@@ -27,7 +27,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespacesCreateOrUpdateOrgSecretRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodespacesCreateOrUpdateOrgSecretRequestVisibility Visibility { get; set; }
+        public required global::G.CodespacesCreateOrUpdateOrgSecretRequestVisibility Visibility { get; set; }
 
         /// <summary>
         /// An array of repository IDs that can access the organization secret. You can only provide a list of repository IDs when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret) endpoints.

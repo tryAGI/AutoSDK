@@ -22,16 +22,16 @@ namespace G
         public string? Email { get; set; }
 
         /// <summary>
-        /// The role for the new member. 
-        ///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
-        ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  
-        ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. 
-        ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-        /// <br/>Default Value: direct_member
+        /// The role for the new member. <br/>
+        ///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  <br/>
+        ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  <br/>
+        ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. <br/>
+        ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.<br/>
+        /// Default Value: direct_member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgsCreateInvitationRequestRoleJsonConverter))]
-        public OrgsCreateInvitationRequestRole? Role { get; set; } = OrgsCreateInvitationRequestRole.DirectMember;
+        public global::G.OrgsCreateInvitationRequestRole? Role { get; set; } = global::G.OrgsCreateInvitationRequestRole.DirectMember;
 
         /// <summary>
         /// Specify IDs for the teams you want to invite new members to.

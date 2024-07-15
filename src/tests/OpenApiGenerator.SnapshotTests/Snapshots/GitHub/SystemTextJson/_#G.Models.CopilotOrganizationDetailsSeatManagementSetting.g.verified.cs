@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CopilotOrganizationDetailsSeatManagementSetting ToEnum(string value)
+        public static CopilotOrganizationDetailsSeatManagementSetting? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "assign_selected" => CopilotOrganizationDetailsSeatManagementSetting.AssignSelected,
                 "disabled" => CopilotOrganizationDetailsSeatManagementSetting.Disabled,
                 "unconfigured" => CopilotOrganizationDetailsSeatManagementSetting.Unconfigured,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

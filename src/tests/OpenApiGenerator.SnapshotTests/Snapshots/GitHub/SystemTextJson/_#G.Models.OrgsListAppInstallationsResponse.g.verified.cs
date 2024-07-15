@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Installation> Installations { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Installation> Installations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -58,7 +58,7 @@ namespace G
         public string? RepositoryName { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
         public global::System.DateTime PushedAt { get; set; }
@@ -68,14 +68,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposGetOrgRuleSuitesResponseResultJsonConverter))]
-        public ReposGetOrgRuleSuitesResponseResult? Result { get; set; }
+        public global::G.ReposGetOrgRuleSuitesResponseResult? Result { get; set; }
 
         /// <summary>
         /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposGetOrgRuleSuitesResponseEvaluationResultJsonConverter))]
-        public ReposGetOrgRuleSuitesResponseEvaluationResult? EvaluationResult { get; set; }
+        public global::G.ReposGetOrgRuleSuitesResponseEvaluationResult? EvaluationResult { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

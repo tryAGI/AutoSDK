@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("base")]
-        public WebhookPullRequestEditedChangesBase? Base { get; set; }
+        public global::G.WebhookPullRequestEditedChangesBase? Base { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public WebhookPullRequestEditedChangesBody? Body { get; set; }
+        public global::G.WebhookPullRequestEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
-        public WebhookPullRequestEditedChangesTitle? Title { get; set; }
+        public global::G.WebhookPullRequestEditedChangesTitle? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

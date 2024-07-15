@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesDemilestonedIssueAssigneeTypeJsonConverter))]
-        public WebhookIssuesDemilestonedIssueAssigneeType? Type { get; set; }
+        public global::G.WebhookIssuesDemilestonedIssueAssigneeType? Type { get; set; }
 
         /// <summary>
         /// 

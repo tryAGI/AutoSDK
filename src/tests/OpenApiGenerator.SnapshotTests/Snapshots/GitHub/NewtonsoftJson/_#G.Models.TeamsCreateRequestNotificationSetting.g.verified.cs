@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The notification setting the team has chosen. The options are:  
-    ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  
-    ///  * `notifications_disabled` - no one receives notifications.  
+    /// The notification setting the team has chosen. The options are:  <br/>
+    ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  <br/>
+    ///  * `notifications_disabled` - no one receives notifications.  <br/>
     /// Default: `notifications_enabled`
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsCreateRequestNotificationSetting ToEnum(string value)
+        public static TeamsCreateRequestNotificationSetting? ToEnum(string value)
         {
             return value switch
             {
                 "notifications_enabled" => TeamsCreateRequestNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamsCreateRequestNotificationSetting.NotificationsDisabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

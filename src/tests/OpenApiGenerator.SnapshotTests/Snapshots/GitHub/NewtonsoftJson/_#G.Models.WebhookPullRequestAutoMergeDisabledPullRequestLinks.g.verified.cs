@@ -13,49 +13,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksComments Comments { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksComments Comments { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commits", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits Commits { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits Commits { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml Html { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml Html { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue Issue { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue Issue { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_comment", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment ReviewComment { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment ReviewComment { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_comments", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments ReviewComments { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments ReviewComments { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf Self { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf Self { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses Statuses { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses Statuses { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

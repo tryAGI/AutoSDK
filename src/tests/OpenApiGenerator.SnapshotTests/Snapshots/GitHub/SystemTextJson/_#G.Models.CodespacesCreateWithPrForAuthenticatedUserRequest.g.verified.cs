@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("geo")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespacesCreateWithPrForAuthenticatedUserRequestGeoJsonConverter))]
-        public CodespacesCreateWithPrForAuthenticatedUserRequestGeo? Geo { get; set; }
+        public global::G.CodespacesCreateWithPrForAuthenticatedUserRequestGeo? Geo { get; set; }
 
         /// <summary>
         /// IP for location auto-detection when proxying a request

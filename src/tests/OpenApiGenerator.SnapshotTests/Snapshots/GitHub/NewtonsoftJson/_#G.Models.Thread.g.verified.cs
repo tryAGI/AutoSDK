@@ -19,13 +19,13 @@ namespace G
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subject", Required = global::Newtonsoft.Json.Required.Always)]
-        public ThreadSubject Subject { get; set; } = default!;
+        public global::G.ThreadSubject Subject { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/notifications/threads/2/subscription
+        /// Example: https://api.github.com/notifications/threads/2/subscription
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SubscriptionUrl { get; set; } = default!;

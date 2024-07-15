@@ -10,8 +10,8 @@ namespace G
     public sealed partial class GistsCreateCommentRequest
     {
         /// <summary>
-        /// The comment text.
-        /// <br/>Example: Body of the attachment
+        /// The comment text.<br/>
+        /// Example: Body of the attachment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The process in which the Page will be built.
-    /// <br/>Example: legacy
+    /// The process in which the Page will be built.<br/>
+    /// Example: legacy
     /// </summary>
     public enum PageBuildType
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PageBuildType ToEnum(string value)
+        public static PageBuildType? ToEnum(string value)
         {
             return value switch
             {
                 "legacy" => PageBuildType.Legacy,
                 "workflow" => PageBuildType.Workflow,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

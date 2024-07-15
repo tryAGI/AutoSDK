@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleCommitterEmailPatternParametersOperator ToEnum(string value)
+        public static RepositoryRuleCommitterEmailPatternParametersOperator? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "ends_with" => RepositoryRuleCommitterEmailPatternParametersOperator.EndsWith,
                 "contains" => RepositoryRuleCommitterEmailPatternParametersOperator.Contains,
                 "regex" => RepositoryRuleCommitterEmailPatternParametersOperator.Regex,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ShortBranchCommit Commit { get; set; }
+        public required global::G.ShortBranchCommit Commit { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace G
         /// Branch Protection
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protection")]
-        public BranchProtection? Protection { get; set; }
+        public global::G.BranchProtection? Protection { get; set; }
 
         /// <summary>
         /// 

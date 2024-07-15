@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: 
+    /// 
     /// </summary>
     public sealed partial class UsersAddSocialAccountForAuthenticatedUserRequest
     {
         /// <summary>
-        /// Full URLs for the social media profiles to add.
-        /// <br/>Example: []
+        /// Full URLs for the social media profiles to add.<br/>
+        /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]

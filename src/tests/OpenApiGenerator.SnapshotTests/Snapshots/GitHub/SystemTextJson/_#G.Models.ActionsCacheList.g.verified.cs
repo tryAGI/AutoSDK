@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ActionsCacheList
     {
         /// <summary>
-        /// Total number of caches
-        /// <br/>Example: 2
+        /// Total number of caches<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions_caches")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ActionsCacheListActionsCaches> ActionsCaches { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCaches> ActionsCaches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

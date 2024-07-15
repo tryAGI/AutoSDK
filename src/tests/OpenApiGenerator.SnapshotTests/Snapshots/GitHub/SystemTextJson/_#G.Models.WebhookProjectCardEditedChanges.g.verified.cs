@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookProjectCardEditedChangesNote Note { get; set; }
+        public required global::G.WebhookProjectCardEditedChangesNote Note { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

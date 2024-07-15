@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<DependabotAlertSecurityVulnerability> Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityVulnerability> Vulnerabilities { get; set; }
 
         /// <summary>
         /// The severity of the advisory.
@@ -50,35 +50,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertSecurityAdvisorySeverity Severity { get; set; }
+        public required global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; }
 
         /// <summary>
         /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertSecurityAdvisoryCvss Cvss { get; set; }
+        public required global::G.DependabotAlertSecurityAdvisoryCvss Cvss { get; set; }
 
         /// <summary>
         /// Details for the advisory pertaining to Common Weakness Enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<DependabotAlertSecurityAdvisoryCwes> Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwes> Cwes { get; set; }
 
         /// <summary>
         /// Values that identify this advisory among security information sources.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<DependabotAlertSecurityAdvisoryIdentifiers> Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifiers> Identifiers { get; set; }
 
         /// <summary>
         /// Links to additional advisory information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<DependabotAlertSecurityAdvisoryReferences> References { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReferences> References { get; set; }
 
         /// <summary>
         /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

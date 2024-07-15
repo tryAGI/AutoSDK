@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seat_breakdown")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CopilotSeatBreakdown SeatBreakdown { get; set; }
+        public required global::G.CopilotSeatBreakdown SeatBreakdown { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
@@ -22,28 +22,28 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("public_code_suggestions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CopilotOrganizationDetailsPublicCodeSuggestionsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CopilotOrganizationDetailsPublicCodeSuggestions PublicCodeSuggestions { get; set; }
+        public required global::G.CopilotOrganizationDetailsPublicCodeSuggestions PublicCodeSuggestions { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ide_chat")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CopilotOrganizationDetailsIdeChatJsonConverter))]
-        public CopilotOrganizationDetailsIdeChat? IdeChat { get; set; }
+        public global::G.CopilotOrganizationDetailsIdeChat? IdeChat { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("platform_chat")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CopilotOrganizationDetailsPlatformChatJsonConverter))]
-        public CopilotOrganizationDetailsPlatformChat? PlatformChat { get; set; }
+        public global::G.CopilotOrganizationDetailsPlatformChat? PlatformChat { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cli")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CopilotOrganizationDetailsCliJsonConverter))]
-        public CopilotOrganizationDetailsCli? Cli { get; set; }
+        public global::G.CopilotOrganizationDetailsCli? Cli { get; set; }
 
         /// <summary>
         /// The mode of assigning new seats.
@@ -51,7 +51,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("seat_management_setting")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CopilotOrganizationDetailsSeatManagementSettingJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CopilotOrganizationDetailsSeatManagementSetting SeatManagementSetting { get; set; }
+        public required global::G.CopilotOrganizationDetailsSeatManagementSetting SeatManagementSetting { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

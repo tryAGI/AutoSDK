@@ -10,32 +10,32 @@ namespace G
     public sealed partial class JobSteps
     {
         /// <summary>
-        /// The phase of the lifecycle that the job is currently in.
-        /// <br/>Example: queued
+        /// The phase of the lifecycle that the job is currently in.<br/>
+        /// Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.JobStepsStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required JobStepsStatus Status { get; set; }
+        public required global::G.JobStepsStatus Status { get; set; }
 
         /// <summary>
-        /// The outcome of the job.
-        /// <br/>Example: success
+        /// The outcome of the job.<br/>
+        /// Example: success
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Conclusion { get; set; }
 
         /// <summary>
-        /// The name of the job.
-        /// <br/>Example: test-coverage
+        /// The name of the job.<br/>
+        /// Example: test-coverage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,14 +43,12 @@ namespace G
 
         /// <summary>
         /// The time that the step started, in ISO 8601 format.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// The time that the job finished, in ISO 8601 format.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }

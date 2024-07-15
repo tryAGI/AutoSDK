@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
-        public FileCommitContentLinks? Links { get; set; }
+        public global::G.FileCommitContentLinks? Links { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

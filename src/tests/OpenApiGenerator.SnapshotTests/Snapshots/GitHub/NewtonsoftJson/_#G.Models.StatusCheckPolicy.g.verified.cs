@@ -10,19 +10,19 @@ namespace G
     public sealed partial class StatusCheckPolicy
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strict", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Strict { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: [continuous-integration/travis-ci]
+        /// Example: [continuous-integration/travis-ci]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contexts", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Contexts { get; set; } = default!;
@@ -31,10 +31,10 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<StatusCheckPolicyChecks> Checks { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StatusCheckPolicyChecks> Checks { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contexts_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContextsUrl { get; set; } = default!;

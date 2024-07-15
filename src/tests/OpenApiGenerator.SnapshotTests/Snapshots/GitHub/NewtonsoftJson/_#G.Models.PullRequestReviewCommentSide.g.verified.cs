@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
-    /// <br/>Default Value: RIGHT
+    /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment<br/>
+    /// Default Value: RIGHT
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PullRequestReviewCommentSide
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullRequestReviewCommentSide ToEnum(string value)
+        public static PullRequestReviewCommentSide? ToEnum(string value)
         {
             return value switch
             {
                 "LEFT" => PullRequestReviewCommentSide.LEFT,
                 "RIGHT" => PullRequestReviewCommentSide.RIGHT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

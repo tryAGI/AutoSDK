@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestEditedChangesBaseRef Ref { get; set; }
+        public required global::G.WebhookPullRequestEditedChangesBaseRef Ref { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestEditedChangesBaseSha Sha { get; set; }
+        public required global::G.WebhookPullRequestEditedChangesBaseSha Sha { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

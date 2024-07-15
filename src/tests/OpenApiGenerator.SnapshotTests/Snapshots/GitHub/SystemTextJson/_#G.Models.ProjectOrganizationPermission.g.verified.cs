@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ProjectOrganizationPermission ToEnum(string value)
+        public static ProjectOrganizationPermission? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "write" => ProjectOrganizationPermission.Write,
                 "admin" => ProjectOrganizationPermission.Admin,
                 "none" => ProjectOrganizationPermission.None,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -19,7 +19,7 @@ namespace G
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_actions")]
-        public ActionsSetGithubActionsPermissionsRepositoryRequestAllowedActions? AllowedActions { get; set; }
+        public global::G.AllowedActions? AllowedActions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

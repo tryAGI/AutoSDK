@@ -264,7 +264,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents ToEnum(string value)
+        public static WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents? ToEnum(string value)
         {
             return value switch
             {
@@ -315,7 +315,7 @@ namespace G
                 "workflow_run" => WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents.WorkflowRun,
                 "reminder" => WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents.Reminder,
                 "pull_request_review_thread" => WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents.PullRequestReviewThread,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

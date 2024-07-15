@@ -13,13 +13,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser EnabledBy { get; set; } = default!;
+        public global::G.SimpleUser EnabledBy { get; set; } = default!;
 
         /// <summary>
         /// The merge method to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_method", Required = global::Newtonsoft.Json.Required.Always)]
-        public AutoMergeMergeMethod MergeMethod { get; set; } = default!;
+        public global::G.AutoMergeMergeMethod MergeMethod { get; set; } = default!;
 
         /// <summary>
         /// Title for the merge commit message.

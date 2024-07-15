@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestMilestoneCreator? Creator { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestMilestoneCreator? Creator { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// The state of the milestone.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestAutoMergeDisabledPullRequestMilestoneState State { get; set; } = default!;
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestMilestoneState State { get; set; } = default!;
 
         /// <summary>
         /// The title of the milestone.

@@ -6,8 +6,31 @@ namespace G
 {
     public partial class ReposClient
     {
+        partial void PrepareReposUpdateReleaseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int releaseId,
+            global::G.ReposUpdateReleaseRequest request);
+        partial void PrepareReposUpdateReleaseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int releaseId,
+            global::G.ReposUpdateReleaseRequest request);
+        partial void ProcessReposUpdateReleaseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessReposUpdateReleaseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Update a release
+        /// Update a release<br/>
+        /// Users with push access to the repository can edit a release.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -15,53 +38,116 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Release> ReposUpdateReleaseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Release> ReposUpdateReleaseAsync(
             string owner,
             string repo,
             int releaseId,
-            ReposUpdateReleaseRequest request,
+            global::G.ReposUpdateReleaseRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReposUpdateReleaseArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                releaseId: ref releaseId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/releases/{releaseId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/releases/{releaseId}", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReposUpdateReleaseRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                releaseId: releaseId,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReposUpdateReleaseResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessReposUpdateReleaseResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Release?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Release?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Update a release
+        /// Update a release<br/>
+        /// Users with push access to the repository can edit a release.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="releaseId"></param>
-        /// <param name="tagName"></param>
-        /// <param name="targetCommitish"></param>
-        /// <param name="name"></param>
-        /// <param name="body"></param>
-        /// <param name="draft"></param>
-        /// <param name="prerelease"></param>
-        /// <param name="makeLatest"></param>
-        /// <param name="discussionCategoryName"></param>
+        /// <param name="tagName">
+        /// The name of the tag.
+        /// </param>
+        /// <param name="targetCommitish">
+        /// Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
+        /// </param>
+        /// <param name="name">
+        /// The name of the release.
+        /// </param>
+        /// <param name="body">
+        /// Text describing the contents of the tag.
+        /// </param>
+        /// <param name="draft">
+        /// `true` makes the release a draft, and `false` publishes the release.
+        /// </param>
+        /// <param name="prerelease">
+        /// `true` to identify the release as a prerelease, `false` to identify the release as a full release.
+        /// </param>
+        /// <param name="makeLatest">
+        /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="discussionCategoryName">
+        /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Release> ReposUpdateReleaseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Release> ReposUpdateReleaseAsync(
             string owner,
             string repo,
             int releaseId,
@@ -71,11 +157,11 @@ namespace G
             string? body = default,
             bool draft = default,
             bool prerelease = default,
-            ReposUpdateReleaseRequestMakeLatest? makeLatest = ReposUpdateReleaseRequestMakeLatest.True,
+            global::G.ReposUpdateReleaseRequestMakeLatest? makeLatest = global::G.ReposUpdateReleaseRequestMakeLatest.True,
             string? discussionCategoryName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ReposUpdateReleaseRequest
+            var request = new global::G.ReposUpdateReleaseRequest
             {
                 TagName = tagName,
                 TargetCommitish = targetCommitish,

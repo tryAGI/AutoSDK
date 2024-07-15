@@ -29,7 +29,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobInProgressWorkflowJobConclusion? Conclusion { get; set; }
+        public required global::G.WebhookWorkflowJobInProgressWorkflowJobConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created.
@@ -142,7 +142,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobInProgressWorkflowJobStatus Status { get; set; }
+        public required global::G.WebhookWorkflowJobInProgressWorkflowJobStatus Status { get; set; }
 
         /// <summary>
         /// The name of the current branch.
@@ -163,7 +163,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookWorkflowJobInProgressWorkflowJobSteps> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobInProgressWorkflowJobSteps> Steps { get; set; }
 
         /// <summary>
         /// 

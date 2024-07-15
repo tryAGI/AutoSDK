@@ -10,8 +10,8 @@ namespace G
     public sealed partial class Manifest
     {
         /// <summary>
-        /// The name of the manifest.
-        /// <br/>Example: package-lock.json
+        /// The name of the manifest.<br/>
+        /// Example: package-lock.json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -20,13 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file")]
-        public ManifestFile? File { get; set; }
+        public global::G.ManifestFile? File { get; set; }
 
         /// <summary>
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public Metadata? Metadata { get; set; }
+        public global::G.Metadata? Metadata { get; set; }
 
         /// <summary>
         /// A collection of resolved package dependencies.

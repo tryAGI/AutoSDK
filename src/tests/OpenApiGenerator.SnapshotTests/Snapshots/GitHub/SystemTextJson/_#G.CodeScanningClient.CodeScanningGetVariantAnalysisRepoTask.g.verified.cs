@@ -6,8 +6,34 @@ namespace G
 {
     public partial class CodeScanningClient
     {
+        partial void PrepareCodeScanningGetVariantAnalysisRepoTaskArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int codeqlVariantAnalysisId,
+            ref string repoOwner,
+            ref string repoName);
+        partial void PrepareCodeScanningGetVariantAnalysisRepoTaskRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int codeqlVariantAnalysisId,
+            string repoOwner,
+            string repoName);
+        partial void ProcessCodeScanningGetVariantAnalysisRepoTaskResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCodeScanningGetVariantAnalysisRepoTaskResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Get the analysis status of a repository in a CodeQL variant analysis
+        /// Get the analysis status of a repository in a CodeQL variant analysis<br/>
+        /// Gets the analysis status of a repository in a CodeQL variant analysis.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -16,7 +42,7 @@ namespace G
         /// <param name="repoName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CodeScanningVariantAnalysisRepoTask> CodeScanningGetVariantAnalysisRepoTaskAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CodeScanningVariantAnalysisRepoTask> CodeScanningGetVariantAnalysisRepoTaskAsync(
             string owner,
             string repo,
             int codeqlVariantAnalysisId,
@@ -24,20 +50,66 @@ namespace G
             string repoName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCodeScanningGetVariantAnalysisRepoTaskArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                codeqlVariantAnalysisId: ref codeqlVariantAnalysisId,
+                repoOwner: ref repoOwner,
+                repoName: ref repoName);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeqlVariantAnalysisId}/repos/{repoOwner}/{repoName}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeqlVariantAnalysisId}/repos/{repoOwner}/{repoName}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCodeScanningGetVariantAnalysisRepoTaskRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                codeqlVariantAnalysisId: codeqlVariantAnalysisId,
+                repoOwner: repoOwner,
+                repoName: repoName);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCodeScanningGetVariantAnalysisRepoTaskResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCodeScanningGetVariantAnalysisRepoTaskResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CodeScanningVariantAnalysisRepoTask?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CodeScanningVariantAnalysisRepoTask?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

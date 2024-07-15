@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: 
-    ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  
+    /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: <br/>
+    ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  <br/>
     ///  * `notifications_disabled` - no one receives notifications.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsUpdateInOrgRequestNotificationSetting ToEnum(string value)
+        public static TeamsUpdateInOrgRequestNotificationSetting? ToEnum(string value)
         {
             return value switch
             {
                 "notifications_enabled" => TeamsUpdateInOrgRequestNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamsUpdateInOrgRequestNotificationSetting.NotificationsDisabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: added
+    /// Example: added
     /// </summary>
     public enum DiffEntryStatus
     {
@@ -64,7 +64,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DiffEntryStatus ToEnum(string value)
+        public static DiffEntryStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -75,7 +75,7 @@ namespace G
                 "copied" => DiffEntryStatus.Copied,
                 "changed" => DiffEntryStatus.Changed,
                 "unchanged" => DiffEntryStatus.Unchanged,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

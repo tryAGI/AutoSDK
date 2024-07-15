@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ManifestFile
     {
         /// <summary>
-        /// The path of the manifest file relative to the root of the Git repository.
-        /// <br/>Example: /src/build/package-lock.json
+        /// The path of the manifest file relative to the root of the Git repository.<br/>
+        /// Example: /src/build/package-lock.json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_location")]
         public string? SourceLocation { get; set; }

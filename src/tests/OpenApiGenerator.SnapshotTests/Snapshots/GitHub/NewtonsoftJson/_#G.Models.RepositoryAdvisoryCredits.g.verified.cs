@@ -19,7 +19,7 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public RepositoryAdvisoryCreditsType? Type { get; set; }
+        public global::G.SecurityAdvisoryCreditTypes? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

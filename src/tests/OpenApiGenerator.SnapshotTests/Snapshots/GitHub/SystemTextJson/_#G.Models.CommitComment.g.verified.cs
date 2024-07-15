@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -94,19 +94,19 @@ namespace G
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CommitCommentAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CommitCommentAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

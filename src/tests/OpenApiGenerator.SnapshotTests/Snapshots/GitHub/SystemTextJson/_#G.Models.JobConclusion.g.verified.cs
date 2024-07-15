@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The outcome of the job.
-    /// <br/>Example: success
+    /// The outcome of the job.<br/>
+    /// Example: success
     /// </summary>
     public enum JobConclusion
     {
@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static JobConclusion ToEnum(string value)
+        public static JobConclusion? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "skipped" => JobConclusion.Skipped,
                 "timed_out" => JobConclusion.TimedOut,
                 "action_required" => JobConclusion.ActionRequired,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

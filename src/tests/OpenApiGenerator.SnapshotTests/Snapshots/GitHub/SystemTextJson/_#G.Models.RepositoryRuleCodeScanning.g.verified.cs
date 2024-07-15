@@ -15,13 +15,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCodeScanningTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryRuleCodeScanningType Type { get; set; }
+        public required global::G.RepositoryRuleCodeScanningType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public RepositoryRuleCodeScanningParameters? Parameters { get; set; }
+        public global::G.RepositoryRuleCodeScanningParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

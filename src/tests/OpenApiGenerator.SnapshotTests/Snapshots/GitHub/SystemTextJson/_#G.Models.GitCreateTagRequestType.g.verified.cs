@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GitCreateTagRequestType ToEnum(string value)
+        public static GitCreateTagRequestType? ToEnum(string value)
         {
             return value switch
             {
                 "commit" => GitCreateTagRequestType.Commit,
                 "tree" => GitCreateTagRequestType.Tree,
                 "blob" => GitCreateTagRequestType.Blob,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

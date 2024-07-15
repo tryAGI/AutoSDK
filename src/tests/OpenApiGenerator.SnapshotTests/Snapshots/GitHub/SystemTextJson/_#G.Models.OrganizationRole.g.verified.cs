@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Organization { get; set; }
+        public required global::G.NullableSimpleUser? Organization { get; set; }
 
         /// <summary>
         /// The date and time the role was created.

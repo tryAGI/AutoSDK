@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_property", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty RepositoryProperty { get; set; } = default!;
+        public global::G.RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty RepositoryProperty { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

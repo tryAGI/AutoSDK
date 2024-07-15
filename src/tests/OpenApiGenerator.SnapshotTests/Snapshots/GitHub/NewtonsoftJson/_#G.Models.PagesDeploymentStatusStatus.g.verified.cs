@@ -96,7 +96,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PagesDeploymentStatusStatus ToEnum(string value)
+        public static PagesDeploymentStatusStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -111,7 +111,7 @@ namespace G
                 "deployment_attempt_error" => PagesDeploymentStatusStatus.DeploymentAttemptError,
                 "deployment_lost" => PagesDeploymentStatusStatus.DeploymentLost,
                 "succeed" => PagesDeploymentStatusStatus.Succeed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

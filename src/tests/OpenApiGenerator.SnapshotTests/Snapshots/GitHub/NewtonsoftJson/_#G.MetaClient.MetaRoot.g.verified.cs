@@ -6,28 +6,79 @@ namespace G
 {
     public partial class MetaClient
     {
+        partial void PrepareMetaRootArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareMetaRootRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessMetaRootResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessMetaRootResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// GitHub API Root
+        /// GitHub API Root<br/>
+        /// Get Hypermedia links to resources accessible in GitHub's REST API
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Root> MetaRootAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Root> MetaRootAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareMetaRootArguments(
+                httpClient: _httpClient);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareMetaRootRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessMetaRootResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessMetaRootResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Root?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Root?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

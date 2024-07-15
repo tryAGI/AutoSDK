@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: newest
+    /// Default Value: newest
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListForksSort
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForksSort ToEnum(string value)
+        public static ReposListForksSort? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "oldest" => ReposListForksSort.Oldest,
                 "stargazers" => ReposListForksSort.Stargazers,
                 "watchers" => ReposListForksSort.Watchers,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

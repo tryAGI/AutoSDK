@@ -10,22 +10,22 @@ namespace G
     public sealed partial class PackageVersionMetadata
     {
         /// <summary>
-        /// <br/>Example: docker
+        /// Example: docker
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public PackageVersionMetadataPackageType PackageType { get; set; } = default!;
+        public global::G.PackageVersionMetadataPackageType PackageType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("container")]
-        public PackageVersionMetadataContainer? Container { get; set; }
+        public global::G.PackageVersionMetadataContainer? Container { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker")]
-        public PackageVersionMetadataDocker? Docker { get; set; }
+        public global::G.PackageVersionMetadataDocker? Docker { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

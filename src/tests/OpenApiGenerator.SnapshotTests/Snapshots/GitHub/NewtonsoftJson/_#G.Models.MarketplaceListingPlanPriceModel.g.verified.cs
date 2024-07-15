@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: FLAT_RATE
+    /// Example: FLAT_RATE
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MarketplaceListingPlanPriceModel
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MarketplaceListingPlanPriceModel ToEnum(string value)
+        public static MarketplaceListingPlanPriceModel? ToEnum(string value)
         {
             return value switch
             {
                 "FREE" => MarketplaceListingPlanPriceModel.FREE,
                 "FLAT_RATE" => MarketplaceListingPlanPriceModel.FLATRATE,
                 "PER_UNIT" => MarketplaceListingPlanPriceModel.PERUNIT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public WebhookMilestoneEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookMilestoneEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("due_on")]
-        public WebhookMilestoneEditedChangesDueOn? DueOn { get; set; }
+        public global::G.WebhookMilestoneEditedChangesDueOn? DueOn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
-        public WebhookMilestoneEditedChangesTitle? Title { get; set; }
+        public global::G.WebhookMilestoneEditedChangesTitle? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

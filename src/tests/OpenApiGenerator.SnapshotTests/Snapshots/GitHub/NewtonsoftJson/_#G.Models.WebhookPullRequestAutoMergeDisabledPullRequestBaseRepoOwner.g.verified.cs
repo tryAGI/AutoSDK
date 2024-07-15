@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType? Type { get; set; }
+        public global::G.WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

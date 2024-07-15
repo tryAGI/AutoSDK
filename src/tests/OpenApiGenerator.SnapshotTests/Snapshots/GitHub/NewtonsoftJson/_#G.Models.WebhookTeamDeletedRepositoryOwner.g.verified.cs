@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookTeamDeletedRepositoryOwnerType? Type { get; set; }
+        public global::G.WebhookTeamDeletedRepositoryOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

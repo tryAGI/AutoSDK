@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration ToEnum(string value)
+        public static WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration? ToEnum(string value)
         {
             return value switch
             {
                 "read" => WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration.Read,
                 "write" => WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration.Write,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

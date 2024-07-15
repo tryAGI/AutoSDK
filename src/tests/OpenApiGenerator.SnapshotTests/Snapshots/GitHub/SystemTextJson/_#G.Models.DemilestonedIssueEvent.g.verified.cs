@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
         /// 
@@ -70,14 +70,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableIntegration? PerformedViaGithubApp { get; set; }
+        public required global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DemilestonedIssueEventMilestone Milestone { get; set; }
+        public required global::G.DemilestonedIssueEventMilestone Milestone { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

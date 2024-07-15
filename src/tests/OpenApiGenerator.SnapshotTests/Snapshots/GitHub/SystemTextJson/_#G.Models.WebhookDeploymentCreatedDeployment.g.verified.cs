@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookDeploymentCreatedDeployment.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -21,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentCreatedDeploymentCreator? Creator { get; set; }
+        public required global::G.WebhookDeploymentCreatedDeploymentCreator? Creator { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +72,7 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 

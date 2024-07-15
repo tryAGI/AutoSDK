@@ -10,28 +10,28 @@ namespace G
     public sealed partial class Email
     {
         /// <summary>
-        /// <br/>Example: octocat@github.com
+        /// Example: octocat@github.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email1 { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Primary { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verified")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Verified { get; set; }
 
         /// <summary>
-        /// <br/>Example: public
+        /// Example: public
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonRequired]

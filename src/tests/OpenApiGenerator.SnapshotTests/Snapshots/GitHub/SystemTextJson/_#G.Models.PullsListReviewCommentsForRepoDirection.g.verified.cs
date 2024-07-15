@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsListReviewCommentsForRepoDirection ToEnum(string value)
+        public static PullsListReviewCommentsForRepoDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => PullsListReviewCommentsForRepoDirection.Asc,
                 "desc" => PullsListReviewCommentsForRepoDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

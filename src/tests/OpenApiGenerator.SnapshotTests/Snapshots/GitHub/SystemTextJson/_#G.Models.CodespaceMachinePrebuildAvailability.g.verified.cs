@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
-    /// <br/>Example: ready
+    /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.<br/>
+    /// Example: ready
     /// </summary>
     public enum CodespaceMachinePrebuildAvailability
     {
@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespaceMachinePrebuildAvailability ToEnum(string value)
+        public static CodespaceMachinePrebuildAvailability? ToEnum(string value)
         {
             return value switch
             {
                 "none" => CodespaceMachinePrebuildAvailability.None,
                 "ready" => CodespaceMachinePrebuildAvailability.Ready,
                 "in_progress" => CodespaceMachinePrebuildAvailability.InProgress,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public BranchShortCommit Commit { get; set; } = default!;
+        public global::G.BranchShortCommit Commit { get; set; } = default!;
 
         /// <summary>
         /// 

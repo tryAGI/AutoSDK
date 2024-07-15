@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunnerLabelType ToEnum(string value)
+        public static RunnerLabelType? ToEnum(string value)
         {
             return value switch
             {
                 "read-only" => RunnerLabelType.ReadOnly,
                 "custom" => RunnerLabelType.Custom,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

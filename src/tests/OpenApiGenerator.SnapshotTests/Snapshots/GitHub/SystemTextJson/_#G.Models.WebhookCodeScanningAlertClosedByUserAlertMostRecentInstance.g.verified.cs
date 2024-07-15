@@ -45,13 +45,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
-        public WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceLocation? Location { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceLocation? Location { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceMessage? Message { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceMessage? Message { get; set; }
 
         /// <summary>
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
@@ -66,7 +66,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceState State { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstanceState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

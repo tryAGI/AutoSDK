@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("marketplace_pending_change")]
-        public MarketplacePurchaseMarketplacePendingChange? MarketplacePendingChange { get; set; }
+        public global::G.MarketplacePurchaseMarketplacePendingChange? MarketplacePendingChange { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("marketplace_purchase", Required = global::Newtonsoft.Json.Required.Always)]
-        public MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; } = default!;
+        public global::G.MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

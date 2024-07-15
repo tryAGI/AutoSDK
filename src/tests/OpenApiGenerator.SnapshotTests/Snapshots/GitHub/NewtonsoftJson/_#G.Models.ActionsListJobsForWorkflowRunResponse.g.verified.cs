@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("jobs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Job> Jobs { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Job> Jobs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

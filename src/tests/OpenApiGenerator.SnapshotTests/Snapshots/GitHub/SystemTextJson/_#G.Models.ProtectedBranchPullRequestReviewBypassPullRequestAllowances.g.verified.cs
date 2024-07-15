@@ -13,19 +13,19 @@ namespace G
         /// The list of users allowed to bypass pull request requirements.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
-        public global::System.Collections.Generic.IList<SimpleUser>? Users { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? Users { get; set; }
 
         /// <summary>
         /// The list of teams allowed to bypass pull request requirements.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("teams")]
-        public global::System.Collections.Generic.IList<Team>? Teams { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Team>? Teams { get; set; }
 
         /// <summary>
         /// The list of apps allowed to bypass pull request requirements.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
-        public global::System.Collections.Generic.IList<Integration>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

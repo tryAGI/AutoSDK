@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("condition_type")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType? ConditionType { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType? ConditionType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget? Target { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget? Target { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("include")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude? Include { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude? Include { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exclude")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude? Exclude { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude? Exclude { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

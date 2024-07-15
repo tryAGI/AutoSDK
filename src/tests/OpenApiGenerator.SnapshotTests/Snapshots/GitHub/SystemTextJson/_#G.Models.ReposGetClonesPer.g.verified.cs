@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: day
+    /// Default Value: day
     /// </summary>
     public enum ReposGetClonesPer
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetClonesPer ToEnum(string value)
+        public static ReposGetClonesPer? ToEnum(string value)
         {
             return value switch
             {
                 "day" => ReposGetClonesPer.Day,
                 "week" => ReposGetClonesPer.Week,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

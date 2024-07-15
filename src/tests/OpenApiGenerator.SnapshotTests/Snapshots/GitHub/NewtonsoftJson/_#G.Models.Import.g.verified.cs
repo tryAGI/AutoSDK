@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public ImportStatus Status { get; set; } = default!;
+        public global::G.ImportStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_choices")]
-        public global::System.Collections.Generic.IList<ImportProjectChoices?>? ProjectChoices { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImportProjectChoices?>? ProjectChoices { get; set; }
 
         /// <summary>
         /// 

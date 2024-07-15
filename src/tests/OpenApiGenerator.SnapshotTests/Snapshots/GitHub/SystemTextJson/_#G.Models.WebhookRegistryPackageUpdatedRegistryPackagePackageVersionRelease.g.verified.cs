@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor Author { get; set; }
+        public required global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor Author { get; set; }
 
         /// <summary>
         /// 

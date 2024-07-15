@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationPullRequestTitle
     {
         /// <summary>
-        /// The API URL to get the pull request where the secret was detected.
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/pull/2846
+        /// The API URL to get the pull request where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pull/2846
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request_title_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PullRequestTitleUrl { get; set; } = default!;

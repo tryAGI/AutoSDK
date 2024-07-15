@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RateLimitOverviewResources Resources { get; set; }
+        public required global::G.RateLimitOverviewResources Resources { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RateLimit Rate { get; set; }
+        public required global::G.RateLimit Rate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

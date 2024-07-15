@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesReopenedIssueMilestoneCreator? Creator { get; set; }
+        public required global::G.WebhookIssuesReopenedIssueMilestoneCreator? Creator { get; set; }
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesReopenedIssueMilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesReopenedIssueMilestoneState State { get; set; }
+        public required global::G.WebhookIssuesReopenedIssueMilestoneState State { get; set; }
 
         /// <summary>
         /// The title of the milestone.

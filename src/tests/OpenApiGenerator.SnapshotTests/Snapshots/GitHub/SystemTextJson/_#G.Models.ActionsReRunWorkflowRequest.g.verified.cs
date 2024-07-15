@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ActionsReRunWorkflowRequest
     {
         /// <summary>
-        /// Whether to enable debug logging for the re-run.
-        /// <br/>Default Value: false
+        /// Whether to enable debug logging for the re-run.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_debug_logging")]
         public bool EnableDebugLogging { get; set; } = false;

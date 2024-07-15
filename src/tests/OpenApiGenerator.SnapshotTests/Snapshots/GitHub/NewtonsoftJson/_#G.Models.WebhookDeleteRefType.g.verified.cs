@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookDeleteRefType ToEnum(string value)
+        public static WebhookDeleteRefType? ToEnum(string value)
         {
             return value switch
             {
                 "tag" => WebhookDeleteRefType.Tag,
                 "branch" => WebhookDeleteRefType.Branch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

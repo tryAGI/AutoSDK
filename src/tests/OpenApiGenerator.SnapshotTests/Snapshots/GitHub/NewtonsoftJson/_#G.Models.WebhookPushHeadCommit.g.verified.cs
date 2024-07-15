@@ -19,13 +19,13 @@ namespace G
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPushHeadCommitAuthor Author { get; set; } = default!;
+        public global::G.WebhookPushHeadCommitAuthor Author { get; set; } = default!;
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPushHeadCommitCommitter Committer { get; set; } = default!;
+        public global::G.WebhookPushHeadCommitCommitter Committer { get; set; } = default!;
 
         /// <summary>
         /// Whether this commit is distinct from any that have been pushed before.

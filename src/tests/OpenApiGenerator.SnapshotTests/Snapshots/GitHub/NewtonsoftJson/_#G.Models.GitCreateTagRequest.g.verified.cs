@@ -31,13 +31,13 @@ namespace G
         /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public GitCreateTagRequestType Type { get; set; } = default!;
+        public global::G.GitCreateTagRequestType Type { get; set; } = default!;
 
         /// <summary>
         /// An object with information about the individual creating the tag.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tagger")]
-        public GitCreateTagRequestTagger? Tagger { get; set; }
+        public global::G.GitCreateTagRequestTagger? Tagger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

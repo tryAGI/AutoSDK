@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookIssuesEditedIssueAssigneeType ToEnum(string value)
+        public static WebhookIssuesEditedIssueAssigneeType? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "User" => WebhookIssuesEditedIssueAssigneeType.User,
                 "Organization" => WebhookIssuesEditedIssueAssigneeType.Organization,
                 "Mannequin" => WebhookIssuesEditedIssueAssigneeType.Mannequin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

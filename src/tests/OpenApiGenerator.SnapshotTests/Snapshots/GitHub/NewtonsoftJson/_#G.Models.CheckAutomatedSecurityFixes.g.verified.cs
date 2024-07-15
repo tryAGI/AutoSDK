@@ -10,15 +10,15 @@ namespace G
     public sealed partial class CheckAutomatedSecurityFixes
     {
         /// <summary>
-        /// Whether automated security fixes are enabled for the repository.
-        /// <br/>Example: true
+        /// Whether automated security fixes are enabled for the repository.<br/>
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Enabled { get; set; } = default!;
 
         /// <summary>
-        /// Whether automated security fixes are paused for the repository.
-        /// <br/>Example: false
+        /// Whether automated security fixes are paused for the repository.<br/>
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("paused", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Paused { get; set; } = default!;

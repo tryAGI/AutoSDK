@@ -67,7 +67,7 @@ namespace G
         /// Breakdown of Copilot code completions usage by language and editor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("breakdown", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CopilotUsageMetricsBreakdown>? Breakdown { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdown>? Breakdown { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_runs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WorkflowRun> WorkflowRuns { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WorkflowRun> WorkflowRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

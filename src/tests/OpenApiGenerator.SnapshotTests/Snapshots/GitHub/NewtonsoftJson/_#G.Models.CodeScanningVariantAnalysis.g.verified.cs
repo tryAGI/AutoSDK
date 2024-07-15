@@ -19,19 +19,19 @@ namespace G
         /// A GitHub repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("controller_repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleRepository ControllerRepo { get; set; } = default!;
+        public global::G.SimpleRepository ControllerRepo { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser Actor { get; set; } = default!;
 
         /// <summary>
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_language", Required = global::Newtonsoft.Json.Required.Always)]
-        public CodeScanningVariantAnalysisQueryLanguage QueryLanguage { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; } = default!;
 
         /// <summary>
         /// The download url for the query pack.
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public CodeScanningVariantAnalysisStatus Status { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
@@ -73,19 +73,19 @@ namespace G
         /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failure_reason")]
-        public CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
+        public global::G.CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scanned_repositories")]
-        public global::System.Collections.Generic.IList<CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
 
         /// <summary>
         /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("skipped_repositories")]
-        public CodeScanningVariantAnalysisSkippedRepositories? SkippedRepositories { get; set; }
+        public global::G.CodeScanningVariantAnalysisSkippedRepositories? SkippedRepositories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

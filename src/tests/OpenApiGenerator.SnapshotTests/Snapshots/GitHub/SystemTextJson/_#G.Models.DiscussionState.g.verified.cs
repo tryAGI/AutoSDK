@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The current state of the discussion.
-    /// `converting` means that the discussion is being converted from an issue.
+    /// The current state of the discussion.<br/>
+    /// `converting` means that the discussion is being converted from an issue.<br/>
     /// `transferring` means that the discussion is being transferred from another repository.
     /// </summary>
     public enum DiscussionState
@@ -56,7 +56,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DiscussionState ToEnum(string value)
+        public static DiscussionState? ToEnum(string value)
         {
             return value switch
             {
@@ -65,7 +65,7 @@ namespace G
                 "locked" => DiscussionState.Locked,
                 "converting" => DiscussionState.Converting,
                 "transferring" => DiscussionState.Transferring,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

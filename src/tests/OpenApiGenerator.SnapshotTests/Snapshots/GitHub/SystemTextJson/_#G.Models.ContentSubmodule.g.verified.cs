@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ContentSubmoduleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentSubmoduleType Type { get; set; }
+        public required global::G.ContentSubmoduleType Type { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentSubmoduleLinks Links { get; set; }
+        public required global::G.ContentSubmoduleLinks Links { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

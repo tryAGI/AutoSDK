@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_permission")]
-        public WebhookMemberEditedChangesOldPermission? OldPermission { get; set; }
+        public global::G.WebhookMemberEditedChangesOldPermission? OldPermission { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
-        public WebhookMemberEditedChangesPermission? Permission { get; set; }
+        public global::G.WebhookMemberEditedChangesPermission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

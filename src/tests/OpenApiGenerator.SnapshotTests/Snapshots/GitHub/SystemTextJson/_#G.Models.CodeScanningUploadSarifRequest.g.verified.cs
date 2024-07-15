@@ -17,9 +17,9 @@ namespace G
         public required string CommitSha { get; set; }
 
         /// <summary>
-        /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,
-        /// `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.
-        /// <br/>Example: refs/heads/main
+        /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,<br/>
+        /// `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.<br/>
+        /// Example: refs/heads/main
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,9 +33,9 @@ namespace G
         public required string Sarif { get; set; }
 
         /// <summary>
-        /// The base directory used in the analysis, as it appears in the SARIF file.
-        /// This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
-        /// <br/>Example: file:///github/workspace/
+        /// The base directory used in the analysis, as it appears in the SARIF file.<br/>
+        /// This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.<br/>
+        /// Example: file:///github/workspace/
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checkout_uri")]
         public string? CheckoutUri { get; set; }
@@ -53,7 +53,7 @@ namespace G
         public string? ToolName { get; set; }
 
         /// <summary>
-        /// Whether the SARIF file will be validated according to the code scanning specifications.
+        /// Whether the SARIF file will be validated according to the code scanning specifications.<br/>
         /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validate")]

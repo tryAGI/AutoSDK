@@ -13,7 +13,7 @@ namespace G
         /// The name of the package affected by the vulnerability.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryCreateVulnerabilitiesPackage Package { get; set; } = default!;
+        public global::G.RepositoryAdvisoryCreateVulnerabilitiesPackage Package { get; set; } = default!;
 
         /// <summary>
         /// The range of the package versions affected by the vulnerability.

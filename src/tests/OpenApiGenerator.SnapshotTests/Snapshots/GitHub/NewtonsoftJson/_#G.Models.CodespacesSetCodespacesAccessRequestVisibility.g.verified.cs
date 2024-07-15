@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespacesSetCodespacesAccessRequestVisibility ToEnum(string value)
+        public static CodespacesSetCodespacesAccessRequestVisibility? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "selected_members" => CodespacesSetCodespacesAccessRequestVisibility.SelectedMembers,
                 "all_members" => CodespacesSetCodespacesAccessRequestVisibility.AllMembers,
                 "all_members_and_outside_collaborators" => CodespacesSetCodespacesAccessRequestVisibility.AllMembersAndOutsideCollaborators,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

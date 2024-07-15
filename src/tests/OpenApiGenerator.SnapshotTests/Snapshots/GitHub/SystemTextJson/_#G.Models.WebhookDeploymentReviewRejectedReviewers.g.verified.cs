@@ -13,14 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewer")]
-        public WebhookDeploymentReviewRejectedReviewersReviewer? Reviewer { get; set; }
+        public global::G.WebhookDeploymentReviewRejectedReviewersReviewer? Reviewer { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentReviewRejectedReviewersTypeJsonConverter))]
-        public WebhookDeploymentReviewRejectedReviewersType? Type { get; set; }
+        public global::G.WebhookDeploymentReviewRejectedReviewersType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

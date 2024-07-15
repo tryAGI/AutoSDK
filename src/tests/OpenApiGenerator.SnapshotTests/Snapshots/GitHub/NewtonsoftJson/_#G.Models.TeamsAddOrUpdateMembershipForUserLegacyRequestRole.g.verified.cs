@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The role that this user should have in the team.
-    /// <br/>Default Value: member
+    /// The role that this user should have in the team.<br/>
+    /// Default Value: member
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamsAddOrUpdateMembershipForUserLegacyRequestRole
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsAddOrUpdateMembershipForUserLegacyRequestRole ToEnum(string value)
+        public static TeamsAddOrUpdateMembershipForUserLegacyRequestRole? ToEnum(string value)
         {
             return value switch
             {
                 "member" => TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member,
                 "maintainer" => TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Maintainer,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

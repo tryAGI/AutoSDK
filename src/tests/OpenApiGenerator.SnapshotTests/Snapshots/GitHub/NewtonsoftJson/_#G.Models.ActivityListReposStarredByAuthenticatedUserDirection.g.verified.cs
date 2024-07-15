@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ActivityListReposStarredByAuthenticatedUserDirection
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActivityListReposStarredByAuthenticatedUserDirection ToEnum(string value)
+        public static ActivityListReposStarredByAuthenticatedUserDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ActivityListReposStarredByAuthenticatedUserDirection.Asc,
                 "desc" => ActivityListReposStarredByAuthenticatedUserDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

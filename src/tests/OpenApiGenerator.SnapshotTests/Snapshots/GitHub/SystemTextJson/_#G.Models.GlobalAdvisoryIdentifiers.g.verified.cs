@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GlobalAdvisoryIdentifiersTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GlobalAdvisoryIdentifiersType Type { get; set; }
+        public required global::G.GlobalAdvisoryIdentifiersType Type { get; set; }
 
         /// <summary>
         /// The identifier value.

@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningDefaultSetupState ToEnum(string value)
+        public static CodeScanningDefaultSetupState? ToEnum(string value)
         {
             return value switch
             {
                 "configured" => CodeScanningDefaultSetupState.Configured,
                 "not-configured" => CodeScanningDefaultSetupState.NotConfigured,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -17,8 +17,8 @@ namespace G
         public required int AppId { get; set; }
 
         /// <summary>
-        /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
-        /// <br/>Default Value: true
+        /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("setting")]
         [global::System.Text.Json.Serialization.JsonRequired]

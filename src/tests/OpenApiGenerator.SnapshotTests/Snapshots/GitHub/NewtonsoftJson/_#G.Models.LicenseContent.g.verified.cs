@@ -79,13 +79,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public LicenseContentLinks Links { get; set; } = default!;
+        public global::G.LicenseContentLinks Links { get; set; } = default!;
 
         /// <summary>
         /// License Simple
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableLicenseSimple? License { get; set; } = default!;
+        public global::G.NullableLicenseSimple? License { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationDiscussionTitle
     {
         /// <summary>
-        /// The URL to the discussion where the secret was detected.
-        /// <br/>Example: https://github.com/community/community/discussions/39082
+        /// The URL to the discussion where the secret was detected.<br/>
+        /// Example: https://github.com/community/community/discussions/39082
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("discussion_title_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiscussionTitleUrl { get; set; } = default!;

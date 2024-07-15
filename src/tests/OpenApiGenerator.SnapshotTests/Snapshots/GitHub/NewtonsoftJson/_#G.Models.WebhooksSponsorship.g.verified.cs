@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintainer")]
-        public WebhooksSponsorshipMaintainer? Maintainer { get; set; }
+        public global::G.WebhooksSponsorshipMaintainer? Maintainer { get; set; }
 
         /// <summary>
         /// 
@@ -37,19 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sponsor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksSponsorshipSponsor? Sponsor { get; set; } = default!;
+        public global::G.WebhooksSponsorshipSponsor? Sponsor { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sponsorable", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksSponsorshipSponsorable? Sponsorable { get; set; } = default!;
+        public global::G.WebhooksSponsorshipSponsorable? Sponsorable { get; set; } = default!;
 
         /// <summary>
         /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksSponsorshipTier Tier { get; set; } = default!;
+        public global::G.WebhooksSponsorshipTier Tier { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

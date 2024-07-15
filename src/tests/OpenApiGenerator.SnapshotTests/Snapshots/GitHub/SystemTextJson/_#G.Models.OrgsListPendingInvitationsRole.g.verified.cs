@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     public enum OrgsListPendingInvitationsRole
     {
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsListPendingInvitationsRole ToEnum(string value)
+        public static OrgsListPendingInvitationsRole? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "direct_member" => OrgsListPendingInvitationsRole.DirectMember,
                 "billing_manager" => OrgsListPendingInvitationsRole.BillingManager,
                 "hiring_manager" => OrgsListPendingInvitationsRole.HiringManager,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

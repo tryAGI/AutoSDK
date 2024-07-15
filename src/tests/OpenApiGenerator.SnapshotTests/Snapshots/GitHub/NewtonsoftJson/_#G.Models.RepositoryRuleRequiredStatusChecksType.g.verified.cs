@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleRequiredStatusChecksType ToEnum(string value)
+        public static RepositoryRuleRequiredStatusChecksType? ToEnum(string value)
         {
             return value switch
             {
                 "required_status_checks" => RepositoryRuleRequiredStatusChecksType.RequiredStatusChecks,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,13 +10,13 @@ namespace G
     public sealed partial class PageBuildStatus
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/github/hello-world/pages/builds/latest
+        /// Example: https://api.github.com/repos/github/hello-world/pages/builds/latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: queued
+        /// Example: queued
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;

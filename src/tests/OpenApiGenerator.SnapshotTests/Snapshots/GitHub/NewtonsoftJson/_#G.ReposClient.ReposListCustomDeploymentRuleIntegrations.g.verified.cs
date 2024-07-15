@@ -6,17 +6,49 @@ namespace G
 {
     public partial class ReposClient
     {
+        partial void PrepareReposListCustomDeploymentRuleIntegrationsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string environmentName,
+            ref string repo,
+            ref string owner,
+            ref int page,
+            ref int perPage);
+        partial void PrepareReposListCustomDeploymentRuleIntegrationsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string environmentName,
+            string repo,
+            string owner,
+            int page,
+            int perPage);
+        partial void ProcessReposListCustomDeploymentRuleIntegrationsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessReposListCustomDeploymentRuleIntegrationsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// List custom deployment rule integrations available for an environment
+        /// List custom deployment rule integrations available for an environment<br/>
+        /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.<br/>
+        /// For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."<br/>
+        /// For more information about the app that is providing this custom deployment rule, see "[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)".<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <param name="environmentName"></param>
         /// <param name="repo"></param>
         /// <param name="owner"></param>
-        /// <param name="page"></param>
-        /// <param name="perPage"></param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ReposListCustomDeploymentRuleIntegrationsResponse> ReposListCustomDeploymentRuleIntegrationsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ReposListCustomDeploymentRuleIntegrationsResponse> ReposListCustomDeploymentRuleIntegrationsAsync(
             string environmentName,
             string repo,
             string owner,
@@ -24,20 +56,66 @@ namespace G
             int perPage,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReposListCustomDeploymentRuleIntegrationsArguments(
+                httpClient: _httpClient,
+                environmentName: ref environmentName,
+                repo: ref repo,
+                owner: ref owner,
+                page: ref page,
+                perPage: ref perPage);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules/apps?page={page}&per_page={perPage}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules/apps?page={page}&per_page={perPage}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReposListCustomDeploymentRuleIntegrationsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                environmentName: environmentName,
+                repo: repo,
+                owner: owner,
+                page: page,
+                perPage: perPage);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReposListCustomDeploymentRuleIntegrationsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessReposListCustomDeploymentRuleIntegrationsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ReposListCustomDeploymentRuleIntegrationsResponse?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ReposListCustomDeploymentRuleIntegrationsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

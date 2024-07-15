@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookDeploymentReviewRequestedWorkflowRunStatus ToEnum(string value)
+        public static WebhookDeploymentReviewRequestedWorkflowRunStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "queued" => WebhookDeploymentReviewRequestedWorkflowRunStatus.Queued,
                 "waiting" => WebhookDeploymentReviewRequestedWorkflowRunStatus.Waiting,
                 "pending" => WebhookDeploymentReviewRequestedWorkflowRunStatus.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

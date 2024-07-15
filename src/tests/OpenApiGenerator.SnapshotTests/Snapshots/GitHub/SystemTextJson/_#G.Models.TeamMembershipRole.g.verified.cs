@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The role of the user in the team.
-    /// <br/>Default Value: member
-    /// <br/>Example: member
+    /// The role of the user in the team.<br/>
+    /// Default Value: member<br/>
+    /// Example: member
     /// </summary>
     public enum TeamMembershipRole
     {
@@ -41,13 +41,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamMembershipRole ToEnum(string value)
+        public static TeamMembershipRole? ToEnum(string value)
         {
             return value switch
             {
                 "member" => TeamMembershipRole.Member,
                 "maintainer" => TeamMembershipRole.Maintainer,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

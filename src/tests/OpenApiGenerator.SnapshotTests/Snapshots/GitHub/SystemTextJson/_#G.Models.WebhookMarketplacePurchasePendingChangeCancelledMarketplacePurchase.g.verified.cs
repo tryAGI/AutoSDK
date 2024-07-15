@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount Account { get; set; }
+        public required global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseAccount Account { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan Plan { get; set; }
+        public required global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan Plan { get; set; }
 
         /// <summary>
         /// 

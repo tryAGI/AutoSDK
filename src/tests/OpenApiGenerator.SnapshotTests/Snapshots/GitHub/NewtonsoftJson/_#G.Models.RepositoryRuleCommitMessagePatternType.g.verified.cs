@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleCommitMessagePatternType ToEnum(string value)
+        public static RepositoryRuleCommitMessagePatternType? ToEnum(string value)
         {
             return value switch
             {
                 "commit_message_pattern" => RepositoryRuleCommitMessagePatternType.CommitMessagePattern,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

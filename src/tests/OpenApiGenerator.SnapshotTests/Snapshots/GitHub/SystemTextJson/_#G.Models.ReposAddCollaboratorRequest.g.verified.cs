@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ReposAddCollaboratorRequest
     {
         /// <summary>
-        /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.
-        /// <br/>Default Value: push
+        /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.<br/>
+        /// Default Value: push
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         public string? Permission { get; set; } = "push";

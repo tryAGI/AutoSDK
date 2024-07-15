@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksAlertDismisserTypeJsonConverter))]
-        public WebhooksAlertDismisserType? Type { get; set; }
+        public global::G.WebhooksAlertDismisserType? Type { get; set; }
 
         /// <summary>
         /// 

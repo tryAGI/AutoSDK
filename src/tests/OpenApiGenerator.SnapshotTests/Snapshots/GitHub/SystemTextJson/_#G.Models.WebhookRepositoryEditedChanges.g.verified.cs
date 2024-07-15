@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch")]
-        public WebhookRepositoryEditedChangesDefaultBranch? DefaultBranch { get; set; }
+        public global::G.WebhookRepositoryEditedChangesDefaultBranch? DefaultBranch { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public WebhookRepositoryEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookRepositoryEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("homepage")]
-        public WebhookRepositoryEditedChangesHomepage? Homepage { get; set; }
+        public global::G.WebhookRepositoryEditedChangesHomepage? Homepage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topics")]
-        public WebhookRepositoryEditedChangesTopics? Topics { get; set; }
+        public global::G.WebhookRepositoryEditedChangesTopics? Topics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Creator { get; set; }
+        public required global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

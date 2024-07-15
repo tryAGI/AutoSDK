@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; }
+        public required global::G.WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; }
 
         /// <summary>
         /// The merge method to use.
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod MergeMethod { get; set; }
+        public required global::G.WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod MergeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

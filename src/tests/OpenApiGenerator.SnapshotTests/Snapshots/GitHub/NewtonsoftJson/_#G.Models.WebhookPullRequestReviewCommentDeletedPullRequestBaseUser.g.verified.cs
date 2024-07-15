@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType? Type { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType? Type { get; set; }
 
         /// <summary>
         /// 

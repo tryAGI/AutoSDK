@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookTeamAddedToRepositoryRepositoryVisibility ToEnum(string value)
+        public static WebhookTeamAddedToRepositoryRepositoryVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => WebhookTeamAddedToRepositoryRepositoryVisibility.Public,
                 "private" => WebhookTeamAddedToRepositoryRepositoryVisibility.Private,
                 "internal" => WebhookTeamAddedToRepositoryRepositoryVisibility.Internal,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

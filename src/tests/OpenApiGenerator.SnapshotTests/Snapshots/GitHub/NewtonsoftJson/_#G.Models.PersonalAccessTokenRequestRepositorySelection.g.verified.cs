@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PersonalAccessTokenRequestRepositorySelection ToEnum(string value)
+        public static PersonalAccessTokenRequestRepositorySelection? ToEnum(string value)
         {
             return value switch
             {
                 "none" => PersonalAccessTokenRequestRepositorySelection.None,
                 "all" => PersonalAccessTokenRequestRepositorySelection.All,
                 "subset" => PersonalAccessTokenRequestRepositorySelection.Subset,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

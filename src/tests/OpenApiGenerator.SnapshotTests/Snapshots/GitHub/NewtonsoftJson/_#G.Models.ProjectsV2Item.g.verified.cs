@@ -37,28 +37,28 @@ namespace G
         /// The type of content tracked in a project item
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ProjectsV2ItemContentType ContentType { get; set; } = default!;
+        public global::G.ProjectsV2ItemContentType ContentType { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator")]
-        public SimpleUser? Creator { get; set; }
+        public global::G.SimpleUser? Creator { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ArchivedAt { get; set; } = default!;

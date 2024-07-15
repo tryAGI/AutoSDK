@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookRegistryPackagePublishedRegistryPackagePackageVersion.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor? Author { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::System.OneOf<string?, object?> Body { get; set; }
+        public global::System.OneOf<string?, object?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("container_metadata")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -97,19 +99,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("npm_metadata")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nuget_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -127,13 +129,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("release")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Release { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Release { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rubygems_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
 
         /// <summary>
         /// 

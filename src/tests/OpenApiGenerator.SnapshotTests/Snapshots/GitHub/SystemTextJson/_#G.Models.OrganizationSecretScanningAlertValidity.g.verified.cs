@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrganizationSecretScanningAlertValidity ToEnum(string value)
+        public static OrganizationSecretScanningAlertValidity? ToEnum(string value)
         {
             return value switch
             {
                 "active" => OrganizationSecretScanningAlertValidity.Active,
                 "inactive" => OrganizationSecretScanningAlertValidity.Inactive,
                 "unknown" => OrganizationSecretScanningAlertValidity.Unknown,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

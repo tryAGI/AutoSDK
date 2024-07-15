@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksSponsorshipSponsorTypeJsonConverter))]
-        public WebhooksSponsorshipSponsorType? Type { get; set; }
+        public global::G.WebhooksSponsorshipSponsorType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// Type of repository selection requested.
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationProgrammaticAccessGrantRequestRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrganizationProgrammaticAccessGrantRequestRepositorySelection RepositorySelection { get; set; }
+        public required global::G.OrganizationProgrammaticAccessGrantRequestRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// URL to the list of repositories requested to be accessed via fine-grained personal access token. Should only be followed when `repository_selection` is `subset`.
@@ -50,7 +50,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrganizationProgrammaticAccessGrantRequestPermissions Permissions { get; set; }
+        public required global::G.OrganizationProgrammaticAccessGrantRequestPermissions Permissions { get; set; }
 
         /// <summary>
         /// Date and time when the request for access was created.

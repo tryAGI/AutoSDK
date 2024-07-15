@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListActivitiesTimePeriod ToEnum(string value)
+        public static ReposListActivitiesTimePeriod? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "month" => ReposListActivitiesTimePeriod.Month,
                 "quarter" => ReposListActivitiesTimePeriod.Quarter,
                 "year" => ReposListActivitiesTimePeriod.Year,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("matches")]
-        public global::System.Collections.Generic.IList<LabelSearchResultItemTextMatchesMatches?>? Matches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LabelSearchResultItemTextMatchesMatches?>? Matches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

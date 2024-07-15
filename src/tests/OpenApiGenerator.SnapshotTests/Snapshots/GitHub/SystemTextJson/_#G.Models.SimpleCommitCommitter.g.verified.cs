@@ -10,16 +10,16 @@ namespace G
     public sealed partial class SimpleCommitCommitter
     {
         /// <summary>
-        /// Name of the commit's committer
-        /// <br/>Example: Monalisa Octocat
+        /// Name of the commit's committer<br/>
+        /// Example: Monalisa Octocat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Git email address of the commit's committer
-        /// <br/>Example: monalisa.octocat@example.com
+        /// Git email address of the commit's committer<br/>
+        /// Example: monalisa.octocat@example.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]

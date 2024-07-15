@@ -14,11 +14,11 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PendingDeploymentEnvironment Environment { get; set; }
+        public required global::G.PendingDeploymentEnvironment Environment { get; set; }
 
         /// <summary>
-        /// The set duration of the wait timer
-        /// <br/>Example: 30
+        /// The set duration of the wait timer<br/>
+        /// Example: 30
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,15 +26,14 @@ namespace G
 
         /// <summary>
         /// The time that the wait timer began.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer_started_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? WaitTimerStartedAt { get; set; }
 
         /// <summary>
-        /// Whether the currently authenticated user can approve the deployment
-        /// <br/>Example: true
+        /// Whether the currently authenticated user can approve the deployment<br/>
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_can_approve")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<PendingDeploymentReviewers> Reviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewers> Reviewers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

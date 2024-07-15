@@ -21,28 +21,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// New requested permissions, categorized by type of permission.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions_added")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PersonalAccessTokenRequestPermissionsAdded PermissionsAdded { get; set; }
+        public required global::G.PersonalAccessTokenRequestPermissionsAdded PermissionsAdded { get; set; }
 
         /// <summary>
         /// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions_upgraded")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PersonalAccessTokenRequestPermissionsUpgraded PermissionsUpgraded { get; set; }
+        public required global::G.PersonalAccessTokenRequestPermissionsUpgraded PermissionsUpgraded { get; set; }
 
         /// <summary>
         /// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions_result")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PersonalAccessTokenRequestPermissionsResult PermissionsResult { get; set; }
+        public required global::G.PersonalAccessTokenRequestPermissionsResult PermissionsResult { get; set; }
 
         /// <summary>
         /// Type of repository selection requested.
@@ -50,7 +50,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PersonalAccessTokenRequestRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; }
+        public required global::G.PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<PersonalAccessTokenRequestRepositories>? Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositories>? Repositories { get; set; }
 
         /// <summary>
         /// Date and time when the request for access was created.

@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ThreadSubject Subject { get; set; }
+        public required global::G.ThreadSubject Subject { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/notifications/threads/2/subscription
+        /// Example: https://api.github.com/notifications/threads/2/subscription
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

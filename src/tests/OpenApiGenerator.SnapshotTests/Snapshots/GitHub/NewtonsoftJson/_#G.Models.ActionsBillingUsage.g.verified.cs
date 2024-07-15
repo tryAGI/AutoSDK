@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minutes_used_breakdown", Required = global::Newtonsoft.Json.Required.Always)]
-        public ActionsBillingUsageMinutesUsedBreakdown MinutesUsedBreakdown { get; set; } = default!;
+        public global::G.ActionsBillingUsageMinutesUsedBreakdown MinutesUsedBreakdown { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

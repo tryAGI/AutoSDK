@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestUnassignedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; } = default!;
+        public global::G.WebhookPullRequestUnassignedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; } = default!;
 
         /// <summary>
         /// The merge method to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_method", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestUnassignedPullRequestAutoMergeMergeMethod MergeMethod { get; set; } = default!;
+        public global::G.WebhookPullRequestUnassignedPullRequestAutoMergeMergeMethod MergeMethod { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

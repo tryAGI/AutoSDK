@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusBranchesCommit Commit { get; set; }
+        public required global::G.WebhookStatusBranchesCommit Commit { get; set; }
 
         /// <summary>
         /// 

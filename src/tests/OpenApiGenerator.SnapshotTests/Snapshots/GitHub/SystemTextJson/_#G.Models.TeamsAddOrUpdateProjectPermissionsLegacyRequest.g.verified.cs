@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamsAddOrUpdateProjectPermissionsLegacyRequestPermissionJsonConverter))]
-        public TeamsAddOrUpdateProjectPermissionsLegacyRequestPermission? Permission { get; set; }
+        public global::G.TeamsAddOrUpdateProjectPermissionsLegacyRequestPermission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// Tools that must provide code scanning results for this rule to pass.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_scanning_tools", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryRuleParamsCodeScanningTool> CodeScanningTools { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsCodeScanningTool> CodeScanningTools { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

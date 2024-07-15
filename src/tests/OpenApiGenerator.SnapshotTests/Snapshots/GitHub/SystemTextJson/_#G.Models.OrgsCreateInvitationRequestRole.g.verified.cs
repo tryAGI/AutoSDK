@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// The role for the new member. 
-    ///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
-    ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  
-    ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. 
-    ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-    /// <br/>Default Value: direct_member
+    /// The role for the new member. <br/>
+    ///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  <br/>
+    ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  <br/>
+    ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. <br/>
+    ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.<br/>
+    /// Default Value: direct_member
     /// </summary>
     public enum OrgsCreateInvitationRequestRole
     {
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsCreateInvitationRequestRole ToEnum(string value)
+        public static OrgsCreateInvitationRequestRole? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "direct_member" => OrgsCreateInvitationRequestRole.DirectMember,
                 "billing_manager" => OrgsCreateInvitationRequestRole.BillingManager,
                 "reinstate" => OrgsCreateInvitationRequestRole.Reinstate,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

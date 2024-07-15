@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secrets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CodespacesOrgSecret> Secrets { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CodespacesOrgSecret> Secrets { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

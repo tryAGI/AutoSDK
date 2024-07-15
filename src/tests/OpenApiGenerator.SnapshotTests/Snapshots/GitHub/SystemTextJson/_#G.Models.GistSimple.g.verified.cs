@@ -13,19 +13,21 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks")]
-        public global::System.Collections.Generic.IList<GistSimpleForks?>? Forks { get; set; }
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::System.Collections.Generic.IList<global::G.GistSimpleForks?>? Forks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("history")]
-        public global::System.Collections.Generic.IList<GistHistory>? History { get; set; }
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::System.Collections.Generic.IList<global::G.GistHistory>? History { get; set; }
 
         /// <summary>
         /// Gist
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fork_of")]
-        public GistSimpleForkOf? ForkOf { get; set; }
+        public global::G.GistSimpleForkOf? ForkOf { get; set; }
 
         /// <summary>
         /// 
@@ -127,7 +129,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public SimpleUser? Owner { get; set; }
+        public global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// 

@@ -6,32 +6,98 @@ namespace G
 {
     public partial class CodespacesClient
     {
+        partial void PrepareCodespacesListSecretsForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int perPage,
+            ref int page);
+        partial void PrepareCodespacesListSecretsForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int perPage,
+            int page);
+        partial void ProcessCodespacesListSecretsForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCodespacesListSecretsForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// List secrets for the authenticated user
+        /// List secrets for the authenticated user<br/>
+        /// Lists all development environment secrets available for a user's codespaces without revealing their<br/>
+        /// encrypted values.<br/>
+        /// The authenticated user must have Codespaces access to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CodespacesListSecretsForAuthenticatedUserResponse> CodespacesListSecretsForAuthenticatedUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CodespacesListSecretsForAuthenticatedUserResponse> CodespacesListSecretsForAuthenticatedUserAsync(
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCodespacesListSecretsForAuthenticatedUserArguments(
+                httpClient: _httpClient,
+                perPage: ref perPage,
+                page: ref page);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/user/codespaces/secrets?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/codespaces/secrets?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCodespacesListSecretsForAuthenticatedUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                perPage: perPage,
+                page: page);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCodespacesListSecretsForAuthenticatedUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCodespacesListSecretsForAuthenticatedUserResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CodespacesListSecretsForAuthenticatedUserResponse?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CodespacesListSecretsForAuthenticatedUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

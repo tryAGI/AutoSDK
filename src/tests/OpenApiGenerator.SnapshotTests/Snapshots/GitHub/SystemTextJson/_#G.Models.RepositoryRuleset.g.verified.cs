@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RepositoryRuleset.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -24,19 +26,19 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// The target of the ruleset
+        /// The target of the ruleset<br/>
         /// **Note**: The `push` target is in beta and is subject to change.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRulesetTargetJsonConverter))]
-        public RepositoryRulesetTarget? Target { get; set; }
+        public global::G.RepositoryRulesetTarget? Target { get; set; }
 
         /// <summary>
         /// The type of the source of the ruleset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRulesetSourceTypeJsonConverter))]
-        public RepositoryRulesetSourceType? SourceType { get; set; }
+        public global::G.RepositoryRulesetSourceType? SourceType { get; set; }
 
         /// <summary>
         /// The name of the source
@@ -49,23 +51,23 @@ namespace G
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRulesetEnforcementJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryRulesetEnforcement Enforcement { get; set; }
+        public required global::G.RepositoryRuleEnforcement Enforcement { get; set; }
 
         /// <summary>
         /// The actors that can bypass the rules in this ruleset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bypass_actors")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetBypassActor>? BypassActors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? BypassActors { get; set; }
 
         /// <summary>
-        /// The bypass type of the user making the API request for this ruleset. This field is only returned when
+        /// The bypass type of the user making the API request for this ruleset. This field is only returned when<br/>
         /// querying the repository-level endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_can_bypass")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRulesetCurrentUserCanBypassJsonConverter))]
-        public RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
+        public global::G.RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
 
         /// <summary>
         /// 
@@ -77,20 +79,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
-        public RepositoryRulesetLinks? Links { get; set; }
+        public global::G.RepositoryRulesetLinks? Links { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<RepositoryRulesetConditions?, OrgRulesetConditions?>? Conditions { get; set; }
+        public global::System.AnyOf<global::G.RepositoryRulesetConditions?, global::G.OrgRulesetConditions?>? Conditions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
-        public global::System.Collections.Generic.IList<RepositoryRule>? Rules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRule>? Rules { get; set; }
 
         /// <summary>
         /// 

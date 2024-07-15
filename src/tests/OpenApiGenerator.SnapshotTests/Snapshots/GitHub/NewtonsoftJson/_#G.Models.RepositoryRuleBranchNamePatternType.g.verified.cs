@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleBranchNamePatternType ToEnum(string value)
+        public static RepositoryRuleBranchNamePatternType? ToEnum(string value)
         {
             return value switch
             {
                 "branch_name_pattern" => RepositoryRuleBranchNamePatternType.BranchNamePattern,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

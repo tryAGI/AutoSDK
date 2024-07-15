@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CodeScanningAnalysis
     {
         /// <summary>
-        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
@@ -41,7 +41,7 @@ namespace G
         public string? Category { get; set; }
 
         /// <summary>
-        /// <br/>Example: error reading field xyz
+        /// Example: error reading field xyz
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
         public string Error { get; set; } = default!;
@@ -77,8 +77,8 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// An identifier for the upload.
-        /// <br/>Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
+        /// An identifier for the upload.<br/>
+        /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sarif_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string SarifId { get; set; } = default!;
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool", Required = global::Newtonsoft.Json.Required.Always)]
-        public CodeScanningAnalysisTool Tool { get; set; } = default!;
+        public global::G.CodeScanningAnalysisTool Tool { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -96,8 +96,8 @@ namespace G
         public bool Deletable { get; set; } = default!;
 
         /// <summary>
-        /// Warning generated when processing the analysis
-        /// <br/>Example: 123 results were ignored
+        /// Warning generated when processing the analysis<br/>
+        /// Example: 123 results were ignored
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("warning", Required = global::Newtonsoft.Json.Required.Always)]
         public string Warning { get; set; } = default!;

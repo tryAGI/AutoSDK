@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static InstallationRepositorySelection ToEnum(string value)
+        public static InstallationRepositorySelection? ToEnum(string value)
         {
             return value switch
             {
                 "all" => InstallationRepositorySelection.All,
                 "selected" => InstallationRepositorySelection.Selected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

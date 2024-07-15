@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.IssuesCreateRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -37,7 +39,7 @@ namespace G
         /// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<string?, IssuesCreateRequestLabels?>>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.IssuesCreateRequestLabels?>?>? Labels { get; set; }
 
         /// <summary>
         /// Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._

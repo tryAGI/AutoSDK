@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookProjectCardMovedChangesColumnId ColumnId { get; set; }
+        public required global::G.WebhookProjectCardMovedChangesColumnId ColumnId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: "DISMISS"
+    /// Example: "DISMISS"
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PullsDismissReviewRequestEvent
@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsDismissReviewRequestEvent ToEnum(string value)
+        public static PullsDismissReviewRequestEvent? ToEnum(string value)
         {
             return value switch
             {
                 "DISMISS" => PullsDismissReviewRequestEvent.DISMISS,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

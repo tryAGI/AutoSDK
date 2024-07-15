@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookRepositoryRenamedChangesRepositoryName Name { get; set; }
+        public required global::G.WebhookRepositoryRenamedChangesRepositoryName Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

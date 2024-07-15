@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhooksUserMannequinType? Type { get; set; }
+        public global::G.WebhooksUserMannequinType? Type { get; set; }
 
         /// <summary>
         /// 

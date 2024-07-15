@@ -17,11 +17,11 @@ namespace G
         public required string Message { get; set; }
 
         /// <summary>
-        /// <br/>Example: "DISMISS"
+        /// Example: "DISMISS"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsDismissReviewRequestEventJsonConverter))]
-        public PullsDismissReviewRequestEvent? Event { get; set; }
+        public global::G.PullsDismissReviewRequestEvent? Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

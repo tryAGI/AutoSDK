@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public WebhookPullRequestReviewEditedChangesBody? Body { get; set; }
+        public global::G.WebhookPullRequestReviewEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

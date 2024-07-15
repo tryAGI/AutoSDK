@@ -6,8 +6,22 @@ namespace G
 {
     public partial class CodespacesClient
     {
+        partial void PrepareCodespacesDeleteSecretForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string secretName);
+        partial void PrepareCodespacesDeleteSecretForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string secretName);
+        partial void ProcessCodespacesDeleteSecretForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
-        /// Delete a secret for the authenticated user
+        /// Delete a secret for the authenticated user<br/>
+        /// Deletes a development environment secret from a user's codespaces using the secret name. Deleting the secret will remove access from all codespaces that were allowed to access the secret.<br/>
+        /// The authenticated user must have Codespaces access to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="secretName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,14 +30,35 @@ namespace G
             string secretName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCodespacesDeleteSecretForAuthenticatedUserArguments(
+                httpClient: _httpClient,
+                secretName: ref secretName);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/user/codespaces/secrets/{secretName}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/codespaces/secrets/{secretName}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCodespacesDeleteSecretForAuthenticatedUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                secretName: secretName);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCodespacesDeleteSecretForAuthenticatedUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

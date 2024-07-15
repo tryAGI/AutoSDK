@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookDeploymentCreatedWorkflowRunActorType? Type { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunActorType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ReposCreateDeploymentRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -17,15 +19,15 @@ namespace G
         public required string Ref { get; set; }
 
         /// <summary>
-        /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
-        /// <br/>Default Value: deploy
+        /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).<br/>
+        /// Default Value: deploy
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task")]
         public string? Task { get; set; } = "deploy";
 
         /// <summary>
-        /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
-        /// <br/>Default Value: true
+        /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_merge")]
         public bool AutoMerge { get; set; } = true;
@@ -41,25 +43,24 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<object?, string?> Payload { get; set; }
+        public global::System.OneOf<object?, string?>? Payload { get; set; }
 
         /// <summary>
-        /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
-        /// <br/>Default Value: production
+        /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).<br/>
+        /// Default Value: production
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public string? Environment { get; set; } = "production";
 
         /// <summary>
         /// Short description of the deployment.
-        /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; } = "";
+        public string? Description { get; set; }
 
         /// <summary>
-        /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
-        /// <br/>Default Value: false
+        /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient_environment")]
         public bool TransientEnvironment { get; set; } = false;

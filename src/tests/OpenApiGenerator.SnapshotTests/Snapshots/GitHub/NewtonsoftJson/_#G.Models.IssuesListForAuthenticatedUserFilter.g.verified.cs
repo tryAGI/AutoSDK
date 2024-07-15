@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: assigned
+    /// Default Value: assigned
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum IssuesListForAuthenticatedUserFilter
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesListForAuthenticatedUserFilter ToEnum(string value)
+        public static IssuesListForAuthenticatedUserFilter? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "subscribed" => IssuesListForAuthenticatedUserFilter.Subscribed,
                 "repos" => IssuesListForAuthenticatedUserFilter.Repos,
                 "all" => IssuesListForAuthenticatedUserFilter.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -14,15 +14,15 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisRepository Repository { get; set; }
+        public required global::G.CodeScanningVariantAnalysisRepository Repository { get; set; }
 
         /// <summary>
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisScannedRepositoriesAnalysisStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisScannedRepositoriesAnalysisStatus AnalysisStatus { get; set; }
+        public required global::G.CodeScanningVariantAnalysisStatus AnalysisStatus { get; set; }
 
         /// <summary>
         /// The number of results in the case of a successful analysis. This is only available for successful analyses.

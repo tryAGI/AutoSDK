@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrganizationDependabotSecretVisibility ToEnum(string value)
+        public static OrganizationDependabotSecretVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "all" => OrganizationDependabotSecretVisibility.All,
                 "private" => OrganizationDependabotSecretVisibility.Private,
                 "selected" => OrganizationDependabotSecretVisibility.Selected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

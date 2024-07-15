@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamMembershipState ToEnum(string value)
+        public static TeamMembershipState? ToEnum(string value)
         {
             return value switch
             {
                 "active" => TeamMembershipState.Active,
                 "pending" => TeamMembershipState.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

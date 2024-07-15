@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDiscussionCategoryChangedChangesCategoryFrom From { get; set; }
+        public required global::G.WebhookDiscussionCategoryChangedChangesCategoryFrom From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

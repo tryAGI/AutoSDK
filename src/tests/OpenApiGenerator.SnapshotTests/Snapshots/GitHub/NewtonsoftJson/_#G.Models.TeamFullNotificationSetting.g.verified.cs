@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The notification setting the team has set
-    /// <br/>Example: notifications_enabled
+    /// The notification setting the team has set<br/>
+    /// Example: notifications_enabled
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamFullNotificationSetting
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamFullNotificationSetting ToEnum(string value)
+        public static TeamFullNotificationSetting? ToEnum(string value)
         {
             return value switch
             {
                 "notifications_enabled" => TeamFullNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamFullNotificationSetting.NotificationsDisabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

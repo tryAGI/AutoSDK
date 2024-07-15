@@ -31,7 +31,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -61,13 +61,13 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app", Required = global::Newtonsoft.Json.Required.Always)]
-        public Integration? PerformedViaGithubApp { get; set; } = default!;
+        public global::G.Integration? PerformedViaGithubApp { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_card")]
-        public ConvertedNoteToIssueIssueEventProjectCard? ProjectCard { get; set; }
+        public global::G.ConvertedNoteToIssueIssueEventProjectCard? ProjectCard { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sbom")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependencyGraphSpdxSbomSbom Sbom { get; set; }
+        public required global::G.DependencyGraphSpdxSbomSbom Sbom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

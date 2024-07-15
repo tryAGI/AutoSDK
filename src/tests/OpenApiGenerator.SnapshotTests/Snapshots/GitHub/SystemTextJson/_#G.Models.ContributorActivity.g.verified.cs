@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Author { get; set; }
+        public required global::G.NullableSimpleUser? Author { get; set; }
 
         /// <summary>
-        /// <br/>Example: 135
+        /// Example: 135
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Total { get; set; }
 
         /// <summary>
-        /// <br/>Example: []
+        /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weeks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ContributorActivityWeeks> Weeks { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ContributorActivityWeeks> Weeks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

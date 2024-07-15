@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposCreateInOrgRequestVisibility ToEnum(string value)
+        public static ReposCreateInOrgRequestVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => ReposCreateInOrgRequestVisibility.Public,
                 "private" => ReposCreateInOrgRequestVisibility.Private,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

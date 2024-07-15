@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookGollumPagesActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookGollumPagesAction Action { get; set; }
+        public required global::G.WebhookGollumPagesAction Action { get; set; }
 
         /// <summary>
         /// Points to the HTML wiki page.

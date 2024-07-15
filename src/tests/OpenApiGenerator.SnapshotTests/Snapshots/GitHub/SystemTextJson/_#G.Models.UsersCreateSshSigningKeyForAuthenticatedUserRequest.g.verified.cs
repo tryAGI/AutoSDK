@@ -10,8 +10,8 @@ namespace G
     public sealed partial class UsersCreateSshSigningKeyForAuthenticatedUserRequest
     {
         /// <summary>
-        /// A descriptive name for the new key.
-        /// <br/>Example: Personal MacBook Air
+        /// A descriptive name for the new key.<br/>
+        /// Example: Personal MacBook Air
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }

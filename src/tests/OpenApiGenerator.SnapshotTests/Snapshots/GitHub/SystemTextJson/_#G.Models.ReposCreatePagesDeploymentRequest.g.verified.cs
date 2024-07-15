@@ -22,15 +22,15 @@ namespace G
         public string? ArtifactUrl { get; set; }
 
         /// <summary>
-        /// The target environment for this GitHub Pages deployment.
-        /// <br/>Default Value: github-pages
+        /// The target environment for this GitHub Pages deployment.<br/>
+        /// Default Value: github-pages
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public string? Environment { get; set; } = "github-pages";
 
         /// <summary>
-        /// A unique string that represents the version of the build for this deployment.
-        /// <br/>Default Value: GITHUB_SHA
+        /// A unique string that represents the version of the build for this deployment.<br/>
+        /// Default Value: GITHUB_SHA
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages_build_version")]
         [global::System.Text.Json.Serialization.JsonRequired]

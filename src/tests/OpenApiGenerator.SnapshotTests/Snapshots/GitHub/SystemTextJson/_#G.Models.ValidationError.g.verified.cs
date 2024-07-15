@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
-        public global::System.Collections.Generic.IList<ValidationErrorErrors?>? Errors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ValidationErrorErrors?>? Errors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

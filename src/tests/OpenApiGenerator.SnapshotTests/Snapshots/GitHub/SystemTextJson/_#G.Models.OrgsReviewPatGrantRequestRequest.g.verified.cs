@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgsReviewPatGrantRequestRequestActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrgsReviewPatGrantRequestRequestAction Action { get; set; }
+        public required global::G.OrgsReviewPatGrantRequestRequestAction Action { get; set; }
 
         /// <summary>
         /// Reason for approving or denying the request. Max 1024 characters.

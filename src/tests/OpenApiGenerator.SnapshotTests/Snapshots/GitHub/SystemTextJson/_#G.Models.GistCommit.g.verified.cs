@@ -10,14 +10,14 @@ namespace G
     public sealed partial class GistCommit
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/gists/aa5a315d61ae9438b18d/57a7f021a713b1c5a6a199b54cc514735d2d462f
+        /// Example: https://api.github.com/gists/aa5a315d61ae9438b18d/57a7f021a713b1c5a6a199b54cc514735d2d462f
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
+        /// Example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,17 +28,17 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("change_status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GistCommitChangeStatus ChangeStatus { get; set; }
+        public required global::G.GistCommitChangeStatus ChangeStatus { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

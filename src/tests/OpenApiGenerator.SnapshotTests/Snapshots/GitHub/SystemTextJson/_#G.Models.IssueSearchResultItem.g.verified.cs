@@ -96,21 +96,21 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
-        public global::System.Collections.Generic.IList<SimpleUser>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? Assignees { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<IssueSearchResultItemLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabels> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -130,14 +130,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Assignee { get; set; }
+        public required global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableMilestone? Milestone { get; set; }
+        public required global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -171,13 +171,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
-        public IssueSearchResultItemPullRequest? PullRequest { get; set; }
+        public global::G.IssueSearchResultItemPullRequest? PullRequest { get; set; }
 
         /// <summary>
         /// 
@@ -193,13 +193,13 @@ namespace G
         public required double Score { get; set; }
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssueSearchResultItemAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required IssueSearchResultItemAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// A repository on GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public Repository? Repository { get; set; }
+        public global::G.Repository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -235,13 +235,13 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public NullableIntegration? PerformedViaGithubApp { get; set; }
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchIssuesAndPullRequestsSort ToEnum(string value)
+        public static SearchIssuesAndPullRequestsSort? ToEnum(string value)
         {
             return value switch
             {
@@ -99,7 +99,7 @@ namespace G
                 "interactions" => SearchIssuesAndPullRequestsSort.Interactions,
                 "created" => SearchIssuesAndPullRequestsSort.Created,
                 "updated" => SearchIssuesAndPullRequestsSort.Updated,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

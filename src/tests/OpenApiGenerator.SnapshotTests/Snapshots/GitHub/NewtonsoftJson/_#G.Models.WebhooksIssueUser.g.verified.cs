@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhooksIssueUserType? Type { get; set; }
+        public global::G.WebhooksIssueUserType? Type { get; set; }
 
         /// <summary>
         /// 

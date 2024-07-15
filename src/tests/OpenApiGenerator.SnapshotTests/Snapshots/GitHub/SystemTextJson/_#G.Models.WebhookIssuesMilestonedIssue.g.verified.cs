@@ -15,20 +15,20 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesMilestonedIssueActiveLockReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesMilestonedIssueActiveLockReason? ActiveLockReason { get; set; }
+        public required global::G.WebhookIssuesMilestonedIssueActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        public WebhookIssuesMilestonedIssueAssignee? Assignee { get; set; }
+        public global::G.WebhookIssuesMilestonedIssueAssignee? Assignee { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookIssuesMilestonedIssueAssignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesMilestonedIssueAssignees?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesMilestonedIssueAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesMilestonedIssueAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookIssuesMilestonedIssueAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// Contents of the issue
@@ -104,7 +104,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        public global::System.Collections.Generic.IList<WebhookIssuesMilestonedIssueLabels?>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesMilestonedIssueLabels?>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesMilestonedIssueMilestone? Milestone { get; set; }
+        public required global::G.WebhookIssuesMilestonedIssueMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -144,20 +144,20 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public WebhookIssuesMilestonedIssuePerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public global::G.WebhookIssuesMilestonedIssuePerformedViaGithubApp? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
-        public WebhookIssuesMilestonedIssuePullRequest? PullRequest { get; set; }
+        public global::G.WebhookIssuesMilestonedIssuePullRequest? PullRequest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesMilestonedIssueReactions Reactions { get; set; }
+        public required global::G.WebhookIssuesMilestonedIssueReactions Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -171,7 +171,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesMilestonedIssueStateJsonConverter))]
-        public WebhookIssuesMilestonedIssueState? State { get; set; }
+        public global::G.WebhookIssuesMilestonedIssueState? State { get; set; }
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesMilestonedIssueUser? User { get; set; }
+        public required global::G.WebhookIssuesMilestonedIssueUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

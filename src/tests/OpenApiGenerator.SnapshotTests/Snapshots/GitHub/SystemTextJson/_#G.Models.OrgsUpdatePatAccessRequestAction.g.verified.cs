@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsUpdatePatAccessRequestAction ToEnum(string value)
+        public static OrgsUpdatePatAccessRequestAction? ToEnum(string value)
         {
             return value switch
             {
                 "revoke" => OrgsUpdatePatAccessRequestAction.Revoke,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -19,73 +19,73 @@ namespace G
         /// Status Check Policy
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_status_checks")]
-        public StatusCheckPolicy? RequiredStatusChecks { get; set; }
+        public global::G.StatusCheckPolicy? RequiredStatusChecks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_pull_request_reviews")]
-        public ProtectedBranchRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_signatures")]
-        public ProtectedBranchRequiredSignatures? RequiredSignatures { get; set; }
+        public global::G.ProtectedBranchRequiredSignatures? RequiredSignatures { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforce_admins")]
-        public ProtectedBranchEnforceAdmins? EnforceAdmins { get; set; }
+        public global::G.ProtectedBranchEnforceAdmins? EnforceAdmins { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_linear_history")]
-        public ProtectedBranchRequiredLinearHistory? RequiredLinearHistory { get; set; }
+        public global::G.ProtectedBranchRequiredLinearHistory? RequiredLinearHistory { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_force_pushes")]
-        public ProtectedBranchAllowForcePushes? AllowForcePushes { get; set; }
+        public global::G.ProtectedBranchAllowForcePushes? AllowForcePushes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_deletions")]
-        public ProtectedBranchAllowDeletions? AllowDeletions { get; set; }
+        public global::G.ProtectedBranchAllowDeletions? AllowDeletions { get; set; }
 
         /// <summary>
         /// Branch Restriction Policy
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("restrictions")]
-        public BranchRestrictionPolicy? Restrictions { get; set; }
+        public global::G.BranchRestrictionPolicy? Restrictions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_conversation_resolution")]
-        public ProtectedBranchRequiredConversationResolution? RequiredConversationResolution { get; set; }
+        public global::G.ProtectedBranchRequiredConversationResolution? RequiredConversationResolution { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("block_creations")]
-        public ProtectedBranchBlockCreations? BlockCreations { get; set; }
+        public global::G.ProtectedBranchBlockCreations? BlockCreations { get; set; }
 
         /// <summary>
         /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lock_branch")]
-        public ProtectedBranchLockBranch? LockBranch { get; set; }
+        public global::G.ProtectedBranchLockBranch? LockBranch { get; set; }
 
         /// <summary>
         /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_fork_syncing")]
-        public ProtectedBranchAllowForkSyncing? AllowForkSyncing { get; set; }
+        public global::G.ProtectedBranchAllowForkSyncing? AllowForkSyncing { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

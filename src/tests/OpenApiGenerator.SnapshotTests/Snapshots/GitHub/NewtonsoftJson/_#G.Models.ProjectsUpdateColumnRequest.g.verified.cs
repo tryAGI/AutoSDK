@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ProjectsUpdateColumnRequest
     {
         /// <summary>
-        /// Name of the project column
-        /// <br/>Example: Remaining tasks
+        /// Name of the project column<br/>
+        /// Example: Remaining tasks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;

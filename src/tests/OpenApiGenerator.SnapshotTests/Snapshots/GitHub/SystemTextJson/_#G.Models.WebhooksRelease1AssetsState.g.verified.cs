@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksRelease1AssetsState ToEnum(string value)
+        public static WebhooksRelease1AssetsState? ToEnum(string value)
         {
             return value switch
             {
                 "uploaded" => WebhooksRelease1AssetsState.Uploaded,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

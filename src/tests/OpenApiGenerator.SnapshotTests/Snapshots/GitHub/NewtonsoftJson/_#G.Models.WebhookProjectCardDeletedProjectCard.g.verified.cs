@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookProjectCardDeletedProjectCardCreator? Creator { get; set; } = default!;
+        public global::G.WebhookProjectCardDeletedProjectCardCreator? Creator { get; set; } = default!;
 
         /// <summary>
         /// The project card's ID

@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent")]
-        public WebhooksTeamParent? Parent { get; set; }
+        public global::G.WebhooksTeamParent? Parent { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories
@@ -70,14 +70,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksTeamPrivacyJsonConverter))]
-        public WebhooksTeamPrivacy? Privacy { get; set; }
+        public global::G.WebhooksTeamPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksTeamNotificationSettingJsonConverter))]
-        public WebhooksTeamNotificationSetting? NotificationSetting { get; set; }
+        public global::G.WebhooksTeamNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// 

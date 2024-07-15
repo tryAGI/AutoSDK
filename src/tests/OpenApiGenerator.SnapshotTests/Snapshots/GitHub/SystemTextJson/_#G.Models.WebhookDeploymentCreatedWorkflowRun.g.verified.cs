@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentCreatedWorkflowRunActor? Actor { get; set; }
+        public required global::G.WebhookDeploymentCreatedWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentCreatedWorkflowRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentCreatedWorkflowRunConclusion? Conclusion { get; set; }
+        public required global::G.WebhookDeploymentCreatedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +94,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_repository")]
-        public WebhookDeploymentCreatedWorkflowRunHeadRepository? HeadRepository { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunHeadRepository? HeadRepository { get; set; }
 
         /// <summary>
         /// 
@@ -161,19 +161,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookDeploymentCreatedWorkflowRunPullRequests> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunPullRequests> PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenced_workflows")]
-        public global::System.Collections.Generic.IList<WebhookDeploymentCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public WebhookDeploymentCreatedWorkflowRunRepository? Repository { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunRepository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -208,13 +208,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentCreatedWorkflowRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentCreatedWorkflowRunStatus Status { get; set; }
+        public required global::G.WebhookDeploymentCreatedWorkflowRunStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggering_actor")]
-        public WebhookDeploymentCreatedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
 
         /// <summary>
         /// 

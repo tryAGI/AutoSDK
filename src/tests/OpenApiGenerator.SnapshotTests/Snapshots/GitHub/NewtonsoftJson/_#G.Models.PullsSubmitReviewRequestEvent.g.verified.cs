@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsSubmitReviewRequestEvent ToEnum(string value)
+        public static PullsSubmitReviewRequestEvent? ToEnum(string value)
         {
             return value switch
             {
                 "APPROVE" => PullsSubmitReviewRequestEvent.APPROVE,
                 "REQUEST_CHANGES" => PullsSubmitReviewRequestEvent.REQUESTCHANGES,
                 "COMMENT" => PullsSubmitReviewRequestEvent.COMMENT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

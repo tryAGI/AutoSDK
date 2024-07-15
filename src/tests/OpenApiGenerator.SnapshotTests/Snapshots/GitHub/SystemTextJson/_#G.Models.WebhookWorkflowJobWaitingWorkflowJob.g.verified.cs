@@ -155,14 +155,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobWaitingWorkflowJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobWaitingWorkflowJobStatus Status { get; set; }
+        public required global::G.WebhookWorkflowJobWaitingWorkflowJobStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookWorkflowJobWaitingWorkflowJobSteps> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobWaitingWorkflowJobSteps> Steps { get; set; }
 
         /// <summary>
         /// 

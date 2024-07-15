@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The bypass type of the user making the API request for this ruleset. This field is only returned when
+    /// The bypass type of the user making the API request for this ruleset. This field is only returned when<br/>
     /// querying the repository-level endpoint.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRulesetCurrentUserCanBypass ToEnum(string value)
+        public static RepositoryRulesetCurrentUserCanBypass? ToEnum(string value)
         {
             return value switch
             {
                 "always" => RepositoryRulesetCurrentUserCanBypass.Always,
                 "pull_requests_only" => RepositoryRulesetCurrentUserCanBypass.PullRequestsOnly,
                 "never" => RepositoryRulesetCurrentUserCanBypass.Never,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

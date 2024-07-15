@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookRepositoryRenamedChangesRepository Repository { get; set; } = default!;
+        public global::G.WebhookRepositoryRenamedChangesRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

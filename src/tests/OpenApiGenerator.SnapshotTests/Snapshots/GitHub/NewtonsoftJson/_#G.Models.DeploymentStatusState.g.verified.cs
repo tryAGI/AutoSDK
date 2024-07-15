@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The state of the status.
-    /// <br/>Example: success
+    /// The state of the status.<br/>
+    /// Example: success
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum DeploymentStatusState
@@ -73,7 +73,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DeploymentStatusState ToEnum(string value)
+        public static DeploymentStatusState? ToEnum(string value)
         {
             return value switch
             {
@@ -84,7 +84,7 @@ namespace G
                 "success" => DeploymentStatusState.Success,
                 "queued" => DeploymentStatusState.Queued,
                 "in_progress" => DeploymentStatusState.InProgress,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

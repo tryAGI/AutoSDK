@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationDiscussionComment
     {
         /// <summary>
-        /// The API URL to get the discussion comment where the secret was detected.
-        /// <br/>Example: https://github.com/community/community/discussions/39082#discussioncomment-4158232
+        /// The API URL to get the discussion comment where the secret was detected.<br/>
+        /// Example: https://github.com/community/community/discussions/39082#discussioncomment-4158232
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("discussion_comment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

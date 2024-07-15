@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public WebhookProjectEditedChangesBody? Body { get; set; }
+        public global::G.WebhookProjectEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public WebhookProjectEditedChangesName? Name { get; set; }
+        public global::G.WebhookProjectEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

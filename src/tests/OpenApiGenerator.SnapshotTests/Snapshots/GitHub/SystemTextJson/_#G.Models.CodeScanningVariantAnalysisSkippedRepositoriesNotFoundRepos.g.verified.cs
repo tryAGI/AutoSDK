@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos
     {
         /// <summary>
-        /// The total number of repositories that were skipped for this reason.
-        /// <br/>Example: 2
+        /// The total number of repositories that were skipped for this reason.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_count")]
         [global::System.Text.Json.Serialization.JsonRequired]

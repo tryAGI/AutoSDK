@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleUpdateType ToEnum(string value)
+        public static RepositoryRuleUpdateType? ToEnum(string value)
         {
             return value switch
             {
                 "update" => RepositoryRuleUpdateType.Update,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

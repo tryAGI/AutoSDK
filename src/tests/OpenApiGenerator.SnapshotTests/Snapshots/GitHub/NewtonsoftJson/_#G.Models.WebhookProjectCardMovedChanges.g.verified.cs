@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("column_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookProjectCardMovedChangesColumnId ColumnId { get; set; } = default!;
+        public global::G.WebhookProjectCardMovedChangesColumnId ColumnId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

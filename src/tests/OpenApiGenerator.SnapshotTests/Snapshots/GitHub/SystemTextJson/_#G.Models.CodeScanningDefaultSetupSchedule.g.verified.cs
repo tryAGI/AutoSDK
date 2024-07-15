@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningDefaultSetupSchedule ToEnum(string value)
+        public static CodeScanningDefaultSetupSchedule? ToEnum(string value)
         {
             return value switch
             {
                 "weekly" => CodeScanningDefaultSetupSchedule.Weekly,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

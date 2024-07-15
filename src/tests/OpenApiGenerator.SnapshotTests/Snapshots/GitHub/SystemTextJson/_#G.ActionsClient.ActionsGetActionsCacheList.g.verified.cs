@@ -6,44 +6,136 @@ namespace G
 {
     public partial class ActionsClient
     {
-        /// <summary>
-        /// List GitHub Actions caches for a repository
-        /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
-        /// <param name="@ref"></param>
-        /// <param name="key"></param>
-        /// <param name="sort"></param>
-        /// <param name="direction"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ActionsCacheList> ActionsGetActionsCacheListAsync(
+        partial void PrepareActionsGetActionsCacheListArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int perPage,
+            ref int page,
+            ref string @ref,
+            ref string key,
+            ref global::G.ActionsGetActionsCacheListSort sort,
+            ref global::G.ActionsGetActionsCacheListDirection direction);
+        partial void PrepareActionsGetActionsCacheListRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int perPage,
             int page,
             string @ref,
             string key,
-            ActionsGetActionsCacheListSort sort,
-            ActionsGetActionsCacheListDirection direction,
+            global::G.ActionsGetActionsCacheListSort sort,
+            global::G.ActionsGetActionsCacheListDirection direction);
+        partial void ProcessActionsGetActionsCacheListResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessActionsGetActionsCacheListResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List GitHub Actions caches for a repository<br/>
+        /// Lists the GitHub Actions caches for a repository.<br/>
+        /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="@ref"></param>
+        /// <param name="key"></param>
+        /// <param name="sort">
+        /// Default Value: last_accessed_at
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.ActionsCacheList> ActionsGetActionsCacheListAsync(
+            string owner,
+            string repo,
+            int perPage,
+            int page,
+            string @ref,
+            string key,
+            global::G.ActionsGetActionsCacheListSort sort,
+            global::G.ActionsGetActionsCacheListDirection direction,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareActionsGetActionsCacheListArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                perPage: ref perPage,
+                page: ref page,
+                @ref: ref @ref,
+                key: ref key,
+                sort: ref sort,
+                direction: ref direction);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/actions/caches?per_page={perPage}&page={page}&ref={@ref}&key={key}&sort={sort}&direction={direction}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/caches?per_page={perPage}&page={page}&ref={@ref}&key={key}&sort={sort}&direction={direction}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareActionsGetActionsCacheListRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                perPage: perPage,
+                page: page,
+                @ref: @ref,
+                key: key,
+                sort: sort,
+                direction: direction);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessActionsGetActionsCacheListResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessActionsGetActionsCacheListResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ActionsCacheList?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ActionsCacheList?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

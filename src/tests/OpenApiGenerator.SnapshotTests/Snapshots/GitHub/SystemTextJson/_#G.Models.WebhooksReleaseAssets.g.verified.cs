@@ -78,7 +78,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReleaseAssetsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReleaseAssetsState State { get; set; }
+        public required global::G.WebhooksReleaseAssetsState State { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploader")]
-        public WebhooksReleaseAssetsUploader? Uploader { get; set; }
+        public global::G.WebhooksReleaseAssetsUploader? Uploader { get; set; }
 
         /// <summary>
         /// 

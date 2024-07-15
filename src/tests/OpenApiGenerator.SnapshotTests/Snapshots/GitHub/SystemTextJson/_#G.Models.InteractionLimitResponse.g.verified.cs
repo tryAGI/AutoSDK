@@ -10,23 +10,23 @@ namespace G
     public sealed partial class InteractionLimitResponse
     {
         /// <summary>
-        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
-        /// <br/>Example: collaborators_only
+        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
+        /// Example: collaborators_only
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitResponseLimitJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionGroupJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required InteractionLimitResponseLimit Limit { get; set; }
+        public required global::G.InteractionGroup Limit { get; set; }
 
         /// <summary>
-        /// <br/>Example: repository
+        /// Example: repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Origin { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

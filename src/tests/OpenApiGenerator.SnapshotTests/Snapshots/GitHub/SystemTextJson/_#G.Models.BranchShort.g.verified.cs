@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BranchShortCommit Commit { get; set; }
+        public required global::G.BranchShortCommit Commit { get; set; }
 
         /// <summary>
         /// 

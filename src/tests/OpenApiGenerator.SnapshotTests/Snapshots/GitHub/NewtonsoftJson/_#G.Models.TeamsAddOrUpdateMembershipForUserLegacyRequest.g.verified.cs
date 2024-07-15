@@ -10,11 +10,11 @@ namespace G
     public sealed partial class TeamsAddOrUpdateMembershipForUserLegacyRequest
     {
         /// <summary>
-        /// The role that this user should have in the team.
-        /// <br/>Default Value: member
+        /// The role that this user should have in the team.<br/>
+        /// Default Value: member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public TeamsAddOrUpdateMembershipForUserLegacyRequestRole? Role { get; set; } = TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member;
+        public global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? Role { get; set; } = global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.IntegrationInstallationRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,14 +12,14 @@ namespace G
     public sealed partial class IntegrationInstallationRequest
     {
         /// <summary>
-        /// Unique identifier of the request installation.
-        /// <br/>Example: 42
+        /// Unique identifier of the request installation.<br/>
+        /// Example: 42
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDExOkludGVncmF0aW9uMQ==
+        /// Example: MDExOkludGVncmF0aW9uMQ==
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id")]
         public string? NodeId { get; set; }
@@ -26,16 +28,16 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<SimpleUser, Enterprise> Account { get; set; } = default!;
+        public global::System.AnyOf<global::G.SimpleUser?, global::G.Enterprise?> Account { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requester", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Requester { get; set; } = default!;
+        public global::G.SimpleUser Requester { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;

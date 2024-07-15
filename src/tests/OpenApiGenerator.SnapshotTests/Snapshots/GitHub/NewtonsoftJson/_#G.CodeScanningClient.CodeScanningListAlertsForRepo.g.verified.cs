@@ -6,23 +6,22 @@ namespace G
 {
     public partial class CodeScanningClient
     {
-        /// <summary>
-        /// List code scanning alerts for a repository
-        /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
-        /// <param name="toolName"></param>
-        /// <param name="toolGuid"></param>
-        /// <param name="page"></param>
-        /// <param name="perPage"></param>
-        /// <param name="@ref"></param>
-        /// <param name="direction"></param>
-        /// <param name="sort"></param>
-        /// <param name="state"></param>
-        /// <param name="severity"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<CodeScanningAlertItems>> CodeScanningListAlertsForRepoAsync(
+        partial void PrepareCodeScanningListAlertsForRepoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref string toolName,
+            ref string? toolGuid,
+            ref int page,
+            ref int perPage,
+            ref string @ref,
+            ref global::G.CodeScanningListAlertsForRepoDirection direction,
+            ref global::G.CodeScanningListAlertsForRepoSort sort,
+            ref global::G.CodeScanningAlertStateQuery state,
+            ref global::G.CodeScanningAlertSeverity severity);
+        partial void PrepareCodeScanningListAlertsForRepoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             string toolName,
@@ -30,57 +29,176 @@ namespace G
             int page,
             int perPage,
             string @ref,
-            CodeScanningListAlertsForRepoDirection direction,
-            CodeScanningListAlertsForRepoSort sort,
-            CodeScanningListAlertsForRepoState state,
-            CodeScanningListAlertsForRepoSeverity severity,
+            global::G.CodeScanningListAlertsForRepoDirection direction,
+            global::G.CodeScanningListAlertsForRepoSort sort,
+            global::G.CodeScanningAlertStateQuery state,
+            global::G.CodeScanningAlertSeverity severity);
+        partial void ProcessCodeScanningListAlertsForRepoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCodeScanningListAlertsForRepoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List code scanning alerts for a repository<br/>
+        /// Lists code scanning alerts.<br/>
+        /// The response includes a `most_recent_instance` object.<br/>
+        /// This provides details of the most recent instance of this alert<br/>
+        /// for the default branch (or for the specified Git reference if you used `ref` in the request).<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="toolName">
+        /// The name of the tool used to generate the code scanning analysis.
+        /// </param>
+        /// <param name="toolGuid">
+        /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="@ref">
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
+        /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sort">
+        /// Default Value: created
+        /// </param>
+        /// <param name="state">
+        /// State of a code scanning alert.
+        /// </param>
+        /// <param name="severity">
+        /// Severity of a code scanning alert.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAlertItems>> CodeScanningListAlertsForRepoAsync(
+            string owner,
+            string repo,
+            string toolName,
+            string? toolGuid,
+            int page,
+            int perPage,
+            string @ref,
+            global::G.CodeScanningListAlertsForRepoDirection direction,
+            global::G.CodeScanningListAlertsForRepoSort sort,
+            global::G.CodeScanningAlertStateQuery state,
+            global::G.CodeScanningAlertSeverity severity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCodeScanningListAlertsForRepoArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                toolName: ref toolName,
+                toolGuid: ref toolGuid,
+                page: ref page,
+                perPage: ref perPage,
+                @ref: ref @ref,
+                direction: ref direction,
+                sort: ref sort,
+                state: ref state,
+                severity: ref severity);
+
             var directionValue = direction switch
             {
-                CodeScanningListAlertsForRepoDirection.Asc => "asc",
-                CodeScanningListAlertsForRepoDirection.Desc => "desc",
+                global::G.CodeScanningListAlertsForRepoDirection.Asc => "asc",
+                global::G.CodeScanningListAlertsForRepoDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var sortValue = sort switch
             {
-                CodeScanningListAlertsForRepoSort.Created => "created",
-                CodeScanningListAlertsForRepoSort.Updated => "updated",
+                global::G.CodeScanningListAlertsForRepoSort.Created => "created",
+                global::G.CodeScanningListAlertsForRepoSort.Updated => "updated",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var stateValue = state switch
             {
-                CodeScanningListAlertsForRepoState.Open => "open",
-                CodeScanningListAlertsForRepoState.Closed => "closed",
-                CodeScanningListAlertsForRepoState.Dismissed => "dismissed",
-                CodeScanningListAlertsForRepoState.Fixed => "fixed",
+                global::G.CodeScanningAlertStateQuery.Open => "open",
+                global::G.CodeScanningAlertStateQuery.Closed => "closed",
+                global::G.CodeScanningAlertStateQuery.Dismissed => "dismissed",
+                global::G.CodeScanningAlertStateQuery.Fixed => "fixed",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var severityValue = severity switch
             {
-                CodeScanningListAlertsForRepoSeverity.Critical => "critical",
-                CodeScanningListAlertsForRepoSeverity.High => "high",
-                CodeScanningListAlertsForRepoSeverity.Medium => "medium",
-                CodeScanningListAlertsForRepoSeverity.Low => "low",
-                CodeScanningListAlertsForRepoSeverity.Warning => "warning",
-                CodeScanningListAlertsForRepoSeverity.Note => "note",
-                CodeScanningListAlertsForRepoSeverity.Error => "error",
+                global::G.CodeScanningAlertSeverity.Critical => "critical",
+                global::G.CodeScanningAlertSeverity.High => "high",
+                global::G.CodeScanningAlertSeverity.Medium => "medium",
+                global::G.CodeScanningAlertSeverity.Low => "low",
+                global::G.CodeScanningAlertSeverity.Warning => "warning",
+                global::G.CodeScanningAlertSeverity.Note => "note",
+                global::G.CodeScanningAlertSeverity.Error => "error",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&direction={directionValue}&sort={sortValue}&state={stateValue}&severity={severityValue}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&direction={directionValue}&sort={sortValue}&state={stateValue}&severity={severityValue}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCodeScanningListAlertsForRepoRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                toolName: toolName,
+                toolGuid: toolGuid,
+                page: page,
+                perPage: perPage,
+                @ref: @ref,
+                direction: direction,
+                sort: sort,
+                state: state,
+                severity: severity);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCodeScanningListAlertsForRepoResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCodeScanningListAlertsForRepoResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<CodeScanningAlertItems>?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.CodeScanningAlertItems>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

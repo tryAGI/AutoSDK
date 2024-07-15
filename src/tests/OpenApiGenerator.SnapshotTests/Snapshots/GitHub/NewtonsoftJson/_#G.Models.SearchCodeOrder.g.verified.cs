@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SearchCodeOrder
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchCodeOrder ToEnum(string value)
+        public static SearchCodeOrder? ToEnum(string value)
         {
             return value switch
             {
                 "desc" => SearchCodeOrder.Desc,
                 "asc" => SearchCodeOrder.Asc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksChanges8TierFrom From { get; set; }
+        public required global::G.WebhooksChanges8TierFrom From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

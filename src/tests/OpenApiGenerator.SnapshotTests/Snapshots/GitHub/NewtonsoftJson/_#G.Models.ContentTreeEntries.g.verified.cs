@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentTreeEntriesLinks Links { get; set; } = default!;
+        public global::G.ContentTreeEntriesLinks Links { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

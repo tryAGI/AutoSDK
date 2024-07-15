@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: due_on
+    /// Default Value: due_on
     /// </summary>
     public enum IssuesListMilestonesSort
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesListMilestonesSort ToEnum(string value)
+        public static IssuesListMilestonesSort? ToEnum(string value)
         {
             return value switch
             {
                 "due_on" => IssuesListMilestonesSort.DueOn,
                 "completeness" => IssuesListMilestonesSort.Completeness,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

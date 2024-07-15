@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_patched_version", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion? FirstPatchedVersion { get; set; } = default!;
+        public global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion? FirstPatchedVersion { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage Package { get; set; } = default!;
+        public global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage Package { get; set; } = default!;
 
         /// <summary>
         /// 

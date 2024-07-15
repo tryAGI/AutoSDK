@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.IssuesUpdateRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -31,14 +33,14 @@ namespace G
         /// The open or closed state of the issue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public IssuesUpdateRequestState? State { get; set; }
+        public global::G.IssuesUpdateRequestState? State { get; set; }
 
         /// <summary>
-        /// The reason for the state change. Ignored unless `state` is changed.
-        /// <br/>Example: not_planned
+        /// The reason for the state change. Ignored unless `state` is changed.<br/>
+        /// Example: not_planned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
-        public IssuesUpdateRequestStateReason? StateReason { get; set; }
+        public global::G.IssuesUpdateRequestStateReason? StateReason { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +52,7 @@ namespace G
         /// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<string?, IssuesUpdateRequestLabels?>>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.IssuesUpdateRequestLabels?>?>? Labels { get; set; }
 
         /// <summary>
         /// Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.

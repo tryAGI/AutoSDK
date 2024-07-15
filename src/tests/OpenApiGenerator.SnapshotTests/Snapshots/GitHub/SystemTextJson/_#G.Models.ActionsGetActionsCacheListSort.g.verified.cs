@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: last_accessed_at
+    /// Default Value: last_accessed_at
     /// </summary>
     public enum ActionsGetActionsCacheListSort
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsGetActionsCacheListSort ToEnum(string value)
+        public static ActionsGetActionsCacheListSort? ToEnum(string value)
         {
             return value switch
             {
                 "created_at" => ActionsGetActionsCacheListSort.CreatedAt,
                 "last_accessed_at" => ActionsGetActionsCacheListSort.LastAccessedAt,
                 "size_in_bytes" => ActionsGetActionsCacheListSort.SizeInBytes,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

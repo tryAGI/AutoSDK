@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
-        public global::System.Collections.Generic.IList<GpgKeySubkeysEmails?>? Emails { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GpgKeySubkeysEmails?>? Emails { get; set; }
 
         /// <summary>
         /// 

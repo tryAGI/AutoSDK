@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The target of the ruleset
+    /// The target of the ruleset<br/>
     /// **Note**: The `push` target is in beta and is subject to change.
     /// </summary>
     public enum ReposCreateOrgRulesetRequestTarget
@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposCreateOrgRulesetRequestTarget ToEnum(string value)
+        public static ReposCreateOrgRulesetRequestTarget? ToEnum(string value)
         {
             return value switch
             {
                 "branch" => ReposCreateOrgRulesetRequestTarget.Branch,
                 "tag" => ReposCreateOrgRulesetRequestTarget.Tag,
                 "push" => ReposCreateOrgRulesetRequestTarget.Push,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

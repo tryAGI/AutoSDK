@@ -10,16 +10,16 @@ namespace G
     public sealed partial class DependabotPublicKey
     {
         /// <summary>
-        /// The identifier for the key.
-        /// <br/>Example: 1234567
+        /// The identifier for the key.<br/>
+        /// Example: 1234567
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeyId { get; set; }
 
         /// <summary>
-        /// The Base64 encoded public key.
-        /// <br/>Example: hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=
+        /// The Base64 encoded public key.<br/>
+        /// Example: hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class GitCommit
     {
         /// <summary>
-        /// SHA for the commit
-        /// <br/>Example: 7638417db6d59f3c431d3e1f261cc637155684cd
+        /// SHA for the commit<br/>
+        /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,18 +36,18 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitCommitAuthor Author { get; set; }
+        public required global::G.GitCommitAuthor Author { get; set; }
 
         /// <summary>
         /// Identifying information for the git-user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitCommitCommitter Committer { get; set; }
+        public required global::G.GitCommitCommitter Committer { get; set; }
 
         /// <summary>
-        /// Message describing the purpose of the commit
-        /// <br/>Example: Fix #42
+        /// Message describing the purpose of the commit<br/>
+        /// Example: Fix #42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -58,21 +58,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitCommitTree Tree { get; set; }
+        public required global::G.GitCommitTree Tree { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GitCommitParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GitCommitParents> Parents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verification")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitCommitVerification Verification { get; set; }
+        public required global::G.GitCommitVerification Verification { get; set; }
 
         /// <summary>
         /// 

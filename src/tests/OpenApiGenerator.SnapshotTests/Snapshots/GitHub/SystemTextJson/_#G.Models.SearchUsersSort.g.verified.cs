@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchUsersSort ToEnum(string value)
+        public static SearchUsersSort? ToEnum(string value)
         {
             return value switch
             {
                 "followers" => SearchUsersSort.Followers,
                 "repositories" => SearchUsersSort.Repositories,
                 "joined" => SearchUsersSort.Joined,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

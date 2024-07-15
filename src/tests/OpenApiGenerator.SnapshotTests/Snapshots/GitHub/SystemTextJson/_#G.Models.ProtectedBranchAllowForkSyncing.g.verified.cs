@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ProtectedBranchAllowForkSyncing
     {
         /// <summary>
-        /// <br/>Default Value: false
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool Enabled { get; set; } = false;

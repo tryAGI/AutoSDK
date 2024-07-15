@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public FileCommitContent? Content { get; set; } = default!;
+        public global::G.FileCommitContent? Content { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public FileCommitCommit Commit { get; set; } = default!;
+        public global::G.FileCommitCommit Commit { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,24 +14,23 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupStateJsonConverter))]
-        public CodeScanningDefaultSetupState? State { get; set; }
+        public global::G.CodeScanningDefaultSetupState? State { get; set; }
 
         /// <summary>
         /// Languages to be analyzed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
-        public global::System.Collections.Generic.IList<CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupQuerySuiteJsonConverter))]
-        public CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
+        public global::G.CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
         /// Timestamp of latest configuration update.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
@@ -41,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupScheduleJsonConverter))]
-        public CodeScanningDefaultSetupSchedule? Schedule { get; set; }
+        public global::G.CodeScanningDefaultSetupSchedule? Schedule { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

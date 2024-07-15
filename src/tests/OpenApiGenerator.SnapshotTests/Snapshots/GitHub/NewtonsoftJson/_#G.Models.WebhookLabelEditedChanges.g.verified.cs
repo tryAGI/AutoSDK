@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("color")]
-        public WebhookLabelEditedChangesColor? Color { get; set; }
+        public global::G.WebhookLabelEditedChangesColor? Color { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public WebhookLabelEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookLabelEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public WebhookLabelEditedChangesName? Name { get; set; }
+        public global::G.WebhookLabelEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

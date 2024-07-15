@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("most_recent_instance")]
-        public WebhookCodeScanningAlertReopenedAlertMostRecentInstance? MostRecentInstance { get; set; }
+        public global::G.WebhookCodeScanningAlertReopenedAlertMostRecentInstance? MostRecentInstance { get; set; }
 
         /// <summary>
         /// The code scanning alert number.
@@ -62,7 +62,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertReopenedAlertRule Rule { get; set; }
+        public required global::G.WebhookCodeScanningAlertReopenedAlertRule Rule { get; set; }
 
         /// <summary>
         /// State of a code scanning alert.
@@ -70,14 +70,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertReopenedAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertReopenedAlertState State { get; set; }
+        public required global::G.WebhookCodeScanningAlertReopenedAlertState State { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertReopenedAlertTool Tool { get; set; }
+        public required global::G.WebhookCodeScanningAlertReopenedAlertTool Tool { get; set; }
 
         /// <summary>
         /// 

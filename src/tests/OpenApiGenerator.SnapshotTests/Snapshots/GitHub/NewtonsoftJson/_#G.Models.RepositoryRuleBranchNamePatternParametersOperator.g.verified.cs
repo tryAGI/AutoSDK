@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleBranchNamePatternParametersOperator ToEnum(string value)
+        public static RepositoryRuleBranchNamePatternParametersOperator? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "ends_with" => RepositoryRuleBranchNamePatternParametersOperator.EndsWith,
                 "contains" => RepositoryRuleBranchNamePatternParametersOperator.Contains,
                 "regex" => RepositoryRuleBranchNamePatternParametersOperator.Regex,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

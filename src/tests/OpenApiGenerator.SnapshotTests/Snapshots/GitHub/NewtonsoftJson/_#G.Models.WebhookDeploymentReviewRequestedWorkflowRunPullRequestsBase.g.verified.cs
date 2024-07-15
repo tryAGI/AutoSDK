@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentReviewRequestedWorkflowRunPullRequestsBaseRepo Repo { get; set; } = default!;
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequestsBaseRepo Repo { get; set; } = default!;
 
         /// <summary>
         /// 

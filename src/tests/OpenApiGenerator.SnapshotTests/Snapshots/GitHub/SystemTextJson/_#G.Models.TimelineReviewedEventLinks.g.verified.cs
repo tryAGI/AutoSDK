@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TimelineReviewedEventLinksHtml Html { get; set; }
+        public required global::G.TimelineReviewedEventLinksHtml Html { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TimelineReviewedEventLinksPullRequest PullRequest { get; set; }
+        public required global::G.TimelineReviewedEventLinksPullRequest PullRequest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

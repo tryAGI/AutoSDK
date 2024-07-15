@@ -34,6 +34,7 @@ namespace G
         /// **This parameter is deprecated. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int Position { get; set; }
 
         /// <summary>
@@ -41,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsCreateReviewCommentRequestSideJsonConverter))]
-        public PullsCreateReviewCommentRequestSide? Side { get; set; }
+        public global::G.PullsCreateReviewCommentRequestSide? Side { get; set; }
 
         /// <summary>
         /// **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
@@ -60,11 +61,11 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsCreateReviewCommentRequestStartSideJsonConverter))]
-        public PullsCreateReviewCommentRequestStartSide? StartSide { get; set; }
+        public global::G.PullsCreateReviewCommentRequestStartSide? StartSide { get; set; }
 
         /// <summary>
-        /// The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.
-        /// <br/>Example: 2
+        /// The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reply_to")]
         public int InReplyTo { get; set; }
@@ -74,7 +75,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsCreateReviewCommentRequestSubjectTypeJsonConverter))]
-        public PullsCreateReviewCommentRequestSubjectType? SubjectType { get; set; }
+        public global::G.PullsCreateReviewCommentRequestSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

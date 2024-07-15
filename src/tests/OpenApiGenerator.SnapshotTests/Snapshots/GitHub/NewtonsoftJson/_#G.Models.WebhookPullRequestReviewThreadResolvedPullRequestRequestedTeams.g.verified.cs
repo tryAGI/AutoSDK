@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent")]
-        public WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent? Parent { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent? Parent { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsPrivacy? Privacy { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// 

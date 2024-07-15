@@ -20,7 +20,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        public SimpleUser? Actor { get; set; }
+        public global::G.SimpleUser? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TimelineCrossReferencedEventSource Source { get; set; }
+        public required global::G.TimelineCrossReferencedEventSource Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

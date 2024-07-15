@@ -10,15 +10,15 @@ namespace G
     public sealed partial class ReposCreateOrUpdateEnvironmentRequestReviewers
     {
         /// <summary>
-        /// The type of reviewer.
-        /// <br/>Example: User
+        /// The type of reviewer.<br/>
+        /// Example: User
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public ReposCreateOrUpdateEnvironmentRequestReviewersType? Type { get; set; }
+        public global::G.DeploymentReviewerType? Type { get; set; }
 
         /// <summary>
-        /// The id of the user or team who can review the deployment
-        /// <br/>Example: 4532992
+        /// The id of the user or team who can review the deployment<br/>
+        /// Example: 4532992
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int Id { get; set; }

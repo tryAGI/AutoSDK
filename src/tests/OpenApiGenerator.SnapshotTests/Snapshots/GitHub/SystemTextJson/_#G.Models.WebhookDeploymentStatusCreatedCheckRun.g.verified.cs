@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentStatusCreatedCheckRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
+        public required global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentStatusCreatedCheckRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentStatusCreatedCheckRunStatus Status { get; set; }
+        public required global::G.WebhookDeploymentStatusCreatedCheckRunStatus Status { get; set; }
 
         /// <summary>
         /// 

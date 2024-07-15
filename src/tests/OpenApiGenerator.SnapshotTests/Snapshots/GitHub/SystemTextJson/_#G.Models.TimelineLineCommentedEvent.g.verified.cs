@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public global::System.Collections.Generic.IList<PullRequestReviewComment>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequestReviewComment>? Comments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

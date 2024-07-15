@@ -10,15 +10,15 @@ namespace G
     public sealed partial class IssuesLockRequest
     {
         /// <summary>
-        /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  
-        ///  * `off-topic`  
-        ///  * `too heated`  
-        ///  * `resolved`  
+        /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  <br/>
+        ///  * `off-topic`  <br/>
+        ///  * `too heated`  <br/>
+        ///  * `resolved`  <br/>
         ///  * `spam`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssuesLockRequestLockReasonJsonConverter))]
-        public IssuesLockRequestLockReason? LockReason { get; set; }
+        public global::G.IssuesLockRequestLockReason? LockReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

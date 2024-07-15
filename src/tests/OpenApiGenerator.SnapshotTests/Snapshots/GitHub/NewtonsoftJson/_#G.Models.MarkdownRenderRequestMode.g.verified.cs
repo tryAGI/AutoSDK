@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The rendering mode.
-    /// <br/>Default Value: markdown
-    /// <br/>Example: markdown
+    /// The rendering mode.<br/>
+    /// Default Value: markdown<br/>
+    /// Example: markdown
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MarkdownRenderRequestMode
@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MarkdownRenderRequestMode ToEnum(string value)
+        public static MarkdownRenderRequestMode? ToEnum(string value)
         {
             return value switch
             {
                 "markdown" => MarkdownRenderRequestMode.Markdown,
                 "gfm" => MarkdownRenderRequestMode.Gfm,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

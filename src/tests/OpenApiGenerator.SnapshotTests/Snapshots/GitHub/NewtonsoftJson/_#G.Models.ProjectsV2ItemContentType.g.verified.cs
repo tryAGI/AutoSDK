@@ -7,13 +7,56 @@ namespace G
     /// <summary>
     /// The type of content tracked in a project item
     /// </summary>
-    public sealed partial class ProjectsV2ItemContentType
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ProjectsV2ItemContentType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="Issue")]
+        Issue,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="PullRequest")]
+        PullRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DraftIssue")]
+        DraftIssue,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ProjectsV2ItemContentTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ProjectsV2ItemContentType value)
+        {
+            return value switch
+            {
+                ProjectsV2ItemContentType.Issue => "Issue",
+                ProjectsV2ItemContentType.PullRequest => "PullRequest",
+                ProjectsV2ItemContentType.DraftIssue => "DraftIssue",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ProjectsV2ItemContentType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Issue" => ProjectsV2ItemContentType.Issue,
+                "PullRequest" => ProjectsV2ItemContentType.PullRequest,
+                "DraftIssue" => ProjectsV2ItemContentType.DraftIssue,
+                _ => null,
+            };
+        }
     }
 }

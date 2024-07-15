@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref_name")]
-        public RepositoryRulesetConditionsRefName? RefName { get; set; }
+        public global::G.RepositoryRulesetConditionsRefName? RefName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

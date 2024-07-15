@@ -10,18 +10,18 @@ namespace G
     public sealed partial class InteractionLimit
     {
         /// <summary>
-        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
-        /// <br/>Example: collaborators_only
+        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
+        /// Example: collaborators_only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
-        public InteractionLimitLimit Limit { get; set; } = default!;
+        public global::G.InteractionGroup Limit { get; set; } = default!;
 
         /// <summary>
-        /// The duration of the interaction restriction. Default: `one_day`.
-        /// <br/>Example: one_month
+        /// The duration of the interaction restriction. Default: `one_day`.<br/>
+        /// Example: one_month
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expiry")]
-        public InteractionLimitExpiry? Expiry { get; set; }
+        public global::G.InteractionExpiry? Expiry { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,19 +10,19 @@ namespace G
     public sealed partial class NullableGitUser
     {
         /// <summary>
-        /// <br/>Example: "Chris Wanstrath"
+        /// Example: "Chris Wanstrath"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: "chris@ozmm.org"
+        /// Example: "chris@ozmm.org"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
         /// <summary>
-        /// <br/>Example: "2007-10-29T02:42:39.000-07:00"
+        /// Example: "2007-10-29T02:42:39.000-07:00"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("date")]
         public string? Date { get; set; }

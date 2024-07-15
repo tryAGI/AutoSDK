@@ -17,12 +17,12 @@ namespace G
         public required string Title { get; set; }
 
         /// <summary>
-        /// The state of the milestone. Either `open` or `closed`.
-        /// <br/>Default Value: open
+        /// The state of the milestone. Either `open` or `closed`.<br/>
+        /// Default Value: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssuesCreateMilestoneRequestStateJsonConverter))]
-        public IssuesCreateMilestoneRequestState? State { get; set; } = IssuesCreateMilestoneRequestState.Open;
+        public global::G.IssuesCreateMilestoneRequestState? State { get; set; } = global::G.IssuesCreateMilestoneRequestState.Open;
 
         /// <summary>
         /// A description of the milestone.

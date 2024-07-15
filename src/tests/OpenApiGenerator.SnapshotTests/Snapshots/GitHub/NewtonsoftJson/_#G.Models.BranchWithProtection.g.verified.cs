@@ -19,13 +19,13 @@ namespace G
         /// Commit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public Commit Commit { get; set; } = default!;
+        public global::G.Commit Commit { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public BranchWithProtectionLinks Links { get; set; } = default!;
+        public global::G.BranchWithProtectionLinks Links { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// Branch Protection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protection", Required = global::Newtonsoft.Json.Required.Always)]
-        public BranchProtection Protection { get; set; } = default!;
+        public global::G.BranchProtection Protection { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -46,13 +46,13 @@ namespace G
         public string ProtectionUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "mas*"
+        /// Example: "mas*"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pattern")]
         public string? Pattern { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
         public int RequiredApprovingReviewCount { get; set; }

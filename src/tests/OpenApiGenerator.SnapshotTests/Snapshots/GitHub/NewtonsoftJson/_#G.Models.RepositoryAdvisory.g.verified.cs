@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RepositoryAdvisory.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -49,31 +51,31 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisorySeverity? Severity { get; set; } = default!;
+        public global::G.RepositoryAdvisorySeverity? Severity { get; set; } = default!;
 
         /// <summary>
         /// The author of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<SimpleUser>? Author { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleUser?>? Author { get; set; } = default!;
 
         /// <summary>
         /// The publisher of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("publisher", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<SimpleUser>? Publisher { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleUser?>? Publisher { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryIdentifiers> Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifiers> Identifiers { get; set; } = default!;
 
         /// <summary>
         /// The state of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryState State { get; set; } = default!;
+        public global::G.RepositoryAdvisoryState State { get; set; } = default!;
 
         /// <summary>
         /// The date and time of when the advisory was created, in ISO 8601 format.
@@ -109,25 +111,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("submission", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisorySubmission? Submission { get; set; } = default!;
+        public global::G.RepositoryAdvisorySubmission? Submission { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cvss", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryCvss? Cvss { get; set; } = default!;
+        public global::G.RepositoryAdvisoryCvss? Cvss { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCwes>? Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwes>? Cwes { get; set; } = default!;
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -139,31 +141,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCredits>? Credits { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredits>? Credits { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits_detailed", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCredit>? CreditsDetailed { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; } = default!;
 
         /// <summary>
         /// A list of users that collaborate on the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("collaborating_users", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<SimpleUser>? CollaboratingUsers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? CollaboratingUsers { get; set; } = default!;
 
         /// <summary>
         /// A list of teams that collaborate on the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("collaborating_teams", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Team>? CollaboratingTeams { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; } = default!;
 
         /// <summary>
         /// A temporary private fork of the advisory's repository for collaborating on a fix.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_fork", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<SimpleRepository>? PrivateFork { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleRepository?>? PrivateFork { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

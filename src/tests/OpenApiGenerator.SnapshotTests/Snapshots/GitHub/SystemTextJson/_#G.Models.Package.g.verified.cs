@@ -10,70 +10,70 @@ namespace G
     public sealed partial class Package
     {
         /// <summary>
-        /// Unique identifier of the package.
-        /// <br/>Example: 1
+        /// Unique identifier of the package.<br/>
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// The name of the package.
-        /// <br/>Example: super-linter
+        /// The name of the package.<br/>
+        /// Example: super-linter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: docker
+        /// Example: docker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackagePackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PackagePackageType PackageType { get; set; }
+        public required global::G.PackagePackageType PackageType { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/orgs/github/packages/container/super-linter
+        /// Example: https://api.github.com/orgs/github/packages/container/super-linter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/orgs/github/packages/container/package/super-linter
+        /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// The number of versions of the package.
-        /// <br/>Example: 1
+        /// The number of versions of the package.<br/>
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int VersionCount { get; set; }
 
         /// <summary>
-        /// <br/>Example: private
+        /// Example: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackageVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PackageVisibility Visibility { get; set; }
+        public required global::G.PackageVisibility Visibility { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public NullableSimpleUser? Owner { get; set; }
+        public global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public NullableMinimalRepository? Repository { get; set; }
+        public global::G.NullableMinimalRepository? Repository { get; set; }
 
         /// <summary>
         /// 

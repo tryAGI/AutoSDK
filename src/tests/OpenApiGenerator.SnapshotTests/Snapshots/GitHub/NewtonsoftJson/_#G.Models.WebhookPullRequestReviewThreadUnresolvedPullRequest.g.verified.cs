@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPullRequestReviewThreadUnresolvedPullRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,43 +15,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinks Links { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinks Links { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_lock_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason? ActiveLockReason { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason? ActiveLockReason { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee? Assignee { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee? Assignee { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookPullRequestReviewThreadUnresolvedPullRequestAssignees?> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignees?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// The status of auto merging a pull request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_merge", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge? AutoMerge { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge? AutoMerge { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("base", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestBase Base { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBase Base { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -97,7 +99,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestHead Head { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestHead Head { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -121,7 +123,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookPullRequestReviewThreadUnresolvedPullRequestLabels> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLabels> Labels { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -145,7 +147,7 @@ namespace G
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone? Milestone { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone? Milestone { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -169,13 +171,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewers?, WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewers>> RequestedReviewers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewers?, global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewers>> RequestedReviewers { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_teams", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams> RequestedTeams { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams> RequestedTeams { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -193,7 +195,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestState State { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestState State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -223,7 +225,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestUser? User { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

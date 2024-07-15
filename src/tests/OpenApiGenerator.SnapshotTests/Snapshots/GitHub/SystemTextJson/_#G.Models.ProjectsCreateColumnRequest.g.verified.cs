@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ProjectsCreateColumnRequest
     {
         /// <summary>
-        /// Name of the project column
-        /// <br/>Example: Remaining tasks
+        /// Name of the project column<br/>
+        /// Example: Remaining tasks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

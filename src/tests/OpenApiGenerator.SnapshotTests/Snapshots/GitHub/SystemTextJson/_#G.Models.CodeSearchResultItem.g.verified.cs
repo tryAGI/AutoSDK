@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// 
@@ -84,7 +84,7 @@ namespace G
         public global::System.DateTime LastModifiedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: [73..77, 77..78]
+        /// Example: [73..77, 77..78]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line_numbers")]
         public global::System.Collections.Generic.IList<string?>? LineNumbers { get; set; }
@@ -93,7 +93,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<CodeSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

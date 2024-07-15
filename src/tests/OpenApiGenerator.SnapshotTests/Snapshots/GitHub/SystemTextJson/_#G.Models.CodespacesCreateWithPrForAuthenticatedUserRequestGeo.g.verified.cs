@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespacesCreateWithPrForAuthenticatedUserRequestGeo ToEnum(string value)
+        public static CodespacesCreateWithPrForAuthenticatedUserRequestGeo? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "SoutheastAsia" => CodespacesCreateWithPrForAuthenticatedUserRequestGeo.SoutheastAsia,
                 "UsEast" => CodespacesCreateWithPrForAuthenticatedUserRequestGeo.UsEast,
                 "UsWest" => CodespacesCreateWithPrForAuthenticatedUserRequestGeo.UsWest,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

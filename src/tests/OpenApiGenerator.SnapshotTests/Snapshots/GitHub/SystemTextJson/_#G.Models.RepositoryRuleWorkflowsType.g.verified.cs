@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleWorkflowsType ToEnum(string value)
+        public static RepositoryRuleWorkflowsType? ToEnum(string value)
         {
             return value switch
             {
                 "workflows" => RepositoryRuleWorkflowsType.Workflows,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

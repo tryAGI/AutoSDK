@@ -20,14 +20,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPushCommitsAuthor Author { get; set; }
+        public required global::G.WebhookPushCommitsAuthor Author { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPushCommitsCommitter Committer { get; set; }
+        public required global::G.WebhookPushCommitsCommitter Committer { get; set; }
 
         /// <summary>
         /// Whether this commit is distinct from any that have been pushed before.

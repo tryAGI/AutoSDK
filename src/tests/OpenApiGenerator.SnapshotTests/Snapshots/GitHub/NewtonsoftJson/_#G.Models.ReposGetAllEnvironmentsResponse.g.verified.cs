@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ReposGetAllEnvironmentsResponse
     {
         /// <summary>
-        /// The number of environments in this repository
-        /// <br/>Example: 5
+        /// The number of environments in this repository<br/>
+        /// Example: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
         public int TotalCount { get; set; }
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environments")]
-        public global::System.Collections.Generic.IList<Environment>? Environments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Environment>? Environments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

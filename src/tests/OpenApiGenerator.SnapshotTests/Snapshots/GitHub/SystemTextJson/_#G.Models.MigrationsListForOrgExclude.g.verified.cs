@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MigrationsListForOrgExclude ToEnum(string value)
+        public static MigrationsListForOrgExclude? ToEnum(string value)
         {
             return value switch
             {
                 "repositories" => MigrationsListForOrgExclude.Repositories,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

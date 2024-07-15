@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedPullRequestBaseRepo Repo { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedPullRequestBaseRepo Repo { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedPullRequestBaseUser? User { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedPullRequestBaseUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

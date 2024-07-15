@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookForkForkeeOwnerTypeJsonConverter))]
-        public WebhookForkForkeeOwnerType? Type { get; set; }
+        public global::G.WebhookForkForkeeOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

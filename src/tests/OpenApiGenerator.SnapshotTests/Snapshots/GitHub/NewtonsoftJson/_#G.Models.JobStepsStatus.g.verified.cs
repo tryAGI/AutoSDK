@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The phase of the lifecycle that the job is currently in.
-    /// <br/>Example: queued
+    /// The phase of the lifecycle that the job is currently in.<br/>
+    /// Example: queued
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum JobStepsStatus
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static JobStepsStatus ToEnum(string value)
+        public static JobStepsStatus? ToEnum(string value)
         {
             return value switch
             {
                 "queued" => JobStepsStatus.Queued,
                 "in_progress" => JobStepsStatus.InProgress,
                 "completed" => JobStepsStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

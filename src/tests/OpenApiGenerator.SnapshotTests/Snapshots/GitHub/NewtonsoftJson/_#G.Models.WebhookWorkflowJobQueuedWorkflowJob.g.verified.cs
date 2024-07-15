@@ -121,7 +121,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobQueuedWorkflowJobStatus Status { get; set; } = default!;
+        public global::G.WebhookWorkflowJobQueuedWorkflowJobStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The name of the current branch.
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookWorkflowJobQueuedWorkflowJobSteps> Steps { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobSteps> Steps { get; set; } = default!;
 
         /// <summary>
         /// 

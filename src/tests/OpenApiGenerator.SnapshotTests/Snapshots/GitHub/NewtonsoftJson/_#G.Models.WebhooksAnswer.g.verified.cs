@@ -13,7 +13,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksAnswerAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhooksAnswerAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public WebhooksAnswerReactions? Reactions { get; set; }
+        public global::G.WebhooksAnswerReactions? Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksAnswerUser? User { get; set; } = default!;
+        public global::G.WebhooksAnswerUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

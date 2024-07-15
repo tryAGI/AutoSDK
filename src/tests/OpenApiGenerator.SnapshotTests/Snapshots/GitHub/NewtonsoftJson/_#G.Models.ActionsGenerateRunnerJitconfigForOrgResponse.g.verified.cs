@@ -13,7 +13,7 @@ namespace G
         /// A self hosted runner
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runner", Required = global::Newtonsoft.Json.Required.Always)]
-        public Runner Runner { get; set; } = default!;
+        public global::G.Runner Runner { get; set; } = default!;
 
         /// <summary>
         /// The base64 encoded runner configuration.

@@ -10,25 +10,25 @@ namespace G
     public sealed partial class NullableCodeOfConductSimple
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/github/docs/community/code_of_conduct
+        /// Example: https://api.github.com/repos/github/docs/community/code_of_conduct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: citizen_code_of_conduct
+        /// Example: citizen_code_of_conduct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Citizen Code of Conduct
+        /// Example: Citizen Code of Conduct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
+        /// Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? HtmlUrl { get; set; } = default!;

@@ -35,14 +35,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPageBuildBuildError Error { get; set; }
+        public required global::G.WebhookPageBuildBuildError Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPageBuildBuildPusher? Pusher { get; set; }
+        public required global::G.WebhookPageBuildBuildPusher? Pusher { get; set; }
 
         /// <summary>
         /// 

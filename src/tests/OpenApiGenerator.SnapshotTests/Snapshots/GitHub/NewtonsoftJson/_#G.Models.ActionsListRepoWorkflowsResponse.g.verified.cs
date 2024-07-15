@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflows", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Workflow> Workflows { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Workflow> Workflows { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

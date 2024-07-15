@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase Base { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequestsBase Base { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead Head { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead Head { get; set; }
 
         /// <summary>
         /// 

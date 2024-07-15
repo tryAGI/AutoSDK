@@ -10,25 +10,25 @@ namespace G
     public sealed partial class ActionsReviewPendingDeploymentsForRunRequest
     {
         /// <summary>
-        /// The list of environment ids to approve or reject
-        /// <br/>Example: [161171787, 161171795]
+        /// The list of environment ids to approve or reject<br/>
+        /// Example: [161171787, 161171795]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<int> EnvironmentIds { get; set; }
 
         /// <summary>
-        /// Whether to approve or reject deployment to the specified environments.
-        /// <br/>Example: approved
+        /// Whether to approve or reject deployment to the specified environments.<br/>
+        /// Example: approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ActionsReviewPendingDeploymentsForRunRequestState State { get; set; }
+        public required global::G.ActionsReviewPendingDeploymentsForRunRequestState State { get; set; }
 
         /// <summary>
-        /// A comment to accompany the deployment review
-        /// <br/>Example: Ship it!
+        /// A comment to accompany the deployment review<br/>
+        /// Example: Ship it!
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonRequired]

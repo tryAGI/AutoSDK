@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPackagePublishedPackagePackageVersionAuthorType? Type { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionAuthorType? Type { get; set; }
 
         /// <summary>
         /// 

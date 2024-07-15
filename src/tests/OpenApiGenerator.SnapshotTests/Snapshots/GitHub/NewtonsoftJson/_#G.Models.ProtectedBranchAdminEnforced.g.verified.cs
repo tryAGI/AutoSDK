@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ProtectedBranchAdminEnforced
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/enforce_admins
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/enforce_admins
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Enabled { get; set; } = default!;

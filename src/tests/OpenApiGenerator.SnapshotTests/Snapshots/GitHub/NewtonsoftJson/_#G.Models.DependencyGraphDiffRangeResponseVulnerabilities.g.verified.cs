@@ -10,25 +10,25 @@ namespace G
     public sealed partial class DependencyGraphDiffRangeResponseVulnerabilities
     {
         /// <summary>
-        /// <br/>Example: critical
+        /// Example: critical
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
         public string Severity { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: GHSA-rf4j-j272-fj86
+        /// Example: GHSA-rf4j-j272-fj86
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advisory_ghsa_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisoryGhsaId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: A summary of the advisory.
+        /// Example: A summary of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advisory_summary", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisorySummary { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/advisories/GHSA-rf4j-j272-fj86
+        /// Example: https://github.com/advisories/GHSA-rf4j-j272-fj86
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advisory_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisoryUrl { get; set; } = default!;

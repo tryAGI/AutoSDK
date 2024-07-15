@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType ToEnum(string value)
+        public static WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "User" => WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType.User,
                 "Organization" => WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType.Organization,
                 "Mannequin" => WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType.Mannequin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

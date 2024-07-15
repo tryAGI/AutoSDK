@@ -14,15 +14,15 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_discussion")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required Discussion NewDiscussion { get; set; }
+        public required global::G.Discussion NewDiscussion { get; set; }
 
         /// <summary>
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryWebhooks NewRepository { get; set; }
+        public required global::G.RepositoryWebhooks NewRepository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

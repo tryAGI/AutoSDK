@@ -10,8 +10,8 @@ namespace G
     public sealed partial class RepoCodespacesSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: SECRET_TOKEN
+        /// The name of the secret.<br/>
+        /// Example: SECRET_TOKEN
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

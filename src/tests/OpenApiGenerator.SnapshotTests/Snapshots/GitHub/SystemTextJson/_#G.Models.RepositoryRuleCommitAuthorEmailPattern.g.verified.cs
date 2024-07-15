@@ -15,13 +15,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCommitAuthorEmailPatternTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryRuleCommitAuthorEmailPatternType Type { get; set; }
+        public required global::G.RepositoryRuleCommitAuthorEmailPatternType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public RepositoryRuleCommitAuthorEmailPatternParameters? Parameters { get; set; }
+        public global::G.RepositoryRuleCommitAuthorEmailPatternParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

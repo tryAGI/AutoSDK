@@ -58,7 +58,7 @@ namespace G
         public string? RepositoryName { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pushed_at")]
         public global::System.DateTime PushedAt { get; set; }
@@ -67,19 +67,19 @@ namespace G
         /// The result of the rule evaluations for rules with the `active` enforcement status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
-        public RuleSuiteResult? Result { get; set; }
+        public global::G.RuleSuiteResult? Result { get; set; }
 
         /// <summary>
         /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_result")]
-        public RuleSuiteEvaluationResult? EvaluationResult { get; set; }
+        public global::G.RuleSuiteEvaluationResult? EvaluationResult { get; set; }
 
         /// <summary>
         /// Details on the evaluated rules.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule_evaluations")]
-        public global::System.Collections.Generic.IList<RuleSuiteRuleEvaluations?>? RuleEvaluations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluations?>? RuleEvaluations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

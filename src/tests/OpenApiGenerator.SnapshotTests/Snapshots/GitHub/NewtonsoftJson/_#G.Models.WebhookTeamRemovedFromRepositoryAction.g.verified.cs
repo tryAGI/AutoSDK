@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookTeamRemovedFromRepositoryAction ToEnum(string value)
+        public static WebhookTeamRemovedFromRepositoryAction? ToEnum(string value)
         {
             return value switch
             {
                 "removed_from_repository" => WebhookTeamRemovedFromRepositoryAction.RemovedFromRepository,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

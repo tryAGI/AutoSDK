@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public DiscussionAnswerChosenByType? Type { get; set; }
+        public global::G.DiscussionAnswerChosenByType? Type { get; set; }
 
         /// <summary>
         /// 

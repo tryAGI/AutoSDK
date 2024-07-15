@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookProjectCardMovedAction ToEnum(string value)
+        public static WebhookProjectCardMovedAction? ToEnum(string value)
         {
             return value switch
             {
                 "moved" => WebhookProjectCardMovedAction.Moved,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

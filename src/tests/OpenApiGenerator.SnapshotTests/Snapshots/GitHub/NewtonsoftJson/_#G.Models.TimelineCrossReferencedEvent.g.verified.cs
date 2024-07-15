@@ -19,7 +19,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor")]
-        public SimpleUser? Actor { get; set; }
+        public global::G.SimpleUser? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public TimelineCrossReferencedEventSource Source { get; set; } = default!;
+        public global::G.TimelineCrossReferencedEventSource Source { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

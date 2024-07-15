@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The reason for the current state
-    /// <br/>Example: not_planned
+    /// The reason for the current state<br/>
+    /// Example: not_planned
     /// </summary>
     public enum NullableIssueStateReason
     {
@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static NullableIssueStateReason ToEnum(string value)
+        public static NullableIssueStateReason? ToEnum(string value)
         {
             return value switch
             {
                 "completed" => NullableIssueStateReason.Completed,
                 "reopened" => NullableIssueStateReason.Reopened,
                 "not_planned" => NullableIssueStateReason.NotPlanned,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,14 +10,14 @@ namespace G
     public sealed partial class UserMarketplacePurchase
     {
         /// <summary>
-        /// <br/>Example: monthly
+        /// Example: monthly
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing_cycle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BillingCycle { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_billing_date")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,21 +31,21 @@ namespace G
         public required int? UnitCount { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_free_trial")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool OnFreeTrial { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("free_trial_ends_on")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? FreeTrialEndsOn { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,14 +56,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MarketplaceAccount Account { get; set; }
+        public required global::G.MarketplaceAccount Account { get; set; }
 
         /// <summary>
         /// Marketplace Listing Plan
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MarketplaceListingPlan Plan { get; set; }
+        public required global::G.MarketplaceListingPlan Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

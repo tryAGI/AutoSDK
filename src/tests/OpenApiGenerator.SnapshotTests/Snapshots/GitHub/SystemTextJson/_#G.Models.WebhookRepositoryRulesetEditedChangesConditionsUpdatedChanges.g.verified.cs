@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("condition_type")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType? ConditionType { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType? ConditionType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget? Target { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget? Target { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude? Include { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude? Include { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude? Exclude { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude? Exclude { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

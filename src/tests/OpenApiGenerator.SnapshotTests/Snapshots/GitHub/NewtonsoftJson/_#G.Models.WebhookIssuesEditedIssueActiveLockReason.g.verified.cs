@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookIssuesEditedIssueActiveLockReason ToEnum(string value)
+        public static WebhookIssuesEditedIssueActiveLockReason? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "off-topic" => WebhookIssuesEditedIssueActiveLockReason.OffTopic,
                 "too heated" => WebhookIssuesEditedIssueActiveLockReason.TooHeated,
                 "spam" => WebhookIssuesEditedIssueActiveLockReason.Spam,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

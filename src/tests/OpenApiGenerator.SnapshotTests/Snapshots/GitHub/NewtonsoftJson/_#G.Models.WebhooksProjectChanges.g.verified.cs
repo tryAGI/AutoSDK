@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived_at")]
-        public WebhooksProjectChangesArchivedAt? ArchivedAt { get; set; }
+        public global::G.WebhooksProjectChangesArchivedAt? ArchivedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

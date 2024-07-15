@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public WebhookIssuesEditedChangesBody? Body { get; set; }
+        public global::G.WebhookIssuesEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        public WebhookIssuesEditedChangesTitle? Title { get; set; }
+        public global::G.WebhookIssuesEditedChangesTitle? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace G
         public bool VerifiedAllowed { get; set; }
 
         /// <summary>
-        /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.
+        /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.<br/>
         /// **Note**: The `patterns_allowed` setting only applies to public repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patterns_allowed")]

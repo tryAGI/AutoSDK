@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The target of the ruleset
+    /// The target of the ruleset<br/>
     /// **Note**: The `push` target is in beta and is subject to change.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposCreateRepoRulesetRequestTarget ToEnum(string value)
+        public static ReposCreateRepoRulesetRequestTarget? ToEnum(string value)
         {
             return value switch
             {
                 "branch" => ReposCreateRepoRulesetRequestTarget.Branch,
                 "tag" => ReposCreateRepoRulesetRequestTarget.Tag,
                 "push" => ReposCreateRepoRulesetRequestTarget.Push,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

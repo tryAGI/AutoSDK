@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPullRequestSynchronizePullRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -14,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestLinks Links { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestLinks Links { get; set; }
 
         /// <summary>
         /// 
@@ -22,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestActiveLockReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestActiveLockReason? ActiveLockReason { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -35,14 +37,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestAssignee? Assignee { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestAssignee? Assignee { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookPullRequestSynchronizePullRequestAssignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestAssignees?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -50,21 +52,21 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The status of auto merging a pull request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_merge")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestAutoMerge? AutoMerge { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestAutoMerge? AutoMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestBase Base { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestBase Base { get; set; }
 
         /// <summary>
         /// 
@@ -144,7 +146,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestHead Head { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestHead Head { get; set; }
 
         /// <summary>
         /// 
@@ -172,7 +174,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookPullRequestSynchronizePullRequestLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestLabels> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -223,14 +225,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merged_by")]
-        public WebhookPullRequestSynchronizePullRequestMergedBy? MergedBy { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestMergedBy? MergedBy { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestMilestone? Milestone { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -264,14 +266,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<WebhookPullRequestSynchronizePullRequestRequestedReviewers?, WebhookPullRequestSynchronizePullRequestRequestedReviewers>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewers?, global::G.WebhookPullRequestSynchronizePullRequestRequestedReviewers>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookPullRequestSynchronizePullRequestRequestedTeams> RequestedTeams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestRequestedTeams> RequestedTeams { get; set; }
 
         /// <summary>
         /// 
@@ -299,7 +301,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestState State { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestState State { get; set; }
 
         /// <summary>
         /// 
@@ -334,7 +336,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestUser? User { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

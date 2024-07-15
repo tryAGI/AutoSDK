@@ -19,13 +19,14 @@ namespace G
         /// **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contexts")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<string?>? Contexts { get; set; }
 
         /// <summary>
         /// The list of status checks to require in order to merge into this branch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks")]
-        public global::System.Collections.Generic.IList<ReposUpdateStatusCheckProtectionRequestChecks?>? Checks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestChecks?>? Checks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

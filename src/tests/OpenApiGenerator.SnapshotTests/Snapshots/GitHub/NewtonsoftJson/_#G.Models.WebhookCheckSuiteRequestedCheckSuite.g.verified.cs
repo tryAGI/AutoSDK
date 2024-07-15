@@ -19,7 +19,7 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRequestedCheckSuiteApp App { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRequestedCheckSuiteApp App { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRequestedCheckSuiteConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRequestedCheckSuiteConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRequestedCheckSuiteHeadCommit HeadCommit { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRequestedCheckSuiteHeadCommit HeadCommit { get; set; } = default!;
 
         /// <summary>
         /// The SHA of the head commit that is being checked.
@@ -85,7 +85,7 @@ namespace G
         /// An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookCheckSuiteRequestedCheckSuitePullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequests> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRequestedCheckSuiteStatus? Status { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRequestedCheckSuiteStatus? Status { get; set; } = default!;
 
         /// <summary>
         /// 

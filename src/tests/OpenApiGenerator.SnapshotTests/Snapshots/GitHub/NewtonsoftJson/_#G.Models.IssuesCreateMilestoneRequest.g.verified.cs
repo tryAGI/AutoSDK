@@ -16,11 +16,11 @@ namespace G
         public string Title { get; set; } = default!;
 
         /// <summary>
-        /// The state of the milestone. Either `open` or `closed`.
-        /// <br/>Default Value: open
+        /// The state of the milestone. Either `open` or `closed`.<br/>
+        /// Default Value: open
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public IssuesCreateMilestoneRequestState? State { get; set; } = IssuesCreateMilestoneRequestState.Open;
+        public global::G.IssuesCreateMilestoneRequestState? State { get; set; } = global::G.IssuesCreateMilestoneRequestState.Open;
 
         /// <summary>
         /// A description of the milestone.

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created
+    /// Default Value: created
     /// </summary>
     public enum SecurityAdvisoriesListRepositoryAdvisoriesSort
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecurityAdvisoriesListRepositoryAdvisoriesSort ToEnum(string value)
+        public static SecurityAdvisoriesListRepositoryAdvisoriesSort? ToEnum(string value)
         {
             return value switch
             {
                 "created" => SecurityAdvisoriesListRepositoryAdvisoriesSort.Created,
                 "updated" => SecurityAdvisoriesListRepositoryAdvisoriesSort.Updated,
                 "published" => SecurityAdvisoriesListRepositoryAdvisoriesSort.Published,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

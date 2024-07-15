@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookWorkflowRunCompletedAction ToEnum(string value)
+        public static WebhookWorkflowRunCompletedAction? ToEnum(string value)
         {
             return value switch
             {
                 "completed" => WebhookWorkflowRunCompletedAction.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

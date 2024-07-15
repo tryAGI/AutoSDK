@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. 
+    /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. <br/>
     /// **Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsUpdateRequestMembersAllowedRepositoryCreationType ToEnum(string value)
+        public static OrgsUpdateRequestMembersAllowedRepositoryCreationType? ToEnum(string value)
         {
             return value switch
             {
                 "all" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.All,
                 "private" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private,
                 "none" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.None,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

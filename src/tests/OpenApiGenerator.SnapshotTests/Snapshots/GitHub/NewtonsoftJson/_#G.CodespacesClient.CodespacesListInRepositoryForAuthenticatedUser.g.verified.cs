@@ -6,36 +6,108 @@ namespace G
 {
     public partial class CodespacesClient
     {
+        partial void PrepareCodespacesListInRepositoryForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int perPage,
+            ref int page,
+            ref string owner,
+            ref string repo);
+        partial void PrepareCodespacesListInRepositoryForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int perPage,
+            int page,
+            string owner,
+            string repo);
+        partial void ProcessCodespacesListInRepositoryForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCodespacesListInRepositoryForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// List codespaces in a repository for the authenticated user
+        /// List codespaces in a repository for the authenticated user<br/>
+        /// Lists the codespaces associated to a specified repository and the authenticated user.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CodespacesListInRepositoryForAuthenticatedUserResponse> CodespacesListInRepositoryForAuthenticatedUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CodespacesListInRepositoryForAuthenticatedUserResponse> CodespacesListInRepositoryForAuthenticatedUserAsync(
             int perPage,
             int page,
             string owner,
             string repo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCodespacesListInRepositoryForAuthenticatedUserArguments(
+                httpClient: _httpClient,
+                perPage: ref perPage,
+                page: ref page,
+                owner: ref owner,
+                repo: ref repo);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/codespaces?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/codespaces?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCodespacesListInRepositoryForAuthenticatedUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                perPage: perPage,
+                page: page,
+                owner: owner,
+                repo: repo);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCodespacesListInRepositoryForAuthenticatedUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCodespacesListInRepositoryForAuthenticatedUserResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CodespacesListInRepositoryForAuthenticatedUserResponse?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CodespacesListInRepositoryForAuthenticatedUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

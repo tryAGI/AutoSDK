@@ -35,14 +35,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullRequestMinimalHead Head { get; set; }
+        public required global::G.PullRequestMinimalHead Head { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullRequestMinimalBase Base { get; set; }
+        public required global::G.PullRequestMinimalBase Base { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

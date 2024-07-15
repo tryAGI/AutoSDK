@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ProtectedBranchPullRequestReview
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
@@ -19,36 +19,36 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissal_restrictions")]
-        public ProtectedBranchPullRequestReviewDismissalRestrictions? DismissalRestrictions { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewDismissalRestrictions? DismissalRestrictions { get; set; }
 
         /// <summary>
         /// Allow specific users, teams, or apps to bypass pull request requirements.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bypass_pull_request_allowances")]
-        public ProtectedBranchPullRequestReviewBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismiss_stale_reviews", Required = global::Newtonsoft.Json.Required.Always)]
         public bool DismissStaleReviews { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_code_owner_reviews", Required = global::Newtonsoft.Json.Required.Always)]
         public bool RequireCodeOwnerReviews { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
         public int RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
-        /// Whether the most recent push must be approved by someone other than the person who pushed it.
-        /// <br/>Default Value: false
-        /// <br/>Example: true
+        /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
         public bool RequireLastPushApproval { get; set; } = false;

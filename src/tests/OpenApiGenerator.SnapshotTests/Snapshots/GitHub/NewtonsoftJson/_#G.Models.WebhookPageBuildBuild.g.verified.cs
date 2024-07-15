@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPageBuildBuildError Error { get; set; } = default!;
+        public global::G.WebhookPageBuildBuildError Error { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pusher", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPageBuildBuildPusher? Pusher { get; set; } = default!;
+        public global::G.WebhookPageBuildBuildPusher? Pusher { get; set; } = default!;
 
         /// <summary>
         /// 

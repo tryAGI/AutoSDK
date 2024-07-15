@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StatusCheckPolicyChecks
     {
         /// <summary>
-        /// <br/>Example: continuous-integration/travis-ci
+        /// Example: continuous-integration/travis-ci
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context", Required = global::Newtonsoft.Json.Required.Always)]
         public string Context { get; set; } = default!;

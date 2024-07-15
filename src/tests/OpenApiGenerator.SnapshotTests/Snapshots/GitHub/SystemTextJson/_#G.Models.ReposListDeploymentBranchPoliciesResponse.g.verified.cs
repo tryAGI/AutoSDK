@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ReposListDeploymentBranchPoliciesResponse
     {
         /// <summary>
-        /// The number of deployment branch policies for the environment.
-        /// <br/>Example: 2
+        /// The number of deployment branch policies for the environment.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch_policies")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<DeploymentBranchPolicy> BranchPolicies { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DeploymentBranchPolicy> BranchPolicies { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

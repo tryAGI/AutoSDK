@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookReleasePrereleasedReleaseAssetsUploaderType ToEnum(string value)
+        public static WebhookReleasePrereleasedReleaseAssetsUploaderType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => WebhookReleasePrereleasedReleaseAssetsUploaderType.Bot,
                 "User" => WebhookReleasePrereleasedReleaseAssetsUploaderType.User,
                 "Organization" => WebhookReleasePrereleasedReleaseAssetsUploaderType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

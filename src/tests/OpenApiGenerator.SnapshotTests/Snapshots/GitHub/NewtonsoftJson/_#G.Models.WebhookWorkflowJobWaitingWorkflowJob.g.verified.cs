@@ -133,13 +133,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobWaitingWorkflowJobStatus Status { get; set; } = default!;
+        public global::G.WebhookWorkflowJobWaitingWorkflowJobStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookWorkflowJobWaitingWorkflowJobSteps> Steps { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobWaitingWorkflowJobSteps> Steps { get; set; } = default!;
 
         /// <summary>
         /// 

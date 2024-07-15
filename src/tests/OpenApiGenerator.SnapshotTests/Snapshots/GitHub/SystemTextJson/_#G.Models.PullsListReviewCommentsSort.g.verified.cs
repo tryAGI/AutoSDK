@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created
+    /// Default Value: created
     /// </summary>
     public enum PullsListReviewCommentsSort
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsListReviewCommentsSort ToEnum(string value)
+        public static PullsListReviewCommentsSort? ToEnum(string value)
         {
             return value switch
             {
                 "created" => PullsListReviewCommentsSort.Created,
                 "updated" => PullsListReviewCommentsSort.Updated,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

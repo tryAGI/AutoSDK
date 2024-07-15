@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPullRequestAutoMergeEnabledPullRequestAssigneesType? Type { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestAssigneesType? Type { get; set; }
 
         /// <summary>
         /// 

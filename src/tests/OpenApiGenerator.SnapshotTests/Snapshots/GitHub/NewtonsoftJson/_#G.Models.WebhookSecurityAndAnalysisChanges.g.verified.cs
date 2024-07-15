@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from")]
-        public WebhookSecurityAndAnalysisChangesFrom? From { get; set; }
+        public global::G.WebhookSecurityAndAnalysisChangesFrom? From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

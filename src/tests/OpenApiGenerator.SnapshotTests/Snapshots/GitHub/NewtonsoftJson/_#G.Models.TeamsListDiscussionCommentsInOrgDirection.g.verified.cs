@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamsListDiscussionCommentsInOrgDirection
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsListDiscussionCommentsInOrgDirection ToEnum(string value)
+        public static TeamsListDiscussionCommentsInOrgDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => TeamsListDiscussionCommentsInOrgDirection.Asc,
                 "desc" => TeamsListDiscussionCommentsInOrgDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

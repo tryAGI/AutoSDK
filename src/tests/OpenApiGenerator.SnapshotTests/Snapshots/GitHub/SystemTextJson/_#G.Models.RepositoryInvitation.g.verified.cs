@@ -10,8 +10,8 @@ namespace G
     public sealed partial class RepositoryInvitation
     {
         /// <summary>
-        /// Unique identifier of the repository invitation.
-        /// <br/>Example: 42
+        /// Unique identifier of the repository invitation.<br/>
+        /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,33 +22,33 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitee")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Invitee { get; set; }
+        public required global::G.NullableSimpleUser? Invitee { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Inviter { get; set; }
+        public required global::G.NullableSimpleUser? Inviter { get; set; }
 
         /// <summary>
-        /// The permission associated with the invitation.
-        /// <br/>Example: read
+        /// The permission associated with the invitation.<br/>
+        /// Example: read
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryInvitationPermissionsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryInvitationPermissions Permissions { get; set; }
+        public required global::G.RepositoryInvitationPermissions Permissions { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,15 +61,15 @@ namespace G
         public bool Expired { get; set; }
 
         /// <summary>
-        /// URL for the repository invitation
-        /// <br/>Example: https://api.github.com/user/repository-invitations/1
+        /// URL for the repository invitation<br/>
+        /// Example: https://api.github.com/user/repository-invitations/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/invitations
+        /// Example: https://github.com/octocat/Hello-World/invitations
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -73,7 +73,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Creator { get; set; } = default!;
+        public global::G.SimpleUser Creator { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public TeamProjectPermissions Permissions { get; set; } = default!;
+        public global::G.TeamProjectPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

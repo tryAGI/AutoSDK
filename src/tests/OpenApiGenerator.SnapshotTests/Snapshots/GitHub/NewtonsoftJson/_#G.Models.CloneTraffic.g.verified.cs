@@ -10,13 +10,13 @@ namespace G
     public sealed partial class CloneTraffic
     {
         /// <summary>
-        /// <br/>Example: 173
+        /// Example: 173
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 128
+        /// Example: 128
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("clones", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Traffic> Clones { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Traffic> Clones { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

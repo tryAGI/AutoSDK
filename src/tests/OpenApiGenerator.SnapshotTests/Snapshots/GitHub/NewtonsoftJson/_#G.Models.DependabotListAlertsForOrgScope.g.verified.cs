@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependabotListAlertsForOrgScope ToEnum(string value)
+        public static DependabotListAlertsForOrgScope? ToEnum(string value)
         {
             return value switch
             {
                 "development" => DependabotListAlertsForOrgScope.Development,
                 "runtime" => DependabotListAlertsForOrgScope.Runtime,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

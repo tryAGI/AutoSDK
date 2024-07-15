@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AppPermissionsOrganizationEvents ToEnum(string value)
+        public static AppPermissionsOrganizationEvents? ToEnum(string value)
         {
             return value switch
             {
                 "read" => AppPermissionsOrganizationEvents.Read,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

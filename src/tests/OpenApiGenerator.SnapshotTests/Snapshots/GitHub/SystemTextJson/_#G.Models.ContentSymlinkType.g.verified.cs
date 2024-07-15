@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ContentSymlinkType ToEnum(string value)
+        public static ContentSymlinkType? ToEnum(string value)
         {
             return value switch
             {
                 "symlink" => ContentSymlinkType.Symlink,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

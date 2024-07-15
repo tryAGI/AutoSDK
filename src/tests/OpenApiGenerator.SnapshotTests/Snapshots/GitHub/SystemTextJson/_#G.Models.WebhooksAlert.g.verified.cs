@@ -46,7 +46,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismisser")]
-        public WebhooksAlertDismisser? Dismisser { get; set; }
+        public global::G.WebhooksAlertDismisser? Dismisser { get; set; }
 
         /// <summary>
         /// 
@@ -121,7 +121,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksAlertState State { get; set; }
+        public required global::G.WebhooksAlertState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AppPermissionsRepositoryCustomProperties ToEnum(string value)
+        public static AppPermissionsRepositoryCustomProperties? ToEnum(string value)
         {
             return value switch
             {
                 "read" => AppPermissionsRepositoryCustomProperties.Read,
                 "write" => AppPermissionsRepositoryCustomProperties.Write,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

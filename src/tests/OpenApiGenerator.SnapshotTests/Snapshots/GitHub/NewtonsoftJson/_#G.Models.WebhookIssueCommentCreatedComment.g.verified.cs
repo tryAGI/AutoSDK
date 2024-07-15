@@ -13,7 +13,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssueCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhookIssueCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// Contents of the issue comment
@@ -55,13 +55,13 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableIntegration? PerformedViaGithubApp { get; set; } = default!;
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssueCommentCreatedCommentReactions Reactions { get; set; } = default!;
+        public global::G.WebhookIssueCommentCreatedCommentReactions Reactions { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssueCommentCreatedCommentUser? User { get; set; } = default!;
+        public global::G.WebhookIssueCommentCreatedCommentUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

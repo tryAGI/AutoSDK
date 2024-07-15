@@ -10,77 +10,77 @@ namespace G
     public sealed partial class ReviewComment
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: 42
+        /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? PullRequestReviewId { get; set; }
 
         /// <summary>
-        /// <br/>Example: 10
+        /// Example: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
+        /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// <br/>Example: @@ -16,33 +16,40 @@ public class Connection : IConnection...
+        /// Example: @@ -16,33 +16,40 @@ public class Connection : IConnection...
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff_hunk")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiffHunk { get; set; }
 
         /// <summary>
-        /// <br/>Example: file1.txt
+        /// Example: file1.txt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? Position { get; set; }
 
         /// <summary>
-        /// <br/>Example: 4
+        /// Example: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_position")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OriginalPosition { get; set; }
 
         /// <summary>
-        /// <br/>Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitId { get; set; }
 
         /// <summary>
-        /// <br/>Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
+        /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OriginalCommitId { get; set; }
 
         /// <summary>
-        /// <br/>Example: 8
+        /// Example: 8
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reply_to_id")]
         public int InReplyToId { get; set; }
@@ -90,58 +90,58 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
-        /// <br/>Example: Great stuff
+        /// Example: Great stuff
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
+        /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PullRequestUrl { get; set; }
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReviewCommentAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReviewCommentLinks Links { get; set; }
+        public required global::G.ReviewCommentLinks Links { get; set; }
 
         /// <summary>
         /// 
@@ -159,48 +159,48 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
-        /// The side of the first line of the range for a multi-line comment.
-        /// <br/>Default Value: RIGHT
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentSideJsonConverter))]
-        public ReviewCommentSide? Side { get; set; } = ReviewCommentSide.RIGHT;
+        public global::G.ReviewCommentSide? Side { get; set; } = global::G.ReviewCommentSide.RIGHT;
 
         /// <summary>
-        /// The side of the first line of the range for a multi-line comment.
-        /// <br/>Default Value: RIGHT
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentStartSideJsonConverter))]
-        public ReviewCommentStartSide? StartSide { get; set; } = ReviewCommentStartSide.RIGHT;
+        public global::G.ReviewCommentStartSide? StartSide { get; set; } = global::G.ReviewCommentStartSide.RIGHT;
 
         /// <summary>
-        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-        /// <br/>Example: 2
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
         public int Line { get; set; }
 
         /// <summary>
-        /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
-        /// <br/>Example: 2
+        /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_line")]
         public int OriginalLine { get; set; }
 
         /// <summary>
-        /// The first line of the range for a multi-line comment.
-        /// <br/>Example: 2
+        /// The first line of the range for a multi-line comment.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         public int? StartLine { get; set; }
 
         /// <summary>
-        /// The original first line of the range for a multi-line comment.
-        /// <br/>Example: 2
+        /// The original first line of the range for a multi-line comment.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_start_line")]
         public int? OriginalStartLine { get; set; }

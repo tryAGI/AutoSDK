@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MigrationsSetLfsPreferenceRequestUseLfs ToEnum(string value)
+        public static MigrationsSetLfsPreferenceRequestUseLfs? ToEnum(string value)
         {
             return value switch
             {
                 "opt_in" => MigrationsSetLfsPreferenceRequestUseLfs.OptIn,
                 "opt_out" => MigrationsSetLfsPreferenceRequestUseLfs.OptOut,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

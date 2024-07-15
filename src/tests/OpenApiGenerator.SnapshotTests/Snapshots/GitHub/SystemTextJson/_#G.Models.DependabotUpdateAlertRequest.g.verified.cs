@@ -10,20 +10,20 @@ namespace G
     public sealed partial class DependabotUpdateAlertRequest
     {
         /// <summary>
-        /// The state of the Dependabot alert.
+        /// The state of the Dependabot alert.<br/>
         /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotUpdateAlertRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotUpdateAlertRequestState State { get; set; }
+        public required global::G.DependabotUpdateAlertRequestState State { get; set; }
 
         /// <summary>
         /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotUpdateAlertRequestDismissedReasonJsonConverter))]
-        public DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
+        public global::G.DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// An optional comment associated with dismissing the alert.

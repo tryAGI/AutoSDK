@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ProjectsAddCollaboratorRequest
     {
         /// <summary>
-        /// The permission to grant the collaborator.
-        /// <br/>Default Value: write
-        /// <br/>Example: write
+        /// The permission to grant the collaborator.<br/>
+        /// Default Value: write<br/>
+        /// Example: write
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectsAddCollaboratorRequestPermissionJsonConverter))]
-        public ProjectsAddCollaboratorRequestPermission? Permission { get; set; } = ProjectsAddCollaboratorRequestPermission.Write;
+        public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; } = global::G.ProjectsAddCollaboratorRequestPermission.Write;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public RepositoryWebhooksTemplateRepositoryOwner? Owner { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositoryOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -445,7 +445,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public RepositoryWebhooksTemplateRepositoryPermissions? Permissions { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -490,42 +490,42 @@ namespace G
         public bool UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit title:
-        /// - `PR_TITLE` - default to the pull request's title.
+        /// The default value for a squash merge commit title:<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksTemplateRepositorySquashMergeCommitTitleJsonConverter))]
-        public RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit message:
-        /// - `PR_BODY` - default to the pull request's body.
-        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
+        /// The default value for a squash merge commit message:<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
+        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.<br/>
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksTemplateRepositorySquashMergeCommitMessageJsonConverter))]
-        public RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit title.
-        /// - `PR_TITLE` - default to the pull request's title.
+        /// The default value for a merge commit title.<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksTemplateRepositoryMergeCommitTitleJsonConverter))]
-        public RepositoryWebhooksTemplateRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit message.
-        /// - `PR_TITLE` - default to the pull request's title.
-        /// - `PR_BODY` - default to the pull request's body.
+        /// The default value for a merge commit message.<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksTemplateRepositoryMergeCommitMessageJsonConverter))]
-        public RepositoryWebhooksTemplateRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.RepositoryWebhooksTemplateRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// 

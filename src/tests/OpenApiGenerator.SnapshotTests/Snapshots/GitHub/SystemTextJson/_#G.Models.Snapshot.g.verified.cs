@@ -21,19 +21,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SnapshotJob Job { get; set; }
+        public required global::G.SnapshotJob Job { get; set; }
 
         /// <summary>
-        /// The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
-        /// <br/>Example: ddc951f4b1293222421f2c8df679786153acf689
+        /// The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.<br/>
+        /// Example: ddc951f4b1293222421f2c8df679786153acf689
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }
 
         /// <summary>
-        /// The repository branch that triggered this snapshot.
-        /// <br/>Example: refs/heads/main
+        /// The repository branch that triggered this snapshot.<br/>
+        /// Example: refs/heads/main
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,13 +44,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detector")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SnapshotDetector Detector { get; set; }
+        public required global::G.SnapshotDetector Detector { get; set; }
 
         /// <summary>
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public Metadata? Metadata { get; set; }
+        public global::G.Metadata? Metadata { get; set; }
 
         /// <summary>
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
@@ -60,7 +60,6 @@ namespace G
 
         /// <summary>
         /// The time at which the snapshot was scanned.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scanned")]
         [global::System.Text.Json.Serialization.JsonRequired]

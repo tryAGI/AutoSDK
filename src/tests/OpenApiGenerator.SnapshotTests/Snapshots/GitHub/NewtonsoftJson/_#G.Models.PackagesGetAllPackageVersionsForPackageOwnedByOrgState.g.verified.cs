@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: active
+    /// Default Value: active
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PackagesGetAllPackageVersionsForPackageOwnedByOrgState
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PackagesGetAllPackageVersionsForPackageOwnedByOrgState ToEnum(string value)
+        public static PackagesGetAllPackageVersionsForPackageOwnedByOrgState? ToEnum(string value)
         {
             return value switch
             {
                 "active" => PackagesGetAllPackageVersionsForPackageOwnedByOrgState.Active,
                 "deleted" => PackagesGetAllPackageVersionsForPackageOwnedByOrgState.Deleted,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

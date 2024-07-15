@@ -20,26 +20,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GitCreateTreeRequestTreeModeJsonConverter))]
-        public GitCreateTreeRequestTreeMode? Mode { get; set; }
+        public global::G.GitCreateTreeRequestTreeMode? Mode { get; set; }
 
         /// <summary>
         /// Either `blob`, `tree`, or `commit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GitCreateTreeRequestTreeTypeJsonConverter))]
-        public GitCreateTreeRequestTreeType? Type { get; set; }
+        public global::G.GitCreateTreeRequestTreeType? Type { get; set; }
 
         /// <summary>
-        /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.  
-        ///   
+        /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.  <br/>
+        ///   <br/>
         /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         public string? Sha { get; set; }
 
         /// <summary>
-        /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.  
-        ///   
+        /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.  <br/>
+        ///   <br/>
         /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]

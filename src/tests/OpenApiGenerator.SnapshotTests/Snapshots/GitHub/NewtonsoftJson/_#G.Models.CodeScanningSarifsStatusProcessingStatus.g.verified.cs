@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningSarifsStatusProcessingStatus ToEnum(string value)
+        public static CodeScanningSarifsStatusProcessingStatus? ToEnum(string value)
         {
             return value switch
             {
                 "pending" => CodeScanningSarifsStatusProcessingStatus.Pending,
                 "complete" => CodeScanningSarifsStatusProcessingStatus.Complete,
                 "failed" => CodeScanningSarifsStatusProcessingStatus.Failed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

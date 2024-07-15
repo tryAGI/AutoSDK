@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UsersGetContextForUserSubjectType ToEnum(string value)
+        public static UsersGetContextForUserSubjectType? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "repository" => UsersGetContextForUserSubjectType.Repository,
                 "issue" => UsersGetContextForUserSubjectType.Issue,
                 "pull_request" => UsersGetContextForUserSubjectType.PullRequest,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

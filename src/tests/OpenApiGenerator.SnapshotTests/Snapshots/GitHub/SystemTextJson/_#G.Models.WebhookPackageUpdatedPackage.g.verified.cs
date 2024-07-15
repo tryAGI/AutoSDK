@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPackageUpdatedPackageOwner? Owner { get; set; }
+        public required global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -77,14 +77,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPackageUpdatedPackagePackageVersion PackageVersion { get; set; }
+        public required global::G.WebhookPackageUpdatedPackagePackageVersion PackageVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPackageUpdatedPackageRegistry? Registry { get; set; }
+        public required global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 

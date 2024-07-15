@@ -16,12 +16,12 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// The rendering mode.
-        /// <br/>Default Value: markdown
-        /// <br/>Example: markdown
+        /// The rendering mode.<br/>
+        /// Default Value: markdown<br/>
+        /// Example: markdown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
-        public MarkdownRenderRequestMode? Mode { get; set; } = MarkdownRenderRequestMode.Markdown;
+        public global::G.MarkdownRenderRequestMode? Mode { get; set; } = global::G.MarkdownRenderRequestMode.Markdown;
 
         /// <summary>
         /// The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.

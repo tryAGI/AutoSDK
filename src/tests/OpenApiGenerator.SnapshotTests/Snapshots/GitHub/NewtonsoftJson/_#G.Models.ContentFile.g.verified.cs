@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentFileType Type { get; set; } = default!;
+        public global::G.ContentFileType Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,16 +79,16 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentFileLinks Links { get; set; } = default!;
+        public global::G.ContentFileLinks Links { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "actual/actual.md"
+        /// Example: "actual/actual.md"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
         public string? Target { get; set; }
 
         /// <summary>
-        /// <br/>Example: "git://example.com/defunkt/dotjs.git"
+        /// Example: "git://example.com/defunkt/dotjs.git"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("submodule_git_url")]
         public string? SubmoduleGitUrl { get; set; }

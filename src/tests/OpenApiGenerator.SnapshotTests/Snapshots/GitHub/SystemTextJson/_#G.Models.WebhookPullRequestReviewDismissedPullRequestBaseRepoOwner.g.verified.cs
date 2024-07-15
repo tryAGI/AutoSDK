@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewDismissedPullRequestBaseRepoOwnerTypeJsonConverter))]
-        public WebhookPullRequestReviewDismissedPullRequestBaseRepoOwnerType? Type { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedPullRequestBaseRepoOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

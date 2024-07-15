@@ -38,8 +38,8 @@ namespace G
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// The file name of the asset.
-        /// <br/>Example: Team Environment
+        /// The file name of the asset.<br/>
+        /// Example: Team Environment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -58,7 +58,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReleaseAssetStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReleaseAssetState State { get; set; }
+        public required global::G.ReleaseAssetState State { get; set; }
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploader")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Uploader { get; set; }
+        public required global::G.NullableSimpleUser? Uploader { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

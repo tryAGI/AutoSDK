@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRulesetBypassActorActorType ToEnum(string value)
+        public static RepositoryRulesetBypassActorActorType? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "RepositoryRole" => RepositoryRulesetBypassActorActorType.RepositoryRole,
                 "Team" => RepositoryRulesetBypassActorActorType.Team,
                 "DeployKey" => RepositoryRulesetBypassActorActorType.DeployKey,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

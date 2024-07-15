@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: false
-    /// <br/>Example: true
+    /// Default Value: false<br/>
+    /// Example: true
     /// </summary>
     public enum GistsCreateRequestPublic
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GistsCreateRequestPublic ToEnum(string value)
+        public static GistsCreateRequestPublic? ToEnum(string value)
         {
             return value switch
             {
                 "true" => GistsCreateRequestPublic.True,
                 "false" => GistsCreateRequestPublic.False,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

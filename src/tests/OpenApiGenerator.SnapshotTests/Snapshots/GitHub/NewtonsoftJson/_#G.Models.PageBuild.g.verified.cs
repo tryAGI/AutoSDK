@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public PageBuildError Error { get; set; } = default!;
+        public global::G.PageBuildError Error { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pusher", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Pusher { get; set; } = default!;
+        public global::G.NullableSimpleUser? Pusher { get; set; } = default!;
 
         /// <summary>
         /// 

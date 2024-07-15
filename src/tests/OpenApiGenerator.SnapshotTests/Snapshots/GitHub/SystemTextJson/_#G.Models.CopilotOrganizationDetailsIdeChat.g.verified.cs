@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CopilotOrganizationDetailsIdeChat ToEnum(string value)
+        public static CopilotOrganizationDetailsIdeChat? ToEnum(string value)
         {
             return value switch
             {
                 "enabled" => CopilotOrganizationDetailsIdeChat.Enabled,
                 "disabled" => CopilotOrganizationDetailsIdeChat.Disabled,
                 "unconfigured" => CopilotOrganizationDetailsIdeChat.Unconfigured,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

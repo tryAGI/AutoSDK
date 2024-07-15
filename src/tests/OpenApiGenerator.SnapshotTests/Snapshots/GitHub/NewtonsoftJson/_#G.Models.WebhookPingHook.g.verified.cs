@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPingHookConfig Config { get; set; } = default!;
+        public global::G.WebhookPingHookConfig Config { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -55,13 +55,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_response")]
-        public HookResponse? LastResponse { get; set; }
+        public global::G.HookResponse? LastResponse { get; set; }
 
         /// <summary>
         /// The type of webhook. The only valid value is 'web'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPingHookName Name { get; set; } = default!;
+        public global::G.WebhookPingHookName Name { get; set; } = default!;
 
         /// <summary>
         /// 

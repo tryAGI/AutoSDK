@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_patched_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion? FirstPatchedVersion { get; set; }
+        public required global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion? FirstPatchedVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage Package { get; set; }
+        public required global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage Package { get; set; }
 
         /// <summary>
         /// 

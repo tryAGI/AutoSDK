@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public CommitSearchResultItemCommitAuthor Author { get; set; } = default!;
+        public global::G.CommitSearchResultItemCommitAuthor Author { get; set; } = default!;
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableGitUser? Committer { get; set; } = default!;
+        public global::G.NullableGitUser? Committer { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree", Required = global::Newtonsoft.Json.Required.Always)]
-        public CommitSearchResultItemCommitTree Tree { get; set; } = default!;
+        public global::G.CommitSearchResultItemCommitTree Tree { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verification")]
-        public Verification? Verification { get; set; }
+        public global::G.Verification? Verification { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

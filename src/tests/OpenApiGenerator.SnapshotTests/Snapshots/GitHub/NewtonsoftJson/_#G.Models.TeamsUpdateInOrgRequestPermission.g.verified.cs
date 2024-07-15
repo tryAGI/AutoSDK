@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
-    /// <br/>Default Value: pull
+    /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.<br/>
+    /// Default Value: pull
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamsUpdateInOrgRequestPermission
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsUpdateInOrgRequestPermission ToEnum(string value)
+        public static TeamsUpdateInOrgRequestPermission? ToEnum(string value)
         {
             return value switch
             {
                 "pull" => TeamsUpdateInOrgRequestPermission.Pull,
                 "push" => TeamsUpdateInOrgRequestPermission.Push,
                 "admin" => TeamsUpdateInOrgRequestPermission.Admin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

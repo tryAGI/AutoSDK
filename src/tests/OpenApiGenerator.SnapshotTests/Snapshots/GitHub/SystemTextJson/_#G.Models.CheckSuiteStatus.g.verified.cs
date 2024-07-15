@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
-    /// <br/>Example: completed
+    /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.<br/>
+    /// Example: completed
     /// </summary>
     public enum CheckSuiteStatus
     {
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CheckSuiteStatus ToEnum(string value)
+        public static CheckSuiteStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -70,7 +70,7 @@ namespace G
                 "waiting" => CheckSuiteStatus.Waiting,
                 "requested" => CheckSuiteStatus.Requested,
                 "pending" => CheckSuiteStatus.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

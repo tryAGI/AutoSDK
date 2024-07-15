@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationCommit
     {
         /// <summary>
-        /// The file path in the repository
-        /// <br/>Example: /example/secrets.txt
+        /// The file path in the repository<br/>
+        /// Example: /example/secrets.txt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
@@ -41,8 +41,8 @@ namespace G
         public double EndColumn { get; set; } = default!;
 
         /// <summary>
-        /// SHA-1 hash ID of the associated blob
-        /// <br/>Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
+        /// SHA-1 hash ID of the associated blob<br/>
+        /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blob_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string BlobSha { get; set; } = default!;
@@ -54,8 +54,8 @@ namespace G
         public string BlobUrl { get; set; } = default!;
 
         /// <summary>
-        /// SHA-1 hash ID of the associated commit
-        /// <br/>Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
+        /// SHA-1 hash ID of the associated commit<br/>
+        /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitSha { get; set; } = default!;

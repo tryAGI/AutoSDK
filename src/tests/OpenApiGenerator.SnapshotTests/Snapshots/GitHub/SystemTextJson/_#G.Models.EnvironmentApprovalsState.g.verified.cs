@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
-    /// <br/>Example: approved
+    /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
+    /// Example: approved
     /// </summary>
     public enum EnvironmentApprovalsState
     {
@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EnvironmentApprovalsState ToEnum(string value)
+        public static EnvironmentApprovalsState? ToEnum(string value)
         {
             return value switch
             {
                 "approved" => EnvironmentApprovalsState.Approved,
                 "rejected" => EnvironmentApprovalsState.Rejected,
                 "pending" => EnvironmentApprovalsState.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

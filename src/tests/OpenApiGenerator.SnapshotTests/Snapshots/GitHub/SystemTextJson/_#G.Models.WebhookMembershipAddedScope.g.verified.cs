@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookMembershipAddedScope ToEnum(string value)
+        public static WebhookMembershipAddedScope? ToEnum(string value)
         {
             return value switch
             {
                 "team" => WebhookMembershipAddedScope.Team,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

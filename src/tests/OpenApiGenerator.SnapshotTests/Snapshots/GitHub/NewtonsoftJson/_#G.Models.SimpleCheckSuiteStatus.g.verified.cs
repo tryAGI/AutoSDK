@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: completed
+    /// Example: completed
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SimpleCheckSuiteStatus
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SimpleCheckSuiteStatus ToEnum(string value)
+        public static SimpleCheckSuiteStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "completed" => SimpleCheckSuiteStatus.Completed,
                 "pending" => SimpleCheckSuiteStatus.Pending,
                 "waiting" => SimpleCheckSuiteStatus.Waiting,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

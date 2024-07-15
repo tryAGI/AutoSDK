@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookForkForkeeOwnerType? Type { get; set; }
+        public global::G.WebhookForkForkeeOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

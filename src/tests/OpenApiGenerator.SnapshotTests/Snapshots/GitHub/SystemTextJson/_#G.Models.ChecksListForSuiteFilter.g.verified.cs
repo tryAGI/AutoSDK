@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: latest
+    /// Default Value: latest
     /// </summary>
     public enum ChecksListForSuiteFilter
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChecksListForSuiteFilter ToEnum(string value)
+        public static ChecksListForSuiteFilter? ToEnum(string value)
         {
             return value switch
             {
                 "latest" => ChecksListForSuiteFilter.Latest,
                 "all" => ChecksListForSuiteFilter.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

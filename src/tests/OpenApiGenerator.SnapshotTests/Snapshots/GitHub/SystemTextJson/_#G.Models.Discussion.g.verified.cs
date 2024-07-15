@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer_chosen_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionAnswerChosenBy? AnswerChosenBy { get; set; }
+        public required global::G.DiscussionAnswerChosenBy? AnswerChosenBy { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.DiscussionAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionCategory Category { get; set; }
+        public required global::G.DiscussionCategory Category { get; set; }
 
         /// <summary>
         /// 
@@ -112,7 +112,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public DiscussionReactions? Reactions { get; set; }
+        public global::G.DiscussionReactions? Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -122,23 +122,23 @@ namespace G
         public required string RepositoryUrl { get; set; }
 
         /// <summary>
-        /// The current state of the discussion.
-        /// `converting` means that the discussion is being converted from an issue.
+        /// The current state of the discussion.<br/>
+        /// `converting` means that the discussion is being converted from an issue.<br/>
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionState State { get; set; }
+        public required global::G.DiscussionState State { get; set; }
 
         /// <summary>
-        /// The reason for the current state
-        /// <br/>Example: resolved
+        /// The reason for the current state<br/>
+        /// Example: resolved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionStateReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionStateReason? StateReason { get; set; }
+        public required global::G.DiscussionStateReason? StateReason { get; set; }
 
         /// <summary>
         /// 
@@ -165,7 +165,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DiscussionUser? User { get; set; }
+        public required global::G.DiscussionUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

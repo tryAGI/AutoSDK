@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FileCommitContent? Content { get; set; }
+        public required global::G.FileCommitContent? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FileCommitCommit Commit { get; set; }
+        public required global::G.FileCommitCommit Commit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

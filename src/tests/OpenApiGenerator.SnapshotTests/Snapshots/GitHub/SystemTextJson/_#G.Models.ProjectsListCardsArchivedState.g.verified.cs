@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: not_archived
+    /// Default Value: not_archived
     /// </summary>
     public enum ProjectsListCardsArchivedState
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ProjectsListCardsArchivedState ToEnum(string value)
+        public static ProjectsListCardsArchivedState? ToEnum(string value)
         {
             return value switch
             {
                 "all" => ProjectsListCardsArchivedState.All,
                 "archived" => ProjectsListCardsArchivedState.Archived,
                 "not_archived" => ProjectsListCardsArchivedState.NotArchived,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

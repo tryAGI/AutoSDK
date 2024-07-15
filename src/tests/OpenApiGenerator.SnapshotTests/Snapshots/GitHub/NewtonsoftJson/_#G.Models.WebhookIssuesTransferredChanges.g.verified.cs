@@ -13,13 +13,13 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesTransferredChangesNewIssue NewIssue { get; set; } = default!;
+        public global::G.WebhookIssuesTransferredChangesNewIssue NewIssue { get; set; } = default!;
 
         /// <summary>
         /// A git repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesTransferredChangesNewRepository NewRepository { get; set; } = default!;
+        public global::G.WebhookIssuesTransferredChangesNewRepository NewRepository { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

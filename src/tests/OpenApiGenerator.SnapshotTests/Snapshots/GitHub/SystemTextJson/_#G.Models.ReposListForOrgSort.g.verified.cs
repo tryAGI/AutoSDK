@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created
+    /// Default Value: created
     /// </summary>
     public enum ReposListForOrgSort
     {
@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForOrgSort ToEnum(string value)
+        public static ReposListForOrgSort? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "updated" => ReposListForOrgSort.Updated,
                 "pushed" => ReposListForOrgSort.Pushed,
                 "full_name" => ReposListForOrgSort.FullName,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

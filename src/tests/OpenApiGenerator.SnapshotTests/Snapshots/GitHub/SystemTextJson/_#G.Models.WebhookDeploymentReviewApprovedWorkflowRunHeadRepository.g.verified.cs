@@ -217,7 +217,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
 
         /// <summary>
         /// 

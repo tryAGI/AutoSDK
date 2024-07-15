@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningSarifsStatusProcessingStatusJsonConverter))]
-        public CodeScanningSarifsStatusProcessingStatus? ProcessingStatus { get; set; }
+        public global::G.CodeScanningSarifsStatusProcessingStatus? ProcessingStatus { get; set; }
 
         /// <summary>
         /// The REST API URL for getting the analyses associated with the upload.

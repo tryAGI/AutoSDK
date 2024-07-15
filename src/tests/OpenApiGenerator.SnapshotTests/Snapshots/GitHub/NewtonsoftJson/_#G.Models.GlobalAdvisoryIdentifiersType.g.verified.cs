@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GlobalAdvisoryIdentifiersType ToEnum(string value)
+        public static GlobalAdvisoryIdentifiersType? ToEnum(string value)
         {
             return value switch
             {
                 "CVE" => GlobalAdvisoryIdentifiersType.CVE,
                 "GHSA" => GlobalAdvisoryIdentifiersType.GHSA,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

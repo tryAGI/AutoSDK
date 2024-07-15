@@ -16,8 +16,8 @@ namespace G
         public string Content { get; set; } = default!;
 
         /// <summary>
-        /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-        /// <br/>Default Value: utf-8
+        /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.<br/>
+        /// Default Value: utf-8
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding")]
         public string? Encoding { get; set; } = "utf-8";

@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentLinksHtml Html { get; set; }
+        public required global::G.WebhooksReviewCommentLinksHtml Html { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentLinksPullRequest PullRequest { get; set; }
+        public required global::G.WebhooksReviewCommentLinksPullRequest PullRequest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentLinksSelf Self { get; set; }
+        public required global::G.WebhooksReviewCommentLinksSelf Self { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

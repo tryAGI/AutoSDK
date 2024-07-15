@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetRepoRuleSuitesResponseResult ToEnum(string value)
+        public static ReposGetRepoRuleSuitesResponseResult? ToEnum(string value)
         {
             return value switch
             {
                 "pass" => ReposGetRepoRuleSuitesResponseResult.Pass,
                 "fail" => ReposGetRepoRuleSuitesResponseResult.Fail,
                 "bypass" => ReposGetRepoRuleSuitesResponseResult.Bypass,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

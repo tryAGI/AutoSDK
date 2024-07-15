@@ -37,13 +37,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public FileCommitCommitAuthor? Author { get; set; }
+        public global::G.FileCommitCommitAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        public FileCommitCommitCommitter? Committer { get; set; }
+        public global::G.FileCommitCommitCommitter? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -55,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
-        public FileCommitCommitTree? Tree { get; set; }
+        public global::G.FileCommitCommitTree? Tree { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
-        public global::System.Collections.Generic.IList<FileCommitCommitParents?>? Parents { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FileCommitCommitParents?>? Parents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verification")]
-        public FileCommitCommitVerification? Verification { get; set; }
+        public global::G.FileCommitCommitVerification? Verification { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

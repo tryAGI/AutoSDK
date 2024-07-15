@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsMergeRequestMergeMethod ToEnum(string value)
+        public static PullsMergeRequestMergeMethod? ToEnum(string value)
         {
             return value switch
             {
                 "merge" => PullsMergeRequestMergeMethod.Merge,
                 "squash" => PullsMergeRequestMergeMethod.Squash,
                 "rebase" => PullsMergeRequestMergeMethod.Rebase,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

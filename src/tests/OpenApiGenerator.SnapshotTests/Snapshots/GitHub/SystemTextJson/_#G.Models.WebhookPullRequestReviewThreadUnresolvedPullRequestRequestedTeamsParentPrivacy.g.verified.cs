@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsParentPrivacy ToEnum(string value)
+        public static WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsParentPrivacy? ToEnum(string value)
         {
             return value switch
             {
                 "open" => WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsParentPrivacy.Open,
                 "closed" => WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsParentPrivacy.Closed,
                 "secret" => WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsParentPrivacy.Secret,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

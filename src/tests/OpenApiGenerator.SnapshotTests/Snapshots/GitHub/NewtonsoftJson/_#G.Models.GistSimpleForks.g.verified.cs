@@ -25,7 +25,7 @@ namespace G
         /// Public User
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
-        public PublicUser? User { get; set; }
+        public global::G.PublicUser? User { get; set; }
 
         /// <summary>
         /// 

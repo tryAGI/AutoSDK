@@ -10,8 +10,8 @@ namespace G
     public sealed partial class OrganizationDependabotSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: SECRET_TOKEN
+        /// The name of the secret.<br/>
+        /// Example: SECRET_TOKEN
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -32,10 +32,10 @@ namespace G
         /// Visibility of a secret
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrganizationDependabotSecretVisibility Visibility { get; set; } = default!;
+        public global::G.OrganizationDependabotSecretVisibility Visibility { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
+        /// Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }

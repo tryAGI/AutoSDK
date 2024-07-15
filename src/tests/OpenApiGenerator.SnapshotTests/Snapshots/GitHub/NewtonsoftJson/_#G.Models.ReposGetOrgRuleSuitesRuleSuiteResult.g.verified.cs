@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposGetOrgRuleSuitesRuleSuiteResult
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetOrgRuleSuitesRuleSuiteResult ToEnum(string value)
+        public static ReposGetOrgRuleSuitesRuleSuiteResult? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "fail" => ReposGetOrgRuleSuitesRuleSuiteResult.Fail,
                 "bypass" => ReposGetOrgRuleSuitesRuleSuiteResult.Bypass,
                 "all" => ReposGetOrgRuleSuitesRuleSuiteResult.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

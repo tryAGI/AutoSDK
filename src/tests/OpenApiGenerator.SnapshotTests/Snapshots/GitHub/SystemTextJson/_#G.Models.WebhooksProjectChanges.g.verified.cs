@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
-        public WebhooksProjectChangesArchivedAt? ArchivedAt { get; set; }
+        public global::G.WebhooksProjectChangesArchivedAt? ArchivedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

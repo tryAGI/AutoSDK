@@ -10,14 +10,14 @@ namespace G
     public sealed partial class ViewTraffic
     {
         /// <summary>
-        /// <br/>Example: 14850
+        /// Example: 14850
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
 
         /// <summary>
-        /// <br/>Example: 3782
+        /// Example: 3782
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("views")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Traffic> Views { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Traffic> Views { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

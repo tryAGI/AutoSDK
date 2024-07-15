@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -27,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
-        public global::System.OneOf<bool, string?, int, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue?> Value { get; set; }
+        public global::System.OneOf<bool, string?, int, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue?>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,7 +25,7 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? Severity { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? Severity { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
         /// 
@@ -70,26 +70,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableIntegration? PerformedViaGithubApp { get; set; }
+        public required global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_requester")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser ReviewRequester { get; set; }
+        public required global::G.SimpleUser ReviewRequester { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_team")]
-        public Team? RequestedTeam { get; set; }
+        public global::G.Team? RequestedTeam { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewer")]
-        public SimpleUser? RequestedReviewer { get; set; }
+        public global::G.SimpleUser? RequestedReviewer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CodespacesOrgSecret
     {
         /// <summary>
-        /// The name of the secret
-        /// <br/>Example: SECRET_NAME
+        /// The name of the secret<br/>
+        /// Example: SECRET_NAME
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -32,11 +32,11 @@ namespace G
         /// The type of repositories in the organization that the secret is visible to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
-        public CodespacesOrgSecretVisibility Visibility { get; set; } = default!;
+        public global::G.CodespacesOrgSecretVisibility Visibility { get; set; } = default!;
 
         /// <summary>
-        /// The API URL at which the list of repositories this secret is visible to can be retrieved
-        /// <br/>Example: https://api.github.com/orgs/ORGANIZATION/codespaces/secrets/SECRET_NAME/repositories
+        /// The API URL at which the list of repositories this secret is visible to can be retrieved<br/>
+        /// Example: https://api.github.com/orgs/ORGANIZATION/codespaces/secrets/SECRET_NAME/repositories
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }

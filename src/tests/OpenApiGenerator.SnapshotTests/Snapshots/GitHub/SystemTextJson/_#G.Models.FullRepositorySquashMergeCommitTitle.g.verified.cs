@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a squash merge commit title:
-    /// - `PR_TITLE` - default to the pull request's title.
-    /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-    /// <br/>Example: PR_TITLE
+    /// The default value for a squash merge commit title:<br/>
+    /// - `PR_TITLE` - default to the pull request's title.<br/>
+    /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).<br/>
+    /// Example: PR_TITLE
     /// </summary>
     public enum FullRepositorySquashMergeCommitTitle
     {
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FullRepositorySquashMergeCommitTitle ToEnum(string value)
+        public static FullRepositorySquashMergeCommitTitle? ToEnum(string value)
         {
             return value switch
             {
                 "PR_TITLE" => FullRepositorySquashMergeCommitTitle.PRTITLE,
                 "COMMIT_OR_PR_TITLE" => FullRepositorySquashMergeCommitTitle.COMMITORPRTITLE,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

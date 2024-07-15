@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_scanning_tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryRuleParamsCodeScanningTool> CodeScanningTools { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsCodeScanningTool> CodeScanningTools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

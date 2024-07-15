@@ -5,11 +5,11 @@
 namespace G
 {
     /// <summary>
-    /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:  
-    /// **For a non-nested team:**  
-    ///  * `secret` - only visible to organization owners and members of this team.  
-    ///  * `closed` - visible to all members of this organization.  
-    /// **For a parent or child team:**  
+    /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:  <br/>
+    /// **For a non-nested team:**  <br/>
+    ///  * `secret` - only visible to organization owners and members of this team.  <br/>
+    ///  * `closed` - visible to all members of this organization.  <br/>
+    /// **For a parent or child team:**  <br/>
     ///  * `closed` - visible to all members of this organization.
     /// </summary>
     public enum TeamsUpdateLegacyRequestPrivacy
@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsUpdateLegacyRequestPrivacy ToEnum(string value)
+        public static TeamsUpdateLegacyRequestPrivacy? ToEnum(string value)
         {
             return value switch
             {
                 "secret" => TeamsUpdateLegacyRequestPrivacy.Secret,
                 "closed" => TeamsUpdateLegacyRequestPrivacy.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

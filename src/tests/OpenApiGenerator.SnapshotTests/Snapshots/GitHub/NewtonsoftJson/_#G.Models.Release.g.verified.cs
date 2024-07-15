@@ -58,15 +58,15 @@ namespace G
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// The name of the tag.
-        /// <br/>Example: v1.0.0
+        /// The name of the tag.<br/>
+        /// Example: v1.0.0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string TagName { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the commitish value that determines where the Git tag is created from.
-        /// <br/>Example: master
+        /// Specifies the commitish value that determines where the Git tag is created from.<br/>
+        /// Example: master
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_commitish", Required = global::Newtonsoft.Json.Required.Always)]
         public string TargetCommitish { get; set; } = default!;
@@ -84,15 +84,15 @@ namespace G
         public string? Body { get; set; }
 
         /// <summary>
-        /// true to create a draft (unpublished) release, false to create a published one.
-        /// <br/>Example: false
+        /// true to create a draft (unpublished) release, false to create a published one.<br/>
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Draft { get; set; } = default!;
 
         /// <summary>
-        /// Whether to identify the release as a prerelease or a full release.
-        /// <br/>Example: false
+        /// Whether to identify the release as a prerelease or a full release.<br/>
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prerelease", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Prerelease { get; set; } = default!;
@@ -113,13 +113,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Author { get; set; } = default!;
+        public global::G.SimpleUser Author { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ReleaseAsset> Assets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ReleaseAsset> Assets { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -149,7 +149,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

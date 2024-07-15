@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required Commit Commit { get; set; }
+        public required global::G.Commit Commit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BranchWithProtectionLinks Links { get; set; }
+        public required global::G.BranchWithProtectionLinks Links { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protection")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BranchProtection Protection { get; set; }
+        public required global::G.BranchProtection Protection { get; set; }
 
         /// <summary>
         /// 
@@ -52,13 +52,13 @@ namespace G
         public required string ProtectionUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "mas*"
+        /// Example: "mas*"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
         public string? Pattern { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_approving_review_count")]
         public int RequiredApprovingReviewCount { get; set; }

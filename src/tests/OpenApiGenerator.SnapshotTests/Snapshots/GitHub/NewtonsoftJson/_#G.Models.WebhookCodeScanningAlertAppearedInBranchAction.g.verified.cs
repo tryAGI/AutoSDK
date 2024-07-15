@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookCodeScanningAlertAppearedInBranchAction ToEnum(string value)
+        public static WebhookCodeScanningAlertAppearedInBranchAction? ToEnum(string value)
         {
             return value switch
             {
                 "appeared_in_branch" => WebhookCodeScanningAlertAppearedInBranchAction.AppearedInBranch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

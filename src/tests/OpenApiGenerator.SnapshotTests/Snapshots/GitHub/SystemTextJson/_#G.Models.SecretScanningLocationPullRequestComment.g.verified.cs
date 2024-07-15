@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationPullRequestComment
     {
         /// <summary>
-        /// The API URL to get the pull request comment where the secret was detected.
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/issues/comments/1081119451
+        /// The API URL to get the pull request comment where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/issues/comments/1081119451
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_comment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -14,27 +14,27 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<EnvironmentApprovalsEnvironments> Environments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironments> Environments { get; set; }
 
         /// <summary>
-        /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
-        /// <br/>Example: approved
+        /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
+        /// Example: approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EnvironmentApprovalsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EnvironmentApprovalsState State { get; set; }
+        public required global::G.EnvironmentApprovalsState State { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser User { get; set; }
+        public required global::G.SimpleUser User { get; set; }
 
         /// <summary>
-        /// The comment submitted with the deployment review
-        /// <br/>Example: Ship it!
+        /// The comment submitted with the deployment review<br/>
+        /// Example: Ship it!
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonRequired]

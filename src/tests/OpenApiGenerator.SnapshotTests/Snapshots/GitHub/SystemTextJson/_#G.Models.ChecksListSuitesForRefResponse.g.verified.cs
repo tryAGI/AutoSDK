@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_suites")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CheckSuite> CheckSuites { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CheckSuite> CheckSuites { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

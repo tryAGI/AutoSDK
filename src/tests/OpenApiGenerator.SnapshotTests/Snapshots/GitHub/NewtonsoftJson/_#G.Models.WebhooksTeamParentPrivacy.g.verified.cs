@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksTeamParentPrivacy ToEnum(string value)
+        public static WebhooksTeamParentPrivacy? ToEnum(string value)
         {
             return value switch
             {
                 "open" => WebhooksTeamParentPrivacy.Open,
                 "closed" => WebhooksTeamParentPrivacy.Closed,
                 "secret" => WebhooksTeamParentPrivacy.Secret,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

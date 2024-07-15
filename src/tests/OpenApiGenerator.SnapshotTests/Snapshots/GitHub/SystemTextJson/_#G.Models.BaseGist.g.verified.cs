@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        public SimpleUser? Owner { get; set; }
+        public global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// 

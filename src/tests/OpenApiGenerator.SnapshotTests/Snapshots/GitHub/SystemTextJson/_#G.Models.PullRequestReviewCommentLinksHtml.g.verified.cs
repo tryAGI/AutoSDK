@@ -10,7 +10,7 @@ namespace G
     public sealed partial class PullRequestReviewCommentLinksHtml
     {
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
+        /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("href")]
         [global::System.Text.Json.Serialization.JsonRequired]

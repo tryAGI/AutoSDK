@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public ShortBranchCommit Commit { get; set; } = default!;
+        public global::G.ShortBranchCommit Commit { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// Branch Protection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protection")]
-        public BranchProtection? Protection { get; set; }
+        public global::G.BranchProtection? Protection { get; set; }
 
         /// <summary>
         /// 

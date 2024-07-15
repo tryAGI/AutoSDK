@@ -22,15 +22,15 @@ namespace G
         public string? ArtifactUrl { get; set; }
 
         /// <summary>
-        /// The target environment for this GitHub Pages deployment.
-        /// <br/>Default Value: github-pages
+        /// The target environment for this GitHub Pages deployment.<br/>
+        /// Default Value: github-pages
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment")]
         public string? Environment { get; set; } = "github-pages";
 
         /// <summary>
-        /// A unique string that represents the version of the build for this deployment.
-        /// <br/>Default Value: GITHUB_SHA
+        /// A unique string that represents the version of the build for this deployment.<br/>
+        /// Default Value: GITHUB_SHA
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pages_build_version", Required = global::Newtonsoft.Json.Required.Always)]
         public string PagesBuildVersion { get; set; } = default!;

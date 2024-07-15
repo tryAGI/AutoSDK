@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MergedUpstreamMergeTypeJsonConverter))]
-        public MergedUpstreamMergeType? MergeType { get; set; }
+        public global::G.MergedUpstreamMergeType? MergeType { get; set; }
 
         /// <summary>
         /// 

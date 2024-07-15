@@ -31,12 +31,12 @@ namespace G
         public required bool Truncated { get; set; }
 
         /// <summary>
-        /// Objects specifying a tree structure
-        /// <br/>Example: []
+        /// Objects specifying a tree structure<br/>
+        /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GitTreeTree> Tree { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GitTreeTree> Tree { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

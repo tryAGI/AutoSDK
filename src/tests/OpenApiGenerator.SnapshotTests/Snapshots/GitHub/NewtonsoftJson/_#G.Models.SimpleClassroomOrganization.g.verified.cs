@@ -10,37 +10,37 @@ namespace G
     public sealed partial class SimpleClassroomOrganization
     {
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: github
+        /// Example: github
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("login", Required = global::Newtonsoft.Json.Required.Always)]
         public string Login { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDEyOk9yZ2FuaXphdGlvbjE=
+        /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/github
+        /// Example: https://github.com/github
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Github - Code thigns happen here
+        /// Example: Github - Code thigns happen here
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/images/error/octocat_happy.gif
+        /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AvatarUrl { get; set; } = default!;

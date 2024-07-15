@@ -10,21 +10,21 @@ namespace G
     public sealed partial class OrgRepoCustomPropertyValues
     {
         /// <summary>
-        /// <br/>Example: 1296269
+        /// Example: 1296269
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RepositoryId { get; set; }
 
         /// <summary>
-        /// <br/>Example: Hello-World
+        /// Example: Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryName { get; set; }
 
         /// <summary>
-        /// <br/>Example: octocat/Hello-World
+        /// Example: octocat/Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CustomPropertyValue> Properties { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CustomPropertyValue> Properties { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

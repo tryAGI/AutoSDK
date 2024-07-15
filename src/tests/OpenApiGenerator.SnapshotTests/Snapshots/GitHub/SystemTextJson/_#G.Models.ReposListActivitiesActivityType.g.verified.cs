@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListActivitiesActivityType ToEnum(string value)
+        public static ReposListActivitiesActivityType? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "branch_deletion" => ReposListActivitiesActivityType.BranchDeletion,
                 "pr_merge" => ReposListActivitiesActivityType.PrMerge,
                 "merge_queue_merge" => ReposListActivitiesActivityType.MergeQueueMerge,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

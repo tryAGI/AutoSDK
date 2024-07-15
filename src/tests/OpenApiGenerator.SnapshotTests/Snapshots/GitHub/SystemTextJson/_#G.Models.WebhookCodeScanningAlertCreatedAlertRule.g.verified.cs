@@ -53,7 +53,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertCreatedAlertRuleSeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertCreatedAlertRuleSeverity? Severity { get; set; }
+        public required global::G.WebhookCodeScanningAlertCreatedAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// 

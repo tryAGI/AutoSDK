@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunHeadCommitAuthor Author { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunHeadCommitAuthor Author { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunHeadCommitCommitter Committer { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunHeadCommitCommitter Committer { get; set; }
 
         /// <summary>
         /// 

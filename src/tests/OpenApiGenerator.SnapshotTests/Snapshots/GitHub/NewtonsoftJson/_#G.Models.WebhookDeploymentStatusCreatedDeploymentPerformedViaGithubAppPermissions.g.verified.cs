@@ -13,211 +13,211 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actions")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsActions? Actions { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsActions? Actions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("administration")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsAdministration? Administration { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsAdministration? Administration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsChecks? Checks { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsChecks? Checks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_references")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences? ContentReferences { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences? ContentReferences { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contents")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents? Contents { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents? Contents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deployments")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsDeployments? Deployments { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsDeployments? Deployments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("discussions")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions? Discussions { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions? Discussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emails")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsEmails? Emails { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsEmails? Emails { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environments")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments? Environments { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments? Environments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issues")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsIssues? Issues { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsIssues? Issues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("keys")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsKeys? Keys { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsKeys? Keys { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsMembers? Members { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsMembers? Members { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsMetadata? Metadata { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_administration")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration? OrganizationAdministration { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration? OrganizationAdministration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_hooks")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks? OrganizationHooks { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks? OrganizationHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_packages")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages? OrganizationPackages { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages? OrganizationPackages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_plan")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan? OrganizationPlan { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan? OrganizationPlan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_projects")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects? OrganizationProjects { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects? OrganizationProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_secrets")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets? OrganizationSecrets { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets? OrganizationSecrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_self_hosted_runners")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? OrganizationSelfHostedRunners { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? OrganizationSelfHostedRunners { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_user_blocking")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking? OrganizationUserBlocking { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking? OrganizationUserBlocking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("packages")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPackages? Packages { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPackages? Packages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pages")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPages? Pages { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPages? Pages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests? PullRequests { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests? PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_hooks")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks? RepositoryHooks { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks? RepositoryHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_projects")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects? RepositoryProjects { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects? RepositoryProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_alerts")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts? SecretScanningAlerts { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts? SecretScanningAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secrets")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets? Secrets { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets? Secrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_events")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents? SecurityEvents { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents? SecurityEvents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_scanning_alert")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert? SecurityScanningAlert { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert? SecurityScanningAlert { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile? SingleFile { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile? SingleFile { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsStatuses? Statuses { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsStatuses? Statuses { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("team_discussions")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsTeamDiscussions? TeamDiscussions { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsTeamDiscussions? TeamDiscussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerability_alerts")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts? VulnerabilityAlerts { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts? VulnerabilityAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflows")]
-        public WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows? Workflows { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows? Workflows { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

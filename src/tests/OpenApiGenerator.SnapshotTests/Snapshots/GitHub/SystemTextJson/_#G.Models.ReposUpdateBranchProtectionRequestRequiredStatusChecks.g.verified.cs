@@ -27,7 +27,7 @@ namespace G
         /// The list of status checks to require in order to merge into this branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checks")]
-        public global::System.Collections.Generic.IList<ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks?>? Checks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks?>? Checks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

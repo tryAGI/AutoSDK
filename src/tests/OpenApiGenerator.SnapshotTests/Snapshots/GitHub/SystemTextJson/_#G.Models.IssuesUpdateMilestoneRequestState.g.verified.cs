@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The state of the milestone. Either `open` or `closed`.
-    /// <br/>Default Value: open
+    /// The state of the milestone. Either `open` or `closed`.<br/>
+    /// Default Value: open
     /// </summary>
     public enum IssuesUpdateMilestoneRequestState
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesUpdateMilestoneRequestState ToEnum(string value)
+        public static IssuesUpdateMilestoneRequestState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => IssuesUpdateMilestoneRequestState.Open,
                 "closed" => IssuesUpdateMilestoneRequestState.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

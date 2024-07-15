@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RepositoryAdvisory.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -57,7 +59,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisorySeverity? Severity { get; set; }
+        public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
         /// The author of the advisory.
@@ -65,7 +67,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<SimpleUser>? Author { get; set; }
+        public required global::System.AllOf<global::G.SimpleUser?>? Author { get; set; }
 
         /// <summary>
         /// The publisher of the advisory.
@@ -73,14 +75,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<SimpleUser>? Publisher { get; set; }
+        public required global::System.AllOf<global::G.SimpleUser?>? Publisher { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryIdentifiers> Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifiers> Identifiers { get; set; }
 
         /// <summary>
         /// The state of the advisory.
@@ -88,7 +90,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisoryState State { get; set; }
+        public required global::G.RepositoryAdvisoryState State { get; set; }
 
         /// <summary>
         /// The date and time of when the advisory was created, in ISO 8601 format.
@@ -130,28 +132,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submission")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisorySubmission? Submission { get; set; }
+        public required global::G.RepositoryAdvisorySubmission? Submission { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisoryCvss? Cvss { get; set; }
+        public required global::G.RepositoryAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryCwes>? Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwes>? Cwes { get; set; }
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -165,28 +167,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryCredits>? Credits { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredits>? Credits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits_detailed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryCredit>? CreditsDetailed { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; }
 
         /// <summary>
         /// A list of users that collaborate on the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_users")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<SimpleUser>? CollaboratingUsers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.SimpleUser>? CollaboratingUsers { get; set; }
 
         /// <summary>
         /// A list of teams that collaborate on the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Team>? CollaboratingTeams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
 
         /// <summary>
         /// A temporary private fork of the advisory's repository for collaborating on a fix.
@@ -194,7 +196,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<SimpleRepository>? PrivateFork { get; set; }
+        public required global::System.AllOf<global::G.SimpleRepository?>? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType? Type { get; set; }
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepo.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepo
     {
         /// <summary>
-        /// Whether to allow auto-merge for pull requests.
-        /// <br/>Default Value: false
+        /// Whether to allow auto-merge for pull requests.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
         public bool AllowAutoMerge { get; set; } = false;
@@ -23,22 +25,22 @@ namespace G
         public bool AllowForking { get; set; }
 
         /// <summary>
-        /// Whether to allow merge commits for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow merge commits for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
         public bool AllowMergeCommit { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow rebase merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow rebase merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
         public bool AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow squash merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow squash merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
         public bool AllowSquashMerge { get; set; } = true;
@@ -57,8 +59,8 @@ namespace G
         public required string ArchiveUrl { get; set; }
 
         /// <summary>
-        /// Whether the repository is archived.
-        /// <br/>Default Value: false
+        /// Whether the repository is archived.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -150,8 +152,8 @@ namespace G
         public required string DefaultBranch { get; set; }
 
         /// <summary>
-        /// Whether to delete head branches when pull requests are merged
-        /// <br/>Default Value: false
+        /// Whether to delete head branches when pull requests are merged<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
         public bool DeleteBranchOnMerge { get; set; } = false;
@@ -254,16 +256,16 @@ namespace G
         public required string GitUrl { get; set; }
 
         /// <summary>
-        /// Whether downloads are enabled.
-        /// <br/>Default Value: true
+        /// Whether downloads are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasDownloads { get; set; }
 
         /// <summary>
-        /// Whether issues are enabled.
-        /// <br/>Default Value: true
+        /// Whether issues are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -277,24 +279,24 @@ namespace G
         public required bool HasPages { get; set; }
 
         /// <summary>
-        /// Whether projects are enabled.
-        /// <br/>Default Value: true
+        /// Whether projects are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasProjects { get; set; }
 
         /// <summary>
-        /// Whether the wiki is enabled.
-        /// <br/>Default Value: true
+        /// Whether the wiki is enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasWiki { get; set; }
 
         /// <summary>
-        /// Whether discussions are enabled.
-        /// <br/>Default Value: false
+        /// Whether discussions are enabled.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -388,7 +390,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoLicense? License { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoLicense? License { get; set; }
 
         /// <summary>
         /// 
@@ -463,13 +465,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoOwner? Owner { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoOwner? Owner { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPermissions? Permissions { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -622,7 +624,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoVisibility Visibility { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoVisibility Visibility { get; set; }
 
         /// <summary>
         /// 

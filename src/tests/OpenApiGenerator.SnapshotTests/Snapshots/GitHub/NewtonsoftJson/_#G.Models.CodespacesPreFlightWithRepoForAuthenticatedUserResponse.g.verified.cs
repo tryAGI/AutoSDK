@@ -13,13 +13,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billable_owner")]
-        public SimpleUser? BillableOwner { get; set; }
+        public global::G.SimpleUser? BillableOwner { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("defaults")]
-        public CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? Defaults { get; set; }
+        public global::G.CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? Defaults { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

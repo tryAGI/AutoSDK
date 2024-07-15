@@ -10,8 +10,8 @@ namespace G
     public sealed partial class OrgsConvertMemberToOutsideCollaboratorRequest
     {
         /// <summary>
-        /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
-        /// <br/>Default Value: false
+        /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("async")]
         public bool Async { get; set; } = false;

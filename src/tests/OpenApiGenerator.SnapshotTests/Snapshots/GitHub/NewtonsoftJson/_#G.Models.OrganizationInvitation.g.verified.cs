@@ -55,7 +55,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inviter", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Inviter { get; set; } = default!;
+        public global::G.SimpleUser Inviter { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -64,19 +64,19 @@ namespace G
         public int TeamCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
+        /// Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/organizations/16/invitations/1/teams"
+        /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invitation_teams_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string InvitationTeamsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "member"
+        /// Example: "member"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invitation_source")]
         public string? InvitationSource { get; set; }

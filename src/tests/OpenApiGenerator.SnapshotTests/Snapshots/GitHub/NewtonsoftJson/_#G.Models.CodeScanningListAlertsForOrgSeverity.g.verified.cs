@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningListAlertsForOrgSeverity ToEnum(string value)
+        public static CodeScanningListAlertsForOrgSeverity? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "warning" => CodeScanningListAlertsForOrgSeverity.Warning,
                 "note" => CodeScanningListAlertsForOrgSeverity.Note,
                 "error" => CodeScanningListAlertsForOrgSeverity.Error,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

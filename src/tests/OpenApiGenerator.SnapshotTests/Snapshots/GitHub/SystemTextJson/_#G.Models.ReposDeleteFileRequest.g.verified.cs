@@ -33,13 +33,13 @@ namespace G
         /// object containing information about the committer.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        public ReposDeleteFileRequestCommitter? Committer { get; set; }
+        public global::G.ReposDeleteFileRequestCommitter? Committer { get; set; }
 
         /// <summary>
         /// object containing information about the author.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public ReposDeleteFileRequestAuthor? Author { get; set; }
+        public global::G.ReposDeleteFileRequestAuthor? Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

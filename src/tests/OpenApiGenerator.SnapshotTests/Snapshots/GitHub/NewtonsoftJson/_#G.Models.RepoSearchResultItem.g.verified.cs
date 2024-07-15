@@ -37,7 +37,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Owner { get; set; } = default!;
+        public global::G.NullableSimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -475,19 +475,19 @@ namespace G
         /// License Simple
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableLicenseSimple? License { get; set; } = default!;
+        public global::G.NullableLicenseSimple? License { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public RepoSearchResultItemPermissions? Permissions { get; set; }
+        public global::G.RepoSearchResultItemPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<RepoSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepoSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 
@@ -538,7 +538,7 @@ namespace G
         public bool IsTemplate { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
         public bool WebCommitSignoffRequired { get; set; }

@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunPullRequestsBaseRepo Repo { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequestsBaseRepo Repo { get; set; }
 
         /// <summary>
         /// 

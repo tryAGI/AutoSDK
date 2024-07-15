@@ -6,8 +6,26 @@ namespace G
 {
     public partial class OrgsClient
     {
+        partial void PrepareOrgsAssignUserToOrgRoleArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref string username,
+            ref int roleId);
+        partial void PrepareOrgsAssignUserToOrgRoleRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            string username,
+            int roleId);
+        partial void ProcessOrgsAssignUserToOrgRoleResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
-        /// Assign an organization role to a user
+        /// Assign an organization role to a user<br/>
+        /// Assigns an organization role to a member of an organization. For more information on organization roles, see "[Managing people's access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles)."<br/>
+        /// The authenticated user must be an administrator for the organization to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="username"></param>
@@ -20,14 +38,39 @@ namespace G
             int roleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareOrgsAssignUserToOrgRoleArguments(
+                httpClient: _httpClient,
+                org: ref org,
+                username: ref username,
+                roleId: ref roleId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/orgs/{org}/organization-roles/users/{username}/{roleId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/organization-roles/users/{username}/{roleId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareOrgsAssignUserToOrgRoleRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                org: org,
+                username: username,
+                roleId: roleId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessOrgsAssignUserToOrgRoleResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

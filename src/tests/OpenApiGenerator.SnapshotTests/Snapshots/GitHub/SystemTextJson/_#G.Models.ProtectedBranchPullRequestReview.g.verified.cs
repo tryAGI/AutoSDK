@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ProtectedBranchPullRequestReview
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
@@ -19,38 +19,38 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissal_restrictions")]
-        public ProtectedBranchPullRequestReviewDismissalRestrictions? DismissalRestrictions { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewDismissalRestrictions? DismissalRestrictions { get; set; }
 
         /// <summary>
         /// Allow specific users, teams, or apps to bypass pull request requirements.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bypass_pull_request_allowances")]
-        public ProtectedBranchPullRequestReviewBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
+        public global::G.ProtectedBranchPullRequestReviewBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismiss_stale_reviews")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool DismissStaleReviews { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_code_owner_reviews")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool RequireCodeOwnerReviews { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_approving_review_count")]
         public int RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
-        /// Whether the most recent push must be approved by someone other than the person who pushed it.
-        /// <br/>Default Value: false
-        /// <br/>Example: true
+        /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
         public bool RequireLastPushApproval { get; set; } = false;

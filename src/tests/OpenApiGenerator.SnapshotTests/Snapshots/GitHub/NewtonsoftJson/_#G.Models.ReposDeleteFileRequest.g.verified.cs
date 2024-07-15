@@ -31,13 +31,13 @@ namespace G
         /// object containing information about the committer.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer")]
-        public ReposDeleteFileRequestCommitter? Committer { get; set; }
+        public global::G.ReposDeleteFileRequestCommitter? Committer { get; set; }
 
         /// <summary>
         /// object containing information about the author.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public ReposDeleteFileRequestAuthor? Author { get; set; }
+        public global::G.ReposDeleteFileRequestAuthor? Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

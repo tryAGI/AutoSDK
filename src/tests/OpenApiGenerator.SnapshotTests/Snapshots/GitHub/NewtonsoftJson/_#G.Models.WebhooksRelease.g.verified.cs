@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhooksReleaseAssets> Assets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksReleaseAssets> Assets { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReleaseAuthor? Author { get; set; } = default!;
+        public global::G.WebhooksReleaseAuthor? Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public WebhooksReleaseReactions? Reactions { get; set; }
+        public global::G.WebhooksReleaseReactions? Reactions { get; set; }
 
         /// <summary>
         /// The name of the tag.

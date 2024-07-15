@@ -6,44 +6,108 @@ namespace G
 {
     public partial class PackagesClient
     {
+        partial void PreparePackagesGetPackageForUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::G.PackagesGetPackageForUserPackageType packageType,
+            ref string packageName,
+            ref string username);
+        partial void PreparePackagesGetPackageForUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.PackagesGetPackageForUserPackageType packageType,
+            string packageName,
+            string username);
+        partial void ProcessPackagesGetPackageForUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessPackagesGetPackageForUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Get a package for a user
+        /// Get a package for a user<br/>
+        /// Gets a specific package metadata for a public package owned by a user.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
         /// </summary>
         /// <param name="packageType"></param>
         /// <param name="packageName"></param>
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Package> PackagesGetPackageForUserAsync(
-            PackagesGetPackageForUserPackageType packageType,
+        public async global::System.Threading.Tasks.Task<global::G.Package> PackagesGetPackageForUserAsync(
+            global::G.PackagesGetPackageForUserPackageType packageType,
             string packageName,
             string username,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PreparePackagesGetPackageForUserArguments(
+                httpClient: _httpClient,
+                packageType: ref packageType,
+                packageName: ref packageName,
+                username: ref username);
+
             var packageTypeValue = packageType switch
             {
-                PackagesGetPackageForUserPackageType.Npm => "npm",
-                PackagesGetPackageForUserPackageType.Maven => "maven",
-                PackagesGetPackageForUserPackageType.Rubygems => "rubygems",
-                PackagesGetPackageForUserPackageType.Docker => "docker",
-                PackagesGetPackageForUserPackageType.Nuget => "nuget",
-                PackagesGetPackageForUserPackageType.Container => "container",
+                global::G.PackagesGetPackageForUserPackageType.Npm => "npm",
+                global::G.PackagesGetPackageForUserPackageType.Maven => "maven",
+                global::G.PackagesGetPackageForUserPackageType.Rubygems => "rubygems",
+                global::G.PackagesGetPackageForUserPackageType.Docker => "docker",
+                global::G.PackagesGetPackageForUserPackageType.Nuget => "nuget",
+                global::G.PackagesGetPackageForUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/users/{username}/packages/{packageTypeValue}/{packageName}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/{username}/packages/{packageTypeValue}/{packageName}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PreparePackagesGetPackageForUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                packageType: packageType,
+                packageName: packageName,
+                username: username);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessPackagesGetPackageForUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessPackagesGetPackageForUserResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Package?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Package?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

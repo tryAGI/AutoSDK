@@ -16,8 +16,8 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// Whether the new repository should be private.
-        /// <br/>Default Value: false
+        /// Whether the new repository should be private.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         public bool Private { get; set; } = false;

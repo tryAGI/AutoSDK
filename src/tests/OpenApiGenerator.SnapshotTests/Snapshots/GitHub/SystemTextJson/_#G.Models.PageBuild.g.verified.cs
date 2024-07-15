@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PageBuildError Error { get; set; }
+        public required global::G.PageBuildError Error { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Pusher { get; set; }
+        public required global::G.NullableSimpleUser? Pusher { get; set; }
 
         /// <summary>
         /// 

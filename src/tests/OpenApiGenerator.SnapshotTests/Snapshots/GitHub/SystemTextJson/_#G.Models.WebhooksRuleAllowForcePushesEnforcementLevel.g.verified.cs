@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksRuleAllowForcePushesEnforcementLevel ToEnum(string value)
+        public static WebhooksRuleAllowForcePushesEnforcementLevel? ToEnum(string value)
         {
             return value switch
             {
                 "off" => WebhooksRuleAllowForcePushesEnforcementLevel.Off,
                 "non_admins" => WebhooksRuleAllowForcePushesEnforcementLevel.NonAdmins,
                 "everyone" => WebhooksRuleAllowForcePushesEnforcementLevel.Everyone,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

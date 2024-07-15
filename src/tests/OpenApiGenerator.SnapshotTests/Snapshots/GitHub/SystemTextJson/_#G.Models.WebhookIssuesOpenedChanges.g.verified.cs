@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_issue")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesOpenedChangesOldIssue? OldIssue { get; set; }
+        public required global::G.WebhookIssuesOpenedChangesOldIssue? OldIssue { get; set; }
 
         /// <summary>
         /// A git repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssuesOpenedChangesOldRepository OldRepository { get; set; }
+        public required global::G.WebhookIssuesOpenedChangesOldRepository OldRepository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

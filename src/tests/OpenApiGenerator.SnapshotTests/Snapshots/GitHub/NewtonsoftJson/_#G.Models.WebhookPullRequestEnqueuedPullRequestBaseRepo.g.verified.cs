@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPullRequestEnqueuedPullRequestBaseRepo.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class WebhookPullRequestEnqueuedPullRequestBaseRepo
     {
         /// <summary>
-        /// Whether to allow auto-merge for pull requests.
-        /// <br/>Default Value: false
+        /// Whether to allow auto-merge for pull requests.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
         public bool AllowAutoMerge { get; set; } = false;
@@ -23,22 +25,22 @@ namespace G
         public bool AllowForking { get; set; }
 
         /// <summary>
-        /// Whether to allow merge commits for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow merge commits for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
         public bool AllowMergeCommit { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow rebase merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow rebase merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
         public bool AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow squash merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow squash merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
         public bool AllowSquashMerge { get; set; } = true;
@@ -56,8 +58,8 @@ namespace G
         public string ArchiveUrl { get; set; } = default!;
 
         /// <summary>
-        /// Whether the repository is archived.
-        /// <br/>Default Value: false
+        /// Whether the repository is archived.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Archived { get; set; } = default!;
@@ -135,8 +137,8 @@ namespace G
         public string DefaultBranch { get; set; } = default!;
 
         /// <summary>
-        /// Whether to delete head branches when pull requests are merged
-        /// <br/>Default Value: false
+        /// Whether to delete head branches when pull requests are merged<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
         public bool DeleteBranchOnMerge { get; set; } = false;
@@ -226,15 +228,15 @@ namespace G
         public string GitUrl { get; set; } = default!;
 
         /// <summary>
-        /// Whether downloads are enabled.
-        /// <br/>Default Value: true
+        /// Whether downloads are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_downloads", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDownloads { get; set; } = default!;
 
         /// <summary>
-        /// Whether issues are enabled.
-        /// <br/>Default Value: true
+        /// Whether issues are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasIssues { get; set; } = default!;
@@ -246,22 +248,22 @@ namespace G
         public bool HasPages { get; set; } = default!;
 
         /// <summary>
-        /// Whether projects are enabled.
-        /// <br/>Default Value: true
+        /// Whether projects are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasProjects { get; set; } = default!;
 
         /// <summary>
-        /// Whether the wiki is enabled.
-        /// <br/>Default Value: true
+        /// Whether the wiki is enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasWiki { get; set; } = default!;
 
         /// <summary>
-        /// Whether discussions are enabled.
-        /// <br/>Default Value: false
+        /// Whether discussions are enabled.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_discussions", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDiscussions { get; set; } = default!;
@@ -342,7 +344,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoLicense? License { get; set; } = default!;
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoLicense? License { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -351,21 +353,21 @@ namespace G
         public string? MasterBranch { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit message.
-        /// - `PR_TITLE` - default to the pull request's title.
-        /// - `PR_BODY` - default to the pull request's body.
+        /// The default value for a merge commit message.<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit title.
-        /// - `PR_TITLE` - default to the pull request's title.
+        /// The default value for a merge commit title.<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -425,13 +427,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoOwner? Owner { get; set; } = default!;
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoOwner? Owner { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoPermissions? Permissions { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -476,21 +478,21 @@ namespace G
         public int Size { get; set; } = default!;
 
         /// <summary>
-        /// The default value for a squash merge commit message:
-        /// - `PR_BODY` - default to the pull request's body.
-        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
+        /// The default value for a squash merge commit message:<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
+        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.<br/>
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit title:
-        /// - `PR_TITLE` - default to the pull request's title.
+        /// The default value for a squash merge commit title:<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -577,8 +579,8 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
-        /// <br/>Default Value: false
+        /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
         public bool UseSquashPrTitleAsDefault { get; set; } = false;
@@ -587,7 +589,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestEnqueuedPullRequestBaseRepoVisibility Visibility { get; set; } = default!;
+        public global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoVisibility Visibility { get; set; } = default!;
 
         /// <summary>
         /// 

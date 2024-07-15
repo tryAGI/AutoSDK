@@ -6,8 +6,27 @@ namespace G
 {
     public partial class ReactionsClient
     {
+        partial void PrepareReactionsDeleteForIssueArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int issueNumber,
+            ref int reactionId);
+        partial void PrepareReactionsDeleteForIssueRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int issueNumber,
+            int reactionId);
+        partial void ProcessReactionsDeleteForIssueResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
-        /// Delete an issue reaction
+        /// Delete an issue reaction<br/>
+        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.<br/>
+        /// Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -22,14 +41,41 @@ namespace G
             int reactionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReactionsDeleteForIssueArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                issueNumber: ref issueNumber,
+                reactionId: ref reactionId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/issues/{issueNumber}/reactions/{reactionId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/issues/{issueNumber}/reactions/{reactionId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReactionsDeleteForIssueRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                issueNumber: issueNumber,
+                reactionId: reactionId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReactionsDeleteForIssueResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

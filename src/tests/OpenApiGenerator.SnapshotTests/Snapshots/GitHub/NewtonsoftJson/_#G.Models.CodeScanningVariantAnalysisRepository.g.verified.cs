@@ -10,22 +10,22 @@ namespace G
     public sealed partial class CodeScanningVariantAnalysisRepository
     {
         /// <summary>
-        /// A unique identifier of the repository.
-        /// <br/>Example: 1296269
+        /// A unique identifier of the repository.<br/>
+        /// Example: 1296269
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// The name of the repository.
-        /// <br/>Example: Hello-World
+        /// The name of the repository.<br/>
+        /// Example: Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The full, globally unique, name of the repository.
-        /// <br/>Example: octocat/Hello-World
+        /// The full, globally unique, name of the repository.<br/>
+        /// Example: octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string FullName { get; set; } = default!;
@@ -37,13 +37,13 @@ namespace G
         public bool Private { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 80
+        /// Example: 80
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int StargazersCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;

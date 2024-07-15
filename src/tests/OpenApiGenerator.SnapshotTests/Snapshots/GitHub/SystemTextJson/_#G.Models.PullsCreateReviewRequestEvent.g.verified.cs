@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsCreateReviewRequestEvent ToEnum(string value)
+        public static PullsCreateReviewRequestEvent? ToEnum(string value)
         {
             return value switch
             {
                 "APPROVE" => PullsCreateReviewRequestEvent.APPROVE,
                 "REQUEST_CHANGES" => PullsCreateReviewRequestEvent.REQUESTCHANGES,
                 "COMMENT" => PullsCreateReviewRequestEvent.COMMENT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

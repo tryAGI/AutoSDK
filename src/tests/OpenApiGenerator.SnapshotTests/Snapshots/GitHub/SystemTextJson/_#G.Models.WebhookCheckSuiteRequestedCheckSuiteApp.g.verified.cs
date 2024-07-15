@@ -27,7 +27,7 @@ namespace G
         /// The list of events for the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<WebhookCheckSuiteRequestedCheckSuiteAppEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuiteAppEvents?>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -69,13 +69,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCheckSuiteRequestedCheckSuiteAppOwner? Owner { get; set; }
+        public required global::G.WebhookCheckSuiteRequestedCheckSuiteAppOwner? Owner { get; set; }
 
         /// <summary>
         /// The set of permissions for the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public WebhookCheckSuiteRequestedCheckSuiteAppPermissions? Permissions { get; set; }
+        public global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// The slug name of the GitHub app

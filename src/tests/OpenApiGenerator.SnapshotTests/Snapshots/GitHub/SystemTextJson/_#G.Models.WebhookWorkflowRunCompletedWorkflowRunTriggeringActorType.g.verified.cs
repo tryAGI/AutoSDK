@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType ToEnum(string value)
+        public static WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.Bot,
                 "User" => WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.User,
                 "Organization" => WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

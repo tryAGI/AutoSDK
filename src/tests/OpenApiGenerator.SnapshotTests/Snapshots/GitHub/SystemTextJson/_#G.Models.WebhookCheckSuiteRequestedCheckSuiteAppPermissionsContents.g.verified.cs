@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents ToEnum(string value)
+        public static WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents? ToEnum(string value)
         {
             return value switch
             {
                 "read" => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents.Read,
                 "write" => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents.Write,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

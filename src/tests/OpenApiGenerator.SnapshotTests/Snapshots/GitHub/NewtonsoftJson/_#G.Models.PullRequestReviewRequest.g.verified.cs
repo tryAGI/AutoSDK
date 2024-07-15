@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("users", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<SimpleUser> Users { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.SimpleUser> Users { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("teams", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Team> Teams { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Team> Teams { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

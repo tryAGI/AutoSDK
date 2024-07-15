@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: private
+    /// Example: private
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PackageVisibility
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PackageVisibility ToEnum(string value)
+        public static PackageVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "private" => PackageVisibility.Private,
                 "public" => PackageVisibility.Public,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

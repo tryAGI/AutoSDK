@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inviter", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; } = default!;
+        public global::G.WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; } = default!;
 
         /// <summary>
         /// 

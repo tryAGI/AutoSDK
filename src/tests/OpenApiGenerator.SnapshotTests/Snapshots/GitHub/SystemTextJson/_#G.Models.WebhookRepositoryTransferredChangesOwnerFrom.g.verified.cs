@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        public WebhookRepositoryTransferredChangesOwnerFromOrganization? Organization { get; set; }
+        public global::G.WebhookRepositoryTransferredChangesOwnerFromOrganization? Organization { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public WebhookRepositoryTransferredChangesOwnerFromUser? User { get; set; }
+        public global::G.WebhookRepositoryTransferredChangesOwnerFromUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

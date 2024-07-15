@@ -14,20 +14,20 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupUpdateStateJsonConverter))]
-        public CodeScanningDefaultSetupUpdateState? State { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateState? State { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupUpdateQuerySuiteJsonConverter))]
-        public CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
         /// CodeQL languages to be analyzed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
-        public global::System.Collections.Generic.IList<CodeScanningDefaultSetupUpdateLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguages?>? Languages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

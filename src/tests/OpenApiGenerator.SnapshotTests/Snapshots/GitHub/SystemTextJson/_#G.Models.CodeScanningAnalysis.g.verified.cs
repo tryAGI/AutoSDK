@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CodeScanningAnalysis
     {
         /// <summary>
-        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
@@ -45,7 +45,7 @@ namespace G
         public string? Category { get; set; }
 
         /// <summary>
-        /// <br/>Example: error reading field xyz
+        /// Example: error reading field xyz
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -87,8 +87,8 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// An identifier for the upload.
-        /// <br/>Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
+        /// An identifier for the upload.<br/>
+        /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sarif_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -99,7 +99,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAnalysisTool Tool { get; set; }
+        public required global::G.CodeScanningAnalysisTool Tool { get; set; }
 
         /// <summary>
         /// 
@@ -109,8 +109,8 @@ namespace G
         public required bool Deletable { get; set; }
 
         /// <summary>
-        /// Warning generated when processing the analysis
-        /// <br/>Example: 123 results were ignored
+        /// Warning generated when processing the analysis<br/>
+        /// Example: 123 results were ignored
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warning")]
         [global::System.Text.Json.Serialization.JsonRequired]

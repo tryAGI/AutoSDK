@@ -10,13 +10,13 @@ namespace G
     public sealed partial class SocialAccount
     {
         /// <summary>
-        /// <br/>Example: linkedin
+        /// Example: linkedin
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
         public string Provider { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://www.linkedin.com/company/github/
+        /// Example: https://www.linkedin.com/company/github/
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;

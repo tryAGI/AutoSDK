@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookReleasePrereleasedReleaseAssetsUploaderType? Type { get; set; }
+        public global::G.WebhookReleasePrereleasedReleaseAssetsUploaderType? Type { get; set; }
 
         /// <summary>
         /// 

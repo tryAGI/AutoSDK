@@ -212,7 +212,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<UserSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.UserSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 

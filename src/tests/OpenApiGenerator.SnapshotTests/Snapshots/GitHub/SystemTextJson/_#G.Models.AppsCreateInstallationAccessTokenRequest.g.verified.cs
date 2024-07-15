@@ -16,18 +16,17 @@ namespace G
         public global::System.Collections.Generic.IList<string?>? Repositories { get; set; }
 
         /// <summary>
-        /// List of repository IDs that the token should have access to
-        /// <br/>Example: [1]
+        /// List of repository IDs that the token should have access to<br/>
+        /// Example: [1]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_ids")]
         public global::System.Collections.Generic.IList<int>? RepositoryIds { get; set; }
 
         /// <summary>
         /// The permissions granted to the user access token.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public AppPermissions? Permissions { get; set; }
+        public global::G.AppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

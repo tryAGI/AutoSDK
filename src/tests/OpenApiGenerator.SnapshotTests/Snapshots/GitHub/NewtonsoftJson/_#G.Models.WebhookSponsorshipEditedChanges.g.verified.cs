@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy_level")]
-        public WebhookSponsorshipEditedChangesPrivacyLevel? PrivacyLevel { get; set; }
+        public global::G.WebhookSponsorshipEditedChangesPrivacyLevel? PrivacyLevel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

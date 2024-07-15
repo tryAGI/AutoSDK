@@ -13,19 +13,19 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Author { get; set; } = default!;
+        public global::G.NullableSimpleUser? Author { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 135
+        /// Example: 135
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
         public int Total { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: []
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("weeks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ContributorActivityWeeks> Weeks { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContributorActivityWeeks> Weeks { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_lock_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueActiveLockReason? ActiveLockReason { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueActiveLockReason? ActiveLockReason { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee")]
-        public WebhookIssuesReopenedIssueAssignee? Assignee { get; set; }
+        public global::G.WebhookIssuesReopenedIssueAssignee? Assignee { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookIssuesReopenedIssueAssignees?> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueAssignees?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// Contents of the issue
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<WebhookIssuesReopenedIssueLabels?>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueLabels?>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueMilestone? Milestone { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueMilestone? Milestone { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -127,19 +127,19 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
-        public WebhookIssuesReopenedIssuePerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public global::G.WebhookIssuesReopenedIssuePerformedViaGithubApp? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request")]
-        public WebhookIssuesReopenedIssuePullRequest? PullRequest { get; set; }
+        public global::G.WebhookIssuesReopenedIssuePullRequest? PullRequest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueReactions Reactions { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueReactions Reactions { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -151,7 +151,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueState State { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueState State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -187,7 +187,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesReopenedIssueUser? User { get; set; } = default!;
+        public global::G.WebhookIssuesReopenedIssueUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

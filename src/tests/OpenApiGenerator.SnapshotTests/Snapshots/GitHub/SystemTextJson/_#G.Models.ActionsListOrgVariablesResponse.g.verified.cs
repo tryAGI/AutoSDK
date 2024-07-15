@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<OrganizationActionsVariable> Variables { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OrganizationActionsVariable> Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

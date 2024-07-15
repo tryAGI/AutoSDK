@@ -13,7 +13,7 @@ namespace G
         /// Details for the vulnerable package.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package")]
-        public DependabotAlertPackage? Package { get; set; }
+        public global::G.DependabotAlertPackage? Package { get; set; }
 
         /// <summary>
         /// The full path to the dependency manifest file, relative to the root of the repository.
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertDependencyScopeJsonConverter))]
-        public DependabotAlertDependencyScope? Scope { get; set; }
+        public global::G.DependabotAlertDependencyScope? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

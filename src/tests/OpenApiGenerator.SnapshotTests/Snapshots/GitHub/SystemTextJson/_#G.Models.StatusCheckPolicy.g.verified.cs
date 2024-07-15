@@ -10,21 +10,21 @@ namespace G
     public sealed partial class StatusCheckPolicy
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Strict { get; set; }
 
         /// <summary>
-        /// <br/>Example: [continuous-integration/travis-ci]
+        /// Example: [continuous-integration/travis-ci]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,10 +35,10 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<StatusCheckPolicyChecks> Checks { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.StatusCheckPolicyChecks> Checks { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

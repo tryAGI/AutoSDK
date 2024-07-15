@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule_source")]
-        public RuleSuiteRuleEvaluationsRuleSource? RuleSource { get; set; }
+        public global::G.RuleSuiteRuleEvaluationsRuleSource? RuleSource { get; set; }
 
         /// <summary>
         /// The enforcement level of this rule source.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
-        public RuleSuiteRuleEvaluationsEnforcement? Enforcement { get; set; }
+        public global::G.RuleSuiteRuleEvaluationsEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// The result of the evaluation of the individual rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
-        public RuleSuiteRuleEvaluationsResult? Result { get; set; }
+        public global::G.RuleSuiteRuleEvaluationsResult? Result { get; set; }
 
         /// <summary>
         /// The type of rule.

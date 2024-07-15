@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CodeScanningVariantAnalysisSkippedRepoGroup
     {
         /// <summary>
-        /// The total number of repositories that were skipped for this reason.
-        /// <br/>Example: 2
+        /// The total number of repositories that were skipped for this reason.<br/>
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CodeScanningVariantAnalysisRepository> Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisRepository> Repositories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

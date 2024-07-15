@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public WebhookPullRequestReviewEditedChangesBody? Body { get; set; }
+        public global::G.WebhookPullRequestReviewEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

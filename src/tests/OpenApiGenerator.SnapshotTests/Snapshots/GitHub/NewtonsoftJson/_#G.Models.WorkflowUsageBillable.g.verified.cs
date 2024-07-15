@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("UBUNTU")]
-        public WorkflowUsageBillableUBUNTU? UBUNTU { get; set; }
+        public global::G.WorkflowUsageBillableUBUNTU? UBUNTU { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("MACOS")]
-        public WorkflowUsageBillableMACOS? MACOS { get; set; }
+        public global::G.WorkflowUsageBillableMACOS? MACOS { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("WINDOWS")]
-        public WorkflowUsageBillableWINDOWS? WINDOWS { get; set; }
+        public global::G.WorkflowUsageBillableWINDOWS? WINDOWS { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

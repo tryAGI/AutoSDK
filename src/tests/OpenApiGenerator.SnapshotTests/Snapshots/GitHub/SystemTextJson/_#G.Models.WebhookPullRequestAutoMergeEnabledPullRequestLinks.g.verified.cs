@@ -14,56 +14,56 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksComments Comments { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksComments Comments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksCommits Commits { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksCommits Commits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksHtml Html { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksHtml Html { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksIssue Issue { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksIssue Issue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment ReviewComment { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComment ReviewComment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComments ReviewComments { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksReviewComments ReviewComments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksSelf Self { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksSelf Self { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestAutoMergeEnabledPullRequestLinksStatuses Statuses { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestLinksStatuses Statuses { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

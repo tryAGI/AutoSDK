@@ -64,7 +64,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GlobalAdvisoryType Type { get; set; }
+        public required global::G.GlobalAdvisoryType Type { get; set; }
 
         /// <summary>
         /// The severity of the advisory.
@@ -72,7 +72,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GlobalAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GlobalAdvisorySeverity Severity { get; set; }
+        public required global::G.GlobalAdvisorySeverity Severity { get; set; }
 
         /// <summary>
         /// The URL of the advisory's source code.
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalAdvisoryIdentifiers>? Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifiers>? Identifiers { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         public required global::System.DateTime? GithubReviewedAt { get; set; }
 
         /// <summary>
-        /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.
+        /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.<br/>
         /// This field is only populated when the advisory is imported from the National Vulnerability Database.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nvd_published_at")]
@@ -136,28 +136,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Vulnerability>? Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Vulnerability>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GlobalAdvisoryCvss? Cvss { get; set; }
+        public required global::G.GlobalAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalAdvisoryCwes>? Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwes>? Cwes { get; set; }
 
         /// <summary>
         /// The users who contributed to the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalAdvisoryCredits>? Credits { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredits>? Credits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

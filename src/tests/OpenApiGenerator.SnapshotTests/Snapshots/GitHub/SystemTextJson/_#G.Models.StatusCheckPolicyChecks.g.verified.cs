@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StatusCheckPolicyChecks
     {
         /// <summary>
-        /// <br/>Example: continuous-integration/travis-ci
+        /// Example: continuous-integration/travis-ci
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonRequired]

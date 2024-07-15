@@ -10,8 +10,8 @@ namespace G
     public sealed partial class RepositorySubscription
     {
         /// <summary>
-        /// Determines if notifications should be received from this repository.
-        /// <br/>Example: true
+        /// Determines if notifications should be received from this repository.<br/>
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscribed")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,21 +32,21 @@ namespace G
         public required string? Reason { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/example/subscription
+        /// Example: https://api.github.com/repos/octocat/example/subscription
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/example
+        /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

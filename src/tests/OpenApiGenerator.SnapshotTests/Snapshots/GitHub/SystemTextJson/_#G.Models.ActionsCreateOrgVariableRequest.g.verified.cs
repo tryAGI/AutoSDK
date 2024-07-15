@@ -29,7 +29,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsCreateOrgVariableRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ActionsCreateOrgVariableRequestVisibility Visibility { get; set; }
+        public required global::G.ActionsCreateOrgVariableRequestVisibility Visibility { get; set; }
 
         /// <summary>
         /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.

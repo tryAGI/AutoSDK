@@ -10,16 +10,16 @@ namespace G
     public sealed partial class OrganizationActionsVariable
     {
         /// <summary>
-        /// The name of the variable.
-        /// <br/>Example: USERNAME
+        /// The name of the variable.<br/>
+        /// Example: USERNAME
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// The value of the variable.
-        /// <br/>Example: octocat
+        /// The value of the variable.<br/>
+        /// Example: octocat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -27,7 +27,6 @@ namespace G
 
         /// <summary>
         /// The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +34,6 @@ namespace G
 
         /// <summary>
         /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,10 +45,10 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationActionsVariableVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrganizationActionsVariableVisibility Visibility { get; set; }
+        public required global::G.OrganizationActionsVariableVisibility Visibility { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/organizations/org/variables/USERNAME/repositories
+        /// Example: https://api.github.com/organizations/org/variables/USERNAME/repositories
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }

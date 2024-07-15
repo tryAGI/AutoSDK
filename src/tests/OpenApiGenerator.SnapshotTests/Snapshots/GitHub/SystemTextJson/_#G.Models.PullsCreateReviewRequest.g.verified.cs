@@ -26,13 +26,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsCreateReviewRequestEventJsonConverter))]
-        public PullsCreateReviewRequestEvent? Event { get; set; }
+        public global::G.PullsCreateReviewRequestEvent? Event { get; set; }
 
         /// <summary>
         /// Use the following table to specify the location, destination, and contents of the draft review comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public global::System.Collections.Generic.IList<PullsCreateReviewRequestComments?>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullsCreateReviewRequestComments?>? Comments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

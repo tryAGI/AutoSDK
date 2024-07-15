@@ -217,7 +217,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner")]
-        public WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
 
         /// <summary>
         /// 

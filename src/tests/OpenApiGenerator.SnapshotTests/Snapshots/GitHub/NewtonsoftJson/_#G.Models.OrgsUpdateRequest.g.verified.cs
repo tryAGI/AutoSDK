@@ -64,15 +64,15 @@ namespace G
         public bool HasRepositoryProjects { get; set; }
 
         /// <summary>
-        /// Default permission level members have for organization repositories.
-        /// <br/>Default Value: read
+        /// Default permission level members have for organization repositories.<br/>
+        /// Default Value: read
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_repository_permission")]
-        public OrgsUpdateRequestDefaultRepositoryPermission? DefaultRepositoryPermission { get; set; } = OrgsUpdateRequestDefaultRepositoryPermission.Read;
+        public global::G.OrgsUpdateRequestDefaultRepositoryPermission? DefaultRepositoryPermission { get; set; } = global::G.OrgsUpdateRequestDefaultRepositoryPermission.Read;
 
         /// <summary>
-        /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.
-        /// <br/>Default Value: true
+        /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_repositories")]
         public bool MembersCanCreateRepositories { get; set; } = true;
@@ -96,96 +96,96 @@ namespace G
         public bool MembersCanCreatePublicRepositories { get; set; }
 
         /// <summary>
-        /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. 
+        /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. <br/>
         /// **Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_allowed_repository_creation_type")]
-        public OrgsUpdateRequestMembersAllowedRepositoryCreationType? MembersAllowedRepositoryCreationType { get; set; }
+        public global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? MembersAllowedRepositoryCreationType { get; set; }
 
         /// <summary>
-        /// Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.
-        /// <br/>Default Value: true
+        /// Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_pages")]
         public bool MembersCanCreatePages { get; set; } = true;
 
         /// <summary>
-        /// Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.
-        /// <br/>Default Value: true
+        /// Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_public_pages")]
         public bool MembersCanCreatePublicPages { get; set; } = true;
 
         /// <summary>
-        /// Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.
-        /// <br/>Default Value: true
+        /// Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_private_pages")]
         public bool MembersCanCreatePrivatePages { get; set; } = true;
 
         /// <summary>
-        /// Whether organization members can fork private organization repositories.
-        /// <br/>Default Value: false
+        /// Whether organization members can fork private organization repositories.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_fork_private_repositories")]
         public bool MembersCanForkPrivateRepositories { get; set; } = false;
 
         /// <summary>
-        /// Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.
-        /// <br/>Default Value: false
+        /// Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
         public bool WebCommitSignoffRequired { get; set; } = false;
 
         /// <summary>
-        /// <br/>Example: "http://github.blog"
+        /// Example: "http://github.blog"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
 
         /// <summary>
-        /// Whether GitHub Advanced Security is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether GitHub Advanced Security is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security_enabled_for_new_repositories")]
         public bool AdvancedSecurityEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether Dependabot alerts is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether Dependabot alerts is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts_enabled_for_new_repositories")]
         public bool DependabotAlertsEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether Dependabot security updates is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether Dependabot security updates is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates_enabled_for_new_repositories")]
         public bool DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether dependency graph is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether dependency graph is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_enabled_for_new_repositories")]
         public bool DependencyGraphEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether secret scanning is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_enabled_for_new_repositories")]
         public bool SecretScanningEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning push protection is automatically enabled for new repositories.
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+        /// Whether secret scanning push protection is automatically enabled for new repositories.<br/>
+        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_enabled_for_new_repositories")]

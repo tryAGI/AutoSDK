@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of the value for the property
-    /// <br/>Example: single_select
+    /// The type of the value for the property<br/>
+    /// Example: single_select
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgsCreateOrUpdateCustomPropertyRequestValueType
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsCreateOrUpdateCustomPropertyRequestValueType ToEnum(string value)
+        public static OrgsCreateOrUpdateCustomPropertyRequestValueType? ToEnum(string value)
         {
             return value switch
             {
                 "string" => OrgsCreateOrUpdateCustomPropertyRequestValueType.String,
                 "single_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

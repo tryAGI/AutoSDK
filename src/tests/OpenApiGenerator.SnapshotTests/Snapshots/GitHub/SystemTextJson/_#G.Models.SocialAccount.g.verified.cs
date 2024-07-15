@@ -10,14 +10,14 @@ namespace G
     public sealed partial class SocialAccount
     {
         /// <summary>
-        /// <br/>Example: linkedin
+        /// Example: linkedin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provider { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://www.linkedin.com/company/github/
+        /// Example: https://www.linkedin.com/company/github/
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

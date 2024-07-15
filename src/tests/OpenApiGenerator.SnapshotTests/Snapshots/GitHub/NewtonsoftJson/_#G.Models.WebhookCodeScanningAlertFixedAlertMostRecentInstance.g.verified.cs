@@ -43,13 +43,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("location")]
-        public WebhookCodeScanningAlertFixedAlertMostRecentInstanceLocation? Location { get; set; }
+        public global::G.WebhookCodeScanningAlertFixedAlertMostRecentInstanceLocation? Location { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message")]
-        public WebhookCodeScanningAlertFixedAlertMostRecentInstanceMessage? Message { get; set; }
+        public global::G.WebhookCodeScanningAlertFixedAlertMostRecentInstanceMessage? Message { get; set; }
 
         /// <summary>
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
@@ -61,7 +61,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertFixedAlertMostRecentInstanceState State { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertFixedAlertMostRecentInstanceState State { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

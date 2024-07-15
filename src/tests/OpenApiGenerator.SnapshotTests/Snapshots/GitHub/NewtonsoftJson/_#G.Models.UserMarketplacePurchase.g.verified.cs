@@ -10,13 +10,13 @@ namespace G
     public sealed partial class UserMarketplacePurchase
     {
         /// <summary>
-        /// <br/>Example: monthly
+        /// Example: monthly
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_cycle", Required = global::Newtonsoft.Json.Required.Always)]
         public string BillingCycle { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_billing_date", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? NextBillingDate { get; set; } = default!;
@@ -28,19 +28,19 @@ namespace G
         public int? UnitCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on_free_trial", Required = global::Newtonsoft.Json.Required.Always)]
         public bool OnFreeTrial { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? FreeTrialEndsOn { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public MarketplaceAccount Account { get; set; } = default!;
+        public global::G.MarketplaceAccount Account { get; set; } = default!;
 
         /// <summary>
         /// Marketplace Listing Plan
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan", Required = global::Newtonsoft.Json.Required.Always)]
-        public MarketplaceListingPlan Plan { get; set; } = default!;
+        public global::G.MarketplaceListingPlan Plan { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

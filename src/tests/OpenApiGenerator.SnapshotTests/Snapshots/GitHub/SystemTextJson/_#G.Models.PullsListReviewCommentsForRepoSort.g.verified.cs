@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsListReviewCommentsForRepoSort ToEnum(string value)
+        public static PullsListReviewCommentsForRepoSort? ToEnum(string value)
         {
             return value switch
             {
                 "created" => PullsListReviewCommentsForRepoSort.Created,
                 "updated" => PullsListReviewCommentsForRepoSort.Updated,
                 "created_at" => PullsListReviewCommentsForRepoSort.CreatedAt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

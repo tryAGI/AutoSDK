@@ -10,25 +10,25 @@ namespace G
     public sealed partial class FullRepository
     {
         /// <summary>
-        /// <br/>Example: 1296269
+        /// Example: 1296269
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
+        /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Hello-World
+        /// Example: Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: octocat/Hello-World
+        /// Example: octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string FullName { get; set; } = default!;
@@ -37,7 +37,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -46,13 +46,13 @@ namespace G
         public bool Private { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World
+        /// Example: https://github.com/octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: This your first repo!
+        /// Example: This your first repo!
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
@@ -64,259 +64,259 @@ namespace G
         public bool Fork { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World
+        /// Example: https://api.github.com/repos/octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archive_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ArchiveUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/assignees{/user}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/assignees{/user}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AssigneesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blobs_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string BlobsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/branches{/branch}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/branches{/branch}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("branches_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string BranchesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("collaborators_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CollaboratorsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/comments{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/comments{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommentsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/commits{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/commits{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commits_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compare_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CompareUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/contents/{+path}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/contents/{+path}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contents_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContentsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/contributors
+        /// Example: http://api.github.com/repos/octocat/Hello-World/contributors
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contributors_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContributorsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/deployments
+        /// Example: http://api.github.com/repos/octocat/Hello-World/deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deployments_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DeploymentsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/downloads
+        /// Example: http://api.github.com/repos/octocat/Hello-World/downloads
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("downloads_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DownloadsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/events
+        /// Example: http://api.github.com/repos/octocat/Hello-World/events
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string EventsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/forks
+        /// Example: http://api.github.com/repos/octocat/Hello-World/forks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ForksUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("git_commits_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string GitCommitsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("git_refs_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string GitRefsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("git_tags_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string GitTagsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: git:github.com/octocat/Hello-World.git
+        /// Example: git:github.com/octocat/Hello-World.git
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("git_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string GitUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue_comment_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssueCommentUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/issues/events{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues/events{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue_events_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssueEventsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/issues{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issues_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssuesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/keys{/key_id}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/keys{/key_id}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("keys_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string KeysUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/labels{/name}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/labels{/name}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string LabelsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/languages
+        /// Example: http://api.github.com/repos/octocat/Hello-World/languages
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languages_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string LanguagesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/merges
+        /// Example: http://api.github.com/repos/octocat/Hello-World/merges
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merges_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string MergesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/milestones{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/milestones{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestones_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string MilestonesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notifications_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string NotificationsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/pulls{/number}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/pulls{/number}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pulls_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PullsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/releases{/id}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/releases{/id}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("releases_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReleasesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: git@github.com:octocat/Hello-World.git
+        /// Example: git@github.com:octocat/Hello-World.git
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ssh_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SshUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/stargazers
+        /// Example: http://api.github.com/repos/octocat/Hello-World/stargazers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string StargazersUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/statuses/{sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/statuses/{sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string StatusesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/subscribers
+        /// Example: http://api.github.com/repos/octocat/Hello-World/subscribers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribers_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SubscribersUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/subscription
+        /// Example: http://api.github.com/repos/octocat/Hello-World/subscription
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SubscriptionUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/tags
+        /// Example: http://api.github.com/repos/octocat/Hello-World/tags
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TagsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/teams
+        /// Example: http://api.github.com/repos/octocat/Hello-World/teams
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("teams_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TeamsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trees_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TreesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World.git
+        /// Example: https://github.com/octocat/Hello-World.git
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("clone_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CloneUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: git:git.example.com/octocat/Hello-World
+        /// Example: git:git.example.com/octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mirror_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? MirrorUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: http://api.github.com/repos/octocat/Hello-World/hooks
+        /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hooks_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HooksUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://svn.github.com/octocat/Hello-World
+        /// Example: https://svn.github.com/octocat/Hello-World
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("svn_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SvnUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com
+        /// Example: https://github.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("homepage", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Homepage { get; set; } = default!;
@@ -328,68 +328,68 @@ namespace G
         public string? Language { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 9
+        /// Example: 9
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int ForksCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 80
+        /// Example: 80
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int StargazersCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 80
+        /// Example: 80
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watchers_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int WatchersCount { get; set; } = default!;
 
         /// <summary>
-        /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
-        /// <br/>Example: 108
+        /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.<br/>
+        /// Example: 108
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
         public int Size { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: master
+        /// Example: master
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_branch", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultBranch { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 0
+        /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("open_issues_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int OpenIssuesCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
         public bool IsTemplate { get; set; }
 
         /// <summary>
-        /// <br/>Example: [octocat, atom, electron, API]
+        /// Example: [octocat, atom, electron, API]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topics")]
         public global::System.Collections.Generic.IList<string?>? Topics { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasIssues { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasProjects { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasWiki { get; set; } = default!;
@@ -401,13 +401,13 @@ namespace G
         public bool HasPages { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_downloads")]
         public bool HasDownloads { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_discussions", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDiscussions { get; set; } = default!;
@@ -425,26 +425,26 @@ namespace G
         public bool Disabled { get; set; } = default!;
 
         /// <summary>
-        /// The repository visibility: public, private, or internal.
-        /// <br/>Example: public
+        /// The repository visibility: public, private, or internal.<br/>
+        /// Example: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
         public string? Visibility { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pushed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime PushedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
@@ -453,10 +453,10 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public FullRepositoryPermissions? Permissions { get; set; }
+        public global::G.FullRepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
         public bool AllowRebaseMerge { get; set; }
@@ -465,7 +465,7 @@ namespace G
         /// A repository on GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_repository")]
-        public NullableRepository? TemplateRepository { get; set; }
+        public global::G.NullableRepository? TemplateRepository { get; set; }
 
         /// <summary>
         /// 
@@ -474,99 +474,99 @@ namespace G
         public string? TempCloneToken { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
         public bool AllowSquashMerge { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
         public bool AllowAutoMerge { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
         public bool DeleteBranchOnMerge { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
         public bool AllowMergeCommit { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_update_branch")]
         public bool AllowUpdateBranch { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
         public bool UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit title:
-        /// - `PR_TITLE` - default to the pull request's title.
-        /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-        /// <br/>Example: PR_TITLE
+        /// The default value for a squash merge commit title:<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
+        /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).<br/>
+        /// Example: PR_TITLE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
-        public FullRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.FullRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit message:
-        /// - `PR_BODY` - default to the pull request's body.
-        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
-        /// - `BLANK` - default to a blank commit message.
-        /// <br/>Example: PR_BODY
+        /// The default value for a squash merge commit message:<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
+        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.<br/>
+        /// - `BLANK` - default to a blank commit message.<br/>
+        /// Example: PR_BODY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
-        public FullRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.FullRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit title.
-        ///   - `PR_TITLE` - default to the pull request's title.
-        ///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-        /// <br/>Example: PR_TITLE
+        /// The default value for a merge commit title.<br/>
+        ///   - `PR_TITLE` - default to the pull request's title.<br/>
+        ///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).<br/>
+        /// Example: PR_TITLE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
-        public FullRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.FullRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
-        /// The default value for a merge commit message.
-        /// - `PR_TITLE` - default to the pull request's title.
-        /// - `PR_BODY` - default to the pull request's body.
-        /// - `BLANK` - default to a blank commit message.
-        /// <br/>Example: PR_BODY
+        /// The default value for a merge commit message.<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
+        /// - `BLANK` - default to a blank commit message.<br/>
+        /// Example: PR_BODY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
-        public FullRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.FullRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
         public bool AllowForking { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
         public bool WebCommitSignoffRequired { get; set; }
 
         /// <summary>
-        /// <br/>Example: 42
+        /// Example: 42
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribers_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int SubscribersCount { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 0
+        /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("network_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int NetworkCount { get; set; } = default!;
@@ -575,25 +575,25 @@ namespace G
         /// License Simple
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableLicenseSimple? License { get; set; } = default!;
+        public global::G.NullableLicenseSimple? License { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
-        public NullableSimpleUser? Organization { get; set; }
+        public global::G.NullableSimpleUser? Organization { get; set; }
 
         /// <summary>
         /// A repository on GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent")]
-        public Repository? Parent { get; set; }
+        public global::G.Repository? Parent { get; set; }
 
         /// <summary>
         /// A repository on GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
-        public Repository? Source { get; set; }
+        public global::G.Repository? Source { get; set; }
 
         /// <summary>
         /// 
@@ -620,8 +620,8 @@ namespace G
         public int Watchers { get; set; } = default!;
 
         /// <summary>
-        /// Whether anonymous git access is allowed.
-        /// <br/>Default Value: true
+        /// Whether anonymous git access is allowed.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anonymous_access_enabled")]
         public bool AnonymousAccessEnabled { get; set; } = true;
@@ -630,13 +630,13 @@ namespace G
         /// Code of Conduct Simple
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_of_conduct")]
-        public CodeOfConductSimple? CodeOfConduct { get; set; }
+        public global::G.CodeOfConductSimple? CodeOfConduct { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_and_analysis")]
-        public SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public global::G.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 
         /// <summary>
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.

@@ -31,8 +31,8 @@ namespace G
         public required global::System.Collections.Generic.IList<string> Labels { get; set; }
 
         /// <summary>
-        /// The working directory to be used for job execution, relative to the runner install directory.
-        /// <br/>Default Value: _work
+        /// The working directory to be used for job execution, relative to the runner install directory.<br/>
+        /// Default Value: _work
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("work_folder")]
         public string? WorkFolder { get; set; } = "_work";

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Installation.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class Installation
     {
         /// <summary>
-        /// The ID of the installation.
-        /// <br/>Example: 1
+        /// The ID of the installation.<br/>
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -23,7 +25,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<SimpleUser, Enterprise>? Account { get; set; }
+        public required global::System.AnyOf<global::G.SimpleUser?, global::G.Enterprise?>? Account { get; set; }
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
@@ -31,31 +33,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InstallationRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required InstallationRepositorySelection RepositorySelection { get; set; }
+        public required global::G.InstallationRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/app/installations/1/access_tokens
+        /// Example: https://api.github.com/app/installations/1/access_tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_tokens_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AccessTokensUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/installation/repositories
+        /// Example: https://api.github.com/installation/repositories
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoriesUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/organizations/github/settings/installations/1
+        /// Example: https://github.com/organizations/github/settings/installations/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -69,7 +71,7 @@ namespace G
         public required int TargetId { get; set; }
 
         /// <summary>
-        /// <br/>Example: Organization
+        /// Example: Organization
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -77,11 +79,10 @@ namespace G
 
         /// <summary>
         /// The permissions granted to the user access token.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required AppPermissions Permissions { get; set; }
+        public required global::G.AppPermissions Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -105,26 +106,26 @@ namespace G
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: config.yaml
+        /// Example: config.yaml
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SingleFileName { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_multiple_single_files")]
         public bool HasMultipleSingleFiles { get; set; }
 
         /// <summary>
-        /// <br/>Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
         public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }
 
         /// <summary>
-        /// <br/>Example: github-actions
+        /// Example: github-actions
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -135,7 +136,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspended_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? SuspendedBy { get; set; }
+        public required global::G.NullableSimpleUser? SuspendedBy { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +146,7 @@ namespace G
         public required global::System.DateTime? SuspendedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
+        /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contact_email")]
         public string? ContactEmail { get; set; }

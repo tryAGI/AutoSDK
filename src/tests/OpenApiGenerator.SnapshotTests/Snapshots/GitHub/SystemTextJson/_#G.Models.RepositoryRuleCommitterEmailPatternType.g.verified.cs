@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleCommitterEmailPatternType ToEnum(string value)
+        public static RepositoryRuleCommitterEmailPatternType? ToEnum(string value)
         {
             return value switch
             {
                 "committer_email_pattern" => RepositoryRuleCommitterEmailPatternType.CommitterEmailPattern,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

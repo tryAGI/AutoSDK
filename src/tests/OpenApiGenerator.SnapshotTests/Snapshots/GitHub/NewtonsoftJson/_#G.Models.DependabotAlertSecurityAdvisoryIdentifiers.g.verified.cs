@@ -13,7 +13,7 @@ namespace G
         /// The type of advisory identifier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertSecurityAdvisoryIdentifiersType Type { get; set; } = default!;
+        public global::G.DependabotAlertSecurityAdvisoryIdentifiersType Type { get; set; } = default!;
 
         /// <summary>
         /// The value of the advisory identifer.

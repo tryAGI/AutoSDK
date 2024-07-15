@@ -54,7 +54,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookProjectCardMovedProjectCardCreator? Creator { get; set; }
+        public required global::G.WebhookProjectCardMovedProjectCardCreator? Creator { get; set; }
 
         /// <summary>
         /// The project card's ID

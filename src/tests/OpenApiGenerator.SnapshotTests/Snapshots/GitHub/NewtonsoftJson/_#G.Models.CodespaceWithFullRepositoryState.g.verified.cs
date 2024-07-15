@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// State of this codespace.
-    /// <br/>Example: Available
+    /// State of this codespace.<br/>
+    /// Example: Available
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CodespaceWithFullRepositoryState
@@ -133,7 +133,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespaceWithFullRepositoryState ToEnum(string value)
+        public static CodespaceWithFullRepositoryState? ToEnum(string value)
         {
             return value switch
             {
@@ -154,7 +154,7 @@ namespace G
                 "Exporting" => CodespaceWithFullRepositoryState.Exporting,
                 "Updating" => CodespaceWithFullRepositoryState.Updating,
                 "Rebuilding" => CodespaceWithFullRepositoryState.Rebuilding,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

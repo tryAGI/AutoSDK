@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookIssuesOpenedIssuePerformedViaGithubAppOwnerType? Type { get; set; }
+        public global::G.WebhookIssuesOpenedIssuePerformedViaGithubAppOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

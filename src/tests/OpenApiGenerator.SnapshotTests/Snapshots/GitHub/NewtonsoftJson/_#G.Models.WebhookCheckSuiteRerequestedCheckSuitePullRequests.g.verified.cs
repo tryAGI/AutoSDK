@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("base", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase Base { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase Base { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCheckSuiteRerequestedCheckSuitePullRequestsHead Head { get; set; } = default!;
+        public global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequestsHead Head { get; set; } = default!;
 
         /// <summary>
         /// 

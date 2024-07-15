@@ -13,19 +13,19 @@ namespace G
         /// The desired state of code scanning default setup.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public CodeScanningDefaultSetupUpdateState? State { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateState? State { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_suite")]
-        public CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
+        public global::G.CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
         /// CodeQL languages to be analyzed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languages")]
-        public global::System.Collections.Generic.IList<CodeScanningDefaultSetupUpdateLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguages?>? Languages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

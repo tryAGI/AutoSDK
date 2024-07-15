@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookRegistryPackagePublishedRegistryPackagePackageVersion.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,14 +15,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor? Author { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object?> Body { get; set; }
+        public global::System.OneOf<string?, object?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -32,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container_metadata")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -104,20 +106,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("npm_metadata")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nuget_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; }
 
         /// <summary>
         /// 
@@ -136,13 +138,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Release { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Release { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubygems_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
 
         /// <summary>
         /// 

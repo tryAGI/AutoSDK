@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app", Required = global::Newtonsoft.Json.Required.Always)]
-        public AuthorizationApp App { get; set; } = default!;
+        public global::G.AuthorizationApp App { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,13 +85,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
-        public NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation")]
-        public NullableScopedInstallation? Installation { get; set; }
+        public global::G.NullableScopedInstallation? Installation { get; set; }
 
         /// <summary>
         /// 

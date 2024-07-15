@@ -6,42 +6,102 @@ namespace G
 {
     public partial class PackagesClient
     {
+        partial void PreparePackagesDeletePackageForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::G.PackagesDeletePackageForAuthenticatedUserPackageType packageType,
+            ref string packageName);
+        partial void PreparePackagesDeletePackageForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.PackagesDeletePackageForAuthenticatedUserPackageType packageType,
+            string packageName);
+        partial void ProcessPackagesDeletePackageForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessPackagesDeletePackageForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Delete a package for the authenticated user
+        /// Delete a package for the authenticated user<br/>
+        /// Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, `repo` scope is also required. For the list these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
         /// </summary>
         /// <param name="packageType"></param>
         /// <param name="packageName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<BasicError> PackagesDeletePackageForAuthenticatedUserAsync(
-            PackagesDeletePackageForAuthenticatedUserPackageType packageType,
+        public async global::System.Threading.Tasks.Task<global::G.BasicError> PackagesDeletePackageForAuthenticatedUserAsync(
+            global::G.PackagesDeletePackageForAuthenticatedUserPackageType packageType,
             string packageName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PreparePackagesDeletePackageForAuthenticatedUserArguments(
+                httpClient: _httpClient,
+                packageType: ref packageType,
+                packageName: ref packageName);
+
             var packageTypeValue = packageType switch
             {
-                PackagesDeletePackageForAuthenticatedUserPackageType.Npm => "npm",
-                PackagesDeletePackageForAuthenticatedUserPackageType.Maven => "maven",
-                PackagesDeletePackageForAuthenticatedUserPackageType.Rubygems => "rubygems",
-                PackagesDeletePackageForAuthenticatedUserPackageType.Docker => "docker",
-                PackagesDeletePackageForAuthenticatedUserPackageType.Nuget => "nuget",
-                PackagesDeletePackageForAuthenticatedUserPackageType.Container => "container",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Npm => "npm",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Maven => "maven",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Rubygems => "rubygems",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Docker => "docker",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Nuget => "nuget",
+                global::G.PackagesDeletePackageForAuthenticatedUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/user/packages/{packageTypeValue}/{packageName}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/packages/{packageTypeValue}/{packageName}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PreparePackagesDeletePackageForAuthenticatedUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                packageType: packageType,
+                packageName: packageName);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessPackagesDeletePackageForAuthenticatedUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessPackagesDeletePackageForAuthenticatedUserResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<BasicError?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BasicError?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

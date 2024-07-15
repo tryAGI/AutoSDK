@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsListMembershipsForAuthenticatedUserState ToEnum(string value)
+        public static OrgsListMembershipsForAuthenticatedUserState? ToEnum(string value)
         {
             return value switch
             {
                 "active" => OrgsListMembershipsForAuthenticatedUserState.Active,
                 "pending" => OrgsListMembershipsForAuthenticatedUserState.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CodespacesPermissionsCheckForDevcontainer
     {
         /// <summary>
-        /// Whether the user has accepted the permissions defined by the devcontainer config
-        /// <br/>Example: true
+        /// Whether the user has accepted the permissions defined by the devcontainer config<br/>
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accepted", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Accepted { get; set; } = default!;

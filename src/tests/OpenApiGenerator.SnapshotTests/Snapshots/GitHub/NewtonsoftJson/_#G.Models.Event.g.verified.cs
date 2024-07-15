@@ -25,25 +25,25 @@ namespace G
         /// Actor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public Actor Actor { get; set; } = default!;
+        public global::G.Actor Actor { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventRepo Repo { get; set; } = default!;
+        public global::G.EventRepo Repo { get; set; } = default!;
 
         /// <summary>
         /// Actor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("org")]
-        public Actor? Org { get; set; }
+        public global::G.Actor? Org { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventPayload Payload { get; set; } = default!;
+        public global::G.EventPayload Payload { get; set; } = default!;
 
         /// <summary>
         /// 

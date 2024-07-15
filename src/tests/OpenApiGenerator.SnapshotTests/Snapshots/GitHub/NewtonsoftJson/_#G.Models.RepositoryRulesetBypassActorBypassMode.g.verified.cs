@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRulesetBypassActorBypassMode ToEnum(string value)
+        public static RepositoryRulesetBypassActorBypassMode? ToEnum(string value)
         {
             return value switch
             {
                 "always" => RepositoryRulesetBypassActorBypassMode.Always,
                 "pull_request" => RepositoryRulesetBypassActorBypassMode.PullRequest,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

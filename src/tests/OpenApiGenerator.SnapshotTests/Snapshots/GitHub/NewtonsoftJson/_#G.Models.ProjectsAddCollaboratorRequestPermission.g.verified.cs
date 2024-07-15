@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The permission to grant the collaborator.
-    /// <br/>Default Value: write
-    /// <br/>Example: write
+    /// The permission to grant the collaborator.<br/>
+    /// Default Value: write<br/>
+    /// Example: write
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ProjectsAddCollaboratorRequestPermission
@@ -50,14 +50,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ProjectsAddCollaboratorRequestPermission ToEnum(string value)
+        public static ProjectsAddCollaboratorRequestPermission? ToEnum(string value)
         {
             return value switch
             {
                 "read" => ProjectsAddCollaboratorRequestPermission.Read,
                 "write" => ProjectsAddCollaboratorRequestPermission.Write,
                 "admin" => ProjectsAddCollaboratorRequestPermission.Admin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

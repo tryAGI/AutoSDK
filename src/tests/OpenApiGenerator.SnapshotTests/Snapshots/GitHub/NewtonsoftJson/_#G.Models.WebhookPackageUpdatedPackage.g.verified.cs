@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPackageUpdatedPackageOwner? Owner { get; set; } = default!;
+        public global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -67,13 +67,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_version", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPackageUpdatedPackagePackageVersion PackageVersion { get; set; } = default!;
+        public global::G.WebhookPackageUpdatedPackagePackageVersion PackageVersion { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPackageUpdatedPackageRegistry? Registry { get; set; } = default!;
+        public global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; } = default!;
 
         /// <summary>
         /// 

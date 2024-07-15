@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitRefObject Object { get; set; }
+        public required global::G.GitRefObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

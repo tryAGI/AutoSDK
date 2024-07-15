@@ -10,8 +10,8 @@ namespace G
     public sealed partial class DependabotSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: MY_ARTIFACTORY_PASSWORD
+        /// The name of the secret.<br/>
+        /// Example: MY_ARTIFACTORY_PASSWORD
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;

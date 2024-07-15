@@ -25,7 +25,7 @@ namespace G
         /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
-        public ActionsUpdateOrgVariableRequestVisibility? Visibility { get; set; }
+        public global::G.ActionsUpdateOrgVariableRequestVisibility? Visibility { get; set; }
 
         /// <summary>
         /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.

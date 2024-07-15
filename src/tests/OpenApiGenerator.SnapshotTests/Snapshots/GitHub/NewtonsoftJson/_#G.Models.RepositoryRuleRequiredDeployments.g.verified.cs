@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRuleRequiredDeploymentsType Type { get; set; } = default!;
+        public global::G.RepositoryRuleRequiredDeploymentsType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters")]
-        public RepositoryRuleRequiredDeploymentsParameters? Parameters { get; set; }
+        public global::G.RepositoryRuleRequiredDeploymentsParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

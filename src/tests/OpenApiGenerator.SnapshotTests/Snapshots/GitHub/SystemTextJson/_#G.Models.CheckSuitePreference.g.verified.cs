@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preferences")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CheckSuitePreferencePreferences Preferences { get; set; }
+        public required global::G.CheckSuitePreferencePreferences Preferences { get; set; }
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

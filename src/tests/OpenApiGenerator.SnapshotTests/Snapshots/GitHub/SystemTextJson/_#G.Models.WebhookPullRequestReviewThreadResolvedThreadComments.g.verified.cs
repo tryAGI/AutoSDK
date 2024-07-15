@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsLinks Links { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsLinks Links { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the comment.
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsReactions Reactions { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsReactions Reactions { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.
@@ -155,7 +155,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadResolvedThreadCommentsSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsSide Side { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsSide Side { get; set; }
 
         /// <summary>
         /// The first line of the range for a multi-line comment.
@@ -165,20 +165,20 @@ namespace G
         public required int? StartLine { get; set; }
 
         /// <summary>
-        /// The side of the first line of the range for a multi-line comment.
-        /// <br/>Default Value: RIGHT
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadResolvedThreadCommentsStartSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide? StartSide { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectTypeJsonConverter))]
-        public WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType? SubjectType { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// 
@@ -199,7 +199,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewThreadResolvedThreadCommentsUser? User { get; set; }
+        public required global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

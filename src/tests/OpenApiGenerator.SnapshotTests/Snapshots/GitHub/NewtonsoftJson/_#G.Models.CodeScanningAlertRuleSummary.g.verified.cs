@@ -31,13 +31,13 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
-        public CodeScanningAlertRuleSummarySeverity? Severity { get; set; }
+        public global::G.CodeScanningAlertRuleSummarySeverity? Severity { get; set; }
 
         /// <summary>
         /// The security severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_severity_level")]
-        public CodeScanningAlertRuleSummarySecuritySeverityLevel? SecuritySeverityLevel { get; set; }
+        public global::G.CodeScanningAlertRuleSummarySecuritySeverityLevel? SecuritySeverityLevel { get; set; }
 
         /// <summary>
         /// A short description of the rule used to detect the alert.

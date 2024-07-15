@@ -13,23 +13,22 @@ namespace G
         /// Code scanning default setup has been configured or not.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public CodeScanningDefaultSetupState? State { get; set; }
+        public global::G.CodeScanningDefaultSetupState? State { get; set; }
 
         /// <summary>
         /// Languages to be analyzed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languages")]
-        public global::System.Collections.Generic.IList<CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_suite")]
-        public CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
+        public global::G.CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
         /// Timestamp of latest configuration update.
-        /// <br/>Example: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
@@ -38,7 +37,7 @@ namespace G
         /// The frequency of the periodic analysis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schedule")]
-        public CodeScanningDefaultSetupSchedule? Schedule { get; set; }
+        public global::G.CodeScanningDefaultSetupSchedule? Schedule { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

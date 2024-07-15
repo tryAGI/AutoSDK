@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookProjectCardConvertedChangesNote Note { get; set; } = default!;
+        public global::G.WebhookProjectCardConvertedChangesNote Note { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

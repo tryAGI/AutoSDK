@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: asc
+    /// Default Value: asc
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum IssuesListMilestonesDirection
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesListMilestonesDirection ToEnum(string value)
+        public static IssuesListMilestonesDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => IssuesListMilestonesDirection.Asc,
                 "desc" => IssuesListMilestonesDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

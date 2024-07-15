@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleParamsCodeScanningToolAlertsThreshold ToEnum(string value)
+        public static RepositoryRuleParamsCodeScanningToolAlertsThreshold? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "errors" => RepositoryRuleParamsCodeScanningToolAlertsThreshold.Errors,
                 "errors_and_warnings" => RepositoryRuleParamsCodeScanningToolAlertsThreshold.ErrorsAndWarnings,
                 "all" => RepositoryRuleParamsCodeScanningToolAlertsThreshold.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

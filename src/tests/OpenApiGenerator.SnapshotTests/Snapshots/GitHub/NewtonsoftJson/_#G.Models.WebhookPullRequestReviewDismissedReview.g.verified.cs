@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewDismissedReviewLinks Links { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewDismissedReviewLinks Links { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// The text of the review.
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewDismissedReviewState State { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewDismissedReviewState State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewDismissedReviewUser? User { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewDismissedReviewUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

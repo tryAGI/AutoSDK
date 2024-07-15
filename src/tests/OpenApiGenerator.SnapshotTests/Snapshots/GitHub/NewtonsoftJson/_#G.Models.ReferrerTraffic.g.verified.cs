@@ -10,19 +10,19 @@ namespace G
     public sealed partial class ReferrerTraffic
     {
         /// <summary>
-        /// <br/>Example: Google
+        /// Example: Google
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referrer", Required = global::Newtonsoft.Json.Required.Always)]
         public string Referrer { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 4
+        /// Example: 4
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;

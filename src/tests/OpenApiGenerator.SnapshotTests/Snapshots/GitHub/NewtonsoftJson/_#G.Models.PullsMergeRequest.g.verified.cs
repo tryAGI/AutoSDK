@@ -31,7 +31,7 @@ namespace G
         /// The merge method to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_method")]
-        public PullsMergeRequestMergeMethod? MergeMethod { get; set; }
+        public global::G.PullsMergeRequestMergeMethod? MergeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

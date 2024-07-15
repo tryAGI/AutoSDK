@@ -13,19 +13,19 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser User { get; set; } = default!;
+        public global::G.SimpleUser User { get; set; } = default!;
 
         /// <summary>
         /// The type of credit the user is receiving.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryCreditType Type { get; set; } = default!;
+        public global::G.SecurityAdvisoryCreditTypes Type { get; set; } = default!;
 
         /// <summary>
         /// The state of the user's acceptance of the credit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryCreditState State { get; set; } = default!;
+        public global::G.RepositoryAdvisoryCreditState State { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

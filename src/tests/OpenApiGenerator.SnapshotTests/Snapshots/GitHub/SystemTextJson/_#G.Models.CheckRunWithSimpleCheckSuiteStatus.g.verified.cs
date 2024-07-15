@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The phase of the lifecycle that the check is currently in.
-    /// <br/>Example: queued
+    /// The phase of the lifecycle that the check is currently in.<br/>
+    /// Example: queued
     /// </summary>
     public enum CheckRunWithSimpleCheckSuiteStatus
     {
@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CheckRunWithSimpleCheckSuiteStatus ToEnum(string value)
+        public static CheckRunWithSimpleCheckSuiteStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -58,7 +58,7 @@ namespace G
                 "in_progress" => CheckRunWithSimpleCheckSuiteStatus.InProgress,
                 "completed" => CheckRunWithSimpleCheckSuiteStatus.Completed,
                 "pending" => CheckRunWithSimpleCheckSuiteStatus.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

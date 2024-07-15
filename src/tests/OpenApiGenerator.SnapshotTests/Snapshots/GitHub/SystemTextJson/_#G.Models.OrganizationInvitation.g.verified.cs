@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Inviter { get; set; }
+        public required global::G.SimpleUser Inviter { get; set; }
 
         /// <summary>
         /// 
@@ -71,21 +71,21 @@ namespace G
         public required int TeamCount { get; set; }
 
         /// <summary>
-        /// <br/>Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
+        /// Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/organizations/16/invitations/1/teams"
+        /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitation_teams_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string InvitationTeamsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "member"
+        /// Example: "member"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitation_source")]
         public string? InvitationSource { get; set; }

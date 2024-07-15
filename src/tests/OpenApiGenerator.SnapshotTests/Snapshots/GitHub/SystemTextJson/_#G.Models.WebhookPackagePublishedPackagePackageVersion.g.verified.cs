@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPackagePublishedPackagePackageVersion.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,14 +15,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public WebhookPackagePublishedPackagePackageVersionAuthor? Author { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object?> Body { get; set; }
+        public global::System.OneOf<string?, object?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -32,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container_metadata")]
-        public WebhookPackagePublishedPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionContainerMetadata? ContainerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_metadata")]
-        public global::System.Collections.Generic.IList<WebhookPackagePublishedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -104,20 +106,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("npm_metadata")]
-        public WebhookPackagePublishedPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadata? NpmMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nuget_metadata")]
-        public global::System.Collections.Generic.IList<WebhookPackagePublishedPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookPackagePublishedPackagePackageVersionPackageFiles> PackageFiles { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionPackageFiles> PackageFiles { get; set; }
 
         /// <summary>
         /// 
@@ -135,13 +137,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release")]
-        public WebhookPackagePublishedPackagePackageVersionRelease? Release { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionRelease? Release { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rubygems_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
 
         /// <summary>
         /// 

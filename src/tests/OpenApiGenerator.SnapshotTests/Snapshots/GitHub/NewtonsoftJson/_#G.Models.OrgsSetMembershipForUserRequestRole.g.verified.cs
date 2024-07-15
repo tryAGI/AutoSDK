@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The role to give the user in the organization. Can be one of:  
-    ///  * `admin` - The user will become an owner of the organization.  
-    ///  * `member` - The user will become a non-owner member of the organization.
-    /// <br/>Default Value: member
+    /// The role to give the user in the organization. Can be one of:  <br/>
+    ///  * `admin` - The user will become an owner of the organization.  <br/>
+    ///  * `member` - The user will become a non-owner member of the organization.<br/>
+    /// Default Value: member
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgsSetMembershipForUserRequestRole
@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsSetMembershipForUserRequestRole ToEnum(string value)
+        public static OrgsSetMembershipForUserRequestRole? ToEnum(string value)
         {
             return value switch
             {
                 "admin" => OrgsSetMembershipForUserRequestRole.Admin,
                 "member" => OrgsSetMembershipForUserRequestRole.Member,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

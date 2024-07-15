@@ -13,49 +13,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksComments Comments { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksComments Comments { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commits", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksCommits Commits { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksCommits Commits { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml Html { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml Html { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksIssue Issue { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksIssue Issue { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_comment", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksReviewComment ReviewComment { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksReviewComment ReviewComment { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_comments", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksReviewComments ReviewComments { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksReviewComments ReviewComments { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksSelf Self { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksSelf Self { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedPullRequestLinksStatuses Statuses { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinksStatuses Statuses { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

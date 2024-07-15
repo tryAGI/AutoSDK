@@ -10,46 +10,46 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
-        /// <br/>Example: 208045946
+        /// Example: 208045946
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDU6TGFiZWwyMDgwNDU5NDY=
+        /// Example: MDU6TGFiZWwyMDgwNDU5NDY=
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// URL for the label
-        /// <br/>Example: https://api.github.com/repositories/42/labels/bug
+        /// URL for the label<br/>
+        /// Example: https://api.github.com/repositories/42/labels/bug
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The name of the label.
-        /// <br/>Example: bug
+        /// The name of the label.<br/>
+        /// Example: bug
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Something isn't working
+        /// Example: Something isn't working
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
         /// <summary>
-        /// 6-character hex code, without the leading #, identifying the color
-        /// <br/>Example: FFFFFF
+        /// 6-character hex code, without the leading #, identifying the color<br/>
+        /// Example: FFFFFF
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("color", Required = global::Newtonsoft.Json.Required.Always)]
         public string Color { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Default { get; set; } = default!;

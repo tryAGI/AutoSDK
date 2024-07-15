@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullsListDirection ToEnum(string value)
+        public static PullsListDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => PullsListDirection.Asc,
                 "desc" => PullsListDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

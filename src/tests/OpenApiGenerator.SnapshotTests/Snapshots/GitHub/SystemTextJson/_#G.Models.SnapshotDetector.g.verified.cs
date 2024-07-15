@@ -10,24 +10,24 @@ namespace G
     public sealed partial class SnapshotDetector
     {
         /// <summary>
-        /// The name of the detector used.
-        /// <br/>Example: docker buildtime detector
+        /// The name of the detector used.<br/>
+        /// Example: docker buildtime detector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// The version of the detector used.
-        /// <br/>Example: 1.0.0
+        /// The version of the detector used.<br/>
+        /// Example: 1.0.0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Version { get; set; }
 
         /// <summary>
-        /// The url of the detector used.
-        /// <br/>Example: http://example.com/docker-buildtimer-detector
+        /// The url of the detector used.<br/>
+        /// Example: http://example.com/docker-buildtimer-detector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

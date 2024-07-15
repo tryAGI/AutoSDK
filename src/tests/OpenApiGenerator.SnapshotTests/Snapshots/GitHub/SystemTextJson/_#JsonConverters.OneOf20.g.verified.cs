@@ -12,12 +12,14 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+
             var
             readerCopy = reader;
             T1? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -27,7 +29,7 @@ namespace OpenApiGenerator.JsonConverters
             T2? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -37,7 +39,7 @@ namespace OpenApiGenerator.JsonConverters
             T3? value3 = default;
             try
             {
-                value3 = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref readerCopy);
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -47,7 +49,7 @@ namespace OpenApiGenerator.JsonConverters
             T4? value4 = default;
             try
             {
-                value4 = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref readerCopy);
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -57,7 +59,7 @@ namespace OpenApiGenerator.JsonConverters
             T5? value5 = default;
             try
             {
-                value5 = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref readerCopy);
+                value5 = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -67,7 +69,7 @@ namespace OpenApiGenerator.JsonConverters
             T6? value6 = default;
             try
             {
-                value6 = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref readerCopy);
+                value6 = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -77,7 +79,7 @@ namespace OpenApiGenerator.JsonConverters
             T7? value7 = default;
             try
             {
-                value7 = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref readerCopy);
+                value7 = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -87,7 +89,7 @@ namespace OpenApiGenerator.JsonConverters
             T8? value8 = default;
             try
             {
-                value8 = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref readerCopy);
+                value8 = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -97,7 +99,7 @@ namespace OpenApiGenerator.JsonConverters
             T9? value9 = default;
             try
             {
-                value9 = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref readerCopy);
+                value9 = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -107,7 +109,7 @@ namespace OpenApiGenerator.JsonConverters
             T10? value10 = default;
             try
             {
-                value10 = global::System.Text.Json.JsonSerializer.Deserialize<T10>(ref readerCopy);
+                value10 = global::System.Text.Json.JsonSerializer.Deserialize<T10>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -117,7 +119,7 @@ namespace OpenApiGenerator.JsonConverters
             T11? value11 = default;
             try
             {
-                value11 = global::System.Text.Json.JsonSerializer.Deserialize<T11>(ref readerCopy);
+                value11 = global::System.Text.Json.JsonSerializer.Deserialize<T11>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -127,7 +129,7 @@ namespace OpenApiGenerator.JsonConverters
             T12? value12 = default;
             try
             {
-                value12 = global::System.Text.Json.JsonSerializer.Deserialize<T12>(ref readerCopy);
+                value12 = global::System.Text.Json.JsonSerializer.Deserialize<T12>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -137,7 +139,7 @@ namespace OpenApiGenerator.JsonConverters
             T13? value13 = default;
             try
             {
-                value13 = global::System.Text.Json.JsonSerializer.Deserialize<T13>(ref readerCopy);
+                value13 = global::System.Text.Json.JsonSerializer.Deserialize<T13>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -147,7 +149,7 @@ namespace OpenApiGenerator.JsonConverters
             T14? value14 = default;
             try
             {
-                value14 = global::System.Text.Json.JsonSerializer.Deserialize<T14>(ref readerCopy);
+                value14 = global::System.Text.Json.JsonSerializer.Deserialize<T14>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -157,7 +159,7 @@ namespace OpenApiGenerator.JsonConverters
             T15? value15 = default;
             try
             {
-                value15 = global::System.Text.Json.JsonSerializer.Deserialize<T15>(ref readerCopy);
+                value15 = global::System.Text.Json.JsonSerializer.Deserialize<T15>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -167,7 +169,7 @@ namespace OpenApiGenerator.JsonConverters
             T16? value16 = default;
             try
             {
-                value16 = global::System.Text.Json.JsonSerializer.Deserialize<T16>(ref readerCopy);
+                value16 = global::System.Text.Json.JsonSerializer.Deserialize<T16>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -177,7 +179,7 @@ namespace OpenApiGenerator.JsonConverters
             T17? value17 = default;
             try
             {
-                value17 = global::System.Text.Json.JsonSerializer.Deserialize<T17>(ref readerCopy);
+                value17 = global::System.Text.Json.JsonSerializer.Deserialize<T17>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -187,7 +189,7 @@ namespace OpenApiGenerator.JsonConverters
             T18? value18 = default;
             try
             {
-                value18 = global::System.Text.Json.JsonSerializer.Deserialize<T18>(ref readerCopy);
+                value18 = global::System.Text.Json.JsonSerializer.Deserialize<T18>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -197,7 +199,7 @@ namespace OpenApiGenerator.JsonConverters
             T19? value19 = default;
             try
             {
-                value19 = global::System.Text.Json.JsonSerializer.Deserialize<T19>(ref readerCopy);
+                value19 = global::System.Text.Json.JsonSerializer.Deserialize<T19>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -207,7 +209,7 @@ namespace OpenApiGenerator.JsonConverters
             T20? value20 = default;
             try
             {
-                value20 = global::System.Text.Json.JsonSerializer.Deserialize<T20>(ref readerCopy);
+                value20 = global::System.Text.Json.JsonSerializer.Deserialize<T20>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -260,102 +262,102 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
 
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader, options);
             }
 
             else if (value3 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref reader, options);
             }
 
             else if (value4 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref reader, options);
             }
 
             else if (value5 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref reader, options);
             }
 
             else if (value6 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref reader, options);
             }
 
             else if (value7 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref reader, options);
             }
 
             else if (value8 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref reader, options);
             }
 
             else if (value9 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref reader, options);
             }
 
             else if (value10 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T10>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T10>(ref reader, options);
             }
 
             else if (value11 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T11>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T11>(ref reader, options);
             }
 
             else if (value12 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T12>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T12>(ref reader, options);
             }
 
             else if (value13 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T13>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T13>(ref reader, options);
             }
 
             else if (value14 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T14>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T14>(ref reader, options);
             }
 
             else if (value15 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T15>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T15>(ref reader, options);
             }
 
             else if (value16 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T16>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T16>(ref reader, options);
             }
 
             else if (value17 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T17>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T17>(ref reader, options);
             }
 
             else if (value18 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T18>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T18>(ref reader, options);
             }
 
             else if (value19 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T19>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T19>(ref reader, options);
             }
 
             else if (value20 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T20>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T20>(ref reader, options);
             }
             return result;
         }
@@ -366,6 +368,8 @@ namespace OpenApiGenerator.JsonConverters
             global::System.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+
             if (!value.Validate())
             {
                 throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(T1).Name}, {typeof(T2).Name}, {typeof(T3).Name}, {typeof(T4).Name}, {typeof(T5).Name}, {typeof(T6).Name}, {typeof(T7).Name}, {typeof(T8).Name}, {typeof(T9).Name}, {typeof(T10).Name}, {typeof(T11).Name}, {typeof(T12).Name}, {typeof(T13).Name}, {typeof(T14).Name}, {typeof(T15).Name}, {typeof(T16).Name}, {typeof(T17).Name}, {typeof(T18).Name}, {typeof(T19).Name}, {typeof(T20).Name}> object.");
@@ -373,102 +377,102 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, value.Value1!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(T1), options);
             }
 
             else if (value.IsValue2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, value.Value2!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(T2), options);
             }
 
             else if (value.IsValue3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, value.Value3!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(T3), options);
             }
 
             else if (value.IsValue4)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, value.Value4!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(T4), options);
             }
 
             else if (value.IsValue5)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, value.Value5!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(T5), options);
             }
 
             else if (value.IsValue6)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, value.Value6!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeof(T6), options);
             }
 
             else if (value.IsValue7)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, value.Value7!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, typeof(T7), options);
             }
 
             else if (value.IsValue8)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value8, value.Value8!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value8, typeof(T8), options);
             }
 
             else if (value.IsValue9)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9, value.Value9!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9, typeof(T9), options);
             }
 
             else if (value.IsValue10)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10, value.Value10!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10, typeof(T10), options);
             }
 
             else if (value.IsValue11)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11, value.Value11!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11, typeof(T11), options);
             }
 
             else if (value.IsValue12)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12, value.Value12!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12, typeof(T12), options);
             }
 
             else if (value.IsValue13)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value13, value.Value13!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value13, typeof(T13), options);
             }
 
             else if (value.IsValue14)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value14, value.Value14!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value14, typeof(T14), options);
             }
 
             else if (value.IsValue15)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value15, value.Value15!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value15, typeof(T15), options);
             }
 
             else if (value.IsValue16)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value16, value.Value16!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value16, typeof(T16), options);
             }
 
             else if (value.IsValue17)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value17, value.Value17!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value17, typeof(T17), options);
             }
 
             else if (value.IsValue18)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value18, value.Value18!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value18, typeof(T18), options);
             }
 
             else if (value.IsValue19)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value19, value.Value19!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value19, typeof(T19), options);
             }
 
             else if (value.IsValue20)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value20, value.Value20!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value20, typeof(T20), options);
             }
         }
     }

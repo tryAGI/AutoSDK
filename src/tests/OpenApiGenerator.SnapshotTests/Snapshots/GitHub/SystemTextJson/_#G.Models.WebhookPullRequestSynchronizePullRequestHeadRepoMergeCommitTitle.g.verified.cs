@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle ToEnum(string value)
+        public static WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle? ToEnum(string value)
         {
             return value switch
             {
                 "PR_TITLE" => WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle.PRTITLE,
                 "MERGE_MESSAGE" => WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle.MERGEMESSAGE,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

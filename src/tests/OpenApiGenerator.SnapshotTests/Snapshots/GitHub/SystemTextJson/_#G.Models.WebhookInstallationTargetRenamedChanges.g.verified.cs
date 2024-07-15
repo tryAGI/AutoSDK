@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
-        public WebhookInstallationTargetRenamedChangesLogin? Login { get; set; }
+        public global::G.WebhookInstallationTargetRenamedChangesLogin? Login { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
-        public WebhookInstallationTargetRenamedChangesSlug? Slug { get; set; }
+        public global::G.WebhookInstallationTargetRenamedChangesSlug? Slug { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

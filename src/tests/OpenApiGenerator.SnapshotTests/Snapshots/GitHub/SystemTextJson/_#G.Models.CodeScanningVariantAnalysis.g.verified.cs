@@ -21,22 +21,22 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controller_repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleRepository ControllerRepo { get; set; }
+        public required global::G.SimpleRepository ControllerRepo { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisQueryLanguageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisQueryLanguage QueryLanguage { get; set; }
+        public required global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; }
 
         /// <summary>
         /// The download url for the query pack.
@@ -69,7 +69,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisStatus Status { get; set; }
+        public required global::G.CodeScanningVariantAnalysisStatus Status { get; set; }
 
         /// <summary>
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
@@ -82,19 +82,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisFailureReasonJsonConverter))]
-        public CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
+        public global::G.CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scanned_repositories")]
-        public global::System.Collections.Generic.IList<CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
 
         /// <summary>
         /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skipped_repositories")]
-        public CodeScanningVariantAnalysisSkippedRepositories? SkippedRepositories { get; set; }
+        public global::G.CodeScanningVariantAnalysisSkippedRepositories? SkippedRepositories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchReposSort ToEnum(string value)
+        public static SearchReposSort? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "forks" => SearchReposSort.Forks,
                 "help-wanted-issues" => SearchReposSort.HelpWantedIssues,
                 "updated" => SearchReposSort.Updated,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

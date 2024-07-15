@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<SimpleCommitStatus> Statuses { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.SimpleCommitStatus> Statuses { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// 

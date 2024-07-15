@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ReposCreateOrUpdateEnvironmentRequestReviewers
     {
         /// <summary>
-        /// The type of reviewer.
-        /// <br/>Example: User
+        /// The type of reviewer.<br/>
+        /// Example: User
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposCreateOrUpdateEnvironmentRequestReviewersTypeJsonConverter))]
-        public ReposCreateOrUpdateEnvironmentRequestReviewersType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeploymentReviewerTypeJsonConverter))]
+        public global::G.DeploymentReviewerType? Type { get; set; }
 
         /// <summary>
-        /// The id of the user or team who can review the deployment
-        /// <br/>Example: 4532992
+        /// The id of the user or team who can review the deployment<br/>
+        /// Example: 4532992
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int Id { get; set; }

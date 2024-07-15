@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MigrationsStartImportRequestVcsJsonConverter))]
-        public MigrationsStartImportRequestVcs? Vcs { get; set; }
+        public global::G.MigrationsStartImportRequestVcs? Vcs { get; set; }
 
         /// <summary>
         /// If authentication is required, the username to provide to `vcs_url`.

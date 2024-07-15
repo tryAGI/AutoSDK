@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismisser")]
-        public WebhooksAlertDismisser? Dismisser { get; set; }
+        public global::G.WebhooksAlertDismisser? Dismisser { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksAlertState State { get; set; } = default!;
+        public global::G.WebhooksAlertState State { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

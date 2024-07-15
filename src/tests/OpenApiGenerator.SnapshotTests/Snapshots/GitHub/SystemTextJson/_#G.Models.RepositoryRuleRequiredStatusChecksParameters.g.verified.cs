@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_status_checks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryRuleParamsStatusCheckConfiguration> RequiredStatusChecks { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsStatusCheckConfiguration> RequiredStatusChecks { get; set; }
 
         /// <summary>
         /// Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.

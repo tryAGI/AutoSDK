@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Organization
     {
         /// <summary>
-        /// Unique login name of the organization
-        /// <br/>Example: new-org
+        /// Unique login name of the organization<br/>
+        /// Example: new-org
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
 
         /// <summary>
-        /// URL for the organization
-        /// <br/>Example: https://api.github.com/orgs/github
+        /// URL for the organization<br/>
+        /// Example: https://api.github.com/orgs/github
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -96,8 +96,8 @@ namespace G
         public required string? Description { get; set; }
 
         /// <summary>
-        /// Display blog url for the organization
-        /// <br/>Example: blog.example-org.com
+        /// Display blog url for the organization<br/>
+        /// Example: blog.example-org.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("blog")]
         public string? Blog { get; set; }
@@ -110,29 +110,29 @@ namespace G
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// Display name for the organization
-        /// <br/>Example: New Org
+        /// Display name for the organization<br/>
+        /// Example: New Org
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Display company name for the organization
-        /// <br/>Example: Acme corporation
+        /// Display company name for the organization<br/>
+        /// Example: Acme corporation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
         public string? Company { get; set; }
 
         /// <summary>
-        /// Display location for the organization
-        /// <br/>Example: Berlin, Germany
+        /// Display location for the organization<br/>
+        /// Example: Berlin, Germany
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
         public string? Location { get; set; }
 
         /// <summary>
-        /// Display email for the organization
-        /// <br/>Example: org@example.com
+        /// Display email for the organization<br/>
+        /// Example: org@example.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
@@ -210,7 +210,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
-        public OrganizationPlan? Plan { get; set; }
+        public global::G.OrganizationPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

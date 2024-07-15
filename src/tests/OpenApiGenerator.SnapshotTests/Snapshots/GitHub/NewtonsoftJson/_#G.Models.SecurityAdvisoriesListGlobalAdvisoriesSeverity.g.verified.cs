@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecurityAdvisoriesListGlobalAdvisoriesSeverity ToEnum(string value)
+        public static SecurityAdvisoriesListGlobalAdvisoriesSeverity? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "medium" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Medium,
                 "high" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.High,
                 "critical" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

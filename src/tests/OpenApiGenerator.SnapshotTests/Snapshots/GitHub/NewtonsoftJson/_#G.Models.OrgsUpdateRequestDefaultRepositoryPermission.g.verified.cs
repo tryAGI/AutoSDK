@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Default permission level members have for organization repositories.
-    /// <br/>Default Value: read
+    /// Default permission level members have for organization repositories.<br/>
+    /// Default Value: read
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgsUpdateRequestDefaultRepositoryPermission
@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsUpdateRequestDefaultRepositoryPermission ToEnum(string value)
+        public static OrgsUpdateRequestDefaultRepositoryPermission? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "write" => OrgsUpdateRequestDefaultRepositoryPermission.Write,
                 "admin" => OrgsUpdateRequestDefaultRepositoryPermission.Admin,
                 "none" => OrgsUpdateRequestDefaultRepositoryPermission.None,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

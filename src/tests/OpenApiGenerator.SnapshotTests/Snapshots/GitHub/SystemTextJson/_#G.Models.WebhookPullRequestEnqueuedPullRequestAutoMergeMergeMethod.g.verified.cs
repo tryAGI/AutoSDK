@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod ToEnum(string value)
+        public static WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod? ToEnum(string value)
         {
             return value switch
             {
                 "merge" => WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod.Merge,
                 "squash" => WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod.Squash,
                 "rebase" => WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod.Rebase,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

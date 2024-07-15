@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookStatusCommitCommitterType? Type { get; set; }
+        public global::G.WebhookStatusCommitCommitterType? Type { get; set; }
 
         /// <summary>
         /// 

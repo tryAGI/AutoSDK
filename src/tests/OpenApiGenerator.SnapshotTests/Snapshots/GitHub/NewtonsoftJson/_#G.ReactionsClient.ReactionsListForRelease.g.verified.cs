@@ -6,50 +6,129 @@ namespace G
 {
     public partial class ReactionsClient
     {
+        partial void PrepareReactionsListForReleaseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int releaseId,
+            ref global::G.ReactionsListForReleaseContent content,
+            ref int perPage,
+            ref int page);
+        partial void PrepareReactionsListForReleaseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int releaseId,
+            global::G.ReactionsListForReleaseContent content,
+            int perPage,
+            int page);
+        partial void ProcessReactionsListForReleaseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessReactionsListForReleaseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// List reactions for a release
+        /// List reactions for a release<br/>
+        /// List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="releaseId"></param>
         /// <param name="content"></param>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Reaction>> ReactionsListForReleaseAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Reaction>> ReactionsListForReleaseAsync(
             string owner,
             string repo,
             int releaseId,
-            ReactionsListForReleaseContent content,
+            global::G.ReactionsListForReleaseContent content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReactionsListForReleaseArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                releaseId: ref releaseId,
+                content: ref content,
+                perPage: ref perPage,
+                page: ref page);
+
             var contentValue = content switch
             {
-                ReactionsListForReleaseContent.Plus1 => "+1",
-                ReactionsListForReleaseContent.Laugh => "laugh",
-                ReactionsListForReleaseContent.Heart => "heart",
-                ReactionsListForReleaseContent.Hooray => "hooray",
-                ReactionsListForReleaseContent.Rocket => "rocket",
-                ReactionsListForReleaseContent.Eyes => "eyes",
+                global::G.ReactionsListForReleaseContent.Plus1 => "+1",
+                global::G.ReactionsListForReleaseContent.Laugh => "laugh",
+                global::G.ReactionsListForReleaseContent.Heart => "heart",
+                global::G.ReactionsListForReleaseContent.Hooray => "hooray",
+                global::G.ReactionsListForReleaseContent.Rocket => "rocket",
+                global::G.ReactionsListForReleaseContent.Eyes => "eyes",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/releases/{releaseId}/reactions?content={contentValue}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/releases/{releaseId}/reactions?content={contentValue}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReactionsListForReleaseRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                releaseId: releaseId,
+                content: content,
+                perPage: perPage,
+                page: page);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReactionsListForReleaseResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessReactionsListForReleaseResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<Reaction>?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Reaction>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

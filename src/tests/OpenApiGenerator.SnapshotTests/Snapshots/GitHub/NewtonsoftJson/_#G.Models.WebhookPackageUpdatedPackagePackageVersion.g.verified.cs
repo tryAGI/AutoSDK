@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPackageUpdatedPackagePackageVersionAuthor? Author { get; set; } = default!;
+        public global::G.WebhookPackageUpdatedPackagePackageVersionAuthor? Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker_metadata")]
-        public global::System.Collections.Generic.IList<WebhookPackageUpdatedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookPackageUpdatedPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -109,13 +109,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("release")]
-        public WebhookPackageUpdatedPackagePackageVersionRelease? Release { get; set; }
+        public global::G.WebhookPackageUpdatedPackagePackageVersionRelease? Release { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rubygems_metadata")]
-        public global::System.Collections.Generic.IList<WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRubygemsMetadata>? RubygemsMetadata { get; set; }
 
         /// <summary>
         /// 

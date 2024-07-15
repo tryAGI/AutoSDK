@@ -24,8 +24,8 @@ namespace G
         public required string Body { get; set; }
 
         /// <summary>
-        /// Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
-        /// <br/>Default Value: false
+        /// Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         public bool Private { get; set; } = false;

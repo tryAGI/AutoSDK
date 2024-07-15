@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// You can use `run_url` to track the status of the run. This includes a property status and conclusion.
+    /// You can use `run_url` to track the status of the run. This includes a property status and conclusion.<br/>
     /// You should not rely on this always being an actions workflow run object.
     /// </summary>
     public sealed partial class CodeScanningDefaultSetupUpdateResponse

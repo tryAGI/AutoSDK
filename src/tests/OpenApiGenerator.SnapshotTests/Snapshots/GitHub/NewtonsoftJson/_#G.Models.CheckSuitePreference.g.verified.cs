@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preferences", Required = global::Newtonsoft.Json.Required.Always)]
-        public CheckSuitePreferencePreferences Preferences { get; set; } = default!;
+        public global::G.CheckSuitePreferencePreferences Preferences { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

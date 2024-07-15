@@ -10,8 +10,8 @@ namespace G
     public sealed partial class GistsCreateCommentRequest
     {
         /// <summary>
-        /// The comment text.
-        /// <br/>Example: Body of the attachment
+        /// The comment text.<br/>
+        /// Example: Body of the attachment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string Body { get; set; } = default!;

@@ -16,18 +16,18 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The role of the user in the team.
-        /// <br/>Default Value: member
-        /// <br/>Example: member
+        /// The role of the user in the team.<br/>
+        /// Default Value: member<br/>
+        /// Example: member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public TeamMembershipRole Role { get; set; } = default!;
+        public global::G.TeamMembershipRole Role { get; set; } = default!;
 
         /// <summary>
         /// The state of the user's membership in the team.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public TeamMembershipState State { get; set; } = default!;
+        public global::G.TeamMembershipState State { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

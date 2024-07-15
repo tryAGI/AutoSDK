@@ -37,7 +37,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Organization { get; set; } = default!;
+        public global::G.NullableSimpleUser? Organization { get; set; } = default!;
 
         /// <summary>
         /// The date and time the role was created.

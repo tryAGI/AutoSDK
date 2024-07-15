@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.OrgCustomProperty.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -17,13 +19,13 @@ namespace G
         public required string PropertyName { get; set; }
 
         /// <summary>
-        /// The type of the value for the property
-        /// <br/>Example: single_select
+        /// The type of the value for the property<br/>
+        /// Example: single_select
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgCustomPropertyValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrgCustomPropertyValueType ValueType { get; set; }
+        public required global::G.OrgCustomPropertyValueType ValueType { get; set; }
 
         /// <summary>
         /// Whether the property is required.
@@ -45,19 +47,19 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// An ordered list of the allowed values of the property.
+        /// An ordered list of the allowed values of the property.<br/>
         /// The property can have up to 200 allowed values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_values")]
         public global::System.Collections.Generic.IList<string?>? AllowedValues { get; set; }
 
         /// <summary>
-        /// Who can edit the values of the property
-        /// <br/>Example: org_actors
+        /// Who can edit the values of the property<br/>
+        /// Example: org_actors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values_editable_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgCustomPropertyValuesEditableByJsonConverter))]
-        public OrgCustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
+        public global::G.OrgCustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

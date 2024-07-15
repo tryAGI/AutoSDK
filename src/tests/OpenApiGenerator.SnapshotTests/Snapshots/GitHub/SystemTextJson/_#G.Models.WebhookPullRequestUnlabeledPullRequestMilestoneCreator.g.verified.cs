@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestUnlabeledPullRequestMilestoneCreatorTypeJsonConverter))]
-        public WebhookPullRequestUnlabeledPullRequestMilestoneCreatorType? Type { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestMilestoneCreatorType? Type { get; set; }
 
         /// <summary>
         /// 

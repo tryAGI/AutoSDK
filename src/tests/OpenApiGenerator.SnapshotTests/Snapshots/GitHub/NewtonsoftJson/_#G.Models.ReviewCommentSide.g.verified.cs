@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The side of the first line of the range for a multi-line comment.
-    /// <br/>Default Value: RIGHT
+    /// The side of the first line of the range for a multi-line comment.<br/>
+    /// Default Value: RIGHT
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReviewCommentSide
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReviewCommentSide ToEnum(string value)
+        public static ReviewCommentSide? ToEnum(string value)
         {
             return value switch
             {
                 "LEFT" => ReviewCommentSide.LEFT,
                 "RIGHT" => ReviewCommentSide.RIGHT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

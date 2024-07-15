@@ -10,25 +10,25 @@ namespace G
     public sealed partial class OrgHookConfig
     {
         /// <summary>
-        /// <br/>Example: "http://example.com/2"
+        /// Example: "http://example.com/2"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: "0"
+        /// Example: "0"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insecure_ssl")]
         public string? InsecureSsl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "form"
+        /// Example: "form"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
         public string? ContentType { get; set; }
 
         /// <summary>
-        /// <br/>Example: "********"
+        /// Example: "********"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret")]
         public string? Secret { get; set; }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created
+    /// Default Value: created
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum IssuesListForOrgSort
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesListForOrgSort ToEnum(string value)
+        public static IssuesListForOrgSort? ToEnum(string value)
         {
             return value switch
             {
                 "created" => IssuesListForOrgSort.Created,
                 "updated" => IssuesListForOrgSort.Updated,
                 "comments" => IssuesListForOrgSort.Comments,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

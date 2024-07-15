@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RuleSuiteResult ToEnum(string value)
+        public static RuleSuiteResult? ToEnum(string value)
         {
             return value switch
             {
                 "pass" => RuleSuiteResult.Pass,
                 "fail" => RuleSuiteResult.Fail,
                 "bypass" => RuleSuiteResult.Bypass,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

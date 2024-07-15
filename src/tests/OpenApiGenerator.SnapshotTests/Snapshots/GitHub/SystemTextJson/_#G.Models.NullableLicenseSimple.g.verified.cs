@@ -10,35 +10,35 @@ namespace G
     public sealed partial class NullableLicenseSimple
     {
         /// <summary>
-        /// <br/>Example: mit
+        /// Example: mit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
 
         /// <summary>
-        /// <br/>Example: MIT License
+        /// Example: MIT License
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/licenses/mit
+        /// Example: https://api.github.com/licenses/mit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: MIT
+        /// Example: MIT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spdx_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SpdxId { get; set; }
 
         /// <summary>
-        /// <br/>Example: MDc6TGljZW5zZW1pdA==
+        /// Example: MDc6TGljZW5zZW1pdA==
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

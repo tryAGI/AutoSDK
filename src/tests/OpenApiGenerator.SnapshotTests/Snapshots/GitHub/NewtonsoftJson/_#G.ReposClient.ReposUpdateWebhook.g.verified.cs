@@ -6,8 +6,31 @@ namespace G
 {
     public partial class ReposClient
     {
+        partial void PrepareReposUpdateWebhookArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int hookId,
+            global::G.ReposUpdateWebhookRequest request);
+        partial void PrepareReposUpdateWebhookRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int hookId,
+            global::G.ReposUpdateWebhookRequest request);
+        partial void ProcessReposUpdateWebhookResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessReposUpdateWebhookResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Update a repository webhook
+        /// Update a repository webhook<br/>
+        /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -15,61 +38,119 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Hook> ReposUpdateWebhookAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Hook> ReposUpdateWebhookAsync(
             string owner,
             string repo,
             int hookId,
-            ReposUpdateWebhookRequest request,
+            global::G.ReposUpdateWebhookRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReposUpdateWebhookArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                hookId: ref hookId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/hooks/{hookId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/hooks/{hookId}", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReposUpdateWebhookRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                hookId: hookId,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReposUpdateWebhookResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessReposUpdateWebhookResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Hook?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Hook?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Update a repository webhook
+        /// Update a repository webhook<br/>
+        /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="hookId"></param>
-        /// <param name="config"></param>
-        /// <param name="events"></param>
-        /// <param name="addEvents"></param>
-        /// <param name="removeEvents"></param>
-        /// <param name="active"></param>
+        /// <param name="config">
+        /// Configuration object of the webhook
+        /// </param>
+        /// <param name="events">
+        /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.<br/>
+        /// Default Value: [push]
+        /// </param>
+        /// <param name="addEvents">
+        /// Determines a list of events to be added to the list of events that the Hook triggers for.
+        /// </param>
+        /// <param name="removeEvents">
+        /// Determines a list of events to be removed from the list of events that the Hook triggers for.
+        /// </param>
+        /// <param name="active">
+        /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Hook> ReposUpdateWebhookAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Hook> ReposUpdateWebhookAsync(
             string owner,
             string repo,
             int hookId,
-            WebhookConfig? config = default,
+            global::G.WebhookConfig? config = default,
             global::System.Collections.Generic.IList<string?>? events = default,
             global::System.Collections.Generic.IList<string?>? addEvents = default,
             global::System.Collections.Generic.IList<string?>? removeEvents = default,
             bool active = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ReposUpdateWebhookRequest
+            var request = new global::G.ReposUpdateWebhookRequest
             {
                 Config = config,
                 Events = events,

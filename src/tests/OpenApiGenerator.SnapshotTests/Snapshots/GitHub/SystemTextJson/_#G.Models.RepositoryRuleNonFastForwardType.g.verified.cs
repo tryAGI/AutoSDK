@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleNonFastForwardType ToEnum(string value)
+        public static RepositoryRuleNonFastForwardType? ToEnum(string value)
         {
             return value switch
             {
                 "non_fast_forward" => RepositoryRuleNonFastForwardType.NonFastForward,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

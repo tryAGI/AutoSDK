@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookTeamEditedChangesRepositoryPermissions Permissions { get; set; } = default!;
+        public global::G.WebhookTeamEditedChangesRepositoryPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

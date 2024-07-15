@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The permission associated with the invitation.
-    /// <br/>Example: read
+    /// The permission associated with the invitation.<br/>
+    /// Example: read
     /// </summary>
     public enum RepositoryInvitationPermissions
     {
@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryInvitationPermissions ToEnum(string value)
+        public static RepositoryInvitationPermissions? ToEnum(string value)
         {
             return value switch
             {
@@ -64,7 +64,7 @@ namespace G
                 "admin" => RepositoryInvitationPermissions.Admin,
                 "triage" => RepositoryInvitationPermissions.Triage,
                 "maintain" => RepositoryInvitationPermissions.Maintain,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

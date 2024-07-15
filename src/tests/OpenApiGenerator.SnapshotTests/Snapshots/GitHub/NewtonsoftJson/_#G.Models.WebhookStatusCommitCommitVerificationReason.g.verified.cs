@@ -120,7 +120,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookStatusCommitCommitVerificationReason ToEnum(string value)
+        public static WebhookStatusCommitCommitVerificationReason? ToEnum(string value)
         {
             return value switch
             {
@@ -139,7 +139,7 @@ namespace G
                 "valid" => WebhookStatusCommitCommitVerificationReason.Valid,
                 "bad_cert" => WebhookStatusCommitCommitVerificationReason.BadCert,
                 "ocsp_pending" => WebhookStatusCommitCommitVerificationReason.OcspPending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

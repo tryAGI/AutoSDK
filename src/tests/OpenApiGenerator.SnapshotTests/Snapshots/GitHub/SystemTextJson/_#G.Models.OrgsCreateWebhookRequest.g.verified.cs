@@ -21,18 +21,18 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrgsCreateWebhookRequestConfig Config { get; set; }
+        public required global::G.OrgsCreateWebhookRequestConfig Config { get; set; }
 
         /// <summary>
-        /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
-        /// <br/>Default Value: [push]
+        /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.<br/>
+        /// Default Value: [push]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         public global::System.Collections.Generic.IList<string?>? Events { get; set; }
 
         /// <summary>
-        /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-        /// <br/>Default Value: true
+        /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         public bool Active { get; set; } = true;

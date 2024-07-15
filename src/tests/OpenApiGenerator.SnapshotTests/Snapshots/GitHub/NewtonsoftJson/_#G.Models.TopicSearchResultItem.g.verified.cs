@@ -91,19 +91,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<TopicSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("related")]
-        public global::System.Collections.Generic.IList<TopicSearchResultItemRelated?>? Related { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemRelated?>? Related { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aliases")]
-        public global::System.Collections.Generic.IList<TopicSearchResultItemAliases?>? Aliases { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliases?>? Aliases { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

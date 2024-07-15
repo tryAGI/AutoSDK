@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestReviewCommentEditedPullRequestMilestoneState ToEnum(string value)
+        public static WebhookPullRequestReviewCommentEditedPullRequestMilestoneState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneState.Open,
                 "closed" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneState.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -91,14 +91,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required LicenseContentLinks Links { get; set; }
+        public required global::G.LicenseContentLinks Links { get; set; }
 
         /// <summary>
         /// License Simple
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableLicenseSimple? License { get; set; }
+        public required global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

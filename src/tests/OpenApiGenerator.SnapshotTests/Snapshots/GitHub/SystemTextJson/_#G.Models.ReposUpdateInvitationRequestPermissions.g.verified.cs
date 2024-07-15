@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposUpdateInvitationRequestPermissions ToEnum(string value)
+        public static ReposUpdateInvitationRequestPermissions? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "maintain" => ReposUpdateInvitationRequestPermissions.Maintain,
                 "triage" => ReposUpdateInvitationRequestPermissions.Triage,
                 "admin" => ReposUpdateInvitationRequestPermissions.Admin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

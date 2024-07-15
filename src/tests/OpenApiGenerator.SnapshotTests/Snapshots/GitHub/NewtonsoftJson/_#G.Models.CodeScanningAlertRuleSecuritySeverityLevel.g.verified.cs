@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningAlertRuleSecuritySeverityLevel ToEnum(string value)
+        public static CodeScanningAlertRuleSecuritySeverityLevel? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "medium" => CodeScanningAlertRuleSecuritySeverityLevel.Medium,
                 "high" => CodeScanningAlertRuleSecuritySeverityLevel.High,
                 "critical" => CodeScanningAlertRuleSecuritySeverityLevel.Critical,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

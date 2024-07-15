@@ -10,13 +10,13 @@ namespace G
     public sealed partial class GpgKey
     {
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Octocat's GPG Key
+        /// Example: Octocat's GPG Key
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
@@ -28,31 +28,31 @@ namespace G
         public int? PrimaryKeyId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 3262EFF25BA0D270
+        /// Example: 3262EFF25BA0D270
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string KeyId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: xsBNBFayYZ...
+        /// Example: xsBNBFayYZ...
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_key", Required = global::Newtonsoft.Json.Required.Always)]
         public string PublicKey { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: []
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emails", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GpgKeyEmails> Emails { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GpgKeyEmails> Emails { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: []
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subkeys", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GpgKeySubkeys> Subkeys { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GpgKeySubkeys> Subkeys { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_sign", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanSign { get; set; } = default!;
@@ -70,13 +70,13 @@ namespace G
         public bool CanEncryptStorage { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_certify", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanCertify { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
@@ -88,7 +88,7 @@ namespace G
         public global::System.DateTime? ExpiresAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("revoked", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Revoked { get; set; } = default!;

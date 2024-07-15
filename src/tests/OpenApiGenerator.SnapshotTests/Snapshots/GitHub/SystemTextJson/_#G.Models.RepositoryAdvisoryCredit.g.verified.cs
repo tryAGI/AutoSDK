@@ -14,15 +14,15 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser User { get; set; }
+        public required global::G.SimpleUser User { get; set; }
 
         /// <summary>
         /// The type of credit the user is receiving.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryCreditTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisoryCreditType Type { get; set; }
+        public required global::G.SecurityAdvisoryCreditTypes Type { get; set; }
 
         /// <summary>
         /// The state of the user's acceptance of the credit.
@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryCreditStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisoryCreditState State { get; set; }
+        public required global::G.RepositoryAdvisoryCreditState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

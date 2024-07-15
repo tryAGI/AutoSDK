@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookOrgBlockBlockedAction ToEnum(string value)
+        public static WebhookOrgBlockBlockedAction? ToEnum(string value)
         {
             return value switch
             {
                 "blocked" => WebhookOrgBlockBlockedAction.Blocked,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

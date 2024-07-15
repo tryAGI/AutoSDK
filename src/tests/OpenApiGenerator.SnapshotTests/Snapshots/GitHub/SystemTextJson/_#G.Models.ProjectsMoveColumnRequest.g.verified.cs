@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ProjectsMoveColumnRequest
     {
         /// <summary>
-        /// The position of the column in a project. Can be one of: `first`, `last`, or `after:&lt;column_id&gt;` to place after the specified column.
-        /// <br/>Example: last
+        /// The position of the column in a project. Can be one of: `first`, `last`, or `after:&lt;column_id&gt;` to place after the specified column.<br/>
+        /// Example: last
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         [global::System.Text.Json.Serialization.JsonRequired]

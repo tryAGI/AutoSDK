@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_type")]
-        public MergedUpstreamMergeType? MergeType { get; set; }
+        public global::G.MergedUpstreamMergeType? MergeType { get; set; }
 
         /// <summary>
         /// 

@@ -19,19 +19,19 @@ namespace G
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue")]
-        public Issue? Issue { get; set; }
+        public global::G.Issue? Issue { get; set; }
 
         /// <summary>
         /// Comments provide a way for people to collaborate on an issue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment")]
-        public IssueComment? Comment { get; set; }
+        public global::G.IssueComment? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pages")]
-        public global::System.Collections.Generic.IList<EventPayloadPages?>? Pages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EventPayloadPages?>? Pages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

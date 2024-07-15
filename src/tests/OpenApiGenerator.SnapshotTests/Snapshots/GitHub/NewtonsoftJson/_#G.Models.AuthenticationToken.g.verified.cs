@@ -10,21 +10,20 @@ namespace G
     public sealed partial class AuthenticationToken
     {
         /// <summary>
-        /// The token used for authentication
-        /// <br/>Example: v1.1f699f1069f60xxx
+        /// The token used for authentication<br/>
+        /// Example: v1.1f699f1069f60xxx
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
         public string Token { get; set; } = default!;
 
         /// <summary>
         /// The time this token expires
-        /// <br/>Example: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime ExpiresAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
         public object? Permissions { get; set; }
@@ -33,10 +32,10 @@ namespace G
         /// The repositories this token has access to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<Repository>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Repository>? Repositories { get; set; }
 
         /// <summary>
-        /// <br/>Example: config.yaml
+        /// Example: config.yaml
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file")]
         public string? SingleFile { get; set; }
@@ -45,7 +44,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection")]
-        public AuthenticationTokenRepositorySelection? RepositorySelection { get; set; }
+        public global::G.AuthenticationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

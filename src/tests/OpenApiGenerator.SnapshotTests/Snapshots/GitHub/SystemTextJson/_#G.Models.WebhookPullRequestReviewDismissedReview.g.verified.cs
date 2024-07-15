@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewDismissedReviewLinks Links { get; set; }
+        public required global::G.WebhookPullRequestReviewDismissedReviewLinks Links { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewDismissedReviewAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the review.
@@ -72,7 +72,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewDismissedReviewStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewDismissedReviewState State { get; set; }
+        public required global::G.WebhookPullRequestReviewDismissedReviewState State { get; set; }
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestReviewDismissedReviewUser? User { get; set; }
+        public required global::G.WebhookPullRequestReviewDismissedReviewUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

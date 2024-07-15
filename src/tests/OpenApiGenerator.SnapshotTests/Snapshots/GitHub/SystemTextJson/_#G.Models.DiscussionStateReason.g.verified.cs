@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The reason for the current state
-    /// <br/>Example: resolved
+    /// The reason for the current state<br/>
+    /// Example: resolved
     /// </summary>
     public enum DiscussionStateReason
     {
@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DiscussionStateReason ToEnum(string value)
+        public static DiscussionStateReason? ToEnum(string value)
         {
             return value switch
             {
@@ -58,7 +58,7 @@ namespace G
                 "outdated" => DiscussionStateReason.Outdated,
                 "duplicate" => DiscussionStateReason.Duplicate,
                 "reopened" => DiscussionStateReason.Reopened,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

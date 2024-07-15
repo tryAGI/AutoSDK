@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RunnerLabel> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RunnerLabel> Labels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

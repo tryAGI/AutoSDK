@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The reaction to use
-    /// <br/>Example: heart
+    /// The reaction to use<br/>
+    /// Example: heart
     /// </summary>
     public enum ReactionContent
     {
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReactionContent ToEnum(string value)
+        public static ReactionContent? ToEnum(string value)
         {
             return value switch
             {
@@ -82,7 +82,7 @@ namespace G
                 "hooray" => ReactionContent.Hooray,
                 "rocket" => ReactionContent.Rocket,
                 "eyes" => ReactionContent.Eyes,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

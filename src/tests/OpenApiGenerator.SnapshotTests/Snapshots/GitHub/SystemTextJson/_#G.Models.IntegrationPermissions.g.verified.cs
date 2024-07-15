@@ -6,7 +6,6 @@ namespace G
 {
     /// <summary>
     /// The set of permissions for the GitHub app
-    /// <br/>Example: 
     /// </summary>
     public sealed partial class IntegrationPermissions
     {

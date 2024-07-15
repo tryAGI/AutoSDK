@@ -217,7 +217,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public PullRequestHeadRepoOwner Owner { get; set; } = default!;
+        public global::G.PullRequestHeadRepoOwner Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -409,7 +409,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public PullRequestHeadRepoPermissions? Permissions { get; set; }
+        public global::G.PullRequestHeadRepoPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -439,7 +439,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public PullRequestHeadRepoLicense? License { get; set; } = default!;
+        public global::G.PullRequestHeadRepoLicense? License { get; set; } = default!;
 
         /// <summary>
         /// 

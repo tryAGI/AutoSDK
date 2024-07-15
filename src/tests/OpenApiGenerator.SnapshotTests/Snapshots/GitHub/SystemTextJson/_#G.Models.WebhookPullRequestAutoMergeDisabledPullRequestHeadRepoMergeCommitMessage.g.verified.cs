@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a merge commit message.
-    /// - `PR_TITLE` - default to the pull request's title.
-    /// - `PR_BODY` - default to the pull request's body.
+    /// The default value for a merge commit message.<br/>
+    /// - `PR_TITLE` - default to the pull request's title.<br/>
+    /// - `PR_BODY` - default to the pull request's body.<br/>
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
     public enum WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage
@@ -47,14 +47,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage ToEnum(string value)
+        public static WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage? ToEnum(string value)
         {
             return value switch
             {
                 "PR_BODY" => WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage.PRBODY,
                 "PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage.PRTITLE,
                 "BLANK" => WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoMergeCommitMessage.BLANK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

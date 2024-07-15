@@ -10,14 +10,14 @@ namespace G
     public sealed partial class CloneTraffic
     {
         /// <summary>
-        /// <br/>Example: 173
+        /// Example: 173
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
 
         /// <summary>
-        /// <br/>Example: 128
+        /// Example: 128
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clones")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Traffic> Clones { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Traffic> Clones { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
-    /// <br/>Example: direct
+    /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.<br/>
+    /// Example: direct
     /// </summary>
     public enum DependencyRelationship
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependencyRelationship ToEnum(string value)
+        public static DependencyRelationship? ToEnum(string value)
         {
             return value switch
             {
                 "direct" => DependencyRelationship.Direct,
                 "indirect" => DependencyRelationship.Indirect,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

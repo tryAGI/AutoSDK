@@ -27,7 +27,7 @@ namespace G
         /// The list of events for the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvents?>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -69,13 +69,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner? Owner { get; set; }
+        public required global::G.WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner? Owner { get; set; }
 
         /// <summary>
         /// The set of permissions for the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions? Permissions { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// The slug name of the GitHub app

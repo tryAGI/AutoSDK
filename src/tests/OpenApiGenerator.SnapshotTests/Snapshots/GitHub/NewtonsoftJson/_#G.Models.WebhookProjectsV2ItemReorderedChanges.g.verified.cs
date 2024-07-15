@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("previous_projects_v2_item_node_id")]
-        public WebhookProjectsV2ItemReorderedChangesPreviousProjectsV2ItemNodeId? PreviousProjectsV2ItemNodeId { get; set; }
+        public global::G.WebhookProjectsV2ItemReorderedChangesPreviousProjectsV2ItemNodeId? PreviousProjectsV2ItemNodeId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

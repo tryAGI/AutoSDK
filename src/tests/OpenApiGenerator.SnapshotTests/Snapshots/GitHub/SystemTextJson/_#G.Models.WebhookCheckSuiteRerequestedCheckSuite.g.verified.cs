@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCheckSuiteRerequestedCheckSuiteApp App { get; set; }
+        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteApp App { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
+        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCheckSuiteRerequestedCheckSuiteHeadCommit HeadCommit { get; set; }
+        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteHeadCommit HeadCommit { get; set; }
 
         /// <summary>
         /// The SHA of the head commit that is being checked.
@@ -99,7 +99,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookCheckSuiteRerequestedCheckSuitePullRequests> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequests> PullRequests { get; set; }
 
         /// <summary>
         /// 
@@ -119,7 +119,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
+        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// 

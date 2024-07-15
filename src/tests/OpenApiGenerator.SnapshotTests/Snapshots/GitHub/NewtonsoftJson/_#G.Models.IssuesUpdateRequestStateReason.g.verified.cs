@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The reason for the state change. Ignored unless `state` is changed.
-    /// <br/>Example: not_planned
+    /// The reason for the state change. Ignored unless `state` is changed.<br/>
+    /// Example: not_planned
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum IssuesUpdateRequestStateReason
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesUpdateRequestStateReason ToEnum(string value)
+        public static IssuesUpdateRequestStateReason? ToEnum(string value)
         {
             return value switch
             {
                 "completed" => IssuesUpdateRequestStateReason.Completed,
                 "not_planned" => IssuesUpdateRequestStateReason.NotPlanned,
                 "reopened" => IssuesUpdateRequestStateReason.Reopened,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

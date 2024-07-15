@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchCommitsSort ToEnum(string value)
+        public static SearchCommitsSort? ToEnum(string value)
         {
             return value switch
             {
                 "author-date" => SearchCommitsSort.AuthorDate,
                 "committer-date" => SearchCommitsSort.CommitterDate,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

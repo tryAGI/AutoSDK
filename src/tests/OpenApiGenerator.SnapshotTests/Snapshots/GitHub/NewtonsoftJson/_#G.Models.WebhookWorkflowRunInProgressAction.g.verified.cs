@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookWorkflowRunInProgressAction ToEnum(string value)
+        public static WebhookWorkflowRunInProgressAction? ToEnum(string value)
         {
             return value switch
             {
                 "in_progress" => WebhookWorkflowRunInProgressAction.InProgress,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

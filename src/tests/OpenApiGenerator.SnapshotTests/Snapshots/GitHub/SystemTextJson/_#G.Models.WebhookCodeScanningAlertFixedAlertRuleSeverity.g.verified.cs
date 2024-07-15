@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookCodeScanningAlertFixedAlertRuleSeverity ToEnum(string value)
+        public static WebhookCodeScanningAlertFixedAlertRuleSeverity? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "note" => WebhookCodeScanningAlertFixedAlertRuleSeverity.Note,
                 "warning" => WebhookCodeScanningAlertFixedAlertRuleSeverity.Warning,
                 "error" => WebhookCodeScanningAlertFixedAlertRuleSeverity.Error,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

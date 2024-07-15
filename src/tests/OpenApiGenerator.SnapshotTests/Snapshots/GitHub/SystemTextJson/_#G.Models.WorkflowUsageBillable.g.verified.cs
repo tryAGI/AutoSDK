@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UBUNTU")]
-        public WorkflowUsageBillableUBUNTU? UBUNTU { get; set; }
+        public global::G.WorkflowUsageBillableUBUNTU? UBUNTU { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MACOS")]
-        public WorkflowUsageBillableMACOS? MACOS { get; set; }
+        public global::G.WorkflowUsageBillableMACOS? MACOS { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("WINDOWS")]
-        public WorkflowUsageBillableWINDOWS? WINDOWS { get; set; }
+        public global::G.WorkflowUsageBillableWINDOWS? WINDOWS { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

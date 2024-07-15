@@ -97,7 +97,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? User { get; set; } = default!;
+        public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner")]
-        public SimpleUser? Owner { get; set; }
+        public global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// 

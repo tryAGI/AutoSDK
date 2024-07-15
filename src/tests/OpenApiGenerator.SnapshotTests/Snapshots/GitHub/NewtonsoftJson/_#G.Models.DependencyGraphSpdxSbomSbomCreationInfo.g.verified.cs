@@ -10,8 +10,8 @@ namespace G
     public sealed partial class DependencyGraphSpdxSbomSbomCreationInfo
     {
         /// <summary>
-        /// The date and time the SPDX document was created.
-        /// <br/>Example: 2021-11-03T00:00:00Z
+        /// The date and time the SPDX document was created.<br/>
+        /// Example: 2021-11-03T00:00:00Z
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
         public string Created { get; set; } = default!;

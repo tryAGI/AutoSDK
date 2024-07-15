@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRuleCommitterEmailPatternType Type { get; set; } = default!;
+        public global::G.RepositoryRuleCommitterEmailPatternType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters")]
-        public RepositoryRuleCommitterEmailPatternParameters? Parameters { get; set; }
+        public global::G.RepositoryRuleCommitterEmailPatternParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

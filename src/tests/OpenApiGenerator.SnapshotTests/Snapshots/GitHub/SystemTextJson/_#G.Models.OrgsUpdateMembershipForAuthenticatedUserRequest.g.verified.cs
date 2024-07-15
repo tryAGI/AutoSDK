@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgsUpdateMembershipForAuthenticatedUserRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrgsUpdateMembershipForAuthenticatedUserRequestState State { get; set; }
+        public required global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

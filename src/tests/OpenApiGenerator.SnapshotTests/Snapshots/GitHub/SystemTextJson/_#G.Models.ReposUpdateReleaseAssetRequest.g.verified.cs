@@ -22,7 +22,7 @@ namespace G
         public string? Label { get; set; }
 
         /// <summary>
-        /// <br/>Example: "uploaded"
+        /// Example: "uploaded"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         public string? State { get; set; }

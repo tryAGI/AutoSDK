@@ -10,15 +10,15 @@ namespace G
     public sealed partial class CodespaceWithFullRepositoryGitStatus
     {
         /// <summary>
-        /// The number of commits the local repository is ahead of the remote.
-        /// <br/>Example: 0
+        /// The number of commits the local repository is ahead of the remote.<br/>
+        /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ahead")]
         public int Ahead { get; set; }
 
         /// <summary>
-        /// The number of commits the local repository is behind the remote.
-        /// <br/>Example: 0
+        /// The number of commits the local repository is behind the remote.<br/>
+        /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("behind")]
         public int Behind { get; set; }
@@ -36,8 +36,8 @@ namespace G
         public bool HasUncommittedChanges { get; set; }
 
         /// <summary>
-        /// The current branch (or SHA if in detached HEAD state) of the local repository.
-        /// <br/>Example: main
+        /// The current branch (or SHA if in detached HEAD state) of the local repository.<br/>
+        /// Example: main
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref")]
         public string? Ref { get; set; }

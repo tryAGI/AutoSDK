@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentSymlinkType Type { get; set; } = default!;
+        public global::G.ContentSymlinkType Type { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentSymlinkLinks Links { get; set; } = default!;
+        public global::G.ContentSymlinkLinks Links { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

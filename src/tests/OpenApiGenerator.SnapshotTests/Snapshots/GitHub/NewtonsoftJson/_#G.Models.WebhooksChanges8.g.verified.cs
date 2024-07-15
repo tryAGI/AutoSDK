@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksChanges8Tier Tier { get; set; } = default!;
+        public global::G.WebhooksChanges8Tier Tier { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

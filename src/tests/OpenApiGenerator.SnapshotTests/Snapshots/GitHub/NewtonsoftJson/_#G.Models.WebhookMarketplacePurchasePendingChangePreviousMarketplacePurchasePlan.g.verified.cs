@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price_model", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel PriceModel { get; set; } = default!;
+        public global::G.WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel PriceModel { get; set; } = default!;
 
         /// <summary>
         /// 

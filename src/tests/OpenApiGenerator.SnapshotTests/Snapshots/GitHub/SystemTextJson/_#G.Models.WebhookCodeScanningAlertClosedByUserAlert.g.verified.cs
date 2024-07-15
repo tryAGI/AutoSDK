@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertClosedByUserAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("most_recent_instance")]
-        public WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
 
         /// <summary>
         /// The code scanning alert number.
@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertRule Rule { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertRule Rule { get; set; }
 
         /// <summary>
         /// State of a code scanning alert.
@@ -71,14 +71,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertClosedByUserAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertState State { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertState State { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertClosedByUserAlertTool Tool { get; set; }
+        public required global::G.WebhookCodeScanningAlertClosedByUserAlertTool Tool { get; set; }
 
         /// <summary>
         /// 

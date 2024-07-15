@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookDeploymentReviewRejectedWorkflowRunConclusion ToEnum(string value)
+        public static WebhookDeploymentReviewRejectedWorkflowRunConclusion? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "timed_out" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.TimedOut,
                 "action_required" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.ActionRequired,
                 "stale" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Stale,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookDeploymentReviewApprovedReviewersReviewerType? Type { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedReviewersReviewerType? Type { get; set; }
 
         /// <summary>
         /// 

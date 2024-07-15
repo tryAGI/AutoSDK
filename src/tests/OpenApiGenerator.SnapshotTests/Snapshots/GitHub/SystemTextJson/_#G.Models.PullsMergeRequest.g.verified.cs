@@ -32,7 +32,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsMergeRequestMergeMethodJsonConverter))]
-        public PullsMergeRequestMergeMethod? MergeMethod { get; set; }
+        public global::G.PullsMergeRequestMergeMethod? MergeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

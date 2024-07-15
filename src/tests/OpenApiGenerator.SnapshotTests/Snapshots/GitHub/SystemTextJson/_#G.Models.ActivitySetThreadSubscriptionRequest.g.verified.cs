@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ActivitySetThreadSubscriptionRequest
     {
         /// <summary>
-        /// Whether to block all notifications from a thread.
-        /// <br/>Default Value: false
+        /// Whether to block all notifications from a thread.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ignored")]
         public bool Ignored { get; set; } = false;

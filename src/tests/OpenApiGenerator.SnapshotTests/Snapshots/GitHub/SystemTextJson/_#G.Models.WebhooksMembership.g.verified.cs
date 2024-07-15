@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksMembershipUser? User { get; set; }
+        public required global::G.WebhooksMembershipUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

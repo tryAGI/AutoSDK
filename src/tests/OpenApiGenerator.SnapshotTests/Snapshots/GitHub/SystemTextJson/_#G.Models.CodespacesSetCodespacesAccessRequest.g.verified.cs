@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespacesSetCodespacesAccessRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodespacesSetCodespacesAccessRequestVisibility Visibility { get; set; }
+        public required global::G.CodespacesSetCodespacesAccessRequestVisibility Visibility { get; set; }
 
         /// <summary>
         /// The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.

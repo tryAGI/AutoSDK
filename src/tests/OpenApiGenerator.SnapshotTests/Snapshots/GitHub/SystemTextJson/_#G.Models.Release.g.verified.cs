@@ -66,16 +66,16 @@ namespace G
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// The name of the tag.
-        /// <br/>Example: v1.0.0
+        /// The name of the tag.<br/>
+        /// Example: v1.0.0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TagName { get; set; }
 
         /// <summary>
-        /// Specifies the commitish value that determines where the Git tag is created from.
-        /// <br/>Example: master
+        /// Specifies the commitish value that determines where the Git tag is created from.<br/>
+        /// Example: master
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_commitish")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -95,16 +95,16 @@ namespace G
         public string? Body { get; set; }
 
         /// <summary>
-        /// true to create a draft (unpublished) release, false to create a published one.
-        /// <br/>Example: false
+        /// true to create a draft (unpublished) release, false to create a published one.<br/>
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Draft { get; set; }
 
         /// <summary>
-        /// Whether to identify the release as a prerelease or a full release.
-        /// <br/>Example: false
+        /// Whether to identify the release as a prerelease or a full release.<br/>
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prerelease")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -129,14 +129,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Author { get; set; }
+        public required global::G.SimpleUser Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ReleaseAsset> Assets { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ReleaseAsset> Assets { get; set; }
 
         /// <summary>
         /// 
@@ -166,7 +166,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

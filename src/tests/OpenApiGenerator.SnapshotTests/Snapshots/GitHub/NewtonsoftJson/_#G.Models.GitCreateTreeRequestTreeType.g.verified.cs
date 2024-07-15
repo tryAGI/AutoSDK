@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GitCreateTreeRequestTreeType ToEnum(string value)
+        public static GitCreateTreeRequestTreeType? ToEnum(string value)
         {
             return value switch
             {
                 "blob" => GitCreateTreeRequestTreeType.Blob,
                 "tree" => GitCreateTreeRequestTreeType.Tree,
                 "commit" => GitCreateTreeRequestTreeType.Commit,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

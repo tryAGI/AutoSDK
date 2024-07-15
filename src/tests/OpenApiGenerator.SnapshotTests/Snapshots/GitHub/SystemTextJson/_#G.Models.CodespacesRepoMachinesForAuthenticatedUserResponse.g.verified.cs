@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("machines")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CodespaceMachine> Machines { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CodespaceMachine> Machines { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

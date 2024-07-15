@@ -10,22 +10,22 @@ namespace G
     public sealed partial class ProjectsUpdateRequest
     {
         /// <summary>
-        /// Name of the project
-        /// <br/>Example: Week One Sprint
+        /// Name of the project<br/>
+        /// Example: Week One Sprint
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Body of the project
-        /// <br/>Example: This project represents the sprint of the first week in January
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
 
         /// <summary>
-        /// State of the project; either 'open' or 'closed'
-        /// <br/>Example: open
+        /// State of the project; either 'open' or 'closed'<br/>
+        /// Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         public string? State { get; set; }
@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectsUpdateRequestOrganizationPermissionJsonConverter))]
-        public ProjectsUpdateRequestOrganizationPermission? OrganizationPermission { get; set; }
+        public global::G.ProjectsUpdateRequestOrganizationPermission? OrganizationPermission { get; set; }
 
         /// <summary>
         /// Whether or not this project can be seen by everyone.

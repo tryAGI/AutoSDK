@@ -17,14 +17,14 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// The role of the user in the team.
-        /// <br/>Default Value: member
-        /// <br/>Example: member
+        /// The role of the user in the team.<br/>
+        /// Default Value: member<br/>
+        /// Example: member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TeamMembershipRole Role { get; set; }
+        public required global::G.TeamMembershipRole Role { get; set; }
 
         /// <summary>
         /// The state of the user's membership in the team.
@@ -32,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TeamMembershipState State { get; set; }
+        public required global::G.TeamMembershipState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

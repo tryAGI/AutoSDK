@@ -10,25 +10,25 @@ namespace G
     public sealed partial class GitignoreTemplate
     {
         /// <summary>
-        /// <br/>Example: C
+        /// Example: C
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: # Object files
-        /// *.o
-        /// # Libraries
-        /// *.lib
-        /// *.a
-        /// # Shared objects (inc. Windows DLLs)
-        /// *.dll
-        /// *.so
-        /// *.so.*
-        /// *.dylib
-        /// # Executables
-        /// *.exe
-        /// *.out
+        /// Example: # Object files<br/>
+        /// *.o<br/>
+        /// # Libraries<br/>
+        /// *.lib<br/>
+        /// *.a<br/>
+        /// # Shared objects (inc. Windows DLLs)<br/>
+        /// *.dll<br/>
+        /// *.so<br/>
+        /// *.so.*<br/>
+        /// *.dylib<br/>
+        /// # Executables<br/>
+        /// *.exe<br/>
+        /// *.out<br/>
         /// *.app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]

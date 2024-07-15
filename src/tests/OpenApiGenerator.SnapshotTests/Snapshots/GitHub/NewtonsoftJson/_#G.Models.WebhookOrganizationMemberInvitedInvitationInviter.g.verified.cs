@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookOrganizationMemberInvitedInvitationInviterType? Type { get; set; }
+        public global::G.WebhookOrganizationMemberInvitedInvitationInviterType? Type { get; set; }
 
         /// <summary>
         /// 

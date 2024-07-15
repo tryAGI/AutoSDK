@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryAdvisoryCreditState ToEnum(string value)
+        public static RepositoryAdvisoryCreditState? ToEnum(string value)
         {
             return value switch
             {
                 "accepted" => RepositoryAdvisoryCreditState.Accepted,
                 "declined" => RepositoryAdvisoryCreditState.Declined,
                 "pending" => RepositoryAdvisoryCreditState.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

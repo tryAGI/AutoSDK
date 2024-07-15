@@ -31,7 +31,7 @@ namespace G
         /// A product affected by the vulnerability detailed in a repository security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities")]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryUpdateVulnerabilities?>? Vulnerabilities { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilities?>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
@@ -43,13 +43,13 @@ namespace G
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits")]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryUpdateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredits?>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
-        public RepositoryAdvisoryUpdateSeverity? Severity { get; set; }
+        public global::G.RepositoryAdvisoryUpdateSeverity? Severity { get; set; }
 
         /// <summary>
         /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
@@ -61,7 +61,7 @@ namespace G
         /// The state of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public RepositoryAdvisoryUpdateState? State { get; set; }
+        public global::G.RepositoryAdvisoryUpdateState? State { get; set; }
 
         /// <summary>
         /// A list of usernames who have been granted write access to the advisory.

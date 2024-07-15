@@ -28,27 +28,27 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required Actor Actor { get; set; }
+        public required global::G.Actor Actor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EventRepo Repo { get; set; }
+        public required global::G.EventRepo Repo { get; set; }
 
         /// <summary>
         /// Actor
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org")]
-        public Actor? Org { get; set; }
+        public global::G.Actor? Org { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EventPayload Payload { get; set; }
+        public required global::G.EventPayload Payload { get; set; }
 
         /// <summary>
         /// 

@@ -35,15 +35,15 @@ namespace G
         public string? Body { get; set; }
 
         /// <summary>
-        /// `true` to create a draft (unpublished) release, `false` to create a published one.
-        /// <br/>Default Value: false
+        /// `true` to create a draft (unpublished) release, `false` to create a published one.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
         public bool Draft { get; set; } = false;
 
         /// <summary>
-        /// `true` to identify the release as a prerelease. `false` to identify the release as a full release.
-        /// <br/>Default Value: false
+        /// `true` to identify the release as a prerelease. `false` to identify the release as a full release.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prerelease")]
         public bool Prerelease { get; set; } = false;
@@ -55,19 +55,19 @@ namespace G
         public string? DiscussionCategoryName { get; set; }
 
         /// <summary>
-        /// Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
-        /// <br/>Default Value: false
+        /// Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_release_notes")]
         public bool GenerateReleaseNotes { get; set; } = false;
 
         /// <summary>
-        /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-        /// <br/>Default Value: true
+        /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("make_latest")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposCreateReleaseRequestMakeLatestJsonConverter))]
-        public ReposCreateReleaseRequestMakeLatest? MakeLatest { get; set; } = ReposCreateReleaseRequestMakeLatest.True;
+        public global::G.ReposCreateReleaseRequestMakeLatest? MakeLatest { get; set; } = global::G.ReposCreateReleaseRequestMakeLatest.True;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,14 +10,14 @@ namespace G
     public sealed partial class CommitCommitTree
     {
         /// <summary>
-        /// <br/>Example: 827efc6d56897b048c772eb4087f854f46256132
+        /// Example: 827efc6d56897b048c772eb4087f854f46256132
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132
+        /// Example: https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]

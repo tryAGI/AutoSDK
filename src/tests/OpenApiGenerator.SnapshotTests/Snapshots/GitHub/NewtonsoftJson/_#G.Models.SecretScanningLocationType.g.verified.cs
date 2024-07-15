@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
-    /// <br/>Example: commit
+    /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.<br/>
+    /// Example: commit
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SecretScanningLocationType
@@ -109,7 +109,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecretScanningLocationType ToEnum(string value)
+        public static SecretScanningLocationType? ToEnum(string value)
         {
             return value switch
             {
@@ -126,7 +126,7 @@ namespace G
                 "pull_request_comment" => SecretScanningLocationType.PullRequestComment,
                 "pull_request_review" => SecretScanningLocationType.PullRequestReview,
                 "pull_request_review_comment" => SecretScanningLocationType.PullRequestReviewComment,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

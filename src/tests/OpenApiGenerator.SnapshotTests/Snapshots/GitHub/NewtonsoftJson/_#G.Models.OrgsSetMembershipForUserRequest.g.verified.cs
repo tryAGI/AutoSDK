@@ -10,13 +10,13 @@ namespace G
     public sealed partial class OrgsSetMembershipForUserRequest
     {
         /// <summary>
-        /// The role to give the user in the organization. Can be one of:  
-        ///  * `admin` - The user will become an owner of the organization.  
-        ///  * `member` - The user will become a non-owner member of the organization.
-        /// <br/>Default Value: member
+        /// The role to give the user in the organization. Can be one of:  <br/>
+        ///  * `admin` - The user will become an owner of the organization.  <br/>
+        ///  * `member` - The user will become a non-owner member of the organization.<br/>
+        /// Default Value: member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public OrgsSetMembershipForUserRequestRole? Role { get; set; } = OrgsSetMembershipForUserRequestRole.Member;
+        public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; } = global::G.OrgsSetMembershipForUserRequestRole.Member;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

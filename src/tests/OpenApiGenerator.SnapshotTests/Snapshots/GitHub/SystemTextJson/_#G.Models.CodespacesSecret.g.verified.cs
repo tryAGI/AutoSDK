@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CodespacesSecret
     {
         /// <summary>
-        /// The name of the secret
-        /// <br/>Example: SECRET_NAME
+        /// The name of the secret<br/>
+        /// Example: SECRET_NAME
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,11 +37,11 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespacesSecretVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodespacesSecretVisibility Visibility { get; set; }
+        public required global::G.CodespacesSecretVisibility Visibility { get; set; }
 
         /// <summary>
-        /// The API URL at which the list of repositories this secret is visible to can be retrieved
-        /// <br/>Example: https://api.github.com/user/secrets/SECRET_NAME/repositories
+        /// The API URL at which the list of repositories this secret is visible to can be retrieved<br/>
+        /// Example: https://api.github.com/user/secrets/SECRET_NAME/repositories
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repositories_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

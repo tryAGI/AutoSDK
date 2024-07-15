@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public WebhookTeamEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookTeamEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public WebhookTeamEditedChangesName? Name { get; set; }
+        public global::G.WebhookTeamEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        public WebhookTeamEditedChangesPrivacy? Privacy { get; set; }
+        public global::G.WebhookTeamEditedChangesPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        public WebhookTeamEditedChangesNotificationSetting? NotificationSetting { get; set; }
+        public global::G.WebhookTeamEditedChangesNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public WebhookTeamEditedChangesRepository? Repository { get; set; }
+        public global::G.WebhookTeamEditedChangesRepository? Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

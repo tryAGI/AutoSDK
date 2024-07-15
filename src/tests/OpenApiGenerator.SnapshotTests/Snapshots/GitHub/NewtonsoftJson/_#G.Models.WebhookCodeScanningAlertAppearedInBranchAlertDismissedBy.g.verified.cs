@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookCodeScanningAlertAppearedInBranchAlertDismissedByType? Type { get; set; }
+        public global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedByType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksProjectCreator? Creator { get; set; }
+        public required global::G.WebhooksProjectCreator? Creator { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksProjectStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksProjectState State { get; set; }
+        public required global::G.WebhooksProjectState State { get; set; }
 
         /// <summary>
         /// 

@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhooksAlertDismisserType? Type { get; set; }
+        public global::G.WebhooksAlertDismisserType? Type { get; set; }
 
         /// <summary>
         /// 

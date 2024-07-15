@@ -10,25 +10,25 @@ namespace G
     public sealed partial class Email
     {
         /// <summary>
-        /// <br/>Example: octocat@github.com
+        /// Example: octocat@github.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
         public string Email1 { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("primary", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Primary { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verified", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Verified { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: public
+        /// Example: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Visibility { get; set; } = default!;

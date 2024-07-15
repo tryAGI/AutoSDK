@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecurityAndAnalysisAdvancedSecurityStatus ToEnum(string value)
+        public static SecurityAndAnalysisAdvancedSecurityStatus? ToEnum(string value)
         {
             return value switch
             {
                 "enabled" => SecurityAndAnalysisAdvancedSecurityStatus.Enabled,
                 "disabled" => SecurityAndAnalysisAdvancedSecurityStatus.Disabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

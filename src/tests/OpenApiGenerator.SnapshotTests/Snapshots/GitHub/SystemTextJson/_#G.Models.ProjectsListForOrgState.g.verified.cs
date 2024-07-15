@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: open
+    /// Default Value: open
     /// </summary>
     public enum ProjectsListForOrgState
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ProjectsListForOrgState ToEnum(string value)
+        public static ProjectsListForOrgState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => ProjectsListForOrgState.Open,
                 "closed" => ProjectsListForOrgState.Closed,
                 "all" => ProjectsListForOrgState.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

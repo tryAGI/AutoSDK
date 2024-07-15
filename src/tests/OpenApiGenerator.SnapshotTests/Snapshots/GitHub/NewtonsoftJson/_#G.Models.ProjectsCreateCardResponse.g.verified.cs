@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errors")]
-        public global::System.Collections.Generic.IList<ProjectsCreateCardResponseErrors?>? Errors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProjectsCreateCardResponseErrors?>? Errors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

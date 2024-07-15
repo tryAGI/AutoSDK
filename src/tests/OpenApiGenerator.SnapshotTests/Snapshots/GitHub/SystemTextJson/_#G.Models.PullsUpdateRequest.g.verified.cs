@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsUpdateRequestStateJsonConverter))]
-        public PullsUpdateRequestState? State { get; set; }
+        public global::G.PullsUpdateRequestState? State { get; set; }
 
         /// <summary>
         /// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.

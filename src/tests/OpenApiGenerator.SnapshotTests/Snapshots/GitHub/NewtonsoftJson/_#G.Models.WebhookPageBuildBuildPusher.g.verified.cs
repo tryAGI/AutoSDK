@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPageBuildBuildPusherType? Type { get; set; }
+        public global::G.WebhookPageBuildBuildPusherType? Type { get; set; }
 
         /// <summary>
         /// 

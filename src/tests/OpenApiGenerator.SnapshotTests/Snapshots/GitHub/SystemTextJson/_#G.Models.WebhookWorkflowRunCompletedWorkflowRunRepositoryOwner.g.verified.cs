@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerTypeJsonConverter))]
-        public WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType? Type { get; set; }
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Whether it's a group assignment or individual assignment.
-    /// <br/>Example: individual
+    /// Whether it's a group assignment or individual assignment.<br/>
+    /// Example: individual
     /// </summary>
     public enum ClassroomAssignmentType
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ClassroomAssignmentType ToEnum(string value)
+        public static ClassroomAssignmentType? ToEnum(string value)
         {
             return value switch
             {
                 "individual" => ClassroomAssignmentType.Individual,
                 "group" => ClassroomAssignmentType.Group,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

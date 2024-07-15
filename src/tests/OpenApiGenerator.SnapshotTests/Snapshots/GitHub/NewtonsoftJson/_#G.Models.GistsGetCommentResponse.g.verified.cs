@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("block")]
-        public GistsGetCommentResponseBlock? Block { get; set; }
+        public global::G.GistsGetCommentResponseBlock? Block { get; set; }
 
         /// <summary>
         /// 

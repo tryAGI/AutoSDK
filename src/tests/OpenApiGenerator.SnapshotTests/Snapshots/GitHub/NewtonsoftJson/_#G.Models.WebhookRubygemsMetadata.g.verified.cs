@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version_info")]
-        public WebhookRubygemsMetadataVersionInfo? VersionInfo { get; set; }
+        public global::G.WebhookRubygemsMetadataVersionInfo? VersionInfo { get; set; }
 
         /// <summary>
         /// 

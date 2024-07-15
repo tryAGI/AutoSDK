@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookCheckSuiteCompletedCheckSuiteAppOwnerType? Type { get; set; }
+        public global::G.WebhookCheckSuiteCompletedCheckSuiteAppOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

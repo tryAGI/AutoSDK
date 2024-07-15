@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
-        public WebhookProjectsV2ItemConvertedChangesContentType? ContentType { get; set; }
+        public global::G.WebhookProjectsV2ItemConvertedChangesContentType? ContentType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

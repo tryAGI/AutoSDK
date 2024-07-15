@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created
+    /// Default Value: created
     /// </summary>
     public enum CodeScanningListRecentAnalysesSort
     {
@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningListRecentAnalysesSort ToEnum(string value)
+        public static CodeScanningListRecentAnalysesSort? ToEnum(string value)
         {
             return value switch
             {
                 "created" => CodeScanningListRecentAnalysesSort.Created,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

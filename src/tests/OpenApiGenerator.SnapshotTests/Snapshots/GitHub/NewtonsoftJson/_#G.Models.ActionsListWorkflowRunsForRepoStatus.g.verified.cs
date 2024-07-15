@@ -114,7 +114,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsListWorkflowRunsForRepoStatus ToEnum(string value)
+        public static ActionsListWorkflowRunsForRepoStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -132,7 +132,7 @@ namespace G
                 "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
                 "waiting" => ActionsListWorkflowRunsForRepoStatus.Waiting,
                 "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

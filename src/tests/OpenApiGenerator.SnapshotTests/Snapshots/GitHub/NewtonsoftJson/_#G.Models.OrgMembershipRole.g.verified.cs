@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The user's membership type in the organization.
-    /// <br/>Example: admin
+    /// The user's membership type in the organization.<br/>
+    /// Example: admin
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgMembershipRole
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgMembershipRole ToEnum(string value)
+        public static OrgMembershipRole? ToEnum(string value)
         {
             return value switch
             {
                 "admin" => OrgMembershipRole.Admin,
                 "member" => OrgMembershipRole.Member,
                 "billing_manager" => OrgMembershipRole.BillingManager,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

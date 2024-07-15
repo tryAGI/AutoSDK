@@ -30,25 +30,25 @@ namespace G
         public required string Body { get; set; }
 
         /// <summary>
-        /// <br/>Example: 28
+        /// Example: 28
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
         public int Line { get; set; }
 
         /// <summary>
-        /// <br/>Example: RIGHT
+        /// Example: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         public string? Side { get; set; }
 
         /// <summary>
-        /// <br/>Example: 26
+        /// Example: 26
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         public int StartLine { get; set; }
 
         /// <summary>
-        /// <br/>Example: LEFT
+        /// Example: LEFT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         public string? StartSide { get; set; }

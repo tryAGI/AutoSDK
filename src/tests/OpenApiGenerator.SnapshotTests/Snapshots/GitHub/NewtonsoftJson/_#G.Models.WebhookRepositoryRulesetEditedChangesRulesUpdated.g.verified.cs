@@ -13,13 +13,13 @@ namespace G
         /// A repository rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule")]
-        public RepositoryRule? Rule { get; set; }
+        public global::G.RepositoryRule? Rule { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes")]
-        public WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Changes { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Changes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

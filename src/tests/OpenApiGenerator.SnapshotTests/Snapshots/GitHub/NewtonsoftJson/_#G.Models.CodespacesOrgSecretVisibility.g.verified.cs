@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespacesOrgSecretVisibility ToEnum(string value)
+        public static CodespacesOrgSecretVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "all" => CodespacesOrgSecretVisibility.All,
                 "private" => CodespacesOrgSecretVisibility.Private,
                 "selected" => CodespacesOrgSecretVisibility.Selected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

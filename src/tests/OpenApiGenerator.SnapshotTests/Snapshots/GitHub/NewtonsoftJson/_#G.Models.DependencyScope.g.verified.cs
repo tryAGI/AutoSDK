@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
-    /// <br/>Example: runtime
+    /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.<br/>
+    /// Example: runtime
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum DependencyScope
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependencyScope ToEnum(string value)
+        public static DependencyScope? ToEnum(string value)
         {
             return value switch
             {
                 "runtime" => DependencyScope.Runtime,
                 "development" => DependencyScope.Development,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

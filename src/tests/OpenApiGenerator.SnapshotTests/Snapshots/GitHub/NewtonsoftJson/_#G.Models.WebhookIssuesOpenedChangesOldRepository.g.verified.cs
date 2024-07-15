@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookIssuesOpenedChangesOldRepository.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class WebhookIssuesOpenedChangesOldRepository
     {
         /// <summary>
-        /// Whether to allow auto-merge for pull requests.
-        /// <br/>Default Value: false
+        /// Whether to allow auto-merge for pull requests.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
         public bool AllowAutoMerge { get; set; } = false;
@@ -23,22 +25,22 @@ namespace G
         public bool AllowForking { get; set; }
 
         /// <summary>
-        /// Whether to allow merge commits for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow merge commits for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
         public bool AllowMergeCommit { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow rebase merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow rebase merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
         public bool AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow squash merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow squash merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
         public bool AllowSquashMerge { get; set; } = true;
@@ -56,8 +58,8 @@ namespace G
         public string ArchiveUrl { get; set; } = default!;
 
         /// <summary>
-        /// Whether the repository is archived.
-        /// <br/>Default Value: false
+        /// Whether the repository is archived.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Archived { get; set; } = default!;
@@ -141,8 +143,8 @@ namespace G
         public string DefaultBranch { get; set; } = default!;
 
         /// <summary>
-        /// Whether to delete head branches when pull requests are merged
-        /// <br/>Default Value: false
+        /// Whether to delete head branches when pull requests are merged<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
         public bool DeleteBranchOnMerge { get; set; } = false;
@@ -238,15 +240,15 @@ namespace G
         public bool HasDiscussions { get; set; }
 
         /// <summary>
-        /// Whether downloads are enabled.
-        /// <br/>Default Value: true
+        /// Whether downloads are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_downloads", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasDownloads { get; set; } = default!;
 
         /// <summary>
-        /// Whether issues are enabled.
-        /// <br/>Default Value: true
+        /// Whether issues are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasIssues { get; set; } = default!;
@@ -258,15 +260,15 @@ namespace G
         public bool HasPages { get; set; } = default!;
 
         /// <summary>
-        /// Whether projects are enabled.
-        /// <br/>Default Value: true
+        /// Whether projects are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasProjects { get; set; } = default!;
 
         /// <summary>
-        /// Whether the wiki is enabled.
-        /// <br/>Default Value: true
+        /// Whether the wiki is enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasWiki { get; set; } = default!;
@@ -347,7 +349,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesOpenedChangesOldRepositoryLicense? License { get; set; } = default!;
+        public global::G.WebhookIssuesOpenedChangesOldRepositoryLicense? License { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -413,13 +415,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesOpenedChangesOldRepositoryOwner? Owner { get; set; } = default!;
+        public global::G.WebhookIssuesOpenedChangesOldRepositoryOwner? Owner { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public WebhookIssuesOpenedChangesOldRepositoryPermissions? Permissions { get; set; }
+        public global::G.WebhookIssuesOpenedChangesOldRepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -551,7 +553,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssuesOpenedChangesOldRepositoryVisibility Visibility { get; set; } = default!;
+        public global::G.WebhookIssuesOpenedChangesOldRepositoryVisibility Visibility { get; set; } = default!;
 
         /// <summary>
         /// 

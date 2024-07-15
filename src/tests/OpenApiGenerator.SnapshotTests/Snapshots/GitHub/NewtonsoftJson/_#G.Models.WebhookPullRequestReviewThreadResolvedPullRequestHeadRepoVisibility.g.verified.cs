@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoVisibility ToEnum(string value)
+        public static WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoVisibility.Public,
                 "private" => WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoVisibility.Private,
                 "internal" => WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoVisibility.Internal,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

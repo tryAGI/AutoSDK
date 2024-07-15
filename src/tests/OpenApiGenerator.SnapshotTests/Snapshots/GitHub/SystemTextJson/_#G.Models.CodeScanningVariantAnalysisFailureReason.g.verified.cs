@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningVariantAnalysisFailureReason ToEnum(string value)
+        public static CodeScanningVariantAnalysisFailureReason? ToEnum(string value)
         {
             return value switch
             {
                 "no_repos_queried" => CodeScanningVariantAnalysisFailureReason.NoReposQueried,
                 "actions_workflow_run_failed" => CodeScanningVariantAnalysisFailureReason.ActionsWorkflowRunFailed,
                 "internal_error" => CodeScanningVariantAnalysisFailureReason.InternalError,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

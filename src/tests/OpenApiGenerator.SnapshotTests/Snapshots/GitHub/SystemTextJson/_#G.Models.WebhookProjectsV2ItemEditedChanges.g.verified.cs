@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field_value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookProjectsV2ItemEditedChangesFieldValue FieldValue { get; set; }
+        public required global::G.WebhookProjectsV2ItemEditedChangesFieldValue FieldValue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

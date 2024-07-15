@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependabotUpdateAlertRequestDismissedReason ToEnum(string value)
+        public static DependabotUpdateAlertRequestDismissedReason? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "no_bandwidth" => DependabotUpdateAlertRequestDismissedReason.NoBandwidth,
                 "not_used" => DependabotUpdateAlertRequestDismissedReason.NotUsed,
                 "tolerable_risk" => DependabotUpdateAlertRequestDismissedReason.TolerableRisk,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

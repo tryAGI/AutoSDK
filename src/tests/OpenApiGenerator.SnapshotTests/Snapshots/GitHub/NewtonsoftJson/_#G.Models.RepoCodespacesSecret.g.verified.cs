@@ -10,8 +10,8 @@ namespace G
     public sealed partial class RepoCodespacesSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: SECRET_TOKEN
+        /// The name of the secret.<br/>
+        /// Example: SECRET_TOKEN
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;

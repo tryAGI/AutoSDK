@@ -36,13 +36,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GitCreateTagRequestTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GitCreateTagRequestType Type { get; set; }
+        public required global::G.GitCreateTagRequestType Type { get; set; }
 
         /// <summary>
         /// An object with information about the individual creating the tag.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tagger")]
-        public GitCreateTagRequestTagger? Tagger { get; set; }
+        public global::G.GitCreateTagRequestTagger? Tagger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

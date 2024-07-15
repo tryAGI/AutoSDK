@@ -21,11 +21,11 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
-        /// Unique identifier of the issue comment
-        /// <br/>Example: 42
+        /// Unique identifier of the issue comment<br/>
+        /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,16 +39,16 @@ namespace G
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// URL for the issue comment
-        /// <br/>Example: https://api.github.com/repositories/42/issues/comments/1
+        /// URL for the issue comment<br/>
+        /// Example: https://api.github.com/repositories/42/issues/comments/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// Contents of the issue comment
-        /// <br/>Example: What version of Safari were you using when you observed this bug?
+        /// Contents of the issue comment<br/>
+        /// Example: What version of Safari were you using when you observed this bug?
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
@@ -77,17 +77,17 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser User { get; set; }
+        public required global::G.SimpleUser User { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -101,25 +101,25 @@ namespace G
         public required string IssueUrl { get; set; }
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TimelineCommentEventAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TimelineCommentEventAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public NullableIntegration? PerformedViaGithubApp { get; set; }
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,28 +10,28 @@ namespace G
     public sealed partial class SimpleClassroomUser
     {
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: octocat
+        /// Example: octocat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/images/error/octocat_happy.gif
+        /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AvatarUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat
+        /// Example: https://github.com/octocat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

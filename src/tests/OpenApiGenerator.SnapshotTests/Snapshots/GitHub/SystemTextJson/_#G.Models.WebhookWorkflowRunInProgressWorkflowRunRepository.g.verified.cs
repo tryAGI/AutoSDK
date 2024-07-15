@@ -252,7 +252,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner? Owner { get; set; }
+        public required global::G.WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner? Owner { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.

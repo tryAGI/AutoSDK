@@ -55,7 +55,7 @@ namespace G
         /// Marketplace Listing Plan
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
-        public MarketplaceListingPlan? Plan { get; set; }
+        public global::G.MarketplaceListingPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

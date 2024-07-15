@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct ToEnum(string value)
+        public static OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "code_scanning_default_setup" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup,
                 "secret_scanning" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning,
                 "secret_scanning_push_protection" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

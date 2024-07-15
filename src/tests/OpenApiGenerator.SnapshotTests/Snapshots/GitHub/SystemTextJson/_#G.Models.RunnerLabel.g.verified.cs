@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunnerLabelTypeJsonConverter))]
-        public RunnerLabelType? Type { get; set; }
+        public global::G.RunnerLabelType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

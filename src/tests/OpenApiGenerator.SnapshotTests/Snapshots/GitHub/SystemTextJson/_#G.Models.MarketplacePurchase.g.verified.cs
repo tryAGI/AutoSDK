@@ -53,14 +53,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_pending_change")]
-        public MarketplacePurchaseMarketplacePendingChange? MarketplacePendingChange { get; set; }
+        public global::G.MarketplacePurchaseMarketplacePendingChange? MarketplacePendingChange { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_purchase")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; }
+        public required global::G.MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

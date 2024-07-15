@@ -10,14 +10,14 @@ namespace G
     public sealed partial class PageBuildStatus
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/github/hello-world/pages/builds/latest
+        /// Example: https://api.github.com/repos/github/hello-world/pages/builds/latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: queued
+        /// Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]

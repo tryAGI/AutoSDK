@@ -15,28 +15,25 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposCreateDeploymentStatusRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReposCreateDeploymentStatusRequestState State { get; set; }
+        public required global::G.ReposCreateDeploymentStatusRequestState State { get; set; }
 
         /// <summary>
         /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
-        /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
-        public string? TargetUrl { get; set; } = "";
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`
-        /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_url")]
-        public string? LogUrl { get; set; } = "";
+        public string? LogUrl { get; set; }
 
         /// <summary>
         /// A short description of the status. The maximum description length is 140 characters.
-        /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; } = "";
+        public string? Description { get; set; }
 
         /// <summary>
         /// Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`. If not defined, the environment of the previous status on the deployment will be used, if it exists. Otherwise, the environment of the deployment will be used.
@@ -46,10 +43,9 @@ namespace G
 
         /// <summary>
         /// Sets the URL for accessing your environment. Default: `""`
-        /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_url")]
-        public string? EnvironmentUrl { get; set; } = "";
+        public string? EnvironmentUrl { get; set; }
 
         /// <summary>
         /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`

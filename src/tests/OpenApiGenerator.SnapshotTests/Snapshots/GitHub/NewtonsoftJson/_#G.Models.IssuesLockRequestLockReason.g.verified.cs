@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  
-    ///  * `off-topic`  
-    ///  * `too heated`  
-    ///  * `resolved`  
+    /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  <br/>
+    ///  * `off-topic`  <br/>
+    ///  * `too heated`  <br/>
+    ///  * `resolved`  <br/>
     ///  * `spam`
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -58,7 +58,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesLockRequestLockReason ToEnum(string value)
+        public static IssuesLockRequestLockReason? ToEnum(string value)
         {
             return value switch
             {
@@ -66,7 +66,7 @@ namespace G
                 "too heated" => IssuesLockRequestLockReason.TooHeated,
                 "resolved" => IssuesLockRequestLockReason.Resolved,
                 "spam" => IssuesLockRequestLockReason.Spam,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

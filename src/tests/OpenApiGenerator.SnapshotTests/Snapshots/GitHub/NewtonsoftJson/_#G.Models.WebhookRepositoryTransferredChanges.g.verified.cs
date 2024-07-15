@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookRepositoryTransferredChangesOwner Owner { get; set; } = default!;
+        public global::G.WebhookRepositoryTransferredChangesOwner Owner { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobStepsConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobInProgressWorkflowJobStepsConclusion? Conclusion { get; set; }
+        public required global::G.WebhookWorkflowJobInProgressWorkflowJobStepsConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobStepsStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobInProgressWorkflowJobStepsStatus Status { get; set; }
+        public required global::G.WebhookWorkflowJobInProgressWorkflowJobStepsStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

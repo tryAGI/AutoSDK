@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public WebhookProjectColumnEditedChangesName? Name { get; set; }
+        public global::G.WebhookProjectColumnEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

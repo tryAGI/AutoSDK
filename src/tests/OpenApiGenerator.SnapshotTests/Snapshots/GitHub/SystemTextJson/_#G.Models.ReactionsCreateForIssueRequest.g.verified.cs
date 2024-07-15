@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReactionsCreateForIssueRequestContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReactionsCreateForIssueRequestContent Content { get; set; }
+        public required global::G.ReactionsCreateForIssueRequestContent Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor? Author { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: ahead
+    /// Example: ahead
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CommitComparisonStatus
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CommitComparisonStatus ToEnum(string value)
+        public static CommitComparisonStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "ahead" => CommitComparisonStatus.Ahead,
                 "behind" => CommitComparisonStatus.Behind,
                 "identical" => CommitComparisonStatus.Identical,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

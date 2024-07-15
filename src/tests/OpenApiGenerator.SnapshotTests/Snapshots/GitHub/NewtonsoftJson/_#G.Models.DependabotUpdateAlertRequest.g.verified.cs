@@ -10,17 +10,17 @@ namespace G
     public sealed partial class DependabotUpdateAlertRequest
     {
         /// <summary>
-        /// The state of the Dependabot alert.
+        /// The state of the Dependabot alert.<br/>
         /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotUpdateAlertRequestState State { get; set; } = default!;
+        public global::G.DependabotUpdateAlertRequestState State { get; set; } = default!;
 
         /// <summary>
         /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
-        public DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
+        public global::G.DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// An optional comment associated with dismissing the alert.

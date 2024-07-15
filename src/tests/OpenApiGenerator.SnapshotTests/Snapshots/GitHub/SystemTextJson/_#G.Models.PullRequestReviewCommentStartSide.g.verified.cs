@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The side of the first line of the range for a multi-line comment.
-    /// <br/>Default Value: RIGHT
+    /// The side of the first line of the range for a multi-line comment.<br/>
+    /// Default Value: RIGHT
     /// </summary>
     public enum PullRequestReviewCommentStartSide
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullRequestReviewCommentStartSide ToEnum(string value)
+        public static PullRequestReviewCommentStartSide? ToEnum(string value)
         {
             return value switch
             {
                 "LEFT" => PullRequestReviewCommentStartSide.LEFT,
                 "RIGHT" => PullRequestReviewCommentStartSide.RIGHT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

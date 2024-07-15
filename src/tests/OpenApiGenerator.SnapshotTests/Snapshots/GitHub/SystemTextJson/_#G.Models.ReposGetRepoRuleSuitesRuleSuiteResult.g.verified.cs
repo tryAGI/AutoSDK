@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     public enum ReposGetRepoRuleSuitesRuleSuiteResult
     {
@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetRepoRuleSuitesRuleSuiteResult ToEnum(string value)
+        public static ReposGetRepoRuleSuitesRuleSuiteResult? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "fail" => ReposGetRepoRuleSuitesRuleSuiteResult.Fail,
                 "bypass" => ReposGetRepoRuleSuitesRuleSuiteResult.Bypass,
                 "all" => ReposGetRepoRuleSuitesRuleSuiteResult.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,43 +10,43 @@ namespace G
     public sealed partial class UsersUpdateAuthenticatedRequest
     {
         /// <summary>
-        /// The new name of the user.
-        /// <br/>Example: Omar Jahandar
+        /// The new name of the user.<br/>
+        /// Example: Omar Jahandar
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// The publicly visible email address of the user.
-        /// <br/>Example: omar@example.com
+        /// The publicly visible email address of the user.<br/>
+        /// Example: omar@example.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
-        /// The new blog URL of the user.
-        /// <br/>Example: blog.example.com
+        /// The new blog URL of the user.<br/>
+        /// Example: blog.example.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
 
         /// <summary>
-        /// The new Twitter username of the user.
-        /// <br/>Example: therealomarj
+        /// The new Twitter username of the user.<br/>
+        /// Example: therealomarj
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("twitter_username")]
         public string? TwitterUsername { get; set; }
 
         /// <summary>
-        /// The new company of the user.
-        /// <br/>Example: Acme corporation
+        /// The new company of the user.<br/>
+        /// Example: Acme corporation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company")]
         public string? Company { get; set; }
 
         /// <summary>
-        /// The new location of the user.
-        /// <br/>Example: Berlin, Germany
+        /// The new location of the user.<br/>
+        /// Example: Berlin, Germany
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("location")]
         public string? Location { get; set; }

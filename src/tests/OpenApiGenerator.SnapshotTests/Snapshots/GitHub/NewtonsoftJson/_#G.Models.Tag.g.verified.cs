@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Tag
     {
         /// <summary>
-        /// <br/>Example: v0.1
+        /// Example: v0.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -19,16 +19,16 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public TagCommit Commit { get; set; } = default!;
+        public global::G.TagCommit Commit { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/zipball/v0.1
+        /// Example: https://github.com/octocat/Hello-World/zipball/v0.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("zipball_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ZipballUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/tarball/v0.1
+        /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tarball_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TarballUrl { get; set; } = default!;

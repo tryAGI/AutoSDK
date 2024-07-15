@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPingHookConfig.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class WebhookPingHookConfig
     {
         /// <summary>
-        /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
-        /// <br/>Example: "json"
+        /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>
+        /// Example: "json"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
         public string? ContentType { get; set; }
@@ -20,18 +22,18 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure_ssl")]
-        public global::System.OneOf<string?, double> InsecureSsl { get; set; }
+        public global::System.OneOf<string?, double>? InsecureSsl { get; set; }
 
         /// <summary>
-        /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
-        /// <br/>Example: "********"
+        /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).<br/>
+        /// Example: "********"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret")]
         public string? Secret { get; set; }
 
         /// <summary>
-        /// The URL to which the payloads will be delivered.
-        /// <br/>Example: https://example.com/webhook
+        /// The URL to which the payloads will be delivered.<br/>
+        /// Example: https://example.com/webhook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }

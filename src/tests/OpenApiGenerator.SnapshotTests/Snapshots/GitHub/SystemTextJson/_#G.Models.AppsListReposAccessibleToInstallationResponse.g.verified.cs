@@ -21,10 +21,10 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Repository> Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; }
 
         /// <summary>
-        /// <br/>Example: selected
+        /// Example: selected
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         public string? RepositorySelection { get; set; }

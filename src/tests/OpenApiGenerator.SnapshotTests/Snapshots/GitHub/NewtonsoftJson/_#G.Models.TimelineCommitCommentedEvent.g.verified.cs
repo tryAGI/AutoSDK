@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
-        public global::System.Collections.Generic.IList<CommitComment>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CommitComment>? Comments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

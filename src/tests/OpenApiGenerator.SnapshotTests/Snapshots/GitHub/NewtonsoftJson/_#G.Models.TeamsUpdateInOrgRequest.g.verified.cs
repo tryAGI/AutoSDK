@@ -22,30 +22,30 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  
-        /// **For a non-nested team:**  
-        ///  * `secret` - only visible to organization owners and members of this team.  
-        ///  * `closed` - visible to all members of this organization.  
-        /// **For a parent or child team:**  
+        /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  <br/>
+        /// **For a non-nested team:**  <br/>
+        ///  * `secret` - only visible to organization owners and members of this team.  <br/>
+        ///  * `closed` - visible to all members of this organization.  <br/>
+        /// **For a parent or child team:**  <br/>
         ///  * `closed` - visible to all members of this organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public TeamsUpdateInOrgRequestPrivacy? Privacy { get; set; }
+        public global::G.TeamsUpdateInOrgRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
-        /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: 
-        ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  
+        /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: <br/>
+        ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  <br/>
         ///  * `notifications_disabled` - no one receives notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
-        public TeamsUpdateInOrgRequestNotificationSetting? NotificationSetting { get; set; }
+        public global::G.TeamsUpdateInOrgRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
-        /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
-        /// <br/>Default Value: pull
+        /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.<br/>
+        /// Default Value: pull
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public TeamsUpdateInOrgRequestPermission? Permission { get; set; } = TeamsUpdateInOrgRequestPermission.Pull;
+        public global::G.TeamsUpdateInOrgRequestPermission? Permission { get; set; } = global::G.TeamsUpdateInOrgRequestPermission.Pull;
 
         /// <summary>
         /// The ID of a team to set as the parent team.

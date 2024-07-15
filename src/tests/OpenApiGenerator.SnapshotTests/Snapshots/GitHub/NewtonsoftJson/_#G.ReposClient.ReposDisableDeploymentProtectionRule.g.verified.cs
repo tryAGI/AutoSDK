@@ -6,8 +6,28 @@ namespace G
 {
     public partial class ReposClient
     {
+        partial void PrepareReposDisableDeploymentProtectionRuleArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string environmentName,
+            ref string repo,
+            ref string owner,
+            ref int protectionRuleId);
+        partial void PrepareReposDisableDeploymentProtectionRuleRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string environmentName,
+            string repo,
+            string owner,
+            int protectionRuleId);
+        partial void ProcessReposDisableDeploymentProtectionRuleResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
-        /// Disable a custom protection rule for an environment
+        /// Disable a custom protection rule for an environment<br/>
+        /// Disables a custom deployment protection rule for an environment.<br/>
+        /// The authenticated user must have admin or owner permissions to the repository to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="environmentName"></param>
         /// <param name="repo"></param>
@@ -22,14 +42,41 @@ namespace G
             int protectionRuleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReposDisableDeploymentProtectionRuleArguments(
+                httpClient: _httpClient,
+                environmentName: ref environmentName,
+                repo: ref repo,
+                owner: ref owner,
+                protectionRuleId: ref protectionRuleId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules/{protectionRuleId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules/{protectionRuleId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReposDisableDeploymentProtectionRuleRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                environmentName: environmentName,
+                repo: repo,
+                owner: owner,
+                protectionRuleId: protectionRuleId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReposDisableDeploymentProtectionRuleResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

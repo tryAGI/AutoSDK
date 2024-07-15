@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunActor? Actor { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunActor? Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,13 +73,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunHeadCommit HeadCommit { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunHeadCommit HeadCommit { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunHeadRepository HeadRepository { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunHeadRepository HeadRepository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -139,19 +139,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookWorkflowRunCompletedWorkflowRunPullRequests?> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunCompletedWorkflowRunPullRequests?> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunRepository Repository { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -181,13 +181,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunStatus Status { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triggering_actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -214,8 +214,8 @@ namespace G
         public string WorkflowUrl { get; set; } = default!;
 
         /// <summary>
-        /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
-        /// <br/>Example: Simple Workflow
+        /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.<br/>
+        /// Example: Simple Workflow
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_title")]
         public string? DisplayTitle { get; set; }

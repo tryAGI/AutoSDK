@@ -10,25 +10,25 @@ namespace G
     public sealed partial class SimpleClassroomUser
     {
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: octocat
+        /// Example: octocat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("login", Required = global::Newtonsoft.Json.Required.Always)]
         public string Login { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/images/error/octocat_happy.gif
+        /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AvatarUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat
+        /// Example: https://github.com/octocat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;

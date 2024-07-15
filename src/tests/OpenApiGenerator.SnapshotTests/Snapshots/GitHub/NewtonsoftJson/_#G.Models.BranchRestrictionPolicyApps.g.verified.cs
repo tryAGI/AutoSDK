@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner")]
-        public BranchRestrictionPolicyAppsOwner? Owner { get; set; }
+        public global::G.BranchRestrictionPolicyAppsOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public BranchRestrictionPolicyAppsPermissions? Permissions { get; set; }
+        public global::G.BranchRestrictionPolicyAppsPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 

@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a squash merge commit message:
-    /// - `PR_BODY` - default to the pull request's body.
-    /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
+    /// The default value for a squash merge commit message:<br/>
+    /// - `PR_BODY` - default to the pull request's body.<br/>
+    /// - `COMMIT_MESSAGES` - default to the branch's commit messages.<br/>
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
     public enum WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage
@@ -47,14 +47,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage ToEnum(string value)
+        public static WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage? ToEnum(string value)
         {
             return value switch
             {
                 "PR_BODY" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.PRBODY,
                 "COMMIT_MESSAGES" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES,
                 "BLANK" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.BLANK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: docker
+    /// Example: docker
     /// </summary>
     public enum PackageVersionMetadataPackageType
     {
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PackageVersionMetadataPackageType ToEnum(string value)
+        public static PackageVersionMetadataPackageType? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "docker" => PackageVersionMetadataPackageType.Docker,
                 "nuget" => PackageVersionMetadataPackageType.Nuget,
                 "container" => PackageVersionMetadataPackageType.Container,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

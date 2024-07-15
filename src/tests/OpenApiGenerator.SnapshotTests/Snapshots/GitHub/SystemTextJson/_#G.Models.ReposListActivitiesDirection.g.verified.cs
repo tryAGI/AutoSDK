@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     public enum ReposListActivitiesDirection
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListActivitiesDirection ToEnum(string value)
+        public static ReposListActivitiesDirection? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ReposListActivitiesDirection.Asc,
                 "desc" => ReposListActivitiesDirection.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

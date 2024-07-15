@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookStatusBranchesCommit Commit { get; set; } = default!;
+        public global::G.WebhookStatusBranchesCommit Commit { get; set; } = default!;
 
         /// <summary>
         /// 

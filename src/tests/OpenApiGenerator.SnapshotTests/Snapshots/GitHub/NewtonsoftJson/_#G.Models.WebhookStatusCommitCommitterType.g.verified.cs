@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookStatusCommitCommitterType ToEnum(string value)
+        public static WebhookStatusCommitCommitterType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => WebhookStatusCommitCommitterType.Bot,
                 "User" => WebhookStatusCommitCommitterType.User,
                 "Organization" => WebhookStatusCommitCommitterType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

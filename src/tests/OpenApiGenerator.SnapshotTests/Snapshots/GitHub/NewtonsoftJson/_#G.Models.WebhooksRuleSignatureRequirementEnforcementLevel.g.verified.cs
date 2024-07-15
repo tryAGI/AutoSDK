@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksRuleSignatureRequirementEnforcementLevel ToEnum(string value)
+        public static WebhooksRuleSignatureRequirementEnforcementLevel? ToEnum(string value)
         {
             return value switch
             {
                 "off" => WebhooksRuleSignatureRequirementEnforcementLevel.Off,
                 "non_admins" => WebhooksRuleSignatureRequirementEnforcementLevel.NonAdmins,
                 "everyone" => WebhooksRuleSignatureRequirementEnforcementLevel.Everyone,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

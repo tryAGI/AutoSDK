@@ -13,11 +13,11 @@ namespace G
         /// Configuration object of the webhook
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        public WebhookConfig? Config { get; set; }
+        public global::G.WebhookConfig? Config { get; set; }
 
         /// <summary>
-        /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
-        /// <br/>Default Value: [push]
+        /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.<br/>
+        /// Default Value: [push]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         public global::System.Collections.Generic.IList<string?>? Events { get; set; }
@@ -35,8 +35,8 @@ namespace G
         public global::System.Collections.Generic.IList<string?>? RemoveEvents { get; set; }
 
         /// <summary>
-        /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-        /// <br/>Default Value: true
+        /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         public bool Active { get; set; } = true;

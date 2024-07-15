@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookDiscussionCategoryChangedAction ToEnum(string value)
+        public static WebhookDiscussionCategoryChangedAction? ToEnum(string value)
         {
             return value switch
             {
                 "category_changed" => WebhookDiscussionCategoryChangedAction.CategoryChanged,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

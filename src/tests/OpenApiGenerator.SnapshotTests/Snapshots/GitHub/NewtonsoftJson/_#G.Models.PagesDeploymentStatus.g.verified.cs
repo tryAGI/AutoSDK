@@ -13,7 +13,7 @@ namespace G
         /// The current status of the deployment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public PagesDeploymentStatusStatus? Status { get; set; }
+        public global::G.PagesDeploymentStatusStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

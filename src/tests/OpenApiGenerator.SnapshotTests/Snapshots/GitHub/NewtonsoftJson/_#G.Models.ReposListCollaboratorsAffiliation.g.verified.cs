@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListCollaboratorsAffiliation
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListCollaboratorsAffiliation ToEnum(string value)
+        public static ReposListCollaboratorsAffiliation? ToEnum(string value)
         {
             return value switch
             {
                 "outside" => ReposListCollaboratorsAffiliation.Outside,
                 "direct" => ReposListCollaboratorsAffiliation.Direct,
                 "all" => ReposListCollaboratorsAffiliation.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

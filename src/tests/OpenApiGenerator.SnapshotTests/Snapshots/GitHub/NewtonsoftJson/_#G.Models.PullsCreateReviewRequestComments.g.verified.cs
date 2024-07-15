@@ -28,25 +28,25 @@ namespace G
         public string Body { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 28
+        /// Example: 28
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line")]
         public int Line { get; set; }
 
         /// <summary>
-        /// <br/>Example: RIGHT
+        /// Example: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side")]
         public string? Side { get; set; }
 
         /// <summary>
-        /// <br/>Example: 26
+        /// Example: 26
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_line")]
         public int StartLine { get; set; }
 
         /// <summary>
-        /// <br/>Example: LEFT
+        /// Example: LEFT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
         public string? StartSide { get; set; }

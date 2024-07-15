@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentReviewRequestedWorkflowRunActor? Actor { get; set; } = default!;
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunActor? Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentReviewRequestedWorkflowRunConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository")]
-        public WebhookDeploymentReviewRequestedWorkflowRunHeadRepository? HeadRepository { get; set; }
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunHeadRepository? HeadRepository { get; set; }
 
         /// <summary>
         /// 
@@ -139,19 +139,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookDeploymentReviewRequestedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public WebhookDeploymentReviewRequestedWorkflowRunRepository? Repository { get; set; }
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunRepository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -181,13 +181,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentReviewRequestedWorkflowRunStatus Status { get; set; } = default!;
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triggering_actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentReviewRequestedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
 
         /// <summary>
         /// 

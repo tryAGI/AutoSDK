@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgsListOutsideCollaboratorsFilter
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsListOutsideCollaboratorsFilter ToEnum(string value)
+        public static OrgsListOutsideCollaboratorsFilter? ToEnum(string value)
         {
             return value switch
             {
                 "2fa_disabled" => OrgsListOutsideCollaboratorsFilter._2faDisabled,
                 "all" => OrgsListOutsideCollaboratorsFilter.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

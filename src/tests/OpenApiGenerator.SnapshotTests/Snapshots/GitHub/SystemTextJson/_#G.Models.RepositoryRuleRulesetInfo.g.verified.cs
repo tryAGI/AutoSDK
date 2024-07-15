@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ruleset_source_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleRulesetInfoRulesetSourceTypeJsonConverter))]
-        public RepositoryRuleRulesetInfoRulesetSourceType? RulesetSourceType { get; set; }
+        public global::G.RepositoryRuleRulesetInfoRulesetSourceType? RulesetSourceType { get; set; }
 
         /// <summary>
         /// The name of the source of the ruleset that includes this rule.

@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependabotAlertSecurityAdvisoryIdentifiersType ToEnum(string value)
+        public static DependabotAlertSecurityAdvisoryIdentifiersType? ToEnum(string value)
         {
             return value switch
             {
                 "CVE" => DependabotAlertSecurityAdvisoryIdentifiersType.CVE,
                 "GHSA" => DependabotAlertSecurityAdvisoryIdentifiersType.GHSA,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

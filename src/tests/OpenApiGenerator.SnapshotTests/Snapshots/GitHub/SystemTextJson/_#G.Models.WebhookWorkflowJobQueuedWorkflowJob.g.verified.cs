@@ -141,7 +141,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobQueuedWorkflowJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookWorkflowJobQueuedWorkflowJobStatus Status { get; set; }
+        public required global::G.WebhookWorkflowJobQueuedWorkflowJobStatus Status { get; set; }
 
         /// <summary>
         /// The name of the current branch.
@@ -162,7 +162,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookWorkflowJobQueuedWorkflowJobSteps> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobSteps> Steps { get; set; }
 
         /// <summary>
         /// 

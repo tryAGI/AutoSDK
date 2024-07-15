@@ -37,7 +37,7 @@ namespace G
         /// Marketplace Listing Plan
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
-        public MarketplaceListingPlan? Plan { get; set; }
+        public global::G.MarketplaceListingPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

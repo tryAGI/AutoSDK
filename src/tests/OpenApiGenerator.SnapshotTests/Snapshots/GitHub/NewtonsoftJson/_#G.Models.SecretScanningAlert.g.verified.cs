@@ -49,13 +49,13 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public SecretScanningAlertState? State { get; set; }
+        public global::G.SecretScanningAlertState? State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
-        public SecretScanningAlertResolution? Resolution { get; set; }
+        public global::G.SecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>
         /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -67,7 +67,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolved_by")]
-        public NullableSimpleUser? ResolvedBy { get; set; }
+        public global::G.NullableSimpleUser? ResolvedBy { get; set; }
 
         /// <summary>
         /// An optional comment to resolve an alert.
@@ -82,7 +82,7 @@ namespace G
         public string? SecretType { get; set; }
 
         /// <summary>
-        /// User-friendly name for the detected secret, matching the `secret_type`.
+        /// User-friendly name for the detected secret, matching the `secret_type`.<br/>
         /// For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_type_display_name")]
@@ -104,7 +104,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("push_protection_bypassed_by")]
-        public NullableSimpleUser? PushProtectionBypassedBy { get; set; }
+        public global::G.NullableSimpleUser? PushProtectionBypassedBy { get; set; }
 
         /// <summary>
         /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -116,7 +116,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validity")]
-        public SecretScanningAlertValidity? Validity { get; set; }
+        public global::G.SecretScanningAlertValidity? Validity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

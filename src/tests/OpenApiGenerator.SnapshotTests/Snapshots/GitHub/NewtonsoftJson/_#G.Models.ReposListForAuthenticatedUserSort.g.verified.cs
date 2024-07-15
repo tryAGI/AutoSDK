@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: full_name
+    /// Default Value: full_name
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListForAuthenticatedUserSort
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForAuthenticatedUserSort ToEnum(string value)
+        public static ReposListForAuthenticatedUserSort? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "updated" => ReposListForAuthenticatedUserSort.Updated,
                 "pushed" => ReposListForAuthenticatedUserSort.Pushed,
                 "full_name" => ReposListForAuthenticatedUserSort.FullName,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

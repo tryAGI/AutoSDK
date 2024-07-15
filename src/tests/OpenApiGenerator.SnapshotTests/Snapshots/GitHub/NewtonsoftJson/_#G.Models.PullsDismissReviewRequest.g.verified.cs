@@ -16,10 +16,10 @@ namespace G
         public string Message { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "DISMISS"
+        /// Example: "DISMISS"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
-        public PullsDismissReviewRequestEvent? Event { get; set; }
+        public global::G.PullsDismissReviewRequestEvent? Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

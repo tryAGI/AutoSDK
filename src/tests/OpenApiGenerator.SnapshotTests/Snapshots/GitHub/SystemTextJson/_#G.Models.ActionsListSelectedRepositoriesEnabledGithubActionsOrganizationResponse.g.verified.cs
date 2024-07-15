@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Repository> Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

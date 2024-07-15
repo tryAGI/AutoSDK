@@ -25,7 +25,7 @@ namespace G
         /// The list of events for the GitHub app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssuePerformedViaGithubAppEvents?>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -61,13 +61,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookIssueCommentEditedIssuePerformedViaGithubAppOwner? Owner { get; set; } = default!;
+        public global::G.WebhookIssueCommentEditedIssuePerformedViaGithubAppOwner? Owner { get; set; } = default!;
 
         /// <summary>
         /// The set of permissions for the GitHub app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public WebhookIssueCommentEditedIssuePerformedViaGithubAppPermissions? Permissions { get; set; }
+        public global::G.WebhookIssueCommentEditedIssuePerformedViaGithubAppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// The slug name of the GitHub app

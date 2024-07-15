@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks Links { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks Links { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// The text of the comment.
@@ -127,13 +127,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions Reactions { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions Reactions { get; set; } = default!;
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide Side { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide Side { get; set; } = default!;
 
         /// <summary>
         /// The first line of the range for a multi-line comment.
@@ -142,17 +142,17 @@ namespace G
         public int? StartLine { get; set; } = default!;
 
         /// <summary>
-        /// The side of the first line of the range for a multi-line comment.
-        /// <br/>Default Value: RIGHT
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? StartSide { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? StartSide { get; set; } = default!;
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subject_type")]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType? SubjectType { get; set; }
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? User { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

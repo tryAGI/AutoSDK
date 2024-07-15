@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The initally assigned location of a new codespace.
-    /// <br/>Example: WestUs2
+    /// The initally assigned location of a new codespace.<br/>
+    /// Example: WestUs2
     /// </summary>
     public enum CodespaceLocation
     {
@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodespaceLocation ToEnum(string value)
+        public static CodespaceLocation? ToEnum(string value)
         {
             return value switch
             {
@@ -58,7 +58,7 @@ namespace G
                 "SouthEastAsia" => CodespaceLocation.SouthEastAsia,
                 "WestEurope" => CodespaceLocation.WestEurope,
                 "WestUs2" => CodespaceLocation.WestUs2,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

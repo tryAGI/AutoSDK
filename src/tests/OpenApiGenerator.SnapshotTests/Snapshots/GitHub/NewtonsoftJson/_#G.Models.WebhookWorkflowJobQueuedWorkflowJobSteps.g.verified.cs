@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobQueuedWorkflowJobStepsConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookWorkflowJobQueuedWorkflowJobStepsConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobQueuedWorkflowJobStepsStatus Status { get; set; } = default!;
+        public global::G.WebhookWorkflowJobQueuedWorkflowJobStepsStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

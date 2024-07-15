@@ -6,30 +6,86 @@ namespace G
 {
     public partial class AppsClient
     {
+        partial void PrepareAppsGetInstallationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int installationId);
+        partial void PrepareAppsGetInstallationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int installationId);
+        partial void ProcessAppsGetInstallationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessAppsGetInstallationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Get an installation for the authenticated app
+        /// Get an installation for the authenticated app<br/>
+        /// Enables an authenticated GitHub App to find an installation's information using the installation id.<br/>
+        /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// </summary>
         /// <param name="installationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Installation> AppsGetInstallationAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Installation> AppsGetInstallationAsync(
             int installationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareAppsGetInstallationArguments(
+                httpClient: _httpClient,
+                installationId: ref installationId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/app/installations/{installationId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/app/installations/{installationId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareAppsGetInstallationRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                installationId: installationId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessAppsGetInstallationResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessAppsGetInstallationResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Installation?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Installation?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

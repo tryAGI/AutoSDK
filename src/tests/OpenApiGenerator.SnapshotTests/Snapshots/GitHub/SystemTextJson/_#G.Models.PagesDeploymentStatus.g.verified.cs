@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PagesDeploymentStatusStatusJsonConverter))]
-        public PagesDeploymentStatusStatus? Status { get; set; }
+        public global::G.PagesDeploymentStatusStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

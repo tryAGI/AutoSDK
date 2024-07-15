@@ -19,25 +19,25 @@ namespace G
         /// The state of the Dependabot alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertState State { get; set; } = default!;
+        public global::G.DependabotAlertState State { get; set; } = default!;
 
         /// <summary>
         /// Details for the vulnerable dependency.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertDependency Dependency { get; set; } = default!;
+        public global::G.DependabotAlertDependency Dependency { get; set; } = default!;
 
         /// <summary>
         /// Details for the GitHub Security Advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_advisory", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; } = default!;
+        public global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; } = default!;
 
         /// <summary>
         /// Details pertaining to one vulnerable version range for the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_vulnerability", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; } = default!;
+        public global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; } = default!;
 
         /// <summary>
         /// The REST API URL of the alert resource.
@@ -73,13 +73,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? DismissedBy { get; set; } = default!;
+        public global::G.NullableSimpleUser? DismissedBy { get; set; } = default!;
 
         /// <summary>
         /// The reason that the alert was dismissed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public DependabotAlertDismissedReason? DismissedReason { get; set; } = default!;
+        public global::G.DependabotAlertDismissedReason? DismissedReason { get; set; } = default!;
 
         /// <summary>
         /// An optional comment associated with the alert's dismissal.

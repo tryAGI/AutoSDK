@@ -6,6 +6,26 @@ namespace G
 {
     public partial class ReposClient
     {
+        partial void PrepareReposMergeArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            global::G.ReposMergeRequest request);
+        partial void PrepareReposMergeRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            global::G.ReposMergeRequest request);
+        partial void ProcessReposMergeResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessReposMergeResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Merge a branch
         /// </summary>
@@ -14,32 +34,75 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Commit> ReposMergeAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Commit> ReposMergeAsync(
             string owner,
             string repo,
-            ReposMergeRequest request,
+            global::G.ReposMergeRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareReposMergeArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/merges", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/merges", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareReposMergeRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessReposMergeResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessReposMergeResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Commit?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Commit?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,12 +111,18 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="@base"></param>
-        /// <param name="head"></param>
-        /// <param name="commitMessage"></param>
+        /// <param name="@base">
+        /// The name of the base branch that the head will be merged into.
+        /// </param>
+        /// <param name="head">
+        /// The head to merge. This can be a branch name or a commit SHA1.
+        /// </param>
+        /// <param name="commitMessage">
+        /// Commit message to use for the merge commit. If omitted, a default message will be used.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Commit> ReposMergeAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Commit> ReposMergeAsync(
             string owner,
             string repo,
             string @base,
@@ -61,7 +130,7 @@ namespace G
             string? commitMessage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ReposMergeRequest
+            var request = new global::G.ReposMergeRequest
             {
                 Base = @base,
                 Head = head,

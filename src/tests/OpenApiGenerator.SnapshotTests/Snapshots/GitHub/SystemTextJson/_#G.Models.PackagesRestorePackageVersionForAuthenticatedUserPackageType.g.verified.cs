@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PackagesRestorePackageVersionForAuthenticatedUserPackageType ToEnum(string value)
+        public static PackagesRestorePackageVersionForAuthenticatedUserPackageType? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "docker" => PackagesRestorePackageVersionForAuthenticatedUserPackageType.Docker,
                 "nuget" => PackagesRestorePackageVersionForAuthenticatedUserPackageType.Nuget,
                 "container" => PackagesRestorePackageVersionForAuthenticatedUserPackageType.Container,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

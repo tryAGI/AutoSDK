@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningDefaultSetupUpdateQuerySuite ToEnum(string value)
+        public static CodeScanningDefaultSetupUpdateQuerySuite? ToEnum(string value)
         {
             return value switch
             {
                 "default" => CodeScanningDefaultSetupUpdateQuerySuite.Default,
                 "extended" => CodeScanningDefaultSetupUpdateQuerySuite.Extended,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

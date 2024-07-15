@@ -6,62 +6,136 @@ namespace G
 {
     public partial class ProjectsClient
     {
+        partial void PrepareProjectsUpdateArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int projectId,
+            global::G.ProjectsUpdateRequest request);
+        partial void PrepareProjectsUpdateRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int projectId,
+            global::G.ProjectsUpdateRequest request);
+        partial void ProcessProjectsUpdateResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessProjectsUpdateResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Update a project
+        /// Update a project<br/>
+        /// Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Project> ProjectsUpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Project> ProjectsUpdateAsync(
             int projectId,
-            ProjectsUpdateRequest request,
+            global::G.ProjectsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareProjectsUpdateArguments(
+                httpClient: _httpClient,
+                projectId: ref projectId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/projects/{projectId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/projects/{projectId}", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareProjectsUpdateRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                projectId: projectId,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessProjectsUpdateResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessProjectsUpdateResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Project?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Project?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Update a project
+        /// Update a project<br/>
+        /// Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
         /// </summary>
         /// <param name="projectId"></param>
-        /// <param name="name"></param>
-        /// <param name="body"></param>
-        /// <param name="state"></param>
-        /// <param name="organizationPermission"></param>
-        /// <param name="@private"></param>
+        /// <param name="name">
+        /// Name of the project<br/>
+        /// Example: Week One Sprint
+        /// </param>
+        /// <param name="body">
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
+        /// </param>
+        /// <param name="state">
+        /// State of the project; either 'open' or 'closed'<br/>
+        /// Example: open
+        /// </param>
+        /// <param name="organizationPermission">
+        /// The baseline permission that all organization members have on this project
+        /// </param>
+        /// <param name="@private">
+        /// Whether or not this project can be seen by everyone.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Project> ProjectsUpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Project> ProjectsUpdateAsync(
             int projectId,
             string? name = default,
             string? body = default,
             string? state = default,
-            ProjectsUpdateRequestOrganizationPermission? organizationPermission = default,
+            global::G.ProjectsUpdateRequestOrganizationPermission? organizationPermission = default,
             bool @private = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ProjectsUpdateRequest
+            var request = new global::G.ProjectsUpdateRequest
             {
                 Name = name,
                 Body = body,

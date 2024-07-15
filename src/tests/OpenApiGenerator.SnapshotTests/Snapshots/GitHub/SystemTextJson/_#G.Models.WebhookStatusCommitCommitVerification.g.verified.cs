@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookStatusCommitCommitVerificationReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitCommitVerificationReason Reason { get; set; }
+        public required global::G.WebhookStatusCommitCommitVerificationReason Reason { get; set; }
 
         /// <summary>
         /// 

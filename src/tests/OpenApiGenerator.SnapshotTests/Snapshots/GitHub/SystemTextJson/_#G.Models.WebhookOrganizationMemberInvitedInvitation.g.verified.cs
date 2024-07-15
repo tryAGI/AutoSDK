@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; }
+        public required global::G.WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; }
 
         /// <summary>
         /// 

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Installation.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class Installation
     {
         /// <summary>
-        /// The ID of the installation.
-        /// <br/>Example: 1
+        /// The ID of the installation.<br/>
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
@@ -20,34 +22,34 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<SimpleUser, Enterprise>? Account { get; set; } = default!;
+        public global::System.AnyOf<global::G.SimpleUser?, global::G.Enterprise?>? Account { get; set; } = default!;
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
-        public InstallationRepositorySelection RepositorySelection { get; set; } = default!;
+        public global::G.InstallationRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/app/installations/1/access_tokens
+        /// Example: https://api.github.com/app/installations/1/access_tokens
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_tokens_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AccessTokensUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/installation/repositories
+        /// Example: https://api.github.com/installation/repositories
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoriesUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/organizations/github/settings/installations/1
+        /// Example: https://github.com/organizations/github/settings/installations/1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int AppId { get; set; } = default!;
@@ -59,17 +61,16 @@ namespace G
         public int TargetId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Organization
+        /// Example: Organization
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_type", Required = global::Newtonsoft.Json.Required.Always)]
         public string TargetType { get; set; } = default!;
 
         /// <summary>
         /// The permissions granted to the user access token.
-        /// <br/>Example: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public AppPermissions Permissions { get; set; } = default!;
+        public global::G.AppPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -90,25 +91,25 @@ namespace G
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: config.yaml
+        /// Example: config.yaml
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? SingleFileName { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_multiple_single_files")]
         public bool HasMultipleSingleFiles { get; set; }
 
         /// <summary>
-        /// <br/>Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file_paths")]
         public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }
 
         /// <summary>
-        /// <br/>Example: github-actions
+        /// Example: github-actions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app_slug", Required = global::Newtonsoft.Json.Required.Always)]
         public string AppSlug { get; set; } = default!;
@@ -117,7 +118,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("suspended_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? SuspendedBy { get; set; } = default!;
+        public global::G.NullableSimpleUser? SuspendedBy { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -126,7 +127,7 @@ namespace G
         public global::System.DateTime? SuspendedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
+        /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contact_email")]
         public string? ContactEmail { get; set; }

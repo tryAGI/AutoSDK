@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentLinks Links { get; set; }
+        public required global::G.WebhooksReviewCommentLinks Links { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhooksReviewCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the comment.
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentReactions Reactions { get; set; }
+        public required global::G.WebhooksReviewCommentReactions Reactions { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.
@@ -155,7 +155,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentSide Side { get; set; }
+        public required global::G.WebhooksReviewCommentSide Side { get; set; }
 
         /// <summary>
         /// The first line of the range for a multi-line comment.
@@ -165,20 +165,20 @@ namespace G
         public required int? StartLine { get; set; }
 
         /// <summary>
-        /// The side of the first line of the range for a multi-line comment.
-        /// <br/>Default Value: RIGHT
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentStartSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentStartSide? StartSide { get; set; }
+        public required global::G.WebhooksReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentSubjectTypeJsonConverter))]
-        public WebhooksReviewCommentSubjectType? SubjectType { get; set; }
+        public global::G.WebhooksReviewCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// 
@@ -199,7 +199,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewCommentUser? User { get; set; }
+        public required global::G.WebhooksReviewCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

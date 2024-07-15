@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public WebhookProjectsV2ProjectEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookProjectsV2ProjectEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public")]
-        public WebhookProjectsV2ProjectEditedChangesPublic? Public { get; set; }
+        public global::G.WebhookProjectsV2ProjectEditedChangesPublic? Public { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("short_description")]
-        public WebhookProjectsV2ProjectEditedChangesShortDescription? ShortDescription { get; set; }
+        public global::G.WebhookProjectsV2ProjectEditedChangesShortDescription? ShortDescription { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
-        public WebhookProjectsV2ProjectEditedChangesTitle? Title { get; set; }
+        public global::G.WebhookProjectsV2ProjectEditedChangesTitle? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

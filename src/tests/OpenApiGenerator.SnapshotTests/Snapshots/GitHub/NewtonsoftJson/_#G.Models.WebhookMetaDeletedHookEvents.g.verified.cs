@@ -342,7 +342,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookMetaDeletedHookEvents ToEnum(string value)
+        public static WebhookMetaDeletedHookEvents? ToEnum(string value)
         {
             return value switch
             {
@@ -398,7 +398,7 @@ namespace G
                 "workflow_run" => WebhookMetaDeletedHookEvents.WorkflowRun,
                 "repository_dispatch" => WebhookMetaDeletedHookEvents.RepositoryDispatch,
                 "projects_v2_item" => WebhookMetaDeletedHookEvents.ProjectsV2Item,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -82,67 +82,67 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// <br/>Example: ""
+        /// Example: ""
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gravatar_id")]
         public string? GravatarId { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://github.com/testorg-ea8ec76d71c3af4b"
+        /// Example: "https://github.com/testorg-ea8ec76d71c3af4b"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string? HtmlUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/followers"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/followers"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("followers_url")]
         public string? FollowersUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/following{/other_user}"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/following{/other_user}"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("following_url")]
         public string? FollowingUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/gists{/gist_id}"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/gists{/gist_id}"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gists_url")]
         public string? GistsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/starred{/owner}{/repo}"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/starred{/owner}{/repo}"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("starred_url")]
         public string? StarredUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/subscriptions"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/subscriptions"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptions_url")]
         public string? SubscriptionsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/orgs"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/orgs"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organizations_url")]
         public string? OrganizationsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/received_events"
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/received_events"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("received_events_url")]
         public string? ReceivedEventsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: "Organization"
+        /// Example: "Organization"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("site_admin")]
         public bool SiteAdmin { get; set; }

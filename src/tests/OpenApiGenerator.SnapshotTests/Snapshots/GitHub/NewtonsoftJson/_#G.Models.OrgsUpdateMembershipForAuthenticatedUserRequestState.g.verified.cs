@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsUpdateMembershipForAuthenticatedUserRequestState ToEnum(string value)
+        public static OrgsUpdateMembershipForAuthenticatedUserRequestState? ToEnum(string value)
         {
             return value switch
             {
                 "active" => OrgsUpdateMembershipForAuthenticatedUserRequestState.Active,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

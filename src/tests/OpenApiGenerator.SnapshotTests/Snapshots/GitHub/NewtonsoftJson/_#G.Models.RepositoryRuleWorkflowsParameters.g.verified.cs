@@ -13,7 +13,7 @@ namespace G
         /// Workflows that must pass for this rule to pass.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflows", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryRuleParamsWorkflowFileReference> Workflows { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsWorkflowFileReference> Workflows { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

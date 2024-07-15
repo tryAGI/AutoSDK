@@ -14,56 +14,56 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksComments Comments { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksComments Comments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksCommits Commits { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksCommits Commits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksHtml Html { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksHtml Html { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksIssue Issue { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksIssue Issue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksReviewComment ReviewComment { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksReviewComment ReviewComment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksReviewComments ReviewComments { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksReviewComments ReviewComments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksSelf Self { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksSelf Self { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestUnassignedPullRequestLinksStatuses Statuses { get; set; }
+        public required global::G.WebhookPullRequestUnassignedPullRequestLinksStatuses Statuses { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

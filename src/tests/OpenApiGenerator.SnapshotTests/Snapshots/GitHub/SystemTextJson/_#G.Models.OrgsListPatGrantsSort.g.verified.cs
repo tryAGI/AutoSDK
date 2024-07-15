@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: created_at
+    /// Default Value: created_at
     /// </summary>
     public enum OrgsListPatGrantsSort
     {
@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsListPatGrantsSort ToEnum(string value)
+        public static OrgsListPatGrantsSort? ToEnum(string value)
         {
             return value switch
             {
                 "created_at" => OrgsListPatGrantsSort.CreatedAt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

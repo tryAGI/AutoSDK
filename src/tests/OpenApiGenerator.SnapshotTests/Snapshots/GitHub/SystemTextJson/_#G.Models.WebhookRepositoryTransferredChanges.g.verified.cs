@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookRepositoryTransferredChangesOwner Owner { get; set; }
+        public required global::G.WebhookRepositoryTransferredChangesOwner Owner { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

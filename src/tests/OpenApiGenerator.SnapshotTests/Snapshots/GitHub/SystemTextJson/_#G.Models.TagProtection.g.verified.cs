@@ -10,31 +10,31 @@ namespace G
     public sealed partial class TagProtection
     {
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2011-01-26T19:01:12Z
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2011-01-26T19:01:12Z
+        /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// <br/>Example: v1.*
+        /// Example: v1.*
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
         [global::System.Text.Json.Serialization.JsonRequired]

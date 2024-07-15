@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhooksSponsorshipSponsorableType? Type { get; set; }
+        public global::G.WebhooksSponsorshipSponsorableType? Type { get; set; }
 
         /// <summary>
         /// 

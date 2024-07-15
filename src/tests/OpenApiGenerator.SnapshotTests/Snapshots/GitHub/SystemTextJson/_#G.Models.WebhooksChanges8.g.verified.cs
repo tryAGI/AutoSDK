@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksChanges8Tier Tier { get; set; }
+        public required global::G.WebhooksChanges8Tier Tier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel ToEnum(string value)
+        public static WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel? ToEnum(string value)
         {
             return value switch
             {
                 "FREE" => WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.FREE,
                 "FLAT_RATE" => WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.FLATRATE,
                 "PER_UNIT" => WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.PERUNIT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WorkflowRunUsageBillable Billable { get; set; }
+        public required global::G.WorkflowRunUsageBillable Billable { get; set; }
 
         /// <summary>
         /// 

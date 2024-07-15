@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billable", Required = global::Newtonsoft.Json.Required.Always)]
-        public WorkflowRunUsageBillable Billable { get; set; } = default!;
+        public global::G.WorkflowRunUsageBillable Billable { get; set; } = default!;
 
         /// <summary>
         /// 

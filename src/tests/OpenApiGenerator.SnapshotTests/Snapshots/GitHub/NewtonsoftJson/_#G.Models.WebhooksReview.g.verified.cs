@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReviewLinks Links { get; set; } = default!;
+        public global::G.WebhooksReviewLinks Links { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReviewAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.WebhooksReviewAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// The text of the review.
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReviewUser? User { get; set; } = default!;
+        public global::G.WebhooksReviewUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

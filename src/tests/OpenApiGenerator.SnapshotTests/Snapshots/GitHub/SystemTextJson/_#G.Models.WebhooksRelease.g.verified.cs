@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhooksReleaseAssets> Assets { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksReleaseAssets> Assets { get; set; }
 
         /// <summary>
         /// 
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReleaseAuthor? Author { get; set; }
+        public required global::G.WebhooksReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public WebhooksReleaseReactions? Reactions { get; set; }
+        public global::G.WebhooksReleaseReactions? Reactions { get; set; }
 
         /// <summary>
         /// The name of the tag.

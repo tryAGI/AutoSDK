@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCommitCommentCreatedCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCommitCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookCommitCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the comment.
@@ -84,7 +84,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public WebhookCommitCommentCreatedCommentReactions? Reactions { get; set; }
+        public global::G.WebhookCommitCommentCreatedCommentReactions? Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCommitCommentCreatedCommentUser? User { get; set; }
+        public required global::G.WebhookCommitCommentCreatedCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

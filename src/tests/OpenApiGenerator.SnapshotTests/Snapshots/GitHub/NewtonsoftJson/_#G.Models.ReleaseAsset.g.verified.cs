@@ -34,8 +34,8 @@ namespace G
         public string NodeId { get; set; } = default!;
 
         /// <summary>
-        /// The file name of the asset.
-        /// <br/>Example: Team Environment
+        /// The file name of the asset.<br/>
+        /// Example: Team Environment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
@@ -50,7 +50,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReleaseAssetState State { get; set; } = default!;
+        public global::G.ReleaseAssetState State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uploader", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Uploader { get; set; } = default!;
+        public global::G.NullableSimpleUser? Uploader { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

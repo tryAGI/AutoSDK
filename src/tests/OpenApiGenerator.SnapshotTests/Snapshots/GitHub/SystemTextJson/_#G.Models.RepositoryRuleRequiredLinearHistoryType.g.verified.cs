@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleRequiredLinearHistoryType ToEnum(string value)
+        public static RepositoryRuleRequiredLinearHistoryType? ToEnum(string value)
         {
             return value switch
             {
                 "required_linear_history" => RepositoryRuleRequiredLinearHistoryType.RequiredLinearHistory,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

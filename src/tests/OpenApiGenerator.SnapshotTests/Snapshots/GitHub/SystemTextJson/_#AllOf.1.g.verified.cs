@@ -5,33 +5,64 @@ using System.Linq;
 
 namespace System
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public readonly struct AllOf<T1> : global::System.IEquatable<AllOf<T1>>
     {
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T1? Value1 { get; init; }
 #else
         public T1? Value1 { get; }
 #endif
 
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
 #endif
         public bool IsValue1 => Value1 != null;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AllOf<T1>(T1 value) => new AllOf<T1>(value);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator T1?(AllOf<T1> @this) => @this.Value1;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public AllOf(T1? value)
         {
             Value1 = value;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsValue1;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
@@ -47,6 +78,9 @@ namespace System
             return fields.Aggregate(offset, HashCodeAggregator);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Equals(AllOf<T1> other)
         {
             return
@@ -54,16 +88,25 @@ namespace System
                 ;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static bool operator ==(AllOf<T1> obj1, AllOf<T1> obj2)
         {
             return global::System.Collections.Generic.EqualityComparer<AllOf<T1>>.Default.Equals(obj1, obj2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static bool operator !=(AllOf<T1> obj1, AllOf<T1> obj2)
         {
             return !(obj1 == obj2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override bool Equals(object? obj)
         {
             return obj is AllOf<T1> o && Equals(o);

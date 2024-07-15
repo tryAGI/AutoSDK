@@ -10,19 +10,19 @@ namespace G
     public sealed partial class CommunityProfile
     {
         /// <summary>
-        /// <br/>Example: 100
+        /// Example: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("health_percentage", Required = global::Newtonsoft.Json.Required.Always)]
         public int HealthPercentage { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: My first repository on GitHub!
+        /// Example: My first repository on GitHub!
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: example.com
+        /// Example: example.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documentation", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Documentation { get; set; } = default!;
@@ -31,16 +31,16 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public CommunityProfileFiles Files { get; set; } = default!;
+        public global::G.CommunityProfileFiles Files { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_reports_enabled")]
         public bool ContentReportsEnabled { get; set; }

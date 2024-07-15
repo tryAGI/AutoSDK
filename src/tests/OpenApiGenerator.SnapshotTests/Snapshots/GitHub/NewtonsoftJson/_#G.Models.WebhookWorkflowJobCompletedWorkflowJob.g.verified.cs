@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobCompletedWorkflowJobConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// The time that the job created.
@@ -121,7 +121,7 @@ namespace G
         /// The current status of the job. Can be `queued`, `in_progress`, `waiting`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowJobCompletedWorkflowJobStatus Status { get; set; } = default!;
+        public global::G.WebhookWorkflowJobCompletedWorkflowJobStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The name of the current branch.
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookWorkflowJobCompletedWorkflowJobSteps> Steps { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobCompletedWorkflowJobSteps> Steps { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The state of the Dependabot alert.
+    /// The state of the Dependabot alert.<br/>
     /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependabotUpdateAlertRequestState ToEnum(string value)
+        public static DependabotUpdateAlertRequestState? ToEnum(string value)
         {
             return value switch
             {
                 "dismissed" => DependabotUpdateAlertRequestState.Dismissed,
                 "open" => DependabotUpdateAlertRequestState.Open,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

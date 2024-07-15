@@ -10,71 +10,71 @@ namespace G
     public sealed partial class MarketplaceListingPlan
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/marketplace_listing/plans/1313
+        /// Example: https://api.github.com/marketplace_listing/plans/1313
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/marketplace_listing/plans/1313/accounts
+        /// Example: https://api.github.com/marketplace_listing/plans/1313/accounts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accounts_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AccountsUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1313
+        /// Example: 1313
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
 
         /// <summary>
-        /// <br/>Example: Pro
+        /// Example: Pro
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: A professional-grade CI solution
+        /// Example: A professional-grade CI solution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1099
+        /// Example: 1099
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("monthly_price_in_cents")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MonthlyPriceInCents { get; set; }
 
         /// <summary>
-        /// <br/>Example: 11870
+        /// Example: 11870
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("yearly_price_in_cents")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int YearlyPriceInCents { get; set; }
 
         /// <summary>
-        /// <br/>Example: FLAT_RATE
+        /// Example: FLAT_RATE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MarketplaceListingPlanPriceModel PriceModel { get; set; }
+        public required global::G.MarketplaceListingPlanPriceModel PriceModel { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_free_trial")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -88,14 +88,14 @@ namespace G
         public required string? UnitName { get; set; }
 
         /// <summary>
-        /// <br/>Example: published
+        /// Example: published
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
 
         /// <summary>
-        /// <br/>Example: [Up to 25 private repositories, 11 concurrent builds]
+        /// Example: [Up to 25 private repositories, 11 concurrent builds]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bullets")]
         [global::System.Text.Json.Serialization.JsonRequired]

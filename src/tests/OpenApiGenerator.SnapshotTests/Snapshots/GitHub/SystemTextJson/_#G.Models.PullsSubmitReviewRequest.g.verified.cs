@@ -21,7 +21,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullsSubmitReviewRequestEventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullsSubmitReviewRequestEvent Event { get; set; }
+        public required global::G.PullsSubmitReviewRequestEvent Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

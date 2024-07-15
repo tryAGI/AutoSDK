@@ -29,15 +29,15 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.
-        /// <br/>Default Value: false
+        /// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_all_branches")]
         public bool IncludeAllBranches { get; set; } = false;
 
         /// <summary>
-        /// Either `true` to create a new private repository or `false` to create a new public one.
-        /// <br/>Default Value: false
+        /// Either `true` to create a new private repository or `false` to create a new public one.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         public bool Private { get; set; } = false;

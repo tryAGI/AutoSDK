@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: owner
+    /// Default Value: owner
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListForUserType
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForUserType ToEnum(string value)
+        public static ReposListForUserType? ToEnum(string value)
         {
             return value switch
             {
                 "all" => ReposListForUserType.All,
                 "owner" => ReposListForUserType.Owner,
                 "member" => ReposListForUserType.Member,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

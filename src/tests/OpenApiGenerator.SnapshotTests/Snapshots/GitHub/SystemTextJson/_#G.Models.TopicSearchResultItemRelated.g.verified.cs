@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topic_relation")]
-        public TopicSearchResultItemRelatedTopicRelation? TopicRelation { get; set; }
+        public global::G.TopicSearchResultItemRelatedTopicRelation? TopicRelation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

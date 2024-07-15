@@ -55,13 +55,13 @@ namespace G
         /// The type of advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public GlobalAdvisoryType Type { get; set; } = default!;
+        public global::G.GlobalAdvisoryType Type { get; set; } = default!;
 
         /// <summary>
         /// The severity of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
-        public GlobalAdvisorySeverity Severity { get; set; } = default!;
+        public global::G.GlobalAdvisorySeverity Severity { get; set; } = default!;
 
         /// <summary>
         /// The URL of the advisory's source code.
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GlobalAdvisoryIdentifiers>? Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifiers>? Identifiers { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -100,7 +100,7 @@ namespace G
         public global::System.DateTime? GithubReviewedAt { get; set; } = default!;
 
         /// <summary>
-        /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.
+        /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.<br/>
         /// This field is only populated when the advisory is imported from the National Vulnerability Database.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nvd_published_at", Required = global::Newtonsoft.Json.Required.Always)]
@@ -116,25 +116,25 @@ namespace G
         /// The products and respective version ranges affected by the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Vulnerability>? Vulnerabilities { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Vulnerability>? Vulnerabilities { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cvss", Required = global::Newtonsoft.Json.Required.Always)]
-        public GlobalAdvisoryCvss? Cvss { get; set; } = default!;
+        public global::G.GlobalAdvisoryCvss? Cvss { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GlobalAdvisoryCwes>? Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwes>? Cwes { get; set; } = default!;
 
         /// <summary>
         /// The users who contributed to the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GlobalAdvisoryCredits>? Credits { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredits>? Credits { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

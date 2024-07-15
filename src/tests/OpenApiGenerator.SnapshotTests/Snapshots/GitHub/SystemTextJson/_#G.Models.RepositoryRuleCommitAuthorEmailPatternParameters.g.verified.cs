@@ -27,7 +27,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCommitAuthorEmailPatternParametersOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryRuleCommitAuthorEmailPatternParametersOperator Operator { get; set; }
+        public required global::G.RepositoryRuleCommitAuthorEmailPatternParametersOperator Operator { get; set; }
 
         /// <summary>
         /// The pattern to match with.

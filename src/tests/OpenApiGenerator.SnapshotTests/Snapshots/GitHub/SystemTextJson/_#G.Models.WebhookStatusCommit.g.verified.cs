@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitAuthor? Author { get; set; }
+        public required global::G.WebhookStatusCommitAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitCommit Commit { get; set; }
+        public required global::G.WebhookStatusCommitCommit Commit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitCommitter? Committer { get; set; }
+        public required global::G.WebhookStatusCommitCommitter? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookStatusCommitParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookStatusCommitParents> Parents { get; set; }
 
         /// <summary>
         /// 

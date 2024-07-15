@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChecksListForRefStatus ToEnum(string value)
+        public static ChecksListForRefStatus? ToEnum(string value)
         {
             return value switch
             {
                 "queued" => ChecksListForRefStatus.Queued,
                 "in_progress" => ChecksListForRefStatus.InProgress,
                 "completed" => ChecksListForRefStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

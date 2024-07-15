@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent")]
-        public WebhooksPullRequest5RequestedTeamsParent? Parent { get; set; }
+        public global::G.WebhooksPullRequest5RequestedTeamsParent? Parent { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories
@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksPullRequest5RequestedTeamsPrivacyJsonConverter))]
-        public WebhooksPullRequest5RequestedTeamsPrivacy? Privacy { get; set; }
+        public global::G.WebhooksPullRequest5RequestedTeamsPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// 

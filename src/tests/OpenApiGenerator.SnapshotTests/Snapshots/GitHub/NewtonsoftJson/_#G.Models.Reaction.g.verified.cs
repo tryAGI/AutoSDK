@@ -10,13 +10,13 @@ namespace G
     public sealed partial class Reaction
     {
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDg6UmVhY3Rpb24x
+        /// Example: MDg6UmVhY3Rpb24x
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
@@ -25,17 +25,17 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? User { get; set; } = default!;
+        public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
-        /// The reaction to use
-        /// <br/>Example: heart
+        /// The reaction to use<br/>
+        /// Example: heart
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReactionContent Content { get; set; } = default!;
+        public global::G.ReactionContent Content { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;

@@ -13,7 +13,7 @@ namespace G
         /// Require status checks to pass before merging. Set to `null` to disable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_status_checks", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReposUpdateBranchProtectionRequestRequiredStatusChecks? RequiredStatusChecks { get; set; } = default!;
+        public global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecks? RequiredStatusChecks { get; set; } = default!;
 
         /// <summary>
         /// Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
@@ -25,13 +25,13 @@ namespace G
         /// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_pull_request_reviews", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; } = default!;
+        public global::G.ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; } = default!;
 
         /// <summary>
         /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("restrictions", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReposUpdateBranchProtectionRequestRestrictions? Restrictions { get; set; } = default!;
+        public global::G.ReposUpdateBranchProtectionRequestRestrictions? Restrictions { get; set; } = default!;
 
         /// <summary>
         /// Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
@@ -64,15 +64,15 @@ namespace G
         public bool RequiredConversationResolution { get; set; }
 
         /// <summary>
-        /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
-        /// <br/>Default Value: false
+        /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lock_branch")]
         public bool LockBranch { get; set; } = false;
 
         /// <summary>
-        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
-        /// <br/>Default Value: false
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_fork_syncing")]
         public bool AllowForkSyncing { get; set; } = false;

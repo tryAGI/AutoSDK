@@ -13,7 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public ReactionsCreateForPullRequestReviewCommentRequestContent Content { get; set; } = default!;
+        public global::G.ReactionsCreateForPullRequestReviewCommentRequestContent Content { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

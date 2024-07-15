@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Whether to approve or reject deployment to the specified environments.
-    /// <br/>Example: approved
+    /// Whether to approve or reject deployment to the specified environments.<br/>
+    /// Example: approved
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ActionsReviewPendingDeploymentsForRunRequestState
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsReviewPendingDeploymentsForRunRequestState ToEnum(string value)
+        public static ActionsReviewPendingDeploymentsForRunRequestState? ToEnum(string value)
         {
             return value switch
             {
                 "approved" => ActionsReviewPendingDeploymentsForRunRequestState.Approved,
                 "rejected" => ActionsReviewPendingDeploymentsForRunRequestState.Rejected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

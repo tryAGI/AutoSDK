@@ -13,13 +13,13 @@ namespace G
         /// Parameters for a repository ruleset ref name condition
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("condition")]
-        public RepositoryRulesetConditions? Condition { get; set; }
+        public global::G.RepositoryRulesetConditions? Condition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
-        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges? Changes { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges? Changes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -242,7 +242,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
-        public PublicUserPlan? Plan { get; set; }
+        public global::G.PublicUserPlan? Plan { get; set; }
 
         /// <summary>
         /// 
@@ -251,31 +251,31 @@ namespace G
         public global::System.DateTime? SuspendedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_gists")]
         public int PrivateGists { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_private_repos")]
         public int TotalPrivateRepos { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_private_repos")]
         public int OwnedPrivateRepos { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage")]
         public int DiskUsage { get; set; }
 
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborators")]
         public int Collaborators { get; set; }

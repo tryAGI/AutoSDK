@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookGollumPagesAction ToEnum(string value)
+        public static WebhookGollumPagesAction? ToEnum(string value)
         {
             return value switch
             {
                 "created" => WebhookGollumPagesAction.Created,
                 "edited" => WebhookGollumPagesAction.Edited,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

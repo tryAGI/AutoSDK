@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: active
+    /// Example: active
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum WorkflowState
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WorkflowState ToEnum(string value)
+        public static WorkflowState? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "disabled_fork" => WorkflowState.DisabledFork,
                 "disabled_inactivity" => WorkflowState.DisabledInactivity,
                 "disabled_manually" => WorkflowState.DisabledManually,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

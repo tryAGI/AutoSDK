@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
-    /// <br/>Default Value: pull
+    /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.<br/>
+    /// Default Value: pull
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamsCreateRequestPermission
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsCreateRequestPermission ToEnum(string value)
+        public static TeamsCreateRequestPermission? ToEnum(string value)
         {
             return value switch
             {
                 "pull" => TeamsCreateRequestPermission.Pull,
                 "push" => TeamsCreateRequestPermission.Push,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

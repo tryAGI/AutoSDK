@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_info")]
-        public WebhookRubygemsMetadataVersionInfo? VersionInfo { get; set; }
+        public global::G.WebhookRubygemsMetadataVersionInfo? VersionInfo { get; set; }
 
         /// <summary>
         /// 

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class PullRequestReviewCommentLinksSelf
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("href", Required = global::Newtonsoft.Json.Required.Always)]
         public string Href { get; set; } = default!;

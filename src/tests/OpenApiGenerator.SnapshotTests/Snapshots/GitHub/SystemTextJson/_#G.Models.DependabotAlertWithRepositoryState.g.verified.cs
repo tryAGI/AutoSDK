@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependabotAlertWithRepositoryState ToEnum(string value)
+        public static DependabotAlertWithRepositoryState? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "dismissed" => DependabotAlertWithRepositoryState.Dismissed,
                 "fixed" => DependabotAlertWithRepositoryState.Fixed,
                 "open" => DependabotAlertWithRepositoryState.Open,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewThreadResolvedThreadCommentsUserTypeJsonConverter))]
-        public WebhookPullRequestReviewThreadResolvedThreadCommentsUserType? Type { get; set; }
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsUserType? Type { get; set; }
 
         /// <summary>
         /// 

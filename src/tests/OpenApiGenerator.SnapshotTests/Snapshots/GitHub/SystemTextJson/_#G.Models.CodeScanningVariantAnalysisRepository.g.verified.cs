@@ -10,24 +10,24 @@ namespace G
     public sealed partial class CodeScanningVariantAnalysisRepository
     {
         /// <summary>
-        /// A unique identifier of the repository.
-        /// <br/>Example: 1296269
+        /// A unique identifier of the repository.<br/>
+        /// Example: 1296269
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// The name of the repository.
-        /// <br/>Example: Hello-World
+        /// The name of the repository.<br/>
+        /// Example: Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// The full, globally unique, name of the repository.
-        /// <br/>Example: octocat/Hello-World
+        /// The full, globally unique, name of the repository.<br/>
+        /// Example: octocat/Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,14 +41,14 @@ namespace G
         public required bool Private { get; set; }
 
         /// <summary>
-        /// <br/>Example: 80
+        /// Example: 80
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StargazersCount { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -17,7 +17,7 @@ namespace G
         public required string Permission { get; set; }
 
         /// <summary>
-        /// <br/>Example: admin
+        /// Example: admin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableCollaborator? User { get; set; }
+        public required global::G.NullableCollaborator? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

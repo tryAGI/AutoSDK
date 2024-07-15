@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentStatusCreatedWorkflowRunActor? Actor { get; set; } = default!;
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunActor? Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentStatusCreatedWorkflowRunConclusion? Conclusion { get; set; } = default!;
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunConclusion? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository")]
-        public WebhookDeploymentStatusCreatedWorkflowRunHeadRepository? HeadRepository { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunHeadRepository? HeadRepository { get; set; }
 
         /// <summary>
         /// 
@@ -145,19 +145,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhookDeploymentStatusCreatedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public WebhookDeploymentStatusCreatedWorkflowRunRepository? Repository { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunRepository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentStatusCreatedWorkflowRunStatus Status { get; set; } = default!;
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triggering_actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
 
         /// <summary>
         /// 

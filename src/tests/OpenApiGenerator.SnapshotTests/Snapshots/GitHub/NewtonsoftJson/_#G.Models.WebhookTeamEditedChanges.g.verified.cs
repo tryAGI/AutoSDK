@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public WebhookTeamEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookTeamEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public WebhookTeamEditedChangesName? Name { get; set; }
+        public global::G.WebhookTeamEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public WebhookTeamEditedChangesPrivacy? Privacy { get; set; }
+        public global::G.WebhookTeamEditedChangesPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
-        public WebhookTeamEditedChangesNotificationSetting? NotificationSetting { get; set; }
+        public global::G.WebhookTeamEditedChangesNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public WebhookTeamEditedChangesRepository? Repository { get; set; }
+        public global::G.WebhookTeamEditedChangesRepository? Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

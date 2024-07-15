@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationIssueTitle
     {
         /// <summary>
-        /// The API URL to get the issue where the secret was detected.
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
+        /// The API URL to get the issue where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue_title_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssueTitleUrl { get; set; } = default!;

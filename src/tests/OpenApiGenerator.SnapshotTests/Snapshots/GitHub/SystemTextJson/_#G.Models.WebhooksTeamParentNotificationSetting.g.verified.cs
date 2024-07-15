@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksTeamParentNotificationSetting ToEnum(string value)
+        public static WebhooksTeamParentNotificationSetting? ToEnum(string value)
         {
             return value switch
             {
                 "notifications_enabled" => WebhooksTeamParentNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => WebhooksTeamParentNotificationSetting.NotificationsDisabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

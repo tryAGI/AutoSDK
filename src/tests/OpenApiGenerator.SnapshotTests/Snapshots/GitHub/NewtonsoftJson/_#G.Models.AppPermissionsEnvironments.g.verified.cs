@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AppPermissionsEnvironments ToEnum(string value)
+        public static AppPermissionsEnvironments? ToEnum(string value)
         {
             return value switch
             {
                 "read" => AppPermissionsEnvironments.Read,
                 "write" => AppPermissionsEnvironments.Write,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

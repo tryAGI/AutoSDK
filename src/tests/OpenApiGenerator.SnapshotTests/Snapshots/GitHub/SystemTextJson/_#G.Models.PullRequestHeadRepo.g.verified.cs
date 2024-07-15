@@ -252,7 +252,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullRequestHeadRepoOwner Owner { get; set; }
+        public required global::G.PullRequestHeadRepoOwner Owner { get; set; }
 
         /// <summary>
         /// 
@@ -473,7 +473,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public PullRequestHeadRepoPermissions? Permissions { get; set; }
+        public global::G.PullRequestHeadRepoPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -504,7 +504,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullRequestHeadRepoLicense? License { get; set; }
+        public required global::G.PullRequestHeadRepoLicense? License { get; set; }
 
         /// <summary>
         /// 

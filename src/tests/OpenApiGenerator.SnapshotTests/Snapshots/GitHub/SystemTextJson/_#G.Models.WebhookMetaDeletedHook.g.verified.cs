@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookMetaDeletedHookConfig Config { get; set; }
+        public required global::G.WebhookMetaDeletedHookConfig Config { get; set; }
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookMetaDeletedHookEvents> Events { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookMetaDeletedHookEvents> Events { get; set; }
 
         /// <summary>
         /// 

@@ -13,13 +13,13 @@ namespace G
         /// The repository properties and values to include. All of these properties must match for the condition to pass.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("include")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetConditionsRepositoryPropertySpec>? Include { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? Include { get; set; }
 
         /// <summary>
         /// The repository properties and values to exclude. The condition will not pass if any of these properties match.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exclude")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetConditionsRepositoryPropertySpec>? Exclude { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? Exclude { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? DismissedBy { get; set; }
+        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? DismissedReason { get; set; }
+        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("most_recent_instance")]
-        public WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance? MostRecentInstance { get; set; }
+        public global::G.WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance? MostRecentInstance { get; set; }
 
         /// <summary>
         /// The code scanning alert number.
@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertAppearedInBranchAlertRule Rule { get; set; }
+        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertRule Rule { get; set; }
 
         /// <summary>
         /// State of a code scanning alert.
@@ -71,14 +71,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertAppearedInBranchAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertAppearedInBranchAlertState State { get; set; }
+        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertState State { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookCodeScanningAlertAppearedInBranchAlertTool Tool { get; set; }
+        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertTool Tool { get; set; }
 
         /// <summary>
         /// 

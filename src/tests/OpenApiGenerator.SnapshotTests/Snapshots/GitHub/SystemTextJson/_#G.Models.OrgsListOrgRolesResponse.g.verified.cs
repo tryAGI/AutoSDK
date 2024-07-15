@@ -19,7 +19,7 @@ namespace G
         /// The list of organization roles available to the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
-        public global::System.Collections.Generic.IList<OrganizationRole>? Roles { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OrganizationRole>? Roles { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

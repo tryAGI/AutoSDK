@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksProjectCreator? Creator { get; set; } = default!;
+        public global::G.WebhooksProjectCreator? Creator { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksProjectState State { get; set; } = default!;
+        public global::G.WebhooksProjectState State { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksPreviousMarketplacePurchaseAccount Account { get; set; } = default!;
+        public global::G.WebhooksPreviousMarketplacePurchaseAccount Account { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksPreviousMarketplacePurchasePlan Plan { get; set; } = default!;
+        public global::G.WebhooksPreviousMarketplacePurchasePlan Plan { get; set; } = default!;
 
         /// <summary>
         /// 

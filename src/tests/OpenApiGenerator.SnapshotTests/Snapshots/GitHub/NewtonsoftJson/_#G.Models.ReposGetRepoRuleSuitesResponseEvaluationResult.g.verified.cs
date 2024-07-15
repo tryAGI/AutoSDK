@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetRepoRuleSuitesResponseEvaluationResult ToEnum(string value)
+        public static ReposGetRepoRuleSuitesResponseEvaluationResult? ToEnum(string value)
         {
             return value switch
             {
                 "pass" => ReposGetRepoRuleSuitesResponseEvaluationResult.Pass,
                 "fail" => ReposGetRepoRuleSuitesResponseEvaluationResult.Fail,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

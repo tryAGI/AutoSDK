@@ -6,54 +6,119 @@ namespace G
 {
     public partial class AppsClient
     {
+        partial void PrepareAppsDeleteAuthorizationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string clientId,
+            global::G.AppsDeleteAuthorizationRequest request);
+        partial void PrepareAppsDeleteAuthorizationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string clientId,
+            global::G.AppsDeleteAuthorizationRequest request);
+        partial void ProcessAppsDeleteAuthorizationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessAppsDeleteAuthorizationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Delete an app authorization
+        /// Delete an app authorization<br/>
+        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.<br/>
+        /// Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ValidationError> AppsDeleteAuthorizationAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ValidationError> AppsDeleteAuthorizationAsync(
             string clientId,
-            AppsDeleteAuthorizationRequest request,
+            global::G.AppsDeleteAuthorizationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareAppsDeleteAuthorizationArguments(
+                httpClient: _httpClient,
+                clientId: ref clientId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/applications/{clientId}/grant", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/applications/{clientId}/grant", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareAppsDeleteAuthorizationRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                clientId: clientId,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessAppsDeleteAuthorizationResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessAppsDeleteAuthorizationResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ValidationError?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ValidationError?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Delete an app authorization
+        /// Delete an app authorization<br/>
+        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.<br/>
+        /// Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
         /// </summary>
         /// <param name="clientId"></param>
-        /// <param name="accessToken"></param>
+        /// <param name="accessToken">
+        /// The OAuth access token used to authenticate to the GitHub API.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ValidationError> AppsDeleteAuthorizationAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ValidationError> AppsDeleteAuthorizationAsync(
             string clientId,
             string accessToken,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new AppsDeleteAuthorizationRequest
+            var request = new global::G.AppsDeleteAuthorizationRequest
             {
                 AccessToken = accessToken,
             };

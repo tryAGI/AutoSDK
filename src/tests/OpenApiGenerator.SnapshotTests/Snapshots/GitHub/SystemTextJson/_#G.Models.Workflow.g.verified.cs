@@ -10,78 +10,78 @@ namespace G
     public sealed partial class Workflow
     {
         /// <summary>
-        /// <br/>Example: 5
+        /// Example: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: MDg6V29ya2Zsb3cxMg==
+        /// Example: MDg6V29ya2Zsb3cxMg==
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// <br/>Example: CI
+        /// Example: CI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: ruby.yaml
+        /// Example: ruby.yaml
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
 
         /// <summary>
-        /// <br/>Example: active
+        /// Example: active
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WorkflowStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WorkflowState State { get; set; }
+        public required global::G.WorkflowState State { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/actions/setup-ruby/workflows/5
+        /// Example: https://api.github.com/repos/actions/setup-ruby/workflows/5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml
+        /// Example: https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
+        /// Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("badge_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BadgeUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
         public global::System.DateTime DeletedAt { get; set; }

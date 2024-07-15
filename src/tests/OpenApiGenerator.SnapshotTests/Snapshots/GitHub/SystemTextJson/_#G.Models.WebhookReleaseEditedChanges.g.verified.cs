@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public WebhookReleaseEditedChangesBody? Body { get; set; }
+        public global::G.WebhookReleaseEditedChangesBody? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public WebhookReleaseEditedChangesName? Name { get; set; }
+        public global::G.WebhookReleaseEditedChangesName? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("make_latest")]
-        public WebhookReleaseEditedChangesMakeLatest? MakeLatest { get; set; }
+        public global::G.WebhookReleaseEditedChangesMakeLatest? MakeLatest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

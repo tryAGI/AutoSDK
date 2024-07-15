@@ -17,8 +17,8 @@ namespace G
         public required string Content { get; set; }
 
         /// <summary>
-        /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-        /// <br/>Default Value: utf-8
+        /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.<br/>
+        /// Default Value: utf-8
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding")]
         public string? Encoding { get; set; } = "utf-8";

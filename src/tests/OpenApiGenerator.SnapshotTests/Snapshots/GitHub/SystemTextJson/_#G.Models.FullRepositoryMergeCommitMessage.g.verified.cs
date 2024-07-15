@@ -5,11 +5,11 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a merge commit message.
-    /// - `PR_TITLE` - default to the pull request's title.
-    /// - `PR_BODY` - default to the pull request's body.
-    /// - `BLANK` - default to a blank commit message.
-    /// <br/>Example: PR_BODY
+    /// The default value for a merge commit message.<br/>
+    /// - `PR_TITLE` - default to the pull request's title.<br/>
+    /// - `PR_BODY` - default to the pull request's body.<br/>
+    /// - `BLANK` - default to a blank commit message.<br/>
+    /// Example: PR_BODY
     /// </summary>
     public enum FullRepositoryMergeCommitMessage
     {
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FullRepositoryMergeCommitMessage ToEnum(string value)
+        public static FullRepositoryMergeCommitMessage? ToEnum(string value)
         {
             return value switch
             {
                 "PR_BODY" => FullRepositoryMergeCommitMessage.PRBODY,
                 "PR_TITLE" => FullRepositoryMergeCommitMessage.PRTITLE,
                 "BLANK" => FullRepositoryMergeCommitMessage.BLANK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

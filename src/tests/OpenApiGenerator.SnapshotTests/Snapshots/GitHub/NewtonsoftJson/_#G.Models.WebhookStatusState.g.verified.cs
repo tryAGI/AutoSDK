@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookStatusState ToEnum(string value)
+        public static WebhookStatusState? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "success" => WebhookStatusState.Success,
                 "failure" => WebhookStatusState.Failure,
                 "error" => WebhookStatusState.Error,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

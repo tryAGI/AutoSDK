@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; }
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
@@ -46,14 +46,14 @@ namespace G
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryCreateSeverityJsonConverter))]
-        public RepositoryAdvisoryCreateSeverity? Severity { get; set; }
+        public global::G.RepositoryAdvisoryCreateSeverity? Severity { get; set; }
 
         /// <summary>
         /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
@@ -62,8 +62,8 @@ namespace G
         public string? CvssVectorString { get; set; }
 
         /// <summary>
-        /// Whether to create a temporary private fork of the repository to collaborate on a fix.
-        /// <br/>Default Value: false
+        /// Whether to create a temporary private fork of the repository to collaborate on a fix.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_private_fork")]
         public bool StartPrivateFork { get; set; } = false;

@@ -10,14 +10,14 @@ namespace G
     public sealed partial class ActionsWorkflowAccessToRepository
     {
         /// <summary>
-        /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
-        /// repository.
+        /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the<br/>
+        /// repository.<br/>
         /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsWorkflowAccessToRepositoryAccessLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ActionsWorkflowAccessToRepositoryAccessLevel AccessLevel { get; set; }
+        public required global::G.ActionsWorkflowAccessToRepositoryAccessLevel AccessLevel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

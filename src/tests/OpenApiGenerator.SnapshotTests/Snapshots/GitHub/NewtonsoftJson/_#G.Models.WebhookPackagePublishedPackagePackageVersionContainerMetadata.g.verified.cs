@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public WebhookPackagePublishedPackagePackageVersionContainerMetadataTag? Tag { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionContainerMetadataTag? Tag { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

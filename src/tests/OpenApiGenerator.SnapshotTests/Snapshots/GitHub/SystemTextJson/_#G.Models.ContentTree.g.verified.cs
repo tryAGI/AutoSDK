@@ -76,14 +76,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entries")]
-        public global::System.Collections.Generic.IList<ContentTreeEntries?>? Entries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentTreeEntries?>? Entries { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentTreeLinks Links { get; set; }
+        public required global::G.ContentTreeLinks Links { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

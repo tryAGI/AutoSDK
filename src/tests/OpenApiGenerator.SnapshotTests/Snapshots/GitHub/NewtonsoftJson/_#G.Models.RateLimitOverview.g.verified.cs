@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resources", Required = global::Newtonsoft.Json.Required.Always)]
-        public RateLimitOverviewResources Resources { get; set; } = default!;
+        public global::G.RateLimitOverviewResources Resources { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rate", Required = global::Newtonsoft.Json.Required.Always)]
-        public RateLimit Rate { get; set; } = default!;
+        public global::G.RateLimit Rate { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

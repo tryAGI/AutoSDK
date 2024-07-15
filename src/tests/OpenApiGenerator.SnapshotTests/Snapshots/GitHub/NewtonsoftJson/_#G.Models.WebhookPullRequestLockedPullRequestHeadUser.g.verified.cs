@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookPullRequestLockedPullRequestHeadUserType? Type { get; set; }
+        public global::G.WebhookPullRequestLockedPullRequestHeadUserType? Type { get; set; }
 
         /// <summary>
         /// 

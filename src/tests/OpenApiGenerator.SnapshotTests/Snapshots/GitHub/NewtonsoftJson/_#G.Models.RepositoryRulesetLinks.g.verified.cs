@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self")]
-        public RepositoryRulesetLinksSelf? Self { get; set; }
+        public global::G.RepositoryRulesetLinksSelf? Self { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html")]
-        public RepositoryRulesetLinksHtml? Html { get; set; }
+        public global::G.RepositoryRulesetLinksHtml? Html { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

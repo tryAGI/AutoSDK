@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minutes_used_breakdown")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ActionsBillingUsageMinutesUsedBreakdown MinutesUsedBreakdown { get; set; }
+        public required global::G.ActionsBillingUsageMinutesUsedBreakdown MinutesUsedBreakdown { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

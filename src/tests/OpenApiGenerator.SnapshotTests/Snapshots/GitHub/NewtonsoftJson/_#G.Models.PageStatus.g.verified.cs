@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The status of the most recent build of the Page.
-    /// <br/>Example: built
+    /// The status of the most recent build of the Page.<br/>
+    /// Example: built
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PageStatus
@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PageStatus ToEnum(string value)
+        public static PageStatus? ToEnum(string value)
         {
             return value switch
             {
                 "built" => PageStatus.Built,
                 "building" => PageStatus.Building,
                 "errored" => PageStatus.Errored,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

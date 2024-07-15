@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookStatusCommitCommit.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<WebhookStatusCommitCommitAuthor, WebhookStatusCommitCommitAuthor> Author { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookStatusCommitCommitAuthor, global::G.WebhookStatusCommitCommitAuthor> Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<WebhookStatusCommitCommitCommitter, WebhookStatusCommitCommitCommitter> Committer { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookStatusCommitCommitCommitter, global::G.WebhookStatusCommitCommitCommitter> Committer { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookStatusCommitCommitTree Tree { get; set; } = default!;
+        public global::G.WebhookStatusCommitCommitTree Tree { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verification", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookStatusCommitCommitVerification Verification { get; set; } = default!;
+        public global::G.WebhookStatusCommitCommitVerification Verification { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

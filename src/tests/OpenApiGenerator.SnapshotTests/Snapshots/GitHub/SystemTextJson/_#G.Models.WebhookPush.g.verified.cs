@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookPushCommits> Commits { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPushCommits> Commits { get; set; }
 
         /// <summary>
         /// URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
@@ -59,12 +59,12 @@ namespace G
         public required bool Deleted { get; set; }
 
         /// <summary>
-        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
-        /// on an enterprise account or an organization that's part of an enterprise account. For more information,
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enterprise")]
-        public EnterpriseWebhooks? Enterprise { get; set; }
+        public global::G.EnterpriseWebhooks? Enterprise { get; set; }
 
         /// <summary>
         /// Whether this push was a force push of the `ref`.
@@ -78,29 +78,29 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPushHeadCommit? HeadCommit { get; set; }
+        public required global::G.WebhookPushHeadCommit? HeadCommit { get; set; }
 
         /// <summary>
-        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
-        /// for and sent to a GitHub App. For more information,
+        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
+        /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
-        public SimpleInstallation? Installation { get; set; }
+        public global::G.SimpleInstallation? Installation { get; set; }
 
         /// <summary>
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        public OrganizationSimpleWebhooks? Organization { get; set; }
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPushPusher Pusher { get; set; }
+        public required global::G.WebhookPushPusher Pusher { get; set; }
 
         /// <summary>
         /// The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
@@ -114,13 +114,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPushRepository Repository { get; set; }
+        public required global::G.WebhookPushRepository Repository { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

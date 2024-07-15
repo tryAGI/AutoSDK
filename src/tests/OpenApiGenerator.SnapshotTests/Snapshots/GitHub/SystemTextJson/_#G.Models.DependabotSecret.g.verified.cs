@@ -10,8 +10,8 @@ namespace G
     public sealed partial class DependabotSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: MY_ARTIFACTORY_PASSWORD
+        /// The name of the secret.<br/>
+        /// Example: MY_ARTIFACTORY_PASSWORD
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

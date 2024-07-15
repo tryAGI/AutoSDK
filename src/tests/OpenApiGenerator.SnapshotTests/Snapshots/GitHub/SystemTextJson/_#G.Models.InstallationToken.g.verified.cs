@@ -25,38 +25,37 @@ namespace G
 
         /// <summary>
         /// The permissions granted to the user access token.
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public AppPermissions? Permissions { get; set; }
+        public global::G.AppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InstallationTokenRepositorySelectionJsonConverter))]
-        public InstallationTokenRepositorySelection? RepositorySelection { get; set; }
+        public global::G.InstallationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<Repository>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Repository>? Repositories { get; set; }
 
         /// <summary>
-        /// <br/>Example: README.md
+        /// Example: README.md
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file")]
         public string? SingleFile { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_multiple_single_files")]
         public bool HasMultipleSingleFiles { get; set; }
 
         /// <summary>
-        /// <br/>Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
         public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }

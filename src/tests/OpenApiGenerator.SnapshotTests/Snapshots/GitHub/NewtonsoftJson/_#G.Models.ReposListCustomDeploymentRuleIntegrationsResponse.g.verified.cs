@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ReposListCustomDeploymentRuleIntegrationsResponse
     {
         /// <summary>
-        /// The total number of custom deployment protection rule integrations available for this environment.
-        /// <br/>Example: 35
+        /// The total number of custom deployment protection rule integrations available for this environment.<br/>
+        /// Example: 35
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
         public int TotalCount { get; set; }
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("available_custom_deployment_protection_rule_integrations")]
-        public global::System.Collections.Generic.IList<CustomDeploymentRuleApp>? AvailableCustomDeploymentProtectionRuleIntegrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CustomDeploymentRuleApp>? AvailableCustomDeploymentProtectionRuleIntegrations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,13 +19,13 @@ namespace G
         /// The type of actor that can bypass a ruleset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRulesetBypassActorActorType ActorType { get; set; } = default!;
+        public global::G.RepositoryRulesetBypassActorActorType ActorType { get; set; } = default!;
 
         /// <summary>
         /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bypass_mode", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRulesetBypassActorBypassMode BypassMode { get; set; } = default!;
+        public global::G.RepositoryRulesetBypassActorBypassMode BypassMode { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -193,7 +193,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<UserSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.UserSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 

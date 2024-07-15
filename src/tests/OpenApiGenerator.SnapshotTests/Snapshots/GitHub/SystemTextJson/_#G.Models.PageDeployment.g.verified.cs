@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.PageDeployment.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -18,24 +20,24 @@ namespace G
         public required global::System.OneOf<int, string> Id { get; set; }
 
         /// <summary>
-        /// The URI to monitor GitHub Pages deployment status.
-        /// <br/>Example: https://api.github.com/repos/github/hello-world/pages/deployments/4fd754f7e594640989b406850d0bc8f06a121251
+        /// The URI to monitor GitHub Pages deployment status.<br/>
+        /// Example: https://api.github.com/repos/github/hello-world/pages/deployments/4fd754f7e594640989b406850d0bc8f06a121251
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StatusUrl { get; set; }
 
         /// <summary>
-        /// The URI to the deployed GitHub Pages.
-        /// <br/>Example: hello-world.github.io
+        /// The URI to the deployed GitHub Pages.<br/>
+        /// Example: hello-world.github.io
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PageUrl { get; set; }
 
         /// <summary>
-        /// The URI to the deployed GitHub Pages preview.
-        /// <br/>Example: monalisa-1231a2312sa32-23sda74.drafts.github.io
+        /// The URI to the deployed GitHub Pages preview.<br/>
+        /// Example: monalisa-1231a2312sa32-23sda74.drafts.github.io
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview_url")]
         public string? PreviewUrl { get; set; }

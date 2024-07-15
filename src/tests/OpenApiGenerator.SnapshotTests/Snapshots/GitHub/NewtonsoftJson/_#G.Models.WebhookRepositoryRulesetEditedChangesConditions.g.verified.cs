@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("added")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetConditions>? Added { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditions>? Added { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetConditions>? Deleted { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditions>? Deleted { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated")]
-        public global::System.Collections.Generic.IList<WebhookRepositoryRulesetEditedChangesConditionsUpdated?>? Updated { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdated?>? Updated { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

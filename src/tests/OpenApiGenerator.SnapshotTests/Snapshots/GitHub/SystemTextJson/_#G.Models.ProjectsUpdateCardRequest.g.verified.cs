@@ -10,15 +10,15 @@ namespace G
     public sealed partial class ProjectsUpdateCardRequest
     {
         /// <summary>
-        /// The project card's note
-        /// <br/>Example: Update all gems
+        /// The project card's note<br/>
+        /// Example: Update all gems
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         public string? Note { get; set; }
 
         /// <summary>
-        /// Whether or not the card is archived
-        /// <br/>Example: false
+        /// Whether or not the card is archived<br/>
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         public bool Archived { get; set; }

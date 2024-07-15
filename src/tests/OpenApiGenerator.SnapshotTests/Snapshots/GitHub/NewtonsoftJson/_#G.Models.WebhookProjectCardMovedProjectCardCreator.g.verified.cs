@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookProjectCardMovedProjectCardCreatorType? Type { get; set; }
+        public global::G.WebhookProjectCardMovedProjectCardCreatorType? Type { get; set; }
 
         /// <summary>
         /// 

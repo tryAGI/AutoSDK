@@ -10,8 +10,8 @@ namespace G
     public sealed partial class OrganizationDependabotSecret
     {
         /// <summary>
-        /// The name of the secret.
-        /// <br/>Example: SECRET_TOKEN
+        /// The name of the secret.<br/>
+        /// Example: SECRET_TOKEN
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,10 +37,10 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationDependabotSecretVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrganizationDependabotSecretVisibility Visibility { get; set; }
+        public required global::G.OrganizationDependabotSecretVisibility Visibility { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
+        /// Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }

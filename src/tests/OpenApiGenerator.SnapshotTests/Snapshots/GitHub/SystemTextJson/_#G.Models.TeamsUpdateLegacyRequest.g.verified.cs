@@ -23,33 +23,33 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:  
-        /// **For a non-nested team:**  
-        ///  * `secret` - only visible to organization owners and members of this team.  
-        ///  * `closed` - visible to all members of this organization.  
-        /// **For a parent or child team:**  
+        /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:  <br/>
+        /// **For a non-nested team:**  <br/>
+        ///  * `secret` - only visible to organization owners and members of this team.  <br/>
+        ///  * `closed` - visible to all members of this organization.  <br/>
+        /// **For a parent or child team:**  <br/>
         ///  * `closed` - visible to all members of this organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamsUpdateLegacyRequestPrivacyJsonConverter))]
-        public TeamsUpdateLegacyRequestPrivacy? Privacy { get; set; }
+        public global::G.TeamsUpdateLegacyRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
-        /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: 
-        ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  
+        /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: <br/>
+        ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.  <br/>
         ///  * `notifications_disabled` - no one receives notifications.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamsUpdateLegacyRequestNotificationSettingJsonConverter))]
-        public TeamsUpdateLegacyRequestNotificationSetting? NotificationSetting { get; set; }
+        public global::G.TeamsUpdateLegacyRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
-        /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
-        /// <br/>Default Value: pull
+        /// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.<br/>
+        /// Default Value: pull
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamsUpdateLegacyRequestPermissionJsonConverter))]
-        public TeamsUpdateLegacyRequestPermission? Permission { get; set; } = TeamsUpdateLegacyRequestPermission.Pull;
+        public global::G.TeamsUpdateLegacyRequestPermission? Permission { get; set; } = global::G.TeamsUpdateLegacyRequestPermission.Pull;
 
         /// <summary>
         /// The ID of a team to set as the parent team.

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
-    /// <br/>Example: active
+    /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.<br/>
+    /// Example: active
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgMembershipState
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgMembershipState ToEnum(string value)
+        public static OrgMembershipState? ToEnum(string value)
         {
             return value switch
             {
                 "active" => OrgMembershipState.Active,
                 "pending" => OrgMembershipState.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

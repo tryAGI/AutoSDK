@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListForAuthenticatedUserVisibility
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForAuthenticatedUserVisibility ToEnum(string value)
+        public static ReposListForAuthenticatedUserVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "all" => ReposListForAuthenticatedUserVisibility.All,
                 "public" => ReposListForAuthenticatedUserVisibility.Public,
                 "private" => ReposListForAuthenticatedUserVisibility.Private,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

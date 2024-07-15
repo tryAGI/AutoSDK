@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: neutral
+    /// Example: neutral
     /// </summary>
     public enum SimpleCheckSuiteConclusion
     {
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SimpleCheckSuiteConclusion ToEnum(string value)
+        public static SimpleCheckSuiteConclusion? ToEnum(string value)
         {
             return value switch
             {
@@ -87,7 +87,7 @@ namespace G
                 "action_required" => SimpleCheckSuiteConclusion.ActionRequired,
                 "stale" => SimpleCheckSuiteConclusion.Stale,
                 "startup_failure" => SimpleCheckSuiteConclusion.StartupFailure,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Whether this rule targets a branch or tag.
-    /// <br/>Example: branch
+    /// Whether this rule targets a branch or tag.<br/>
+    /// Example: branch
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum DeploymentBranchPolicyType
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DeploymentBranchPolicyType ToEnum(string value)
+        public static DeploymentBranchPolicyType? ToEnum(string value)
         {
             return value switch
             {
                 "branch" => DeploymentBranchPolicyType.Branch,
                 "tag" => DeploymentBranchPolicyType.Tag,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

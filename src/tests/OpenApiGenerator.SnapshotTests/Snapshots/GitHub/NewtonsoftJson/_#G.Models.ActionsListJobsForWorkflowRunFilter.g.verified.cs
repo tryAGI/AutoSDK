@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: latest
+    /// Default Value: latest
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ActionsListJobsForWorkflowRunFilter
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsListJobsForWorkflowRunFilter ToEnum(string value)
+        public static ActionsListJobsForWorkflowRunFilter? ToEnum(string value)
         {
             return value switch
             {
                 "latest" => ActionsListJobsForWorkflowRunFilter.Latest,
                 "all" => ActionsListJobsForWorkflowRunFilter.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

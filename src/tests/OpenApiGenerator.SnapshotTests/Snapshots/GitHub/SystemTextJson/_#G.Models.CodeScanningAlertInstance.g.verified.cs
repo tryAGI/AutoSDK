@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CodeScanningAlertInstance
     {
         /// <summary>
-        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
@@ -38,8 +38,8 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertInstanceStateJsonConverter))]
-        public CodeScanningAlertInstanceState? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertStateJsonConverter))]
+        public global::G.CodeScanningAlertState? State { get; set; }
 
         /// <summary>
         /// 
@@ -51,13 +51,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public CodeScanningAlertInstanceMessage? Message { get; set; }
+        public global::G.CodeScanningAlertInstanceMessage? Message { get; set; }
 
         /// <summary>
         /// Describe a region within a file for the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
-        public CodeScanningAlertLocation? Location { get; set; }
+        public global::G.CodeScanningAlertLocation? Location { get; set; }
 
         /// <summary>
         /// 
@@ -66,11 +66,11 @@ namespace G
         public string? HtmlUrl { get; set; }
 
         /// <summary>
-        /// Classifications that have been applied to the file that triggered the alert.
+        /// Classifications that have been applied to the file that triggered the alert.<br/>
         /// For example identifying it as documentation, or a generated file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public global::System.Collections.Generic.IList<CodeScanningAlertClassification>? Classifications { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification>? Classifications { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

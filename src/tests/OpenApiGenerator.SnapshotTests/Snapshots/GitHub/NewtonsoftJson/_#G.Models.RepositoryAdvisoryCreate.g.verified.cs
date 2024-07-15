@@ -31,7 +31,7 @@ namespace G
         /// A product affected by the vulnerability detailed in a repository security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; } = default!;
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
@@ -43,13 +43,13 @@ namespace G
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits")]
-        public global::System.Collections.Generic.IList<RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
-        public RepositoryAdvisoryCreateSeverity? Severity { get; set; }
+        public global::G.RepositoryAdvisoryCreateSeverity? Severity { get; set; }
 
         /// <summary>
         /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
@@ -58,8 +58,8 @@ namespace G
         public string? CvssVectorString { get; set; }
 
         /// <summary>
-        /// Whether to create a temporary private fork of the repository to collaborate on a fix.
-        /// <br/>Default Value: false
+        /// Whether to create a temporary private fork of the repository to collaborate on a fix.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_private_fork")]
         public bool StartPrivateFork { get; set; } = false;

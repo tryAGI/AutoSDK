@@ -9,6 +9,35 @@ namespace G
     /// </summary>
     public sealed partial class SearchResultTextMatches
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object_url")]
+        public string? ObjectUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object_type")]
+        public string? ObjectType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("property")]
+        public string? Property { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fragment")]
+        public string? Fragment { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatchesMatches?>? Matches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

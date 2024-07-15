@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AppPermissionsWorkflows ToEnum(string value)
+        public static AppPermissionsWorkflows? ToEnum(string value)
         {
             return value switch
             {
                 "write" => AppPermissionsWorkflows.Write,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

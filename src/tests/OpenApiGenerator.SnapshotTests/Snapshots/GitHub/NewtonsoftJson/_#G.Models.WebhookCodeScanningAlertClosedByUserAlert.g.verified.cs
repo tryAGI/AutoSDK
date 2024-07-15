@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; } = default!;
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; } = default!;
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("most_recent_instance")]
-        public WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
 
         /// <summary>
         /// The code scanning alert number.
@@ -55,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertClosedByUserAlertRule Rule { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertRule Rule { get; set; } = default!;
 
         /// <summary>
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertClosedByUserAlertState State { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertState State { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertClosedByUserAlertTool Tool { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertTool Tool { get; set; } = default!;
 
         /// <summary>
         /// 

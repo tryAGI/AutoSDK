@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent")]
-        public WebhooksTeam1Parent? Parent { get; set; }
+        public global::G.WebhooksTeam1Parent? Parent { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories
@@ -67,13 +67,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public WebhooksTeam1Privacy? Privacy { get; set; }
+        public global::G.WebhooksTeam1Privacy? Privacy { get; set; }
 
         /// <summary>
         /// Whether team members will receive notifications when their team is @mentioned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
-        public WebhooksTeam1NotificationSetting? NotificationSetting { get; set; }
+        public global::G.WebhooksTeam1NotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// 

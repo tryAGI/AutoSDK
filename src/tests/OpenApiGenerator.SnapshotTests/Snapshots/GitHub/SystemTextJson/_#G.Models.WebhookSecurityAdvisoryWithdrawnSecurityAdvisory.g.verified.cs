@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss Cvss { get; set; }
+        public required global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss Cvss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes> Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes> Cwes { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiers> Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiers> Identifiers { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences> References { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences> References { get; set; }
 
         /// <summary>
         /// 
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities> Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities> Vulnerabilities { get; set; }
 
         /// <summary>
         /// 

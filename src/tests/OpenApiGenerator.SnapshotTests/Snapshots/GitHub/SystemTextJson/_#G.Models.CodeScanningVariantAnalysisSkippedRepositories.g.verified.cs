@@ -14,28 +14,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_mismatch_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisSkippedRepoGroup AccessMismatchRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup AccessMismatchRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("not_found_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos NotFoundRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos NotFoundRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("no_codeql_db_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisSkippedRepoGroup NoCodeqlDbRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup NoCodeqlDbRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("over_limit_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningVariantAnalysisSkippedRepoGroup OverLimitRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup OverLimitRepos { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

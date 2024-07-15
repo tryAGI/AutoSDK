@@ -85,19 +85,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees")]
-        public global::System.Collections.Generic.IList<SimpleUser>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? Assignees { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? User { get; set; } = default!;
+        public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<IssueSearchResultItemLabels> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabels> Labels { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -115,13 +115,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Assignee { get; set; } = default!;
+        public global::G.NullableSimpleUser? Assignee { get; set; } = default!;
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableMilestone? Milestone { get; set; } = default!;
+        public global::G.NullableMilestone? Milestone { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -151,13 +151,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request")]
-        public IssueSearchResultItemPullRequest? PullRequest { get; set; }
+        public global::G.IssueSearchResultItemPullRequest? PullRequest { get; set; }
 
         /// <summary>
         /// 
@@ -172,11 +172,11 @@ namespace G
         public double Score { get; set; } = default!;
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public IssueSearchResultItemAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -188,7 +188,7 @@ namespace G
         /// A repository on GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public Repository? Repository { get; set; }
+        public global::G.Repository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -212,13 +212,13 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
-        public NullableIntegration? PerformedViaGithubApp { get; set; }
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

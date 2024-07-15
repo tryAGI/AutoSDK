@@ -169,8 +169,9 @@ public static class OpenApiExtensions
     public static string ClearForXml(this string text)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
-        
+
         return text
+            .Replace("&", "&amp;")
             .Replace("<", "&lt;")
             .Replace(">", "&gt;");
     }

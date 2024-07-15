@@ -279,7 +279,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents ToEnum(string value)
+        public static WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents? ToEnum(string value)
         {
             return value switch
             {
@@ -333,7 +333,7 @@ namespace G
                 "pull_request_review_thread" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReviewThread,
                 "secret_scanning_alert_location" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.SecretScanningAlertLocation,
                 "merge_group" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.MergeGroup,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

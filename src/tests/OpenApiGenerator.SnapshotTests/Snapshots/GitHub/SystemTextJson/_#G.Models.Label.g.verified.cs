@@ -10,52 +10,52 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
-        /// <br/>Example: 208045946
+        /// Example: 208045946
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: MDU6TGFiZWwyMDgwNDU5NDY=
+        /// Example: MDU6TGFiZWwyMDgwNDU5NDY=
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// URL for the label
-        /// <br/>Example: https://api.github.com/repositories/42/labels/bug
+        /// URL for the label<br/>
+        /// Example: https://api.github.com/repositories/42/labels/bug
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// The name of the label.
-        /// <br/>Example: bug
+        /// The name of the label.<br/>
+        /// Example: bug
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: Something isn't working
+        /// Example: Something isn't working
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
 
         /// <summary>
-        /// 6-character hex code, without the leading #, identifying the color
-        /// <br/>Example: FFFFFF
+        /// 6-character hex code, without the leading #, identifying the color<br/>
+        /// Example: FFFFFF
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Color { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default")]
         [global::System.Text.Json.Serialization.JsonRequired]

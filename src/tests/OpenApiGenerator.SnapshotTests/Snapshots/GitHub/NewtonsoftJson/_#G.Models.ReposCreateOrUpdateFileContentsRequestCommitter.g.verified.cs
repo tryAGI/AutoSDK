@@ -22,7 +22,7 @@ namespace G
         public string Email { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: "2013-01-05T13:13:22+05:00"
+        /// Example: "2013-01-05T13:13:22+05:00"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date")]
         public string? Date { get; set; }

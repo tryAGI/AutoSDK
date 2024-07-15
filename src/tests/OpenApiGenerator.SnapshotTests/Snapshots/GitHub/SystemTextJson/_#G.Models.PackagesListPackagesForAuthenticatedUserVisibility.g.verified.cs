@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PackagesListPackagesForAuthenticatedUserVisibility ToEnum(string value)
+        public static PackagesListPackagesForAuthenticatedUserVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => PackagesListPackagesForAuthenticatedUserVisibility.Public,
                 "private" => PackagesListPackagesForAuthenticatedUserVisibility.Private,
                 "internal" => PackagesListPackagesForAuthenticatedUserVisibility.Internal,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -13,7 +13,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("change_status")]
-        public GistHistoryChangeStatus? ChangeStatus { get; set; }
+        public global::G.GistHistoryChangeStatus? ChangeStatus { get; set; }
 
         /// <summary>
         /// 

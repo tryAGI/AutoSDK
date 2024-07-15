@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum OrgsListPendingInvitationsInvitationSource
@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgsListPendingInvitationsInvitationSource ToEnum(string value)
+        public static OrgsListPendingInvitationsInvitationSource? ToEnum(string value)
         {
             return value switch
             {
                 "all" => OrgsListPendingInvitationsInvitationSource.All,
                 "member" => OrgsListPendingInvitationsInvitationSource.Member,
                 "scim" => OrgsListPendingInvitationsInvitationSource.Scim,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

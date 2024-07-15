@@ -13,7 +13,7 @@ namespace G
         /// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processing_status")]
-        public CodeScanningSarifsStatusProcessingStatus? ProcessingStatus { get; set; }
+        public global::G.CodeScanningSarifsStatusProcessingStatus? ProcessingStatus { get; set; }
 
         /// <summary>
         /// The REST API URL for getting the analyses associated with the upload.

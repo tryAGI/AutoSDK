@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ReleaseNotesContent
     {
         /// <summary>
-        /// The generated name of the release
-        /// <br/>Example: Release v1.0.0 is now available!
+        /// The generated name of the release<br/>
+        /// Example: Release v1.0.0 is now available!
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]

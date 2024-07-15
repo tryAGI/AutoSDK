@@ -19,13 +19,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// Type of repository selection requested.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrganizationProgrammaticAccessGrantRepositorySelection RepositorySelection { get; set; } = default!;
+        public global::G.OrganizationProgrammaticAccessGrantRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>
         /// URL to the list of repositories the fine-grained personal access token can access. Only follow when `repository_selection` is `subset`.
@@ -37,7 +37,7 @@ namespace G
         /// Permissions requested, categorized by type of permission.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrganizationProgrammaticAccessGrantPermissions Permissions { get; set; } = default!;
+        public global::G.OrganizationProgrammaticAccessGrantPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// Date and time when the fine-grained personal access token was approved to access the organization.

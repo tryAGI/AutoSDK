@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
-        public PagesHealthCheckDomain? Domain { get; set; }
+        public global::G.PagesHealthCheckDomain? Domain { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alt_domain")]
-        public PagesHealthCheckAltDomain? AltDomain { get; set; }
+        public global::G.PagesHealthCheckAltDomain? AltDomain { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

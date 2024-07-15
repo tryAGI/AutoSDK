@@ -67,7 +67,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReleaseAssetsState State { get; set; } = default!;
+        public global::G.WebhooksReleaseAssetsState State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uploader")]
-        public WebhooksReleaseAssetsUploader? Uploader { get; set; }
+        public global::G.WebhooksReleaseAssetsUploader? Uploader { get; set; }
 
         /// <summary>
         /// 

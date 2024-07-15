@@ -37,31 +37,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public CommitSearchResultItemCommit Commit { get; set; } = default!;
+        public global::G.CommitSearchResultItemCommit Commit { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Author { get; set; } = default!;
+        public global::G.NullableSimpleUser? Author { get; set; } = default!;
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableGitUser? Committer { get; set; } = default!;
+        public global::G.NullableGitUser? Committer { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CommitSearchResultItemParents> Parents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParents> Parents { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<CommitSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

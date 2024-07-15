@@ -10,8 +10,8 @@ namespace G
     public sealed partial class Manifest
     {
         /// <summary>
-        /// The name of the manifest.
-        /// <br/>Example: package-lock.json
+        /// The name of the manifest.<br/>
+        /// Example: package-lock.json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        public ManifestFile? File { get; set; }
+        public global::G.ManifestFile? File { get; set; }
 
         /// <summary>
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public Metadata? Metadata { get; set; }
+        public global::G.Metadata? Metadata { get; set; }
 
         /// <summary>
         /// A collection of resolved package dependencies.

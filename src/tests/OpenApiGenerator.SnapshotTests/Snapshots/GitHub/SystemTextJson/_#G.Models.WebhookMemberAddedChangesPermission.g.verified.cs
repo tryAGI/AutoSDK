@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`
-    /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role
-    /// assigned to the collaborator, use the `role_name` field instead, which will provide the full
+    /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`<br/>
+    /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role<br/>
+    /// assigned to the collaborator, use the `role_name` field instead, which will provide the full<br/>
     /// role name, including custom roles.
     /// </summary>
     public sealed partial class WebhookMemberAddedChangesPermission
@@ -18,7 +18,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMemberAddedChangesPermissionToJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookMemberAddedChangesPermissionTo To { get; set; }
+        public required global::G.WebhookMemberAddedChangesPermissionTo To { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

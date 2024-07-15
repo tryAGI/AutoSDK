@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ActionsReRunJobForWorkflowRunRequest
     {
         /// <summary>
-        /// Whether to enable debug logging for the re-run.
-        /// <br/>Default Value: false
+        /// Whether to enable debug logging for the re-run.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_debug_logging")]
         public bool EnableDebugLogging { get; set; } = false;

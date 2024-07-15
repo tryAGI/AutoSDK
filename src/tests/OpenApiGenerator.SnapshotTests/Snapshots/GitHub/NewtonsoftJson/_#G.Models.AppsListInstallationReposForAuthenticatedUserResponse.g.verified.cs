@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Repository> Repositories { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("most_recent_instance")]
-        public WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
+        public global::G.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance? MostRecentInstance { get; set; }
 
         /// <summary>
         /// The code scanning alert number.
@@ -55,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertReopenedByUserAlertRule Rule { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertReopenedByUserAlertRule Rule { get; set; } = default!;
 
         /// <summary>
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertReopenedByUserAlertState State { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertReopenedByUserAlertState State { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertReopenedByUserAlertTool Tool { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertReopenedByUserAlertTool Tool { get; set; } = default!;
 
         /// <summary>
         /// 

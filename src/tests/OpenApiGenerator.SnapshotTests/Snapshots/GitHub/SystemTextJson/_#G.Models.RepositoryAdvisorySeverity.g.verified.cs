@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryAdvisorySeverity ToEnum(string value)
+        public static RepositoryAdvisorySeverity? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "high" => RepositoryAdvisorySeverity.High,
                 "medium" => RepositoryAdvisorySeverity.Medium,
                 "low" => RepositoryAdvisorySeverity.Low,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

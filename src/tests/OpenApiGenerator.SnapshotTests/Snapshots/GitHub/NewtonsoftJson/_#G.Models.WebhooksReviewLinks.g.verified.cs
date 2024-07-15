@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReviewLinksHtml Html { get; set; } = default!;
+        public global::G.WebhooksReviewLinksHtml Html { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksReviewLinksPullRequest PullRequest { get; set; } = default!;
+        public global::G.WebhooksReviewLinksPullRequest PullRequest { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

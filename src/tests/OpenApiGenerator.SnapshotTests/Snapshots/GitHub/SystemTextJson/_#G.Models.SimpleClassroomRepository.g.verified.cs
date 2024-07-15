@@ -10,32 +10,32 @@ namespace G
     public sealed partial class SimpleClassroomRepository
     {
         /// <summary>
-        /// A unique identifier of the repository.
-        /// <br/>Example: 1296269
+        /// A unique identifier of the repository.<br/>
+        /// Example: 1296269
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// The full, globally unique name of the repository.
-        /// <br/>Example: octocat/Hello-World
+        /// The full, globally unique name of the repository.<br/>
+        /// Example: octocat/Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FullName { get; set; }
 
         /// <summary>
-        /// The URL to view the repository on GitHub.com.
-        /// <br/>Example: https://github.com/octocat/Hello-World
+        /// The URL to view the repository on GitHub.com.<br/>
+        /// Example: https://github.com/octocat/Hello-World
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// The GraphQL identifier of the repository.
-        /// <br/>Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
+        /// The GraphQL identifier of the repository.<br/>
+        /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,8 +49,8 @@ namespace G
         public required bool Private { get; set; }
 
         /// <summary>
-        /// The default branch for the repository.
-        /// <br/>Example: main
+        /// The default branch for the repository.<br/>
+        /// Example: main
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch")]
         [global::System.Text.Json.Serialization.JsonRequired]

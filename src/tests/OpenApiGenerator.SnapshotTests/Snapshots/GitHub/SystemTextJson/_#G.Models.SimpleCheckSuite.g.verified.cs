@@ -10,7 +10,7 @@ namespace G
     public sealed partial class SimpleCheckSuite
     {
         /// <summary>
-        /// <br/>Example: d6fde92930d4715a2b49857d24b940956b26d2d3
+        /// Example: d6fde92930d4715a2b49857d24b940956b26d2d3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("after")]
         public string? After { get; set; }
@@ -19,20 +19,20 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app")]
-        public Integration? App { get; set; }
+        public global::G.Integration? App { get; set; }
 
         /// <summary>
-        /// <br/>Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
+        /// Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("before")]
         public string? Before { get; set; }
 
         /// <summary>
-        /// <br/>Example: neutral
+        /// Example: neutral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SimpleCheckSuiteConclusionJsonConverter))]
-        public SimpleCheckSuiteConclusion? Conclusion { get; set; }
+        public global::G.SimpleCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -41,26 +41,26 @@ namespace G
         public global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: master
+        /// Example: master
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
         public string? HeadBranch { get; set; }
 
         /// <summary>
-        /// The SHA of the head commit that is being checked.
-        /// <br/>Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+        /// The SHA of the head commit that is being checked.<br/>
+        /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_sha")]
         public string? HeadSha { get; set; }
 
         /// <summary>
-        /// <br/>Example: 5
+        /// Example: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: MDEwOkNoZWNrU3VpdGU1
+        /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         public string? NodeId { get; set; }
@@ -69,20 +69,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
-        public global::System.Collections.Generic.IList<PullRequestMinimal>? PullRequests { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? PullRequests { get; set; }
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public MinimalRepository? Repository { get; set; }
+        public global::G.MinimalRepository? Repository { get; set; }
 
         /// <summary>
-        /// <br/>Example: completed
+        /// Example: completed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SimpleCheckSuiteStatusJsonConverter))]
-        public SimpleCheckSuiteStatus? Status { get; set; }
+        public global::G.SimpleCheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         public global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/github/hello-world/check-suites/5
+        /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }

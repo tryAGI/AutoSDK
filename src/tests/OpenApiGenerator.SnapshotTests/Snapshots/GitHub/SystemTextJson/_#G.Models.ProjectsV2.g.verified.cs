@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Creator { get; set; }
+        public required global::G.SimpleUser Creator { get; set; }
 
         /// <summary>
         /// 
@@ -59,21 +59,21 @@ namespace G
         public required bool Public { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -94,7 +94,7 @@ namespace G
         public required string? ShortDescription { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -105,7 +105,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? DeletedBy { get; set; }
+        public required global::G.NullableSimpleUser? DeletedBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

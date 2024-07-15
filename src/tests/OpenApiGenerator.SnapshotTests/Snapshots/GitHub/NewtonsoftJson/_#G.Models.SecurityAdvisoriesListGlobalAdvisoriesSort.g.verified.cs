@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: published
+    /// Default Value: published
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SecurityAdvisoriesListGlobalAdvisoriesSort
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecurityAdvisoriesListGlobalAdvisoriesSort ToEnum(string value)
+        public static SecurityAdvisoriesListGlobalAdvisoriesSort? ToEnum(string value)
         {
             return value switch
             {
                 "updated" => SecurityAdvisoriesListGlobalAdvisoriesSort.Updated,
                 "published" => SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

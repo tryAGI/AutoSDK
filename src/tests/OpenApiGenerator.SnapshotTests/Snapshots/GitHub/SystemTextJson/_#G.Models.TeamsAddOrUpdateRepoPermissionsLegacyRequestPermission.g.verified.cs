@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission ToEnum(string value)
+        public static TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission? ToEnum(string value)
         {
             return value switch
             {
                 "pull" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Pull,
                 "push" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Push,
                 "admin" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Admin,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

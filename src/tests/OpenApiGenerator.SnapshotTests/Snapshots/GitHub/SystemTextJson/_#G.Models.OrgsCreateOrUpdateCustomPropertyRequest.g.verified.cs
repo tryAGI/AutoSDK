@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.OrgsCreateOrUpdateCustomPropertyRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,13 +12,13 @@ namespace G
     public sealed partial class OrgsCreateOrUpdateCustomPropertyRequest
     {
         /// <summary>
-        /// The type of the value for the property
-        /// <br/>Example: single_select
+        /// The type of the value for the property<br/>
+        /// Example: single_select
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgsCreateOrUpdateCustomPropertyRequestValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required OrgsCreateOrUpdateCustomPropertyRequestValueType ValueType { get; set; }
+        public required global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType ValueType { get; set; }
 
         /// <summary>
         /// Whether the property is required.
@@ -38,7 +40,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// An ordered list of the allowed values of the property.
+        /// An ordered list of the allowed values of the property.<br/>
         /// The property can have up to 200 allowed values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_values")]

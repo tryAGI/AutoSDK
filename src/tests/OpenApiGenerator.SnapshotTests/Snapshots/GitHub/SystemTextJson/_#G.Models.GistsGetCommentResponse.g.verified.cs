@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("block")]
-        public GistsGetCommentResponseBlock? Block { get; set; }
+        public global::G.GistsGetCommentResponseBlock? Block { get; set; }
 
         /// <summary>
         /// 

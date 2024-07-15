@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksAnswerAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksAnswerAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhooksAnswerAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public WebhooksAnswerReactions? Reactions { get; set; }
+        public global::G.WebhooksAnswerReactions? Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -98,7 +98,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksAnswerUser? User { get; set; }
+        public required global::G.WebhooksAnswerUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

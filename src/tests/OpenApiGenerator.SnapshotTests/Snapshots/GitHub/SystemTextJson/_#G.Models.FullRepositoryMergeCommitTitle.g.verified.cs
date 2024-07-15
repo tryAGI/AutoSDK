@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a merge commit title.
-    ///   - `PR_TITLE` - default to the pull request's title.
-    ///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-    /// <br/>Example: PR_TITLE
+    /// The default value for a merge commit title.<br/>
+    ///   - `PR_TITLE` - default to the pull request's title.<br/>
+    ///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).<br/>
+    /// Example: PR_TITLE
     /// </summary>
     public enum FullRepositoryMergeCommitTitle
     {
@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FullRepositoryMergeCommitTitle ToEnum(string value)
+        public static FullRepositoryMergeCommitTitle? ToEnum(string value)
         {
             return value switch
             {
                 "PR_TITLE" => FullRepositoryMergeCommitTitle.PRTITLE,
                 "MERGE_MESSAGE" => FullRepositoryMergeCommitTitle.MERGEMESSAGE,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

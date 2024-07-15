@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningDefaultSetupUpdateLanguages ToEnum(string value)
+        public static CodeScanningDefaultSetupUpdateLanguages? ToEnum(string value)
         {
             return value switch
             {
@@ -81,7 +81,7 @@ namespace G
                 "python" => CodeScanningDefaultSetupUpdateLanguages.Python,
                 "ruby" => CodeScanningDefaultSetupUpdateLanguages.Ruby,
                 "swift" => CodeScanningDefaultSetupUpdateLanguages.Swift,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

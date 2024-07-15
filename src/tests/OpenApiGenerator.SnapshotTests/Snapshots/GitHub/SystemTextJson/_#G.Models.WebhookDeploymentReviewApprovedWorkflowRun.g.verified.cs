@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentReviewApprovedWorkflowRunActor? Actor { get; set; }
+        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentReviewApprovedWorkflowRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentReviewApprovedWorkflowRunConclusion? Conclusion { get; set; }
+        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +94,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_repository")]
-        public WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? HeadRepository { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? HeadRepository { get; set; }
 
         /// <summary>
         /// 
@@ -161,19 +161,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<WebhookDeploymentReviewApprovedWorkflowRunPullRequests> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewApprovedWorkflowRunPullRequests> PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenced_workflows")]
-        public global::System.Collections.Generic.IList<WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public WebhookDeploymentReviewApprovedWorkflowRunRepository? Repository { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunRepository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -208,14 +208,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentReviewApprovedWorkflowRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentReviewApprovedWorkflowRunStatus Status { get; set; }
+        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggering_actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
+        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
 
         /// <summary>
         /// 

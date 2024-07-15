@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The level of privacy this team should have
-    /// <br/>Example: closed
+    /// The level of privacy this team should have<br/>
+    /// Example: closed
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum TeamFullPrivacy
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamFullPrivacy ToEnum(string value)
+        public static TeamFullPrivacy? ToEnum(string value)
         {
             return value switch
             {
                 "closed" => TeamFullPrivacy.Closed,
                 "secret" => TeamFullPrivacy.Secret,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

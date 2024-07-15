@@ -19,7 +19,7 @@ namespace G
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
-        public Issue? Issue { get; set; }
+        public global::G.Issue? Issue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,63 +10,63 @@ namespace G
     public sealed partial class CheckAnnotation
     {
         /// <summary>
-        /// <br/>Example: README.md
+        /// Example: README.md
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartLine { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_line")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndLine { get; set; }
 
         /// <summary>
-        /// <br/>Example: 5
+        /// Example: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_column")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? StartColumn { get; set; }
 
         /// <summary>
-        /// <br/>Example: 10
+        /// Example: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_column")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? EndColumn { get; set; }
 
         /// <summary>
-        /// <br/>Example: warning
+        /// Example: warning
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_level")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? AnnotationLevel { get; set; }
 
         /// <summary>
-        /// <br/>Example: Spell Checker
+        /// Example: Spell Checker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Title { get; set; }
 
         /// <summary>
-        /// <br/>Example: Check your spelling for 'banaas'.
+        /// Example: Check your spelling for 'banaas'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Message { get; set; }
 
         /// <summary>
-        /// <br/>Example: Do you mean 'bananas' or 'banana'?
+        /// Example: Do you mean 'bananas' or 'banana'?
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw_details")]
         [global::System.Text.Json.Serialization.JsonRequired]

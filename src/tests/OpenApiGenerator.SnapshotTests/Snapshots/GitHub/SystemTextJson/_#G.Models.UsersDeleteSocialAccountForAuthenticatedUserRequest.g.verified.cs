@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: 
+    /// 
     /// </summary>
     public sealed partial class UsersDeleteSocialAccountForAuthenticatedUserRequest
     {
         /// <summary>
-        /// Full URLs for the social media profiles to delete.
-        /// <br/>Example: []
+        /// Full URLs for the social media profiles to delete.<br/>
+        /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]

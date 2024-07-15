@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookDiscussionCommentEditedChangesBody Body { get; set; }
+        public required global::G.WebhookDiscussionCommentEditedChangesBody Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

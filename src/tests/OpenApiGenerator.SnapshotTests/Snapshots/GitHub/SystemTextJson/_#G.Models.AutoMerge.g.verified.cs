@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser EnabledBy { get; set; }
+        public required global::G.SimpleUser EnabledBy { get; set; }
 
         /// <summary>
         /// The merge method to use.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AutoMergeMergeMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required AutoMergeMergeMethod MergeMethod { get; set; }
+        public required global::G.AutoMergeMergeMethod MergeMethod { get; set; }
 
         /// <summary>
         /// Title for the merge commit message.

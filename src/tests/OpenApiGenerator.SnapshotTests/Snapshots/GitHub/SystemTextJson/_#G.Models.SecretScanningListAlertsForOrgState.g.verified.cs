@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecretScanningListAlertsForOrgState ToEnum(string value)
+        public static SecretScanningListAlertsForOrgState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => SecretScanningListAlertsForOrgState.Open,
                 "resolved" => SecretScanningListAlertsForOrgState.Resolved,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

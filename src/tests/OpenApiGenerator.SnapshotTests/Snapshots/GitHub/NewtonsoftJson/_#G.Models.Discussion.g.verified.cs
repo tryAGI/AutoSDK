@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("answer_chosen_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionAnswerChosenBy? AnswerChosenBy { get; set; } = default!;
+        public global::G.DiscussionAnswerChosenBy? AnswerChosenBy { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.DiscussionAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionCategory Category { get; set; } = default!;
+        public global::G.DiscussionCategory Category { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public DiscussionReactions? Reactions { get; set; }
+        public global::G.DiscussionReactions? Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -106,19 +106,19 @@ namespace G
         public string RepositoryUrl { get; set; } = default!;
 
         /// <summary>
-        /// The current state of the discussion.
-        /// `converting` means that the discussion is being converted from an issue.
+        /// The current state of the discussion.<br/>
+        /// `converting` means that the discussion is being converted from an issue.<br/>
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionState State { get; set; } = default!;
+        public global::G.DiscussionState State { get; set; } = default!;
 
         /// <summary>
-        /// The reason for the current state
-        /// <br/>Example: resolved
+        /// The reason for the current state<br/>
+        /// Example: resolved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionStateReason? StateReason { get; set; } = default!;
+        public global::G.DiscussionStateReason? StateReason { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -142,7 +142,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiscussionUser? User { get; set; } = default!;
+        public global::G.DiscussionUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

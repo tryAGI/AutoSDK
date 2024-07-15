@@ -13,13 +13,13 @@ namespace G
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor Author { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor Author { get; set; } = default!;
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter Committer { get; set; } = default!;
+        public global::G.WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter Committer { get; set; } = default!;
 
         /// <summary>
         /// 

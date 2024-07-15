@@ -348,7 +348,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookCheckSuiteRequestedCheckSuiteAppEvents ToEnum(string value)
+        public static WebhookCheckSuiteRequestedCheckSuiteAppEvents? ToEnum(string value)
         {
             return value switch
             {
@@ -405,7 +405,7 @@ namespace G
                 "projects_v2_item" => WebhookCheckSuiteRequestedCheckSuiteAppEvents.ProjectsV2Item,
                 "merge_group" => WebhookCheckSuiteRequestedCheckSuiteAppEvents.MergeGroup,
                 "repository_import" => WebhookCheckSuiteRequestedCheckSuiteAppEvents.RepositoryImport,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

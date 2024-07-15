@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor? Author { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 

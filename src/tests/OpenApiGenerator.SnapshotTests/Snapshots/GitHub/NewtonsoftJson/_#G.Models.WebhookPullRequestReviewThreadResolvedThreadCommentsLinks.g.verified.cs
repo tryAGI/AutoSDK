@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadResolvedThreadCommentsLinksHtml Html { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsLinksHtml Html { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadResolvedThreadCommentsLinksPullRequest PullRequest { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsLinksPullRequest PullRequest { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf Self { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf Self { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

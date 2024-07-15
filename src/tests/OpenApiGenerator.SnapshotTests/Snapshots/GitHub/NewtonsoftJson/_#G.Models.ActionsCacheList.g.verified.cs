@@ -10,8 +10,8 @@ namespace G
     public sealed partial class ActionsCacheList
     {
         /// <summary>
-        /// Total number of caches
-        /// <br/>Example: 2
+        /// Total number of caches<br/>
+        /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalCount { get; set; } = default!;
@@ -20,7 +20,7 @@ namespace G
         /// Array of caches
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actions_caches", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ActionsCacheListActionsCaches> ActionsCaches { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCaches> ActionsCaches { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

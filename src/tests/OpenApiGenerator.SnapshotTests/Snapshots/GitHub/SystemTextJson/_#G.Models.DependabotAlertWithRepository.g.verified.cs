@@ -22,28 +22,28 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertWithRepositoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertWithRepositoryState State { get; set; }
+        public required global::G.DependabotAlertWithRepositoryState State { get; set; }
 
         /// <summary>
         /// Details for the vulnerable dependency.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependency")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertWithRepositoryDependency Dependency { get; set; }
+        public required global::G.DependabotAlertWithRepositoryDependency Dependency { get; set; }
 
         /// <summary>
         /// Details for the GitHub Security Advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_advisory")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; }
+        public required global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; }
 
         /// <summary>
         /// Details pertaining to one vulnerable version range for the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_vulnerability")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; }
+        public required global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; }
 
         /// <summary>
         /// The REST API URL of the alert resource.
@@ -85,7 +85,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? DismissedBy { get; set; }
+        public required global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason that the alert was dismissed.
@@ -93,7 +93,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertWithRepositoryDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertWithRepositoryDismissedReason? DismissedReason { get; set; }
+        public required global::G.DependabotAlertWithRepositoryDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// An optional comment associated with the alert's dismissal.
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleRepository Repository { get; set; }
+        public required global::G.SimpleRepository Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

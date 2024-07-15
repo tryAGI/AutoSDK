@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_and_analysis")]
-        public SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public global::G.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

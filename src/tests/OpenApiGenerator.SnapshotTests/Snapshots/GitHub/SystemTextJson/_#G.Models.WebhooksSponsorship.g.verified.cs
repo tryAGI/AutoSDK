@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainer")]
-        public WebhooksSponsorshipMaintainer? Maintainer { get; set; }
+        public global::G.WebhooksSponsorshipMaintainer? Maintainer { get; set; }
 
         /// <summary>
         /// 
@@ -41,21 +41,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sponsor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksSponsorshipSponsor? Sponsor { get; set; }
+        public required global::G.WebhooksSponsorshipSponsor? Sponsor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sponsorable")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksSponsorshipSponsorable? Sponsorable { get; set; }
+        public required global::G.WebhooksSponsorshipSponsorable? Sponsorable { get; set; }
 
         /// <summary>
         /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksSponsorshipTier Tier { get; set; }
+        public required global::G.WebhooksSponsorshipTier Tier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

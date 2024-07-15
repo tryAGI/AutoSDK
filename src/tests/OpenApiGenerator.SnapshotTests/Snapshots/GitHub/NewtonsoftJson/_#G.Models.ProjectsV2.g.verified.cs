@@ -25,13 +25,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Creator { get; set; } = default!;
+        public global::G.SimpleUser Creator { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -52,19 +52,19 @@ namespace G
         public bool Public { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? ClosedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
@@ -82,7 +82,7 @@ namespace G
         public string? ShortDescription { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? DeletedAt { get; set; } = default!;
@@ -91,7 +91,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? DeletedBy { get; set; } = default!;
+        public global::G.NullableSimpleUser? DeletedBy { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,7 +19,7 @@ namespace G
         /// Action to apply to the requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrgsReviewPatGrantRequestsInBulkRequestAction Action { get; set; } = default!;
+        public global::G.OrgsReviewPatGrantRequestsInBulkRequestAction Action { get; set; } = default!;
 
         /// <summary>
         /// Reason for approving or denying the requests. Max 1024 characters.

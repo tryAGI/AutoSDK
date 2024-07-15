@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CopilotSeatDetails.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -22,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigning_team")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1))]
-        public global::System.OneOf<Team?>? AssigningTeam { get; set; }
+        public global::System.OneOf<global::G.Team?>? AssigningTeam { get; set; }
 
         /// <summary>
         /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.

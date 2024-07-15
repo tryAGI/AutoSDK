@@ -57,7 +57,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksMarketplacePurchasePlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksMarketplacePurchasePlanPriceModel PriceModel { get; set; }
+        public required global::G.WebhooksMarketplacePurchasePlanPriceModel PriceModel { get; set; }
 
         /// <summary>
         /// 

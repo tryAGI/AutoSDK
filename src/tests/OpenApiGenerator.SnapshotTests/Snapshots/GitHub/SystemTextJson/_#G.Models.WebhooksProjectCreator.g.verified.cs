@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksProjectCreatorTypeJsonConverter))]
-        public WebhooksProjectCreatorType? Type { get; set; }
+        public global::G.WebhooksProjectCreatorType? Type { get; set; }
 
         /// <summary>
         /// 

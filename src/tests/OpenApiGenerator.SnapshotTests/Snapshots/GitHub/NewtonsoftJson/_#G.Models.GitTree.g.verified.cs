@@ -28,11 +28,11 @@ namespace G
         public bool Truncated { get; set; } = default!;
 
         /// <summary>
-        /// Objects specifying a tree structure
-        /// <br/>Example: []
+        /// Objects specifying a tree structure<br/>
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GitTreeTree> Tree { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GitTreeTree> Tree { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The state of the milestone.
-    /// <br/>Default Value: open
-    /// <br/>Example: open
+    /// The state of the milestone.<br/>
+    /// Default Value: open<br/>
+    /// Example: open
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum NullableMilestoneState
@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static NullableMilestoneState ToEnum(string value)
+        public static NullableMilestoneState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => NullableMilestoneState.Open,
                 "closed" => NullableMilestoneState.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

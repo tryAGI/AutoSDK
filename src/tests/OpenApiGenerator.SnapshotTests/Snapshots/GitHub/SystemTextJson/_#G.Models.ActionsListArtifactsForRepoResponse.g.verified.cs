@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifacts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Artifact> Artifacts { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Artifact> Artifacts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

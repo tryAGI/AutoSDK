@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReactionsCreateForTeamDiscussionCommentLegacyRequestContent ToEnum(string value)
+        public static ReactionsCreateForTeamDiscussionCommentLegacyRequestContent? ToEnum(string value)
         {
             return value switch
             {
@@ -81,7 +81,7 @@ namespace G
                 "hooray" => ReactionsCreateForTeamDiscussionCommentLegacyRequestContent.Hooray,
                 "rocket" => ReactionsCreateForTeamDiscussionCommentLegacyRequestContent.Rocket,
                 "eyes" => ReactionsCreateForTeamDiscussionCommentLegacyRequestContent.Eyes,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

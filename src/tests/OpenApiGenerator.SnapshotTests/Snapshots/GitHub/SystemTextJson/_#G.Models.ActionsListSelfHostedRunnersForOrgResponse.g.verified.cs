@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runners")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Runner> Runners { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Runner> Runners { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

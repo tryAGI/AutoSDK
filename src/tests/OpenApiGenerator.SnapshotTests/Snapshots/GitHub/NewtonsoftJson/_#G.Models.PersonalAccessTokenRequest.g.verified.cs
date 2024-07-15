@@ -19,31 +19,31 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// New requested permissions, categorized by type of permission.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions_added", Required = global::Newtonsoft.Json.Required.Always)]
-        public PersonalAccessTokenRequestPermissionsAdded PermissionsAdded { get; set; } = default!;
+        public global::G.PersonalAccessTokenRequestPermissionsAdded PermissionsAdded { get; set; } = default!;
 
         /// <summary>
         /// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions_upgraded", Required = global::Newtonsoft.Json.Required.Always)]
-        public PersonalAccessTokenRequestPermissionsUpgraded PermissionsUpgraded { get; set; } = default!;
+        public global::G.PersonalAccessTokenRequestPermissionsUpgraded PermissionsUpgraded { get; set; } = default!;
 
         /// <summary>
         /// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions_result", Required = global::Newtonsoft.Json.Required.Always)]
-        public PersonalAccessTokenRequestPermissionsResult PermissionsResult { get; set; } = default!;
+        public global::G.PersonalAccessTokenRequestPermissionsResult PermissionsResult { get; set; } = default!;
 
         /// <summary>
         /// Type of repository selection requested.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
-        public PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; } = default!;
+        public global::G.PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>
         /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
@@ -55,7 +55,7 @@ namespace G
         /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<PersonalAccessTokenRequestRepositories>? Repositories { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositories>? Repositories { get; set; } = default!;
 
         /// <summary>
         /// Date and time when the request for access was created.

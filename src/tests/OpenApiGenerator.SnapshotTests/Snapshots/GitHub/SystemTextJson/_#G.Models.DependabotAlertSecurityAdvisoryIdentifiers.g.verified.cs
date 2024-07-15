@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertSecurityAdvisoryIdentifiersTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DependabotAlertSecurityAdvisoryIdentifiersType Type { get; set; }
+        public required global::G.DependabotAlertSecurityAdvisoryIdentifiersType Type { get; set; }
 
         /// <summary>
         /// The value of the advisory identifer.

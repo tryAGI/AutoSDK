@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewer")]
-        public WebhookDeploymentReviewApprovedReviewersReviewer? Reviewer { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedReviewersReviewer? Reviewer { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public WebhookDeploymentReviewApprovedReviewersType? Type { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedReviewersType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

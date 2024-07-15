@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppOwnerTypeJsonConverter))]
-        public WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppOwnerType? Type { get; set; }
+        public global::G.WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppOwnerType? Type { get; set; }
 
         /// <summary>
         /// 

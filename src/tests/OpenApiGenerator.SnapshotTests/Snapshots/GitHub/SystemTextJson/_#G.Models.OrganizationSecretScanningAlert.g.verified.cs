@@ -49,15 +49,15 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertStateJsonConverter))]
-        public OrganizationSecretScanningAlertState? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningAlertStateJsonConverter))]
+        public global::G.SecretScanningAlertState? State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertResolutionJsonConverter))]
-        public OrganizationSecretScanningAlertResolution? Resolution { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningAlertResolutionJsonConverter))]
+        public global::G.SecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>
         /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -69,7 +69,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolved_by")]
-        public NullableSimpleUser? ResolvedBy { get; set; }
+        public global::G.NullableSimpleUser? ResolvedBy { get; set; }
 
         /// <summary>
         /// The type of secret that secret scanning detected.
@@ -78,7 +78,7 @@ namespace G
         public string? SecretType { get; set; }
 
         /// <summary>
-        /// User-friendly name for the detected secret, matching the `secret_type`.
+        /// User-friendly name for the detected secret, matching the `secret_type`.<br/>
         /// For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_type_display_name")]
@@ -94,7 +94,7 @@ namespace G
         /// A GitHub repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public SimpleRepository? Repository { get; set; }
+        public global::G.SimpleRepository? Repository { get; set; }
 
         /// <summary>
         /// Whether push protection was bypassed for the detected secret.
@@ -106,7 +106,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("push_protection_bypassed_by")]
-        public NullableSimpleUser? PushProtectionBypassedBy { get; set; }
+        public global::G.NullableSimpleUser? PushProtectionBypassedBy { get; set; }
 
         /// <summary>
         /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -125,7 +125,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertValidityJsonConverter))]
-        public OrganizationSecretScanningAlertValidity? Validity { get; set; }
+        public global::G.OrganizationSecretScanningAlertValidity? Validity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

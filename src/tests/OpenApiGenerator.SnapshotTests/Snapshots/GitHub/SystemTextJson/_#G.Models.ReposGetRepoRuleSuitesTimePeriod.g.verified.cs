@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: day
+    /// Default Value: day
     /// </summary>
     public enum ReposGetRepoRuleSuitesTimePeriod
     {
@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposGetRepoRuleSuitesTimePeriod ToEnum(string value)
+        public static ReposGetRepoRuleSuitesTimePeriod? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "day" => ReposGetRepoRuleSuitesTimePeriod.Day,
                 "week" => ReposGetRepoRuleSuitesTimePeriod.Week,
                 "month" => ReposGetRepoRuleSuitesTimePeriod.Month,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

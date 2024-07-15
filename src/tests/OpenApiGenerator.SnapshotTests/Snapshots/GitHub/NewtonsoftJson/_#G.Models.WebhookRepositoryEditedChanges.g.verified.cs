@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_branch")]
-        public WebhookRepositoryEditedChangesDefaultBranch? DefaultBranch { get; set; }
+        public global::G.WebhookRepositoryEditedChangesDefaultBranch? DefaultBranch { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public WebhookRepositoryEditedChangesDescription? Description { get; set; }
+        public global::G.WebhookRepositoryEditedChangesDescription? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("homepage")]
-        public WebhookRepositoryEditedChangesHomepage? Homepage { get; set; }
+        public global::G.WebhookRepositoryEditedChangesHomepage? Homepage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topics")]
-        public WebhookRepositoryEditedChangesTopics? Topics { get; set; }
+        public global::G.WebhookRepositoryEditedChangesTopics? Topics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

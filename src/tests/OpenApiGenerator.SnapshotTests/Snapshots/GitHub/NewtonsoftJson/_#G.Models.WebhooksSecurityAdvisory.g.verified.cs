@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cvss", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksSecurityAdvisoryCvss Cvss { get; set; } = default!;
+        public global::G.WebhooksSecurityAdvisoryCvss Cvss { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhooksSecurityAdvisoryCwes> Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryCwes> Cwes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhooksSecurityAdvisoryIdentifiers> Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryIdentifiers> Identifiers { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("references", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhooksSecurityAdvisoryReferences> References { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryReferences> References { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<WebhooksSecurityAdvisoryVulnerabilities> Vulnerabilities { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryVulnerabilities> Vulnerabilities { get; set; } = default!;
 
         /// <summary>
         /// 

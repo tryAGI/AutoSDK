@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DiscussionAnswerChosenByType ToEnum(string value)
+        public static DiscussionAnswerChosenByType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => DiscussionAnswerChosenByType.Bot,
                 "User" => DiscussionAnswerChosenByType.User,
                 "Organization" => DiscussionAnswerChosenByType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

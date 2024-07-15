@@ -10,24 +10,24 @@ namespace G
     public sealed partial class PackageVersionMetadata
     {
         /// <summary>
-        /// <br/>Example: docker
+        /// Example: docker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackageVersionMetadataPackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PackageVersionMetadataPackageType PackageType { get; set; }
+        public required global::G.PackageVersionMetadataPackageType PackageType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        public PackageVersionMetadataContainer? Container { get; set; }
+        public global::G.PackageVersionMetadataContainer? Container { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker")]
-        public PackageVersionMetadataDocker? Docker { get; set; }
+        public global::G.PackageVersionMetadataDocker? Docker { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

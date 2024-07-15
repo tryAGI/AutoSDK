@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// State of this Pull Request. Either `open` or `closed`.
-    /// <br/>Example: open
+    /// State of this Pull Request. Either `open` or `closed`.<br/>
+    /// Example: open
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PullRequestState
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullRequestState ToEnum(string value)
+        public static PullRequestState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => PullRequestState.Open,
                 "closed" => PullRequestState.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

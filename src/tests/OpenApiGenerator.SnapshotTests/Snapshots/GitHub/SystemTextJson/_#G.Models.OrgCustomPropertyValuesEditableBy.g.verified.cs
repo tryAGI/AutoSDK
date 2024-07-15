@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Who can edit the values of the property
-    /// <br/>Example: org_actors
+    /// Who can edit the values of the property<br/>
+    /// Example: org_actors
     /// </summary>
     public enum OrgCustomPropertyValuesEditableBy
     {
@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OrgCustomPropertyValuesEditableBy ToEnum(string value)
+        public static OrgCustomPropertyValuesEditableBy? ToEnum(string value)
         {
             return value switch
             {
                 "org_actors" => OrgCustomPropertyValuesEditableBy.OrgActors,
                 "org_and_repo_actors" => OrgCustomPropertyValuesEditableBy.OrgAndRepoActors,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

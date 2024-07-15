@@ -25,7 +25,7 @@ namespace G
         /// A git repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadResolvedPullRequestHeadRepo? Repo { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestHeadRepo? Repo { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookPullRequestReviewThreadResolvedPullRequestHeadUser? User { get; set; } = default!;
+        public global::G.WebhookPullRequestReviewThreadResolvedPullRequestHeadUser? User { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

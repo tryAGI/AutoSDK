@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public TimelineReviewedEventLinksHtml Html { get; set; } = default!;
+        public global::G.TimelineReviewedEventLinksHtml Html { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request", Required = global::Newtonsoft.Json.Required.Always)]
-        public TimelineReviewedEventLinksPullRequest PullRequest { get; set; } = default!;
+        public global::G.TimelineReviewedEventLinksPullRequest PullRequest { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

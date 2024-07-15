@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The state of the milestone.
-    /// <br/>Default Value: open
-    /// <br/>Example: open
+    /// The state of the milestone.<br/>
+    /// Default Value: open<br/>
+    /// Example: open
     /// </summary>
     public enum MilestoneState
     {
@@ -41,13 +41,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MilestoneState ToEnum(string value)
+        public static MilestoneState? ToEnum(string value)
         {
             return value switch
             {
                 "open" => MilestoneState.Open,
                 "closed" => MilestoneState.Closed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

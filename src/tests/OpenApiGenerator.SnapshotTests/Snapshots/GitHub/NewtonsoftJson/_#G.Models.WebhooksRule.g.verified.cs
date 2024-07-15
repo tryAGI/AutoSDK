@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_deletions_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleAllowDeletionsEnforcementLevel AllowDeletionsEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleAllowDeletionsEnforcementLevel AllowDeletionsEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_force_pushes_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleAllowForcePushesEnforcementLevel AllowForcePushesEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleAllowForcePushesEnforcementLevel AllowForcePushesEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,13 +79,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("linear_history_requirement_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleLinearHistoryRequirementEnforcementLevel LinearHistoryRequirementEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleLinearHistoryRequirementEnforcementLevel LinearHistoryRequirementEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_queue_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleMergeQueueEnforcementLevel MergeQueueEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleMergeQueueEnforcementLevel MergeQueueEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request_reviews_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRulePullRequestReviewsEnforcementLevel PullRequestReviewsEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRulePullRequestReviewsEnforcementLevel PullRequestReviewsEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -127,13 +127,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_conversation_resolution_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleRequiredConversationResolutionLevel RequiredConversationResolutionLevel { get; set; } = default!;
+        public global::G.WebhooksRuleRequiredConversationResolutionLevel RequiredConversationResolutionLevel { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_deployments_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleRequiredDeploymentsEnforcementLevel RequiredDeploymentsEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleRequiredDeploymentsEnforcementLevel RequiredDeploymentsEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -145,13 +145,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_status_checks_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleRequiredStatusChecksEnforcementLevel RequiredStatusChecksEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleRequiredStatusChecksEnforcementLevel RequiredStatusChecksEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("signature_requirement_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksRuleSignatureRequirementEnforcementLevel SignatureRequirementEnforcementLevel { get; set; } = default!;
+        public global::G.WebhooksRuleSignatureRequirementEnforcementLevel SignatureRequirementEnforcementLevel { get; set; } = default!;
 
         /// <summary>
         /// 

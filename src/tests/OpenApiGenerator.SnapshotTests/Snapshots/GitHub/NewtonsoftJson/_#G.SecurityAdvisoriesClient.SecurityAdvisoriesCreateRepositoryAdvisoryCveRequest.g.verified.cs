@@ -6,8 +6,32 @@ namespace G
 {
     public partial class SecurityAdvisoriesClient
     {
+        partial void PrepareSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref string ghsaId);
+        partial void PrepareSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            string ghsaId);
+        partial void ProcessSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Request a CVE for a repository security advisory
+        /// Request a CVE for a repository security advisory<br/>
+        /// If you want a CVE identification number for the security vulnerability in your project, and don't already have one, you can request a CVE identification number from GitHub. For more information see "[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional)."<br/>
+        /// You may request a CVE for public repositories, but cannot do so for private repositories.<br/>
+        /// In order to request a CVE for a repository security advisory, the authenticated user must be a security manager or administrator of that repository.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -20,20 +44,62 @@ namespace G
             string ghsaId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                ghsaId: ref ghsaId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/security-advisories/{ghsaId}/cve", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/security-advisories/{ghsaId}/cve", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                ghsaId: ghsaId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessSecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

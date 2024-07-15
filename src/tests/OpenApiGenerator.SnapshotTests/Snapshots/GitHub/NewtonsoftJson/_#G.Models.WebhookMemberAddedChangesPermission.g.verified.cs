@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`
-    /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role
-    /// assigned to the collaborator, use the `role_name` field instead, which will provide the full
+    /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`<br/>
+    /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role<br/>
+    /// assigned to the collaborator, use the `role_name` field instead, which will provide the full<br/>
     /// role name, including custom roles.
     /// </summary>
     public sealed partial class WebhookMemberAddedChangesPermission
@@ -16,7 +16,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMemberAddedChangesPermissionTo To { get; set; } = default!;
+        public global::G.WebhookMemberAddedChangesPermissionTo To { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

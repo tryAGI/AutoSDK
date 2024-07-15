@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsUpdateOrgVariableRequestVisibility ToEnum(string value)
+        public static ActionsUpdateOrgVariableRequestVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "all" => ActionsUpdateOrgVariableRequestVisibility.All,
                 "private" => ActionsUpdateOrgVariableRequestVisibility.Private,
                 "selected" => ActionsUpdateOrgVariableRequestVisibility.Selected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

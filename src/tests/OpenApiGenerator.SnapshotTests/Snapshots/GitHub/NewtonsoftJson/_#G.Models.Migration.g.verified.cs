@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Migration
     {
         /// <summary>
-        /// <br/>Example: 79
+        /// Example: 79
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
@@ -19,22 +19,22 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Owner { get; set; } = default!;
+        public global::G.NullableSimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
+        /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("guid", Required = global::Newtonsoft.Json.Required.Always)]
         public string Guid { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: pending
+        /// Example: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public string State { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lock_repositories", Required = global::Newtonsoft.Json.Required.Always)]
         public bool LockRepositories { get; set; } = default!;
@@ -79,22 +79,22 @@ namespace G
         /// The repositories included in the migration. Only returned for export migrations.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Repository> Repositories { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/orgs/octo-org/migrations/79
+        /// Example: https://api.github.com/orgs/octo-org/migrations/79
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime UpdatedAt { get; set; } = default!;

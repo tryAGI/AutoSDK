@@ -13,7 +13,7 @@ namespace G
         /// Details for the vulnerable package.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package")]
-        public DependabotAlertPackage? Package { get; set; }
+        public global::G.DependabotAlertPackage? Package { get; set; }
 
         /// <summary>
         /// The full path to the dependency manifest file, relative to the root of the repository.
@@ -25,7 +25,7 @@ namespace G
         /// The execution scope of the vulnerable dependency.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
-        public DependabotAlertDependencyScope? Scope { get; set; }
+        public global::G.DependabotAlertDependencyScope? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

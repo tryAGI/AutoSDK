@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewLinks Links { get; set; }
+        public required global::G.WebhooksReviewLinks Links { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhooksReviewAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the review.
@@ -85,7 +85,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksReviewUser? User { get; set; }
+        public required global::G.WebhooksReviewUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

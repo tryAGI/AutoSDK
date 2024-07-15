@@ -83,7 +83,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentTreeEntriesLinks Links { get; set; }
+        public required global::G.ContentTreeEntriesLinks Links { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

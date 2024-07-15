@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ViewTraffic
     {
         /// <summary>
-        /// <br/>Example: 14850
+        /// Example: 14850
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 3782
+        /// Example: 3782
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("views", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Traffic> Views { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Traffic> Views { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

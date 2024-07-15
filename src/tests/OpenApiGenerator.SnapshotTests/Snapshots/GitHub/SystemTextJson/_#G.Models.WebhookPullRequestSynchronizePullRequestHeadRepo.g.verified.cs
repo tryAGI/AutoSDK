@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPullRequestSynchronizePullRequestHeadRepo.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,8 +12,8 @@ namespace G
     public sealed partial class WebhookPullRequestSynchronizePullRequestHeadRepo
     {
         /// <summary>
-        /// Whether to allow auto-merge for pull requests.
-        /// <br/>Default Value: false
+        /// Whether to allow auto-merge for pull requests.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
         public bool AllowAutoMerge { get; set; } = false;
@@ -23,22 +25,22 @@ namespace G
         public bool AllowForking { get; set; }
 
         /// <summary>
-        /// Whether to allow merge commits for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow merge commits for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
         public bool AllowMergeCommit { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow rebase merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow rebase merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
         public bool AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
-        /// Whether to allow squash merges for pull requests.
-        /// <br/>Default Value: true
+        /// Whether to allow squash merges for pull requests.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
         public bool AllowSquashMerge { get; set; } = true;
@@ -57,8 +59,8 @@ namespace G
         public required string ArchiveUrl { get; set; }
 
         /// <summary>
-        /// Whether the repository is archived.
-        /// <br/>Default Value: false
+        /// Whether the repository is archived.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -150,8 +152,8 @@ namespace G
         public required string DefaultBranch { get; set; }
 
         /// <summary>
-        /// Whether to delete head branches when pull requests are merged
-        /// <br/>Default Value: false
+        /// Whether to delete head branches when pull requests are merged<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
         public bool DeleteBranchOnMerge { get; set; } = false;
@@ -254,16 +256,16 @@ namespace G
         public required string GitUrl { get; set; }
 
         /// <summary>
-        /// Whether downloads are enabled.
-        /// <br/>Default Value: true
+        /// Whether downloads are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasDownloads { get; set; }
 
         /// <summary>
-        /// Whether issues are enabled.
-        /// <br/>Default Value: true
+        /// Whether issues are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -277,24 +279,24 @@ namespace G
         public required bool HasPages { get; set; }
 
         /// <summary>
-        /// Whether projects are enabled.
-        /// <br/>Default Value: true
+        /// Whether projects are enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasProjects { get; set; }
 
         /// <summary>
-        /// Whether the wiki is enabled.
-        /// <br/>Default Value: true
+        /// Whether the wiki is enabled.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasWiki { get; set; }
 
         /// <summary>
-        /// Whether discussions are enabled.
-        /// <br/>Default Value: false
+        /// Whether discussions are enabled.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -388,7 +390,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestHeadRepoLicense? License { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestHeadRepoLicense? License { get; set; }
 
         /// <summary>
         /// 
@@ -401,14 +403,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitMessageJsonConverter))]
-        public WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message title.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitleJsonConverter))]
-        public WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestHeadRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -477,13 +479,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestHeadRepoOwner? Owner { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestHeadRepoOwner? Owner { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public WebhookPullRequestSynchronizePullRequestHeadRepoPermissions? Permissions { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestHeadRepoPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -534,23 +536,23 @@ namespace G
         public required int Size { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit message:
-        /// - `PR_BODY` - default to the pull request's body.
-        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
+        /// The default value for a squash merge commit message:<br/>
+        /// - `PR_BODY` - default to the pull request's body.<br/>
+        /// - `COMMIT_MESSAGES` - default to the branch's commit messages.<br/>
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessageJsonConverter))]
-        public WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
-        /// The default value for a squash merge commit title:
-        /// - `PR_TITLE` - default to the pull request's title.
+        /// The default value for a squash merge commit title:<br/>
+        /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitTitleJsonConverter))]
-        public WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -650,8 +652,8 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
-        /// <br/>Default Value: false
+        /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_squash_pr_title_as_default")]
         public bool UseSquashPrTitleAsDefault { get; set; } = false;
@@ -662,7 +664,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestSynchronizePullRequestHeadRepoVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPullRequestSynchronizePullRequestHeadRepoVisibility Visibility { get; set; }
+        public required global::G.WebhookPullRequestSynchronizePullRequestHeadRepoVisibility Visibility { get; set; }
 
         /// <summary>
         /// 

@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required AuthorizationApp App { get; set; }
+        public required global::G.AuthorizationApp App { get; set; }
 
         /// <summary>
         /// 
@@ -97,13 +97,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
-        public NullableScopedInstallation? Installation { get; set; }
+        public global::G.NullableScopedInstallation? Installation { get; set; }
 
         /// <summary>
         /// 

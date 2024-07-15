@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     public enum TeamsListMembersLegacyRole
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TeamsListMembersLegacyRole ToEnum(string value)
+        public static TeamsListMembersLegacyRole? ToEnum(string value)
         {
             return value switch
             {
                 "member" => TeamsListMembersLegacyRole.Member,
                 "maintainer" => TeamsListMembersLegacyRole.Maintainer,
                 "all" => TeamsListMembersLegacyRole.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

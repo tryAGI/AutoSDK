@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryRulesetConditionsRepositoryIdTargetRepositoryId RepositoryId { get; set; }
+        public required global::G.RepositoryRulesetConditionsRepositoryIdTargetRepositoryId RepositoryId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

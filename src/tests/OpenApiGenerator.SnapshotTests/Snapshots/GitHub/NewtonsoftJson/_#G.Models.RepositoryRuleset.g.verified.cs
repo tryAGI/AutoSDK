@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RepositoryRuleset.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -22,17 +24,17 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The target of the ruleset
+        /// The target of the ruleset<br/>
         /// **Note**: The `push` target is in beta and is subject to change.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
-        public RepositoryRulesetTarget? Target { get; set; }
+        public global::G.RepositoryRulesetTarget? Target { get; set; }
 
         /// <summary>
         /// The type of the source of the ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type")]
-        public RepositoryRulesetSourceType? SourceType { get; set; }
+        public global::G.RepositoryRulesetSourceType? SourceType { get; set; }
 
         /// <summary>
         /// The name of the source
@@ -44,20 +46,20 @@ namespace G
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryRulesetEnforcement Enforcement { get; set; } = default!;
+        public global::G.RepositoryRuleEnforcement Enforcement { get; set; } = default!;
 
         /// <summary>
         /// The actors that can bypass the rules in this ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bypass_actors")]
-        public global::System.Collections.Generic.IList<RepositoryRulesetBypassActor>? BypassActors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? BypassActors { get; set; }
 
         /// <summary>
-        /// The bypass type of the user making the API request for this ruleset. This field is only returned when
+        /// The bypass type of the user making the API request for this ruleset. This field is only returned when<br/>
         /// querying the repository-level endpoint.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_user_can_bypass")]
-        public RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
+        public global::G.RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
 
         /// <summary>
         /// 
@@ -69,19 +71,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links")]
-        public RepositoryRulesetLinks? Links { get; set; }
+        public global::G.RepositoryRulesetLinks? Links { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conditions")]
-        public global::System.AnyOf<RepositoryRulesetConditions?, OrgRulesetConditions?>? Conditions { get; set; }
+        public global::System.AnyOf<global::G.RepositoryRulesetConditions?, global::G.OrgRulesetConditions?>? Conditions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rules")]
-        public global::System.Collections.Generic.IList<RepositoryRule>? Rules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryRule>? Rules { get; set; }
 
         /// <summary>
         /// 

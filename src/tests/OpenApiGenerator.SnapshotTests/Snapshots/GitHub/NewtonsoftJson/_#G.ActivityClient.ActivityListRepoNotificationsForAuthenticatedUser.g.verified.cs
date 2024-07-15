@@ -6,20 +6,59 @@ namespace G
 {
     public partial class ActivityClient
     {
+        partial void PrepareActivityListRepoNotificationsForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref bool all,
+            ref bool participating,
+            global::System.DateTime since,
+            global::System.DateTime before,
+            ref int perPage,
+            ref int page);
+        partial void PrepareActivityListRepoNotificationsForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            bool all,
+            bool participating,
+            global::System.DateTime since,
+            global::System.DateTime before,
+            int perPage,
+            int page);
+        partial void ProcessActivityListRepoNotificationsForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessActivityListRepoNotificationsForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// List repository notifications for the authenticated user
+        /// List repository notifications for the authenticated user<br/>
+        /// Lists all notifications for the current user in the specified repository.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="all"></param>
-        /// <param name="participating"></param>
+        /// <param name="all">
+        /// Default Value: false
+        /// </param>
+        /// <param name="participating">
+        /// Default Value: false
+        /// </param>
         /// <param name="since"></param>
         /// <param name="before"></param>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Thread>> ActivityListRepoNotificationsForAuthenticatedUserAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Thread>> ActivityListRepoNotificationsForAuthenticatedUserAsync(
             string owner,
             string repo,
             bool all,
@@ -30,20 +69,72 @@ namespace G
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareActivityListRepoNotificationsForAuthenticatedUserArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                all: ref all,
+                participating: ref participating,
+                since: since,
+                before: before,
+                perPage: ref perPage,
+                page: ref page);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/notifications?all={all}&participating={participating}&since={since}&before={before}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/notifications?all={all}&participating={participating}&since={since:yyyy-MM-ddTHH:mm:ssZ}&before={before:yyyy-MM-ddTHH:mm:ssZ}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareActivityListRepoNotificationsForAuthenticatedUserRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                all: all,
+                participating: participating,
+                since: since,
+                before: before,
+                perPage: perPage,
+                page: page);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessActivityListRepoNotificationsForAuthenticatedUserResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessActivityListRepoNotificationsForAuthenticatedUserResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<Thread>?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Thread>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

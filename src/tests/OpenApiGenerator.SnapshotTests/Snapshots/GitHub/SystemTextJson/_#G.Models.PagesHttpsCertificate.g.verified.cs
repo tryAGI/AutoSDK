@@ -10,23 +10,23 @@ namespace G
     public sealed partial class PagesHttpsCertificate
     {
         /// <summary>
-        /// <br/>Example: approved
+        /// Example: approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PagesHttpsCertificateStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PagesHttpsCertificateState State { get; set; }
+        public required global::G.PagesHttpsCertificateState State { get; set; }
 
         /// <summary>
-        /// <br/>Example: Certificate is approved
+        /// Example: Certificate is approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
 
         /// <summary>
-        /// Array of the domain set and its alternate name (if it is configured)
-        /// <br/>Example: [example.com, www.example.com]
+        /// Array of the domain set and its alternate name (if it is configured)<br/>
+        /// Example: [example.com, www.example.com]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
         [global::System.Text.Json.Serialization.JsonRequired]

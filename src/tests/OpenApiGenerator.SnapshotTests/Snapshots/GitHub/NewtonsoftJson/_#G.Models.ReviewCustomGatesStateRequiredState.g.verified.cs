@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReviewCustomGatesStateRequiredState ToEnum(string value)
+        public static ReviewCustomGatesStateRequiredState? ToEnum(string value)
         {
             return value switch
             {
                 "approved" => ReviewCustomGatesStateRequiredState.Approved,
                 "rejected" => ReviewCustomGatesStateRequiredState.Rejected,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

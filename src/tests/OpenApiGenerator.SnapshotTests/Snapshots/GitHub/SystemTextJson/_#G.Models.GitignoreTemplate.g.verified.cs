@@ -10,26 +10,26 @@ namespace G
     public sealed partial class GitignoreTemplate
     {
         /// <summary>
-        /// <br/>Example: C
+        /// Example: C
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: # Object files
-        /// *.o
-        /// # Libraries
-        /// *.lib
-        /// *.a
-        /// # Shared objects (inc. Windows DLLs)
-        /// *.dll
-        /// *.so
-        /// *.so.*
-        /// *.dylib
-        /// # Executables
-        /// *.exe
-        /// *.out
+        /// Example: # Object files<br/>
+        /// *.o<br/>
+        /// # Libraries<br/>
+        /// *.lib<br/>
+        /// *.a<br/>
+        /// # Shared objects (inc. Windows DLLs)<br/>
+        /// *.dll<br/>
+        /// *.so<br/>
+        /// *.so.*<br/>
+        /// *.dylib<br/>
+        /// # Executables<br/>
+        /// *.exe<br/>
+        /// *.out<br/>
         /// *.app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]

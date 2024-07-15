@@ -64,7 +64,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposCreateDeploymentStatusRequestState ToEnum(string value)
+        public static ReposCreateDeploymentStatusRequestState? ToEnum(string value)
         {
             return value switch
             {
@@ -75,7 +75,7 @@ namespace G
                 "queued" => ReposCreateDeploymentStatusRequestState.Queued,
                 "pending" => ReposCreateDeploymentStatusRequestState.Pending,
                 "success" => ReposCreateDeploymentStatusRequestState.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SecretScanningLocationCommit
     {
         /// <summary>
-        /// The file path in the repository
-        /// <br/>Example: /example/secrets.txt
+        /// The file path in the repository<br/>
+        /// Example: /example/secrets.txt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,8 +46,8 @@ namespace G
         public required double EndColumn { get; set; }
 
         /// <summary>
-        /// SHA-1 hash ID of the associated blob
-        /// <br/>Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
+        /// SHA-1 hash ID of the associated blob<br/>
+        /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("blob_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,8 +61,8 @@ namespace G
         public required string BlobUrl { get; set; }
 
         /// <summary>
-        /// SHA-1 hash ID of the associated commit
-        /// <br/>Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
+        /// SHA-1 hash ID of the associated commit<br/>
+        /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]

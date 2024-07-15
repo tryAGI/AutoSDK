@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependencyGraphDiffRangeResponseChangeType ToEnum(string value)
+        public static DependencyGraphDiffRangeResponseChangeType? ToEnum(string value)
         {
             return value switch
             {
                 "added" => DependencyGraphDiffRangeResponseChangeType.Added,
                 "removed" => DependencyGraphDiffRangeResponseChangeType.Removed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

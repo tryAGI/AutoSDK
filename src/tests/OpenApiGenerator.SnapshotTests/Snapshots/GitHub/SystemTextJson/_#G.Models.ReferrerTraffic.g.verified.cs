@@ -10,21 +10,21 @@ namespace G
     public sealed partial class ReferrerTraffic
     {
         /// <summary>
-        /// <br/>Example: Google
+        /// Example: Google
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("referrer")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Referrer { get; set; }
 
         /// <summary>
-        /// <br/>Example: 4
+        /// Example: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
 
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]

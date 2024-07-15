@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("check_runs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CheckRun> CheckRuns { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CheckRun> CheckRuns { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

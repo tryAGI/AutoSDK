@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Issue.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -24,8 +26,8 @@ namespace G
         public required string NodeId { get; set; }
 
         /// <summary>
-        /// URL for the issue
-        /// <br/>Example: https://api.github.com/repositories/42/issues/1
+        /// URL for the issue<br/>
+        /// Example: https://api.github.com/repositories/42/issues/1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -67,40 +69,40 @@ namespace G
         public required string HtmlUrl { get; set; }
 
         /// <summary>
-        /// Number uniquely identifying the issue within its repository
-        /// <br/>Example: 42
+        /// Number uniquely identifying the issue within its repository<br/>
+        /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
 
         /// <summary>
-        /// State of the issue; either 'open' or 'closed'
-        /// <br/>Example: open
+        /// State of the issue; either 'open' or 'closed'<br/>
+        /// Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
 
         /// <summary>
-        /// The reason for the current state
-        /// <br/>Example: not_planned
+        /// The reason for the current state<br/>
+        /// Example: not_planned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssueStateReasonJsonConverter))]
-        public IssueStateReason? StateReason { get; set; }
+        public global::G.IssueStateReason? StateReason { get; set; }
 
         /// <summary>
-        /// Title of the issue
-        /// <br/>Example: Widget creation fails in Safari on OS X 10.8
+        /// Title of the issue<br/>
+        /// Example: Widget creation fails in Safari on OS X 10.8
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
 
         /// <summary>
-        /// Contents of the issue
-        /// <br/>Example: It looks like the new widget form is broken on Safari. When I try and create the widget, Safari crashes. This is reproducible on 10.8, but not 10.9. Maybe a browser bug?
+        /// Contents of the issue<br/>
+        /// Example: It looks like the new widget form is broken on Safari. When I try and create the widget, Safari crashes. This is reproducible on 10.8, but not 10.9. Maybe a browser bug?
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
@@ -110,35 +112,35 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? User { get; set; }
+        public required global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
-        /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-        /// <br/>Example: [bug, registration]
+        /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository<br/>
+        /// Example: [bug, registration]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<string, IssueLabels>> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.IssueLabels>> Labels { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Assignee { get; set; }
+        public required global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
-        public global::System.Collections.Generic.IList<SimpleUser>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? Assignees { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableMilestone? Milestone { get; set; }
+        public required global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -164,7 +166,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
-        public IssuePullRequest? PullRequest { get; set; }
+        public global::G.IssuePullRequest? PullRequest { get; set; }
 
         /// <summary>
         /// 
@@ -197,7 +199,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_by")]
-        public NullableSimpleUser? ClosedBy { get; set; }
+        public global::G.NullableSimpleUser? ClosedBy { get; set; }
 
         /// <summary>
         /// 
@@ -221,28 +223,28 @@ namespace G
         /// A repository on GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public Repository? Repository { get; set; }
+        public global::G.Repository? Repository { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public NullableIntegration? PerformedViaGithubApp { get; set; }
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssueAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required IssueAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

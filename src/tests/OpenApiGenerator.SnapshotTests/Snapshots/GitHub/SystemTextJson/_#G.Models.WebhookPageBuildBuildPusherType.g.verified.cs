@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPageBuildBuildPusherType ToEnum(string value)
+        public static WebhookPageBuildBuildPusherType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => WebhookPageBuildBuildPusherType.Bot,
                 "User" => WebhookPageBuildBuildPusherType.User,
                 "Organization" => WebhookPageBuildBuildPusherType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

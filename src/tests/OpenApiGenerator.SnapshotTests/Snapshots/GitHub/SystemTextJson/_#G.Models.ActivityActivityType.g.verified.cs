@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of the activity that was performed.
-    /// <br/>Example: force_push
+    /// The type of the activity that was performed.<br/>
+    /// Example: force_push
     /// </summary>
     public enum ActivityActivityType
     {
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActivityActivityType ToEnum(string value)
+        public static ActivityActivityType? ToEnum(string value)
         {
             return value switch
             {
@@ -70,7 +70,7 @@ namespace G
                 "branch_creation" => ActivityActivityType.BranchCreation,
                 "pr_merge" => ActivityActivityType.PrMerge,
                 "merge_queue_merge" => ActivityActivityType.MergeQueueMerge,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

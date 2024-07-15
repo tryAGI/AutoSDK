@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReposUpdateInvitationRequestPermissionsJsonConverter))]
-        public ReposUpdateInvitationRequestPermissions? Permissions { get; set; }
+        public global::G.ReposUpdateInvitationRequestPermissions? Permissions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

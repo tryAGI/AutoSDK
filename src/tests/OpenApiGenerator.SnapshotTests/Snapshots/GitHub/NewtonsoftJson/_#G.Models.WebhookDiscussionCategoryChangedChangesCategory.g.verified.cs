@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDiscussionCategoryChangedChangesCategoryFrom From { get; set; } = default!;
+        public global::G.WebhookDiscussionCategoryChangedChangesCategoryFrom From { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

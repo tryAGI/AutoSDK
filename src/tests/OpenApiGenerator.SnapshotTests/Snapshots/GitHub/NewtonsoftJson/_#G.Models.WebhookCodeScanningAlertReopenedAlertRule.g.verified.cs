@@ -49,7 +49,7 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookCodeScanningAlertReopenedAlertRuleSeverity? Severity { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertReopenedAlertRuleSeverity? Severity { get; set; } = default!;
 
         /// <summary>
         /// 

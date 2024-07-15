@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     public enum SearchCommitsOrder
     {
@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SearchCommitsOrder ToEnum(string value)
+        public static SearchCommitsOrder? ToEnum(string value)
         {
             return value switch
             {
                 "desc" => SearchCommitsOrder.Desc,
                 "asc" => SearchCommitsOrder.Asc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

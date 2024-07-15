@@ -49,7 +49,7 @@ namespace G
         /// The reason for resolving the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
-        public SecretScanningAlertWebhookResolution? Resolution { get; set; }
+        public global::G.SecretScanningAlertResolutionWebhook? Resolution { get; set; }
 
         /// <summary>
         /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -61,7 +61,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolved_by")]
-        public NullableSimpleUser? ResolvedBy { get; set; }
+        public global::G.NullableSimpleUser? ResolvedBy { get; set; }
 
         /// <summary>
         /// An optional comment to resolve an alert.
@@ -79,7 +79,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validity")]
-        public SecretScanningAlertWebhookValidity? Validity { get; set; }
+        public global::G.SecretScanningAlertWebhookValidity? Validity { get; set; }
 
         /// <summary>
         /// Whether push protection was bypassed for the detected secret.
@@ -91,7 +91,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("push_protection_bypassed_by")]
-        public NullableSimpleUser? PushProtectionBypassedBy { get; set; }
+        public global::G.NullableSimpleUser? PushProtectionBypassedBy { get; set; }
 
         /// <summary>
         /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

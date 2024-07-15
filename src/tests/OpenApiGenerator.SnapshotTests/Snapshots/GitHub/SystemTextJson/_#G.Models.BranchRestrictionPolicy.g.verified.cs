@@ -42,21 +42,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<BranchRestrictionPolicyUsers> Users { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyUsers> Users { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<BranchRestrictionPolicyTeams> Teams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyTeams> Teams { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<BranchRestrictionPolicyApps> Apps { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyApps> Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

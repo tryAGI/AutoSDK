@@ -25,7 +25,7 @@ namespace G
         /// Public User
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public PublicUser? User { get; set; }
+        public global::G.PublicUser? User { get; set; }
 
         /// <summary>
         /// 

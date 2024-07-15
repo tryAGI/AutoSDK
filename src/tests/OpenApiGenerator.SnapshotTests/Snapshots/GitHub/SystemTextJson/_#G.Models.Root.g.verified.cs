@@ -97,6 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hub_url")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? HubUrl { get; set; }
 
         /// <summary>

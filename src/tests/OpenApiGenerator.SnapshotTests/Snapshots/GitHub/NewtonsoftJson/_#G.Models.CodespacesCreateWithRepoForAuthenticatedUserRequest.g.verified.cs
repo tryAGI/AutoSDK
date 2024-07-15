@@ -25,7 +25,7 @@ namespace G
         /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("geo")]
-        public CodespacesCreateWithRepoForAuthenticatedUserRequestGeo? Geo { get; set; }
+        public global::G.CodespacesCreateWithRepoForAuthenticatedUserRequestGeo? Geo { get; set; }
 
         /// <summary>
         /// IP for location auto-detection when proxying a request

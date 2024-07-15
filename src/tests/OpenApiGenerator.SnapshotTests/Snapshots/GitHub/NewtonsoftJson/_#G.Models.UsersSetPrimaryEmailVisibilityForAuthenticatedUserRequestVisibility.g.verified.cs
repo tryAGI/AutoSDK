@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility ToEnum(string value)
+        public static UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Public,
                 "private" => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Private,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

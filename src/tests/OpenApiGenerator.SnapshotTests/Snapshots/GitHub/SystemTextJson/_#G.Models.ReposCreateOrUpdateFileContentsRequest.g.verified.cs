@@ -39,13 +39,13 @@ namespace G
         /// The person that committed the file. Default: the authenticated user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        public ReposCreateOrUpdateFileContentsRequestCommitter? Committer { get; set; }
+        public global::G.ReposCreateOrUpdateFileContentsRequestCommitter? Committer { get; set; }
 
         /// <summary>
         /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public ReposCreateOrUpdateFileContentsRequestAuthor? Author { get; set; }
+        public global::G.ReposCreateOrUpdateFileContentsRequestAuthor? Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

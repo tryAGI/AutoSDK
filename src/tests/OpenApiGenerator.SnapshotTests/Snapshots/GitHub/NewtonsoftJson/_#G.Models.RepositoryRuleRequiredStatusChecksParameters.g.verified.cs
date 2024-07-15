@@ -13,7 +13,7 @@ namespace G
         /// Status checks that are required.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_status_checks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RepositoryRuleParamsStatusCheckConfiguration> RequiredStatusChecks { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsStatusCheckConfiguration> RequiredStatusChecks { get; set; } = default!;
 
         /// <summary>
         /// Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.

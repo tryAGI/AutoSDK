@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookPullRequestAutoMergeEnabledAction ToEnum(string value)
+        public static WebhookPullRequestAutoMergeEnabledAction? ToEnum(string value)
         {
             return value switch
             {
                 "auto_merge_enabled" => WebhookPullRequestAutoMergeEnabledAction.AutoMergeEnabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

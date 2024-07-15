@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
-        public WebhookDeploymentProtectionRuleRequestedAction? Action { get; set; }
+        public global::G.WebhookDeploymentProtectionRuleRequestedAction? Action { get; set; }
 
         /// <summary>
         /// The name of the environment that has the deployment protection rule.
@@ -37,41 +37,41 @@ namespace G
         /// A request for a specific ref(branch,sha,tag) to be deployed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deployment")]
-        public Deployment? Deployment { get; set; }
+        public global::G.Deployment? Deployment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests")]
-        public global::System.Collections.Generic.IList<PullRequest>? PullRequests { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequest>? PullRequests { get; set; }
 
         /// <summary>
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public RepositoryWebhooks? Repository { get; set; }
+        public global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
-        public OrganizationSimpleWebhooks? Organization { get; set; }
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; }
 
         /// <summary>
-        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
-        /// for and sent to a GitHub App. For more information,
+        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
+        /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation")]
-        public SimpleInstallation? Installation { get; set; }
+        public global::G.SimpleInstallation? Installation { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender")]
-        public SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

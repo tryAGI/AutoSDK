@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookDiscussionCommentEditedChangesBody Body { get; set; } = default!;
+        public global::G.WebhookDiscussionCommentEditedChangesBody Body { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,21 +10,21 @@ namespace G
     public sealed partial class InteractionLimit
     {
         /// <summary>
-        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
-        /// <br/>Example: collaborators_only
+        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
+        /// Example: collaborators_only
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitLimitJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionGroupJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required InteractionLimitLimit Limit { get; set; }
+        public required global::G.InteractionGroup Limit { get; set; }
 
         /// <summary>
-        /// The duration of the interaction restriction. Default: `one_day`.
-        /// <br/>Example: one_month
+        /// The duration of the interaction restriction. Default: `one_day`.<br/>
+        /// Example: one_month
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expiry")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitExpiryJsonConverter))]
-        public InteractionLimitExpiry? Expiry { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionExpiryJsonConverter))]
+        public global::G.InteractionExpiry? Expiry { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

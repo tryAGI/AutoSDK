@@ -67,7 +67,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? User { get; set; } = default!;
+        public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -82,17 +82,17 @@ namespace G
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// How the author is associated with the repository.
-        /// <br/>Example: OWNER
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public CommitCommentAuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reactions")]
-        public ReactionRollup? Reactions { get; set; }
+        public global::G.ReactionRollup? Reactions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

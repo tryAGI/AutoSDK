@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_deletions_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleAllowDeletionsEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleAllowDeletionsEnforcementLevel AllowDeletionsEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleAllowDeletionsEnforcementLevel AllowDeletionsEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_force_pushes_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleAllowForcePushesEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleAllowForcePushesEnforcementLevel AllowForcePushesEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleAllowForcePushesEnforcementLevel AllowForcePushesEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("linear_history_requirement_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleLinearHistoryRequirementEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleLinearHistoryRequirementEnforcementLevel LinearHistoryRequirementEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleLinearHistoryRequirementEnforcementLevel LinearHistoryRequirementEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_queue_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleMergeQueueEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleMergeQueueEnforcementLevel MergeQueueEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleMergeQueueEnforcementLevel MergeQueueEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_reviews_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRulePullRequestReviewsEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRulePullRequestReviewsEnforcementLevel PullRequestReviewsEnforcementLevel { get; set; }
+        public required global::G.WebhooksRulePullRequestReviewsEnforcementLevel PullRequestReviewsEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -151,7 +151,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("required_conversation_resolution_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleRequiredConversationResolutionLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleRequiredConversationResolutionLevel RequiredConversationResolutionLevel { get; set; }
+        public required global::G.WebhooksRuleRequiredConversationResolutionLevel RequiredConversationResolutionLevel { get; set; }
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("required_deployments_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleRequiredDeploymentsEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleRequiredDeploymentsEnforcementLevel RequiredDeploymentsEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleRequiredDeploymentsEnforcementLevel RequiredDeploymentsEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("required_status_checks_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleRequiredStatusChecksEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleRequiredStatusChecksEnforcementLevel RequiredStatusChecksEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleRequiredStatusChecksEnforcementLevel RequiredStatusChecksEnforcementLevel { get; set; }
 
         /// <summary>
         /// 
@@ -182,7 +182,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("signature_requirement_enforcement_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRuleSignatureRequirementEnforcementLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhooksRuleSignatureRequirementEnforcementLevel SignatureRequirementEnforcementLevel { get; set; }
+        public required global::G.WebhooksRuleSignatureRequirementEnforcementLevel SignatureRequirementEnforcementLevel { get; set; }
 
         /// <summary>
         /// 

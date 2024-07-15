@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMetaDeletedHookConfigContentType ContentType { get; set; } = default!;
+        public global::G.WebhookMetaDeletedHookConfigContentType ContentType { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -31,7 +31,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -61,25 +61,25 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableIntegration? PerformedViaGithubApp { get; set; } = default!;
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_requester", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser ReviewRequester { get; set; } = default!;
+        public global::G.SimpleUser ReviewRequester { get; set; } = default!;
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_team")]
-        public Team? RequestedTeam { get; set; }
+        public global::G.Team? RequestedTeam { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewer")]
-        public SimpleUser? RequestedReviewer { get; set; }
+        public global::G.SimpleUser? RequestedReviewer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

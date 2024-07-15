@@ -10,7 +10,7 @@ namespace G
     public sealed partial class BranchProtectionLockBranch
     {
         /// <summary>
-        /// <br/>Default Value: false
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool Enabled { get; set; } = false;

@@ -10,8 +10,8 @@ namespace G
     public sealed partial class SimpleCommit
     {
         /// <summary>
-        /// SHA for the commit
-        /// <br/>Example: 7638417db6d59f3c431d3e1f261cc637155684cd
+        /// SHA for the commit<br/>
+        /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,8 +25,8 @@ namespace G
         public required string TreeId { get; set; }
 
         /// <summary>
-        /// Message describing the purpose of the commit
-        /// <br/>Example: Fix #42
+        /// Message describing the purpose of the commit<br/>
+        /// Example: Fix #42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,7 +34,6 @@ namespace G
 
         /// <summary>
         /// Timestamp of the commit
-        /// <br/>Example: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,14 +44,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleCommitAuthor? Author { get; set; }
+        public required global::G.SimpleCommitAuthor? Author { get; set; }
 
         /// <summary>
         /// Information about the Git committer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleCommitCommitter? Committer { get; set; }
+        public required global::G.SimpleCommitCommitter? Committer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

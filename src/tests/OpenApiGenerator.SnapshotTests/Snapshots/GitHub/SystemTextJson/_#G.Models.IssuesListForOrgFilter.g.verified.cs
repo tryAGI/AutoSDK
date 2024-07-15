@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: assigned
+    /// Default Value: assigned
     /// </summary>
     public enum IssuesListForOrgFilter
     {
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static IssuesListForOrgFilter ToEnum(string value)
+        public static IssuesListForOrgFilter? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "subscribed" => IssuesListForOrgFilter.Subscribed,
                 "repos" => IssuesListForOrgFilter.Repos,
                 "all" => IssuesListForOrgFilter.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

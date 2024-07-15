@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryAdvisoryUpdateState ToEnum(string value)
+        public static RepositoryAdvisoryUpdateState? ToEnum(string value)
         {
             return value switch
             {
                 "published" => RepositoryAdvisoryUpdateState.Published,
                 "closed" => RepositoryAdvisoryUpdateState.Closed,
                 "draft" => RepositoryAdvisoryUpdateState.Draft,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

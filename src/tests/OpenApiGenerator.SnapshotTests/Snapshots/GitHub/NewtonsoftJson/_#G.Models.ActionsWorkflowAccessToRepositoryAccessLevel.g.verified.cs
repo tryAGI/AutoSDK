@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
-    /// repository.
+    /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the<br/>
+    /// repository.<br/>
     /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -50,14 +50,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ActionsWorkflowAccessToRepositoryAccessLevel ToEnum(string value)
+        public static ActionsWorkflowAccessToRepositoryAccessLevel? ToEnum(string value)
         {
             return value switch
             {
                 "none" => ActionsWorkflowAccessToRepositoryAccessLevel.None,
                 "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
                 "organization" => ActionsWorkflowAccessToRepositoryAccessLevel.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

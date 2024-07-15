@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookStatusCommitCommitVerificationReason Reason { get; set; } = default!;
+        public global::G.WebhookStatusCommitCommitVerificationReason Reason { get; set; } = default!;
 
         /// <summary>
         /// 

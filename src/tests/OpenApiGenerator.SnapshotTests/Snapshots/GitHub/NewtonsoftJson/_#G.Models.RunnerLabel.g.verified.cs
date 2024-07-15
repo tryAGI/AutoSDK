@@ -25,7 +25,7 @@ namespace G
         /// The type of label. Read-only labels are applied automatically when the runner is configured.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public RunnerLabelType? Type { get; set; }
+        public global::G.RunnerLabelType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

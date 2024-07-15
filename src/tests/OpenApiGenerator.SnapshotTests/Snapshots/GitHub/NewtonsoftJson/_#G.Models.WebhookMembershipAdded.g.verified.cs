@@ -13,61 +13,61 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMembershipAddedAction Action { get; set; } = default!;
+        public global::G.WebhookMembershipAddedAction Action { get; set; } = default!;
 
         /// <summary>
-        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
-        /// on an enterprise account or an organization that's part of an enterprise account. For more information,
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enterprise")]
-        public EnterpriseWebhooks? Enterprise { get; set; }
+        public global::G.EnterpriseWebhooks? Enterprise { get; set; }
 
         /// <summary>
-        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
-        /// for and sent to a GitHub App. For more information,
+        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
+        /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation")]
-        public SimpleInstallation? Installation { get; set; }
+        public global::G.SimpleInstallation? Installation { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("member", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksUser? Member { get; set; } = default!;
+        public global::G.WebhooksUser? Member { get; set; } = default!;
 
         /// <summary>
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrganizationSimpleWebhooks Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
 
         /// <summary>
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public RepositoryWebhooks? Repository { get; set; }
+        public global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
         /// The scope of the membership. Currently, can only be `team`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMembershipAddedScope Scope { get; set; } = default!;
+        public global::G.WebhookMembershipAddedScope Scope { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookMembershipAddedSender? Sender { get; set; } = default!;
+        public global::G.WebhookMembershipAddedSender? Sender { get; set; } = default!;
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("team", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksTeam Team { get; set; } = default!;
+        public global::G.WebhooksTeam Team { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

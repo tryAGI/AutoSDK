@@ -13,7 +13,7 @@ namespace G
         /// The package's language or package management ecosystem.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ecosystem", Required = global::Newtonsoft.Json.Required.Always)]
-        public RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem Ecosystem { get; set; } = default!;
+        public global::G.SecurityAdvisoryEcosystems Ecosystem { get; set; } = default!;
 
         /// <summary>
         /// The unique package name within its ecosystem.

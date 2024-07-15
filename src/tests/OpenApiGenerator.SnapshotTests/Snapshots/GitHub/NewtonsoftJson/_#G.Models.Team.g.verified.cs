@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public TeamPermissions? Permissions { get; set; }
+        public global::G.TeamPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/orgs/rails/teams/core
+        /// Example: https://github.com/orgs/rails/teams/core
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
@@ -91,7 +91,7 @@ namespace G
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableTeamSimple? Parent { get; set; } = default!;
+        public global::G.NullableTeamSimple? Parent { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

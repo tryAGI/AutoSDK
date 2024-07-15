@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     public enum ProjectsListCollaboratorsAffiliation
     {
@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ProjectsListCollaboratorsAffiliation ToEnum(string value)
+        public static ProjectsListCollaboratorsAffiliation? ToEnum(string value)
         {
             return value switch
             {
                 "outside" => ProjectsListCollaboratorsAffiliation.Outside,
                 "direct" => ProjectsListCollaboratorsAffiliation.Direct,
                 "all" => ProjectsListCollaboratorsAffiliation.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

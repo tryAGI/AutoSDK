@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: all
+    /// Default Value: all
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposListForAuthenticatedUserType
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReposListForAuthenticatedUserType ToEnum(string value)
+        public static ReposListForAuthenticatedUserType? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "public" => ReposListForAuthenticatedUserType.Public,
                 "private" => ReposListForAuthenticatedUserType.Private,
                 "member" => ReposListForAuthenticatedUserType.Member,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

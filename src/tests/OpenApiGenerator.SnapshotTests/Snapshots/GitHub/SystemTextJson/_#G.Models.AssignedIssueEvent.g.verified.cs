@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
         /// 
@@ -70,21 +70,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required Integration? PerformedViaGithubApp { get; set; }
+        public required global::G.Integration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Assignee { get; set; }
+        public required global::G.SimpleUser Assignee { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Assigner { get; set; }
+        public required global::G.SimpleUser Assigner { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

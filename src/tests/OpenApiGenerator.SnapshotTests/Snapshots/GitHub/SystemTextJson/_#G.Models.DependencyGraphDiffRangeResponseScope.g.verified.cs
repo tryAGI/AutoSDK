@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DependencyGraphDiffRangeResponseScope ToEnum(string value)
+        public static DependencyGraphDiffRangeResponseScope? ToEnum(string value)
         {
             return value switch
             {
                 "unknown" => DependencyGraphDiffRangeResponseScope.Unknown,
                 "runtime" => DependencyGraphDiffRangeResponseScope.Runtime,
                 "development" => DependencyGraphDiffRangeResponseScope.Development,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

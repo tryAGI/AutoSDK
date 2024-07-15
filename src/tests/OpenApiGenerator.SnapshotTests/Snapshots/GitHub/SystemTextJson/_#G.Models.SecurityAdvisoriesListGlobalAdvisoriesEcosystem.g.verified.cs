@@ -94,7 +94,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SecurityAdvisoriesListGlobalAdvisoriesEcosystem ToEnum(string value)
+        public static SecurityAdvisoriesListGlobalAdvisoriesEcosystem? ToEnum(string value)
         {
             return value switch
             {
@@ -111,7 +111,7 @@ namespace G
                 "pub" => SecurityAdvisoriesListGlobalAdvisoriesEcosystem.Pub,
                 "other" => SecurityAdvisoriesListGlobalAdvisoriesEcosystem.Other,
                 "swift" => SecurityAdvisoriesListGlobalAdvisoriesEcosystem.Swift,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -10,36 +10,36 @@ namespace G
     public sealed partial class Runner
     {
         /// <summary>
-        /// The id of the runner.
-        /// <br/>Example: 5
+        /// The id of the runner.<br/>
+        /// Example: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// The id of the runner group.
-        /// <br/>Example: 1
+        /// The id of the runner group.<br/>
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runner_group_id")]
         public int RunnerGroupId { get; set; }
 
         /// <summary>
-        /// The name of the runner.
-        /// <br/>Example: iMac
+        /// The name of the runner.<br/>
+        /// Example: iMac
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The Operating System of the runner.
-        /// <br/>Example: macos
+        /// The Operating System of the runner.<br/>
+        /// Example: macos
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("os", Required = global::Newtonsoft.Json.Required.Always)]
         public string Os { get; set; } = default!;
 
         /// <summary>
-        /// The status of the runner.
-        /// <br/>Example: online
+        /// The status of the runner.<br/>
+        /// Example: online
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
@@ -54,7 +54,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RunnerLabel> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RunnerLabel> Labels { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

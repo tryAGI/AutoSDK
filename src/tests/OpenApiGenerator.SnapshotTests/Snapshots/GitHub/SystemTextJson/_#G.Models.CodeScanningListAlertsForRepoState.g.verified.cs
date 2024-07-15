@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeScanningListAlertsForRepoState ToEnum(string value)
+        public static CodeScanningListAlertsForRepoState? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "closed" => CodeScanningListAlertsForRepoState.Closed,
                 "dismissed" => CodeScanningListAlertsForRepoState.Dismissed,
                 "fixed" => CodeScanningListAlertsForRepoState.Fixed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

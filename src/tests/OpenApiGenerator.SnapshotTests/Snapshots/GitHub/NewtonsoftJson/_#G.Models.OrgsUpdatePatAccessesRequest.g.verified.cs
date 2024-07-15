@@ -13,7 +13,7 @@ namespace G
         /// Action to apply to the fine-grained personal access token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public OrgsUpdatePatAccessesRequestAction Action { get; set; } = default!;
+        public global::G.OrgsUpdatePatAccessesRequestAction Action { get; set; } = default!;
 
         /// <summary>
         /// The IDs of the fine-grained personal access tokens.

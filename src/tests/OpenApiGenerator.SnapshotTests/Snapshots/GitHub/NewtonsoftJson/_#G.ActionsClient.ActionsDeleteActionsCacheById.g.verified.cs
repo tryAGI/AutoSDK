@@ -6,8 +6,25 @@ namespace G
 {
     public partial class ActionsClient
     {
+        partial void PrepareActionsDeleteActionsCacheByIdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int cacheId);
+        partial void PrepareActionsDeleteActionsCacheByIdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int cacheId);
+        partial void ProcessActionsDeleteActionsCacheByIdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
-        /// Delete a GitHub Actions cache for a repository (using a cache ID)
+        /// Delete a GitHub Actions cache for a repository (using a cache ID)<br/>
+        /// Deletes a GitHub Actions cache for a repository, using a cache ID.<br/>
+        /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -20,14 +37,39 @@ namespace G
             int cacheId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareActionsDeleteActionsCacheByIdArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                cacheId: ref cacheId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/actions/caches/{cacheId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/caches/{cacheId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareActionsDeleteActionsCacheByIdRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                cacheId: cacheId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessActionsDeleteActionsCacheByIdResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

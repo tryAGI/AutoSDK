@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The phase of the lifecycle that the job is currently in.
-    /// <br/>Example: queued
+    /// The phase of the lifecycle that the job is currently in.<br/>
+    /// Example: queued
     /// </summary>
     public enum JobStatus
     {
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static JobStatus ToEnum(string value)
+        public static JobStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -70,7 +70,7 @@ namespace G
                 "waiting" => JobStatus.Waiting,
                 "requested" => JobStatus.Requested,
                 "pending" => JobStatus.Pending,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

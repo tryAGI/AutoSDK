@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CommitSearchResultItemCommitAuthor Author { get; set; }
+        public required global::G.CommitSearchResultItemCommitAuthor Author { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableGitUser? Committer { get; set; }
+        public required global::G.NullableGitUser? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CommitSearchResultItemCommitTree Tree { get; set; }
+        public required global::G.CommitSearchResultItemCommitTree Tree { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verification")]
-        public Verification? Verification { get; set; }
+        public global::G.Verification? Verification { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

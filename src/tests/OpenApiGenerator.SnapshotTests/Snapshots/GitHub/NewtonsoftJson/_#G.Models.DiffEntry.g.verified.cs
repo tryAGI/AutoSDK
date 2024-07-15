@@ -10,67 +10,67 @@ namespace G
     public sealed partial class DiffEntry
     {
         /// <summary>
-        /// <br/>Example: bbcd538c8e72b8c175046e27cc8f907076331401
+        /// Example: bbcd538c8e72b8c175046e27cc8f907076331401
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: file1.txt
+        /// Example: file1.txt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filename", Required = global::Newtonsoft.Json.Required.Always)]
         public string Filename { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: added
+        /// Example: added
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public DiffEntryStatus Status { get; set; } = default!;
+        public global::G.DiffEntryStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 103
+        /// Example: 103
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("additions", Required = global::Newtonsoft.Json.Required.Always)]
         public int Additions { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 21
+        /// Example: 21
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deletions", Required = global::Newtonsoft.Json.Required.Always)]
         public int Deletions { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 124
+        /// Example: 124
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes", Required = global::Newtonsoft.Json.Required.Always)]
         public int Changes { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/blob/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
+        /// Example: https://github.com/octocat/Hello-World/blob/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blob_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string BlobUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/raw/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
+        /// Example: https://github.com/octocat/Hello-World/raw/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("raw_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RawUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/octocat/Hello-World/contents/file1.txt?ref=6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// Example: https://api.github.com/repos/octocat/Hello-World/contents/file1.txt?ref=6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contents_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContentsUrl { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: @@ -132,7 +132,7 @@ module Test @@ -1000,7 +1000,7 @@ module Test
+        /// Example: @@ -132,7 +132,7 @@ module Test @@ -1000,7 +1000,7 @@ module Test
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("patch")]
         public string? Patch { get; set; }
 
         /// <summary>
-        /// <br/>Example: file.txt
+        /// Example: file.txt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("previous_filename")]
         public string? PreviousFilename { get; set; }

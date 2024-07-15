@@ -10,15 +10,15 @@ namespace G
     public sealed partial class Organization
     {
         /// <summary>
-        /// Unique login name of the organization
-        /// <br/>Example: new-org
+        /// Unique login name of the organization<br/>
+        /// Example: new-org
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("login", Required = global::Newtonsoft.Json.Required.Always)]
         public string Login { get; set; } = default!;
 
         /// <summary>
-        /// URL for the organization
-        /// <br/>Example: https://api.github.com/orgs/github
+        /// URL for the organization<br/>
+        /// Example: https://api.github.com/orgs/github
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
@@ -84,8 +84,8 @@ namespace G
         public string? Description { get; set; } = default!;
 
         /// <summary>
-        /// Display blog url for the organization
-        /// <br/>Example: blog.example-org.com
+        /// Display blog url for the organization<br/>
+        /// Example: blog.example-org.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
@@ -97,29 +97,29 @@ namespace G
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// Display name for the organization
-        /// <br/>Example: New Org
+        /// Display name for the organization<br/>
+        /// Example: New Org
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Display company name for the organization
-        /// <br/>Example: Acme corporation
+        /// Display company name for the organization<br/>
+        /// Example: Acme corporation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company")]
         public string? Company { get; set; }
 
         /// <summary>
-        /// Display location for the organization
-        /// <br/>Example: Berlin, Germany
+        /// Display location for the organization<br/>
+        /// Example: Berlin, Germany
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("location")]
         public string? Location { get; set; }
 
         /// <summary>
-        /// Display email for the organization
-        /// <br/>Example: org@example.com
+        /// Display email for the organization<br/>
+        /// Example: org@example.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
@@ -188,7 +188,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
-        public OrganizationPlan? Plan { get; set; }
+        public global::G.OrganizationPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

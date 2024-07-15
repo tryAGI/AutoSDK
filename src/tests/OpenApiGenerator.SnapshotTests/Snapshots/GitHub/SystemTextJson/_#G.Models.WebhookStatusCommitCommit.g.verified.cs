@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookStatusCommitCommit.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -15,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<WebhookStatusCommitCommitAuthor, WebhookStatusCommitCommitAuthor> Author { get; set; }
+        public required global::System.AllOf<global::G.WebhookStatusCommitCommitAuthor, global::G.WebhookStatusCommitCommitAuthor> Author { get; set; }
 
         /// <summary>
         /// 
@@ -30,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<WebhookStatusCommitCommitCommitter, WebhookStatusCommitCommitCommitter> Committer { get; set; }
+        public required global::System.AllOf<global::G.WebhookStatusCommitCommitCommitter, global::G.WebhookStatusCommitCommitCommitter> Committer { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +46,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitCommitTree Tree { get; set; }
+        public required global::G.WebhookStatusCommitCommitTree Tree { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +60,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verification")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookStatusCommitCommitVerification Verification { get; set; }
+        public required global::G.WebhookStatusCommitCommitVerification Verification { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

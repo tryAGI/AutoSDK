@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookWorkflowJobWaitingWorkflowJobStepsConclusion ToEnum(string value)
+        public static WebhookWorkflowJobWaitingWorkflowJobStepsConclusion? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "skipped" => WebhookWorkflowJobWaitingWorkflowJobStepsConclusion.Skipped,
                 "success" => WebhookWorkflowJobWaitingWorkflowJobStepsConclusion.Success,
                 "cancelled" => WebhookWorkflowJobWaitingWorkflowJobStepsConclusion.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

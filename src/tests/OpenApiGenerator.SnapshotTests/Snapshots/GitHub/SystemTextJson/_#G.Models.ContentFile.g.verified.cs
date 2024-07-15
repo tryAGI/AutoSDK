@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ContentFileTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentFileType Type { get; set; }
+        public required global::G.ContentFileType Type { get; set; }
 
         /// <summary>
         /// 
@@ -92,16 +92,16 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_links")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ContentFileLinks Links { get; set; }
+        public required global::G.ContentFileLinks Links { get; set; }
 
         /// <summary>
-        /// <br/>Example: "actual/actual.md"
+        /// Example: "actual/actual.md"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         public string? Target { get; set; }
 
         /// <summary>
-        /// <br/>Example: "git://example.com/defunkt/dotjs.git"
+        /// Example: "git://example.com/defunkt/dotjs.git"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submodule_git_url")]
         public string? SubmoduleGitUrl { get; set; }

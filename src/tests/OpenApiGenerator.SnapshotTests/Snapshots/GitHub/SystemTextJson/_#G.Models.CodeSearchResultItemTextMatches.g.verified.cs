@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
-        public global::System.Collections.Generic.IList<CodeSearchResultItemTextMatchesMatches?>? Matches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeSearchResultItemTextMatchesMatches?>? Matches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

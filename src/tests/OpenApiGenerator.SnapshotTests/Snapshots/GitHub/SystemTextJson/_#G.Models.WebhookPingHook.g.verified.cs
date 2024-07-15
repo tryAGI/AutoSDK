@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPingHookConfig Config { get; set; }
+        public required global::G.WebhookPingHookConfig Config { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_response")]
-        public HookResponse? LastResponse { get; set; }
+        public global::G.HookResponse? LastResponse { get; set; }
 
         /// <summary>
         /// The type of webhook. The only valid value is 'web'.
@@ -68,7 +68,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPingHookNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookPingHookName Name { get; set; }
+        public required global::G.WebhookPingHookName Name { get; set; }
 
         /// <summary>
         /// 

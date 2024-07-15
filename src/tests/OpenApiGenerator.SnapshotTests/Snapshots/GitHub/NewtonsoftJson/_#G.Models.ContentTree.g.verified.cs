@@ -67,13 +67,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entries")]
-        public global::System.Collections.Generic.IList<ContentTreeEntries?>? Entries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentTreeEntries?>? Entries { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_links", Required = global::Newtonsoft.Json.Required.Always)]
-        public ContentTreeLinks Links { get; set; } = default!;
+        public global::G.ContentTreeLinks Links { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

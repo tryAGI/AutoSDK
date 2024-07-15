@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory20))]
-        public RepositoryRule? Rule { get; set; }
+        public global::G.RepositoryRule? Rule { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
-        public WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Changes { get; set; }
+        public global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Changes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

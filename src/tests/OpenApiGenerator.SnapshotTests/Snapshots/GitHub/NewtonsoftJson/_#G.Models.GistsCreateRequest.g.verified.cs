@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.GistsCreateRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,15 +12,14 @@ namespace G
     public sealed partial class GistsCreateRequest
     {
         /// <summary>
-        /// Description of the gist
-        /// <br/>Example: Example Ruby script
+        /// Description of the gist<br/>
+        /// Example: Example Ruby script
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
         /// Names and content for the files that make up the gist
-        /// <br/>Example: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
         public object Files { get; set; } = default!;
@@ -27,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public")]
-        public global::System.OneOf<bool, GistsCreateRequestPublic?> Public { get; set; }
+        public global::System.OneOf<bool, global::G.GistsCreateRequestPublic?>? Public { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

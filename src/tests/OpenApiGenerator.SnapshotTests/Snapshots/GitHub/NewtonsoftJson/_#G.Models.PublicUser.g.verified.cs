@@ -211,7 +211,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
-        public PublicUserPlan? Plan { get; set; }
+        public global::G.PublicUserPlan? Plan { get; set; }
 
         /// <summary>
         /// 
@@ -220,31 +220,31 @@ namespace G
         public global::System.DateTime? SuspendedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_gists")]
         public int PrivateGists { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_private_repos")]
         public int TotalPrivateRepos { get; set; }
 
         /// <summary>
-        /// <br/>Example: 2
+        /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owned_private_repos")]
         public int OwnedPrivateRepos { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disk_usage")]
         public int DiskUsage { get; set; }
 
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("collaborators")]
         public int Collaborators { get; set; }

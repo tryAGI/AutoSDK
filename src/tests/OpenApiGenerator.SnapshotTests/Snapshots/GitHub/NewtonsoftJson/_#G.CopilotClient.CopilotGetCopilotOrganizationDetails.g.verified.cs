@@ -6,30 +6,90 @@ namespace G
 {
     public partial class CopilotClient
     {
+        partial void PrepareCopilotGetCopilotOrganizationDetailsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org);
+        partial void PrepareCopilotGetCopilotOrganizationDetailsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org);
+        partial void ProcessCopilotGetCopilotOrganizationDetailsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCopilotGetCopilotOrganizationDetailsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Get Copilot seat information and settings for an organization
+        /// Get Copilot seat information and settings for an organization<br/>
+        /// **Note**: This endpoint is in beta and is subject to change.<br/>
+        /// Gets information about an organization's Copilot subscription, including seat breakdown<br/>
+        /// and code matching policies. To configure these settings, go to your organization's settings on GitHub.com.<br/>
+        /// For more information, see "[Managing policies for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-copilot-business-in-your-organization)".<br/>
+        /// Only organization owners can configure and view details about the organization's Copilot Business subscription.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CopilotOrganizationDetails> CopilotGetCopilotOrganizationDetailsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CopilotOrganizationDetails> CopilotGetCopilotOrganizationDetailsAsync(
             string org,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCopilotGetCopilotOrganizationDetailsArguments(
+                httpClient: _httpClient,
+                org: ref org);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/orgs/{org}/copilot/billing", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/copilot/billing", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCopilotGetCopilotOrganizationDetailsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                org: org);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCopilotGetCopilotOrganizationDetailsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCopilotGetCopilotOrganizationDetailsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CopilotOrganizationDetails?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CopilotOrganizationDetails?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCustomGatesStateRequiredStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ReviewCustomGatesStateRequiredState State { get; set; }
+        public required global::G.ReviewCustomGatesStateRequiredState State { get; set; }
 
         /// <summary>
         /// Optional comment to include with the review.

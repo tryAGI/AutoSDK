@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GitCreateTreeRequestTreeMode ToEnum(string value)
+        public static GitCreateTreeRequestTreeMode? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "040000" => GitCreateTreeRequestTreeMode._040000,
                 "160000" => GitCreateTreeRequestTreeMode._160000,
                 "120000" => GitCreateTreeRequestTreeMode._120000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

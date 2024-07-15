@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.WebhooksIssue2PerformedViaGithubAppPermissionsContentsExtensions.ToEnum(stringValue);
+                        return global::G.WebhooksIssue2PerformedViaGithubAppPermissionsContentsExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -30,7 +30,7 @@ namespace OpenApiGenerator.JsonConverters
                     return (global::G.WebhooksIssue2PerformedViaGithubAppPermissionsContents)numValue;
                 }
                 default:
-                    throw new global::System.ArgumentOutOfRangeException();
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
 
             return default;
@@ -42,6 +42,8 @@ namespace OpenApiGenerator.JsonConverters
             global::G.WebhooksIssue2PerformedViaGithubAppPermissionsContents value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
             writer.WriteStringValue(global::G.WebhooksIssue2PerformedViaGithubAppPermissionsContentsExtensions.ToValueString(value));
         }
     }

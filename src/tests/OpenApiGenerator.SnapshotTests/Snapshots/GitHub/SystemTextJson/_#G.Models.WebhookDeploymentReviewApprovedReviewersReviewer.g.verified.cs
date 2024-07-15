@@ -130,7 +130,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentReviewApprovedReviewersReviewerTypeJsonConverter))]
-        public WebhookDeploymentReviewApprovedReviewersReviewerType? Type { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedReviewersReviewerType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -10,31 +10,31 @@ namespace G
     public sealed partial class Autolink
     {
         /// <summary>
-        /// <br/>Example: 3
+        /// Example: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
 
         /// <summary>
-        /// The prefix of a key that is linkified.
-        /// <br/>Example: TICKET-
+        /// The prefix of a key that is linkified.<br/>
+        /// Example: TICKET-
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_prefix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeyPrefix { get; set; }
 
         /// <summary>
-        /// A template for the target URL that is generated if a key was found.
-        /// <br/>Example: https://example.com/TICKET?query=&lt;num&gt;
+        /// A template for the target URL that is generated if a key was found.<br/>
+        /// Example: https://example.com/TICKET?query=&lt;num&gt;
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url_template")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UrlTemplate { get; set; }
 
         /// <summary>
-        /// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
-        /// <br/>Example: true
+        /// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.<br/>
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_alphanumeric")]
         [global::System.Text.Json.Serialization.JsonRequired]

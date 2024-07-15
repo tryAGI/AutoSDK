@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssueCommentCreatedCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssueCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.WebhookIssueCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// Contents of the issue comment
@@ -64,14 +64,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableIntegration? PerformedViaGithubApp { get; set; }
+        public required global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssueCommentCreatedCommentReactions Reactions { get; set; }
+        public required global::G.WebhookIssueCommentCreatedCommentReactions Reactions { get; set; }
 
         /// <summary>
         /// 
@@ -92,7 +92,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required WebhookIssueCommentCreatedCommentUser? User { get; set; }
+        public required global::G.WebhookIssueCommentCreatedCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

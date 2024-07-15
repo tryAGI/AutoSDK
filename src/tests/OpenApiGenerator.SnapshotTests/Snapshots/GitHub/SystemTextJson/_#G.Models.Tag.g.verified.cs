@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Tag
     {
         /// <summary>
-        /// <br/>Example: v0.1
+        /// Example: v0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -21,17 +21,17 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TagCommit Commit { get; set; }
+        public required global::G.TagCommit Commit { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/zipball/v0.1
+        /// Example: https://github.com/octocat/Hello-World/zipball/v0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("zipball_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ZipballUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/octocat/Hello-World/tarball/v0.1
+        /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tarball_url")]
         [global::System.Text.Json.Serialization.JsonRequired]

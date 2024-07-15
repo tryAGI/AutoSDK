@@ -10,13 +10,13 @@ namespace G
     public sealed partial class GistCommit
     {
         /// <summary>
-        /// <br/>Example: https://api.github.com/gists/aa5a315d61ae9438b18d/57a7f021a713b1c5a6a199b54cc514735d2d462f
+        /// Example: https://api.github.com/gists/aa5a315d61ae9438b18d/57a7f021a713b1c5a6a199b54cc514735d2d462f
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
+        /// Example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
         public string Version { get; set; } = default!;
@@ -25,16 +25,16 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? User { get; set; } = default!;
+        public global::G.NullableSimpleUser? User { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("change_status", Required = global::Newtonsoft.Json.Required.Always)]
-        public GistCommitChangeStatus ChangeStatus { get; set; } = default!;
+        public global::G.GistCommitChangeStatus ChangeStatus { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committed_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime CommittedAt { get; set; } = default!;

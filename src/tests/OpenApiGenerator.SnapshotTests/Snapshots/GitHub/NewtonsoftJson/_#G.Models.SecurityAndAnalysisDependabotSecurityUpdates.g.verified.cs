@@ -13,7 +13,7 @@ namespace G
         /// The enablement status of Dependabot security updates for the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public SecurityAndAnalysisDependabotSecurityUpdatesStatus? Status { get; set; }
+        public global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

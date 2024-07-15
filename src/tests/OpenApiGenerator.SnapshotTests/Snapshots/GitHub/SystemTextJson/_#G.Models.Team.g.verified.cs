@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public TeamPermissions? Permissions { get; set; }
+        public global::G.TeamPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://github.com/orgs/rails/teams/core
+        /// Example: https://github.com/orgs/rails/teams/core
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -102,7 +102,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableTeamSimple? Parent { get; set; }
+        public required global::G.NullableTeamSimple? Parent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

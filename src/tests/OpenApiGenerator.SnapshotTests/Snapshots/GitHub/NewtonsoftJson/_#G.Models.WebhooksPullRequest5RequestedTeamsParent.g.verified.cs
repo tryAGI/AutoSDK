@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhooksPullRequest5RequestedTeamsParentPrivacy Privacy { get; set; } = default!;
+        public global::G.WebhooksPullRequest5RequestedTeamsParentPrivacy Privacy { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RepositoryAdvisoryCreateVulnerabilitiesPackage Package { get; set; }
+        public required global::G.RepositoryAdvisoryCreateVulnerabilitiesPackage Package { get; set; }
 
         /// <summary>
         /// The range of the package versions affected by the vulnerability.

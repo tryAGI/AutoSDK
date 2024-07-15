@@ -16,8 +16,8 @@ namespace G
         public int AppId { get; set; } = default!;
 
         /// <summary>
-        /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
-        /// <br/>Default Value: true
+        /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("setting", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Setting { get; set; } = default!;

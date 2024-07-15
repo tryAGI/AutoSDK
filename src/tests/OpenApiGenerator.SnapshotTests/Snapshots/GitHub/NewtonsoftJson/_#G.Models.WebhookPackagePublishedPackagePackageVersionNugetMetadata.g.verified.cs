@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookPackagePublishedPackagePackageVersionNugetMetadata.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.OneOf<int, string?> Id { get; set; }
+        public global::System.OneOf<int, string?>? Id { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::System.OneOf<bool, string?, int, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue?> Value { get; set; }
+        public global::System.OneOf<bool, string?, int, global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadataValue?>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

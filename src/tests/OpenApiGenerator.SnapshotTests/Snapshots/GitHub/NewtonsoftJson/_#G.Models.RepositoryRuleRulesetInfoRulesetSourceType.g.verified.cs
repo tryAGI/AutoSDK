@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositoryRuleRulesetInfoRulesetSourceType ToEnum(string value)
+        public static RepositoryRuleRulesetInfoRulesetSourceType? ToEnum(string value)
         {
             return value switch
             {
                 "Repository" => RepositoryRuleRulesetInfoRulesetSourceType.Repository,
                 "Organization" => RepositoryRuleRulesetInfoRulesetSourceType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

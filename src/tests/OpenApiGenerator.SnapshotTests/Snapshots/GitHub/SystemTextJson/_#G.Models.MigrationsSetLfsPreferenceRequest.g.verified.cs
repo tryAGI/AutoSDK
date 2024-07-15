@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("use_lfs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MigrationsSetLfsPreferenceRequestUseLfs UseLfs { get; set; }
+        public required global::G.MigrationsSetLfsPreferenceRequestUseLfs UseLfs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hub_url")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? HubUrl { get; set; }
 
         /// <summary>

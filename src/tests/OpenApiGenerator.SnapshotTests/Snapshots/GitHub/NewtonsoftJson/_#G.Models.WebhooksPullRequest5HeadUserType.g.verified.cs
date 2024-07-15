@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhooksPullRequest5HeadUserType ToEnum(string value)
+        public static WebhooksPullRequest5HeadUserType? ToEnum(string value)
         {
             return value switch
             {
                 "Bot" => WebhooksPullRequest5HeadUserType.Bot,
                 "User" => WebhooksPullRequest5HeadUserType.User,
                 "Organization" => WebhooksPullRequest5HeadUserType.Organization,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

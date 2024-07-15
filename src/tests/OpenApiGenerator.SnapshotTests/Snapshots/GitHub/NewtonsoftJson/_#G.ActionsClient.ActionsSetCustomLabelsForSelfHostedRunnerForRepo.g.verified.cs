@@ -6,8 +6,34 @@ namespace G
 {
     public partial class ActionsClient
     {
+        partial void PrepareActionsSetCustomLabelsForSelfHostedRunnerForRepoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int runnerId,
+            global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest request);
+        partial void PrepareActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int runnerId,
+            global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest request);
+        partial void ProcessActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessActionsSetCustomLabelsForSelfHostedRunnerForRepoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// Set custom labels for a self-hosted runner for a repository
+        /// Set custom labels for a self-hosted runner for a repository<br/>
+        /// Remove all previous custom labels and set the new custom labels for a specific<br/>
+        /// self-hosted runner configured in a repository.<br/>
+        /// Authenticated users must have admin access to the repository to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -15,53 +41,104 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse> ActionsSetCustomLabelsForSelfHostedRunnerForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse> ActionsSetCustomLabelsForSelfHostedRunnerForRepoAsync(
             string owner,
             string repo,
             int runnerId,
-            ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest request,
+            global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareActionsSetCustomLabelsForSelfHostedRunnerForRepoArguments(
+                httpClient: _httpClient,
+                owner: ref owner,
+                repo: ref repo,
+                runnerId: ref runnerId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/actions/runners/{runnerId}/labels", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/runners/{runnerId}/labels", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                owner: owner,
+                repo: repo,
+                runnerId: runnerId,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessActionsSetCustomLabelsForSelfHostedRunnerForRepoResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse?>(__content) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Set custom labels for a self-hosted runner for a repository
+        /// Set custom labels for a self-hosted runner for a repository<br/>
+        /// Remove all previous custom labels and set the new custom labels for a specific<br/>
+        /// self-hosted runner configured in a repository.<br/>
+        /// Authenticated users must have admin access to the repository to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="runnerId"></param>
-        /// <param name="labels"></param>
+        /// <param name="labels">
+        /// The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse> ActionsSetCustomLabelsForSelfHostedRunnerForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse> ActionsSetCustomLabelsForSelfHostedRunnerForRepoAsync(
             string owner,
             string repo,
             int runnerId,
             global::System.Collections.Generic.IList<string> labels,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest
+            var request = new global::G.ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest
             {
                 Labels = labels,
             };

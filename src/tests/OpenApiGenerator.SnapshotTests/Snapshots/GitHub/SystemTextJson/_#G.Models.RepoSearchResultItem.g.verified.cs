@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Owner { get; set; }
+        public required global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -549,19 +549,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableLicenseSimple? License { get; set; }
+        public required global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public RepoSearchResultItemPermissions? Permissions { get; set; }
+        public global::G.RepoSearchResultItemPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<RepoSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepoSearchResultItemTextMatches?>? TextMatches { get; set; }
 
         /// <summary>
         /// 
@@ -612,7 +612,7 @@ namespace G
         public bool IsTemplate { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
         public bool WebCommitSignoffRequired { get; set; }

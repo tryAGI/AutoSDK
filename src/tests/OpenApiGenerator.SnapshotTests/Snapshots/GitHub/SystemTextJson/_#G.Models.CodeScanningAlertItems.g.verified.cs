@@ -54,9 +54,9 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertItemsStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAlertItemsState State { get; set; }
+        public required global::G.CodeScanningAlertState State { get; set; }
 
         /// <summary>
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -69,7 +69,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? DismissedBy { get; set; }
+        public required global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -82,9 +82,9 @@ namespace G
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertItemsDismissedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAlertItemsDismissedReason? DismissedReason { get; set; }
+        public required global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.
@@ -97,21 +97,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAlertRuleSummary Rule { get; set; }
+        public required global::G.CodeScanningAlertRuleSummary Rule { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAnalysisTool Tool { get; set; }
+        public required global::G.CodeScanningAnalysisTool Tool { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("most_recent_instance")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CodeScanningAlertInstance MostRecentInstance { get; set; }
+        public required global::G.CodeScanningAlertInstance MostRecentInstance { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

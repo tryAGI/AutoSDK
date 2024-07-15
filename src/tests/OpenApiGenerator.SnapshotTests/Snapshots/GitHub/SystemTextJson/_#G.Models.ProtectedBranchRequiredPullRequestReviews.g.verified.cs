@@ -35,8 +35,8 @@ namespace G
         public int RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
-        /// Whether the most recent push must be approved by someone other than the person who pushed it.
-        /// <br/>Default Value: false
+        /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
         public bool RequireLastPushApproval { get; set; } = false;
@@ -45,13 +45,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissal_restrictions")]
-        public ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? DismissalRestrictions { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? DismissalRestrictions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bypass_pull_request_allowances")]
-        public ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
+        public global::G.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? BypassPullRequestAllowances { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

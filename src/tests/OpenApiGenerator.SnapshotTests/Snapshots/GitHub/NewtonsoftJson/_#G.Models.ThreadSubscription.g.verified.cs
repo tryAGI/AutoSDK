@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ThreadSubscription
     {
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribed", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Subscribed { get; set; } = default!;
@@ -28,25 +28,25 @@ namespace G
         public string? Reason { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTime? CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/notifications/threads/1/subscription
+        /// Example: https://api.github.com/notifications/threads/1/subscription
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/notifications/threads/1
+        /// Example: https://api.github.com/notifications/threads/1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("thread_url")]
         public string? ThreadUrl { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/repos/1
+        /// Example: https://api.github.com/repos/1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_url")]
         public string? RepositoryUrl { get; set; }

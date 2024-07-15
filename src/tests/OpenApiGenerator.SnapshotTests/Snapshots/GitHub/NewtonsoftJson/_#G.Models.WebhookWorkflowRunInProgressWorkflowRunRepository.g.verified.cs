@@ -217,7 +217,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner? Owner { get; set; } = default!;
+        public global::G.WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner? Owner { get; set; } = default!;
 
         /// <summary>
         /// Whether the repository is private or public.
