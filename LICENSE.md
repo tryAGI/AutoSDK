@@ -13,9 +13,7 @@ We believe in offering the full power of OpenApiGenerator to all our users, rega
 - Full access to all OpenApiGenerator features.
 - Support for commercial usage.
 - Freedom to create and deploy unlimited closed-source projects, applications, and APIs.
-- Royalty-free redistribution of the compiled library with your applications.
-  Transitive Dependency Usage
-  If you're using OpenApiGenerator as a transitive dependency, you're free to use it under the MIT license without any cost. However, you're welcomed and encouraged to support the project by purchasing a paid license if you find the library valuable.
+- Possibility to sell OpenApiGenerator-based SDK generation as a service.
 
 ### Non-profit Usage
 
@@ -29,17 +27,13 @@ For companies generating less than $1M USD in annual gross revenue, you can use 
 
 Companies with an annual gross revenue exceeding $1M USD are required to purchase a paid license. The type of license you need depends on the number of developers working on projects that use OpenApiGenerator:
 
-Professional License - If there are up to 10 developers in your company who are using OpenApiGenerator, you need to purchase the Professional License.
+Professional License - If there are up to 10 developers in your company who are using OpenApiGenerator, you need to purchase the Professional License. There will still be a limitation here - you can't sell OpenApiGenerator-based SDK generation as a service.
 
-Enterprise License - If your company has more than 10 developers using OpenApiGenerator, the Enterprise License is the right choice.
+Enterprise License - If your company has more than 10 developers using OpenApiGenerator, the Enterprise License is the right choice. You can also sell SDK generation based on OpenApiGenerator as a service.
 
 ### Beyond Compliance
 
 Remember, purchasing a license isn't just about adhering to our guidelines, but also supporting the development of OpenApiGenerator. Your contribution helps us to improve the library and offer top-notch support to all users.
-
-## Third-Party Code
-
-This project includes some code from the StefH/AnyOf project, which is licensed under the MIT license. For more details, please refer to the [AnyOf repository](https://github.com/StefH/AnyOf).
 
 ## OpenApiGenerator Community MIT License
 
