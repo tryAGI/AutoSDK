@@ -8,6 +8,7 @@
       TargetFramework: netstandard2.0,
       Namespace: G,
       ClassName: Api,
+      ClsCompliantEnumPrefix: x,
       GenerateConstructors: false,
       GroupByTags: false,
       GenerateMethods: false,
@@ -30,7 +31,7 @@
     Properties: [
       {
         Id: 4,
-        Name: _4,
+        Name: x4,
         Type: {
           CSharpType: string?,
           IsArray: false,
@@ -55,13 +56,13 @@
         IsDeprecated: false,
         Summary: Example: 1234,
         ConverterType: ,
-        ParameterName: _4,
-        ArgumentName: _4,
+        ParameterName: x4,
+        ArgumentName: x4,
         ParameterDefaultValue: default
       },
       {
         Id: 1.5,
-        Name: _1_5,
+        Name: x1_5,
         Type: {
           CSharpType: bool,
           IsArray: false,
@@ -86,13 +87,13 @@
         IsDeprecated: false,
         Summary: Example: true,
         ConverterType: ,
-        ParameterName: _1_5,
-        ArgumentName: _1_5,
+        ParameterName: x1_5,
+        ArgumentName: x1_5,
         ParameterDefaultValue: default
       },
       {
         Id: 16:9,
-        Name: _16_9,
+        Name: x16_9,
         Type: {
           CSharpType: bool,
           IsArray: false,
@@ -117,8 +118,8 @@
         IsDeprecated: false,
         Summary: Example: true,
         ConverterType: ,
-        ParameterName: _16_9,
-        ArgumentName: _16_9,
+        ParameterName: x16_9,
+        ArgumentName: x16_9,
         ParameterDefaultValue: default
       },
       {
@@ -234,6 +235,7 @@
       TargetFramework: netstandard2.0,
       Namespace: G,
       ClassName: Api,
+      ClsCompliantEnumPrefix: x,
       GenerateConstructors: false,
       GroupByTags: false,
       GenerateMethods: false,

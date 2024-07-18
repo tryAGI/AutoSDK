@@ -41,6 +41,9 @@ public partial class Tests : VerifyBase
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         var compilation = (Compilation)CSharpCompilation.Create(
             assemblyName: "Tests",
+            syntaxTrees: ImmutableArray.Create(SyntaxFactory.ParseSyntaxTree(@"
+[assembly: System.CLSCompliantAttribute(true)]
+")),
             references: references,
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
         var generator = new T();

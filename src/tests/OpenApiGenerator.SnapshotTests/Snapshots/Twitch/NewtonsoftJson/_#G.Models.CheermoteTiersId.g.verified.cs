@@ -22,37 +22,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1")]
-        _1,
+        x1,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="100")]
-        _100,
+        x100,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="500")]
-        _500,
+        x500,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1000")]
-        _1000,
+        x1000,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="5000")]
-        _5000,
+        x5000,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="10000")]
-        _10000,
+        x10000,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="100000")]
-        _100000,
+        x100000,
     }
 
     /// <summary>
@@ -67,13 +67,13 @@ namespace G
         {
             return value switch
             {
-                CheermoteTiersId._1 => "1",
-                CheermoteTiersId._100 => "100",
-                CheermoteTiersId._500 => "500",
-                CheermoteTiersId._1000 => "1000",
-                CheermoteTiersId._5000 => "5000",
-                CheermoteTiersId._10000 => "10000",
-                CheermoteTiersId._100000 => "100000",
+                CheermoteTiersId.x1 => "1",
+                CheermoteTiersId.x100 => "100",
+                CheermoteTiersId.x500 => "500",
+                CheermoteTiersId.x1000 => "1000",
+                CheermoteTiersId.x5000 => "5000",
+                CheermoteTiersId.x10000 => "10000",
+                CheermoteTiersId.x100000 => "100000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,13 +84,13 @@ namespace G
         {
             return value switch
             {
-                "1" => CheermoteTiersId._1,
-                "100" => CheermoteTiersId._100,
-                "500" => CheermoteTiersId._500,
-                "1000" => CheermoteTiersId._1000,
-                "5000" => CheermoteTiersId._5000,
-                "10000" => CheermoteTiersId._10000,
-                "100000" => CheermoteTiersId._100000,
+                "1" => CheermoteTiersId.x1,
+                "100" => CheermoteTiersId.x100,
+                "500" => CheermoteTiersId.x500,
+                "1000" => CheermoteTiersId.x1000,
+                "5000" => CheermoteTiersId.x5000,
+                "10000" => CheermoteTiersId.x10000,
+                "100000" => CheermoteTiersId.x100000,
                 _ => null,
             };
         }

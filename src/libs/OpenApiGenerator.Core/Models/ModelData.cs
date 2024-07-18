@@ -132,7 +132,7 @@ public readonly record struct ModelData(
             Style = schema.Value.IsEnum() ? ModelStyle.Enumeration : model.Style,
             Properties = schema.Value.IsEnum()
                 ? schema.Value.Enum
-                    .Select(value => value.ToEnumValue())
+                    .Select(value => value.ToEnumValue(settings))
                     .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                     .ToImmutableArray()
                 : schema.Value.Properties
@@ -182,7 +182,7 @@ public readonly record struct ModelData(
                 {
                     Style = ModelStyle.Enumeration,
                     Properties = x.Schema.Value.Enum
-                        .Select(value => value.ToEnumValue())
+                        .Select(value => value.ToEnumValue(settings))
                         .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                         .ToImmutableArray(),
                 })

@@ -34,9 +34,9 @@ public class SchemaContext
     
     public TypeData? TypeData { get; set; }
 
-    private static string ComputeId(SchemaContext? parent, string? helper)
+    private static string ComputeId(Settings settings, SchemaContext? parent, string? helper)
     {
-        var id = parent?.Id + helper?.ToCSharpName(parent);
+        var id = parent?.Id + helper?.ToCSharpName(settings, parent);
         if (string.IsNullOrWhiteSpace(id))
         {
             throw new InvalidOperationException("Id is required. Invalid info.");
@@ -151,7 +151,7 @@ public class SchemaContext
                 Parent = parent,
                 Settings = settings,
                 Schema = schema,
-                Id = schema.Reference.Id.ToCSharpName(parent),
+                Id = schema.Reference.Id.ToCSharpName(settings, parent),
                 Type = "ref",
                 IsReference = true,
                 ComponentId = componentId,
@@ -175,7 +175,7 @@ public class SchemaContext
             Parent = parent,
             Settings = settings,
             Schema = schema,
-            Id = propertyName?.ToCSharpName(parent) ?? componentId?.ToCSharpName(parent) ?? ComputeId(parent, helper),
+            Id = propertyName?.ToCSharpName(settings, parent) ?? componentId?.ToCSharpName(settings, parent) ?? ComputeId(settings, parent, helper),
             Type = ComputeType(schema),
             ComponentId = componentId,
             PropertyName = propertyName,
@@ -244,7 +244,7 @@ public class SchemaContext
                 index: i++));
         }
         
-        context.TypeData = Models.TypeData.FromSchemaContext(context, schemas);
+        context.TypeData = Models.TypeData.FromSchemaContext(context, settings, schemas);
         
         return schemas;
     }

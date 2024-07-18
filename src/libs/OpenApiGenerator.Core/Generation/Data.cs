@@ -183,7 +183,7 @@ public static class Data
                     ? [
                         .. includedTags.Select(x => PropertyData.Default with
                         {
-                            Name = PropertyData.SanitizeName(x.Name.ToClassName()),
+                            Name = PropertyData.SanitizeName(x.Name.ToClassName(), settings.ClsCompliantEnumPrefix),
                             Type = TypeData.Default with
                             {
                                 CSharpType = $"{x.Name.ToClassName()}Client",

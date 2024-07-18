@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter))]
-        public global::G.CreateImageRequestSize? Size { get; set; } = global::G.CreateImageRequestSize._1024x1024;
+        public global::G.CreateImageRequestSize? Size { get; set; } = global::G.CreateImageRequestSize.x1024x1024;
 
         /// <summary>
         /// The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.<br/>

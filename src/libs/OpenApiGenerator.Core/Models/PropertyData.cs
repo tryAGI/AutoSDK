@@ -54,7 +54,7 @@ public readonly record struct PropertyData(
             name = name.FixPropertyName(parents.Last().ClassName);
         }
 
-        name = SanitizeName(name, true);
+        name = SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
         
         var type = TypeData.FromSchema(schema, settings, operationId == null || string.IsNullOrWhiteSpace(operationId)
             ? parents
@@ -75,7 +75,7 @@ public readonly record struct PropertyData(
             ConverterType: type.ConverterType);
     }
 
-    internal static string SanitizeName(string? name, bool skipHandlingWordSeparators = false)
+    internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)
             => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
@@ -100,12 +100,16 @@ public readonly record struct PropertyData(
 
         if (name.Length == 0)
         {
-            return "_";
+            return string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
+                ? "_"
+                : clsCompliantEnumPrefix;
         }
         
         if (InvalidFirstChar(name[0]))
         {
-            name = $"_{name}";
+            name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
+                ? "_"
+                : clsCompliantEnumPrefix) + name;
         }
 
         if (!name.Skip(1).Any(InvalidSubsequentChar))

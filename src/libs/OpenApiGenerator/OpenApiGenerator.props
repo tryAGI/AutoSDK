@@ -18,6 +18,8 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_Namespace"/>
     <!-- Namespace. Default: $(PackageId)Api or $(AssemblyName)Api or "Api" -->
     <CompilerVisibleProperty Include="OpenApiGenerator_ClassName"/>
+    <!-- Prefix for enums which start with a number to make them CLS compliant. Default: "x". Pass empty string to disable prefixing(it will be non-CLS compliant '_') -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ClsCompliantEnumPrefix"/>
     <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
     <CompilerVisibleProperty Include="OpenApiGenerator_NamingConvention"/>
     <!-- SystemTextJson/NewtonsoftJson. Default: SystemTextJson -->

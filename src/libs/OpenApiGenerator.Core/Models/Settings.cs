@@ -8,6 +8,7 @@ public readonly record struct Settings(
     string TargetFramework,
     string Namespace,
     string ClassName,
+    string ClsCompliantEnumPrefix,
     NamingConvention NamingConvention,
     JsonSerializerType JsonSerializerType,
     SdkFeatureUsage UseRequiredKeyword,

@@ -52,7 +52,7 @@ namespace G
         /// Example: 1024x1024
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public global::G.CreateImageEditRequestSize? Size { get; set; } = global::G.CreateImageEditRequestSize._1024x1024;
+        public global::G.CreateImageEditRequestSize? Size { get; set; } = global::G.CreateImageEditRequestSize.x1024x1024;
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>

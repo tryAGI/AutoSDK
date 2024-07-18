@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        _24h,
+        x24h,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                CreateBatchRequestCompletionWindow._24h => "24h",
+                CreateBatchRequestCompletionWindow.x24h => "24h",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "24h" => CreateBatchRequestCompletionWindow._24h,
+                "24h" => CreateBatchRequestCompletionWindow.x24h,
                 _ => null,
             };
         }

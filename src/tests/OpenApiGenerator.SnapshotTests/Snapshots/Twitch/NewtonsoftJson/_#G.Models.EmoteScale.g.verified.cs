@@ -14,17 +14,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1.0")]
-        _10,
+        x10,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="2.0")]
-        _20,
+        x20,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="3.0")]
-        _30,
+        x30,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                EmoteScale._10 => "1.0",
-                EmoteScale._20 => "2.0",
-                EmoteScale._30 => "3.0",
+                EmoteScale.x10 => "1.0",
+                EmoteScale.x20 => "2.0",
+                EmoteScale.x30 => "3.0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "1.0" => EmoteScale._10,
-                "2.0" => EmoteScale._20,
-                "3.0" => EmoteScale._30,
+                "1.0" => EmoteScale.x10,
+                "2.0" => EmoteScale.x20,
+                "3.0" => EmoteScale.x30,
                 _ => null,
             };
         }

@@ -16,17 +16,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="256x256")]
-        _256x256,
+        x256x256,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="512x512")]
-        _512x512,
+        x512x512,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1024x1024")]
-        _1024x1024,
+        x1024x1024,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace G
         {
             return value switch
             {
-                CreateImageEditRequestSize._256x256 => "256x256",
-                CreateImageEditRequestSize._512x512 => "512x512",
-                CreateImageEditRequestSize._1024x1024 => "1024x1024",
+                CreateImageEditRequestSize.x256x256 => "256x256",
+                CreateImageEditRequestSize.x512x512 => "512x512",
+                CreateImageEditRequestSize.x1024x1024 => "1024x1024",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                "256x256" => CreateImageEditRequestSize._256x256,
-                "512x512" => CreateImageEditRequestSize._512x512,
-                "1024x1024" => CreateImageEditRequestSize._1024x1024,
+                "256x256" => CreateImageEditRequestSize.x256x256,
+                "512x512" => CreateImageEditRequestSize.x512x512,
+                "1024x1024" => CreateImageEditRequestSize.x1024x1024,
                 _ => null,
             };
         }

@@ -1,8 +1,8 @@
 ﻿[
   Pet(class),
-    _4(string),
-    _1_5(bool),
-    _16_9(bool),
+    x4(string),
+    x1_5(bool),
+    x16_9(bool),
     Id(long),
     Name(string),
     Tag(string),

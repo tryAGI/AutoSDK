@@ -13,19 +13,19 @@ namespace G
         /// Example: 1234
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("4")]
-        public string? _4 { get; set; }
+        public string? x4 { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("1.5")]
-        public bool _1_5 { get; set; }
+        public bool x1_5 { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("16:9")]
-        public bool _16_9 { get; set; }
+        public bool x16_9 { get; set; }
 
         /// <summary>
         /// 

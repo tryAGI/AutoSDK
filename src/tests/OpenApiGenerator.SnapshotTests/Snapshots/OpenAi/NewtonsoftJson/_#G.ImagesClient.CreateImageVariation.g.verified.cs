@@ -131,7 +131,7 @@ namespace G
             global::System.AnyOf<string?, global::G.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageVariationRequestResponseFormat? responseFormat = global::G.CreateImageVariationRequestResponseFormat.Url,
-            global::G.CreateImageVariationRequestSize? size = global::G.CreateImageVariationRequestSize._1024x1024,
+            global::G.CreateImageVariationRequestSize? size = global::G.CreateImageVariationRequestSize.x1024x1024,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

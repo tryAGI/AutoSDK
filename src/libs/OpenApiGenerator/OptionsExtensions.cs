@@ -27,6 +27,8 @@ public static class OptionsExtensions
                        options.GetGlobalOption("PackageId")?.WithPostfix("Api") ??
                        options.GetGlobalOption("AssemblyName")?.WithPostfix("Api") ??
                        "Api",
+            ClsCompliantEnumPrefix: options.GetGlobalOption(nameof(Settings.ClsCompliantEnumPrefix), prefix) ??
+                                    "x",
             NamingConvention: options.GetEnumGlobalOption<NamingConvention>(nameof(Settings.NamingConvention), prefix),
             JsonSerializerType: options.GetEnumGlobalOption<JsonSerializerType>(nameof(Settings.JsonSerializerType), prefix),
             UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),

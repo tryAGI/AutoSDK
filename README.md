@@ -12,7 +12,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Allows partial generation (models only) or end points filtering
 - Available under MIT license for general users and most organizations
 - Uses https://github.com/microsoft/OpenAPI.NET for parsing OpenAPI specification
-- Supports nullable enable/trimming/native AOT compilation
+- Supports nullable enable/trimming/native AOT compilation/CLS compliance
 - Tested on GitHub 220k lines OpenAPI specification
 - Supports OneOf/AnyOf/AllOf/Not schemas
 - Supports Enums for System.Text.Json

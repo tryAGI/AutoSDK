@@ -98,7 +98,7 @@ public readonly record struct EndPoint(
                     Properties = (x.Schema.Enum?.Any() == true
                         ? x.Schema.Enum
                         : x.Schema.Items.Enum)
-                    .Select(value => value.ToEnumValue())
+                    .Select(value => value.ToEnumValue(settings))
                     .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                     .ToImmutableArray(),
                 })

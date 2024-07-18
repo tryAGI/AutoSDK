@@ -143,7 +143,7 @@ namespace G
             int? n = 1,
             global::G.CreateImageRequestQuality? quality = global::G.CreateImageRequestQuality.Standard,
             global::G.CreateImageRequestResponseFormat? responseFormat = global::G.CreateImageRequestResponseFormat.Url,
-            global::G.CreateImageRequestSize? size = global::G.CreateImageRequestSize._1024x1024,
+            global::G.CreateImageRequestSize? size = global::G.CreateImageRequestSize.x1024x1024,
             global::G.CreateImageRequestStyle? style = global::G.CreateImageRequestStyle.Vivid,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)

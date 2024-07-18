@@ -79,7 +79,7 @@ public readonly record struct TypeData(
         if (schema.Value.IsEnum())
         {
             var values = schema.Value.Enum
-                .Select(value => value.ToEnumValue()).ToArray();
+                .Select(value => value.ToEnumValue(settings)).ToArray();
             properties = values
                 .Select(x => x.Name)
                 .ToImmutableArray();
@@ -106,7 +106,7 @@ public readonly record struct TypeData(
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes);
     }
     
-    public static TypeData FromSchemaContext(SchemaContext context, IReadOnlyCollection<SchemaContext> children)
+    public static TypeData FromSchemaContext(SchemaContext context, Settings settings, IReadOnlyCollection<SchemaContext> children)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
@@ -122,7 +122,7 @@ public readonly record struct TypeData(
         if (context.Schema.IsEnum())
         {
             var values = context.Schema.Enum
-                .Select(value => value.ToEnumValue()).ToArray();
+                .Select(value => value.ToEnumValue(settings)).ToArray();
             properties = values
                 .Select(x => x.Name)
                 .ToImmutableArray();

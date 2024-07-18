@@ -11,6 +11,7 @@ public class CacheTests
         TargetFramework: "netstandard2.0",
         Namespace: "G",
         ClassName: "Api",
+        ClsCompliantEnumPrefix: "x",
         NamingConvention: default,
         JsonSerializerType: default,
         UseRequiredKeyword: default,

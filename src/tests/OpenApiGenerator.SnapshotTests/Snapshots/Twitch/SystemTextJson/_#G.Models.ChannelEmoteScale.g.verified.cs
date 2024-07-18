@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        _10,
+        x10,
         /// <summary>
         /// 
         /// </summary>
-        _20,
+        x20,
         /// <summary>
         /// 
         /// </summary>
-        _30,
+        x30,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ChannelEmoteScale._10 => "1.0",
-                ChannelEmoteScale._20 => "2.0",
-                ChannelEmoteScale._30 => "3.0",
+                ChannelEmoteScale.x10 => "1.0",
+                ChannelEmoteScale.x20 => "2.0",
+                ChannelEmoteScale.x30 => "3.0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "1.0" => ChannelEmoteScale._10,
-                "2.0" => ChannelEmoteScale._20,
-                "3.0" => ChannelEmoteScale._30,
+                "1.0" => ChannelEmoteScale.x10,
+                "2.0" => ChannelEmoteScale.x20,
+                "3.0" => ChannelEmoteScale.x30,
                 _ => null,
             };
         }

@@ -34,12 +34,17 @@ public class GenerateCommand : Command
             aliases: ["--single-file", "-s"],
             getDefaultValue: () => false,
             description: "Generate all models in a single file");
+        var clsCompliantEnumPrefixOption = new Option<string>(
+            aliases: ["--clsCompliantEnumPrefix"],
+            getDefaultValue: () => "x",
+            description: "Prefix for enums which start with a number to make them CLS compliant. Pass empty string to disable prefixing(it will be non-CLS compliant '_')");
         AddArgument(inputOption);
         AddOption(outputOption);
         AddOption(targetFrameworkOption);
         AddOption(namespaceOption);
         AddOption(clientClassNameOption);
         AddOption(singleFileOption);
+        AddOption(clsCompliantEnumPrefixOption);
 
         this.SetHandler(
             HandleAsync,
@@ -48,7 +53,8 @@ public class GenerateCommand : Command
             targetFrameworkOption,
             namespaceOption,
             clientClassNameOption,
-            singleFileOption);
+            singleFileOption,
+            clsCompliantEnumPrefixOption);
     }
 
     private static async Task HandleAsync(
@@ -57,7 +63,8 @@ public class GenerateCommand : Command
         string targetFramework,
         string @namespace,
         string clientClassName,
-        bool generateAsSingleFile)
+        bool generateAsSingleFile,
+        string clsCompliantEnumPrefix)
     {
         Console.WriteLine($"Loading {inputPath}...");
         
@@ -83,6 +90,7 @@ public class GenerateCommand : Command
             TargetFramework: targetFramework,
             Namespace: @namespace,
             ClassName: clientClassName,
+            ClsCompliantEnumPrefix: clsCompliantEnumPrefix,
             NamingConvention: default,
             JsonSerializerType: default,
             UseRequiredKeyword: default,

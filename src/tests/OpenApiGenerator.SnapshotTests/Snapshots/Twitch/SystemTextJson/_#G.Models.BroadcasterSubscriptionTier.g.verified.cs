@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        _1000,
+        x1000,
         /// <summary>
         /// 
         /// </summary>
-        _2000,
+        x2000,
         /// <summary>
         /// 
         /// </summary>
-        _3000,
+        x3000,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                BroadcasterSubscriptionTier._1000 => "1000",
-                BroadcasterSubscriptionTier._2000 => "2000",
-                BroadcasterSubscriptionTier._3000 => "3000",
+                BroadcasterSubscriptionTier.x1000 => "1000",
+                BroadcasterSubscriptionTier.x2000 => "2000",
+                BroadcasterSubscriptionTier.x3000 => "3000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "1000" => BroadcasterSubscriptionTier._1000,
-                "2000" => BroadcasterSubscriptionTier._2000,
-                "3000" => BroadcasterSubscriptionTier._3000,
+                "1000" => BroadcasterSubscriptionTier.x1000,
+                "2000" => BroadcasterSubscriptionTier.x2000,
+                "3000" => BroadcasterSubscriptionTier.x3000,
                 _ => null,
             };
         }

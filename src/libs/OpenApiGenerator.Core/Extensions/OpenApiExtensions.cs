@@ -89,7 +89,7 @@ public static class OpenApiExtensions
         }
         if (schema.Value.Enum.Any() && schema.Value.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
-            return type.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
+            return type.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
         }
         if (schema.Value.AnyOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
         {
@@ -97,7 +97,7 @@ public static class OpenApiExtensions
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson
             }, parents);
-            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
+            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
         }
         if (schema.Value.OneOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
         {
@@ -105,7 +105,7 @@ public static class OpenApiExtensions
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson
             }, parents);
-            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
+            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
         }
         if (schema.Value.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
@@ -229,7 +229,7 @@ public static class OpenApiExtensions
         }).ToImmutableArray();
     }
 
-    internal static string ToCSharpName(this string text, SchemaContext? parent)
+    internal static string ToCSharpName(this string text, Settings settings, SchemaContext? parent)
     {
         var name = text.ToPropertyName();
         
@@ -240,7 +240,7 @@ public static class OpenApiExtensions
             name = name.FixPropertyName(parent.Id);
         }
 
-        return PropertyData.SanitizeName(name, true);
+        return PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
     }
     
     public static bool IsEnum(
@@ -329,7 +329,8 @@ public static class OpenApiExtensions
     }
     
     public static PropertyData ToEnumValue(
-        this IOpenApiAny any)
+        this IOpenApiAny any,
+        Settings settings)
     {
         var id = any.GetString() ?? string.Empty;
         var name = id
@@ -345,13 +346,15 @@ public static class OpenApiExtensions
         if (name.Length > 0 &&
             char.IsDigit(name[0]))
         {
-            name = "_" + name;
+            name = (string.IsNullOrWhiteSpace(settings.ClsCompliantEnumPrefix)
+                ? "_"
+                : settings.ClsCompliantEnumPrefix) + name;
         }
 
         return PropertyData.Default with
         {
             Id = id,
-            Name = PropertyData.SanitizeName(name),
+            Name = PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix),
         };
     }
 

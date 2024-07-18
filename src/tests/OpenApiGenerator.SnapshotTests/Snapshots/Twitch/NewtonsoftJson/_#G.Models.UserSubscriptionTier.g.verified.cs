@@ -18,17 +18,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1000")]
-        _1000,
+        x1000,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="2000")]
-        _2000,
+        x2000,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="3000")]
-        _3000,
+        x3000,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                UserSubscriptionTier._1000 => "1000",
-                UserSubscriptionTier._2000 => "2000",
-                UserSubscriptionTier._3000 => "3000",
+                UserSubscriptionTier.x1000 => "1000",
+                UserSubscriptionTier.x2000 => "2000",
+                UserSubscriptionTier.x3000 => "3000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "1000" => UserSubscriptionTier._1000,
-                "2000" => UserSubscriptionTier._2000,
-                "3000" => UserSubscriptionTier._3000,
+                "1000" => UserSubscriptionTier.x1000,
+                "2000" => UserSubscriptionTier.x2000,
+                "3000" => UserSubscriptionTier.x3000,
                 _ => null,
             };
         }
