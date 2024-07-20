@@ -71,6 +71,21 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Anthropic(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.anthropic_yaml.FileName,
+                text: H.Resources.anthropic_yaml.AsString())
+        ], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateJsonSerializerContextTypes"] = "true",
+        });
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Ollama(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
