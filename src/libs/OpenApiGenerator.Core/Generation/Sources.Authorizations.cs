@@ -10,9 +10,9 @@ public static partial class Sources
         Authorization authorization)
     {
         var methodName = $"AuthorizeUsing{authorization.Scheme.ToPropertyName()}";
-        var body = (authorization.Type, authorization.Scheme) switch
+        var body = (authorization.Type, authorization.Scheme, authorization.In) switch
         {
-            (SecuritySchemeType.Http, "bearer") => $@" 
+            (SecuritySchemeType.Http, "bearer", _) => $@" 
         /// <summary>
         /// Authorize using bearer authentication.
         /// </summary>
@@ -26,7 +26,7 @@ public static partial class Sources
                 scheme: ""Bearer"",
                 parameter: apiKey);
         }}",
-            (SecuritySchemeType.Http, "basic") => $@" 
+            (SecuritySchemeType.Http, "basic", _) => $@" 
         /// <summary>
         /// Authorize using basic authentication.
         /// </summary>
@@ -43,6 +43,19 @@ public static partial class Sources
                 scheme: ""Basic"",
                 parameter: global::System.Convert.ToBase64String(
                     global::System.Text.Encoding.UTF8.GetBytes($""{{username}}:{{password}}"")));
+        }}",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => $@" 
+        /// <summary>
+        /// Authorize using ApiKey authentication.
+        /// </summary>
+        /// <param name=""username""></param>
+        /// <param name=""password""></param>
+        public void AuthorizeUsingApiKey(
+            string apiKey)
+        {{
+            apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+
+            _httpClient.DefaultRequestHeaders.Add(""{authorization.Name}"", apiKey);
         }}",
             _ => " ",
         };

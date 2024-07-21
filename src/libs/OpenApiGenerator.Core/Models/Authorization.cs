@@ -4,6 +4,8 @@ namespace OpenApiGenerator.Core.Models;
 
 public readonly record struct Authorization(
     SecuritySchemeType Type,
+    ParameterLocation In,
+    string Name,
     string Scheme,
     Settings Settings
 )
@@ -13,10 +15,12 @@ public readonly record struct Authorization(
         Settings settings)
     {
         scheme = scheme ?? throw new ArgumentNullException(nameof(scheme));
-        
+
         return new Authorization(
             Type: scheme.Type,
-            Scheme: scheme.Scheme,
+            In: scheme.In,
+            Name: scheme.Name ?? string.Empty,
+            Scheme: scheme.Scheme ?? string.Empty,
             Settings: settings);
     }
 }
