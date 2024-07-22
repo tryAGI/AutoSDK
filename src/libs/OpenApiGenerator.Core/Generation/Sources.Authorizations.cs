@@ -48,8 +48,7 @@ public static partial class Sources
         /// <summary>
         /// Authorize using ApiKey authentication.
         /// </summary>
-        /// <param name=""username""></param>
-        /// <param name=""password""></param>
+        /// <param name=""apiKey""></param>
         public void AuthorizeUsingApiKey(
             string apiKey)
         {{
