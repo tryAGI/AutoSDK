@@ -1,15 +1,6 @@
 ﻿[
   {
     SubType: AnyOf,
-    Count: 3,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
-    Summary: ,
-    Properties: null
-  },
-  {
-    SubType: AnyOf,
     Count: 2,
     IsTrimming: false,
     Namespace: System,
@@ -19,7 +10,61 @@
   },
   {
     SubType: AnyOf,
+    Count: 3,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: AnyOf,
     Count: 4,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: AnyOf,
+    Count: 6,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: AnyOf,
+    Count: 5,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: OneOf,
+    Count: 3,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: AllOf,
+    Count: 1,
     IsTrimming: false,
     Namespace: System,
     Name: ,

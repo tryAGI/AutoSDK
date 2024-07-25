@@ -5,6 +5,7 @@ public enum MethodNamingConvention
     SimpleOperationId,
     MethodAndPath,
     OperationIdWithDots,
+    OperationIdSplit,
 }
 
 public static class MethodNamingConventionExtensions
@@ -16,6 +17,7 @@ public static class MethodNamingConventionExtensions
             MethodNamingConvention.SimpleOperationId => new SimpleOperationIdGenerator(),
             MethodNamingConvention.OperationIdWithDots => new OperationIdWithDotsGenerator(),
             MethodNamingConvention.MethodAndPath => new MethodAndPathGenerator(),
+            MethodNamingConvention.OperationIdSplit => new OperationIdSplitGenerator(),
             _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null),
         };
     }

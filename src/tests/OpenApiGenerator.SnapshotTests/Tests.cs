@@ -63,6 +63,8 @@ public partial class Tests
                 text: H.Resources.langsmith_yaml.AsString())
         ], new Dictionary<string, string>
         {
+            ["build_property.OpenApiGenerator_MethodNamingConvention"] = "OperationIdSplit",
+            ["build_property.OpenApiGenerator_ExcludeDeprecatedOperations"] = "true",
             //["build_property.OpenApiGenerator_JsonSerializerContext"] = "SourceGenerationContext",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         });

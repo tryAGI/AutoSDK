@@ -5,7 +5,6 @@
 namespace G
 {
     /// <summary>
-    /// From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -19,6 +18,136 @@ namespace G
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OrgsClient Orgs => new OrgsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AuthClient Auth => new AuthClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ExamplesClient Examples => new ExamplesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunClient Run => new RunClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FeedbackClient Feedback => new FeedbackClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PublicClient Public => new PublicClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant => new TenantClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InfoClient Info => new InfoClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PromptsClient Prompts => new PromptsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReposClient Repos => new ReposClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LikesClient Likes => new LikesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CommitsClient Commits => new CommitsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SettingsClient Settings => new SettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public EventsClient Events => new EventsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CommentsClient Comments => new CommentsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Creates a new instance of the Api.

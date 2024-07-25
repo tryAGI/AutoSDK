@@ -195,6 +195,7 @@ public readonly record struct TypeData(
                 ($"{children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpType}".AsArray(), true),
             
             (null, null)  => ("object", true),
+            ("null", _)  => ("object", true),
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
         };
 
@@ -256,6 +257,7 @@ public readonly record struct TypeData(
             ("array", _) when schema.Value.Items.Reference == null => (GetCSharpType(schema.Value.Items.WithKey(schema.Key), settings, parents.ToArray()).AsArray(), true),
             
             (null, null)  => ("object", true),
+            ("null", _)  => ("object", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
 

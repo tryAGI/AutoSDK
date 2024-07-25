@@ -1,0 +1,450 @@
+﻿[
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (16,47)-(16,79),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (17,47)-(17,77),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (22,47)-(22,82),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (22,94)-(22,129),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (33,43)-(33,75),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (34,43)-(34,73),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (39,43)-(39,78),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (39,90)-(39,125),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (83,43)-(83,75),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (84,43)-(84,73),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (89,43)-(89,78),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepos.g.cs: (89,90)-(89,125),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListReposApiV1ReposGetSortDirection' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (16,47)-(16,86),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (17,47)-(17,84),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (31,43)-(31,82),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (32,43)-(32,80),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (77,43)-(77,82),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsArchived' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0234,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ReposClient.ListRepoTags.g.cs: (78,43)-(78,80),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+    MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+    Message: The type or namespace name 'ListRepoTagsApiV1ReposTagsGetIsPublic' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0019,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ApiKeyClient.GenerateApiKey.g.cs: (34,22)-(34,96),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0019),
+    MessageFormat: Operator '{0}' cannot be applied to operands of type '{1}' and '{2}',
+    Message: Operator '??' cannot be applied to operands of type 'AllOf<APIKeyCreateRequest>' and '<throw expression>',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0019,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.ApiKeyClient.GeneratePersonalAccessToken.g.cs: (34,22)-(34,96),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0019),
+    MessageFormat: Operator '{0}' cannot be applied to operands of type '{1}' and '{2}',
+    Message: Operator '??' cannot be applied to operands of type 'AllOf<APIKeyCreateRequest>' and '<throw expression>',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.BodyParamsForRunSchema.g.cs: (130,84)-(130,90),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.RunDateOrder?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.BodyUploadCsvDatasetApiV1DatasetsUploadPost.g.cs: (34,83)-(34,87),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.DataType?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.Identity.g.cs: (64,89)-(64,100),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.AccessScope?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.MemberIdentity.g.cs: (64,89)-(64,100),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.AccessScope?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.OrgMemberIdentity.g.cs: (64,89)-(64,100),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.AccessScope?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.OrgPendingIdentity.g.cs: (58,89)-(58,100),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.AccessScope?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0029,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.PendingIdentity.g.cs: (58,89)-(58,100),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0029),
+    MessageFormat: Cannot implicitly convert type '{0}' to '{1}',
+    Message: Cannot implicitly convert type 'string' to 'System.AllOf<G.AccessScope?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0019,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.FeedbackClient.CreateFeedbackIngestToken.g.cs: (34,22)-(34,96),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0019),
+    MessageFormat: Operator '{0}' cannot be applied to operands of type '{1}' and '{2}',
+    Message: Operator '??' cannot be applied to operands of type 'AnyOf<FeedbackIngestTokenCreateSchema, IList<FeedbackIngestTokenCreateSchema>>' and '<throw expression>',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  }
+]

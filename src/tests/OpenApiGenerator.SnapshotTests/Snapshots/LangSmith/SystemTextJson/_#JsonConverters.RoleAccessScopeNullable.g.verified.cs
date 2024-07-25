@@ -1,0 +1,57 @@
+﻿//HintName: JsonConverters.RoleAccessScopeNullable.g.cs
+#nullable enable
+
+namespace OpenApiGenerator.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class RoleAccessScopeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RoleAccessScope?>
+    {
+        /// <inheritdoc />
+        public override global::G.RoleAccessScope? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.RoleAccessScopeExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.RoleAccessScope)numValue;
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.RoleAccessScope? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.RoleAccessScopeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}
