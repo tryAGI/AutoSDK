@@ -229,6 +229,7 @@ Update a run.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunUpdateSchemaExtended,
       IsArray: false,
@@ -1000,6 +1001,7 @@ Create a new run.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunCreateSchemaExtended,
       IsArray: false,
@@ -1185,6 +1187,7 @@ Create a new run.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

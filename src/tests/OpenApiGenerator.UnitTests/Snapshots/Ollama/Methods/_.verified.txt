@@ -36,6 +36,7 @@ This endpoint returns the version of the Ollama server.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -550,6 +551,7 @@ The final response object will include statistics and additional data from the r
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateCompletionRequest,
       IsArray: false,
@@ -967,6 +969,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateChatCompletionRequest,
       IsArray: false,
@@ -1298,6 +1301,7 @@ How long (in minutes) to keep the model loaded in memory.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateEmbeddingRequest,
       IsArray: false,
@@ -1605,6 +1609,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModelRequest,
       IsArray: false,
@@ -1744,6 +1749,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1851,6 +1857,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1996,6 +2003,7 @@ Example: llama3:8b,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModelInfoRequest,
       IsArray: false,
@@ -2209,6 +2217,7 @@ Example: llama3-backup,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CopyModelRequest,
       IsArray: false,
@@ -2356,6 +2365,7 @@ Example: llama3:13b,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.DeleteModelRequest,
       IsArray: false,
@@ -2637,6 +2647,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PullModelRequest,
       IsArray: false,
@@ -2953,6 +2964,7 @@ Requires registering for ollama.ai and adding a public key first.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PushModelRequest,
       IsArray: false,
@@ -3136,6 +3148,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3254,6 +3267,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: byte[],
       IsArray: false,
@@ -3482,6 +3496,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3590,6 +3605,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3672,6 +3688,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3754,6 +3771,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3836,6 +3854,7 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

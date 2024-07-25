@@ -855,6 +855,7 @@ A list of functions the model may generate JSON inputs for.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateChatCompletionRequest,
       IsArray: false,
@@ -1700,6 +1701,7 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateCompletionRequest,
       IsArray: false,
@@ -2187,6 +2189,7 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateImageRequest,
       IsArray: false,
@@ -2620,6 +2623,7 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateImageEditRequest,
       IsArray: false,
@@ -2989,6 +2993,7 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateImageVariationRequest,
       IsArray: false,
@@ -3312,6 +3317,7 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateEmbeddingRequest,
       IsArray: false,
@@ -3652,6 +3658,7 @@ Default Value: 1,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateSpeechRequest,
       IsArray: false,
@@ -4040,6 +4047,7 @@ Default Value: [segment],
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateTranscriptionRequest,
       IsArray: false,
@@ -4354,6 +4362,7 @@ Default Value: 0,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateTranslationRequest,
       IsArray: false,
@@ -4526,6 +4535,7 @@ Default Value: 0,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4725,6 +4735,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateFileRequest,
       IsArray: false,
@@ -4908,6 +4919,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5054,6 +5066,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5210,6 +5223,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5574,6 +5588,7 @@ Response includes details of the enqueued job including job status and the name 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateFineTuningJobRequest,
       IsArray: false,
@@ -5821,6 +5836,7 @@ List your organization's fine-tuning jobs
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5971,6 +5987,7 @@ Get info about a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6216,6 +6233,7 @@ Get status updates for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6363,6 +6381,7 @@ Immediately cancel a fine-tune job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6608,6 +6627,7 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6723,6 +6743,7 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6867,6 +6888,7 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7016,6 +7038,7 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7200,6 +7223,7 @@ Example: text-moderation-stable,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModerationRequest,
       IsArray: false,
@@ -7482,6 +7506,7 @@ Example: text-moderation-stable,
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7945,6 +7970,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateAssistantRequest,
       IsArray: false,
@@ -8153,6 +8179,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8664,6 +8691,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyAssistantRequest,
       IsArray: false,
@@ -8873,6 +8901,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9084,6 +9113,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateThreadRequest,
       IsArray: false,
@@ -9262,6 +9292,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9480,6 +9511,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyThreadRequest,
       IsArray: false,
@@ -9657,6 +9689,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9981,6 +10014,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10270,6 +10304,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateMessageRequest,
       IsArray: false,
@@ -10502,6 +10537,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10739,6 +10775,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyMessageRequest,
       IsArray: false,
@@ -10966,6 +11003,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11618,6 +11656,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateThreadAndRunRequest,
       IsArray: false,
@@ -12010,6 +12049,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12697,6 +12737,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRunRequest,
       IsArray: false,
@@ -12979,6 +13020,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13242,6 +13284,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyRunRequest,
       IsArray: false,
@@ -13561,6 +13604,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.SubmitToolOutputsRunRequest,
       IsArray: false,
@@ -13816,6 +13860,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14188,6 +14233,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14406,6 +14452,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14688,6 +14735,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14968,6 +15016,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreRequest,
       IsArray: false,
@@ -15162,6 +15211,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15424,6 +15474,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateVectorStoreRequest,
       IsArray: false,
@@ -15615,6 +15666,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15949,6 +16001,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16163,6 +16216,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileRequest,
       IsArray: false,
@@ -16379,6 +16433,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16570,6 +16625,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16780,6 +16836,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileBatchRequest,
       IsArray: false,
@@ -16992,6 +17049,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17179,6 +17237,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17553,6 +17612,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17813,6 +17873,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateBatchRequest,
       IsArray: false,
@@ -18048,6 +18109,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18198,6 +18260,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18379,6 +18442,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18897,6 +18961,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19415,6 +19480,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19497,6 +19563,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19579,6 +19646,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19661,6 +19729,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19743,6 +19812,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19825,6 +19895,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19907,6 +19978,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19989,6 +20061,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20071,6 +20144,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20153,6 +20227,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20235,6 +20310,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20317,6 +20393,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

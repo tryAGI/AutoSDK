@@ -69,6 +69,7 @@
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -196,6 +197,7 @@
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -340,6 +342,7 @@
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -480,6 +483,7 @@
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

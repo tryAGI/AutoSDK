@@ -57,6 +57,7 @@ The response will be a JSON object describing the account:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -186,6 +187,7 @@ The response will be a paginated JSON list of collection objects:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -324,6 +326,7 @@ The response will be a collection object with a nested list of the models in tha
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -450,6 +453,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -789,6 +793,7 @@ The response will be a JSON object describing the deployment:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateDeploymentsRequest,
       IsArray: false,
@@ -1000,6 +1005,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1189,6 +1195,7 @@ The response will be a JSON object describing the deployment:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1529,6 +1536,7 @@ Updating any deployment properties will increment the `number` field of the `cur
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateDeploymentsRequest,
       IsArray: false,
@@ -1940,6 +1948,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -2074,6 +2083,7 @@ The response will be a JSON array of hardware objects:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2221,6 +2231,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2623,6 +2634,7 @@ The response will be a model object in the following format:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModelsRequest,
       IsArray: false,
@@ -2816,6 +2828,7 @@ The response will be an empty 204, indicating the model has been deleted.
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3007,6 +3020,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3377,6 +3391,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -3586,6 +3601,7 @@ The response will be a JSON array of model version objects, sorted with the most
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3795,6 +3811,7 @@ The response will be an empty 202, indicating the deletion request has been acce
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4034,6 +4051,7 @@ For more details, see the docs on [Cog's supported input and output types](https
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4423,6 +4441,7 @@ To find some models to train on, check out the [trainable language models collec
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TrainingRequest,
       IsArray: false,
@@ -4593,6 +4612,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4928,6 +4948,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.VersionPredictionRequest,
       IsArray: false,
@@ -5135,6 +5156,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5254,6 +5276,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5394,6 +5417,7 @@ The response will be a paginated JSON array of training objects, sorted with the
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5567,6 +5591,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5686,6 +5711,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5788,6 +5814,7 @@ The response will be a JSON object with a `key` property:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5892,6 +5919,7 @@ The response will be a JSON object with a `key` property:
       FromCli: false
     },
     IsDeprecated: false,
+    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
