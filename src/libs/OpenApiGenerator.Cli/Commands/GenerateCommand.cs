@@ -30,10 +30,18 @@ public class GenerateCommand : Command
             aliases: ["--clientClassName", "-c"],
             getDefaultValue: () => string.Empty,
             description: "Client class name");
+        var methodNamingConventionOption = new Option<MethodNamingConvention>(
+            aliases: ["--methodNamingConvention", "-m"],
+            getDefaultValue: () => MethodNamingConvention.MethodAndPath,
+            description: "Method Naming Convention");
         var singleFileOption = new Option<bool>(
             aliases: ["--single-file", "-s"],
             getDefaultValue: () => false,
             description: "Generate all models in a single file");
+        var excludeDeprecatedOption = new Option<bool>(
+            aliases: ["--exclude-deprecated-operations", "-e"],
+            getDefaultValue: () => false,
+            description: "Exclude deprecated operations");
         var clsCompliantEnumPrefixOption = new Option<string>(
             aliases: ["--clsCompliantEnumPrefix"],
             getDefaultValue: () => "x",
@@ -43,7 +51,9 @@ public class GenerateCommand : Command
         AddOption(targetFrameworkOption);
         AddOption(namespaceOption);
         AddOption(clientClassNameOption);
+        AddOption(methodNamingConventionOption);
         AddOption(singleFileOption);
+        AddOption(excludeDeprecatedOption);
         AddOption(clsCompliantEnumPrefixOption);
 
         this.SetHandler(
@@ -54,6 +64,7 @@ public class GenerateCommand : Command
             namespaceOption,
             clientClassNameOption,
             singleFileOption,
+            excludeDeprecatedOption,
             clsCompliantEnumPrefixOption);
     }
 
@@ -64,6 +75,7 @@ public class GenerateCommand : Command
         string @namespace,
         string clientClassName,
         bool generateAsSingleFile,
+        bool excludeDeprecatedOperations,
         string clsCompliantEnumPrefix)
     {
         Console.WriteLine($"Loading {inputPath}...");
@@ -105,6 +117,7 @@ public class GenerateCommand : Command
             ExcludeOperationIds: [],
             IncludeTags: [],
             ExcludeTags: [],
+            ExcludeDeprecatedOperations: excludeDeprecatedOperations,
             JsonSerializerContext: $"{@namespace}.SourceGenerationContext",
             GenerateJsonSerializerContextTypes: true,
             GenerateModels: false,

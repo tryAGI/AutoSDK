@@ -32,6 +32,7 @@ public partial class DataTests : VerifyBase
         ModelStyle: default,
         IncludeModels: [],
         ExcludeModels: [],
+        ExcludeDeprecatedOperations: false,
         GeneratePolyfills: true,
         GenerateSdk: true,
         FromCli: false

@@ -141,6 +141,11 @@ public static class Data
                 path.Value.Operations
                     .Where(x =>
                     {
+                        if (settings.ExcludeDeprecatedOperations &&
+                            x.Value.Deprecated)
+                        {
+                            return false;
+                        }
                         if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
                         {
                             return true;

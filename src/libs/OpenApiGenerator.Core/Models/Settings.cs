@@ -24,6 +24,7 @@ public readonly record struct Settings(
     ImmutableArray<string> ExcludeOperationIds,
     ImmutableArray<string> IncludeTags,
     ImmutableArray<string> ExcludeTags,
+    bool ExcludeDeprecatedOperations,
     string JsonSerializerContext,
     bool GenerateJsonSerializerContextTypes,
     
