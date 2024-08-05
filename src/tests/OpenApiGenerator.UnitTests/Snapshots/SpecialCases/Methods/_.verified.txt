@@ -71,7 +71,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -161,6 +160,7 @@
     Converters: null,
     MethodName: ListPetsAsync,
     NotAsyncMethodName: ListPets,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListPets
   },
   {
@@ -201,7 +201,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -274,6 +273,7 @@
     Converters: null,
     MethodName: CreatePetsAsync,
     NotAsyncMethodName: CreatePets,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreatePets
   },
   {
@@ -348,7 +348,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -452,6 +451,7 @@
     Converters: null,
     MethodName: ShowPetByIdAsync,
     NotAsyncMethodName: ShowPetById,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ShowPetById
   },
   {
@@ -491,7 +491,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -537,6 +536,7 @@
     Converters: null,
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   }
 ]

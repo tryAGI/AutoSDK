@@ -19,7 +19,6 @@ public readonly record struct EndPoint(
     string BaseUrlSummary,
     Settings Settings,
     bool IsDeprecated,
-    bool IsMultipartFormData,
     TypeData RequestType,
     TypeData ResponseType,
     ImmutableArray<ModelData> AdditionalModels,
@@ -29,6 +28,7 @@ public readonly record struct EndPoint(
 {
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
+    public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
     
     public string FileNameWithoutExtension => string.IsNullOrWhiteSpace(Path)
         ? $"{Namespace}.{ClassName}"
@@ -212,8 +212,6 @@ public readonly record struct EndPoint(
             BaseUrlSummary: string.Empty,
             Settings: settings,
             IsDeprecated: operation.Value.Deprecated,
-            IsMultipartFormData: operation.Value.RequestBody?.ResolveIfRequired().Content
-                .Any(x => x.Key.Contains("multipart/form-data")) == true,
             RequestType: requestType ?? TypeData.Default,
             ResponseType: responseType ?? TypeData.Default,
             AdditionalModels: [

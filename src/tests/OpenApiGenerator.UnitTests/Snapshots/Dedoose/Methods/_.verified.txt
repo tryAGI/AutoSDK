@@ -105,7 +105,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -212,6 +211,7 @@
     Converters: null,
     MethodName: AccountDisableRecurringPaymentAsync,
     NotAsyncMethodName: AccountDisableRecurringPayment,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountDisableRecurringPayment
   },
   {
@@ -286,7 +286,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -401,6 +400,7 @@
     Converters: null,
     MethodName: AccountGetAccountBillingLogsForCurrentUserAsync,
     NotAsyncMethodName: AccountGetAccountBillingLogsForCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetAccountBillingLogsForCurrentUser
   },
   {
@@ -475,7 +475,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -588,6 +587,7 @@
     Converters: null,
     MethodName: AccountGetAccountDetailsForCurrentUserAsync,
     NotAsyncMethodName: AccountGetAccountDetailsForCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetAccountDetailsForCurrentUser
   },
   {
@@ -662,7 +662,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -769,6 +768,7 @@
     Converters: null,
     MethodName: AccountGetAccountForCurrentUserAsync,
     NotAsyncMethodName: AccountGetAccountForCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetAccountForCurrentUser
   },
   {
@@ -877,7 +877,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -984,6 +983,7 @@
     Converters: null,
     MethodName: AccountGetAccountProjectInfoJobResponseAsync,
     NotAsyncMethodName: AccountGetAccountProjectInfoJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetAccountProjectInfoJobResponse
   },
   {
@@ -1092,7 +1092,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1199,6 +1198,7 @@
     Converters: null,
     MethodName: AccountGetExportStorageMetricsJobIdAsync,
     NotAsyncMethodName: AccountGetExportStorageMetricsJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetExportStorageMetricsJobId
   },
   {
@@ -1307,7 +1307,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1414,6 +1413,7 @@
     Converters: null,
     MethodName: AccountGetProjectAccessDetailsForUserAsync,
     NotAsyncMethodName: AccountGetProjectAccessDetailsForUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetProjectAccessDetailsForUser
   },
   {
@@ -1556,7 +1556,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1663,6 +1662,7 @@
     Converters: null,
     MethodName: AccountGrantAdminAsync,
     NotAsyncMethodName: AccountGrantAdmin,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGrantAdmin
   },
   {
@@ -1771,7 +1771,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1922,6 +1921,7 @@
     Converters: null,
     MethodName: AccountRemoveUserFromCurrentAccountAsync,
     NotAsyncMethodName: AccountRemoveUserFromCurrentAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountRemoveUserFromCurrentAccount
   },
   {
@@ -2064,7 +2064,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2171,6 +2170,7 @@
     Converters: null,
     MethodName: AccountRevokeAdminAsync,
     NotAsyncMethodName: AccountRevokeAdmin,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountRevokeAdmin
   },
   {
@@ -2347,7 +2347,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2454,6 +2453,7 @@
     Converters: null,
     MethodName: AccountSendPaymentReceiptAsync,
     NotAsyncMethodName: AccountSendPaymentReceipt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountSendPaymentReceipt
   },
   {
@@ -2562,7 +2562,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2669,6 +2668,7 @@
     Converters: null,
     MethodName: AccountStartExportAccountChargesJobAsync,
     NotAsyncMethodName: AccountStartExportAccountChargesJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountStartExportAccountChargesJob
   },
   {
@@ -2777,7 +2777,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2884,6 +2883,7 @@
     Converters: null,
     MethodName: AccountStartExportAccountPaymentsJobAsync,
     NotAsyncMethodName: AccountStartExportAccountPaymentsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountStartExportAccountPaymentsJob
   },
   {
@@ -2992,7 +2992,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3099,6 +3098,7 @@
     Converters: null,
     MethodName: AccountStartExportAccountProjectSummaryJobAsync,
     NotAsyncMethodName: AccountStartExportAccountProjectSummaryJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountStartExportAccountProjectSummaryJob
   },
   {
@@ -3207,7 +3207,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3314,6 +3313,7 @@
     Converters: null,
     MethodName: AccountStartGetAccountProjectInfoJobAsync,
     NotAsyncMethodName: AccountStartGetAccountProjectInfoJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountStartGetAccountProjectInfoJob
   },
   {
@@ -3762,7 +3762,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3923,6 +3922,7 @@
     Converters: null,
     MethodName: AccountUpdateAccountPWPolicyAsync,
     NotAsyncMethodName: AccountUpdateAccountPWPolicy,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountUpdateAccountPWPolicy
   },
   {
@@ -4201,7 +4201,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4352,6 +4351,7 @@
     Converters: null,
     MethodName: AccountUpdateAccountUserAsync,
     NotAsyncMethodName: AccountUpdateAccountUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountUpdateAccountUser
   },
   {
@@ -4528,7 +4528,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4635,6 +4634,7 @@
     Converters: null,
     MethodName: AdminAddCreditsToAccountAsync,
     NotAsyncMethodName: AdminAddCreditsToAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminAddCreditsToAccount
   },
   {
@@ -4811,7 +4811,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4918,6 +4917,7 @@
     Converters: null,
     MethodName: AdminAddGroupToProjectAsync,
     NotAsyncMethodName: AdminAddGroupToProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminAddGroupToProject
   },
   {
@@ -5230,7 +5230,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5337,6 +5336,7 @@
     Converters: null,
     MethodName: AdminAddNewUserToAccountAsync,
     NotAsyncMethodName: AdminAddNewUserToAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminAddNewUserToAccount
   },
   {
@@ -5479,7 +5479,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5586,6 +5585,7 @@
     Converters: null,
     MethodName: AdminAddUserToAccountAsync,
     NotAsyncMethodName: AdminAddUserToAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminAddUserToAccount
   },
   {
@@ -5762,7 +5762,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5869,6 +5868,7 @@
     Converters: null,
     MethodName: AdminAddUserToGroupAsync,
     NotAsyncMethodName: AdminAddUserToGroup,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminAddUserToGroup
   },
   {
@@ -6011,7 +6011,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6118,6 +6117,7 @@
     Converters: null,
     MethodName: AdminCreateAccountAsync,
     NotAsyncMethodName: AdminCreateAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminCreateAccount
   },
   {
@@ -6226,7 +6226,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6333,6 +6332,7 @@
     Converters: null,
     MethodName: AdminGetAccountTransactionsAsync,
     NotAsyncMethodName: AdminGetAccountTransactions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetAccountTransactions
   },
   {
@@ -6407,7 +6407,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6514,6 +6513,7 @@
     Converters: null,
     MethodName: AdminGetActiveUserInfosAsync,
     NotAsyncMethodName: AdminGetActiveUserInfos,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetActiveUserInfos
   },
   {
@@ -6588,7 +6588,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6695,6 +6694,7 @@
     Converters: null,
     MethodName: AdminGetActivityMetricsAsync,
     NotAsyncMethodName: AdminGetActivityMetrics,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetActivityMetrics
   },
   {
@@ -6837,7 +6837,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6944,6 +6943,7 @@
     Converters: null,
     MethodName: AdminGetFilteredProjectsAsync,
     NotAsyncMethodName: AdminGetFilteredProjects,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetFilteredProjects
   },
   {
@@ -7086,7 +7086,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7193,6 +7192,7 @@
     Converters: null,
     MethodName: AdminGetFilteredProjectsAndUsersAsync,
     NotAsyncMethodName: AdminGetFilteredProjectsAndUsers,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetFilteredProjectsAndUsers
   },
   {
@@ -7335,7 +7335,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7442,6 +7441,7 @@
     Converters: null,
     MethodName: AdminGetFilteredUsersAsync,
     NotAsyncMethodName: AdminGetFilteredUsers,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetFilteredUsers
   },
   {
@@ -7550,7 +7550,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7657,6 +7656,7 @@
     Converters: null,
     MethodName: AdminGetMergeStatusAsync,
     NotAsyncMethodName: AdminGetMergeStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetMergeStatus
   },
   {
@@ -7765,7 +7765,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7872,6 +7871,7 @@
     Converters: null,
     MethodName: AdminGetProjectSecurityInfoAsync,
     NotAsyncMethodName: AdminGetProjectSecurityInfo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetProjectSecurityInfo
   },
   {
@@ -7946,7 +7946,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8053,6 +8052,7 @@
     Converters: null,
     MethodName: AdminGetRevenueSegmentsAsync,
     NotAsyncMethodName: AdminGetRevenueSegments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetRevenueSegments
   },
   {
@@ -8127,7 +8127,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8234,6 +8233,7 @@
     Converters: null,
     MethodName: AdminGetSignupSegmentsAsync,
     NotAsyncMethodName: AdminGetSignupSegments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetSignupSegments
   },
   {
@@ -8342,7 +8342,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8449,6 +8448,7 @@
     Converters: null,
     MethodName: AdminGetUserFullDetailsByUserAsync,
     NotAsyncMethodName: AdminGetUserFullDetailsByUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminGetUserFullDetailsByUser
   },
   {
@@ -8727,7 +8727,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8834,6 +8833,7 @@
     Converters: null,
     MethodName: AdminMergeProjectsAsync,
     NotAsyncMethodName: AdminMergeProjects,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminMergeProjects
   },
   {
@@ -8976,7 +8976,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9083,6 +9082,7 @@
     Converters: null,
     MethodName: AdminMigrateUserToAccountAsync,
     NotAsyncMethodName: AdminMigrateUserToAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminMigrateUserToAccount
   },
   {
@@ -9191,7 +9191,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9298,6 +9297,7 @@
     Converters: null,
     MethodName: AdminOverrideVerifyAsync,
     NotAsyncMethodName: AdminOverrideVerify,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminOverrideVerify
   },
   {
@@ -9474,7 +9474,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9581,6 +9580,7 @@
     Converters: null,
     MethodName: AdminProcessPaymentAsync,
     NotAsyncMethodName: AdminProcessPayment,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminProcessPayment
   },
   {
@@ -9723,7 +9723,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9830,6 +9829,7 @@
     Converters: null,
     MethodName: AdminSendAllClientsMessageAsync,
     NotAsyncMethodName: AdminSendAllClientsMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSendAllClientsMessage
   },
   {
@@ -10006,7 +10006,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10113,6 +10112,7 @@
     Converters: null,
     MethodName: AdminSetAccountCPUPMOverrideAsync,
     NotAsyncMethodName: AdminSetAccountCPUPMOverride,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSetAccountCPUPMOverride
   },
   {
@@ -10221,7 +10221,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10328,6 +10327,7 @@
     Converters: null,
     MethodName: AdminSetAccountGroupDiscountAsync,
     NotAsyncMethodName: AdminSetAccountGroupDiscount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSetAccountGroupDiscount
   },
   {
@@ -10436,7 +10436,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10543,6 +10542,7 @@
     Converters: null,
     MethodName: AdminSetAccountStudentDiscountAsync,
     NotAsyncMethodName: AdminSetAccountStudentDiscount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSetAccountStudentDiscount
   },
   {
@@ -10719,7 +10719,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10826,6 +10825,7 @@
     Converters: null,
     MethodName: AdminSetAccountUserAdminStatusAsync,
     NotAsyncMethodName: AdminSetAccountUserAdminStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSetAccountUserAdminStatus
   },
   {
@@ -10968,7 +10968,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11075,6 +11074,7 @@
     Converters: null,
     MethodName: AdminSetUserPasswordAsync,
     NotAsyncMethodName: AdminSetUserPassword,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSetUserPassword
   },
   {
@@ -11183,7 +11183,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11290,6 +11289,7 @@
     Converters: null,
     MethodName: AdminStartAddDemoProjectAsync,
     NotAsyncMethodName: AdminStartAddDemoProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminStartAddDemoProject
   },
   {
@@ -11364,7 +11364,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11471,6 +11470,7 @@
     Converters: null,
     MethodName: AdminStartExportAccountsJobAsync,
     NotAsyncMethodName: AdminStartExportAccountsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminStartExportAccountsJob
   },
   {
@@ -11545,7 +11545,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11652,6 +11651,7 @@
     Converters: null,
     MethodName: AdminStartExportUsersJobAsync,
     NotAsyncMethodName: AdminStartExportUsersJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminStartExportUsersJob
   },
   {
@@ -12270,7 +12270,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12377,6 +12376,7 @@
     Converters: null,
     MethodName: AdminSubmitPaymentAsync,
     NotAsyncMethodName: AdminSubmitPayment,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminSubmitPayment
   },
   {
@@ -12519,7 +12519,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12626,6 +12625,7 @@
     Converters: null,
     MethodName: AdminUnlinkUserFromProjectAsync,
     NotAsyncMethodName: AdminUnlinkUserFromProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminUnlinkUserFromProject
   },
   {
@@ -12802,7 +12802,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12909,6 +12908,7 @@
     Converters: null,
     MethodName: AdminUpdateProjectAsync,
     NotAsyncMethodName: AdminUpdateProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminUpdateProject
   },
   {
@@ -13187,7 +13187,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13294,6 +13293,7 @@
     Converters: null,
     MethodName: AdminUpdateUserGroupAsync,
     NotAsyncMethodName: AdminUpdateUserGroup,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminUpdateUserGroup
   },
   {
@@ -13504,7 +13504,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13611,6 +13610,7 @@
     Converters: null,
     MethodName: AdminUpdateUserInfoAsync,
     NotAsyncMethodName: AdminUpdateUserInfo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient.AdminUpdateUserInfo
   },
   {
@@ -13821,7 +13821,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13928,6 +13927,7 @@
     Converters: null,
     MethodName: ChatGetChatMessagesAsync,
     NotAsyncMethodName: ChatGetChatMessages,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient.ChatGetChatMessages
   },
   {
@@ -14036,7 +14036,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14143,6 +14142,7 @@
     Converters: null,
     MethodName: ChatGetProjectChatUsersAsync,
     NotAsyncMethodName: ChatGetProjectChatUsers,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient.ChatGetProjectChatUsers
   },
   {
@@ -14319,7 +14319,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14440,6 +14439,7 @@
     Converters: null,
     MethodName: ChatSubmitProjectChatMessageAsync,
     NotAsyncMethodName: ChatSubmitProjectChatMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient.ChatSubmitProjectChatMessage
   },
   {
@@ -15024,7 +15024,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15159,6 +15158,7 @@
     Converters: null,
     MethodName: DataSetAddDataSetAsync,
     NotAsyncMethodName: DataSetAddDataSet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DataSetClient.DataSetAddDataSet
   },
   {
@@ -15845,7 +15845,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15980,6 +15979,7 @@
     Converters: null,
     MethodName: DataSetDeleteDataSetAsync,
     NotAsyncMethodName: DataSetDeleteDataSet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DataSetClient.DataSetDeleteDataSet
   },
   {
@@ -16088,7 +16088,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16195,6 +16194,7 @@
     Converters: null,
     MethodName: DataSetGetDataSetsByProjectAsync,
     NotAsyncMethodName: DataSetGetDataSetsByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DataSetClient.DataSetGetDataSetsByProject
   },
   {
@@ -16881,7 +16881,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17016,6 +17015,7 @@
     Converters: null,
     MethodName: DataSetUpdateDataSetAsync,
     NotAsyncMethodName: DataSetUpdateDataSet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DataSetClient.DataSetUpdateDataSet
   },
   {
@@ -17193,7 +17193,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.FieldValueDTO>,
       IsArray: true,
@@ -17366,6 +17365,7 @@
     Converters: null,
     MethodName: DescriptorAddDescriptorAsync,
     NotAsyncMethodName: DescriptorAddDescriptor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddDescriptor
   },
   {
@@ -17645,7 +17645,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.FieldOptionVO>,
       IsArray: true,
@@ -17818,6 +17817,7 @@
     Converters: null,
     MethodName: DescriptorAddDescriptorFieldAsync,
     NotAsyncMethodName: DescriptorAddDescriptorField,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddDescriptorField
   },
   {
@@ -18028,7 +18028,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18135,6 +18134,7 @@
     Converters: null,
     MethodName: DescriptorAddDescriptorLinkAsync,
     NotAsyncMethodName: DescriptorAddDescriptorLink,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddDescriptorLink
   },
   {
@@ -18345,7 +18345,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18470,6 +18469,7 @@
     Converters: null,
     MethodName: DescriptorAddDescriptorSetAsync,
     NotAsyncMethodName: DescriptorAddDescriptorSet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddDescriptorSet
   },
   {
@@ -18782,7 +18782,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18889,6 +18888,7 @@
     Converters: null,
     MethodName: DescriptorAddDynamicValueAsync,
     NotAsyncMethodName: DescriptorAddDynamicValue,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddDynamicValue
   },
   {
@@ -19031,7 +19031,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19138,6 +19137,7 @@
     Converters: null,
     MethodName: DescriptorAddLinksAsync,
     NotAsyncMethodName: DescriptorAddLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddLinks
   },
   {
@@ -19382,7 +19382,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19489,6 +19488,7 @@
     Converters: null,
     MethodName: DescriptorAddOrUpdateDynamicValuesAsync,
     NotAsyncMethodName: DescriptorAddOrUpdateDynamicValues,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorAddOrUpdateDynamicValues
   },
   {
@@ -19869,7 +19869,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19996,6 +19995,7 @@
     Converters: null,
     MethodName: DescriptorDeleteDescriptorAsync,
     NotAsyncMethodName: DescriptorDeleteDescriptor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorDeleteDescriptor
   },
   {
@@ -20410,7 +20410,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20539,6 +20538,7 @@
     Converters: null,
     MethodName: DescriptorDeleteDescriptorFieldAsync,
     NotAsyncMethodName: DescriptorDeleteDescriptorField,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorDeleteDescriptorField
   },
   {
@@ -20681,7 +20681,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20788,6 +20787,7 @@
     Converters: null,
     MethodName: DescriptorDeleteDescriptorsAsync,
     NotAsyncMethodName: DescriptorDeleteDescriptors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorDeleteDescriptors
   },
   {
@@ -20964,7 +20964,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21071,6 +21070,7 @@
     Converters: null,
     MethodName: DescriptorDeleteLinkAsync,
     NotAsyncMethodName: DescriptorDeleteLink,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorDeleteLink
   },
   {
@@ -21213,7 +21213,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21320,6 +21319,7 @@
     Converters: null,
     MethodName: DescriptorForceDeleteDescriptorSetPolledAsync,
     NotAsyncMethodName: DescriptorForceDeleteDescriptorSetPolled,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorForceDeleteDescriptorSetPolled
   },
   {
@@ -21428,7 +21428,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21535,6 +21534,7 @@
     Converters: null,
     MethodName: DescriptorGetConvertFieldTypeJobResponseAsync,
     NotAsyncMethodName: DescriptorGetConvertFieldTypeJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetConvertFieldTypeJobResponse
   },
   {
@@ -21643,7 +21643,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21750,6 +21749,7 @@
     Converters: null,
     MethodName: DescriptorGetDesDataFromFileJobResultAsync,
     NotAsyncMethodName: DescriptorGetDesDataFromFileJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetDesDataFromFileJobResult
   },
   {
@@ -21858,7 +21858,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21965,6 +21964,7 @@
     Converters: null,
     MethodName: DescriptorGetDesFieldImportDataFromFileAsync,
     NotAsyncMethodName: DescriptorGetDesFieldImportDataFromFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetDesFieldImportDataFromFile
   },
   {
@@ -22073,7 +22073,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22180,6 +22179,7 @@
     Converters: null,
     MethodName: DescriptorGetDynamicValuesByProjectIdAsync,
     NotAsyncMethodName: DescriptorGetDynamicValuesByProjectId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetDynamicValuesByProjectId
   },
   {
@@ -22356,7 +22356,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22463,6 +22462,7 @@
     Converters: null,
     MethodName: DescriptorGetProjectDescriptorFieldValuesAsync,
     NotAsyncMethodName: DescriptorGetProjectDescriptorFieldValues,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetProjectDescriptorFieldValues
   },
   {
@@ -22571,7 +22571,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22678,6 +22677,7 @@
     Converters: null,
     MethodName: DescriptorGetProjectDescriptorLinksAsync,
     NotAsyncMethodName: DescriptorGetProjectDescriptorLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetProjectDescriptorLinks
   },
   {
@@ -22786,7 +22786,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22901,6 +22900,7 @@
     Converters: null,
     MethodName: DescriptorGetProjectDescriptorPropsAsync,
     NotAsyncMethodName: DescriptorGetProjectDescriptorProps,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetProjectDescriptorProps
   },
   {
@@ -23077,7 +23077,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23184,6 +23183,7 @@
     Converters: null,
     MethodName: DescriptorGetProjectDescriptorsPagedAsync,
     NotAsyncMethodName: DescriptorGetProjectDescriptorsPaged,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetProjectDescriptorsPaged
   },
   {
@@ -23326,7 +23326,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23433,6 +23432,7 @@
     Converters: null,
     MethodName: DescriptorGetResourceLinksAsync,
     NotAsyncMethodName: DescriptorGetResourceLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorGetResourceLinks
   },
   {
@@ -23677,7 +23677,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23784,6 +23783,7 @@
     Converters: null,
     MethodName: DescriptorImportFieldsAsync,
     NotAsyncMethodName: DescriptorImportFields,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorImportFields
   },
   {
@@ -23892,7 +23892,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23999,6 +23998,7 @@
     Converters: null,
     MethodName: DescriptorIsForceDeleteDescriptorSetPolledCompleteAsync,
     NotAsyncMethodName: DescriptorIsForceDeleteDescriptorSetPolledComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorIsForceDeleteDescriptorSetPolledComplete
   },
   {
@@ -24209,7 +24209,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -24316,6 +24315,7 @@
     Converters: null,
     MethodName: DescriptorStartConvertFieldTypeJobAsync,
     NotAsyncMethodName: DescriptorStartConvertFieldTypeJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorStartConvertFieldTypeJob
   },
   {
@@ -24526,7 +24526,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -24633,6 +24632,7 @@
     Converters: null,
     MethodName: DescriptorStartExportDescriptorsJobAsync,
     NotAsyncMethodName: DescriptorStartExportDescriptorsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorStartExportDescriptorsJob
   },
   {
@@ -24809,7 +24809,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -24916,6 +24915,7 @@
     Converters: null,
     MethodName: DescriptorStartExportFieldsJobAsync,
     NotAsyncMethodName: DescriptorStartExportFieldsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorStartExportFieldsJob
   },
   {
@@ -25092,7 +25092,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -25199,6 +25198,7 @@
     Converters: null,
     MethodName: DescriptorStartGetDesDataFromFileJobAsync,
     NotAsyncMethodName: DescriptorStartGetDesDataFromFileJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorStartGetDesDataFromFileJob
   },
   {
@@ -25409,7 +25409,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -25516,6 +25515,7 @@
     Converters: null,
     MethodName: DescriptorStartImportDescriptorsJobAsync,
     NotAsyncMethodName: DescriptorStartImportDescriptorsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorStartImportDescriptorsJob
   },
   {
@@ -25862,7 +25862,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -25987,6 +25986,7 @@
     Converters: null,
     MethodName: DescriptorUpdateDescriptorSetAsync,
     NotAsyncMethodName: DescriptorUpdateDescriptorSet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorUpdateDescriptorSet
   },
   {
@@ -26232,7 +26232,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.FieldOptionVO>,
       IsArray: true,
@@ -26405,6 +26404,7 @@
     Converters: null,
     MethodName: DescriptorUpdateFieldAndOptionsAsync,
     NotAsyncMethodName: DescriptorUpdateFieldAndOptions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorUpdateFieldAndOptions
   },
   {
@@ -26547,7 +26547,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -26654,6 +26653,7 @@
     Converters: null,
     MethodName: DescriptorUpdateFieldOrdersAsync,
     NotAsyncMethodName: DescriptorUpdateFieldOrders,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorUpdateFieldOrders
   },
   {
@@ -26796,7 +26796,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -26903,6 +26902,7 @@
     Converters: null,
     MethodName: DescriptorUpdateValuesAsync,
     NotAsyncMethodName: DescriptorUpdateValues,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient.DescriptorUpdateValues
   },
   {
@@ -27215,7 +27215,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -27322,6 +27321,7 @@
     Converters: null,
     MethodName: ErrorProcessUIErrorAsync,
     NotAsyncMethodName: ErrorProcessUIError,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ErrorClient.ErrorProcessUIError
   },
   {
@@ -27702,7 +27702,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -27815,6 +27814,7 @@
     Converters: null,
     MethodName: ExcerptAddDocumentExcerptWithTagsAsync,
     NotAsyncMethodName: ExcerptAddDocumentExcerptWithTags,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddDocumentExcerptWithTags
   },
   {
@@ -28093,7 +28093,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -28206,6 +28205,7 @@
     Converters: null,
     MethodName: ExcerptAddImageExcerptAsync,
     NotAsyncMethodName: ExcerptAddImageExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddImageExcerpt
   },
   {
@@ -28484,7 +28484,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -28597,6 +28596,7 @@
     Converters: null,
     MethodName: ExcerptAddPDFImageExcerptAsync,
     NotAsyncMethodName: ExcerptAddPDFImageExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddPDFImageExcerpt
   },
   {
@@ -28875,7 +28875,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -28988,6 +28987,7 @@
     Converters: null,
     MethodName: ExcerptAddPDFSwfImageExcerptAsync,
     NotAsyncMethodName: ExcerptAddPDFSwfImageExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddPDFSwfImageExcerpt
   },
   {
@@ -29334,7 +29334,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -29447,6 +29446,7 @@
     Converters: null,
     MethodName: ExcerptAddPDFSwfTextExcerptAsync,
     NotAsyncMethodName: ExcerptAddPDFSwfTextExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddPDFSwfTextExcerpt
   },
   {
@@ -29725,7 +29725,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -29838,6 +29837,7 @@
     Converters: null,
     MethodName: ExcerptAddVideoExcerptAsync,
     NotAsyncMethodName: ExcerptAddVideoExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptAddVideoExcerpt
   },
   {
@@ -29980,7 +29980,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30117,6 +30116,7 @@
     Converters: null,
     MethodName: ExcerptDeleteExcerptAsync,
     NotAsyncMethodName: ExcerptDeleteExcerpt,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptDeleteExcerpt
   },
   {
@@ -30293,7 +30293,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30400,6 +30399,7 @@
     Converters: null,
     MethodName: ExcerptGetExcerptsByProjectIdAsync,
     NotAsyncMethodName: ExcerptGetExcerptsByProjectId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptGetExcerptsByProjectId
   },
   {
@@ -30508,7 +30508,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30615,6 +30614,7 @@
     Converters: null,
     MethodName: ExcerptGetSearchExcerptsJobResultsAsync,
     NotAsyncMethodName: ExcerptGetSearchExcerptsJobResults,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptGetSearchExcerptsJobResults
   },
   {
@@ -30723,7 +30723,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30830,6 +30829,7 @@
     Converters: null,
     MethodName: ExcerptIsDeleteExcerptsJobCompleteAsync,
     NotAsyncMethodName: ExcerptIsDeleteExcerptsJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptIsDeleteExcerptsJobComplete
   },
   {
@@ -30972,7 +30972,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -31079,6 +31078,7 @@
     Converters: null,
     MethodName: ExcerptStartDeleteExcerptsJobAsync,
     NotAsyncMethodName: ExcerptStartDeleteExcerptsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptStartDeleteExcerptsJob
   },
   {
@@ -31221,7 +31221,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -31328,6 +31327,7 @@
     Converters: null,
     MethodName: ExcerptStartSearchExcerptsJobAsync,
     NotAsyncMethodName: ExcerptStartSearchExcerptsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptStartSearchExcerptsJob
   },
   {
@@ -31606,7 +31606,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -31743,6 +31742,7 @@
     Converters: null,
     MethodName: ExcerptUpdateExcerptRangeAsync,
     NotAsyncMethodName: ExcerptUpdateExcerptRange,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptUpdateExcerptRange
   },
   {
@@ -31919,7 +31919,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32056,6 +32055,7 @@
     Converters: null,
     MethodName: ExcerptUpdateExcerptTextAsync,
     NotAsyncMethodName: ExcerptUpdateExcerptText,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptUpdateExcerptText
   },
   {
@@ -32300,7 +32300,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32437,6 +32436,7 @@
     Converters: null,
     MethodName: ExcerptUpdateImageExcerptRegionAsync,
     NotAsyncMethodName: ExcerptUpdateImageExcerptRegion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptUpdateImageExcerptRegion
   },
   {
@@ -32681,7 +32681,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32818,6 +32817,7 @@
     Converters: null,
     MethodName: ExcerptUpdatePDFSwfImageExcerptRegionAsync,
     NotAsyncMethodName: ExcerptUpdatePDFSwfImageExcerptRegion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient.ExcerptUpdatePDFSwfImageExcerptRegion
   },
   {
@@ -32926,7 +32926,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -33033,6 +33032,7 @@
     Converters: null,
     MethodName: ExportGetExcerptsExportStatusAsync,
     NotAsyncMethodName: ExportGetExcerptsExportStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportGetExcerptsExportStatus
   },
   {
@@ -33141,7 +33141,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -33248,6 +33247,7 @@
     Converters: null,
     MethodName: ExportGetExcerptsExportURLAsync,
     NotAsyncMethodName: ExportGetExcerptsExportURL,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportGetExcerptsExportURL
   },
   {
@@ -33356,7 +33356,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -33463,6 +33462,7 @@
     Converters: null,
     MethodName: ExportGetExportJobURIAsync,
     NotAsyncMethodName: ExportGetExportJobURI,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportGetExportJobURI
   },
   {
@@ -33571,7 +33571,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -33678,6 +33677,7 @@
     Converters: null,
     MethodName: ExportIsExportJobCompleteAsync,
     NotAsyncMethodName: ExportIsExportJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportIsExportJobComplete
   },
   {
@@ -34297,7 +34297,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<string>,
       IsArray: true,
@@ -34464,6 +34463,7 @@
     Converters: null,
     MethodName: ExportStartExcerptsExportAsync,
     NotAsyncMethodName: ExportStartExcerptsExport,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportStartExcerptsExport
   },
   {
@@ -34810,7 +34810,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -34917,6 +34916,7 @@
     Converters: null,
     MethodName: ExportStartExportBubbleChartJobAsync,
     NotAsyncMethodName: ExportStartExportBubbleChartJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportStartExportBubbleChartJob
   },
   {
@@ -35093,7 +35093,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -35200,6 +35199,7 @@
     Converters: null,
     MethodName: ExportStartExportHierarchicalChartJobAsync,
     NotAsyncMethodName: ExportStartExportHierarchicalChartJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportStartExportHierarchicalChartJob
   },
   {
@@ -35342,7 +35342,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -35449,6 +35448,7 @@
     Converters: null,
     MethodName: ExportStartExportSingleSeriesChartJobAsync,
     NotAsyncMethodName: ExportStartExportSingleSeriesChartJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportStartExportSingleSeriesChartJob
   },
   {
@@ -35795,7 +35795,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -35902,6 +35901,7 @@
     Converters: null,
     MethodName: ExportStartGridChartExportJobAsync,
     NotAsyncMethodName: ExportStartGridChartExportJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient.ExportStartGridChartExportJob
   },
   {
@@ -36112,7 +36112,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36219,6 +36218,7 @@
     Converters: null,
     MethodName: FileEmailFileAsync,
     NotAsyncMethodName: FileEmailFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileEmailFile
   },
   {
@@ -36327,7 +36327,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36434,6 +36433,7 @@
     Converters: null,
     MethodName: FileGetConvertPDF2SwfResultAsync,
     NotAsyncMethodName: FileGetConvertPDF2SwfResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetConvertPDF2SwfResult
   },
   {
@@ -36542,7 +36542,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36649,6 +36648,7 @@
     Converters: null,
     MethodName: FileGetExportJobFileURIAsync,
     NotAsyncMethodName: FileGetExportJobFileURI,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetExportJobFileURI
   },
   {
@@ -36757,7 +36757,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36864,6 +36863,7 @@
     Converters: null,
     MethodName: FileGetFXMLDocJobResultAsync,
     NotAsyncMethodName: FileGetFXMLDocJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetFXMLDocJobResult
   },
   {
@@ -37006,7 +37006,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37113,6 +37112,7 @@
     Converters: null,
     MethodName: FileGetFXMLDocXPolledAsync,
     NotAsyncMethodName: FileGetFXMLDocXPolled,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetFXMLDocXPolled
   },
   {
@@ -37221,7 +37221,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37328,6 +37327,7 @@
     Converters: null,
     MethodName: FileGetMoveFileFromTempToPermJobResultAsync,
     NotAsyncMethodName: FileGetMoveFileFromTempToPermJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetMoveFileFromTempToPermJobResult
   },
   {
@@ -37402,7 +37402,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37515,6 +37514,7 @@
     Converters: null,
     MethodName: FileGetWriteKeyAsync,
     NotAsyncMethodName: FileGetWriteKey,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileGetWriteKey
   },
   {
@@ -37623,7 +37623,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37730,6 +37729,7 @@
     Converters: null,
     MethodName: FileIsJobManagerJobCompleteAsync,
     NotAsyncMethodName: FileIsJobManagerJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileIsJobManagerJobComplete
   },
   {
@@ -37872,7 +37872,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37979,6 +37978,7 @@
     Converters: null,
     MethodName: FileStartConvertPDF2SwfAsync,
     NotAsyncMethodName: FileStartConvertPDF2Swf,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileStartConvertPDF2Swf
   },
   {
@@ -38189,7 +38189,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38296,6 +38295,7 @@
     Converters: null,
     MethodName: FileStoreProjectFileStringAsync,
     NotAsyncMethodName: FileStoreProjectFileString,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient.FileStoreProjectFileString
   },
   {
@@ -38404,7 +38404,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38511,6 +38510,7 @@
     Converters: null,
     MethodName: GetBytesFromFileStorageAsync,
     NotAsyncMethodName: GetBytesFromFileStorage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileStorageClient.GetBytesFromFileStorage
   },
   {
@@ -38550,7 +38550,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38617,6 +38616,7 @@
     Converters: null,
     MethodName: GetClientVersionsAsync,
     NotAsyncMethodName: GetClientVersions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.GetClientVersions
   },
   {
@@ -38691,7 +38691,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38798,6 +38797,7 @@
     Converters: null,
     MethodName: GetConnectionKeyAsync,
     NotAsyncMethodName: GetConnectionKey,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsersClient.GetConnectionKey
   },
   {
@@ -38906,7 +38906,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39013,6 +39012,7 @@
     Converters: null,
     MethodName: AccountGetProjectAccessDetailsForUser2Async,
     NotAsyncMethodName: AccountGetProjectAccessDetailsForUser2,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient.AccountGetProjectAccessDetailsForUser2
   },
   {
@@ -39052,7 +39052,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39119,6 +39118,7 @@
     Converters: null,
     MethodName: GetServiceMessagesControllerAsync,
     NotAsyncMethodName: GetServiceMessagesController,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.GetServiceMessagesController
   },
   {
@@ -39227,7 +39227,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39334,6 +39333,7 @@
     Converters: null,
     MethodName: GetStringFromFileStorageAsync,
     NotAsyncMethodName: GetStringFromFileStorage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileStorageClient.GetStringFromFileStorage
   },
   {
@@ -39373,7 +39373,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39440,6 +39439,7 @@
     Converters: null,
     MethodName: GetTopBlogPostsAsync,
     NotAsyncMethodName: GetTopBlogPosts,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.GetTopBlogPosts
   },
   {
@@ -39543,7 +39543,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.LoginRequest,
       IsArray: false,
@@ -39722,6 +39721,7 @@
     Converters: null,
     MethodName: CreateLoginAsync,
     NotAsyncMethodName: CreateLogin,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.CreateLogin
   },
   {
@@ -39796,7 +39796,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39917,6 +39916,7 @@
     Converters: null,
     MethodName: GetMeAsync,
     NotAsyncMethodName: GetMe,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsersClient.GetMe
   },
   {
@@ -40093,7 +40093,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40210,6 +40209,7 @@
     Converters: null,
     MethodName: MemoAddFolderAsync,
     NotAsyncMethodName: MemoAddFolder,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoAddFolder
   },
   {
@@ -40556,7 +40556,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40671,6 +40670,7 @@
     Converters: null,
     MethodName: MemoAddMemoAsync,
     NotAsyncMethodName: MemoAddMemo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoAddMemo
   },
   {
@@ -40847,7 +40847,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40954,6 +40953,7 @@
     Converters: null,
     MethodName: MemoAddMemoFolderLinksAsync,
     NotAsyncMethodName: MemoAddMemoFolderLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoAddMemoFolderLinks
   },
   {
@@ -41164,7 +41164,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -41281,6 +41280,7 @@
     Converters: null,
     MethodName: MemoDeleteFolderAsync,
     NotAsyncMethodName: MemoDeleteFolder,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoDeleteFolder
   },
   {
@@ -41695,7 +41695,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -41824,6 +41823,7 @@
     Converters: null,
     MethodName: MemoDeleteMemoAsync,
     NotAsyncMethodName: MemoDeleteMemo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoDeleteMemo
   },
   {
@@ -41932,7 +41932,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42039,6 +42038,7 @@
     Converters: null,
     MethodName: MemoGetCopyMemosToDocumentsJobResultAsync,
     NotAsyncMethodName: MemoGetCopyMemosToDocumentsJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoGetCopyMemosToDocumentsJobResult
   },
   {
@@ -42147,7 +42147,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42254,6 +42253,7 @@
     Converters: null,
     MethodName: MemoGetImportMemosXMLResponseAsync,
     NotAsyncMethodName: MemoGetImportMemosXMLResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoGetImportMemosXMLResponse
   },
   {
@@ -42362,7 +42362,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42469,6 +42468,7 @@
     Converters: null,
     MethodName: MemoGetSearchMemosJobResultsAsync,
     NotAsyncMethodName: MemoGetSearchMemosJobResults,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoGetSearchMemosJobResults
   },
   {
@@ -42577,7 +42577,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42684,6 +42683,7 @@
     Converters: null,
     MethodName: MemoIsCopyMemosToDocumentsJobCompleteAsync,
     NotAsyncMethodName: MemoIsCopyMemosToDocumentsJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoIsCopyMemosToDocumentsJobComplete
   },
   {
@@ -42860,7 +42860,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42967,6 +42966,7 @@
     Converters: null,
     MethodName: MemoLinkFoldersToMemosAsync,
     NotAsyncMethodName: MemoLinkFoldersToMemos,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoLinkFoldersToMemos
   },
   {
@@ -43381,7 +43381,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -43488,6 +43487,7 @@
     Converters: null,
     MethodName: MemoLinkObjectAsync,
     NotAsyncMethodName: MemoLinkObject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoLinkObject
   },
   {
@@ -43596,7 +43596,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -43713,6 +43712,7 @@
     Converters: null,
     MethodName: MemoLoadProjectMemosFoldersAndLinksAsync,
     NotAsyncMethodName: MemoLoadProjectMemosFoldersAndLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoLoadProjectMemosFoldersAndLinks
   },
   {
@@ -43889,7 +43889,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -43996,6 +43995,7 @@
     Converters: null,
     MethodName: MemoStartCopyMemosToDocumentsJobAsync,
     NotAsyncMethodName: MemoStartCopyMemosToDocumentsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoStartCopyMemosToDocumentsJob
   },
   {
@@ -44376,7 +44376,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -44483,6 +44482,7 @@
     Converters: null,
     MethodName: MemoStartExportMemosAsync,
     NotAsyncMethodName: MemoStartExportMemos,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoStartExportMemos
   },
   {
@@ -44795,7 +44795,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -44902,6 +44901,7 @@
     Converters: null,
     MethodName: MemoStartExportMemosXMLAsync,
     NotAsyncMethodName: MemoStartExportMemosXML,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoStartExportMemosXML
   },
   {
@@ -45044,7 +45044,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45151,6 +45150,7 @@
     Converters: null,
     MethodName: MemoStartImportMemosXMLAsync,
     NotAsyncMethodName: MemoStartImportMemosXML,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoStartImportMemosXML
   },
   {
@@ -45293,7 +45293,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45400,6 +45399,7 @@
     Converters: null,
     MethodName: MemoStartSearchMemosJobAsync,
     NotAsyncMethodName: MemoStartSearchMemosJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoStartSearchMemosJob
   },
   {
@@ -45678,7 +45678,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45785,6 +45784,7 @@
     Converters: null,
     MethodName: MemoUnlinkObjectAsync,
     NotAsyncMethodName: MemoUnlinkObject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoUnlinkObject
   },
   {
@@ -45961,7 +45961,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -46078,6 +46077,7 @@
     Converters: null,
     MethodName: MemoUpdateFolderTitleAsync,
     NotAsyncMethodName: MemoUpdateFolderTitle,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoUpdateFolderTitle
   },
   {
@@ -46662,7 +46662,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -46777,6 +46776,7 @@
     Converters: null,
     MethodName: MemoUpdateMemoAsync,
     NotAsyncMethodName: MemoUpdateMemo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient.MemoUpdateMemo
   },
   {
@@ -46953,7 +46953,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47076,6 +47075,7 @@
     Converters: null,
     MethodName: ProjectAddProjectByUserAsync,
     NotAsyncMethodName: ProjectAddProjectByUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectAddProjectByUser
   },
   {
@@ -47286,7 +47286,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47409,6 +47408,7 @@
     Converters: null,
     MethodName: ProjectAddProjectEncryptedByUserAsync,
     NotAsyncMethodName: ProjectAddProjectEncryptedByUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectAddProjectEncryptedByUser
   },
   {
@@ -47551,7 +47551,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47658,6 +47657,7 @@
     Converters: null,
     MethodName: ProjectCheckEncryptedDataAsync,
     NotAsyncMethodName: ProjectCheckEncryptedData,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectCheckEncryptedData
   },
   {
@@ -47732,7 +47732,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47839,6 +47838,7 @@
     Converters: null,
     MethodName: ProjectGetAllProjectsForCurrentUserAsync,
     NotAsyncMethodName: ProjectGetAllProjectsForCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetAllProjectsForCurrentUser
   },
   {
@@ -47947,7 +47947,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48054,6 +48053,7 @@
     Converters: null,
     MethodName: ProjectGetCopyProjectStatusAsync,
     NotAsyncMethodName: ProjectGetCopyProjectStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetCopyProjectStatus
   },
   {
@@ -48162,7 +48162,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48269,6 +48268,7 @@
     Converters: null,
     MethodName: ProjectGetExportAccountProjectsJobIdAsync,
     NotAsyncMethodName: ProjectGetExportAccountProjectsJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetExportAccountProjectsJobId
   },
   {
@@ -48377,7 +48377,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48500,6 +48499,7 @@
     Converters: null,
     MethodName: ProjectGetProjectByIdAsync,
     NotAsyncMethodName: ProjectGetProjectById,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetProjectById
   },
   {
@@ -48608,7 +48608,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48731,6 +48730,7 @@
     Converters: null,
     MethodName: ProjectGetProjectCopyJobProjectAsync,
     NotAsyncMethodName: ProjectGetProjectCopyJobProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetProjectCopyJobProject
   },
   {
@@ -48839,7 +48839,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48946,6 +48945,7 @@
     Converters: null,
     MethodName: ProjectGetProjectImportJobExceptionsAsync,
     NotAsyncMethodName: ProjectGetProjectImportJobExceptions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetProjectImportJobExceptions
   },
   {
@@ -49054,7 +49054,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49179,6 +49178,7 @@
     Converters: null,
     MethodName: ProjectGetProjectImportStatusAsync,
     NotAsyncMethodName: ProjectGetProjectImportStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectGetProjectImportStatus
   },
   {
@@ -49287,7 +49287,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49394,6 +49393,7 @@
     Converters: null,
     MethodName: ProjectIsDeletedProjectJobCompleteAsync,
     NotAsyncMethodName: ProjectIsDeletedProjectJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectIsDeletedProjectJobComplete
   },
   {
@@ -49536,7 +49536,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49643,6 +49642,7 @@
     Converters: null,
     MethodName: ProjectRenameProjectAsync,
     NotAsyncMethodName: ProjectRenameProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectRenameProject
   },
   {
@@ -49853,7 +49853,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49960,6 +49959,7 @@
     Converters: null,
     MethodName: ProjectStartCopyProjectJobAsync,
     NotAsyncMethodName: ProjectStartCopyProjectJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectStartCopyProjectJob
   },
   {
@@ -50102,7 +50102,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -50209,6 +50208,7 @@
     Converters: null,
     MethodName: ProjectStartDeleteProjectAsync,
     NotAsyncMethodName: ProjectStartDeleteProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectStartDeleteProject
   },
   {
@@ -50453,7 +50453,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -50560,6 +50559,7 @@
     Converters: null,
     MethodName: ProjectStartProjectExportJobAsync,
     NotAsyncMethodName: ProjectStartProjectExportJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectStartProjectExportJob
   },
   {
@@ -50736,7 +50736,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -50843,6 +50842,7 @@
     Converters: null,
     MethodName: ProjectStartProjectImportJobAsync,
     NotAsyncMethodName: ProjectStartProjectImportJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectStartProjectImportJob
   },
   {
@@ -51019,7 +51019,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -51142,6 +51141,7 @@
     Converters: null,
     MethodName: ProjectUpdateProjectAsync,
     NotAsyncMethodName: ProjectUpdateProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient.ProjectUpdateProject
   },
   {
@@ -51386,7 +51386,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -51493,6 +51492,7 @@
     Converters: null,
     MethodName: ResourceAddAudioResourceAsync,
     NotAsyncMethodName: ResourceAddAudioResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceAddAudioResource
   },
   {
@@ -51805,7 +51805,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -51940,6 +51939,7 @@
     Converters: null,
     MethodName: ResourceAddResourceAsync,
     NotAsyncMethodName: ResourceAddResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceAddResource
   },
   {
@@ -52150,7 +52150,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -52257,6 +52256,7 @@
     Converters: null,
     MethodName: ResourceAddTranscriptAsync,
     NotAsyncMethodName: ResourceAddTranscript,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceAddTranscript
   },
   {
@@ -52501,7 +52501,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -52608,6 +52607,7 @@
     Converters: null,
     MethodName: ResourceAddVideoResourceAsync,
     NotAsyncMethodName: ResourceAddVideoResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceAddVideoResource
   },
   {
@@ -52818,7 +52818,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -52933,6 +52932,7 @@
     Converters: null,
     MethodName: ResourceCloneDocumentAsync,
     NotAsyncMethodName: ResourceCloneDocument,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceCloneDocument
   },
   {
@@ -53483,7 +53483,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -53618,6 +53617,7 @@
     Converters: null,
     MethodName: ResourceDeleteResourceAsync,
     NotAsyncMethodName: ResourceDeleteResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceDeleteResource
   },
   {
@@ -53930,7 +53930,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54037,6 +54036,7 @@
     Converters: null,
     MethodName: ResourceDeleteTranscriptAsync,
     NotAsyncMethodName: ResourceDeleteTranscript,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceDeleteTranscript
   },
   {
@@ -54145,7 +54145,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54280,6 +54279,7 @@
     Converters: null,
     MethodName: ResourceGetAddImageResourceJobResponseAsync,
     NotAsyncMethodName: ResourceGetAddImageResourceJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetAddImageResourceJobResponse
   },
   {
@@ -54388,7 +54388,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54495,6 +54494,7 @@
     Converters: null,
     MethodName: ResourceGetAddPDFImageResourceJobResponseAsync,
     NotAsyncMethodName: ResourceGetAddPDFImageResourceJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetAddPDFImageResourceJobResponse
   },
   {
@@ -54603,7 +54603,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54738,6 +54737,7 @@
     Converters: null,
     MethodName: ResourceGetAddPDFSwfResourceJobResponseAsync,
     NotAsyncMethodName: ResourceGetAddPDFSwfResourceJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetAddPDFSwfResourceJobResponse
   },
   {
@@ -54880,7 +54880,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55015,6 +55014,7 @@
     Converters: null,
     MethodName: ResourceGetAudioResourceByJobIdAsync,
     NotAsyncMethodName: ResourceGetAudioResourceByJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetAudioResourceByJobId
   },
   {
@@ -55157,7 +55157,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55264,6 +55263,7 @@
     Converters: null,
     MethodName: ResourceGetAudioSampleAsync,
     NotAsyncMethodName: ResourceGetAudioSample,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetAudioSample
   },
   {
@@ -55372,7 +55372,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55479,6 +55478,7 @@
     Converters: null,
     MethodName: ResourceGetDocumentSearchJobResultAsync,
     NotAsyncMethodName: ResourceGetDocumentSearchJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetDocumentSearchJobResult
   },
   {
@@ -55587,7 +55587,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55694,6 +55693,7 @@
     Converters: null,
     MethodName: ResourceGetExportJobURLAsync,
     NotAsyncMethodName: ResourceGetExportJobURL,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetExportJobURL
   },
   {
@@ -55802,7 +55802,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55909,6 +55908,7 @@
     Converters: null,
     MethodName: ResourceGetExportPDFSwfJobResultAsync,
     NotAsyncMethodName: ResourceGetExportPDFSwfJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetExportPDFSwfJobResult
   },
   {
@@ -56017,7 +56017,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56124,6 +56123,7 @@
     Converters: null,
     MethodName: ResourceGetResourcesByProjectAsync,
     NotAsyncMethodName: ResourceGetResourcesByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetResourcesByProject
   },
   {
@@ -56266,7 +56266,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56373,6 +56372,7 @@
     Converters: null,
     MethodName: ResourceGetResourceSyncItemsAsync,
     NotAsyncMethodName: ResourceGetResourceSyncItems,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetResourceSyncItems
   },
   {
@@ -56481,7 +56481,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56588,6 +56587,7 @@
     Converters: null,
     MethodName: ResourceGetTranscripstsAsync,
     NotAsyncMethodName: ResourceGetTranscripsts,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetTranscripsts
   },
   {
@@ -56730,7 +56730,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56837,6 +56836,7 @@
     Converters: null,
     MethodName: ResourceGetTranscriptExportJobIdAsync,
     NotAsyncMethodName: ResourceGetTranscriptExportJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetTranscriptExportJobId
   },
   {
@@ -56979,7 +56979,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57114,6 +57113,7 @@
     Converters: null,
     MethodName: ResourceGetVideoResourceByJobIdAsync,
     NotAsyncMethodName: ResourceGetVideoResourceByJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceGetVideoResourceByJobId
   },
   {
@@ -57222,7 +57222,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57329,6 +57328,7 @@
     Converters: null,
     MethodName: ResourceIsJobCompleteAsync,
     NotAsyncMethodName: ResourceIsJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceIsJobComplete
   },
   {
@@ -57437,7 +57437,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57544,6 +57543,7 @@
     Converters: null,
     MethodName: ResourceIsResourceAudioConversionCompleteAsync,
     NotAsyncMethodName: ResourceIsResourceAudioConversionComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceIsResourceAudioConversionComplete
   },
   {
@@ -57652,7 +57652,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57759,6 +57758,7 @@
     Converters: null,
     MethodName: ResourceIsResourceVideoConversionCompleteAsync,
     NotAsyncMethodName: ResourceIsResourceVideoConversionComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceIsResourceVideoConversionComplete
   },
   {
@@ -57901,7 +57901,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58008,6 +58007,7 @@
     Converters: null,
     MethodName: ResourceLockResourceAsync,
     NotAsyncMethodName: ResourceLockResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceLockResource
   },
   {
@@ -58218,7 +58218,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58325,6 +58324,7 @@
     Converters: null,
     MethodName: ResourceStartAddImageResourceAsync,
     NotAsyncMethodName: ResourceStartAddImageResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartAddImageResource
   },
   {
@@ -58535,7 +58535,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58642,6 +58641,7 @@
     Converters: null,
     MethodName: ResourceStartAddPDFImageResourceJobAsync,
     NotAsyncMethodName: ResourceStartAddPDFImageResourceJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartAddPDFImageResourceJob
   },
   {
@@ -58818,7 +58818,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58925,6 +58924,7 @@
     Converters: null,
     MethodName: ResourceStartAddPDFSwfResourceJobAsync,
     NotAsyncMethodName: ResourceStartAddPDFSwfResourceJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartAddPDFSwfResourceJob
   },
   {
@@ -59067,7 +59067,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59174,6 +59173,7 @@
     Converters: null,
     MethodName: ResourceStartDeleteResourcesJobAsync,
     NotAsyncMethodName: ResourceStartDeleteResourcesJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartDeleteResourcesJob
   },
   {
@@ -59316,7 +59316,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59423,6 +59422,7 @@
     Converters: null,
     MethodName: ResourceStartDocumentSearchJobAsync,
     NotAsyncMethodName: ResourceStartDocumentSearchJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartDocumentSearchJob
   },
   {
@@ -59701,7 +59701,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59808,6 +59807,7 @@
     Converters: null,
     MethodName: ResourceStartExportDocumentJobWithRTLAsync,
     NotAsyncMethodName: ResourceStartExportDocumentJobWithRTL,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartExportDocumentJobWithRTL
   },
   {
@@ -59950,7 +59950,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -60057,6 +60056,7 @@
     Converters: null,
     MethodName: ResourceStartExportPDFSwfJobAsync,
     NotAsyncMethodName: ResourceStartExportPDFSwfJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartExportPDFSwfJob
   },
   {
@@ -60267,7 +60267,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -60374,6 +60373,7 @@
     Converters: null,
     MethodName: ResourceStartExportResourcesJobAsync,
     NotAsyncMethodName: ResourceStartExportResourcesJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceStartExportResourcesJob
   },
   {
@@ -60516,7 +60516,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -60623,6 +60622,7 @@
     Converters: null,
     MethodName: ResourceUnlockResourceAsync,
     NotAsyncMethodName: ResourceUnlockResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceUnlockResource
   },
   {
@@ -60901,7 +60901,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -61008,6 +61007,7 @@
     Converters: null,
     MethodName: ResourceUpdateDocumentDataAndExcerptsAsync,
     NotAsyncMethodName: ResourceUpdateDocumentDataAndExcerpts,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceUpdateDocumentDataAndExcerpts
   },
   {
@@ -61218,7 +61218,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -61353,6 +61352,7 @@
     Converters: null,
     MethodName: ResourceUpdateResourceAsync,
     NotAsyncMethodName: ResourceUpdateResource,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceUpdateResource
   },
   {
@@ -61665,7 +61665,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -61772,6 +61771,7 @@
     Converters: null,
     MethodName: ResourceUpdateResourceAndDataAsync,
     NotAsyncMethodName: ResourceUpdateResourceAndData,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceUpdateResourceAndData
   },
   {
@@ -62152,7 +62152,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -62259,6 +62258,7 @@
     Converters: null,
     MethodName: ResourceUpdateTranscriptDataAsync,
     NotAsyncMethodName: ResourceUpdateTranscriptData,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient.ResourceUpdateTranscriptData
   },
   {
@@ -62298,7 +62298,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -62371,6 +62370,7 @@
     Converters: null,
     MethodName: GetRsaAsync,
     NotAsyncMethodName: GetRsa,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.GetRsa
   },
   {
@@ -62547,7 +62547,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -62668,6 +62667,7 @@
     Converters: null,
     MethodName: SecurityAddGroupAsync,
     NotAsyncMethodName: SecurityAddGroup,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityAddGroup
   },
   {
@@ -62946,7 +62946,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -63067,6 +63066,7 @@
     Converters: null,
     MethodName: SecurityDeleteGroupAsync,
     NotAsyncMethodName: SecurityDeleteGroup,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityDeleteGroup
   },
   {
@@ -63141,7 +63141,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -63248,6 +63247,7 @@
     Converters: null,
     MethodName: SecurityGetAllAccessListsAsync,
     NotAsyncMethodName: SecurityGetAllAccessLists,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityGetAllAccessLists
   },
   {
@@ -63356,7 +63356,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -63463,6 +63462,7 @@
     Converters: null,
     MethodName: SecurityGetProjectGroupLinksAsync,
     NotAsyncMethodName: SecurityGetProjectGroupLinks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityGetProjectGroupLinks
   },
   {
@@ -63571,7 +63571,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -63678,6 +63677,7 @@
     Converters: null,
     MethodName: SecurityGetProjectGroupsAsync,
     NotAsyncMethodName: SecurityGetProjectGroups,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityGetProjectGroups
   },
   {
@@ -63752,7 +63752,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -63859,6 +63858,7 @@
     Converters: null,
     MethodName: SecurityGetSuperUserIdsAsync,
     NotAsyncMethodName: SecurityGetSuperUserIds,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityGetSuperUserIds
   },
   {
@@ -63933,7 +63933,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -64040,6 +64039,7 @@
     Converters: null,
     MethodName: SecurityGetVersionAsync,
     NotAsyncMethodName: SecurityGetVersion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityGetVersion
   },
   {
@@ -64182,7 +64182,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -64289,6 +64288,7 @@
     Converters: null,
     MethodName: SecurityImpersonateUserAsync,
     NotAsyncMethodName: SecurityImpersonateUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityImpersonateUser
   },
   {
@@ -64465,7 +64465,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -64572,6 +64571,7 @@
     Converters: null,
     MethodName: SecurityLinkUserAsync,
     NotAsyncMethodName: SecurityLinkUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityLinkUser
   },
   {
@@ -64782,7 +64782,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -64889,6 +64888,7 @@
     Converters: null,
     MethodName: SecurityLinkUserWithInvitationAsync,
     NotAsyncMethodName: SecurityLinkUserWithInvitation,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityLinkUserWithInvitation
   },
   {
@@ -64963,7 +64963,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -65050,6 +65049,7 @@
     Converters: null,
     MethodName: SecurityResetUserPasswordByEmailAsync,
     NotAsyncMethodName: SecurityResetUserPasswordByEmail,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityResetUserPasswordByEmail
   },
   {
@@ -65124,7 +65124,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -65211,6 +65210,7 @@
     Converters: null,
     MethodName: SecurityResetUserPasswordByUsernameAsync,
     NotAsyncMethodName: SecurityResetUserPasswordByUsername,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityResetUserPasswordByUsername
   },
   {
@@ -65285,7 +65285,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -65392,6 +65391,7 @@
     Converters: null,
     MethodName: SecurityStopImpersonationAsync,
     NotAsyncMethodName: SecurityStopImpersonation,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityStopImpersonation
   },
   {
@@ -65534,7 +65534,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -65641,6 +65640,7 @@
     Converters: null,
     MethodName: SecurityUnlinkUserFromProjectAsync,
     NotAsyncMethodName: SecurityUnlinkUserFromProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityUnlinkUserFromProject
   },
   {
@@ -65919,7 +65919,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -66040,6 +66039,7 @@
     Converters: null,
     MethodName: SecurityUpdateGroupAsync,
     NotAsyncMethodName: SecurityUpdateGroup,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient.SecurityUpdateGroup
   },
   {
@@ -66148,7 +66148,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -66263,6 +66262,7 @@
     Converters: null,
     MethodName: SurveyImportGetSurveyImportStatusAsync,
     NotAsyncMethodName: SurveyImportGetSurveyImportStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SurveyImportClient.SurveyImportGetSurveyImportStatus
   },
   {
@@ -66439,7 +66439,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -66546,6 +66545,7 @@
     Converters: null,
     MethodName: SurveyImportStartSurveyImportJobAsync,
     NotAsyncMethodName: SurveyImportStartSurveyImportJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SurveyImportClient.SurveyImportStartSurveyImportJob
   },
   {
@@ -66824,7 +66824,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -66949,6 +66948,7 @@
     Converters: null,
     MethodName: TagAddExcerptTagApplicationAsync,
     NotAsyncMethodName: TagAddExcerptTagApplication,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagAddExcerptTagApplication
   },
   {
@@ -67193,7 +67193,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -67300,6 +67299,7 @@
     Converters: null,
     MethodName: TagAddExcerptTagApplicationsAsync,
     NotAsyncMethodName: TagAddExcerptTagApplications,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagAddExcerptTagApplications
   },
   {
@@ -67680,7 +67680,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -67815,6 +67814,7 @@
     Converters: null,
     MethodName: TagAddTagAsync,
     NotAsyncMethodName: TagAddTag,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagAddTag
   },
   {
@@ -68025,7 +68025,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -68148,6 +68147,7 @@
     Converters: null,
     MethodName: TagAddTagLinkAsync,
     NotAsyncMethodName: TagAddTagLink,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagAddTagLink
   },
   {
@@ -68562,7 +68562,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -68697,6 +68696,7 @@
     Converters: null,
     MethodName: TagAddTagWithParentAsync,
     NotAsyncMethodName: TagAddTagWithParent,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagAddTagWithParent
   },
   {
@@ -69247,7 +69247,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -69354,6 +69353,7 @@
     Converters: null,
     MethodName: TagDeleteTagByJobAsync,
     NotAsyncMethodName: TagDeleteTagByJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagDeleteTagByJob
   },
   {
@@ -69700,7 +69700,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -69823,6 +69822,7 @@
     Converters: null,
     MethodName: TagDeleteTagLinkAsync,
     NotAsyncMethodName: TagDeleteTagLink,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagDeleteTagLink
   },
   {
@@ -69931,7 +69931,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -70066,6 +70065,7 @@
     Converters: null,
     MethodName: TagGetDeleteTagByJobResponseAsync,
     NotAsyncMethodName: TagGetDeleteTagByJobResponse,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetDeleteTagByJobResponse
   },
   {
@@ -70276,7 +70276,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -70383,6 +70382,7 @@
     Converters: null,
     MethodName: TagGetProjectTagsExportFileURLJobIdAsync,
     NotAsyncMethodName: TagGetProjectTagsExportFileURLJobId,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetProjectTagsExportFileURLJobId
   },
   {
@@ -70491,7 +70491,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -70598,6 +70597,7 @@
     Converters: null,
     MethodName: TagGetProjectTagsExportJobFileURLAsync,
     NotAsyncMethodName: TagGetProjectTagsExportJobFileURL,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetProjectTagsExportJobFileURL
   },
   {
@@ -70706,7 +70706,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -70813,6 +70812,7 @@
     Converters: null,
     MethodName: TagGetRetroUpcodeJobTagApplicationsAsync,
     NotAsyncMethodName: TagGetRetroUpcodeJobTagApplications,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetRetroUpcodeJobTagApplications
   },
   {
@@ -70989,7 +70989,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -71096,6 +71095,7 @@
     Converters: null,
     MethodName: TagGetTagApplicationsByProjectAsync,
     NotAsyncMethodName: TagGetTagApplicationsByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetTagApplicationsByProject
   },
   {
@@ -71204,7 +71204,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -71311,6 +71310,7 @@
     Converters: null,
     MethodName: TagGetTagLinksByProjectAsync,
     NotAsyncMethodName: TagGetTagLinksByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetTagLinksByProject
   },
   {
@@ -71419,7 +71419,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -71526,6 +71525,7 @@
     Converters: null,
     MethodName: TagGetTagsByProjectAsync,
     NotAsyncMethodName: TagGetTagsByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetTagsByProject
   },
   {
@@ -71634,7 +71634,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -71741,6 +71740,7 @@
     Converters: null,
     MethodName: TagGetTagsFromSpreadsheetJobResultAsync,
     NotAsyncMethodName: TagGetTagsFromSpreadsheetJobResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagGetTagsFromSpreadsheetJobResult
   },
   {
@@ -71849,7 +71849,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -71956,6 +71955,7 @@
     Converters: null,
     MethodName: TagIsJobCompleteAsync,
     NotAsyncMethodName: TagIsJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagIsJobComplete
   },
   {
@@ -72064,7 +72064,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -72171,6 +72170,7 @@
     Converters: null,
     MethodName: TagIsRetroUpcodeJobCompleteAsync,
     NotAsyncMethodName: TagIsRetroUpcodeJobComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagIsRetroUpcodeJobComplete
   },
   {
@@ -72347,7 +72347,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -72454,6 +72453,7 @@
     Converters: null,
     MethodName: TagMergeTagsAsync,
     NotAsyncMethodName: TagMergeTags,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagMergeTags
   },
   {
@@ -72596,7 +72596,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -72721,6 +72720,7 @@
     Converters: null,
     MethodName: TagRemoveTagApplicationAsync,
     NotAsyncMethodName: TagRemoveTagApplication,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagRemoveTagApplication
   },
   {
@@ -72829,7 +72829,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -72936,6 +72935,7 @@
     Converters: null,
     MethodName: TagStartGetTagsFromImportJobAsync,
     NotAsyncMethodName: TagStartGetTagsFromImportJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagStartGetTagsFromImportJob
   },
   {
@@ -73078,7 +73078,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -73185,6 +73184,7 @@
     Converters: null,
     MethodName: TagStartImportTagsJobAsync,
     NotAsyncMethodName: TagStartImportTagsJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagStartImportTagsJob
   },
   {
@@ -73327,7 +73327,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -73434,6 +73433,7 @@
     Converters: null,
     MethodName: TagStartRetroUpcodeJobAsync,
     NotAsyncMethodName: TagStartRetroUpcodeJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagStartRetroUpcodeJob
   },
   {
@@ -73950,7 +73950,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -74085,6 +74084,7 @@
     Converters: null,
     MethodName: TagUpdateTagAsync,
     NotAsyncMethodName: TagUpdateTag,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagUpdateTag
   },
   {
@@ -74261,7 +74261,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -74368,6 +74367,7 @@
     Converters: null,
     MethodName: TagUpdateTagAppWeightAsync,
     NotAsyncMethodName: TagUpdateTagAppWeight,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagUpdateTagAppWeight
   },
   {
@@ -74680,7 +74680,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -74803,6 +74802,7 @@
     Converters: null,
     MethodName: TagUpdateTagLinkAsync,
     NotAsyncMethodName: TagUpdateTagLink,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagUpdateTagLink
   },
   {
@@ -74945,7 +74945,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -75052,6 +75051,7 @@
     Converters: null,
     MethodName: TagUpdateTagOrdersAsync,
     NotAsyncMethodName: TagUpdateTagOrders,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient.TagUpdateTagOrders
   },
   {
@@ -75364,7 +75364,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -75471,6 +75470,7 @@
     Converters: null,
     MethodName: TrainingAddTestAsync,
     NotAsyncMethodName: TrainingAddTest,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingAddTest
   },
   {
@@ -75885,7 +75885,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -76014,6 +76013,7 @@
     Converters: null,
     MethodName: TrainingDeleteTestAsync,
     NotAsyncMethodName: TrainingDeleteTest,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingDeleteTest
   },
   {
@@ -76122,7 +76122,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -76251,6 +76250,7 @@
     Converters: null,
     MethodName: TrainingGetAddTestResultAsync,
     NotAsyncMethodName: TrainingGetAddTestResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetAddTestResult
   },
   {
@@ -76393,7 +76393,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -76500,6 +76499,7 @@
     Converters: null,
     MethodName: TrainingGetTestExcerptsAsync,
     NotAsyncMethodName: TrainingGetTestExcerpts,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestExcerpts
   },
   {
@@ -76642,7 +76642,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -76749,6 +76748,7 @@
     Converters: null,
     MethodName: TrainingGetTestMasterTagApplicationsAsync,
     NotAsyncMethodName: TrainingGetTestMasterTagApplications,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestMasterTagApplications
   },
   {
@@ -76857,7 +76857,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -76964,6 +76963,7 @@
     Converters: null,
     MethodName: TrainingGetTestResultsByProjectAsync,
     NotAsyncMethodName: TrainingGetTestResultsByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestResultsByProject
   },
   {
@@ -77140,7 +77140,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -77247,6 +77246,7 @@
     Converters: null,
     MethodName: TrainingGetTestResultTagAppsAsync,
     NotAsyncMethodName: TrainingGetTestResultTagApps,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestResultTagApps
   },
   {
@@ -77355,7 +77355,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -77462,6 +77461,7 @@
     Converters: null,
     MethodName: TrainingGetTestsByProjectAsync,
     NotAsyncMethodName: TrainingGetTestsByProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestsByProject
   },
   {
@@ -77604,7 +77604,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -77711,6 +77710,7 @@
     Converters: null,
     MethodName: TrainingGetTestTagsAsync,
     NotAsyncMethodName: TrainingGetTestTags,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingGetTestTags
   },
   {
@@ -77819,7 +77819,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -77926,6 +77925,7 @@
     Converters: null,
     MethodName: TrainingIsTestAddCompleteAsync,
     NotAsyncMethodName: TrainingIsTestAddComplete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingIsTestAddComplete
   },
   {
@@ -78204,7 +78204,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -78331,6 +78330,7 @@
     Converters: null,
     MethodName: TrainingSaveTestResultAsync,
     NotAsyncMethodName: TrainingSaveTestResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingSaveTestResult
   },
   {
@@ -78541,7 +78541,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -78648,6 +78647,7 @@
     Converters: null,
     MethodName: TrainingStartExportTestResultJobAsync,
     NotAsyncMethodName: TrainingStartExportTestResultJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingStartExportTestResultJob
   },
   {
@@ -78960,7 +78960,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -79087,6 +79086,7 @@
     Converters: null,
     MethodName: TrainingUpdateTestResultAsync,
     NotAsyncMethodName: TrainingUpdateTestResult,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient.TrainingUpdateTestResult
   },
   {
@@ -79190,7 +79190,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UnsafeLoginRequest,
       IsArray: false,
@@ -79369,6 +79368,7 @@
     Converters: null,
     MethodName: UnsafeLoginAsync,
     NotAsyncMethodName: UnsafeLogin,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.UnsafeLogin
   },
   {
@@ -79546,7 +79546,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: byte[],
       IsArray: false,
@@ -79713,6 +79712,7 @@
     Converters: null,
     MethodName: UploadToFileStorageAsync,
     NotAsyncMethodName: UploadToFileStorage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileStorageClient.UploadToFileStorage
   },
   {
@@ -79821,7 +79821,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -79928,6 +79927,7 @@
     Converters: null,
     MethodName: UserAcceptInvitationByCurrentUserAsync,
     NotAsyncMethodName: UserAcceptInvitationByCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserAcceptInvitationByCurrentUser
   },
   {
@@ -80274,7 +80274,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -80387,6 +80386,7 @@
     Converters: null,
     MethodName: UserAddNewUserToAccountAsync,
     NotAsyncMethodName: UserAddNewUserToAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserAddNewUserToAccount
   },
   {
@@ -80461,7 +80461,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -80548,6 +80547,7 @@
     Converters: null,
     MethodName: UserDoesUserEmailExistAsync,
     NotAsyncMethodName: UserDoesUserEmailExist,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserDoesUserEmailExist
   },
   {
@@ -80622,7 +80622,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -80709,6 +80708,7 @@
     Converters: null,
     MethodName: UserDoesUserExistAsync,
     NotAsyncMethodName: UserDoesUserExist,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserDoesUserExist
   },
   {
@@ -80783,7 +80783,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -80912,6 +80911,7 @@
     Converters: null,
     MethodName: UserGetCurrentAccountStatusAsync,
     NotAsyncMethodName: UserGetCurrentAccountStatus,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserGetCurrentAccountStatus
   },
   {
@@ -80986,7 +80986,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -81093,6 +81092,7 @@
     Converters: null,
     MethodName: UserGetCurrentUserPendingInvitationsAsync,
     NotAsyncMethodName: UserGetCurrentUserPendingInvitations,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserGetCurrentUserPendingInvitations
   },
   {
@@ -81201,7 +81201,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -81308,6 +81307,7 @@
     Converters: null,
     MethodName: UserGetFederationResponseForConnectionAsync,
     NotAsyncMethodName: UserGetFederationResponseForConnection,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserGetFederationResponseForConnection
   },
   {
@@ -81484,7 +81484,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -81591,6 +81590,7 @@
     Converters: null,
     MethodName: UserGetFilteredUsersAsync,
     NotAsyncMethodName: UserGetFilteredUsers,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserGetFilteredUsers
   },
   {
@@ -81699,7 +81699,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -81806,6 +81805,7 @@
     Converters: null,
     MethodName: UserGetProjectUsersAsync,
     NotAsyncMethodName: UserGetProjectUsers,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserGetProjectUsers
   },
   {
@@ -81982,7 +81982,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -82089,6 +82088,7 @@
     Converters: null,
     MethodName: UserInviteUserToProjectAsync,
     NotAsyncMethodName: UserInviteUserToProject,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserInviteUserToProject
   },
   {
@@ -82231,7 +82231,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -82338,6 +82337,7 @@
     Converters: null,
     MethodName: UserLinkUsertoAccountAsync,
     NotAsyncMethodName: UserLinkUsertoAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserLinkUsertoAccount
   },
   {
@@ -82480,7 +82480,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -82587,6 +82586,7 @@
     Converters: null,
     MethodName: UserRegisterConnectionAsync,
     NotAsyncMethodName: UserRegisterConnection,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserRegisterConnection
   },
   {
@@ -82695,7 +82695,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -82802,6 +82801,7 @@
     Converters: null,
     MethodName: UserRejectInvitationByCurrentUserAsync,
     NotAsyncMethodName: UserRejectInvitationByCurrentUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserRejectInvitationByCurrentUser
   },
   {
@@ -83080,7 +83080,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -83187,6 +83186,7 @@
     Converters: null,
     MethodName: UserSendContactRequestEmailAsync,
     NotAsyncMethodName: UserSendContactRequestEmail,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserSendContactRequestEmail
   },
   {
@@ -83771,7 +83771,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -83890,6 +83889,7 @@
     Converters: null,
     MethodName: UserSubmitCurrentAccountPaymentAsync,
     NotAsyncMethodName: UserSubmitCurrentAccountPayment,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserSubmitCurrentAccountPayment
   },
   {
@@ -83998,7 +83998,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -84105,6 +84104,7 @@
     Converters: null,
     MethodName: UserSubmitEulaAsync,
     NotAsyncMethodName: UserSubmitEula,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserSubmitEula
   },
   {
@@ -84281,7 +84281,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -84388,6 +84387,7 @@
     Converters: null,
     MethodName: UserUpdateConnectionAsync,
     NotAsyncMethodName: UserUpdateConnection,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserUpdateConnection
   },
   {
@@ -84530,7 +84530,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -84637,6 +84636,7 @@
     Converters: null,
     MethodName: UserUpdateCurrentUserPasswordAsync,
     NotAsyncMethodName: UserUpdateCurrentUserPassword,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserUpdateCurrentUserPassword
   },
   {
@@ -84915,7 +84915,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -85022,6 +85021,7 @@
     Converters: null,
     MethodName: UserUpdateUserAsync,
     NotAsyncMethodName: UserUpdateUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserUpdateUser
   },
   {
@@ -85436,7 +85436,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -85543,6 +85542,7 @@
     Converters: null,
     MethodName: UserUpdateUserInfoAsync,
     NotAsyncMethodName: UserUpdateUserInfo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserUpdateUserInfo
   },
   {
@@ -85719,7 +85719,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -85870,6 +85869,7 @@
     Converters: null,
     MethodName: UserValidate2FactorAsync,
     NotAsyncMethodName: UserValidate2Factor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserValidate2Factor
   },
   {
@@ -86046,7 +86046,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -86153,6 +86152,7 @@
     Converters: null,
     MethodName: UserValidateUserAsync,
     NotAsyncMethodName: UserValidateUser,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserValidateUser
   },
   {
@@ -86329,7 +86329,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -86450,6 +86449,7 @@
     Converters: null,
     MethodName: UserValidateUser2Async,
     NotAsyncMethodName: UserValidateUser2,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient.UserValidateUser2
   },
   {
@@ -86592,7 +86592,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -86743,6 +86742,7 @@
     Converters: null,
     MethodName: Validate2FactorAsync,
     NotAsyncMethodName: Validate2Factor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient.Validate2Factor
   },
   {
@@ -87403,7 +87403,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87449,6 +87448,7 @@
     Converters: null,
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -87488,7 +87488,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87534,6 +87533,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AccountClient
   },
   {
@@ -87573,7 +87573,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87619,6 +87618,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AdminClient
   },
   {
@@ -87658,7 +87658,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87704,6 +87703,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient
   },
   {
@@ -87743,7 +87743,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87789,6 +87788,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DataSetClient
   },
   {
@@ -87828,7 +87828,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87874,6 +87873,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DescriptorClient
   },
   {
@@ -87913,7 +87913,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -87959,6 +87958,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ErrorClient
   },
   {
@@ -87998,7 +87998,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88044,6 +88043,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExcerptClient
   },
   {
@@ -88083,7 +88083,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88129,6 +88128,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExportClient
   },
   {
@@ -88168,7 +88168,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88214,6 +88213,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileClient
   },
   {
@@ -88253,7 +88253,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88299,6 +88298,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FileStorageClient
   },
   {
@@ -88338,7 +88338,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88384,6 +88383,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LoginClient
   },
   {
@@ -88423,7 +88423,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88469,6 +88468,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsersClient
   },
   {
@@ -88508,7 +88508,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88554,6 +88553,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.MemoClient
   },
   {
@@ -88593,7 +88593,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88639,6 +88638,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ProjectClient
   },
   {
@@ -88678,7 +88678,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88724,6 +88723,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ResourceClient
   },
   {
@@ -88763,7 +88763,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88809,6 +88808,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SecurityClient
   },
   {
@@ -88848,7 +88848,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88894,6 +88893,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SurveyImportClient
   },
   {
@@ -88933,7 +88933,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -88979,6 +88978,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TagClient
   },
   {
@@ -89018,7 +89018,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -89064,6 +89063,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TrainingClient
   },
   {
@@ -89103,7 +89103,6 @@
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -89149,6 +89148,7 @@
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UserClient
   }
 ]

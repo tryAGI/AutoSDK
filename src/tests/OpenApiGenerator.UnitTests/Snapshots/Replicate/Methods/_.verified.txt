@@ -59,7 +59,6 @@ The response will be a JSON object describing the account:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -126,6 +125,7 @@ The response will be a JSON object describing the account:
     Converters: null,
     MethodName: GetAccountAsync,
     NotAsyncMethodName: GetAccount,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetAccount
   },
   {
@@ -191,7 +191,6 @@ The response will be a paginated JSON list of collection objects:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -237,6 +236,7 @@ The response will be a paginated JSON list of collection objects:
     Converters: null,
     MethodName: ListCollectionsAsync,
     NotAsyncMethodName: ListCollections,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListCollections
   },
   {
@@ -332,7 +332,6 @@ The response will be a collection object with a nested list of the models in tha
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -378,6 +377,7 @@ The response will be a collection object with a nested list of the models in tha
     Converters: null,
     MethodName: GetCollectionsAsync,
     NotAsyncMethodName: GetCollections,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetCollections
   },
   {
@@ -461,7 +461,6 @@ The response will be a paginated JSON array of deployment objects, sorted with t
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -528,6 +527,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
     Converters: null,
     MethodName: ListDeploymentsAsync,
     NotAsyncMethodName: ListDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListDeployments
   },
   {
@@ -803,7 +803,6 @@ The response will be a JSON object describing the deployment:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateDeploymentsRequest,
       IsArray: false,
@@ -890,6 +889,7 @@ The response will be a JSON object describing the deployment:
     Converters: null,
     MethodName: CreateDeploymentsAsync,
     NotAsyncMethodName: CreateDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreateDeployments
   },
   {
@@ -1017,7 +1017,6 @@ The response will be an empty 204, indicating the deployment has been deleted.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1063,6 +1062,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
     Converters: null,
     MethodName: DeleteDeploymentsAsync,
     NotAsyncMethodName: DeleteDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.DeleteDeployments
   },
   {
@@ -1209,7 +1209,6 @@ The response will be a JSON object describing the deployment:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1276,6 +1275,7 @@ The response will be a JSON object describing the deployment:
     Converters: null,
     MethodName: GetDeploymentsAsync,
     NotAsyncMethodName: GetDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetDeployments
   },
   {
@@ -1552,7 +1552,6 @@ Updating any deployment properties will increment the `number` field of the `cur
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateDeploymentsRequest,
       IsArray: false,
@@ -1639,6 +1638,7 @@ Updating any deployment properties will increment the `number` field of the `cur
     Converters: null,
     MethodName: UpdateDeploymentsAsync,
     NotAsyncMethodName: UpdateDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.UpdateDeployments
   },
   {
@@ -1966,7 +1966,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -2043,6 +2042,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Converters: null,
     MethodName: CreatePredictionsDeploymentsAsync,
     NotAsyncMethodName: CreatePredictionsDeployments,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreatePredictionsDeployments
   },
   {
@@ -2103,7 +2103,6 @@ The response will be a JSON array of hardware objects:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2170,6 +2169,7 @@ The response will be a JSON array of hardware objects:
     Converters: null,
     MethodName: ListHardwareAsync,
     NotAsyncMethodName: ListHardware,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListHardware
   },
   {
@@ -2253,7 +2253,6 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2299,6 +2298,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
     Converters: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListModels
   },
   {
@@ -2658,7 +2658,6 @@ The response will be a model object in the following format:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModelsRequest,
       IsArray: false,
@@ -2725,6 +2724,7 @@ The response will be a model object in the following format:
     Converters: null,
     MethodName: CreateModelsAsync,
     NotAsyncMethodName: CreateModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreateModels
   },
   {
@@ -2854,7 +2854,6 @@ The response will be an empty 204, indicating the model has been deleted.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2900,6 +2899,7 @@ The response will be an empty 204, indicating the model has been deleted.
     Converters: null,
     MethodName: DeleteModelsAsync,
     NotAsyncMethodName: DeleteModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.DeleteModels
   },
   {
@@ -3048,7 +3048,6 @@ The `latest_version` object is the model's most recently pushed [version](#model
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3094,6 +3093,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
     Converters: null,
     MethodName: GetModelsAsync,
     NotAsyncMethodName: GetModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetModels
   },
   {
@@ -3421,7 +3421,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -3498,6 +3497,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Converters: null,
     MethodName: CreatePredictionsModelsAsync,
     NotAsyncMethodName: CreatePredictionsModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreatePredictionsModels
   },
   {
@@ -3633,7 +3633,6 @@ The response will be a JSON array of model version objects, sorted with the most
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3679,6 +3678,7 @@ The response will be a JSON array of model version objects, sorted with the most
     Converters: null,
     MethodName: ListVersionsModelsAsync,
     NotAsyncMethodName: ListVersionsModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListVersionsModels
   },
   {
@@ -3845,7 +3845,6 @@ The response will be an empty 202, indicating the deletion request has been acce
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3891,6 +3890,7 @@ The response will be an empty 202, indicating the deletion request has been acce
     Converters: null,
     MethodName: DeleteVersionsModelsAsync,
     NotAsyncMethodName: DeleteVersionsModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.DeleteVersionsModels
   },
   {
@@ -4087,7 +4087,6 @@ For more details, see the docs on [Cog's supported input and output types](https
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4133,6 +4132,7 @@ For more details, see the docs on [Cog's supported input and output types](https
     Converters: null,
     MethodName: GetVersionsModelsAsync,
     NotAsyncMethodName: GetVersionsModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetVersionsModels
   },
   {
@@ -4479,7 +4479,6 @@ To find some models to train on, check out the [trainable language models collec
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TrainingRequest,
       IsArray: false,
@@ -4556,6 +4555,7 @@ To find some models to train on, check out the [trainable language models collec
     Converters: null,
     MethodName: CreateTrainingsAsync,
     NotAsyncMethodName: CreateTrainings,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreateTrainings
   },
   {
@@ -4652,7 +4652,6 @@ The response will be a paginated JSON array of prediction objects, sorted with t
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4698,6 +4697,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
     Converters: null,
     MethodName: ListPredictionsAsync,
     NotAsyncMethodName: ListPredictions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListPredictions
   },
   {
@@ -4990,7 +4990,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.VersionPredictionRequest,
       IsArray: false,
@@ -5069,6 +5068,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Converters: null,
     MethodName: CreatePredictionsAsync,
     NotAsyncMethodName: CreatePredictions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CreatePredictions
   },
   {
@@ -5200,7 +5200,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5246,6 +5245,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Converters: null,
     MethodName: GetPredictionsAsync,
     NotAsyncMethodName: GetPredictions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetPredictions
   },
   {
@@ -5322,7 +5322,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5368,6 +5367,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Converters: null,
     MethodName: CancelPredictionsAsync,
     NotAsyncMethodName: CancelPredictions,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CancelPredictions
   },
   {
@@ -5465,7 +5465,6 @@ The response will be a paginated JSON array of training objects, sorted with the
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5511,6 +5510,7 @@ The response will be a paginated JSON array of training objects, sorted with the
     Converters: null,
     MethodName: ListTrainingsAsync,
     NotAsyncMethodName: ListTrainings,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.ListTrainings
   },
   {
@@ -5641,7 +5641,6 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5687,6 +5686,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     Converters: null,
     MethodName: GetTrainingsAsync,
     NotAsyncMethodName: GetTrainings,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetTrainings
   },
   {
@@ -5763,7 +5763,6 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5809,6 +5808,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     Converters: null,
     MethodName: CancelTrainingsAsync,
     NotAsyncMethodName: CancelTrainings,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.CancelTrainings
   },
   {
@@ -5868,7 +5868,6 @@ The response will be a JSON object with a `key` property:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5935,6 +5934,7 @@ The response will be a JSON object with a `key` property:
     Converters: null,
     MethodName: GetSecretDefaultWebhooksAsync,
     NotAsyncMethodName: GetSecretDefaultWebhooks,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetSecretDefaultWebhooks
   },
   {
@@ -5975,7 +5975,6 @@ The response will be a JSON object with a `key` property:
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6040,6 +6039,7 @@ The response will be a JSON object with a `key` property:
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   }
 ]

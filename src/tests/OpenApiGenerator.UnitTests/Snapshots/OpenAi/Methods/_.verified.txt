@@ -857,7 +857,6 @@ A list of functions the model may generate JSON inputs for.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateChatCompletionRequest,
       IsArray: false,
@@ -1010,6 +1009,7 @@ A list of functions the model may generate JSON inputs for.
     Converters: null,
     MethodName: CreateChatCompletionAsync,
     NotAsyncMethodName: CreateChatCompletion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient.CreateChatCompletion
   },
   {
@@ -1705,7 +1705,6 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateCompletionRequest,
       IsArray: false,
@@ -1846,6 +1845,7 @@ Example: user-1234,
     Converters: null,
     MethodName: CreateCompletionAsync,
     NotAsyncMethodName: CreateCompletion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CompletionsClient.CreateCompletion
   },
   {
@@ -2195,7 +2195,6 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateImageRequest,
       IsArray: false,
@@ -2306,6 +2305,7 @@ Example: user-1234,
     Converters: null,
     MethodName: CreateImageAsync,
     NotAsyncMethodName: CreateImage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ImagesClient.CreateImage
   },
   {
@@ -2693,7 +2693,6 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateImageEditRequest,
       IsArray: false,
@@ -2804,6 +2803,7 @@ Example: user-1234,
     Converters: null,
     MethodName: CreateImageEditAsync,
     NotAsyncMethodName: CreateImageEdit,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.ImagesClient.CreateImageEdit
   },
   {
@@ -3096,7 +3096,6 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateImageVariationRequest,
       IsArray: false,
@@ -3203,6 +3202,7 @@ Example: user-1234,
     Converters: null,
     MethodName: CreateImageVariationAsync,
     NotAsyncMethodName: CreateImageVariation,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.ImagesClient.CreateImageVariation
   },
   {
@@ -3422,7 +3422,6 @@ Example: user-1234,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateEmbeddingRequest,
       IsArray: false,
@@ -3531,6 +3530,7 @@ Example: user-1234,
     Converters: null,
     MethodName: CreateEmbeddingAsync,
     NotAsyncMethodName: CreateEmbedding,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EmbeddingsClient.CreateEmbedding
   },
   {
@@ -3765,7 +3765,6 @@ Default Value: 1,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateSpeechRequest,
       IsArray: false,
@@ -3864,6 +3863,7 @@ Default Value: 1,
     Converters: null,
     MethodName: CreateSpeechAsync,
     NotAsyncMethodName: CreateSpeech,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AudioClient.CreateSpeech
   },
   {
@@ -4189,7 +4189,6 @@ Default Value: [segment],
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateTranscriptionRequest,
       IsArray: false,
@@ -4294,6 +4293,7 @@ Default Value: [segment],
     Converters: null,
     MethodName: CreateTranscriptionAsync,
     NotAsyncMethodName: CreateTranscription,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.AudioClient.CreateTranscription
   },
   {
@@ -4539,7 +4539,6 @@ Default Value: 0,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateTranslationRequest,
       IsArray: false,
@@ -4640,6 +4639,7 @@ Default Value: 0,
     Converters: null,
     MethodName: CreateTranslationAsync,
     NotAsyncMethodName: CreateTranslation,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.AudioClient.CreateTranslation
   },
   {
@@ -4714,7 +4714,6 @@ Default Value: 0,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4787,6 +4786,7 @@ Default Value: 0,
     Converters: null,
     MethodName: ListFilesAsync,
     NotAsyncMethodName: ListFiles,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FilesClient.ListFiles
   },
   {
@@ -4949,7 +4949,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.CreateFileRequest,
       IsArray: false,
@@ -5060,6 +5059,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     Converters: null,
     MethodName: CreateFileAsync,
     NotAsyncMethodName: CreateFile,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.FilesClient.CreateFile
   },
   {
@@ -5135,7 +5135,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5210,6 +5209,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     Converters: null,
     MethodName: DeleteFileAsync,
     NotAsyncMethodName: DeleteFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FilesClient.DeleteFile
   },
   {
@@ -5284,7 +5284,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5369,6 +5368,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     Converters: null,
     MethodName: RetrieveFileAsync,
     NotAsyncMethodName: RetrieveFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FilesClient.RetrieveFile
   },
   {
@@ -5443,7 +5443,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5510,6 +5509,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     Converters: null,
     MethodName: DownloadFileAsync,
     NotAsyncMethodName: DownloadFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FilesClient.DownloadFile
   },
   {
@@ -5810,7 +5810,6 @@ Response includes details of the enqueued job including job status and the name 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateFineTuningJobRequest,
       IsArray: false,
@@ -5949,6 +5948,7 @@ Response includes details of the enqueued job including job status and the name 
     Converters: null,
     MethodName: CreateFineTuningJobAsync,
     NotAsyncMethodName: CreateFineTuningJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.CreateFineTuningJob
   },
   {
@@ -6060,7 +6060,6 @@ List your organization's fine-tuning jobs
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6135,6 +6134,7 @@ List your organization's fine-tuning jobs
     Converters: null,
     MethodName: ListPaginatedFineTuningJobsAsync,
     NotAsyncMethodName: ListPaginatedFineTuningJobs,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.ListPaginatedFineTuningJobs
   },
   {
@@ -6213,7 +6213,6 @@ Get info about a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6316,6 +6315,7 @@ Get info about a fine-tuning job.
     Converters: null,
     MethodName: RetrieveFineTuningJobAsync,
     NotAsyncMethodName: RetrieveFineTuningJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.RetrieveFineTuningJob
   },
   {
@@ -6461,7 +6461,6 @@ Get status updates for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6534,6 +6533,7 @@ Get status updates for a fine-tuning job.
     Converters: null,
     MethodName: ListFineTuningEventsAsync,
     NotAsyncMethodName: ListFineTuningEvents,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.ListFineTuningEvents
   },
   {
@@ -6611,7 +6611,6 @@ Immediately cancel a fine-tune job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6714,6 +6713,7 @@ Immediately cancel a fine-tune job.
     Converters: null,
     MethodName: CancelFineTuningJobAsync,
     NotAsyncMethodName: CancelFineTuningJob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.CancelFineTuningJob
   },
   {
@@ -6859,7 +6859,6 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6938,6 +6937,7 @@ List checkpoints for a fine-tuning job.
     Converters: null,
     MethodName: ListFineTuningJobCheckpointsAsync,
     NotAsyncMethodName: ListFineTuningJobCheckpoints,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient.ListFineTuningJobCheckpoints
   },
   {
@@ -6977,7 +6977,6 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7050,6 +7049,7 @@ List checkpoints for a fine-tuning job.
     Converters: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.ListModels
   },
   {
@@ -7124,7 +7124,6 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7201,6 +7200,7 @@ List checkpoints for a fine-tuning job.
     Converters: null,
     MethodName: RetrieveModelAsync,
     NotAsyncMethodName: RetrieveModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.RetrieveModel
   },
   {
@@ -7276,7 +7276,6 @@ List checkpoints for a fine-tuning job.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7351,6 +7350,7 @@ List checkpoints for a fine-tuning job.
     Converters: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.DeleteModel
   },
   {
@@ -7463,7 +7463,6 @@ Example: text-moderation-stable,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModerationRequest,
       IsArray: false,
@@ -7564,6 +7563,7 @@ Example: text-moderation-stable,
     Converters: null,
     MethodName: CreateModerationAsync,
     NotAsyncMethodName: CreateModeration,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModerationsClient.CreateModeration
   },
   {
@@ -7748,7 +7748,6 @@ Example: text-moderation-stable,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7827,6 +7826,7 @@ Example: text-moderation-stable,
     Converters: null,
     MethodName: ListAssistantsAsync,
     NotAsyncMethodName: ListAssistants,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ListAssistants
   },
   {
@@ -8214,7 +8214,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateAssistantRequest,
       IsArray: false,
@@ -8351,6 +8350,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: CreateAssistantAsync,
     NotAsyncMethodName: CreateAssistant,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CreateAssistant
   },
   {
@@ -8425,7 +8425,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8520,6 +8519,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: GetAssistantAsync,
     NotAsyncMethodName: GetAssistant,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.GetAssistant
   },
   {
@@ -8939,7 +8939,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyAssistantRequest,
       IsArray: false,
@@ -9076,6 +9075,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: ModifyAssistantAsync,
     NotAsyncMethodName: ModifyAssistant,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ModifyAssistant
   },
   {
@@ -9151,7 +9151,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9226,6 +9225,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: DeleteAssistantAsync,
     NotAsyncMethodName: DeleteAssistant,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.DeleteAssistant
   },
   {
@@ -9365,7 +9365,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateThreadRequest,
       IsArray: false,
@@ -9472,6 +9471,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CreateThreadAsync,
     NotAsyncMethodName: CreateThread,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CreateThread
   },
   {
@@ -9546,7 +9546,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9625,6 +9624,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: GetThreadAsync,
     NotAsyncMethodName: GetThread,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.GetThread
   },
   {
@@ -9767,7 +9767,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyThreadRequest,
       IsArray: false,
@@ -9872,6 +9871,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ModifyThreadAsync,
     NotAsyncMethodName: ModifyThread,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ModifyThread
   },
   {
@@ -9947,7 +9947,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10022,6 +10021,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: DeleteThreadAsync,
     NotAsyncMethodName: DeleteThread,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.DeleteThread
   },
   {
@@ -10274,7 +10274,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10353,6 +10352,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ListMessagesAsync,
     NotAsyncMethodName: ListMessages,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ListMessages
   },
   {
@@ -10566,7 +10566,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateMessageRequest,
       IsArray: false,
@@ -10693,6 +10692,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CreateMessageAsync,
     NotAsyncMethodName: CreateMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CreateMessage
   },
   {
@@ -10801,7 +10801,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10898,6 +10897,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: GetMessageAsync,
     NotAsyncMethodName: GetMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.GetMessage
   },
   {
@@ -11041,7 +11041,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyMessageRequest,
       IsArray: false,
@@ -11162,6 +11161,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ModifyMessageAsync,
     NotAsyncMethodName: ModifyMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ModifyMessage
   },
   {
@@ -11271,7 +11271,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11346,6 +11345,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: DeleteMessageAsync,
     NotAsyncMethodName: DeleteMessage,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.DeleteMessage
   },
   {
@@ -11926,7 +11926,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateThreadAndRunRequest,
       IsArray: false,
@@ -12103,6 +12102,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: CreateThreadAndRunAsync,
     NotAsyncMethodName: CreateThreadAndRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CreateThreadAndRun
   },
   {
@@ -12321,7 +12321,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12400,6 +12399,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: ListRunsAsync,
     NotAsyncMethodName: ListRuns,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ListRuns
   },
   {
@@ -13011,7 +13011,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRunRequest,
       IsArray: false,
@@ -13188,6 +13187,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: CreateRunAsync,
     NotAsyncMethodName: CreateRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CreateRun
   },
   {
@@ -13296,7 +13296,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13419,6 +13418,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Converters: null,
     MethodName: GetRunAsync,
     NotAsyncMethodName: GetRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.GetRun
   },
   {
@@ -13562,7 +13562,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModifyRunRequest,
       IsArray: false,
@@ -13709,6 +13708,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ModifyRunAsync,
     NotAsyncMethodName: ModifyRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ModifyRun
   },
   {
@@ -13884,7 +13884,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.SubmitToolOutputsRunRequest,
       IsArray: false,
@@ -14033,6 +14032,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Converters: null,
     MethodName: SubmitToolOuputsToRunAsync,
     NotAsyncMethodName: SubmitToolOuputsToRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.SubmitToolOuputsToRun
   },
   {
@@ -14142,7 +14142,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14265,6 +14264,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Converters: null,
     MethodName: CancelRunAsync,
     NotAsyncMethodName: CancelRun,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.CancelRun
   },
   {
@@ -14517,7 +14517,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14596,6 +14595,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Converters: null,
     MethodName: ListRunStepsAsync,
     NotAsyncMethodName: ListRunSteps,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.ListRunSteps
   },
   {
@@ -14738,7 +14738,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14839,6 +14838,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Converters: null,
     MethodName: GetRunStepAsync,
     NotAsyncMethodName: GetRunStep,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient.GetRunStep
   },
   {
@@ -15023,7 +15023,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15102,6 +15101,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Converters: null,
     MethodName: ListVectorStoresAsync,
     NotAsyncMethodName: ListVectorStores,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.ListVectorStores
   },
   {
@@ -15306,7 +15306,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreRequest,
       IsArray: false,
@@ -15429,6 +15428,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CreateVectorStoreAsync,
     NotAsyncMethodName: CreateVectorStore,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStore
   },
   {
@@ -15503,7 +15503,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15594,6 +15593,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: GetVectorStoreAsync,
     NotAsyncMethodName: GetVectorStore,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStore
   },
   {
@@ -15768,7 +15768,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateVectorStoreRequest,
       IsArray: false,
@@ -15887,6 +15886,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ModifyVectorStoreAsync,
     NotAsyncMethodName: ModifyVectorStore,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.ModifyVectorStore
   },
   {
@@ -15962,7 +15962,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16037,6 +16036,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: DeleteVectorStoreAsync,
     NotAsyncMethodName: DeleteVectorStore,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStore
   },
   {
@@ -16299,7 +16299,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16378,6 +16377,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ListVectorStoreFilesAsync,
     NotAsyncMethodName: ListVectorStoreFiles,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.ListVectorStoreFiles
   },
   {
@@ -16516,7 +16516,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileRequest,
       IsArray: false,
@@ -16627,6 +16626,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CreateVectorStoreFileAsync,
     NotAsyncMethodName: CreateVectorStoreFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFile
   },
   {
@@ -16735,7 +16735,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16820,6 +16819,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: GetVectorStoreFileAsync,
     NotAsyncMethodName: GetVectorStoreFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFile
   },
   {
@@ -16929,7 +16929,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17004,6 +17003,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: DeleteVectorStoreFileAsync,
     NotAsyncMethodName: DeleteVectorStoreFile,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStoreFile
   },
   {
@@ -17142,7 +17142,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileBatchRequest,
       IsArray: false,
@@ -17249,6 +17248,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CreateVectorStoreFileBatchAsync,
     NotAsyncMethodName: CreateVectorStoreFileBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFileBatch
   },
   {
@@ -17357,7 +17357,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17438,6 +17437,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: GetVectorStoreFileBatchAsync,
     NotAsyncMethodName: GetVectorStoreFileBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFileBatch
   },
   {
@@ -17547,7 +17547,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17628,6 +17627,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: CancelVectorStoreFileBatchAsync,
     NotAsyncMethodName: CancelVectorStoreFileBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.CancelVectorStoreFileBatch
   },
   {
@@ -17924,7 +17924,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18003,6 +18002,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Converters: null,
     MethodName: ListFilesInVectorStoreBatchAsync,
     NotAsyncMethodName: ListFilesInVectorStoreBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient.ListFilesInVectorStoreBatch
   },
   {
@@ -18187,7 +18187,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateBatchRequest,
       IsArray: false,
@@ -18316,6 +18315,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.BatchClient.CreateBatch
   },
   {
@@ -18425,7 +18425,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18504,6 +18503,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ListBatchesAsync,
     NotAsyncMethodName: ListBatches,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.BatchClient.ListBatches
   },
   {
@@ -18578,7 +18578,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18687,6 +18686,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: RetrieveBatchAsync,
     NotAsyncMethodName: RetrieveBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.BatchClient.RetrieveBatch
   },
   {
@@ -18762,7 +18762,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18871,6 +18870,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: CancelBatchAsync,
     NotAsyncMethodName: CancelBatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.BatchClient.CancelBatch
   },
   {
@@ -19283,7 +19283,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19765,6 +19764,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -19804,7 +19804,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19850,6 +19849,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AssistantsClient
   },
   {
@@ -19889,7 +19889,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19935,6 +19934,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AudioClient
   },
   {
@@ -19974,7 +19974,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20020,6 +20019,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient
   },
   {
@@ -20059,7 +20059,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20105,6 +20104,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CompletionsClient
   },
   {
@@ -20144,7 +20144,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20190,6 +20189,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EmbeddingsClient
   },
   {
@@ -20229,7 +20229,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20275,6 +20274,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FineTuningClient
   },
   {
@@ -20314,7 +20314,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20360,6 +20359,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.BatchClient
   },
   {
@@ -20399,7 +20399,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20445,6 +20444,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FilesClient
   },
   {
@@ -20484,7 +20484,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20530,6 +20529,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ImagesClient
   },
   {
@@ -20569,7 +20569,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20615,6 +20614,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient
   },
   {
@@ -20654,7 +20654,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20700,6 +20699,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModerationsClient
   },
   {
@@ -20739,7 +20739,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -20785,6 +20784,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.VectorStoresClient
   }
 ]

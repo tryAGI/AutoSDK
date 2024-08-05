@@ -143,7 +143,6 @@ Get a specific session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -292,6 +291,7 @@ Get a specific session.,
     Converters: null,
     MethodName: ReadTracerSessionApiV1SessionsSessionIdGetAsync,
     NotAsyncMethodName: ReadTracerSessionApiV1SessionsSessionIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.ReadTracerSessionApiV1SessionsSessionIdGet
   },
   {
@@ -561,7 +561,6 @@ Create a new session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TracerSessionUpdate,
       IsArray: false,
@@ -708,6 +707,7 @@ Create a new session.,
     Converters: null,
     MethodName: UpdateTracerSessionApiV1SessionsSessionIdPatchAsync,
     NotAsyncMethodName: UpdateTracerSessionApiV1SessionsSessionIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.UpdateTracerSessionApiV1SessionsSessionIdPatch
   },
   {
@@ -785,7 +785,6 @@ Delete a specific session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -874,6 +873,7 @@ Delete a specific session.,
     Converters: null,
     MethodName: DeleteTracerSessionApiV1SessionsSessionIdDeleteAsync,
     NotAsyncMethodName: DeleteTracerSessionApiV1SessionsSessionIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.DeleteTracerSessionApiV1SessionsSessionIdDelete
   },
   {
@@ -1372,7 +1372,6 @@ Get all sessions.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1461,6 +1460,7 @@ Get all sessions.,
     Converters: null,
     MethodName: ReadTracerSessionsApiV1SessionsGetAsync,
     NotAsyncMethodName: ReadTracerSessionsApiV1SessionsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.ReadTracerSessionsApiV1SessionsGet
   },
   {
@@ -1825,7 +1825,6 @@ Create a new session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TracerSessionCreate,
       IsArray: false,
@@ -1978,6 +1977,7 @@ Create a new session.,
     Converters: null,
     MethodName: CreateTracerSessionApiV1SessionsPostAsync,
     NotAsyncMethodName: CreateTracerSessionApiV1SessionsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.CreateTracerSessionApiV1SessionsPost
   },
   {
@@ -2055,7 +2055,6 @@ Delete a specific session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2144,6 +2143,7 @@ Delete a specific session.,
     Converters: null,
     MethodName: DeleteTracerSessionsApiV1SessionsDeleteAsync,
     NotAsyncMethodName: DeleteTracerSessionsApiV1SessionsDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.DeleteTracerSessionsApiV1SessionsDelete
   },
   {
@@ -2360,7 +2360,6 @@ Given a session, a number K, and (optionally) a list of metadata keys, return th
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2449,6 +2448,7 @@ Given a session, a number K, and (optionally) a list of metadata keys, return th
     Converters: null,
     MethodName: ReadTracerSessionsRunsMetadataApiV1SessionsSessionIdMetadataGetAsync,
     NotAsyncMethodName: ReadTracerSessionsRunsMetadataApiV1SessionsSessionIdMetadataGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.ReadTracerSessionsRunsMetadataApiV1SessionsSessionIdMetadataGet
   },
   {
@@ -2525,7 +2525,6 @@ Get all filter views for a session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2614,6 +2613,7 @@ Get all filter views for a session.,
     Converters: null,
     MethodName: ReadFilterViewsApiV1SessionsSessionIdViewsGetAsync,
     NotAsyncMethodName: ReadFilterViewsApiV1SessionsSessionIdViewsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.ReadFilterViewsApiV1SessionsSessionIdViewsGet
   },
   {
@@ -2785,7 +2785,6 @@ Create a new filter view.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FilterViewCreate,
       IsArray: false,
@@ -2918,6 +2917,7 @@ Create a new filter view.,
     Converters: null,
     MethodName: CreateFilterViewApiV1SessionsSessionIdViewsPostAsync,
     NotAsyncMethodName: CreateFilterViewApiV1SessionsSessionIdViewsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.CreateFilterViewApiV1SessionsSessionIdViewsPost
   },
   {
@@ -3028,7 +3028,6 @@ Get a specific filter view.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3133,6 +3132,7 @@ Get a specific filter view.,
     Converters: null,
     MethodName: ReadFilterViewApiV1SessionsSessionIdViewsViewIdGetAsync,
     NotAsyncMethodName: ReadFilterViewApiV1SessionsSessionIdViewsViewIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.ReadFilterViewApiV1SessionsSessionIdViewsViewIdGet
   },
   {
@@ -3340,7 +3340,6 @@ Update a filter view.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FilterViewUpdate,
       IsArray: false,
@@ -3473,6 +3472,7 @@ Update a filter view.,
     Converters: null,
     MethodName: UpdateFilterViewApiV1SessionsSessionIdViewsViewIdPatchAsync,
     NotAsyncMethodName: UpdateFilterViewApiV1SessionsSessionIdViewsViewIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.UpdateFilterViewApiV1SessionsSessionIdViewsViewIdPatch
   },
   {
@@ -3584,7 +3584,6 @@ Delete a specific filter view.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3673,6 +3672,7 @@ Delete a specific filter view.,
     Converters: null,
     MethodName: DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDeleteAsync,
     NotAsyncMethodName: DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient.DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDelete
   },
   {
@@ -3714,7 +3714,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3781,6 +3780,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: ListOrganizationsApiV1OrgsGetAsync,
     NotAsyncMethodName: ListOrganizationsApiV1OrgsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ListOrganizationsApiV1OrgsGet
   },
   {
@@ -3821,7 +3821,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3892,6 +3891,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: CreateCustomersAndGetStripeSetupIntentApiV1OrgsCurrentSetupPostAsync,
     NotAsyncMethodName: CreateCustomersAndGetStripeSetupIntentApiV1OrgsCurrentSetupPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.CreateCustomersAndGetStripeSetupIntentApiV1OrgsCurrentSetupPost
   },
   {
@@ -3931,7 +3931,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4028,6 +4027,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: GetOrganizationInfoApiV1OrgsCurrentGetAsync,
     NotAsyncMethodName: GetOrganizationInfoApiV1OrgsCurrentGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetOrganizationInfoApiV1OrgsCurrentGet
   },
   {
@@ -4067,7 +4067,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4152,6 +4151,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: GetCurrentOrganizationInfoApiV1OrgsCurrentInfoGetAsync,
     NotAsyncMethodName: GetCurrentOrganizationInfoApiV1OrgsCurrentInfoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetCurrentOrganizationInfoApiV1OrgsCurrentInfoGet
   },
   {
@@ -4191,7 +4191,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4286,6 +4285,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: GetOrganizationBillingInfoApiV1OrgsCurrentBillingGetAsync,
     NotAsyncMethodName: GetOrganizationBillingInfoApiV1OrgsCurrentBillingGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetOrganizationBillingInfoApiV1OrgsCurrentBillingGet
   },
   {
@@ -4403,7 +4403,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4496,6 +4495,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: GetDashboardApiV1OrgsCurrentDashboardGetAsync,
     NotAsyncMethodName: GetDashboardApiV1OrgsCurrentDashboardGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetDashboardApiV1OrgsCurrentDashboardGet
   },
   {
@@ -4602,7 +4602,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.StripePaymentInformation,
       IsArray: false,
@@ -4717,6 +4716,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPostAsync,
     NotAsyncMethodName: OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.OnPaymentMethodCreatedApiV1OrgsCurrentPaymentMethodPost
   },
   {
@@ -4756,7 +4756,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4833,6 +4832,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: GetCompanyInfoApiV1OrgsCurrentBusinessInfoGetAsync,
     NotAsyncMethodName: GetCompanyInfoApiV1OrgsCurrentBusinessInfoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetCompanyInfoApiV1OrgsCurrentBusinessInfoGet
   },
   {
@@ -5002,7 +5002,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.StripeBusinessInfoInput,
       IsArray: false,
@@ -5121,6 +5120,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostAsync,
     NotAsyncMethodName: SetCompanyInfoApiV1OrgsCurrentBusinessInfoPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPost
   },
   {
@@ -5207,7 +5207,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ChangePaymentPlanSchema,
       IsArray: false,
@@ -5320,6 +5319,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: ChangePaymentPlanApiV1OrgsCurrentPlanPostAsync,
     NotAsyncMethodName: ChangePaymentPlanApiV1OrgsCurrentPlanPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ChangePaymentPlanApiV1OrgsCurrentPlanPost
   },
   {
@@ -5359,7 +5359,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5426,6 +5425,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: ListOrganizationRolesApiV1OrgsCurrentRolesGetAsync,
     NotAsyncMethodName: ListOrganizationRolesApiV1OrgsCurrentRolesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ListOrganizationRolesApiV1OrgsCurrentRolesGet
   },
   {
@@ -5560,7 +5560,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRoleRequest,
       IsArray: false,
@@ -5693,6 +5692,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: CreateOrganizationRolesApiV1OrgsCurrentRolesPostAsync,
     NotAsyncMethodName: CreateOrganizationRolesApiV1OrgsCurrentRolesPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.CreateOrganizationRolesApiV1OrgsCurrentRolesPost
   },
   {
@@ -5768,7 +5768,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5873,6 +5872,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: DeleteOrganizationRolesApiV1OrgsCurrentRolesRoleIdDeleteAsync,
     NotAsyncMethodName: DeleteOrganizationRolesApiV1OrgsCurrentRolesRoleIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.DeleteOrganizationRolesApiV1OrgsCurrentRolesRoleIdDelete
   },
   {
@@ -6041,7 +6041,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateRoleRequest,
       IsArray: false,
@@ -6174,6 +6173,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: UpdateOrganizationRolesApiV1OrgsCurrentRolesRoleIdPatchAsync,
     NotAsyncMethodName: UpdateOrganizationRolesApiV1OrgsCurrentRolesRoleIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.UpdateOrganizationRolesApiV1OrgsCurrentRolesRoleIdPatch
   },
   {
@@ -6213,7 +6213,6 @@ Get all orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6280,6 +6279,7 @@ Get all orgs visible to this auth,
     Converters: null,
     MethodName: ListPermissionsApiV1OrgsPermissionsGetAsync,
     NotAsyncMethodName: ListPermissionsApiV1OrgsPermissionsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ListPermissionsApiV1OrgsPermissionsGet
   },
   {
@@ -6321,7 +6321,6 @@ Get all pending orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6388,6 +6387,7 @@ Get all pending orgs visible to this auth,
     Converters: null,
     MethodName: ListPendingOrganizationInvitesApiV1OrgsPendingGetAsync,
     NotAsyncMethodName: ListPendingOrganizationInvitesApiV1OrgsPendingGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ListPendingOrganizationInvitesApiV1OrgsPendingGet
   },
   {
@@ -6427,7 +6427,6 @@ Get all pending orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6502,6 +6501,7 @@ Get all pending orgs visible to this auth,
     Converters: null,
     MethodName: GetCurrentOrgMembersApiV1OrgsCurrentMembersGetAsync,
     NotAsyncMethodName: GetCurrentOrgMembersApiV1OrgsCurrentMembersGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.GetCurrentOrgMembersApiV1OrgsCurrentMembersGet
   },
   {
@@ -6766,7 +6766,6 @@ Get all pending orgs visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PendingIdentityCreate,
       IsArray: false,
@@ -6921,6 +6920,7 @@ Get all pending orgs visible to this auth,
     Converters: null,
     MethodName: AddMemberToCurrentOrgApiV1OrgsCurrentMembersPostAsync,
     NotAsyncMethodName: AddMemberToCurrentOrgApiV1OrgsCurrentMembersPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.AddMemberToCurrentOrgApiV1OrgsCurrentMembersPost
   },
   {
@@ -6963,7 +6963,6 @@ Batch invite up to 500 users to the current org.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.PendingIdentityCreate>,
       IsArray: true,
@@ -7072,6 +7071,7 @@ Batch invite up to 500 users to the current org.,
     Converters: null,
     MethodName: AddMembersToCurrentOrgBatchApiV1OrgsCurrentMembersBatchPostAsync,
     NotAsyncMethodName: AddMembersToCurrentOrgBatchApiV1OrgsCurrentMembersBatchPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.AddMembersToCurrentOrgBatchApiV1OrgsCurrentMembersBatchPost
   },
   {
@@ -7149,7 +7149,6 @@ When an admin deletes a pending member invite.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7238,6 +7237,7 @@ When an admin deletes a pending member invite.,
     Converters: null,
     MethodName: DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteAsync,
     NotAsyncMethodName: DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDelete
   },
   {
@@ -7313,7 +7313,6 @@ When an admin deletes a pending member invite.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7402,6 +7401,7 @@ When an admin deletes a pending member invite.,
     Converters: null,
     MethodName: DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteAsync,
     NotAsyncMethodName: DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDelete
   },
   {
@@ -7477,7 +7477,6 @@ When an admin deletes a pending member invite.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7586,6 +7585,7 @@ When an admin deletes a pending member invite.,
     Converters: null,
     MethodName: ClaimPendingOrganizationInviteApiV1OrgsPendingOrganizationIdClaimPostAsync,
     NotAsyncMethodName: ClaimPendingOrganizationInviteApiV1OrgsPendingOrganizationIdClaimPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ClaimPendingOrganizationInviteApiV1OrgsPendingOrganizationIdClaimPost
   },
   {
@@ -7663,7 +7663,6 @@ Hard delete a user from the current organization.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7752,6 +7751,7 @@ Hard delete a user from the current organization.,
     Converters: null,
     MethodName: RemoveMemberFromCurrentOrgApiV1OrgsCurrentMembersIdentityIdDeleteAsync,
     NotAsyncMethodName: RemoveMemberFromCurrentOrgApiV1OrgsCurrentMembersIdentityIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.RemoveMemberFromCurrentOrgApiV1OrgsCurrentMembersIdentityIdDelete
   },
   {
@@ -7924,7 +7924,6 @@ This is used for updating a user's role (all auth modes) or full_name/password (
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.OrgIdentityPatch,
       IsArray: false,
@@ -8041,6 +8040,7 @@ This is used for updating a user's role (all auth modes) or full_name/password (
     Converters: null,
     MethodName: UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchAsync,
     NotAsyncMethodName: UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatch
   },
   {
@@ -8082,7 +8082,6 @@ List out the configured TTL settings for a given org (org-level and tenant-level
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8149,6 +8148,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     Converters: null,
     MethodName: ListTtlSettingsApiV1OrgsTtlSettingsGetAsync,
     NotAsyncMethodName: ListTtlSettingsApiV1OrgsTtlSettingsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.ListTtlSettingsApiV1OrgsTtlSettingsGet
   },
   {
@@ -8227,7 +8227,6 @@ List out the configured TTL settings for a given org (org-level and tenant-level
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpsertOrgOrWorkspaceTTLSettingsRequest,
       IsArray: false,
@@ -8356,6 +8355,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     Converters: null,
     MethodName: UpsertTtlSettingsApiV1OrgsTtlSettingsPutAsync,
     NotAsyncMethodName: UpsertTtlSettingsApiV1OrgsTtlSettingsPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient.UpsertTtlSettingsApiV1OrgsTtlSettingsPut
   },
   {
@@ -8396,7 +8396,6 @@ List out the configured TTL settings for a given org (org-level and tenant-level
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8467,6 +8466,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     Converters: null,
     MethodName: LoginApiV1LoginPostAsync,
     NotAsyncMethodName: LoginApiV1LoginPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AuthClient.LoginApiV1LoginPost
   },
   {
@@ -8508,7 +8508,6 @@ Get the current tenant's API keys,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8575,6 +8574,7 @@ Get the current tenant's API keys,
     Converters: null,
     MethodName: GetApiKeysApiV1ApiKeyGetAsync,
     NotAsyncMethodName: GetApiKeysApiV1ApiKeyGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.GetApiKeysApiV1ApiKeyGet
   },
   {
@@ -8617,7 +8617,6 @@ Generate an api key for the user,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.AllOf<global::G.APIKeyCreateRequest>,
       IsArray: false,
@@ -8742,6 +8741,7 @@ Generate an api key for the user,
     Converters: null,
     MethodName: GenerateApiKeyApiV1ApiKeyPostAsync,
     NotAsyncMethodName: GenerateApiKeyApiV1ApiKeyPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.GenerateApiKeyApiV1ApiKeyPost
   },
   {
@@ -8819,7 +8819,6 @@ Delete an api key for the user,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8920,6 +8919,7 @@ Delete an api key for the user,
     Converters: null,
     MethodName: DeleteApiKeyApiV1ApiKeyApiKeyIdDeleteAsync,
     NotAsyncMethodName: DeleteApiKeyApiV1ApiKeyApiKeyIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.DeleteApiKeyApiV1ApiKeyApiKeyIdDelete
   },
   {
@@ -8961,7 +8961,6 @@ Get the current users PATs for this tenant,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9028,6 +9027,7 @@ Get the current users PATs for this tenant,
     Converters: null,
     MethodName: GetPersonalAccessTokensApiV1ApiKeyCurrentGetAsync,
     NotAsyncMethodName: GetPersonalAccessTokensApiV1ApiKeyCurrentGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.GetPersonalAccessTokensApiV1ApiKeyCurrentGet
   },
   {
@@ -9070,7 +9070,6 @@ Generate a Personal Access Token the user,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.AllOf<global::G.APIKeyCreateRequest>,
       IsArray: false,
@@ -9195,6 +9194,7 @@ Generate a Personal Access Token the user,
     Converters: null,
     MethodName: GeneratePersonalAccessTokenApiV1ApiKeyCurrentPostAsync,
     NotAsyncMethodName: GeneratePersonalAccessTokenApiV1ApiKeyCurrentPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.GeneratePersonalAccessTokenApiV1ApiKeyCurrentPost
   },
   {
@@ -9272,7 +9272,6 @@ Delete a Personal Access Token for the user,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9373,6 +9372,7 @@ Delete a Personal Access Token for the user,
     Converters: null,
     MethodName: DeletePersonalAccessTokenApiV1ApiKeyCurrentPatIdDeleteAsync,
     NotAsyncMethodName: DeletePersonalAccessTokenApiV1ApiKeyCurrentPatIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient.DeletePersonalAccessTokenApiV1ApiKeyCurrentPatIdDelete
   },
   {
@@ -9487,7 +9487,6 @@ Get a specific example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9596,6 +9595,7 @@ Get a specific example.,
     Converters: null,
     MethodName: ReadExampleApiV1ExamplesExampleIdGetAsync,
     NotAsyncMethodName: ReadExampleApiV1ExamplesExampleIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.ReadExampleApiV1ExamplesExampleIdGet
   },
   {
@@ -9833,7 +9833,6 @@ Update a specific example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ExampleUpdate,
       IsArray: false,
@@ -9954,6 +9953,7 @@ Update a specific example.,
     Converters: null,
     MethodName: UpdateExampleApiV1ExamplesExampleIdPatchAsync,
     NotAsyncMethodName: UpdateExampleApiV1ExamplesExampleIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.UpdateExampleApiV1ExamplesExampleIdPatch
   },
   {
@@ -10031,7 +10031,6 @@ Delete a specific example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10120,6 +10119,7 @@ Delete a specific example.,
     Converters: null,
     MethodName: DeleteExampleApiV1ExamplesExampleIdDeleteAsync,
     NotAsyncMethodName: DeleteExampleApiV1ExamplesExampleIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.DeleteExampleApiV1ExamplesExampleIdDelete
   },
   {
@@ -10586,7 +10586,6 @@ Get all examples by query params,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10675,6 +10674,7 @@ Get all examples by query params,
     Converters: null,
     MethodName: ReadExamplesApiV1ExamplesGetAsync,
     NotAsyncMethodName: ReadExamplesApiV1ExamplesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.ReadExamplesApiV1ExamplesGet
   },
   {
@@ -10972,7 +10972,6 @@ Create a new example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ExampleCreate,
       IsArray: false,
@@ -11119,6 +11118,7 @@ Create a new example.,
     Converters: null,
     MethodName: CreateExampleApiV1ExamplesPostAsync,
     NotAsyncMethodName: CreateExampleApiV1ExamplesPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.CreateExampleApiV1ExamplesPost
   },
   {
@@ -11196,7 +11196,6 @@ Delete a specific set of examples.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11285,6 +11284,7 @@ Delete a specific set of examples.,
     Converters: null,
     MethodName: DeleteExamplesApiV1ExamplesDeleteAsync,
     NotAsyncMethodName: DeleteExamplesApiV1ExamplesDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.DeleteExamplesApiV1ExamplesDelete
   },
   {
@@ -11327,7 +11327,6 @@ Create a new example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.ExampleBulkCreate>,
       IsArray: true,
@@ -11436,6 +11435,7 @@ Create a new example.,
     Converters: null,
     MethodName: CreateExamplesApiV1ExamplesBulkPostAsync,
     NotAsyncMethodName: CreateExamplesApiV1ExamplesBulkPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.CreateExamplesApiV1ExamplesBulkPost
   },
   {
@@ -11478,7 +11478,6 @@ Update examples in bulk.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.ExampleUpdateWithID>,
       IsArray: true,
@@ -11587,6 +11586,7 @@ Update examples in bulk.,
     Converters: null,
     MethodName: UpdateExamplesApiV1ExamplesBulkPatchAsync,
     NotAsyncMethodName: UpdateExamplesApiV1ExamplesBulkPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient.UpdateExamplesApiV1ExamplesBulkPatch
   },
   {
@@ -11788,7 +11788,6 @@ Create a new example.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost,
       IsArray: false,
@@ -11905,6 +11904,7 @@ Create a new example.,
     Converters: null,
     MethodName: UploadExamplesApiV1ExamplesUploadDatasetIdPostAsync,
     NotAsyncMethodName: UploadExamplesApiV1ExamplesUploadDatasetIdPost,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.ExamplesClient.UploadExamplesApiV1ExamplesUploadDatasetIdPost
   },
   {
@@ -11981,7 +11981,6 @@ Get a specific dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12096,6 +12095,7 @@ Get a specific dataset.,
     Converters: null,
     MethodName: ReadDatasetApiV1DatasetsDatasetIdGetAsync,
     NotAsyncMethodName: ReadDatasetApiV1DatasetsDatasetIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadDatasetApiV1DatasetsDatasetIdGet
   },
   {
@@ -12173,7 +12173,6 @@ Delete a specific dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12262,6 +12261,7 @@ Delete a specific dataset.,
     Converters: null,
     MethodName: DeleteDatasetApiV1DatasetsDatasetIdDeleteAsync,
     NotAsyncMethodName: DeleteDatasetApiV1DatasetsDatasetIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DeleteDatasetApiV1DatasetsDatasetIdDelete
   },
   {
@@ -12499,7 +12499,6 @@ Update a specific dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.DatasetUpdate,
       IsArray: false,
@@ -12638,6 +12637,7 @@ Update a specific dataset.,
     Converters: null,
     MethodName: UpdateDatasetApiV1DatasetsDatasetIdPatchAsync,
     NotAsyncMethodName: UpdateDatasetApiV1DatasetsDatasetIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.UpdateDatasetApiV1DatasetsDatasetIdPatch
   },
   {
@@ -12961,7 +12961,6 @@ Get all datasets by query params and owner.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13050,6 +13049,7 @@ Get all datasets by query params and owner.,
     Converters: null,
     MethodName: ReadDatasetsApiV1DatasetsGetAsync,
     NotAsyncMethodName: ReadDatasetsApiV1DatasetsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadDatasetsApiV1DatasetsGet
   },
   {
@@ -13348,7 +13348,6 @@ Create a new dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.DatasetCreate,
       IsArray: false,
@@ -13501,6 +13500,7 @@ Create a new dataset.,
     Converters: null,
     MethodName: CreateDatasetApiV1DatasetsPostAsync,
     NotAsyncMethodName: CreateDatasetApiV1DatasetsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.CreateDatasetApiV1DatasetsPost
   },
   {
@@ -13765,7 +13765,6 @@ Create a new dataset from a CSV file.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: true,
     RequestType: {
       CSharpType: global::G.BodyUploadCsvDatasetApiV1DatasetsUploadPost,
       IsArray: false,
@@ -13914,6 +13913,7 @@ Create a new dataset from a CSV file.,
     Converters: null,
     MethodName: UploadCsvDatasetApiV1DatasetsUploadPostAsync,
     NotAsyncMethodName: UploadCsvDatasetApiV1DatasetsUploadPost,
+    IsMultipartFormData: true,
     FileNameWithoutExtension: G.DatasetsClient.UploadCsvDatasetApiV1DatasetsUploadPost
   },
   {
@@ -14130,7 +14130,6 @@ Get dataset versions.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14219,6 +14218,7 @@ Get dataset versions.,
     Converters: null,
     MethodName: GetDatasetVersionsApiV1DatasetsDatasetIdVersionsGetAsync,
     NotAsyncMethodName: GetDatasetVersionsApiV1DatasetsDatasetIdVersionsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.GetDatasetVersionsApiV1DatasetsDatasetIdVersionsGet
   },
   {
@@ -14365,7 +14365,6 @@ Get diff between two dataset versions.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14462,6 +14461,7 @@ Get diff between two dataset versions.,
     Converters: null,
     MethodName: DiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGetAsync,
     NotAsyncMethodName: DiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DiffDatasetVersionsApiV1DatasetsDatasetIdVersionsDiffGet
   },
   {
@@ -14608,7 +14608,6 @@ Get dataset version by as_of or exact tag.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14703,6 +14702,7 @@ Get dataset version by as_of or exact tag.,
     Converters: null,
     MethodName: GetDatasetVersionApiV1DatasetsDatasetIdVersionGetAsync,
     NotAsyncMethodName: GetDatasetVersionApiV1DatasetsDatasetIdVersionGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.GetDatasetVersionApiV1DatasetsDatasetIdVersionGet
   },
   {
@@ -14842,7 +14842,6 @@ Set a tag on a dataset version.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PutDatasetVersionsSchema,
       IsArray: false,
@@ -14963,6 +14962,7 @@ Set a tag on a dataset version.,
     Converters: null,
     MethodName: UpdateDatasetVersionApiV1DatasetsDatasetIdTagsPutAsync,
     NotAsyncMethodName: UpdateDatasetVersionApiV1DatasetsDatasetIdTagsPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.UpdateDatasetVersionApiV1DatasetsDatasetIdTagsPut
   },
   {
@@ -15074,7 +15074,6 @@ Download a dataset as OpenAI Evals Jsonl format.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15163,6 +15162,7 @@ Download a dataset as OpenAI Evals Jsonl format.,
     Converters: null,
     MethodName: DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetAsync,
     NotAsyncMethodName: DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGet
   },
   {
@@ -15274,7 +15274,6 @@ Download a dataset as OpenAI Jsonl format.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15363,6 +15362,7 @@ Download a dataset as OpenAI Jsonl format.,
     Converters: null,
     MethodName: DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetAsync,
     NotAsyncMethodName: DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGet
   },
   {
@@ -15474,7 +15474,6 @@ Download a dataset as CSV format.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15563,6 +15562,7 @@ Download a dataset as CSV format.,
     Converters: null,
     MethodName: DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGetAsync,
     NotAsyncMethodName: DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGet
   },
   {
@@ -15799,7 +15799,6 @@ Fetch examples for a dataset, and fetch the runs for each example if they are as
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.QueryExampleSchemaWithRuns,
       IsArray: false,
@@ -15922,6 +15921,7 @@ Fetch examples for a dataset, and fetch the runs for each example if they are as
     Converters: null,
     MethodName: ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPostAsync,
     NotAsyncMethodName: ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadExamplesWithRunsApiV1DatasetsDatasetIdRunsPost
   },
   {
@@ -16220,7 +16220,6 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.QueryFeedbackDelta,
       IsArray: false,
@@ -16349,6 +16348,7 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
     Converters: null,
     MethodName: ReadDeltaApiV1DatasetsDatasetIdRunsDeltaPostAsync,
     NotAsyncMethodName: ReadDeltaApiV1DatasetsDatasetIdRunsDeltaPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadDeltaApiV1DatasetsDatasetIdRunsDeltaPost
   },
   {
@@ -16425,7 +16425,6 @@ Get the state of sharing a dataset,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16516,6 +16515,7 @@ Get the state of sharing a dataset,
     Converters: null,
     MethodName: ReadDatasetShareStateApiV1DatasetsDatasetIdShareGetAsync,
     NotAsyncMethodName: ReadDatasetShareStateApiV1DatasetsDatasetIdShareGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadDatasetShareStateApiV1DatasetsDatasetIdShareGet
   },
   {
@@ -16628,7 +16628,6 @@ Share a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16723,6 +16722,7 @@ Share a dataset.,
     Converters: null,
     MethodName: ShareDatasetApiV1DatasetsDatasetIdSharePutAsync,
     NotAsyncMethodName: ShareDatasetApiV1DatasetsDatasetIdSharePut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ShareDatasetApiV1DatasetsDatasetIdSharePut
   },
   {
@@ -16800,7 +16800,6 @@ Unshare a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16889,6 +16888,7 @@ Unshare a dataset.,
     Converters: null,
     MethodName: UnshareDatasetApiV1DatasetsDatasetIdShareDeleteAsync,
     NotAsyncMethodName: UnshareDatasetApiV1DatasetsDatasetIdShareDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.UnshareDatasetApiV1DatasetsDatasetIdShareDelete
   },
   {
@@ -17211,7 +17211,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17300,6 +17299,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: ReadComparativeExperimentsApiV1DatasetsDatasetIdComparativeGetAsync,
     NotAsyncMethodName: ReadComparativeExperimentsApiV1DatasetsDatasetIdComparativeGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ReadComparativeExperimentsApiV1DatasetsDatasetIdComparativeGet
   },
   {
@@ -17594,7 +17594,6 @@ Create a comparative experiment.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ComparativeExperimentCreate,
       IsArray: false,
@@ -17739,6 +17738,7 @@ Create a comparative experiment.,
     Converters: null,
     MethodName: CreateComparativeExperimentApiV1DatasetsComparativePostAsync,
     NotAsyncMethodName: CreateComparativeExperimentApiV1DatasetsComparativePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.CreateComparativeExperimentApiV1DatasetsComparativePost
   },
   {
@@ -17816,7 +17816,6 @@ Delete a specific comparative experiment.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -17905,6 +17904,7 @@ Delete a specific comparative experiment.,
     Converters: null,
     MethodName: DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDeleteAsync,
     NotAsyncMethodName: DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDelete
   },
   {
@@ -18073,7 +18073,6 @@ Clone a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.BodyCloneDatasetApiV1DatasetsClonePost,
       IsArray: false,
@@ -18192,6 +18191,7 @@ Clone a dataset.,
     Converters: null,
     MethodName: CloneDatasetApiV1DatasetsClonePostAsync,
     NotAsyncMethodName: CloneDatasetApiV1DatasetsClonePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.CloneDatasetApiV1DatasetsClonePost
   },
   {
@@ -18304,7 +18304,6 @@ Default Value: latest,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -18393,6 +18392,7 @@ Default Value: latest,
     Converters: null,
     MethodName: GetDatasetSplitsApiV1DatasetsDatasetIdSplitsGetAsync,
     NotAsyncMethodName: GetDatasetSplitsApiV1DatasetsDatasetIdSplitsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.GetDatasetSplitsApiV1DatasetsDatasetIdSplitsGet
   },
   {
@@ -18562,7 +18562,6 @@ Default Value: latest,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut,
       IsArray: false,
@@ -18679,6 +18678,7 @@ Default Value: latest,
     Converters: null,
     MethodName: UpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPutAsync,
     NotAsyncMethodName: UpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.UpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut
   },
   {
@@ -18789,7 +18789,6 @@ Serve a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.DatasetServeRequest,
       IsArray: false,
@@ -18902,6 +18901,7 @@ Serve a dataset.,
     Converters: null,
     MethodName: ServeApiV1DatasetsDatasetIdServePostAsync,
     NotAsyncMethodName: ServeApiV1DatasetsDatasetIdServePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.ServeApiV1DatasetsDatasetIdServePost
   },
   {
@@ -18979,7 +18979,6 @@ Serve a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19068,6 +19067,7 @@ Serve a dataset.,
     Converters: null,
     MethodName: UnserveApiV1DatasetsDatasetIdUnservePostAsync,
     NotAsyncMethodName: UnserveApiV1DatasetsDatasetIdUnservePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.UnserveApiV1DatasetsDatasetIdUnservePost
   },
   {
@@ -19208,7 +19208,6 @@ Search a dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.SearchDatasetRequest,
       IsArray: false,
@@ -19327,6 +19326,7 @@ Search a dataset.,
     Converters: null,
     MethodName: SearchApiV1DatasetsDatasetIdSearchPostAsync,
     NotAsyncMethodName: SearchApiV1DatasetsDatasetIdSearchPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient.SearchApiV1DatasetsDatasetIdSearchPost
   },
   {
@@ -19439,7 +19439,6 @@ List all run rules.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -19528,6 +19527,7 @@ List all run rules.,
     Converters: null,
     MethodName: ListRulesApiV1RunsRulesGetAsync,
     NotAsyncMethodName: ListRulesApiV1RunsRulesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.ListRulesApiV1RunsRulesGet
   },
   {
@@ -20145,7 +20145,6 @@ Create a new run rule.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunRulesCreateSchema,
       IsArray: false,
@@ -20348,6 +20347,7 @@ Create a new run rule.,
     Converters: null,
     MethodName: CreateRuleApiV1RunsRulesPostAsync,
     NotAsyncMethodName: CreateRuleApiV1RunsRulesPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.CreateRuleApiV1RunsRulesPost
   },
   {
@@ -20999,7 +20999,6 @@ Update a run rule.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunRulesCreateSchema,
       IsArray: false,
@@ -21202,6 +21201,7 @@ Update a run rule.,
     Converters: null,
     MethodName: UpdateRuleApiV1RunsRulesRuleIdPatchAsync,
     NotAsyncMethodName: UpdateRuleApiV1RunsRulesRuleIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.UpdateRuleApiV1RunsRulesRuleIdPatch
   },
   {
@@ -21279,7 +21279,6 @@ Delete a run rule.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21368,6 +21367,7 @@ Delete a run rule.,
     Converters: null,
     MethodName: DeleteRuleApiV1RunsRulesRuleIdDeleteAsync,
     NotAsyncMethodName: DeleteRuleApiV1RunsRulesRuleIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.DeleteRuleApiV1RunsRulesRuleIdDelete
   },
   {
@@ -21584,7 +21584,6 @@ List logs for a particular rule,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21673,6 +21672,7 @@ List logs for a particular rule,
     Converters: null,
     MethodName: ListRuleLogsApiV1RunsRulesRuleIdLogsGetAsync,
     NotAsyncMethodName: ListRuleLogsApiV1RunsRulesRuleIdLogsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.ListRuleLogsApiV1RunsRulesRuleIdLogsGet
   },
   {
@@ -21750,7 +21750,6 @@ Trigger a run rule manually.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -21895,6 +21894,7 @@ Trigger a run rule manually.,
     Converters: null,
     MethodName: TriggerRuleApiV1RunsRulesRuleIdTriggerPostAsync,
     NotAsyncMethodName: TriggerRuleApiV1RunsRulesRuleIdTriggerPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.TriggerRuleApiV1RunsRulesRuleIdTriggerPost
   },
   {
@@ -22006,7 +22006,6 @@ Get a specific run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22185,6 +22184,7 @@ Get a specific run.,
     Converters: null,
     MethodName: ReadRunApiV1RunsRunIdGetAsync,
     NotAsyncMethodName: ReadRunApiV1RunsRunIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.ReadRunApiV1RunsRunIdGet
   },
   {
@@ -22646,7 +22646,6 @@ Update a run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateRunRequest,
       IsArray: false,
@@ -22781,6 +22780,7 @@ Update a run.,
     Converters: null,
     MethodName: UpdateRunApiV1RunsRunIdPatchAsync,
     NotAsyncMethodName: UpdateRunApiV1RunsRunIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.UpdateRunApiV1RunsRunIdPatch
   },
   {
@@ -22857,7 +22857,6 @@ Get the state of sharing of a run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -22948,6 +22947,7 @@ Get the state of sharing of a run.,
     Converters: null,
     MethodName: ReadRunShareStateApiV1RunsRunIdShareGetAsync,
     NotAsyncMethodName: ReadRunShareStateApiV1RunsRunIdShareGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.ReadRunShareStateApiV1RunsRunIdShareGet
   },
   {
@@ -23025,7 +23025,6 @@ Share a run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23120,6 +23119,7 @@ Share a run.,
     Converters: null,
     MethodName: ShareRunApiV1RunsRunIdSharePutAsync,
     NotAsyncMethodName: ShareRunApiV1RunsRunIdSharePut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.ShareRunApiV1RunsRunIdSharePut
   },
   {
@@ -23197,7 +23197,6 @@ Unshare a run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -23286,6 +23285,7 @@ Unshare a run.,
     Converters: null,
     MethodName: UnshareRunApiV1RunsRunIdShareDeleteAsync,
     NotAsyncMethodName: UnshareRunApiV1RunsRunIdShareDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.UnshareRunApiV1RunsRunIdShareDelete
   },
   {
@@ -23970,7 +23970,6 @@ Get all runs by query in body payload.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.BodyParamsForRunSchema,
       IsArray: false,
@@ -24129,6 +24128,7 @@ Get all runs by query in body payload.,
     Converters: null,
     MethodName: QueryRunsApiV1RunsQueryPostAsync,
     NotAsyncMethodName: QueryRunsApiV1RunsQueryPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.QueryRunsApiV1RunsQueryPost
   },
   {
@@ -24234,7 +24234,6 @@ Get runs filter expression query for a given natural language query.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RequestBodyForRunsGenerateQuery,
       IsArray: false,
@@ -24355,6 +24354,7 @@ Get runs filter expression query for a given natural language query.,
     Converters: null,
     MethodName: GenerateQueryForRunsApiV1RunsGenerateQueryPostAsync,
     NotAsyncMethodName: GenerateQueryForRunsApiV1RunsGenerateQueryPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.GenerateQueryForRunsApiV1RunsGenerateQueryPost
   },
   {
@@ -24910,7 +24910,6 @@ Get all runs by query in body payload.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FilterQueryParamsForRunSchema,
       IsArray: false,
@@ -25089,6 +25088,7 @@ Get all runs by query in body payload.,
     Converters: null,
     MethodName: StatsRunsApiV1RunsStatsPostAsync,
     NotAsyncMethodName: StatsRunsApiV1RunsStatsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.StatsRunsApiV1RunsStatsPost
   },
   {
@@ -25259,7 +25259,6 @@ Get monitoring data for a specific session.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.MonitorRequest,
       IsArray: false,
@@ -25382,6 +25381,7 @@ Get monitoring data for a specific session.,
     Converters: null,
     MethodName: MonitorTracerSessionApiV1RunsMonitorPostAsync,
     NotAsyncMethodName: MonitorTracerSessionApiV1RunsMonitorPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.MonitorTracerSessionApiV1RunsMonitorPost
   },
   {
@@ -26079,7 +26079,6 @@ Create a new run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRunRequest,
       IsArray: false,
@@ -26208,6 +26207,7 @@ Create a new run.,
     Converters: null,
     MethodName: CreateRunApiV1RunsPostAsync,
     NotAsyncMethodName: CreateRunApiV1RunsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.CreateRunApiV1RunsPost
   },
   {
@@ -26313,7 +26313,6 @@ Batch ingest runs.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.BatchIngestRunsRequest,
       IsArray: false,
@@ -26406,6 +26405,7 @@ Batch ingest runs.,
     Converters: null,
     MethodName: BatchIngestRunsApiV1RunsBatchPostAsync,
     NotAsyncMethodName: BatchIngestRunsApiV1RunsBatchPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.BatchIngestRunsApiV1RunsBatchPost
   },
   {
@@ -26710,7 +26710,6 @@ Get runs grouped by an expression,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunGroupRequest,
       IsArray: false,
@@ -26835,6 +26834,7 @@ Get runs grouped by an expression,
     Converters: null,
     MethodName: GroupRunsApiV1RunsGroupPostAsync,
     NotAsyncMethodName: GroupRunsApiV1RunsGroupPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.GroupRunsApiV1RunsGroupPost
   },
   {
@@ -27104,7 +27104,6 @@ Get stats for the grouped runs.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RunGroupRequest,
       IsArray: false,
@@ -27267,6 +27266,7 @@ Get stats for the grouped runs.,
     Converters: null,
     MethodName: StatsGroupRunsApiV1RunsGroupStatsPostAsync,
     NotAsyncMethodName: StatsGroupRunsApiV1RunsGroupStatsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient.StatsGroupRunsApiV1RunsGroupStatsPost
   },
   {
@@ -27343,7 +27343,6 @@ Get a specific feedback.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -27460,6 +27459,7 @@ Get a specific feedback.,
     Converters: null,
     MethodName: ReadFeedbackApiV1FeedbackFeedbackIdGetAsync,
     NotAsyncMethodName: ReadFeedbackApiV1FeedbackFeedbackIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.ReadFeedbackApiV1FeedbackFeedbackIdGet
   },
   {
@@ -27697,7 +27697,6 @@ Replace an existing feedback entry with a new, modified entry.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FeedbackUpdateSchema,
       IsArray: false,
@@ -27846,6 +27845,7 @@ Replace an existing feedback entry with a new, modified entry.,
     Converters: null,
     MethodName: UpdateFeedbackApiV1FeedbackFeedbackIdPatchAsync,
     NotAsyncMethodName: UpdateFeedbackApiV1FeedbackFeedbackIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.UpdateFeedbackApiV1FeedbackFeedbackIdPatch
   },
   {
@@ -27923,7 +27923,6 @@ Delete a feedback.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -28012,6 +28011,7 @@ Delete a feedback.,
     Converters: null,
     MethodName: DeleteFeedbackApiV1FeedbackFeedbackIdDeleteAsync,
     NotAsyncMethodName: DeleteFeedbackApiV1FeedbackFeedbackIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.DeleteFeedbackApiV1FeedbackFeedbackIdDelete
   },
   {
@@ -28474,7 +28474,6 @@ List all Feedback by query params.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -28563,6 +28562,7 @@ List all Feedback by query params.,
     Converters: null,
     MethodName: ReadFeedbacksApiV1FeedbackGetAsync,
     NotAsyncMethodName: ReadFeedbacksApiV1FeedbackGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.ReadFeedbacksApiV1FeedbackGet
   },
   {
@@ -29050,7 +29050,6 @@ Create a new feedback.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FeedbackCreateSchema,
       IsArray: false,
@@ -29217,6 +29216,7 @@ Create a new feedback.,
     Converters: null,
     MethodName: CreateFeedbackApiV1FeedbackPostAsync,
     NotAsyncMethodName: CreateFeedbackApiV1FeedbackPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.CreateFeedbackApiV1FeedbackPost
   },
   {
@@ -29707,7 +29707,6 @@ is already visible in the app, thus already present in DB,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FeedbackCreateSchema,
       IsArray: false,
@@ -29874,6 +29873,7 @@ is already visible in the app, thus already present in DB,
     Converters: null,
     MethodName: EagerlyCreateFeedbackApiV1FeedbackEagerPostAsync,
     NotAsyncMethodName: EagerlyCreateFeedbackApiV1FeedbackEagerPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.EagerlyCreateFeedbackApiV1FeedbackEagerPost
   },
   {
@@ -29916,7 +29916,6 @@ Create a new feedback ingest token.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.AnyOf<global::G.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenCreateSchema>>,
       IsArray: false,
@@ -30029,6 +30028,7 @@ Create a new feedback ingest token.,
     Converters: null,
     MethodName: CreateFeedbackIngestTokenApiV1FeedbackTokensPostAsync,
     NotAsyncMethodName: CreateFeedbackIngestTokenApiV1FeedbackTokensPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.CreateFeedbackIngestTokenApiV1FeedbackTokensPost
   },
   {
@@ -30105,7 +30105,6 @@ List all feedback ingest tokens for a run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30194,6 +30193,7 @@ List all feedback ingest tokens for a run.,
     Converters: null,
     MethodName: ListFeedbackIngestTokensApiV1FeedbackTokensGetAsync,
     NotAsyncMethodName: ListFeedbackIngestTokensApiV1FeedbackTokensGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.ListFeedbackIngestTokensApiV1FeedbackTokensGet
   },
   {
@@ -30410,7 +30410,6 @@ Create a new feedback with a token.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -30499,6 +30498,7 @@ Create a new feedback with a token.,
     Converters: null,
     MethodName: CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetAsync,
     NotAsyncMethodName: CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGet
   },
   {
@@ -30736,7 +30736,6 @@ Create a new feedback with a token.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FeedbackCreateWithTokenExtendedSchema,
       IsArray: false,
@@ -30857,6 +30856,7 @@ Create a new feedback with a token.,
     Converters: null,
     MethodName: CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostAsync,
     NotAsyncMethodName: CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPost
   },
   {
@@ -30968,7 +30968,6 @@ Get the shared run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -31129,6 +31128,7 @@ Get the shared run.,
     Converters: null,
     MethodName: GetSharedRunApiV1PublicShareTokenRunGetAsync,
     NotAsyncMethodName: GetSharedRunApiV1PublicShareTokenRunGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.GetSharedRunApiV1PublicShareTokenRunGet
   },
   {
@@ -31274,7 +31274,6 @@ Get the shared run.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -31435,6 +31434,7 @@ Get the shared run.,
     Converters: null,
     MethodName: GetSharedRunByIdApiV1PublicShareTokenRunIdGetAsync,
     NotAsyncMethodName: GetSharedRunByIdApiV1PublicShareTokenRunIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.GetSharedRunByIdApiV1PublicShareTokenRunIdGet
   },
   {
@@ -31544,7 +31544,6 @@ Get run by ids or the shared run if not specifed.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.QueryParamsForPublicRunSchema,
       IsArray: false,
@@ -31665,6 +31664,7 @@ Get run by ids or the shared run if not specifed.,
     Converters: null,
     MethodName: QuerySharedRunsApiV1PublicShareTokenRunsQueryPostAsync,
     NotAsyncMethodName: QuerySharedRunsApiV1PublicShareTokenRunsQueryPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.QuerySharedRunsApiV1PublicShareTokenRunsQueryPost
   },
   {
@@ -32089,7 +32089,6 @@ Get run by ids or the shared run if not specifed.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32178,6 +32177,7 @@ Get run by ids or the shared run if not specifed.,
     Converters: null,
     MethodName: ReadSharedFeedbacksApiV1PublicShareTokenFeedbacksGetAsync,
     NotAsyncMethodName: ReadSharedFeedbacksApiV1PublicShareTokenFeedbacksGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedFeedbacksApiV1PublicShareTokenFeedbacksGet
   },
   {
@@ -32395,7 +32395,6 @@ Get dataset by ids or the shared dataset if not specifed.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32502,6 +32501,7 @@ Get dataset by ids or the shared dataset if not specifed.,
     Converters: null,
     MethodName: ReadSharedDatasetApiV1PublicShareTokenDatasetsGetAsync,
     NotAsyncMethodName: ReadSharedDatasetApiV1PublicShareTokenDatasetsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDatasetApiV1PublicShareTokenDatasetsGet
   },
   {
@@ -32826,7 +32826,6 @@ Get example by ids or the shared example if not specifed.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -32915,6 +32914,7 @@ Get example by ids or the shared example if not specifed.,
     Converters: null,
     MethodName: ReadSharedExamplesApiV1PublicShareTokenExamplesGetAsync,
     NotAsyncMethodName: ReadSharedExamplesApiV1PublicShareTokenExamplesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedExamplesApiV1PublicShareTokenExamplesGet
   },
   {
@@ -33377,7 +33377,6 @@ Get projects run on a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -33466,6 +33465,7 @@ Get projects run on a dataset that has been shared.,
     Converters: null,
     MethodName: ReadSharedDatasetTracerSessionsApiV1PublicShareTokenDatasetsSessionsGetAsync,
     NotAsyncMethodName: ReadSharedDatasetTracerSessionsApiV1PublicShareTokenDatasetsSessionsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDatasetTracerSessionsApiV1PublicShareTokenDatasetsSessionsGet
   },
   {
@@ -33702,7 +33702,6 @@ Get examples with associated runs from sessions in a dataset that has been share
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.QueryExampleSchemaWithRuns,
       IsArray: false,
@@ -33825,6 +33824,7 @@ Get examples with associated runs from sessions in a dataset that has been share
     Converters: null,
     MethodName: ReadSharedDatasetExamplesWithRunsApiV1PublicShareTokenExamplesRunsPostAsync,
     NotAsyncMethodName: ReadSharedDatasetExamplesWithRunsApiV1PublicShareTokenExamplesRunsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDatasetExamplesWithRunsApiV1PublicShareTokenExamplesRunsPost
   },
   {
@@ -34123,7 +34123,6 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.QueryFeedbackDelta,
       IsArray: false,
@@ -34252,6 +34251,7 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
     Converters: null,
     MethodName: ReadSharedDeltaApiV1PublicShareTokenDatasetsRunsDeltaPostAsync,
     NotAsyncMethodName: ReadSharedDeltaApiV1PublicShareTokenDatasetsRunsDeltaPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDeltaApiV1PublicShareTokenDatasetsRunsDeltaPost
   },
   {
@@ -34970,7 +34970,6 @@ Get runs in projects run over a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.BodyParamsForRunSchema,
       IsArray: false,
@@ -35129,6 +35128,7 @@ Get runs in projects run over a dataset that has been shared.,
     Converters: null,
     MethodName: QuerySharedDatasetRunsApiV1PublicShareTokenDatasetsRunsQueryPostAsync,
     NotAsyncMethodName: QuerySharedDatasetRunsApiV1PublicShareTokenDatasetsRunsQueryPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.QuerySharedDatasetRunsApiV1PublicShareTokenDatasetsRunsQueryPost
   },
   {
@@ -35268,7 +35268,6 @@ Get runs in projects run over a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.RequestBodyForRunsGenerateQuery,
       IsArray: false,
@@ -35389,6 +35388,7 @@ Get runs in projects run over a dataset that has been shared.,
     Converters: null,
     MethodName: GenerateQueryForSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsGenerateQueryPostAsync,
     NotAsyncMethodName: GenerateQueryForSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsGenerateQueryPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.GenerateQueryForSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsGenerateQueryPost
   },
   {
@@ -35978,7 +35978,6 @@ Get run stats in projects run over a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.FilterQueryParamsForRunSchema,
       IsArray: false,
@@ -36157,6 +36156,7 @@ Get run stats in projects run over a dataset that has been shared.,
     Converters: null,
     MethodName: StatsSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsStatsPostAsync,
     NotAsyncMethodName: StatsSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsStatsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.StatsSharedDatasetRunsApiV1PublicShareTokenDatasetsRunsStatsPost
   },
   {
@@ -36302,7 +36302,6 @@ Get runs in projects run over a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36465,6 +36464,7 @@ Get runs in projects run over a dataset that has been shared.,
     Converters: null,
     MethodName: ReadSharedDatasetRunApiV1PublicShareTokenDatasetsRunsRunIdGetAsync,
     NotAsyncMethodName: ReadSharedDatasetRunApiV1PublicShareTokenDatasetsRunsRunIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDatasetRunApiV1PublicShareTokenDatasetsRunsRunIdGet
   },
   {
@@ -36891,7 +36891,6 @@ Get feedback for runs in projects run over a dataset that has been shared.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -36980,6 +36979,7 @@ Get feedback for runs in projects run over a dataset that has been shared.,
     Converters: null,
     MethodName: ReadSharedDatasetFeedbackApiV1PublicShareTokenDatasetsFeedbackGetAsync,
     NotAsyncMethodName: ReadSharedDatasetFeedbackApiV1PublicShareTokenDatasetsFeedbackGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedDatasetFeedbackApiV1PublicShareTokenDatasetsFeedbackGet
   },
   {
@@ -37267,7 +37267,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37356,6 +37355,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: ReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGetAsync,
     NotAsyncMethodName: ReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient.ReadSharedComparativeExperimentsApiV1PublicShareTokenDatasetsComparativeGet
   },
   {
@@ -37571,7 +37571,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -37660,6 +37659,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: GetAnnotationQueuesApiV1AnnotationQueuesGetAsync,
     NotAsyncMethodName: GetAnnotationQueuesApiV1AnnotationQueuesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.GetAnnotationQueuesApiV1AnnotationQueuesGet
   },
   {
@@ -37889,7 +37889,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.AnnotationQueueCreateSchema,
       IsArray: false,
@@ -38028,6 +38027,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: CreateAnnotationQueueApiV1AnnotationQueuesPostAsync,
     NotAsyncMethodName: CreateAnnotationQueueApiV1AnnotationQueuesPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.CreateAnnotationQueueApiV1AnnotationQueuesPost
   },
   {
@@ -38103,7 +38103,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38192,6 +38191,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDeleteAsync,
     NotAsyncMethodName: DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDelete
   },
   {
@@ -38363,7 +38363,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.AnnotationQueueUpdateSchema,
       IsArray: false,
@@ -38480,6 +38479,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchAsync,
     NotAsyncMethodName: UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatch
   },
   {
@@ -38555,7 +38555,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<string>,
       IsArray: true,
@@ -38664,6 +38663,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: AddRunsToAnnotationQueueApiV1AnnotationQueuesQueueIdRunsPostAsync,
     NotAsyncMethodName: AddRunsToAnnotationQueueApiV1AnnotationQueuesQueueIdRunsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.AddRunsToAnnotationQueueApiV1AnnotationQueuesQueueIdRunsPost
   },
   {
@@ -38772,7 +38772,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -38955,6 +38954,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: GetRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunIndexGetAsync,
     NotAsyncMethodName: GetRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunIndexGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.GetRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunIndexGet
   },
   {
@@ -39029,7 +39029,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39118,6 +39117,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: GetAnnotationQueuesForRunApiV1AnnotationQueuesRunIdQueuesGetAsync,
     NotAsyncMethodName: GetAnnotationQueuesForRunApiV1AnnotationQueuesRunIdQueuesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.GetAnnotationQueuesForRunApiV1AnnotationQueuesRunIdQueuesGet
   },
   {
@@ -39291,7 +39291,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.AnnotationQueueRunUpdateSchema,
       IsArray: false,
@@ -39406,6 +39405,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchAsync,
     NotAsyncMethodName: UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatch
   },
   {
@@ -39515,7 +39515,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39604,6 +39603,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: DeleteRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdDeleteAsync,
     NotAsyncMethodName: DeleteRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.DeleteRunFromAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdDelete
   },
   {
@@ -39678,7 +39678,6 @@ Get all comparative experiments for a given dataset.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39771,6 +39770,7 @@ Get all comparative experiments for a given dataset.,
     Converters: null,
     MethodName: GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGetAsync,
     NotAsyncMethodName: GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient.GetSizeFromAnnotationQueueApiV1AnnotationQueuesQueueIdSizeGet
   },
   {
@@ -39812,7 +39812,6 @@ Get all tenants visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -39879,6 +39878,7 @@ Get all tenants visible to this auth,
     Converters: null,
     MethodName: ListTenantsApiV1TenantsGetAsync,
     NotAsyncMethodName: ListTenantsApiV1TenantsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.ListTenantsApiV1TenantsGet
   },
   {
@@ -40048,7 +40048,6 @@ Create a new organization and corresponding workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TenantCreate,
       IsArray: false,
@@ -40181,6 +40180,7 @@ Create a new organization and corresponding workspace.,
     Converters: null,
     MethodName: CreateTenantApiV1TenantsPostAsync,
     NotAsyncMethodName: CreateTenantApiV1TenantsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.CreateTenantApiV1TenantsPost
   },
   {
@@ -40222,7 +40222,6 @@ Deprecated: replaced by /workspaces/pending,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40289,6 +40288,7 @@ Deprecated: replaced by /workspaces/pending,
     Converters: null,
     MethodName: ListPendingTenantInvitesApiV1TenantsPendingGetAsync,
     NotAsyncMethodName: ListPendingTenantInvitesApiV1TenantsPendingGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.ListPendingTenantInvitesApiV1TenantsPendingGet
   },
   {
@@ -40366,7 +40366,6 @@ Deprecated: replaced by /workspaces/pending/{id},
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40455,6 +40454,7 @@ Deprecated: replaced by /workspaces/pending/{id},
     Converters: null,
     MethodName: DeletePendingTenantInviteApiV1TenantsPendingIdDeleteAsync,
     NotAsyncMethodName: DeletePendingTenantInviteApiV1TenantsPendingIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.DeletePendingTenantInviteApiV1TenantsPendingIdDelete
   },
   {
@@ -40532,7 +40532,6 @@ Deprecated: replaced by /orgs/pending/{organization_id}/claim,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40621,6 +40620,7 @@ Deprecated: replaced by /orgs/pending/{organization_id}/claim,
     Converters: null,
     MethodName: ClaimPendingTenantInviteApiV1TenantsPendingTenantIdClaimPostAsync,
     NotAsyncMethodName: ClaimPendingTenantInviteApiV1TenantsPendingTenantIdClaimPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.ClaimPendingTenantInviteApiV1TenantsPendingTenantIdClaimPost
   },
   {
@@ -40662,7 +40662,6 @@ Deprecated: replaced by /workspaces/current/stats,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40741,6 +40740,7 @@ Deprecated: replaced by /workspaces/current/stats,
     Converters: null,
     MethodName: GetCurrentTenantStatsApiV1TenantsCurrentStatsGetAsync,
     NotAsyncMethodName: GetCurrentTenantStatsApiV1TenantsCurrentStatsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.GetCurrentTenantStatsApiV1TenantsCurrentStatsGet
   },
   {
@@ -40782,7 +40782,6 @@ Deprecated: replaced by /workspaces/current/stats,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40861,6 +40860,7 @@ Deprecated: replaced by /workspaces/current/stats,
     Converters: null,
     MethodName: GetCurrentTenantStatsApiV1TenantsStatsGetAsync,
     NotAsyncMethodName: GetCurrentTenantStatsApiV1TenantsStatsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.GetCurrentTenantStatsApiV1TenantsStatsGet
   },
   {
@@ -40902,7 +40902,6 @@ Deprecated: replaced by /workspaces/current/members,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -40977,6 +40976,7 @@ Deprecated: replaced by /workspaces/current/members,
     Converters: null,
     MethodName: GetCurrentTenantMembersApiV1TenantsCurrentMembersGetAsync,
     NotAsyncMethodName: GetCurrentTenantMembersApiV1TenantsCurrentMembersGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.GetCurrentTenantMembersApiV1TenantsCurrentMembersGet
   },
   {
@@ -41243,7 +41243,6 @@ Deprecated: replaced by /workspaces/current/members,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PendingIdentityCreate,
       IsArray: false,
@@ -41398,6 +41397,7 @@ Deprecated: replaced by /workspaces/current/members,
     Converters: null,
     MethodName: AddMemberToCurrentTenantApiV1TenantsCurrentMembersPostAsync,
     NotAsyncMethodName: AddMemberToCurrentTenantApiV1TenantsCurrentMembersPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.AddMemberToCurrentTenantApiV1TenantsCurrentMembersPost
   },
   {
@@ -41439,7 +41439,6 @@ Deprecated: replaced by /orgs/current/roles,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -41506,6 +41505,7 @@ Deprecated: replaced by /orgs/current/roles,
     Converters: null,
     MethodName: ListOrganizationRolesApiV1TenantsCurrentRolesGetAsync,
     NotAsyncMethodName: ListOrganizationRolesApiV1TenantsCurrentRolesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.ListOrganizationRolesApiV1TenantsCurrentRolesGet
   },
   {
@@ -41618,7 +41618,6 @@ Deprecated: replaced by /workspaces/current/shared,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -41711,6 +41710,7 @@ Deprecated: replaced by /workspaces/current/shared,
     Converters: null,
     MethodName: GetSharedTokensApiV1TenantsCurrentSharedGetAsync,
     NotAsyncMethodName: GetSharedTokensApiV1TenantsCurrentSharedGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.GetSharedTokensApiV1TenantsCurrentSharedGet
   },
   {
@@ -41785,7 +41785,6 @@ Deprecated: replaced by /workspaces/current/shared,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TenantBulkUnshareRequest,
       IsArray: false,
@@ -41898,6 +41897,7 @@ Deprecated: replaced by /workspaces/current/shared,
     Converters: null,
     MethodName: BulkUnshareEntitiesApiV1TenantsCurrentSharedDeleteAsync,
     NotAsyncMethodName: BulkUnshareEntitiesApiV1TenantsCurrentSharedDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.BulkUnshareEntitiesApiV1TenantsCurrentSharedDelete
   },
   {
@@ -41975,7 +41975,6 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42064,6 +42063,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
     Converters: null,
     MethodName: DeleteCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdDeleteAsync,
     NotAsyncMethodName: DeleteCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.DeleteCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdDelete
   },
   {
@@ -42204,7 +42204,6 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.IdentityPatch,
       IsArray: false,
@@ -42319,6 +42318,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
     Converters: null,
     MethodName: PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatchAsync,
     NotAsyncMethodName: PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.PatchCurrentTenantMemberApiV1TenantsCurrentMembersIdentityIdPatch
   },
   {
@@ -42396,7 +42396,6 @@ Deprecated: replaced by /workspaces/current/members/{identity_id}/pending,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42485,6 +42484,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id}/pending,
     Converters: null,
     MethodName: DeleteCurrentTenantPendingMemberApiV1TenantsCurrentMembersIdentityIdPendingDeleteAsync,
     NotAsyncMethodName: DeleteCurrentTenantPendingMemberApiV1TenantsCurrentMembersIdentityIdPendingDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.DeleteCurrentTenantPendingMemberApiV1TenantsCurrentMembersIdentityIdPendingDelete
   },
   {
@@ -42526,7 +42526,6 @@ Deprecated: replaced by /workspaces/current/usage_limits,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42601,6 +42600,7 @@ Deprecated: replaced by /workspaces/current/usage_limits,
     Converters: null,
     MethodName: GetCurrentTenantUsageLimitsInfoApiV1TenantsCurrentUsageLimitsGetAsync,
     NotAsyncMethodName: GetCurrentTenantUsageLimitsInfoApiV1TenantsCurrentUsageLimitsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.GetCurrentTenantUsageLimitsInfoApiV1TenantsCurrentUsageLimitsGet
   },
   {
@@ -42642,7 +42642,6 @@ Deprecated: replaced by /workspaces/current/secrets,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42709,6 +42708,7 @@ Deprecated: replaced by /workspaces/current/secrets,
     Converters: null,
     MethodName: ListCurrentTenantSecretsApiV1TenantsCurrentSecretsGetAsync,
     NotAsyncMethodName: ListCurrentTenantSecretsApiV1TenantsCurrentSecretsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.ListCurrentTenantSecretsApiV1TenantsCurrentSecretsGet
   },
   {
@@ -42751,7 +42751,6 @@ Deprecated: replaced by /workspaces/current/secrets,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.SecretUpsert>,
       IsArray: true,
@@ -42860,6 +42859,7 @@ Deprecated: replaced by /workspaces/current/secrets,
     Converters: null,
     MethodName: UpsertCurrentTenantSecretsApiV1TenantsCurrentSecretsPostAsync,
     NotAsyncMethodName: UpsertCurrentTenantSecretsApiV1TenantsCurrentSecretsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient.UpsertCurrentTenantSecretsApiV1TenantsCurrentSecretsPost
   },
   {
@@ -42901,7 +42901,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -42978,6 +42977,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: GetServerInfoApiV1InfoGetAsync,
     NotAsyncMethodName: GetServerInfoApiV1InfoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.InfoClient.GetServerInfoApiV1InfoGet
   },
   {
@@ -43053,7 +43053,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -43142,6 +43141,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: ListFeedbackConfigsEndpointApiV1FeedbackConfigsGetAsync,
     NotAsyncMethodName: ListFeedbackConfigsEndpointApiV1FeedbackConfigsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackConfigsClient.ListFeedbackConfigsEndpointApiV1FeedbackConfigsGet
   },
   {
@@ -43283,7 +43283,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateFeedbackConfigSchema,
       IsArray: false,
@@ -43412,6 +43411,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: CreateFeedbackConfigEndpointApiV1FeedbackConfigsPostAsync,
     NotAsyncMethodName: CreateFeedbackConfigEndpointApiV1FeedbackConfigsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackConfigsClient.CreateFeedbackConfigEndpointApiV1FeedbackConfigsPost
   },
   {
@@ -43548,7 +43548,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateFeedbackConfigSchema,
       IsArray: false,
@@ -43677,6 +43676,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: UpdateFeedbackConfigEndpointApiV1FeedbackConfigsPatchAsync,
     NotAsyncMethodName: UpdateFeedbackConfigEndpointApiV1FeedbackConfigsPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackConfigsClient.UpdateFeedbackConfigEndpointApiV1FeedbackConfigsPatch
   },
   {
@@ -43716,7 +43716,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -43783,6 +43782,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: ReadModelPriceMapApiV1ModelPriceMapGetAsync,
     NotAsyncMethodName: ReadModelPriceMapApiV1ModelPriceMapGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelPriceMapClient.ReadModelPriceMapApiV1ModelPriceMapGet
   },
   {
@@ -44046,7 +44046,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModelPriceMapCreateSchema,
       IsArray: false,
@@ -44171,6 +44170,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: CreateNewModelPriceApiV1ModelPriceMapPostAsync,
     NotAsyncMethodName: CreateNewModelPriceApiV1ModelPriceMapPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelPriceMapClient.CreateNewModelPriceApiV1ModelPriceMapPost
   },
   {
@@ -44468,7 +44468,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModelPriceMapUpdateSchema,
       IsArray: false,
@@ -44593,6 +44592,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: UpdateModelPriceApiV1ModelPriceMapIdPutAsync,
     NotAsyncMethodName: UpdateModelPriceApiV1ModelPriceMapIdPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelPriceMapClient.UpdateModelPriceApiV1ModelPriceMapIdPut
   },
   {
@@ -44668,7 +44668,6 @@ Get information about the current deployment of LangSmith.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -44757,6 +44756,7 @@ Get information about the current deployment of LangSmith.,
     Converters: null,
     MethodName: DeleteModelPriceApiV1ModelPriceMapIdDeleteAsync,
     NotAsyncMethodName: DeleteModelPriceApiV1ModelPriceMapIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelPriceMapClient.DeleteModelPriceApiV1ModelPriceMapIdDelete
   },
   {
@@ -44798,7 +44798,6 @@ List out the configured usage limits for a given tenant.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -44865,6 +44864,7 @@ List out the configured usage limits for a given tenant.,
     Converters: null,
     MethodName: ListUsageLimitsApiV1UsageLimitsGetAsync,
     NotAsyncMethodName: ListUsageLimitsApiV1UsageLimitsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsageLimitsClient.ListUsageLimitsApiV1UsageLimitsGet
   },
   {
@@ -45007,7 +45007,6 @@ Create a new usage limit.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpsertUsageLimit,
       IsArray: false,
@@ -45138,6 +45137,7 @@ Create a new usage limit.,
     Converters: null,
     MethodName: UpsertUsageLimitApiV1UsageLimitsPutAsync,
     NotAsyncMethodName: UpsertUsageLimitApiV1UsageLimitsPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsageLimitsClient.UpsertUsageLimitApiV1UsageLimitsPut
   },
   {
@@ -45179,7 +45179,6 @@ List out the configured usage limits for a given organization.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45246,6 +45245,7 @@ List out the configured usage limits for a given organization.,
     Converters: null,
     MethodName: ListOrgUsageLimitsApiV1UsageLimitsOrgGetAsync,
     NotAsyncMethodName: ListOrgUsageLimitsApiV1UsageLimitsOrgGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsageLimitsClient.ListOrgUsageLimitsApiV1UsageLimitsOrgGet
   },
   {
@@ -45323,7 +45323,6 @@ Delete a specific usage limit.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45412,6 +45411,7 @@ Delete a specific usage limit.,
     Converters: null,
     MethodName: DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteAsync,
     NotAsyncMethodName: DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsageLimitsClient.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDelete
   },
   {
@@ -45453,7 +45453,6 @@ List out the configured TTL settings for a given tenant.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -45520,6 +45519,7 @@ List out the configured TTL settings for a given tenant.,
     Converters: null,
     MethodName: ListTtlSettingsApiV1TtlSettingsGetAsync,
     NotAsyncMethodName: ListTtlSettingsApiV1TtlSettingsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TtlSettingsClient.ListTtlSettingsApiV1TtlSettingsGet
   },
   {
@@ -45630,7 +45630,6 @@ List out the configured TTL settings for a given tenant.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpsertTTLSettingsRequest,
       IsArray: false,
@@ -45761,6 +45760,7 @@ List out the configured TTL settings for a given tenant.,
     Converters: null,
     MethodName: UpsertTtlSettingsApiV1TtlSettingsPutAsync,
     NotAsyncMethodName: UpsertTtlSettingsApiV1TtlSettingsPut,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TtlSettingsClient.UpsertTtlSettingsApiV1TtlSettingsPut
   },
   {
@@ -45895,7 +45895,6 @@ List out the configured TTL settings for a given tenant.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.InvokePromptPayload,
       IsArray: false,
@@ -46012,6 +46011,7 @@ List out the configured TTL settings for a given tenant.,
     Converters: null,
     MethodName: InvokePromptApiV1PromptsInvokePromptPostAsync,
     NotAsyncMethodName: InvokePromptApiV1PromptsInvokePromptPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PromptsClient.InvokePromptApiV1PromptsInvokePromptPost
   },
   {
@@ -46053,7 +46053,6 @@ Get all workspaces visible to this auth in the current org. Does not create a ne
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -46120,6 +46119,7 @@ Get all workspaces visible to this auth in the current org. Does not create a ne
     Converters: null,
     MethodName: ListWorkspacesApiV1WorkspacesGetAsync,
     NotAsyncMethodName: ListWorkspacesApiV1WorkspacesGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.ListWorkspacesApiV1WorkspacesGet
   },
   {
@@ -46257,7 +46257,6 @@ Create a new workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.WorkspaceCreate,
       IsArray: false,
@@ -46388,6 +46387,7 @@ Create a new workspace.,
     Converters: null,
     MethodName: CreateWorkspaceApiV1WorkspacesPostAsync,
     NotAsyncMethodName: CreateWorkspaceApiV1WorkspacesPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.CreateWorkspaceApiV1WorkspacesPost
   },
   {
@@ -46494,7 +46494,6 @@ Create a new workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.WorkspacePatch,
       IsArray: false,
@@ -46621,6 +46620,7 @@ Create a new workspace.,
     Converters: null,
     MethodName: PatchWorkspaceApiV1WorkspacesWorkspaceIdPatchAsync,
     NotAsyncMethodName: PatchWorkspaceApiV1WorkspacesWorkspaceIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.PatchWorkspaceApiV1WorkspacesWorkspaceIdPatch
   },
   {
@@ -46662,7 +46662,6 @@ Get all workspaces visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -46729,6 +46728,7 @@ Get all workspaces visible to this auth,
     Converters: null,
     MethodName: ListPendingWorkspaceInvitesApiV1WorkspacesPendingGetAsync,
     NotAsyncMethodName: ListPendingWorkspaceInvitesApiV1WorkspacesPendingGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.ListPendingWorkspaceInvitesApiV1WorkspacesPendingGet
   },
   {
@@ -46804,7 +46804,6 @@ Get all workspaces visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -46893,6 +46892,7 @@ Get all workspaces visible to this auth,
     Converters: null,
     MethodName: DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDeleteAsync,
     NotAsyncMethodName: DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDelete
   },
   {
@@ -46968,7 +46968,6 @@ Get all workspaces visible to this auth,
       FromCli: false
     },
     IsDeprecated: true,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47057,6 +47056,7 @@ Get all workspaces visible to this auth,
     Converters: null,
     MethodName: ClaimPendingWorkspaceInviteApiV1WorkspacesPendingWorkspaceIdClaimPostAsync,
     NotAsyncMethodName: ClaimPendingWorkspaceInviteApiV1WorkspacesPendingWorkspaceIdClaimPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.ClaimPendingWorkspaceInviteApiV1WorkspacesPendingWorkspaceIdClaimPost
   },
   {
@@ -47096,7 +47096,6 @@ Get all workspaces visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47175,6 +47174,7 @@ Get all workspaces visible to this auth,
     Converters: null,
     MethodName: GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGetAsync,
     NotAsyncMethodName: GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.GetCurrentWorkspaceStatsApiV1WorkspacesCurrentStatsGet
   },
   {
@@ -47214,7 +47214,6 @@ Get all workspaces visible to this auth,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47289,6 +47288,7 @@ Get all workspaces visible to this auth,
     Converters: null,
     MethodName: GetCurrentWorkspaceMembersApiV1WorkspacesCurrentMembersGetAsync,
     NotAsyncMethodName: GetCurrentWorkspaceMembersApiV1WorkspacesCurrentMembersGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.GetCurrentWorkspaceMembersApiV1WorkspacesCurrentMembersGet
   },
   {
@@ -47427,7 +47427,6 @@ Add an existing organization member to the current workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.IdentityCreate,
       IsArray: false,
@@ -47564,6 +47563,7 @@ Add an existing organization member to the current workspace.,
     Converters: null,
     MethodName: AddMemberToCurrentWorkspaceApiV1WorkspacesCurrentMembersPostAsync,
     NotAsyncMethodName: AddMemberToCurrentWorkspaceApiV1WorkspacesCurrentMembersPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.AddMemberToCurrentWorkspaceApiV1WorkspacesCurrentMembersPost
   },
   {
@@ -47606,7 +47606,6 @@ Batch invite up to 500 users to the current workspace and organization.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.PendingIdentityCreate>,
       IsArray: true,
@@ -47715,6 +47714,7 @@ Batch invite up to 500 users to the current workspace and organization.,
     Converters: null,
     MethodName: AddMembersToCurrentWorkspaceBatchApiV1WorkspacesCurrentMembersBatchPostAsync,
     NotAsyncMethodName: AddMembersToCurrentWorkspaceBatchApiV1WorkspacesCurrentMembersBatchPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.AddMembersToCurrentWorkspaceBatchApiV1WorkspacesCurrentMembersBatchPost
   },
   {
@@ -47827,7 +47827,6 @@ List all shared entities and their tokens by the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -47920,6 +47919,7 @@ List all shared entities and their tokens by the workspace.,
     Converters: null,
     MethodName: GetSharedTokensApiV1WorkspacesCurrentSharedGetAsync,
     NotAsyncMethodName: GetSharedTokensApiV1WorkspacesCurrentSharedGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.GetSharedTokensApiV1WorkspacesCurrentSharedGet
   },
   {
@@ -47994,7 +47994,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.TenantBulkUnshareRequest,
       IsArray: false,
@@ -48107,6 +48106,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteAsync,
     NotAsyncMethodName: BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDelete
   },
   {
@@ -48182,7 +48182,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48271,6 +48270,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: DeleteCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdDeleteAsync,
     NotAsyncMethodName: DeleteCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.DeleteCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdDelete
   },
   {
@@ -48409,7 +48409,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.IdentityPatch,
       IsArray: false,
@@ -48524,6 +48523,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchAsync,
     NotAsyncMethodName: PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatch
   },
   {
@@ -48599,7 +48599,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48688,6 +48687,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: DeleteCurrentWorkspacePendingMemberApiV1WorkspacesCurrentMembersIdentityIdPendingDeleteAsync,
     NotAsyncMethodName: DeleteCurrentWorkspacePendingMemberApiV1WorkspacesCurrentMembersIdentityIdPendingDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.DeleteCurrentWorkspacePendingMemberApiV1WorkspacesCurrentMembersIdentityIdPendingDelete
   },
   {
@@ -48727,7 +48727,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48802,6 +48801,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: GetCurrentWorkspaceUsageLimitsInfoApiV1WorkspacesCurrentUsageLimitsGetAsync,
     NotAsyncMethodName: GetCurrentWorkspaceUsageLimitsInfoApiV1WorkspacesCurrentUsageLimitsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.GetCurrentWorkspaceUsageLimitsInfoApiV1WorkspacesCurrentUsageLimitsGet
   },
   {
@@ -48841,7 +48841,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -48908,6 +48907,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGetAsync,
     NotAsyncMethodName: ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.ListCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsGet
   },
   {
@@ -48948,7 +48948,6 @@ Bulk unshare entities by share tokens for the workspace.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::System.Collections.Generic.IList<global::G.SecretUpsert>,
       IsArray: true,
@@ -49057,6 +49056,7 @@ Bulk unshare entities by share tokens for the workspace.,
     Converters: null,
     MethodName: UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostAsync,
     NotAsyncMethodName: UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPost
   },
   {
@@ -49098,7 +49098,6 @@ Get all playground settings for this tenant id.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49165,6 +49164,7 @@ Get all playground settings for this tenant id.,
     Converters: null,
     MethodName: ListPlaygroundSettingsApiV1PlaygroundSettingsGetAsync,
     NotAsyncMethodName: ListPlaygroundSettingsApiV1PlaygroundSettingsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PlaygroundSettingsClient.ListPlaygroundSettingsApiV1PlaygroundSettingsGet
   },
   {
@@ -49271,7 +49271,6 @@ Create playground settings.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PlaygroundSettingsCreateRequest,
       IsArray: false,
@@ -49398,6 +49397,7 @@ Create playground settings.,
     Converters: null,
     MethodName: CreatePlaygroundSettingsApiV1PlaygroundSettingsPostAsync,
     NotAsyncMethodName: CreatePlaygroundSettingsApiV1PlaygroundSettingsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PlaygroundSettingsClient.CreatePlaygroundSettingsApiV1PlaygroundSettingsPost
   },
   {
@@ -49507,7 +49507,6 @@ Update playground settings.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PlaygroundSettingsUpdateRequest,
       IsArray: false,
@@ -49632,6 +49631,7 @@ Update playground settings.,
     Converters: null,
     MethodName: UpdatePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdPatchAsync,
     NotAsyncMethodName: UpdatePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PlaygroundSettingsClient.UpdatePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdPatch
   },
   {
@@ -49709,7 +49709,6 @@ Delete playground settings.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49798,6 +49797,7 @@ Delete playground settings.,
     Converters: null,
     MethodName: DeletePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdDeleteAsync,
     NotAsyncMethodName: DeletePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PlaygroundSettingsClient.DeletePlaygroundSettingsApiV1PlaygroundSettingsPlaygroundSettingsIdDelete
   },
   {
@@ -49839,7 +49839,6 @@ Get the current organization's service accounts.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -49906,6 +49905,7 @@ Get the current organization's service accounts.,
     Converters: null,
     MethodName: GetServiceAccountsApiV1ServiceAccountsGetAsync,
     NotAsyncMethodName: GetServiceAccountsApiV1ServiceAccountsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ServiceAccountsClient.GetServiceAccountsApiV1ServiceAccountsGet
   },
   {
@@ -49980,7 +49980,6 @@ Create a service account,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ServiceAccountCreateRequest,
       IsArray: false,
@@ -50109,6 +50108,7 @@ Create a service account,
     Converters: null,
     MethodName: CreateServiceAccountApiV1ServiceAccountsPostAsync,
     NotAsyncMethodName: CreateServiceAccountApiV1ServiceAccountsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ServiceAccountsClient.CreateServiceAccountApiV1ServiceAccountsPost
   },
   {
@@ -50186,7 +50186,6 @@ Delete a service account,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -50289,6 +50288,7 @@ Delete a service account,
     Converters: null,
     MethodName: DeleteServiceAccountApiV1ServiceAccountsServiceAccountIdDeleteAsync,
     NotAsyncMethodName: DeleteServiceAccountApiV1ServiceAccountsServiceAccountIdDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ServiceAccountsClient.DeleteServiceAccountApiV1ServiceAccountsServiceAccountIdDelete
   },
   {
@@ -50822,7 +50822,6 @@ Get all repos.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -50917,6 +50916,7 @@ Get all repos.,
     Converters: null,
     MethodName: ListReposApiV1ReposGetAsync,
     NotAsyncMethodName: ListReposApiV1ReposGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.ListReposApiV1ReposGet
   },
   {
@@ -51118,7 +51118,6 @@ Create a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRepoRequest,
       IsArray: false,
@@ -51243,6 +51242,7 @@ Create a repo.,
     Converters: null,
     MethodName: CreateRepoApiV1ReposPostAsync,
     NotAsyncMethodName: CreateRepoApiV1ReposPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.CreateRepoApiV1ReposPost
   },
   {
@@ -51353,7 +51353,6 @@ Get a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -51446,6 +51445,7 @@ Get a repo.,
     Converters: null,
     MethodName: GetRepoApiV1ReposOwnerRepoGetAsync,
     NotAsyncMethodName: GetRepoApiV1ReposOwnerRepoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.GetRepoApiV1ReposOwnerRepoGet
   },
   {
@@ -51717,7 +51717,6 @@ Update a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.UpdateRepoRequest,
       IsArray: false,
@@ -51842,6 +51841,7 @@ Update a repo.,
     Converters: null,
     MethodName: UpdateRepoApiV1ReposOwnerRepoPatchAsync,
     NotAsyncMethodName: UpdateRepoApiV1ReposOwnerRepoPatch,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.UpdateRepoApiV1ReposOwnerRepoPatch
   },
   {
@@ -51953,7 +51953,6 @@ Delete a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -52042,6 +52041,7 @@ Delete a repo.,
     Converters: null,
     MethodName: DeleteRepoApiV1ReposOwnerRepoDeleteAsync,
     NotAsyncMethodName: DeleteRepoApiV1ReposOwnerRepoDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.DeleteRepoApiV1ReposOwnerRepoDelete
   },
   {
@@ -52312,7 +52312,6 @@ Fork a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ForkRepoRequest,
       IsArray: false,
@@ -52437,6 +52436,7 @@ Fork a repo.,
     Converters: null,
     MethodName: ForkRepoApiV1ReposOwnerRepoForkPostAsync,
     NotAsyncMethodName: ForkRepoApiV1ReposOwnerRepoForkPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.ForkRepoApiV1ReposOwnerRepoForkPost
   },
   {
@@ -52900,7 +52900,6 @@ Get all repo tags.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -52993,6 +52992,7 @@ Get all repo tags.,
     Converters: null,
     MethodName: ListRepoTagsApiV1ReposTagsGetAsync,
     NotAsyncMethodName: ListRepoTagsApiV1ReposTagsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient.ListRepoTagsApiV1ReposTagsGet
   },
   {
@@ -53135,7 +53135,6 @@ Like a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.LikeRepoRequest,
       IsArray: false,
@@ -53252,6 +53251,7 @@ Like a repo.,
     Converters: null,
     MethodName: LikeRepoApiV1LikesOwnerRepoPostAsync,
     NotAsyncMethodName: LikeRepoApiV1LikesOwnerRepoPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LikesClient.LikeRepoApiV1LikesOwnerRepoPost
   },
   {
@@ -53432,7 +53432,6 @@ Get all commits.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -53527,6 +53526,7 @@ Get all commits.,
     Converters: null,
     MethodName: ListCommitsApiV1CommitsOwnerRepoGetAsync,
     NotAsyncMethodName: ListCommitsApiV1CommitsOwnerRepoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommitsClient.ListCommitsApiV1CommitsOwnerRepoGet
   },
   {
@@ -53733,7 +53733,6 @@ Upload a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateRepoCommitRequest,
       IsArray: false,
@@ -53854,6 +53853,7 @@ Upload a repo.,
     Converters: null,
     MethodName: CreateCommitApiV1CommitsOwnerRepoPostAsync,
     NotAsyncMethodName: CreateCommitApiV1CommitsOwnerRepoPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommitsClient.CreateCommitApiV1CommitsOwnerRepoPost
   },
   {
@@ -54104,7 +54104,6 @@ Download a repo.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54201,6 +54200,7 @@ Download a repo.,
     Converters: null,
     MethodName: GetCommitApiV1CommitsOwnerRepoCommitGetAsync,
     NotAsyncMethodName: GetCommitApiV1CommitsOwnerRepoCommitGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommitsClient.GetCommitApiV1CommitsOwnerRepoCommitGet
   },
   {
@@ -54242,7 +54242,6 @@ Get settings.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -54319,6 +54318,7 @@ Get settings.,
     Converters: null,
     MethodName: GetSettingsApiV1SettingsGetAsync,
     NotAsyncMethodName: GetSettingsApiV1SettingsGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SettingsClient.GetSettingsApiV1SettingsGet
   },
   {
@@ -54393,7 +54393,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.SetTenantHandleRequest,
       IsArray: false,
@@ -54516,6 +54515,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: SetTenantHandleApiV1SettingsHandlePostAsync,
     NotAsyncMethodName: SetTenantHandleApiV1SettingsHandlePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SettingsClient.SetTenantHandleApiV1SettingsHandlePost
   },
   {
@@ -54688,7 +54688,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateEventRequest,
       IsArray: false,
@@ -54807,6 +54806,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: CreateEventApiV1EventsPostAsync,
     NotAsyncMethodName: CreateEventApiV1EventsPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EventsClient.CreateEventApiV1EventsPost
   },
   {
@@ -54947,7 +54947,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateCommentRequest,
       IsArray: false,
@@ -55060,6 +55059,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: CreateCommentApiV1CommentsOwnerRepoPostAsync,
     NotAsyncMethodName: CreateCommentApiV1CommentsOwnerRepoPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.CreateCommentApiV1CommentsOwnerRepoPost
   },
   {
@@ -55238,7 +55238,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55333,6 +55332,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: GetCommentsApiV1CommentsOwnerRepoGetAsync,
     NotAsyncMethodName: GetCommentsApiV1CommentsOwnerRepoGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.GetCommentsApiV1CommentsOwnerRepoGet
   },
   {
@@ -55545,7 +55545,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -55640,6 +55639,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: GetSubCommentsApiV1CommentsOwnerRepoParentCommentIdGetAsync,
     NotAsyncMethodName: GetSubCommentsApiV1CommentsOwnerRepoParentCommentIdGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.GetSubCommentsApiV1CommentsOwnerRepoParentCommentIdGet
   },
   {
@@ -55814,7 +55814,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateCommentRequest,
       IsArray: false,
@@ -55951,6 +55950,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: CreateSubCommentApiV1CommentsOwnerRepoParentCommentIdPostAsync,
     NotAsyncMethodName: CreateSubCommentApiV1CommentsOwnerRepoParentCommentIdPost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.CreateSubCommentApiV1CommentsOwnerRepoParentCommentIdPost
   },
   {
@@ -56094,7 +56094,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56183,6 +56182,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePostAsync,
     NotAsyncMethodName: LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePost,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePost
   },
   {
@@ -56326,7 +56326,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56415,6 +56414,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: UnlikeCommentApiV1CommentsOwnerRepoParentCommentIdLikeDeleteAsync,
     NotAsyncMethodName: UnlikeCommentApiV1CommentsOwnerRepoParentCommentIdLikeDelete,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient.UnlikeCommentApiV1CommentsOwnerRepoParentCommentIdLikeDelete
   },
   {
@@ -56454,7 +56454,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -56521,6 +56520,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: OkOkGetAsync,
     NotAsyncMethodName: OkOkGet,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.OkOkGet
   },
   {
@@ -57367,7 +57367,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57554,6 +57553,7 @@ Set tenant handle.,
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -57593,7 +57593,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57639,6 +57638,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TracerSessionsClient
   },
   {
@@ -57678,7 +57678,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57724,6 +57723,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.OrgsClient
   },
   {
@@ -57763,7 +57763,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57809,6 +57808,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AuthClient
   },
   {
@@ -57848,7 +57848,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57894,6 +57893,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ApiKeyClient
   },
   {
@@ -57933,7 +57933,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -57979,6 +57978,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ExamplesClient
   },
   {
@@ -58018,7 +58018,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58064,6 +58063,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.DatasetsClient
   },
   {
@@ -58103,7 +58103,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58149,6 +58148,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.RunClient
   },
   {
@@ -58188,7 +58188,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58234,6 +58233,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackClient
   },
   {
@@ -58273,7 +58273,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58319,6 +58318,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PublicClient
   },
   {
@@ -58358,7 +58358,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58404,6 +58403,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.AnnotationQueuesClient
   },
   {
@@ -58443,7 +58443,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58489,6 +58488,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TenantClient
   },
   {
@@ -58528,7 +58528,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58574,6 +58573,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.InfoClient
   },
   {
@@ -58613,7 +58613,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58659,6 +58658,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.FeedbackConfigsClient
   },
   {
@@ -58698,7 +58698,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58744,6 +58743,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelPriceMapClient
   },
   {
@@ -58783,7 +58783,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58829,6 +58828,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.UsageLimitsClient
   },
   {
@@ -58868,7 +58868,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58914,6 +58913,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.TtlSettingsClient
   },
   {
@@ -58953,7 +58953,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -58999,6 +58998,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PromptsClient
   },
   {
@@ -59038,7 +59038,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59084,6 +59083,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.WorkspacesClient
   },
   {
@@ -59123,7 +59123,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59169,6 +59168,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.PlaygroundSettingsClient
   },
   {
@@ -59208,7 +59208,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59254,6 +59253,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ServiceAccountsClient
   },
   {
@@ -59293,7 +59293,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59339,6 +59338,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ReposClient
   },
   {
@@ -59378,7 +59378,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59424,6 +59423,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.LikesClient
   },
   {
@@ -59463,7 +59463,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59509,6 +59508,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommitsClient
   },
   {
@@ -59548,7 +59548,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59594,6 +59593,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.SettingsClient
   },
   {
@@ -59633,7 +59633,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59679,6 +59678,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EventsClient
   },
   {
@@ -59718,7 +59718,6 @@ Set tenant handle.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -59764,6 +59763,7 @@ Set tenant handle.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CommentsClient
   }
 ]

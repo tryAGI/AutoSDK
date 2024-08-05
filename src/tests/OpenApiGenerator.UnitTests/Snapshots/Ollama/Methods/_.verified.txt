@@ -38,7 +38,6 @@ This endpoint returns the version of the Ollama server.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -109,6 +108,7 @@ This endpoint returns the version of the Ollama server.,
     Converters: null,
     MethodName: GetVersionAsync,
     NotAsyncMethodName: GetVersion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api.GetVersion
   },
   {
@@ -555,7 +555,6 @@ The final response object will include statistics and additional data from the r
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateCompletionRequest,
       IsArray: false,
@@ -690,6 +689,7 @@ The final response object will include statistics and additional data from the r
     Converters: null,
     MethodName: GenerateCompletionAsync,
     NotAsyncMethodName: GenerateCompletion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CompletionsClient.GenerateCompletion
   },
   {
@@ -975,7 +975,6 @@ This is a streaming endpoint, so there will be a series of responses. The final 
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateChatCompletionRequest,
       IsArray: false,
@@ -1100,6 +1099,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
     Converters: null,
     MethodName: GenerateChatCompletionAsync,
     NotAsyncMethodName: GenerateChatCompletion,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient.GenerateChatCompletion
   },
   {
@@ -1309,7 +1309,6 @@ How long (in minutes) to keep the model loaded in memory.
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.GenerateEmbeddingRequest,
       IsArray: false,
@@ -1410,6 +1409,7 @@ How long (in minutes) to keep the model loaded in memory.
     Converters: null,
     MethodName: GenerateEmbeddingAsync,
     NotAsyncMethodName: GenerateEmbedding,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EmbeddingsClient.GenerateEmbedding
   },
   {
@@ -1619,7 +1619,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CreateModelRequest,
       IsArray: false,
@@ -1722,6 +1721,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     Converters: null,
     MethodName: CreateModelAsync,
     NotAsyncMethodName: CreateModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.CreateModel
   },
   {
@@ -1761,7 +1761,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1832,6 +1831,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     Converters: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.ListModels
   },
   {
@@ -1871,7 +1871,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1942,6 +1941,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     Converters: null,
     MethodName: ListRunningModelsAsync,
     NotAsyncMethodName: ListRunningModels,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.ListRunningModels
   },
   {
@@ -2019,7 +2019,6 @@ Example: llama3:8b,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.ModelInfoRequest,
       IsArray: false,
@@ -2128,6 +2127,7 @@ Example: llama3:8b,
     Converters: null,
     MethodName: ShowModelInfoAsync,
     NotAsyncMethodName: ShowModelInfo,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.ShowModelInfo
   },
   {
@@ -2235,7 +2235,6 @@ Example: llama3-backup,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.CopyModelRequest,
       IsArray: false,
@@ -2308,6 +2307,7 @@ Example: llama3-backup,
     Converters: null,
     MethodName: CopyModelAsync,
     NotAsyncMethodName: CopyModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.CopyModel
   },
   {
@@ -2385,7 +2385,6 @@ Example: llama3:13b,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.DeleteModelRequest,
       IsArray: false,
@@ -2456,6 +2455,7 @@ Example: llama3:13b,
     Converters: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.DeleteModel
   },
   {
@@ -2669,7 +2669,6 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PullModelRequest,
       IsArray: false,
@@ -2778,6 +2777,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
     Converters: null,
     MethodName: PullModelAsync,
     NotAsyncMethodName: PullModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.PullModel
   },
   {
@@ -2988,7 +2988,6 @@ Requires registering for ollama.ai and adding a public key first.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: global::G.PushModelRequest,
       IsArray: false,
@@ -3097,6 +3096,7 @@ Requires registering for ollama.ai and adding a public key first.,
     Converters: null,
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.PushModel
   },
   {
@@ -3174,7 +3174,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3220,6 +3219,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: CheckBlobAsync,
     NotAsyncMethodName: CheckBlob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.CheckBlob
   },
   {
@@ -3295,7 +3295,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: byte[],
       IsArray: false,
@@ -3362,6 +3361,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: CreateBlobAsync,
     NotAsyncMethodName: CreateBlob,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient.CreateBlob
   },
   {
@@ -3526,7 +3526,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3598,6 +3597,7 @@ This is checking your Ollama server and not Ollama.ai.,
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -3637,7 +3637,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3683,6 +3682,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.CompletionsClient
   },
   {
@@ -3722,7 +3722,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3768,6 +3767,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ChatClient
   },
   {
@@ -3807,7 +3807,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3853,6 +3852,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.EmbeddingsClient
   },
   {
@@ -3892,7 +3892,6 @@ This is checking your Ollama server and not Ollama.ai.,
       FromCli: false
     },
     IsDeprecated: false,
-    IsMultipartFormData: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3938,6 +3937,7 @@ This is checking your Ollama server and not Ollama.ai.,
     Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
+    IsMultipartFormData: false,
     FileNameWithoutExtension: G.ModelsClient
   }
 ]
