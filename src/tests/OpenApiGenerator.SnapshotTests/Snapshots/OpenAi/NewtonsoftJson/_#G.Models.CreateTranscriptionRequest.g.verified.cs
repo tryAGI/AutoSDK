@@ -18,6 +18,12 @@ namespace G
         public byte[] File { get; set; } = default!;
 
         /// <summary>
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("filename", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Filename { get; set; } = default!;
+
+        /// <summary>
         /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
         /// Example: whisper-1
         /// </summary>

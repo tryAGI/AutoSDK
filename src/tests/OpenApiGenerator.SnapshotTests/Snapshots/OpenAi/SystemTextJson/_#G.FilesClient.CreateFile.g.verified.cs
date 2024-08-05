@@ -108,6 +108,9 @@ namespace G
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
+        /// <param name="filename">
+        /// The File object (not file name) to be uploaded.
+        /// </param>
         /// <param name="purpose">
         /// The intended purpose of the uploaded file.<br/>
         /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
@@ -116,12 +119,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OpenAIFile> CreateFileAsync(
             byte[] file,
+            string filename,
             global::G.CreateFileRequestPurpose purpose,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateFileRequest
             {
                 File = file,
+                Filename = filename,
                 Purpose = purpose,
             };
 

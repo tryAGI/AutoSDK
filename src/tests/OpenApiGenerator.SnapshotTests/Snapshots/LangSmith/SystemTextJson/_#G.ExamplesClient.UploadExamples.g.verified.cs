@@ -107,6 +107,7 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="file"></param>
+        /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -114,6 +115,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> UploadExamplesAsync(
             string datasetId,
             byte[] file,
+            string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::System.Collections.Generic.IList<string?>? outputKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -121,6 +123,7 @@ namespace G
             var request = new global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost
             {
                 File = file,
+                Filename = filename,
                 InputKeys = inputKeys,
                 OutputKeys = outputKeys,
             };

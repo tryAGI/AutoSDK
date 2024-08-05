@@ -19,6 +19,13 @@ namespace G
         public required byte[] Image { get; set; }
 
         /// <summary>
+        /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Imagename { get; set; }
+
+        /// <summary>
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </summary>
@@ -31,6 +38,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         public byte[]? Mask { get; set; }
+
+        /// <summary>
+        /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("maskname")]
+        public string? Maskname { get; set; }
 
         /// <summary>
         /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>

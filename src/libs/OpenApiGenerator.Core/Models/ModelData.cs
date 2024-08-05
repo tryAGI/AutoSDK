@@ -136,15 +136,39 @@ public readonly record struct ModelData(
                     .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                     .ToImmutableArray()
                 : schema.Value.Properties
-                    .Select(x => PropertyData.FromSchema(
-                        schema: x,
-                        requiredProperties: requiredProperties,
-                        parameterLocation: null,
-                        parameterStyle: null,
-                        parameterExplode: null,
-                        operationId: string.Empty,
-                        settings: settings,
-                        parents: innerParents))
+                    .SelectMany(x =>
+                    {
+                        var property = PropertyData.FromSchema(
+                            schema: x,
+                            requiredProperties: requiredProperties,
+                            parameterLocation: null,
+                            parameterStyle: null,
+                            parameterExplode: null,
+                            operationId: string.Empty,
+                            settings: settings,
+                            parents: innerParents);
+                        if (x.Value.Type == "string" && x.Value.Format == "binary")
+                        {
+                            return new []
+                            {
+                                property,
+                                property with
+                                {
+                                    Id = property.Id + "name",
+                                    Name = property.Name + "name",
+                                    Type = TypeData.Default with
+                                    {
+                                        CSharpType = property.IsRequired ? "string" : "string?",
+                                        JsonSerializerType = settings.JsonSerializerType,
+                                        GenerateJsonSerializerContextTypes = settings.GenerateJsonSerializerContextTypes,
+                                    },
+                                    JsonSerializerType = settings.JsonSerializerType,
+                                },
+                            };
+                        }
+
+                        return new [] { property };
+                    })
                     .ToImmutableArray(),
             AdditionalModels = schema.Value.Properties
                 .Select(x => FromSchema(x, settings, innerParents))

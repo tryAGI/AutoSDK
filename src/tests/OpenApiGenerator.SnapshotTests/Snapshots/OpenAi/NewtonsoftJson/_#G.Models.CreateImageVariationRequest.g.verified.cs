@@ -18,6 +18,12 @@ namespace G
         public byte[] Image { get; set; } = default!;
 
         /// <summary>
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("imagename", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Imagename { get; set; } = default!;
+
+        /// <summary>
         /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2

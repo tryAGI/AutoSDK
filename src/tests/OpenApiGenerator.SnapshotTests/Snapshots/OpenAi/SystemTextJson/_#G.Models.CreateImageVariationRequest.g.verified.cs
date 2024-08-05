@@ -19,6 +19,13 @@ namespace G
         public required byte[] Image { get; set; }
 
         /// <summary>
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Imagename { get; set; }
+
+        /// <summary>
         /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2

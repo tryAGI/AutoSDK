@@ -44,8 +44,4 @@
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Snapshots\Anthropic\NewtonsoftJson\_.verified.txt" />
-  </ItemGroup>
-
 </Project>

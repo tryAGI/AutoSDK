@@ -17,6 +17,13 @@ namespace G
         public required byte[] File { get; set; }
 
         /// <summary>
+        /// The File object (not file name) to be uploaded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
+
+        /// <summary>
         /// The intended purpose of the uploaded file.<br/>
         /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
         /// </summary>

@@ -100,6 +100,7 @@ namespace G
         /// Create a new dataset from a CSV file.
         /// </summary>
         /// <param name="file"></param>
+        /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
@@ -111,6 +112,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Dataset> UploadCsvDatasetAsync(
             byte[] file,
+            string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::System.AnyOf<string?, object?>? name = default,
             global::System.AllOf<global::G.DataType?>? dataType = default,
@@ -121,6 +123,7 @@ namespace G
             var request = new global::G.BodyUploadCsvDatasetApiV1DatasetsUploadPost
             {
                 File = file,
+                Filename = filename,
                 InputKeys = inputKeys,
                 Name = name,
                 DataType = dataType,

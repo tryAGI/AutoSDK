@@ -100,11 +100,17 @@ namespace G
         /// <param name="image">
         /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
         /// </param>
+        /// <param name="imagename">
+        /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
+        /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </param>
         /// <param name="mask">
+        /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
         /// <param name="model">
@@ -135,8 +141,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageEditAsync(
             byte[] image,
+            string imagename,
             string prompt,
             byte[]? mask = default,
+            string? maskname = default,
             global::System.AnyOf<string?, global::G.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageEditRequestSize? size = global::G.CreateImageEditRequestSize.x1024x1024,
@@ -147,8 +155,10 @@ namespace G
             var request = new global::G.CreateImageEditRequest
             {
                 Image = image,
+                Imagename = imagename,
                 Prompt = prompt,
                 Mask = mask,
+                Maskname = maskname,
                 Model = model,
                 N = n,
                 Size = size,

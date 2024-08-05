@@ -100,6 +100,9 @@ namespace G
         /// <param name="file">
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
+        /// <param name="filename">
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// </param>
         /// <param name="model">
         /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
         /// Example: whisper-1
@@ -126,6 +129,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             byte[] file,
+            string filename,
             global::System.AnyOf<string, global::G.CreateTranscriptionRequestModel> model,
             string? language = default,
             string? prompt = default,
@@ -137,6 +141,7 @@ namespace G
             var request = new global::G.CreateTranscriptionRequest
             {
                 File = file,
+                Filename = filename,
                 Model = model,
                 Language = language,
                 Prompt = prompt,

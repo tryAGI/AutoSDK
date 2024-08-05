@@ -18,6 +18,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("filename", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Filename { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_keys", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> InputKeys { get; set; } = default!;
 

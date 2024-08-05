@@ -100,6 +100,9 @@ namespace G
         /// <param name="image">
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
         /// </param>
+        /// <param name="imagename">
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </param>
         /// <param name="model">
         /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
         /// Default Value: dall-e-2<br/>
@@ -128,6 +131,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageVariationAsync(
             byte[] image,
+            string imagename,
             global::System.AnyOf<string?, global::G.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageVariationRequestResponseFormat? responseFormat = global::G.CreateImageVariationRequestResponseFormat.Url,
@@ -138,6 +142,7 @@ namespace G
             var request = new global::G.CreateImageVariationRequest
             {
                 Image = image,
+                Imagename = imagename,
                 Model = model,
                 N = n,
                 ResponseFormat = responseFormat,
