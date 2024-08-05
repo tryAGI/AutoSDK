@@ -18,6 +18,7 @@ public readonly record struct TypeData(
     int AllOfCount,
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues,
+    ImmutableArray<TypeData> SubTypes,
     string Namespace,
     bool IsDeprecated,
     JsonSerializerType JsonSerializerType,
@@ -36,6 +37,7 @@ public readonly record struct TypeData(
         AllOfCount: 0,
         Properties: [],
         EnumValues: [],
+        SubTypes: [],
         Namespace: string.Empty,
         IsDeprecated: false,
         JsonSerializerType: JsonSerializerType.SystemTextJson,
@@ -77,6 +79,26 @@ public readonly record struct TypeData(
                 .ToImmutableArray();
         }
         
+        var subTypes = ImmutableArray<TypeData>.Empty;
+        if (schema.Value.AnyOf.Any())
+        {
+            subTypes = schema.Value.AnyOf
+                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .ToImmutableArray();
+        }
+        else if (schema.Value.OneOf.Any())
+        {
+            subTypes = schema.Value.OneOf
+                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .ToImmutableArray();
+        }
+        else if (schema.Value.AllOf.Any())
+        {
+            subTypes = schema.Value.AllOf
+                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .ToImmutableArray();
+        }
+        
         var enumValues = ImmutableArray<string>.Empty;
         if (schema.Value.IsEnum())
         {
@@ -103,6 +125,7 @@ public readonly record struct TypeData(
             AllOfCount: schema.Value.AllOf?.Count ?? 0,
             Properties: properties,
             EnumValues: enumValues,
+            SubTypes: subTypes,
             Namespace: settings.Namespace,
             IsDeprecated: schema.Value.Deprecated,
             JsonSerializerType: settings.JsonSerializerType,
@@ -147,6 +170,7 @@ public readonly record struct TypeData(
             AllOfCount: context.Schema.AllOf?.Count ?? 0,
             Properties: properties,
             EnumValues: enumValues,
+            SubTypes: [],
             Namespace: context.Settings.Namespace,
             IsDeprecated: context.Schema.Deprecated,
             JsonSerializerType: context.Settings.JsonSerializerType,
