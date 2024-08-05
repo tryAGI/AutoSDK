@@ -43,10 +43,32 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/images/variations", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "multipart/form-data");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "image",
+                fileName: request.Imagename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                name: "model");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.N}"),
+                name: "n");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                name: "response_format");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Size}"),
+                name: "size");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.User}"),
+                name: "user");
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

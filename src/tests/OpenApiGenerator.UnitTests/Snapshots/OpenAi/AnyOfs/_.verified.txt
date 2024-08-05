@@ -80,6 +80,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type,
             text
@@ -97,6 +98,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -114,6 +116,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type,
             image_url
@@ -131,6 +134,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -158,6 +162,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             content,
             role,
@@ -176,6 +181,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -193,6 +199,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             content,
             role,
@@ -211,6 +218,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -228,6 +236,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             content,
             role,
@@ -248,6 +257,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -265,6 +275,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             role,
             content,
@@ -283,6 +294,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -300,6 +312,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             role,
             content,
@@ -318,6 +331,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -353,6 +367,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             None,
             Auto,
@@ -375,6 +390,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -392,6 +408,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type,
             function
@@ -409,6 +426,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -442,6 +460,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             None,
             Auto
@@ -462,6 +481,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -479,6 +499,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type
           ],
@@ -495,6 +516,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -528,6 +550,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             None,
             Auto,
@@ -550,6 +573,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -567,6 +591,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type,
             function
@@ -584,6 +609,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -611,6 +637,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type
           ],
@@ -627,6 +654,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -644,6 +672,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             type,
             static
@@ -661,6 +690,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -708,6 +738,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           OneOfCount: 1,
           Properties: null,
           EnumValues: null,
@@ -723,6 +754,7 @@ integrate the Assistants API with streaming.
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -740,6 +772,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           OneOfCount: 10,
           Properties: null,
           EnumValues: null,
@@ -755,6 +788,7 @@ integrate the Assistants API with streaming.
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory10
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -772,6 +806,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           OneOfCount: 7,
           Properties: null,
           EnumValues: null,
@@ -787,6 +822,7 @@ integrate the Assistants API with streaming.
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory7
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -804,6 +840,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           OneOfCount: 5,
           Properties: null,
           EnumValues: null,
@@ -819,6 +856,7 @@ integrate the Assistants API with streaming.
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -836,6 +874,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             event,
             data
@@ -853,6 +892,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -870,6 +910,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             event,
             data
@@ -887,6 +928,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -914,6 +956,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -928,6 +971,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -955,6 +999,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -969,6 +1014,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -986,6 +1032,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1000,6 +1047,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1017,6 +1065,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1031,6 +1080,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1048,6 +1098,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1062,6 +1113,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1079,6 +1131,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1093,6 +1146,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1110,6 +1164,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1124,6 +1179,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1141,6 +1197,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1155,6 +1212,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1172,6 +1230,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1186,6 +1245,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1203,6 +1263,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1217,6 +1278,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1234,6 +1296,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1248,6 +1311,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1275,6 +1339,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1289,6 +1354,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1306,6 +1372,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1320,6 +1387,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1337,6 +1405,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1351,6 +1420,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1368,6 +1438,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1382,6 +1453,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1399,6 +1471,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1413,6 +1486,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1430,6 +1504,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1444,6 +1519,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1461,6 +1537,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1475,6 +1552,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1502,6 +1580,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1516,6 +1595,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1533,6 +1613,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1547,6 +1628,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1564,6 +1646,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1578,6 +1661,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1595,6 +1679,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1609,6 +1694,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1626,6 +1712,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1640,6 +1727,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1667,6 +1755,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1681,6 +1770,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1698,6 +1788,7 @@ integrate the Assistants API with streaming.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             content,
             role,
@@ -1718,6 +1809,7 @@ integrate the Assistants API with streaming.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,

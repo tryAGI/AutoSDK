@@ -147,7 +147,7 @@ public readonly record struct ModelData(
                             operationId: string.Empty,
                             settings: settings,
                             parents: innerParents);
-                        if (x.Value.Type == "string" && x.Value.Format == "binary")
+                        if (x.Value.IsBinary())
                         {
                             return new []
                             {
@@ -156,6 +156,7 @@ public readonly record struct ModelData(
                                 {
                                     Id = property.Id + "name",
                                     Name = property.Name + "name",
+                                    IsMultiPartFormDataFilename = true,
                                     Type = TypeData.Default with
                                     {
                                         CSharpType = property.IsRequired ? "string" : "string?",

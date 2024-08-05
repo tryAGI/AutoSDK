@@ -18,6 +18,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -32,6 +33,7 @@
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         ParameterLocation: Query,
         ParameterStyle: Form,
         ParameterExplode: true,
@@ -78,6 +80,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: ,
@@ -98,6 +101,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: G,
@@ -120,6 +124,7 @@
         IsBase64: false,
         IsDate: false,
         IsDateTime: false,
+        IsBinary: false,
         Properties: null,
         EnumValues: null,
         Namespace: G,
@@ -140,6 +145,7 @@
         IsBase64: false,
         IsDate: false,
         IsDateTime: false,
+        IsBinary: false,
         Properties: [
           code,
           message
@@ -208,6 +214,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: ,
@@ -228,6 +235,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: [
         code,
         message
@@ -253,6 +261,7 @@
         IsBase64: false,
         IsDate: false,
         IsDateTime: false,
+        IsBinary: false,
         Properties: [
           code,
           message
@@ -295,6 +304,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -309,6 +319,7 @@
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
@@ -355,6 +366,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: ,
@@ -375,6 +387,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: [
         4,
         1.5,
@@ -404,6 +417,7 @@
         IsBase64: false,
         IsDate: false,
         IsDateTime: false,
+        IsBinary: false,
         Properties: [
           4,
           1.5,
@@ -431,6 +445,7 @@
         IsBase64: false,
         IsDate: false,
         IsDateTime: false,
+        IsBinary: false,
         Properties: [
           code,
           message
@@ -498,6 +513,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: ,
@@ -518,6 +534,7 @@
       IsBase64: false,
       IsDate: false,
       IsDateTime: false,
+      IsBinary: false,
       Properties: null,
       EnumValues: null,
       Namespace: ,

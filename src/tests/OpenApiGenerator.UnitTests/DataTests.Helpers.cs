@@ -65,11 +65,11 @@ public partial class DataTests : VerifyBase
                 .UseDirectory($"Snapshots/{callerName}/Schemas")
                 .UseFileName("_");
         
-        // modelsTask = modelsTask.AutoVerify();
-        // methodsTask = methodsTask.AutoVerify();
-        // anyOfsTask = anyOfsTask.AutoVerify();
-        // typesTask = typesTask.AutoVerify();
-        // schemasTask = schemasTask.AutoVerify();
+        modelsTask = modelsTask.AutoVerify();
+        methodsTask = methodsTask.AutoVerify();
+        anyOfsTask = anyOfsTask.AutoVerify();
+        typesTask = typesTask.AutoVerify();
+        schemasTask = schemasTask.AutoVerify();
         
         return Task.WhenAll(modelsTask, methodsTask, anyOfsTask, typesTask, schemasTask);
     }

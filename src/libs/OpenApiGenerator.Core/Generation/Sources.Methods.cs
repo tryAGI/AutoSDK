@@ -227,6 +227,31 @@ namespace {endPoint.Namespace}
         }
         
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        if (endPoint.IsMultipartFormData)
+        {
+            return $@" 
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+{endPoint.Properties.Where(x => !x.IsMultiPartFormDataFilename).Select(x => x.Type.IsBinary ? @$" 
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>())
+                {{
+                    Headers =
+                    {{
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse(""{endPoint.RequestMediaType}""),
+                    }},
+                }},
+                name: ""{x.Id}"",
+                fileName: request.{x.Name + "name"} ?? string.Empty);
+ " : @$" 
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($""{{request.{x.Name}}}""),
+                name: ""{x.Id}"");
+ ").Inject()}
+            
+            httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+        
         var requestContent = endPoint.RequestType.IsBase64
             ? "global::System.Convert.ToBase64String(request)"
             : jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext);

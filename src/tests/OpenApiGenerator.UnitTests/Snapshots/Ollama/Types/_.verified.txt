@@ -6,6 +6,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -26,6 +27,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -46,6 +48,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -66,6 +69,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       num_keep,
       seed,
@@ -116,6 +120,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       Json
     ],
@@ -140,6 +145,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -160,6 +166,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -180,6 +187,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -200,6 +208,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: true,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -220,6 +229,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -240,6 +250,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -260,6 +271,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       role,
       content,
@@ -284,6 +296,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -305,6 +318,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       System,
       User,
@@ -333,6 +347,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -353,6 +368,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -374,6 +390,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -394,6 +411,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       parent_model,
       format,
@@ -421,6 +439,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -441,6 +460,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       general.architecture,
       general.file_type,
@@ -466,6 +486,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -487,6 +508,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -508,6 +530,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       version
     ],
@@ -530,6 +553,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       prompt,
@@ -562,6 +586,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       created_at,
@@ -594,6 +619,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       messages,
@@ -621,6 +647,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       message,
       model,
@@ -653,6 +680,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       prompt,
@@ -678,6 +706,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       embedding
     ],
@@ -700,6 +729,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       modelfile,
@@ -726,6 +756,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       status
     ],
@@ -748,6 +779,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       models
     ],
@@ -770,6 +802,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       models
     ],
@@ -792,6 +825,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model
     ],
@@ -814,6 +848,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       license,
       modelfile,
@@ -843,6 +878,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       source,
       destination
@@ -866,6 +902,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model
     ],
@@ -888,6 +925,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       insecure,
@@ -914,6 +952,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       status,
       digest,
@@ -939,6 +978,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       model,
       insecure,
@@ -965,6 +1005,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: false,
     Properties: [
       status,
       digest,
@@ -990,6 +1031,7 @@
     IsBase64: false,
     IsDate: false,
     IsDateTime: false,
+    IsBinary: true,
     Properties: null,
     EnumValues: null,
     Namespace: G,

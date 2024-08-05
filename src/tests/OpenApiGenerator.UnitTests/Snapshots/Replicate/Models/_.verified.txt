@@ -41,6 +41,7 @@
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -55,6 +56,7 @@
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
@@ -88,6 +90,7 @@ Use a data URL when:
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -102,6 +105,7 @@ Use a data URL when:
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
@@ -123,6 +127,7 @@ If the requested model version supports streaming, the returned prediction will 
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -137,6 +142,7 @@ If the requested model version supports streaming, the returned prediction will 
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
@@ -156,6 +162,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -170,6 +177,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the prediction request:
@@ -252,6 +260,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -266,6 +275,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -283,6 +293,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -297,6 +308,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -314,6 +326,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -328,6 +341,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -345,6 +359,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -359,6 +374,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -419,6 +435,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -433,6 +450,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 A string representing the desired model to push to in the format `{destination_model_owner}/{destination_model_name}`. This should be an existing model owned by the user or organization making the API request. If the destination is invalid, the server will return an appropriate 4XX response.
@@ -452,6 +470,7 @@ A string representing the desired model to push to in the format `{destination_m
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -466,6 +485,7 @@ A string representing the desired model to push to in the format `{destination_m
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 An object containing inputs to the Cog model's `train()` function.
@@ -485,6 +505,7 @@ An object containing inputs to the Cog model's `train()` function.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -499,6 +520,7 @@ An object containing inputs to the Cog model's `train()` function.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.,
         ConverterType: ,
@@ -516,6 +538,7 @@ An object containing inputs to the Cog model's `train()` function.
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -530,6 +553,7 @@ An object containing inputs to the Cog model's `train()` function.
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the training has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the training request:
@@ -613,6 +637,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -627,6 +652,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -644,6 +670,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -658,6 +685,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -675,6 +703,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -689,6 +718,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -706,6 +736,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -720,6 +751,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -780,6 +812,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -794,6 +827,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
@@ -827,6 +861,7 @@ Use a data URL when:
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -841,6 +876,7 @@ Use a data URL when:
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
@@ -862,6 +898,7 @@ If the requested model version supports streaming, the returned prediction will 
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -876,6 +913,7 @@ If the requested model version supports streaming, the returned prediction will 
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version that you want to run.,
         ConverterType: ,
@@ -893,6 +931,7 @@ If the requested model version supports streaming, the returned prediction will 
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -907,6 +946,7 @@ If the requested model version supports streaming, the returned prediction will 
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
@@ -926,6 +966,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -940,6 +981,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the prediction request:
@@ -1023,6 +1065,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1037,6 +1080,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1054,6 +1098,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1068,6 +1113,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1085,6 +1131,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1099,6 +1146,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1116,6 +1164,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1130,6 +1179,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1190,6 +1240,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1204,6 +1255,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The GitHub URL of the account.,
         ConverterType: ,
@@ -1221,6 +1273,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1235,6 +1288,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the account.,
         ConverterType: ,
@@ -1252,6 +1306,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Organization,
             User
@@ -1272,6 +1327,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The account type. Can be a user or an organization.,
         ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter,
@@ -1289,6 +1345,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1303,6 +1360,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The username of the account.,
         ConverterType: ,
@@ -1364,6 +1422,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1378,6 +1437,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1395,6 +1455,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -1409,6 +1470,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1469,6 +1531,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1483,6 +1546,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL pointing to the next page of deployment objects if any,
         ConverterType: ,
@@ -1500,6 +1564,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1514,6 +1579,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL pointing to the previous page of deployment objects if any,
         ConverterType: ,
@@ -1531,6 +1597,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1545,6 +1612,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: An array containing a page of deployment objects,
         ConverterType: ,
@@ -1605,6 +1673,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1619,6 +1688,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1636,6 +1706,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1650,6 +1721,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the deployment.,
         ConverterType: ,
@@ -1667,6 +1739,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1681,6 +1754,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The owner of the deployment.,
         ConverterType: ,
@@ -1741,6 +1815,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1755,6 +1830,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1772,6 +1848,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: true,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1786,6 +1863,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The time the release was created.,
         ConverterType: ,
@@ -1803,6 +1881,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1817,6 +1896,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -1834,6 +1914,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1848,6 +1929,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
         ConverterType: ,
@@ -1865,6 +1947,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1879,6 +1962,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The release number. This is an auto-incrementing integer that starts at 1, and is set automatically when a deployment is created.,
         ConverterType: ,
@@ -1896,6 +1980,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1910,6 +1995,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version used in the release.,
         ConverterType: ,
@@ -1970,6 +2056,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1984,6 +2071,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model.,
         ConverterType: ,
@@ -2001,6 +2089,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2015,6 +2104,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -2032,6 +2122,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2046,6 +2137,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -2106,6 +2198,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2120,6 +2213,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The GitHub URL of the account that created the release.,
         ConverterType: ,
@@ -2137,6 +2231,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2151,6 +2246,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the account that created the release.,
         ConverterType: ,
@@ -2168,6 +2264,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Organization,
             User
@@ -2188,6 +2285,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
         ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter,
@@ -2205,6 +2303,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2219,6 +2318,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The username of the account that created the release.,
         ConverterType: ,
@@ -2280,6 +2380,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -2294,6 +2395,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -2311,6 +2413,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -2325,6 +2428,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -2385,6 +2489,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2399,6 +2504,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ConverterType: ,
@@ -2416,6 +2522,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2430,6 +2537,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -2447,6 +2555,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2461,6 +2570,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -2478,6 +2588,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2492,6 +2603,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The full name of the model that you want to deploy e.g. stability-ai/sdxl.,
         ConverterType: ,
@@ -2509,6 +2621,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2523,6 +2636,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the deployment.,
         ConverterType: ,
@@ -2540,6 +2654,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2554,6 +2669,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The 64-character string ID of the model version that you want to deploy.,
         ConverterType: ,
@@ -2614,6 +2730,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2628,6 +2745,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -2645,6 +2763,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2659,6 +2778,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the deployment.,
         ConverterType: ,
@@ -2676,6 +2796,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2690,6 +2811,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The owner of the deployment.,
         ConverterType: ,
@@ -2750,6 +2872,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2764,6 +2887,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -2781,6 +2905,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: true,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2795,6 +2920,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The time the release was created.,
         ConverterType: ,
@@ -2812,6 +2938,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2826,6 +2953,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -2843,6 +2971,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2857,6 +2986,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
         ConverterType: ,
@@ -2874,6 +3004,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2888,6 +3019,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The release number.,
         ConverterType: ,
@@ -2905,6 +3037,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2919,6 +3052,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version used in the release.,
         ConverterType: ,
@@ -2979,6 +3113,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -2993,6 +3128,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model.,
         ConverterType: ,
@@ -3010,6 +3146,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3024,6 +3161,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -3041,6 +3179,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3055,6 +3194,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -3115,6 +3255,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3129,6 +3270,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The GitHub URL of the account that created the release.,
         ConverterType: ,
@@ -3146,6 +3288,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3160,6 +3303,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the account that created the release.,
         ConverterType: ,
@@ -3177,6 +3321,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Organization,
             User
@@ -3197,6 +3342,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
@@ -3214,6 +3360,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3228,6 +3375,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The username of the account that created the release.,
         ConverterType: ,
@@ -3289,6 +3437,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -3303,6 +3452,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -3320,6 +3470,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -3334,6 +3485,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -3394,6 +3546,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3408,6 +3561,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -3425,6 +3579,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3439,6 +3594,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the deployment.,
         ConverterType: ,
@@ -3456,6 +3612,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3470,6 +3627,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The owner of the deployment.,
         ConverterType: ,
@@ -3530,6 +3688,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3544,6 +3703,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -3561,6 +3721,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: true,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3575,6 +3736,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The time the release was created.,
         ConverterType: ,
@@ -3592,6 +3754,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3606,6 +3769,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -3623,6 +3787,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3637,6 +3802,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
         ConverterType: ,
@@ -3654,6 +3820,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3668,6 +3835,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The release number.,
         ConverterType: ,
@@ -3685,6 +3853,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3699,6 +3868,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version used in the release.,
         ConverterType: ,
@@ -3759,6 +3929,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3773,6 +3944,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model.,
         ConverterType: ,
@@ -3790,6 +3962,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3804,6 +3977,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -3821,6 +3995,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3835,6 +4010,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -3895,6 +4071,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3909,6 +4086,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The GitHub URL of the account that created the release.,
         ConverterType: ,
@@ -3926,6 +4104,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -3940,6 +4119,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the account that created the release.,
         ConverterType: ,
@@ -3957,6 +4137,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Organization,
             User
@@ -3977,6 +4158,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
         ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
@@ -3994,6 +4176,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4008,6 +4191,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The username of the account that created the release.,
         ConverterType: ,
@@ -4069,6 +4253,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -4083,6 +4268,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -4100,6 +4286,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -4114,6 +4301,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -4174,6 +4362,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4188,6 +4377,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ConverterType: ,
@@ -4205,6 +4395,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4219,6 +4410,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -4236,6 +4428,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4250,6 +4443,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -4267,6 +4461,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4281,6 +4476,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version that you want to deploy,
         ConverterType: ,
@@ -4341,6 +4537,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4355,6 +4552,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -4372,6 +4570,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4386,6 +4585,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the deployment.,
         ConverterType: ,
@@ -4403,6 +4603,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4417,6 +4618,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The owner of the deployment.,
         ConverterType: ,
@@ -4477,6 +4679,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4491,6 +4694,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -4508,6 +4712,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: true,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4522,6 +4727,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The time the release was created.,
         ConverterType: ,
@@ -4539,6 +4745,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4553,6 +4760,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -4570,6 +4778,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4584,6 +4793,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
         ConverterType: ,
@@ -4601,6 +4811,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4615,6 +4826,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The release number.,
         ConverterType: ,
@@ -4632,6 +4844,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4646,6 +4859,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The ID of the model version used in the release.,
         ConverterType: ,
@@ -4706,6 +4920,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4720,6 +4935,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model.,
         ConverterType: ,
@@ -4737,6 +4953,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4751,6 +4968,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ConverterType: ,
@@ -4768,6 +4986,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4782,6 +5001,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ConverterType: ,
@@ -4842,6 +5062,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4856,6 +5077,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The GitHub URL of the account that created the release.,
         ConverterType: ,
@@ -4873,6 +5095,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4887,6 +5110,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the account that created the release.,
         ConverterType: ,
@@ -4904,6 +5128,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Organization,
             User
@@ -4924,6 +5149,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
         ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
@@ -4941,6 +5167,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -4955,6 +5182,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The username of the account that created the release.,
         ConverterType: ,
@@ -5016,6 +5244,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -5030,6 +5259,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -5047,6 +5277,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -5061,6 +5292,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -5121,6 +5353,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5135,6 +5368,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the hardware.,
         ConverterType: ,
@@ -5152,6 +5386,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5166,6 +5401,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU of the hardware.,
         ConverterType: ,
@@ -5226,6 +5462,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5240,6 +5477,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL for the model's cover image. This should be an image file.,
         ConverterType: ,
@@ -5257,6 +5495,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5271,6 +5510,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A description of the model.,
         ConverterType: ,
@@ -5288,6 +5528,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5302,6 +5543,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL for the model's source code on GitHub.,
         ConverterType: ,
@@ -5319,6 +5561,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5333,6 +5576,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ConverterType: ,
@@ -5350,6 +5594,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5364,6 +5609,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL for the model's license.,
         ConverterType: ,
@@ -5381,6 +5627,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5395,6 +5642,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the model. This must be unique among all models owned by the user or organization.,
         ConverterType: ,
@@ -5412,6 +5660,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5426,6 +5675,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The name of the user or organization that will own the model. This must be the same as the user or organization that is making the API request. In other words, the API token used in the request must belong to this user or organization.,
         ConverterType: ,
@@ -5443,6 +5693,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5457,6 +5708,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: A URL for the model's paper.,
         ConverterType: ,
@@ -5474,6 +5726,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: [
             Public,
             Private
@@ -5494,6 +5747,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter,
@@ -5555,6 +5809,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -5569,6 +5824,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -5586,6 +5842,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: ,
@@ -5600,6 +5857,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
@@ -5660,6 +5918,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsBase64: false,
           IsDate: false,
           IsDateTime: false,
+          IsBinary: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -5674,6 +5933,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ConverterType: 
         },
         IsRequired: false,
+        IsMultiPartFormDataFilename: false,
         IsDeprecated: false,
         Summary: The signing secret.,
         ConverterType: ,

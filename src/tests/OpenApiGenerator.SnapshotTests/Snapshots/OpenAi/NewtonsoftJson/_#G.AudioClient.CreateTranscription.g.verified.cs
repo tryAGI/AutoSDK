@@ -43,10 +43,35 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/audio/transcriptions", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "multipart/form-data");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "file",
+                fileName: request.Filename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                name: "model");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                name: "language");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                name: "prompt");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                name: "response_format");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                name: "temperature");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.TimestampGranularities}"),
+                name: "timestamp_granularities[]");
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
