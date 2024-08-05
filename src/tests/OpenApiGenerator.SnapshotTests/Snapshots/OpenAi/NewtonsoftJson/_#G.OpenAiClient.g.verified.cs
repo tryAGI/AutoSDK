@@ -61,6 +61,11 @@ namespace G
         public FilesClient Files => new FilesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads => new UploadsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images => new ImagesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);

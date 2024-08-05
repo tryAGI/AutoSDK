@@ -61,6 +61,11 @@ namespace G
         public FilesClient Files => new FilesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads => new UploadsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images => new ImagesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
@@ -200,6 +205,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CreateFileRequestPurposeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateUploadRequestPurposeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateUploadRequestPurposeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersBatchSizeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersBatchSizeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersLearningRateMultiplierJsonConverter(),
@@ -242,6 +249,12 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.OpenAIFilePurposeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.OpenAIFileStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.OpenAIFileStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadPartObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UploadPartObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.EmbeddingObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.EmbeddingObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.FineTuningJobHyperparametersNEpochsJsonConverter(),

@@ -20,6 +20,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Gpt4oMini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMini20240718,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4Turbo,
         /// <summary>
         /// 
@@ -105,6 +113,8 @@ namespace G
             {
                 CreateThreadAndRunRequestModel.Gpt4o => "gpt-4o",
                 CreateThreadAndRunRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
+                CreateThreadAndRunRequestModel.Gpt4oMini => "gpt-4o-mini",
+                CreateThreadAndRunRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
                 CreateThreadAndRunRequestModel.Gpt4Turbo => "gpt-4-turbo",
                 CreateThreadAndRunRequestModel.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 CreateThreadAndRunRequestModel.Gpt40125Preview => "gpt-4-0125-preview",
@@ -135,6 +145,8 @@ namespace G
             {
                 "gpt-4o" => CreateThreadAndRunRequestModel.Gpt4o,
                 "gpt-4o-2024-05-13" => CreateThreadAndRunRequestModel.Gpt4o20240513,
+                "gpt-4o-mini" => CreateThreadAndRunRequestModel.Gpt4oMini,
+                "gpt-4o-mini-2024-07-18" => CreateThreadAndRunRequestModel.Gpt4oMini20240718,
                 "gpt-4-turbo" => CreateThreadAndRunRequestModel.Gpt4Turbo,
                 "gpt-4-turbo-2024-04-09" => CreateThreadAndRunRequestModel.Gpt4Turbo20240409,
                 "gpt-4-0125-preview" => CreateThreadAndRunRequestModel.Gpt40125Preview,

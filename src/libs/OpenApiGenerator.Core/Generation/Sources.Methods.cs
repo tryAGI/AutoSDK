@@ -218,6 +218,21 @@ namespace {endPoint.Namespace}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
+    public static string SerializePropertyAsString(
+        PropertyData property)
+    {
+        if (property.ParameterLocation != null)
+        {
+            return $"$\"{{{property.ParameterName}}}\"";
+        }
+        
+        return property.Type.IsAnyOf
+            ? string.Join(" ?? ", property.Type.SubTypes.Select((y, i) => y.IsEnum
+                ? $"request.{property.Name}{(property.IsRequired ? "" : "?")}.Value{i + 1}{(property.IsRequired ? "" : "?")}.ToValueString()"
+                : $"request.{property.Name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
+            : $"$\"{{request.{property.Name}}}\"";
+    }
+    
     public static string GenerateRequestData(
         EndPoint endPoint)
     {
@@ -233,11 +248,6 @@ namespace {endPoint.Namespace}
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Properties.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
-    var serializedValue = x.Type.IsAnyOf
-        ? string.Join(" ?? ", x.Type.SubTypes.Select((y, i) => y.IsEnum
-            ? $"request.{x.Name}{(x.IsRequired ? "" : "?")}.Value{i + 1}{(x.IsRequired ? "" : "?")}.ToValueString()"
-            : $"request.{x.Name}{(x.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
-        : $"$\"{{request.{x.Name}}}\"";
     return x.Type.IsBinary ? @$" 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>())
@@ -251,7 +261,7 @@ namespace {endPoint.Namespace}
                 fileName: request.{x.Name + "name"} ?? string.Empty);
  " : @$" 
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent({serializedValue}),
+                content: new global::System.Net.Http.StringContent({SerializePropertyAsString(x)}),
                 name: ""{x.Id}"");
  ";
 }).Inject()}

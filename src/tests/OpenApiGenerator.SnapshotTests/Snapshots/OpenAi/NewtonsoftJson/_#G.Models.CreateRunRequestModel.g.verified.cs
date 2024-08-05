@@ -23,6 +23,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini")]
+        Gpt4oMini,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-2024-07-18")]
+        Gpt4oMini20240718,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-4-turbo")]
         Gpt4Turbo,
         /// <summary>
@@ -126,6 +136,8 @@ namespace G
             {
                 CreateRunRequestModel.Gpt4o => "gpt-4o",
                 CreateRunRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
+                CreateRunRequestModel.Gpt4oMini => "gpt-4o-mini",
+                CreateRunRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
                 CreateRunRequestModel.Gpt4Turbo => "gpt-4-turbo",
                 CreateRunRequestModel.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 CreateRunRequestModel.Gpt40125Preview => "gpt-4-0125-preview",
@@ -156,6 +168,8 @@ namespace G
             {
                 "gpt-4o" => CreateRunRequestModel.Gpt4o,
                 "gpt-4o-2024-05-13" => CreateRunRequestModel.Gpt4o20240513,
+                "gpt-4o-mini" => CreateRunRequestModel.Gpt4oMini,
+                "gpt-4o-mini-2024-07-18" => CreateRunRequestModel.Gpt4oMini20240718,
                 "gpt-4-turbo" => CreateRunRequestModel.Gpt4Turbo,
                 "gpt-4-turbo-2024-04-09" => CreateRunRequestModel.Gpt4Turbo20240409,
                 "gpt-4-0125-preview" => CreateRunRequestModel.Gpt40125Preview,
