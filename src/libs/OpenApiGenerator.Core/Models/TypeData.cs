@@ -100,7 +100,10 @@ public readonly record struct TypeData(
         }
         if (schema.Value.IsArray())
         {
-            subTypes = [FromSchema(schema.Value.Items.UseReferenceIdOrKey(schema.Key), settings, parents)];
+            subTypes = [Default with
+            {
+                IsEnum = schema.Value.Items.IsEnum(),
+            }];
         }
         
         var enumValues = ImmutableArray<string>.Empty;
