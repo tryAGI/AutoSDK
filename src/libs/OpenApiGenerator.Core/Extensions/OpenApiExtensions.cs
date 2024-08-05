@@ -243,6 +243,14 @@ public static class OpenApiExtensions
         return PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
     }
     
+    public static bool IsArray(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type == "array";
+    }
+    
     public static bool IsEnum(
         this OpenApiSchema schema)
     {

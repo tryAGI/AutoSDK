@@ -83,20 +83,24 @@ public readonly record struct TypeData(
         if (schema.Value.AnyOf.Any())
         {
             subTypes = schema.Value.AnyOf
-                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
                 .ToImmutableArray();
         }
         else if (schema.Value.OneOf.Any())
         {
             subTypes = schema.Value.OneOf
-                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
                 .ToImmutableArray();
         }
         else if (schema.Value.AllOf.Any())
         {
             subTypes = schema.Value.AllOf
-                .Select(x => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
                 .ToImmutableArray();
+        }
+        if (schema.Value.IsArray())
+        {
+            subTypes = [FromSchema(schema.Value.Items.UseReferenceIdOrKey(schema.Key), settings, parents)];
         }
         
         var enumValues = ImmutableArray<string>.Empty;
@@ -114,7 +118,7 @@ public readonly record struct TypeData(
         
         return new TypeData(
             CSharpType: GetCSharpType(schema, settings, parents),
-            IsArray: schema.Value.Type == "array",
+            IsArray: schema.Value.IsArray(),
             IsEnum: schema.Value.IsEnum(),
             IsBase64: schema.Value.IsBase64(),
             IsDate: schema.Value.IsDate(),

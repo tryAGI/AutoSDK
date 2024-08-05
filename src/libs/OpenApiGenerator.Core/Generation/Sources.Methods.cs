@@ -16,7 +16,9 @@ public static partial class Sources
             return GenerateConstructors(endPoint);
         }
 
-        var usings = endPoint.Properties.Any(x => x.Type.IsArray && x.ParameterExplode == true)
+        var usings =
+            endPoint.Properties.Any(x => x.Type.IsArray && x.ParameterExplode == true) ||
+            endPoint.IsMultipartFormData && endPoint.Properties.Any(x => x.Type.IsArray)
             ? "using System.Linq;\n"
             : "";
         var contentType = endPoint.ContentType switch
@@ -221,16 +223,26 @@ namespace {endPoint.Namespace}
     public static string SerializePropertyAsString(
         PropertyData property)
     {
-        if (property.ParameterLocation != null)
+        var name = property.ParameterLocation != null
+            ? property.ParameterName
+            : "request." + property.Name;
+        if (property.Type.IsArray)
         {
-            return $"$\"{{{property.ParameterName}}}\"";
+            var additionalConvertSubtype = property.Type.SubTypes.First().IsEnum
+                ? "?.ToValueString()"
+                : string.Empty;
+            return $"$\"[{{string.Join(\",\", {name}?.Select(x => x{additionalConvertSubtype}) ?? global::System.Array.Empty<string>())}}]\"";
         }
+        
+        var additionalConvert = property.Type.IsEnum
+            ? $"{(property.IsRequired ? "" : "?")}.ToValueString()"
+            : string.Empty;
         
         return property.Type.IsAnyOf
             ? string.Join(" ?? ", property.Type.SubTypes.Select((y, i) => y.IsEnum
-                ? $"request.{property.Name}{(property.IsRequired ? "" : "?")}.Value{i + 1}{(property.IsRequired ? "" : "?")}.ToValueString()"
-                : $"request.{property.Name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
-            : $"$\"{{request.{property.Name}}}\"";
+                ? $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}{(property.IsRequired ? "" : "?")}.ToValueString()"
+                : $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
+            : $"$\"{{{name}{additionalConvert}}}\"";
     }
     
     public static string GenerateRequestData(

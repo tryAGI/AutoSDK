@@ -74,10 +74,10 @@ namespace G
                 content: new global::System.Net.Http.StringContent($"{request.N}"),
                 name: "n");
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Size}"),
+                content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
                 name: "size");
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                 name: "response_format");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.User}"),

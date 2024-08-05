@@ -1,4 +1,5 @@
 ﻿//HintName: G.AudioClient.CreateTranscription.g.cs
+using System.Linq;
 
 #nullable enable
 
@@ -64,13 +65,13 @@ namespace G
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                 name: "prompt");
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                 name: "response_format");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
                 name: "temperature");
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.TimestampGranularities}"),
+                content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities?.Select(x => x?.ToValueString()) ?? global::System.Array.Empty<string>())}]"),
                 name: "timestamp_granularities[]");
             httpRequest.Content = __httpRequestContent;
 
