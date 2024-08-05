@@ -57,31 +57,49 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                 name: "prompt");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>())
-                {
-                    Headers =
+            if (request.Mask != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>())
                     {
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                        Headers =
+                        {
+                            ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                        },
                     },
-                },
-                name: "mask",
-                fileName: request.Maskname ?? string.Empty);
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
-                name: "model");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.N}"),
-                name: "n");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                name: "size");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                name: "response_format");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.User}"),
-                name: "user");
+                    name: "mask",
+                    fileName: request.Maskname ?? string.Empty);
+            } 
+            if (request.Model != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
+                    name: "model");
+            } 
+            if (request.N != 1)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.N}"),
+                    name: "n");
+            } 
+            if (request.Size != global::G.CreateImageEditRequestSize.x1024x1024)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                    name: "size");
+            } 
+            if (request.ResponseFormat != global::G.CreateImageEditRequestResponseFormat.Url)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    name: "response_format");
+            } 
+            if (request.User != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.User}"),
+                    name: "user");
+            }
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

@@ -54,21 +54,36 @@ namespace G
                 },
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
-                name: "model");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.N}"),
-                name: "n");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                name: "response_format");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                name: "size");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.User}"),
-                name: "user");
+            if (request.Model != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
+                    name: "model");
+            } 
+            if (request.N != 1)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.N}"),
+                    name: "n");
+            } 
+            if (request.ResponseFormat != global::G.CreateImageVariationRequestResponseFormat.Url)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    name: "response_format");
+            } 
+            if (request.Size != global::G.CreateImageVariationRequestSize.x1024x1024)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                    name: "size");
+            } 
+            if (request.User != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.User}"),
+                    name: "user");
+            }
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

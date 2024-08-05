@@ -58,21 +58,36 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
                 name: "model");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Language}"),
-                name: "language");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "prompt");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                name: "response_format");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                name: "temperature");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities?.Select(x => x?.ToValueString()) ?? global::System.Array.Empty<string>())}]"),
-                name: "timestamp_granularities[]");
+            if (request.Language != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                    name: "language");
+            } 
+            if (request.Prompt != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                    name: "prompt");
+            } 
+            if (request.ResponseFormat != global::G.CreateTranscriptionRequestResponseFormat.Json)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    name: "response_format");
+            } 
+            if (request.Temperature != 0)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                    name: "temperature");
+            } 
+            if (request.TimestampGranularities != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities?.Select(x => x?.ToValueString()) ?? global::System.Array.Empty<string>())}]"),
+                    name: "timestamp_granularities[]");
+            }
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

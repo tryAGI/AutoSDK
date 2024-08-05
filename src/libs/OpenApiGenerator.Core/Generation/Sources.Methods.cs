@@ -260,7 +260,7 @@ namespace {endPoint.Namespace}
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Properties.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
-    return x.Type.IsBinary ? @$" 
+    var add = x.Type.IsBinary ? @$" 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>())
                 {{
@@ -276,6 +276,16 @@ namespace {endPoint.Namespace}
                 content: new global::System.Net.Http.StringContent({SerializePropertyAsString(x)}),
                 name: ""{x.Id}"");
  ";
+    if (x.IsRequired)
+    {
+        return add;
+    }
+
+    return $@" 
+            if ({(x.ParameterLocation != null ? x.ParameterName : "request." + x.Name)} != {x.ParameterDefaultValue})
+            {{
+{add.AddIndent(1)}
+            }}";
 }).Inject()}
             
             httpRequest.Content = __httpRequestContent;

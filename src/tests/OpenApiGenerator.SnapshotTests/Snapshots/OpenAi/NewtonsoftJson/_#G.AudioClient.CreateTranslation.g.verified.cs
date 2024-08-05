@@ -57,15 +57,24 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
                 name: "model");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "prompt");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
-                name: "response_format");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                name: "temperature");
+            if (request.Prompt != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                    name: "prompt");
+            } 
+            if (request.ResponseFormat != "json")
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                    name: "response_format");
+            } 
+            if (request.Temperature != 0)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                    name: "temperature");
+            }
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
