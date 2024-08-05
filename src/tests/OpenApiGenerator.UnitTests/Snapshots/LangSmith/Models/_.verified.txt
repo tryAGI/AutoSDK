@@ -5195,6 +5195,37 @@
         ParameterDefaultValue: default
       },
       {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
+        ParameterDefaultValue: default
+      },
+      {
         Id: input_keys,
         Name: InputKeys,
         Type: {
@@ -5560,6 +5591,37 @@
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {

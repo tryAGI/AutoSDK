@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}?include_stats={includeStats}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -300,6 +301,7 @@ Get a specific session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -715,6 +717,7 @@ Create a new session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -880,6 +883,7 @@ Delete a specific session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions?reference_free={referenceFree}&reference_dataset={referenceDataset}&id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&facets={facets}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: reference_free,
@@ -1466,6 +1470,7 @@ Get all sessions.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions?upsert={upsert}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: upsert,
@@ -1982,6 +1987,7 @@ Create a new session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions?{string.Join("&", sessionIds.Select(static x => $"sessionIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_ids,
@@ -2147,6 +2153,7 @@ Delete a specific session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/metadata?metadata_keys={metadataKeys}&start_time={startTime}&k={k}&root_runs_only={rootRunsOnly}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -2451,6 +2458,7 @@ Given a session, a number K, and (optionally) a list of metadata keys, return th
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/views",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -2615,6 +2623,7 @@ Get all filter views for a session.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/views",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -2918,6 +2927,7 @@ Create a new filter view.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/views/{viewId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -3132,6 +3142,7 @@ Get a specific filter view.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/views/{viewId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -3471,6 +3482,7 @@ Update a filter view.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/sessions/{sessionId}/views/{viewId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -3670,6 +3682,7 @@ Delete a specific filter view.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Organizations
@@ -3777,6 +3790,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/setup",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary: Create Customers And Get Stripe Setup Intent,
@@ -3887,6 +3901,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Organization Info,
     BaseUrlSummary: ,
@@ -4022,6 +4037,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/info",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Current Organization Info,
     BaseUrlSummary: ,
@@ -4145,6 +4161,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/billing",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Organization Billing Info,
     BaseUrlSummary: ,
@@ -4278,6 +4295,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/dashboard?type={type}&color_scheme={colorScheme}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: type,
@@ -4487,6 +4505,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/payment-method",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: billing_info,
@@ -4707,6 +4726,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/business-info",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Company Info,
     BaseUrlSummary: ,
@@ -4822,6 +4842,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/business-info",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: company_info,
@@ -5109,6 +5130,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/plan",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: tier,
@@ -5307,6 +5329,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/roles",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: List Organization Roles,
     BaseUrlSummary: ,
@@ -5412,6 +5435,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/roles",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: display_name,
@@ -5678,6 +5702,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/roles/{roleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: role_id,
@@ -5857,6 +5882,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/roles/{roleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: role_id,
@@ -6157,6 +6183,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/permissions",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: List Permissions,
     BaseUrlSummary: ,
@@ -6262,6 +6289,7 @@ Get all orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/pending",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Pending Organization Invites
@@ -6369,6 +6397,7 @@ Get all pending orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/members",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Current Org Members,
     BaseUrlSummary: ,
@@ -6482,6 +6511,7 @@ Get all pending orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/members",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: email,
@@ -6900,6 +6930,7 @@ Get all pending orgs visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/current/members/batch",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -7050,6 +7081,7 @@ Batch invite up to 500 users to the current org.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/members/{identityId}/pending",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -7215,6 +7247,7 @@ When an admin deletes a pending member invite.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/pending/{organizationId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: organization_id,
@@ -7378,6 +7411,7 @@ When an admin deletes a pending member invite.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/pending/{organizationId}/claim",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: organization_id,
@@ -7561,6 +7595,7 @@ When an admin deletes a pending member invite.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -7726,6 +7761,7 @@ Hard delete a user from the current organization.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/orgs/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -8014,6 +8050,7 @@ This is used for updating a user's role (all auth modes) or full_name/password (
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/ttl-settings",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Ttl Settings
@@ -8121,6 +8158,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/orgs/ttl-settings",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: default_trace_tier,
@@ -8327,6 +8365,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/login",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary: Login,
@@ -8437,6 +8476,7 @@ List out the configured TTL settings for a given org (org-level and tenant-level
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/api-key",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Api Keys
@@ -8544,6 +8584,7 @@ Get the current tenant's API keys,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/api-key",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -8710,6 +8751,7 @@ Generate an api key for the user,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/api-key/{apiKeyId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: api_key_id,
@@ -8887,6 +8929,7 @@ Delete an api key for the user,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/api-key/current",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Personal Access Tokens
@@ -8994,6 +9037,7 @@ Get the current users PATs for this tenant,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/api-key/current",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -9160,6 +9204,7 @@ Generate a Personal Access Token the user,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/api-key/current/{patId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: pat_id,
@@ -9337,6 +9382,7 @@ Delete a Personal Access Token for the user,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples/{exampleId}?as_of={asOf}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: example_id,
@@ -9559,6 +9605,7 @@ Get a specific example.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples/{exampleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: example_id,
@@ -9916,6 +9963,7 @@ Update a specific example.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples/{exampleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: example_id,
@@ -10081,6 +10129,7 @@ Delete a specific example.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples?id={id}&as_of={asOf}&metadata={metadata}&full_text_contains={fullTextContains}&splits={splits}&dataset={dataset}&offset={offset}&limit={limit}&order={order}&random_seed={randomSeed}&{string.Join("&", select.Select(static x => $"select={x}"))}&filter={filter}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -10635,6 +10684,7 @@ Get all examples by query params,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/examples",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: inputs,
@@ -11078,6 +11128,7 @@ Create a new example.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples?{string.Join("&", exampleIds.Select(static x => $"exampleIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: example_ids,
@@ -11243,6 +11294,7 @@ Delete a specific set of examples.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/examples/bulk",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -11393,6 +11445,7 @@ Create a new example.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/examples/bulk",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Patch,
     Summary:
@@ -11543,6 +11596,7 @@ Update examples in bulk.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/examples/upload/{datasetId}",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: dataset_id,
@@ -11607,6 +11661,37 @@ Update examples in bulk.,
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -11829,6 +11914,7 @@ Create a new example.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -12019,6 +12105,7 @@ Get a specific dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -12184,6 +12271,7 @@ Delete a specific dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -12559,6 +12647,7 @@ Update a specific dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets?id={id}&data_type={dataType}&name={name}&name_contains={nameContains}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -12970,6 +13059,7 @@ Get all datasets by query params and owner.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/datasets",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: name,
@@ -13420,6 +13510,7 @@ Create a new dataset.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/datasets/upload",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: file,
@@ -13450,6 +13541,37 @@ Create a new dataset.,
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -13801,6 +13923,7 @@ Create a new dataset from a CSV file.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/versions?search={search}&example={example}&limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -14105,6 +14228,7 @@ Get dataset versions.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/versions/diff?from_version={fromVersion}&to_version={toVersion}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -14347,6 +14471,7 @@ Get diff between two dataset versions.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/version?as_of={asOf}&tag={tag}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -14587,6 +14712,7 @@ Get dataset version by as_of or exact tag.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/tags",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -14846,6 +14972,7 @@ Set a tag on a dataset version.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/openai?as_of={asOf}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -15045,6 +15172,7 @@ Download a dataset as OpenAI Evals Jsonl format.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/openai_ft?as_of={asOf}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -15244,6 +15372,7 @@ Download a dataset as OpenAI Jsonl format.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/csv?as_of={asOf}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -15443,6 +15572,7 @@ Download a dataset as CSV format.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -15801,6 +15931,7 @@ Fetch examples for a dataset, and fetch the runs for each example if they are as
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/runs/delta",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -16227,6 +16358,7 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/share",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -16393,6 +16525,7 @@ Get the state of sharing a dataset,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/share?share_projects={shareProjects}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -16599,6 +16732,7 @@ Share a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/share",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -16764,6 +16898,7 @@ Unshare a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/comparative?name={name}&name_contains={nameContains}&id={id}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -17174,6 +17309,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/datasets/comparative",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -17612,6 +17748,7 @@ Create a comparative experiment.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/comparative/{comparativeExperimentId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: comparative_experiment_id,
@@ -17777,6 +17914,7 @@ Delete a specific comparative experiment.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/datasets/clone",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: target_dataset_id,
@@ -18063,6 +18201,7 @@ Clone a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/splits?as_of={asOf}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -18263,6 +18402,7 @@ Default Value: latest,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/splits",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -18548,6 +18688,7 @@ Default Value: latest,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/serve",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -18770,6 +18911,7 @@ Serve a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/unserve",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -18935,6 +19077,7 @@ Serve a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/datasets/{datasetId}/search",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -19193,6 +19336,7 @@ Search a dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/rules?dataset_id={datasetId}&session_id={sessionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: dataset_id,
@@ -19393,6 +19537,7 @@ List all run rules.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/rules",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: display_name,
@@ -20212,6 +20357,7 @@ Create a new run rule.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/rules/{ruleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: rule_id,
@@ -21065,6 +21211,7 @@ Update a run rule.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/rules/{ruleId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: rule_id,
@@ -21230,6 +21377,7 @@ Delete a run rule.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/rules/{ruleId}/logs?limit={limit}&offset={offset}&start_time={startTime}&end_time={endTime}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: rule_id,
@@ -21534,6 +21682,7 @@ List logs for a particular rule,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/rules/{ruleId}/trigger",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: rule_id,
@@ -21755,6 +21904,7 @@ Trigger a run rule manually.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/{runId}?exclude_s3_stored_attributes={excludeS3StoredAttributes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -22044,6 +22194,7 @@ Get a specific run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/{runId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -22639,6 +22790,7 @@ Update a run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/{runId}/share",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -22805,6 +22957,7 @@ Get the state of sharing of a run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/{runId}/share",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -22976,6 +23129,7 @@ Share a run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/runs/{runId}/share",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -23141,6 +23295,7 @@ Unshare a run.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/query",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -23983,6 +24138,7 @@ Get all runs by query in body payload.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/generate-query",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: query,
@@ -24208,6 +24364,7 @@ Get runs filter expression query for a given natural language query.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/stats",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -24941,6 +25098,7 @@ Get all runs by query in body payload.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/monitor",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: timezone,
@@ -25233,6 +25391,7 @@ Get monitoring data for a specific session.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: name,
@@ -26058,6 +26217,7 @@ Create a new run.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/batch",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: post,
@@ -26255,6 +26415,7 @@ Batch ingest runs.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/group",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: accept,
@@ -26683,6 +26844,7 @@ Get runs grouped by an expression,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/runs/group/stats",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: session_id,
@@ -27114,6 +27276,7 @@ Get stats for the grouped runs.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/{feedbackId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: feedback_id,
@@ -27306,6 +27469,7 @@ Get a specific feedback.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/{feedbackId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: feedback_id,
@@ -27691,6 +27855,7 @@ Replace an existing feedback entry with a new, modified entry.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/{feedbackId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: feedback_id,
@@ -27856,6 +28021,7 @@ Delete a feedback.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback?run={run}&key={key}&session={session}&source={source}&limit={limit}&offset={offset}&user={user}&has_comment={hasComment}&has_score={hasScore}&level={level}&max_created_at={maxCreatedAt}&min_created_at={minCreatedAt}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run,
@@ -28406,6 +28572,7 @@ List all Feedback by query params.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/feedback",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: created_at,
@@ -29059,6 +29226,7 @@ Create a new feedback.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/feedback/eager",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: created_at,
@@ -29715,6 +29883,7 @@ is already visible in the app, thus already present in DB,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/feedback/tokens",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -29869,6 +30038,7 @@ Create a new feedback ingest token.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/tokens?run_id={runId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -30033,6 +30203,7 @@ List all feedback ingest tokens for a run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/tokens/{token}?score={score}&value={value}&comment={comment}&correction={correction}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30337,6 +30508,7 @@ Create a new feedback with a token.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback/tokens/{token}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30694,6 +30866,7 @@ Create a new feedback with a token.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/run?exclude_s3_stored_attributes={excludeS3StoredAttributes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -30965,6 +31138,7 @@ Get the shared run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/run/{id}?exclude_s3_stored_attributes={excludeS3StoredAttributes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -31270,6 +31444,7 @@ Get the shared run.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/runs/query",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -31499,6 +31674,7 @@ Get run by ids or the shared run if not specifed.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/feedbacks?run={run}&key={key}&session={session}&source={source}&limit={limit}&offset={offset}&user={user}&has_comment={hasComment}&has_score={hasScore}&level={level}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -32011,6 +32187,7 @@ Get run by ids or the shared run if not specifed.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets?offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -32334,6 +32511,7 @@ Get dataset by ids or the shared dataset if not specifed.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/examples?id={id}&as_of={asOf}&metadata={metadata}&offset={offset}&limit={limit}&{string.Join("&", select.Select(static x => $"select={x}"))}&filter={filter}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -32746,6 +32924,7 @@ Get example by ids or the shared example if not specifed.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/sessions?id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&facets={facets}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -33296,6 +33475,7 @@ Get projects run on a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/examples/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -33654,6 +33834,7 @@ Get examples with associated runs from sessions in a dataset that has been share
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/runs/delta",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -34080,6 +34261,7 @@ Fetch the number of regressions/improvements for each example in a dataset, betw
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/runs/query",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -34956,6 +35138,7 @@ Get runs in projects run over a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/runs/generate-query",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -35215,6 +35398,7 @@ Get runs in projects run over a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/runs/stats",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -35982,6 +36166,7 @@ Get run stats in projects run over a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/runs/{runId}?exclude_s3_stored_attributes={excludeS3StoredAttributes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -36289,6 +36474,7 @@ Get runs in projects run over a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/feedback?run={run}&key={key}&session={session}&source={source}&limit={limit}&offset={offset}&user={user}&has_comment={hasComment}&has_score={hasScore}&level={level}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -36803,6 +36989,7 @@ Get feedback for runs in projects run over a dataset that has been shared.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/public/{shareToken}/datasets/comparative?name={name}&name_contains={nameContains}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_token,
@@ -37178,6 +37365,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues?ids={ids}&name={name}&name_contains={nameContains}&offset={offset}&limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: ids,
@@ -37481,6 +37669,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/annotation-queues",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: name,
@@ -37848,6 +38037,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -38011,6 +38201,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -38298,6 +38489,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -38481,6 +38673,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}/run/{index}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -38771,6 +38964,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{runId}/queues",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: run_id,
@@ -38933,6 +39127,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}/runs/{queueRunId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -39220,6 +39415,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}/runs/{queueRunId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -39417,6 +39613,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/annotation-queues/{queueId}/size",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: queue_id,
@@ -39583,6 +39780,7 @@ Get all comparative experiments for a given dataset.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Tenants
@@ -39690,6 +39888,7 @@ Get all tenants visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -39991,6 +40190,7 @@ Create a new organization and corresponding workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/pending",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Pending Tenant Invites
@@ -40098,6 +40298,7 @@ Deprecated: replaced by /workspaces/pending,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/pending/{id}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -40263,6 +40464,7 @@ Deprecated: replaced by /workspaces/pending/{id},
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/pending/{tenantId}/claim",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: tenant_id,
@@ -40428,6 +40630,7 @@ Deprecated: replaced by /orgs/pending/{organization_id}/claim,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/stats",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Current Tenant Stats
@@ -40547,6 +40750,7 @@ Deprecated: replaced by /workspaces/current/stats,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/stats",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Current Tenant Stats
@@ -40666,6 +40870,7 @@ Deprecated: replaced by /workspaces/current/stats,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/members",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Current Tenant Members
@@ -40781,6 +40986,7 @@ Deprecated: replaced by /workspaces/current/members,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/members",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: email,
@@ -41201,6 +41407,7 @@ Deprecated: replaced by /workspaces/current/members,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/roles",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Organization Roles
@@ -41308,6 +41515,7 @@ Deprecated: replaced by /orgs/current/roles,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/current/shared?limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -41512,6 +41720,7 @@ Deprecated: replaced by /workspaces/current/shared,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/shared",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_tokens,
@@ -41698,6 +41907,7 @@ Deprecated: replaced by /workspaces/current/shared,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -41863,6 +42073,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -42117,6 +42328,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id},
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tenants/current/members/{identityId}/pending",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -42282,6 +42494,7 @@ Deprecated: replaced by /workspaces/current/members/{identity_id}/pending,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/usage_limits",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Current Tenant Usage Limits Info
@@ -42397,6 +42610,7 @@ Deprecated: replaced by /workspaces/current/usage_limits,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/secrets",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Current Tenant Secrets
@@ -42504,6 +42718,7 @@ Deprecated: replaced by /workspaces/current/secrets,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/tenants/current/secrets",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -42654,6 +42869,7 @@ Deprecated: replaced by /workspaces/current/secrets,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/info",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Server Info
@@ -42771,6 +42987,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/feedback-configs?key={key}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: key,
@@ -42934,6 +43151,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/feedback-configs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: feedback_key,
@@ -43203,6 +43421,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/feedback-configs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: feedback_key,
@@ -43467,6 +43686,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/model-price-map",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Read Model Price Map,
     BaseUrlSummary: ,
@@ -43572,6 +43792,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/model-price-map",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: name,
@@ -43959,6 +44180,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/model-price-map/{id}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -44380,6 +44602,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/model-price-map/{id}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -44543,6 +44766,7 @@ Get information about the current deployment of LangSmith.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/usage-limits",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Usage Limits
@@ -44650,6 +44874,7 @@ List out the configured usage limits for a given tenant.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/usage-limits",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit_type,
@@ -44922,6 +45147,7 @@ Create a new usage limit.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/usage-limits/org",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Org Usage Limits
@@ -45029,6 +45255,7 @@ List out the configured usage limits for a given organization.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/usage-limits/{usageLimitId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: usage_limit_id,
@@ -45194,6 +45421,7 @@ Delete a specific usage limit.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/ttl-settings",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Ttl Settings
@@ -45301,6 +45529,7 @@ List out the configured TTL settings for a given tenant.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/ttl-settings",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: tenant_id,
@@ -45541,6 +45770,7 @@ List out the configured TTL settings for a given tenant.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/prompts/invoke_prompt",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: messages,
@@ -45791,6 +46021,7 @@ List out the configured TTL settings for a given tenant.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Workspaces
@@ -45898,6 +46129,7 @@ Get all workspaces visible to this auth in the current org. Does not create a ne
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -46165,6 +46397,7 @@ Create a new workspace.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/{workspaceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: workspace_id,
@@ -46397,6 +46630,7 @@ Create a new workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/pending",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Pending Workspace Invites
@@ -46504,6 +46738,7 @@ Get all workspaces visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/pending/{id}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: id,
@@ -46667,6 +46902,7 @@ Get all workspaces visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/pending/{workspaceId}/claim",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: workspace_id,
@@ -46830,6 +47066,7 @@ Get all workspaces visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/stats",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Current Workspace Stats,
     BaseUrlSummary: ,
@@ -46947,6 +47184,7 @@ Get all workspaces visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/members",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Current Workspace Members,
     BaseUrlSummary: ,
@@ -47060,6 +47298,7 @@ Get all workspaces visible to this auth,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/members",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: user_id,
@@ -47334,6 +47573,7 @@ Add an existing organization member to the current workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/members/batch",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary:
@@ -47484,6 +47724,7 @@ Batch invite up to 500 users to the current workspace and organization.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/current/shared?limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -47688,6 +47929,7 @@ List all shared entities and their tokens by the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/shared",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: share_tokens,
@@ -47874,6 +48116,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -48037,6 +48280,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/current/members/{identityId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -48289,6 +48533,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/workspaces/current/members/{identityId}/pending",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: identity_id,
@@ -48452,6 +48697,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/usage_limits",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Get Current Workspace Usage Limits Info,
     BaseUrlSummary: ,
@@ -48565,6 +48811,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/secrets",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: List Current Workspace Secrets,
     BaseUrlSummary: ,
@@ -48670,6 +48917,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/workspaces/current/secrets",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary: Upsert Current Workspace Secrets,
@@ -48818,6 +49066,7 @@ Bulk unshare entities by share tokens for the workspace.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/playground-settings",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List Playground Settings
@@ -48925,6 +49174,7 @@ Get all playground settings for this tenant id.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/playground-settings",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: settings,
@@ -49157,6 +49407,7 @@ Create playground settings.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/playground-settings/{playgroundSettingsId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: playground_settings_id,
@@ -49390,6 +49641,7 @@ Update playground settings.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/playground-settings/{playgroundSettingsId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: playground_settings_id,
@@ -49555,6 +49807,7 @@ Delete playground settings.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/service-accounts",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Service Accounts
@@ -49662,6 +49915,7 @@ Get the current organization's service accounts.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/service-accounts",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: name,
@@ -49864,6 +50118,7 @@ Create a service account,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/service-accounts/{serviceAccountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: service_account_id,
@@ -50043,6 +50298,7 @@ Delete a service account,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos?limit={limit}&offset={offset}&tenant_handle={tenantHandle}&tenant_id={tenantId}&query={query}&has_commits={hasCommits}&tags={tags}&is_archived={isArchived}&is_public={isPublic}&upstream_repo_owner={upstreamRepoOwner}&upstream_repo_handle={upstreamRepoHandle}&match_prefix={matchPrefix}&sort_field={sortField}&sort_direction={sortDirection}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -50670,6 +50926,7 @@ Get all repos.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/repos",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: repo_handle,
@@ -50995,6 +51252,7 @@ Create a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -51197,6 +51455,7 @@ Get a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -51592,6 +51851,7 @@ Update a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -51791,6 +52051,7 @@ Delete a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos/{owner}/{repo}/fork",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -52185,6 +52446,7 @@ Fork a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/repos/tags?limit={limit}&offset={offset}&tenant_handle={tenantHandle}&tenant_id={tenantId}&query={query}&has_commits={hasCommits}&tags={tags}&is_archived={isArchived}&is_public={isPublic}&upstream_repo_owner={upstreamRepoOwner}&upstream_repo_handle={upstreamRepoHandle}&match_prefix={matchPrefix}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -52740,6 +53002,7 @@ Get all repo tags.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/likes/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -52998,6 +53261,7 @@ Like a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/commits/{owner}/{repo}?limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -53272,6 +53536,7 @@ Get all commits.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/commits/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -53598,6 +53863,7 @@ Upload a repo.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/commits/{owner}/{repo}/{commit}?get_examples={getExamples}&is_view={isView}&include_model={includeModel}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -53944,6 +54210,7 @@ Download a repo.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/settings",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get Settings
@@ -54061,6 +54328,7 @@ Get settings.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/settings/handle",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: tenant_handle,
@@ -54257,6 +54525,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/events",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: event_type,
@@ -54547,6 +54816,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -54799,6 +55069,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}?limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -55071,6 +55342,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}?limit={limit}&offset={offset}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -55377,6 +55649,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -55687,6 +55960,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -55918,6 +56192,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: owner,
@@ -56149,6 +56424,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: "/ok",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Ok,
     BaseUrlSummary: ,
@@ -56254,6 +56530,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: [
       {
         Id: ,
@@ -57286,6 +57563,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57370,6 +57648,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57454,6 +57733,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57538,6 +57818,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57622,6 +57903,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57706,6 +57988,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57790,6 +58073,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57874,6 +58158,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -57958,6 +58243,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58042,6 +58328,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58126,6 +58413,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58210,6 +58498,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58294,6 +58583,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58378,6 +58668,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58462,6 +58753,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58546,6 +58838,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58630,6 +58923,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58714,6 +59008,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58798,6 +59093,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58882,6 +59178,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -58966,6 +59263,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -59050,6 +59348,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -59134,6 +59433,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -59218,6 +59518,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -59302,6 +59603,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -59386,6 +59688,7 @@ Set tenant handle.,
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

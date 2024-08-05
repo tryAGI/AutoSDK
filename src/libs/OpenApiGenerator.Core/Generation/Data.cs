@@ -184,6 +184,7 @@ public static class Data
                 BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
+                RequestMediaType: string.Empty,
                 Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. includedTags.Select(x => PropertyData.Default with
@@ -220,6 +221,7 @@ public static class Data
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Stream: false,
                         Path: string.Empty,
+                        RequestMediaType: string.Empty,
                         Properties: ImmutableArray<PropertyData>.Empty,
                         HttpMethod: OperationType.Get,
                         ContentType: ContentType.String,
@@ -397,6 +399,7 @@ public static class Data
                 BaseUrl: string.Empty,
                 Stream: false,
                 Path: string.Empty,
+                RequestMediaType: string.Empty,
                 Properties: [],
                 HttpMethod: OperationType.Get,
                 ContentType: ContentType.String,

@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/chat/completions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: messages,
@@ -1018,6 +1019,7 @@ A list of functions the model may generate JSON inputs for.
     BaseUrl: ,
     Stream: false,
     Path: "/completions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -1853,6 +1855,7 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/generations",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: prompt,
@@ -2312,6 +2315,7 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/edits",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: image,
@@ -2342,6 +2346,37 @@ Example: user-1234,
         ConverterType: ,
         ParameterName: image,
         ArgumentName: image,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: imagename,
+        Name: Imagename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.,
+        ConverterType: ,
+        ParameterName: imagename,
+        ArgumentName: imagename,
         ParameterDefaultValue: default
       },
       {
@@ -2406,6 +2441,37 @@ Example: A cute baby sea otter wearing a beret,
         ConverterType: ,
         ParameterName: mask,
         ArgumentName: mask,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: maskname,
+        Name: Maskname,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.,
+        ConverterType: ,
+        ParameterName: maskname,
+        ArgumentName: maskname,
         ParameterDefaultValue: default
       },
       {
@@ -2747,6 +2813,7 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/variations",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: image,
@@ -2777,6 +2844,37 @@ Example: user-1234,
         ConverterType: ,
         ParameterName: image,
         ArgumentName: image,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: imagename,
+        Name: Imagename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.,
+        ConverterType: ,
+        ParameterName: imagename,
+        ArgumentName: imagename,
         ParameterDefaultValue: default
       },
       {
@@ -3114,6 +3212,7 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: input,
@@ -3441,6 +3540,7 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/speech",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -3773,6 +3873,7 @@ Default Value: 1,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/transcriptions",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: file,
@@ -3805,6 +3906,39 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -4169,6 +4303,7 @@ Default Value: [segment],
     BaseUrl: ,
     Stream: false,
     Path: "/audio/translations",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: file,
@@ -4201,6 +4336,39 @@ The audio file object (not file name) translate, in one of these formats: flac, 
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -4481,6 +4649,7 @@ Default Value: 0,
     BaseUrl: ,
     Stream: false,
     Path: $"/files?purpose={purpose}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: purpose,
@@ -4627,6 +4796,7 @@ Default Value: 0,
     BaseUrl: ,
     Stream: false,
     Path: "/files",
+    RequestMediaType: multipart/form-data,
     Properties: [
       {
         Id: file,
@@ -4659,6 +4829,39 @@ The File object (not file name) to be uploaded.
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The File object (not file name) to be uploaded.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -4866,6 +5069,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: file_id,
@@ -5015,6 +5219,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: file_id,
@@ -5173,6 +5378,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}/content",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: file_id,
@@ -5313,6 +5519,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: "/fine_tuning/jobs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -5751,6 +5958,7 @@ Response includes details of the enqueued job including job status and the name 
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs?after={after}&limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: after,
@@ -5936,6 +6144,7 @@ List your organization's fine-tuning jobs
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -6116,6 +6325,7 @@ Get info about a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/events?after={after}&limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -6333,6 +6543,7 @@ Get status updates for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -6512,6 +6723,7 @@ Immediately cancel a fine-tune job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -6735,6 +6947,7 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     BaseUrlSummary: ,
@@ -6846,6 +7059,7 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -6996,6 +7210,7 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -7145,6 +7360,7 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: "/moderations",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: input,
@@ -7357,6 +7573,7 @@ Example: text-moderation-stable,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants?limit={limit}&order={order}&after={after}&before={before}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -7619,6 +7836,7 @@ Example: text-moderation-stable,
     BaseUrl: ,
     Stream: false,
     Path: "/assistants",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model,
@@ -8142,6 +8360,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: assistant_id,
@@ -8310,6 +8529,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: assistant_id,
@@ -8865,6 +9085,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: assistant_id,
@@ -9014,6 +9235,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: "/threads",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: messages,
@@ -9259,6 +9481,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -9411,6 +9634,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -9657,6 +9881,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -9806,6 +10031,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -10136,6 +10362,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -10475,6 +10702,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -10679,6 +10907,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -10942,6 +11171,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -11125,6 +11355,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/threads/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: assistant_id,
@@ -11881,6 +12112,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -12177,6 +12409,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -12964,6 +13197,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -13194,6 +13428,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -13483,6 +13718,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -13806,6 +14042,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -14037,6 +14274,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -14367,6 +14605,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: thread_id,
@@ -14609,6 +14848,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores?limit={limit}&order={order}&after={after}&before={before}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -14871,6 +15111,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: "/vector_stores",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: file_ids,
@@ -15197,6 +15438,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -15361,6 +15603,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -15653,6 +15896,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -15802,6 +16046,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -16142,6 +16387,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -16390,6 +16636,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -16582,6 +16829,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -16765,6 +17013,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -17009,6 +17258,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -17197,6 +17447,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -17386,6 +17637,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: vector_store_id,
@@ -17760,6 +18012,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/batches",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: input_file_id,
@@ -18072,6 +18325,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches?after={after}&limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: after,
@@ -18259,6 +18513,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: batch_id,
@@ -18441,6 +18696,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: batch_id,
@@ -18624,6 +18880,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: [
       {
         Id: ,
@@ -19517,6 +19774,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Build Assistants that can call models and use tools.,
     BaseUrlSummary: ,
@@ -19601,6 +19859,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Turn audio into text or text into audio.,
     BaseUrlSummary: ,
@@ -19685,6 +19944,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: ,
@@ -19769,6 +20029,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
     BaseUrlSummary: ,
@@ -19853,6 +20114,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
     BaseUrlSummary: ,
@@ -19937,6 +20199,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
     BaseUrlSummary: ,
@@ -20021,6 +20284,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Create large batches of API requests to run asynchronously.,
     BaseUrlSummary: ,
@@ -20105,6 +20369,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
     BaseUrlSummary: ,
@@ -20189,6 +20454,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
     BaseUrlSummary: ,
@@ -20273,6 +20539,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: List and describe the various models available in the API.,
     BaseUrlSummary: ,
@@ -20357,6 +20624,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
     BaseUrlSummary: ,
@@ -20441,6 +20709,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

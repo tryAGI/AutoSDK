@@ -13518,6 +13518,37 @@ Example: vivid,
         ParameterDefaultValue: default
       },
       {
+        Id: imagename,
+        Name: Imagename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.,
+        ConverterType: ,
+        ParameterName: imagename,
+        ArgumentName: imagename,
+        ParameterDefaultValue: default
+      },
+      {
         Id: prompt,
         Name: Prompt,
         Type: {
@@ -13579,6 +13610,37 @@ Example: A cute baby sea otter wearing a beret,
         ConverterType: ,
         ParameterName: mask,
         ArgumentName: mask,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: maskname,
+        Name: Maskname,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.,
+        ConverterType: ,
+        ParameterName: maskname,
+        ArgumentName: maskname,
         ParameterDefaultValue: default
       },
       {
@@ -14162,6 +14224,37 @@ Example: url,
         ConverterType: ,
         ParameterName: image,
         ArgumentName: image,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: imagename,
+        Name: Imagename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.,
+        ConverterType: ,
+        ParameterName: imagename,
+        ArgumentName: imagename,
         ParameterDefaultValue: default
       },
       {
@@ -16183,6 +16276,39 @@ The File object (not file name) to be uploaded.
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The File object (not file name) to be uploaded.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {
@@ -19131,6 +19257,39 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
         ParameterDefaultValue: default
       },
       {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
+        ParameterDefaultValue: default
+      },
+      {
         Id: model,
         Name: Model,
         Type: {
@@ -20558,6 +20717,39 @@ The audio file object (not file name) translate, in one of these formats: flac, 
         ConverterType: ,
         ParameterName: file,
         ArgumentName: file,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: filename,
+        Name: Filename,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          IsReferenceable: true,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+,
+        ConverterType: ,
+        ParameterName: filename,
+        ArgumentName: filename,
         ParameterDefaultValue: default
       },
       {

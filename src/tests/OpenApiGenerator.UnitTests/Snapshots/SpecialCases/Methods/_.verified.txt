@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/pets?limit={limit}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: limit,
@@ -169,6 +170,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/pets",
+    RequestMediaType: application/json,
     Properties: null,
     HttpMethod: Post,
     Summary: Create a pet,
@@ -281,6 +283,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/pets/{petId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: petId,
@@ -458,6 +461,7 @@
     BaseUrl: http://petstore.swagger.io/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/disablerecurringpayment?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -220,6 +221,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/account/getaccountbillinglogsforcurrentuser",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -408,6 +410,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/account/getaccountdetailsforcurrentuser",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -594,6 +597,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/account/getaccountforcurrentuser",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -774,6 +778,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/getaccountprojectinfojobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -988,6 +993,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/getexportstoragemetricsjobid?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -1202,6 +1208,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/getprojectaccessdetailsforuser?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -1416,6 +1423,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/grantadmin?accountId={accountId}&userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -1664,6 +1672,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/removeuserfromcurrentaccount?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -1922,6 +1931,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/revokeadmin?accountId={accountId}&userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -2170,6 +2180,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/sendpaymentreceipt?accountId={accountId}&transactionId={transactionId}&email={email}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -2452,6 +2463,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/startexportaccountchargesjob?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -2666,6 +2678,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/startexportaccountpaymentsjob?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -2880,6 +2893,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/startexportaccountprojectsummaryjob?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -3094,6 +3108,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/startgetaccountprojectinfojob?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -3308,6 +3323,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/updateaccountpwpolicy?accountId={accountId}&enforcePolicy={enforcePolicy}&minLength={minLength}&requireChar={requireChar}&requireUpper={requireUpper}&requireNumber={requireNumber}&requireSymbol={requireSymbol}&maxAgeInDays={maxAgeInDays}&require2Auth={require2Auth}&relogin2Auth={relogin2Auth}&idleTimeoutInMinutes={idleTimeoutInMinutes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -3916,6 +3932,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/updateaccountuser?userId={userId}&firstName={firstName}&lastName={lastName}&phone={phone}&email={email}&active={active}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -4344,6 +4361,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/addcreditstoaccount?accountId={accountId}&credits={credits}&reason={reason}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -4626,6 +4644,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/addgrouptoproject?projectId={projectId}&groupTitle={groupTitle}&groupACLId={groupACLId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -4908,6 +4927,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/addnewusertoaccount?accountId={accountId}&username={username}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&encryptedPass={encryptedPass}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -5326,6 +5346,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/addusertoaccount?userId={userId}&accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -5574,6 +5595,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/addusertogroup?projectId={projectId}&userId={userId}&groupId={groupId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -5856,6 +5878,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/createaccount?adminId={adminId}&credits={credits}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -6104,6 +6127,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getaccounttransactions?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -6318,6 +6342,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/getactiveuserinfos",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -6498,6 +6523,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/getactivitymetrics",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -6678,6 +6704,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getfilteredprojects?filter={filter}&maxResults={maxResults}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -6926,6 +6953,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getfilteredprojectsandusers?filter={filter}&maxResults={maxResults}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -7174,6 +7202,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getfilteredusers?filter={filter}&maxResults={maxResults}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -7422,6 +7451,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getmergestatus?mergedProjectId={mergedProjectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -7636,6 +7666,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getprojectsecurityinfo?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -7850,6 +7881,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/getrevenuesegments",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -8030,6 +8062,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/getsignupsegments",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -8210,6 +8243,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/getuserfulldetailsbyuser?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -8424,6 +8458,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/mergeprojects?project1Id={project1Id}&project2Id={project2Id}&newTitle={newTitle}&newDescription={newDescription}&creatorId={creatorId}&mergeCodes={mergeCodes}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -8808,6 +8843,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/migrateusertoaccount?userToBeMovedId={userToBeMovedId}&accountIdToMoveTo={accountIdToMoveTo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -9056,6 +9092,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/overrideverify?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -9270,6 +9307,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/processpayment?accountId={accountId}&amount={amount}&memo={memo}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -9552,6 +9590,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/sendallclientsmessage?title={title}&message={message}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -9800,6 +9839,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/setaccountcpupmoverride?accountId={accountId}&cpupmOverride={cpupmOverride}&endDate={endDate:yyyy-MM-ddTHH:mm:ssZ}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -10082,6 +10122,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/setaccountgroupdiscount?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -10296,6 +10337,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/setaccountstudentdiscount?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -10510,6 +10552,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/setaccountuseradminstatus?accountId={accountId}&userId={userId}&isAdmin={isAdmin}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -10792,6 +10835,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/setuserpassword?userId={userId}&rsaEncrptedPass={rsaEncrptedPass}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -11040,6 +11084,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/startadddemoproject?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -11254,6 +11299,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/startexportaccountsjob",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -11434,6 +11480,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/admin/startexportusersjob",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -11614,6 +11661,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/submitpayment?accountId={accountId}&amount={amount}&firstName={firstName}&lastName={lastName}&address1={address1}&address2={address2}&city={city}&state={state}&country={country}&zip={zip}&cardType={cardType}&cardNum={cardNum}&cardCCV={cardCCV}&expMonth={expMonth}&expYear={expYear}&saveAsReoccuring={saveAsReoccuring}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -12338,6 +12386,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/unlinkuserfromproject?projectId={projectId}&userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -12586,6 +12635,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/updateproject?projectId={projectId}&title={title}&adminId={adminId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -12868,6 +12918,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/updateusergroup?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&AccessListIDL={accessListIDL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -13252,6 +13303,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/admin/updateuserinfo?userId={userId}&username={username}&email={email}&phone={phone}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -13568,6 +13620,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/chat/getchatmessages?userId={userId}&projectId={projectId}&lastRevievedProjectMessageId={lastRevievedProjectMessageId}&lastRecievedGlobalMessageId={lastRecievedGlobalMessageId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -13884,6 +13937,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/chat/getprojectchatusers?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -14098,6 +14152,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/chat/submitprojectchatmessage?projectId={projectId}&userId={userId}&message={message}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -14394,6 +14449,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/dataset/adddataset?projectId={projectId}&userId={userId}&title={title}&description={description}&areExcerptsFiltered={areExcerptsFiltered}&areResourcesFiltered={areResourcesFiltered}&areDescriptorsFiltered={areDescriptorsFiltered}&areTagsFiltered={areTagsFiltered}&areUsersFiltered={areUsersFiltered}&{string.Join("&", excerptIds.Select(static x => $"excerptIds={x}"))}&{string.Join("&", descriptorIds.Select(static x => $"descriptorIds={x}"))}&{string.Join("&", userIds.Select(static x => $"userIds={x}"))}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&{string.Join("&", tagIds.Select(static x => $"tagIds={x}"))}&{string.Join("&", excludedExcerptIds.Select(static x => $"excludedExcerptIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -15112,6 +15168,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdLists_IncludedTagIds.Select(static x => $"objectIdLists_IncludedTagIds={x}"))}&{string.Join("&", objectIdLists_IncludedDescriptorIds.Select(static x => $"objectIdLists_IncludedDescriptorIds={x}"))}&{string.Join("&", objectIdLists_IncludedResourceIds.Select(static x => $"objectIdLists_IncludedResourceIds={x}"))}&{string.Join("&", objectIdLists_IncludedExcerptIds.Select(static x => $"objectIdLists_IncludedExcerptIds={x}"))}&{string.Join("&", objectIdLists_IncludedUserIds.Select(static x => $"objectIdLists_IncludedUserIds={x}"))}&{string.Join("&", objectIdLists_ExcludedExcerptIds.Select(static x => $"objectIdLists_ExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -15932,6 +15989,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/dataset/getdatasetsbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -16146,6 +16204,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/dataset/updatedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdLists_IncludedTagIds.Select(static x => $"objectIdLists_IncludedTagIds={x}"))}&{string.Join("&", objectIdLists_IncludedDescriptorIds.Select(static x => $"objectIdLists_IncludedDescriptorIds={x}"))}&{string.Join("&", objectIdLists_IncludedResourceIds.Select(static x => $"objectIdLists_IncludedResourceIds={x}"))}&{string.Join("&", objectIdLists_IncludedExcerptIds.Select(static x => $"objectIdLists_IncludedExcerptIds={x}"))}&{string.Join("&", objectIdLists_IncludedUserIds.Select(static x => $"objectIdLists_IncludedUserIds={x}"))}&{string.Join("&", objectIdLists_ExcludedExcerptIds.Select(static x => $"objectIdLists_ExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -16966,6 +17025,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/adddescriptor?projectId={projectId}&userId={userId}&setId={setId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -17315,6 +17375,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/adddescriptorfield?projectId={projectId}&title={title}&description={description}&type={type}&isDynamic={isDynamic}&setId={setId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -17766,6 +17827,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/adddescriptorlink?projectId={projectId}&resourceId={resourceId}&descriptorId={descriptorId}&{string.Join("&", dynamicValues.Select(static x => $"dynamicValues={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -18082,6 +18144,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/adddescriptorset?projectId={projectId}&title={title}&description={description}&createByUserId={createByUserId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -18416,6 +18479,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/adddynamicvalue?projectId={projectId}&setId={setId}&descriptorId={descriptorId}&fieldId={fieldId}&resourceId={resourceId}&data={data}&optionId={optionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -18834,6 +18898,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/addlinks?projectId={projectId}&{string.Join("&", links.Select(static x => $"links={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -19082,6 +19147,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/addorupdatedynamicvalues?projectId={projectId}&resourceId={resourceId}&setId={setId}&descriptorId={descriptorId}&{string.Join("&", values.Select(static x => $"values={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -19432,6 +19498,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/deletedescriptor?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&CreateByIDL={createByIDL}&DescriptorSetIDL={descriptorSetIDL}&ValuesData={valuesData}&DynamicValuesData={dynamicValuesData}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -19938,6 +20005,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/deletedescriptorfield?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&DescriptorSetIDL={descriptorSetIDL}&Type={type}&Title={title}&Description={description}&IsDynamicField={isDynamicField}&SortOrder={sortOrder}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -20480,6 +20548,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/deletedescriptors?projectId={projectId}&{string.Join("&", descriptorsIds.Select(static x => $"descriptorsIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -20728,6 +20797,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/deletelink?projectId={projectId}&resourceId={resourceId}&descriptorId={descriptorId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -21010,6 +21080,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/forcedeletedescriptorsetpolled?projectIDL={projectIDL}&descriptorSetId={descriptorSetId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -21258,6 +21329,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getconvertfieldtypejobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -21472,6 +21544,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getdesdatafromfilejobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -21686,6 +21759,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getdesfieldimportdatafromfile?relativeFileURL={relativeFileURL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -21900,6 +21974,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getdynamicvaluesbyprojectid?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -22114,6 +22189,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getprojectdescriptorfieldvalues?projectId={projectId}&page={page}&pageSize={pageSize}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -22396,6 +22472,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getprojectdescriptorlinks?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -22610,6 +22687,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getprojectdescriptorprops?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -22832,6 +22910,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getprojectdescriptorspaged?projectId={projectId}&page={page}&pageSize={pageSize}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -23114,6 +23193,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/getresourcelinks?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -23362,6 +23442,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/importfields?projectId={projectId}&userId={userId}&{string.Join("&", fieldInfos.Select(static x => $"fieldInfos={x}"))}&existingSetId={existingSetId}&newSetTitle={newSetTitle}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -23712,6 +23793,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/isforcedeletedescriptorsetpolledcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -23926,6 +24008,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/startconvertfieldtypejob?projectId={projectId}&setId={setId}&fieldId={fieldId}&newFieldType={newFieldType}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -24242,6 +24325,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/startexportdescriptorsjob?projectId={projectId}&setId={setId}&{string.Join("&", descriptorIds.Select(static x => $"descriptorIds={x}"))}&fileExtension={fileExtension}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -24558,6 +24642,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/startexportfieldsjob?projectId={projectId}&setId={setId}&fileExtension={fileExtension}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -24840,6 +24925,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/startgetdesdatafromfilejob?localFileURL={localFileURL}&setId={setId}&projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -25122,6 +25208,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/startimportdescriptorsjob?projectId={projectId}&userId={userId}&setId={setId}&{string.Join("&", descriptorInfos.Select(static x => $"descriptorInfos={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -25438,6 +25525,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/updatedescriptorset?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&CreatedByUserId={createdByUserId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -25908,6 +25996,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/updatefieldandoptions?projectId={projectId}&fieldId={fieldId}&title={title}&description={description}&{string.Join("&", deletedOptionIds.Select(static x => $"deletedOptionIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -26325,6 +26414,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/updatefieldorders?projectId={projectId}&{string.Join("&", fields.Select(static x => $"fields={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -26573,6 +26663,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/descriptor/updatevalues?projectId={projectId}&{string.Join("&", values.Select(static x => $"values={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -26821,6 +26912,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/error/processuierror?projectId={projectId}&userId={userId}&workspace={workspace}&errorCode={errorCode}&message={message}&currentTarget={currentTarget}&stacktrace={stacktrace}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -27239,6 +27331,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/adddocumentexcerptwithtags?projectId={projectId}&userId={userId}&resourceId={resourceId}&title={title}&description={description}&startIndex={startIndex}&endIndex={endIndex}&excerptText={excerptText}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -27731,6 +27824,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/addimageexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply.Select(static x => $"tagIdsToApply={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -28121,6 +28215,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/addpdfimageexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply.Select(static x => $"tagIdsToApply={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -28511,6 +28606,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/addpdfswfimageexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply.Select(static x => $"tagIdsToApply={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -28901,6 +28997,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/addpdfswftextexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&pageIndex={pageIndex}&start={start}&end={end}&text={text}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -29359,6 +29456,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/addvideoexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply.Select(static x => $"tagIdsToApply={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -29749,6 +29847,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/deleteexcerpt?projectId={projectId}&excerptId={excerptId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30027,6 +30126,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/getexcerptsbyprojectid?projectId={projectId}&page={page}&pageSize={pageSize}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30309,6 +30409,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/getsearchexcerptsjobresults?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30523,6 +30624,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/isdeleteexcerptsjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30737,6 +30839,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/startdeleteexcerptsjob?currentProjectId={currentProjectId}&{string.Join("&", excerptIds.Select(static x => $"excerptIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -30985,6 +31088,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/startsearchexcerptsjob?projectId={projectId}&searchText={searchText}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -31233,6 +31337,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/updateexcerptrange?projectId={projectId}&userId={userId}&excerptId={excerptId}&newStart={newStart}&newEnd={newEnd}&updatedTextURI={updatedTextURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -31647,6 +31752,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/updateexcerpttext?projectIDL={projectIDL}&excerptId={excerptId}&text={text}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -31959,6 +32065,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/updateimageexcerptregion?projectId={projectId}&userId={userId}&excerptId={excerptId}&start={start}&end={end}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -32339,6 +32446,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/excerpt/updatepdfswfimageexcerptregion?projectId={projectId}&currentUserId={currentUserId}&excerptId={excerptId}&newStart={newStart}&newEnd={newEnd}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -32719,6 +32827,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/getexcerptsexportstatus?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -32933,6 +33042,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/getexcerptsexporturl?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -33147,6 +33257,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/getexportjoburi?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -33361,6 +33472,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/isexportjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -33575,6 +33687,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/startexcerptsexport?projectId={projectId}&FileExtension={fileExtension}&ExCopyMode={exCopyMode}&SortMode={sortMode}&ExRange={exRange}&ExCreator={exCreator}&ExDate={exDate}&DesInfo={desInfo}&DocTitle={docTitle}&DocCreator={docCreator}&DocDate={docDate}&TagApplied={tagApplied}&TagWeight={tagWeight}&TagRange={tagRange}&Memos={memos}&symKeyEncrypted={symKeyEncrypted}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -34360,6 +34473,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/startexportbubblechartjob?projectId={projectId}&Title={title}&{string.Join("&", columnLabels.Select(static x => $"columnLabels={x}"))}&{string.Join("&", rowLabels.Select(static x => $"rowLabels={x}"))}&{string.Join("&", rows.Select(static x => $"rows={x}"))}&MaxCount={maxCount}&ColorByTotal={colorByTotal}&extension={extension}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -34812,6 +34926,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/startexporthierarchicalchartjob?projectId={projectId}&Title={title}&{string.Join("&", parentItems.Select(static x => $"parentItems={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -35094,6 +35209,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/startexportsingleserieschartjob?projectId={projectId}&{string.Join("&", exportInfo.Select(static x => $"exportInfo={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -35342,6 +35458,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/export/startgridchartexportjob?projectId={projectId}&Title={title}&{string.Join("&", columnLabels.Select(static x => $"columnLabels={x}"))}&{string.Join("&", rowLabels.Select(static x => $"rowLabels={x}"))}&{string.Join("&", rows.Select(static x => $"rows={x}"))}&MaxCount={maxCount}&ColorByTotal={colorByTotal}&extension={extension}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -35794,6 +35911,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/emailfile?fileURI={fileURI}&attachmentFileName={attachmentFileName}&emailAddress={emailAddress}&subject={subject}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -36110,6 +36228,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/getconvertpdf2swfresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -36324,6 +36443,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/getexportjobfileuri?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -36538,6 +36658,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/getfxmldocjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -36752,6 +36873,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/getfxmldocxpolled?projectId={projectId}&fileURL={fileURL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -37000,6 +37122,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/getmovefilefromtemptopermjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -37214,6 +37337,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/file/getwritekey",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -37400,6 +37524,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/isjobmanagerjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -37614,6 +37739,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/startconvertpdf2swf?projectId={projectId}&pdfURI={pdfURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -37862,6 +37988,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/file/storeprojectfilestring?projectId={projectId}&fileStorageType={fileStorageType}&extension={extension}&text={text}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -38178,6 +38305,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/getbytesfromfilestorage?dataPath={dataPath}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -38392,6 +38520,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/getclientversions",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Returns client versions.,
     BaseUrlSummary: ,
@@ -38497,6 +38626,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/getconnectionkey",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -38677,6 +38807,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/account/getprojectaccessdetailsforuser2?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -38891,6 +39022,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/getservicemessages",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Returns service messages.,
     BaseUrlSummary: ,
@@ -38996,6 +39128,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/getstringfromfilestorage?dataPath={dataPath}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -39210,6 +39343,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/gettopblogposts",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Returns top blog posts.,
     BaseUrlSummary: ,
@@ -39315,6 +39449,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/login",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: username,
@@ -39596,6 +39731,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/me",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -39790,6 +39926,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/addfolder?projectId={projectId}&title={title}&parentFolderId={parentFolderId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -40082,6 +40219,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/addmemo?projectId={projectId}&title={title}&dataPath={dataPath}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}&{string.Join("&", resources.Select(static x => $"resources={x}"))}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}&{string.Join("&", descriptors.Select(static x => $"descriptors={x}"))}&{string.Join("&", tags.Select(static x => $"tags={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -40542,6 +40680,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/addmemofolderlinks?projectId={projectId}&memoId={memoId}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -40824,6 +40963,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/deletefolder?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -41150,6 +41290,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/deletememo?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}&CreatedUserId={createdUserId}&LastEditUserId={lastEditUserId}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&LastEditStamp={lastEditStamp:yyyy-MM-ddTHH:mm:ssZ}&FolderId={folderId}&DataURI={dataURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -41692,6 +41833,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/getcopymemostodocumentsjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -41906,6 +42048,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/getimportmemosxmlresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -42120,6 +42263,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/getsearchmemosjobresults?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -42334,6 +42478,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/iscopymemostodocumentsjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -42548,6 +42693,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/linkfolderstomemos?projectId={projectId}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -42830,6 +42976,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/linkobject?projectId={projectId}&memoId={memoId}&Id={id1}&Position={position1}&Id={id2}&Position={position2}&Id={id3}&Position={position3}&Id={id4}&Position={position4}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -43350,6 +43497,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/loadprojectmemosfoldersandlinks?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -43574,6 +43722,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/startcopymemostodocumentsjob?projectId={projectId}&userId={userId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -43856,6 +44005,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/startexportmemos?projectId={projectId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}&description={description}&extension={extension}&includeCodes={includeCodes}&includeMedia={includeMedia}&includeExcerpts={includeExcerpts}&includeDescriptors={includeDescriptors}&symKey={symKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -44342,6 +44492,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/startexportmemosxml?projectId={projectId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}&codeSelection={codeSelection}&mediaSelection={mediaSelection}&excerptsSelection={excerptsSelection}&descriptorsSelection={descriptorsSelection}&symKey={symKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -44760,6 +44911,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/startimportmemosxml?projectId={projectId}&fileURI={fileURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -45008,6 +45160,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/startsearchmemosjob?projectId={projectId}&searchText={searchText}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -45256,6 +45409,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/unlinkobject?projectId={projectId}&memoId={memoId}&resourceId={resourceId}&excerptId={excerptId}&descriptorId={descriptorId}&tagId={tagId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -45640,6 +45794,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/updatefoldertitle?projectId={projectId}&folderId={folderId}&title={title}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -45932,6 +46087,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/memo/updatememo?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}&CreatedUserId={createdUserId}&LastEditUserId={lastEditUserId}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&LastEditStamp={lastEditStamp:yyyy-MM-ddTHH:mm:ssZ}&FolderId={folderId}&DataURI={dataURI}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}&{string.Join("&", resources.Select(static x => $"resources={x}"))}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}&{string.Join("&", descriptors.Select(static x => $"descriptors={x}"))}&{string.Join("&", tags.Select(static x => $"tags={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -46630,6 +46786,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/addprojectbyuser?userId={userId}&title={title}&decription={decription}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -46928,6 +47085,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/addprojectencryptedbyuser?userId={userId}&title={title}&decription={decription}&symKeyHash={symKeyHash}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -47260,6 +47418,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/checkencrypteddata?projectId={projectId}&encryptedSymKey={encryptedSymKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -47508,6 +47667,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/project/getallprojectsforcurrentuser",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -47688,6 +47848,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getcopyprojectstatus?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -47902,6 +48063,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getexportaccountprojectsjobid?accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -48116,6 +48278,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getprojectbyid?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -48346,6 +48509,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getprojectcopyjobproject?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -48576,6 +48740,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getprojectimportjobexceptions?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -48790,6 +48955,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/getprojectimportstatus?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -49022,6 +49188,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/isdeletedprojectjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -49236,6 +49403,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/renameproject?projectId={projectId}&newTitle={newTitle}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -49484,6 +49652,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/startcopyprojectjob?userId={userId}&projectId={projectId}&title={title}&decription={decription}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -49800,6 +49969,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/startdeleteproject?projectId={projectId}&userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -50048,6 +50218,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/startprojectexportjob?projectId={projectId}&password={password}&email={email}&extension={extension}&encryptedSymKey={encryptedSymKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -50398,6 +50569,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/startprojectimportjob?projectId={projectId}&fileURI={fileURI}&password={password}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -50680,6 +50852,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/project/updateproject?projectId={projectId}&updatedTitle={updatedTitle}&updatedDescription={updatedDescription}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -50978,6 +51151,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/addaudioresource?projectId={projectId}&userId={userId}&title={title}&description={description}&videoUploadURL={videoUploadURL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -51328,6 +51502,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/addresource?projectId={projectId}&userId={userId}&title={title}&description={description}&resourceType={resourceType}&fileURL={fileURL}&length={length}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -51774,6 +51949,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/addtranscript?projectId={projectId}&currentUserId={currentUserId}&resourceId={resourceId}&transcriptData={transcriptData}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -52090,6 +52266,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/addvideoresource?projectId={projectId}&userId={userId}&title={title}&description={description}&videoUploadURL={videoUploadURL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -52440,6 +52617,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/clonedocument?projectId={projectId}&resourceId={resourceId}&cloneExcerpts={cloneExcerpts}&cloneTagApps={cloneTagApps}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -52764,6 +52942,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/deleteresource?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&Type={type}&DataPath={dataPath}&Length={length}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&CreateByUserIDL={createByUserIDL}&IsDataLocked={isDataLocked}&MetaData={metaData}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -53448,6 +53627,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/deletetranscript?ProjectIdKey={projectIdKey}&Id={id}&Creator={creator}&ProjectId={projectId}&ResourceId={resourceId}&DataPath={dataPath}&Created={created:yyyy-MM-ddTHH:mm:ssZ}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -53866,6 +54046,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getaddimageresourcejobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -54108,6 +54289,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getaddpdfimageresourcejobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -54322,6 +54504,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getaddpdfswfresourcejobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -54564,6 +54747,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getaudioresourcebyjobid?projectId={projectId}&jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -54840,6 +55024,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getaudiosample?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -55088,6 +55273,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getdocumentsearchjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -55302,6 +55488,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getexportjoburl?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -55516,6 +55703,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getexportpdfswfjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -55730,6 +55918,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getresourcesbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -55944,6 +56133,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getresourcesyncitems?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -56192,6 +56382,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/gettranscripsts?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -56406,6 +56597,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/gettranscriptexportjobid?projectId={projectId}&transcriptId={transcriptId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -56654,6 +56846,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/getvideoresourcebyjobid?projectId={projectId}&jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -56930,6 +57123,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/isjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -57144,6 +57338,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/isresourceaudioconversioncomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -57358,6 +57553,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/isresourcevideoconversioncomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -57572,6 +57768,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/lockresource?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -57820,6 +58017,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startaddimageresource?projectId={projectId}&userId={userId}&fileName={fileName}&fileURI={fileURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -58136,6 +58334,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startaddpdfimageresourcejob?projectId={projectId}&userId={userId}&fileName={fileName}&fileURI={fileURI}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -58452,6 +58651,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startaddpdfswfresourcejob?projectId={projectId}&title={title}&fileUri={fileUri}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -58734,6 +58934,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startdeleteresourcesjob?projectId={projectId}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -58982,6 +59183,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startdocumentsearchjob?projectId={projectId}&searchText={searchText}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -59230,6 +59432,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startexportdocumentjobwithrtl?projectId={projectId}&resourceId={resourceId}&includeExRegions={includeExRegions}&rtl={rtl}&exportExtension={exportExtension}&encryptedSymKey={encryptedSymKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -59614,6 +59817,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startexportpdfswfjob?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -59862,6 +60066,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/startexportresourcesjob?projectId={projectId}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&includeDescriptorInfo={includeDescriptorInfo}&includeCodeCounts={includeCodeCounts}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -60178,6 +60383,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/unlockresource?projectId={projectId}&resourceId={resourceId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -60426,6 +60632,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/updatedocumentdataandexcerpts?projectId={projectId}&userId={userId}&resourceId={resourceId}&updatedTextDataURI={updatedTextDataURI}&updatedLength={updatedLength}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -60810,6 +61017,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/updateresource?projectId={projectId}&resourceId={resourceId}&title={title}&description={description}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -61154,6 +61362,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/updateresourceanddata?projectId={projectId}&resourceId={resourceId}&title={title}&description={description}&fileURL={fileURL}&length={length}&isLocked={isLocked}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -61572,6 +61781,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/resource/updatetranscriptdata?ProjectIdKey={projectIdKey}&Id={id}&Creator={creator}&ProjectId={projectId}&ResourceId={resourceId}&DataPath={dataPath}&Created={created:yyyy-MM-ddTHH:mm:ssZ}&transcriptData={transcriptData}&{string.Join("&", syncItems.Select(static x => $"syncItems={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -62058,6 +62268,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/rsa",
+    RequestMediaType: application/json,
     Properties: null,
     Summary: Returns RSA public information.,
     BaseUrlSummary: ,
@@ -62169,6 +62380,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/addgroup?projectId={projectId}&title={title}&accessListId={accessListId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -62465,6 +62677,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/deletegroup?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&AccessListIDL={accessListIDL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -62863,6 +63076,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/security/getallaccesslists",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -63043,6 +63257,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/getprojectgrouplinks?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -63257,6 +63472,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/getprojectgroups?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -63471,6 +63687,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/security/getsuperuserids",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -63651,6 +63868,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/security/getversion",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -63831,6 +64049,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/impersonateuser?username={username}&email={email}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -64079,6 +64298,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/linkuser?userId={userId}&projectId={projectId}&groupId={groupId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -64361,6 +64581,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/linkuserwithinvitation?userId={userId}&projectId={projectId}&groupId={groupId}&invitationId={invitationId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -64677,6 +64898,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/resetuserpasswordbyemail?userEmail={userEmail}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: userEmail,
@@ -64837,6 +65059,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/resetuserpasswordbyusername?username={username}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: username,
@@ -64997,6 +65220,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/security/stopimpersonation",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -65177,6 +65401,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/unlinkuserfromproject?userId={userId}&projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -65425,6 +65650,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/security/updategroup?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&AccessListIDL={accessListIDL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -65823,6 +66049,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/surveyimport/getsurveyimportstatus?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -66045,6 +66272,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/surveyimport/startsurveyimportjob?projectId={projectId}&surveyUploadedFileURL={surveyUploadedFileURL}&encryptedSymKey={encryptedSymKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -66327,6 +66555,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/addexcerpttagapplication?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&tagId={tagId}&weight={weight}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -66729,6 +66958,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/addexcerpttagapplications?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -67079,6 +67309,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/addtag?projectId={projectId}&title={title}&description={description}&isWeighted={isWeighted}&weightMin={weightMin}&weightMax={weightMax}&weightDefault={weightDefault}&allowDecimalWeights={allowDecimalWeights}&color={color}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -67593,6 +67824,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/addtaglink?projectId={projectId}&tag1Id={tag1Id}&tag2Id={tag2Id}&isParentChildLink={isParentChildLink}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -67925,6 +68157,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/addtagwithparent?proejctId={proejctId}&parentTagId={parentTagId}&title={title}&description={description}&isWeighted={isWeighted}&weightMin={weightMin}&weightMax={weightMax}&weightDefault={weightDefault}&allowDecimalWeights={allowDecimalWeights}&color={color}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -68473,6 +68706,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/deletetagbyjob?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&IsWeighted={isWeighted}&WeightMin={weightMin}&WeightMax={weightMax}&WeightDefault={weightDefault}&SortOrder={sortOrder}&Color={color}&AllowDecimalWeight={allowDecimalWeight}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -69129,6 +69363,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/deletetaglink?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Tag1IDL={tag1IDL}&Tag2IDL={tag2IDL}&IsParentChildLink={isParentChildLink}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -69597,6 +69832,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/getdeletetagbyjobresponse?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -69839,6 +70075,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/getprojecttagsexportfileurljobid?projectId={projectId}&fileExtension={fileExtension}&includeExcerpts={includeExcerpts}&encryptedSymKey={encryptedSymKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -70155,6 +70392,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/getprojecttagsexportjobfileurl?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -70369,6 +70607,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/getretroupcodejobtagapplications?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -70583,6 +70822,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/gettagapplicationsbyproject?projectId={projectId}&page={page}&pageSize={pageSize}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -70865,6 +71105,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/gettaglinksbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -71079,6 +71320,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/gettagsbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -71293,6 +71535,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/gettagsfromspreadsheetjobresult?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -71507,6 +71750,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/isjobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -71721,6 +71965,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/isretroupcodejobcomplete?jobId={jobId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -71935,6 +72180,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/mergetags?projectId={projectId}&tag1Id={tag1Id}&tag2Id={tag2Id}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -72217,6 +72463,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/removetagapplication?projectId={projectId}&tagAppId={tagAppId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -72483,6 +72730,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/startgettagsfromimportjob?fileURL={fileURL}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -72697,6 +72945,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/startimporttagsjob?projectId={projectId}&{string.Join("&", tagVOs.Select(static x => $"tagVOs={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -72945,6 +73194,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/startretroupcodejob?projectId={projectId}&userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -73193,6 +73443,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/updatetag?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&IsWeighted={isWeighted}&WeightMin={weightMin}&WeightMax={weightMax}&WeightDefault={weightDefault}&SortOrder={sortOrder}&Color={color}&AllowDecimalWeight={allowDecimalWeight}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -73843,6 +74094,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/updatetagappweight?currentProjectId={currentProjectId}&tagAppId={tagAppId}&newWeight={newWeight}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -74125,6 +74377,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/updatetaglink?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Tag1IDL={tag1IDL}&Tag2IDL={tag2IDL}&IsParentChildLink={isParentChildLink}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -74559,6 +74812,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/tag/updatetagorders?projectId={projectId}&{string.Join("&", tags.Select(static x => $"tags={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -74807,6 +75061,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/addtest?projectId={projectId}&trainingTestType={trainingTestType}&title={title}&description={description}&createdUserId={createdUserId}&{string.Join("&", exIds.Select(static x => $"exIds={x}"))}&{string.Join("&", tagIds.Select(static x => $"tagIds={x}"))}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -75225,6 +75480,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/deletetest?ProjectIdKey={projectIdKey}&Id={id}&TestType={testType}&Title={title}&Description={description}&CreatedOn={createdOn:yyyy-MM-ddTHH:mm:ssZ}&ProjectId={projectId}&ExcerptCount={excerptCount}&TagCount={tagCount}&Creator={creator}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -75767,6 +76023,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/getaddtestresult?addTestWorkerId={addTestWorkerId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -76003,6 +76260,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettestexcerpts?projectId={projectId}&testId={testId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -76251,6 +76509,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettestmastertagapplications?projectId={projectId}&testId={testId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -76499,6 +76758,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettestresultsbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -76713,6 +76973,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettestresulttagapps?projectId={projectId}&testId={testId}&testResultId={testResultId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -76995,6 +77256,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettestsbyproject?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -77209,6 +77471,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/gettesttags?projectId={projectId}&testId={testId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -77457,6 +77720,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/istestaddcomplete?addTestWorkerId={addTestWorkerId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -77671,6 +77935,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/savetestresult?projectId={projectId}&traineeUserId={traineeUserId}&testId={testId}&overallRating={overallRating}&{string.Join("&", traineeTagApps.Select(static x => $"traineeTagApps={x}"))}&completed={completed}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -78075,6 +78340,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/startexporttestresultjob?projectId={projectId}&testResultId={testResultId}&fileExtension={fileExtension}&cryptoKey={cryptoKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -78391,6 +78657,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/training/updatetestresult?projectId={projectId}&traineeUserId={traineeUserId}&testId={testId}&resultId={resultId}&overallRating={overallRating}&{string.Join("&", traineeTagApps.Select(static x => $"traineeTagApps={x}"))}&completed={completed}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -78829,6 +79096,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/unsafelogin",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: username,
@@ -79110,6 +79378,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/uploadtofilestorage?name={name}&projectId={projectId}&uploadType={uploadType}",
+    RequestMediaType: application/octet-stream,
     Properties: [
       {
         Id: token,
@@ -79453,6 +79722,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/acceptinvitationbycurrentuser?invitationId={invitationId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -79667,6 +79937,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/addnewusertoaccount?projectId={projectId}&username={username}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&encryptedPass={encryptedPass}&groupId={groupId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -80125,6 +80396,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/doesuseremailexist?email={email}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: email,
@@ -80285,6 +80557,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/doesuserexist?username={username}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: username,
@@ -80445,6 +80718,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/user/getcurrentaccountstatus",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -80647,6 +80921,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/api/v1/user/getcurrentuserpendinginvitations",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -80827,6 +81102,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/getfederationresponseforconnection?connectionKey={connectionKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -81041,6 +81317,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/getfilteredusers?projectId={projectId}&filter={filter}&maxResults={maxResults}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -81323,6 +81600,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/getprojectusers?projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -81537,6 +81815,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/inviteusertoproject?projectId={projectId}&email={email}&groupId={groupId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -81819,6 +82098,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/linkusertoaccount?userId={userId}&accountId={accountId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -82067,6 +82347,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/registerconnection?userId={userId}&connectionKey={connectionKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -82315,6 +82596,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/rejectinvitationbycurrentuser?invitationId={invitationId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -82529,6 +82811,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/sendcontactrequestemail?firstname={firstname}&lastname={lastname}&email={email}&phone={phone}&institution={institution}&comments={comments}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -82913,6 +83196,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/submitcurrentaccountpayment?amount={amount}&firstName={firstName}&lastName={lastName}&address1={address1}&address2={address2}&city={city}&state={state}&country={country}&zip={zip}&cardType={cardType}&cardNum={cardNum}&cardCCV={cardCCV}&expMonth={expMonth}&expYear={expYear}&saveAsReoccuring={saveAsReoccuring}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -83615,6 +83899,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/submiteula?userId={userId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -83829,6 +84114,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/updateconnection?userId={userId}&connectionKey={connectionKey}&projectId={projectId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -84111,6 +84397,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/updatecurrentuserpassword?userId={userId}&encryptedPass={encryptedPass}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -84359,6 +84646,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/updateuser?userId={userId}&firstName={firstName}&lastName={lastName}&phone={phone}&email={email}&password={password}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -84743,6 +85031,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/updateuserinfo?userId={userId}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&address={address}&city={city}&state={state}&country={country}&zip={zip}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -85263,6 +85552,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/validate2factor?username={username}&connectionKey={connectionKey}&encryptedAuthToken={encryptedAuthToken}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -85589,6 +85879,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/validateuser?username={username}&passSalt={passSalt}&connectionKey={connectionKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -85871,6 +86162,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/user/validateuser2?username={username}&rsaEncryptedPass={rsaEncryptedPass}&connectionKey={connectionKey}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -86167,6 +86459,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/api/v1/validate2factor?username={username}&authToken={authToken}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: token,
@@ -86459,6 +86752,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: [
       {
         Id: ,
@@ -87164,6 +87458,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87248,6 +87543,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87332,6 +87628,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87416,6 +87713,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87500,6 +87798,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87584,6 +87883,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87668,6 +87968,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87752,6 +88053,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87836,6 +88138,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -87920,6 +88223,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88004,6 +88308,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88088,6 +88393,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88172,6 +88478,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88256,6 +88563,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88340,6 +88648,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88424,6 +88733,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88508,6 +88818,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88592,6 +88903,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88676,6 +88988,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,
@@ -88760,6 +89073,7 @@
     BaseUrl: ,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

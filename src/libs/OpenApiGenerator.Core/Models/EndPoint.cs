@@ -11,6 +11,7 @@ public readonly record struct EndPoint(
     string BaseUrl,
     bool Stream,
     string Path,
+    string RequestMediaType,
     ImmutableArray<PropertyData> Properties,
     OperationType HttpMethod,
     ContentType ContentType,
@@ -104,26 +105,28 @@ public readonly record struct EndPoint(
                     .ToImmutableArray(),
                 })
             .ToArray();
-        var requestMediaTypes = operation.Value.RequestBody?.ResolveIfRequired().Content?.Values ?? [];
+        var requestMediaTypes =
+            operation.Value.RequestBody?.ResolveIfRequired().Content ??
+            new Dictionary<string, OpenApiMediaType>();
         var requestBodyModels = requestMediaTypes
             .Where(x =>
-                x.Schema != null &&
-                (x.Schema.Type == "object" ||
-                (x.Schema.Type == "array"
-                && x.Schema.Items?.Type == "object") ||
-                x.Schema.AnyOf is { Count: > 0 } ||
-                x.Schema.OneOf is { Count: > 0 } ||
-                x.Schema.AllOf is { Count: > 0 }))
+                x.Value.Schema != null &&
+                (x.Value.Schema.Type == "object" ||
+                (x.Value.Schema.Type == "array"
+                && x.Value.Schema.Items?.Type == "object") ||
+                x.Value.Schema.AnyOf is { Count: > 0 } ||
+                x.Value.Schema.OneOf is { Count: > 0 } ||
+                x.Value.Schema.AllOf is { Count: > 0 }))
             .SelectMany(x => ModelData.FromSchemas(
-                x.Schema!,
+                x.Value.Schema!,
                 settings,
                 id + "Request"))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var requestBodyTypes = requestMediaTypes
-            .Where(x => x.Schema != null)
+            .Where(x => x.Value.Schema != null)
             .Select(x => TypeData.FromSchema(
-                x.Schema!.UseReferenceIdOrKey(id + "Request"),
+                x.Value.Schema!.UseReferenceIdOrKey(id + "Request"),
                 settings))
             .ToArray();
         
@@ -133,6 +136,13 @@ public readonly record struct EndPoint(
         TypeData? requestType = requestBodyTypes.Length == 0
             ? null
             : requestBodyTypes.First();
+        var requestMediaType = requestMediaTypes
+            .Select(x => x.Key)
+            .FirstOrDefault() ?? "application/json";
+        if (requestType?.IsBase64 == true)
+        {
+            requestMediaType = "application/octet-stream";
+        }
         
         var responses = (operation.Value.Responses ?? [])
             .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
@@ -191,6 +201,7 @@ public readonly record struct EndPoint(
             Stream: responses
                 .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
             Path: preparedPath,
+            RequestMediaType: requestMediaType,
             Properties: properties.ToImmutableArray(),
             HttpMethod: operation.Key,
             ContentType: responses

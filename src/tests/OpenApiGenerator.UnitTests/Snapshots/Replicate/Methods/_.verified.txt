@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/account",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get the authenticated account
@@ -134,6 +135,7 @@ The response will be a JSON object describing the account:
     BaseUrl: ,
     Stream: false,
     Path: "/collections",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List collections of models
@@ -244,6 +246,7 @@ The response will be a paginated JSON list of collection objects:
     BaseUrl: ,
     Stream: false,
     Path: $"/collections/{collectionSlug}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: collection_slug,
@@ -384,6 +387,7 @@ The response will be a collection object with a nested list of the models in tha
     BaseUrl: ,
     Stream: false,
     Path: "/deployments",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List deployments
@@ -533,6 +537,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
     BaseUrl: ,
     Stream: false,
     Path: "/deployments",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: hardware,
@@ -894,6 +899,7 @@ The response will be a JSON object describing the deployment:
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: deployment_owner,
@@ -1066,6 +1072,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: deployment_owner,
@@ -1278,6 +1285,7 @@ The response will be a JSON object describing the deployment:
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: deployment_owner,
@@ -1640,6 +1648,7 @@ Updating any deployment properties will increment the `number` field of the `cur
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}/predictions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: deployment_owner,
@@ -2043,6 +2052,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     BaseUrl: ,
     Stream: false,
     Path: "/hardware",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List available hardware for models
@@ -2169,6 +2179,7 @@ The response will be a JSON array of hardware objects:
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List public models
@@ -2297,6 +2308,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: cover_image_url,
@@ -2722,6 +2734,7 @@ The response will be a model object in the following format:
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -2896,6 +2909,7 @@ The response will be an empty 204, indicating the model has been deleted.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -3089,6 +3103,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/predictions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -3492,6 +3507,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -3672,6 +3688,7 @@ The response will be a JSON array of model version objects, sorted with the most
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -3883,6 +3900,7 @@ The response will be an empty 202, indicating the deletion request has been acce
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -4124,6 +4142,7 @@ For more details, see the docs on [Cog's supported input and output types](https
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}/trainings",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: model_owner,
@@ -4546,6 +4565,7 @@ To find some models to train on, check out the [trainable language models collec
     BaseUrl: ,
     Stream: false,
     Path: "/predictions",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List predictions
@@ -4687,6 +4707,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
     BaseUrl: ,
     Stream: false,
     Path: "/predictions",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: input,
@@ -5057,6 +5078,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     BaseUrl: ,
     Stream: false,
     Path: $"/predictions/{predictionId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: prediction_id,
@@ -5233,6 +5255,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     BaseUrl: ,
     Stream: false,
     Path: $"/predictions/{predictionId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: prediction_id,
@@ -5354,6 +5377,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     BaseUrl: ,
     Stream: false,
     Path: "/trainings",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 List trainings
@@ -5496,6 +5520,7 @@ The response will be a paginated JSON array of training objects, sorted with the
     BaseUrl: ,
     Stream: false,
     Path: $"/trainings/{trainingId}",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: training_id,
@@ -5671,6 +5696,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     BaseUrl: ,
     Stream: false,
     Path: $"/trainings/{trainingId}/cancel",
+    RequestMediaType: application/json,
     Properties: [
       {
         Id: training_id,
@@ -5792,6 +5818,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     BaseUrl: ,
     Stream: false,
     Path: "/webhooks/default/secret",
+    RequestMediaType: application/json,
     Properties: null,
     Summary:
 Get the signing secret for the default webhook
@@ -5917,6 +5944,7 @@ The response will be a JSON object with a `key` property:
     BaseUrl: https://api.replicate.com/v1,
     Stream: false,
     Path: ,
+    RequestMediaType: ,
     Properties: null,
     Summary: A web service for running Replicate models,
     BaseUrlSummary: ,
