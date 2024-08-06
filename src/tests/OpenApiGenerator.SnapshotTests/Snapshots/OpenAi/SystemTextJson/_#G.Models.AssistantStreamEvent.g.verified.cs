@@ -23,7 +23,7 @@ namespace G
     /// in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to<br/>
     /// integrate the Assistants API with streaming.
     /// </summary>
-    public readonly struct AssistantStreamEvent : global::System.IEquatable<AssistantStreamEvent>
+    public readonly partial struct AssistantStreamEvent : global::System.IEquatable<AssistantStreamEvent>
     {
         /// <summary>
         /// 

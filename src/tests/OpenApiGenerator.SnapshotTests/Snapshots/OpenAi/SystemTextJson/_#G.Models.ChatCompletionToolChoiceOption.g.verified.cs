@@ -14,7 +14,7 @@ namespace G
     /// Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.<br/>
     /// `none` is the default when no tools are present. `auto` is the default if tools are present.
     /// </summary>
-    public readonly struct ChatCompletionToolChoiceOption : global::System.IEquatable<ChatCompletionToolChoiceOption>
+    public readonly partial struct ChatCompletionToolChoiceOption : global::System.IEquatable<ChatCompletionToolChoiceOption>
     {
         /// <summary>
         /// 

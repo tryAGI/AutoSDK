@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct RunStreamEvent : global::System.IEquatable<RunStreamEvent>
+    public readonly partial struct RunStreamEvent : global::System.IEquatable<RunStreamEvent>
     {
         /// <summary>
         /// 

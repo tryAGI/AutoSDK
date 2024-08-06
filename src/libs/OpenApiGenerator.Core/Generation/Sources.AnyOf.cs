@@ -60,7 +60,7 @@ public static partial class Sources
 namespace {@namespace}
 {{
     {summary.ToXmlDocumentationSummary(level: 4)}
-    public readonly struct {className} : global::System.IEquatable<{className}>
+    public readonly partial struct {className} : global::System.IEquatable<{className}>
     {{
 {allTypes.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}

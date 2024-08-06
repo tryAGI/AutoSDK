@@ -1960,36 +1960,26 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.PredictionRequestWebhookEventsFilter?,
+              CSharpType: ,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
-              Properties: [
-                Start,
-                Output,
-                Logs,
-                Completed
-              ],
-              EnumValues: [
-                start,
-                output,
-                logs,
-                completed
-              ],
+              Properties: null,
+              EnumValues: null,
               SubTypes: null,
-              Namespace: G,
+              Namespace: ,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.PredictionRequestWebhookEventsFilter,
-              CSharpTypeWithNullability: global::G.PredictionRequestWebhookEventsFilter?,
-              ShortCSharpTypeWithoutNullability: PredictionRequestWebhookEventsFilter,
-              ShortCSharpTypeWithNullability: PredictionRequestWebhookEventsFilter?,
+              CSharpTypeWithoutNullability: ,
+              CSharpTypeWithNullability: ?,
+              ShortCSharpTypeWithoutNullability: ,
+              ShortCSharpTypeWithNullability: ?,
               IsAnyOf: false,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.PredictionRequestWebhookEventsFilterJsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.JsonConverter
             }
           ],
           Namespace: G,
@@ -2291,7 +2281,7 @@ The response will be a JSON array of hardware objects:
       EnumValues: null,
       SubTypes: [
         {
-          CSharpType: global::G.ListHardwareResponse,
+          CSharpType: ,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -2301,13 +2291,13 @@ The response will be a JSON array of hardware objects:
           Properties: null,
           EnumValues: null,
           SubTypes: null,
-          Namespace: G,
+          Namespace: ,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.ListHardwareResponse,
-          CSharpTypeWithNullability: global::G.ListHardwareResponse?,
-          ShortCSharpTypeWithoutNullability: ListHardwareResponse,
-          ShortCSharpTypeWithNullability: ListHardwareResponse?,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           IsReferenceable: false,
           ConverterType: 
@@ -2338,7 +2328,7 @@ The response will be a JSON array of hardware objects:
         EnumValues: null,
         SubTypes: [
           {
-            CSharpType: global::G.ListHardwareResponse,
+            CSharpType: ,
             IsArray: false,
             IsEnum: false,
             IsBase64: false,
@@ -2348,13 +2338,13 @@ The response will be a JSON array of hardware objects:
             Properties: null,
             EnumValues: null,
             SubTypes: null,
-            Namespace: G,
+            Namespace: ,
             IsDeprecated: false,
             GenerateJsonSerializerContextTypes: false,
-            CSharpTypeWithoutNullability: global::G.ListHardwareResponse,
-            CSharpTypeWithNullability: global::G.ListHardwareResponse?,
-            ShortCSharpTypeWithoutNullability: ListHardwareResponse,
-            ShortCSharpTypeWithNullability: ListHardwareResponse?,
+            CSharpTypeWithoutNullability: ,
+            CSharpTypeWithNullability: ?,
+            ShortCSharpTypeWithoutNullability: ,
+            ShortCSharpTypeWithNullability: ?,
             IsAnyOf: false,
             IsReferenceable: false,
             ConverterType: 
@@ -3581,36 +3571,26 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.PredictionRequestWebhookEventsFilter?,
+              CSharpType: ,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
-              Properties: [
-                Start,
-                Output,
-                Logs,
-                Completed
-              ],
-              EnumValues: [
-                start,
-                output,
-                logs,
-                completed
-              ],
+              Properties: null,
+              EnumValues: null,
               SubTypes: null,
-              Namespace: G,
+              Namespace: ,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.PredictionRequestWebhookEventsFilter,
-              CSharpTypeWithNullability: global::G.PredictionRequestWebhookEventsFilter?,
-              ShortCSharpTypeWithoutNullability: PredictionRequestWebhookEventsFilter,
-              ShortCSharpTypeWithNullability: PredictionRequestWebhookEventsFilter?,
+              CSharpTypeWithoutNullability: ,
+              CSharpTypeWithNullability: ?,
+              ShortCSharpTypeWithoutNullability: ,
+              ShortCSharpTypeWithNullability: ?,
               IsAnyOf: false,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.PredictionRequestWebhookEventsFilterJsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.JsonConverter
             }
           ],
           Namespace: G,
@@ -4732,36 +4712,26 @@ An object containing inputs to the Cog model's `train()` function.
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.TrainingRequestWebhookEventsFilter?,
+              CSharpType: ,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
-              Properties: [
-                Start,
-                Output,
-                Logs,
-                Completed
-              ],
-              EnumValues: [
-                start,
-                output,
-                logs,
-                completed
-              ],
+              Properties: null,
+              EnumValues: null,
               SubTypes: null,
-              Namespace: G,
+              Namespace: ,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.TrainingRequestWebhookEventsFilter,
-              CSharpTypeWithNullability: global::G.TrainingRequestWebhookEventsFilter?,
-              ShortCSharpTypeWithoutNullability: TrainingRequestWebhookEventsFilter,
-              ShortCSharpTypeWithNullability: TrainingRequestWebhookEventsFilter?,
+              CSharpTypeWithoutNullability: ,
+              CSharpTypeWithNullability: ?,
+              ShortCSharpTypeWithoutNullability: ,
+              ShortCSharpTypeWithNullability: ?,
               IsAnyOf: false,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.TrainingRequestWebhookEventsFilterJsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.JsonConverter
             }
           ],
           Namespace: G,
@@ -5302,36 +5272,26 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.VersionPredictionRequestWebhookEventsFilter?,
+              CSharpType: ,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
-              Properties: [
-                Start,
-                Output,
-                Logs,
-                Completed
-              ],
-              EnumValues: [
-                start,
-                output,
-                logs,
-                completed
-              ],
+              Properties: null,
+              EnumValues: null,
               SubTypes: null,
-              Namespace: G,
+              Namespace: ,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.VersionPredictionRequestWebhookEventsFilter,
-              CSharpTypeWithNullability: global::G.VersionPredictionRequestWebhookEventsFilter?,
-              ShortCSharpTypeWithoutNullability: VersionPredictionRequestWebhookEventsFilter,
-              ShortCSharpTypeWithNullability: VersionPredictionRequestWebhookEventsFilter?,
+              CSharpTypeWithoutNullability: ,
+              CSharpTypeWithNullability: ?,
+              ShortCSharpTypeWithoutNullability: ,
+              ShortCSharpTypeWithNullability: ?,
               IsAnyOf: false,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.VersionPredictionRequestWebhookEventsFilterJsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.JsonConverter
             }
           ],
           Namespace: G,

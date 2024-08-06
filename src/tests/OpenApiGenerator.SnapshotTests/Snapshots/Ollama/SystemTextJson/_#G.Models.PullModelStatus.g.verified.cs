@@ -10,7 +10,7 @@ namespace G
     /// Status pulling the model.<br/>
     /// Example: pulling manifest
     /// </summary>
-    public readonly struct PullModelStatus : global::System.IEquatable<PullModelStatus>
+    public readonly partial struct PullModelStatus : global::System.IEquatable<PullModelStatus>
     {
         /// <summary>
         /// 

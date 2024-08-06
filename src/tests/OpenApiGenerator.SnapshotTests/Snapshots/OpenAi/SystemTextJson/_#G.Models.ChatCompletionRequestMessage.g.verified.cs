@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct ChatCompletionRequestMessage : global::System.IEquatable<ChatCompletionRequestMessage>
+    public readonly partial struct ChatCompletionRequestMessage : global::System.IEquatable<ChatCompletionRequestMessage>
     {
         /// <summary>
         /// 

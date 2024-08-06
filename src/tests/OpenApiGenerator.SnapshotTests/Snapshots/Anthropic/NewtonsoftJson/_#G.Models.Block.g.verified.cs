@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// A block of content in a message.
     /// </summary>
-    public readonly struct Block : global::System.IEquatable<Block>
+    public readonly partial struct Block : global::System.IEquatable<Block>
     {
         /// <summary>
         /// 

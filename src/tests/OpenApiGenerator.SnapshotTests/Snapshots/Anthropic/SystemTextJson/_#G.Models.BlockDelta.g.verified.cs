@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// A delta in a streaming message.
     /// </summary>
-    public readonly struct BlockDelta : global::System.IEquatable<BlockDelta>
+    public readonly partial struct BlockDelta : global::System.IEquatable<BlockDelta>
     {
         /// <summary>
         /// 

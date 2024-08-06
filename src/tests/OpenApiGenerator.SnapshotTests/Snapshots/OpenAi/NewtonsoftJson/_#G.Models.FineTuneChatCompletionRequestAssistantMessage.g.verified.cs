@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct FineTuneChatCompletionRequestAssistantMessage : global::System.IEquatable<FineTuneChatCompletionRequestAssistantMessage>
+    public readonly partial struct FineTuneChatCompletionRequestAssistantMessage : global::System.IEquatable<FineTuneChatCompletionRequestAssistantMessage>
     {
         /// <summary>
         /// 

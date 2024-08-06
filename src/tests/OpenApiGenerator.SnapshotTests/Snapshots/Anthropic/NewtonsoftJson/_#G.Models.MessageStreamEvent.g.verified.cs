@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// A event in a streaming conversation.
     /// </summary>
-    public readonly struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
+    public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
         /// 

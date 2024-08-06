@@ -13,7 +13,7 @@ namespace G
     /// `required` means the model must call one or more tools before responding to the user.<br/>
     /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
     /// </summary>
-    public readonly struct AssistantsApiToolChoiceOption : global::System.IEquatable<AssistantsApiToolChoiceOption>
+    public readonly partial struct AssistantsApiToolChoiceOption : global::System.IEquatable<AssistantsApiToolChoiceOption>
     {
         /// <summary>
         /// 

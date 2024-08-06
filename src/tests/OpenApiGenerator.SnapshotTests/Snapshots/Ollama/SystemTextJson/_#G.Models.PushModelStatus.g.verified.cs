@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// Status pushing the model.
     /// </summary>
-    public readonly struct PushModelStatus : global::System.IEquatable<PushModelStatus>
+    public readonly partial struct PushModelStatus : global::System.IEquatable<PushModelStatus>
     {
         /// <summary>
         /// 

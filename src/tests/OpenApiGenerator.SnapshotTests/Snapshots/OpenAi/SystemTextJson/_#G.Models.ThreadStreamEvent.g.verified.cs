@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
+    public readonly partial struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
     {
         /// <summary>
         /// 
