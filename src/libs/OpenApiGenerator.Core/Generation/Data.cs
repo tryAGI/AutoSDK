@@ -23,7 +23,8 @@ public static class Data
             .SelectMany(schema => SchemaContext.FromSchema(
                 schema: schema.Value,
                 settings: settings,
-                componentId: schema.Key))
+                componentId: schema.Key,
+                hint: Hint.Component))
             .Concat(allOperations
                 .Where(x => x.Operation.RequestBody != null)
                 .SelectMany(x => x.Operation.RequestBody!.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, ContentType: y.Key, MediaType: y.Value)))
@@ -66,6 +67,29 @@ public static class Data
                     responseStatusCode: x.ResponseStatusCode,
                     response: x.Response,
                     hint: Hint.Response)))
+            .ToArray();
+        
+        foreach (var context in schemaContexts.Where(x => x.Parent != null))
+        {
+            context.Parent!.Children.Add(context);
+        }
+        
+        var componentSchemaContexts = schemaContexts
+            .Where(x => x.IsComponent)
+            .ToDictionary(x => x.ComponentId!, x => x);
+        var resolvedSchemaContexts = schemaContexts
+            .SelectMany(x =>
+            {
+                if (!x.IsReference)
+                {
+                    return [x];
+                }
+                
+                x.Parent?.Children.Remove(x);
+                x.Parent?.Children.Add(componentSchemaContexts[x.ReferenceId!]);
+
+                return Array.Empty<SchemaContext>();
+            })
             .ToArray();
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
@@ -410,6 +434,7 @@ public static class Data
                 AdditionalModels: [],
                 AdditionalTypes: [],
                 Converters: converters),
-            Schemas: schemaContexts);
+            Schemas: schemaContexts,
+            ResolvedSchemas: resolvedSchemaContexts);
     }
 }

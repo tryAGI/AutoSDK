@@ -64,14 +64,19 @@ public partial class DataTests : VerifyBase
             Verify(data.Schemas.Select(x => $"{GetMargin(x)}{x.Id}({x.Type})"))
                 .UseDirectory($"Snapshots/{callerName}/Schemas")
                 .UseFileName("_");
+        var resolvedSchemasTask =
+            Verify(ToResolvedStrings(data.ResolvedSchemas.Where(x => x.Parent == null)))
+                .UseDirectory($"Snapshots/{callerName}/ResolvedSchemas")
+                .UseFileName("_");
         
         modelsTask = modelsTask.AutoVerify();
         methodsTask = methodsTask.AutoVerify();
         anyOfsTask = anyOfsTask.AutoVerify();
         typesTask = typesTask.AutoVerify();
         schemasTask = schemasTask.AutoVerify();
+        resolvedSchemasTask = resolvedSchemasTask.AutoVerify();
         
-        return Task.WhenAll(modelsTask, methodsTask, anyOfsTask, typesTask, schemasTask);
+        return Task.WhenAll(modelsTask, methodsTask, anyOfsTask, typesTask, schemasTask, resolvedSchemasTask);
     }
 
     private static string GetMargin(SchemaContext context)
@@ -85,5 +90,18 @@ public partial class DataTests : VerifyBase
         }
         
         return margin;
+    }
+
+    private static List<string> ToResolvedStrings(IEnumerable<SchemaContext> contexts, string margin = "")
+    {
+        var result = new List<string>();
+        foreach (var context in contexts)
+        {
+            result.Add($"{margin}{context.Id}({context.Type})");
+            
+            result.AddRange(ToResolvedStrings(context.Children, margin + "  "));
+        }
+        
+        return result;
     }
 }

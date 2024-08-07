@@ -7,4 +7,5 @@ public readonly record struct Data(
     EquatableArray<TypeData> Types,
     EquatableArray<Authorization> Authorizations,
     EndPoint Converters,
-    IReadOnlyList<SchemaContext> Schemas);
+    IReadOnlyList<SchemaContext> Schemas,
+    IReadOnlyList<SchemaContext> ResolvedSchemas);

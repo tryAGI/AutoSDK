@@ -6,12 +6,15 @@ namespace OpenApiGenerator.Core.Models;
 public class SchemaContext
 {
     public SchemaContext? Parent { get; init; }
+    public IList<SchemaContext> Children { get; set; } = [];
     
     public required Settings Settings { get; init; }
     public required OpenApiSchema Schema { get; init; }
     public required string Id { get; init; }
     public required string Type { get; init; }
-    public bool IsReference { get; init; }
+    
+    public string? ReferenceId { get; init; }
+    public bool IsReference => ReferenceId != null;
     
     public Hint? Hint { get; init; }
     public int? Index { get; init; }
@@ -101,7 +104,7 @@ public class SchemaContext
             return "allOf";
         }
         
-        return schema.Type;
+        return schema.Type ?? "class";
     }
 
     public string ShortType
@@ -153,7 +156,7 @@ public class SchemaContext
                 Schema = schema,
                 Id = schema.Reference.Id.ToCSharpName(settings, parent),
                 Type = "ref",
-                IsReference = true,
+                ReferenceId = schema.Reference.Id,
                 ComponentId = componentId,
                 PropertyName = propertyName,
                 Hint = hint,

@@ -10,4 +10,5 @@ public enum Hint
     Response,
     Parameter,
     Property,
+    Component,
 }
