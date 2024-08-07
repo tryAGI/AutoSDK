@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ChatCompletionRequestAssistantMessage.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,14 @@ namespace G
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>?>? Content { get; set; }
+
+        /// <summary>
+        /// The refusal message by the assistant.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
+        public string? Refusal { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `assistant`.

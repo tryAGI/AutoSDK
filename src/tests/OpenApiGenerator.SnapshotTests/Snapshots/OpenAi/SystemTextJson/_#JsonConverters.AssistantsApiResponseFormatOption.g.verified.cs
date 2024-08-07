@@ -27,10 +27,30 @@ namespace OpenApiGenerator.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.AssistantsApiResponseFormat? value2 = default;
+            global::G.ResponseFormatText? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormat>(ref readerCopy, options);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatText>(ref readerCopy, options);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseFormatJsonObject? value3 = default;
+            try
+            {
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatJsonObject>(ref readerCopy, options);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::G.ResponseFormatJsonSchema? value4 = default;
+            try
+            {
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatJsonSchema>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -38,11 +58,15 @@ namespace OpenApiGenerator.JsonConverters
             var result = new global::G.AssistantsApiResponseFormatOption(
                 value1,
 
-                value2
+                value2,
+
+                value3,
+
+                value4
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.AssistantsApiResponseFormat).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}>");
             }
 
             if (value1 != null)
@@ -52,7 +76,17 @@ namespace OpenApiGenerator.JsonConverters
 
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormat>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatText>(ref reader, options);
+            }
+
+            else if (value3 != null)
+            {
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatJsonObject>(ref reader, options);
+            }
+
+            else if (value4 != null)
+            {
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseFormatJsonSchema>(ref reader, options);
             }
             return result;
         }
@@ -67,7 +101,7 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.AssistantsApiResponseFormat).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}> object.");
             }
 
             if (value.IsValue1)
@@ -77,7 +111,17 @@ namespace OpenApiGenerator.JsonConverters
 
             else if (value.IsValue2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.AssistantsApiResponseFormat), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.ResponseFormatText), options);
+            }
+
+            else if (value.IsValue3)
+            {
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::G.ResponseFormatJsonObject), options);
+            }
+
+            else if (value.IsValue4)
+            {
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::G.ResponseFormatJsonSchema), options);
             }
         }
     }

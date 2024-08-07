@@ -66,7 +66,7 @@
       },
       {
         Id: 1.5,
-        Name: x1_5,
+        Name: x15,
         Type: {
           CSharpType: bool,
           IsArray: false,
@@ -94,8 +94,8 @@
         IsDeprecated: false,
         Summary: Example: true,
         ConverterType: ,
-        ParameterName: x1_5,
-        ArgumentName: x1_5,
+        ParameterName: x15,
+        ArgumentName: x15,
         ParameterDefaultValue: default
       },
       {

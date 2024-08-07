@@ -26,7 +26,7 @@ namespace G
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
         /// <param name="model">
-        /// Example: gpt-3.5-turbo
+        /// Example: gpt-4o-mini
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

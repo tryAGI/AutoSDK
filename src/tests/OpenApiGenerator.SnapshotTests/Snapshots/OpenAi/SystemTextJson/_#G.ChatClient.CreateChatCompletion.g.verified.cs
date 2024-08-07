@@ -102,7 +102,7 @@ namespace G
         /// </param>
         /// <param name="model">
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
-        /// Example: gpt-4-turbo
+        /// Example: gpt-4o
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -135,7 +135,8 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="responseFormat">
-        /// An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
@@ -203,7 +204,7 @@ namespace G
             int? maxTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
-            global::G.CreateChatCompletionRequestResponseFormat? responseFormat = default,
+            global::System.OneOf<global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? responseFormat = default,
             int? seed = default,
             global::G.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,

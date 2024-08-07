@@ -37,6 +37,15 @@
   },
   {
     SubType: OneOf,
+    Count: 3,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
+    SubType: OneOf,
     Count: 1,
     IsTrimming: false,
     Namespace: System,
@@ -52,99 +61,6 @@
     Name: ,
     Summary: ,
     Properties: null
-  },
-  {
-    SubType: OneOf,
-    Count: 3,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
-    Summary: ,
-    Properties: null
-  },
-  {
-    SubType: OneOf,
-    Count: 2,
-    IsTrimming: false,
-    Namespace: G,
-    Name: ChatCompletionRequestMessageContentPart,
-    Summary: ,
-    Properties: [
-      {
-        Id: ,
-        Name: Text,
-        Type: {
-          CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
-          IsArray: false,
-          IsEnum: false,
-          IsBase64: false,
-          IsDate: false,
-          IsDateTime: false,
-          IsBinary: false,
-          Properties: [
-            type,
-            text
-          ],
-          EnumValues: null,
-          SubTypes: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
-          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
-          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
-          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
-          IsAnyOf: false,
-          IsReferenceable: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsMultiPartFormDataFilename: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: text,
-        ArgumentName: text,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: ,
-        Name: Image,
-        Type: {
-          CSharpType: global::G.ChatCompletionRequestMessageContentPartImage,
-          IsArray: false,
-          IsEnum: false,
-          IsBase64: false,
-          IsDate: false,
-          IsDateTime: false,
-          IsBinary: false,
-          Properties: [
-            type,
-            image_url
-          ],
-          EnumValues: null,
-          SubTypes: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartImage,
-          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartImage?,
-          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartImage,
-          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartImage?,
-          IsAnyOf: false,
-          IsReferenceable: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsMultiPartFormDataFilename: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: image,
-        ArgumentName: image,
-        ParameterDefaultValue: default
-      }
-    ]
   },
   {
     SubType: OneOf,
@@ -243,6 +159,7 @@
           IsBinary: false,
           Properties: [
             content,
+            refusal,
             role,
             name,
             tool_calls,
@@ -350,6 +267,268 @@
   },
   {
     SubType: OneOf,
+    Count: 1,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestSystemMessageContentPart,
+    Summary: ,
+    Properties: [
+      {
+        Id: ,
+        Name: Text,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            text
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestUserMessageContentPart,
+    Summary: ,
+    Properties: [
+      {
+        Id: ,
+        Name: Text,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            text
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Image,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartImage,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            image_url
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartImage,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartImage?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartImage,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartImage?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: image,
+        ArgumentName: image,
+        ParameterDefaultValue: default
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestAssistantMessageContentPart,
+    Summary: ,
+    Properties: [
+      {
+        Id: ,
+        Name: Text,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            text
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Refusal,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartRefusal,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            refusal
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartRefusal,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartRefusal?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartRefusal,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartRefusal?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: refusal,
+        ArgumentName: refusal,
+        ParameterDefaultValue: default
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 1,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestToolMessageContentPart,
+    Summary: ,
+    Properties: [
+      {
+        Id: ,
+        Name: Text,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            text
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+          ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
+          ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
     Count: 2,
     IsTrimming: false,
     Namespace: G,
@@ -447,12 +626,14 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
   },
   {
     SubType: OneOf,
-    Count: 2,
+    Count: 4,
     IsTrimming: false,
     Namespace: G,
     Name: AssistantsApiResponseFormatOption,
     Summary:
 Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -471,11 +652,9 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsDateTime: false,
           IsBinary: false,
           Properties: [
-            None,
             Auto
           ],
           EnumValues: [
-            none,
             auto
           ],
           SubTypes: null,
@@ -503,7 +682,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         Id: ,
         Name: Value2,
         Type: {
-          CSharpType: global::G.AssistantsApiResponseFormat,
+          CSharpType: global::G.ResponseFormatText,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -518,10 +697,10 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormat,
-          CSharpTypeWithNullability: global::G.AssistantsApiResponseFormat?,
-          ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormat,
-          ShortCSharpTypeWithNullability: AssistantsApiResponseFormat?,
+          CSharpTypeWithoutNullability: global::G.ResponseFormatText,
+          CSharpTypeWithNullability: global::G.ResponseFormatText?,
+          ShortCSharpTypeWithoutNullability: ResponseFormatText,
+          ShortCSharpTypeWithNullability: ResponseFormatText?,
           IsAnyOf: false,
           IsReferenceable: false,
           ConverterType: 
@@ -533,6 +712,79 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: ,
         ParameterName: value2,
         ArgumentName: value2,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Value3,
+        Type: {
+          CSharpType: global::G.ResponseFormatJsonObject,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ResponseFormatJsonObject,
+          CSharpTypeWithNullability: global::G.ResponseFormatJsonObject?,
+          ShortCSharpTypeWithoutNullability: ResponseFormatJsonObject,
+          ShortCSharpTypeWithNullability: ResponseFormatJsonObject?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: value3,
+        ArgumentName: value3,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Value4,
+        Type: {
+          CSharpType: global::G.ResponseFormatJsonSchema,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          IsBinary: false,
+          Properties: [
+            type,
+            json_schema
+          ],
+          EnumValues: null,
+          SubTypes: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ResponseFormatJsonSchema,
+          CSharpTypeWithNullability: global::G.ResponseFormatJsonSchema?,
+          ShortCSharpTypeWithoutNullability: ResponseFormatJsonSchema,
+          ShortCSharpTypeWithNullability: ResponseFormatJsonSchema?,
+          IsAnyOf: false,
+          IsReferenceable: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsMultiPartFormDataFilename: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: value4,
+        ArgumentName: value4,
         ParameterDefaultValue: default
       }
     ]
@@ -2346,6 +2598,7 @@ integrate the Assistants API with streaming.
           IsBinary: false,
           Properties: [
             content,
+            refusal,
             role,
             name,
             tool_calls,

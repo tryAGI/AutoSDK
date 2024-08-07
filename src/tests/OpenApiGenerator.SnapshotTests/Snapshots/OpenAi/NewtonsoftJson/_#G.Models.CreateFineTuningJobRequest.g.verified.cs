@@ -13,8 +13,8 @@ namespace G
     {
         /// <summary>
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning/what-models-can-be-fine-tuned).<br/>
-        /// Example: gpt-3.5-turbo
+        /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
+        /// Example: gpt-4o-mini
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel> Model { get; set; } = default!;
@@ -38,7 +38,7 @@ namespace G
 
         /// <summary>
         /// A string of up to 18 characters that will be added to your fine-tuned model name.<br/>
-        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-3.5-turbo:openai:custom-model-name:7p4lURel`.
+        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("suffix")]
         public string? Suffix { get; set; }

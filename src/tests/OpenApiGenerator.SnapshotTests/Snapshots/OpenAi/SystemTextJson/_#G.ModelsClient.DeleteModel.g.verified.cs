@@ -26,7 +26,7 @@ namespace G
         /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
         /// </summary>
         /// <param name="model">
-        /// Example: ft:gpt-3.5-turbo:acemeco:suffix:abc123
+        /// Example: ft:gpt-4o-mini:acemeco:suffix:abc123
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

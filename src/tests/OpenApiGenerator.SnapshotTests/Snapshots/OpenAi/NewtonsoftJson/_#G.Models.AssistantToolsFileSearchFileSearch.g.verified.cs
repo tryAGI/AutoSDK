@@ -10,7 +10,7 @@ namespace G
     public sealed partial class AssistantToolsFileSearchFileSearch
     {
         /// <summary>
-        /// The maximum number of results the file search tool should output. The default is 20 for gpt-4* models and 5 for gpt-3.5-turbo. This number should be between 1 and 50 inclusive.<br/>
+        /// The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.<br/>
         /// Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_num_results")]

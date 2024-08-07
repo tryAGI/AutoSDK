@@ -17,12 +17,12 @@ namespace G
             global::System.DateTime createStamp,
             ref string title,
             ref string desciption,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedTagIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedDescriptorIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedResourceIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedExcerptIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedUserIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_ExcludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedTagIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedDescriptorIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedResourceIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedUserIds,
+            global::System.Collections.Generic.IList<string> objectIdListsExcludedExcerptIds,
             ref bool areExcerptsFiltered,
             ref bool areResourcesFiltered,
             ref bool areTagsFiltered,
@@ -39,12 +39,12 @@ namespace G
             global::System.DateTime createStamp,
             string title,
             string desciption,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedTagIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedDescriptorIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedResourceIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedExcerptIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedUserIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_ExcludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedTagIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedDescriptorIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedResourceIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedUserIds,
+            global::System.Collections.Generic.IList<string> objectIdListsExcludedExcerptIds,
             bool areExcerptsFiltered,
             bool areResourcesFiltered,
             bool areTagsFiltered,
@@ -70,12 +70,12 @@ namespace G
         /// <param name="createStamp"></param>
         /// <param name="title"></param>
         /// <param name="desciption"></param>
-        /// <param name="objectIdLists_IncludedTagIds"></param>
-        /// <param name="objectIdLists_IncludedDescriptorIds"></param>
-        /// <param name="objectIdLists_IncludedResourceIds"></param>
-        /// <param name="objectIdLists_IncludedExcerptIds"></param>
-        /// <param name="objectIdLists_IncludedUserIds"></param>
-        /// <param name="objectIdLists_ExcludedExcerptIds"></param>
+        /// <param name="objectIdListsIncludedTagIds"></param>
+        /// <param name="objectIdListsIncludedDescriptorIds"></param>
+        /// <param name="objectIdListsIncludedResourceIds"></param>
+        /// <param name="objectIdListsIncludedExcerptIds"></param>
+        /// <param name="objectIdListsIncludedUserIds"></param>
+        /// <param name="objectIdListsExcludedExcerptIds"></param>
         /// <param name="areExcerptsFiltered"></param>
         /// <param name="areResourcesFiltered"></param>
         /// <param name="areTagsFiltered"></param>
@@ -92,12 +92,12 @@ namespace G
             global::System.DateTime createStamp,
             string title,
             string desciption,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedTagIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedDescriptorIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedResourceIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedExcerptIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_IncludedUserIds,
-            global::System.Collections.Generic.IList<string> objectIdLists_ExcludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedTagIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedDescriptorIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedResourceIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdListsIncludedUserIds,
+            global::System.Collections.Generic.IList<string> objectIdListsExcludedExcerptIds,
             bool areExcerptsFiltered,
             bool areResourcesFiltered,
             bool areTagsFiltered,
@@ -117,12 +117,12 @@ namespace G
                 createStamp: createStamp,
                 title: ref title,
                 desciption: ref desciption,
-                objectIdLists_IncludedTagIds: objectIdLists_IncludedTagIds,
-                objectIdLists_IncludedDescriptorIds: objectIdLists_IncludedDescriptorIds,
-                objectIdLists_IncludedResourceIds: objectIdLists_IncludedResourceIds,
-                objectIdLists_IncludedExcerptIds: objectIdLists_IncludedExcerptIds,
-                objectIdLists_IncludedUserIds: objectIdLists_IncludedUserIds,
-                objectIdLists_ExcludedExcerptIds: objectIdLists_ExcludedExcerptIds,
+                objectIdListsIncludedTagIds: objectIdListsIncludedTagIds,
+                objectIdListsIncludedDescriptorIds: objectIdListsIncludedDescriptorIds,
+                objectIdListsIncludedResourceIds: objectIdListsIncludedResourceIds,
+                objectIdListsIncludedExcerptIds: objectIdListsIncludedExcerptIds,
+                objectIdListsIncludedUserIds: objectIdListsIncludedUserIds,
+                objectIdListsExcludedExcerptIds: objectIdListsExcludedExcerptIds,
                 areExcerptsFiltered: ref areExcerptsFiltered,
                 areResourcesFiltered: ref areResourcesFiltered,
                 areTagsFiltered: ref areTagsFiltered,
@@ -131,7 +131,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdLists_IncludedTagIds.Select(static x => $"objectIdLists_IncludedTagIds={x}"))}&{string.Join("&", objectIdLists_IncludedDescriptorIds.Select(static x => $"objectIdLists_IncludedDescriptorIds={x}"))}&{string.Join("&", objectIdLists_IncludedResourceIds.Select(static x => $"objectIdLists_IncludedResourceIds={x}"))}&{string.Join("&", objectIdLists_IncludedExcerptIds.Select(static x => $"objectIdLists_IncludedExcerptIds={x}"))}&{string.Join("&", objectIdLists_IncludedUserIds.Select(static x => $"objectIdLists_IncludedUserIds={x}"))}&{string.Join("&", objectIdLists_ExcludedExcerptIds.Select(static x => $"objectIdLists_ExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdListsIncludedTagIds.Select(static x => $"objectIdListsIncludedTagIds={x}"))}&{string.Join("&", objectIdListsIncludedDescriptorIds.Select(static x => $"objectIdListsIncludedDescriptorIds={x}"))}&{string.Join("&", objectIdListsIncludedResourceIds.Select(static x => $"objectIdListsIncludedResourceIds={x}"))}&{string.Join("&", objectIdListsIncludedExcerptIds.Select(static x => $"objectIdListsIncludedExcerptIds={x}"))}&{string.Join("&", objectIdListsIncludedUserIds.Select(static x => $"objectIdListsIncludedUserIds={x}"))}&{string.Join("&", objectIdListsExcludedExcerptIds.Select(static x => $"objectIdListsExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -147,12 +147,12 @@ namespace G
                 createStamp: createStamp,
                 title: title,
                 desciption: desciption,
-                objectIdLists_IncludedTagIds: objectIdLists_IncludedTagIds,
-                objectIdLists_IncludedDescriptorIds: objectIdLists_IncludedDescriptorIds,
-                objectIdLists_IncludedResourceIds: objectIdLists_IncludedResourceIds,
-                objectIdLists_IncludedExcerptIds: objectIdLists_IncludedExcerptIds,
-                objectIdLists_IncludedUserIds: objectIdLists_IncludedUserIds,
-                objectIdLists_ExcludedExcerptIds: objectIdLists_ExcludedExcerptIds,
+                objectIdListsIncludedTagIds: objectIdListsIncludedTagIds,
+                objectIdListsIncludedDescriptorIds: objectIdListsIncludedDescriptorIds,
+                objectIdListsIncludedResourceIds: objectIdListsIncludedResourceIds,
+                objectIdListsIncludedExcerptIds: objectIdListsIncludedExcerptIds,
+                objectIdListsIncludedUserIds: objectIdListsIncludedUserIds,
+                objectIdListsExcludedExcerptIds: objectIdListsExcludedExcerptIds,
                 areExcerptsFiltered: areExcerptsFiltered,
                 areResourcesFiltered: areResourcesFiltered,
                 areTagsFiltered: areTagsFiltered,

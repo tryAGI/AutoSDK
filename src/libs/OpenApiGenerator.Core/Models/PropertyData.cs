@@ -139,7 +139,7 @@ public readonly record struct PropertyData(
     {
         return name
             .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '/', '(', '[', ']', ')');
+            .UseWordSeparator('_', '+', '-', '.', '/', '(', '[', ']', ')');
     }
 
     public string ParameterName => Name

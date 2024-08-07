@@ -25,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-3.5-turbo")]
         Gpt35Turbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini")]
+        Gpt4oMini,
     }
 
     /// <summary>
@@ -42,6 +47,7 @@ namespace G
                 CreateFineTuningJobRequestModel.Babbage002 => "babbage-002",
                 CreateFineTuningJobRequestModel.Davinci002 => "davinci-002",
                 CreateFineTuningJobRequestModel.Gpt35Turbo => "gpt-3.5-turbo",
+                CreateFineTuningJobRequestModel.Gpt4oMini => "gpt-4o-mini",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,6 +61,7 @@ namespace G
                 "babbage-002" => CreateFineTuningJobRequestModel.Babbage002,
                 "davinci-002" => CreateFineTuningJobRequestModel.Davinci002,
                 "gpt-3.5-turbo" => CreateFineTuningJobRequestModel.Gpt35Turbo,
+                "gpt-4o-mini" => CreateFineTuningJobRequestModel.Gpt4oMini,
                 _ => null,
             };
         }

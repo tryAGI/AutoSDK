@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         Auto,
     }
 
@@ -31,7 +27,6 @@ namespace G
         {
             return value switch
             {
-                AssistantObjectResponseFormat.None => "none",
                 AssistantObjectResponseFormat.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,7 +38,6 @@ namespace G
         {
             return value switch
             {
-                "none" => AssistantObjectResponseFormat.None,
                 "auto" => AssistantObjectResponseFormat.Auto,
                 _ => null,
             };

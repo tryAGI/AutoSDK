@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto")]
         Auto,
     }
@@ -34,7 +29,6 @@ namespace G
         {
             return value switch
             {
-                AssistantsApiResponseFormatOptionVariant1.None => "none",
                 AssistantsApiResponseFormatOptionVariant1.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -46,7 +40,6 @@ namespace G
         {
             return value switch
             {
-                "none" => AssistantsApiResponseFormatOptionVariant1.None,
                 "auto" => AssistantsApiResponseFormatOptionVariant1.Auto,
                 _ => null,
             };

@@ -81,9 +81,29 @@ namespace G
         public ModerationsClient Moderations => new ModerationsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs => new AuditLogsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
         /// 
         /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InvitesClient Invites => new InvitesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Creates a new instance of the OpenAiClient.
@@ -115,12 +135,14 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CreateCompletionResponseChoicesFinishReasonNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartRefusalTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartRefusalTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestSystemMessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageRoleJsonConverter(),
@@ -133,6 +155,12 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionToolTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionToolTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatTextTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatTextTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonObjectTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonObjectTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter(),
@@ -147,8 +175,6 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestModelJsonConverter(),
@@ -273,8 +299,6 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.FineTuningJobCheckpointObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1NullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatTypeJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatJsonConverter(),
@@ -371,6 +395,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageContentTextObjectTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageContentTextObjectTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MessageContentRefusalObjectTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MessageContentRefusalObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter(),
@@ -379,6 +405,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MessageDeltaContentRefusalObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter(),
@@ -509,6 +537,74 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.BatchRequestInputMethodNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogActorApiKeyTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogActorApiKeyTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogActorTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogActorTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogEventTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AuditLogEventTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ListAuditLogsResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ListAuditLogsResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteListResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteListResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteRequestRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteRequestRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteDeleteResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.InviteDeleteResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserListResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserListResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserRoleUpdateRequestRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserRoleUpdateRequestRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserDeleteResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UserDeleteResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectListResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectListResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserCreateRequestRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserCreateRequestRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserUpdateRequestRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserUpdateRequestRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserDeleteResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectUserDeleteResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountListResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountListResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountApiKeyObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountDeleteResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectServiceAccountDeleteResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyOwnerTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyListResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyListResponseObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyDeleteResponseObjectJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ProjectApiKeyDeleteResponseObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListAssistantsOrderJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListAssistantsOrderNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListMessagesOrderJsonConverter(),
@@ -531,15 +627,20 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ListAuditLogsEventTypesJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ListAuditLogsEventTypesNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory1(),
                     new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4(),
                     new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2(),
+                    new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3(),
                     new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1(),
                     new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5(),
-                    new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3(),
-                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestSystemMessageContentPartJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageContentPartJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestAssistantMessageContentPartJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRequestToolMessageContentPartJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter(),

@@ -16643,7 +16643,7 @@
     ClassName: DataSetClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdLists_IncludedTagIds.Select(static x => $"objectIdLists_IncludedTagIds={x}"))}&{string.Join("&", objectIdLists_IncludedDescriptorIds.Select(static x => $"objectIdLists_IncludedDescriptorIds={x}"))}&{string.Join("&", objectIdLists_IncludedResourceIds.Select(static x => $"objectIdLists_IncludedResourceIds={x}"))}&{string.Join("&", objectIdLists_IncludedExcerptIds.Select(static x => $"objectIdLists_IncludedExcerptIds={x}"))}&{string.Join("&", objectIdLists_IncludedUserIds.Select(static x => $"objectIdLists_IncludedUserIds={x}"))}&{string.Join("&", objectIdLists_ExcludedExcerptIds.Select(static x => $"objectIdLists_ExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
+    Path: $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdListsIncludedTagIds.Select(static x => $"objectIdListsIncludedTagIds={x}"))}&{string.Join("&", objectIdListsIncludedDescriptorIds.Select(static x => $"objectIdListsIncludedDescriptorIds={x}"))}&{string.Join("&", objectIdListsIncludedResourceIds.Select(static x => $"objectIdListsIncludedResourceIds={x}"))}&{string.Join("&", objectIdListsIncludedExcerptIds.Select(static x => $"objectIdListsIncludedExcerptIds={x}"))}&{string.Join("&", objectIdListsIncludedUserIds.Select(static x => $"objectIdListsIncludedUserIds={x}"))}&{string.Join("&", objectIdListsExcludedExcerptIds.Select(static x => $"objectIdListsExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
     RequestMediaType: application/json,
     Properties: [
       {
@@ -16944,7 +16944,7 @@
       },
       {
         Id: ObjectIdLists.IncludedTagIds,
-        Name: ObjectIdLists_IncludedTagIds,
+        Name: ObjectIdListsIncludedTagIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -16998,13 +16998,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedTagIds,
-        ArgumentName: objectIdLists_IncludedTagIds,
+        ParameterName: objectIdListsIncludedTagIds,
+        ArgumentName: objectIdListsIncludedTagIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedDescriptorIds,
-        Name: ObjectIdLists_IncludedDescriptorIds,
+        Name: ObjectIdListsIncludedDescriptorIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -17058,13 +17058,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedDescriptorIds,
-        ArgumentName: objectIdLists_IncludedDescriptorIds,
+        ParameterName: objectIdListsIncludedDescriptorIds,
+        ArgumentName: objectIdListsIncludedDescriptorIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedResourceIds,
-        Name: ObjectIdLists_IncludedResourceIds,
+        Name: ObjectIdListsIncludedResourceIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -17118,13 +17118,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedResourceIds,
-        ArgumentName: objectIdLists_IncludedResourceIds,
+        ParameterName: objectIdListsIncludedResourceIds,
+        ArgumentName: objectIdListsIncludedResourceIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedExcerptIds,
-        Name: ObjectIdLists_IncludedExcerptIds,
+        Name: ObjectIdListsIncludedExcerptIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -17178,13 +17178,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedExcerptIds,
-        ArgumentName: objectIdLists_IncludedExcerptIds,
+        ParameterName: objectIdListsIncludedExcerptIds,
+        ArgumentName: objectIdListsIncludedExcerptIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedUserIds,
-        Name: ObjectIdLists_IncludedUserIds,
+        Name: ObjectIdListsIncludedUserIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -17238,13 +17238,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedUserIds,
-        ArgumentName: objectIdLists_IncludedUserIds,
+        ParameterName: objectIdListsIncludedUserIds,
+        ArgumentName: objectIdListsIncludedUserIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.ExcludedExcerptIds,
-        Name: ObjectIdLists_ExcludedExcerptIds,
+        Name: ObjectIdListsExcludedExcerptIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -17298,8 +17298,8 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_ExcludedExcerptIds,
-        ArgumentName: objectIdLists_ExcludedExcerptIds,
+        ParameterName: objectIdListsExcludedExcerptIds,
+        ArgumentName: objectIdListsExcludedExcerptIds,
         ParameterDefaultValue: default
       },
       {
@@ -17946,7 +17946,7 @@
     ClassName: DataSetClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/api/v1/dataset/updatedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdLists_IncludedTagIds.Select(static x => $"objectIdLists_IncludedTagIds={x}"))}&{string.Join("&", objectIdLists_IncludedDescriptorIds.Select(static x => $"objectIdLists_IncludedDescriptorIds={x}"))}&{string.Join("&", objectIdLists_IncludedResourceIds.Select(static x => $"objectIdLists_IncludedResourceIds={x}"))}&{string.Join("&", objectIdLists_IncludedExcerptIds.Select(static x => $"objectIdLists_IncludedExcerptIds={x}"))}&{string.Join("&", objectIdLists_IncludedUserIds.Select(static x => $"objectIdLists_IncludedUserIds={x}"))}&{string.Join("&", objectIdLists_ExcludedExcerptIds.Select(static x => $"objectIdLists_ExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
+    Path: $"/api/v1/dataset/updatedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdListsIncludedTagIds.Select(static x => $"objectIdListsIncludedTagIds={x}"))}&{string.Join("&", objectIdListsIncludedDescriptorIds.Select(static x => $"objectIdListsIncludedDescriptorIds={x}"))}&{string.Join("&", objectIdListsIncludedResourceIds.Select(static x => $"objectIdListsIncludedResourceIds={x}"))}&{string.Join("&", objectIdListsIncludedExcerptIds.Select(static x => $"objectIdListsIncludedExcerptIds={x}"))}&{string.Join("&", objectIdListsIncludedUserIds.Select(static x => $"objectIdListsIncludedUserIds={x}"))}&{string.Join("&", objectIdListsExcludedExcerptIds.Select(static x => $"objectIdListsExcludedExcerptIds={x}"))}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}",
     RequestMediaType: application/json,
     Properties: [
       {
@@ -18247,7 +18247,7 @@
       },
       {
         Id: ObjectIdLists.IncludedTagIds,
-        Name: ObjectIdLists_IncludedTagIds,
+        Name: ObjectIdListsIncludedTagIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18301,13 +18301,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedTagIds,
-        ArgumentName: objectIdLists_IncludedTagIds,
+        ParameterName: objectIdListsIncludedTagIds,
+        ArgumentName: objectIdListsIncludedTagIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedDescriptorIds,
-        Name: ObjectIdLists_IncludedDescriptorIds,
+        Name: ObjectIdListsIncludedDescriptorIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18361,13 +18361,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedDescriptorIds,
-        ArgumentName: objectIdLists_IncludedDescriptorIds,
+        ParameterName: objectIdListsIncludedDescriptorIds,
+        ArgumentName: objectIdListsIncludedDescriptorIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedResourceIds,
-        Name: ObjectIdLists_IncludedResourceIds,
+        Name: ObjectIdListsIncludedResourceIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18421,13 +18421,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedResourceIds,
-        ArgumentName: objectIdLists_IncludedResourceIds,
+        ParameterName: objectIdListsIncludedResourceIds,
+        ArgumentName: objectIdListsIncludedResourceIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedExcerptIds,
-        Name: ObjectIdLists_IncludedExcerptIds,
+        Name: ObjectIdListsIncludedExcerptIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18481,13 +18481,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedExcerptIds,
-        ArgumentName: objectIdLists_IncludedExcerptIds,
+        ParameterName: objectIdListsIncludedExcerptIds,
+        ArgumentName: objectIdListsIncludedExcerptIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.IncludedUserIds,
-        Name: ObjectIdLists_IncludedUserIds,
+        Name: ObjectIdListsIncludedUserIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18541,13 +18541,13 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_IncludedUserIds,
-        ArgumentName: objectIdLists_IncludedUserIds,
+        ParameterName: objectIdListsIncludedUserIds,
+        ArgumentName: objectIdListsIncludedUserIds,
         ParameterDefaultValue: default
       },
       {
         Id: ObjectIdLists.ExcludedExcerptIds,
-        Name: ObjectIdLists_ExcludedExcerptIds,
+        Name: ObjectIdListsExcludedExcerptIds,
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
@@ -18601,8 +18601,8 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: objectIdLists_ExcludedExcerptIds,
-        ArgumentName: objectIdLists_ExcludedExcerptIds,
+        ParameterName: objectIdListsExcludedExcerptIds,
+        ArgumentName: objectIdListsExcludedExcerptIds,
         ParameterDefaultValue: default
       },
       {

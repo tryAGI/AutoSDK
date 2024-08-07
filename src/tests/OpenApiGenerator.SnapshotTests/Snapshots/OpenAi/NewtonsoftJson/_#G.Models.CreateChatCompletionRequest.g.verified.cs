@@ -19,7 +19,7 @@ namespace G
 
         /// <summary>
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
-        /// Example: gpt-4-turbo
+        /// Example: gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel> Model { get; set; } = default!;
@@ -76,12 +76,13 @@ namespace G
         public double? PresencePenalty { get; set; } = 0;
 
         /// <summary>
-        /// An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.CreateChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.ChatCompletionRequestSystemMessage.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// The contents of the system message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Content { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
         /// The role of the messages author, in this case `system`.

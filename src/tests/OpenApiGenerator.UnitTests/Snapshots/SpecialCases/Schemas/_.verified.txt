@@ -1,7 +1,7 @@
 ﻿[
   Pet(class),
     x4(string),
-    x1_5(bool),
+    x15(bool),
     x16_9(bool),
     Id(long),
     Name(string),

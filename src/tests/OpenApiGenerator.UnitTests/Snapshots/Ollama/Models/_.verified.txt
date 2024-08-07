@@ -5277,7 +5277,7 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
     Properties: [
       {
         Id: general.architecture,
-        Name: General_architecture,
+        Name: GeneralArchitecture,
         Type: {
           CSharpType: string?,
           IsArray: false,
@@ -5305,13 +5305,13 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsDeprecated: false,
         Summary: The architecture of the model.,
         ConverterType: ,
-        ParameterName: general_architecture,
-        ArgumentName: general_architecture,
+        ParameterName: generalArchitecture,
+        ArgumentName: generalArchitecture,
         ParameterDefaultValue: default
       },
       {
         Id: general.file_type,
-        Name: General_fileType,
+        Name: GeneralFileType,
         Type: {
           CSharpType: int?,
           IsArray: false,
@@ -5339,13 +5339,13 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsDeprecated: false,
         Summary: The file type of the model.,
         ConverterType: ,
-        ParameterName: general_fileType,
-        ArgumentName: general_fileType,
+        ParameterName: generalFileType,
+        ArgumentName: generalFileType,
         ParameterDefaultValue: default
       },
       {
         Id: general.parameter_count,
-        Name: General_parameterCount,
+        Name: GeneralParameterCount,
         Type: {
           CSharpType: long?,
           IsArray: false,
@@ -5373,13 +5373,13 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsDeprecated: false,
         Summary: The number of parameters in the model.,
         ConverterType: ,
-        ParameterName: general_parameterCount,
-        ArgumentName: general_parameterCount,
+        ParameterName: generalParameterCount,
+        ArgumentName: generalParameterCount,
         ParameterDefaultValue: default
       },
       {
         Id: general.quantization_version,
-        Name: General_quantizationVersion,
+        Name: GeneralQuantizationVersion,
         Type: {
           CSharpType: int?,
           IsArray: false,
@@ -5407,8 +5407,8 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsDeprecated: false,
         Summary: The number of parameters in the model.,
         ConverterType: ,
-        ParameterName: general_quantizationVersion,
-        ArgumentName: general_quantizationVersion,
+        ParameterName: generalQuantizationVersion,
+        ArgumentName: generalQuantizationVersion,
         ParameterDefaultValue: default
       }
     ],

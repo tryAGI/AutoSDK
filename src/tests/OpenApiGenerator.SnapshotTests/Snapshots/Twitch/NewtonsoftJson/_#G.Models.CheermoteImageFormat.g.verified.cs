@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("1.5")]
-        public string? x1_5 { get; set; }
+        public string? x15 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

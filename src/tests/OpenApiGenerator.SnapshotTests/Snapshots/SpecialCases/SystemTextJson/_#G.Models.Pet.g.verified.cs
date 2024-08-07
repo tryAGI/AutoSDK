@@ -19,7 +19,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("1.5")]
-        public bool x1_5 { get; set; }
+        public bool x15 { get; set; }
 
         /// <summary>
         /// Example: true

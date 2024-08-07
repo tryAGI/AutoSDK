@@ -81,9 +81,29 @@ namespace G
         public ModerationsClient Moderations => new ModerationsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs => new AuditLogsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
         /// 
         /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InvitesClient Invites => new InvitesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Creates a new instance of the OpenAiClient.

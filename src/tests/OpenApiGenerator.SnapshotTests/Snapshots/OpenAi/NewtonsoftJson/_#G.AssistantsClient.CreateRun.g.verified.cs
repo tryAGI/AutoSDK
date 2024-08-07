@@ -109,7 +109,7 @@ namespace G
         /// </param>
         /// <param name="model">
         /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
-        /// Example: gpt-4-turbo
+        /// Example: gpt-4o
         /// </param>
         /// <param name="instructions">
         /// Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
@@ -132,8 +132,7 @@ namespace G
         /// Example: 1
         /// </param>
         /// <param name="topP">
-        /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
-        /// We generally recommend altering this or temperature but not both.<br/>
+        /// empty<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
@@ -161,6 +160,7 @@ namespace G
         /// </param>
         /// <param name="responseFormat">
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
@@ -183,7 +183,7 @@ namespace G
             global::G.TruncationObject? truncationStrategy = default,
             global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? toolChoice = default,
             bool? parallelToolCalls = default,
-            global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
+            global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRunRequest

@@ -38,8 +38,7 @@ namespace G
         /// Log probability information for the choice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateChatCompletionResponseChoicesLogprobs? Logprobs { get; set; }
+        public global::G.CreateChatCompletionResponseChoicesLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

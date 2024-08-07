@@ -1,0 +1,24 @@
+﻿//HintName: G.Models.AuditLogUserUpdatedChangesRequested.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The payload used to update the user.
+    /// </summary>
+    public sealed partial class AuditLogUserUpdatedChangesRequested
+    {
+        /// <summary>
+        /// The role of the user. Is either `owner` or `member`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public string? Role { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}
