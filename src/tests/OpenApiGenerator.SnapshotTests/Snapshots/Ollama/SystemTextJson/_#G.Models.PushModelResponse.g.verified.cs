@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PushModelResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,8 @@ namespace G
         /// Status pushing the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.PushModelResponseStatus?>? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PushModelStatusJsonConverter))]
+        public global::G.PushModelStatus? Status { get; set; }
 
         /// <summary>
         /// the model's digest<br/>

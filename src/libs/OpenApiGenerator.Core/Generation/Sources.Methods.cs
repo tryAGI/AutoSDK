@@ -69,9 +69,10 @@ namespace {endPoint.Namespace}
     {
         targetFramework = targetFramework ?? throw new ArgumentNullException(nameof(targetFramework));
         
-        if (operationType == OperationType.Patch &&
-            (targetFramework.StartsWith("net4", StringComparison.OrdinalIgnoreCase) ||
-            targetFramework.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase)))
+        if (operationType == OperationType.Patch// &&
+            //(targetFramework.StartsWith("net4", StringComparison.OrdinalIgnoreCase) ||
+            //targetFramework.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase))
+            )
         {
             return "new global::System.Net.Http.HttpMethod(\"PATCH\")";
         }
@@ -86,10 +87,10 @@ namespace {endPoint.Namespace}
         var taskType = endPoint.Stream
             ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpType}>"
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpTypeWithoutNullability}>"
             : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpType}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpTypeWithoutNullability}>";
         var httpCompletionOption = endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead);
@@ -228,10 +229,11 @@ namespace {endPoint.Namespace}
             : "request." + property.Name;
         if (property.Type.IsArray)
         {
-            var additionalConvertSubtype = property.Type.SubTypes.First().IsEnum
-                ? "?.ToValueString()"
+            var subType = property.Type.SubTypes.First();
+            var additionalConvertSubtype = subType.IsEnum
+                ? ".ToValueString()"
                 : string.Empty;
-            return $"$\"[{{string.Join(\",\", {name}?.Select(x => x{additionalConvertSubtype}) ?? global::System.Array.Empty<string>())}}]\"";
+            return $"$\"[{{string.Join(\",\", {name}.Select(x => x{additionalConvertSubtype}))}}]\"";
         }
         
         var additionalConvert = property.Type.IsEnum
@@ -240,7 +242,7 @@ namespace {endPoint.Namespace}
         
         return property.Type.IsAnyOf
             ? string.Join(" ?? ", property.Type.SubTypes.Select((y, i) => y.IsEnum
-                ? $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}{(property.IsRequired ? "" : "?")}.ToValueString()"
+                ? $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToValueString()"
                 : $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
@@ -319,10 +321,10 @@ namespace {endPoint.Namespace}
         var taskType = endPoint.Stream
             ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpType}>"
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpTypeWithoutNullability}>"
             : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpType}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpTypeWithoutNullability}>";
         var cancellationTokenAttribute = endPoint.Stream
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;

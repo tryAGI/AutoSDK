@@ -5,7 +5,6 @@ using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Core.Helpers;
-using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
 using OpenApiGenerator.Core.Serialization;
@@ -77,44 +76,51 @@ public static class OpenApiExtensions
         return path;
     }
 
-    public static string? GetDefaultValue(this KeyValuePair<string, OpenApiSchema> schema, Settings settings, ModelData[] parents)
+    public static string? GetDefaultValue(this SchemaContext context)
     {
-        var type = TypeData.FromSchema(schema, settings with
-        {
-            JsonSerializerType = JsonSerializerType.NewtonsoftJson
-        }, parents);
-        if (type.CSharpType == "object?" || schema.Value.Default is OpenApiArray)
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        context.TypeData = context.TypeData ?? throw new InvalidOperationException("Invalid state: TypeData is null");
+        
+        if (context.TypeData.Value.CSharpType == "object?" || context.Schema.Default is OpenApiArray)
         {
             return string.Empty;
         }
-        if (schema.Value.Enum.Any() && schema.Value.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
+        if (context.Schema.Enum.Any() && context.Schema.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
-            return type.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
+            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
         }
-        if (schema.Value.AnyOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
+        if (context.Schema.AnyOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
-            var typeData = TypeData.FromSchema(schema.Value.AnyOf.First(x => x.Enum.Any()).WithKey(schema.Key), settings with
-            {
-                JsonSerializerType = JsonSerializerType.NewtonsoftJson
-            }, parents);
-            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
+            var enumChildContext = context.Children
+                .Where(x => x.Hint is Hint.AnyOf)
+                .First(x => x.Schema.Enum.Any());
+            
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
         }
-        if (schema.Value.OneOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
+        if (context.Schema.OneOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
-            var typeData = TypeData.FromSchema(schema.Value.OneOf.First(x => x.Enum.Any()).WithKey(schema.Key), settings with
-            {
-                JsonSerializerType = JsonSerializerType.NewtonsoftJson
-            }, parents);
-            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue(settings).Name;
+            var enumChildContext = context.Children
+                .Where(x => x.Hint is Hint.OneOf)
+                .First(x => x.Schema.Enum.Any());
+            
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
         }
-        if (schema.Value.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
+        if (context.Schema.AllOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
+        {
+            var enumChildContext = context.Children
+                .Where(x => x.Hint is Hint.AllOf)
+                .First(x => x.Schema.Enum.Any());
+            
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
+        }
+        if (context.Schema.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
             return $"\"{@string.Value}\"";
         }
         
-        return schema.Value.Default?.GetString();
+        return context.Schema.Default?.GetString();
     }
-
+    
     public static string GetSummary(this OpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
@@ -206,26 +212,20 @@ public static class OpenApiExtensions
     }
 
     public static ImmutableArray<PropertyData> ToAnyOfProperties(
-        this IList<OpenApiSchema> schemas,
-        Settings settings,
+        this IList<SchemaContext> schemas,
         string key)
     {
-        var useSmartNames = schemas.All(x => x.Reference != null);
+        var useSmartNames = schemas.All(x => x.Schema.Reference != null);
         var className = key.ToClassName();
         
-        return schemas.Select((x, i) =>
+        return schemas.Select((x, i) => PropertyData.Default with
         {
-            var type = TypeData.FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings);
-
-            return PropertyData.Default with
-            {
-                Name = useSmartNames
-                    ? SmartNamedAnyOfNames.ComputeSmartName(
-                        type.ShortCSharpTypeWithoutNullability,
-                        className)
-                    : $"Value{i + 1}",
-                Type = type,
-            };
+            Type = x.TypeData ?? throw new InvalidOperationException("TypeData is required"),
+            Name = useSmartNames
+                ? SmartNamedAnyOfNames.ComputeSmartName(
+                    x.TypeData.Value.ShortCSharpTypeWithoutNullability,
+                    className)
+                : $"Value{i + 1}",
         }).ToImmutableArray();
     }
 
@@ -291,19 +291,6 @@ public static class OpenApiExtensions
         return schema.Type == "string" && schema.Format == "binary";
     }
 
-    public static bool IsComponent(
-        this KeyValuePair<string, OpenApiSchema> schema)
-    {
-        return schema.Value.Reference?.HostDocument?.Components?.Schemas?.ContainsKey(schema.Key) == true;
-    }
-
-    public static string[] Append(
-        this string[] parents,
-        KeyValuePair<string, OpenApiSchema> schema)
-    {
-        return parents.Concat([schema.Key.ToPropertyName()]).ToArray();
-    }
-
     public static T ResolveIfRequired<T>(this T referenceable) where T : class, IOpenApiReferenceable
     {
         referenceable = referenceable ?? throw new ArgumentNullException(nameof(referenceable));
@@ -316,17 +303,6 @@ public static class OpenApiExtensions
         string key)
     {
         return new KeyValuePair<string, OpenApiSchema>(key, schema);
-    }
-
-    public static KeyValuePair<string, OpenApiSchema> UseReferenceIdOrKey(
-        this OpenApiSchema schema,
-        string key)
-    {
-        schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        
-        return new KeyValuePair<string, OpenApiSchema>(
-            schema.Reference?.Id ?? key,
-            schema);
     }
 
     public static string ReplacePlusAndMinusOnStart(
@@ -373,18 +349,6 @@ public static class OpenApiExtensions
             Name = PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix),
         };
     }
-
-    public static IEnumerable<OpenApiReference> GetReferences(
-        this KeyValuePair<string, OpenApiSchema> schema)
-    {
-        return schema.Value.Properties
-            .Where(static x => x.Value.Reference != null)
-            .Select(static x => x.Value.Reference)
-            .Concat(schema.Value.Items?.Reference != null
-                ? schema.Value.Items.WithKey("empty").GetReferences().Concat(new[] { schema.Value.Items.Reference })
-                : [])
-            .Concat(schema.Value.Properties.SelectMany(GetReferences));
-    }
     
     public static string[] FindAllOperationIdsForTag(
         this OpenApiDocument openApiDocument,
@@ -398,71 +362,5 @@ public static class OpenApiExtensions
             .Where(x => x.Value.OperationId != null)
             .Select(x => x.Value.OperationId!)
             .ToArray();
-    }
-    
-    public static string[] FindAllModelsForTag(
-        this OpenApiDocument openApiDocument,
-        string tag)
-    {
-        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
-        
-        var operations = openApiDocument.Paths!
-            .SelectMany(path => path.Value.Operations)
-            .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
-            .ToArray();
-        
-        var schemas = operations
-            .SelectMany(x => x.Value.RequestBody?.ResolveIfRequired().Content.Values ?? [])
-            .Select(x => x.Schema)
-            .Concat(operations
-                .SelectMany(x => x.Value.Parameters ?? [])
-                .Select(x => x.ResolveIfRequired().Schema))
-            .Concat(operations 
-                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
-                .SelectMany(x => x.ResolveIfRequired().Content.Values)
-                .Select(x => x.Schema))
-            .Where(x => x != null)
-            .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
-                .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
-                .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
-                .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
-                .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
-            .Where(x => x != null)
-            // .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
-            //     .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
-            // .Where(x => x != null)
-            // .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
-            //     .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
-            //     .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
-            // .Where(x => x != null)
-            .ToArray();
-        
-        return operations
-            .Select(x => x.Value.RequestBody?.Reference?.Id)
-            .Concat(operations
-                .SelectMany(x => x.Value.Parameters ?? [])
-                .Select(x => x.Reference?.Id))
-            .Concat(operations 
-                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
-                .Select(x => x.Reference?.Id))
-            .Concat(operations 
-                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
-                .SelectMany(x => x.Content.Values)
-                .Where(x => x.Schema != null)
-                .Select(x => x.Schema!.Reference?.Id))
-            .Concat(operations 
-                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
-                .SelectMany(x => x.Content.Values)
-                .Where(x => x.Schema != null)
-                .Select(x => x.Schema!.Items?.Reference?.Id))
-            .Concat(schemas.Select(x => x?.Reference?.Id))
-            .Where(x => x != null)
-            .Distinct()
-            .ToArray()!;
     }
 }

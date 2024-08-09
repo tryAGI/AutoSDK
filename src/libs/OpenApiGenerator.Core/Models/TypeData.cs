@@ -16,6 +16,7 @@ public readonly record struct TypeData(
     int AnyOfCount,
     int OneOfCount,
     int AllOfCount,
+    bool IsComponent,
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues,
     ImmutableArray<TypeData> SubTypes,
@@ -35,6 +36,7 @@ public readonly record struct TypeData(
         AnyOfCount: 0,
         OneOfCount: 0,
         AllOfCount: 0,
+        IsComponent: false,
         Properties: [],
         EnumValues: [],
         SubTypes: [],
@@ -54,7 +56,7 @@ public readonly record struct TypeData(
         IsAnyOf ||
         IsEnum;
     
-    public string ConverterType => IsEnum
+    public string ConverterType => IsEnum || ((AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0) && IsComponent)
         ? $"global::OpenApiGenerator.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
         : AnyOfCount > 0
             ? $"global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
@@ -63,83 +65,8 @@ public readonly record struct TypeData(
                 : AllOfCount > 0
                     ? $"global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
                     : string.Empty;
-
-    public static TypeData FromSchema(
-        KeyValuePair<string, OpenApiSchema> schema,
-        Settings settings,
-        params ModelData[] parents)
-    {
-        parents = parents ?? throw new ArgumentNullException(nameof(parents));
-
-        var properties = ImmutableArray<string>.Empty;
-        if (schema.Value.Reference?.HostDocument?.ResolveReference(schema.Value.Reference) is OpenApiSchema referenceSchema)
-        {
-            properties = referenceSchema.Properties
-                .Select(x => x.Key)
-                .ToImmutableArray();
-        }
-        
-        var subTypes = ImmutableArray<TypeData>.Empty;
-        if (schema.Value.AnyOf.Any())
-        {
-            subTypes = schema.Value.AnyOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
-                .ToImmutableArray();
-        }
-        else if (schema.Value.OneOf.Any())
-        {
-            subTypes = schema.Value.OneOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
-                .ToImmutableArray();
-        }
-        else if (schema.Value.AllOf.Any())
-        {
-            subTypes = schema.Value.AllOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(schema.Key), settings, parents))
-                .ToImmutableArray();
-        }
-        if (schema.Value.IsArray())
-        {
-            subTypes = [Default with
-            {
-                IsEnum = schema.Value.Items.IsEnum(),
-            }];
-        }
-        
-        var enumValues = ImmutableArray<string>.Empty;
-        if (schema.Value.IsEnum())
-        {
-            var values = schema.Value.Enum
-                .Select(value => value.ToEnumValue(settings)).ToArray();
-            properties = values
-                .Select(x => x.Name)
-                .ToImmutableArray();
-            enumValues = values
-                .Select(x => x.Id)
-                .ToImmutableArray();
-        }
-        
-        return new TypeData(
-            CSharpType: GetCSharpType(schema, settings, parents),
-            IsArray: schema.Value.IsArray(),
-            IsEnum: schema.Value.IsEnum(),
-            IsBase64: schema.Value.IsBase64(),
-            IsDate: schema.Value.IsDate(),
-            IsDateTime: schema.Value.IsDateTime(),
-            IsBinary: schema.Value.IsBinary(),
-            AnyOfCount: schema.Value.AnyOf?.Count ?? 0,
-            OneOfCount: schema.Value.OneOf?.Count ?? 0,
-            AllOfCount: schema.Value.AllOf?.Count ?? 0,
-            Properties: properties,
-            EnumValues: enumValues,
-            SubTypes: subTypes,
-            Namespace: settings.Namespace,
-            IsDeprecated: schema.Value.Deprecated,
-            JsonSerializerType: settings.JsonSerializerType,
-            GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes);
-    }
     
-    public static TypeData FromSchemaContext(SchemaContext context, Settings settings, IReadOnlyCollection<SchemaContext> children)
+    public static TypeData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
@@ -151,11 +78,41 @@ public readonly record struct TypeData(
                 .ToImmutableArray();
         }
         
+        var subTypes = ImmutableArray<TypeData>.Empty;
+        if (context.Schema.AnyOf.Any())
+        {
+            subTypes = context.Children
+                .Where(x => x is { Hint: Hint.AnyOf, TypeData: not null })
+                .Select(x => x.TypeData!.Value)
+                .ToImmutableArray();
+        }
+        else if (context.Schema.OneOf.Any())
+        {
+            subTypes = context.Children
+                .Where(x => x is { Hint: Hint.OneOf, TypeData: not null })
+                .Select(x => x.TypeData!.Value)
+                .ToImmutableArray();
+        }
+        else if (context.Schema.AllOf.Any())
+        {
+            subTypes = context.Children
+                .Where(x => x is { Hint: Hint.AllOf, TypeData: not null })
+                .Select(x => x.TypeData!.Value)
+                .ToImmutableArray();
+        }
+        if (context.Schema.IsArray())
+        {
+            subTypes = [Default with
+            {
+                IsEnum = context.Schema.Items.IsEnum(),
+            }];
+        }
+        
         var enumValues = ImmutableArray<string>.Empty;
         if (context.Schema.IsEnum())
         {
             var values = context.Schema.Enum
-                .Select(value => value.ToEnumValue(settings)).ToArray();
+                .Select(value => value.ToEnumValue(context.Settings)).ToArray();
             properties = values
                 .Select(x => x.Name)
                 .ToImmutableArray();
@@ -165,7 +122,7 @@ public readonly record struct TypeData(
         }
         
         return new TypeData(
-            CSharpType: GetCSharpType(context, children),
+            CSharpType: GetCSharpType(context),
             IsArray: context.Schema.Type == "array",
             IsEnum: context.Schema.IsEnum(),
             IsBase64: context.Schema.IsBase64(),
@@ -175,35 +132,35 @@ public readonly record struct TypeData(
             AnyOfCount: context.Schema.AnyOf?.Count ?? 0,
             OneOfCount: context.Schema.OneOf?.Count ?? 0,
             AllOfCount: context.Schema.AllOf?.Count ?? 0,
+            IsComponent: context.IsComponent,
             Properties: properties,
             EnumValues: enumValues,
-            SubTypes: [],
+            SubTypes: subTypes,
             Namespace: context.Settings.Namespace,
             IsDeprecated: context.Schema.Deprecated,
             JsonSerializerType: context.Settings.JsonSerializerType,
             GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);
     }
     
-    public static string GetCSharpType(SchemaContext context, IReadOnlyCollection<SchemaContext> children)
+    public static string GetCSharpType(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        children = children ?? throw new ArgumentNullException(nameof(children));
         
         var (type, reference) = (context.Schema.Type, context.Schema.Format) switch
         {
-            (null, _) when context.Schema.AnyOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (null, _) when context.Schema.OneOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (null, _) when context.Schema.AllOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.AnyOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.OneOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.AllOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             
-            (null, _) when context.Schema.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (null, _) when context.Schema.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (null, _) when context.Schema.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            ("object", _) when context.Schema.Reference == null &&
-                               children.Count == 1 =>
-                ("object", true),
+            // ("object", _) when context.Schema.Reference == null &&
+            //                    context.Children.Count == 1 =>
+            //     ("object", true),
             ("object", _) when context.Schema.Reference == null =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),
 
@@ -227,7 +184,7 @@ public readonly record struct TypeData(
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
             ("array", _) =>
-                ($"{children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpType}".AsArray(), true),
+                ($"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(), true),
             
             (null, null)  => ("object", true),
             ("null", _)  => ("object", true),
@@ -236,68 +193,6 @@ public readonly record struct TypeData(
 
         return context.Schema.Nullable ||
                reference && !context.IsRequired
-            ? type + "?"
-            : type;
-    }
-    
-    public static string GetCSharpType(
-        KeyValuePair<string, OpenApiSchema> schema,
-        Settings settings,
-        params ModelData[] parents)
-    {
-        parents = parents ?? throw new ArgumentNullException(nameof(parents));
-        
-        var model = ModelData.FromSchema(schema, settings, parents);
-        var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
-        {
-            (null, _) when schema.Value.AnyOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
-            (null, _) when schema.Value.OneOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
-            (null, _) when schema.Value.AllOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
-            
-            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
-            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
-            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
-
-            ("object", _) or (null, _) when schema.Value.Reference != null =>
-                ($"global::{settings.Namespace}.{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
-            ("object", _) when schema.Value.Reference == null &&
-                               model.Properties.IsEmpty =>
-                ("object", true),
-            ("object", _) when schema.Value.Reference == null =>
-                ($"global::{settings.Namespace}.{model.ExternalClassName}", true),
-
-            ("string", _) when schema.Value.Enum.Any() =>
-                ($"global::{settings.Namespace}.{(schema.Value is { Reference: not null } ? ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName : (model with { Style = ModelStyle.Enumeration }).ExternalClassName)}", true),
-            // ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
-            //     ("string", true),
-
-            ("boolean", _) => ("bool", false),
-            ("integer", "int32") => ("int", false),
-            ("integer", "int64") => ("long", false),
-            ("number", "float") => ("float", false),
-            ("number", "double") => ("double", false),
-            ("string", "byte") => ("byte[]", true),
-            ("string", "binary") => ("byte[]", true),
-            ("string", "date") => ("global::System.DateTime", false),
-            ("string", "date-time") => ("global::System.DateTime", false),
-            ("string", "password") => ("string", true),
-            //("string", "uri") => ("global::System.Uri", true),
-
-            ("integer", _) => ("int", false),
-            ("number", _) => ("double", false),
-            ("string", _) => ("string", true),
-            ("object", _) => ("object", true),
-            ("array", _) when schema.Value.Items.Reference != null =>
-                ($"global::{settings.Namespace}.{ModelData.FromKey(schema.Value.Items.Reference.Id, settings).ClassName}".AsArray(), true),
-            ("array", _) when schema.Value.Items.Reference == null => (GetCSharpType(schema.Value.Items.WithKey(schema.Key), settings, parents.ToArray()).AsArray(), true),
-            
-            (null, null)  => ("object", true),
-            ("null", _)  => ("object", true),
-            _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
-        };
-
-        return schema.Value.Nullable ||
-               reference && parents.Length > 0 && parents.Last().Schema.Value?.Required.Contains(schema.Key) == false
             ? type + "?"
             : type;
     }

@@ -18,7 +18,7 @@ public static partial class Sources
     [global::System.Runtime.Serialization.DataContract]
     public enum {modelData.ClassName}
     {{
-{modelData.Properties.Select(property => @$"
+{modelData.EnumValues.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         [global::System.Runtime.Serialization.EnumMember(Value=""{property.Id}"")]
         {property.Name},
@@ -30,7 +30,7 @@ public static partial class Sources
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     public enum {modelData.ClassName}
     {{
-{modelData.Properties.Select(property => @$"
+{modelData.EnumValues.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {property.Name},
     ").Inject()}
@@ -60,7 +60,7 @@ public static partial class Sources
         {{
             return value switch
             {{
-{modelData.Properties.Select(property => @$" 
+{modelData.EnumValues.Select(property => @$" 
                 {modelData.ClassName}.{property.Name} => ""{property.Id}"",
  ").Inject()}
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -72,7 +72,7 @@ public static partial class Sources
         {{
             return value switch
             {{
-{modelData.Properties.Select(property => @$" 
+{modelData.EnumValues.Select(property => @$" 
                 ""{property.Id}"" => {modelData.ClassName}.{property.Name},
  ").Inject()}
                 _ => null,

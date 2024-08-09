@@ -31,7 +31,7 @@ namespace G
         /// The families of the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("families")]
-        public global::System.Collections.Generic.IList<string?>? Families { get; set; }
+        public global::System.Collections.Generic.IList<string>? Families { get; set; }
 
         /// <summary>
         /// The size of the model's parameters.

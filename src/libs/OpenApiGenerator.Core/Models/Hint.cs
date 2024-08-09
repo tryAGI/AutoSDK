@@ -6,6 +6,7 @@ public enum Hint
     AnyOf,
     OneOf,
     AllOf,
+    Enum,
     Request,
     Response,
     Parameter,

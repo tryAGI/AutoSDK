@@ -132,7 +132,7 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
             string model,
             string prompt,
-            global::System.Collections.Generic.IList<string?>? images = default,
+            global::System.Collections.Generic.IList<string>? images = default,
             string? system = default,
             string? template = default,
             global::System.Collections.Generic.IList<long>? context = default,

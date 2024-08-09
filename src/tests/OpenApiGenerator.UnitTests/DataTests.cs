@@ -35,13 +35,13 @@ public partial class DataTests
             })));
     }
     
-    // [TestMethod]
-    // public Task GitHub()
-    // {
-    //     return VerifyAsync(Data.Prepare((
-    //         H.Resources.github_yaml.AsString(),
-    //         DefaultSettings)));
-    // }
+    [TestMethod]
+    public Task GitHub()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.github_yaml.AsString(),
+            DefaultSettings)));
+    }
 
     [TestMethod]
     public Task LangSmith()

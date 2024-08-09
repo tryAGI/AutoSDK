@@ -6,7 +6,16 @@ namespace OpenApiGenerator.Core.Generation;
 
 public static partial class Sources
 {
-    public static FileWithName Model(
+    public static FileWithName Class(
+        ModelData modelData,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{modelData.FileNameWithoutExtension}.g.cs",
+            Text: GenerateModel(modelData, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName Enum(
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {

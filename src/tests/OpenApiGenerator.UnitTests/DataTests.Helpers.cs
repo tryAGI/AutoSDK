@@ -42,11 +42,17 @@ public partial class DataTests : VerifyBase
         Data data,
         [CallerMemberName] string? callerName = null)
     {
-        var modelsTask =
-            Verify(data.Models
+        var classesTask =
+            Verify(data.Classes
                     .Select(x => x with { Parents = [] })
                     .ToArray())
-                .UseDirectory($"Snapshots/{callerName}/Models")
+                .UseDirectory($"Snapshots/{callerName}/Classes")
+                .UseFileName("_");
+        var enumsTask =
+            Verify(data.Enums
+                    .Select(x => x with { Parents = [] })
+                    .ToArray())
+                .UseDirectory($"Snapshots/{callerName}/Enums")
                 .UseFileName("_");
         var methodsTask =
             Verify(data.Methods)
@@ -69,14 +75,24 @@ public partial class DataTests : VerifyBase
                 .UseDirectory($"Snapshots/{callerName}/ResolvedSchemas")
                 .UseFileName("_");
         
-        modelsTask = modelsTask.AutoVerify();
+        classesTask = classesTask.AutoVerify();
+        enumsTask = enumsTask.AutoVerify();
         methodsTask = methodsTask.AutoVerify();
         anyOfsTask = anyOfsTask.AutoVerify();
         typesTask = typesTask.AutoVerify();
         schemasTask = schemasTask.AutoVerify();
         resolvedSchemasTask = resolvedSchemasTask.AutoVerify();
+
+        Console.WriteLine($"Number of schemas: {data.Schemas.Count}");
+        Console.WriteLine($"Total: {data.Times.Total}");
+        Console.WriteLine($"TraversalTree: {data.Times.TraversalTree}");
+        Console.WriteLine($"ResolveCollisions: {data.Times.ResolveCollisions}");
+        Console.WriteLine($"ResolveReferences: {data.Times.ResolveReferences}");
+        Console.WriteLine($"Filtering: {data.Times.Filtering}");
+        Console.WriteLine($"ComputeData: {data.Times.ComputeData}");
+        Console.WriteLine($"ComputeDataClasses: {data.Times.ComputeDataClasses}");
         
-        return Task.WhenAll(modelsTask, methodsTask, anyOfsTask, typesTask, schemasTask, resolvedSchemasTask);
+        return Task.WhenAll(classesTask, enumsTask, methodsTask, anyOfsTask, typesTask, schemasTask, resolvedSchemasTask);
     }
 
     private static string GetMargin(SchemaContext context)
@@ -97,7 +113,7 @@ public partial class DataTests : VerifyBase
         var result = new List<string>();
         foreach (var context in contexts)
         {
-            result.Add($"{margin}{context.Id}({context.Type})");
+            result.Add($"{margin}{context.Id}({context.Type})[{string.Join(", ", context.Tags)}]");
             
             result.AddRange(ToResolvedStrings(context.Children, margin + "  "));
         }

@@ -11,6 +11,8 @@
   Error(class),
     Code(int),
     Message(string),
+  ListPetsLimit(int),
+  ShowPetByIdPetId(string),
   Pets(ref),
   Error(ref),
   Error(ref),

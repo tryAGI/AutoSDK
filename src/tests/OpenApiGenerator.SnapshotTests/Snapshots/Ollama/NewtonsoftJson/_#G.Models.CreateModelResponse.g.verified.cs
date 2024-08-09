@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CreateModelResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// Status creating the model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>? Status { get; set; }
+        public global::G.CreateModelStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

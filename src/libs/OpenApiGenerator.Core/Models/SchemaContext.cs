@@ -10,20 +10,26 @@ public class SchemaContext
     
     public required Settings Settings { get; init; }
     public required OpenApiSchema Schema { get; init; }
-    public required string Id { get; init; }
+    public required string Id { get; set; }
     public required string Type { get; init; }
     
     public string? ReferenceId { get; init; }
     public bool IsReference => ReferenceId != null;
+    public SchemaContext? ResolvedReference { get; set; }
     
     public Hint? Hint { get; init; }
     public int? Index { get; init; }
+    /// <summary>
+    /// Used to constrain the recursion depth.
+    /// </summary>
+    public int Depth { get; init; }
     
     public string? PropertyName { get; init; }
     public bool IsProperty => PropertyName != null;
+    public PropertyData? PropertyData { get; set; }
     
     public string? ComponentId { get; init; }
-    public bool IsComponent => ComponentId != null;
+    public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
     
     public string? OperationPath { get; init; }
     public OperationType? OperationType { get; init; }
@@ -31,11 +37,72 @@ public class SchemaContext
     public string? ContentType { get; init; }
     public OpenApiMediaType? MediaType { get; init; }
     public OpenApiParameter? Parameter { get; init; }
+    public string? ParameterName => Parameter?.Name;
     public string? ResponseStatusCode { get; init; }
     public OpenApiResponse? Response { get; init; }
     public bool IsOperation => OperationPath != null;
     
     public TypeData? TypeData { get; set; }
+    
+    public bool IsClass => Type == "class";// || ResolvedReference?.IsClass == true;
+    //public ModelData? ClassData { get; set; }
+    public ModelData? ClassData => IsClass
+        ? //IsReference
+            //? ModelData.FromSchemaContext(ResolvedReference!)
+            //:
+            ModelData.FromSchemaContext(this)
+        : null;
+    
+    public bool IsEnum => Type == "enum";// || ResolvedReference?.IsEnum == true;
+    //public ModelData? EnumData { get; set; }
+    public ModelData? EnumData => IsEnum
+         ? //IsReference
+             //? ModelData.FromSchemaContext(ResolvedReference!)
+             //:
+             ModelData.FromSchemaContext(this)
+         : null;
+    public string? ClassName { get; set; }
+    
+    public bool IsAnyOf => Schema.AnyOf.Any();
+    public bool IsOneOf => Schema.OneOf.Any();
+    public bool IsAllOf => Schema.AllOf.Any();
+    public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
+    
+    public IReadOnlyList<PropertyData> ComputedProperties
+    {
+        get
+        {
+            if (PropertyData == null)
+            {
+                return [];
+            }
+            
+            if (Schema.IsBinary())
+            {
+                return new []
+                {
+                    PropertyData.Value,
+                    PropertyData.Value with
+                    {
+                        Id = PropertyData.Value.Id + "name",
+                        Name = PropertyData.Value.Name + "name",
+                        IsMultiPartFormDataFilename = true,
+                        Type = Models.TypeData.Default with
+                        {
+                            CSharpType = PropertyData.Value.IsRequired ? "string" : "string?",
+                            JsonSerializerType = Settings.JsonSerializerType,
+                            GenerateJsonSerializerContextTypes = Settings.GenerateJsonSerializerContextTypes,
+                        },
+                        JsonSerializerType = Settings.JsonSerializerType,
+                    },
+                };
+            }
+
+            return new [] { PropertyData.Value };
+        }
+    }
+
+    public HashSet<string> Tags { get; set; } = [];
 
     private static string ComputeId(Settings settings, SchemaContext? parent, string? helper)
     {
@@ -107,15 +174,13 @@ public class SchemaContext
         return schema.Type ?? "class";
     }
 
-    public string ShortType
-    {
-        get
-        {
-            return TypeData?.CSharpType ?? Type;
-        }
-    }
+    public string ShortType => TypeData?.CSharpType ?? Type;
 
-    public bool IsRequired => IsProperty && Parent?.Schema.Required.Contains(PropertyName) == true;
+    public bool IsRequired =>
+        IsProperty && Parent?.Schema.Required.Contains(PropertyName) == true ||
+        Hint == Models.Hint.Parameter && Parameter?.Required == true ||
+        Hint == Models.Hint.Request && Operation?.RequestBody?.Required == true ||
+        Hint == Models.Hint.Response;
 
     public static IReadOnlyList<SchemaContext> FromSchema(
         OpenApiSchema schema,
@@ -132,7 +197,8 @@ public class SchemaContext
         string? responseStatusCode = null,
         OpenApiResponse? response = null,
         Hint? hint = null,
-        int? index = null)
+        int? index = null,
+        int depth = 0)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
         var helper = hint switch
@@ -169,16 +235,18 @@ public class SchemaContext
                 Parameter = parameter,
                 ResponseStatusCode = responseStatusCode,
                 Response = response,
+                Depth = depth,
             }];
         }
         
-        var schemas = new List<SchemaContext>();
         var context = new SchemaContext
         {
             Parent = parent,
             Settings = settings,
             Schema = schema,
-            Id = propertyName?.ToCSharpName(settings, parent) ?? componentId?.ToCSharpName(settings, parent) ?? ComputeId(settings, parent, helper),
+            Id = propertyName?.ToCSharpName(settings, parent) ??
+                 componentId?.ToCSharpName(settings, parent) ??
+                 ComputeId(settings, parent, helper),
             Type = ComputeType(schema),
             ComponentId = componentId,
             PropertyName = propertyName,
@@ -192,63 +260,186 @@ public class SchemaContext
             Parameter = parameter,
             ResponseStatusCode = responseStatusCode,
             Response = response,
+            Depth = depth,
         };
-        schemas.Add(context);
+        if ((context.IsClass || context.IsEnum) && hint is not (Models.Hint.AllOf or Models.Hint.AnyOf or Models.Hint.OneOf))
+        {
+            context.Id = $"{parent?.Id}{context.Id.ToClassName()}";
+        }
         
+        var children = new List<SchemaContext>();
         if (schema.Items != null)
         {
-            schemas.AddRange(FromSchema(
+            children.AddRange(FromSchema(
                 schema: schema.Items,
                 settings: settings,
                 parent: context,
-                hint: Models.Hint.ArrayItem));
+                hint: Models.Hint.ArrayItem,
+                depth: depth + 1));
         }
         
         var i = 0;
         foreach (var property in schema.Properties)
         {
-            schemas.AddRange(FromSchema(
+            children.AddRange(FromSchema(
                 schema: property.Value,
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.Property,
                 propertyName: property.Key,
-                index: i++));
+                index: i++,
+                depth: depth + 1));
         }
 
         i = 0;
         foreach (var item in schema.AnyOf)
         {
-            schemas.AddRange(FromSchema(
+            children.AddRange(FromSchema(
                 schema: item,
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.AnyOf,
-                index: i++));
+                index: i++,
+                depth: depth + 1));
         }
         i = 0;
         foreach (var item in schema.OneOf)
         {
-            schemas.AddRange(FromSchema(
+            children.AddRange(FromSchema(
                 schema: item,
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.OneOf,
-                index: i++));
+                index: i++,
+                depth: depth + 1));
         }
         i = 0;
         foreach (var item in schema.AllOf)
         {
-            schemas.AddRange(FromSchema(
+            children.AddRange(FromSchema(
                 schema: item,
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.AllOf,
-                index: i++));
+                index: i++,
+                depth: depth + 1));
         }
         
-        context.TypeData = Models.TypeData.FromSchemaContext(context, settings, schemas);
+        context.Children = children
+            .Where(x => x.Depth == depth + 1)
+            .ToList();
+        // context.TypeData = Models.TypeData.FromSchemaContext(context);
+        // if (context.IsProperty || context.Hint is Models.Hint.Parameter)
+        // {
+        //     context.PropertyData = Models.PropertyData.FromSchemaContext(context);
+        // }
         
-        return schemas;
+        return [context, ..children];
+    }
+    
+    public void ComputeData(int level = 0, int maxDepth = 20)
+    {
+        // Prevent infinite recursion for circular references
+        if (level > maxDepth)
+        {
+            return;
+        }
+        
+        ResolvedReference?.ComputeData(level + 1, maxDepth: maxDepth);
+        foreach (var child in Children)
+        {
+            child.ComputeData(level + 1, maxDepth: maxDepth);
+        }
+        
+        TypeData = IsReference
+            ? ResolvedReference?.TypeData
+            : Models.TypeData.FromSchemaContext(this);
+        if (IsProperty || Hint is Models.Hint.Parameter)
+        {
+            PropertyData = Models.PropertyData.FromSchemaContext(this);
+        }
+    }
+    
+    // public void ComputeData()
+    // {
+        // TypeData = Models.TypeData.FromSchemaContext(this);
+        // if (IsProperty || Hint is Models.Hint.Parameter)
+        // {
+        //     PropertyData = Models.PropertyData.FromSchemaContext(this);
+        // }
+        // if (IsEnum)
+        // {
+        //     EnumData = ModelData.FromSchemaContext(this);
+        // }
+        // else if (IsClass)
+        // {
+        //     ClassData = ModelData.FromSchemaContext(this);
+        // }
+    //}
+    
+    public bool HasAnyTag(params string[] tags)
+    {
+        return
+            tags.Contains(string.Empty) && Tags.Count == 0 ||
+            Tags.Any(tags.Contains) ||
+            Parent?.HasAnyTag(tags) == true;
+    }
+    
+    public bool AnyParent(Func<SchemaContext, bool> predicate)
+    {
+        predicate = predicate ?? throw new ArgumentNullException(nameof(predicate));
+        
+        if (predicate(this))
+        {
+            return true;
+        }
+        
+        return Parent?.AnyParent(predicate) == true;
+    }
+    
+    public IReadOnlyCollection<SchemaContext> WithAllChildren(int level = 0, int maxDepth = 20)
+    {
+        // Prevent infinite recursion for circular references
+        if (level > maxDepth)
+        {
+            return [];
+        }
+        
+        if (IsReference)
+        {
+            return [this, ..ResolvedReference!.WithAllChildren(level + 1, maxDepth: maxDepth)];
+        }
+        
+        var result = new List<SchemaContext> { this };
+        foreach (var child in Children)
+        {
+            result.AddRange(child.WithAllChildren(level + 1, maxDepth: maxDepth));
+        }
+        
+        return result;
+    }
+    
+    public void ComputeTags(HashSet<string>? parentTags = null, int level = 0, int maxDepth = 20)
+    {
+        // Prevent infinite recursion for circular references
+        if (level > maxDepth)
+        {
+            return;
+        }
+        
+        foreach (var tag in Operation?.Tags ?? [])
+        {
+            Tags.Add(tag.Name);
+        }
+        foreach (var tag in parentTags ?? [])
+        {
+            Tags.Add(tag);
+        }
+        
+        foreach (var child in Children)
+        {
+            child.ComputeTags(Tags, level + 1, maxDepth: maxDepth);
+        }
+        ResolvedReference?.ComputeTags(Tags, level + 1, maxDepth: maxDepth);
     }
 }

@@ -109,7 +109,7 @@ namespace G
         /// Sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::System.Collections.Generic.IList<string?>? Stop { get; set; }
+        public global::System.Collections.Generic.IList<string>? Stop { get; set; }
 
         /// <summary>
         /// Enable NUMA support. (Default: false)

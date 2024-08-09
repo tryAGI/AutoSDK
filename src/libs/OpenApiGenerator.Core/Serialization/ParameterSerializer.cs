@@ -46,7 +46,7 @@ public static class ParameterSerializer
         {
             if (parameter.ParameterExplode == true)
             {
-                return $"{{string.Join(\"&\", {parameter.ArgumentName}.Select(static x => $\"{parameter.Name.ToParameterName()}={{x}}\"))}}";
+                return $"{{string.Join(\"&\", {parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.Select(static x => $\"{parameter.Name.ToParameterName()}={{x}}\"){(parameter.IsRequired ? "" : " ?? global::System.Array.Empty<string>()")})}}";
             }
             
             switch (parameter.ParameterStyle)

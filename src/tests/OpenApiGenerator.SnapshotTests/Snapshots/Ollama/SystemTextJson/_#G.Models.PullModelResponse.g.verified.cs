@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PullModelResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -18,8 +16,8 @@ namespace G
         /// Example: pulling manifest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.PullModelResponseStatus?>? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullModelStatusJsonConverter))]
+        public global::G.PullModelStatus? Status { get; set; }
 
         /// <summary>
         /// The model's digest.<br/>

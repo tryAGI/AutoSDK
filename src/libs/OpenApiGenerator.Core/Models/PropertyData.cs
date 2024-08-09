@@ -34,50 +34,45 @@ public readonly record struct PropertyData(
         Summary: string.Empty,
         ConverterType: string.Empty);
 
-    public static PropertyData FromSchema(
-        KeyValuePair<string, OpenApiSchema> schema,
-        HashSet<string> requiredProperties,
-        ParameterLocation? parameterLocation,
-        ParameterStyle? parameterStyle,
-        bool? parameterExplode,
-        string? operationId,
-        Settings settings,
-        params ModelData[] parents)
+    public static PropertyData FromSchemaContext(SchemaContext context)
     {
-        requiredProperties = requiredProperties ?? throw new ArgumentNullException(nameof(requiredProperties));
-        parents = parents ?? throw new ArgumentNullException(nameof(parents));
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        var propertyName = context.PropertyName ?? context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
+        var type = context.TypeData ?? throw new InvalidOperationException("TypeData is required.");
 
-        var name = schema.Key.ToPropertyName();
+        var name = propertyName.ToPropertyName();
         
         name = HandleWordSeparators(name);
 
-        if (parents.Length != 0)
+        if (context.Parent != null)
         {
-            name = name.FixPropertyName(parents.Last().ClassName);
+            name = name.FixPropertyName(context.Parent.Id);
         }
 
-        name = SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
+        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
         
-        var type = TypeData.FromSchema(schema, settings, operationId == null || string.IsNullOrWhiteSpace(operationId)
-            ? parents
-            : parents.Concat([ModelData.FromKey(operationId, settings) with { Schema = default }]).ToArray());
+        var requiredProperties = context.Parent != null
+            ? new HashSet<string>(context.Parent.Schema.Required)
+            : [];
         
         return new PropertyData(
-            Id: schema.Key,
+            Id: propertyName,
             Name: name,
             Type: type,
-            IsRequired: requiredProperties.Contains(schema.Key),
+            IsRequired: context.Hint is Hint.Parameter
+                ? context.Parameter?.Required == true || context.Parameter?.In == Microsoft.OpenApi.Models.ParameterLocation.Path
+                : requiredProperties.Contains(propertyName),
             IsMultiPartFormDataFilename: false,
-            ParameterLocation: parameterLocation,
-            ParameterStyle: parameterStyle,
-            ParameterExplode: parameterExplode,
-            JsonSerializerType: settings.JsonSerializerType,
-            IsDeprecated: schema.Value.Deprecated,
-            DefaultValue: schema.GetDefaultValue(settings, parents),
-            Summary: schema.Value.GetSummary(),
+            ParameterLocation: context.Parameter?.In,
+            ParameterStyle: context.Parameter?.Style,
+            ParameterExplode: context.Parameter?.Explode,
+            JsonSerializerType: context.Settings.JsonSerializerType,
+            IsDeprecated: context.Schema.Deprecated,
+            DefaultValue: context.GetDefaultValue(),
+            Summary: context.Schema.GetSummary(),
             ConverterType: type.ConverterType);
     }
-
+    
     internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)

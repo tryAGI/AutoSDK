@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
@@ -12,6 +13,9 @@ public static class Data
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
+        var totalTime = Stopwatch.StartNew();
+        var traversalTreeTime = Stopwatch.StartNew();
+        
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
@@ -38,6 +42,19 @@ public static class Data
                     contentType: x.ContentType,
                     mediaType: x.MediaType,
                     hint: Hint.Request)))
+            .Concat(allOperations
+                .SelectMany(x => (x.Operation.Parameters ?? []).Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
+                .Where(x => x.Parameter.Schema != null)
+                .SelectMany(x => SchemaContext.FromSchema(
+                    schema: x.Parameter.Schema!,
+                    settings: settings,
+                    operationPath: x.OperationPath,
+                    operationType: x.OperationType,
+                    operation: x.Operation,
+                    contentType: null,
+                    mediaType: null,
+                    parameter: x.Parameter,
+                    hint: Hint.Parameter)))
             .Concat(allOperations
                 .SelectMany(x => (x.Operation.Parameters ?? []).Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
                 .SelectMany(x => x.Parameter.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.Parameter, ContentType: y.Key, MediaType: y.Value)))
@@ -69,29 +86,72 @@ public static class Data
                     hint: Hint.Response)))
             .ToArray();
         
-        foreach (var context in schemaContexts.Where(x => x.Parent != null))
+        traversalTreeTime.Stop();
+        
+        // foreach (var context in schemaContexts.Where(x => x.Parent != null))
+        // {
+        //     context.Parent!.Children.Add(context);
+        // }
+        
+        var resolveCollisionsTime = Stopwatch.StartNew();
+        
+        foreach (var group in schemaContexts
+            .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
+            .GroupBy(x => x.Id))
         {
-            context.Parent!.Children.Add(context);
+            var i = 2;
+            foreach (var context in group.Skip(1))
+            {
+                context.Id += $"{i++}";
+            }
         }
+        
+        resolveCollisionsTime.Stop();
+        
+        var resolveReferencesTime = Stopwatch.StartNew();
         
         var componentSchemaContexts = schemaContexts
             .Where(x => x.IsComponent)
             .ToDictionary(x => x.ComponentId!, x => x);
-        var resolvedSchemaContexts = schemaContexts
-            .SelectMany(x =>
-            {
-                if (!x.IsReference)
-                {
-                    return [x];
-                }
-                
-                x.Parent?.Children.Remove(x);
-                x.Parent?.Children.Add(componentSchemaContexts[x.ReferenceId!]);
-
-                return Array.Empty<SchemaContext>();
-            })
-            .ToArray();
         
+        foreach (var context in schemaContexts.Where(x => x.IsReference))
+        {
+            context.ResolvedReference = componentSchemaContexts[context.ReferenceId!];
+            context.Id = context.ResolvedReference.Id;
+            context.TypeData = context.ResolvedReference.TypeData;
+            // context.TypeData = context.ResolvedReference.TypeData;
+            // context.PropertyData = context.ResolvedReference.PropertyData;
+            // context.TypeData = Models.TypeData.FromSchemaContext(context);
+            // if (context.IsProperty)
+            // {
+            //     context.PropertyData = Models.PropertyData.FromSchemaContext(context);
+            // }
+        }
+        
+        resolveReferencesTime.Stop();
+        
+        // foreach (var context in schemaContexts)
+        // {
+        //     context.ComputeData();
+        // }
+        // foreach (var context in schemaContexts.Where(x => x.IsReference))
+        // {
+        //     context.TypeData = context.ResolvedReference!.TypeData;
+        //     //context.PropertyData = context.ResolvedReference!.PropertyData;
+        //     // context.EnumData = context.ResolvedReference!.EnumData;
+        //     // context.ClassData = context.ResolvedReference!.ClassData;
+        // }
+        // foreach (var context in schemaContexts)
+        // {
+        //     context.ComputeData();
+        // }
+        // foreach (var context in schemaContexts)
+        // {
+        //     context.ComputeData();
+        // }
+        
+        var filteringTime = Stopwatch.StartNew();
+
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
         var excludedOperationIds = new HashSet<string>(settings.ExcludeOperationIds);
         foreach (var tag in settings.IncludeTags)
@@ -127,41 +187,69 @@ public static class Data
             };
         }
 
+        var maxDepth = schemaContexts.Max(x => x.Depth);
+        foreach (var context in schemaContexts.Where(x => x.Operation != null))
+        {
+            context.ComputeTags(maxDepth: maxDepth);
+        }
+        foreach (var context in schemaContexts)
+        {
+            context.ComputeTags(maxDepth: maxDepth);
+        }
+        
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
-        foreach (var tag in settings.IncludeTags)
-        {
-            includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
-        }
-        foreach (var tag in settings.ExcludeTags)
-        {
-            excludedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
-        }
-        var referencesOfIncludedModels = includedModels.Count == 0
-            ? []
-            : new HashSet<string>(openApiDocument.Components.Schemas!
-                .Where(schema =>
-                    (includedModels.Count == 0 ||
-                    includedModels.Contains(schema.Key)) &&
-                    !excludedModels.Contains(schema.Key))
-                .SelectMany(schema => schema.GetReferences())
-                .Select(reference => reference.Id));
+        
+        var isFilteringRequired = settings.IncludeTags.Length > 0 ||
+                                  settings.ExcludeTags.Length > 0 ||
+                                  includedModels.Count > 0 ||
+                                  excludedModels.Count > 0 ||
+                                  !settings.GenerateModels;
+        var filteredSchemaContexts = isFilteringRequired
+            ? schemaContexts
+                .Where(x =>
+                    (settings.GenerateModels ||
+                     settings.GenerateSdk ||
+                     (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))) &&
+                    (settings.IncludeTags.Length == 0 ||
+                     x.HasAnyTag(settings.IncludeTags.ToArray())) &&
+                    !x.HasAnyTag(settings.ExcludeTags.ToArray()) &&
+                    (!x.IsComponent && includedModels.Count == 0 ||
+                     (includedModels.Count == 0 ||
+                      includedModels.Contains(x.ComponentId!)) &&
+                    !excludedModels.Contains(x.ComponentId!)))
+                .SelectMany(x => x.WithAllChildren())
+                .Distinct()
+                .ToArray()
+            : schemaContexts;
+        
+        filteringTime.Stop();
+        
+        var computeDataTime = Stopwatch.StartNew();
 
-        var includedSchemas = openApiDocument.Components.Schemas!
-            .Where(schema =>
-                (includedModels.Count == 0 ||
-                 includedModels.Contains(schema.Key) ||
-                 referencesOfIncludedModels.Contains(schema.Key)) &&
-                !excludedModels.Contains(schema.Key))
-            .ToArray();
-        Dictionary<string, ModelData> classes = includedSchemas
-            .SelectMany(schema => ModelData.FromSchemas(schema.Value, settings, schema.Key))
-            .SelectMany(model => model.WithAdditionalModels())
-            .GroupBy(x => x.ClassName)
-            .Select(x => x.First())
+        foreach (var context in filteredSchemaContexts)
+        {
+            context.ComputeData();
+        }
+        
+        computeDataTime.Stop();
+        
+        var computeDataClassesTime = Stopwatch.StartNew();
+        
+        Dictionary<string, ModelData> classes = filteredSchemaContexts
+            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
+            .Select(x => x.ClassData)
+            .Where(x => x is not null)
+            .Select(x => x!.Value)
+            .ToDictionary(x => x.ClassName, x => x);
+        Dictionary<string, ModelData> enums = filteredSchemaContexts
+            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
+            .Select(x => x.EnumData)
+            .Where(x => x is not null)
+            .Select(x => x!.Value)
             .ToDictionary(x => x.ClassName, x => x);
 
-        var operations = openApiDocument.Paths!.SelectMany(path =>
+        var operations = settings.GenerateSdk || settings.GenerateMethods ? openApiDocument.Paths!.SelectMany(path =>
                 path.Value.Operations
                     .Where(x =>
                     {
@@ -177,7 +265,7 @@ public static class Data
                     
                         var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
                             settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
-                    
+                        
                         return (includedOperationIds.Count == 0 ||
                                 includedOperationIds.Contains(methodName) ||
                                 (x.Value.OperationId != null && includedOperationIds.Contains(x.Value.OperationId))) &&
@@ -185,10 +273,10 @@ public static class Data
                                (x.Value.OperationId == null || !excludedOperationIds.Contains(x.Value.OperationId));
                     })
                     .Select(x => (Path: path, Operation: x)))
-            .ToArray();
+            .ToArray() : [];
         
         var operationsAsMethods = operations
-            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
+            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key, filteredSchemaContexts.Where(y => y.Operation == x.Operation.Value).ToArray()))
             .ToArray();
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
@@ -230,8 +318,6 @@ public static class Data
                 IsDeprecated: false,
                 RequestType: TypeData.Default,
                 ResponseType: TypeData.Default,
-                AdditionalModels: [],
-                AdditionalTypes: [],
                 Converters: [])] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
@@ -254,8 +340,6 @@ public static class Data
                         IsDeprecated: false,
                         RequestType: TypeData.Default,
                         ResponseType: TypeData.Default,
-                        AdditionalModels: [],
-                        AdditionalTypes: [],
                         Converters: [])))
                 .ToArray();
         }
@@ -269,78 +353,60 @@ public static class Data
             settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
             (!string.IsNullOrWhiteSpace(settings.JsonSerializerContext) ||
              settings.GenerateJsonSerializerContextTypes);
-        var allSchemas = settings.GenerateSdk || settings.GenerateModels ? classes.Values.Concat(methods
-                .SelectMany(x => x.AdditionalModels))
-            .SelectMany(x => x.Schema.Value.Properties.Values
-                .Concat(x.Schema.Value.AnyOf)
-                .Concat(x.Schema.Value.OneOf)
-                .Concat(x.Schema.Value.AllOf)
-                .Concat([x.Schema.Value])
-                .ToArray())
-            .ToArray() : [];
-        var anyOfs = allSchemas
-            .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Concat(allSchemas
-                .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty)))
+        var anyOfs = filteredSchemaContexts
+            .Where(x => x is { IsComponent: false, Schema.AnyOf.Count: > 0 })
+            .Select(x => new AnyOfData("AnyOf", x.Schema.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
             .Distinct()
             .ToImmutableArray();
-        var oneOfs = allSchemas
-            .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Concat(allSchemas
-                .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty)))
+        var oneOfs = filteredSchemaContexts
+            .Where(x => x is { IsComponent: false, Schema.OneOf.Count: > 0 })
+            .Select(x => new AnyOfData("OneOf", x.Schema.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
             .Distinct()
             .ToImmutableArray();
-        var allOfs = allSchemas
-            .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Concat(allSchemas
-                .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty)))
+        var allOfs = filteredSchemaContexts
+            .Where(x => x is { IsComponent: false, Schema.AllOf.Count: > 0 })
+            .Select(x => new AnyOfData("AllOf", x.Schema.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
             .Distinct()
             .ToImmutableArray();
-        anyOfs = settings.GenerateSdk || settings.GenerateModels ? anyOfs
-            .Concat(includedSchemas
-                .Where(x => x.Value.AnyOf is { Count: >0 })
+        anyOfs = anyOfs
+            .Concat(filteredSchemaContexts
+                .Where(x => x is { IsComponent: true, IsReference: false, Schema.AnyOf.Count: >0 })
                 .Select(schema => new AnyOfData(
                     "AnyOf",
-                    schema.Value.AnyOf.Count,
+                    schema.Schema.AnyOf.Count,
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key.ToClassName(),
-                    schema.Value.GetSummary(),
-                    schema.Value.AnyOf.ToAnyOfProperties(settings, schema.Key))))
-            .ToImmutableArray() : [];
-        oneOfs = settings.GenerateSdk || settings.GenerateModels ? oneOfs
-            .Concat(includedSchemas
-                .Where(x => x.Value.OneOf is { Count: >0 })
+                    schema.Id,
+                    schema.Schema.GetSummary(),
+                    schema.Children.Where(x => x.Hint == Hint.AnyOf).ToList().ToAnyOfProperties(schema.Id))))
+            .ToImmutableArray();
+        oneOfs = oneOfs
+            .Concat(filteredSchemaContexts
+                .Where(x => x is { IsComponent: true, IsReference: false, Schema.OneOf.Count: >0 })
                 .Select(schema => new AnyOfData(
                     "OneOf",
-                    schema.Value.OneOf.Count,
+                    schema.Schema.OneOf.Count,
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key.ToClassName(),
-                    schema.Value.GetSummary(),
-                    schema.Value.OneOf.ToAnyOfProperties(settings, schema.Key))))
-            .ToImmutableArray() : [];
-        allOfs = settings.GenerateSdk || settings.GenerateModels ? allOfs
-            .Concat(includedSchemas
-                .Where(x => x.Value.AllOf is { Count: >0 })
+                    schema.Id,
+                    schema.Schema.GetSummary(),
+                    schema.Children.Where(x => x.Hint == Hint.OneOf).ToList().ToAnyOfProperties(schema.Id))))
+            .ToImmutableArray();
+        allOfs = allOfs
+            .Concat(filteredSchemaContexts
+                .Where(x => x is { IsComponent: true, IsReference: false, Schema.AllOf.Count: >0 })
                 .Select(schema => new AnyOfData(
                     "AllOf",
-                    schema.Value.AllOf.Count,
+                    schema.Schema.AllOf.Count,
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key.ToClassName(),
-                    schema.Value.GetSummary(),
-                    schema.Value.AllOf.ToAnyOfProperties(settings, schema.Key))))
-            .ToImmutableArray() : [];
+                    schema.Id,
+                    schema.Schema.GetSummary(),
+                    schema.Children.Where(x => x.Hint == Hint.AllOf).ToList().ToAnyOfProperties(schema.Id))))
+            .ToImmutableArray();
 
         AnyOfData[] anyOfDatas =
         [
@@ -350,39 +416,38 @@ public static class Data
         ];
 
         var types =
-            settings.GenerateJsonSerializerContextTypes &&
-            (settings.GenerateSdk || settings.GenerateModels)
-                ? classes.Values
-                    .SelectMany(model => model.Properties)
-                    .Select(x => x.Type)
-                    .Concat(methods.SelectMany(x => x.AdditionalTypes))
-                    .Where(x => !string.IsNullOrWhiteSpace(x.CSharpType))
+            settings.GenerateJsonSerializerContextTypes
+                ? filteredSchemaContexts
+                    .Where(x =>
+                        x is { TypeData: not null } &&
+                        !string.IsNullOrWhiteSpace(x.TypeData!.Value.CSharpType))
+                    .Select(x => x.TypeData!.Value)
                     .GroupBy(x => x.CSharpTypeWithNullability)
                     .Select(x => x.First())
                     .ToImmutableArray()
                 : [];
-        var models = settings.GenerateSdk || settings.GenerateModels ? classes.Values
-                .Select(model => model with
-                {
-                    Schema = default,
-                }).Concat(
-                methods
-                    .SelectMany(x => x.AdditionalModels)
-                    .Select(model => model with
-                    {
-                        Schema = default,
-                    }))
-            //.Where(x => x.Properties.Any())
-            .GroupBy(x => x.FileNameWithoutExtension)
-            .Select(x => x.First())
-            .ToImmutableArray() : [];
+        
+        classes = classes
+            .Select(x => new KeyValuePair<string, ModelData>(x.Key, x.Value with
+            {
+                SchemaContext = default!,
+            }))
+            .ToDictionary(x => x.Key, x => x.Value);
+        enums = enums
+            .Select(x => new KeyValuePair<string, ModelData>(x.Key, x.Value with
+            {
+                SchemaContext = default!,
+            }))
+            .ToDictionary(x => x.Key, x => x.Value);
 
-        var converters = models
-            .Where(x => x.Style == ModelStyle.Enumeration && x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+        var converters = enums
+            .Where(x =>
+                x.Value.Style == ModelStyle.Enumeration &&
+                x.Value.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
             .SelectMany(x => new[]
             {
-                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
-                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
+                $"global::OpenApiGenerator.JsonConverters.{x.Value.ClassName}JsonConverter",
+                $"global::OpenApiGenerator.JsonConverters.{x.Value.ClassName}NullableJsonConverter"
             })
             .Concat(anyOfDatas
                 .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
@@ -405,10 +470,9 @@ public static class Data
         }
         
         return new Models.Data(
-            Models: models,
-            Methods: settings.GenerateSdk || settings.GenerateMethods
-                ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
-                : [],
+            Classes: classes.Values.ToImmutableArray(),
+            Enums: enums.Values.ToImmutableArray(),
+            Methods: methods.ToImmutableArray(),
             AnyOfs: anyOfDatas.ToImmutableArray(),
             Types: types,
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
@@ -431,10 +495,18 @@ public static class Data
                 IsDeprecated: false,
                 RequestType: TypeData.Default,
                 ResponseType: TypeData.Default,
-                AdditionalModels: [],
-                AdditionalTypes: [],
                 Converters: converters),
             Schemas: schemaContexts,
-            ResolvedSchemas: resolvedSchemaContexts);
+            ResolvedSchemas: filteredSchemaContexts,
+            Times: new Times(
+                TraversalTree: traversalTreeTime.Elapsed,
+                ResolveCollisions: resolveCollisionsTime.Elapsed,
+                ResolveReferences: resolveReferencesTime.Elapsed,
+                Filtering: filteringTime.Elapsed,
+                ComputeData: computeDataTime.Elapsed,
+                ComputeDataClasses: computeDataClassesTime.Elapsed,
+                Total: totalTime.Elapsed
+                )
+            );
     }
 }

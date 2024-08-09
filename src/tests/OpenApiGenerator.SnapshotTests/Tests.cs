@@ -100,7 +100,12 @@ public partial class Tests
             //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
-            //["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
+            //["build_property.OpenApiGenerator_IncludeModels"] = "PushModelResponse",
+            // ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateModels"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            // ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            // ["build_property.OpenApiGenerator_IncludeOperationIds"] = "checkBlob",
         });
     }
     
@@ -149,15 +154,18 @@ public partial class Tests
         ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_ClassName"] = "OpenAiClient",
-            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-            //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
-            //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
+            // ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateModels"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            // ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            // ["build_property.OpenApiGenerator_IncludeOperationIds"] = "addUploadPart",
+            //["build_property.OpenApiGenerator_IncludeModels"] = "FineTuneChatCompletionRequestAssistantMessage",
         });
     }
     
     // [DataTestMethod]
     // [DataRow(JsonSerializerType.SystemTextJson)]
-    // [DataRow(JsonSerializerType.NewtonsoftJson)]
+    // //[DataRow(JsonSerializerType.NewtonsoftJson)]
     // public Task GitHub(JsonSerializerType jsonSerializerType)
     // {
     //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [

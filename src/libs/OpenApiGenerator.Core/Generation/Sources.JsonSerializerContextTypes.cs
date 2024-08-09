@@ -27,9 +27,9 @@ namespace {types[0].Namespace}
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class JsonSerializerContextTypes
     {{
-{types.Select((type, i) => @$"
+{types.Select(x => x.CSharpTypeWithNullability).Distinct().Select((type, i) => @$"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {type.CSharpTypeWithNullability} Type{i} {{ get; set; }}").Inject()}
+        public {type} Type{i} {{ get; set; }}").Inject()}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

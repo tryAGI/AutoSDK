@@ -130,8 +130,10 @@ public class GenerateCommand : Command
         );
 
         var data = Core.Generation.Data.Prepare((yaml, settings));
-        var files = data.Models
-            .SelectMany(x => new [] { Sources.Model(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
+        var files = data.Enums
+            .SelectMany(x => new [] { Sources.Enum(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
+            .Concat(data.Classes
+                .Select(x => Sources.Class(x)))
             .Concat(data.Methods
                 .Select(x => Sources.Method(x)))
             .Concat(data.Authorizations

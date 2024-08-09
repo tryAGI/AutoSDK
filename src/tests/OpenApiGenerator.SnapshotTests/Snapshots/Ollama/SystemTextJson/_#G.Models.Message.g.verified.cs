@@ -29,7 +29,7 @@ namespace G
         /// (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        public global::System.Collections.Generic.IList<string?>? Images { get; set; }
+        public global::System.Collections.Generic.IList<string>? Images { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
