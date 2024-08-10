@@ -143,7 +143,7 @@ namespace {endPoint.Namespace}
             {{
 {x.Type.Properties.Zip(x.Type.EnumValues, (property, value) => (Property: property, Value: value))
     .Select(y => $@"
-                {x.Type.CSharpType}.{y.Property.ToPropertyName()} => ""{y.Value}"",").Inject()}
+                {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

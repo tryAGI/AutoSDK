@@ -137,7 +137,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AccountDisableRecurringPaymentResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -151,10 +151,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AccountDisableRecurringPaymentResponse,
+      CSharpTypeWithNullability: global::G.AccountDisableRecurringPaymentResponse?,
+      ShortCSharpTypeWithoutNullability: AccountDisableRecurringPaymentResponse,
+      ShortCSharpTypeWithNullability: AccountDisableRecurringPaymentResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -528,7 +528,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AccountGetAccountForCurrentUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -542,10 +542,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AccountGetAccountForCurrentUserResponse,
+      CSharpTypeWithNullability: global::G.AccountGetAccountForCurrentUserResponse?,
+      ShortCSharpTypeWithoutNullability: AccountGetAccountForCurrentUserResponse,
+      ShortCSharpTypeWithNullability: AccountGetAccountForCurrentUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -1050,7 +1050,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::System.Collections.Generic.IList<object>,
+      CSharpType: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
       IsArray: true,
       IsEnum: false,
       IsBase64: false,
@@ -1088,10 +1088,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object>,
-      CSharpTypeWithNullability: global::System.Collections.Generic.IList<object>?,
-      ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object>,
-      ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<object>?,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>?,
+      ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
+      ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -3769,7 +3769,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminAddCreditsToAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -3783,10 +3783,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminAddCreditsToAccountResponse,
+      CSharpTypeWithNullability: global::G.AdminAddCreditsToAccountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminAddCreditsToAccountResponse,
+      ShortCSharpTypeWithNullability: AdminAddCreditsToAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -4011,7 +4011,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminAddGroupToProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4025,10 +4025,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminAddGroupToProjectResponse,
+      CSharpTypeWithNullability: global::G.AdminAddGroupToProjectResponse?,
+      ShortCSharpTypeWithoutNullability: AdminAddGroupToProjectResponse,
+      ShortCSharpTypeWithNullability: AdminAddGroupToProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -4405,7 +4405,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminAddNewUserToAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4419,10 +4419,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminAddNewUserToAccountResponse,
+      CSharpTypeWithNullability: global::G.AdminAddNewUserToAccountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminAddNewUserToAccountResponse,
+      ShortCSharpTypeWithNullability: AdminAddNewUserToAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -4609,7 +4609,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminAddUserToAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4623,10 +4623,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminAddUserToAccountResponse,
+      CSharpTypeWithNullability: global::G.AdminAddUserToAccountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminAddUserToAccountResponse,
+      ShortCSharpTypeWithNullability: AdminAddUserToAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -4851,7 +4851,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminAddUserToGroupResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4865,10 +4865,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminAddUserToGroupResponse,
+      CSharpTypeWithNullability: global::G.AdminAddUserToGroupResponse?,
+      ShortCSharpTypeWithoutNullability: AdminAddUserToGroupResponse,
+      ShortCSharpTypeWithNullability: AdminAddUserToGroupResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5055,7 +5055,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminCreateAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5069,10 +5069,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminCreateAccountResponse,
+      CSharpTypeWithNullability: global::G.AdminCreateAccountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminCreateAccountResponse,
+      ShortCSharpTypeWithNullability: AdminCreateAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5221,7 +5221,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetAccountTransactionsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5235,10 +5235,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetAccountTransactionsResponse,
+      CSharpTypeWithNullability: global::G.AdminGetAccountTransactionsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetAccountTransactionsResponse,
+      ShortCSharpTypeWithNullability: AdminGetAccountTransactionsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5349,7 +5349,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetActiveUserInfosResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5363,10 +5363,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetActiveUserInfosResponse,
+      CSharpTypeWithNullability: global::G.AdminGetActiveUserInfosResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetActiveUserInfosResponse,
+      ShortCSharpTypeWithNullability: AdminGetActiveUserInfosResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5477,7 +5477,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetActivityMetricsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5491,10 +5491,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetActivityMetricsResponse,
+      CSharpTypeWithNullability: global::G.AdminGetActivityMetricsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetActivityMetricsResponse,
+      ShortCSharpTypeWithNullability: AdminGetActivityMetricsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5681,7 +5681,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetFilteredProjectsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5695,10 +5695,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetFilteredProjectsResponse,
+      CSharpTypeWithNullability: global::G.AdminGetFilteredProjectsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetFilteredProjectsResponse,
+      ShortCSharpTypeWithNullability: AdminGetFilteredProjectsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -5885,7 +5885,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetFilteredProjectsAndUsersResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5899,10 +5899,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetFilteredProjectsAndUsersResponse,
+      CSharpTypeWithNullability: global::G.AdminGetFilteredProjectsAndUsersResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetFilteredProjectsAndUsersResponse,
+      ShortCSharpTypeWithNullability: AdminGetFilteredProjectsAndUsersResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6089,7 +6089,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetFilteredUsersResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6103,10 +6103,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetFilteredUsersResponse,
+      CSharpTypeWithNullability: global::G.AdminGetFilteredUsersResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetFilteredUsersResponse,
+      ShortCSharpTypeWithNullability: AdminGetFilteredUsersResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6255,7 +6255,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetMergeStatusResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6269,10 +6269,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetMergeStatusResponse,
+      CSharpTypeWithNullability: global::G.AdminGetMergeStatusResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetMergeStatusResponse,
+      ShortCSharpTypeWithNullability: AdminGetMergeStatusResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6421,7 +6421,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetProjectSecurityInfoResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6435,10 +6435,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetProjectSecurityInfoResponse,
+      CSharpTypeWithNullability: global::G.AdminGetProjectSecurityInfoResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetProjectSecurityInfoResponse,
+      ShortCSharpTypeWithNullability: AdminGetProjectSecurityInfoResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6549,7 +6549,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetRevenueSegmentsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6563,10 +6563,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetRevenueSegmentsResponse,
+      CSharpTypeWithNullability: global::G.AdminGetRevenueSegmentsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetRevenueSegmentsResponse,
+      ShortCSharpTypeWithNullability: AdminGetRevenueSegmentsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6677,7 +6677,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetSignupSegmentsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6691,10 +6691,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetSignupSegmentsResponse,
+      CSharpTypeWithNullability: global::G.AdminGetSignupSegmentsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetSignupSegmentsResponse,
+      ShortCSharpTypeWithNullability: AdminGetSignupSegmentsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -6843,7 +6843,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminGetUserFullDetailsByUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6857,10 +6857,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminGetUserFullDetailsByUserResponse,
+      CSharpTypeWithNullability: global::G.AdminGetUserFullDetailsByUserResponse?,
+      ShortCSharpTypeWithoutNullability: AdminGetUserFullDetailsByUserResponse,
+      ShortCSharpTypeWithNullability: AdminGetUserFullDetailsByUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -7199,7 +7199,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminMergeProjectsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7213,10 +7213,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminMergeProjectsResponse,
+      CSharpTypeWithNullability: global::G.AdminMergeProjectsResponse?,
+      ShortCSharpTypeWithoutNullability: AdminMergeProjectsResponse,
+      ShortCSharpTypeWithNullability: AdminMergeProjectsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -7403,7 +7403,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminMigrateUserToAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7417,10 +7417,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminMigrateUserToAccountResponse,
+      CSharpTypeWithNullability: global::G.AdminMigrateUserToAccountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminMigrateUserToAccountResponse,
+      ShortCSharpTypeWithNullability: AdminMigrateUserToAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -7569,7 +7569,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminOverrideVerifyResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7583,10 +7583,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminOverrideVerifyResponse,
+      CSharpTypeWithNullability: global::G.AdminOverrideVerifyResponse?,
+      ShortCSharpTypeWithoutNullability: AdminOverrideVerifyResponse,
+      ShortCSharpTypeWithNullability: AdminOverrideVerifyResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -7811,7 +7811,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminProcessPaymentResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7825,10 +7825,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminProcessPaymentResponse,
+      CSharpTypeWithNullability: global::G.AdminProcessPaymentResponse?,
+      ShortCSharpTypeWithoutNullability: AdminProcessPaymentResponse,
+      ShortCSharpTypeWithNullability: AdminProcessPaymentResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -8015,7 +8015,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSendAllClientsMessageResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8029,10 +8029,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSendAllClientsMessageResponse,
+      CSharpTypeWithNullability: global::G.AdminSendAllClientsMessageResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSendAllClientsMessageResponse,
+      ShortCSharpTypeWithNullability: AdminSendAllClientsMessageResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -8257,7 +8257,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSetAccountCPUPMOverrideResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8271,10 +8271,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSetAccountCPUPMOverrideResponse,
+      CSharpTypeWithNullability: global::G.AdminSetAccountCPUPMOverrideResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSetAccountCPUPMOverrideResponse,
+      ShortCSharpTypeWithNullability: AdminSetAccountCPUPMOverrideResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -8423,7 +8423,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSetAccountGroupDiscountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8437,10 +8437,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSetAccountGroupDiscountResponse,
+      CSharpTypeWithNullability: global::G.AdminSetAccountGroupDiscountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSetAccountGroupDiscountResponse,
+      ShortCSharpTypeWithNullability: AdminSetAccountGroupDiscountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -8589,7 +8589,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSetAccountStudentDiscountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8603,10 +8603,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSetAccountStudentDiscountResponse,
+      CSharpTypeWithNullability: global::G.AdminSetAccountStudentDiscountResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSetAccountStudentDiscountResponse,
+      ShortCSharpTypeWithNullability: AdminSetAccountStudentDiscountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -8831,7 +8831,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSetAccountUserAdminStatusResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8845,10 +8845,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSetAccountUserAdminStatusResponse,
+      CSharpTypeWithNullability: global::G.AdminSetAccountUserAdminStatusResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSetAccountUserAdminStatusResponse,
+      ShortCSharpTypeWithNullability: AdminSetAccountUserAdminStatusResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -9035,7 +9035,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSetUserPasswordResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9049,10 +9049,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSetUserPasswordResponse,
+      CSharpTypeWithNullability: global::G.AdminSetUserPasswordResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSetUserPasswordResponse,
+      ShortCSharpTypeWithNullability: AdminSetUserPasswordResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -9201,7 +9201,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminStartAddDemoProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9215,10 +9215,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminStartAddDemoProjectResponse,
+      CSharpTypeWithNullability: global::G.AdminStartAddDemoProjectResponse?,
+      ShortCSharpTypeWithoutNullability: AdminStartAddDemoProjectResponse,
+      ShortCSharpTypeWithNullability: AdminStartAddDemoProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -9329,7 +9329,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminStartExportAccountsJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9343,10 +9343,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminStartExportAccountsJobResponse,
+      CSharpTypeWithNullability: global::G.AdminStartExportAccountsJobResponse?,
+      ShortCSharpTypeWithoutNullability: AdminStartExportAccountsJobResponse,
+      ShortCSharpTypeWithNullability: AdminStartExportAccountsJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -9457,7 +9457,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminStartExportUsersJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9471,10 +9471,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminStartExportUsersJobResponse,
+      CSharpTypeWithNullability: global::G.AdminStartExportUsersJobResponse?,
+      ShortCSharpTypeWithoutNullability: AdminStartExportUsersJobResponse,
+      ShortCSharpTypeWithNullability: AdminStartExportUsersJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -10193,7 +10193,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminSubmitPaymentResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10207,10 +10207,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminSubmitPaymentResponse,
+      CSharpTypeWithNullability: global::G.AdminSubmitPaymentResponse?,
+      ShortCSharpTypeWithoutNullability: AdminSubmitPaymentResponse,
+      ShortCSharpTypeWithNullability: AdminSubmitPaymentResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -10397,7 +10397,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminUnlinkUserFromProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10411,10 +10411,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminUnlinkUserFromProjectResponse,
+      CSharpTypeWithNullability: global::G.AdminUnlinkUserFromProjectResponse?,
+      ShortCSharpTypeWithoutNullability: AdminUnlinkUserFromProjectResponse,
+      ShortCSharpTypeWithNullability: AdminUnlinkUserFromProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -10639,7 +10639,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminUpdateProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10653,10 +10653,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminUpdateProjectResponse,
+      CSharpTypeWithNullability: global::G.AdminUpdateProjectResponse?,
+      ShortCSharpTypeWithoutNullability: AdminUpdateProjectResponse,
+      ShortCSharpTypeWithNullability: AdminUpdateProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -10995,7 +10995,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminUpdateUserGroupResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11009,10 +11009,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminUpdateUserGroupResponse,
+      CSharpTypeWithNullability: global::G.AdminUpdateUserGroupResponse?,
+      ShortCSharpTypeWithoutNullability: AdminUpdateUserGroupResponse,
+      ShortCSharpTypeWithNullability: AdminUpdateUserGroupResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -11275,7 +11275,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.AdminUpdateUserInfoResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11289,10 +11289,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.AdminUpdateUserInfoResponse,
+      CSharpTypeWithNullability: global::G.AdminUpdateUserInfoResponse?,
+      ShortCSharpTypeWithoutNullability: AdminUpdateUserInfoResponse,
+      ShortCSharpTypeWithNullability: AdminUpdateUserInfoResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -15962,7 +15962,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorAddDescriptorLinkResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -15976,10 +15976,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorAddDescriptorLinkResponse,
+      CSharpTypeWithNullability: global::G.DescriptorAddDescriptorLinkResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorAddDescriptorLinkResponse,
+      ShortCSharpTypeWithNullability: DescriptorAddDescriptorLinkResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -16645,7 +16645,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorAddDynamicValueResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16659,10 +16659,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorAddDynamicValueResponse,
+      CSharpTypeWithNullability: global::G.DescriptorAddDynamicValueResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorAddDynamicValueResponse,
+      ShortCSharpTypeWithNullability: DescriptorAddDynamicValueResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -16873,7 +16873,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorAddLinksResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16887,10 +16887,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorAddLinksResponse,
+      CSharpTypeWithNullability: global::G.DescriptorAddLinksResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorAddLinksResponse,
+      ShortCSharpTypeWithNullability: DescriptorAddLinksResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -17215,7 +17215,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorAddOrUpdateDynamicValuesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -17229,10 +17229,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorAddOrUpdateDynamicValuesResponse,
+      CSharpTypeWithNullability: global::G.DescriptorAddOrUpdateDynamicValuesResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorAddOrUpdateDynamicValuesResponse,
+      ShortCSharpTypeWithNullability: DescriptorAddOrUpdateDynamicValuesResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -18442,7 +18442,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorDeleteDescriptorsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18456,10 +18456,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorDeleteDescriptorsResponse,
+      CSharpTypeWithNullability: global::G.DescriptorDeleteDescriptorsResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorDeleteDescriptorsResponse,
+      ShortCSharpTypeWithNullability: DescriptorDeleteDescriptorsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -18684,7 +18684,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorDeleteLinkResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18698,10 +18698,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorDeleteLinkResponse,
+      CSharpTypeWithNullability: global::G.DescriptorDeleteLinkResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorDeleteLinkResponse,
+      ShortCSharpTypeWithNullability: DescriptorDeleteLinkResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -19054,7 +19054,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorGetConvertFieldTypeJobResponseResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19068,10 +19068,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorGetConvertFieldTypeJobResponseResponse,
+      CSharpTypeWithNullability: global::G.DescriptorGetConvertFieldTypeJobResponseResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorGetConvertFieldTypeJobResponseResponse,
+      ShortCSharpTypeWithNullability: DescriptorGetConvertFieldTypeJobResponseResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -19220,7 +19220,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorGetDesDataFromFileJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19234,10 +19234,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorGetDesDataFromFileJobResultResponse,
+      CSharpTypeWithNullability: global::G.DescriptorGetDesDataFromFileJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorGetDesDataFromFileJobResultResponse,
+      ShortCSharpTypeWithNullability: DescriptorGetDesDataFromFileJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -19386,7 +19386,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorGetDesFieldImportDataFromFileResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19400,10 +19400,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorGetDesFieldImportDataFromFileResponse,
+      CSharpTypeWithNullability: global::G.DescriptorGetDesFieldImportDataFromFileResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorGetDesFieldImportDataFromFileResponse,
+      ShortCSharpTypeWithNullability: DescriptorGetDesFieldImportDataFromFileResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -19552,7 +19552,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorGetDynamicValuesByProjectIdResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19566,10 +19566,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorGetDynamicValuesByProjectIdResponse,
+      CSharpTypeWithNullability: global::G.DescriptorGetDynamicValuesByProjectIdResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorGetDynamicValuesByProjectIdResponse,
+      ShortCSharpTypeWithNullability: DescriptorGetDynamicValuesByProjectIdResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -20648,7 +20648,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorGetResourceLinksResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -20662,10 +20662,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorGetResourceLinksResponse,
+      CSharpTypeWithNullability: global::G.DescriptorGetResourceLinksResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorGetResourceLinksResponse,
+      ShortCSharpTypeWithNullability: DescriptorGetResourceLinksResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -20990,7 +20990,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorImportFieldsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21004,10 +21004,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorImportFieldsResponse,
+      CSharpTypeWithNullability: global::G.DescriptorImportFieldsResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorImportFieldsResponse,
+      ShortCSharpTypeWithNullability: DescriptorImportFieldsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -21436,7 +21436,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorStartConvertFieldTypeJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21450,10 +21450,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorStartConvertFieldTypeJobResponse,
+      CSharpTypeWithNullability: global::G.DescriptorStartConvertFieldTypeJobResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorStartConvertFieldTypeJobResponse,
+      ShortCSharpTypeWithNullability: DescriptorStartConvertFieldTypeJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -21982,7 +21982,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorStartExportFieldsJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21996,10 +21996,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorStartExportFieldsJobResponse,
+      CSharpTypeWithNullability: global::G.DescriptorStartExportFieldsJobResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorStartExportFieldsJobResponse,
+      ShortCSharpTypeWithNullability: DescriptorStartExportFieldsJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -22224,7 +22224,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorStartGetDesDataFromFileJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22238,10 +22238,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorStartGetDesDataFromFileJobResponse,
+      CSharpTypeWithNullability: global::G.DescriptorStartGetDesDataFromFileJobResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorStartGetDesDataFromFileJobResponse,
+      ShortCSharpTypeWithNullability: DescriptorStartGetDesDataFromFileJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -22528,7 +22528,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorStartImportDescriptorsJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22542,10 +22542,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorStartImportDescriptorsJobResponse,
+      CSharpTypeWithNullability: global::G.DescriptorStartImportDescriptorsJobResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorStartImportDescriptorsJobResponse,
+      ShortCSharpTypeWithNullability: DescriptorStartImportDescriptorsJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -23567,7 +23567,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorUpdateFieldOrdersResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23581,10 +23581,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorUpdateFieldOrdersResponse,
+      CSharpTypeWithNullability: global::G.DescriptorUpdateFieldOrdersResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorUpdateFieldOrdersResponse,
+      ShortCSharpTypeWithNullability: DescriptorUpdateFieldOrdersResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -23795,7 +23795,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.DescriptorUpdateValuesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23809,10 +23809,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.DescriptorUpdateValuesResponse,
+      CSharpTypeWithNullability: global::G.DescriptorUpdateValuesResponse?,
+      ShortCSharpTypeWithoutNullability: DescriptorUpdateValuesResponse,
+      ShortCSharpTypeWithNullability: DescriptorUpdateValuesResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -24189,7 +24189,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ErrorProcessUIErrorResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24203,10 +24203,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ErrorProcessUIErrorResponse,
+      CSharpTypeWithNullability: global::G.ErrorProcessUIErrorResponse?,
+      ShortCSharpTypeWithoutNullability: ErrorProcessUIErrorResponse,
+      ShortCSharpTypeWithNullability: ErrorProcessUIErrorResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -31173,7 +31173,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ExportStartExportBubbleChartJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -31187,10 +31187,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ExportStartExportBubbleChartJobResponse,
+      CSharpTypeWithNullability: global::G.ExportStartExportBubbleChartJobResponse?,
+      ShortCSharpTypeWithoutNullability: ExportStartExportBubbleChartJobResponse,
+      ShortCSharpTypeWithNullability: ExportStartExportBubbleChartJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -31439,7 +31439,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ExportStartExportHierarchicalChartJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -31453,10 +31453,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ExportStartExportHierarchicalChartJobResponse,
+      CSharpTypeWithNullability: global::G.ExportStartExportHierarchicalChartJobResponse?,
+      ShortCSharpTypeWithoutNullability: ExportStartExportHierarchicalChartJobResponse,
+      ShortCSharpTypeWithNullability: ExportStartExportHierarchicalChartJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -31667,7 +31667,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ExportStartExportSingleSeriesChartJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -31681,10 +31681,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ExportStartExportSingleSeriesChartJobResponse,
+      CSharpTypeWithNullability: global::G.ExportStartExportSingleSeriesChartJobResponse?,
+      ShortCSharpTypeWithoutNullability: ExportStartExportSingleSeriesChartJobResponse,
+      ShortCSharpTypeWithNullability: ExportStartExportSingleSeriesChartJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -32171,7 +32171,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ExportStartGridChartExportJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -32185,10 +32185,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ExportStartGridChartExportJobResponse,
+      CSharpTypeWithNullability: global::G.ExportStartGridChartExportJobResponse?,
+      ShortCSharpTypeWithoutNullability: ExportStartGridChartExportJobResponse,
+      ShortCSharpTypeWithNullability: ExportStartGridChartExportJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -32451,7 +32451,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.FileEmailFileResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -32465,10 +32465,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.FileEmailFileResponse,
+      CSharpTypeWithNullability: global::G.FileEmailFileResponse?,
+      ShortCSharpTypeWithoutNullability: FileEmailFileResponse,
+      ShortCSharpTypeWithNullability: FileEmailFileResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -32617,7 +32617,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.FileGetConvertPDF2SwfResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -32631,10 +32631,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.FileGetConvertPDF2SwfResultResponse,
+      CSharpTypeWithNullability: global::G.FileGetConvertPDF2SwfResultResponse?,
+      ShortCSharpTypeWithoutNullability: FileGetConvertPDF2SwfResultResponse,
+      ShortCSharpTypeWithNullability: FileGetConvertPDF2SwfResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -32949,7 +32949,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.FileGetFXMLDocJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -32963,10 +32963,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.FileGetFXMLDocJobResultResponse,
+      CSharpTypeWithNullability: global::G.FileGetFXMLDocJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: FileGetFXMLDocJobResultResponse,
+      ShortCSharpTypeWithNullability: FileGetFXMLDocJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -33153,7 +33153,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.FileGetFXMLDocXPolledResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -33167,10 +33167,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.FileGetFXMLDocXPolledResponse,
+      CSharpTypeWithNullability: global::G.FileGetFXMLDocXPolledResponse?,
+      ShortCSharpTypeWithoutNullability: FileGetFXMLDocXPolledResponse,
+      ShortCSharpTypeWithNullability: FileGetFXMLDocXPolledResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -33820,7 +33820,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.FileStartConvertPDF2SwfResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -33834,10 +33834,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.FileStartConvertPDF2SwfResponse,
+      CSharpTypeWithNullability: global::G.FileStartConvertPDF2SwfResponse?,
+      ShortCSharpTypeWithoutNullability: FileStartConvertPDF2SwfResponse,
+      ShortCSharpTypeWithNullability: FileStartConvertPDF2SwfResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -36433,7 +36433,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoAddMemoFolderLinksResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -36447,10 +36447,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoAddMemoFolderLinksResponse,
+      CSharpTypeWithNullability: global::G.MemoAddMemoFolderLinksResponse?,
+      ShortCSharpTypeWithoutNullability: MemoAddMemoFolderLinksResponse,
+      ShortCSharpTypeWithNullability: MemoAddMemoFolderLinksResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -37403,7 +37403,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoGetCopyMemosToDocumentsJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -37417,10 +37417,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoGetCopyMemosToDocumentsJobResultResponse,
+      CSharpTypeWithNullability: global::G.MemoGetCopyMemosToDocumentsJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: MemoGetCopyMemosToDocumentsJobResultResponse,
+      ShortCSharpTypeWithNullability: MemoGetCopyMemosToDocumentsJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -37569,7 +37569,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoGetImportMemosXMLResponseResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -37583,10 +37583,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoGetImportMemosXMLResponseResponse,
+      CSharpTypeWithNullability: global::G.MemoGetImportMemosXMLResponseResponse?,
+      ShortCSharpTypeWithoutNullability: MemoGetImportMemosXMLResponseResponse,
+      ShortCSharpTypeWithNullability: MemoGetImportMemosXMLResponseResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -37735,7 +37735,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoGetSearchMemosJobResultsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -37749,10 +37749,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoGetSearchMemosJobResultsResponse,
+      CSharpTypeWithNullability: global::G.MemoGetSearchMemosJobResultsResponse?,
+      ShortCSharpTypeWithoutNullability: MemoGetSearchMemosJobResultsResponse,
+      ShortCSharpTypeWithNullability: MemoGetSearchMemosJobResultsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -38191,7 +38191,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoLinkFoldersToMemosResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -38205,10 +38205,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoLinkFoldersToMemosResponse,
+      CSharpTypeWithNullability: global::G.MemoLinkFoldersToMemosResponse?,
+      ShortCSharpTypeWithoutNullability: MemoLinkFoldersToMemosResponse,
+      ShortCSharpTypeWithNullability: MemoLinkFoldersToMemosResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -38699,7 +38699,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoLinkObjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -38713,10 +38713,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoLinkObjectResponse,
+      CSharpTypeWithNullability: global::G.MemoLinkObjectResponse?,
+      ShortCSharpTypeWithoutNullability: MemoLinkObjectResponse,
+      ShortCSharpTypeWithNullability: MemoLinkObjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -39136,7 +39136,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoStartCopyMemosToDocumentsJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -39150,10 +39150,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoStartCopyMemosToDocumentsJobResponse,
+      CSharpTypeWithNullability: global::G.MemoStartCopyMemosToDocumentsJobResponse?,
+      ShortCSharpTypeWithoutNullability: MemoStartCopyMemosToDocumentsJobResponse,
+      ShortCSharpTypeWithNullability: MemoStartCopyMemosToDocumentsJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -40812,7 +40812,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.MemoUnlinkObjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -40826,10 +40826,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.MemoUnlinkObjectResponse,
+      CSharpTypeWithNullability: global::G.MemoUnlinkObjectResponse?,
+      ShortCSharpTypeWithoutNullability: MemoUnlinkObjectResponse,
+      ShortCSharpTypeWithNullability: MemoUnlinkObjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -42623,7 +42623,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ProjectCheckEncryptedDataResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -42637,10 +42637,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ProjectCheckEncryptedDataResponse,
+      CSharpTypeWithNullability: global::G.ProjectCheckEncryptedDataResponse?,
+      ShortCSharpTypeWithoutNullability: ProjectCheckEncryptedDataResponse,
+      ShortCSharpTypeWithNullability: ProjectCheckEncryptedDataResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -43621,7 +43621,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ProjectGetProjectImportJobExceptionsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -43635,10 +43635,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ProjectGetProjectImportJobExceptionsResponse,
+      CSharpTypeWithNullability: global::G.ProjectGetProjectImportJobExceptionsResponse?,
+      ShortCSharpTypeWithoutNullability: ProjectGetProjectImportJobExceptionsResponse,
+      ShortCSharpTypeWithNullability: ProjectGetProjectImportJobExceptionsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -44166,7 +44166,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ProjectRenameProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -44180,10 +44180,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ProjectRenameProjectResponse,
+      CSharpTypeWithNullability: global::G.ProjectRenameProjectResponse?,
+      ShortCSharpTypeWithoutNullability: ProjectRenameProjectResponse,
+      ShortCSharpTypeWithNullability: ProjectRenameProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -46466,7 +46466,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceAddTranscriptResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -46480,10 +46480,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceAddTranscriptResponse,
+      CSharpTypeWithNullability: global::G.ResourceAddTranscriptResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceAddTranscriptResponse,
+      ShortCSharpTypeWithNullability: ResourceAddTranscriptResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -48136,7 +48136,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceDeleteTranscriptResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -48150,10 +48150,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceDeleteTranscriptResponse,
+      CSharpTypeWithNullability: global::G.ResourceDeleteTranscriptResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceDeleteTranscriptResponse,
+      ShortCSharpTypeWithNullability: ResourceDeleteTranscriptResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -48482,7 +48482,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceGetAddPDFImageResourceJobResponseResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -48496,10 +48496,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceGetAddPDFImageResourceJobResponseResponse,
+      CSharpTypeWithNullability: global::G.ResourceGetAddPDFImageResourceJobResponseResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceGetAddPDFImageResourceJobResponseResponse,
+      ShortCSharpTypeWithNullability: ResourceGetAddPDFImageResourceJobResponseResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -49084,7 +49084,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceGetAudioSampleResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -49098,10 +49098,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceGetAudioSampleResponse,
+      CSharpTypeWithNullability: global::G.ResourceGetAudioSampleResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceGetAudioSampleResponse,
+      ShortCSharpTypeWithNullability: ResourceGetAudioSampleResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -49250,7 +49250,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceGetDocumentSearchJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -49264,10 +49264,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceGetDocumentSearchJobResultResponse,
+      CSharpTypeWithNullability: global::G.ResourceGetDocumentSearchJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceGetDocumentSearchJobResultResponse,
+      ShortCSharpTypeWithNullability: ResourceGetDocumentSearchJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -49582,7 +49582,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceGetExportPDFSwfJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -49596,10 +49596,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceGetExportPDFSwfJobResultResponse,
+      CSharpTypeWithNullability: global::G.ResourceGetExportPDFSwfJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceGetExportPDFSwfJobResultResponse,
+      ShortCSharpTypeWithNullability: ResourceGetExportPDFSwfJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -49976,7 +49976,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceGetResourceSyncItemsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -49990,10 +49990,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceGetResourceSyncItemsResponse,
+      CSharpTypeWithNullability: global::G.ResourceGetResourceSyncItemsResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceGetResourceSyncItemsResponse,
+      ShortCSharpTypeWithNullability: ResourceGetResourceSyncItemsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -51290,7 +51290,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceLockResourceResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -51304,10 +51304,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceLockResourceResponse,
+      CSharpTypeWithNullability: global::G.ResourceLockResourceResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceLockResourceResponse,
+      ShortCSharpTypeWithNullability: ResourceLockResourceResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -52320,7 +52320,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceStartDeleteResourcesJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -52334,10 +52334,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceStartDeleteResourcesJobResponse,
+      CSharpTypeWithNullability: global::G.ResourceStartDeleteResourcesJobResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceStartDeleteResourcesJobResponse,
+      ShortCSharpTypeWithNullability: ResourceStartDeleteResourcesJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -52880,7 +52880,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceStartExportDocumentJobWithRTLResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -52894,10 +52894,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceStartExportDocumentJobWithRTLResponse,
+      CSharpTypeWithNullability: global::G.ResourceStartExportDocumentJobWithRTLResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceStartExportDocumentJobWithRTLResponse,
+      ShortCSharpTypeWithNullability: ResourceStartExportDocumentJobWithRTLResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -53592,7 +53592,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceUnlockResourceResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -53606,10 +53606,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceUnlockResourceResponse,
+      CSharpTypeWithNullability: global::G.ResourceUnlockResourceResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceUnlockResourceResponse,
+      ShortCSharpTypeWithNullability: ResourceUnlockResourceResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -53972,7 +53972,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceUpdateDocumentDataAndExcerptsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -53986,10 +53986,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceUpdateDocumentDataAndExcerptsResponse,
+      CSharpTypeWithNullability: global::G.ResourceUpdateDocumentDataAndExcerptsResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceUpdateDocumentDataAndExcerptsResponse,
+      ShortCSharpTypeWithNullability: ResourceUpdateDocumentDataAndExcerptsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -54660,7 +54660,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceUpdateResourceAndDataResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -54674,10 +54674,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceUpdateResourceAndDataResponse,
+      CSharpTypeWithNullability: global::G.ResourceUpdateResourceAndDataResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceUpdateResourceAndDataResponse,
+      ShortCSharpTypeWithNullability: ResourceUpdateResourceAndDataResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -55154,7 +55154,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.ResourceUpdateTranscriptDataResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -55168,10 +55168,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.ResourceUpdateTranscriptDataResponse,
+      CSharpTypeWithNullability: global::G.ResourceUpdateTranscriptDataResponse?,
+      ShortCSharpTypeWithoutNullability: ResourceUpdateTranscriptDataResponse,
+      ShortCSharpTypeWithNullability: ResourceUpdateTranscriptDataResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -56670,7 +56670,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityGetVersionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -56684,10 +56684,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityGetVersionResponse,
+      CSharpTypeWithNullability: global::G.SecurityGetVersionResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityGetVersionResponse,
+      ShortCSharpTypeWithNullability: SecurityGetVersionResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -56874,7 +56874,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityImpersonateUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -56888,10 +56888,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityImpersonateUserResponse,
+      CSharpTypeWithNullability: global::G.SecurityImpersonateUserResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityImpersonateUserResponse,
+      ShortCSharpTypeWithNullability: SecurityImpersonateUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -57116,7 +57116,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityLinkUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -57130,10 +57130,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityLinkUserResponse,
+      CSharpTypeWithNullability: global::G.SecurityLinkUserResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityLinkUserResponse,
+      ShortCSharpTypeWithNullability: SecurityLinkUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -57396,7 +57396,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityLinkUserWithInvitationResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -57410,10 +57410,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityLinkUserWithInvitationResponse,
+      CSharpTypeWithNullability: global::G.SecurityLinkUserWithInvitationResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityLinkUserWithInvitationResponse,
+      ShortCSharpTypeWithNullability: SecurityLinkUserWithInvitationResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -57780,7 +57780,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityStopImpersonationResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -57794,10 +57794,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityStopImpersonationResponse,
+      CSharpTypeWithNullability: global::G.SecurityStopImpersonationResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityStopImpersonationResponse,
+      ShortCSharpTypeWithNullability: SecurityStopImpersonationResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -57984,7 +57984,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.SecurityUnlinkUserFromProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -57998,10 +57998,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.SecurityUnlinkUserFromProjectResponse,
+      CSharpTypeWithNullability: global::G.SecurityUnlinkUserFromProjectResponse?,
+      ShortCSharpTypeWithoutNullability: SecurityUnlinkUserFromProjectResponse,
+      ShortCSharpTypeWithNullability: SecurityUnlinkUserFromProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -59466,7 +59466,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagAddExcerptTagApplicationsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -59480,10 +59480,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagAddExcerptTagApplicationsResponse,
+      CSharpTypeWithNullability: global::G.TagAddExcerptTagApplicationsResponse?,
+      ShortCSharpTypeWithoutNullability: TagAddExcerptTagApplicationsResponse,
+      ShortCSharpTypeWithNullability: TagAddExcerptTagApplicationsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -62652,7 +62652,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagGetRetroUpcodeJobTagApplicationsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -62666,10 +62666,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagGetRetroUpcodeJobTagApplicationsResponse,
+      CSharpTypeWithNullability: global::G.TagGetRetroUpcodeJobTagApplicationsResponse?,
+      ShortCSharpTypeWithoutNullability: TagGetRetroUpcodeJobTagApplicationsResponse,
+      ShortCSharpTypeWithNullability: TagGetRetroUpcodeJobTagApplicationsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -63464,7 +63464,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagGetTagsFromSpreadsheetJobResultResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -63478,10 +63478,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagGetTagsFromSpreadsheetJobResultResponse,
+      CSharpTypeWithNullability: global::G.TagGetTagsFromSpreadsheetJobResultResponse?,
+      ShortCSharpTypeWithoutNullability: TagGetTagsFromSpreadsheetJobResultResponse,
+      ShortCSharpTypeWithNullability: TagGetTagsFromSpreadsheetJobResultResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -64038,7 +64038,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagMergeTagsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -64052,10 +64052,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagMergeTagsResponse,
+      CSharpTypeWithNullability: global::G.TagMergeTagsResponse?,
+      ShortCSharpTypeWithoutNullability: TagMergeTagsResponse,
+      ShortCSharpTypeWithNullability: TagMergeTagsResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -64645,7 +64645,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagStartImportTagsJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -64659,10 +64659,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagStartImportTagsJobResponse,
+      CSharpTypeWithNullability: global::G.TagStartImportTagsJobResponse?,
+      ShortCSharpTypeWithoutNullability: TagStartImportTagsJobResponse,
+      ShortCSharpTypeWithNullability: TagStartImportTagsJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -64849,7 +64849,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagStartRetroUpcodeJobResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -64863,10 +64863,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagStartRetroUpcodeJobResponse,
+      CSharpTypeWithNullability: global::G.TagStartRetroUpcodeJobResponse?,
+      ShortCSharpTypeWithoutNullability: TagStartRetroUpcodeJobResponse,
+      ShortCSharpTypeWithNullability: TagStartRetroUpcodeJobResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -65727,7 +65727,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagUpdateTagAppWeightResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -65741,10 +65741,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagUpdateTagAppWeightResponse,
+      CSharpTypeWithNullability: global::G.TagUpdateTagAppWeightResponse?,
+      ShortCSharpTypeWithoutNullability: TagUpdateTagAppWeightResponse,
+      ShortCSharpTypeWithNullability: TagUpdateTagAppWeightResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -66357,7 +66357,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.TagUpdateTagOrdersResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -66371,10 +66371,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.TagUpdateTagOrdersResponse,
+      CSharpTypeWithNullability: global::G.TagUpdateTagOrdersResponse?,
+      ShortCSharpTypeWithoutNullability: TagUpdateTagOrdersResponse,
+      ShortCSharpTypeWithNullability: TagUpdateTagOrdersResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -70662,7 +70662,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserAcceptInvitationByCurrentUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -70676,10 +70676,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserAcceptInvitationByCurrentUserResponse,
+      CSharpTypeWithNullability: global::G.UserAcceptInvitationByCurrentUserResponse?,
+      ShortCSharpTypeWithoutNullability: UserAcceptInvitationByCurrentUserResponse,
+      ShortCSharpTypeWithNullability: UserAcceptInvitationByCurrentUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -71810,7 +71810,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserGetFederationResponseForConnectionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -71824,10 +71824,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserGetFederationResponseForConnectionResponse,
+      CSharpTypeWithNullability: global::G.UserGetFederationResponseForConnectionResponse?,
+      ShortCSharpTypeWithoutNullability: UserGetFederationResponseForConnectionResponse,
+      ShortCSharpTypeWithNullability: UserGetFederationResponseForConnectionResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -72052,7 +72052,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserGetFilteredUsersResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -72066,10 +72066,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserGetFilteredUsersResponse,
+      CSharpTypeWithNullability: global::G.UserGetFilteredUsersResponse?,
+      ShortCSharpTypeWithoutNullability: UserGetFilteredUsersResponse,
+      ShortCSharpTypeWithNullability: UserGetFilteredUsersResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -72484,7 +72484,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserInviteUserToProjectResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -72498,10 +72498,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserInviteUserToProjectResponse,
+      CSharpTypeWithNullability: global::G.UserInviteUserToProjectResponse?,
+      ShortCSharpTypeWithoutNullability: UserInviteUserToProjectResponse,
+      ShortCSharpTypeWithNullability: UserInviteUserToProjectResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -72688,7 +72688,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserLinkUsertoAccountResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -72702,10 +72702,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserLinkUsertoAccountResponse,
+      CSharpTypeWithNullability: global::G.UserLinkUsertoAccountResponse?,
+      ShortCSharpTypeWithoutNullability: UserLinkUsertoAccountResponse,
+      ShortCSharpTypeWithNullability: UserLinkUsertoAccountResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -73058,7 +73058,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserRejectInvitationByCurrentUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -73072,10 +73072,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserRejectInvitationByCurrentUserResponse,
+      CSharpTypeWithNullability: global::G.UserRejectInvitationByCurrentUserResponse?,
+      ShortCSharpTypeWithoutNullability: UserRejectInvitationByCurrentUserResponse,
+      ShortCSharpTypeWithNullability: UserRejectInvitationByCurrentUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -73414,7 +73414,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserSendContactRequestEmailResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -73428,10 +73428,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserSendContactRequestEmailResponse,
+      CSharpTypeWithNullability: global::G.UserSendContactRequestEmailResponse?,
+      ShortCSharpTypeWithoutNullability: UserSendContactRequestEmailResponse,
+      ShortCSharpTypeWithNullability: UserSendContactRequestEmailResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -74284,7 +74284,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserSubmitEulaResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -74298,10 +74298,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserSubmitEulaResponse,
+      CSharpTypeWithNullability: global::G.UserSubmitEulaResponse?,
+      ShortCSharpTypeWithoutNullability: UserSubmitEulaResponse,
+      ShortCSharpTypeWithNullability: UserSubmitEulaResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -74730,7 +74730,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserUpdateCurrentUserPasswordResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -74744,10 +74744,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserUpdateCurrentUserPasswordResponse,
+      CSharpTypeWithNullability: global::G.UserUpdateCurrentUserPasswordResponse?,
+      ShortCSharpTypeWithoutNullability: UserUpdateCurrentUserPasswordResponse,
+      ShortCSharpTypeWithNullability: UserUpdateCurrentUserPasswordResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -75086,7 +75086,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserUpdateUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -75100,10 +75100,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserUpdateUserResponse,
+      CSharpTypeWithNullability: global::G.UserUpdateUserResponse?,
+      ShortCSharpTypeWithoutNullability: UserUpdateUserResponse,
+      ShortCSharpTypeWithNullability: UserUpdateUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -75594,7 +75594,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserUpdateUserInfoResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -75608,10 +75608,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserUpdateUserInfoResponse,
+      CSharpTypeWithNullability: global::G.UserUpdateUserInfoResponse?,
+      ShortCSharpTypeWithoutNullability: UserUpdateUserInfoResponse,
+      ShortCSharpTypeWithNullability: UserUpdateUserInfoResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
@@ -76100,7 +76100,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: object,
+      CSharpType: global::G.UserValidateUserResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -76114,10 +76114,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: object,
-      CSharpTypeWithNullability: object?,
-      ShortCSharpTypeWithoutNullability: object,
-      ShortCSharpTypeWithNullability: object?,
+      CSharpTypeWithoutNullability: global::G.UserValidateUserResponse,
+      CSharpTypeWithNullability: global::G.UserValidateUserResponse?,
+      ShortCSharpTypeWithoutNullability: UserValidateUserResponse,
+      ShortCSharpTypeWithNullability: UserValidateUserResponse?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 
