@@ -63,9 +63,9 @@ public class SchemaContext
          : null;
     public string? ClassName { get; set; }
     
-    public bool IsAnyOf => Schema.AnyOf.Any();
-    public bool IsOneOf => Schema.OneOf.Any();
-    public bool IsAllOf => Schema.AllOf.Any();
+    public bool IsAnyOf => Schema.IsAnyOf();
+    public bool IsOneOf => Schema.IsOneOf();
+    public bool IsAllOf => Schema.IsAllOf();
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
     
     public IReadOnlyList<PropertyData> ComputedProperties
@@ -158,15 +158,15 @@ public class SchemaContext
                 _ => "string",
             };
         }
-        if (schema.AnyOf.Any())
+        if (schema.IsAnyOf())
         {
             return "anyOf";
         }
-        if (schema.OneOf.Any())
+        if (schema.IsOneOf())
         {
             return "oneOf";
         }
-        if (schema.AllOf.Any())
+        if (schema.IsAllOf())
         {
             return "allOf";
         }

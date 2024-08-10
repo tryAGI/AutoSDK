@@ -79,21 +79,21 @@ public readonly record struct TypeData(
         }
         
         var subTypes = ImmutableArray<TypeData>.Empty;
-        if (context.Schema.AnyOf.Any())
+        if (context.Schema.IsAnyOf())
         {
             subTypes = context.Children
                 .Where(x => x is { Hint: Hint.AnyOf, TypeData: not null })
                 .Select(x => x.TypeData!.Value)
                 .ToImmutableArray();
         }
-        else if (context.Schema.OneOf.Any())
+        else if (context.Schema.IsOneOf())
         {
             subTypes = context.Children
                 .Where(x => x is { Hint: Hint.OneOf, TypeData: not null })
                 .Select(x => x.TypeData!.Value)
                 .ToImmutableArray();
         }
-        else if (context.Schema.AllOf.Any())
+        else if (context.Schema.IsAllOf())
         {
             subTypes = context.Children
                 .Where(x => x is { Hint: Hint.AllOf, TypeData: not null })
@@ -148,13 +148,13 @@ public readonly record struct TypeData(
         
         var (type, reference) = (context.Schema.Type, context.Schema.Format) switch
         {
-            (_, _) when context.Schema.AnyOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (_, _) when context.Schema.OneOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (_, _) when context.Schema.AllOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.IsAnyOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.IsOneOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.IsAllOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             
-            (_, _) when context.Schema.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (_, _) when context.Schema.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (_, _) when context.Schema.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.IsAnyOf() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.IsOneOf() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.IsAllOf() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),
@@ -186,6 +186,8 @@ public readonly record struct TypeData(
             ("array", _) =>
                 ($"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(), true),
             
+            (null, null) when context.IsClass =>
+                ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (null, null)  => ("object", true),
             ("null", _)  => ("object", true),
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),

@@ -123,7 +123,7 @@ namespace {endPoint.Namespace}
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOf ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
             PrepareArguments(
@@ -313,7 +313,8 @@ namespace {endPoint.Namespace}
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
             endPoint.RequestType.IsArray ||
             endPoint.RequestType.IsEnum ||
-            endPoint.RequestType.IsBase64)
+            endPoint.RequestType.IsBase64 ||
+            endPoint.RequestType.CSharpTypeWithoutNullability is "string")
         {
             return " ";
         }

@@ -199,18 +199,6 @@ public static class OpenApiExtensions
         };
     }
 
-    public static bool IsObjectWithoutReference(
-        this OpenApiSchema schema)
-    {
-        return schema is { Type: "object", Reference: null } &&
-            (schema.Properties.Any() ||
-             schema.AllOf.Any() ||
-             schema.AnyOf.Any() ||
-             schema.OneOf.Any() ||
-             schema.Items != null ||
-             schema.Enum.Any());
-    }
-
     public static ImmutableArray<PropertyData> ToAnyOfProperties(
         this IList<SchemaContext> schemas,
         string key)
@@ -241,6 +229,36 @@ public static class OpenApiExtensions
         }
 
         return PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
+    }
+    
+    public static bool IsOneOf(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return
+            schema.OneOf.Any() &&
+            schema.Properties.Count == 0; // OneOf with properties is not supported
+    }
+    
+    public static bool IsAnyOf(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return
+            schema.AnyOf.Any() &&
+            schema.Properties.Count == 0; // AnyOf with properties is not supported
+    }
+    
+    public static bool IsAllOf(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return
+            schema.AllOf.Any() &&
+            schema.Properties.Count == 0; // AllOf with properties is not supported
     }
     
     public static bool IsArray(

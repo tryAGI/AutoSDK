@@ -163,17 +163,24 @@ public partial class Tests
         });
     }
     
-    // [DataTestMethod]
-    // [DataRow(JsonSerializerType.SystemTextJson)]
-    // //[DataRow(JsonSerializerType.NewtonsoftJson)]
-    // public Task GitHub(JsonSerializerType jsonSerializerType)
-    // {
-    //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
-    //         new CustomAdditionalText(
-    //             path: H.Resources.github_yaml.FileName,
-    //             text: H.Resources.github_yaml.AsString())
-    //     ]);
-    // }
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task GitHub(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.github_yaml.FileName,
+                text: H.Resources.github_yaml.AsString())
+        ], new Dictionary<string, string>
+        {
+            // ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateModels"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            // ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            // ["build_property.OpenApiGenerator_IncludeOperationIds"] = "orgs/enable-or-disable-security-product-on-all-org-repos",
+        });
+    }
     
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
