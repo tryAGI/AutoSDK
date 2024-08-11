@@ -86,7 +86,7 @@ public partial class DataTests : VerifyBase
         Console.WriteLine($"Number of schemas: {data.Schemas.Count}");
         Console.WriteLine($"Total: {data.Times.Total}");
         Console.WriteLine($"TraversalTree: {data.Times.TraversalTree}");
-        Console.WriteLine($"ResolveCollisions: {data.Times.ResolveCollisions}");
+        Console.WriteLine($"Naming: {data.Times.Naming}");
         Console.WriteLine($"ResolveReferences: {data.Times.ResolveReferences}");
         Console.WriteLine($"Filtering: {data.Times.Filtering}");
         Console.WriteLine($"ComputeData: {data.Times.ComputeData}");

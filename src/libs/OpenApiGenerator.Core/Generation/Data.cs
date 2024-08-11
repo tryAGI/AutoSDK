@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Models;
 
 namespace OpenApiGenerator.Core.Generation;
 
@@ -88,25 +89,16 @@ public static class Data
         
         traversalTreeTime.Stop();
         
-        // foreach (var context in schemaContexts.Where(x => x.Parent != null))
-        // {
-        //     context.Parent!.Children.Add(context);
-        // }
-        
-        var resolveCollisionsTime = Stopwatch.StartNew();
-        
-        foreach (var group in schemaContexts
-            .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
-            .GroupBy(x => x.Id))
+        var namingTime = Stopwatch.StartNew();
+
+        foreach (var context in schemaContexts.Where(x => x.IsClass || x.IsEnum))
         {
-            var i = 2;
-            foreach (var context in group.Skip(1))
-            {
-                context.Id += $"{i++}";
-            }
+            _ = ModelNameGenerator.ComputeId(context);
         }
+
+        ModelNameGenerator.ResolveCollisions(schemaContexts);
         
-        resolveCollisionsTime.Stop();
+        namingTime.Stop();
         
         var resolveReferencesTime = Stopwatch.StartNew();
         
@@ -500,7 +492,7 @@ public static class Data
             ResolvedSchemas: filteredSchemaContexts,
             Times: new Times(
                 TraversalTree: traversalTreeTime.Elapsed,
-                ResolveCollisions: resolveCollisionsTime.Elapsed,
+                Naming: namingTime.Elapsed,
                 ResolveReferences: resolveReferencesTime.Elapsed,
                 Filtering: filteringTime.Elapsed,
                 ComputeData: computeDataTime.Elapsed,

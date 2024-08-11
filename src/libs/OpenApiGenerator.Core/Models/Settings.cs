@@ -27,13 +27,45 @@ public readonly record struct Settings(
     bool ExcludeDeprecatedOperations,
     string JsonSerializerContext,
     bool GenerateJsonSerializerContextTypes,
-    
+
     bool GenerateModels,
     ModelStyle ModelStyle,
     ImmutableArray<string> IncludeModels,
     ImmutableArray<string> ExcludeModels,
-    
+
     bool GeneratePolyfills,
-    
+
     bool GenerateSdk,
-    bool FromCli);
+    bool FromCli)
+{
+    public static Settings Default => new(
+        TargetFramework: "net8.0",
+        Namespace: string.Empty,
+        ClassName: string.Empty,
+        ClsCompliantEnumPrefix: string.Empty,
+        NamingConvention: default,
+        JsonSerializerType: default,
+        UseRequiredKeyword: default,
+        GenerateConstructors: false,
+        GroupByTags: true,
+        GenerateMethods: false,
+        MethodNamingConvention: default,
+        MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
+        GenerateMethodsAsHttpClientExtensions: false,
+        GenerateMethodsUsingSystemNetHttpJson: false,
+        IncludeOperationIds: ImmutableArray<string>.Empty,
+        ExcludeOperationIds: ImmutableArray<string>.Empty,
+        IncludeTags: ImmutableArray<string>.Empty,
+        ExcludeTags: ImmutableArray<string>.Empty,
+        ExcludeDeprecatedOperations: false,
+        JsonSerializerContext: string.Empty,
+        GenerateJsonSerializerContextTypes: false,
+        GenerateModels: false,
+        ModelStyle: default,
+        IncludeModels: ImmutableArray<string>.Empty,
+        ExcludeModels: ImmutableArray<string>.Empty,
+        GeneratePolyfills: true,
+        GenerateSdk: true,
+        FromCli: false
+    );
+}

@@ -2,7 +2,7 @@ namespace OpenApiGenerator.Core.Models;
 
 public readonly record struct Times(
     TimeSpan TraversalTree,
-    TimeSpan ResolveCollisions,
+    TimeSpan Naming,
     TimeSpan ResolveReferences,
     TimeSpan Filtering,
     TimeSpan ComputeData,

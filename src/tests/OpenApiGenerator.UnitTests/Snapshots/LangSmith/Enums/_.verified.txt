@@ -7583,7 +7583,7 @@
     FileNameWithoutExtension: G.Models.PostPostItemRunType
   },
   {
-    Id: ListReposApiV1ReposGetIsArchivedVariant1,
+    Id: ListReposApiV1ReposGetIsArchived2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -7722,14 +7722,14 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ListReposApiV1ReposGetIsArchivedVariant1,
-    ClassName: ListReposApiV1ReposGetIsArchivedVariant1,
-    GlobalClassName: global::G.ListReposApiV1ReposGetIsArchivedVariant1,
-    ExternalClassName: ListReposApiV1ReposGetIsArchivedVariant1,
-    FileNameWithoutExtension: G.Models.ListReposApiV1ReposGetIsArchivedVariant1
+    Name: ListReposApiV1ReposGetIsArchived2,
+    ClassName: ListReposApiV1ReposGetIsArchived2,
+    GlobalClassName: global::G.ListReposApiV1ReposGetIsArchived2,
+    ExternalClassName: ListReposApiV1ReposGetIsArchived2,
+    FileNameWithoutExtension: G.Models.ListReposApiV1ReposGetIsArchived2
   },
   {
-    Id: ListReposApiV1ReposGetIsPublicVariant1,
+    Id: ListReposApiV1ReposGetIsPublic2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -7833,11 +7833,11 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ListReposApiV1ReposGetIsPublicVariant1,
-    ClassName: ListReposApiV1ReposGetIsPublicVariant1,
-    GlobalClassName: global::G.ListReposApiV1ReposGetIsPublicVariant1,
-    ExternalClassName: ListReposApiV1ReposGetIsPublicVariant1,
-    FileNameWithoutExtension: G.Models.ListReposApiV1ReposGetIsPublicVariant1
+    Name: ListReposApiV1ReposGetIsPublic2,
+    ClassName: ListReposApiV1ReposGetIsPublic2,
+    GlobalClassName: global::G.ListReposApiV1ReposGetIsPublic2,
+    ExternalClassName: ListReposApiV1ReposGetIsPublic2,
+    FileNameWithoutExtension: G.Models.ListReposApiV1ReposGetIsPublic2
   },
   {
     Id: ListReposApiV1ReposGetSortDirectionVariant1,
@@ -7992,7 +7992,7 @@
     FileNameWithoutExtension: G.Models.ListReposApiV1ReposGetSortDirectionVariant2
   },
   {
-    Id: ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1,
+    Id: ListRepoTagsApiV1ReposTagsGetIsArchived2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -8131,14 +8131,14 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1,
-    ClassName: ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1,
-    GlobalClassName: global::G.ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1,
-    ExternalClassName: ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1,
-    FileNameWithoutExtension: G.Models.ListRepoTagsApiV1ReposTagsGetIsArchivedVariant1
+    Name: ListRepoTagsApiV1ReposTagsGetIsArchived2,
+    ClassName: ListRepoTagsApiV1ReposTagsGetIsArchived2,
+    GlobalClassName: global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2,
+    ExternalClassName: ListRepoTagsApiV1ReposTagsGetIsArchived2,
+    FileNameWithoutExtension: G.Models.ListRepoTagsApiV1ReposTagsGetIsArchived2
   },
   {
-    Id: ListRepoTagsApiV1ReposTagsGetIsPublicVariant1,
+    Id: ListRepoTagsApiV1ReposTagsGetIsPublic2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -8242,10 +8242,10 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ListRepoTagsApiV1ReposTagsGetIsPublicVariant1,
-    ClassName: ListRepoTagsApiV1ReposTagsGetIsPublicVariant1,
-    GlobalClassName: global::G.ListRepoTagsApiV1ReposTagsGetIsPublicVariant1,
-    ExternalClassName: ListRepoTagsApiV1ReposTagsGetIsPublicVariant1,
-    FileNameWithoutExtension: G.Models.ListRepoTagsApiV1ReposTagsGetIsPublicVariant1
+    Name: ListRepoTagsApiV1ReposTagsGetIsPublic2,
+    ClassName: ListRepoTagsApiV1ReposTagsGetIsPublic2,
+    GlobalClassName: global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2,
+    ExternalClassName: ListRepoTagsApiV1ReposTagsGetIsPublic2,
+    FileNameWithoutExtension: G.Models.ListRepoTagsApiV1ReposTagsGetIsPublic2
   }
 ]

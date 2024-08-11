@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Naming.Models;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -103,17 +104,6 @@ public class SchemaContext
     }
 
     public HashSet<string> Tags { get; set; } = [];
-
-    private static string ComputeId(Settings settings, SchemaContext? parent, string? helper)
-    {
-        var id = parent?.Id + helper?.ToCSharpName(settings, parent);
-        if (string.IsNullOrWhiteSpace(id))
-        {
-            throw new InvalidOperationException("Id is required. Invalid info.");
-        }
-
-        return id;
-    }
     
     private static string ComputeType(OpenApiSchema schema)
     {
@@ -201,16 +191,6 @@ public class SchemaContext
         int depth = 0)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        var helper = hint switch
-        {
-            Models.Hint.ArrayItem => "Item",
-            Models.Hint.Request => operation?.OperationId + "Request",
-            Models.Hint.Response => operation?.OperationId + "Response",
-            Models.Hint.Parameter => operation?.OperationId + "_" + parameter?.Name,
-            Models.Hint.AnyOf or Models.Hint.OneOf or Models.Hint.AllOf => $"Variant{(index != null ? $"{index + 1}" : "")}",
-            _ when propertyName != null => propertyName,
-            _ => null,
-        };
 
         if (schema.Reference?.Id != null &&
             componentId != schema.Reference.Id)
@@ -244,9 +224,7 @@ public class SchemaContext
             Parent = parent,
             Settings = settings,
             Schema = schema,
-            Id = propertyName?.ToCSharpName(settings, parent) ??
-                 componentId?.ToCSharpName(settings, parent) ??
-                 ComputeId(settings, parent, helper),
+            Id = ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index),
             Type = ComputeType(schema),
             ComponentId = componentId,
             PropertyName = propertyName,
@@ -262,10 +240,6 @@ public class SchemaContext
             Response = response,
             Depth = depth,
         };
-        if ((context.IsClass || context.IsEnum) && hint is not (Models.Hint.AllOf or Models.Hint.AnyOf or Models.Hint.OneOf))
-        {
-            context.Id = $"{parent?.Id}{context.Id.ToClassName()}";
-        }
         
         var children = new List<SchemaContext>();
         if (schema.Items != null)
@@ -328,11 +302,6 @@ public class SchemaContext
         context.Children = children
             .Where(x => x.Depth == depth + 1)
             .ToList();
-        // context.TypeData = Models.TypeData.FromSchemaContext(context);
-        // if (context.IsProperty || context.Hint is Models.Hint.Parameter)
-        // {
-        //     context.PropertyData = Models.PropertyData.FromSchemaContext(context);
-        // }
         
         return [context, ..children];
     }
@@ -359,23 +328,6 @@ public class SchemaContext
             PropertyData = Models.PropertyData.FromSchemaContext(this);
         }
     }
-    
-    // public void ComputeData()
-    // {
-        // TypeData = Models.TypeData.FromSchemaContext(this);
-        // if (IsProperty || Hint is Models.Hint.Parameter)
-        // {
-        //     PropertyData = Models.PropertyData.FromSchemaContext(this);
-        // }
-        // if (IsEnum)
-        // {
-        //     EnumData = ModelData.FromSchemaContext(this);
-        // }
-        // else if (IsClass)
-        // {
-        //     ClassData = ModelData.FromSchemaContext(this);
-        // }
-    //}
     
     public bool HasAnyTag(params string[] tags)
     {

@@ -152,7 +152,7 @@
     FileNameWithoutExtension: G.Models.ModelObject
   },
   {
-    Id: ModelVariant2,
+    Id: CreateCompletionRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -291,11 +291,11 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant2,
-    ClassName: ModelVariant2,
-    GlobalClassName: global::G.ModelVariant2,
-    ExternalClassName: ModelVariant2,
-    FileNameWithoutExtension: G.Models.ModelVariant2
+    Name: CreateCompletionRequestModel,
+    ClassName: CreateCompletionRequestModel,
+    GlobalClassName: global::G.CreateCompletionRequestModel,
+    ExternalClassName: CreateCompletionRequestModel,
+    FileNameWithoutExtension: G.Models.CreateCompletionRequestModel
   },
   {
     Id: ChoicesChoicesItemFinishReason,
@@ -2433,7 +2433,7 @@ Default Value: auto,
     FileNameWithoutExtension: G.Models.ChatCompletionStreamResponseDeltaRole
   },
   {
-    Id: ModelVariant22,
+    Id: CreateChatCompletionRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -3307,11 +3307,11 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant22,
-    ClassName: ModelVariant22,
-    GlobalClassName: global::G.ModelVariant22,
-    ExternalClassName: ModelVariant22,
-    FileNameWithoutExtension: G.Models.ModelVariant22
+    Name: CreateChatCompletionRequestModel,
+    ClassName: CreateChatCompletionRequestModel,
+    GlobalClassName: global::G.CreateChatCompletionRequestModel,
+    ExternalClassName: CreateChatCompletionRequestModel,
+    FileNameWithoutExtension: G.Models.CreateChatCompletionRequestModel
   },
   {
     Id: CreateChatCompletionRequestServiceTier,
@@ -3432,7 +3432,7 @@ Specifies the latency tier to use for processing the request. This parameter is 
     FileNameWithoutExtension: G.Models.CreateChatCompletionRequestServiceTier
   },
   {
-    Id: FunctionCallVariant1,
+    Id: CreateChatCompletionRequestFunctionCall,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -3538,11 +3538,11 @@ Specifies the latency tier to use for processing the request. This parameter is 
 `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function.
 ,
     IsDeprecated: false,
-    Name: FunctionCallVariant1,
-    ClassName: FunctionCallVariant1,
-    GlobalClassName: global::G.FunctionCallVariant1,
-    ExternalClassName: FunctionCallVariant1,
-    FileNameWithoutExtension: G.Models.FunctionCallVariant1
+    Name: CreateChatCompletionRequestFunctionCall,
+    ClassName: CreateChatCompletionRequestFunctionCall,
+    GlobalClassName: global::G.CreateChatCompletionRequestFunctionCall,
+    ExternalClassName: CreateChatCompletionRequestFunctionCall,
+    FileNameWithoutExtension: G.Models.CreateChatCompletionRequestFunctionCall
   },
   {
     Id: ChoicesChoicesItemFinishReason2,
@@ -4214,7 +4214,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     FileNameWithoutExtension: G.Models.CreateChatCompletionFunctionResponseObject
   },
   {
-    Id: NEpochsVariant12,
+    Id: FineTuningJobHyperparametersNEpochs,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -4283,11 +4283,11 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: NEpochsVariant12,
-    ClassName: NEpochsVariant12,
-    GlobalClassName: global::G.NEpochsVariant12,
-    ExternalClassName: NEpochsVariant12,
-    FileNameWithoutExtension: G.Models.NEpochsVariant12
+    Name: FineTuningJobHyperparametersNEpochs,
+    ClassName: FineTuningJobHyperparametersNEpochs,
+    GlobalClassName: global::G.FineTuningJobHyperparametersNEpochs,
+    ExternalClassName: FineTuningJobHyperparametersNEpochs,
+    FileNameWithoutExtension: G.Models.FineTuningJobHyperparametersNEpochs
   },
   {
     Id: FineTuningJobObject,
@@ -5179,7 +5179,7 @@ Example: scale,
     FileNameWithoutExtension: G.Models.CreateChatCompletionStreamResponseObject
   },
   {
-    Id: ModelVariant23,
+    Id: CreateImageRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -5283,11 +5283,11 @@ Example: scale,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant23,
-    ClassName: ModelVariant23,
-    GlobalClassName: global::G.ModelVariant23,
-    ExternalClassName: ModelVariant23,
-    FileNameWithoutExtension: G.Models.ModelVariant23
+    Name: CreateImageRequestModel,
+    ClassName: CreateImageRequestModel,
+    GlobalClassName: global::G.CreateImageRequestModel,
+    ExternalClassName: CreateImageRequestModel,
+    FileNameWithoutExtension: G.Models.CreateImageRequestModel
   },
   {
     Id: CreateImageRequestQuality,
@@ -5851,7 +5851,7 @@ Example: vivid,
     FileNameWithoutExtension: G.Models.CreateImageRequestStyle
   },
   {
-    Id: ModelVariant24,
+    Id: CreateImageEditRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -5920,11 +5920,11 @@ Example: vivid,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant24,
-    ClassName: ModelVariant24,
-    GlobalClassName: global::G.ModelVariant24,
-    ExternalClassName: ModelVariant24,
-    FileNameWithoutExtension: G.Models.ModelVariant24
+    Name: CreateImageEditRequestModel,
+    ClassName: CreateImageEditRequestModel,
+    GlobalClassName: global::G.CreateImageEditRequestModel,
+    ExternalClassName: CreateImageEditRequestModel,
+    FileNameWithoutExtension: G.Models.CreateImageEditRequestModel
   },
   {
     Id: CreateImageEditRequestSize,
@@ -6190,7 +6190,7 @@ Example: url,
     FileNameWithoutExtension: G.Models.CreateImageEditRequestResponseFormat
   },
   {
-    Id: ModelVariant25,
+    Id: CreateImageVariationRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -6259,11 +6259,11 @@ Example: url,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant25,
-    ClassName: ModelVariant25,
-    GlobalClassName: global::G.ModelVariant25,
-    ExternalClassName: ModelVariant25,
-    FileNameWithoutExtension: G.Models.ModelVariant25
+    Name: CreateImageVariationRequestModel,
+    ClassName: CreateImageVariationRequestModel,
+    GlobalClassName: global::G.CreateImageVariationRequestModel,
+    ExternalClassName: CreateImageVariationRequestModel,
+    FileNameWithoutExtension: G.Models.CreateImageVariationRequestModel
   },
   {
     Id: CreateImageVariationRequestResponseFormat,
@@ -6529,7 +6529,7 @@ Example: 1024x1024,
     FileNameWithoutExtension: G.Models.CreateImageVariationRequestSize
   },
   {
-    Id: ModelVariant26,
+    Id: CreateModerationRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -6633,11 +6633,11 @@ Example: 1024x1024,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant26,
-    ClassName: ModelVariant26,
-    GlobalClassName: global::G.ModelVariant26,
-    ExternalClassName: ModelVariant26,
-    FileNameWithoutExtension: G.Models.ModelVariant26
+    Name: CreateModerationRequestModel,
+    ClassName: CreateModerationRequestModel,
+    GlobalClassName: global::G.CreateModerationRequestModel,
+    ExternalClassName: CreateModerationRequestModel,
+    FileNameWithoutExtension: G.Models.CreateModerationRequestModel
   },
   {
     Id: OpenAIFileObject,
@@ -7670,7 +7670,7 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     FileNameWithoutExtension: G.Models.CreateUploadRequestPurpose
   },
   {
-    Id: ModelVariant27,
+    Id: CreateFineTuningJobRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -7844,14 +7844,14 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant27,
-    ClassName: ModelVariant27,
-    GlobalClassName: global::G.ModelVariant27,
-    ExternalClassName: ModelVariant27,
-    FileNameWithoutExtension: G.Models.ModelVariant27
+    Name: CreateFineTuningJobRequestModel,
+    ClassName: CreateFineTuningJobRequestModel,
+    GlobalClassName: global::G.CreateFineTuningJobRequestModel,
+    ExternalClassName: CreateFineTuningJobRequestModel,
+    FileNameWithoutExtension: G.Models.CreateFineTuningJobRequestModel
   },
   {
-    Id: BatchSizeVariant1,
+    Id: CreateFineTuningJobRequestHyperparametersBatchSize,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -7920,14 +7920,14 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: BatchSizeVariant1,
-    ClassName: BatchSizeVariant1,
-    GlobalClassName: global::G.BatchSizeVariant1,
-    ExternalClassName: BatchSizeVariant1,
-    FileNameWithoutExtension: G.Models.BatchSizeVariant1
+    Name: CreateFineTuningJobRequestHyperparametersBatchSize,
+    ClassName: CreateFineTuningJobRequestHyperparametersBatchSize,
+    GlobalClassName: global::G.CreateFineTuningJobRequestHyperparametersBatchSize,
+    ExternalClassName: CreateFineTuningJobRequestHyperparametersBatchSize,
+    FileNameWithoutExtension: G.Models.CreateFineTuningJobRequestHyperparametersBatchSize
   },
   {
-    Id: LearningRateMultiplierVariant1,
+    Id: CreateFineTuningJobRequestHyperparametersLearningRateMultiplier,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -7996,14 +7996,14 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: LearningRateMultiplierVariant1,
-    ClassName: LearningRateMultiplierVariant1,
-    GlobalClassName: global::G.LearningRateMultiplierVariant1,
-    ExternalClassName: LearningRateMultiplierVariant1,
-    FileNameWithoutExtension: G.Models.LearningRateMultiplierVariant1
+    Name: CreateFineTuningJobRequestHyperparametersLearningRateMultiplier,
+    ClassName: CreateFineTuningJobRequestHyperparametersLearningRateMultiplier,
+    GlobalClassName: global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier,
+    ExternalClassName: CreateFineTuningJobRequestHyperparametersLearningRateMultiplier,
+    FileNameWithoutExtension: G.Models.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier
   },
   {
-    Id: NEpochsVariant1,
+    Id: CreateFineTuningJobRequestHyperparametersNEpochs,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -8072,14 +8072,14 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: NEpochsVariant1,
-    ClassName: NEpochsVariant1,
-    GlobalClassName: global::G.NEpochsVariant1,
-    ExternalClassName: NEpochsVariant1,
-    FileNameWithoutExtension: G.Models.NEpochsVariant1
+    Name: CreateFineTuningJobRequestHyperparametersNEpochs,
+    ClassName: CreateFineTuningJobRequestHyperparametersNEpochs,
+    GlobalClassName: global::G.CreateFineTuningJobRequestHyperparametersNEpochs,
+    ExternalClassName: CreateFineTuningJobRequestHyperparametersNEpochs,
+    FileNameWithoutExtension: G.Models.CreateFineTuningJobRequestHyperparametersNEpochs
   },
   {
-    Id: TypeVariant1,
+    Id: IntegrationsIntegrationsItemType,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -8148,11 +8148,11 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: TypeVariant1,
-    ClassName: TypeVariant1,
-    GlobalClassName: global::G.TypeVariant1,
-    ExternalClassName: TypeVariant1,
-    FileNameWithoutExtension: G.Models.TypeVariant1
+    Name: IntegrationsIntegrationsItemType,
+    ClassName: IntegrationsIntegrationsItemType,
+    GlobalClassName: global::G.IntegrationsIntegrationsItemType,
+    ExternalClassName: IntegrationsIntegrationsItemType,
+    FileNameWithoutExtension: G.Models.IntegrationsIntegrationsItemType
   },
   {
     Id: FineTuningJobEventLevel,
@@ -8605,7 +8605,7 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     FileNameWithoutExtension: G.Models.ListFineTuningJobCheckpointsResponseObject
   },
   {
-    Id: ModelVariant28,
+    Id: CreateEmbeddingRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -8744,11 +8744,11 @@ See the [documentation on File purposes](/docs/api-reference/files/create#files-
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant28,
-    ClassName: ModelVariant28,
-    GlobalClassName: global::G.ModelVariant28,
-    ExternalClassName: ModelVariant28,
-    FileNameWithoutExtension: G.Models.ModelVariant28
+    Name: CreateEmbeddingRequestModel,
+    ClassName: CreateEmbeddingRequestModel,
+    GlobalClassName: global::G.CreateEmbeddingRequestModel,
+    ExternalClassName: CreateEmbeddingRequestModel,
+    FileNameWithoutExtension: G.Models.CreateEmbeddingRequestModel
   },
   {
     Id: CreateEmbeddingRequestEncodingFormat,
@@ -9017,7 +9017,7 @@ Example: float,
     FileNameWithoutExtension: G.Models.CreateEmbeddingResponseObject
   },
   {
-    Id: ModelVariant29,
+    Id: CreateTranscriptionRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -9086,11 +9086,11 @@ Example: float,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant29,
-    ClassName: ModelVariant29,
-    GlobalClassName: global::G.ModelVariant29,
-    ExternalClassName: ModelVariant29,
-    FileNameWithoutExtension: G.Models.ModelVariant29
+    Name: CreateTranscriptionRequestModel,
+    ClassName: CreateTranscriptionRequestModel,
+    GlobalClassName: global::G.CreateTranscriptionRequestModel,
+    ExternalClassName: CreateTranscriptionRequestModel,
+    FileNameWithoutExtension: G.Models.CreateTranscriptionRequestModel
   },
   {
     Id: CreateTranscriptionRequestResponseFormat,
@@ -9423,7 +9423,7 @@ Default Value: json,
     FileNameWithoutExtension: G.Models.TimestampGranularitiesTimestampGranularitiesItem
   },
   {
-    Id: ModelVariant210,
+    Id: CreateTranslationRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -9492,14 +9492,14 @@ Default Value: json,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant210,
-    ClassName: ModelVariant210,
-    GlobalClassName: global::G.ModelVariant210,
-    ExternalClassName: ModelVariant210,
-    FileNameWithoutExtension: G.Models.ModelVariant210
+    Name: CreateTranslationRequestModel,
+    ClassName: CreateTranslationRequestModel,
+    GlobalClassName: global::G.CreateTranslationRequestModel,
+    ExternalClassName: CreateTranslationRequestModel,
+    FileNameWithoutExtension: G.Models.CreateTranslationRequestModel
   },
   {
-    Id: ModelVariant211,
+    Id: CreateSpeechRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -9603,11 +9603,11 @@ Default Value: json,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant211,
-    ClassName: ModelVariant211,
-    GlobalClassName: global::G.ModelVariant211,
-    ExternalClassName: ModelVariant211,
-    FileNameWithoutExtension: G.Models.ModelVariant211
+    Name: CreateSpeechRequestModel,
+    ClassName: CreateSpeechRequestModel,
+    GlobalClassName: global::G.CreateSpeechRequestModel,
+    ExternalClassName: CreateSpeechRequestModel,
+    FileNameWithoutExtension: G.Models.CreateSpeechRequestModel
   },
   {
     Id: CreateSpeechRequestVoice,
@@ -10829,7 +10829,7 @@ Default Value: mp3,
     FileNameWithoutExtension: G.Models.AssistantToolsFunctionType
   },
   {
-    Id: ModelVariant212,
+    Id: CreateAssistantRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -11668,14 +11668,14 @@ Default Value: mp3,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant212,
-    ClassName: ModelVariant212,
-    GlobalClassName: global::G.ModelVariant212,
-    ExternalClassName: ModelVariant212,
-    FileNameWithoutExtension: G.Models.ModelVariant212
+    Name: CreateAssistantRequestModel,
+    ClassName: CreateAssistantRequestModel,
+    GlobalClassName: global::G.CreateAssistantRequestModel,
+    ExternalClassName: CreateAssistantRequestModel,
+    FileNameWithoutExtension: G.Models.CreateAssistantRequestModel
   },
   {
-    Id: VectorStoresVectorStoresItemChunkingStrategyVariant1Type,
+    Id: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -11744,14 +11744,14 @@ Default Value: mp3,
     ],
     Summary: Always `auto`.,
     IsDeprecated: false,
-    Name: VectorStoresVectorStoresItemChunkingStrategyVariant1Type,
-    ClassName: VectorStoresVectorStoresItemChunkingStrategyVariant1Type,
-    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVariant1Type,
-    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVariant1Type,
-    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVariant1Type
+    Name: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type,
+    ClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type,
+    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type,
+    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type,
+    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type
   },
   {
-    Id: VectorStoresVectorStoresItemChunkingStrategyVariant2Type,
+    Id: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -11820,11 +11820,11 @@ Default Value: mp3,
     ],
     Summary: Always `static`.,
     IsDeprecated: false,
-    Name: VectorStoresVectorStoresItemChunkingStrategyVariant2Type,
-    ClassName: VectorStoresVectorStoresItemChunkingStrategyVariant2Type,
-    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVariant2Type,
-    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVariant2Type,
-    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVariant2Type
+    Name: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type,
+    ClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type,
+    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type,
+    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type,
+    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type
   },
   {
     Id: DeleteAssistantResponseObject,
@@ -13225,7 +13225,7 @@ Default Value: mp3,
     FileNameWithoutExtension: G.Models.RunObjectIncompleteDetailsReason
   },
   {
-    Id: ModelVariant213,
+    Id: CreateRunRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -14064,11 +14064,11 @@ Default Value: mp3,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant213,
-    ClassName: ModelVariant213,
-    GlobalClassName: global::G.ModelVariant213,
-    ExternalClassName: ModelVariant213,
-    FileNameWithoutExtension: G.Models.ModelVariant213
+    Name: CreateRunRequestModel,
+    ClassName: CreateRunRequestModel,
+    GlobalClassName: global::G.CreateRunRequestModel,
+    ExternalClassName: CreateRunRequestModel,
+    FileNameWithoutExtension: G.Models.CreateRunRequestModel
   },
   {
     Id: CreateMessageRequestRole,
@@ -14710,7 +14710,7 @@ Default Value: auto,
     FileNameWithoutExtension: G.Models.MessageRequestContentTextObjectType
   },
   {
-    Id: VectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
+    Id: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -14779,14 +14779,14 @@ Default Value: auto,
     ],
     Summary: Always `auto`.,
     IsDeprecated: false,
-    Name: VectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
-    ClassName: VectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
-    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
-    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
-    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVariant1Type2
+    Name: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
+    ClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
+    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
+    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2,
+    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant1Type2
   },
   {
-    Id: VectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
+    Id: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -14855,14 +14855,14 @@ Default Value: auto,
     ],
     Summary: Always `static`.,
     IsDeprecated: false,
-    Name: VectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
-    ClassName: VectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
-    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
-    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
-    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVariant2Type2
+    Name: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
+    ClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
+    GlobalClassName: global::G.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
+    ExternalClassName: VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2,
+    FileNameWithoutExtension: G.Models.VectorStoresVectorStoresItemChunkingStrategyVectorStoresVectorStoresItemChunkingStrategyVariant2Type2
   },
   {
-    Id: ModelVariant214,
+    Id: CreateThreadAndRunRequestModel,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -15701,11 +15701,11 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ModelVariant214,
-    ClassName: ModelVariant214,
-    GlobalClassName: global::G.ModelVariant214,
-    ExternalClassName: ModelVariant214,
-    FileNameWithoutExtension: G.Models.ModelVariant214
+    Name: CreateThreadAndRunRequestModel,
+    ClassName: CreateThreadAndRunRequestModel,
+    GlobalClassName: global::G.CreateThreadAndRunRequestModel,
+    ExternalClassName: CreateThreadAndRunRequestModel,
+    FileNameWithoutExtension: G.Models.CreateThreadAndRunRequestModel
   },
   {
     Id: ThreadObjectObject,
@@ -20796,7 +20796,7 @@ Default Value: auto,
     FileNameWithoutExtension: G.Models.VectorStoreFileBatchObjectStatus
   },
   {
-    Id: ThreadStreamEventVariant1Event,
+    Id: ThreadStreamEventThreadStreamEventVariant1Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -20865,14 +20865,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: ThreadStreamEventVariant1Event,
-    ClassName: ThreadStreamEventVariant1Event,
-    GlobalClassName: global::G.ThreadStreamEventVariant1Event,
-    ExternalClassName: ThreadStreamEventVariant1Event,
-    FileNameWithoutExtension: G.Models.ThreadStreamEventVariant1Event
+    Name: ThreadStreamEventThreadStreamEventVariant1Event,
+    ClassName: ThreadStreamEventThreadStreamEventVariant1Event,
+    GlobalClassName: global::G.ThreadStreamEventThreadStreamEventVariant1Event,
+    ExternalClassName: ThreadStreamEventThreadStreamEventVariant1Event,
+    FileNameWithoutExtension: G.Models.ThreadStreamEventThreadStreamEventVariant1Event
   },
   {
-    Id: RunStreamEventVariant1Event,
+    Id: RunStreamEventRunStreamEventVariant1Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -20941,14 +20941,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant1Event,
-    ClassName: RunStreamEventVariant1Event,
-    GlobalClassName: global::G.RunStreamEventVariant1Event,
-    ExternalClassName: RunStreamEventVariant1Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant1Event
+    Name: RunStreamEventRunStreamEventVariant1Event,
+    ClassName: RunStreamEventRunStreamEventVariant1Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant1Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant1Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant1Event
   },
   {
-    Id: RunStreamEventVariant2Event,
+    Id: RunStreamEventRunStreamEventVariant2Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21017,14 +21017,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant2Event,
-    ClassName: RunStreamEventVariant2Event,
-    GlobalClassName: global::G.RunStreamEventVariant2Event,
-    ExternalClassName: RunStreamEventVariant2Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant2Event
+    Name: RunStreamEventRunStreamEventVariant2Event,
+    ClassName: RunStreamEventRunStreamEventVariant2Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant2Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant2Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant2Event
   },
   {
-    Id: RunStreamEventVariant3Event,
+    Id: RunStreamEventRunStreamEventVariant3Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21093,14 +21093,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant3Event,
-    ClassName: RunStreamEventVariant3Event,
-    GlobalClassName: global::G.RunStreamEventVariant3Event,
-    ExternalClassName: RunStreamEventVariant3Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant3Event
+    Name: RunStreamEventRunStreamEventVariant3Event,
+    ClassName: RunStreamEventRunStreamEventVariant3Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant3Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant3Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant3Event
   },
   {
-    Id: RunStreamEventVariant4Event,
+    Id: RunStreamEventRunStreamEventVariant4Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21169,14 +21169,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant4Event,
-    ClassName: RunStreamEventVariant4Event,
-    GlobalClassName: global::G.RunStreamEventVariant4Event,
-    ExternalClassName: RunStreamEventVariant4Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant4Event
+    Name: RunStreamEventRunStreamEventVariant4Event,
+    ClassName: RunStreamEventRunStreamEventVariant4Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant4Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant4Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant4Event
   },
   {
-    Id: RunStreamEventVariant5Event,
+    Id: RunStreamEventRunStreamEventVariant5Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21245,14 +21245,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant5Event,
-    ClassName: RunStreamEventVariant5Event,
-    GlobalClassName: global::G.RunStreamEventVariant5Event,
-    ExternalClassName: RunStreamEventVariant5Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant5Event
+    Name: RunStreamEventRunStreamEventVariant5Event,
+    ClassName: RunStreamEventRunStreamEventVariant5Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant5Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant5Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant5Event
   },
   {
-    Id: RunStreamEventVariant6Event,
+    Id: RunStreamEventRunStreamEventVariant6Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21321,14 +21321,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant6Event,
-    ClassName: RunStreamEventVariant6Event,
-    GlobalClassName: global::G.RunStreamEventVariant6Event,
-    ExternalClassName: RunStreamEventVariant6Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant6Event
+    Name: RunStreamEventRunStreamEventVariant6Event,
+    ClassName: RunStreamEventRunStreamEventVariant6Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant6Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant6Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant6Event
   },
   {
-    Id: RunStreamEventVariant7Event,
+    Id: RunStreamEventRunStreamEventVariant7Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21397,14 +21397,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant7Event,
-    ClassName: RunStreamEventVariant7Event,
-    GlobalClassName: global::G.RunStreamEventVariant7Event,
-    ExternalClassName: RunStreamEventVariant7Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant7Event
+    Name: RunStreamEventRunStreamEventVariant7Event,
+    ClassName: RunStreamEventRunStreamEventVariant7Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant7Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant7Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant7Event
   },
   {
-    Id: RunStreamEventVariant8Event,
+    Id: RunStreamEventRunStreamEventVariant8Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21473,14 +21473,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant8Event,
-    ClassName: RunStreamEventVariant8Event,
-    GlobalClassName: global::G.RunStreamEventVariant8Event,
-    ExternalClassName: RunStreamEventVariant8Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant8Event
+    Name: RunStreamEventRunStreamEventVariant8Event,
+    ClassName: RunStreamEventRunStreamEventVariant8Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant8Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant8Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant8Event
   },
   {
-    Id: RunStreamEventVariant9Event,
+    Id: RunStreamEventRunStreamEventVariant9Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21549,14 +21549,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant9Event,
-    ClassName: RunStreamEventVariant9Event,
-    GlobalClassName: global::G.RunStreamEventVariant9Event,
-    ExternalClassName: RunStreamEventVariant9Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant9Event
+    Name: RunStreamEventRunStreamEventVariant9Event,
+    ClassName: RunStreamEventRunStreamEventVariant9Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant9Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant9Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant9Event
   },
   {
-    Id: RunStreamEventVariant10Event,
+    Id: RunStreamEventRunStreamEventVariant10Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21625,14 +21625,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStreamEventVariant10Event,
-    ClassName: RunStreamEventVariant10Event,
-    GlobalClassName: global::G.RunStreamEventVariant10Event,
-    ExternalClassName: RunStreamEventVariant10Event,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant10Event
+    Name: RunStreamEventRunStreamEventVariant10Event,
+    ClassName: RunStreamEventRunStreamEventVariant10Event,
+    GlobalClassName: global::G.RunStreamEventRunStreamEventVariant10Event,
+    ExternalClassName: RunStreamEventRunStreamEventVariant10Event,
+    FileNameWithoutExtension: G.Models.RunStreamEventRunStreamEventVariant10Event
   },
   {
-    Id: RunStepStreamEventVariant1Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant1Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21701,14 +21701,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant1Event,
-    ClassName: RunStepStreamEventVariant1Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant1Event,
-    ExternalClassName: RunStepStreamEventVariant1Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant1Event
+    Name: RunStepStreamEventRunStepStreamEventVariant1Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant1Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant1Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant1Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant1Event
   },
   {
-    Id: RunStepStreamEventVariant2Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant2Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21777,14 +21777,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant2Event,
-    ClassName: RunStepStreamEventVariant2Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant2Event,
-    ExternalClassName: RunStepStreamEventVariant2Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant2Event
+    Name: RunStepStreamEventRunStepStreamEventVariant2Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant2Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant2Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant2Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant2Event
   },
   {
-    Id: RunStepStreamEventVariant3Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant3Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21853,14 +21853,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant3Event,
-    ClassName: RunStepStreamEventVariant3Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant3Event,
-    ExternalClassName: RunStepStreamEventVariant3Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant3Event
+    Name: RunStepStreamEventRunStepStreamEventVariant3Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant3Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant3Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant3Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant3Event
   },
   {
-    Id: RunStepStreamEventVariant4Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant4Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -21929,14 +21929,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant4Event,
-    ClassName: RunStepStreamEventVariant4Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant4Event,
-    ExternalClassName: RunStepStreamEventVariant4Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant4Event
+    Name: RunStepStreamEventRunStepStreamEventVariant4Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant4Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant4Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant4Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant4Event
   },
   {
-    Id: RunStepStreamEventVariant5Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant5Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22005,14 +22005,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant5Event,
-    ClassName: RunStepStreamEventVariant5Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant5Event,
-    ExternalClassName: RunStepStreamEventVariant5Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant5Event
+    Name: RunStepStreamEventRunStepStreamEventVariant5Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant5Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant5Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant5Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant5Event
   },
   {
-    Id: RunStepStreamEventVariant6Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant6Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22081,14 +22081,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant6Event,
-    ClassName: RunStepStreamEventVariant6Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant6Event,
-    ExternalClassName: RunStepStreamEventVariant6Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant6Event
+    Name: RunStepStreamEventRunStepStreamEventVariant6Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant6Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant6Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant6Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant6Event
   },
   {
-    Id: RunStepStreamEventVariant7Event,
+    Id: RunStepStreamEventRunStepStreamEventVariant7Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22157,14 +22157,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: RunStepStreamEventVariant7Event,
-    ClassName: RunStepStreamEventVariant7Event,
-    GlobalClassName: global::G.RunStepStreamEventVariant7Event,
-    ExternalClassName: RunStepStreamEventVariant7Event,
-    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant7Event
+    Name: RunStepStreamEventRunStepStreamEventVariant7Event,
+    ClassName: RunStepStreamEventRunStepStreamEventVariant7Event,
+    GlobalClassName: global::G.RunStepStreamEventRunStepStreamEventVariant7Event,
+    ExternalClassName: RunStepStreamEventRunStepStreamEventVariant7Event,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventRunStepStreamEventVariant7Event
   },
   {
-    Id: MessageStreamEventVariant1Event,
+    Id: MessageStreamEventMessageStreamEventVariant1Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22233,14 +22233,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: MessageStreamEventVariant1Event,
-    ClassName: MessageStreamEventVariant1Event,
-    GlobalClassName: global::G.MessageStreamEventVariant1Event,
-    ExternalClassName: MessageStreamEventVariant1Event,
-    FileNameWithoutExtension: G.Models.MessageStreamEventVariant1Event
+    Name: MessageStreamEventMessageStreamEventVariant1Event,
+    ClassName: MessageStreamEventMessageStreamEventVariant1Event,
+    GlobalClassName: global::G.MessageStreamEventMessageStreamEventVariant1Event,
+    ExternalClassName: MessageStreamEventMessageStreamEventVariant1Event,
+    FileNameWithoutExtension: G.Models.MessageStreamEventMessageStreamEventVariant1Event
   },
   {
-    Id: MessageStreamEventVariant2Event,
+    Id: MessageStreamEventMessageStreamEventVariant2Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22309,14 +22309,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: MessageStreamEventVariant2Event,
-    ClassName: MessageStreamEventVariant2Event,
-    GlobalClassName: global::G.MessageStreamEventVariant2Event,
-    ExternalClassName: MessageStreamEventVariant2Event,
-    FileNameWithoutExtension: G.Models.MessageStreamEventVariant2Event
+    Name: MessageStreamEventMessageStreamEventVariant2Event,
+    ClassName: MessageStreamEventMessageStreamEventVariant2Event,
+    GlobalClassName: global::G.MessageStreamEventMessageStreamEventVariant2Event,
+    ExternalClassName: MessageStreamEventMessageStreamEventVariant2Event,
+    FileNameWithoutExtension: G.Models.MessageStreamEventMessageStreamEventVariant2Event
   },
   {
-    Id: MessageStreamEventVariant3Event,
+    Id: MessageStreamEventMessageStreamEventVariant3Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22385,14 +22385,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: MessageStreamEventVariant3Event,
-    ClassName: MessageStreamEventVariant3Event,
-    GlobalClassName: global::G.MessageStreamEventVariant3Event,
-    ExternalClassName: MessageStreamEventVariant3Event,
-    FileNameWithoutExtension: G.Models.MessageStreamEventVariant3Event
+    Name: MessageStreamEventMessageStreamEventVariant3Event,
+    ClassName: MessageStreamEventMessageStreamEventVariant3Event,
+    GlobalClassName: global::G.MessageStreamEventMessageStreamEventVariant3Event,
+    ExternalClassName: MessageStreamEventMessageStreamEventVariant3Event,
+    FileNameWithoutExtension: G.Models.MessageStreamEventMessageStreamEventVariant3Event
   },
   {
-    Id: MessageStreamEventVariant4Event,
+    Id: MessageStreamEventMessageStreamEventVariant4Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22461,14 +22461,14 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: MessageStreamEventVariant4Event,
-    ClassName: MessageStreamEventVariant4Event,
-    GlobalClassName: global::G.MessageStreamEventVariant4Event,
-    ExternalClassName: MessageStreamEventVariant4Event,
-    FileNameWithoutExtension: G.Models.MessageStreamEventVariant4Event
+    Name: MessageStreamEventMessageStreamEventVariant4Event,
+    ClassName: MessageStreamEventMessageStreamEventVariant4Event,
+    GlobalClassName: global::G.MessageStreamEventMessageStreamEventVariant4Event,
+    ExternalClassName: MessageStreamEventMessageStreamEventVariant4Event,
+    FileNameWithoutExtension: G.Models.MessageStreamEventMessageStreamEventVariant4Event
   },
   {
-    Id: MessageStreamEventVariant5Event,
+    Id: MessageStreamEventMessageStreamEventVariant5Event,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -22537,11 +22537,11 @@ Default Value: auto,
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: MessageStreamEventVariant5Event,
-    ClassName: MessageStreamEventVariant5Event,
-    GlobalClassName: global::G.MessageStreamEventVariant5Event,
-    ExternalClassName: MessageStreamEventVariant5Event,
-    FileNameWithoutExtension: G.Models.MessageStreamEventVariant5Event
+    Name: MessageStreamEventMessageStreamEventVariant5Event,
+    ClassName: MessageStreamEventMessageStreamEventVariant5Event,
+    GlobalClassName: global::G.MessageStreamEventMessageStreamEventVariant5Event,
+    ExternalClassName: MessageStreamEventMessageStreamEventVariant5Event,
+    FileNameWithoutExtension: G.Models.MessageStreamEventMessageStreamEventVariant5Event
   },
   {
     Id: ErrorEventEvent,
