@@ -1050,7 +1050,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
+      CSharpType: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseItem>,
       IsArray: true,
       IsEnum: false,
       IsBase64: false,
@@ -1088,10 +1088,10 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
-      CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>?,
-      ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>,
-      ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem>?,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseItem>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseItem>?,
+      ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseItem>,
+      ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<AccountGetProjectAccessDetailsForUserResponseItem>?,
       IsAnyOf: false,
       IsReferenceable: false,
       ConverterType: 

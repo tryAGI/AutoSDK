@@ -56,16 +56,10 @@ public readonly record struct ModelData(
             );
     }
 
-    public string Name => Id;
-        //.ToClassName();// + 
-        // (SchemaContext.Hint is not (Hint.AnyOf or Hint.AllOf or Hint.OneOf) || string.IsNullOrWhiteSpace(SchemaContext.Schema.Type)
-        //     ? string.Empty
-        //     : SchemaContext.Schema.Type.ToPropertyName())
-
     public string ClassName => Id;// Settings.NamingConvention switch
     // {
     //     NamingConvention.ConcatNames => Parents.IsEmpty ? Name : $"{Parents.Last().ClassName}{Name}",
-    //     NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
+    //     
     //     _ => string.Empty,
     // };
 

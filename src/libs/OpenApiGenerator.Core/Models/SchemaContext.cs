@@ -64,6 +64,8 @@ public class SchemaContext
          : null;
     public string? ClassName { get; set; }
     
+    public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
+    
     public bool IsAnyOf => Schema.IsAnyOf();
     public bool IsOneOf => Schema.IsOneOf();
     public bool IsAllOf => Schema.IsAllOf();

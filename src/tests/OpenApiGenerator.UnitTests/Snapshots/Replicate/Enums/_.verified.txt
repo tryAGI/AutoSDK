@@ -1,6 +1,6 @@
 ﻿[
   {
-    Id: WebhookEventsFilterWebhookEventsFilterItem,
+    Id: PredictionRequestWebhookEventsFilterItem,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -175,14 +175,13 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: WebhookEventsFilterWebhookEventsFilterItem,
-    ClassName: WebhookEventsFilterWebhookEventsFilterItem,
-    GlobalClassName: global::G.WebhookEventsFilterWebhookEventsFilterItem,
-    ExternalClassName: WebhookEventsFilterWebhookEventsFilterItem,
-    FileNameWithoutExtension: G.Models.WebhookEventsFilterWebhookEventsFilterItem
+    ClassName: PredictionRequestWebhookEventsFilterItem,
+    GlobalClassName: global::G.PredictionRequestWebhookEventsFilterItem,
+    ExternalClassName: PredictionRequestWebhookEventsFilterItem,
+    FileNameWithoutExtension: G.Models.PredictionRequestWebhookEventsFilterItem
   },
   {
-    Id: WebhookEventsFilterWebhookEventsFilterItem2,
+    Id: TrainingRequestWebhookEventsFilterItem,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -357,14 +356,13 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: WebhookEventsFilterWebhookEventsFilterItem2,
-    ClassName: WebhookEventsFilterWebhookEventsFilterItem2,
-    GlobalClassName: global::G.WebhookEventsFilterWebhookEventsFilterItem2,
-    ExternalClassName: WebhookEventsFilterWebhookEventsFilterItem2,
-    FileNameWithoutExtension: G.Models.WebhookEventsFilterWebhookEventsFilterItem2
+    ClassName: TrainingRequestWebhookEventsFilterItem,
+    GlobalClassName: global::G.TrainingRequestWebhookEventsFilterItem,
+    ExternalClassName: TrainingRequestWebhookEventsFilterItem,
+    FileNameWithoutExtension: G.Models.TrainingRequestWebhookEventsFilterItem
   },
   {
-    Id: WebhookEventsFilterWebhookEventsFilterItem3,
+    Id: VersionPredictionRequestWebhookEventsFilterItem,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -539,11 +537,10 @@
     ],
     Summary: ,
     IsDeprecated: false,
-    Name: WebhookEventsFilterWebhookEventsFilterItem3,
-    ClassName: WebhookEventsFilterWebhookEventsFilterItem3,
-    GlobalClassName: global::G.WebhookEventsFilterWebhookEventsFilterItem3,
-    ExternalClassName: WebhookEventsFilterWebhookEventsFilterItem3,
-    FileNameWithoutExtension: G.Models.WebhookEventsFilterWebhookEventsFilterItem3
+    ClassName: VersionPredictionRequestWebhookEventsFilterItem,
+    GlobalClassName: global::G.VersionPredictionRequestWebhookEventsFilterItem,
+    ExternalClassName: VersionPredictionRequestWebhookEventsFilterItem,
+    FileNameWithoutExtension: G.Models.VersionPredictionRequestWebhookEventsFilterItem
   },
   {
     Id: ModelsCreateRequestVisibility,
@@ -651,7 +648,6 @@
     ],
     Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
     IsDeprecated: false,
-    Name: ModelsCreateRequestVisibility,
     ClassName: ModelsCreateRequestVisibility,
     GlobalClassName: global::G.ModelsCreateRequestVisibility,
     ExternalClassName: ModelsCreateRequestVisibility,
@@ -763,14 +759,13 @@
     ],
     Summary: The account type. Can be a user or an organization.,
     IsDeprecated: false,
-    Name: AccountGetResponseType,
     ClassName: AccountGetResponseType,
     GlobalClassName: global::G.AccountGetResponseType,
     ExternalClassName: AccountGetResponseType,
     FileNameWithoutExtension: G.Models.AccountGetResponseType
   },
   {
-    Id: ResultsResultsItemCurrentReleaseCreatedByType,
+    Id: DeploymentsListResponseResultCurrentReleaseCreatedByType,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -875,11 +870,10 @@
     ],
     Summary: The account type of the creator. Can be a user or an organization.,
     IsDeprecated: false,
-    Name: ResultsResultsItemCurrentReleaseCreatedByType,
-    ClassName: ResultsResultsItemCurrentReleaseCreatedByType,
-    GlobalClassName: global::G.ResultsResultsItemCurrentReleaseCreatedByType,
-    ExternalClassName: ResultsResultsItemCurrentReleaseCreatedByType,
-    FileNameWithoutExtension: G.Models.ResultsResultsItemCurrentReleaseCreatedByType
+    ClassName: DeploymentsListResponseResultCurrentReleaseCreatedByType,
+    GlobalClassName: global::G.DeploymentsListResponseResultCurrentReleaseCreatedByType,
+    ExternalClassName: DeploymentsListResponseResultCurrentReleaseCreatedByType,
+    FileNameWithoutExtension: G.Models.DeploymentsListResponseResultCurrentReleaseCreatedByType
   },
   {
     Id: DeploymentsCreateResponseCurrentReleaseCreatedByType,
@@ -987,7 +981,6 @@
     ],
     Summary: The account type of the creator. Can be a user or an organization.,
     IsDeprecated: false,
-    Name: DeploymentsCreateResponseCurrentReleaseCreatedByType,
     ClassName: DeploymentsCreateResponseCurrentReleaseCreatedByType,
     GlobalClassName: global::G.DeploymentsCreateResponseCurrentReleaseCreatedByType,
     ExternalClassName: DeploymentsCreateResponseCurrentReleaseCreatedByType,
@@ -1099,7 +1092,6 @@
     ],
     Summary: The account type of the creator. Can be a user or an organization.,
     IsDeprecated: false,
-    Name: DeploymentsGetResponseCurrentReleaseCreatedByType,
     ClassName: DeploymentsGetResponseCurrentReleaseCreatedByType,
     GlobalClassName: global::G.DeploymentsGetResponseCurrentReleaseCreatedByType,
     ExternalClassName: DeploymentsGetResponseCurrentReleaseCreatedByType,
@@ -1211,7 +1203,6 @@
     ],
     Summary: The account type of the creator. Can be a user or an organization.,
     IsDeprecated: false,
-    Name: DeploymentsUpdateResponseCurrentReleaseCreatedByType,
     ClassName: DeploymentsUpdateResponseCurrentReleaseCreatedByType,
     GlobalClassName: global::G.DeploymentsUpdateResponseCurrentReleaseCreatedByType,
     ExternalClassName: DeploymentsUpdateResponseCurrentReleaseCreatedByType,

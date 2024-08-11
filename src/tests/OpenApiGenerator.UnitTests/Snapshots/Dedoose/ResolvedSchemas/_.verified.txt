@@ -1946,7 +1946,7 @@
   AccountGetExportStorageMetricsJobIdResponse(string)[Account],
   AccountGetExportStorageMetricsJobIdResponse(string)[Account],
   AccountGetProjectAccessDetailsForUserResponse(array)[Account],
-    AccountGetProjectAccessDetailsForUserResponseAccountGetProjectAccessDetailsForUserResponseItem(class)[Account],
+    AccountGetProjectAccessDetailsForUserResponseItem(class)[Account],
   AccountGetProjectAccessDetailsForUserResponse(string)[Account],
   AccountGetProjectAccessDetailsForUserResponse(string)[Account],
   AccountGrantAdminResponse(bool)[Account],

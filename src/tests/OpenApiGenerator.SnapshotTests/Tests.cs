@@ -153,13 +153,13 @@ public partial class Tests
                 text: H.Resources.openai_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            // ["build_property.OpenApiGenerator_ClassName"] = "OpenAiClient",
-            //  ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
-            //  ["build_property.OpenApiGenerator_GenerateModels"] = "false",
-            //  ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-            //  ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            //  ["build_property.OpenApiGenerator_IncludeOperationIds"] = "listVectorStores",
-            //["build_property.OpenApiGenerator_IncludeModels"] = "FineTuneChatCompletionRequestAssistantMessage",
+            ["build_property.OpenApiGenerator_ClassName"] = "OpenAiClient",
+            // ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateModels"] = "true",
+            // ["build_property.OpenApiGenerator_GenerateMethods"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateConstructors"] = "false",
+            //["build_property.OpenApiGenerator_IncludeOperationIds"] = "listVectorStores",
+            //["build_property.OpenApiGenerator_IncludeModels"] = "CreateAssistantRequest",
         });
     }
     
