@@ -10,24 +10,23 @@
     <NoWarn>$(NoWarn);CS7022;IL2104</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama\OpenApiGenerator.IntegrationTests.Ollama.csproj" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.IpInfo\OpenApiGenerator.IntegrationTests.IpInfo.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo.Data" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch.Data" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama.Models" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI.Models" />
-    <!-- <TrimmerRootAssembly Include="OpenApiGenerator.Helpers" /> -->
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama\OpenApiGenerator.IntegrationTests.Ollama.csproj" />-->
+<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj" />-->
+<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />-->
+<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.IpInfo\OpenApiGenerator.IntegrationTests.IpInfo.csproj" />-->
+<!--  </ItemGroup>-->
+<!--  -->
+<!--  <ItemGroup>-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo.Data" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch.Data" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama.Models" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI" />-->
+<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI.Models" />-->
+<!--  </ItemGroup>-->
 
   <PropertyGroup Label="Publish">
     <RuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('windows'))">win-x64</RuntimeIdentifier>

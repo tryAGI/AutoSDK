@@ -31,7 +31,7 @@ public class OpenAiTests
                 },
                 new ChatCompletionRequestUserMessage
                 {
-                    Content = new ChatCompletionRequestMessageContentPart[]
+                    Content = new ChatCompletionRequestUserMessageContentPart[]
                     {
                         new ChatCompletionRequestMessageContentPartText
                         {
@@ -71,7 +71,7 @@ public class OpenAiTests
                 },
                 new ChatCompletionRequestUserMessage
                 {
-                    Content = new ChatCompletionRequestMessageContentPart[]
+                    Content = new ChatCompletionRequestUserMessageContentPart[]
                     {
                         new ChatCompletionRequestMessageContentPartText
                         {
