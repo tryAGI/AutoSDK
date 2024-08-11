@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -142,7 +142,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestLabel> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -198,14 +198,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewers?, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewers>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant1?, global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewerVariant2?>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeams> RequestedTeams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeam> RequestedTeams { get; set; }
 
         /// <summary>
         /// 

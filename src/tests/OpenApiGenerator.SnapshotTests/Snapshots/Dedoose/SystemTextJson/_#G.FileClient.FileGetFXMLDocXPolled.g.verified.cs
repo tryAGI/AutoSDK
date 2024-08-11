@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareFileGetFXMLDocXPolledArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string fileURL);
+            ref string? token,
+            ref string? projectId,
+            ref string? fileURL);
         partial void PrepareFileGetFXMLDocXPolledRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string fileURL);
+            string? token,
+            string? projectId,
+            string? fileURL);
         partial void ProcessFileGetFXMLDocXPolledResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="fileURL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> FileGetFXMLDocXPolledAsync(
-            string token,
-            string projectId,
-            string fileURL,
+        public async global::System.Threading.Tasks.Task<global::G.FileGetFXMLDocXPolledResponse> FileGetFXMLDocXPolledAsync(
+            string? token,
+            string? projectId,
+            string? fileURL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileGetFXMLDocXPolledResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

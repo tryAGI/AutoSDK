@@ -13,7 +13,7 @@ namespace G
         /// A list of IDs that identify the entitlements to update. You may specify a maximum of 100 IDs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entitlement_ids")]
-        public global::System.Collections.Generic.IList<string?>? EntitlementIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? EntitlementIds { get; set; }
 
         /// <summary>
         /// The fulfillment status to set the entitlements to. Possible values are:  <br/>

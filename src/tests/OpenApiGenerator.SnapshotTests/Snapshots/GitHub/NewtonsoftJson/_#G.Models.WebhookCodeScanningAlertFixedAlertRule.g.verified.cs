@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.Collections.Generic.IList<string?>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

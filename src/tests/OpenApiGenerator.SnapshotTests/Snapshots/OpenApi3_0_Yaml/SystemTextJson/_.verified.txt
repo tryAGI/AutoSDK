@@ -1,0 +1,24 @@
+﻿{
+  Diagnostics: [
+    {
+      Id: OAG,
+      Title: Exception: ,
+      Severity: Error,
+      WarningLevel: 0,
+      Location: : (0,0)-(0,0),
+      MessageFormat:
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.MaxInteger[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at OpenApiGenerator.Core.Generation.Data.Prepare(ValueTuple`2 tuple, CancellationToken cancellationToken) in {SolutionDirectory}src/libs/OpenApiGenerator.Core/Generation/Data.cs:line 118
+   at H.Generators.Extensions.IncrementalValuesProviderExtensions.<>c__DisplayClass8_0`2.<SelectAndReportExceptions>b__0(TSource value, CancellationToken cancellationToken) in /_/src/libs/H.Generators.Extensions/IncrementalValuesProviderExtensions.cs:line 206,
+      Message:
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.MaxInteger[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at OpenApiGenerator.Core.Generation.Data.Prepare(ValueTuple`2 tuple, CancellationToken cancellationToken) in {SolutionDirectory}src/libs/OpenApiGenerator.Core/Generation/Data.cs:line 118
+   at H.Generators.Extensions.IncrementalValuesProviderExtensions.<>c__DisplayClass8_0`2.<SelectAndReportExceptions>b__0(TSource value, CancellationToken cancellationToken) in /_/src/libs/H.Generators.Extensions/IncrementalValuesProviderExtensions.cs:line 206,
+      Category: Usage
+    }
+  ]
+}

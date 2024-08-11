@@ -13,14 +13,14 @@ namespace G
         /// A Discussion in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_discussion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Discussion NewDiscussion { get; set; } = default!;
+        public global::G.Discussion? NewDiscussion { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks NewRepository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? NewRepository { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareTagStartGetTagsFromImportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string fileURL);
+            ref string? token,
+            ref string? fileURL);
         partial void PrepareTagStartGetTagsFromImportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string fileURL);
+            string? token,
+            string? fileURL);
         partial void ProcessTagStartGetTagsFromImportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TagStartGetTagsFromImportJobAsync(
-            string token,
-            string fileURL,
+            string? token,
+            string? fileURL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

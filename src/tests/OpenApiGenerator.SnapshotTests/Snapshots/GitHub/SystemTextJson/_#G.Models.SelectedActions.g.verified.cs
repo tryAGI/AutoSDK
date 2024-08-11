@@ -26,7 +26,7 @@ namespace G
         /// **Note**: The `patterns_allowed` setting only applies to public repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patterns_allowed")]
-        public global::System.Collections.Generic.IList<string?>? PatternsAllowed { get; set; }
+        public global::System.Collections.Generic.IList<string>? PatternsAllowed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

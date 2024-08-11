@@ -34,7 +34,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requester", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Requester { get; set; } = default!;
+        public global::G.SimpleUser? Requester { get; set; } = default!;
 
         /// <summary>
         /// 

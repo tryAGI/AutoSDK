@@ -11,14 +11,14 @@ namespace G
             ref int perPage,
             ref int page,
             global::System.DateTime since,
-            ref string outdated);
+            ref string? outdated);
         partial void PrepareAppsListInstallationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int perPage,
             int page,
             global::System.DateTime since,
-            string outdated);
+            string? outdated);
         partial void ProcessAppsListInstallationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,7 +47,7 @@ namespace G
             int perPage,
             int page,
             global::System.DateTime since,
-            string outdated,
+            string? outdated,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

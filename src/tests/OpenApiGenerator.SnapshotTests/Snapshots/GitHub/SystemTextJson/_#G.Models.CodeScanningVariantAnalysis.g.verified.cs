@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controller_repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleRepository ControllerRepo { get; set; }
+        public required global::G.SimpleRepository? ControllerRepo { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser? Actor { get; set; }
 
         /// <summary>
         /// The language targeted by the CodeQL query
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("query_language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; }
+        public required global::G.CodeScanningVariantAnalysisLanguage? QueryLanguage { get; set; }
 
         /// <summary>
         /// The download url for the query pack.
@@ -67,9 +67,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisStatus2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisStatus Status { get; set; }
+        public required global::G.CodeScanningVariantAnalysisStatus2 Status { get; set; }
 
         /// <summary>
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
@@ -88,7 +88,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scanned_repositories")]
-        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositorie>? ScannedRepositories { get; set; }
 
         /// <summary>
         /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.

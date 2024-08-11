@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareAccountSendPaymentReceiptArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId,
-            ref string transactionId,
-            ref string email);
+            ref string? token,
+            ref string? accountId,
+            ref string? transactionId,
+            ref string? email);
         partial void PrepareAccountSendPaymentReceiptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId,
-            string transactionId,
-            string email);
+            string? token,
+            string? accountId,
+            string? transactionId,
+            string? email);
         partial void ProcessAccountSendPaymentReceiptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> AccountSendPaymentReceiptAsync(
-            string token,
-            string accountId,
-            string transactionId,
-            string email,
+            string? token,
+            string? accountId,
+            string? transactionId,
+            string? email,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

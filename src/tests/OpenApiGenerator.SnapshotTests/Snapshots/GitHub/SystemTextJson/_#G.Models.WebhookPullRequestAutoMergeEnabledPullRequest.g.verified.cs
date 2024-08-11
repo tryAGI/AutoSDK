@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestAssignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestAssignee2> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -174,7 +174,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestLabel> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -266,14 +266,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewers?, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewers>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant1?, global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerVariant2?>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeams> RequestedTeams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeam> RequestedTeams { get; set; }
 
         /// <summary>
         /// 

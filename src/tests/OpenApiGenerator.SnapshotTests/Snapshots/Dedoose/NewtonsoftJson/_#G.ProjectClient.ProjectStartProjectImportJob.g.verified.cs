@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareProjectStartProjectImportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string fileURI,
-            ref string password);
+            ref string? token,
+            ref string? projectId,
+            ref string? fileURI,
+            ref string? password);
         partial void PrepareProjectStartProjectImportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string fileURI,
-            string password);
+            string? token,
+            string? projectId,
+            string? fileURI,
+            string? password);
         partial void ProcessProjectStartProjectImportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartProjectImportJobAsync(
-            string token,
-            string projectId,
-            string fileURI,
-            string password,
+            string? token,
+            string? projectId,
+            string? fileURI,
+            string? password,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

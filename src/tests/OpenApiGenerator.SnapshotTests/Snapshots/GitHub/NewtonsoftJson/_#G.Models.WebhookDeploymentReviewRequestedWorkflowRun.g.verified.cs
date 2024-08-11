@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit")]
-        public object? HeadCommit { get; set; }
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRunHeadCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// 
@@ -139,13 +139,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequest> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflow>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 

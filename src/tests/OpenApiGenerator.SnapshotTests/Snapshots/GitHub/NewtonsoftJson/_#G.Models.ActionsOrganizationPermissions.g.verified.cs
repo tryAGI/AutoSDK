@@ -13,7 +13,7 @@ namespace G
         /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled_repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.EnabledRepositories EnabledRepositories { get; set; } = default!;
+        public global::G.EnabledRepositories? EnabledRepositories { get; set; } = default!;
 
         /// <summary>
         /// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.

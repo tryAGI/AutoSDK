@@ -49,7 +49,7 @@ namespace G
         /// The details of the security advisory, including summary, description, and severity.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_advisory", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksSecurityAdvisory SecurityAdvisory { get; set; } = default!;
+        public global::G.WebhooksSecurityAdvisory? SecurityAdvisory { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

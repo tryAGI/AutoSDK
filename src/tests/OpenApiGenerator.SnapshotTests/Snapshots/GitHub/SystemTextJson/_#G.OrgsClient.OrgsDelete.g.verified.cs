@@ -32,7 +32,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> OrgsDeleteAsync(
+        public async global::System.Threading.Tasks.Task<global::G.OrgsDeleteResponse> OrgsDeleteAsync(
             string org,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,7 +87,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OrgsDeleteResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public required global::G.PredictionRequestInput Input { get; set; }
 
         /// <summary>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
@@ -57,7 +57,7 @@ namespace G
         /// Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events_filter")]
-        public global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>? WebhookEventsFilter { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilterItem>? WebhookEventsFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

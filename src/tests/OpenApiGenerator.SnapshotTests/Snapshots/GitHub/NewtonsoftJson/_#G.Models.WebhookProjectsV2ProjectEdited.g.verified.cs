@@ -34,19 +34,19 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; } = default!;
 
         /// <summary>
         /// A projects v2 project
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projects_v2", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectsV2 ProjectsV2 { get; set; } = default!;
+        public global::G.ProjectsV2? ProjectsV2 { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

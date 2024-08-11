@@ -10,23 +10,23 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection direction,
-            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort sort,
-            ref string before,
-            ref string after,
+            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction,
+            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort,
+            ref string? before,
+            ref string? after,
             ref int perPage,
-            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesState state);
+            ref global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state);
         partial void PrepareSecurityAdvisoriesListRepositoryAdvisoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection direction,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort sort,
-            string before,
-            string after,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort,
+            string? before,
+            string? after,
             int perPage,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState state);
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state);
         partial void ProcessSecurityAdvisoriesListRepositoryAdvisoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,12 +61,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryAdvisory>> SecurityAdvisoriesListRepositoryAdvisoriesAsync(
             string owner,
             string repo,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection direction,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort sort,
-            string before,
-            string after,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort,
+            string? before,
+            string? after,
             int perPage,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState state,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

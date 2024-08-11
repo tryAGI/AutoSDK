@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.WebhookPingHookConfig.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure_ssl")]
-        public global::System.OneOf<string?, double>? InsecureSsl { get; set; }
+        public global::G.WebhookConfigInsecureSsl? InsecureSsl { get; set; }
 
         /// <summary>
         /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).<br/>

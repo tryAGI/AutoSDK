@@ -9,12 +9,12 @@ namespace G
         partial void PrepareListInvitesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
-            ref string after);
+            ref string? after);
         partial void PrepareListInvitesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
-            string after);
+            string? after);
         partial void ProcessListInvitesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.InviteListResponse> ListInvitesAsync(
             int limit,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -39,13 +39,13 @@ namespace G
         /// A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.Collections.Generic.IList<string?>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// List of labels that should be set as the Channel’s CCLs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_classification_labels")]
-        public global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabels?>? ContentClassificationLabels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabel>? ContentClassificationLabels { get; set; }
 
         /// <summary>
         /// Boolean flag indicating if the channel has branded content.

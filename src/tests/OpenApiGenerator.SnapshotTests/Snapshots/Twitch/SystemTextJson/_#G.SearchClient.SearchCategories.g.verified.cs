@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string query,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareSearchCategoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string query,
             int first,
-            string after);
+            string? after);
         partial void ProcessSearchCategoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SearchCategoriesResponse> SearchCategoriesAsync(
             string query,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

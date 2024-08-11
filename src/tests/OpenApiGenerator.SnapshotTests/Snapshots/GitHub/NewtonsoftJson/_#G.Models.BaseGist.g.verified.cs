@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Files { get; set; } = default!;
+        public global::G.BaseGistFiles Files { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -121,13 +121,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks")]
-        public global::System.Collections.Generic.IList<object?>? Forks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BaseGistFork>? Forks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("history")]
-        public global::System.Collections.Generic.IList<object?>? History { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BaseGistHistoryItem>? History { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

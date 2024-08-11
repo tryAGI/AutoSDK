@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domains")]
-        public global::System.Collections.Generic.IList<string?>? Domains { get; set; }
+        public global::System.Collections.Generic.IList<string>? Domains { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

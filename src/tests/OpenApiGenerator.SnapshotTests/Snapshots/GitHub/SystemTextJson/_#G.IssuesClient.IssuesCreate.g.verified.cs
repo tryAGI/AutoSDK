@@ -61,11 +61,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/issues", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -148,12 +148,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Issue> IssuesCreateAsync(
             string owner,
             string repo,
-            global::System.OneOf<string, int> title,
+            global::System.OneOf<string?, int> title,
             string? body = default,
             string? assignee = default,
             global::System.OneOf<string?, int>? milestone = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.IssuesCreateRequestLabels?>?>? labels = default,
-            global::System.Collections.Generic.IList<string?>? assignees = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.IssuesCreateRequestLabel?>>? labels = default,
+            global::System.Collections.Generic.IList<string>? assignees = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.IssuesCreateRequest

@@ -19,7 +19,7 @@ namespace G
         /// Represents a thread that contains [messages](/docs/api-reference/messages).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ThreadObject Data { get; set; } = default!;
+        public global::G.ThreadObject? Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

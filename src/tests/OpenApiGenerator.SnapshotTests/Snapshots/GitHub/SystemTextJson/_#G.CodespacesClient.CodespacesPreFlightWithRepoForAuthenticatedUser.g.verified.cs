@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string @ref,
-            ref string clientIp);
+            ref string? @ref,
+            ref string? clientIp);
         partial void PrepareCodespacesPreFlightWithRepoForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string @ref,
-            string clientIp);
+            string? @ref,
+            string? clientIp);
         partial void ProcessCodespacesPreFlightWithRepoForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodespacesPreFlightWithRepoForAuthenticatedUserResponse> CodespacesPreFlightWithRepoForAuthenticatedUserAsync(
             string owner,
             string repo,
-            string @ref,
-            string clientIp,
+            string? @ref,
+            string? clientIp,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

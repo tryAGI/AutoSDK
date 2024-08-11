@@ -13,13 +13,13 @@ namespace G
         /// A GitHub repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleRepository Repository { get; set; } = default!;
+        public global::G.SimpleRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analysis_status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisStatus AnalysisStatus { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisStatus? AnalysisStatus { get; set; } = default!;
 
         /// <summary>
         /// The size of the artifact. This is only available for successful analyses.

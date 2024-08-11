@@ -55,19 +55,19 @@ namespace G
         /// Details for the advisory pertaining to Common Weakness Enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwes> Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwe> Cwes { get; set; } = default!;
 
         /// <summary>
         /// Values that identify this advisory among security information sources.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifiers> Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
         /// <summary>
         /// Links to additional advisory information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("references", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReferences> References { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReference> References { get; set; } = default!;
 
         /// <summary>
         /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

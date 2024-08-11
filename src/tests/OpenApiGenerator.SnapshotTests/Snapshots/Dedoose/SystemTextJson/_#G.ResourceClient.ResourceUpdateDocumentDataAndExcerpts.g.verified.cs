@@ -9,23 +9,23 @@ namespace G
     {
         partial void PrepareResourceUpdateDocumentDataAndExcerptsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string resourceId,
-            ref string updatedTextDataURI,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? resourceId,
+            ref string? updatedTextDataURI,
             ref int updatedLength,
-            global::System.Collections.Generic.IList<global::G.Excerpt> excerpts);
+            global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
         partial void PrepareResourceUpdateDocumentDataAndExcerptsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
-            string updatedTextDataURI,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
+            string? updatedTextDataURI,
             int updatedLength,
-            global::System.Collections.Generic.IList<global::G.Excerpt> excerpts);
+            global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
         partial void ProcessResourceUpdateDocumentDataAndExcerptsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,14 +47,14 @@ namespace G
         /// <param name="excerpts"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceUpdateDocumentDataAndExcerptsAsync(
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
-            string updatedTextDataURI,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateDocumentDataAndExcerptsResponse> ResourceUpdateDocumentDataAndExcerptsAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
+            string? updatedTextDataURI,
             int updatedLength,
-            global::System.Collections.Generic.IList<global::G.Excerpt> excerpts,
+            global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -71,7 +71,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/updatedocumentdataandexcerpts?projectId={projectId}&userId={userId}&resourceId={resourceId}&updatedTextDataURI={updatedTextDataURI}&updatedLength={updatedLength}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/updatedocumentdataandexcerpts?projectId={projectId}&userId={userId}&resourceId={resourceId}&updatedTextDataURI={updatedTextDataURI}&updatedLength={updatedLength}&{string.Join("&", excerpts?.Select(static x => $"excerpts={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -120,7 +120,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResourceUpdateDocumentDataAndExcerptsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

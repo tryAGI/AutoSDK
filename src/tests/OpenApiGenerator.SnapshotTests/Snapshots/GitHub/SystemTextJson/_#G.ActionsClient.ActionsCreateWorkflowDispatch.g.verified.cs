@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::System.OneOf<int, string> workflowId,
+            ref global::System.OneOf<int, string?> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request);
         partial void PrepareActionsCreateWorkflowDispatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::System.OneOf<int, string> workflowId,
+            global::System.OneOf<int, string?> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request);
         partial void ProcessActionsCreateWorkflowDispatchResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
             string owner,
             string repo,
-            global::System.OneOf<int, string> workflowId,
+            global::System.OneOf<int, string?> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -56,11 +56,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -107,9 +107,9 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
             string owner,
             string repo,
-            global::System.OneOf<int, string> workflowId,
+            global::System.OneOf<int, string?> workflowId,
             string @ref,
-            object? inputs = default,
+            global::G.ActionsCreateWorkflowDispatchRequestInputs? inputs = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ActionsCreateWorkflowDispatchRequest

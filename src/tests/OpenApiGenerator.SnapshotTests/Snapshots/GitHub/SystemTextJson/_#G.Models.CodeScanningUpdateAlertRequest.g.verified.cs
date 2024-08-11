@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertSetStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAlertSetState State { get; set; }
+        public required global::G.CodeScanningAlertSetState? State { get; set; }
 
         /// <summary>
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.

@@ -104,7 +104,7 @@ namespace G
         /// Steps in this job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps")]
-        public global::System.Collections.Generic.IList<global::G.JobSteps?>? Steps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.JobStep>? Steps { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4

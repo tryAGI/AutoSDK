@@ -31,7 +31,7 @@ namespace G
         /// Use the following table to specify the location, destination, and contents of the draft review comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
-        public global::System.Collections.Generic.IList<global::G.PullsCreateReviewRequestComments?>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullsCreateReviewRequestComment>? Comments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

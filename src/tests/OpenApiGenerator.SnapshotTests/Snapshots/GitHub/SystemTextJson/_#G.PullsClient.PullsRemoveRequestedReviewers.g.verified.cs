@@ -59,11 +59,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/pulls/{pullNumber}/requested_reviewers", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -133,7 +133,7 @@ namespace G
             string repo,
             int pullNumber,
             global::System.Collections.Generic.IList<string> reviewers,
-            global::System.Collections.Generic.IList<string?>? teamReviewers = default,
+            global::System.Collections.Generic.IList<string>? teamReviewers = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PullsRemoveRequestedReviewersRequest

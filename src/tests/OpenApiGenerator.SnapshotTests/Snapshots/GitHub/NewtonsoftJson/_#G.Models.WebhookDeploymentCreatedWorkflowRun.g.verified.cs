@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit")]
-        public object? HeadCommit { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunHeadCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// 
@@ -139,19 +139,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("previous_attempt_url")]
-        public object? PreviousAttemptUrl { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRunPreviousAttemptUrl? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunPullRequest> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedWorkflowRunReferencedWorkflow>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 

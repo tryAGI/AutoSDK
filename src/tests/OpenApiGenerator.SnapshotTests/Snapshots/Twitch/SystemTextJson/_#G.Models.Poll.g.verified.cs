@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PollChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PollChoice> Choices { get; set; }
 
         /// <summary>
         /// Not used; will be set to **false**.

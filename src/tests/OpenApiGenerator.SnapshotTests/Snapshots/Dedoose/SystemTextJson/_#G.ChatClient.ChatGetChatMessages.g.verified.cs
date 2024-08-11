@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareChatGetChatMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string projectId,
-            ref string lastRevievedProjectMessageId,
-            ref string lastRecievedGlobalMessageId);
+            ref string? token,
+            ref string? userId,
+            ref string? projectId,
+            ref string? lastRevievedProjectMessageId,
+            ref string? lastRecievedGlobalMessageId);
         partial void PrepareChatGetChatMessagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string projectId,
-            string lastRevievedProjectMessageId,
-            string lastRecievedGlobalMessageId);
+            string? token,
+            string? userId,
+            string? projectId,
+            string? lastRevievedProjectMessageId,
+            string? lastRecievedGlobalMessageId);
         partial void ProcessChatGetChatMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ChatMessageVO>> ChatGetChatMessagesAsync(
-            string token,
-            string userId,
-            string projectId,
-            string lastRevievedProjectMessageId,
-            string lastRecievedGlobalMessageId,
+            string? token,
+            string? userId,
+            string? projectId,
+            string? lastRevievedProjectMessageId,
+            string? lastRecievedGlobalMessageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

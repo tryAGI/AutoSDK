@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSearchCommitsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref global::G.SearchCommitsSort sort,
-            ref global::G.SearchCommitsOrder order,
+            ref global::G.SearchCommitsSort? sort,
+            ref global::G.SearchCommitsOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            global::G.SearchCommitsSort sort,
-            global::G.SearchCommitsOrder order,
+            global::G.SearchCommitsSort? sort,
+            global::G.SearchCommitsOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchCommitsResponse(
@@ -53,8 +53,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchCommitsResponse> SearchCommitsAsync(
             string q,
-            global::G.SearchCommitsSort sort,
-            global::G.SearchCommitsOrder order,
+            global::G.SearchCommitsSort? sort,
+            global::G.SearchCommitsOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

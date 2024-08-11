@@ -49,7 +49,7 @@ namespace G
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,13 +79,13 @@ namespace G
         /// Example: [73..77, 77..78]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line_numbers")]
-        public global::System.Collections.Generic.IList<string?>? LineNumbers { get; set; }
+        public global::System.Collections.Generic.IList<string>? LineNumbers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.CodeSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

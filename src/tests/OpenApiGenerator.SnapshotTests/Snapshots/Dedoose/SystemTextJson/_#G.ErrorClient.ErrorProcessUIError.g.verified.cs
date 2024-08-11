@@ -8,25 +8,25 @@ namespace G
     {
         partial void PrepareErrorProcessUIErrorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string workspace,
-            ref string errorCode,
-            ref string message,
-            ref string currentTarget,
-            ref string stacktrace);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? workspace,
+            ref string? errorCode,
+            ref string? message,
+            ref string? currentTarget,
+            ref string? stacktrace);
         partial void PrepareErrorProcessUIErrorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string workspace,
-            string errorCode,
-            string message,
-            string currentTarget,
-            string stacktrace);
+            string? token,
+            string? projectId,
+            string? userId,
+            string? workspace,
+            string? errorCode,
+            string? message,
+            string? currentTarget,
+            string? stacktrace);
         partial void ProcessErrorProcessUIErrorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,15 +49,15 @@ namespace G
         /// <param name="stacktrace"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ErrorProcessUIErrorAsync(
-            string token,
-            string projectId,
-            string userId,
-            string workspace,
-            string errorCode,
-            string message,
-            string currentTarget,
-            string stacktrace,
+        public async global::System.Threading.Tasks.Task<global::G.ErrorProcessUIErrorResponse> ErrorProcessUIErrorAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            string? workspace,
+            string? errorCode,
+            string? message,
+            string? currentTarget,
+            string? stacktrace,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -125,7 +125,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ErrorProcessUIErrorResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

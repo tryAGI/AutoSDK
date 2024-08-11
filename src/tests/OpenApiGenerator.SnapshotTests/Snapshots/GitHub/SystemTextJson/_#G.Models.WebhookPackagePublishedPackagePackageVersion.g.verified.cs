@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object?>? Body { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookPackagePublishedPackagePackageVersionBody?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Metadata { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionMetadataItem> Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -112,14 +112,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nuget_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadataItem>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionPackageFiles> PackageFiles { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionPackageFile> PackageFiles { get; set; }
 
         /// <summary>
         /// 

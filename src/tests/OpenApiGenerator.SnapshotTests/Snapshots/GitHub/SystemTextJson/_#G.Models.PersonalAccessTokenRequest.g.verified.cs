@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// New requested permissions, categorized by type of permission.
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositories>? Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; }
 
         /// <summary>
         /// Date and time when the request for access was created.

@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.StatusCheckPolicyChecks> Checks { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StatusCheckPolicyCheck> Checks { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts

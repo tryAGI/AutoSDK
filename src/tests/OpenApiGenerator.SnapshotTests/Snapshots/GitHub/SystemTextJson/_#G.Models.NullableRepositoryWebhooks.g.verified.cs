@@ -71,7 +71,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.<br/>
@@ -466,13 +466,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topics")]
-        public global::System.Collections.Generic.IList<string?>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<string>? Topics { get; set; }
 
         /// <summary>
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_properties")]
-        public object? CustomProperties { get; set; }
+        public global::G.NullableRepositoryWebhooksCustomProperties? CustomProperties { get; set; }
 
         /// <summary>
         /// Whether issues are enabled.<br/>

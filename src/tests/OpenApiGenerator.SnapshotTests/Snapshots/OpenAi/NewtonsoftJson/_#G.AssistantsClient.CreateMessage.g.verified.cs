@@ -121,9 +121,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.MessageObject> CreateMessageAsync(
             string threadId,
             global::G.CreateMessageRequestRole role,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>> content,
-            global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachments?>? attachments = default,
-            object? metadata = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>?> content,
+            global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? attachments = default,
+            global::G.CreateMessageRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateMessageRequest

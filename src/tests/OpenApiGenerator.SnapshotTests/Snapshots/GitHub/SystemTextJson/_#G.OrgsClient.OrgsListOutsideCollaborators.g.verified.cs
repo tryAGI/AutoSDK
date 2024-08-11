@@ -9,14 +9,14 @@ namespace G
         partial void PrepareOrgsListOutsideCollaboratorsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.OrgsListOutsideCollaboratorsFilter filter,
+            ref global::G.OrgsListOutsideCollaboratorsFilter? filter,
             ref int perPage,
             ref int page);
         partial void PrepareOrgsListOutsideCollaboratorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.OrgsListOutsideCollaboratorsFilter filter,
+            global::G.OrgsListOutsideCollaboratorsFilter? filter,
             int perPage,
             int page);
         partial void ProcessOrgsListOutsideCollaboratorsResponse(
@@ -46,7 +46,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> OrgsListOutsideCollaboratorsAsync(
             string org,
-            global::G.OrgsListOutsideCollaboratorsFilter filter,
+            global::G.OrgsListOutsideCollaboratorsFilter? filter,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CheermoteTiers> Tiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CheermoteTier> Tiers { get; set; }
 
         /// <summary>
         /// The type of Cheermote. Possible values are:  <br/>

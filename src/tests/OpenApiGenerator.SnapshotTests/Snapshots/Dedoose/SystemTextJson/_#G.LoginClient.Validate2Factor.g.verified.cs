@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareValidate2FactorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string username,
-            ref string authToken);
+            ref string? token,
+            ref string? username,
+            ref string? authToken);
         partial void PrepareValidate2FactorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string username,
-            string authToken);
+            string? token,
+            string? username,
+            string? authToken);
         partial void ProcessValidate2FactorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> Validate2FactorAsync(
-            string token,
-            string username,
-            string authToken,
+            string? token,
+            string? username,
+            string? authToken,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

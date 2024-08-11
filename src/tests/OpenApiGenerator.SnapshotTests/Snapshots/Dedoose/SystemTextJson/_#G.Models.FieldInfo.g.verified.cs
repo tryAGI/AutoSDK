@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("listOptions")]
-        public global::System.Collections.Generic.IList<string?>? ListOptions { get; set; }
+        public global::System.Collections.Generic.IList<string>? ListOptions { get; set; }
 
         /// <summary>
         /// 

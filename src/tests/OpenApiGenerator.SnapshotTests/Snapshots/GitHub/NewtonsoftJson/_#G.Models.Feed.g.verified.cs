@@ -49,7 +49,7 @@ namespace G
         /// Example: [https://github.com/organizations/github/octocat.private.atom?token=abc123]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_user_organization_urls")]
-        public global::System.Collections.Generic.IList<string?>? CurrentUserOrganizationUrls { get; set; }
+        public global::System.Collections.Generic.IList<string>? CurrentUserOrganizationUrls { get; set; }
 
         /// <summary>
         /// Example: https://github.com/security-advisories

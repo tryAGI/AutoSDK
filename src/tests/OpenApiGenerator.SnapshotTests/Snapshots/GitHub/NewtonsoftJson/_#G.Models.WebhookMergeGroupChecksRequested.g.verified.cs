@@ -27,7 +27,7 @@ namespace G
         /// A group of pull requests that the merge queue has grouped together to be merged.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_group", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MergeGroup MergeGroup { get; set; } = default!;
+        public global::G.MergeGroup? MergeGroup { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>

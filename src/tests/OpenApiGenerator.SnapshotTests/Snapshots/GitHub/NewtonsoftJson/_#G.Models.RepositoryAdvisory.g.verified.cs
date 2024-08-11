@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifiers> Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
         /// <summary>
         /// The state of the advisory.
@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwes>? Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; } = default!;
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -141,7 +141,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredits>? Credits { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; } = default!;
 
         /// <summary>
         /// 

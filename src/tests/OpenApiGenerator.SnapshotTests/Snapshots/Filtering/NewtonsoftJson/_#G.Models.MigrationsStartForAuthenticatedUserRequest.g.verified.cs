@@ -64,7 +64,7 @@ namespace G
         /// Example: [repositories]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exclude")]
-        public global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExclude?>? Exclude { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? Exclude { get; set; }
 
         /// <summary>
         /// 

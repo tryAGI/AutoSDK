@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareDescriptorStartGetDesDataFromFileJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string localFileURL,
-            ref string setId,
-            ref string projectId);
+            ref string? token,
+            ref string? localFileURL,
+            ref string? setId,
+            ref string? projectId);
         partial void PrepareDescriptorStartGetDesDataFromFileJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string localFileURL,
-            string setId,
-            string projectId);
+            string? token,
+            string? localFileURL,
+            string? setId,
+            string? projectId);
         partial void ProcessDescriptorStartGetDesDataFromFileJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorStartGetDesDataFromFileJobAsync(
-            string token,
-            string localFileURL,
-            string setId,
-            string projectId,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorStartGetDesDataFromFileJobResponse> DescriptorStartGetDesDataFromFileJobAsync(
+            string? token,
+            string? localFileURL,
+            string? setId,
+            string? projectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorStartGetDesDataFromFileJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

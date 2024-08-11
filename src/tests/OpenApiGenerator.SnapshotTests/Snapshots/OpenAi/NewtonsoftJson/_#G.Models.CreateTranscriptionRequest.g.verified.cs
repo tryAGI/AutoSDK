@@ -28,7 +28,7 @@ namespace G
         /// Example: whisper-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, global::G.CreateTranscriptionRequestModel> Model { get; set; } = default!;
+        public global::System.AnyOf<string?, global::G.CreateTranscriptionRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.
@@ -61,7 +61,7 @@ namespace G
         /// Default Value: [segment]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timestamp_granularities[]")]
-        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>? TimestampGranularities { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? TimestampGranularities { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

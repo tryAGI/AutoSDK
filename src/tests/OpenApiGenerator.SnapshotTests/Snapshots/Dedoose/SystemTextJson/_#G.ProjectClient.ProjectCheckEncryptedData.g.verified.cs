@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareProjectCheckEncryptedDataArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string encryptedSymKey);
+            ref string? token,
+            ref string? projectId,
+            ref string? encryptedSymKey);
         partial void PrepareProjectCheckEncryptedDataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string encryptedSymKey);
+            string? token,
+            string? projectId,
+            string? encryptedSymKey);
         partial void ProcessProjectCheckEncryptedDataResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="encryptedSymKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ProjectCheckEncryptedDataAsync(
-            string token,
-            string projectId,
-            string encryptedSymKey,
+        public async global::System.Threading.Tasks.Task<global::G.ProjectCheckEncryptedDataResponse> ProjectCheckEncryptedDataAsync(
+            string? token,
+            string? projectId,
+            string? encryptedSymKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProjectCheckEncryptedDataResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

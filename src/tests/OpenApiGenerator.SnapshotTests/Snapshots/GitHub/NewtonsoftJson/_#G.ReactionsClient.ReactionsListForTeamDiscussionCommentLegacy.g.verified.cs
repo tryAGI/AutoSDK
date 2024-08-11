@@ -11,7 +11,7 @@ namespace G
             ref int teamId,
             ref int discussionNumber,
             ref int commentNumber,
-            ref global::G.ReactionsListForTeamDiscussionCommentLegacyContent content,
+            ref global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content,
             ref int perPage,
             ref int page);
         partial void PrepareReactionsListForTeamDiscussionCommentLegacyRequest(
@@ -20,7 +20,7 @@ namespace G
             int teamId,
             int discussionNumber,
             int commentNumber,
-            global::G.ReactionsListForTeamDiscussionCommentLegacyContent content,
+            global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content,
             int perPage,
             int page);
         partial void ProcessReactionsListForTeamDiscussionCommentLegacyResponse(
@@ -55,7 +55,7 @@ namespace G
             int teamId,
             int discussionNumber,
             int commentNumber,
-            global::G.ReactionsListForTeamDiscussionCommentLegacyContent content,
+            global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

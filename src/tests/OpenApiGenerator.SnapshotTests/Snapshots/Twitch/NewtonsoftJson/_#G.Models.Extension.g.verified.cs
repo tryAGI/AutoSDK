@@ -67,7 +67,7 @@ namespace G
         /// A dictionary that contains URLs to different sizes of the default icon. The dictionary’s key identifies the icon’s size (for example, 24x24), and the dictionary’s value contains the URL to the icon.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("icon_urls", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ExtensionIconUrls IconUrls { get; set; } = default!;
+        public global::G.ExtensionIconUrls? IconUrls { get; set; } = default!;
 
         /// <summary>
         /// The extension’s ID.

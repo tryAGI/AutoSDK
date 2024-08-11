@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
-        public global::System.Collections.Generic.IList<global::G.FileCommitCommitParents?>? Parents { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FileCommitCommitParent>? Parents { get; set; }
 
         /// <summary>
         /// 

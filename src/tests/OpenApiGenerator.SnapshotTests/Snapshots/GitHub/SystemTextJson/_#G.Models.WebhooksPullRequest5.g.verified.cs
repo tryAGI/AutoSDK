@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignee2> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -174,7 +174,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Labels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Label> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -266,14 +266,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhooksPullRequest5RequestedReviewers?, global::G.WebhooksPullRequest5RequestedReviewers>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1?, global::G.WebhooksPullRequest5RequestedReviewerVariant2?>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_teams")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5RequestedTeams> RequestedTeams { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5RequestedTeam> RequestedTeams { get; set; }
 
         /// <summary>
         /// 

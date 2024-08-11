@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareUploadToFileStorageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string name,
-            ref string projectId,
+            ref string? token,
+            ref string? name,
+            ref string? projectId,
             ref int uploadType,
             byte[] request);
         partial void PrepareUploadToFileStorageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string name,
-            string projectId,
+            string? token,
+            string? name,
+            string? projectId,
             int uploadType,
             byte[] request);
         partial void ProcessUploadToFileStorageResponse(
@@ -41,9 +41,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UploadToFileStorageAsync(
-            string token,
-            string name,
-            string projectId,
+            string? token,
+            string? name,
+            string? projectId,
             int uploadType,
             byte[] request,
             global::System.Threading.CancellationToken cancellationToken = default)

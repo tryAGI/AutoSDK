@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string deploymentOwner,
             ref string deploymentName,
-            global::G.UpdateDeploymentsRequest request);
+            global::G.DeploymentsUpdateRequest request);
         partial void PrepareUpdateDeploymentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string deploymentOwner,
             string deploymentName,
-            global::G.UpdateDeploymentsRequest request);
+            global::G.DeploymentsUpdateRequest request);
         partial void ProcessUpdateDeploymentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,10 +69,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UpdateDeploymentsResponse> UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeploymentsUpdateResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
-            global::G.UpdateDeploymentsRequest request,
+            global::G.DeploymentsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -86,7 +86,7 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/deployments/{deploymentOwner}/{deploymentName}", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
@@ -137,7 +137,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UpdateDeploymentsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeploymentsUpdateResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -195,7 +195,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UpdateDeploymentsResponse> UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeploymentsUpdateResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
             string? hardware = default,
@@ -204,7 +204,7 @@ namespace G
             string? version = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.UpdateDeploymentsRequest
+            var request = new global::G.DeploymentsUpdateRequest
             {
                 Hardware = hardware,
                 MaxInstances = maxInstances,

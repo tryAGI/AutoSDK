@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareFileStoreProjectFileStringArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
+            ref string? token,
+            ref string? projectId,
             ref int fileStorageType,
-            ref string extension,
-            ref string text);
+            ref string? extension,
+            ref string? text);
         partial void PrepareFileStoreProjectFileStringRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int fileStorageType,
-            string extension,
-            string text);
+            string? extension,
+            string? text);
         partial void ProcessFileStoreProjectFileStringResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> FileStoreProjectFileStringAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int fileStorageType,
-            string extension,
-            string text,
+            string? extension,
+            string? text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

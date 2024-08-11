@@ -31,25 +31,25 @@ namespace G
         /// The REST API URL of the alert resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; } = default!;
 
         /// <summary>
         /// The GitHub URL of the alert resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string HtmlUrl { get; set; } = default!;
+        public string? HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// The REST API URL for fetching the list of instances for an alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instances_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string InstancesUrl { get; set; } = default!;
+        public string? InstancesUrl { get; set; } = default!;
 
         /// <summary>
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAlertState State { get; set; } = default!;
+        public global::G.CodeScanningAlertState? State { get; set; } = default!;
 
         /// <summary>
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -85,19 +85,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAlertRuleSummary Rule { get; set; } = default!;
+        public global::G.CodeScanningAlertRuleSummary? Rule { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAnalysisTool Tool { get; set; } = default!;
+        public global::G.CodeScanningAnalysisTool? Tool { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("most_recent_instance", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAlertInstance MostRecentInstance { get; set; } = default!;
+        public global::G.CodeScanningAlertInstance? MostRecentInstance { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

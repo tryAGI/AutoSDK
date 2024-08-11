@@ -40,7 +40,7 @@ namespace G
         /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgRulesetConditionsJsonConverter))]
         public global::G.OrgRulesetConditions? Conditions { get; set; }
 
         /// <summary>

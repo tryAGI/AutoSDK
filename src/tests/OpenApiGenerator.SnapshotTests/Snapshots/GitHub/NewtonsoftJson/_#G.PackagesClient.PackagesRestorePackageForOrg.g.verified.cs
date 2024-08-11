@@ -11,14 +11,14 @@ namespace G
             ref global::G.PackagesRestorePackageForOrgPackageType packageType,
             ref string packageName,
             ref string org,
-            ref string token);
+            ref string? token);
         partial void PreparePackagesRestorePackageForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesRestorePackageForOrgPackageType packageType,
             string packageName,
             string org,
-            string token);
+            string? token);
         partial void ProcessPackagesRestorePackageForOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,7 +47,7 @@ namespace G
             global::G.PackagesRestorePackageForOrgPackageType packageType,
             string packageName,
             string org,
-            string token,
+            string? token,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

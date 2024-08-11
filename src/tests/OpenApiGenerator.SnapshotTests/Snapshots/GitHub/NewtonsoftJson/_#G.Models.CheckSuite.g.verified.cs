@@ -81,7 +81,7 @@ namespace G
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
         /// A commit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleCommit HeadCommit { get; set; } = default!;
+        public global::G.SimpleCommit? HeadCommit { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareAdminAddCreditsToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId,
+            ref string? token,
+            ref string? accountId,
             ref double credits,
-            ref string reason);
+            ref string? reason);
         partial void PrepareAdminAddCreditsToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             double credits,
-            string reason);
+            string? reason);
         partial void ProcessAdminAddCreditsToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminAddCreditsToAccountAsync(
-            string token,
-            string accountId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminAddCreditsToAccountResponse> AdminAddCreditsToAccountAsync(
+            string? token,
+            string? accountId,
             double credits,
-            string reason,
+            string? reason,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminAddCreditsToAccountResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

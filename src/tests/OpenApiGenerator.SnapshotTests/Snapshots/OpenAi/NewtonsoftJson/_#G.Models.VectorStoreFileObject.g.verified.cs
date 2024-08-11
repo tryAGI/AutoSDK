@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.VectorStoreFileObject.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -55,7 +57,7 @@ namespace G
         /// The strategy used to chunk the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
-        public object? ChunkingStrategy { get; set; }
+        public global::System.OneOf<global::G.StaticChunkingStrategyResponseParam?, global::G.OtherChunkingStrategyResponseParam?>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

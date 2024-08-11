@@ -31,37 +31,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public object? Author { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bugs")]
-        public object? Bugs { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBugs? Bugs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependencies")]
-        public object? Dependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDependencies? Dependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dev_dependencies")]
-        public object? DevDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDevDependencies? DevDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_dependencies")]
-        public object? PeerDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataPeerDependencies? PeerDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("optional_dependencies")]
-        public object? OptionalDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataOptionalDependencies? OptionalDependencies { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dist")]
-        public object? Dist { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDist? Dist { get; set; }
 
         /// <summary>
         /// 
@@ -103,13 +103,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public object? Repository { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataRepository? Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scripts")]
-        public object? Scripts { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataScripts? Scripts { get; set; }
 
         /// <summary>
         /// 
@@ -139,61 +139,61 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintainers")]
-        public global::System.Collections.Generic.IList<object?>? Maintainers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMaintainer>? Maintainers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contributors")]
-        public global::System.Collections.Generic.IList<object?>? Contributors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataContributor>? Contributors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engines")]
-        public object? Engines { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataEngines? Engines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("keywords")]
-        public global::System.Collections.Generic.IList<string?>? Keywords { get; set; }
+        public global::System.Collections.Generic.IList<string>? Keywords { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files")]
-        public global::System.Collections.Generic.IList<string?>? Files { get; set; }
+        public global::System.Collections.Generic.IList<string>? Files { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bin")]
-        public object? Bin { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBin? Bin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("man")]
-        public object? Man { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMan? Man { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("directories")]
-        public object? Directories { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDirectories? Directories { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("os")]
-        public global::System.Collections.Generic.IList<string?>? Os { get; set; }
+        public global::System.Collections.Generic.IList<string>? Os { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cpu")]
-        public global::System.Collections.Generic.IList<string?>? Cpu { get; set; }
+        public global::System.Collections.Generic.IList<string>? Cpu { get; set; }
 
         /// <summary>
         /// 

@@ -20,7 +20,7 @@ namespace G
         /// Default Value: [push]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<string?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<string>? Events { get; set; }
 
         /// <summary>
         /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSearchReposArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref global::G.SearchReposSort sort,
-            ref global::G.SearchReposOrder order,
+            ref global::G.SearchReposSort? sort,
+            ref global::G.SearchReposOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            global::G.SearchReposSort sort,
-            global::G.SearchReposOrder order,
+            global::G.SearchReposSort? sort,
+            global::G.SearchReposOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchReposResponse(
@@ -53,8 +53,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchReposResponse> SearchReposAsync(
             string q,
-            global::G.SearchReposSort sort,
-            global::G.SearchReposOrder order,
+            global::G.SearchReposSort? sort,
+            global::G.SearchReposOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

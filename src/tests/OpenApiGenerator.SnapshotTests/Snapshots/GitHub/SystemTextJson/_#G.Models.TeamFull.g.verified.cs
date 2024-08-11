@@ -138,7 +138,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TeamOrganization Organization { get; set; }
+        public required global::G.TeamOrganization? Organization { get; set; }
 
         /// <summary>
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>

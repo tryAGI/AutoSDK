@@ -9,19 +9,19 @@ namespace G
     {
         partial void PrepareDescriptorAddDescriptorLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
-            ref string descriptorId,
-            global::System.Collections.Generic.IList<global::G.FieldValueDTO> dynamicValues);
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues);
         partial void PrepareDescriptorAddDescriptorLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
-            string descriptorId,
-            global::System.Collections.Generic.IList<global::G.FieldValueDTO> dynamicValues);
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues);
         partial void ProcessDescriptorAddDescriptorLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,12 +41,12 @@ namespace G
         /// <param name="dynamicValues"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorAddDescriptorLinkAsync(
-            string token,
-            string projectId,
-            string resourceId,
-            string descriptorId,
-            global::System.Collections.Generic.IList<global::G.FieldValueDTO> dynamicValues,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorAddDescriptorLinkResponse> DescriptorAddDescriptorLinkAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -61,7 +61,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/adddescriptorlink?projectId={projectId}&resourceId={resourceId}&descriptorId={descriptorId}&{string.Join("&", dynamicValues.Select(static x => $"dynamicValues={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/adddescriptorlink?projectId={projectId}&resourceId={resourceId}&descriptorId={descriptorId}&{string.Join("&", dynamicValues?.Select(static x => $"dynamicValues={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -108,7 +108,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorAddDescriptorLinkResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

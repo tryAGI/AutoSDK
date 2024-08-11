@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public required global::G.VectorStoreObjectMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,19 +31,19 @@ namespace G
         /// A product affected by the vulnerability detailed in a repository security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilitie> Vulnerabilities { get; set; } = default!;
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwe_ids")]
-        public global::System.Collections.Generic.IList<string?>? CweIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? CweIds { get; set; }
 
         /// <summary>
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits")]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredit>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.

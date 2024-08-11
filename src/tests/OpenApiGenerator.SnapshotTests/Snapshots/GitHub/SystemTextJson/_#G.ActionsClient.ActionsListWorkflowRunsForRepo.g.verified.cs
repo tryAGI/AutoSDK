@@ -10,31 +10,31 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string actor,
-            ref string branch,
-            ref string @event,
-            ref global::G.ActionsListWorkflowRunsForRepoStatus status,
+            ref string? actor,
+            ref string? branch,
+            ref string? @event,
+            ref global::G.ActionsListWorkflowRunsForRepoStatus? status,
             ref int perPage,
             ref int page,
             global::System.DateTime created,
             ref bool excludePullRequests,
             ref int checkSuiteId,
-            ref string headSha);
+            ref string? headSha);
         partial void PrepareActionsListWorkflowRunsForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string actor,
-            string branch,
-            string @event,
-            global::G.ActionsListWorkflowRunsForRepoStatus status,
+            string? actor,
+            string? branch,
+            string? @event,
+            global::G.ActionsListWorkflowRunsForRepoStatus? status,
             int perPage,
             int page,
             global::System.DateTime created,
             bool excludePullRequests,
             int checkSuiteId,
-            string headSha);
+            string? headSha);
         partial void ProcessActionsListWorkflowRunsForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -74,16 +74,16 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListWorkflowRunsForRepoResponse> ActionsListWorkflowRunsForRepoAsync(
             string owner,
             string repo,
-            string actor,
-            string branch,
-            string @event,
-            global::G.ActionsListWorkflowRunsForRepoStatus status,
+            string? actor,
+            string? branch,
+            string? @event,
+            global::G.ActionsListWorkflowRunsForRepoStatus? status,
             int perPage,
             int page,
             global::System.DateTime created,
             bool excludePullRequests,
             int checkSuiteId,
-            string headSha,
+            string? headSha,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

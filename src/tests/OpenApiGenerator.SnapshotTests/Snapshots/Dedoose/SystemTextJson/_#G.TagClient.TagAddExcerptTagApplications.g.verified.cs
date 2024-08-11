@@ -9,21 +9,21 @@ namespace G
     {
         partial void PrepareTagAddExcerptTagApplicationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string projectId,
-            ref string resourceId,
-            ref string excerptId,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+            ref string? token,
+            ref string? userId,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? excerptId,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void PrepareTagAddExcerptTagApplicationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string projectId,
-            string resourceId,
-            string excerptId,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+            string? token,
+            string? userId,
+            string? projectId,
+            string? resourceId,
+            string? excerptId,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void ProcessTagAddExcerptTagApplicationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,13 +44,13 @@ namespace G
         /// <param name="tagApps"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> TagAddExcerptTagApplicationsAsync(
-            string token,
-            string userId,
-            string projectId,
-            string resourceId,
-            string excerptId,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps,
+        public async global::System.Threading.Tasks.Task<global::G.TagAddExcerptTagApplicationsResponse> TagAddExcerptTagApplicationsAsync(
+            string? token,
+            string? userId,
+            string? projectId,
+            string? resourceId,
+            string? excerptId,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -66,7 +66,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/addexcerpttagapplications?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/addexcerpttagapplications?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&{string.Join("&", tagApps?.Select(static x => $"tagApps={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -114,7 +114,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TagAddExcerptTagApplicationsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::G.GistSimpleForks?>? Forks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GistSimpleFork>? Forks { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public object? Files { get; set; }
+        public global::G.GistSimpleFiles? Files { get; set; }
 
         /// <summary>
         /// 

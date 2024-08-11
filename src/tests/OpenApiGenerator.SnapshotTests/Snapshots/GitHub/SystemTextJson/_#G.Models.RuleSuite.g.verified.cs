@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Response
+    /// 
     /// </summary>
     public sealed partial class RuleSuite
     {
@@ -19,7 +19,7 @@ namespace G
         /// The number that identifies the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor_id")]
-        public int? ActorId { get; set; }
+        public int ActorId { get; set; }
 
         /// <summary>
         /// The handle for the GitHub user account.
@@ -76,12 +76,6 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RuleSuiteEvaluationResultJsonConverter))]
         public global::G.RuleSuiteEvaluationResult? EvaluationResult { get; set; }
-
-        /// <summary>
-        /// Details on the evaluated rules.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("rule_evaluations")]
-        public global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluations?>? RuleEvaluations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

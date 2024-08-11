@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Headers { get; set; }
+        public required global::G.HookDeliveryRequestHeaders? Headers { get; set; }
 
         /// <summary>
         /// The webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Payload { get; set; }
+        public required global::G.HookDeliveryRequestPayload? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

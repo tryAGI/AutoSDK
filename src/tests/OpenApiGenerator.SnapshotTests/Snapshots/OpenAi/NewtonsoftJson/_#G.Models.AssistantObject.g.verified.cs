@@ -69,7 +69,7 @@ namespace G
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Metadata { get; set; } = default!;
+        public global::G.AssistantObjectMetadata? Metadata { get; set; } = default!;
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -95,7 +95,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.OneOf<global::G.AssistantObjectResponseFormat?, global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? ResponseFormat { get; set; }
+        public global::G.AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

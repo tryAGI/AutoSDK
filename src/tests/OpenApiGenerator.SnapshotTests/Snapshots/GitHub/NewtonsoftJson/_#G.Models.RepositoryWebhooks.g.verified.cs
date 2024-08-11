@@ -64,7 +64,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// Whether the repository is private or public.<br/>
@@ -405,13 +405,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topics")]
-        public global::System.Collections.Generic.IList<string?>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<string>? Topics { get; set; }
 
         /// <summary>
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_properties")]
-        public object? CustomProperties { get; set; }
+        public global::G.RepositoryWebhooksCustomProperties? CustomProperties { get; set; }
 
         /// <summary>
         /// Whether issues are enabled.<br/>

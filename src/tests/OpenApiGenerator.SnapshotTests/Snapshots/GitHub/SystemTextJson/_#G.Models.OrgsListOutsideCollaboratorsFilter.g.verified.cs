@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        _2faDisabled,
+        x2faDisabled,
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +31,7 @@ namespace G
         {
             return value switch
             {
-                OrgsListOutsideCollaboratorsFilter._2faDisabled => "2fa_disabled",
+                OrgsListOutsideCollaboratorsFilter.x2faDisabled => "2fa_disabled",
                 OrgsListOutsideCollaboratorsFilter.All => "all",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,7 +43,7 @@ namespace G
         {
             return value switch
             {
-                "2fa_disabled" => OrgsListOutsideCollaboratorsFilter._2faDisabled,
+                "2fa_disabled" => OrgsListOutsideCollaboratorsFilter.x2faDisabled,
                 "all" => OrgsListOutsideCollaboratorsFilter.All,
                 _ => null,
             };

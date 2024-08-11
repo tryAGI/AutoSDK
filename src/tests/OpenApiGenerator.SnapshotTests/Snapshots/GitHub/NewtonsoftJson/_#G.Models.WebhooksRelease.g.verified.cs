@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhooksReleaseAssets> Assets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksReleaseAsset> Assets { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -48,14 +48,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks Repository { get; set; }
+        public required global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_job")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJob, global::G.WebhookWorkflowJobInProgressWorkflowJob> WorkflowJob { get; set; }
+        public required global::System.AllOf<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1?, global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2?> WorkflowJob { get; set; }
 
         /// <summary>
         /// A request for a specific ref(branch,sha,tag) to be deployed

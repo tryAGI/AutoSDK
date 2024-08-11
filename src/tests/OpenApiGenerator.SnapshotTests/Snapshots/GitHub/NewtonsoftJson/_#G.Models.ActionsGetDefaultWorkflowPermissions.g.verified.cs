@@ -13,7 +13,7 @@ namespace G
         /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_workflow_permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ActionsDefaultWorkflowPermissions DefaultWorkflowPermissions { get; set; } = default!;
+        public global::G.ActionsDefaultWorkflowPermissions? DefaultWorkflowPermissions { get; set; } = default!;
 
         /// <summary>
         /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.

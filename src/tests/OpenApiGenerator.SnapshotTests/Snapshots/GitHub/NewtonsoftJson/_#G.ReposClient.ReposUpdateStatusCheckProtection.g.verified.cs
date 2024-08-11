@@ -58,13 +58,13 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -135,7 +135,7 @@ namespace G
             string repo,
             string branch,
             bool strict = default,
-            global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestChecks?>? checks = default,
+            global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestCheck>? checks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposUpdateStatusCheckProtectionRequest

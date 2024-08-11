@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoice> Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.

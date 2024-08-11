@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct WebhookPullRequestReviewRequested : global::System.IEquatable<WebhookPullRequestReviewRequested>
+    public readonly partial struct WebhookPullRequestReviewRequested : global::System.IEquatable<WebhookPullRequestReviewRequested>
     {
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace G
         /// A suite of checks performed on the code of a given code change
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("check_suite", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleCheckSuite CheckSuite { get; set; } = default!;
+        public global::G.SimpleCheckSuite? CheckSuite { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -162,7 +162,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobWaitingWorkflowJobSteps> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobWaitingWorkflowJobStep> Steps { get; set; }
 
         /// <summary>
         /// 

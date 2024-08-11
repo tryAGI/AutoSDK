@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSearchIssuesAndPullRequestsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref global::G.SearchIssuesAndPullRequestsSort sort,
-            ref global::G.SearchIssuesAndPullRequestsOrder order,
+            ref global::G.SearchIssuesAndPullRequestsSort? sort,
+            ref global::G.SearchIssuesAndPullRequestsOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchIssuesAndPullRequestsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            global::G.SearchIssuesAndPullRequestsSort sort,
-            global::G.SearchIssuesAndPullRequestsOrder order,
+            global::G.SearchIssuesAndPullRequestsSort? sort,
+            global::G.SearchIssuesAndPullRequestsOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchIssuesAndPullRequestsResponse(
@@ -55,8 +55,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchIssuesAndPullRequestsResponse> SearchIssuesAndPullRequestsAsync(
             string q,
-            global::G.SearchIssuesAndPullRequestsSort sort,
-            global::G.SearchIssuesAndPullRequestsOrder order,
+            global::G.SearchIssuesAndPullRequestsSort? sort,
+            global::G.SearchIssuesAndPullRequestsOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

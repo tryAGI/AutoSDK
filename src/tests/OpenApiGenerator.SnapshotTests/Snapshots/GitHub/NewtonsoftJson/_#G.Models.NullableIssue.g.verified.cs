@@ -106,7 +106,7 @@ namespace G
         /// Example: [bug, registration]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.NullableIssueLabels>> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.NullableIssueLabel?>> Labels { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
@@ -215,7 +215,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.AuthorAssociation? AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 

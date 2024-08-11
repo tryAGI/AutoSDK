@@ -20,7 +20,7 @@ namespace G
         /// An array of team `slug`s that will be removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("team_reviewers")]
-        public global::System.Collections.Generic.IList<string?>? TeamReviewers { get; set; }
+        public global::System.Collections.Generic.IList<string>? TeamReviewers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

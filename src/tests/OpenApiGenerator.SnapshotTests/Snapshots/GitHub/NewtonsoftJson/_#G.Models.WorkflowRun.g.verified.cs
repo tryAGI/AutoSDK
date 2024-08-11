@@ -223,13 +223,13 @@ namespace G
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository HeadRepository { get; set; } = default!;
+        public global::G.MinimalRepository? HeadRepository { get; set; } = default!;
 
         /// <summary>
         /// Example: 5

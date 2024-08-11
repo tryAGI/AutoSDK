@@ -39,7 +39,7 @@ namespace G
         /// A GitHub organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimple Organization { get; set; } = default!;
+        public global::G.OrganizationSimple? Organization { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.

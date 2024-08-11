@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareDescriptorStartExportFieldsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string setId,
-            ref string fileExtension);
+            ref string? token,
+            ref string? projectId,
+            ref string? setId,
+            ref string? fileExtension);
         partial void PrepareDescriptorStartExportFieldsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string setId,
-            string fileExtension);
+            string? token,
+            string? projectId,
+            string? setId,
+            string? fileExtension);
         partial void ProcessDescriptorStartExportFieldsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="fileExtension"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorStartExportFieldsJobAsync(
-            string token,
-            string projectId,
-            string setId,
-            string fileExtension,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorStartExportFieldsJobResponse> DescriptorStartExportFieldsJobAsync(
+            string? token,
+            string? projectId,
+            string? setId,
+            string? fileExtension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DescriptorStartExportFieldsJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

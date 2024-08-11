@@ -11,14 +11,14 @@ namespace G
             ref string org,
             ref global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             ref global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
-            object request);
+            global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest request);
         partial void PrepareOrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
-            object request);
+            global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest request);
         partial void ProcessOrgsEnableOrDisableSecurityProductOnAllOrgReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,7 +39,7 @@ namespace G
             string org,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
-            object request,
+            global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -73,11 +73,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/{securityProductValue}/{enablementValue}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -113,16 +113,22 @@ namespace G
         /// <param name="org"></param>
         /// <param name="securityProduct"></param>
         /// <param name="enablement"></param>
+        /// <param name="querySuite">
+        /// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.<br/>
+        /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync(
             string org,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
+            global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? querySuite = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new object
+            var request = new global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest
             {
+                QuerySuite = querySuite,
             };
 
             await OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync(

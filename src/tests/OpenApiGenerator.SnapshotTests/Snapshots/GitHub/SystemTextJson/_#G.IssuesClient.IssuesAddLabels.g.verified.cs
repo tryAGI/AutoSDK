@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref int issueNumber,
-            global::System.OneOf<global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequest>, string> request);
+            global::System.OneOf<global::G.IssuesAddLabelsRequestVariant1?, global::System.Collections.Generic.IList<string>?, global::G.IssuesAddLabelsRequestVariant3?, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequestVariant4Item>?, string?> request);
         partial void PrepareIssuesAddLabelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int issueNumber,
-            global::System.OneOf<global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequest>, string> request);
+            global::System.OneOf<global::G.IssuesAddLabelsRequestVariant1?, global::System.Collections.Generic.IList<string>?, global::G.IssuesAddLabelsRequestVariant3?, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequestVariant4Item>?, string?> request);
         partial void ProcessIssuesAddLabelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,11 +42,9 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
-            global::System.OneOf<global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequest>, string> request,
+            global::System.OneOf<global::G.IssuesAddLabelsRequestVariant1?, global::System.Collections.Generic.IList<string>?, global::G.IssuesAddLabelsRequestVariant3?, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequestVariant4Item>?, string?> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
             PrepareIssuesAddLabelsArguments(
@@ -59,11 +57,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/issues/{issueNumber}/labels", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -120,21 +118,16 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
-        /// <param name="labels">
-        /// The names of the labels to add to the issue's existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. You can also replace all of the labels for an issue. For more information, see "[Set labels for an issue](https://docs.github.com/rest/issues/labels#set-labels-for-an-issue)."
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Label>> IssuesAddLabelsAsync(
             string owner,
             string repo,
             int issueNumber,
-            global::System.Collections.Generic.IList<string?>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.OneOf<global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, global::G.IssuesAddLabelsRequest, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequest>, string>
+            var request = new global::System.OneOf<global::G.IssuesAddLabelsRequestVariant1?, global::System.Collections.Generic.IList<string>?, global::G.IssuesAddLabelsRequestVariant3?, global::System.Collections.Generic.IList<global::G.IssuesAddLabelsRequestVariant4Item>?, string?>
             {
-                Labels = labels,
             };
 
             return await IssuesAddLabelsAsync(

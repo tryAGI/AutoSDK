@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareUserValidateUser2Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string username,
-            ref string rsaEncryptedPass,
-            ref string connectionKey);
+            ref string? token,
+            ref string? username,
+            ref string? rsaEncryptedPass,
+            ref string? connectionKey);
         partial void PrepareUserValidateUser2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string username,
-            string rsaEncryptedPass,
-            string connectionKey);
+            string? token,
+            string? username,
+            string? rsaEncryptedPass,
+            string? connectionKey);
         partial void ProcessUserValidateUser2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ValidateUserResult> UserValidateUser2Async(
-            string token,
-            string username,
-            string rsaEncryptedPass,
-            string connectionKey,
+            string? token,
+            string? username,
+            string? rsaEncryptedPass,
+            string? connectionKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

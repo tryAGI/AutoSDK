@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string @ref);
+            ref string? @ref);
         partial void PrepareLicensesGetForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string @ref);
+            string? @ref);
         partial void ProcessLicensesGetForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.LicenseContent> LicensesGetForRepoAsync(
             string owner,
             string repo,
-            string @ref,
+            string? @ref,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

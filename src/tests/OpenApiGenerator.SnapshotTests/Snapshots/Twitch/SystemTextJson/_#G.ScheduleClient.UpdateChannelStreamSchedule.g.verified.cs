@@ -12,7 +12,7 @@ namespace G
             ref bool isVacationEnabled,
             global::System.DateTime vacationStartTime,
             global::System.DateTime vacationEndTime,
-            ref string timezone);
+            ref string? timezone);
         partial void PrepareUpdateChannelStreamScheduleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +20,7 @@ namespace G
             bool isVacationEnabled,
             global::System.DateTime vacationStartTime,
             global::System.DateTime vacationEndTime,
-            string timezone);
+            string? timezone);
         partial void ProcessUpdateChannelStreamScheduleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,7 +43,7 @@ namespace G
             bool isVacationEnabled,
             global::System.DateTime vacationStartTime,
             global::System.DateTime vacationEndTime,
-            string timezone,
+            string? timezone,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -57,7 +57,7 @@ namespace G
                 timezone: ref timezone);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/schedule/settings?broadcaster_id={broadcasterId}&is_vacation_enabled={isVacationEnabled}&vacation_start_time={vacationStartTime:yyyy-MM-ddTHH:mm:ssZ}&vacation_end_time={vacationEndTime:yyyy-MM-ddTHH:mm:ssZ}&timezone={timezone}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(

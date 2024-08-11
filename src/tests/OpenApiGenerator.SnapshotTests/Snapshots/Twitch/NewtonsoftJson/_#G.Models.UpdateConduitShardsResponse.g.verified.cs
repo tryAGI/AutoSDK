@@ -13,13 +13,13 @@ namespace G
         /// List of successful shard updates.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseDataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// List of unsuccessful updates.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errors", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseErrors> Errors { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseError> Errors { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

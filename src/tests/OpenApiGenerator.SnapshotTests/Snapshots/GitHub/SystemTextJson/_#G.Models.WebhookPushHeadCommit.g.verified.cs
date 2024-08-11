@@ -13,7 +13,7 @@ namespace G
         /// An array of files added in the commit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added")]
-        public global::System.Collections.Generic.IList<string?>? Added { get; set; }
+        public global::System.Collections.Generic.IList<string>? Added { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
@@ -54,13 +54,13 @@ namespace G
         /// An array of files modified by the commit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified")]
-        public global::System.Collections.Generic.IList<string?>? Modified { get; set; }
+        public global::System.Collections.Generic.IList<string>? Modified { get; set; }
 
         /// <summary>
         /// An array of files removed in the commit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("removed")]
-        public global::System.Collections.Generic.IList<string?>? Removed { get; set; }
+        public global::System.Collections.Generic.IList<string>? Removed { get; set; }
 
         /// <summary>
         /// The ISO 8601 timestamp of the commit.

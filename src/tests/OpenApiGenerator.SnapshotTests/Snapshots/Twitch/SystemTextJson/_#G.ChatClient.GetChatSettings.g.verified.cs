@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetChatSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref string moderatorId);
+            ref string? moderatorId);
         partial void PrepareGetChatSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            string moderatorId);
+            string? moderatorId);
         partial void ProcessGetChatSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChatSettingsResponse> GetChatSettingsAsync(
             string broadcasterId,
-            string moderatorId,
+            string? moderatorId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? DismissedBy { get; set; } = default!;
+        public global::G.WebhookCodeScanningAlertReopenedAlertDismissedBy? DismissedBy { get; set; } = default!;
 
         /// <summary>
         /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.

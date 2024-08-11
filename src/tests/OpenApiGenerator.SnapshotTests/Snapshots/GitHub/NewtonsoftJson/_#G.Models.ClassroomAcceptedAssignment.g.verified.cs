@@ -54,13 +54,13 @@ namespace G
         /// A GitHub repository view for Classroom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleClassroomRepository Repository { get; set; } = default!;
+        public global::G.SimpleClassroomRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// A GitHub Classroom assignment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignment", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleClassroomAssignment Assignment { get; set; } = default!;
+        public global::G.SimpleClassroomAssignment? Assignment { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

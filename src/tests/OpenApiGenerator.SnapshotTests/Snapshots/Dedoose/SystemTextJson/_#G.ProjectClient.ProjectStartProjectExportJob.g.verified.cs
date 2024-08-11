@@ -8,21 +8,21 @@ namespace G
     {
         partial void PrepareProjectStartProjectExportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string password,
-            ref string email,
-            ref string extension,
-            ref string encryptedSymKey);
+            ref string? token,
+            ref string? projectId,
+            ref string? password,
+            ref string? email,
+            ref string? extension,
+            ref string? encryptedSymKey);
         partial void PrepareProjectStartProjectExportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string password,
-            string email,
-            string extension,
-            string encryptedSymKey);
+            string? token,
+            string? projectId,
+            string? password,
+            string? email,
+            string? extension,
+            string? encryptedSymKey);
         partial void ProcessProjectStartProjectExportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,12 +44,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartProjectExportJobAsync(
-            string token,
-            string projectId,
-            string password,
-            string email,
-            string extension,
-            string encryptedSymKey,
+            string? token,
+            string? projectId,
+            string? password,
+            string? email,
+            string? extension,
+            string? encryptedSymKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

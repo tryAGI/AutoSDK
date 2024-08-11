@@ -85,7 +85,7 @@ namespace G
         /// An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequest> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 

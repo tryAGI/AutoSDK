@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_mismatch_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup AccessMismatchRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup? AccessMismatchRepos { get; set; }
 
         /// <summary>
         /// 
@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("no_codeql_db_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup NoCodeqlDbRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup? NoCodeqlDbRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("over_limit_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup OverLimitRepos { get; set; }
+        public required global::G.CodeScanningVariantAnalysisSkippedRepoGroup? OverLimitRepos { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

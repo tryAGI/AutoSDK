@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ReposListCollaboratorsAffiliation affiliation,
-            ref global::G.ReposListCollaboratorsPermission permission,
+            ref global::G.ReposListCollaboratorsAffiliation? affiliation,
+            ref global::G.ReposListCollaboratorsPermission? permission,
             ref int perPage,
             ref int page);
         partial void PrepareReposListCollaboratorsRequest(
@@ -19,8 +19,8 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ReposListCollaboratorsAffiliation affiliation,
-            global::G.ReposListCollaboratorsPermission permission,
+            global::G.ReposListCollaboratorsAffiliation? affiliation,
+            global::G.ReposListCollaboratorsPermission? permission,
             int perPage,
             int page);
         partial void ProcessReposListCollaboratorsResponse(
@@ -57,8 +57,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Collaborator>> ReposListCollaboratorsAsync(
             string owner,
             string repo,
-            global::G.ReposListCollaboratorsAffiliation affiliation,
-            global::G.ReposListCollaboratorsPermission permission,
+            global::G.ReposListCollaboratorsAffiliation? affiliation,
+            global::G.ReposListCollaboratorsPermission? permission,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

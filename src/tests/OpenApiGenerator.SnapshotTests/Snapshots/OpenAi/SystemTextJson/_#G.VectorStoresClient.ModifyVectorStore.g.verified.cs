@@ -119,7 +119,7 @@ namespace G
             string vectorStoreId,
             string? name = default,
             global::G.VectorStoreExpirationAfter? expiresAfter = default,
-            object? metadata = default,
+            global::G.UpdateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateVectorStoreRequest

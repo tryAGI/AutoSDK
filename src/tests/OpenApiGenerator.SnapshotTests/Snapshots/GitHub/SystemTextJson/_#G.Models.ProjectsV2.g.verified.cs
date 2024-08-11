@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser? Owner { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Creator { get; set; }
+        public required global::G.SimpleUser? Creator { get; set; }
 
         /// <summary>
         /// 

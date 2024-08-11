@@ -20,7 +20,7 @@ namespace G
         /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoice> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.

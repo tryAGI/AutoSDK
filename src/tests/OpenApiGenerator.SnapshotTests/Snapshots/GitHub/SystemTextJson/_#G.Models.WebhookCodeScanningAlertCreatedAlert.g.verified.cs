@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? DismissedAt { get; set; }
+        public required global::G.WebhookCodeScanningAlertCreatedAlertDismissedAt? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? DismissedBy { get; set; }
+        public required global::G.WebhookCodeScanningAlertCreatedAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.
@@ -41,13 +41,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? DismissedReason { get; set; }
+        public required global::G.WebhookCodeScanningAlertCreatedAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fixed_at")]
-        public object? FixedAt { get; set; }
+        public global::G.WebhookCodeScanningAlertCreatedAlertFixedAt? FixedAt { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.

@@ -117,7 +117,7 @@ namespace G
             string inputFileId,
             global::G.CreateBatchRequestEndpoint endpoint,
             global::G.CreateBatchRequestCompletionWindow completionWindow,
-            object? metadata = default,
+            global::G.CreateBatchRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateBatchRequest

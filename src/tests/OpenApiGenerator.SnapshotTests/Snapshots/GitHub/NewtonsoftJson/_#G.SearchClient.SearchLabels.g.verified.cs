@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int repositoryId,
             ref string q,
-            ref global::G.SearchLabelsSort sort,
-            ref global::G.SearchLabelsOrder order,
+            ref global::G.SearchLabelsSort? sort,
+            ref global::G.SearchLabelsOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchLabelsRequest(
@@ -19,8 +19,8 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int repositoryId,
             string q,
-            global::G.SearchLabelsSort sort,
-            global::G.SearchLabelsOrder order,
+            global::G.SearchLabelsSort? sort,
+            global::G.SearchLabelsOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchLabelsResponse(
@@ -57,8 +57,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SearchLabelsResponse> SearchLabelsAsync(
             int repositoryId,
             string q,
-            global::G.SearchLabelsSort sort,
-            global::G.SearchLabelsOrder order,
+            global::G.SearchLabelsSort? sort,
+            global::G.SearchLabelsOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -60,7 +60,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("marketplace_purchase")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; }
+        public required global::G.MarketplacePurchaseMarketplacePurchase1 MarketplacePurchase1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

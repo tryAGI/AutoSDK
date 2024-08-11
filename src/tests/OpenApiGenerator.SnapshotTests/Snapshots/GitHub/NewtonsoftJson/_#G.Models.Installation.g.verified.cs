@@ -70,7 +70,7 @@ namespace G
         /// The permissions granted to the user access token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AppPermissions Permissions { get; set; } = default!;
+        public global::G.AppPermissions? Permissions { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file_paths")]
-        public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }
+        public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 
         /// <summary>
         /// Example: github-actions

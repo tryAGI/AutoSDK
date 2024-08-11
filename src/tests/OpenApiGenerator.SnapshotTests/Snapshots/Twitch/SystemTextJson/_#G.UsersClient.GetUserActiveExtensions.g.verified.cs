@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGetUserActiveExtensionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string userId);
+            ref string? userId);
         partial void PrepareGetUserActiveExtensionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string userId);
+            string? userId);
         partial void ProcessGetUserActiveExtensionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetUserActiveExtensionsResponse> GetUserActiveExtensionsAsync(
-            string userId,
+            string? userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

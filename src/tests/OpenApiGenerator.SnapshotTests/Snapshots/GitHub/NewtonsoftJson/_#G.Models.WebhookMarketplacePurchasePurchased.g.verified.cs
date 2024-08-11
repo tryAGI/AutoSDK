@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("marketplace_purchase", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksMarketplacePurchase MarketplacePurchase { get; set; } = default!;
+        public global::G.WebhooksMarketplacePurchase? MarketplacePurchase { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -67,7 +67,7 @@ namespace G
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

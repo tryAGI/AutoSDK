@@ -9,22 +9,22 @@ namespace G
         partial void PrepareSecurityAdvisoriesListOrgRepositoryAdvisoriesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection direction,
-            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort sort,
-            ref string before,
-            ref string after,
+            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction,
+            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort,
+            ref string? before,
+            ref string? after,
             ref int perPage,
-            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState state);
+            ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state);
         partial void PrepareSecurityAdvisoriesListOrgRepositoryAdvisoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection direction,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort sort,
-            string before,
-            string after,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort,
+            string? before,
+            string? after,
             int perPage,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState state);
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state);
         partial void ProcessSecurityAdvisoriesListOrgRepositoryAdvisoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,12 +57,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryAdvisory>> SecurityAdvisoriesListOrgRepositoryAdvisoriesAsync(
             string org,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection direction,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort sort,
-            string before,
-            string after,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort,
+            string? before,
+            string? after,
             int perPage,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState state,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

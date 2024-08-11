@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser? Actor { get; set; }
 
         /// <summary>
         /// Unique identifier of the issue comment<br/>
@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser User { get; set; }
+        public required global::G.SimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation? AuthorAssociation { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.

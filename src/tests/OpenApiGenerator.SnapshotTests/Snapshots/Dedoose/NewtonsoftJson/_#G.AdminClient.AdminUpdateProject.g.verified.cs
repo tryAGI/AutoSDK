@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareAdminUpdateProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string adminId);
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? adminId);
         partial void PrepareAdminUpdateProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string adminId);
+            string? token,
+            string? projectId,
+            string? title,
+            string? adminId);
         partial void ProcessAdminUpdateProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="adminId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminUpdateProjectAsync(
-            string token,
-            string projectId,
-            string title,
-            string adminId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminUpdateProjectResponse> AdminUpdateProjectAsync(
+            string? token,
+            string? projectId,
+            string? title,
+            string? adminId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminUpdateProjectResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

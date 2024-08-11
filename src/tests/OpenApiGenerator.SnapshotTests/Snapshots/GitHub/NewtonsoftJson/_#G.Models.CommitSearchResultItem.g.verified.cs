@@ -55,13 +55,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParents> Parents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParent> Parents { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

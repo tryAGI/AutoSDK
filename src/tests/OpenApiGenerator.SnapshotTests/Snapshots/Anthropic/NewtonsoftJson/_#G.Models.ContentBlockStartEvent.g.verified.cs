@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ContentBlockStartEvent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// A block of content in a message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_block", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<global::G.TextBlock?, global::G.ImageBlock?, global::G.ToolUseBlock?, global::G.ToolResultBlock?> ContentBlock { get; set; } = default!;
+        public global::G.Block? ContentBlock { get; set; } = default!;
 
         /// <summary>
         /// The index of the content block.
@@ -27,7 +25,7 @@ namespace G
         /// The type of a streaming event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        public global::G.MessageStreamEventType? Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

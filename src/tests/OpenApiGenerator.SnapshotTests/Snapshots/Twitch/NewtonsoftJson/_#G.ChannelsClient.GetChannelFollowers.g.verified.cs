@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareGetChannelFollowersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string userId,
+            ref string? userId,
             ref string broadcasterId,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetChannelFollowersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string userId,
+            string? userId,
             string broadcasterId,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetChannelFollowersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,10 +43,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChannelFollowersResponse> GetChannelFollowersAsync(
-            string userId,
+            string? userId,
             string broadcasterId,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

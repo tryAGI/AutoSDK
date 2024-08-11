@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref int perPage,
             ref int page,
-            ref string name);
+            ref string? name);
         partial void PrepareActionsListArtifactsForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +20,7 @@ namespace G
             string repo,
             int perPage,
             int page,
-            string name);
+            string? name);
         partial void ProcessActionsListArtifactsForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,7 +52,7 @@ namespace G
             string repo,
             int perPage,
             int page,
-            string name,
+            string? name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

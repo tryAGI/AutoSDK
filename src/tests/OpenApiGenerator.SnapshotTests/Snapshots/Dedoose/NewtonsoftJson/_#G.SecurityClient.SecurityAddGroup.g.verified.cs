@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareSecurityAddGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string accessListId);
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? accessListId);
         partial void PrepareSecurityAddGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string accessListId);
+            string? token,
+            string? projectId,
+            string? title,
+            string? accessListId);
         partial void ProcessSecurityAddGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserGroup> SecurityAddGroupAsync(
-            string token,
-            string projectId,
-            string title,
-            string accessListId,
+            string? token,
+            string? projectId,
+            string? title,
+            string? accessListId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

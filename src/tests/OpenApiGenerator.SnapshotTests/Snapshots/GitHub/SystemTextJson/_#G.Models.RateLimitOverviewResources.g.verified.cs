@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("core")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RateLimit Core { get; set; }
+        public required global::G.RateLimit? Core { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RateLimit Search { get; set; }
+        public required global::G.RateLimit? Search { get; set; }
 
         /// <summary>
         /// 

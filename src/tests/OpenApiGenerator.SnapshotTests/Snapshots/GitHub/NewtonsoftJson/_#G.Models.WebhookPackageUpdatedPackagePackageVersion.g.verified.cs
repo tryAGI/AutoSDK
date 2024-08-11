@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Metadata { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionMetadataItem> Metadata { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionPackageFile> PackageFiles { get; set; } = default!;
 
         /// <summary>
         /// 

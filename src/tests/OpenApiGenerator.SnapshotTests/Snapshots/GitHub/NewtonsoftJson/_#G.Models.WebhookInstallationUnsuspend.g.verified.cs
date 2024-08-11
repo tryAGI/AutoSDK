@@ -27,7 +27,7 @@ namespace G
         /// Installation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Installation Installation { get; set; } = default!;
+        public global::G.Installation? Installation { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -40,7 +40,7 @@ namespace G
         /// An array of repository objects that the installation can access.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<global::G.WebhookInstallationUnsuspendRepositories?>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhooksRepositorie>? Repositories { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -53,13 +53,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requester")]
-        public object? Requester { get; set; }
+        public global::G.WebhookInstallationUnsuspendRequester? Requester { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

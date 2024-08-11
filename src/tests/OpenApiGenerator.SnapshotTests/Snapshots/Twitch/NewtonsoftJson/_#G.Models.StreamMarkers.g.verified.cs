@@ -31,7 +31,7 @@ namespace G
         /// A list of videos that contain markers. The list contains a single video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("videos", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Videos { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StreamMarkersVideo> Videos { get; set; } = default!;
 
         /// <summary>
         /// An ID that identifies this video.
@@ -43,7 +43,7 @@ namespace G
         /// The list of markers in this video. The list in ascending order by when the marker was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("markers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.StreamMarkersMarkers> Markers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StreamMarkersMarker> Markers { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

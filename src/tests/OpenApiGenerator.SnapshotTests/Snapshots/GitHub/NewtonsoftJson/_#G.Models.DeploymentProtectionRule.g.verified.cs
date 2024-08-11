@@ -34,7 +34,7 @@ namespace G
         /// A GitHub App that is providing a custom deployment protection rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CustomDeploymentRuleApp App { get; set; } = default!;
+        public global::G.CustomDeploymentRuleApp? App { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

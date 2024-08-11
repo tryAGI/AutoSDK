@@ -8,40 +8,40 @@ namespace G
     {
         partial void PrepareAdminSubmitPaymentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId,
+            ref string? token,
+            ref string? accountId,
             ref double amount,
-            ref string firstName,
-            ref string lastName,
-            ref string address1,
-            ref string address2,
-            ref string city,
-            ref string state,
-            ref string country,
-            ref string zip,
+            ref string? firstName,
+            ref string? lastName,
+            ref string? address1,
+            ref string? address2,
+            ref string? city,
+            ref string? state,
+            ref string? country,
+            ref string? zip,
             ref int cardType,
-            ref string cardNum,
-            ref string cardCCV,
+            ref string? cardNum,
+            ref string? cardCCV,
             ref int expMonth,
             ref int expYear,
             ref bool saveAsReoccuring);
         partial void PrepareAdminSubmitPaymentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             double amount,
-            string firstName,
-            string lastName,
-            string address1,
-            string address2,
-            string city,
-            string state,
-            string country,
-            string zip,
+            string? firstName,
+            string? lastName,
+            string? address1,
+            string? address2,
+            string? city,
+            string? state,
+            string? country,
+            string? zip,
             int cardType,
-            string cardNum,
-            string cardCCV,
+            string? cardNum,
+            string? cardCCV,
             int expMonth,
             int expYear,
             bool saveAsReoccuring);
@@ -76,21 +76,21 @@ namespace G
         /// <param name="saveAsReoccuring"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminSubmitPaymentAsync(
-            string token,
-            string accountId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminSubmitPaymentResponse> AdminSubmitPaymentAsync(
+            string? token,
+            string? accountId,
             double amount,
-            string firstName,
-            string lastName,
-            string address1,
-            string address2,
-            string city,
-            string state,
-            string country,
-            string zip,
+            string? firstName,
+            string? lastName,
+            string? address1,
+            string? address2,
+            string? city,
+            string? state,
+            string? country,
+            string? zip,
             int cardType,
-            string cardNum,
-            string cardCCV,
+            string? cardNum,
+            string? cardCCV,
             int expMonth,
             int expYear,
             bool saveAsReoccuring,
@@ -179,7 +179,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminSubmitPaymentResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

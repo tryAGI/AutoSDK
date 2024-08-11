@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson?, global::G.CreateTranscriptionResponseVerboseJson?>> CreateTranscriptionAsync(
             global::G.CreateTranscriptionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -56,7 +56,7 @@ namespace G
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2?.ToValueString() ?? string.Empty),
                 name: "model");
             if (request.Language != default)
             {
@@ -85,7 +85,7 @@ namespace G
             if (request.TimestampGranularities != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities?.Select(x => x?.ToValueString()) ?? global::System.Array.Empty<string>())}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities.Select(x => x.ToValueString()))}]"),
                     name: "timestamp_granularities[]");
             }
             httpRequest.Content = __httpRequestContent;
@@ -131,7 +131,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.CreateTranscriptionResponseJson?, global::G.CreateTranscriptionResponseVerboseJson?>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -168,15 +168,15 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson?, global::G.CreateTranscriptionResponseVerboseJson?>> CreateTranscriptionAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string, global::G.CreateTranscriptionRequestModel> model,
+            global::System.AnyOf<string?, global::G.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
             global::G.CreateTranscriptionRequestResponseFormat? responseFormat = global::G.CreateTranscriptionRequestResponseFormat.Json,
             double temperature = 0,
-            global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>? timestampGranularities = default,
+            global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateTranscriptionRequest

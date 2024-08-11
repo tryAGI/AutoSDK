@@ -17,160 +17,160 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>? value1 = default;
+            global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>? value2 = default;
+            global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>? value3 = default;
+            global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>? value3 = default;
             try
             {
-                value3 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>? value4 = default;
+            global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>? value4 = default;
             try
             {
-                value4 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value5 = default;
+            global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>? value5 = default;
             try
             {
-                value5 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value5 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value6 = default;
+            global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>? value6 = default;
             try
             {
-                value6 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value6 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value7 = default;
+            global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>? value7 = default;
             try
             {
-                value7 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value7 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value8 = default;
+            global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>? value8 = default;
             try
             {
-                value8 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value8 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value9 = default;
+            global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>? value9 = default;
             try
             {
-                value9 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value9 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value10 = default;
+            global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>? value10 = default;
             try
             {
-                value10 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value10 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value11 = default;
+            global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>? value11 = default;
             try
             {
-                value11 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value11 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value12 = default;
+            global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>? value12 = default;
             try
             {
-                value12 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value12 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value13 = default;
+            global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>? value13 = default;
             try
             {
-                value13 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value13 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value14 = default;
+            global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>? value14 = default;
             try
             {
-                value14 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value14 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value15 = default;
+            global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>? value15 = default;
             try
             {
-                value15 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value15 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? value16 = default;
+            global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>? value16 = default;
             try
             {
-                value16 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>>(ref readerCopy, options);
+                value16 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -210,87 +210,87 @@ namespace OpenApiGenerator.JsonConverters
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>).Name}>");
             }
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value3 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value4 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value5 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value6 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value7 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value8 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value9 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value10 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value11 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value12 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value13 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value14 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value15 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
 
             else if (value16 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>>(ref reader, options);
             }
             return result;
         }
@@ -305,87 +305,87 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>).Name}, {typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>).Name}> object.");
             }
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::System.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::System.AllOf<global::G.RepositoryRuleCreation?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::System.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::System.AllOf<global::G.RepositoryRuleUpdate?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::System.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::System.AllOf<global::G.RepositoryRuleDeletion?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue4)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredLinearHistory?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue5)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredDeployments?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue6)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredSignatures?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue7)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, typeof(global::System.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, typeof(global::System.AllOf<global::G.RepositoryRulePullRequest?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue8)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value8, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value8, typeof(global::System.AllOf<global::G.RepositoryRuleRequiredStatusChecks?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue9)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9, typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9, typeof(global::System.AllOf<global::G.RepositoryRuleNonFastForward?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue10)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10, typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10, typeof(global::System.AllOf<global::G.RepositoryRuleCommitMessagePattern?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue11)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11, typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11, typeof(global::System.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue12)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12, typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12, typeof(global::System.AllOf<global::G.RepositoryRuleCommitterEmailPattern?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue13)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value13, typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value13, typeof(global::System.AllOf<global::G.RepositoryRuleBranchNamePattern?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue14)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value14, typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value14, typeof(global::System.AllOf<global::G.RepositoryRuleTagNamePattern?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue15)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value15, typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value15, typeof(global::System.AllOf<global::G.RepositoryRuleWorkflows?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
 
             else if (value.IsValue16)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value16, typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value16, typeof(global::System.AllOf<global::G.RepositoryRuleCodeScanning?, global::G.RepositoryRuleRulesetInfo?>), options);
             }
         }
     }

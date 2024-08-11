@@ -88,7 +88,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
-        public object? HeadCommit { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunHeadCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// 
@@ -154,20 +154,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_attempt_url")]
-        public object? PreviousAttemptUrl { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedWorkflowRunPreviousAttemptUrl? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunPullRequests> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunPullRequest> PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenced_workflows")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflow>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 

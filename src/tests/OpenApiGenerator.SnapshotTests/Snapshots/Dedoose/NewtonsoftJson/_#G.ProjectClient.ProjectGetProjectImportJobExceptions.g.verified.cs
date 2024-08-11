@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareProjectGetProjectImportJobExceptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string jobId);
+            ref string? token,
+            ref string? jobId);
         partial void PrepareProjectGetProjectImportJobExceptionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string jobId);
+            string? token,
+            string? jobId);
         partial void ProcessProjectGetProjectImportJobExceptionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,9 +31,9 @@ namespace G
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ProjectGetProjectImportJobExceptionsAsync(
-            string token,
-            string jobId,
+        public async global::System.Threading.Tasks.Task<global::G.ProjectGetProjectImportJobExceptionsResponse> ProjectGetProjectImportJobExceptionsAsync(
+            string? token,
+            string? jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ProjectGetProjectImportJobExceptionsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestAssignees?> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestAssignee2> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -123,7 +123,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestLabels> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestLabel> Labels { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -171,13 +171,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewers?, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewers>> RequestedReviewers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant1?, global::G.WebhookPullRequestReviewDismissedPullRequestRequestedReviewerVariant2?>> RequestedReviewers { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_teams", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedTeams> RequestedTeams { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewDismissedPullRequestRequestedTeam> RequestedTeams { get; set; } = default!;
 
         /// <summary>
         /// 

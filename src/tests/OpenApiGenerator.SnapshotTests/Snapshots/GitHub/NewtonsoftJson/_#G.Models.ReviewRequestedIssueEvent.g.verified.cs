@@ -31,7 +31,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser? Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_requester", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser ReviewRequester { get; set; } = default!;
+        public global::G.SimpleUser? ReviewRequester { get; set; } = default!;
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.

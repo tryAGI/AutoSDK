@@ -19,7 +19,7 @@ namespace G
         /// An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("branches", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookStatusBranches> Branches { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookStatusBranche> Branches { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,13 +85,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// The Commit SHA.

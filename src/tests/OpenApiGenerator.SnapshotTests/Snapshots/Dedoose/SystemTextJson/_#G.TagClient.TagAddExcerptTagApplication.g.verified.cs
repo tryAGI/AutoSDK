@@ -8,22 +8,22 @@ namespace G
     {
         partial void PrepareTagAddExcerptTagApplicationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string projectId,
-            ref string resourceId,
-            ref string excerptId,
-            ref string tagId,
+            ref string? token,
+            ref string? userId,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? excerptId,
+            ref string? tagId,
             ref double weight);
         partial void PrepareTagAddExcerptTagApplicationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string projectId,
-            string resourceId,
-            string excerptId,
-            string tagId,
+            string? token,
+            string? userId,
+            string? projectId,
+            string? resourceId,
+            string? excerptId,
+            string? tagId,
             double weight);
         partial void ProcessTagAddExcerptTagApplicationResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,12 +47,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagAppDTO> TagAddExcerptTagApplicationAsync(
-            string token,
-            string userId,
-            string projectId,
-            string resourceId,
-            string excerptId,
-            string tagId,
+            string? token,
+            string? userId,
+            string? projectId,
+            string? resourceId,
+            string? excerptId,
+            string? tagId,
             double weight,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

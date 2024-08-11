@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("videos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Videos { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.StreamMarkersVideo> Videos { get; set; }
 
         /// <summary>
         /// An ID that identifies this video.
@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.StreamMarkersMarkers> Markers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.StreamMarkersMarker> Markers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

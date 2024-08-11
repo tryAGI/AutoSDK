@@ -15,7 +15,7 @@ namespace G
         /// The assignee that has been granted access to GitHub Copilot.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Assignee { get; set; } = default!;
+        public global::System.OneOf<global::G.SimpleUser?, global::G.Team?, global::G.Organization?> Assignee { get; set; } = default!;
 
         /// <summary>
         /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.

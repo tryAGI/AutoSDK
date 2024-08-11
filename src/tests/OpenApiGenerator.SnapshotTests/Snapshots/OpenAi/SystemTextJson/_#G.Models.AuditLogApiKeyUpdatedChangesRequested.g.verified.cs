@@ -13,7 +13,7 @@ namespace G
         /// A list of scopes allowed for the API key, e.g. `["api.model.request"]`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scopes")]
-        public global::System.Collections.Generic.IList<string?>? Scopes { get; set; }
+        public global::System.Collections.Generic.IList<string>? Scopes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

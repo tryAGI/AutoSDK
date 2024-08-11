@@ -38,7 +38,7 @@ namespace G
         /// <param name="deliveryId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> OrgsRedeliverWebhookDeliveryAsync(
+        public async global::System.Threading.Tasks.Task<global::G.OrgsRedeliverWebhookDeliveryResponse> OrgsRedeliverWebhookDeliveryAsync(
             string org,
             int hookId,
             int deliveryId,
@@ -99,7 +99,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OrgsRedeliverWebhookDeliveryResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareDescriptorForceDeleteDescriptorSetPolledArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIDL,
-            ref string descriptorSetId);
+            ref string? token,
+            ref string? projectIDL,
+            ref string? descriptorSetId);
         partial void PrepareDescriptorForceDeleteDescriptorSetPolledRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIDL,
-            string descriptorSetId);
+            string? token,
+            string? projectIDL,
+            string? descriptorSetId);
         partial void ProcessDescriptorForceDeleteDescriptorSetPolledResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DescriptorForceDeleteDescriptorSetPolledAsync(
-            string token,
-            string projectIDL,
-            string descriptorSetId,
+            string? token,
+            string? projectIDL,
+            string? descriptorSetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

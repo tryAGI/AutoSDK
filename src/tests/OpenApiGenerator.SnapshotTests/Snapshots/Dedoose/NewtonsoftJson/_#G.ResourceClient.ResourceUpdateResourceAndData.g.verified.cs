@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareResourceUpdateResourceAndDataArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
-            ref string title,
-            ref string description,
-            ref string fileURL,
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? title,
+            ref string? description,
+            ref string? fileURL,
             ref int length,
             ref bool isLocked);
         partial void PrepareResourceUpdateResourceAndDataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
-            string title,
-            string description,
-            string fileURL,
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? title,
+            string? description,
+            string? fileURL,
             int length,
             bool isLocked);
         partial void ProcessResourceUpdateResourceAndDataResponse(
@@ -49,13 +49,13 @@ namespace G
         /// <param name="isLocked"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceUpdateResourceAndDataAsync(
-            string token,
-            string projectId,
-            string resourceId,
-            string title,
-            string description,
-            string fileURL,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateResourceAndDataResponse> ResourceUpdateResourceAndDataAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? title,
+            string? description,
+            string? fileURL,
             int length,
             bool isLocked,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -125,7 +125,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceUpdateResourceAndDataResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

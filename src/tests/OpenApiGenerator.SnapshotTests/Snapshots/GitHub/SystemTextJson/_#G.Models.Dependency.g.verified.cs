@@ -43,7 +43,7 @@ namespace G
         /// Example: @actions/http-client
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
-        public global::System.Collections.Generic.IList<string?>? Dependencies { get; set; }
+        public global::System.Collections.Generic.IList<string>? Dependencies { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

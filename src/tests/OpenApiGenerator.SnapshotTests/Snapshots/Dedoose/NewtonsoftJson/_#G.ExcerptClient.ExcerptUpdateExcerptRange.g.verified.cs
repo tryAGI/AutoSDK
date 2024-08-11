@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareExcerptUpdateExcerptRangeArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string excerptId,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? excerptId,
             ref int newStart,
             ref int newEnd,
-            ref string updatedTextURI);
+            ref string? updatedTextURI);
         partial void PrepareExcerptUpdateExcerptRangeRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string excerptId,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? excerptId,
             int newStart,
             int newEnd,
-            string updatedTextURI);
+            string? updatedTextURI);
         partial void ProcessExcerptUpdateExcerptRangeResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdateExcerptRangeAsync(
-            string token,
-            string projectId,
-            string userId,
-            string excerptId,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? excerptId,
             int newStart,
             int newEnd,
-            string updatedTextURI,
+            string? updatedTextURI,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookStatusCommitParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookStatusCommitParent> Parents { get; set; }
 
         /// <summary>
         /// 

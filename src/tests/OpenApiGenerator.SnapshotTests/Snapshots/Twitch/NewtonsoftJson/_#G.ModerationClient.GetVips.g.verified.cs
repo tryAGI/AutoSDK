@@ -9,17 +9,17 @@ namespace G
     {
         partial void PrepareGetVipsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> userId,
+            global::System.Collections.Generic.IList<string>? userId,
             ref string broadcasterId,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetVipsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> userId,
+            global::System.Collections.Generic.IList<string>? userId,
             string broadcasterId,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetVipsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,10 +42,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetVIPsResponse> GetVipsAsync(
-            global::System.Collections.Generic.IList<string> userId,
+            global::System.Collections.Generic.IList<string>? userId,
             string broadcasterId,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -59,7 +59,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels/vips?{string.Join("&", userId.Select(static x => $"userId={x}"))}&broadcaster_id={broadcasterId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels/vips?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&broadcaster_id={broadcasterId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareActionsListSelfHostedRunnersForRepoArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string name,
+            ref string? name,
             ref string owner,
             ref string repo,
             ref int perPage,
@@ -16,7 +16,7 @@ namespace G
         partial void PrepareActionsListSelfHostedRunnersForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string name,
+            string? name,
             string owner,
             string repo,
             int perPage,
@@ -48,7 +48,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ActionsListSelfHostedRunnersForRepoResponse> ActionsListSelfHostedRunnersForRepoAsync(
-            string name,
+            string? name,
             string owner,
             string repo,
             int perPage,

@@ -10,27 +10,27 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ReposListActivitiesDirection direction,
+            ref global::G.ReposListActivitiesDirection? direction,
             ref int perPage,
-            ref string before,
-            ref string after,
-            ref string @ref,
-            ref string actor,
-            ref global::G.ReposListActivitiesTimePeriod timePeriod,
-            ref global::G.ReposListActivitiesActivityType activityType);
+            ref string? before,
+            ref string? after,
+            ref string? @ref,
+            ref string? actor,
+            ref global::G.ReposListActivitiesTimePeriod? timePeriod,
+            ref global::G.ReposListActivitiesActivityType? activityType);
         partial void PrepareReposListActivitiesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ReposListActivitiesDirection direction,
+            global::G.ReposListActivitiesDirection? direction,
             int perPage,
-            string before,
-            string after,
-            string @ref,
-            string actor,
-            global::G.ReposListActivitiesTimePeriod timePeriod,
-            global::G.ReposListActivitiesActivityType activityType);
+            string? before,
+            string? after,
+            string? @ref,
+            string? actor,
+            global::G.ReposListActivitiesTimePeriod? timePeriod,
+            global::G.ReposListActivitiesActivityType? activityType);
         partial void ProcessReposListActivitiesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,14 +65,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Activity>> ReposListActivitiesAsync(
             string owner,
             string repo,
-            global::G.ReposListActivitiesDirection direction,
+            global::G.ReposListActivitiesDirection? direction,
             int perPage,
-            string before,
-            string after,
-            string @ref,
-            string actor,
-            global::G.ReposListActivitiesTimePeriod timePeriod,
-            global::G.ReposListActivitiesActivityType activityType,
+            string? before,
+            string? after,
+            string? @ref,
+            string? actor,
+            global::G.ReposListActivitiesTimePeriod? timePeriod,
+            global::G.ReposListActivitiesActivityType? activityType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetReleasedExtensionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string extensionId,
-            ref string extensionVersion);
+            ref string? extensionVersion);
         partial void PrepareGetReleasedExtensionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string extensionId,
-            string extensionVersion);
+            string? extensionVersion);
         partial void ProcessGetReleasedExtensionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetReleasedExtensionsResponse> GetReleasedExtensionsAsync(
             string extensionId,
-            string extensionVersion,
+            string? extensionVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

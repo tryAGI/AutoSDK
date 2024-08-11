@@ -40,19 +40,19 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billable_owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser BillableOwner { get; set; } = default!;
+        public global::G.SimpleUser? BillableOwner { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MinimalRepository Repository { get; set; } = default!;
+        public global::G.MinimalRepository? Repository { get; set; } = default!;
 
         /// <summary>
         /// A description of the machine powering a codespace.

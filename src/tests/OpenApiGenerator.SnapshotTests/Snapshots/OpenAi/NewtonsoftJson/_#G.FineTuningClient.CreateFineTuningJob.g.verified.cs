@@ -142,12 +142,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
-            global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel> model,
+            global::System.AnyOf<string?, global::G.CreateFineTuningJobRequestModel?> model,
             string trainingFile,
             global::G.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
             string? suffix = default,
             string? validationFile = default,
-            global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegrations?>? integrations = default,
+            global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegration>? integrations = default,
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

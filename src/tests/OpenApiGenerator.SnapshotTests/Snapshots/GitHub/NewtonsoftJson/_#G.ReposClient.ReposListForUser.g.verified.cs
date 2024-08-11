@@ -9,18 +9,18 @@ namespace G
         partial void PrepareReposListForUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string username,
-            ref global::G.ReposListForUserType type,
-            ref global::G.ReposListForUserSort sort,
-            ref global::G.ReposListForUserDirection direction,
+            ref global::G.ReposListForUserType? type,
+            ref global::G.ReposListForUserSort? sort,
+            ref global::G.ReposListForUserDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareReposListForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string username,
-            global::G.ReposListForUserType type,
-            global::G.ReposListForUserSort sort,
-            global::G.ReposListForUserDirection direction,
+            global::G.ReposListForUserType? type,
+            global::G.ReposListForUserSort? sort,
+            global::G.ReposListForUserDirection? direction,
             int perPage,
             int page);
         partial void ProcessReposListForUserResponse(
@@ -54,9 +54,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForUserAsync(
             string username,
-            global::G.ReposListForUserType type,
-            global::G.ReposListForUserSort sort,
-            global::G.ReposListForUserDirection direction,
+            global::G.ReposListForUserType? type,
+            global::G.ReposListForUserSort? sort,
+            global::G.ReposListForUserDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

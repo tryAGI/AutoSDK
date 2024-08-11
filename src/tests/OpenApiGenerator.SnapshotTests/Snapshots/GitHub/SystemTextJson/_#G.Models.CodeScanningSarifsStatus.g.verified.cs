@@ -26,7 +26,7 @@ namespace G
         /// Any errors that ocurred during processing of the delivery.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
-        public global::System.Collections.Generic.IList<string?>? Errors { get; set; }
+        public global::System.Collections.Generic.IList<string>? Errors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.IssuesListCommentsForRepoSort sort,
-            ref global::G.IssuesListCommentsForRepoDirection direction,
+            ref global::G.IssuesListCommentsForRepoSort? sort,
+            ref global::G.IssuesListCommentsForRepoDirection? direction,
             global::System.DateTime since,
             ref int perPage,
             ref int page);
@@ -20,8 +20,8 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.IssuesListCommentsForRepoSort sort,
-            global::G.IssuesListCommentsForRepoDirection direction,
+            global::G.IssuesListCommentsForRepoSort? sort,
+            global::G.IssuesListCommentsForRepoDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page);
@@ -62,8 +62,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.IssueComment>> IssuesListCommentsForRepoAsync(
             string owner,
             string repo,
-            global::G.IssuesListCommentsForRepoSort sort,
-            global::G.IssuesListCommentsForRepoDirection direction,
+            global::G.IssuesListCommentsForRepoSort? sort,
+            global::G.IssuesListCommentsForRepoDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page,

@@ -13,7 +13,7 @@ namespace G
         /// Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
-        public global::System.Collections.Generic.IList<string?>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<string>? Assignees { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

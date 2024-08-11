@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareResourceGetTranscriptExportJobIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string transcriptId);
+            ref string? token,
+            ref string? projectId,
+            ref string? transcriptId);
         partial void PrepareResourceGetTranscriptExportJobIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string transcriptId);
+            string? token,
+            string? projectId,
+            string? transcriptId);
         partial void ProcessResourceGetTranscriptExportJobIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceGetTranscriptExportJobIdAsync(
-            string token,
-            string projectId,
-            string transcriptId,
+            string? token,
+            string? projectId,
+            string? transcriptId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

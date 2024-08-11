@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("website")]
-        public global::System.Collections.Generic.IList<string?>? Website { get; set; }
+        public global::System.Collections.Generic.IList<string>? Website { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("codespaces")]
-        public global::System.Collections.Generic.IList<string?>? Codespaces { get; set; }
+        public global::System.Collections.Generic.IList<string>? Codespaces { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("copilot")]
-        public global::System.Collections.Generic.IList<string?>? Copilot { get; set; }
+        public global::System.Collections.Generic.IList<string>? Copilot { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("packages")]
-        public global::System.Collections.Generic.IList<string?>? Packages { get; set; }
+        public global::System.Collections.Generic.IList<string>? Packages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions")]
-        public global::System.Collections.Generic.IList<string?>? Actions { get; set; }
+        public global::System.Collections.Generic.IList<string>? Actions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

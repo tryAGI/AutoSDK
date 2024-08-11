@@ -39,7 +39,7 @@ namespace G
                 invitationId: ref invitationId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/repository_invitations/{invitationId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(

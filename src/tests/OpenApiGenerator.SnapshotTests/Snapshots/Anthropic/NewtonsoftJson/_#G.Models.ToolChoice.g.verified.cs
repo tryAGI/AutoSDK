@@ -21,7 +21,7 @@ namespace G
         /// - `tool`: allows us to force Claude to always use a particular tool specified in the `name` field.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolChoiceType Type { get; set; } = default!;
+        public global::G.ToolChoiceType? Type { get; set; } = default!;
 
         /// <summary>
         /// The name of the tool to use.

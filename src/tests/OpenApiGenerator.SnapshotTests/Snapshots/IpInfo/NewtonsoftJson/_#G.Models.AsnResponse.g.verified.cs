@@ -79,19 +79,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peers")]
-        public global::System.Collections.Generic.IList<string?>? Peers { get; set; }
+        public global::System.Collections.Generic.IList<string>? Peers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upstreams")]
-        public global::System.Collections.Generic.IList<string?>? Upstreams { get; set; }
+        public global::System.Collections.Generic.IList<string>? Upstreams { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("downstreams")]
-        public global::System.Collections.Generic.IList<string?>? Downstreams { get; set; }
+        public global::System.Collections.Generic.IList<string>? Downstreams { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

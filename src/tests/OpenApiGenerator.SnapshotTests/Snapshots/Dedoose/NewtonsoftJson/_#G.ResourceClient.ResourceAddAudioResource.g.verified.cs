@@ -8,21 +8,21 @@ namespace G
     {
         partial void PrepareResourceAddAudioResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string title,
-            ref string description,
-            ref string videoUploadURL);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? title,
+            ref string? description,
+            ref string? videoUploadURL);
         partial void PrepareResourceAddAudioResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
-            string videoUploadURL);
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
+            string? videoUploadURL);
         partial void ProcessResourceAddAudioResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,12 +44,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceAddAudioResourceAsync(
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
-            string videoUploadURL,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
+            string? videoUploadURL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

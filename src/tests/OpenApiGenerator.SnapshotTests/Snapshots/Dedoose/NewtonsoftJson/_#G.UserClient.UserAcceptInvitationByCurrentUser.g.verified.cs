@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareUserAcceptInvitationByCurrentUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string invitationId);
+            ref string? token,
+            ref string? invitationId);
         partial void PrepareUserAcceptInvitationByCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string invitationId);
+            string? token,
+            string? invitationId);
         partial void ProcessUserAcceptInvitationByCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,9 +31,9 @@ namespace G
         /// <param name="invitationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserAcceptInvitationByCurrentUserAsync(
-            string token,
-            string invitationId,
+        public async global::System.Threading.Tasks.Task<global::G.UserAcceptInvitationByCurrentUserResponse> UserAcceptInvitationByCurrentUserAsync(
+            string? token,
+            string? invitationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserAcceptInvitationByCurrentUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

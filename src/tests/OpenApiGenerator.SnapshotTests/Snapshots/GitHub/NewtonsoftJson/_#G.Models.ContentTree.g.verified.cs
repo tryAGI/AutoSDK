@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entries")]
-        public global::System.Collections.Generic.IList<global::G.ContentTreeEntries?>? Entries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentTreeEntrie>? Entries { get; set; }
 
         /// <summary>
         /// 

@@ -31,19 +31,19 @@ namespace G
         /// A product affected by the vulnerability detailed in a repository security advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilities?>? Vulnerabilities { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilitie>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwe_ids")]
-        public global::System.Collections.Generic.IList<string?>? CweIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? CweIds { get; set; }
 
         /// <summary>
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredit>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
@@ -69,13 +69,13 @@ namespace G
         /// A list of usernames who have been granted write access to the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_users")]
-        public global::System.Collections.Generic.IList<string?>? CollaboratingUsers { get; set; }
+        public global::System.Collections.Generic.IList<string>? CollaboratingUsers { get; set; }
 
         /// <summary>
         /// A list of team slugs which have been granted write access to the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_teams")]
-        public global::System.Collections.Generic.IList<string?>? CollaboratingTeams { get; set; }
+        public global::System.Collections.Generic.IList<string>? CollaboratingTeams { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

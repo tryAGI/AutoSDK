@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueAssignees?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueAssignee2> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -104,7 +104,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueLabels?>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueLabel>? Labels { get; set; }
 
         /// <summary>
         /// 

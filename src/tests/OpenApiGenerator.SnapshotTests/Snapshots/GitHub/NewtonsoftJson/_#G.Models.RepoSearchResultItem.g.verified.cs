@@ -409,7 +409,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topics")]
-        public global::System.Collections.Generic.IList<string?>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<string>? Topics { get; set; }
 
         /// <summary>
         /// 
@@ -487,7 +487,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.RepoSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// 

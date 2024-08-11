@@ -23,19 +23,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>> Content { get; set; } = default!;
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>?> Content { get; set; } = default!;
 
         /// <summary>
         /// A list of files attached to the message, and the tools they should be added to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attachments")]
-        public global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachments?>? Attachments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? Attachments { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public object? Metadata { get; set; }
+        public global::G.CreateMessageRequestMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref string path,
-            ref string @ref);
+            ref string? @ref);
         partial void PrepareReposGetContentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             string path,
-            string @ref);
+            string? @ref);
         partial void ProcessReposGetContentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,7 +59,7 @@ namespace G
             string owner,
             string repo,
             string path,
-            string @ref,
+            string? @ref,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

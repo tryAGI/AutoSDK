@@ -27,7 +27,7 @@ namespace G
         /// The list of events for the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent>? Events { get; set; }
 
         /// <summary>
         /// 

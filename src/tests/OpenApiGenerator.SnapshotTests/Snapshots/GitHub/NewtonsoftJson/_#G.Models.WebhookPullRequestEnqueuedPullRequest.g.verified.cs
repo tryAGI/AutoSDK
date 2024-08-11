@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestAssignees?> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestAssignee2> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -153,7 +153,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestLabels> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestLabel> Labels { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -237,13 +237,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewers?, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewers>> RequestedReviewers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant1?, global::G.WebhookPullRequestEnqueuedPullRequestRequestedReviewerVariant2?>> RequestedReviewers { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_teams", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestRequestedTeams> RequestedTeams { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestEnqueuedPullRequestRequestedTeam> RequestedTeams { get; set; } = default!;
 
         /// <summary>
         /// 

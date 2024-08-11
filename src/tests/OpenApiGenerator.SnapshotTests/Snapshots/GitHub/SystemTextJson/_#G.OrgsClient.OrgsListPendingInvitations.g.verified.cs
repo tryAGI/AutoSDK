@@ -11,16 +11,16 @@ namespace G
             ref string org,
             ref int perPage,
             ref int page,
-            ref global::G.OrgsListPendingInvitationsRole role,
-            ref global::G.OrgsListPendingInvitationsInvitationSource invitationSource);
+            ref global::G.OrgsListPendingInvitationsRole? role,
+            ref global::G.OrgsListPendingInvitationsInvitationSource? invitationSource);
         partial void PrepareOrgsListPendingInvitationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             int perPage,
             int page,
-            global::G.OrgsListPendingInvitationsRole role,
-            global::G.OrgsListPendingInvitationsInvitationSource invitationSource);
+            global::G.OrgsListPendingInvitationsRole? role,
+            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource);
         partial void ProcessOrgsListPendingInvitationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,8 +53,8 @@ namespace G
             string org,
             int perPage,
             int page,
-            global::G.OrgsListPendingInvitationsRole role,
-            global::G.OrgsListPendingInvitationsInvitationSource invitationSource,
+            global::G.OrgsListPendingInvitationsRole? role,
+            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -10,16 +10,16 @@ namespace G
         partial void PrepareGetModeratorsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            ref string first,
-            ref string after);
+            global::System.Collections.Generic.IList<string>? userId,
+            ref string? first,
+            ref string? after);
         partial void PrepareGetModeratorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            string first,
-            string after);
+            global::System.Collections.Generic.IList<string>? userId,
+            string? first,
+            string? after);
         partial void ProcessGetModeratorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetModeratorsResponse> GetModeratorsAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            string first,
-            string after,
+            global::System.Collections.Generic.IList<string>? userId,
+            string? first,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -59,7 +59,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/moderators?broadcaster_id={broadcasterId}&{string.Join("&", userId.Select(static x => $"userId={x}"))}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/moderators?broadcaster_id={broadcasterId}&{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

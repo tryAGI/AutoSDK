@@ -9,7 +9,7 @@ namespace G
         partial void PreparePackagesListPackagesForUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.PackagesListPackagesForUserPackageType packageType,
-            ref global::G.PackagesListPackagesForUserVisibility visibility,
+            ref global::G.PackagesListPackagesForUserVisibility? visibility,
             ref string username,
             ref int page,
             ref int perPage);
@@ -17,7 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesListPackagesForUserPackageType packageType,
-            global::G.PackagesListPackagesForUserVisibility visibility,
+            global::G.PackagesListPackagesForUserVisibility? visibility,
             string username,
             int page,
             int perPage);
@@ -48,7 +48,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForUserAsync(
             global::G.PackagesListPackagesForUserPackageType packageType,
-            global::G.PackagesListPackagesForUserVisibility visibility,
+            global::G.PackagesListPackagesForUserVisibility? visibility,
             string username,
             int page,
             int perPage,

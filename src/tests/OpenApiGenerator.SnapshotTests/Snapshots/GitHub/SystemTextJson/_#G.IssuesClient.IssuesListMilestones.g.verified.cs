@@ -10,9 +10,9 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.IssuesListMilestonesState state,
-            ref global::G.IssuesListMilestonesSort sort,
-            ref global::G.IssuesListMilestonesDirection direction,
+            ref global::G.IssuesListMilestonesState? state,
+            ref global::G.IssuesListMilestonesSort? sort,
+            ref global::G.IssuesListMilestonesDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListMilestonesRequest(
@@ -20,9 +20,9 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.IssuesListMilestonesState state,
-            global::G.IssuesListMilestonesSort sort,
-            global::G.IssuesListMilestonesDirection direction,
+            global::G.IssuesListMilestonesState? state,
+            global::G.IssuesListMilestonesSort? sort,
+            global::G.IssuesListMilestonesDirection? direction,
             int perPage,
             int page);
         partial void ProcessIssuesListMilestonesResponse(
@@ -60,9 +60,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Milestone>> IssuesListMilestonesAsync(
             string owner,
             string repo,
-            global::G.IssuesListMilestonesState state,
-            global::G.IssuesListMilestonesSort sort,
-            global::G.IssuesListMilestonesDirection direction,
+            global::G.IssuesListMilestonesState? state,
+            global::G.IssuesListMilestonesSort? sort,
+            global::G.IssuesListMilestonesDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

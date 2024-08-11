@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_contributions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.HypeTrainEventEventDataTopContributions> TopContributions { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.HypeTrainEventEventDataTopContribution> TopContributions { get; set; }
 
         /// <summary>
         /// The current total amount raised.

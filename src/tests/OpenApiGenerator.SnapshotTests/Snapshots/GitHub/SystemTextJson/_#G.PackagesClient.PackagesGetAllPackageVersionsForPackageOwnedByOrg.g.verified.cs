@@ -13,7 +13,7 @@ namespace G
             ref string org,
             ref int page,
             ref int perPage,
-            ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState state);
+            ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state);
         partial void PreparePackagesGetAllPackageVersionsForPackageOwnedByOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             string org,
             int page,
             int perPage,
-            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState state);
+            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state);
         partial void ProcessPackagesGetAllPackageVersionsForPackageOwnedByOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,7 +57,7 @@ namespace G
             string org,
             int page,
             int perPage,
-            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState state,
+            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

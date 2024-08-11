@@ -14,25 +14,25 @@ namespace G
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Ref { get; set; } = default!;
+        public string? Ref { get; set; } = default!;
 
         /// <summary>
         /// The SHA of the commit to which the analysis you are uploading relates.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CommitSha { get; set; } = default!;
+        public string? CommitSha { get; set; } = default!;
 
         /// <summary>
         /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analysis_key", Required = global::Newtonsoft.Json.Required.Always)]
-        public string AnalysisKey { get; set; } = default!;
+        public string? AnalysisKey { get; set; } = default!;
 
         /// <summary>
         /// Identifies the variable values associated with the environment in which this analysis was performed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Environment { get; set; } = default!;
+        public string? Environment { get; set; } = default!;
 
         /// <summary>
         /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
@@ -74,20 +74,20 @@ namespace G
         /// The REST API URL of the analysis resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; } = default!;
 
         /// <summary>
         /// An identifier for the upload.<br/>
         /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sarif_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string SarifId { get; set; } = default!;
+        public string? SarifId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAnalysisTool Tool { get; set; } = default!;
+        public global::G.CodeScanningAnalysisTool? Tool { get; set; } = default!;
 
         /// <summary>
         /// 

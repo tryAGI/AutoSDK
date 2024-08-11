@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CreateVectorStoreRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_ids")]
-        public global::System.Collections.Generic.IList<string?>? FileIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
         /// The name of the vector store.
@@ -31,13 +33,13 @@ namespace G
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
-        public object? ChunkingStrategy { get; set; }
+        public global::System.OneOf<global::G.AutoChunkingStrategyRequestParam?, global::G.StaticChunkingStrategyRequestParam?>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public object? Metadata { get; set; }
+        public global::G.CreateVectorStoreRequestMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

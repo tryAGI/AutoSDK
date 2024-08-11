@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="2fa_disabled")]
-        _2faDisabled,
+        x2faDisabled,
         /// <summary>
         /// 
         /// </summary>
@@ -34,7 +34,7 @@ namespace G
         {
             return value switch
             {
-                OrgsListMembersFilter._2faDisabled => "2fa_disabled",
+                OrgsListMembersFilter.x2faDisabled => "2fa_disabled",
                 OrgsListMembersFilter.All => "all",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -46,7 +46,7 @@ namespace G
         {
             return value switch
             {
-                "2fa_disabled" => OrgsListMembersFilter._2faDisabled,
+                "2fa_disabled" => OrgsListMembersFilter.x2faDisabled,
                 "all" => OrgsListMembersFilter.All,
                 _ => null,
             };

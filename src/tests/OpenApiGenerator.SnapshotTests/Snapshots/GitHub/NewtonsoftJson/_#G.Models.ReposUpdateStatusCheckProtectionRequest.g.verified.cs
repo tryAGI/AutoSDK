@@ -20,13 +20,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contexts")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<string?>? Contexts { get; set; }
+        public global::System.Collections.Generic.IList<string>? Contexts { get; set; }
 
         /// <summary>
         /// The list of status checks to require in order to merge into this branch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks")]
-        public global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestChecks?>? Checks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestCheck>? Checks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

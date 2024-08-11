@@ -163,7 +163,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("adminIds")]
-        public global::System.Collections.Generic.IList<string?>? AdminIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? AdminIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

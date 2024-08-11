@@ -9,27 +9,27 @@ namespace G
     {
         partial void PrepareMemoAddMemoArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string dataPath,
-            global::System.Collections.Generic.IList<string> folderIds,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? dataPath,
+            global::System.Collections.Generic.IList<string>? folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? tags);
         partial void PrepareMemoAddMemoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string dataPath,
-            global::System.Collections.Generic.IList<string> folderIds,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+            string? token,
+            string? projectId,
+            string? title,
+            string? dataPath,
+            global::System.Collections.Generic.IList<string>? folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? tags);
         partial void ProcessMemoAddMemoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,15 +54,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoAndLinks> MemoAddMemoAsync(
-            string token,
-            string projectId,
-            string title,
-            string dataPath,
-            global::System.Collections.Generic.IList<string> folderIds,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags,
+            string? token,
+            string? projectId,
+            string? title,
+            string? dataPath,
+            global::System.Collections.Generic.IList<string>? folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? tags,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -81,7 +81,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/addmemo?projectId={projectId}&title={title}&dataPath={dataPath}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}&{string.Join("&", resources.Select(static x => $"resources={x}"))}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}&{string.Join("&", descriptors.Select(static x => $"descriptors={x}"))}&{string.Join("&", tags.Select(static x => $"tags={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/addmemo?projectId={projectId}&title={title}&dataPath={dataPath}&{string.Join("&", folderIds?.Select(static x => $"folderIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resources?.Select(static x => $"resources={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", excerpts?.Select(static x => $"excerpts={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", descriptors?.Select(static x => $"descriptors={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tags?.Select(static x => $"tags={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

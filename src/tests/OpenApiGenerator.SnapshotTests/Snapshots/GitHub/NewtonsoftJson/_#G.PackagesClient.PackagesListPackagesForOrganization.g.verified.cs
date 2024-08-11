@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.PackagesListPackagesForOrganizationPackageType packageType,
             ref string org,
-            ref global::G.PackagesListPackagesForOrganizationVisibility visibility,
+            ref global::G.PackagesListPackagesForOrganizationVisibility? visibility,
             ref int page,
             ref int perPage);
         partial void PreparePackagesListPackagesForOrganizationRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesListPackagesForOrganizationPackageType packageType,
             string org,
-            global::G.PackagesListPackagesForOrganizationVisibility visibility,
+            global::G.PackagesListPackagesForOrganizationVisibility? visibility,
             int page,
             int perPage);
         partial void ProcessPackagesListPackagesForOrganizationResponse(
@@ -49,7 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForOrganizationAsync(
             global::G.PackagesListPackagesForOrganizationPackageType packageType,
             string org,
-            global::G.PackagesListPackagesForOrganizationVisibility visibility,
+            global::G.PackagesListPackagesForOrganizationVisibility? visibility,
             int page,
             int perPage,
             global::System.Threading.CancellationToken cancellationToken = default)

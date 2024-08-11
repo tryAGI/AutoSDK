@@ -60,13 +60,13 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/security-advisories/{ghsaId}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -168,14 +168,14 @@ namespace G
             string? summary = default,
             string? description = default,
             string? cveId = default,
-            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilities?>? vulnerabilities = default,
-            global::System.Collections.Generic.IList<string?>? cweIds = default,
-            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredits?>? credits = default,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilitie>? vulnerabilities = default,
+            global::System.Collections.Generic.IList<string>? cweIds = default,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredit>? credits = default,
             global::G.RepositoryAdvisoryUpdateSeverity? severity = default,
             string? cvssVectorString = default,
             global::G.RepositoryAdvisoryUpdateState? state = default,
-            global::System.Collections.Generic.IList<string?>? collaboratingUsers = default,
-            global::System.Collections.Generic.IList<string?>? collaboratingTeams = default,
+            global::System.Collections.Generic.IList<string>? collaboratingUsers = default,
+            global::System.Collections.Generic.IList<string>? collaboratingTeams = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.RepositoryAdvisoryUpdate

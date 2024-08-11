@@ -10,19 +10,19 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string vectorStoreId,
             ref int limit,
-            ref global::G.ListVectorStoreFilesOrder order,
-            ref string after,
-            ref string before,
-            ref global::G.ListVectorStoreFilesFilter filter);
+            ref global::G.ListVectorStoreFilesOrder? order,
+            ref string? after,
+            ref string? before,
+            ref global::G.ListVectorStoreFilesFilter? filter);
         partial void PrepareListVectorStoreFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vectorStoreId,
             int limit,
-            global::G.ListVectorStoreFilesOrder order,
-            string after,
-            string before,
-            global::G.ListVectorStoreFilesFilter filter);
+            global::G.ListVectorStoreFilesOrder? order,
+            string? after,
+            string? before,
+            global::G.ListVectorStoreFilesFilter? filter);
         partial void ProcessListVectorStoreFilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,10 +50,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
             int limit,
-            global::G.ListVectorStoreFilesOrder order,
-            string after,
-            string before,
-            global::G.ListVectorStoreFilesFilter filter,
+            global::G.ListVectorStoreFilesOrder? order,
+            string? after,
+            string? before,
+            global::G.ListVectorStoreFilesFilter? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

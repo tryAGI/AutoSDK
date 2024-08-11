@@ -52,21 +52,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks Repository { get; set; }
+        public required global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
         /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksRule Rule { get; set; }
+        public required global::G.WebhooksRule? Rule { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

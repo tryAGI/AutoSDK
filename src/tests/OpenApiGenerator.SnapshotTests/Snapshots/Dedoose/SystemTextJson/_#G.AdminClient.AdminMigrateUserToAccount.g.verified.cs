@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareAdminMigrateUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userToBeMovedId,
-            ref string accountIdToMoveTo);
+            ref string? token,
+            ref string? userToBeMovedId,
+            ref string? accountIdToMoveTo);
         partial void PrepareAdminMigrateUserToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userToBeMovedId,
-            string accountIdToMoveTo);
+            string? token,
+            string? userToBeMovedId,
+            string? accountIdToMoveTo);
         partial void ProcessAdminMigrateUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="accountIdToMoveTo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminMigrateUserToAccountAsync(
-            string token,
-            string userToBeMovedId,
-            string accountIdToMoveTo,
+        public async global::System.Threading.Tasks.Task<global::G.AdminMigrateUserToAccountResponse> AdminMigrateUserToAccountAsync(
+            string? token,
+            string? userToBeMovedId,
+            string? accountIdToMoveTo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminMigrateUserToAccountResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

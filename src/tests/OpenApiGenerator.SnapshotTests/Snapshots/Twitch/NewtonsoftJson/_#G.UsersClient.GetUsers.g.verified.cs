@@ -9,13 +9,13 @@ namespace G
     {
         partial void PrepareGetUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> login);
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? login);
         partial void PrepareGetUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> login);
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? login);
         partial void ProcessGetUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,8 +42,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetUsersResponse> GetUsersAsync(
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> login,
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? login,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -55,7 +55,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users?{string.Join("&", id.Select(static x => $"id={x}"))}&{string.Join("&", login.Select(static x => $"login={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", login?.Select(static x => $"login={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

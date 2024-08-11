@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareResourceGetAudioResourceByJobIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string jobId);
+            ref string? token,
+            ref string? projectId,
+            ref string? jobId);
         partial void PrepareResourceGetAudioResourceByJobIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string jobId);
+            string? token,
+            string? projectId,
+            string? jobId);
         partial void ProcessResourceGetAudioResourceByJobIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceGetAudioResourceByJobIdAsync(
-            string token,
-            string projectId,
-            string jobId,
+            string? token,
+            string? projectId,
+            string? jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

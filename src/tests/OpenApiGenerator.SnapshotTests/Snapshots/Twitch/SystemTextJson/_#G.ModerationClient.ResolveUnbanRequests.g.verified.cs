@@ -12,7 +12,7 @@ namespace G
             ref string moderatorId,
             ref string unbanRequestId,
             ref string status,
-            ref string resolutionText);
+            ref string? resolutionText);
         partial void PrepareResolveUnbanRequestsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +20,7 @@ namespace G
             string moderatorId,
             string unbanRequestId,
             string status,
-            string resolutionText);
+            string? resolutionText);
         partial void ProcessResolveUnbanRequestsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,7 +49,7 @@ namespace G
             string moderatorId,
             string unbanRequestId,
             string status,
-            string resolutionText,
+            string? resolutionText,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -63,7 +63,7 @@ namespace G
                 resolutionText: ref resolutionText);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/unban_requests?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&unban_request_id={unbanRequestId}&status={status}&resolution_text={resolutionText}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(

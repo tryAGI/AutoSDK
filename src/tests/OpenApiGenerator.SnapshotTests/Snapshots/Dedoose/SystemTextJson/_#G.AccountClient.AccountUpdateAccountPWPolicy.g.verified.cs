@@ -8,8 +8,8 @@ namespace G
     {
         partial void PrepareAccountUpdateAccountPWPolicyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId,
+            ref string? token,
+            ref string? accountId,
             ref bool enforcePolicy,
             ref int minLength,
             ref bool requireChar,
@@ -23,8 +23,8 @@ namespace G
         partial void PrepareAccountUpdateAccountPWPolicyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             bool enforcePolicy,
             int minLength,
             bool requireChar,
@@ -62,8 +62,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AccountVO> AccountUpdateAccountPWPolicyAsync(
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             bool enforcePolicy,
             int minLength,
             bool requireChar,

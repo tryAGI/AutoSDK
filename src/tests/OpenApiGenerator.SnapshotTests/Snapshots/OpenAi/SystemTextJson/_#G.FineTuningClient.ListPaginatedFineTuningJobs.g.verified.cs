@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareListPaginatedFineTuningJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string after,
+            ref string? after,
             ref int limit);
         partial void PrepareListPaginatedFineTuningJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string after,
+            string? after,
             int limit);
         partial void ProcessListPaginatedFineTuningJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,7 +34,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPaginatedFineTuningJobsResponse> ListPaginatedFineTuningJobsAsync(
-            string after,
+            string? after,
             int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

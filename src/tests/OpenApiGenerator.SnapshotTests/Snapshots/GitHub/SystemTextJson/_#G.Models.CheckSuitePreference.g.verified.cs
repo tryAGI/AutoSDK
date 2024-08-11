@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository? Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

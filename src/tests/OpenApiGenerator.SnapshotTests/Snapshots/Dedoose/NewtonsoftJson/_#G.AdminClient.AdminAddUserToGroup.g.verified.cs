@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareAdminAddUserToGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string groupId);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? groupId);
         partial void PrepareAdminAddUserToGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string groupId);
+            string? token,
+            string? projectId,
+            string? userId,
+            string? groupId);
         partial void ProcessAdminAddUserToGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="groupId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminAddUserToGroupAsync(
-            string token,
-            string projectId,
-            string userId,
-            string groupId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminAddUserToGroupResponse> AdminAddUserToGroupAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            string? groupId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminAddUserToGroupResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

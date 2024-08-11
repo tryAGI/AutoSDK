@@ -42,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_column", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksProjectColumn ProjectColumn { get; set; } = default!;
+        public global::G.WebhooksProjectColumn? ProjectColumn { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>

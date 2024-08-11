@@ -9,16 +9,16 @@ namespace G
         partial void PrepareListAssistantsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
-            ref global::G.ListAssistantsOrder order,
-            ref string after,
-            ref string before);
+            ref global::G.ListAssistantsOrder? order,
+            ref string? after,
+            ref string? before);
         partial void PrepareListAssistantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
-            global::G.ListAssistantsOrder order,
-            string after,
-            string before);
+            global::G.ListAssistantsOrder? order,
+            string? after,
+            string? before);
         partial void ProcessListAssistantsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListAssistantsResponse> ListAssistantsAsync(
             int limit,
-            global::G.ListAssistantsOrder order,
-            string after,
-            string before,
+            global::G.ListAssistantsOrder? order,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareProjectGetCopyProjectStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string jobId);
+            ref string? token,
+            ref string? jobId);
         partial void PrepareProjectGetCopyProjectStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string jobId);
+            string? token,
+            string? jobId);
         partial void ProcessProjectGetCopyProjectStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> ProjectGetCopyProjectStatusAsync(
-            string token,
-            string jobId,
+            string? token,
+            string? jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -82,7 +82,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AppPermissions Permissions { get; set; }
+        public required global::G.AppPermissions? Permissions { get; set; }
 
         /// <summary>
         /// 
@@ -122,7 +122,7 @@ namespace G
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
-        public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }
+        public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 
         /// <summary>
         /// Example: github-actions

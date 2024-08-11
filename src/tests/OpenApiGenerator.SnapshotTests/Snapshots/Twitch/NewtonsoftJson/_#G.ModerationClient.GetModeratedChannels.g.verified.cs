@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetModeratedChannelsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string userId,
-            ref string after,
+            ref string? after,
             ref int first);
         partial void PrepareGetModeratedChannelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string userId,
-            string after,
+            string? after,
             int first);
         partial void ProcessGetModeratedChannelsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetModeratedChannelsResponse> GetModeratedChannelsAsync(
             string userId,
-            string after,
+            string? after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

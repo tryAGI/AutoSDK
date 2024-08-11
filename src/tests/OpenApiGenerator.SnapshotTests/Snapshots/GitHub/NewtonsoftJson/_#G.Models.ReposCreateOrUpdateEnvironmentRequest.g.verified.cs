@@ -27,7 +27,7 @@ namespace G
         /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewers")]
-        public global::System.Collections.Generic.IList<global::G.ReposCreateOrUpdateEnvironmentRequestReviewers?>? Reviewers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ReposCreateOrUpdateEnvironmentRequestReviewer>? Reviewers { get; set; }
 
         /// <summary>
         /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.

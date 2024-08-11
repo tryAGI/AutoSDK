@@ -49,14 +49,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Commit BaseCommit { get; set; }
+        public required global::G.Commit? BaseCommit { get; set; }
 
         /// <summary>
         /// Commit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_base_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Commit MergeBaseCommit { get; set; }
+        public required global::G.Commit? MergeBaseCommit { get; set; }
 
         /// <summary>
         /// Example: ahead

@@ -115,11 +115,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VectorStoreObject> CreateVectorStoreAsync(
-            global::System.Collections.Generic.IList<string?>? fileIds = default,
+            global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::G.VectorStoreExpirationAfter? expiresAfter = default,
-            object? chunkingStrategy = default,
-            object? metadata = default,
+            global::System.OneOf<global::G.AutoChunkingStrategyRequestParam?, global::G.StaticChunkingStrategyRequestParam?>? chunkingStrategy = default,
+            global::G.CreateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateVectorStoreRequest

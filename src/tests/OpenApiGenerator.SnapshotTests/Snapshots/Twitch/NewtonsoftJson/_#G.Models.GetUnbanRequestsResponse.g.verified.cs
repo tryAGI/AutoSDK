@@ -13,7 +13,7 @@ namespace G
         /// A list that contains information about the channel's unban requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GetUnbanRequestsResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetUnbanRequestsResponseDataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.

@@ -10,16 +10,16 @@ namespace G
         partial void PrepareGetExtensionTransactionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string extensionId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetExtensionTransactionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string extensionId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetExtensionTransactionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionTransactionsResponse> GetExtensionTransactionsAsync(
             string extensionId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -59,7 +59,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/extensions/transactions?extension_id={extensionId}&{string.Join("&", id.Select(static x => $"id={x}"))}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/extensions/transactions?extension_id={extensionId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -11,9 +11,9 @@ namespace G
             ref string owner,
             ref string repo,
             ref int checkSuiteId,
-            ref string checkName,
-            ref global::G.ChecksListForSuiteStatus status,
-            ref global::G.ChecksListForSuiteFilter filter,
+            ref string? checkName,
+            ref global::G.ChecksListForSuiteStatus? status,
+            ref global::G.ChecksListForSuiteFilter? filter,
             ref int perPage,
             ref int page);
         partial void PrepareChecksListForSuiteRequest(
@@ -22,9 +22,9 @@ namespace G
             string owner,
             string repo,
             int checkSuiteId,
-            string checkName,
-            global::G.ChecksListForSuiteStatus status,
-            global::G.ChecksListForSuiteFilter filter,
+            string? checkName,
+            global::G.ChecksListForSuiteStatus? status,
+            global::G.ChecksListForSuiteFilter? filter,
             int perPage,
             int page);
         partial void ProcessChecksListForSuiteResponse(
@@ -62,9 +62,9 @@ namespace G
             string owner,
             string repo,
             int checkSuiteId,
-            string checkName,
-            global::G.ChecksListForSuiteStatus status,
-            global::G.ChecksListForSuiteFilter filter,
+            string? checkName,
+            global::G.ChecksListForSuiteStatus? status,
+            global::G.ChecksListForSuiteFilter? filter,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

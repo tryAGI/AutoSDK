@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareFileEmailFileArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string fileURI,
-            ref string attachmentFileName,
-            ref string emailAddress,
-            ref string subject);
+            ref string? token,
+            ref string? fileURI,
+            ref string? attachmentFileName,
+            ref string? emailAddress,
+            ref string? subject);
         partial void PrepareFileEmailFileRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string fileURI,
-            string attachmentFileName,
-            string emailAddress,
-            string subject);
+            string? token,
+            string? fileURI,
+            string? attachmentFileName,
+            string? emailAddress,
+            string? subject);
         partial void ProcessFileEmailFileResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,12 +40,12 @@ namespace G
         /// <param name="subject"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> FileEmailFileAsync(
-            string token,
-            string fileURI,
-            string attachmentFileName,
-            string emailAddress,
-            string subject,
+        public async global::System.Threading.Tasks.Task<global::G.FileEmailFileResponse> FileEmailFileAsync(
+            string? token,
+            string? fileURI,
+            string? attachmentFileName,
+            string? emailAddress,
+            string? subject,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -107,7 +107,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileEmailFileResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

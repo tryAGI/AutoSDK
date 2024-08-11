@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareUserUpdateCurrentUserPasswordArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string encryptedPass);
+            ref string? token,
+            ref string? userId,
+            ref string? encryptedPass);
         partial void PrepareUserUpdateCurrentUserPasswordRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string encryptedPass);
+            string? token,
+            string? userId,
+            string? encryptedPass);
         partial void ProcessUserUpdateCurrentUserPasswordResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="encryptedPass"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserUpdateCurrentUserPasswordAsync(
-            string token,
-            string userId,
-            string encryptedPass,
+        public async global::System.Threading.Tasks.Task<global::G.UserUpdateCurrentUserPasswordResponse> UserUpdateCurrentUserPasswordAsync(
+            string? token,
+            string? userId,
+            string? encryptedPass,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserUpdateCurrentUserPasswordResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

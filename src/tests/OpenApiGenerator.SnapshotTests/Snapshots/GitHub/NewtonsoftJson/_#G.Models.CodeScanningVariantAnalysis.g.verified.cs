@@ -19,19 +19,19 @@ namespace G
         /// A GitHub repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("controller_repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleRepository ControllerRepo { get; set; } = default!;
+        public global::G.SimpleRepository? ControllerRepo { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser? Actor { get; set; } = default!;
 
         /// <summary>
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_language", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisLanguage? QueryLanguage { get; set; } = default!;
 
         /// <summary>
         /// The download url for the query pack.
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisStatus Status { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisStatus2 Status { get; set; } = default!;
 
         /// <summary>
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scanned_repositories")]
-        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositories?>? ScannedRepositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisScannedRepositorie>? ScannedRepositories { get; set; }
 
         /// <summary>
         /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.

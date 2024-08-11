@@ -131,7 +131,7 @@ namespace G
         /// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
-        public global::System.Collections.Generic.IList<string?>? Exclude { get; set; }
+        public global::System.Collections.Generic.IList<string>? Exclude { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareTagGetDeleteTagByJobResponseArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string jobId);
+            ref string? token,
+            ref string? jobId);
         partial void PrepareTagGetDeleteTagByJobResponseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string jobId);
+            string? token,
+            string? jobId);
         partial void ProcessTagGetDeleteTagByJobResponseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagGetDeleteTagByJobResponseAsync(
-            string token,
-            string jobId,
+            string? token,
+            string? jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

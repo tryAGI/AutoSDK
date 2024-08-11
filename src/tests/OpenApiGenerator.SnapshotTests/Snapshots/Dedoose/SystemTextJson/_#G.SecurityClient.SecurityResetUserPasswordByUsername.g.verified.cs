@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareSecurityResetUserPasswordByUsernameArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string username);
+            ref string? username);
         partial void PrepareSecurityResetUserPasswordByUsernameRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string username);
+            string? username);
         partial void ProcessSecurityResetUserPasswordByUsernameResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> SecurityResetUserPasswordByUsernameAsync(
-            string username,
+            string? username,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.TimelineCommittedEventParents> Parents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.TimelineCommittedEventParent> Parents { get; set; } = default!;
 
         /// <summary>
         /// 

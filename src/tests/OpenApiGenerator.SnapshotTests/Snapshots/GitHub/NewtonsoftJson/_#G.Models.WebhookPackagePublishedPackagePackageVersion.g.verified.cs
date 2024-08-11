@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::System.OneOf<string?, object?>? Body { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookPackagePublishedPackagePackageVersionBody?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Metadata { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionMetadataItem> Metadata { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -105,13 +105,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nuget_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNugetMetadataItem>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionPackageFile> PackageFiles { get; set; } = default!;
 
         /// <summary>
         /// 

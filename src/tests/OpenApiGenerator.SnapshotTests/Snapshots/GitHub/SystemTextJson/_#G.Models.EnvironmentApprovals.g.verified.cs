@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironments> Environments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironment> Environments { get; set; }
 
         /// <summary>
         /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser User { get; set; }
+        public required global::G.SimpleUser? User { get; set; }
 
         /// <summary>
         /// The comment submitted with the deployment review<br/>

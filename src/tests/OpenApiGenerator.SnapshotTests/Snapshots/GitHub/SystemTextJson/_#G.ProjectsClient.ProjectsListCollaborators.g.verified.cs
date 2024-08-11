@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectsListCollaboratorsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int projectId,
-            ref global::G.ProjectsListCollaboratorsAffiliation affiliation,
+            ref global::G.ProjectsListCollaboratorsAffiliation? affiliation,
             ref int perPage,
             ref int page);
         partial void PrepareProjectsListCollaboratorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int projectId,
-            global::G.ProjectsListCollaboratorsAffiliation affiliation,
+            global::G.ProjectsListCollaboratorsAffiliation? affiliation,
             int perPage,
             int page);
         partial void ProcessProjectsListCollaboratorsResponse(
@@ -46,7 +46,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> ProjectsListCollaboratorsAsync(
             int projectId,
-            global::G.ProjectsListCollaboratorsAffiliation affiliation,
+            global::G.ProjectsListCollaboratorsAffiliation? affiliation,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

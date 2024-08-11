@@ -9,26 +9,26 @@ namespace G
     {
         partial void PrepareGetClipsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string broadcasterId,
-            ref string gameId,
-            global::System.Collections.Generic.IList<string> id,
+            ref string? broadcasterId,
+            ref string? gameId,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             ref int first,
-            ref string before,
-            ref string after,
+            ref string? before,
+            ref string? after,
             ref bool isFeatured);
         partial void PrepareGetClipsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string broadcasterId,
-            string gameId,
-            global::System.Collections.Generic.IList<string> id,
+            string? broadcasterId,
+            string? gameId,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,
-            string before,
-            string after,
+            string? before,
+            string? after,
             bool isFeatured);
         partial void ProcessGetClipsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -59,14 +59,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetClipsResponse> GetClipsAsync(
-            string broadcasterId,
-            string gameId,
-            global::System.Collections.Generic.IList<string> id,
+            string? broadcasterId,
+            string? gameId,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,
-            string before,
-            string after,
+            string? before,
+            string? after,
             bool isFeatured,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,7 +86,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/clips?broadcaster_id={broadcasterId}&game_id={gameId}&{string.Join("&", id.Select(static x => $"id={x}"))}&started_at={startedAt:yyyy-MM-ddTHH:mm:ssZ}&ended_at={endedAt:yyyy-MM-ddTHH:mm:ssZ}&first={first}&before={before}&after={after}&is_featured={isFeatured}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/clips?broadcaster_id={broadcasterId}&game_id={gameId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&started_at={startedAt:yyyy-MM-ddTHH:mm:ssZ}&ended_at={endedAt:yyyy-MM-ddTHH:mm:ssZ}&first={first}&before={before}&after={after}&is_featured={isFeatured}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

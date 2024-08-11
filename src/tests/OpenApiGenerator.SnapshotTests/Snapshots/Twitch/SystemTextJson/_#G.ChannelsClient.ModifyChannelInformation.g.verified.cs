@@ -46,7 +46,7 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels?broadcaster_id={broadcasterId}", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
@@ -117,8 +117,8 @@ namespace G
             string? broadcasterLanguage = default,
             string? title = default,
             int delay = default,
-            global::System.Collections.Generic.IList<string?>? tags = default,
-            global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabels?>? contentClassificationLabels = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabel>? contentClassificationLabels = default,
             bool isBrandedContent = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

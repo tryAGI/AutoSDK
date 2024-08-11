@@ -11,14 +11,14 @@ namespace G
             ref string org,
             ref int perPage,
             ref int page,
-            ref string repositoryQuery);
+            ref string? repositoryQuery);
         partial void PrepareOrgsListCustomPropertiesValuesForReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             int perPage,
             int page,
-            string repositoryQuery);
+            string? repositoryQuery);
         partial void ProcessOrgsListCustomPropertiesValuesForReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,7 +47,7 @@ namespace G
             string org,
             int perPage,
             int page,
-            string repositoryQuery,
+            string? repositoryQuery,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

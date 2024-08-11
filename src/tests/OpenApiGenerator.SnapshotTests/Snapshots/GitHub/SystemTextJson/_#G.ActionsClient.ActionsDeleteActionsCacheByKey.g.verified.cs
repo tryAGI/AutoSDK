@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref string key,
-            ref string @ref);
+            ref string? @ref);
         partial void PrepareActionsDeleteActionsCacheByKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             string key,
-            string @ref);
+            string? @ref);
         partial void ProcessActionsDeleteActionsCacheByKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,7 +43,7 @@ namespace G
             string owner,
             string repo,
             string key,
-            string @ref,
+            string? @ref,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

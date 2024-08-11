@@ -35,13 +35,13 @@ namespace G
         /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_contexts")]
-        public global::System.Collections.Generic.IList<string?>? RequiredContexts { get; set; }
+        public global::System.Collections.Generic.IList<string>? RequiredContexts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload")]
-        public global::System.OneOf<object?, string?>? Payload { get; set; }
+        public global::System.OneOf<global::G.ReposCreateDeploymentRequestPayload?, string?>? Payload { get; set; }
 
         /// <summary>
         /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).<br/>

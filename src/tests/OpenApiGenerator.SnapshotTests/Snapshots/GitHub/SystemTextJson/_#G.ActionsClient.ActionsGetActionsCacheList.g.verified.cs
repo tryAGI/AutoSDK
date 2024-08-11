@@ -12,10 +12,10 @@ namespace G
             ref string repo,
             ref int perPage,
             ref int page,
-            ref string @ref,
-            ref string key,
-            ref global::G.ActionsGetActionsCacheListSort sort,
-            ref global::G.ActionsGetActionsCacheListDirection direction);
+            ref string? @ref,
+            ref string? key,
+            ref global::G.ActionsGetActionsCacheListSort? sort,
+            ref global::G.ActionsGetActionsCacheListDirection? direction);
         partial void PrepareActionsGetActionsCacheListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,10 +23,10 @@ namespace G
             string repo,
             int perPage,
             int page,
-            string @ref,
-            string key,
-            global::G.ActionsGetActionsCacheListSort sort,
-            global::G.ActionsGetActionsCacheListDirection direction);
+            string? @ref,
+            string? key,
+            global::G.ActionsGetActionsCacheListSort? sort,
+            global::G.ActionsGetActionsCacheListDirection? direction);
         partial void ProcessActionsGetActionsCacheListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,10 +64,10 @@ namespace G
             string repo,
             int perPage,
             int page,
-            string @ref,
-            string key,
-            global::G.ActionsGetActionsCacheListSort sort,
-            global::G.ActionsGetActionsCacheListDirection direction,
+            string? @ref,
+            string? key,
+            global::G.ActionsGetActionsCacheListSort? sort,
+            global::G.ActionsGetActionsCacheListDirection? direction,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

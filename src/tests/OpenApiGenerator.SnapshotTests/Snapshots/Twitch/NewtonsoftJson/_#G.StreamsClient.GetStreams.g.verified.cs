@@ -9,25 +9,25 @@ namespace G
     {
         partial void PrepareGetStreamsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> userId,
-            global::System.Collections.Generic.IList<string> userLogin,
-            global::System.Collections.Generic.IList<string> gameId,
-            ref global::G.GetStreamsType type,
-            global::System.Collections.Generic.IList<string> language,
+            global::System.Collections.Generic.IList<string>? userId,
+            global::System.Collections.Generic.IList<string>? userLogin,
+            global::System.Collections.Generic.IList<string>? gameId,
+            ref global::G.GetStreamsType? type,
+            global::System.Collections.Generic.IList<string>? language,
             ref int first,
-            ref string before,
-            ref string after);
+            ref string? before,
+            ref string? after);
         partial void PrepareGetStreamsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> userId,
-            global::System.Collections.Generic.IList<string> userLogin,
-            global::System.Collections.Generic.IList<string> gameId,
-            global::G.GetStreamsType type,
-            global::System.Collections.Generic.IList<string> language,
+            global::System.Collections.Generic.IList<string>? userId,
+            global::System.Collections.Generic.IList<string>? userLogin,
+            global::System.Collections.Generic.IList<string>? gameId,
+            global::G.GetStreamsType? type,
+            global::System.Collections.Generic.IList<string>? language,
             int first,
-            string before,
-            string after);
+            string? before,
+            string? after);
         partial void ProcessGetStreamsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,14 +54,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetStreamsResponse> GetStreamsAsync(
-            global::System.Collections.Generic.IList<string> userId,
-            global::System.Collections.Generic.IList<string> userLogin,
-            global::System.Collections.Generic.IList<string> gameId,
-            global::G.GetStreamsType type,
-            global::System.Collections.Generic.IList<string> language,
+            global::System.Collections.Generic.IList<string>? userId,
+            global::System.Collections.Generic.IList<string>? userLogin,
+            global::System.Collections.Generic.IList<string>? gameId,
+            global::G.GetStreamsType? type,
+            global::System.Collections.Generic.IList<string>? language,
             int first,
-            string before,
-            string after,
+            string? before,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -85,7 +85,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId.Select(static x => $"userId={x}"))}&{string.Join("&", userLogin.Select(static x => $"userLogin={x}"))}&{string.Join("&", gameId.Select(static x => $"gameId={x}"))}&type={typeValue}&{string.Join("&", language.Select(static x => $"language={x}"))}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userLogin?.Select(static x => $"userLogin={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", gameId?.Select(static x => $"gameId={x}") ?? global::System.Array.Empty<string>())}&type={typeValue}&{string.Join("&", language?.Select(static x => $"language={x}") ?? global::System.Array.Empty<string>())}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

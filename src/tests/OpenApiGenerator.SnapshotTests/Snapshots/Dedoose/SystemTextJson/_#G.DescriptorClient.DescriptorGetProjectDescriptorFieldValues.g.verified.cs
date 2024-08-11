@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareDescriptorGetProjectDescriptorFieldValuesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
+            ref string? token,
+            ref string? projectId,
             ref int page,
             ref int pageSize);
         partial void PrepareDescriptorGetProjectDescriptorFieldValuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int page,
             int pageSize);
         partial void ProcessDescriptorGetProjectDescriptorFieldValuesResponse(
@@ -38,8 +38,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DescriptorValueDTO>> DescriptorGetProjectDescriptorFieldValuesAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int page,
             int pageSize,
             global::System.Threading.CancellationToken cancellationToken = default)

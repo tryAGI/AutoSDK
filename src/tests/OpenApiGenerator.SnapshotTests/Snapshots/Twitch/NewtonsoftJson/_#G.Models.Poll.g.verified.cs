@@ -43,7 +43,7 @@ namespace G
         /// A list of choices that viewers can choose from. The list will contain a minimum of two choices and up to a maximum of five choices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.PollChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PollChoice> Choices { get; set; } = default!;
 
         /// <summary>
         /// Not used; will be set to **false**.

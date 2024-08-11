@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -88,7 +88,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Metadata { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionMetadataItem> Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile> PackageFiles { get; set; }
 
         /// <summary>
         /// 

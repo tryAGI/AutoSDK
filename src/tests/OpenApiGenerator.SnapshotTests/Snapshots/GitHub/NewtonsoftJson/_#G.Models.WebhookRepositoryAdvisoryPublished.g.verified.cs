@@ -43,13 +43,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// A repository security advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_advisory", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryAdvisory RepositoryAdvisory { get; set; } = default!;
+        public global::G.RepositoryAdvisory? RepositoryAdvisory { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        public global::System.Collections.Generic.IList<global::G.IssuesSetLabelsRequestVariant3Labels?>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IssuesSetLabelsRequestVariant3Label>? Labels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

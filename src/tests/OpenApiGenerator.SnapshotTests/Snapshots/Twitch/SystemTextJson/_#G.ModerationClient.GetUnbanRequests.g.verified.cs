@@ -11,8 +11,8 @@ namespace G
             ref string broadcasterId,
             ref string moderatorId,
             ref string status,
-            ref string userId,
-            ref string after,
+            ref string? userId,
+            ref string? after,
             ref int first);
         partial void PrepareGetUnbanRequestsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             string broadcasterId,
             string moderatorId,
             string status,
-            string userId,
-            string after,
+            string? userId,
+            string? after,
             int first);
         partial void ProcessGetUnbanRequestsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,8 +51,8 @@ namespace G
             string broadcasterId,
             string moderatorId,
             string status,
-            string userId,
-            string after,
+            string? userId,
+            string? after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareAccountRemoveUserFromCurrentAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId);
+            ref string? token,
+            ref string? userId);
         partial void PrepareAccountRemoveUserFromCurrentAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId);
+            string? token,
+            string? userId);
         partial void ProcessAccountRemoveUserFromCurrentAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> AccountRemoveUserFromCurrentAccountAsync(
-            string token,
-            string userId,
+            string? token,
+            string? userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -27,7 +27,7 @@ namespace G
         /// CodeQL languages to be analyzed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
-        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguage>? Languages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

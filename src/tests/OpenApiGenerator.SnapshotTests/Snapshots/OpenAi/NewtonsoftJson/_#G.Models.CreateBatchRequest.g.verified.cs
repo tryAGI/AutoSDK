@@ -33,7 +33,7 @@ namespace G
         /// Optional custom metadata for the batch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public object? Metadata { get; set; }
+        public global::G.CreateBatchRequestMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareAppsListWebhookDeliveriesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int perPage,
-            ref string cursor,
+            ref string? cursor,
             ref bool redelivery);
         partial void PrepareAppsListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery);
         partial void ProcessAppsListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>> AppsListWebhookDeliveriesAsync(
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

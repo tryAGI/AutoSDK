@@ -26,13 +26,13 @@ namespace G
         /// List GitHub IDs for organization members who will become team maintainers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainers")]
-        public global::System.Collections.Generic.IList<string?>? Maintainers { get; set; }
+        public global::System.Collections.Generic.IList<string>? Maintainers { get; set; }
 
         /// <summary>
         /// The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_names")]
-        public global::System.Collections.Generic.IList<string?>? RepoNames { get; set; }
+        public global::System.Collections.Generic.IList<string>? RepoNames { get; set; }
 
         /// <summary>
         /// The level of privacy this team should have. The options are:  <br/>

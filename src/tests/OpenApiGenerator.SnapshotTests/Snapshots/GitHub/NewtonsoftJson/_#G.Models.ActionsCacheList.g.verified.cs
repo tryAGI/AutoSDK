@@ -20,7 +20,7 @@ namespace G
         /// Array of caches
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actions_caches", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCaches> ActionsCaches { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCache> ActionsCaches { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

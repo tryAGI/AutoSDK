@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::System.OneOf<string?, object?>? Body { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody?>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata?>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Metadata { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionMetadataItem> Metadata { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -105,13 +105,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nuget_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata?>? NugetMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>? NugetMetadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package_files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> PackageFiles { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile> PackageFiles { get; set; } = default!;
 
         /// <summary>
         /// 

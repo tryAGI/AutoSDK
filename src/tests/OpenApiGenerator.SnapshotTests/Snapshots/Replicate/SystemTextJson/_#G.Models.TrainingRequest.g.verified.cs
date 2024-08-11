@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public required global::G.TrainingRequestInput Input { get; set; }
 
         /// <summary>
         /// An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
@@ -49,7 +49,7 @@ namespace G
         /// Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events_filter")]
-        public global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>? WebhookEventsFilter { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>? WebhookEventsFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

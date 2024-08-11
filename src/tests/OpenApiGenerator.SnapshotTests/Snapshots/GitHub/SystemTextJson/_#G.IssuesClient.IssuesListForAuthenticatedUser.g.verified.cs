@@ -8,22 +8,22 @@ namespace G
     {
         partial void PrepareIssuesListForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.IssuesListForAuthenticatedUserFilter filter,
-            ref global::G.IssuesListForAuthenticatedUserState state,
-            ref string labels,
-            ref global::G.IssuesListForAuthenticatedUserSort sort,
-            ref global::G.IssuesListForAuthenticatedUserDirection direction,
+            ref global::G.IssuesListForAuthenticatedUserFilter? filter,
+            ref global::G.IssuesListForAuthenticatedUserState? state,
+            ref string? labels,
+            ref global::G.IssuesListForAuthenticatedUserSort? sort,
+            ref global::G.IssuesListForAuthenticatedUserDirection? direction,
             global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.IssuesListForAuthenticatedUserFilter filter,
-            global::G.IssuesListForAuthenticatedUserState state,
-            string labels,
-            global::G.IssuesListForAuthenticatedUserSort sort,
-            global::G.IssuesListForAuthenticatedUserDirection direction,
+            global::G.IssuesListForAuthenticatedUserFilter? filter,
+            global::G.IssuesListForAuthenticatedUserState? state,
+            string? labels,
+            global::G.IssuesListForAuthenticatedUserSort? sort,
+            global::G.IssuesListForAuthenticatedUserDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page);
@@ -72,11 +72,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Issue>> IssuesListForAuthenticatedUserAsync(
-            global::G.IssuesListForAuthenticatedUserFilter filter,
-            global::G.IssuesListForAuthenticatedUserState state,
-            string labels,
-            global::G.IssuesListForAuthenticatedUserSort sort,
-            global::G.IssuesListForAuthenticatedUserDirection direction,
+            global::G.IssuesListForAuthenticatedUserFilter? filter,
+            global::G.IssuesListForAuthenticatedUserState? state,
+            string? labels,
+            global::G.IssuesListForAuthenticatedUserSort? sort,
+            global::G.IssuesListForAuthenticatedUserDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page,

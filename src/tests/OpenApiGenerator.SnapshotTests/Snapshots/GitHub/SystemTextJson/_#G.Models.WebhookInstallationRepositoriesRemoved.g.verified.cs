@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Installation Installation { get; set; }
+        public required global::G.Installation? Installation { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -44,14 +44,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_added")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesAdded> RepositoriesAdded { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksRepositoriesAddedItem>? RepositoriesAdded { get; set; }
 
         /// <summary>
         /// An array of repository objects, which were removed from the installation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_removed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemoved> RepositoriesRemoved { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem> RepositoriesRemoved { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -66,7 +66,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksRepositorySelection RepositorySelection { get; set; }
+        public required global::G.WebhooksRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +80,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

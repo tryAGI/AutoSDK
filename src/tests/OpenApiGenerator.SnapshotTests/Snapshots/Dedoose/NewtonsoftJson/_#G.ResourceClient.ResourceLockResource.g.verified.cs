@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareResourceLockResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId);
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId);
         partial void PrepareResourceLockResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId);
+            string? token,
+            string? projectId,
+            string? resourceId);
         partial void ProcessResourceLockResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceLockResourceAsync(
-            string token,
-            string projectId,
-            string resourceId,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceLockResourceResponse> ResourceLockResourceAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceLockResourceResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSearchUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref global::G.SearchUsersSort sort,
-            ref global::G.SearchUsersOrder order,
+            ref global::G.SearchUsersSort? sort,
+            ref global::G.SearchUsersOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            global::G.SearchUsersSort sort,
-            global::G.SearchUsersOrder order,
+            global::G.SearchUsersSort? sort,
+            global::G.SearchUsersOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchUsersResponse(
@@ -54,8 +54,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchUsersResponse> SearchUsersAsync(
             string q,
-            global::G.SearchUsersSort sort,
-            global::G.SearchUsersOrder order,
+            global::G.SearchUsersSort? sort,
+            global::G.SearchUsersOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

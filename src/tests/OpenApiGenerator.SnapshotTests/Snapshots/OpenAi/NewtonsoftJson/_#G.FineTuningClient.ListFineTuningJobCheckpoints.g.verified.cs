@@ -9,13 +9,13 @@ namespace G
         partial void PrepareListFineTuningJobCheckpointsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string fineTuningJobId,
-            ref string after,
+            ref string? after,
             ref int limit);
         partial void PrepareListFineTuningJobCheckpointsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string fineTuningJobId,
-            string after,
+            string? after,
             int limit);
         partial void ProcessListFineTuningJobCheckpointsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListFineTuningJobCheckpointsResponse> ListFineTuningJobCheckpointsAsync(
             string fineTuningJobId,
-            string after,
+            string? after,
             int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

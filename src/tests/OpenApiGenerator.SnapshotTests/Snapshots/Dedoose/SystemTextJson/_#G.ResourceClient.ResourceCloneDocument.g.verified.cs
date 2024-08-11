@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareResourceCloneDocumentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
             ref bool cloneExcerpts,
             ref bool cloneTagApps);
         partial void PrepareResourceCloneDocumentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? resourceId,
             bool cloneExcerpts,
             bool cloneTagApps);
         partial void ProcessResourceCloneDocumentResponse(
@@ -41,9 +41,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceServiceCloneDocumentControllerOutput> ResourceCloneDocumentAsync(
-            string token,
-            string projectId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? resourceId,
             bool cloneExcerpts,
             bool cloneTagApps,
             global::System.Threading.CancellationToken cancellationToken = default)

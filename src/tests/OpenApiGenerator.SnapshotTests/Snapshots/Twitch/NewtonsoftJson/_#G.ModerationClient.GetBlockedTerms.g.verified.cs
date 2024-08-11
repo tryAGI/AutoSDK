@@ -11,14 +11,14 @@ namespace G
             ref string broadcasterId,
             ref string moderatorId,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetBlockedTermsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             string moderatorId,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetBlockedTermsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace G
             string broadcasterId,
             string moderatorId,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -9,18 +9,18 @@ namespace G
         partial void PrepareReposListForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.ReposListForOrgType type,
-            ref global::G.ReposListForOrgSort sort,
-            ref global::G.ReposListForOrgDirection direction,
+            ref global::G.ReposListForOrgType? type,
+            ref global::G.ReposListForOrgSort? sort,
+            ref global::G.ReposListForOrgDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareReposListForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.ReposListForOrgType type,
-            global::G.ReposListForOrgSort sort,
-            global::G.ReposListForOrgDirection direction,
+            global::G.ReposListForOrgType? type,
+            global::G.ReposListForOrgSort? sort,
+            global::G.ReposListForOrgDirection? direction,
             int perPage,
             int page);
         partial void ProcessReposListForOrgResponse(
@@ -55,9 +55,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForOrgAsync(
             string org,
-            global::G.ReposListForOrgType type,
-            global::G.ReposListForOrgSort sort,
-            global::G.ReposListForOrgDirection direction,
+            global::G.ReposListForOrgType? type,
+            global::G.ReposListForOrgSort? sort,
+            global::G.ReposListForOrgDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

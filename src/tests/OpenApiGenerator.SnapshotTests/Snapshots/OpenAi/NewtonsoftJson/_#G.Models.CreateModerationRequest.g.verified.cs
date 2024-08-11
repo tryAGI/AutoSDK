@@ -15,7 +15,7 @@ namespace G
         /// The input text to classify
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = default!;
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?> Input { get; set; } = default!;
 
         /// <summary>
         /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>

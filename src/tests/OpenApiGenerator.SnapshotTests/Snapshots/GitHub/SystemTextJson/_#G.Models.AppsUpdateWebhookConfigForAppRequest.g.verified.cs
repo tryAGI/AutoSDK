@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AppsUpdateWebhookConfigForAppRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -36,8 +34,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insecure_ssl")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, double>? InsecureSsl { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookConfigInsecureSslJsonConverter))]
+        public global::G.WebhookConfigInsecureSsl? InsecureSsl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

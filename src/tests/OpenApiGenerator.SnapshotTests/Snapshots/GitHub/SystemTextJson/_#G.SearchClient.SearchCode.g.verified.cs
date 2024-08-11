@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSearchCodeArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref global::G.SearchCodeSort sort,
-            ref global::G.SearchCodeOrder order,
+            ref global::G.SearchCodeSort? sort,
+            ref global::G.SearchCodeOrder? order,
             ref int perPage,
             ref int page);
         partial void PrepareSearchCodeRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            global::G.SearchCodeSort sort,
-            global::G.SearchCodeOrder order,
+            global::G.SearchCodeSort? sort,
+            global::G.SearchCodeOrder? order,
             int perPage,
             int page);
         partial void ProcessSearchCodeResponse(
@@ -60,8 +60,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchCodeResponse> SearchCodeAsync(
             string q,
-            global::G.SearchCodeSort sort,
-            global::G.SearchCodeOrder order,
+            global::G.SearchCodeSort? sort,
+            global::G.SearchCodeOrder? order,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

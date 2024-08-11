@@ -25,7 +25,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// Type of repository selection requested.

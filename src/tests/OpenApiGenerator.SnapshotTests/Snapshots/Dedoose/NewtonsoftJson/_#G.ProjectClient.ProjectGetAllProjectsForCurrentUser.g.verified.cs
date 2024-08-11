@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareProjectGetAllProjectsForCurrentUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token);
+            ref string? token);
         partial void PrepareProjectGetAllProjectsForCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token);
+            string? token);
         partial void ProcessProjectGetAllProjectsForCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectGetAllProjectsForCurrentUserAsync(
-            string token,
+            string? token,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

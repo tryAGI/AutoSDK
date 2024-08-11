@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RunStepObject.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -74,7 +76,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object StepDetails { get; set; }
+        public required global::System.OneOf<global::G.RunStepDetailsMessageCreationObject?, global::G.RunStepDetailsToolCallsObject?> StepDetails { get; set; }
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.
@@ -116,7 +118,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public required global::G.RunStepObjectMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.

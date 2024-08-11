@@ -157,7 +157,7 @@ namespace G
             bool excludeReleases = false,
             bool excludeOwnerProjects = false,
             bool orgMetadataOnly = false,
-            global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExclude?>? exclude = default,
+            global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.MigrationsStartForOrgRequest

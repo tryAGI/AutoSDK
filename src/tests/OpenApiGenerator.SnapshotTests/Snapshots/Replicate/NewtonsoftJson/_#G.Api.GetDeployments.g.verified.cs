@@ -62,7 +62,7 @@ namespace G
         /// <param name="deploymentName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetDeploymentsResponse> GetDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeploymentsGetResponse> GetDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -120,7 +120,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetDeploymentsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeploymentsGetResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

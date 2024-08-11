@@ -57,13 +57,13 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/hooks/{hookId}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -144,9 +144,9 @@ namespace G
             string repo,
             int hookId,
             global::G.WebhookConfig? config = default,
-            global::System.Collections.Generic.IList<string?>? events = default,
-            global::System.Collections.Generic.IList<string?>? addEvents = default,
-            global::System.Collections.Generic.IList<string?>? removeEvents = default,
+            global::System.Collections.Generic.IList<string>? events = default,
+            global::System.Collections.Generic.IList<string>? addEvents = default,
+            global::System.Collections.Generic.IList<string>? removeEvents = default,
             bool active = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

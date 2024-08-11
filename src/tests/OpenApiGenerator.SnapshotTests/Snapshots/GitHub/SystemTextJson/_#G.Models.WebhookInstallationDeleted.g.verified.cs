@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Installation Installation { get; set; }
+        public required global::G.Installation? Installation { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -43,7 +43,7 @@ namespace G
         /// An array of repository objects that the installation can access.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<global::G.WebhookInstallationDeletedRepositories?>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhooksRepositorie>? Repositories { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -56,14 +56,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requester")]
-        public object? Requester { get; set; }
+        public global::G.WebhookInstallationDeletedRequester? Requester { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

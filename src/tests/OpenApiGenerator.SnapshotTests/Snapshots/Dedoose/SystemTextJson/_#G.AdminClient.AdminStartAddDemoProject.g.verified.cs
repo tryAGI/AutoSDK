@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareAdminStartAddDemoProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId);
+            ref string? token,
+            ref string? userId);
         partial void PrepareAdminStartAddDemoProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId);
+            string? token,
+            string? userId);
         partial void ProcessAdminStartAddDemoProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,9 +31,9 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminStartAddDemoProjectAsync(
-            string token,
-            string userId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminStartAddDemoProjectResponse> AdminStartAddDemoProjectAsync(
+            string? token,
+            string? userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminStartAddDemoProjectResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

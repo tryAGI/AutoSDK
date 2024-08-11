@@ -9,25 +9,25 @@ namespace G
     {
         partial void PrepareMemoStartExportMemosXMLArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            global::System.Collections.Generic.IList<string> memoIds,
+            ref string? token,
+            ref string? projectId,
+            global::System.Collections.Generic.IList<string>? memoIds,
             ref int codeSelection,
             ref int mediaSelection,
             ref int excerptsSelection,
             ref int descriptorsSelection,
-            ref string symKey);
+            ref string? symKey);
         partial void PrepareMemoStartExportMemosXMLRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> memoIds,
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? memoIds,
             int codeSelection,
             int mediaSelection,
             int excerptsSelection,
             int descriptorsSelection,
-            string symKey);
+            string? symKey);
         partial void ProcessMemoStartExportMemosXMLResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,14 +51,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> MemoStartExportMemosXMLAsync(
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> memoIds,
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? memoIds,
             int codeSelection,
             int mediaSelection,
             int excerptsSelection,
             int descriptorsSelection,
-            string symKey,
+            string? symKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -76,7 +76,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startexportmemosxml?projectId={projectId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}&codeSelection={codeSelection}&mediaSelection={mediaSelection}&excerptsSelection={excerptsSelection}&descriptorsSelection={descriptorsSelection}&symKey={symKey}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startexportmemosxml?projectId={projectId}&{string.Join("&", memoIds?.Select(static x => $"memoIds={x}") ?? global::System.Array.Empty<string>())}&codeSelection={codeSelection}&mediaSelection={mediaSelection}&excerptsSelection={excerptsSelection}&descriptorsSelection={descriptorsSelection}&symKey={symKey}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

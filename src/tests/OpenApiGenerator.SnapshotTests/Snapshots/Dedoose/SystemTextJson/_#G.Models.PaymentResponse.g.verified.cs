@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
-        public global::System.Collections.Generic.IList<string?>? Errors { get; set; }
+        public global::System.Collections.Generic.IList<string>? Errors { get; set; }
 
         /// <summary>
         /// 

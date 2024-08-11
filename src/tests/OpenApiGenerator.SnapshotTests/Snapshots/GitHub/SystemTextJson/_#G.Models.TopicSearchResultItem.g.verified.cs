@@ -102,19 +102,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("related")]
-        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemRelated?>? Related { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemRelatedItem>? Related { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aliases")]
-        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliases?>? Aliases { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliase>? Aliases { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

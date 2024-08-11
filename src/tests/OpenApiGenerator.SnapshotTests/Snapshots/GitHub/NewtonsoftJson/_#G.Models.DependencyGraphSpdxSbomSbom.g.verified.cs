@@ -60,7 +60,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("packages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackages> Packages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DependencyGraphSpdxSbomSbomPackage> Packages { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

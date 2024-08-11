@@ -8,22 +8,22 @@ namespace G
     {
         partial void PrepareAccountUpdateAccountUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string firstName,
-            ref string lastName,
-            ref string phone,
-            ref string email,
+            ref string? token,
+            ref string? userId,
+            ref string? firstName,
+            ref string? lastName,
+            ref string? phone,
+            ref string? email,
             ref bool active);
         partial void PrepareAccountUpdateAccountUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string firstName,
-            string lastName,
-            string phone,
-            string email,
+            string? token,
+            string? userId,
+            string? firstName,
+            string? lastName,
+            string? phone,
+            string? email,
             bool active);
         partial void ProcessAccountUpdateAccountUserResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,12 +47,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> AccountUpdateAccountUserAsync(
-            string token,
-            string userId,
-            string firstName,
-            string lastName,
-            string phone,
-            string email,
+            string? token,
+            string? userId,
+            string? firstName,
+            string? lastName,
+            string? phone,
+            string? email,
             bool active,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

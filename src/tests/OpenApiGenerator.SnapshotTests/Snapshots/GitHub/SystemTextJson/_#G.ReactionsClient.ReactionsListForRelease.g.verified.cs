@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int releaseId,
-            ref global::G.ReactionsListForReleaseContent content,
+            ref global::G.ReactionsListForReleaseContent? content,
             ref int perPage,
             ref int page);
         partial void PrepareReactionsListForReleaseRequest(
@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             int releaseId,
-            global::G.ReactionsListForReleaseContent content,
+            global::G.ReactionsListForReleaseContent? content,
             int perPage,
             int page);
         partial void ProcessReactionsListForReleaseResponse(
@@ -52,7 +52,7 @@ namespace G
             string owner,
             string repo,
             int releaseId,
-            global::G.ReactionsListForReleaseContent content,
+            global::G.ReactionsListForReleaseContent? content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

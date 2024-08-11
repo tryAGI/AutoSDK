@@ -9,16 +9,16 @@ namespace G
         partial void PrepareGetBitsLeaderboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int count,
-            ref global::G.GetBitsLeaderboardPeriod period,
+            ref global::G.GetBitsLeaderboardPeriod? period,
             global::System.DateTime startedAt,
-            ref string userId);
+            ref string? userId);
         partial void PrepareGetBitsLeaderboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int count,
-            global::G.GetBitsLeaderboardPeriod period,
+            global::G.GetBitsLeaderboardPeriod? period,
             global::System.DateTime startedAt,
-            string userId);
+            string? userId);
         partial void ProcessGetBitsLeaderboardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,9 +42,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
             int count,
-            global::G.GetBitsLeaderboardPeriod period,
+            global::G.GetBitsLeaderboardPeriod? period,
             global::System.DateTime startedAt,
-            string userId,
+            string? userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

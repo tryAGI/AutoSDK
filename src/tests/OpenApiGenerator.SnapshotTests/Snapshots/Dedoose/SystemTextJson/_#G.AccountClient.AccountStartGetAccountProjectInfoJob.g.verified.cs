@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareAccountStartGetAccountProjectInfoJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId);
+            ref string? token,
+            ref string? accountId);
         partial void PrepareAccountStartGetAccountProjectInfoJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId);
+            string? token,
+            string? accountId);
         partial void ProcessAccountStartGetAccountProjectInfoJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> AccountStartGetAccountProjectInfoJobAsync(
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

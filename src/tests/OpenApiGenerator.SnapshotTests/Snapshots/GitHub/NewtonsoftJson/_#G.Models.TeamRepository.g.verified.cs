@@ -403,7 +403,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topics")]
-        public global::System.Collections.Generic.IList<string?>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<string>? Topics { get; set; }
 
         /// <summary>
         /// Whether issues are enabled.<br/>

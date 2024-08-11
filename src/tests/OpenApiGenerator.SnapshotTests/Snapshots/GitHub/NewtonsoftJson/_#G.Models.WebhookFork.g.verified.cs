@@ -23,7 +23,7 @@ namespace G
         /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forkee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.WebhookForkForkee, global::G.WebhookForkForkee> Forkee { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookForkForkeeVariant1?, global::G.WebhookForkForkeeVariant2?> Forkee { get; set; } = default!;
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -45,13 +45,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

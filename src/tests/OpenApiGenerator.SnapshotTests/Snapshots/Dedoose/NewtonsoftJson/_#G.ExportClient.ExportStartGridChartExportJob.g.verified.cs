@@ -9,27 +9,27 @@ namespace G
     {
         partial void PrepareExportStartGridChartExportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            global::System.Collections.Generic.IList<string> columnLabels,
-            global::System.Collections.Generic.IList<string> rowLabels,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> rows,
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            global::System.Collections.Generic.IList<string>? columnLabels,
+            global::System.Collections.Generic.IList<string>? rowLabels,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
             ref float maxCount,
             ref bool colorByTotal,
-            ref string extension);
+            ref string? extension);
         partial void PrepareExportStartGridChartExportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            global::System.Collections.Generic.IList<string> columnLabels,
-            global::System.Collections.Generic.IList<string> rowLabels,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> rows,
+            string? token,
+            string? projectId,
+            string? title,
+            global::System.Collections.Generic.IList<string>? columnLabels,
+            global::System.Collections.Generic.IList<string>? rowLabels,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
             float maxCount,
             bool colorByTotal,
-            string extension);
+            string? extension);
         partial void ProcessExportStartGridChartExportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,16 +53,16 @@ namespace G
         /// <param name="extension"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ExportStartGridChartExportJobAsync(
-            string token,
-            string projectId,
-            string title,
-            global::System.Collections.Generic.IList<string> columnLabels,
-            global::System.Collections.Generic.IList<string> rowLabels,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> rows,
+        public async global::System.Threading.Tasks.Task<global::G.ExportStartGridChartExportJobResponse> ExportStartGridChartExportJobAsync(
+            string? token,
+            string? projectId,
+            string? title,
+            global::System.Collections.Generic.IList<string>? columnLabels,
+            global::System.Collections.Generic.IList<string>? rowLabels,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
             float maxCount,
             bool colorByTotal,
-            string extension,
+            string? extension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -81,7 +81,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startgridchartexportjob?projectId={projectId}&Title={title}&{string.Join("&", columnLabels.Select(static x => $"columnLabels={x}"))}&{string.Join("&", rowLabels.Select(static x => $"rowLabels={x}"))}&{string.Join("&", rows.Select(static x => $"rows={x}"))}&MaxCount={maxCount}&ColorByTotal={colorByTotal}&extension={extension}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startgridchartexportjob?projectId={projectId}&Title={title}&{string.Join("&", columnLabels?.Select(static x => $"columnLabels={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", rowLabels?.Select(static x => $"rowLabels={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", rows?.Select(static x => $"rows={x}") ?? global::System.Array.Empty<string>())}&MaxCount={maxCount}&ColorByTotal={colorByTotal}&extension={extension}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -132,7 +132,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ExportStartGridChartExportJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

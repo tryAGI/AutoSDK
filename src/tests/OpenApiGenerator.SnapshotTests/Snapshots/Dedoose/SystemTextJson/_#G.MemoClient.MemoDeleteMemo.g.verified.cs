@@ -8,31 +8,31 @@ namespace G
     {
         partial void PrepareMemoDeleteMemoArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string id,
-            ref string projectId,
-            ref string title,
-            ref string createdUserId,
-            ref string lastEditUserId,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? id,
+            ref string? projectId,
+            ref string? title,
+            ref string? createdUserId,
+            ref string? lastEditUserId,
             global::System.DateTime createStamp,
             global::System.DateTime lastEditStamp,
-            ref string folderId,
-            ref string dataURI);
+            ref string? folderId,
+            ref string? dataURI);
         partial void PrepareMemoDeleteMemoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string id,
-            string projectId,
-            string title,
-            string createdUserId,
-            string lastEditUserId,
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? projectId,
+            string? title,
+            string? createdUserId,
+            string? lastEditUserId,
             global::System.DateTime createStamp,
             global::System.DateTime lastEditStamp,
-            string folderId,
-            string dataURI);
+            string? folderId,
+            string? dataURI);
         partial void ProcessMemoDeleteMemoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Memo> MemoDeleteMemoAsync(
-            string token,
-            string projectIdKey,
-            string id,
-            string projectId,
-            string title,
-            string createdUserId,
-            string lastEditUserId,
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? projectId,
+            string? title,
+            string? createdUserId,
+            string? lastEditUserId,
             global::System.DateTime createStamp,
             global::System.DateTime lastEditStamp,
-            string folderId,
-            string dataURI,
+            string? folderId,
+            string? dataURI,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

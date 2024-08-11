@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareUserRegisterConnectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string connectionKey);
+            ref string? token,
+            ref string? userId,
+            ref string? connectionKey);
         partial void PrepareUserRegisterConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string connectionKey);
+            string? token,
+            string? userId,
+            string? connectionKey);
         partial void ProcessUserRegisterConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserRegisterConnectionAsync(
-            string token,
-            string userId,
-            string connectionKey,
+            string? token,
+            string? userId,
+            string? connectionKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

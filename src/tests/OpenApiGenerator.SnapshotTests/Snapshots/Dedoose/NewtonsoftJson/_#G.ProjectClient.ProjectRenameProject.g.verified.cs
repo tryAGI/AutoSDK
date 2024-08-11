@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareProjectRenameProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string newTitle);
+            ref string? token,
+            ref string? projectId,
+            ref string? newTitle);
         partial void PrepareProjectRenameProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string newTitle);
+            string? token,
+            string? projectId,
+            string? newTitle);
         partial void ProcessProjectRenameProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="newTitle"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ProjectRenameProjectAsync(
-            string token,
-            string projectId,
-            string newTitle,
+        public async global::System.Threading.Tasks.Task<global::G.ProjectRenameProjectResponse> ProjectRenameProjectAsync(
+            string? token,
+            string? projectId,
+            string? newTitle,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ProjectRenameProjectResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

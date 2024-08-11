@@ -25,7 +25,7 @@ namespace G
         /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("weeks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContributorActivityWeeks> Weeks { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> Weeks { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

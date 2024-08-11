@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_repositories")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EnabledRepositoriesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.EnabledRepositories EnabledRepositories { get; set; }
+        public required global::G.EnabledRepositories? EnabledRepositories { get; set; }
 
         /// <summary>
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComments> Comments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComment> Comments { get; set; }
 
         /// <summary>
         /// 

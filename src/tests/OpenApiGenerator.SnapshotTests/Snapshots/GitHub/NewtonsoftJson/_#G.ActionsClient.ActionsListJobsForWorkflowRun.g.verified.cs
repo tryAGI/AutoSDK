@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int runId,
-            ref global::G.ActionsListJobsForWorkflowRunFilter filter,
+            ref global::G.ActionsListJobsForWorkflowRunFilter? filter,
             ref int perPage,
             ref int page);
         partial void PrepareActionsListJobsForWorkflowRunRequest(
@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            global::G.ActionsListJobsForWorkflowRunFilter filter,
+            global::G.ActionsListJobsForWorkflowRunFilter? filter,
             int perPage,
             int page);
         partial void ProcessActionsListJobsForWorkflowRunResponse(
@@ -57,7 +57,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            global::G.ActionsListJobsForWorkflowRunFilter filter,
+            global::G.ActionsListJobsForWorkflowRunFilter? filter,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

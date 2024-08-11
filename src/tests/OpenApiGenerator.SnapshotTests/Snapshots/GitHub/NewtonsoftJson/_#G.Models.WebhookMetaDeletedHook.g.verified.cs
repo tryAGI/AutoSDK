@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookMetaDeletedHookEvents> Events { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookMetaDeletedHookEvent> Events { get; set; } = default!;
 
         /// <summary>
         /// 

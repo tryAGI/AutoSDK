@@ -25,7 +25,7 @@ namespace G
         /// A list of additional permissions included in this role.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public global::System.Collections.Generic.IList<string?>? Permissions { get; set; }
+        public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         /// will produce.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_schema", Required = global::Newtonsoft.Json.Required.Always)]
-        public object InputSchema { get; set; } = default!;
+        public global::G.ToolInputSchema InputSchema { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareUserUpdateConnectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string connectionKey,
-            ref string projectId);
+            ref string? token,
+            ref string? userId,
+            ref string? connectionKey,
+            ref string? projectId);
         partial void PrepareUserUpdateConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string connectionKey,
-            string projectId);
+            string? token,
+            string? userId,
+            string? connectionKey,
+            string? projectId);
         partial void ProcessUserUpdateConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserUpdateConnectionAsync(
-            string token,
-            string userId,
-            string connectionKey,
-            string projectId,
+            string? token,
+            string? userId,
+            string? connectionKey,
+            string? projectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

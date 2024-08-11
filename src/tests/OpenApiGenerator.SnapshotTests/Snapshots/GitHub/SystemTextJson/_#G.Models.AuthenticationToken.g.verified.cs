@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public object? Permissions { get; set; }
+        public global::G.AuthenticationTokenPermissions? Permissions { get; set; }
 
         /// <summary>
         /// The repositories this token has access to

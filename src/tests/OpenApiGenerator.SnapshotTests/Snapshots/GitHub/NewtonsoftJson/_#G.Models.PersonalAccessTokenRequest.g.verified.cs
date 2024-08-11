@@ -19,7 +19,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// New requested permissions, categorized by type of permission.
@@ -55,7 +55,7 @@ namespace G
         /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositories>? Repositories { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; } = default!;
 
         /// <summary>
         /// Date and time when the request for access was created.

@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareUserSendContactRequestEmailArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string firstname,
-            ref string lastname,
-            ref string email,
-            ref string phone,
-            ref string institution,
-            ref string comments);
+            ref string? token,
+            ref string? firstname,
+            ref string? lastname,
+            ref string? email,
+            ref string? phone,
+            ref string? institution,
+            ref string? comments);
         partial void PrepareUserSendContactRequestEmailRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string firstname,
-            string lastname,
-            string email,
-            string phone,
-            string institution,
-            string comments);
+            string? token,
+            string? firstname,
+            string? lastname,
+            string? email,
+            string? phone,
+            string? institution,
+            string? comments);
         partial void ProcessUserSendContactRequestEmailResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,14 +46,14 @@ namespace G
         /// <param name="comments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserSendContactRequestEmailAsync(
-            string token,
-            string firstname,
-            string lastname,
-            string email,
-            string phone,
-            string institution,
-            string comments,
+        public async global::System.Threading.Tasks.Task<global::G.UserSendContactRequestEmailResponse> UserSendContactRequestEmailAsync(
+            string? token,
+            string? firstname,
+            string? lastname,
+            string? email,
+            string? phone,
+            string? institution,
+            string? comments,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserSendContactRequestEmailResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

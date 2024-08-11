@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareTrainingIsTestAddCompleteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string addTestWorkerId);
+            ref string? token,
+            ref string? addTestWorkerId);
         partial void PrepareTrainingIsTestAddCompleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string addTestWorkerId);
+            string? token,
+            string? addTestWorkerId);
         partial void ProcessTrainingIsTestAddCompleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> TrainingIsTestAddCompleteAsync(
-            string token,
-            string addTestWorkerId,
+            string? token,
+            string? addTestWorkerId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -203,10 +203,10 @@ namespace G
         public async global::System.Threading.Tasks.Task CreatePredictionsModelsAsync(
             string modelOwner,
             string modelName,
-            object input,
+            global::G.PredictionRequestInput input,
             bool stream = default,
             string? webhook = default,
-            global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilterItem>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PredictionRequest

@@ -193,11 +193,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreatePredictionsAsync(
-            object input,
+            global::G.VersionPredictionRequestInput input,
             string version,
             bool stream = default,
             string? webhook = default,
-            global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.VersionPredictionRequest

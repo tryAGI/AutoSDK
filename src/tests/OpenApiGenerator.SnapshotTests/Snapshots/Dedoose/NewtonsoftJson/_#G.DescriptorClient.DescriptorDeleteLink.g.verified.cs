@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareDescriptorDeleteLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
-            ref string descriptorId);
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? descriptorId);
         partial void PrepareDescriptorDeleteLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
-            string descriptorId);
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? descriptorId);
         partial void ProcessDescriptorDeleteLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="descriptorId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorDeleteLinkAsync(
-            string token,
-            string projectId,
-            string resourceId,
-            string descriptorId,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorDeleteLinkResponse> DescriptorDeleteLinkAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? descriptorId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorDeleteLinkResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

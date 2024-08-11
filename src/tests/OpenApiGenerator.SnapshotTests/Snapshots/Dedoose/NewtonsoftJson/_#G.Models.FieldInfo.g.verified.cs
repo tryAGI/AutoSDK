@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("listOptions")]
-        public global::System.Collections.Generic.IList<string?>? ListOptions { get; set; }
+        public global::System.Collections.Generic.IList<string>? ListOptions { get; set; }
 
         /// <summary>
         /// 

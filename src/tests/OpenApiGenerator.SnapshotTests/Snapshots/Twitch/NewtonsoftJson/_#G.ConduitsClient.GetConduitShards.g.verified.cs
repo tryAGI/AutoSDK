@@ -9,14 +9,14 @@ namespace G
         partial void PrepareGetConduitShardsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string conduitId,
-            ref string status,
-            ref string after);
+            ref string? status,
+            ref string? after);
         partial void PrepareGetConduitShardsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string conduitId,
-            string status,
-            string after);
+            string? status,
+            string? after);
         partial void ProcessGetConduitShardsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetConduitShardsResponse> GetConduitShardsAsync(
             string conduitId,
-            string status,
-            string after,
+            string? status,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

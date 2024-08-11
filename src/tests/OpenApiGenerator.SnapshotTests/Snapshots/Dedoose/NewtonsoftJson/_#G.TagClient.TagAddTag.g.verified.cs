@@ -8,10 +8,10 @@ namespace G
     {
         partial void PrepareTagAddTagArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string description,
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? description,
             ref bool isWeighted,
             ref double weightMin,
             ref double weightMax,
@@ -21,10 +21,10 @@ namespace G
         partial void PrepareTagAddTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? title,
+            string? description,
             bool isWeighted,
             double weightMin,
             double weightMax,
@@ -56,10 +56,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagAsync(
-            string token,
-            string projectId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? title,
+            string? description,
             bool isWeighted,
             double weightMin,
             double weightMax,

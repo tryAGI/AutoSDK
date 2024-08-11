@@ -82,7 +82,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifiers> Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; }
 
         /// <summary>
         /// The state of the advisory.
@@ -153,7 +153,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwes>? Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -167,7 +167,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredits>? Credits { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; }
 
         /// <summary>
         /// 

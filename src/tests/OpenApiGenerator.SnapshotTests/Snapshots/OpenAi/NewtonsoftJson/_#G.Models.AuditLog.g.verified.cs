@@ -19,7 +19,7 @@ namespace G
         /// The event type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuditLogEventType Type { get; set; } = default!;
+        public global::G.AuditLogEventType? Type { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of the event.
@@ -37,7 +37,7 @@ namespace G
         /// The actor who performed the audit logged action.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuditLogActor Actor { get; set; } = default!;
+        public global::G.AuditLogActor? Actor { get; set; } = default!;
 
         /// <summary>
         /// The details for events with this `type`.

@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareAdminSetAccountCPUPMOverrideArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string accountId,
+            ref string? token,
+            ref string? accountId,
             ref double cpupmOverride,
             global::System.DateTime endDate);
         partial void PrepareAdminSetAccountCPUPMOverrideRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string accountId,
+            string? token,
+            string? accountId,
             double cpupmOverride,
             global::System.DateTime endDate);
         partial void ProcessAdminSetAccountCPUPMOverrideResponse(
@@ -37,9 +37,9 @@ namespace G
         /// <param name="endDate"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminSetAccountCPUPMOverrideAsync(
-            string token,
-            string accountId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminSetAccountCPUPMOverrideResponse> AdminSetAccountCPUPMOverrideAsync(
+            string? token,
+            string? accountId,
             double cpupmOverride,
             global::System.DateTime endDate,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminSetAccountCPUPMOverrideResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

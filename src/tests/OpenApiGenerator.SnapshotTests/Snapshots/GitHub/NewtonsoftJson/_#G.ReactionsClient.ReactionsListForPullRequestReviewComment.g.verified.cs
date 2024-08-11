@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int commentId,
-            ref global::G.ReactionsListForPullRequestReviewCommentContent content,
+            ref global::G.ReactionsListForPullRequestReviewCommentContent? content,
             ref int perPage,
             ref int page);
         partial void PrepareReactionsListForPullRequestReviewCommentRequest(
@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             int commentId,
-            global::G.ReactionsListForPullRequestReviewCommentContent content,
+            global::G.ReactionsListForPullRequestReviewCommentContent? content,
             int perPage,
             int page);
         partial void ProcessReactionsListForPullRequestReviewCommentResponse(
@@ -52,7 +52,7 @@ namespace G
             string owner,
             string repo,
             int commentId,
-            global::G.ReactionsListForPullRequestReviewCommentContent content,
+            global::G.ReactionsListForPullRequestReviewCommentContent? content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

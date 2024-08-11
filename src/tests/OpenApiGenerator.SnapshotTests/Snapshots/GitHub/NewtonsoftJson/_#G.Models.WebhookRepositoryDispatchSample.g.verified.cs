@@ -25,7 +25,7 @@ namespace G
         /// The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("client_payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? ClientPayload { get; set; } = default!;
+        public global::G.WebhookRepositoryDispatchSampleClientPayload? ClientPayload { get; set; } = default!;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -41,7 +41,7 @@ namespace G
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleInstallation Installation { get; set; } = default!;
+        public global::G.SimpleInstallation? Installation { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -55,13 +55,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

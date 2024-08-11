@@ -71,7 +71,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? ParentId { get; set; }
+        public required global::G.WebhooksAnswerParentId? ParentId { get; set; }
 
         /// <summary>
         /// 

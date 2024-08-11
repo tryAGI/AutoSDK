@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("classifications")]
-        public global::System.Collections.Generic.IList<string?>? Classifications { get; set; }
+        public global::System.Collections.Generic.IList<string>? Classifications { get; set; }
 
         /// <summary>
         /// 

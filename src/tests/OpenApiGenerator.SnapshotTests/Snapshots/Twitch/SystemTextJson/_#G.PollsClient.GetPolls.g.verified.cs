@@ -10,16 +10,16 @@ namespace G
         partial void PrepareGetPollsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
-            ref string first,
-            ref string after);
+            global::System.Collections.Generic.IList<string>? id,
+            ref string? first,
+            ref string? after);
         partial void PrepareGetPollsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
-            string first,
-            string after);
+            global::System.Collections.Generic.IList<string>? id,
+            string? first,
+            string? after);
         partial void ProcessGetPollsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,9 +44,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetPollsResponse> GetPollsAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
-            string first,
-            string after,
+            global::System.Collections.Generic.IList<string>? id,
+            string? first,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -60,7 +60,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/polls?broadcaster_id={broadcasterId}&{string.Join("&", id.Select(static x => $"id={x}"))}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/polls?broadcaster_id={broadcasterId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

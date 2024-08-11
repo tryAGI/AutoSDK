@@ -8,31 +8,31 @@ namespace G
     {
         partial void PrepareTrainingDeleteTestArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string id,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? id,
             ref int testType,
-            ref string title,
-            ref string description,
+            ref string? title,
+            ref string? description,
             global::System.DateTime createdOn,
-            ref string projectId,
+            ref string? projectId,
             ref int excerptCount,
             ref int tagCount,
-            ref string creator);
+            ref string? creator);
         partial void PrepareTrainingDeleteTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string id,
+            string? token,
+            string? projectIdKey,
+            string? id,
             int testType,
-            string title,
-            string description,
+            string? title,
+            string? description,
             global::System.DateTime createdOn,
-            string projectId,
+            string? projectId,
             int excerptCount,
             int tagCount,
-            string creator);
+            string? creator);
         partial void ProcessTrainingDeleteTestResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TrainingTest> TrainingDeleteTestAsync(
-            string token,
-            string projectIdKey,
-            string id,
+            string? token,
+            string? projectIdKey,
+            string? id,
             int testType,
-            string title,
-            string description,
+            string? title,
+            string? description,
             global::System.DateTime createdOn,
-            string projectId,
+            string? projectId,
             int excerptCount,
             int tagCount,
-            string creator,
+            string? creator,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

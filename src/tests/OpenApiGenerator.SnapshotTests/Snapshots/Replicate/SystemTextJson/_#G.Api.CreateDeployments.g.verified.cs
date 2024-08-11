@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareCreateDeploymentsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.CreateDeploymentsRequest request);
+            global::G.DeploymentsCreateRequest request);
         partial void PrepareCreateDeploymentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.CreateDeploymentsRequest request);
+            global::G.DeploymentsCreateRequest request);
         partial void ProcessCreateDeploymentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,8 +69,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateDeploymentsResponse> CreateDeploymentsAsync(
-            global::G.CreateDeploymentsRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.DeploymentsCreateResponse> CreateDeploymentsAsync(
+            global::G.DeploymentsCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -131,7 +131,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateDeploymentsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeploymentsCreateResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -199,7 +199,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateDeploymentsResponse> CreateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeploymentsCreateResponse> CreateDeploymentsAsync(
             string hardware,
             int maxInstances,
             int minInstances,
@@ -208,7 +208,7 @@ namespace G
             string version,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.CreateDeploymentsRequest
+            var request = new global::G.DeploymentsCreateRequest
             {
                 Hardware = hardware,
                 MaxInstances = maxInstances,

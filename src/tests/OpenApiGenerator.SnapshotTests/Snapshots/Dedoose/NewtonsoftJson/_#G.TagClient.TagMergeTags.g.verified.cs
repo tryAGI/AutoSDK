@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareTagMergeTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string tag1Id,
-            ref string tag2Id);
+            ref string? token,
+            ref string? projectId,
+            ref string? tag1Id,
+            ref string? tag2Id);
         partial void PrepareTagMergeTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string tag1Id,
-            string tag2Id);
+            string? token,
+            string? projectId,
+            string? tag1Id,
+            string? tag2Id);
         partial void ProcessTagMergeTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="tag2Id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> TagMergeTagsAsync(
-            string token,
-            string projectId,
-            string tag1Id,
-            string tag2Id,
+        public async global::System.Threading.Tasks.Task<global::G.TagMergeTagsResponse> TagMergeTagsAsync(
+            string? token,
+            string? projectId,
+            string? tag1Id,
+            string? tag2Id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TagMergeTagsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareGetFollowedChannelsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string userId,
-            ref string broadcasterId,
+            ref string? broadcasterId,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetFollowedChannelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string userId,
-            string broadcasterId,
+            string? broadcasterId,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetFollowedChannelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,9 +42,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetFollowedChannelsResponse> GetFollowedChannelsAsync(
             string userId,
-            string broadcasterId,
+            string? broadcasterId,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

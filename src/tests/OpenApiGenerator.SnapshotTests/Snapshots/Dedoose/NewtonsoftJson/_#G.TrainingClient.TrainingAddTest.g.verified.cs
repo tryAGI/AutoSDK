@@ -9,25 +9,25 @@ namespace G
     {
         partial void PrepareTrainingAddTestArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
+            ref string? token,
+            ref string? projectId,
             ref int trainingTestType,
-            ref string title,
-            ref string description,
-            ref string createdUserId,
-            global::System.Collections.Generic.IList<string> exIds,
-            global::System.Collections.Generic.IList<string> tagIds);
+            ref string? title,
+            ref string? description,
+            ref string? createdUserId,
+            global::System.Collections.Generic.IList<string>? exIds,
+            global::System.Collections.Generic.IList<string>? tagIds);
         partial void PrepareTrainingAddTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int trainingTestType,
-            string title,
-            string description,
-            string createdUserId,
-            global::System.Collections.Generic.IList<string> exIds,
-            global::System.Collections.Generic.IList<string> tagIds);
+            string? title,
+            string? description,
+            string? createdUserId,
+            global::System.Collections.Generic.IList<string>? exIds,
+            global::System.Collections.Generic.IList<string>? tagIds);
         partial void ProcessTrainingAddTestResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,14 +51,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TrainingAddTestAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int trainingTestType,
-            string title,
-            string description,
-            string createdUserId,
-            global::System.Collections.Generic.IList<string> exIds,
-            global::System.Collections.Generic.IList<string> tagIds,
+            string? title,
+            string? description,
+            string? createdUserId,
+            global::System.Collections.Generic.IList<string>? exIds,
+            global::System.Collections.Generic.IList<string>? tagIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -76,7 +76,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/addtest?projectId={projectId}&trainingTestType={trainingTestType}&title={title}&description={description}&createdUserId={createdUserId}&{string.Join("&", exIds.Select(static x => $"exIds={x}"))}&{string.Join("&", tagIds.Select(static x => $"tagIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/addtest?projectId={projectId}&trainingTestType={trainingTestType}&title={title}&description={description}&createdUserId={createdUserId}&{string.Join("&", exIds?.Select(static x => $"exIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tagIds?.Select(static x => $"tagIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -46,21 +46,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks Repository { get; set; }
+        public required global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("starred_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? StarredAt { get; set; }
+        public required global::G.WebhookStarDeletedStarredAt? StarredAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

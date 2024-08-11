@@ -9,19 +9,19 @@ namespace G
     {
         partial void PrepareDescriptorStartImportDescriptorsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string setId,
-            global::System.Collections.Generic.IList<global::G.DescriptorInfo> descriptorInfos);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? setId,
+            global::System.Collections.Generic.IList<global::G.DescriptorInfo>? descriptorInfos);
         partial void PrepareDescriptorStartImportDescriptorsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string setId,
-            global::System.Collections.Generic.IList<global::G.DescriptorInfo> descriptorInfos);
+            string? token,
+            string? projectId,
+            string? userId,
+            string? setId,
+            global::System.Collections.Generic.IList<global::G.DescriptorInfo>? descriptorInfos);
         partial void ProcessDescriptorStartImportDescriptorsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,12 +41,12 @@ namespace G
         /// <param name="descriptorInfos"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorStartImportDescriptorsJobAsync(
-            string token,
-            string projectId,
-            string userId,
-            string setId,
-            global::System.Collections.Generic.IList<global::G.DescriptorInfo> descriptorInfos,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorStartImportDescriptorsJobResponse> DescriptorStartImportDescriptorsJobAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            string? setId,
+            global::System.Collections.Generic.IList<global::G.DescriptorInfo>? descriptorInfos,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -61,7 +61,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/startimportdescriptorsjob?projectId={projectId}&userId={userId}&setId={setId}&{string.Join("&", descriptorInfos.Select(static x => $"descriptorInfos={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/startimportdescriptorsjob?projectId={projectId}&userId={userId}&setId={setId}&{string.Join("&", descriptorInfos?.Select(static x => $"descriptorInfos={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -108,7 +108,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DescriptorStartImportDescriptorsJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

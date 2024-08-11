@@ -10,19 +10,19 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
             ref string teamSlug,
-            ref global::G.TeamsListDiscussionsInOrgDirection direction,
+            ref global::G.TeamsListDiscussionsInOrgDirection? direction,
             ref int perPage,
             ref int page,
-            ref string pinned);
+            ref string? pinned);
         partial void PrepareTeamsListDiscussionsInOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             string teamSlug,
-            global::G.TeamsListDiscussionsInOrgDirection direction,
+            global::G.TeamsListDiscussionsInOrgDirection? direction,
             int perPage,
             int page,
-            string pinned);
+            string? pinned);
         partial void ProcessTeamsListDiscussionsInOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,10 +55,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussion>> TeamsListDiscussionsInOrgAsync(
             string org,
             string teamSlug,
-            global::G.TeamsListDiscussionsInOrgDirection direction,
+            global::G.TeamsListDiscussionsInOrgDirection? direction,
             int perPage,
             int page,
-            string pinned,
+            string? pinned,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

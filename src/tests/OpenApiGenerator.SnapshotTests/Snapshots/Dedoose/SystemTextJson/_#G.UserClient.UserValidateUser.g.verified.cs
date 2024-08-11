@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareUserValidateUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string username,
-            ref string passSalt,
-            ref string connectionKey);
+            ref string? token,
+            ref string? username,
+            ref string? passSalt,
+            ref string? connectionKey);
         partial void PrepareUserValidateUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string username,
-            string passSalt,
-            string connectionKey);
+            string? token,
+            string? username,
+            string? passSalt,
+            string? connectionKey);
         partial void ProcessUserValidateUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="connectionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserValidateUserAsync(
-            string token,
-            string username,
-            string passSalt,
-            string connectionKey,
+        public async global::System.Threading.Tasks.Task<global::G.UserValidateUserResponse> UserValidateUserAsync(
+            string? token,
+            string? username,
+            string? passSalt,
+            string? connectionKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserValidateUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

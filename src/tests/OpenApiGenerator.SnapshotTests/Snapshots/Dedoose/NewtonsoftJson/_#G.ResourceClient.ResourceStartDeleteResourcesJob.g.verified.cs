@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareResourceStartDeleteResourcesJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds);
+            ref string? token,
+            ref string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds);
         partial void PrepareResourceStartDeleteResourcesJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds);
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds);
         partial void ProcessResourceStartDeleteResourcesJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,10 +35,10 @@ namespace G
         /// <param name="resourceIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceStartDeleteResourcesJobAsync(
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceStartDeleteResourcesJobResponse> ResourceStartDeleteResourcesJobAsync(
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -51,7 +51,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startdeleteresourcesjob?projectId={projectId}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startdeleteresourcesjob?projectId={projectId}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -96,7 +96,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceStartDeleteResourcesJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

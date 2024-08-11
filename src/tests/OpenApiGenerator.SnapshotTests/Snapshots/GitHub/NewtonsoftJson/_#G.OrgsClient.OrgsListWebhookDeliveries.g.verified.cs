@@ -11,7 +11,7 @@ namespace G
             ref string org,
             ref int hookId,
             ref int perPage,
-            ref string cursor,
+            ref string? cursor,
             ref bool redelivery);
         partial void PrepareOrgsListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -19,7 +19,7 @@ namespace G
             string org,
             int hookId,
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery);
         partial void ProcessOrgsListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,7 +50,7 @@ namespace G
             string org,
             int hookId,
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

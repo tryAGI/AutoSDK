@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareResourceStartExportPDFSwfJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId);
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId);
         partial void PrepareResourceStartExportPDFSwfJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId);
+            string? token,
+            string? projectId,
+            string? resourceId);
         partial void ProcessResourceStartExportPDFSwfJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartExportPDFSwfJobAsync(
-            string token,
-            string projectId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? resourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

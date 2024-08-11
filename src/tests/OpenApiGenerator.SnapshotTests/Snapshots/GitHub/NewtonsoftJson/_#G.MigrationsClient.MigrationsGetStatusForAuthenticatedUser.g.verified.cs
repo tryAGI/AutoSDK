@@ -10,12 +10,12 @@ namespace G
         partial void PrepareMigrationsGetStatusForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int migrationId,
-            global::System.Collections.Generic.IList<string> exclude);
+            global::System.Collections.Generic.IList<string>? exclude);
         partial void PrepareMigrationsGetStatusForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int migrationId,
-            global::System.Collections.Generic.IList<string> exclude);
+            global::System.Collections.Generic.IList<string>? exclude);
         partial void ProcessMigrationsGetStatusForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsGetStatusForAuthenticatedUserAsync(
             int migrationId,
-            global::System.Collections.Generic.IList<string> exclude,
+            global::System.Collections.Generic.IList<string>? exclude,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -52,7 +52,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/migrations/{migrationId}?{string.Join("&", exclude.Select(static x => $"exclude={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/migrations/{migrationId}?{string.Join("&", exclude?.Select(static x => $"exclude={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

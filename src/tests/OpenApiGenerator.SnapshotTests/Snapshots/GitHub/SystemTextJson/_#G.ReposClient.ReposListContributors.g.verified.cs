@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string anon,
+            ref string? anon,
             ref int perPage,
             ref int page);
         partial void PrepareReposListContributorsRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string anon,
+            string? anon,
             int perPage,
             int page);
         partial void ProcessReposListContributorsResponse(
@@ -49,7 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Contributor>> ReposListContributorsAsync(
             string owner,
             string repo,
-            string anon,
+            string? anon,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

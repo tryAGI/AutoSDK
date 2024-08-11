@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareMemoAddFolderArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string parentFolderId);
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? parentFolderId);
         partial void PrepareMemoAddFolderRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string parentFolderId);
+            string? token,
+            string? projectId,
+            string? title,
+            string? parentFolderId);
         partial void ProcessMemoAddFolderResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoAddFolderAsync(
-            string token,
-            string projectId,
-            string title,
-            string parentFolderId,
+            string? token,
+            string? projectId,
+            string? title,
+            string? parentFolderId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

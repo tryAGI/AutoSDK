@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareAdminSetUserPasswordArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string rsaEncrptedPass);
+            ref string? token,
+            ref string? userId,
+            ref string? rsaEncrptedPass);
         partial void PrepareAdminSetUserPasswordRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string rsaEncrptedPass);
+            string? token,
+            string? userId,
+            string? rsaEncrptedPass);
         partial void ProcessAdminSetUserPasswordResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="rsaEncrptedPass"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminSetUserPasswordAsync(
-            string token,
-            string userId,
-            string rsaEncrptedPass,
+        public async global::System.Threading.Tasks.Task<global::G.AdminSetUserPasswordResponse> AdminSetUserPasswordAsync(
+            string? token,
+            string? userId,
+            string? rsaEncrptedPass,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminSetUserPasswordResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleCommit HeadCommit { get; set; }
+        public required global::G.SimpleCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

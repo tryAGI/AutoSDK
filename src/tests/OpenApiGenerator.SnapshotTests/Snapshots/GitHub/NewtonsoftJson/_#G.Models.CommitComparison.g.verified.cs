@@ -43,13 +43,13 @@ namespace G
         /// Commit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("base_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Commit BaseCommit { get; set; } = default!;
+        public global::G.Commit? BaseCommit { get; set; } = default!;
 
         /// <summary>
         /// Commit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_base_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Commit MergeBaseCommit { get; set; } = default!;
+        public global::G.Commit? MergeBaseCommit { get; set; } = default!;
 
         /// <summary>
         /// Example: ahead

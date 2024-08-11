@@ -13,7 +13,7 @@ namespace G
         /// The list of environments that were approved or rejected
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironments> Environments { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EnvironmentApprovalsEnvironment> Environments { get; set; } = default!;
 
         /// <summary>
         /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
@@ -26,7 +26,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser User { get; set; } = default!;
+        public global::G.SimpleUser? User { get; set; } = default!;
 
         /// <summary>
         /// The comment submitted with the deployment review<br/>

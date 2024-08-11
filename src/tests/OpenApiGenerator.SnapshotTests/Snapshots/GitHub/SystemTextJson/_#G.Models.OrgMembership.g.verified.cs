@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrganizationSimple Organization { get; set; }
+        public required global::G.OrganizationSimple? Organization { get; set; }
 
         /// <summary>
         /// A GitHub user.

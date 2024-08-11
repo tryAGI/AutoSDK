@@ -32,7 +32,7 @@ namespace G
         /// A collection of resolved package dependencies.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolved")]
-        public object? Resolved { get; set; }
+        public global::G.ManifestResolved? Resolved { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

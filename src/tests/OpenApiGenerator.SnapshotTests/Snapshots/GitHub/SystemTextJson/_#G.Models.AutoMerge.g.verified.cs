@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser EnabledBy { get; set; }
+        public required global::G.SimpleUser? EnabledBy { get; set; }
 
         /// <summary>
         /// The merge method to use.

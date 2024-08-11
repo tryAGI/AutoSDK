@@ -23,7 +23,7 @@ namespace G
         /// deleted if the specified object does not contain at least one of `content` or `filename`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public object? Files { get; set; }
+        public global::G.GistsUpdateRequestFiles? Files { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

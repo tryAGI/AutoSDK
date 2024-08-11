@@ -9,14 +9,14 @@ namespace G
         partial void PrepareUsersGetContextForUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string username,
-            ref global::G.UsersGetContextForUserSubjectType subjectType,
-            ref string subjectId);
+            ref global::G.UsersGetContextForUserSubjectType? subjectType,
+            ref string? subjectId);
         partial void PrepareUsersGetContextForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string username,
-            global::G.UsersGetContextForUserSubjectType subjectType,
-            string subjectId);
+            global::G.UsersGetContextForUserSubjectType? subjectType,
+            string? subjectId);
         partial void ProcessUsersGetContextForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Hovercard> UsersGetContextForUserAsync(
             string username,
-            global::G.UsersGetContextForUserSubjectType subjectType,
-            string subjectId,
+            global::G.UsersGetContextForUserSubjectType? subjectType,
+            string? subjectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

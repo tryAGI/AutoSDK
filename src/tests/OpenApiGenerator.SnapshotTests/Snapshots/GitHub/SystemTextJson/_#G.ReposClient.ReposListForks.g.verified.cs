@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ReposListForksSort sort,
+            ref global::G.ReposListForksSort? sort,
             ref int perPage,
             ref int page);
         partial void PrepareReposListForksRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ReposListForksSort sort,
+            global::G.ReposListForksSort? sort,
             int perPage,
             int page);
         partial void ProcessReposListForksResponse(
@@ -49,7 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForksAsync(
             string owner,
             string repo,
-            global::G.ReposListForksSort sort,
+            global::G.ReposListForksSort? sort,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

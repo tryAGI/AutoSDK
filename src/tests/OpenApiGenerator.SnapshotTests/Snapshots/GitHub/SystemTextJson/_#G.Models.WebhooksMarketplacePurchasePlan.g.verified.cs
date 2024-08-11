@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bullets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string?> Bullets { get; set; }
+        public required global::System.Collections.Generic.IList<string> Bullets { get; set; }
 
         /// <summary>
         /// 

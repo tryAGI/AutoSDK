@@ -21,13 +21,13 @@ namespace G
         /// The changes to the comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksChanges Changes { get; set; } = default!;
+        public global::G.WebhooksChanges? Changes { get; set; } = default!;
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksIssueComment Comment { get; set; } = default!;
+        public global::G.WebhooksIssueComment? Comment { get; set; } = default!;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -49,7 +49,7 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.WebhookIssueCommentEditedIssue, global::G.WebhookIssueCommentEditedIssue> Issue { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1?, global::G.WebhookIssueCommentEditedIssueVariant2?> Issue { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -63,13 +63,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

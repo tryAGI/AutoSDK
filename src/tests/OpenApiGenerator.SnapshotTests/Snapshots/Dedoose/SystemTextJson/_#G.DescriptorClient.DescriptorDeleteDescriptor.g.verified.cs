@@ -8,27 +8,27 @@ namespace G
     {
         partial void PrepareDescriptorDeleteDescriptorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string projectId,
-            ref string id,
-            ref string projectIDL,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? projectId,
+            ref string? id,
+            ref string? projectIDL,
             global::System.DateTime createStamp,
-            ref string createByIDL,
-            ref string descriptorSetIDL,
+            ref string? createByIDL,
+            ref string? descriptorSetIDL,
             byte[] valuesData,
             byte[] dynamicValuesData);
         partial void PrepareDescriptorDeleteDescriptorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
             global::System.DateTime createStamp,
-            string createByIDL,
-            string descriptorSetIDL,
+            string? createByIDL,
+            string? descriptorSetIDL,
             byte[] valuesData,
             byte[] dynamicValuesData);
         partial void ProcessDescriptorDeleteDescriptorResponse(
@@ -56,14 +56,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Descriptor> DescriptorDeleteDescriptorAsync(
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
             global::System.DateTime createStamp,
-            string createByIDL,
-            string descriptorSetIDL,
+            string? createByIDL,
+            string? descriptorSetIDL,
             byte[] valuesData,
             byte[] dynamicValuesData,
             global::System.Threading.CancellationToken cancellationToken = default)

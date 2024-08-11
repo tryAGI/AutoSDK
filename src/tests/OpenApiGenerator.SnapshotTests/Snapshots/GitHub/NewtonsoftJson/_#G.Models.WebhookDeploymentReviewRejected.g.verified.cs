@@ -48,26 +48,26 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewers")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedReviewers?>? Reviewers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhooksReviewer>? Reviewers { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflow_job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedWorkflowJobRuns?>? WorkflowJobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedWorkflowJobRun>? WorkflowJobRuns { get; set; }
 
         /// <summary>
         /// 

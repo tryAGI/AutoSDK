@@ -48,14 +48,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GpgKeyEmails> Emails { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GpgKeyEmail> Emails { get; set; }
 
         /// <summary>
         /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subkeys")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GpgKeySubkeys> Subkeys { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GpgKeySubkey> Subkeys { get; set; }
 
         /// <summary>
         /// Example: true

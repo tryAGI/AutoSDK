@@ -13,13 +13,13 @@ namespace G
         /// A message in a chat conversation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Message Message { get; set; } = default!;
+        public global::G.Message? Message { get; set; } = default!;
 
         /// <summary>
         /// The type of a streaming event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        public global::G.MessageStreamEventType? Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

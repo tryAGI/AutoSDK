@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareSecurityLinkUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string projectId,
-            ref string groupId);
+            ref string? token,
+            ref string? userId,
+            ref string? projectId,
+            ref string? groupId);
         partial void PrepareSecurityLinkUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string projectId,
-            string groupId);
+            string? token,
+            string? userId,
+            string? projectId,
+            string? groupId);
         partial void ProcessSecurityLinkUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,11 +37,11 @@ namespace G
         /// <param name="groupId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> SecurityLinkUserAsync(
-            string token,
-            string userId,
-            string projectId,
-            string groupId,
+        public async global::System.Threading.Tasks.Task<global::G.SecurityLinkUserResponse> SecurityLinkUserAsync(
+            string? token,
+            string? userId,
+            string? projectId,
+            string? groupId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.SecurityLinkUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

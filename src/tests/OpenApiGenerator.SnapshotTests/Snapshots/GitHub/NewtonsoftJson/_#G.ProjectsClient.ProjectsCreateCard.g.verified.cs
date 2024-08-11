@@ -9,12 +9,12 @@ namespace G
         partial void PrepareProjectsCreateCardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int columnId,
-            global::System.OneOf<global::G.ProjectsCreateCardRequest, global::G.ProjectsCreateCardRequest> request);
+            global::System.OneOf<global::G.ProjectsCreateCardRequestVariant1?, global::G.ProjectsCreateCardRequestVariant2?> request);
         partial void PrepareProjectsCreateCardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int columnId,
-            global::System.OneOf<global::G.ProjectsCreateCardRequest, global::G.ProjectsCreateCardRequest> request);
+            global::System.OneOf<global::G.ProjectsCreateCardRequestVariant1?, global::G.ProjectsCreateCardRequestVariant2?> request);
         partial void ProcessProjectsCreateCardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,11 +33,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectCard> ProjectsCreateCardAsync(
             int columnId,
-            global::System.OneOf<global::G.ProjectsCreateCardRequest, global::G.ProjectsCreateCardRequest> request,
+            global::System.OneOf<global::G.ProjectsCreateCardRequestVariant1?, global::G.ProjectsCreateCardRequestVariant2?> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
             PrepareProjectsCreateCardArguments(
@@ -48,11 +46,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/projects/columns/{columnId}/cards", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -104,20 +102,14 @@ namespace G
         /// Create a project card
         /// </summary>
         /// <param name="columnId"></param>
-        /// <param name="note">
-        /// The project card's note<br/>
-        /// Example: Update all gems
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectCard> ProjectsCreateCardAsync(
             int columnId,
-            string? note,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.OneOf<global::G.ProjectsCreateCardRequest, global::G.ProjectsCreateCardRequest>
+            var request = new global::System.OneOf<global::G.ProjectsCreateCardRequestVariant1?, global::G.ProjectsCreateCardRequestVariant2?>
             {
-                Note = note,
             };
 
             return await ProjectsCreateCardAsync(

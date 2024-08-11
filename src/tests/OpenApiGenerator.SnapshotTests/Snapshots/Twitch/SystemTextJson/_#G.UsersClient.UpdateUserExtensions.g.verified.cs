@@ -115,7 +115,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateUserExtensionsResponse> UpdateUserExtensionsAsync(
-            object data,
+            global::G.UpdateUserExtensionsBodyData data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateUserExtensionsBody

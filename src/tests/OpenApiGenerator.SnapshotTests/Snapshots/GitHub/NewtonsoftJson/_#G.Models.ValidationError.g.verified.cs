@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errors")]
-        public global::System.Collections.Generic.IList<global::G.ValidationErrorErrors?>? Errors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ValidationErrorError>? Errors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

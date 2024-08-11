@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareDescriptorAddLinksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO> links);
+            ref string? token,
+            ref string? projectId,
+            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links);
         partial void PrepareDescriptorAddLinksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO> links);
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links);
         partial void ProcessDescriptorAddLinksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,10 +35,10 @@ namespace G
         /// <param name="links"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorAddLinksAsync(
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO> links,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorAddLinksResponse> DescriptorAddLinksAsync(
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -51,7 +51,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/addlinks?projectId={projectId}&{string.Join("&", links.Select(static x => $"links={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/addlinks?projectId={projectId}&{string.Join("&", links?.Select(static x => $"links={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -96,7 +96,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DescriptorAddLinksResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

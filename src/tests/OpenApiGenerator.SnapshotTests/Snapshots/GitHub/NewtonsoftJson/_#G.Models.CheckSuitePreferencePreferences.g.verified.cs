@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_trigger_checks")]
-        public global::System.Collections.Generic.IList<global::G.CheckSuitePreferencePreferencesAutoTriggerChecks?>? AutoTriggerChecks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CheckSuitePreferencePreferencesAutoTriggerCheck>? AutoTriggerChecks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

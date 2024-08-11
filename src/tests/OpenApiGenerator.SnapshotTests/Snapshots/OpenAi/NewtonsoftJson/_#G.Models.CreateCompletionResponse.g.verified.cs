@@ -19,7 +19,7 @@ namespace G
         /// The list of completion choices the model generated for the input prompt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateCompletionResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateCompletionResponseChoice> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the completion was created.

@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareMemoUnlinkObjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string memoId,
-            ref string resourceId,
-            ref string excerptId,
-            ref string descriptorId,
-            ref string tagId);
+            ref string? token,
+            ref string? projectId,
+            ref string? memoId,
+            ref string? resourceId,
+            ref string? excerptId,
+            ref string? descriptorId,
+            ref string? tagId);
         partial void PrepareMemoUnlinkObjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string memoId,
-            string resourceId,
-            string excerptId,
-            string descriptorId,
-            string tagId);
+            string? token,
+            string? projectId,
+            string? memoId,
+            string? resourceId,
+            string? excerptId,
+            string? descriptorId,
+            string? tagId);
         partial void ProcessMemoUnlinkObjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,14 +46,14 @@ namespace G
         /// <param name="tagId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> MemoUnlinkObjectAsync(
-            string token,
-            string projectId,
-            string memoId,
-            string resourceId,
-            string excerptId,
-            string descriptorId,
-            string tagId,
+        public async global::System.Threading.Tasks.Task<global::G.MemoUnlinkObjectResponse> MemoUnlinkObjectAsync(
+            string? token,
+            string? projectId,
+            string? memoId,
+            string? resourceId,
+            string? excerptId,
+            string? descriptorId,
+            string? tagId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoUnlinkObjectResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

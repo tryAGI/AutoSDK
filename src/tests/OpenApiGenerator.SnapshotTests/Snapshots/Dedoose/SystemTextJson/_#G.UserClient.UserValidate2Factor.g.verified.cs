@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareUserValidate2FactorArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string username,
-            ref string connectionKey,
-            ref string encryptedAuthToken);
+            ref string? token,
+            ref string? username,
+            ref string? connectionKey,
+            ref string? encryptedAuthToken);
         partial void PrepareUserValidate2FactorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string username,
-            string connectionKey,
-            string encryptedAuthToken);
+            string? token,
+            string? username,
+            string? connectionKey,
+            string? encryptedAuthToken);
         partial void ProcessUserValidate2FactorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> UserValidate2FactorAsync(
-            string token,
-            string username,
-            string connectionKey,
-            string encryptedAuthToken,
+            string? token,
+            string? username,
+            string? connectionKey,
+            string? encryptedAuthToken,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

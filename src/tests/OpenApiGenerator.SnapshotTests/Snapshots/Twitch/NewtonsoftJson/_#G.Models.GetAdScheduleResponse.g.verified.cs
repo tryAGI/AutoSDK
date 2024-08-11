@@ -13,7 +13,7 @@ namespace G
         /// A list that contains information related to the channel’s ad schedule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GetAdScheduleResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetAdScheduleResponseDataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

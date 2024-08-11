@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.WebhookStatusCommitCommitAuthor, global::G.WebhookStatusCommitCommitAuthor> Author { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookStatusCommitCommitAuthorVariant1?, global::G.WebhookStatusCommitCommitAuthorVariant2?> Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.WebhookStatusCommitCommitCommitter, global::G.WebhookStatusCommitCommitCommitter> Committer { get; set; } = default!;
+        public global::System.AllOf<global::G.WebhookStatusCommitCommitCommitterVariant1?, global::G.WebhookStatusCommitCommitCommitterVariant2?> Committer { get; set; } = default!;
 
         /// <summary>
         /// 

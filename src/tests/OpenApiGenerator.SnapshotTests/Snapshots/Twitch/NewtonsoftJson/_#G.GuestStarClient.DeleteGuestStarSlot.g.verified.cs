@@ -13,7 +13,7 @@ namespace G
             ref string sessionId,
             ref string guestId,
             ref string slotId,
-            ref string shouldReinviteGuest);
+            ref string? shouldReinviteGuest);
         partial void PrepareDeleteGuestStarSlotRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             string sessionId,
             string guestId,
             string slotId,
-            string shouldReinviteGuest);
+            string? shouldReinviteGuest);
         partial void ProcessDeleteGuestStarSlotResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,7 +48,7 @@ namespace G
             string sessionId,
             string guestId,
             string slotId,
-            string shouldReinviteGuest,
+            string? shouldReinviteGuest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

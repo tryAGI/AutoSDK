@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRuns?>? JobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableMACOSJobRun>? JobRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

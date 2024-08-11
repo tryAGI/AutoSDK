@@ -8,18 +8,18 @@ namespace G
     {
         partial void PrepareTagAddTagLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string tag1Id,
-            ref string tag2Id,
+            ref string? token,
+            ref string? projectId,
+            ref string? tag1Id,
+            ref string? tag2Id,
             ref bool isParentChildLink);
         partial void PrepareTagAddTagLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string tag1Id,
-            string tag2Id,
+            string? token,
+            string? projectId,
+            string? tag1Id,
+            string? tag2Id,
             bool isParentChildLink);
         partial void ProcessTagAddTagLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,10 +41,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagLink> TagAddTagLinkAsync(
-            string token,
-            string projectId,
-            string tag1Id,
-            string tag2Id,
+            string? token,
+            string? projectId,
+            string? tag1Id,
+            string? tag2Id,
             bool isParentChildLink,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

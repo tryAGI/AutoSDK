@@ -27,7 +27,7 @@ namespace G
         /// Installation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("installation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Installation Installation { get; set; } = default!;
+        public global::G.Installation? Installation { get; set; } = default!;
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -40,13 +40,13 @@ namespace G
         /// An array of repository objects, which were added to the installation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories_added", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesAdded> RepositoriesAdded { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksRepositoriesAddedItem>? RepositoriesAdded { get; set; } = default!;
 
         /// <summary>
         /// An array of repository objects, which were removed from the installation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories_removed", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemoved> RepositoriesRemoved { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem> RepositoriesRemoved { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -59,7 +59,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksRepositorySelection RepositorySelection { get; set; } = default!;
+        public global::G.WebhooksRepositorySelection? RepositorySelection { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uploader", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Uploader { get; set; } = default!;
+        public global::G.SimpleUser? Uploader { get; set; } = default!;
 
         /// <summary>
         /// The MIME type of the CodeQL database file.

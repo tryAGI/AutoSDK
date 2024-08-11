@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabels> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabel> Labels { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -151,7 +151,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// 
@@ -176,7 +176,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
+        public global::G.AuthorAssociation? AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// 

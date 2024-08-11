@@ -10,9 +10,9 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
             ref int repositoryName,
-            ref global::G.ReposGetOrgRuleSuitesTimePeriod timePeriod,
-            ref string actorName,
-            ref global::G.ReposGetOrgRuleSuitesRuleSuiteResult ruleSuiteResult,
+            ref global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
+            ref string? actorName,
+            ref global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
             ref int perPage,
             ref int page);
         partial void PrepareReposGetOrgRuleSuitesRequest(
@@ -20,9 +20,9 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             int repositoryName,
-            global::G.ReposGetOrgRuleSuitesTimePeriod timePeriod,
-            string actorName,
-            global::G.ReposGetOrgRuleSuitesRuleSuiteResult ruleSuiteResult,
+            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
+            string? actorName,
+            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
             int perPage,
             int page);
         partial void ProcessReposGetOrgRuleSuitesResponse(
@@ -56,12 +56,12 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuites>> ReposGetOrgRuleSuitesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite>> ReposGetOrgRuleSuitesAsync(
             string org,
             int repositoryName,
-            global::G.ReposGetOrgRuleSuitesTimePeriod timePeriod,
-            string actorName,
-            global::G.ReposGetOrgRuleSuitesRuleSuiteResult ruleSuiteResult,
+            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
+            string? actorName,
+            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -129,7 +129,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuites>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuite>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -9,23 +9,23 @@ namespace G
     {
         partial void PrepareExcerptAddPDFSwfImageExcerptArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string resourceId,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? resourceId,
             ref int start,
             ref int end,
-            global::System.Collections.Generic.IList<string> tagIdsToApply);
+            global::System.Collections.Generic.IList<string>? tagIdsToApply);
         partial void PrepareExcerptAddPDFSwfImageExcerptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
             int start,
             int end,
-            global::System.Collections.Generic.IList<string> tagIdsToApply);
+            global::System.Collections.Generic.IList<string>? tagIdsToApply);
         partial void ProcessExcerptAddPDFSwfImageExcerptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,13 +48,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddPDFSwfImageExcerptAsync(
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
             int start,
             int end,
-            global::System.Collections.Generic.IList<string> tagIdsToApply,
+            global::System.Collections.Generic.IList<string>? tagIdsToApply,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -71,7 +71,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/addpdfswfimageexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply.Select(static x => $"tagIdsToApply={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/addpdfswfimageexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&start={start}&end={end}&{string.Join("&", tagIdsToApply?.Select(static x => $"tagIdsToApply={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

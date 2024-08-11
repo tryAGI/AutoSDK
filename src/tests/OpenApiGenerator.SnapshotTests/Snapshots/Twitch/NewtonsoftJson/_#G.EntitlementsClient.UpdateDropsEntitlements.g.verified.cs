@@ -49,7 +49,7 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/entitlements/drops", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
@@ -125,7 +125,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateDropsEntitlementsResponse> UpdateDropsEntitlementsAsync(
-            global::System.Collections.Generic.IList<string?>? entitlementIds = default,
+            global::System.Collections.Generic.IList<string>? entitlementIds = default,
             global::G.UpdateDropsEntitlementsBodyFulfillmentStatus? fulfillmentStatus = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareActivityListReposStarredByAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.ActivityListReposStarredByAuthenticatedUserSort sort,
-            ref global::G.ActivityListReposStarredByAuthenticatedUserDirection direction,
+            ref global::G.ActivityListReposStarredByAuthenticatedUserSort? sort,
+            ref global::G.ActivityListReposStarredByAuthenticatedUserDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareActivityListReposStarredByAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.ActivityListReposStarredByAuthenticatedUserSort sort,
-            global::G.ActivityListReposStarredByAuthenticatedUserDirection direction,
+            global::G.ActivityListReposStarredByAuthenticatedUserSort? sort,
+            global::G.ActivityListReposStarredByAuthenticatedUserDirection? direction,
             int perPage,
             int page);
         partial void ProcessActivityListReposStarredByAuthenticatedUserResponse(
@@ -49,8 +49,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Repository>> ActivityListReposStarredByAuthenticatedUserAsync(
-            global::G.ActivityListReposStarredByAuthenticatedUserSort sort,
-            global::G.ActivityListReposStarredByAuthenticatedUserDirection direction,
+            global::G.ActivityListReposStarredByAuthenticatedUserSort? sort,
+            global::G.ActivityListReposStarredByAuthenticatedUserDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -9,21 +9,21 @@ namespace G
     {
         partial void PrepareDescriptorAddOrUpdateDynamicValuesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
-            ref string setId,
-            ref string descriptorId,
-            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values);
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? setId,
+            ref string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values);
         partial void PrepareDescriptorAddOrUpdateDynamicValuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
-            string setId,
-            string descriptorId,
-            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values);
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? setId,
+            string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values);
         partial void ProcessDescriptorAddOrUpdateDynamicValuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,13 +44,13 @@ namespace G
         /// <param name="values"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorAddOrUpdateDynamicValuesAsync(
-            string token,
-            string projectId,
-            string resourceId,
-            string setId,
-            string descriptorId,
-            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorAddOrUpdateDynamicValuesResponse> DescriptorAddOrUpdateDynamicValuesAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
+            string? setId,
+            string? descriptorId,
+            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -66,7 +66,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/addorupdatedynamicvalues?projectId={projectId}&resourceId={resourceId}&setId={setId}&descriptorId={descriptorId}&{string.Join("&", values.Select(static x => $"values={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/addorupdatedynamicvalues?projectId={projectId}&resourceId={resourceId}&setId={setId}&descriptorId={descriptorId}&{string.Join("&", values?.Select(static x => $"values={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -114,7 +114,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DescriptorAddOrUpdateDynamicValuesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

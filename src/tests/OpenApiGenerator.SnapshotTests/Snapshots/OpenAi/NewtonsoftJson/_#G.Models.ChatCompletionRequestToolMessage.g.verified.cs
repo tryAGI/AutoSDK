@@ -21,7 +21,7 @@ namespace G
         /// The contents of the tool message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestToolMessageContentPart>> Content { get; set; } = default!;
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestToolMessageContentPart>?> Content { get; set; } = default!;
 
         /// <summary>
         /// Tool call that this message is responding to.

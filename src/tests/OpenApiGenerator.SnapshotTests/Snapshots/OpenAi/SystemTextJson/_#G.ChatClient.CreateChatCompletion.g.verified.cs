@@ -196,9 +196,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel> model,
+            global::System.AnyOf<string?, global::G.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
-            object? logitBias = default,
+            global::G.CreateChatCompletionRequestLogitBias? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
             int? maxTokens = default,
@@ -207,13 +207,13 @@ namespace G
             global::System.OneOf<global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? responseFormat = default,
             int? seed = default,
             global::G.CreateChatCompletionRequestServiceTier? serviceTier = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? stop = default,
             bool? stream = false,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
-            global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?>? toolChoice = default,
+            global::G.ChatCompletionToolChoiceOption? toolChoice = default,
             bool? parallelToolCalls = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -24,14 +24,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksChanges Changes { get; set; }
+        public required global::G.WebhooksChanges? Changes { get; set; }
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksIssueComment Comment { get; set; }
+        public required global::G.WebhooksIssueComment? Comment { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -55,7 +55,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookIssueCommentEditedIssue, global::G.WebhookIssueCommentEditedIssue> Issue { get; set; }
+        public required global::System.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1?, global::G.WebhookIssueCommentEditedIssueVariant2?> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -70,14 +70,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks Repository { get; set; }
+        public required global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

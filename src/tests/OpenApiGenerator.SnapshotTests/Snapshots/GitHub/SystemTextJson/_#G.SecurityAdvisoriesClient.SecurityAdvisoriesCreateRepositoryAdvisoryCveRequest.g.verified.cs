@@ -38,7 +38,7 @@ namespace G
         /// <param name="ghsaId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestAsync(
+        public async global::System.Threading.Tasks.Task<global::G.SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponse> SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestAsync(
             string owner,
             string repo,
             string ghsaId,
@@ -99,7 +99,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

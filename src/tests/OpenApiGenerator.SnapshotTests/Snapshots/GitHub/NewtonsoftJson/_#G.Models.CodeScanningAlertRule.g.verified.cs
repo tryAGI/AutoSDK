@@ -49,7 +49,7 @@ namespace G
         /// A set of tags applicable for the rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.Collections.Generic.IList<string?>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// Detailed documentation for the rule as GitHub Flavored Markdown.

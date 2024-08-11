@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Message Message { get; set; }
+        public required global::G.Message? Message { get; set; }
 
         /// <summary>
         /// The type of a streaming event.
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageStreamEventType Type { get; set; }
+        public required global::G.MessageStreamEventType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

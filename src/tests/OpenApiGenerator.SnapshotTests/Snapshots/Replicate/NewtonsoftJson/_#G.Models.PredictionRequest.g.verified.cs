@@ -22,7 +22,7 @@ namespace G
         /// - you don't need to use the file again (Replicate will not store it)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Input { get; set; } = default!;
+        public global::G.PredictionRequestInput Input { get; set; } = default!;
 
         /// <summary>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
@@ -56,7 +56,7 @@ namespace G
         /// Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhook_events_filter")]
-        public global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>? WebhookEventsFilter { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilterItem>? WebhookEventsFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

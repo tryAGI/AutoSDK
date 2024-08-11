@@ -13,7 +13,7 @@ namespace G
         /// Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_trigger_checks")]
-        public global::System.Collections.Generic.IList<global::G.ChecksSetSuitesPreferencesRequestAutoTriggerChecks?>? AutoTriggerChecks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChecksSetSuitesPreferencesRequestAutoTriggerCheck>? AutoTriggerChecks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

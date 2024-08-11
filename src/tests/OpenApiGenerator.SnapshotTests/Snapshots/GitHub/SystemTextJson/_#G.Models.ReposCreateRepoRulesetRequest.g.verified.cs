@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleEnforcement Enforcement { get; set; }
+        public required global::G.RepositoryRuleEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// The actors that can bypass the rules in this ruleset

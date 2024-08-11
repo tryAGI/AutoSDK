@@ -8,22 +8,22 @@ namespace G
     {
         partial void PrepareAdminMergeProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string project1Id,
-            ref string project2Id,
-            ref string newTitle,
-            ref string newDescription,
-            ref string creatorId,
+            ref string? token,
+            ref string? project1Id,
+            ref string? project2Id,
+            ref string? newTitle,
+            ref string? newDescription,
+            ref string? creatorId,
             ref bool mergeCodes);
         partial void PrepareAdminMergeProjectsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string project1Id,
-            string project2Id,
-            string newTitle,
-            string newDescription,
-            string creatorId,
+            string? token,
+            string? project1Id,
+            string? project2Id,
+            string? newTitle,
+            string? newDescription,
+            string? creatorId,
             bool mergeCodes);
         partial void ProcessAdminMergeProjectsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,13 +46,13 @@ namespace G
         /// <param name="mergeCodes"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminMergeProjectsAsync(
-            string token,
-            string project1Id,
-            string project2Id,
-            string newTitle,
-            string newDescription,
-            string creatorId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminMergeProjectsResponse> AdminMergeProjectsAsync(
+            string? token,
+            string? project1Id,
+            string? project2Id,
+            string? newTitle,
+            string? newDescription,
+            string? creatorId,
             bool mergeCodes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminMergeProjectsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

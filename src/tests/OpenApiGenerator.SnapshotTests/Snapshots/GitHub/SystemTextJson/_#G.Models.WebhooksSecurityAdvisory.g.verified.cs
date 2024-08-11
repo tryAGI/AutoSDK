@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryCwes> Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryCwe> Cwes { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryIdentifiers> Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryIdentifier> Identifiers { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryReferences> References { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryReference> References { get; set; }
 
         /// <summary>
         /// 
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryVulnerabilities> Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryVulnerabilitie> Vulnerabilities { get; set; }
 
         /// <summary>
         /// 

@@ -25,13 +25,13 @@ namespace G
         /// A dictionary that contains the localized names of the tag. The key is in the form, &lt;locale&gt;-&lt;coutry/region&gt;. For example, en-us. The value is the localized name.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("localization_names", Required = global::Newtonsoft.Json.Required.Always)]
-        public object LocalizationNames { get; set; } = default!;
+        public global::G.StreamTagLocalizationNames LocalizationNames { get; set; } = default!;
 
         /// <summary>
         /// A dictionary that contains the localized descriptions of the tag. The key is in the form, &lt;locale&gt;-&lt;coutry/region&gt;. For example, en-us. The value is the localized description.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("localization_descriptions", Required = global::Newtonsoft.Json.Required.Always)]
-        public object LocalizationDescriptions { get; set; } = default!;
+        public global::G.StreamTagLocalizationDescriptions LocalizationDescriptions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref int hookId,
             ref int perPage,
-            ref string cursor,
+            ref string? cursor,
             ref bool redelivery);
         partial void PrepareReposListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -21,7 +21,7 @@ namespace G
             string repo,
             int hookId,
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery);
         partial void ProcessReposListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,7 +51,7 @@ namespace G
             string repo,
             int hookId,
             int perPage,
-            string cursor,
+            string? cursor,
             bool redelivery,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

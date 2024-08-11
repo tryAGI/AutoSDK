@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public object? Labels { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionContainerMetadataLabels? Labels { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest")]
-        public object? Manifest { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionContainerMetadataManifest? Manifest { get; set; }
 
         /// <summary>
         /// 

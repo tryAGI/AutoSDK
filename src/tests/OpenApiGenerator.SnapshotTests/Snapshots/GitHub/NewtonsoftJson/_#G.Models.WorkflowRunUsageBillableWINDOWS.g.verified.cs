@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_runs")]
-        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRuns?>? JobRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableWINDOWSJobRun>? JobRuns { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

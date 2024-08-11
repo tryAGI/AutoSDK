@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ContentBlockStartEvent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,9 +13,9 @@ namespace G
         /// A block of content in a message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::G.TextBlock?, global::G.ImageBlock?, global::G.ToolUseBlock?, global::G.ToolResultBlock?> ContentBlock { get; set; }
+        public required global::G.Block? ContentBlock { get; set; }
 
         /// <summary>
         /// The index of the content block.
@@ -32,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageStreamEventType Type { get; set; }
+        public required global::G.MessageStreamEventType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

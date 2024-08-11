@@ -20,7 +20,7 @@ namespace G
         /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include_claim_keys")]
-        public global::System.Collections.Generic.IList<string?>? IncludeClaimKeys { get; set; }
+        public global::System.Collections.Generic.IList<string>? IncludeClaimKeys { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,18 +10,18 @@ namespace G
         partial void PrepareGetBroadcasterSubscriptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            ref string first,
-            ref string after,
-            ref string before);
+            global::System.Collections.Generic.IList<string>? userId,
+            ref string? first,
+            ref string? after,
+            ref string? before);
         partial void PrepareGetBroadcasterSubscriptionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            string first,
-            string after,
-            string before);
+            global::System.Collections.Generic.IList<string>? userId,
+            string? first,
+            string? after,
+            string? before);
         partial void ProcessGetBroadcasterSubscriptionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,10 +47,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBroadcasterSubscriptionsResponse> GetBroadcasterSubscriptionsAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> userId,
-            string first,
-            string after,
-            string before,
+            global::System.Collections.Generic.IList<string>? userId,
+            string? first,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -65,7 +65,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/subscriptions?broadcaster_id={broadcasterId}&{string.Join("&", userId.Select(static x => $"userId={x}"))}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/subscriptions?broadcaster_id={broadcasterId}&{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

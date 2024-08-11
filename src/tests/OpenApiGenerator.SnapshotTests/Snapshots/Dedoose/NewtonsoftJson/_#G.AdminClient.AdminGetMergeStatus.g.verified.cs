@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareAdminGetMergeStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string mergedProjectId);
+            ref string? token,
+            ref string? mergedProjectId);
         partial void PrepareAdminGetMergeStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string mergedProjectId);
+            string? token,
+            string? mergedProjectId);
         partial void ProcessAdminGetMergeStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,9 +31,9 @@ namespace G
         /// <param name="mergedProjectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminGetMergeStatusAsync(
-            string token,
-            string mergedProjectId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminGetMergeStatusResponse> AdminGetMergeStatusAsync(
+            string? token,
+            string? mergedProjectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminGetMergeStatusResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

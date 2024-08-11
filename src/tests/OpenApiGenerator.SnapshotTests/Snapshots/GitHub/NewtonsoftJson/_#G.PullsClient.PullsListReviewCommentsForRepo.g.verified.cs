@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.PullsListReviewCommentsForRepoSort sort,
-            ref global::G.PullsListReviewCommentsForRepoDirection direction,
+            ref global::G.PullsListReviewCommentsForRepoSort? sort,
+            ref global::G.PullsListReviewCommentsForRepoDirection? direction,
             global::System.DateTime since,
             ref int perPage,
             ref int page);
@@ -20,8 +20,8 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.PullsListReviewCommentsForRepoSort sort,
-            global::G.PullsListReviewCommentsForRepoDirection direction,
+            global::G.PullsListReviewCommentsForRepoSort? sort,
+            global::G.PullsListReviewCommentsForRepoDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page);
@@ -60,8 +60,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PullRequestReviewComment>> PullsListReviewCommentsForRepoAsync(
             string owner,
             string repo,
-            global::G.PullsListReviewCommentsForRepoSort sort,
-            global::G.PullsListReviewCommentsForRepoDirection direction,
+            global::G.PullsListReviewCommentsForRepoSort? sort,
+            global::G.PullsListReviewCommentsForRepoDirection? direction,
             global::System.DateTime since,
             int perPage,
             int page,

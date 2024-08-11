@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Assignee { get; set; }
+        public required global::System.OneOf<global::G.SimpleUser?, global::G.Team?, global::G.Organization?> Assignee { get; set; }
 
         /// <summary>
         /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.

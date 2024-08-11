@@ -140,7 +140,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabel> Labels { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
@@ -243,7 +243,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation? AuthorAssociation { get; set; }
 
         /// <summary>
         /// The status of auto merging a pull request.

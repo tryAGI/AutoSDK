@@ -53,7 +53,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookConfig Config { get; set; }
+        public required global::G.WebhookConfig? Config { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_response")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.HookResponse LastResponse { get; set; }
+        public required global::G.HookResponse? LastResponse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

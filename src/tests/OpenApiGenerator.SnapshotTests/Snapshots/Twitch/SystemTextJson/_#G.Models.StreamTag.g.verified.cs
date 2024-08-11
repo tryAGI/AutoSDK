@@ -28,14 +28,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("localization_names")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object LocalizationNames { get; set; }
+        public required global::G.StreamTagLocalizationNames LocalizationNames { get; set; }
 
         /// <summary>
         /// A dictionary that contains the localized descriptions of the tag. The key is in the form, &lt;locale&gt;-&lt;coutry/region&gt;. For example, en-us. The value is the localized description.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("localization_descriptions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object LocalizationDescriptions { get; set; }
+        public required global::G.StreamTagLocalizationDescriptions LocalizationDescriptions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

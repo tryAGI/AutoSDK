@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareGetStringFromFileStorageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string dataPath);
+            ref string? token,
+            ref string? dataPath);
         partial void PrepareGetStringFromFileStorageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string dataPath);
+            string? token,
+            string? dataPath);
         partial void ProcessGetStringFromFileStorageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> GetStringFromFileStorageAsync(
-            string token,
-            string dataPath,
+            string? token,
+            string? dataPath,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

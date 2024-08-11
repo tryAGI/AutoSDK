@@ -9,27 +9,27 @@ namespace G
     {
         partial void PrepareListAuditLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.ListAuditLogsEffectiveAt effectiveAt,
-            global::System.Collections.Generic.IList<string> projectIds,
-            global::System.Collections.Generic.IList<global::G.AuditLogEventType> eventTypes,
-            global::System.Collections.Generic.IList<string> actorIds,
-            global::System.Collections.Generic.IList<string> actorEmails,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            global::G.ListAuditLogsEffectiveAt? effectiveAt,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<global::G.AuditLogEventType>? eventTypes,
+            global::System.Collections.Generic.IList<string>? actorIds,
+            global::System.Collections.Generic.IList<string>? actorEmails,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             ref int limit,
-            ref string after,
-            ref string before);
+            ref string? after,
+            ref string? before);
         partial void PrepareListAuditLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.ListAuditLogsEffectiveAt effectiveAt,
-            global::System.Collections.Generic.IList<string> projectIds,
-            global::System.Collections.Generic.IList<global::G.AuditLogEventType> eventTypes,
-            global::System.Collections.Generic.IList<string> actorIds,
-            global::System.Collections.Generic.IList<string> actorEmails,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            global::G.ListAuditLogsEffectiveAt? effectiveAt,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<global::G.AuditLogEventType>? eventTypes,
+            global::System.Collections.Generic.IList<string>? actorIds,
+            global::System.Collections.Generic.IList<string>? actorEmails,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             int limit,
-            string after,
-            string before);
+            string? after,
+            string? before);
         partial void ProcessListAuditLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,15 +56,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListAuditLogsResponse> ListAuditLogsAsync(
-            global::G.ListAuditLogsEffectiveAt effectiveAt,
-            global::System.Collections.Generic.IList<string> projectIds,
-            global::System.Collections.Generic.IList<global::G.AuditLogEventType> eventTypes,
-            global::System.Collections.Generic.IList<string> actorIds,
-            global::System.Collections.Generic.IList<string> actorEmails,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            global::G.ListAuditLogsEffectiveAt? effectiveAt,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<global::G.AuditLogEventType>? eventTypes,
+            global::System.Collections.Generic.IList<string>? actorIds,
+            global::System.Collections.Generic.IList<string>? actorEmails,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             int limit,
-            string after,
-            string before,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -83,7 +83,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/organization/audit_logs?effective_at={effectiveAt}&{string.Join("&", projectIds.Select(static x => $"projectIds={x}"))}&{string.Join("&", eventTypes.Select(static x => $"eventTypes={x}"))}&{string.Join("&", actorIds.Select(static x => $"actorIds={x}"))}&{string.Join("&", actorEmails.Select(static x => $"actorEmails={x}"))}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&limit={limit}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/organization/audit_logs?effective_at={effectiveAt}&{string.Join("&", projectIds?.Select(static x => $"projectIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", eventTypes?.Select(static x => $"eventTypes={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", actorIds?.Select(static x => $"actorIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", actorEmails?.Select(static x => $"actorEmails={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}&limit={limit}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -139,13 +139,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunPullRequests> PullRequests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunPullRequest> PullRequests { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referenced_workflows")]
-        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflows?>? ReferencedWorkflows { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflow>? ReferencedWorkflows { get; set; }
 
         /// <summary>
         /// 

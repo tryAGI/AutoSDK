@@ -13,7 +13,7 @@ namespace G
         /// The breakdown of Copilot Business seats for the organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seat_breakdown", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CopilotSeatBreakdown SeatBreakdown { get; set; } = default!;
+        public global::G.CopilotSeatBreakdown? SeatBreakdown { get; set; } = default!;
 
         /// <summary>
         /// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.

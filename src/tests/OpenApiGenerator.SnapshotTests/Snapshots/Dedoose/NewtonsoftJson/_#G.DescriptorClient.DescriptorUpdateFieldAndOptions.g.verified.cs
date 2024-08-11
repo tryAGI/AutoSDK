@@ -9,22 +9,22 @@ namespace G
     {
         partial void PrepareDescriptorUpdateFieldAndOptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string fieldId,
-            ref string title,
-            ref string description,
-            global::System.Collections.Generic.IList<string> deletedOptionIds,
+            ref string? token,
+            ref string? projectId,
+            ref string? fieldId,
+            ref string? title,
+            ref string? description,
+            global::System.Collections.Generic.IList<string>? deletedOptionIds,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void PrepareDescriptorUpdateFieldAndOptionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string fieldId,
-            string title,
-            string description,
-            global::System.Collections.Generic.IList<string> deletedOptionIds,
+            string? token,
+            string? projectId,
+            string? fieldId,
+            string? title,
+            string? description,
+            global::System.Collections.Generic.IList<string>? deletedOptionIds,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void ProcessDescriptorUpdateFieldAndOptionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -48,12 +48,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorUpdateFieldAndOptionsAsync(
-            string token,
-            string projectId,
-            string fieldId,
-            string title,
-            string description,
-            global::System.Collections.Generic.IList<string> deletedOptionIds,
+            string? token,
+            string? projectId,
+            string? fieldId,
+            string? title,
+            string? description,
+            global::System.Collections.Generic.IList<string>? deletedOptionIds,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/updatefieldandoptions?projectId={projectId}&fieldId={fieldId}&title={title}&description={description}&{string.Join("&", deletedOptionIds.Select(static x => $"deletedOptionIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/updatefieldandoptions?projectId={projectId}&fieldId={fieldId}&title={title}&description={description}&{string.Join("&", deletedOptionIds?.Select(static x => $"deletedOptionIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,

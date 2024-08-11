@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        public global::System.Collections.Generic.IList<string?>? Tag { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tag { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

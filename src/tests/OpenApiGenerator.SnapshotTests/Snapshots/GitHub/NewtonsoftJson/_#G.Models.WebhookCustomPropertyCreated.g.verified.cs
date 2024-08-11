@@ -19,7 +19,7 @@ namespace G
         /// Custom property defined on an organization
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("definition", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrgCustomProperty Definition { get; set; } = default!;
+        public global::G.OrgCustomProperty? Definition { get; set; } = default!;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -42,7 +42,7 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

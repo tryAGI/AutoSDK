@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GetUserEmotesResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetUserEmotesResponseDataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// A templated URL. Uses the values from the _id_, _format_, _scale_, and _theme\_mode_ fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote.   <br/>

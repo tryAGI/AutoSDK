@@ -8,18 +8,18 @@ namespace G
     {
         partial void PrepareDescriptorStartConvertFieldTypeJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string setId,
-            ref string fieldId,
+            ref string? token,
+            ref string? projectId,
+            ref string? setId,
+            ref string? fieldId,
             ref int newFieldType);
         partial void PrepareDescriptorStartConvertFieldTypeJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string setId,
-            string fieldId,
+            string? token,
+            string? projectId,
+            string? setId,
+            string? fieldId,
             int newFieldType);
         partial void ProcessDescriptorStartConvertFieldTypeJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,11 +40,11 @@ namespace G
         /// <param name="newFieldType"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorStartConvertFieldTypeJobAsync(
-            string token,
-            string projectId,
-            string setId,
-            string fieldId,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorStartConvertFieldTypeJobResponse> DescriptorStartConvertFieldTypeJobAsync(
+            string? token,
+            string? projectId,
+            string? setId,
+            string? fieldId,
             int newFieldType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -107,7 +107,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorStartConvertFieldTypeJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

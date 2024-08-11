@@ -20,7 +20,7 @@ namespace G
         /// Languages to be analyzed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
-        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguage>? Languages { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.

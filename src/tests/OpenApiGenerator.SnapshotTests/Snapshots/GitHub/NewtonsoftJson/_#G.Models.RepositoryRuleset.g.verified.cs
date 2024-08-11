@@ -46,7 +46,7 @@ namespace G
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryRuleEnforcement Enforcement { get; set; } = default!;
+        public global::G.RepositoryRuleEnforcement? Enforcement { get; set; } = default!;
 
         /// <summary>
         /// The actors that can bypass the rules in this ruleset

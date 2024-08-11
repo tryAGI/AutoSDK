@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Data { get; set; }
+        public required global::G.UpdateUserExtensionsBodyData Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

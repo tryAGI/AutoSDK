@@ -9,30 +9,30 @@ namespace G
         partial void PrepareCodeScanningListAlertsForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref string toolName,
+            ref string? toolName,
             ref string? toolGuid,
-            ref string before,
-            ref string after,
+            ref string? before,
+            ref string? after,
             ref int page,
             ref int perPage,
-            ref global::G.CodeScanningListAlertsForOrgDirection direction,
-            ref global::G.CodeScanningAlertStateQuery state,
-            ref global::G.CodeScanningListAlertsForOrgSort sort,
-            ref global::G.CodeScanningAlertSeverity severity);
+            ref global::G.CodeScanningListAlertsForOrgDirection? direction,
+            ref global::G.CodeScanningAlertStateQuery? state,
+            ref global::G.CodeScanningListAlertsForOrgSort? sort,
+            ref global::G.CodeScanningAlertSeverity? severity);
         partial void PrepareCodeScanningListAlertsForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            string toolName,
+            string? toolName,
             string? toolGuid,
-            string before,
-            string after,
+            string? before,
+            string? after,
             int page,
             int perPage,
-            global::G.CodeScanningListAlertsForOrgDirection direction,
-            global::G.CodeScanningAlertStateQuery state,
-            global::G.CodeScanningListAlertsForOrgSort sort,
-            global::G.CodeScanningAlertSeverity severity);
+            global::G.CodeScanningListAlertsForOrgDirection? direction,
+            global::G.CodeScanningAlertStateQuery? state,
+            global::G.CodeScanningListAlertsForOrgSort? sort,
+            global::G.CodeScanningAlertSeverity? severity);
         partial void ProcessCodeScanningListAlertsForOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -79,16 +79,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>> CodeScanningListAlertsForOrgAsync(
             string org,
-            string toolName,
+            string? toolName,
             string? toolGuid,
-            string before,
-            string after,
+            string? before,
+            string? after,
             int page,
             int perPage,
-            global::G.CodeScanningListAlertsForOrgDirection direction,
-            global::G.CodeScanningAlertStateQuery state,
-            global::G.CodeScanningListAlertsForOrgSort sort,
-            global::G.CodeScanningAlertSeverity severity,
+            global::G.CodeScanningListAlertsForOrgDirection? direction,
+            global::G.CodeScanningAlertStateQuery? state,
+            global::G.CodeScanningListAlertsForOrgSort? sort,
+            global::G.CodeScanningAlertSeverity? severity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

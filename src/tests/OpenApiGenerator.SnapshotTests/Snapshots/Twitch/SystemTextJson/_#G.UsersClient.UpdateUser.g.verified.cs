@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUpdateUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string description);
+            ref string? description);
         partial void PrepareUpdateUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string description);
+            string? description);
         partial void ProcessUpdateUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateUserResponse> UpdateUserAsync(
-            string description,
+            string? description,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

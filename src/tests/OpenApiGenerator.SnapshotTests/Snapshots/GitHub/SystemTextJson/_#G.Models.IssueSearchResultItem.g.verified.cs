@@ -110,7 +110,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabels> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabel> Labels { get; set; }
 
         /// <summary>
         /// 
@@ -171,7 +171,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.IssueSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// 
@@ -199,7 +199,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation? AuthorAssociation { get; set; }
 
         /// <summary>
         /// 

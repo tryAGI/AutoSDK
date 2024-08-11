@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareExcerptGetExcerptsByProjectIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
+            ref string? token,
+            ref string? projectId,
             ref int page,
             ref int pageSize);
         partial void PrepareExcerptGetExcerptsByProjectIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int page,
             int pageSize);
         partial void ProcessExcerptGetExcerptsByProjectIdResponse(
@@ -38,8 +38,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Excerpt>> ExcerptGetExcerptsByProjectIdAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             int page,
             int pageSize,
             global::System.Threading.CancellationToken cancellationToken = default)

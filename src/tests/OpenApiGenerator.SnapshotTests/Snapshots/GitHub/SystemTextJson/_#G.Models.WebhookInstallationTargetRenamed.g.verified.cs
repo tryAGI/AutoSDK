@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleInstallation Installation { get; set; }
+        public required global::G.SimpleInstallation? Installation { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>

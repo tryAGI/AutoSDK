@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object FileSearch { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

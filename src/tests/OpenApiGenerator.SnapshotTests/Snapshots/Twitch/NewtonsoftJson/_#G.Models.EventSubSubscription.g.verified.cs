@@ -54,7 +54,7 @@ namespace G
         /// The subscription's parameter values. This is a string-encoded JSON object whose contents are determined by the subscription type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("condition", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Condition { get; set; } = default!;
+        public global::G.EventSubSubscriptionCondition Condition { get; set; } = default!;
 
         /// <summary>
         /// The date and time (in RFC3339 format) of when the subscription was created.

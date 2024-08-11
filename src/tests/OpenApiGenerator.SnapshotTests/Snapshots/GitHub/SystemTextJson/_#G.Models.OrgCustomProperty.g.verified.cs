@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? DefaultValue { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? DefaultValue { get; set; }
 
         /// <summary>
         /// Short description of the property
@@ -51,7 +51,7 @@ namespace G
         /// The property can have up to 200 allowed values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_values")]
-        public global::System.Collections.Generic.IList<string?>? AllowedValues { get; set; }
+        public global::System.Collections.Generic.IList<string>? AllowedValues { get; set; }
 
         /// <summary>
         /// Who can edit the values of the property<br/>

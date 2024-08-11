@@ -37,7 +37,7 @@ namespace G
         /// A list of viewers who were the top predictors; otherwise, **null** if none.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_predictors", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictors>? TopPredictors { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictor>? TopPredictors { get; set; } = default!;
 
         /// <summary>
         /// The color that visually identifies this outcome in the UX. Possible values are:  <br/>

@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareAdminUpdateUserGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string projectId,
-            ref string id,
-            ref string projectIDL,
-            ref string title,
-            ref string accessListIDL);
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? projectId,
+            ref string? id,
+            ref string? projectIDL,
+            ref string? title,
+            ref string? accessListIDL);
         partial void PrepareAdminUpdateUserGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
-            string title,
-            string accessListIDL);
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
+            string? title,
+            string? accessListIDL);
         partial void ProcessAdminUpdateUserGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,14 +46,14 @@ namespace G
         /// <param name="accessListIDL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminUpdateUserGroupAsync(
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
-            string title,
-            string accessListIDL,
+        public async global::System.Threading.Tasks.Task<global::G.AdminUpdateUserGroupResponse> AdminUpdateUserGroupAsync(
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
+            string? title,
+            string? accessListIDL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminUpdateUserGroupResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

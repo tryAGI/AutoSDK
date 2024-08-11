@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        public object? Labels { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataLabels? Labels { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
-        public object? Manifest { get; set; }
+        public global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataManifest? Manifest { get; set; }
 
         /// <summary>
         /// 

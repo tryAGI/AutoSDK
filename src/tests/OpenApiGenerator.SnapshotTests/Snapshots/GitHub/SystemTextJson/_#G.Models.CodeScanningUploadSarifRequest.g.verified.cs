@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CommitSha { get; set; }
+        public required string? CommitSha { get; set; }
 
         /// <summary>
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,<br/>
@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Ref { get; set; }
+        public required string? Ref { get; set; }
 
         /// <summary>
         /// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sarif")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Sarif { get; set; }
+        public required string? Sarif { get; set; }
 
         /// <summary>
         /// The base directory used in the analysis, as it appears in the SARIF file.<br/>

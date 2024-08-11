@@ -207,9 +207,9 @@ namespace G
             string modelName,
             string versionId,
             string destination,
-            object input,
+            global::G.TrainingRequestInput input,
             string? webhook = default,
-            global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TrainingRequest

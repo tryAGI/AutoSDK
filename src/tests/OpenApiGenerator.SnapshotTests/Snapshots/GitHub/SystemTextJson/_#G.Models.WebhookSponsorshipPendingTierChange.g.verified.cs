@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksChanges8 Changes { get; set; }
+        public required global::G.WebhooksChanges8? Changes { get; set; }
 
         /// <summary>
         /// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
@@ -65,14 +65,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sponsorship")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksSponsorship Sponsorship { get; set; }
+        public required global::G.WebhooksSponsorship? Sponsorship { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CommitCommit Commit1 { get; set; }
+        public required global::G.CommitCommit1 Commit1 { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CommitParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CommitParent> Parents { get; set; }
 
         /// <summary>
         /// 

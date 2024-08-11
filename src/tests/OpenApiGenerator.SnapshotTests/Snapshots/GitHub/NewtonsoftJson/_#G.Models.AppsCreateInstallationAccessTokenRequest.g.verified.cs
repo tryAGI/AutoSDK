@@ -13,7 +13,7 @@ namespace G
         /// List of repository names that the token should have access to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<string?>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<string>? Repositories { get; set; }
 
         /// <summary>
         /// List of repository IDs that the token should have access to<br/>

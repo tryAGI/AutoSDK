@@ -27,7 +27,7 @@ namespace G
         /// The list of app `slug`s with push access
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
-        public global::System.Collections.Generic.IList<string?>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<string>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

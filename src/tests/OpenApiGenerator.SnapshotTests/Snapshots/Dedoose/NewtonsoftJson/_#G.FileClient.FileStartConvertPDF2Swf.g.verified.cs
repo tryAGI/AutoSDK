@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareFileStartConvertPDF2SwfArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string pdfURI);
+            ref string? token,
+            ref string? projectId,
+            ref string? pdfURI);
         partial void PrepareFileStartConvertPDF2SwfRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string pdfURI);
+            string? token,
+            string? projectId,
+            string? pdfURI);
         partial void ProcessFileStartConvertPDF2SwfResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="pdfURI"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> FileStartConvertPDF2SwfAsync(
-            string token,
-            string projectId,
-            string pdfURI,
+        public async global::System.Threading.Tasks.Task<global::G.FileStartConvertPDF2SwfResponse> FileStartConvertPDF2SwfAsync(
+            string? token,
+            string? projectId,
+            string? pdfURI,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.FileStartConvertPDF2SwfResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

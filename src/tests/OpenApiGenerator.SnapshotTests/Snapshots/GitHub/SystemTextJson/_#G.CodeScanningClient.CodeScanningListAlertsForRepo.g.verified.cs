@@ -10,29 +10,29 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string toolName,
+            ref string? toolName,
             ref string? toolGuid,
             ref int page,
             ref int perPage,
-            ref string @ref,
-            ref global::G.CodeScanningListAlertsForRepoDirection direction,
-            ref global::G.CodeScanningListAlertsForRepoSort sort,
-            ref global::G.CodeScanningAlertStateQuery state,
-            ref global::G.CodeScanningAlertSeverity severity);
+            ref string? @ref,
+            ref global::G.CodeScanningListAlertsForRepoDirection? direction,
+            ref global::G.CodeScanningListAlertsForRepoSort? sort,
+            ref global::G.CodeScanningAlertStateQuery? state,
+            ref global::G.CodeScanningAlertSeverity? severity);
         partial void PrepareCodeScanningListAlertsForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string toolName,
+            string? toolName,
             string? toolGuid,
             int page,
             int perPage,
-            string @ref,
-            global::G.CodeScanningListAlertsForRepoDirection direction,
-            global::G.CodeScanningListAlertsForRepoSort sort,
-            global::G.CodeScanningAlertStateQuery state,
-            global::G.CodeScanningAlertSeverity severity);
+            string? @ref,
+            global::G.CodeScanningListAlertsForRepoDirection? direction,
+            global::G.CodeScanningListAlertsForRepoSort? sort,
+            global::G.CodeScanningAlertStateQuery? state,
+            global::G.CodeScanningAlertSeverity? severity);
         partial void ProcessCodeScanningListAlertsForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -85,15 +85,15 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAlertItems>> CodeScanningListAlertsForRepoAsync(
             string owner,
             string repo,
-            string toolName,
+            string? toolName,
             string? toolGuid,
             int page,
             int perPage,
-            string @ref,
-            global::G.CodeScanningListAlertsForRepoDirection direction,
-            global::G.CodeScanningListAlertsForRepoSort sort,
-            global::G.CodeScanningAlertStateQuery state,
-            global::G.CodeScanningAlertSeverity severity,
+            string? @ref,
+            global::G.CodeScanningListAlertsForRepoDirection? direction,
+            global::G.CodeScanningListAlertsForRepoSort? sort,
+            global::G.CodeScanningAlertStateQuery? state,
+            global::G.CodeScanningAlertSeverity? severity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

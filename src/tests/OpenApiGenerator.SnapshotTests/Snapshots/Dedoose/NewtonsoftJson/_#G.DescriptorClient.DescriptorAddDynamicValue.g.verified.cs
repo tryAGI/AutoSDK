@@ -8,25 +8,25 @@ namespace G
     {
         partial void PrepareDescriptorAddDynamicValueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string setId,
-            ref string descriptorId,
-            ref string fieldId,
-            ref string resourceId,
-            ref string data,
-            ref string optionId);
+            ref string? token,
+            ref string? projectId,
+            ref string? setId,
+            ref string? descriptorId,
+            ref string? fieldId,
+            ref string? resourceId,
+            ref string? data,
+            ref string? optionId);
         partial void PrepareDescriptorAddDynamicValueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string setId,
-            string descriptorId,
-            string fieldId,
-            string resourceId,
-            string data,
-            string optionId);
+            string? token,
+            string? projectId,
+            string? setId,
+            string? descriptorId,
+            string? fieldId,
+            string? resourceId,
+            string? data,
+            string? optionId);
         partial void ProcessDescriptorAddDynamicValueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,15 +49,15 @@ namespace G
         /// <param name="optionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorAddDynamicValueAsync(
-            string token,
-            string projectId,
-            string setId,
-            string descriptorId,
-            string fieldId,
-            string resourceId,
-            string data,
-            string optionId,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorAddDynamicValueResponse> DescriptorAddDynamicValueAsync(
+            string? token,
+            string? projectId,
+            string? setId,
+            string? descriptorId,
+            string? fieldId,
+            string? resourceId,
+            string? data,
+            string? optionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -125,7 +125,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorAddDynamicValueResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

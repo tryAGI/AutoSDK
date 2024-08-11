@@ -8,21 +8,21 @@ namespace G
     {
         partial void PrepareGetGameAnalyticsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string gameId,
-            ref global::G.GetGameAnalyticsType type,
+            ref string? gameId,
+            ref global::G.GetGameAnalyticsType? type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetGameAnalyticsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string gameId,
-            global::G.GetGameAnalyticsType type,
+            string? gameId,
+            global::G.GetGameAnalyticsType? type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetGameAnalyticsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,12 +47,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGameAnalyticsResponse> GetGameAnalyticsAsync(
-            string gameId,
-            global::G.GetGameAnalyticsType type,
+            string? gameId,
+            global::G.GetGameAnalyticsType? type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

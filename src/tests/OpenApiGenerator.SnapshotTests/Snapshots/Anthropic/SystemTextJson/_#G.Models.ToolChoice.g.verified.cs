@@ -23,7 +23,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ToolChoiceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolChoiceType Type { get; set; }
+        public required global::G.ToolChoiceType? Type { get; set; }
 
         /// <summary>
         /// The name of the tool to use.

@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ProjectsListForRepoState state,
+            ref global::G.ProjectsListForRepoState? state,
             ref int perPage,
             ref int page);
         partial void PrepareProjectsListForRepoRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ProjectsListForRepoState state,
+            global::G.ProjectsListForRepoState? state,
             int perPage,
             int page);
         partial void ProcessProjectsListForRepoResponse(
@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForRepoAsync(
             string owner,
             string repo,
-            global::G.ProjectsListForRepoState state,
+            global::G.ProjectsListForRepoState? state,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUserDoesUserEmailExistArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string email);
+            ref string? email);
         partial void PrepareUserDoesUserEmailExistRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string email);
+            string? email);
         partial void ProcessUserDoesUserEmailExistResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserDoesUserEmailExistAsync(
-            string email,
+            string? email,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

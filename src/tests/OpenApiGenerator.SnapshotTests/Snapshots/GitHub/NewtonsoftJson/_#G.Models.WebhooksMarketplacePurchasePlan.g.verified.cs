@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bullets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string?> Bullets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<string> Bullets { get; set; } = default!;
 
         /// <summary>
         /// 

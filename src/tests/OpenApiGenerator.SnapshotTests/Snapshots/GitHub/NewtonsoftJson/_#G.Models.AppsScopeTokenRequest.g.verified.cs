@@ -34,7 +34,7 @@ namespace G
         /// The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<string?>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<string>? Repositories { get; set; }
 
         /// <summary>
         /// The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.<br/>

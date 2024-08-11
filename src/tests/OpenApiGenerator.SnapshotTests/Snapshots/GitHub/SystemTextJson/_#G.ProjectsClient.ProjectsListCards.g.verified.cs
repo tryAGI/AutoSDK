@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectsListCardsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int columnId,
-            ref global::G.ProjectsListCardsArchivedState archivedState,
+            ref global::G.ProjectsListCardsArchivedState? archivedState,
             ref int perPage,
             ref int page);
         partial void PrepareProjectsListCardsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int columnId,
-            global::G.ProjectsListCardsArchivedState archivedState,
+            global::G.ProjectsListCardsArchivedState? archivedState,
             int perPage,
             int page);
         partial void ProcessProjectsListCardsResponse(
@@ -46,7 +46,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ProjectCard>> ProjectsListCardsAsync(
             int columnId,
-            global::G.ProjectsListCardsArchivedState archivedState,
+            global::G.ProjectsListCardsArchivedState? archivedState,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

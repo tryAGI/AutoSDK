@@ -10,13 +10,13 @@ namespace G
         partial void PrepareGetCustomRewardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             ref bool onlyManageableRewards);
         partial void PrepareGetCustomRewardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             bool onlyManageableRewards);
         partial void ProcessGetCustomRewardResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,7 +41,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardResponse> GetCustomRewardAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             bool onlyManageableRewards,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -55,7 +55,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards?broadcaster_id={broadcasterId}&{string.Join("&", id.Select(static x => $"id={x}"))}&only_manageable_rewards={onlyManageableRewards}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards?broadcaster_id={broadcasterId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&only_manageable_rewards={onlyManageableRewards}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

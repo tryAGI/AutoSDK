@@ -9,29 +9,29 @@ namespace G
     {
         partial void PrepareExcerptAddDocumentExcerptWithTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string resourceId,
-            ref string title,
-            ref string description,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? resourceId,
+            ref string? title,
+            ref string? description,
             ref int startIndex,
             ref int endIndex,
-            ref string excerptText,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+            ref string? excerptText,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void PrepareExcerptAddDocumentExcerptWithTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
+            string? title,
+            string? description,
             int startIndex,
             int endIndex,
-            string excerptText,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+            string? excerptText,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void ProcessExcerptAddDocumentExcerptWithTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,16 +57,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddDocumentExcerptWithTagsAsync(
-            string token,
-            string projectId,
-            string userId,
-            string resourceId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? resourceId,
+            string? title,
+            string? description,
             int startIndex,
             int endIndex,
-            string excerptText,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps,
+            string? excerptText,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -86,7 +86,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/adddocumentexcerptwithtags?projectId={projectId}&userId={userId}&resourceId={resourceId}&title={title}&description={description}&startIndex={startIndex}&endIndex={endIndex}&excerptText={excerptText}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/adddocumentexcerptwithtags?projectId={projectId}&userId={userId}&resourceId={resourceId}&title={title}&description={description}&startIndex={startIndex}&endIndex={endIndex}&excerptText={excerptText}&{string.Join("&", tagApps?.Select(static x => $"tagApps={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

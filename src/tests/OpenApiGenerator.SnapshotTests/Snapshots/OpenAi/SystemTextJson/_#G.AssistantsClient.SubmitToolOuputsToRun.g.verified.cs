@@ -122,7 +122,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunObject> SubmitToolOuputsToRunAsync(
             string threadId,
             string runId,
-            global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
+            global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutput> toolOutputs,
             bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

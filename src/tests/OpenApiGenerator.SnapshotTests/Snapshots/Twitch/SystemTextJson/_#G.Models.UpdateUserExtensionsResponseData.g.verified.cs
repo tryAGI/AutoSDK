@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("panel")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Panel { get; set; }
+        public required global::G.UpdateUserExtensionsResponseDataPanel Panel { get; set; }
 
         /// <summary>
         /// A dictionary that contains the data for a video-overlay extension. The dictionary’s key is a sequential number beginning with 1\. The following fields contain the overlay’s data for each key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overlay")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Overlay { get; set; }
+        public required global::G.UpdateUserExtensionsResponseDataOverlay Overlay { get; set; }
 
         /// <summary>
         /// A dictionary that contains the data for a video-component extension. The dictionary’s key is a sequential number beginning with 1\. The following fields contain the component’s data for each key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("component")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Component { get; set; }
+        public required global::G.UpdateUserExtensionsResponseDataComponent Component { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

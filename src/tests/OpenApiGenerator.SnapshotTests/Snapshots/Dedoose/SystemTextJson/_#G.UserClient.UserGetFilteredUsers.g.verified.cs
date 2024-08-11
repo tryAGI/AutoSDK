@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareUserGetFilteredUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string filter,
+            ref string? token,
+            ref string? projectId,
+            ref string? filter,
             ref int maxResults);
         partial void PrepareUserGetFilteredUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string filter,
+            string? token,
+            string? projectId,
+            string? filter,
             int maxResults);
         partial void ProcessUserGetFilteredUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,10 +37,10 @@ namespace G
         /// <param name="maxResults"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserGetFilteredUsersAsync(
-            string token,
-            string projectId,
-            string filter,
+        public async global::System.Threading.Tasks.Task<global::G.UserGetFilteredUsersResponse> UserGetFilteredUsersAsync(
+            string? token,
+            string? projectId,
+            string? filter,
             int maxResults,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserGetFilteredUsersResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

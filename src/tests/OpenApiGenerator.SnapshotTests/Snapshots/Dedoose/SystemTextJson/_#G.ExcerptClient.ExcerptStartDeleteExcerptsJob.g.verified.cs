@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareExcerptStartDeleteExcerptsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string currentProjectId,
-            global::System.Collections.Generic.IList<string> excerptIds);
+            ref string? token,
+            ref string? currentProjectId,
+            global::System.Collections.Generic.IList<string>? excerptIds);
         partial void PrepareExcerptStartDeleteExcerptsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string currentProjectId,
-            global::System.Collections.Generic.IList<string> excerptIds);
+            string? token,
+            string? currentProjectId,
+            global::System.Collections.Generic.IList<string>? excerptIds);
         partial void ProcessExcerptStartDeleteExcerptsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,9 +36,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ExcerptStartDeleteExcerptsJobAsync(
-            string token,
-            string currentProjectId,
-            global::System.Collections.Generic.IList<string> excerptIds,
+            string? token,
+            string? currentProjectId,
+            global::System.Collections.Generic.IList<string>? excerptIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -51,7 +51,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/startdeleteexcerptsjob?currentProjectId={currentProjectId}&{string.Join("&", excerptIds.Select(static x => $"excerptIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/startdeleteexcerptsjob?currentProjectId={currentProjectId}&{string.Join("&", excerptIds?.Select(static x => $"excerptIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

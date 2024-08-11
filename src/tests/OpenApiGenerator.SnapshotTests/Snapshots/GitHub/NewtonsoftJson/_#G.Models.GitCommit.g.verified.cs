@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GitCommitParents> Parents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GitCommitParent> Parents { get; set; } = default!;
 
         /// <summary>
         /// 

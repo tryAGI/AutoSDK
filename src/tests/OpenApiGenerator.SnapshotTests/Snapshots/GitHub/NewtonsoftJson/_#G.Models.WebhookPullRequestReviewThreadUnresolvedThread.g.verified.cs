@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComments> Comments { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComment> Comments { get; set; } = default!;
 
         /// <summary>
         /// 

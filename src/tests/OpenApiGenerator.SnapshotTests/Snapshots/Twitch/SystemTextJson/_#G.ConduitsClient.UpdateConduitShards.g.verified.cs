@@ -45,7 +45,7 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/eventsub/conduits/shards", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
@@ -115,7 +115,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateConduitShardsResponse> UpdateConduitShardsAsync(
             string conduitId,
-            global::System.Collections.Generic.IList<global::G.UpdateConduitShardsBodyShards> shards,
+            global::System.Collections.Generic.IList<global::G.UpdateConduitShardsBodyShard> shards,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateConduitShardsBody

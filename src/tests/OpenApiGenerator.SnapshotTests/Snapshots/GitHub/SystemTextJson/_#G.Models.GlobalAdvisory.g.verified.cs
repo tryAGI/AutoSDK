@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifiers>? Identifiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? Identifiers { get; set; }
 
         /// <summary>
         /// 
@@ -150,14 +150,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwes>? Cwes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
         /// The users who contributed to the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredits>? Credits { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? Credits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

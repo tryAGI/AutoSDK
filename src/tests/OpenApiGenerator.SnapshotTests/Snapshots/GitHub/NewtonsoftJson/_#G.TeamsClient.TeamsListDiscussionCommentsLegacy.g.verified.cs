@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int teamId,
             ref int discussionNumber,
-            ref global::G.TeamsListDiscussionCommentsLegacyDirection direction,
+            ref global::G.TeamsListDiscussionCommentsLegacyDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareTeamsListDiscussionCommentsLegacyRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int teamId,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsLegacyDirection direction,
+            global::G.TeamsListDiscussionCommentsLegacyDirection? direction,
             int perPage,
             int page);
         partial void ProcessTeamsListDiscussionCommentsLegacyResponse(
@@ -53,7 +53,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussionComment>> TeamsListDiscussionCommentsLegacyAsync(
             int teamId,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsLegacyDirection direction,
+            global::G.TeamsListDiscussionCommentsLegacyDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

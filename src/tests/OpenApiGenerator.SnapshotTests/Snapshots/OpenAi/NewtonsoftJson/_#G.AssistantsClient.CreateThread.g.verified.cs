@@ -111,7 +111,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ThreadObject> CreateThreadAsync(
             global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? messages = default,
             global::G.CreateThreadRequestToolResources? toolResources = default,
-            object? metadata = default,
+            global::G.CreateThreadRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateThreadRequest

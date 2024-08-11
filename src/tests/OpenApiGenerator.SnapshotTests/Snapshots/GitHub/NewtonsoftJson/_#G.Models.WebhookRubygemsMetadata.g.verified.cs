@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public object? Metadata { get; set; }
+        public global::G.WebhookRubygemsMetadataMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependencies")]
-        public global::System.Collections.Generic.IList<object?>? Dependencies { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRubygemsMetadataDependencie>? Dependencies { get; set; }
 
         /// <summary>
         /// 

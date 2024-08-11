@@ -11,7 +11,7 @@ namespace G
             ref string org,
             ref string teamSlug,
             ref int discussionNumber,
-            ref global::G.TeamsListDiscussionCommentsInOrgDirection direction,
+            ref global::G.TeamsListDiscussionCommentsInOrgDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareTeamsListDiscussionCommentsInOrgRequest(
@@ -20,7 +20,7 @@ namespace G
             string org,
             string teamSlug,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsInOrgDirection direction,
+            global::G.TeamsListDiscussionCommentsInOrgDirection? direction,
             int perPage,
             int page);
         partial void ProcessTeamsListDiscussionCommentsInOrgResponse(
@@ -56,7 +56,7 @@ namespace G
             string org,
             string teamSlug,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsInOrgDirection direction,
+            global::G.TeamsListDiscussionCommentsInOrgDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAppsListAccountsForPlanArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int planId,
-            ref global::G.AppsListAccountsForPlanSort sort,
-            ref global::G.AppsListAccountsForPlanDirection direction,
+            ref global::G.AppsListAccountsForPlanSort? sort,
+            ref global::G.AppsListAccountsForPlanDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareAppsListAccountsForPlanRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int planId,
-            global::G.AppsListAccountsForPlanSort sort,
-            global::G.AppsListAccountsForPlanDirection direction,
+            global::G.AppsListAccountsForPlanSort? sort,
+            global::G.AppsListAccountsForPlanDirection? direction,
             int perPage,
             int page);
         partial void ProcessAppsListAccountsForPlanResponse(
@@ -50,8 +50,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MarketplacePurchase>> AppsListAccountsForPlanAsync(
             int planId,
-            global::G.AppsListAccountsForPlanSort sort,
-            global::G.AppsListAccountsForPlanDirection direction,
+            global::G.AppsListAccountsForPlanSort? sort,
+            global::G.AppsListAccountsForPlanDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

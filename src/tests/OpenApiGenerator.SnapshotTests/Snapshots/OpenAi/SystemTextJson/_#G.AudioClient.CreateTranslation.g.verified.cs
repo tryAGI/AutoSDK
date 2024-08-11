@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson?, global::G.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
             global::G.CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -55,7 +55,7 @@ namespace G
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2?.ToValueString() ?? string.Empty),
                 name: "model");
             if (request.Prompt != default)
             {
@@ -118,7 +118,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.CreateTranslationResponseJson?, global::G.CreateTranslationResponseVerboseJson?>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -148,10 +148,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson?, global::G.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string, global::G.CreateTranslationRequestModel> model,
+            global::System.AnyOf<string?, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
             string? responseFormat = "json",
             double temperature = 0,

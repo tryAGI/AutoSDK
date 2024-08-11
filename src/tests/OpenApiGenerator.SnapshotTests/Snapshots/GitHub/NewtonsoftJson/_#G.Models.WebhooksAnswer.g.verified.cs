@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? ParentId { get; set; } = default!;
+        public global::G.WebhooksAnswerParentId? ParentId { get; set; } = default!;
 
         /// <summary>
         /// 

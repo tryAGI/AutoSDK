@@ -9,28 +9,28 @@ namespace G
         partial void PrepareSecretScanningListAlertsForEnterpriseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string enterprise,
-            ref global::G.SecretScanningListAlertsForEnterpriseState state,
-            ref string secretType,
-            ref string resolution,
-            ref global::G.SecretScanningListAlertsForEnterpriseSort sort,
-            ref global::G.SecretScanningListAlertsForEnterpriseDirection direction,
+            ref global::G.SecretScanningListAlertsForEnterpriseState? state,
+            ref string? secretType,
+            ref string? resolution,
+            ref global::G.SecretScanningListAlertsForEnterpriseSort? sort,
+            ref global::G.SecretScanningListAlertsForEnterpriseDirection? direction,
             ref int perPage,
-            ref string before,
-            ref string after,
-            ref string validity);
+            ref string? before,
+            ref string? after,
+            ref string? validity);
         partial void PrepareSecretScanningListAlertsForEnterpriseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string enterprise,
-            global::G.SecretScanningListAlertsForEnterpriseState state,
-            string secretType,
-            string resolution,
-            global::G.SecretScanningListAlertsForEnterpriseSort sort,
-            global::G.SecretScanningListAlertsForEnterpriseDirection direction,
+            global::G.SecretScanningListAlertsForEnterpriseState? state,
+            string? secretType,
+            string? resolution,
+            global::G.SecretScanningListAlertsForEnterpriseSort? sort,
+            global::G.SecretScanningListAlertsForEnterpriseDirection? direction,
             int perPage,
-            string before,
-            string after,
-            string validity);
+            string? before,
+            string? after,
+            string? validity);
         partial void ProcessSecretScanningListAlertsForEnterpriseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -67,15 +67,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>> SecretScanningListAlertsForEnterpriseAsync(
             string enterprise,
-            global::G.SecretScanningListAlertsForEnterpriseState state,
-            string secretType,
-            string resolution,
-            global::G.SecretScanningListAlertsForEnterpriseSort sort,
-            global::G.SecretScanningListAlertsForEnterpriseDirection direction,
+            global::G.SecretScanningListAlertsForEnterpriseState? state,
+            string? secretType,
+            string? resolution,
+            global::G.SecretScanningListAlertsForEnterpriseSort? sort,
+            global::G.SecretScanningListAlertsForEnterpriseDirection? direction,
             int perPage,
-            string before,
-            string after,
-            string validity,
+            string? before,
+            string? after,
+            string? validity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

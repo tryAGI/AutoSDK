@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareDescriptorDeleteDescriptorsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            global::System.Collections.Generic.IList<string> descriptorsIds);
+            ref string? token,
+            ref string? projectId,
+            global::System.Collections.Generic.IList<string>? descriptorsIds);
         partial void PrepareDescriptorDeleteDescriptorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> descriptorsIds);
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? descriptorsIds);
         partial void ProcessDescriptorDeleteDescriptorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,10 +35,10 @@ namespace G
         /// <param name="descriptorsIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorDeleteDescriptorsAsync(
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> descriptorsIds,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorDeleteDescriptorsResponse> DescriptorDeleteDescriptorsAsync(
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? descriptorsIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -51,7 +51,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/deletedescriptors?projectId={projectId}&{string.Join("&", descriptorsIds.Select(static x => $"descriptorsIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/deletedescriptors?projectId={projectId}&{string.Join("&", descriptorsIds?.Select(static x => $"descriptorsIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -96,7 +96,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorDeleteDescriptorsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

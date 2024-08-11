@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ReposGetViewsPer per);
+            ref global::G.ReposGetViewsPer? per);
         partial void PrepareReposGetViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ReposGetViewsPer per);
+            global::G.ReposGetViewsPer? per);
         partial void ProcessReposGetViewsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ViewTraffic> ReposGetViewsAsync(
             string owner,
             string repo,
-            global::G.ReposGetViewsPer per,
+            global::G.ReposGetViewsPer? per,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

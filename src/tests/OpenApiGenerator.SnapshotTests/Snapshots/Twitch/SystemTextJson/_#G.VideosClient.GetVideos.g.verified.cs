@@ -9,29 +9,29 @@ namespace G
     {
         partial void PrepareGetVideosArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> id,
-            ref string userId,
-            ref string gameId,
-            ref string language,
-            ref global::G.GetVideosPeriod period,
-            ref global::G.GetVideosSort sort,
-            ref global::G.GetVideosType type,
-            ref string first,
-            ref string after,
-            ref string before);
+            global::System.Collections.Generic.IList<string>? id,
+            ref string? userId,
+            ref string? gameId,
+            ref string? language,
+            ref global::G.GetVideosPeriod? period,
+            ref global::G.GetVideosSort? sort,
+            ref global::G.GetVideosType? type,
+            ref string? first,
+            ref string? after,
+            ref string? before);
         partial void PrepareGetVideosRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> id,
-            string userId,
-            string gameId,
-            string language,
-            global::G.GetVideosPeriod period,
-            global::G.GetVideosSort sort,
-            global::G.GetVideosType type,
-            string first,
-            string after,
-            string before);
+            global::System.Collections.Generic.IList<string>? id,
+            string? userId,
+            string? gameId,
+            string? language,
+            global::G.GetVideosPeriod? period,
+            global::G.GetVideosSort? sort,
+            global::G.GetVideosType? type,
+            string? first,
+            string? after,
+            string? before);
         partial void ProcessGetVideosResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,16 +61,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetVideosResponse> GetVideosAsync(
-            global::System.Collections.Generic.IList<string> id,
-            string userId,
-            string gameId,
-            string language,
-            global::G.GetVideosPeriod period,
-            global::G.GetVideosSort sort,
-            global::G.GetVideosType type,
-            string first,
-            string after,
-            string before,
+            global::System.Collections.Generic.IList<string>? id,
+            string? userId,
+            string? gameId,
+            string? language,
+            global::G.GetVideosPeriod? period,
+            global::G.GetVideosSort? sort,
+            global::G.GetVideosType? type,
+            string? first,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -90,7 +90,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/videos?{string.Join("&", id.Select(static x => $"id={x}"))}&user_id={userId}&game_id={gameId}&language={language}&period={period}&sort={sort}&type={type}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/videos?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&user_id={userId}&game_id={gameId}&language={language}&period={period}&sort={sort}&type={type}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

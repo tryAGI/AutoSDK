@@ -9,16 +9,16 @@ namespace G
         partial void PrepareCopilotUsageMetricsForEnterpriseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string enterprise,
-            ref string since,
-            ref string until,
+            ref string? since,
+            ref string? until,
             ref int page,
             ref int perPage);
         partial void PrepareCopilotUsageMetricsForEnterpriseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string enterprise,
-            string since,
-            string until,
+            string? since,
+            string? until,
             int page,
             int perPage);
         partial void ProcessCopilotUsageMetricsForEnterpriseResponse(
@@ -56,8 +56,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CopilotUsageMetrics>> CopilotUsageMetricsForEnterpriseAsync(
             string enterprise,
-            string since,
-            string until,
+            string? since,
+            string? until,
             int page,
             int perPage,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareAdminAddUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string accountId);
+            ref string? token,
+            ref string? userId,
+            ref string? accountId);
         partial void PrepareAdminAddUserToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string accountId);
+            string? token,
+            string? userId,
+            string? accountId);
         partial void ProcessAdminAddUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminAddUserToAccountAsync(
-            string token,
-            string userId,
-            string accountId,
+        public async global::System.Threading.Tasks.Task<global::G.AdminAddUserToAccountResponse> AdminAddUserToAccountAsync(
+            string? token,
+            string? userId,
+            string? accountId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -95,7 +95,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminAddUserToAccountResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

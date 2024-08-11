@@ -1,0 +1,36 @@
+﻿//HintName: G.Models.SendChatMessageResponseDataItem.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SendChatMessageResponseDataItem
+    {
+        /// <summary>
+        /// The message id for the message that was sent.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("message_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string MessageId { get; set; } = default!;
+
+        /// <summary>
+        /// If the message passed all checks and was sent.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_sent", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool IsSent { get; set; } = default!;
+
+        /// <summary>
+        /// The reason the message was dropped, if any.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("drop_reason")]
+        public global::System.Collections.Generic.IList<global::G.SendChatMessageResponseDataItemDropReasonItem>? DropReason { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

@@ -19,7 +19,7 @@ namespace G
         /// A list of chat completion choices. Can be more than one if `n` is greater than 1.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionFunctionResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionFunctionResponseChoice> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created.

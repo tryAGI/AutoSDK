@@ -9,17 +9,17 @@ namespace G
     {
         partial void PrepareMemoAddMemoFolderLinksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string memoId,
-            global::System.Collections.Generic.IList<string> folderIds);
+            ref string? token,
+            ref string? projectId,
+            ref string? memoId,
+            global::System.Collections.Generic.IList<string>? folderIds);
         partial void PrepareMemoAddMemoFolderLinksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string memoId,
-            global::System.Collections.Generic.IList<string> folderIds);
+            string? token,
+            string? projectId,
+            string? memoId,
+            global::System.Collections.Generic.IList<string>? folderIds);
         partial void ProcessMemoAddMemoFolderLinksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,11 +38,11 @@ namespace G
         /// <param name="folderIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> MemoAddMemoFolderLinksAsync(
-            string token,
-            string projectId,
-            string memoId,
-            global::System.Collections.Generic.IList<string> folderIds,
+        public async global::System.Threading.Tasks.Task<global::G.MemoAddMemoFolderLinksResponse> MemoAddMemoFolderLinksAsync(
+            string? token,
+            string? projectId,
+            string? memoId,
+            global::System.Collections.Generic.IList<string>? folderIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -56,7 +56,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/addmemofolderlinks?projectId={projectId}&memoId={memoId}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/addmemofolderlinks?projectId={projectId}&memoId={memoId}&{string.Join("&", folderIds?.Select(static x => $"folderIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoAddMemoFolderLinksResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

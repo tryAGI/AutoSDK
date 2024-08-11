@@ -10,20 +10,20 @@ namespace G
         partial void PrepareGetChannelStreamScheduleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startTime,
-            ref string utcOffset,
+            ref string? utcOffset,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetChannelStreamScheduleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startTime,
-            string utcOffset,
+            string? utcOffset,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetChannelStreamScheduleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,11 +49,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChannelStreamScheduleResponse> GetChannelStreamScheduleAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string>? id,
             global::System.DateTime startTime,
-            string utcOffset,
+            string? utcOffset,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -69,7 +69,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/schedule?broadcaster_id={broadcasterId}&{string.Join("&", id.Select(static x => $"id={x}"))}&start_time={startTime:yyyy-MM-ddTHH:mm:ssZ}&utc_offset={utcOffset}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/schedule?broadcaster_id={broadcasterId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&start_time={startTime:yyyy-MM-ddTHH:mm:ssZ}&utc_offset={utcOffset}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

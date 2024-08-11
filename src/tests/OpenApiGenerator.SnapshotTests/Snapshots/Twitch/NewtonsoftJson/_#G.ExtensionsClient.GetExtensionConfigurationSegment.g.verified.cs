@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareGetExtensionConfigurationSegmentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string broadcasterId,
+            ref string? broadcasterId,
             ref string extensionId,
             ref global::G.GetExtensionConfigurationSegmentSegment segment);
         partial void PrepareGetExtensionConfigurationSegmentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string broadcasterId,
+            string? broadcasterId,
             string extensionId,
             global::G.GetExtensionConfigurationSegmentSegment segment);
         partial void ProcessGetExtensionConfigurationSegmentResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionConfigurationSegmentResponse> GetExtensionConfigurationSegmentAsync(
-            string broadcasterId,
+            string? broadcasterId,
             string extensionId,
             global::G.GetExtensionConfigurationSegmentSegment segment,
             global::System.Threading.CancellationToken cancellationToken = default)

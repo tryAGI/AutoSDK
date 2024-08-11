@@ -31,37 +31,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public object? Author { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataAuthor? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bugs")]
-        public object? Bugs { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBugs? Bugs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
-        public object? Dependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDependencies? Dependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dev_dependencies")]
-        public object? DevDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDevDependencies? DevDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_dependencies")]
-        public object? PeerDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataPeerDependencies? PeerDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optional_dependencies")]
-        public object? OptionalDependencies { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataOptionalDependencies? OptionalDependencies { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dist")]
-        public object? Dist { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDist? Dist { get; set; }
 
         /// <summary>
         /// 
@@ -103,13 +103,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public object? Repository { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataRepository? Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scripts")]
-        public object? Scripts { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataScripts? Scripts { get; set; }
 
         /// <summary>
         /// 
@@ -139,61 +139,61 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainers")]
-        public global::System.Collections.Generic.IList<object?>? Maintainers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMaintainer>? Maintainers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contributors")]
-        public global::System.Collections.Generic.IList<object?>? Contributors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataContributor>? Contributors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engines")]
-        public object? Engines { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataEngines? Engines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keywords")]
-        public global::System.Collections.Generic.IList<string?>? Keywords { get; set; }
+        public global::System.Collections.Generic.IList<string>? Keywords { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public global::System.Collections.Generic.IList<string?>? Files { get; set; }
+        public global::System.Collections.Generic.IList<string>? Files { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bin")]
-        public object? Bin { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBin? Bin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("man")]
-        public object? Man { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMan? Man { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("directories")]
-        public object? Directories { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDirectories? Directories { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("os")]
-        public global::System.Collections.Generic.IList<string?>? Os { get; set; }
+        public global::System.Collections.Generic.IList<string>? Os { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu")]
-        public global::System.Collections.Generic.IList<string?>? Cpu { get; set; }
+        public global::System.Collections.Generic.IList<string>? Cpu { get; set; }
 
         /// <summary>
         /// 

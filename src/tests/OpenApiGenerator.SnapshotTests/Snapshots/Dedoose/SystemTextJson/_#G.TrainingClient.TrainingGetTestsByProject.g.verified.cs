@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareTrainingGetTestsByProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId);
+            ref string? token,
+            ref string? projectId);
         partial void PrepareTrainingGetTestsByProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId);
+            string? token,
+            string? projectId);
         partial void ProcessTrainingGetTestsByProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTest>> TrainingGetTestsByProjectAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -38,21 +38,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
+        public required global::G.OrganizationSimpleWebhooks? Organization { get; set; }
 
         /// <summary>
         /// An item belonging to a project
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects_v2_item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectsV2Item ProjectsV2Item { get; set; }
+        public required global::G.ProjectsV2Item? ProjectsV2Item { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

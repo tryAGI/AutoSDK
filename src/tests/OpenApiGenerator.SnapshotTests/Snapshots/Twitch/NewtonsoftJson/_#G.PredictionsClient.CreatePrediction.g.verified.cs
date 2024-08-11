@@ -122,7 +122,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(
             string broadcasterId,
             string title,
-            global::System.Collections.Generic.IList<global::G.CreatePredictionBodyOutcomes> outcomes,
+            global::System.Collections.Generic.IList<global::G.CreatePredictionBodyOutcome> outcomes,
             int predictionWindow,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

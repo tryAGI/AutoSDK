@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MarketplaceAccount Account { get; set; } = default!;
+        public global::G.MarketplaceAccount? Account { get; set; } = default!;
 
         /// <summary>
         /// Marketplace Listing Plan
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MarketplaceListingPlan Plan { get; set; } = default!;
+        public global::G.MarketplaceListingPlan? Plan { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

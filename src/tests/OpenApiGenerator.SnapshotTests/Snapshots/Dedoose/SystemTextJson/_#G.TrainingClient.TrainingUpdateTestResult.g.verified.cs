@@ -9,24 +9,24 @@ namespace G
     {
         partial void PrepareTrainingUpdateTestResultArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string traineeUserId,
-            ref string testId,
-            ref string resultId,
+            ref string? token,
+            ref string? projectId,
+            ref string? traineeUserId,
+            ref string? testId,
+            ref string? resultId,
             ref double overallRating,
-            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp> traineeTagApps,
+            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps,
             ref bool completed);
         partial void PrepareTrainingUpdateTestResultRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string traineeUserId,
-            string testId,
-            string resultId,
+            string? token,
+            string? projectId,
+            string? traineeUserId,
+            string? testId,
+            string? resultId,
             double overallRating,
-            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp> traineeTagApps,
+            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps,
             bool completed);
         partial void ProcessTrainingUpdateTestResultResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,13 +51,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TrainingTestResult> TrainingUpdateTestResultAsync(
-            string token,
-            string projectId,
-            string traineeUserId,
-            string testId,
-            string resultId,
+            string? token,
+            string? projectId,
+            string? traineeUserId,
+            string? testId,
+            string? resultId,
             double overallRating,
-            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp> traineeTagApps,
+            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps,
             bool completed,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,7 +76,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/updatetestresult?projectId={projectId}&traineeUserId={traineeUserId}&testId={testId}&resultId={resultId}&overallRating={overallRating}&{string.Join("&", traineeTagApps.Select(static x => $"traineeTagApps={x}"))}&completed={completed}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/updatetestresult?projectId={projectId}&traineeUserId={traineeUserId}&testId={testId}&resultId={resultId}&overallRating={overallRating}&{string.Join("&", traineeTagApps?.Select(static x => $"traineeTagApps={x}") ?? global::System.Array.Empty<string>())}&completed={completed}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -11,20 +11,20 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             ref string rewardId,
-            ref global::G.GetCustomRewardRedemptionStatus status,
-            global::System.Collections.Generic.IList<string> id,
-            ref global::G.GetCustomRewardRedemptionSort sort,
-            ref string after,
+            ref global::G.GetCustomRewardRedemptionStatus? status,
+            global::System.Collections.Generic.IList<string>? id,
+            ref global::G.GetCustomRewardRedemptionSort? sort,
+            ref string? after,
             ref int first);
         partial void PrepareGetCustomRewardRedemptionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             string rewardId,
-            global::G.GetCustomRewardRedemptionStatus status,
-            global::System.Collections.Generic.IList<string> id,
-            global::G.GetCustomRewardRedemptionSort sort,
-            string after,
+            global::G.GetCustomRewardRedemptionStatus? status,
+            global::System.Collections.Generic.IList<string>? id,
+            global::G.GetCustomRewardRedemptionSort? sort,
+            string? after,
             int first);
         partial void ProcessGetCustomRewardRedemptionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,10 +53,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
             string broadcasterId,
             string rewardId,
-            global::G.GetCustomRewardRedemptionStatus status,
-            global::System.Collections.Generic.IList<string> id,
-            global::G.GetCustomRewardRedemptionSort sort,
-            string after,
+            global::G.GetCustomRewardRedemptionStatus? status,
+            global::System.Collections.Generic.IList<string>? id,
+            global::G.GetCustomRewardRedemptionSort? sort,
+            string? after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards/redemptions?broadcaster_id={broadcasterId}&reward_id={rewardId}&status={status}&{string.Join("&", id.Select(static x => $"id={x}"))}&sort={sort}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards/redemptions?broadcaster_id={broadcasterId}&reward_id={rewardId}&status={status}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&sort={sort}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

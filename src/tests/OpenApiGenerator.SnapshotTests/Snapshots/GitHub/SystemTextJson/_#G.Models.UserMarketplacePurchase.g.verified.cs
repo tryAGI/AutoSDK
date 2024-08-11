@@ -56,14 +56,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MarketplaceAccount Account { get; set; }
+        public required global::G.MarketplaceAccount? Account { get; set; }
 
         /// <summary>
         /// Marketplace Listing Plan
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MarketplaceListingPlan Plan { get; set; }
+        public required global::G.MarketplaceListingPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

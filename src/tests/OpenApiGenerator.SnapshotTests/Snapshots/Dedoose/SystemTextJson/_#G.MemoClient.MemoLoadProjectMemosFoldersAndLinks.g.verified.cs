@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareMemoLoadProjectMemosFoldersAndLinksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId);
+            ref string? token,
+            ref string? projectId);
         partial void PrepareMemoLoadProjectMemosFoldersAndLinksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId);
+            string? token,
+            string? projectId);
         partial void ProcessMemoLoadProjectMemosFoldersAndLinksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemosFoldersAndLinks> MemoLoadProjectMemosFoldersAndLinksAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

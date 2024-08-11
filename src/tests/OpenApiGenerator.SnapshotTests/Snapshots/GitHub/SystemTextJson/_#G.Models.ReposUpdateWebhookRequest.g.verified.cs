@@ -20,19 +20,19 @@ namespace G
         /// Default Value: [push]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<string?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<string>? Events { get; set; }
 
         /// <summary>
         /// Determines a list of events to be added to the list of events that the Hook triggers for.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_events")]
-        public global::System.Collections.Generic.IList<string?>? AddEvents { get; set; }
+        public global::System.Collections.Generic.IList<string>? AddEvents { get; set; }
 
         /// <summary>
         /// Determines a list of events to be removed from the list of events that the Hook triggers for.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove_events")]
-        public global::System.Collections.Generic.IList<string?>? RemoveEvents { get; set; }
+        public global::System.Collections.Generic.IList<string>? RemoveEvents { get; set; }
 
         /// <summary>
         /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>

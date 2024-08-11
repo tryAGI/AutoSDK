@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Description { get; set; }
+        public required global::G.WebhookRegistryPackageUpdatedRegistryPackageDescription? Description { get; set; }
 
         /// <summary>
         /// 
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Registry { get; set; }
+        public required global::G.WebhookRegistryPackageUpdatedRegistryPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 

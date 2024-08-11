@@ -131,13 +131,13 @@ namespace G
         /// A GitHub repository view for Classroom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("starter_code_repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleClassroomRepository StarterCodeRepository { get; set; } = default!;
+        public global::G.SimpleClassroomRepository? StarterCodeRepository { get; set; } = default!;
 
         /// <summary>
         /// A GitHub Classroom classroom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("classroom", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Classroom Classroom { get; set; } = default!;
+        public global::G.Classroom? Classroom { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUsersDeleteEmailForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest, global::System.Collections.Generic.IList<string>, string> request);
+            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request);
         partial void PrepareUsersDeleteEmailForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest, global::System.Collections.Generic.IList<string>, string> request);
+            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request);
         partial void ProcessUsersDeleteEmailForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,11 +30,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BasicError> UsersDeleteEmailForAuthenticatedUserAsync(
-            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest, global::System.Collections.Generic.IList<string>, string> request,
+            global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
             PrepareUsersDeleteEmailForAuthenticatedUserArguments(
@@ -44,11 +42,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/user/emails", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,18 +97,13 @@ namespace G
         /// Delete an email address for the authenticated user<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
-        /// <param name="emails">
-        /// Email addresses associated with the GitHub user account.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BasicError> UsersDeleteEmailForAuthenticatedUserAsync(
-            global::System.Collections.Generic.IList<string> emails,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest, global::System.Collections.Generic.IList<string>, string>
+            var request = new global::System.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?>
             {
-                Emails = emails,
             };
 
             return await UsersDeleteEmailForAuthenticatedUserAsync(

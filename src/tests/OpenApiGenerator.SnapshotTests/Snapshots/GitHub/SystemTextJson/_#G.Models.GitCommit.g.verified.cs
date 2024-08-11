@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GitCommitParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GitCommitParent> Parents { get; set; }
 
         /// <summary>
         /// 

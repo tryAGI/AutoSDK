@@ -8,24 +8,24 @@ namespace G
     {
         partial void PrepareTagUpdateTagLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string projectId,
-            ref string id,
-            ref string projectIDL,
-            ref string tag1IDL,
-            ref string tag2IDL,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? projectId,
+            ref string? id,
+            ref string? projectIDL,
+            ref string? tag1IDL,
+            ref string? tag2IDL,
             ref bool isParentChildLink);
         partial void PrepareTagUpdateTagLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
-            string tag1IDL,
-            string tag2IDL,
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
+            string? tag1IDL,
+            string? tag2IDL,
             bool isParentChildLink);
         partial void ProcessTagUpdateTagLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,13 +50,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagLink> TagUpdateTagLinkAsync(
-            string token,
-            string projectIdKey,
-            string projectId,
-            string id,
-            string projectIDL,
-            string tag1IDL,
-            string tag2IDL,
+            string? token,
+            string? projectIdKey,
+            string? projectId,
+            string? id,
+            string? projectIDL,
+            string? tag1IDL,
+            string? tag2IDL,
             bool isParentChildLink,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

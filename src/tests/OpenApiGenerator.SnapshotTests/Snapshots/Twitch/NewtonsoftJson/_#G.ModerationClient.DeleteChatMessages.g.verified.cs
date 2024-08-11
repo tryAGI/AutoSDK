@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             ref string moderatorId,
-            ref string messageId);
+            ref string? messageId);
         partial void PrepareDeleteChatMessagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             string moderatorId,
-            string messageId);
+            string? messageId);
         partial void ProcessDeleteChatMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         public async global::System.Threading.Tasks.Task DeleteChatMessagesAsync(
             string broadcasterId,
             string moderatorId,
-            string messageId,
+            string? messageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -36,28 +36,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_advisory")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; }
+        public required global::G.DependabotAlertSecurityAdvisory? SecurityAdvisory { get; set; }
 
         /// <summary>
         /// Details pertaining to one vulnerable version range for the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_vulnerability")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; }
+        public required global::G.DependabotAlertSecurityVulnerability? SecurityVulnerability { get; set; }
 
         /// <summary>
         /// The REST API URL of the alert resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public required string? Url { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HtmlUrl { get; set; }
+        public required string? HtmlUrl { get; set; }
 
         /// <summary>
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleRepository Repository { get; set; }
+        public required global::G.SimpleRepository? Repository { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

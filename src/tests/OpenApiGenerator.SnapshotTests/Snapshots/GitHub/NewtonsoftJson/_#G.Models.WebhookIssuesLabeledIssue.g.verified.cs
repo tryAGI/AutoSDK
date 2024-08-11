@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLabeledIssueAssignees?> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLabeledIssueAssignee2> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLabeledIssueLabels?>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesLabeledIssueLabel>? Labels { get; set; }
 
         /// <summary>
         /// 

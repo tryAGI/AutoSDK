@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareDescriptorGetProjectDescriptorPropsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId);
+            ref string? token,
+            ref string? projectId);
         partial void PrepareDescriptorGetProjectDescriptorPropsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId);
+            string? token,
+            string? projectId);
         partial void ProcessDescriptorGetProjectDescriptorPropsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectDescriptorProps> DescriptorGetProjectDescriptorPropsAsync(
-            string token,
-            string projectId,
+            string? token,
+            string? projectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

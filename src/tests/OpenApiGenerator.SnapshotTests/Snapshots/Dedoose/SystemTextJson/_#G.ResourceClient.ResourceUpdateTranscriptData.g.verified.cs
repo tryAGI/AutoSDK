@@ -9,29 +9,29 @@ namespace G
     {
         partial void PrepareResourceUpdateTranscriptDataArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string id,
-            ref string creator,
-            ref string projectId,
-            ref string resourceId,
-            ref string dataPath,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? id,
+            ref string? creator,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? dataPath,
             global::System.DateTime created,
-            ref string transcriptData,
-            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems);
+            ref string? transcriptData,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems);
         partial void PrepareResourceUpdateTranscriptDataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string id,
-            string creator,
-            string projectId,
-            string resourceId,
-            string dataPath,
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? creator,
+            string? projectId,
+            string? resourceId,
+            string? dataPath,
             global::System.DateTime created,
-            string transcriptData,
-            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems);
+            string? transcriptData,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems);
         partial void ProcessResourceUpdateTranscriptDataResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,17 +56,17 @@ namespace G
         /// <param name="syncItems"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceUpdateTranscriptDataAsync(
-            string token,
-            string projectIdKey,
-            string id,
-            string creator,
-            string projectId,
-            string resourceId,
-            string dataPath,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateTranscriptDataResponse> ResourceUpdateTranscriptDataAsync(
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? creator,
+            string? projectId,
+            string? resourceId,
+            string? dataPath,
             global::System.DateTime created,
-            string transcriptData,
-            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems,
+            string? transcriptData,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -86,7 +86,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/updatetranscriptdata?ProjectIdKey={projectIdKey}&Id={id}&Creator={creator}&ProjectId={projectId}&ResourceId={resourceId}&DataPath={dataPath}&Created={created:yyyy-MM-ddTHH:mm:ssZ}&transcriptData={transcriptData}&{string.Join("&", syncItems.Select(static x => $"syncItems={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/updatetranscriptdata?ProjectIdKey={projectIdKey}&Id={id}&Creator={creator}&ProjectId={projectId}&ResourceId={resourceId}&DataPath={dataPath}&Created={created:yyyy-MM-ddTHH:mm:ssZ}&transcriptData={transcriptData}&{string.Join("&", syncItems?.Select(static x => $"syncItems={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -138,7 +138,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResourceUpdateTranscriptDataResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

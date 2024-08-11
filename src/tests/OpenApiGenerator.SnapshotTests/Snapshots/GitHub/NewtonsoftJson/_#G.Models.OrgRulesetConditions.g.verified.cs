@@ -9,15 +9,15 @@ namespace G
     /// <summary>
     /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
     /// </summary>
-    public readonly struct OrgRulesetConditions : global::System.IEquatable<OrgRulesetConditions>
+    public readonly partial struct OrgRulesetConditions : global::System.IEquatable<OrgRulesetConditions>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value1 { get; init; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>? Value1 { get; init; }
 #else
-        public object? Value1 { get; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>? Value1 { get; }
 #endif
 
         /// <summary>
@@ -31,17 +31,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(object value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?> value) => new OrgRulesetConditions(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator object?(OrgRulesetConditions @this) => @this.Value1;
+        public static implicit operator global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>?(OrgRulesetConditions @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgRulesetConditions(object? value)
+        public OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>? value)
         {
             Value1 = value;
         }
@@ -50,9 +50,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>? Value2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>? Value2 { get; }
 #endif
 
         /// <summary>
@@ -66,17 +66,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(object value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?> value) => new OrgRulesetConditions(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator object?(OrgRulesetConditions @this) => @this.Value2;
+        public static implicit operator global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>?(OrgRulesetConditions @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgRulesetConditions(object? value)
+        public OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>? value)
         {
             Value2 = value;
         }
@@ -85,9 +85,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>? Value3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>? Value3 { get; }
 #endif
 
         /// <summary>
@@ -101,17 +101,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OrgRulesetConditions(object value) => new OrgRulesetConditions(value);
+        public static implicit operator OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?> value) => new OrgRulesetConditions(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator object?(OrgRulesetConditions @this) => @this.Value3;
+        public static implicit operator global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>?(OrgRulesetConditions @this) => @this.Value3;
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgRulesetConditions(object? value)
+        public OrgRulesetConditions(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>? value)
         {
             Value3 = value;
         }
@@ -120,9 +120,9 @@ namespace G
         /// 
         /// </summary>
         public OrgRulesetConditions(
-            object? value1,
-            object? value2,
-            object? value3
+            global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>? value1,
+            global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>? value2,
+            global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>? value3
             )
         {
             Value1 = value1;
@@ -155,11 +155,11 @@ namespace G
             var fields = new object?[]
             {
                 Value1,
-                typeof(object),
+                typeof(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>),
                 Value2,
-                typeof(object),
+                typeof(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>),
                 Value3,
-                typeof(object),
+                typeof(global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -175,9 +175,9 @@ namespace G
         public bool Equals(OrgRulesetConditions other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryNameTarget?>?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryIdTarget?>?>.Default.Equals(Value2, other.Value2) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.AllOf<global::G.RepositoryRulesetConditions?, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget?>?>.Default.Equals(Value3, other.Value3) 
                 ;
         }
 

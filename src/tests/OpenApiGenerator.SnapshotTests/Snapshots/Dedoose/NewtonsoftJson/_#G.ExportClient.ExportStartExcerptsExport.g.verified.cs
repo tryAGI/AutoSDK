@@ -8,9 +8,9 @@ namespace G
     {
         partial void PrepareExportStartExcerptsExportArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string fileExtension,
+            ref string? token,
+            ref string? projectId,
+            ref string? fileExtension,
             ref int exCopyMode,
             ref int sortMode,
             ref bool exRange,
@@ -24,14 +24,14 @@ namespace G
             ref bool tagWeight,
             ref bool tagRange,
             ref bool memos,
-            ref string symKeyEncrypted,
+            ref string? symKeyEncrypted,
             global::System.Collections.Generic.IList<string> request);
         partial void PrepareExportStartExcerptsExportRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string fileExtension,
+            string? token,
+            string? projectId,
+            string? fileExtension,
             int exCopyMode,
             int sortMode,
             bool exRange,
@@ -45,7 +45,7 @@ namespace G
             bool tagWeight,
             bool tagRange,
             bool memos,
-            string symKeyEncrypted,
+            string? symKeyEncrypted,
             global::System.Collections.Generic.IList<string> request);
         partial void ProcessExportStartExcerptsExportResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -80,9 +80,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ExportStartExcerptsExportAsync(
-            string token,
-            string projectId,
-            string fileExtension,
+            string? token,
+            string? projectId,
+            string? fileExtension,
             int exCopyMode,
             int sortMode,
             bool exRange,
@@ -96,7 +96,7 @@ namespace G
             bool tagWeight,
             bool tagRange,
             bool memos,
-            string symKeyEncrypted,
+            string? symKeyEncrypted,
             global::System.Collections.Generic.IList<string> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

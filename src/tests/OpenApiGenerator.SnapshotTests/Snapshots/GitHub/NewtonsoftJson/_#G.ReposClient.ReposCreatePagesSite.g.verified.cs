@@ -43,8 +43,6 @@ namespace G
             global::G.ReposCreatePagesSiteRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
             PrepareReposCreatePagesSiteArguments(
@@ -56,11 +54,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/pages", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -117,15 +115,25 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="buildType">
+        /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
+        /// </param>
+        /// <param name="source">
+        /// The source branch and directory used to publish your Pages site.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Page> ReposCreatePagesSiteAsync(
             string owner,
             string repo,
+            global::G.ReposCreatePagesSiteRequestBuildType? buildType = default,
+            global::G.ReposCreatePagesSiteRequestSource? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposCreatePagesSiteRequest
             {
+                BuildType = buildType,
+                Source = source,
             };
 
             return await ReposCreatePagesSiteAsync(

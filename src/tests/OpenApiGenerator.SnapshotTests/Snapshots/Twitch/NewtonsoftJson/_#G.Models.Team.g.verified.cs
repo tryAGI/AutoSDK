@@ -13,7 +13,7 @@ namespace G
         /// The list of team members.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("users", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.TeamUsers> Users { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.TeamUser> Users { get; set; } = default!;
 
         /// <summary>
         /// A URL to the team’s background image.

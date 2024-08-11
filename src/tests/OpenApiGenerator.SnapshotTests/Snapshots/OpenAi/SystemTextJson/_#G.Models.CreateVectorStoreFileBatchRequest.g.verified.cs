@@ -20,7 +20,7 @@ namespace G
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChunkingStrategyRequestParamJsonConverter))]
         public global::G.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
 
         /// <summary>

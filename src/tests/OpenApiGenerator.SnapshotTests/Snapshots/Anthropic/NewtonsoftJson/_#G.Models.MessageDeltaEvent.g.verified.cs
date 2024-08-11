@@ -13,13 +13,13 @@ namespace G
         /// A delta in a streaming message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDelta Delta { get; set; } = default!;
+        public global::G.MessageDelta? Delta { get; set; } = default!;
 
         /// <summary>
         /// The type of a streaming event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        public global::G.MessageStreamEventType? Type { get; set; } = default!;
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -33,7 +33,7 @@ namespace G
         /// from Claude.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDeltaUsage Usage { get; set; } = default!;
+        public global::G.MessageDeltaUsage? Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

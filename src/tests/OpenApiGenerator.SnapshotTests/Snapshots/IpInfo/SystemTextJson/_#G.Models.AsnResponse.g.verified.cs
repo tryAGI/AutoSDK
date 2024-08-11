@@ -84,19 +84,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peers")]
-        public global::System.Collections.Generic.IList<string?>? Peers { get; set; }
+        public global::System.Collections.Generic.IList<string>? Peers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstreams")]
-        public global::System.Collections.Generic.IList<string?>? Upstreams { get; set; }
+        public global::System.Collections.Generic.IList<string>? Upstreams { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("downstreams")]
-        public global::System.Collections.Generic.IList<string?>? Downstreams { get; set; }
+        public global::System.Collections.Generic.IList<string>? Downstreams { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

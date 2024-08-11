@@ -133,7 +133,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CheckAutoModStatusResponse> CheckAutomodStatusAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyData> data,
+            global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyDataItem> data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CheckAutoModStatusBody

@@ -10,27 +10,27 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string toolName,
+            ref string? toolName,
             ref string? toolGuid,
             ref int page,
             ref int perPage,
-            ref string @ref,
-            ref string sarifId,
-            ref global::G.CodeScanningListRecentAnalysesDirection direction,
-            ref global::G.CodeScanningListRecentAnalysesSort sort);
+            ref string? @ref,
+            ref string? sarifId,
+            ref global::G.CodeScanningListRecentAnalysesDirection? direction,
+            ref global::G.CodeScanningListRecentAnalysesSort? sort);
         partial void PrepareCodeScanningListRecentAnalysesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string toolName,
+            string? toolName,
             string? toolGuid,
             int page,
             int perPage,
-            string @ref,
-            string sarifId,
-            global::G.CodeScanningListRecentAnalysesDirection direction,
-            global::G.CodeScanningListRecentAnalysesSort sort);
+            string? @ref,
+            string? sarifId,
+            global::G.CodeScanningListRecentAnalysesDirection? direction,
+            global::G.CodeScanningListRecentAnalysesSort? sort);
         partial void ProcessCodeScanningListRecentAnalysesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -88,14 +88,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>> CodeScanningListRecentAnalysesAsync(
             string owner,
             string repo,
-            string toolName,
+            string? toolName,
             string? toolGuid,
             int page,
             int perPage,
-            string @ref,
-            string sarifId,
-            global::G.CodeScanningListRecentAnalysesDirection direction,
-            global::G.CodeScanningListRecentAnalysesSort sort,
+            string? @ref,
+            string? sarifId,
+            global::G.CodeScanningListRecentAnalysesDirection? direction,
+            global::G.CodeScanningListRecentAnalysesSort? sort,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

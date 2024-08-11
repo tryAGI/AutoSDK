@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareGetGamesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> name,
-            global::System.Collections.Generic.IList<string> igdbId);
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? name,
+            global::System.Collections.Generic.IList<string>? igdbId);
         partial void PrepareGetGamesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> name,
-            global::System.Collections.Generic.IList<string> igdbId);
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? name,
+            global::System.Collections.Generic.IList<string>? igdbId);
         partial void ProcessGetGamesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,9 +40,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGamesResponse> GetGamesAsync(
-            global::System.Collections.Generic.IList<string> id,
-            global::System.Collections.Generic.IList<string> name,
-            global::System.Collections.Generic.IList<string> igdbId,
+            global::System.Collections.Generic.IList<string>? id,
+            global::System.Collections.Generic.IList<string>? name,
+            global::System.Collections.Generic.IList<string>? igdbId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -55,7 +55,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/games?{string.Join("&", id.Select(static x => $"id={x}"))}&{string.Join("&", name.Select(static x => $"name={x}"))}&{string.Join("&", igdbId.Select(static x => $"igdbId={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/games?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", name?.Select(static x => $"name={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", igdbId?.Select(static x => $"igdbId={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

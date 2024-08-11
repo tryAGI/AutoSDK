@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GetUnbanRequestsResponseData> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GetUnbanRequestsResponseDataItem> Data { get; set; }
 
         /// <summary>
         /// Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.

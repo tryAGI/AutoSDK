@@ -173,17 +173,17 @@ namespace G
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
-            object? metadata = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::G.CreateRunRequestMetadata? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::G.TruncationObject? truncationStrategy = default,
-            global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? toolChoice = default,
+            global::G.AssistantsApiToolChoiceOption? toolChoice = default,
             bool? parallelToolCalls = default,
-            global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.ResponseFormatText?, global::G.ResponseFormatJsonObject?, global::G.ResponseFormatJsonSchema?>? responseFormat = default,
+            global::G.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRunRequest

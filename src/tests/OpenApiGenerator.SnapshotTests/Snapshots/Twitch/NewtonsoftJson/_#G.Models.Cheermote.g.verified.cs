@@ -19,7 +19,7 @@ namespace G
         /// A list of tier levels that the Cheermote supports. Each tier identifies the range of Bits that you can cheer at that tier level and an image that graphically identifies the tier level.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CheermoteTiers> Tiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CheermoteTier> Tiers { get; set; } = default!;
 
         /// <summary>
         /// The type of Cheermote. Possible values are:  <br/>

@@ -73,7 +73,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Creator { get; set; } = default!;
+        public global::G.SimpleUser? Creator { get; set; } = default!;
 
         /// <summary>
         /// 

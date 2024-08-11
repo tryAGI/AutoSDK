@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifiers>? Identifiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? Identifiers { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -128,13 +128,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwes>? Cwes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; } = default!;
 
         /// <summary>
         /// The users who contributed to the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credits", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredits>? Credits { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? Credits { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::G.ReposGetClonesPer per);
+            ref global::G.ReposGetClonesPer? per);
         partial void PrepareReposGetClonesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::G.ReposGetClonesPer per);
+            global::G.ReposGetClonesPer? per);
         partial void ProcessReposGetClonesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CloneTraffic> ReposGetClonesAsync(
             string owner,
             string repo,
-            global::G.ReposGetClonesPer per,
+            global::G.ReposGetClonesPer? per,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

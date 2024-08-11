@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareUserUpdateUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string firstName,
-            ref string lastName,
-            ref string phone,
-            ref string email,
-            ref string password);
+            ref string? token,
+            ref string? userId,
+            ref string? firstName,
+            ref string? lastName,
+            ref string? phone,
+            ref string? email,
+            ref string? password);
         partial void PrepareUserUpdateUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string firstName,
-            string lastName,
-            string phone,
-            string email,
-            string password);
+            string? token,
+            string? userId,
+            string? firstName,
+            string? lastName,
+            string? phone,
+            string? email,
+            string? password);
         partial void ProcessUserUpdateUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,14 +46,14 @@ namespace G
         /// <param name="password"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UserUpdateUserAsync(
-            string token,
-            string userId,
-            string firstName,
-            string lastName,
-            string phone,
-            string email,
-            string password,
+        public async global::System.Threading.Tasks.Task<global::G.UserUpdateUserResponse> UserUpdateUserAsync(
+            string? token,
+            string? userId,
+            string? firstName,
+            string? lastName,
+            string? phone,
+            string? email,
+            string? password,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserUpdateUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

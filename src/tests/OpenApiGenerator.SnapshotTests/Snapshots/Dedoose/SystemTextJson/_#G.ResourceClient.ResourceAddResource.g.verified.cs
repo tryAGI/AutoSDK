@@ -8,24 +8,24 @@ namespace G
     {
         partial void PrepareResourceAddResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string title,
-            ref string description,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? title,
+            ref string? description,
             ref int resourceType,
-            ref string fileURL,
+            ref string? fileURL,
             ref int length);
         partial void PrepareResourceAddResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
             int resourceType,
-            string fileURL,
+            string? fileURL,
             int length);
         partial void ProcessResourceAddResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,13 +50,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceAddResourceAsync(
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
             int resourceType,
-            string fileURL,
+            string? fileURL,
             int length,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

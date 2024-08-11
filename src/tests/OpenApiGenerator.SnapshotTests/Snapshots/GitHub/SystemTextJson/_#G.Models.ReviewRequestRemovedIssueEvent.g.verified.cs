@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Actor { get; set; }
+        public required global::G.SimpleUser? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_requester")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser ReviewRequester { get; set; }
+        public required global::G.SimpleUser? ReviewRequester { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.

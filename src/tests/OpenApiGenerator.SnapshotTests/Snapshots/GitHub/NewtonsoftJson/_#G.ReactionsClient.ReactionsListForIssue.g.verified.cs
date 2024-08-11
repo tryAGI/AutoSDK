@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int issueNumber,
-            ref global::G.ReactionsListForIssueContent content,
+            ref global::G.ReactionsListForIssueContent? content,
             ref int perPage,
             ref int page);
         partial void PrepareReactionsListForIssueRequest(
@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
-            global::G.ReactionsListForIssueContent content,
+            global::G.ReactionsListForIssueContent? content,
             int perPage,
             int page);
         partial void ProcessReactionsListForIssueResponse(
@@ -52,7 +52,7 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
-            global::G.ReactionsListForIssueContent content,
+            global::G.ReactionsListForIssueContent? content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

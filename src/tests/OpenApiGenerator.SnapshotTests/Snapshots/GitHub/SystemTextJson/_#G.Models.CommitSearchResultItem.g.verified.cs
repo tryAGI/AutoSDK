@@ -63,14 +63,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParents> Parents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParent> Parents { get; set; }
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MinimalRepository Repository { get; set; }
+        public required global::G.MinimalRepository? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_matches")]
-        public global::System.Collections.Generic.IList<global::G.CommitSearchResultItemTextMatches?>? TextMatches { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? TextMatches { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareTrainingStartExportTestResultJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string testResultId,
-            ref string fileExtension,
-            ref string cryptoKey);
+            ref string? token,
+            ref string? projectId,
+            ref string? testResultId,
+            ref string? fileExtension,
+            ref string? cryptoKey);
         partial void PrepareTrainingStartExportTestResultJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string testResultId,
-            string fileExtension,
-            string cryptoKey);
+            string? token,
+            string? projectId,
+            string? testResultId,
+            string? fileExtension,
+            string? cryptoKey);
         partial void ProcessTrainingStartExportTestResultJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TrainingStartExportTestResultJobAsync(
-            string token,
-            string projectId,
-            string testResultId,
-            string fileExtension,
-            string cryptoKey,
+            string? token,
+            string? projectId,
+            string? testResultId,
+            string? fileExtension,
+            string? cryptoKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

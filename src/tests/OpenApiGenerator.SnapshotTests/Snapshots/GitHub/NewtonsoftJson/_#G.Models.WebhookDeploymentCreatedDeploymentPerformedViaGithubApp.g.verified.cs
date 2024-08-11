@@ -25,7 +25,7 @@ namespace G
         /// The list of events for the GitHub app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvent>? Events { get; set; }
 
         /// <summary>
         /// 

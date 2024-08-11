@@ -9,14 +9,14 @@ namespace G
         partial void PrepareTeamsListDiscussionsLegacyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int teamId,
-            ref global::G.TeamsListDiscussionsLegacyDirection direction,
+            ref global::G.TeamsListDiscussionsLegacyDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareTeamsListDiscussionsLegacyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int teamId,
-            global::G.TeamsListDiscussionsLegacyDirection direction,
+            global::G.TeamsListDiscussionsLegacyDirection? direction,
             int perPage,
             int page);
         partial void ProcessTeamsListDiscussionsLegacyResponse(
@@ -49,7 +49,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussion>> TeamsListDiscussionsLegacyAsync(
             int teamId,
-            global::G.TeamsListDiscussionsLegacyDirection direction,
+            global::G.TeamsListDiscussionsLegacyDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -45,8 +45,6 @@ namespace G
             global::G.CodeScanningCreateVariantAnalysisRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: _httpClient);
             PrepareCodeScanningCreateVariantAnalysisArguments(
@@ -58,11 +56,11 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/codeql/variant-analyses", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -121,15 +119,40 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="language">
+        /// The language targeted by the CodeQL query
+        /// </param>
+        /// <param name="queryPack">
+        /// A Base64-encoded tarball containing a CodeQL query and all its dependencies
+        /// </param>
+        /// <param name="repositories">
+        /// List of repository names (in the form `owner/repo-name`) to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+        /// </param>
+        /// <param name="repositoryLists">
+        /// List of repository lists to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+        /// </param>
+        /// <param name="repositoryOwners">
+        /// List of organization or user names whose repositories the query should be run against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodeScanningVariantAnalysis> CodeScanningCreateVariantAnalysisAsync(
             string owner,
             string repo,
+            global::G.CodeScanningVariantAnalysisLanguage? language,
+            string queryPack,
+            global::System.Collections.Generic.IList<string>? repositories = default,
+            global::System.Collections.Generic.IList<string>? repositoryLists = default,
+            global::System.Collections.Generic.IList<string>? repositoryOwners = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CodeScanningCreateVariantAnalysisRequest
             {
+                Language = language,
+                QueryPack = queryPack,
+                Repositories = repositories,
+                RepositoryLists = repositoryLists,
+                RepositoryOwners = repositoryOwners,
             };
 
             return await CodeScanningCreateVariantAnalysisAsync(

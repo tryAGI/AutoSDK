@@ -9,30 +9,30 @@ namespace G
         partial void PrepareSecretScanningListAlertsForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.SecretScanningListAlertsForOrgState state,
-            ref string secretType,
-            ref string resolution,
-            ref global::G.SecretScanningListAlertsForOrgSort sort,
-            ref global::G.SecretScanningListAlertsForOrgDirection direction,
+            ref global::G.SecretScanningListAlertsForOrgState? state,
+            ref string? secretType,
+            ref string? resolution,
+            ref global::G.SecretScanningListAlertsForOrgSort? sort,
+            ref global::G.SecretScanningListAlertsForOrgDirection? direction,
             ref int page,
             ref int perPage,
-            ref string before,
-            ref string after,
-            ref string validity);
+            ref string? before,
+            ref string? after,
+            ref string? validity);
         partial void PrepareSecretScanningListAlertsForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.SecretScanningListAlertsForOrgState state,
-            string secretType,
-            string resolution,
-            global::G.SecretScanningListAlertsForOrgSort sort,
-            global::G.SecretScanningListAlertsForOrgDirection direction,
+            global::G.SecretScanningListAlertsForOrgState? state,
+            string? secretType,
+            string? resolution,
+            global::G.SecretScanningListAlertsForOrgSort? sort,
+            global::G.SecretScanningListAlertsForOrgDirection? direction,
             int page,
             int perPage,
-            string before,
-            string after,
-            string validity);
+            string? before,
+            string? after,
+            string? validity);
         partial void ProcessSecretScanningListAlertsForOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,16 +71,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>> SecretScanningListAlertsForOrgAsync(
             string org,
-            global::G.SecretScanningListAlertsForOrgState state,
-            string secretType,
-            string resolution,
-            global::G.SecretScanningListAlertsForOrgSort sort,
-            global::G.SecretScanningListAlertsForOrgDirection direction,
+            global::G.SecretScanningListAlertsForOrgState? state,
+            string? secretType,
+            string? resolution,
+            global::G.SecretScanningListAlertsForOrgSort? sort,
+            global::G.SecretScanningListAlertsForOrgDirection? direction,
             int page,
             int perPage,
-            string before,
-            string after,
-            string validity,
+            string? before,
+            string? after,
+            string? validity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

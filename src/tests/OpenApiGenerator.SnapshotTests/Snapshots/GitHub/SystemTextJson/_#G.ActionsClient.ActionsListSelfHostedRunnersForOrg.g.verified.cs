@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareActionsListSelfHostedRunnersForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string name,
+            ref string? name,
             ref string org,
             ref int perPage,
             ref int page);
         partial void PrepareActionsListSelfHostedRunnersForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string name,
+            string? name,
             string org,
             int perPage,
             int page);
@@ -45,7 +45,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ActionsListSelfHostedRunnersForOrgResponse> ActionsListSelfHostedRunnersForOrgAsync(
-            string name,
+            string? name,
             string org,
             int perPage,
             int page,

@@ -34,7 +34,7 @@ namespace G
         /// Default value of the property
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_value")]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? DefaultValue { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? DefaultValue { get; set; }
 
         /// <summary>
         /// Short description of the property
@@ -47,7 +47,7 @@ namespace G
         /// The property can have up to 200 allowed values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_values")]
-        public global::System.Collections.Generic.IList<string?>? AllowedValues { get; set; }
+        public global::System.Collections.Generic.IList<string>? AllowedValues { get; set; }
 
         /// <summary>
         /// Who can edit the values of the property<br/>

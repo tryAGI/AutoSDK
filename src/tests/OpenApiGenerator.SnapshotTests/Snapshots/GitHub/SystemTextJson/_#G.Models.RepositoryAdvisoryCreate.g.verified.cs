@@ -34,19 +34,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilities> Vulnerabilities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilitie> Vulnerabilities { get; set; }
 
         /// <summary>
         /// A list of Common Weakness Enumeration (CWE) IDs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwe_ids")]
-        public global::System.Collections.Generic.IList<string?>? CweIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? CweIds { get; set; }
 
         /// <summary>
         /// A list of users receiving credit for their participation in the security advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredits?>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredit>? Credits { get; set; }
 
         /// <summary>
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.

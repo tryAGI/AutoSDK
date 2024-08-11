@@ -22,7 +22,7 @@ namespace G
         /// Names and content for the files that make up the gist
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Files { get; set; } = default!;
+        public global::G.GistsCreateRequestFiles Files { get; set; } = default!;
 
         /// <summary>
         /// 

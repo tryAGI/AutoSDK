@@ -25,7 +25,7 @@ namespace G
         /// Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recent_folders")]
-        public global::System.Collections.Generic.IList<string?>? RecentFolders { get; set; }
+        public global::System.Collections.Generic.IList<string>? RecentFolders { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

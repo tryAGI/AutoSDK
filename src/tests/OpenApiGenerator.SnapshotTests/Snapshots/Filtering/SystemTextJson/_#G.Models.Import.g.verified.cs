@@ -107,7 +107,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_choices")]
-        public global::System.Collections.Generic.IList<global::G.ImportProjectChoices?>? ProjectChoices { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImportProjectChoice>? ProjectChoices { get; set; }
 
         /// <summary>
         /// 

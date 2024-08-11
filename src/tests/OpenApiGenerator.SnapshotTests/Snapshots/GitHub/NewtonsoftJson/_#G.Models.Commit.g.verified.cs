@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CommitCommit Commit1 { get; set; } = default!;
+        public global::G.CommitCommit1 Commit1 { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CommitParents> Parents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CommitParent> Parents { get; set; } = default!;
 
         /// <summary>
         /// 

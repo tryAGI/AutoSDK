@@ -9,17 +9,17 @@ namespace G
     {
         partial void PrepareMemoStartCopyMemosToDocumentsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            global::System.Collections.Generic.IList<string> memoIds);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            global::System.Collections.Generic.IList<string>? memoIds);
         partial void PrepareMemoStartCopyMemosToDocumentsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            global::System.Collections.Generic.IList<string> memoIds);
+            string? token,
+            string? projectId,
+            string? userId,
+            global::System.Collections.Generic.IList<string>? memoIds);
         partial void ProcessMemoStartCopyMemosToDocumentsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,11 +38,11 @@ namespace G
         /// <param name="memoIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> MemoStartCopyMemosToDocumentsJobAsync(
-            string token,
-            string projectId,
-            string userId,
-            global::System.Collections.Generic.IList<string> memoIds,
+        public async global::System.Threading.Tasks.Task<global::G.MemoStartCopyMemosToDocumentsJobResponse> MemoStartCopyMemosToDocumentsJobAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            global::System.Collections.Generic.IList<string>? memoIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -56,7 +56,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startcopymemostodocumentsjob?projectId={projectId}&userId={userId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startcopymemostodocumentsjob?projectId={projectId}&userId={userId}&{string.Join("&", memoIds?.Select(static x => $"memoIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoStartCopyMemosToDocumentsJobResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

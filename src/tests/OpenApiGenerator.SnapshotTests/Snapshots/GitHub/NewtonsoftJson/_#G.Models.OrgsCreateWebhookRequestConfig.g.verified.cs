@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrgsCreateWebhookRequestConfig.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -16,7 +14,7 @@ namespace G
         /// Example: https://example.com/webhook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; } = default!;
 
         /// <summary>
         /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>
@@ -36,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure_ssl")]
-        public global::System.OneOf<string?, double>? InsecureSsl { get; set; }
+        public global::G.WebhookConfigInsecureSsl? InsecureSsl { get; set; }
 
         /// <summary>
         /// Example: "kdaigle"

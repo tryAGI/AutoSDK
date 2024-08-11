@@ -12,7 +12,7 @@ namespace G
             ref string moderatorId,
             ref string sessionId,
             ref string sourceSlotId,
-            ref string destinationSlotId);
+            ref string? destinationSlotId);
         partial void PrepareUpdateGuestStarSlotRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +20,7 @@ namespace G
             string moderatorId,
             string sessionId,
             string sourceSlotId,
-            string destinationSlotId);
+            string? destinationSlotId);
         partial void ProcessUpdateGuestStarSlotResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace G
             string moderatorId,
             string sessionId,
             string sourceSlotId,
-            string destinationSlotId,
+            string? destinationSlotId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -58,7 +58,7 @@ namespace G
                 destinationSlotId: ref destinationSlotId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/slot?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&source_slot_id={sourceSlotId}&destination_slot_id={destinationSlotId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(

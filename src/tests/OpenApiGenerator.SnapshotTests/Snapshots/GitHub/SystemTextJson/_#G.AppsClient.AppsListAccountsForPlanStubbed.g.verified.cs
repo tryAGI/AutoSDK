@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAppsListAccountsForPlanStubbedArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int planId,
-            ref global::G.AppsListAccountsForPlanStubbedSort sort,
-            ref global::G.AppsListAccountsForPlanStubbedDirection direction,
+            ref global::G.AppsListAccountsForPlanStubbedSort? sort,
+            ref global::G.AppsListAccountsForPlanStubbedDirection? direction,
             ref int perPage,
             ref int page);
         partial void PrepareAppsListAccountsForPlanStubbedRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int planId,
-            global::G.AppsListAccountsForPlanStubbedSort sort,
-            global::G.AppsListAccountsForPlanStubbedDirection direction,
+            global::G.AppsListAccountsForPlanStubbedSort? sort,
+            global::G.AppsListAccountsForPlanStubbedDirection? direction,
             int perPage,
             int page);
         partial void ProcessAppsListAccountsForPlanStubbedResponse(
@@ -50,8 +50,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MarketplacePurchase>> AppsListAccountsForPlanStubbedAsync(
             int planId,
-            global::G.AppsListAccountsForPlanStubbedSort sort,
-            global::G.AppsListAccountsForPlanStubbedDirection direction,
+            global::G.AppsListAccountsForPlanStubbedSort? sort,
+            global::G.AppsListAccountsForPlanStubbedDirection? direction,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

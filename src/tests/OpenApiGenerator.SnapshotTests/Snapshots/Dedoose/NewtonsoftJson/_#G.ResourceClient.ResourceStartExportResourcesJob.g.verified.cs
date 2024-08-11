@@ -9,17 +9,17 @@ namespace G
     {
         partial void PrepareResourceStartExportResourcesJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            ref string? token,
+            ref string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             ref bool includeDescriptorInfo,
             ref bool includeCodeCounts);
         partial void PrepareResourceStartExportResourcesJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             bool includeDescriptorInfo,
             bool includeCodeCounts);
         partial void ProcessResourceStartExportResourcesJobResponse(
@@ -42,9 +42,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartExportResourcesJobAsync(
-            string token,
-            string projectId,
-            global::System.Collections.Generic.IList<string> resourceIds,
+            string? token,
+            string? projectId,
+            global::System.Collections.Generic.IList<string>? resourceIds,
             bool includeDescriptorInfo,
             bool includeCodeCounts,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -61,7 +61,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startexportresourcesjob?projectId={projectId}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&includeDescriptorInfo={includeDescriptorInfo}&includeCodeCounts={includeCodeCounts}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startexportresourcesjob?projectId={projectId}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}&includeDescriptorInfo={includeDescriptorInfo}&includeCodeCounts={includeCodeCounts}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

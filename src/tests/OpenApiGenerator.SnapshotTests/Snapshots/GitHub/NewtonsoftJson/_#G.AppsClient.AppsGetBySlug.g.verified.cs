@@ -29,7 +29,7 @@ namespace G
         /// <param name="appSlug"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Integration?> AppsGetBySlugAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Integration> AppsGetBySlugAsync(
             string appSlug,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

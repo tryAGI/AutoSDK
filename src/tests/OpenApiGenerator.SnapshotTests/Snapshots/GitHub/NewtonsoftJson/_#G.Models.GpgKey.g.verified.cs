@@ -43,13 +43,13 @@ namespace G
         /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emails", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GpgKeyEmails> Emails { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GpgKeyEmail> Emails { get; set; } = default!;
 
         /// <summary>
         /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subkeys", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GpgKeySubkeys> Subkeys { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GpgKeySubkey> Subkeys { get; set; } = default!;
 
         /// <summary>
         /// Example: true

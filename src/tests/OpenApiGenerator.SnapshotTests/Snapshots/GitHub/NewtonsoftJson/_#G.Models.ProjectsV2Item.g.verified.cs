@@ -37,7 +37,7 @@ namespace G
         /// The type of content tracked in a project item
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectsV2ItemContentType ContentType { get; set; } = default!;
+        public global::G.ProjectsV2ItemContentType? ContentType { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.

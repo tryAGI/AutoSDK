@@ -13,7 +13,7 @@ namespace G
         /// The response headers received when the delivery was made.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("headers", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Headers { get; set; } = default!;
+        public global::G.HookDeliveryResponseHeaders? Headers { get; set; } = default!;
 
         /// <summary>
         /// The response payload received.

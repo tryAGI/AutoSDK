@@ -9,21 +9,21 @@ namespace G
     {
         partial void PrepareDescriptorImportFieldsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            global::System.Collections.Generic.IList<global::G.FieldInfo> fieldInfos,
-            ref string existingSetId,
-            ref string newSetTitle);
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
+            ref string? existingSetId,
+            ref string? newSetTitle);
         partial void PrepareDescriptorImportFieldsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            global::System.Collections.Generic.IList<global::G.FieldInfo> fieldInfos,
-            string existingSetId,
-            string newSetTitle);
+            string? token,
+            string? projectId,
+            string? userId,
+            global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
+            string? existingSetId,
+            string? newSetTitle);
         partial void ProcessDescriptorImportFieldsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,13 +44,13 @@ namespace G
         /// <param name="newSetTitle"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DescriptorImportFieldsAsync(
-            string token,
-            string projectId,
-            string userId,
-            global::System.Collections.Generic.IList<global::G.FieldInfo> fieldInfos,
-            string existingSetId,
-            string newSetTitle,
+        public async global::System.Threading.Tasks.Task<global::G.DescriptorImportFieldsResponse> DescriptorImportFieldsAsync(
+            string? token,
+            string? projectId,
+            string? userId,
+            global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
+            string? existingSetId,
+            string? newSetTitle,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -66,7 +66,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/importfields?projectId={projectId}&userId={userId}&{string.Join("&", fieldInfos.Select(static x => $"fieldInfos={x}"))}&existingSetId={existingSetId}&newSetTitle={newSetTitle}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/importfields?projectId={projectId}&userId={userId}&{string.Join("&", fieldInfos?.Select(static x => $"fieldInfos={x}") ?? global::System.Array.Empty<string>())}&existingSetId={existingSetId}&newSetTitle={newSetTitle}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -114,7 +114,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorImportFieldsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

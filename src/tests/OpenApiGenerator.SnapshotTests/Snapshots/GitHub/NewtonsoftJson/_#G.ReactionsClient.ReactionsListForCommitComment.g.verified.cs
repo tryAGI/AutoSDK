@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int commentId,
-            ref global::G.ReactionsListForCommitCommentContent content,
+            ref global::G.ReactionsListForCommitCommentContent? content,
             ref int perPage,
             ref int page);
         partial void PrepareReactionsListForCommitCommentRequest(
@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             int commentId,
-            global::G.ReactionsListForCommitCommentContent content,
+            global::G.ReactionsListForCommitCommentContent? content,
             int perPage,
             int page);
         partial void ProcessReactionsListForCommitCommentResponse(
@@ -52,7 +52,7 @@ namespace G
             string owner,
             string repo,
             int commentId,
-            global::G.ReactionsListForCommitCommentContent content,
+            global::G.ReactionsListForCommitCommentContent? content,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

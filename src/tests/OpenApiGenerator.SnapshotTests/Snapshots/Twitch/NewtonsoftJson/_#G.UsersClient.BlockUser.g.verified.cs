@@ -9,14 +9,14 @@ namespace G
         partial void PrepareBlockUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string targetUserId,
-            ref global::G.BlockUserSourceContext sourceContext,
-            ref global::G.BlockUserReason reason);
+            ref global::G.BlockUserSourceContext? sourceContext,
+            ref global::G.BlockUserReason? reason);
         partial void PrepareBlockUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string targetUserId,
-            global::G.BlockUserSourceContext sourceContext,
-            global::G.BlockUserReason reason);
+            global::G.BlockUserSourceContext? sourceContext,
+            global::G.BlockUserReason? reason);
         partial void ProcessBlockUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,8 +35,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task BlockUserAsync(
             string targetUserId,
-            global::G.BlockUserSourceContext sourceContext,
-            global::G.BlockUserReason reason,
+            global::G.BlockUserSourceContext? sourceContext,
+            global::G.BlockUserReason? reason,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

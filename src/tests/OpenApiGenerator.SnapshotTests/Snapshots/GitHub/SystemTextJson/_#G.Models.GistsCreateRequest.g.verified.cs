@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Files { get; set; }
+        public required global::G.GistsCreateRequestFiles Files { get; set; }
 
         /// <summary>
         /// 

@@ -8,24 +8,24 @@ namespace G
     {
         partial void PrepareResourceDeleteTranscriptArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIdKey,
-            ref string id,
-            ref string creator,
-            ref string projectId,
-            ref string resourceId,
-            ref string dataPath,
+            ref string? token,
+            ref string? projectIdKey,
+            ref string? id,
+            ref string? creator,
+            ref string? projectId,
+            ref string? resourceId,
+            ref string? dataPath,
             global::System.DateTime created);
         partial void PrepareResourceDeleteTranscriptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIdKey,
-            string id,
-            string creator,
-            string projectId,
-            string resourceId,
-            string dataPath,
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? creator,
+            string? projectId,
+            string? resourceId,
+            string? dataPath,
             global::System.DateTime created);
         partial void ProcessResourceDeleteTranscriptResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,14 +49,14 @@ namespace G
         /// <param name="created"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceDeleteTranscriptAsync(
-            string token,
-            string projectIdKey,
-            string id,
-            string creator,
-            string projectId,
-            string resourceId,
-            string dataPath,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceDeleteTranscriptResponse> ResourceDeleteTranscriptAsync(
+            string? token,
+            string? projectIdKey,
+            string? id,
+            string? creator,
+            string? projectId,
+            string? resourceId,
+            string? dataPath,
             global::System.DateTime created,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -125,7 +125,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResourceDeleteTranscriptResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

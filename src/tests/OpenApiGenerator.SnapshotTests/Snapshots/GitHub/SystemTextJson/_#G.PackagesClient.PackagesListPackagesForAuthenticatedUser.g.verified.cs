@@ -9,14 +9,14 @@ namespace G
         partial void PreparePackagesListPackagesForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.PackagesListPackagesForAuthenticatedUserPackageType packageType,
-            ref global::G.PackagesListPackagesForAuthenticatedUserVisibility visibility,
+            ref global::G.PackagesListPackagesForAuthenticatedUserVisibility? visibility,
             ref int page,
             ref int perPage);
         partial void PreparePackagesListPackagesForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesListPackagesForAuthenticatedUserPackageType packageType,
-            global::G.PackagesListPackagesForAuthenticatedUserVisibility visibility,
+            global::G.PackagesListPackagesForAuthenticatedUserVisibility? visibility,
             int page,
             int perPage);
         partial void ProcessPackagesListPackagesForAuthenticatedUserResponse(
@@ -45,7 +45,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForAuthenticatedUserAsync(
             global::G.PackagesListPackagesForAuthenticatedUserPackageType packageType,
-            global::G.PackagesListPackagesForAuthenticatedUserVisibility visibility,
+            global::G.PackagesListPackagesForAuthenticatedUserVisibility? visibility,
             int page,
             int perPage,
             global::System.Threading.CancellationToken cancellationToken = default)

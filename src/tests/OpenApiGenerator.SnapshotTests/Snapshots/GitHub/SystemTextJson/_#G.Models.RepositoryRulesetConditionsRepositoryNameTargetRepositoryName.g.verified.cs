@@ -13,13 +13,13 @@ namespace G
         /// Array of repository names or patterns to include. One of these patterns must match for the condition to pass. Also accepts `~ALL` to include all repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
-        public global::System.Collections.Generic.IList<string?>? Include { get; set; }
+        public global::System.Collections.Generic.IList<string>? Include { get; set; }
 
         /// <summary>
         /// Array of repository names or patterns to exclude. The condition will not pass if any of these patterns match.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
-        public global::System.Collections.Generic.IList<string?>? Exclude { get; set; }
+        public global::System.Collections.Generic.IList<string>? Exclude { get; set; }
 
         /// <summary>
         /// Whether renaming of target repositories is prevented.

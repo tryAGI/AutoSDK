@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string currentUserId,
-            ref string excerptId,
+            ref string? token,
+            ref string? projectId,
+            ref string? currentUserId,
+            ref string? excerptId,
             ref int newStart,
             ref int newEnd);
         partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string currentUserId,
-            string excerptId,
+            string? token,
+            string? projectId,
+            string? currentUserId,
+            string? excerptId,
             int newStart,
             int newEnd);
         partial void ProcessExcerptUpdatePDFSwfImageExcerptRegionResponse(
@@ -44,10 +44,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdatePDFSwfImageExcerptRegionAsync(
-            string token,
-            string projectId,
-            string currentUserId,
-            string excerptId,
+            string? token,
+            string? projectId,
+            string? currentUserId,
+            string? excerptId,
             int newStart,
             int newEnd,
             global::System.Threading.CancellationToken cancellationToken = default)

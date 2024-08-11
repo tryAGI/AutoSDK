@@ -9,19 +9,19 @@ namespace G
     {
         partial void PrepareDescriptorStartExportDescriptorsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string setId,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            ref string fileExtension);
+            ref string? token,
+            ref string? projectId,
+            ref string? setId,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            ref string? fileExtension);
         partial void PrepareDescriptorStartExportDescriptorsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string setId,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            string fileExtension);
+            string? token,
+            string? projectId,
+            string? setId,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            string? fileExtension);
         partial void ProcessDescriptorStartExportDescriptorsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,11 +42,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DescriptorStartExportDescriptorsJobAsync(
-            string token,
-            string projectId,
-            string setId,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            string fileExtension,
+            string? token,
+            string? projectId,
+            string? setId,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            string? fileExtension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -61,7 +61,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/startexportdescriptorsjob?projectId={projectId}&setId={setId}&{string.Join("&", descriptorIds.Select(static x => $"descriptorIds={x}"))}&fileExtension={fileExtension}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/startexportdescriptorsjob?projectId={projectId}&setId={setId}&{string.Join("&", descriptorIds?.Select(static x => $"descriptorIds={x}") ?? global::System.Array.Empty<string>())}&fileExtension={fileExtension}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

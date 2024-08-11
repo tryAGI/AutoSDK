@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes")]
-        public global::System.OneOf<global::G.WebhookProjectsV2ItemEditedChanges?, global::G.WebhookProjectsV2ItemEditedChanges?>? Changes { get; set; }
+        public global::System.OneOf<global::G.WebhookProjectsV2ItemEditedChangesVariant1?, global::G.WebhookProjectsV2ItemEditedChangesVariant2?>? Changes { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -36,19 +36,19 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; } = default!;
 
         /// <summary>
         /// An item belonging to a project
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projects_v2_item", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectsV2Item ProjectsV2Item { get; set; } = default!;
+        public global::G.ProjectsV2Item? ProjectsV2Item { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

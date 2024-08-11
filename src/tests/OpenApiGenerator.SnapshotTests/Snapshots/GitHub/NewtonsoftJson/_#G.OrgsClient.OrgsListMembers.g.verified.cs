@@ -9,16 +9,16 @@ namespace G
         partial void PrepareOrgsListMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.OrgsListMembersFilter filter,
-            ref global::G.OrgsListMembersRole role,
+            ref global::G.OrgsListMembersFilter? filter,
+            ref global::G.OrgsListMembersRole? role,
             ref int perPage,
             ref int page);
         partial void PrepareOrgsListMembersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.OrgsListMembersFilter filter,
-            global::G.OrgsListMembersRole role,
+            global::G.OrgsListMembersFilter? filter,
+            global::G.OrgsListMembersRole? role,
             int perPage,
             int page);
         partial void ProcessOrgsListMembersResponse(
@@ -51,8 +51,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> OrgsListMembersAsync(
             string org,
-            global::G.OrgsListMembersFilter filter,
-            global::G.OrgsListMembersRole role,
+            global::G.OrgsListMembersFilter? filter,
+            global::G.OrgsListMembersRole? role,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -69,7 +69,7 @@ namespace G
 
             var filterValue = filter switch
             {
-                global::G.OrgsListMembersFilter._2faDisabled => "2fa_disabled",
+                global::G.OrgsListMembersFilter.x2faDisabled => "2fa_disabled",
                 global::G.OrgsListMembersFilter.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };

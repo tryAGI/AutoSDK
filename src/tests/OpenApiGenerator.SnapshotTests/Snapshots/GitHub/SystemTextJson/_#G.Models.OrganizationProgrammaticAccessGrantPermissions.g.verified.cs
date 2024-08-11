@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        public object? Organization { get; set; }
+        public global::G.OrganizationProgrammaticAccessGrantPermissionsOrganization? Organization { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public object? Repository { get; set; }
+        public global::G.OrganizationProgrammaticAccessGrantPermissionsRepository? Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("other")]
-        public object? Other { get; set; }
+        public global::G.OrganizationProgrammaticAccessGrantPermissionsOther? Other { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

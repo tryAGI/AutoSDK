@@ -9,15 +9,15 @@ namespace G
     {
         partial void PrepareGetAllStreamTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> tagId,
+            global::System.Collections.Generic.IList<string>? tagId,
             ref int first,
-            ref string after);
+            ref string? after);
         partial void PrepareGetAllStreamTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> tagId,
+            global::System.Collections.Generic.IList<string>? tagId,
             int first,
-            string after);
+            string? after);
         partial void ProcessGetAllStreamTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,9 +41,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.GetAllStreamTagsResponse> GetAllStreamTagsAsync(
-            global::System.Collections.Generic.IList<string> tagId,
+            global::System.Collections.Generic.IList<string>? tagId,
             int first,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -56,7 +56,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/tags/streams?{string.Join("&", tagId.Select(static x => $"tagId={x}"))}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/tags/streams?{string.Join("&", tagId?.Select(static x => $"tagId={x}") ?? global::System.Array.Empty<string>())}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

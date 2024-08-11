@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareAdminUpdateUserInfoArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string userId,
-            ref string username,
-            ref string email,
-            ref string phone);
+            ref string? token,
+            ref string? userId,
+            ref string? username,
+            ref string? email,
+            ref string? phone);
         partial void PrepareAdminUpdateUserInfoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string userId,
-            string username,
-            string email,
-            string phone);
+            string? token,
+            string? userId,
+            string? username,
+            string? email,
+            string? phone);
         partial void ProcessAdminUpdateUserInfoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,12 +40,12 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> AdminUpdateUserInfoAsync(
-            string token,
-            string userId,
-            string username,
-            string email,
-            string phone,
+        public async global::System.Threading.Tasks.Task<global::G.AdminUpdateUserInfoResponse> AdminUpdateUserInfoAsync(
+            string? token,
+            string? userId,
+            string? username,
+            string? email,
+            string? phone,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -107,7 +107,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminUpdateUserInfoResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

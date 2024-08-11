@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref string @ref,
             ref int appId,
-            ref string checkName,
+            ref string? checkName,
             ref int perPage,
             ref int page);
         partial void PrepareChecksListSuitesForRefRequest(
@@ -22,7 +22,7 @@ namespace G
             string repo,
             string @ref,
             int appId,
-            string checkName,
+            string? checkName,
             int perPage,
             int page);
         partial void ProcessChecksListSuitesForRefResponse(
@@ -58,7 +58,7 @@ namespace G
             string repo,
             string @ref,
             int appId,
-            string checkName,
+            string? checkName,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

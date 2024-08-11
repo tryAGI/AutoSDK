@@ -54,7 +54,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("project_card")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookProjectCardMovedProjectCard, global::G.WebhookProjectCardMovedProjectCard> ProjectCard { get; set; }
+        public required global::System.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1?, global::G.WebhookProjectCardMovedProjectCardVariant2?> ProjectCard { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -68,7 +68,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUserWebhooks? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,19 +13,19 @@ namespace G
         /// The list of user `login`s with dismissal access
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
-        public global::System.Collections.Generic.IList<string?>? Users { get; set; }
+        public global::System.Collections.Generic.IList<string>? Users { get; set; }
 
         /// <summary>
         /// The list of team `slug`s with dismissal access
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("teams")]
-        public global::System.Collections.Generic.IList<string?>? Teams { get; set; }
+        public global::System.Collections.Generic.IList<string>? Teams { get; set; }
 
         /// <summary>
         /// The list of app `slug`s with dismissal access
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
-        public global::System.Collections.Generic.IList<string?>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<string>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

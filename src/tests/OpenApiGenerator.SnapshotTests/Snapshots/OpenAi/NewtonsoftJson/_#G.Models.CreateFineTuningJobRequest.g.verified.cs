@@ -17,7 +17,7 @@ namespace G
         /// Example: gpt-4o-mini
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel> Model { get; set; } = default!;
+        public global::System.AnyOf<string?, global::G.CreateFineTuningJobRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.<br/>
@@ -60,7 +60,7 @@ namespace G
         /// A list of integrations to enable for your fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegrations?>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegration>? Integrations { get; set; }
 
         /// <summary>
         /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.<br/>

@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("marketplace_purchase", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MarketplacePurchaseMarketplacePurchase MarketplacePurchase1 { get; set; } = default!;
+        public global::G.MarketplacePurchaseMarketplacePurchase1 MarketplacePurchase1 { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

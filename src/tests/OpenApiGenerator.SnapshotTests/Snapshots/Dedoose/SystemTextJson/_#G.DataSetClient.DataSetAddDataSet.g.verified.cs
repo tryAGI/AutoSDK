@@ -9,41 +9,41 @@ namespace G
     {
         partial void PrepareDataSetAddDataSetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string userId,
-            ref string title,
-            ref string description,
+            ref string? token,
+            ref string? projectId,
+            ref string? userId,
+            ref string? title,
+            ref string? description,
             ref bool areExcerptsFiltered,
             ref bool areResourcesFiltered,
             ref bool areDescriptorsFiltered,
             ref bool areTagsFiltered,
             ref bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string> excerptIds,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            global::System.Collections.Generic.IList<string> userIds,
-            global::System.Collections.Generic.IList<string> resourceIds,
-            global::System.Collections.Generic.IList<string> tagIds,
-            global::System.Collections.Generic.IList<string> excludedExcerptIds);
+            global::System.Collections.Generic.IList<string>? excerptIds,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            global::System.Collections.Generic.IList<string>? userIds,
+            global::System.Collections.Generic.IList<string>? resourceIds,
+            global::System.Collections.Generic.IList<string>? tagIds,
+            global::System.Collections.Generic.IList<string>? excludedExcerptIds);
         partial void PrepareDataSetAddDataSetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
             bool areExcerptsFiltered,
             bool areResourcesFiltered,
             bool areDescriptorsFiltered,
             bool areTagsFiltered,
             bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string> excerptIds,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            global::System.Collections.Generic.IList<string> userIds,
-            global::System.Collections.Generic.IList<string> resourceIds,
-            global::System.Collections.Generic.IList<string> tagIds,
-            global::System.Collections.Generic.IList<string> excludedExcerptIds);
+            global::System.Collections.Generic.IList<string>? excerptIds,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            global::System.Collections.Generic.IList<string>? userIds,
+            global::System.Collections.Generic.IList<string>? resourceIds,
+            global::System.Collections.Generic.IList<string>? tagIds,
+            global::System.Collections.Generic.IList<string>? excludedExcerptIds);
         partial void ProcessDataSetAddDataSetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,22 +75,22 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DataSetVO> DataSetAddDataSetAsync(
-            string token,
-            string projectId,
-            string userId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? userId,
+            string? title,
+            string? description,
             bool areExcerptsFiltered,
             bool areResourcesFiltered,
             bool areDescriptorsFiltered,
             bool areTagsFiltered,
             bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string> excerptIds,
-            global::System.Collections.Generic.IList<string> descriptorIds,
-            global::System.Collections.Generic.IList<string> userIds,
-            global::System.Collections.Generic.IList<string> resourceIds,
-            global::System.Collections.Generic.IList<string> tagIds,
-            global::System.Collections.Generic.IList<string> excludedExcerptIds,
+            global::System.Collections.Generic.IList<string>? excerptIds,
+            global::System.Collections.Generic.IList<string>? descriptorIds,
+            global::System.Collections.Generic.IList<string>? userIds,
+            global::System.Collections.Generic.IList<string>? resourceIds,
+            global::System.Collections.Generic.IList<string>? tagIds,
+            global::System.Collections.Generic.IList<string>? excludedExcerptIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -116,7 +116,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/adddataset?projectId={projectId}&userId={userId}&title={title}&description={description}&areExcerptsFiltered={areExcerptsFiltered}&areResourcesFiltered={areResourcesFiltered}&areDescriptorsFiltered={areDescriptorsFiltered}&areTagsFiltered={areTagsFiltered}&areUsersFiltered={areUsersFiltered}&{string.Join("&", excerptIds.Select(static x => $"excerptIds={x}"))}&{string.Join("&", descriptorIds.Select(static x => $"descriptorIds={x}"))}&{string.Join("&", userIds.Select(static x => $"userIds={x}"))}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&{string.Join("&", tagIds.Select(static x => $"tagIds={x}"))}&{string.Join("&", excludedExcerptIds.Select(static x => $"excludedExcerptIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/adddataset?projectId={projectId}&userId={userId}&title={title}&description={description}&areExcerptsFiltered={areExcerptsFiltered}&areResourcesFiltered={areResourcesFiltered}&areDescriptorsFiltered={areDescriptorsFiltered}&areTagsFiltered={areTagsFiltered}&areUsersFiltered={areUsersFiltered}&{string.Join("&", excerptIds?.Select(static x => $"excerptIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", descriptorIds?.Select(static x => $"descriptorIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userIds?.Select(static x => $"userIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tagIds?.Select(static x => $"tagIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", excludedExcerptIds?.Select(static x => $"excludedExcerptIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

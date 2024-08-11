@@ -11,20 +11,20 @@ namespace G
             ref string vectorStoreId,
             ref string batchId,
             ref int limit,
-            ref global::G.ListFilesInVectorStoreBatchOrder order,
-            ref string after,
-            ref string before,
-            ref global::G.ListFilesInVectorStoreBatchFilter filter);
+            ref global::G.ListFilesInVectorStoreBatchOrder? order,
+            ref string? after,
+            ref string? before,
+            ref global::G.ListFilesInVectorStoreBatchFilter? filter);
         partial void PrepareListFilesInVectorStoreBatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vectorStoreId,
             string batchId,
             int limit,
-            global::G.ListFilesInVectorStoreBatchOrder order,
-            string after,
-            string before,
-            global::G.ListFilesInVectorStoreBatchFilter filter);
+            global::G.ListFilesInVectorStoreBatchOrder? order,
+            string? after,
+            string? before,
+            global::G.ListFilesInVectorStoreBatchFilter? filter);
         partial void ProcessListFilesInVectorStoreBatchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,10 +54,10 @@ namespace G
             string vectorStoreId,
             string batchId,
             int limit,
-            global::G.ListFilesInVectorStoreBatchOrder order,
-            string after,
-            string before,
-            global::G.ListFilesInVectorStoreBatchFilter filter,
+            global::G.ListFilesInVectorStoreBatchOrder? order,
+            string? after,
+            string? before,
+            global::G.ListFilesInVectorStoreBatchFilter? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

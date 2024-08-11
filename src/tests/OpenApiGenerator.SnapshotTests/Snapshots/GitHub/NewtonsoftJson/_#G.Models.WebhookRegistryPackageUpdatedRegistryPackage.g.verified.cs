@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Description { get; set; } = default!;
+        public global::G.WebhookRegistryPackageUpdatedRegistryPackageDescription? Description { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Registry { get; set; } = default!;
+        public global::G.WebhookRegistryPackageUpdatedRegistryPackageRegistry? Registry { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectsListForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref global::G.ProjectsListForOrgState state,
+            ref global::G.ProjectsListForOrgState? state,
             ref int perPage,
             ref int page);
         partial void PrepareProjectsListForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            global::G.ProjectsListForOrgState state,
+            global::G.ProjectsListForOrgState? state,
             int perPage,
             int page);
         partial void ProcessProjectsListForOrgResponse(
@@ -46,7 +46,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForOrgAsync(
             string org,
-            global::G.ProjectsListForOrgState state,
+            global::G.ProjectsListForOrgState? state,
             int perPage,
             int page,
             global::System.Threading.CancellationToken cancellationToken = default)

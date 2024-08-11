@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareExcerptUpdateExcerptTextArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectIDL,
-            ref string excerptId,
-            ref string text);
+            ref string? token,
+            ref string? projectIDL,
+            ref string? excerptId,
+            ref string? text);
         partial void PrepareExcerptUpdateExcerptTextRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectIDL,
-            string excerptId,
-            string text);
+            string? token,
+            string? projectIDL,
+            string? excerptId,
+            string? text);
         partial void ProcessExcerptUpdateExcerptTextResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdateExcerptTextAsync(
-            string token,
-            string projectIDL,
-            string excerptId,
-            string text,
+            string? token,
+            string? projectIDL,
+            string? excerptId,
+            string? text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

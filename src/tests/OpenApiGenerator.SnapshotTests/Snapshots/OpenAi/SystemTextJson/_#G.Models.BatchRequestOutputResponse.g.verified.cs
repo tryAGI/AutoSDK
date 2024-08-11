@@ -25,7 +25,7 @@ namespace G
         /// The JSON body of the response
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public object? Body { get; set; }
+        public global::G.BatchRequestOutputResponseBody? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

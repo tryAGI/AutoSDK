@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("core", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RateLimit Core { get; set; } = default!;
+        public global::G.RateLimit? Core { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RateLimit Search { get; set; } = default!;
+        public global::G.RateLimit? Search { get; set; } = default!;
 
         /// <summary>
         /// 

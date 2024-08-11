@@ -8,24 +8,24 @@ namespace G
     {
         partial void PrepareDescriptorAddDescriptorFieldArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string title,
-            ref string description,
+            ref string? token,
+            ref string? projectId,
+            ref string? title,
+            ref string? description,
             ref double type,
             ref bool isDynamic,
-            ref string setId,
+            ref string? setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void PrepareDescriptorAddDescriptorFieldRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? title,
+            string? description,
             double type,
             bool isDynamic,
-            string setId,
+            string? setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void ProcessDescriptorAddDescriptorFieldResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,13 +50,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorAddDescriptorFieldAsync(
-            string token,
-            string projectId,
-            string title,
-            string description,
+            string? token,
+            string? projectId,
+            string? title,
+            string? description,
             double type,
             bool isDynamic,
-            string setId,
+            string? setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

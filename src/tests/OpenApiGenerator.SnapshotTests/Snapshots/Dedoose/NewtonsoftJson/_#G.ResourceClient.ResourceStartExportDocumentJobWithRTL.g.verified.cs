@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareResourceStartExportDocumentJobWithRTLArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
-            ref string projectId,
-            ref string resourceId,
+            ref string? token,
+            ref string? projectId,
+            ref string? resourceId,
             ref bool includeExRegions,
             ref bool rtl,
-            ref string exportExtension,
-            ref string encryptedSymKey);
+            ref string? exportExtension,
+            ref string? encryptedSymKey);
         partial void PrepareResourceStartExportDocumentJobWithRTLRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
-            string projectId,
-            string resourceId,
+            string? token,
+            string? projectId,
+            string? resourceId,
             bool includeExRegions,
             bool rtl,
-            string exportExtension,
-            string encryptedSymKey);
+            string? exportExtension,
+            string? encryptedSymKey);
         partial void ProcessResourceStartExportDocumentJobWithRTLResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,14 +46,14 @@ namespace G
         /// <param name="encryptedSymKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> ResourceStartExportDocumentJobWithRTLAsync(
-            string token,
-            string projectId,
-            string resourceId,
+        public async global::System.Threading.Tasks.Task<global::G.ResourceStartExportDocumentJobWithRTLResponse> ResourceStartExportDocumentJobWithRTLAsync(
+            string? token,
+            string? projectId,
+            string? resourceId,
             bool includeExRegions,
             bool rtl,
-            string exportExtension,
-            string encryptedSymKey,
+            string? exportExtension,
+            string? encryptedSymKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -119,7 +119,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceStartExportDocumentJobWithRTLResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

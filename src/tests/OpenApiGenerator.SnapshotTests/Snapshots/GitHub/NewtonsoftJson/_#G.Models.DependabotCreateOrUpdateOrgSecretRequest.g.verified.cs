@@ -31,7 +31,7 @@ namespace G
         /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("selected_repository_ids")]
-        public global::System.Collections.Generic.IList<string?>? SelectedRepositoryIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? SelectedRepositoryIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

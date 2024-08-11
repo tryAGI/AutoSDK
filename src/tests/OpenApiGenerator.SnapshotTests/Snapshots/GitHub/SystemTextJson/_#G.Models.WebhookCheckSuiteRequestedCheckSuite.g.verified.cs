@@ -99,7 +99,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequests> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRequestedCheckSuitePullRequest> PullRequests { get; set; }
 
         /// <summary>
         /// 

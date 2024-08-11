@@ -13,7 +13,7 @@ namespace G
         /// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GitCreateTreeRequestTree> Tree { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GitCreateTreeRequestTreeItem> Tree { get; set; } = default!;
 
         /// <summary>
         /// The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you're creating new changes on a branch, then normally you'd set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you're working on.<br/>

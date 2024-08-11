@@ -8,19 +8,19 @@ namespace G
     {
         partial void PrepareGetStreamMarkersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string userId,
-            ref string videoId,
-            ref string first,
-            ref string before,
-            ref string after);
+            ref string? userId,
+            ref string? videoId,
+            ref string? first,
+            ref string? before,
+            ref string? after);
         partial void PrepareGetStreamMarkersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string userId,
-            string videoId,
-            string first,
-            string before,
-            string after);
+            string? userId,
+            string? videoId,
+            string? first,
+            string? before,
+            string? after);
         partial void ProcessGetStreamMarkersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,11 +44,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetStreamMarkersResponse> GetStreamMarkersAsync(
-            string userId,
-            string videoId,
-            string first,
-            string before,
-            string after,
+            string? userId,
+            string? videoId,
+            string? first,
+            string? before,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

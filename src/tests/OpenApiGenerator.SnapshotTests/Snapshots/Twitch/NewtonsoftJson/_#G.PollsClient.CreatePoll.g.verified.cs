@@ -128,7 +128,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreatePollResponse> CreatePollAsync(
             string broadcasterId,
             string title,
-            global::System.Collections.Generic.IList<global::G.CreatePollBodyChoices> choices,
+            global::System.Collections.Generic.IList<global::G.CreatePollBodyChoice> choices,
             int duration,
             bool channelPointsVotingEnabled = default,
             int channelPointsPerVote = default,

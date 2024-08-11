@@ -9,20 +9,20 @@ namespace G
     {
         partial void PrepareGetDropsEntitlementsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> id,
-            ref string userId,
-            ref string gameId,
-            ref global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
-            ref string after,
+            global::System.Collections.Generic.IList<string>? id,
+            ref string? userId,
+            ref string? gameId,
+            ref global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
+            ref string? after,
             ref int first);
         partial void PrepareGetDropsEntitlementsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> id,
-            string userId,
-            string gameId,
-            global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
-            string after,
+            global::System.Collections.Generic.IList<string>? id,
+            string? userId,
+            string? gameId,
+            global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
+            string? after,
             int first);
         partial void ProcessGetDropsEntitlementsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,11 +60,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetDropsEntitlementsResponse> GetDropsEntitlementsAsync(
-            global::System.Collections.Generic.IList<string> id,
-            string userId,
-            string gameId,
-            global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
-            string after,
+            global::System.Collections.Generic.IList<string>? id,
+            string? userId,
+            string? gameId,
+            global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
+            string? after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,7 +87,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/entitlements/drops?{string.Join("&", id.Select(static x => $"id={x}"))}&user_id={userId}&game_id={gameId}&fulfillment_status={fulfillmentStatusValue}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/entitlements/drops?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&user_id={userId}&game_id={gameId}&fulfillment_status={fulfillmentStatusValue}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

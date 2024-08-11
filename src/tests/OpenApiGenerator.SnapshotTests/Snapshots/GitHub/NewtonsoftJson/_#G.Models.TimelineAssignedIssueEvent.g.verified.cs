@@ -31,7 +31,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Actor { get; set; } = default!;
+        public global::G.SimpleUser? Actor { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser Assignee { get; set; } = default!;
+        public global::G.SimpleUser? Assignee { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
