@@ -115,7 +115,9 @@ public static class Data
             };
         }
 
-        var maxDepth = schemaContexts.Max(x => x.Depth);
+        var maxDepth = schemaContexts.Count == 0
+            ? 20
+            : schemaContexts.Max(x => x.Depth);
         foreach (var context in schemaContexts.Where(x => x.Operation != null))
         {
             context.ComputeTags(maxDepth: maxDepth);
