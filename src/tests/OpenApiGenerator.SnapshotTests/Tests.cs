@@ -82,6 +82,9 @@ public partial class Tests
         ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_GenerateJsonSerializerContextTypes"] = "true",
+            // ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
+            // ["build_property.OpenApiGenerator_GenerateModels"] = "true",
+            // ["build_property.OpenApiGenerator_IncludeModels"] = "CreateMessageRequest",
         });
     }
     

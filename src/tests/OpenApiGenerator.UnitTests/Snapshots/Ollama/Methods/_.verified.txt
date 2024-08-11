@@ -62,7 +62,7 @@ This endpoint returns the version of the Ollama server.,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VersionResponse?,
+      CSharpType: global::G.VersionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -664,7 +664,7 @@ The final response object will include statistics and additional data from the r
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.GenerateCompletionResponse?,
+      CSharpType: global::G.GenerateCompletionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1066,7 +1066,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.GenerateChatCompletionResponse?,
+      CSharpType: global::G.GenerateChatCompletionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1358,7 +1358,7 @@ How long (in minutes) to keep the model loaded in memory.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.GenerateEmbeddingResponse?,
+      CSharpType: global::G.GenerateEmbeddingResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1645,7 +1645,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.CreateModelResponse?,
+      CSharpType: global::G.CreateModelResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1736,7 +1736,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ModelsResponse?,
+      CSharpType: global::G.ModelsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1827,7 +1827,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProcessResponse?,
+      CSharpType: global::G.ProcessResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1962,7 +1962,7 @@ Example: llama3:8b,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ModelInfo?,
+      CSharpType: global::G.ModelInfo,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -2561,7 +2561,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.PullModelResponse?,
+      CSharpType: global::G.PullModelResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -2852,7 +2852,7 @@ Requires registering for ollama.ai and adding a public key first.,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.PushModelResponse?,
+      CSharpType: global::G.PushModelResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,

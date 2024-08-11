@@ -212,7 +212,7 @@
         Id: error,
         Name: Error,
         Type: {
-          CSharpType: global::G.Error?,
+          CSharpType: global::G.Error,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -5265,7 +5265,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
         Id: function,
         Name: Function,
         Type: {
-          CSharpType: global::G.FunctionObject?,
+          CSharpType: global::G.FunctionObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -9080,7 +9080,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         Id: message,
         Name: Message,
         Type: {
-          CSharpType: global::G.ChatCompletionResponseMessage?,
+          CSharpType: global::G.ChatCompletionResponseMessage,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -10149,7 +10149,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         Id: message,
         Name: Message,
         Type: {
-          CSharpType: global::G.ChatCompletionResponseMessage?,
+          CSharpType: global::G.ChatCompletionResponseMessage,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -12076,7 +12076,7 @@ When present, it contains a null value except for the last chunk which contains 
         Id: delta,
         Name: Delta,
         Type: {
-          CSharpType: global::G.ChatCompletionStreamResponseDelta?,
+          CSharpType: global::G.ChatCompletionStreamResponseDelta,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -24468,7 +24468,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
         Id: function,
         Name: Function,
         Type: {
-          CSharpType: global::G.FunctionObject?,
+          CSharpType: global::G.FunctionObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -29153,7 +29153,7 @@ The maximum number of completion tokens specified to have been used over the cou
         Id: truncation_strategy,
         Name: TruncationStrategy,
         Type: {
-          CSharpType: global::G.TruncationObject?,
+          CSharpType: global::G.TruncationObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -29191,7 +29191,7 @@ The maximum number of completion tokens specified to have been used over the cou
         Id: tool_choice,
         Name: ToolChoice,
         Type: {
-          CSharpType: global::G.AssistantsApiToolChoiceOption?,
+          CSharpType: global::G.AssistantsApiToolChoiceOption,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -29326,7 +29326,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: global::G.AssistantsApiResponseFormatOption?,
+          CSharpType: global::G.AssistantsApiResponseFormatOption,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -46524,7 +46524,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: static,
         Name: Static,
         Type: {
-          CSharpType: global::G.StaticChunkingStrategy?,
+          CSharpType: global::G.StaticChunkingStrategy,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -47871,7 +47871,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: static,
         Name: Static,
         Type: {
-          CSharpType: global::G.StaticChunkingStrategy?,
+          CSharpType: global::G.StaticChunkingStrategy,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49276,7 +49276,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.ThreadObject?,
+          CSharpType: global::G.ThreadObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49395,7 +49395,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49536,7 +49536,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49677,7 +49677,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49818,7 +49818,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -49959,7 +49959,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50100,7 +50100,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50241,7 +50241,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50382,7 +50382,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50523,7 +50523,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50664,7 +50664,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunObject?,
+          CSharpType: global::G.RunObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50805,7 +50805,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -50937,7 +50937,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51069,7 +51069,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepDeltaObject?,
+          CSharpType: global::G.RunStepDeltaObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51188,7 +51188,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51320,7 +51320,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51452,7 +51452,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51584,7 +51584,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.RunStepObject?,
+          CSharpType: global::G.RunStepObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51716,7 +51716,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.MessageObject?,
+          CSharpType: global::G.MessageObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51844,7 +51844,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.MessageObject?,
+          CSharpType: global::G.MessageObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -51972,7 +51972,7 @@ Represents a step in execution of a run.
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.MessageDeltaObject?,
+          CSharpType: global::G.MessageDeltaObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -52091,7 +52091,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.MessageObject?,
+          CSharpType: global::G.MessageObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -52219,7 +52219,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.MessageObject?,
+          CSharpType: global::G.MessageObject,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -52347,7 +52347,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
         Id: data,
         Name: Data,
         Type: {
-          CSharpType: global::G.Error?,
+          CSharpType: global::G.Error,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -55340,7 +55340,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: global::G.AuditLogEventType?,
+          CSharpType: global::G.AuditLogEventType,
           IsArray: false,
           IsEnum: true,
           IsBase64: false,
@@ -55487,7 +55487,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: actor,
         Name: Actor,
         Type: {
-          CSharpType: global::G.AuditLogActor?,
+          CSharpType: global::G.AuditLogActor,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,
@@ -63262,7 +63262,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: api_key,
         Name: ApiKey,
         Type: {
-          CSharpType: global::G.ProjectServiceAccountApiKey?,
+          CSharpType: global::G.ProjectServiceAccountApiKey,
           IsArray: false,
           IsEnum: false,
           IsBase64: false,

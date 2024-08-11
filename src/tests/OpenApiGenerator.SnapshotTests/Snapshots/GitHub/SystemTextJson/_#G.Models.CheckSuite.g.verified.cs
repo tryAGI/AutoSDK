@@ -95,7 +95,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MinimalRepository? Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleCommit? HeadCommit { get; set; }
+        public required global::G.SimpleCommit HeadCommit { get; set; }
 
         /// <summary>
         /// 

@@ -247,14 +247,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MinimalRepository? Repository { get; set; }
+        public required global::G.MinimalRepository Repository { get; set; }
 
         /// <summary>
         /// Minimal Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MinimalRepository? HeadRepository { get; set; }
+        public required global::G.MinimalRepository HeadRepository { get; set; }
 
         /// <summary>
         /// Example: 5

@@ -325,6 +325,13 @@ public class SchemaContext
         TypeData = IsReference
             ? ResolvedReference?.TypeData
             : Models.TypeData.FromSchemaContext(this);
+        if (IsReference && ResolvedReference != null && TypeData.HasValue)
+        {
+            TypeData = TypeData.Value with
+            {
+                CSharpType = global::OpenApiGenerator.Core.Models.TypeData.GetCSharpType(ResolvedReference, this),
+            };
+        }
         if (IsProperty || Hint is Models.Hint.Parameter)
         {
             PropertyData = Models.PropertyData.FromSchemaContext(this);

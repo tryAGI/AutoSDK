@@ -142,7 +142,7 @@ public readonly record struct TypeData(
             GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);
     }
     
-    public static string GetCSharpType(SchemaContext context)
+    public static string GetCSharpType(SchemaContext context, SchemaContext? additionalContext = null)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
@@ -194,7 +194,7 @@ public readonly record struct TypeData(
         };
 
         return context.Schema.Nullable ||
-               reference && !context.IsRequired
+               reference && !context.IsRequired && additionalContext?.IsRequired != true
             ? type + "?"
             : type;
     }

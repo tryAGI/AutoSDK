@@ -66,7 +66,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthorAssociation? AuthorAssociation { get; set; }
+        public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

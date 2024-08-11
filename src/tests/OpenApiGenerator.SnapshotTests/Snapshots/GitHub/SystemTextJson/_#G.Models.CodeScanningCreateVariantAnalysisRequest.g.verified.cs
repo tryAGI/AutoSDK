@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisLanguage? Language { get; set; }
+        public required global::G.CodeScanningVariantAnalysisLanguage Language { get; set; }
 
         /// <summary>
         /// A Base64-encoded tarball containing a CodeQL query and all its dependencies

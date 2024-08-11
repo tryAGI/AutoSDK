@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requester")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Requester { get; set; }
+        public required global::G.SimpleUser Requester { get; set; }
 
         /// <summary>
         /// 

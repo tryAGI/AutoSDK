@@ -143,7 +143,7 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
-            global::G.SecretScanningAlertState? state,
+            global::G.SecretScanningAlertState state,
             global::G.SecretScanningAlertResolution? resolution = default,
             string? resolutionComment = default,
             global::System.Threading.CancellationToken cancellationToken = default)

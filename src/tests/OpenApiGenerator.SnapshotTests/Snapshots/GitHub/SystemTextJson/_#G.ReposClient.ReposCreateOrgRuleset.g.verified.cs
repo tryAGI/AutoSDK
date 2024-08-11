@@ -130,7 +130,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RepositoryRuleset> ReposCreateOrgRulesetAsync(
             string org,
             string name,
-            global::G.RepositoryRuleEnforcement? enforcement,
+            global::G.RepositoryRuleEnforcement enforcement,
             global::G.ReposCreateOrgRulesetRequestTarget? target = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? bypassActors = default,
             global::G.OrgRulesetConditions? conditions = default,

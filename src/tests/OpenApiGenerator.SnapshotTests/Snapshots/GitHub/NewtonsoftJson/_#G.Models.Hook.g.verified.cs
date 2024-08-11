@@ -47,7 +47,7 @@ namespace G
         /// Configuration object of the webhook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookConfig? Config { get; set; } = default!;
+        public global::G.WebhookConfig Config { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_response", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.HookResponse? LastResponse { get; set; } = default!;
+        public global::G.HookResponse LastResponse { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

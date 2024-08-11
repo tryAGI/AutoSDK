@@ -13,7 +13,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? EnabledBy { get; set; } = default!;
+        public global::G.SimpleUser EnabledBy { get; set; } = default!;
 
         /// <summary>
         /// The merge method to use.

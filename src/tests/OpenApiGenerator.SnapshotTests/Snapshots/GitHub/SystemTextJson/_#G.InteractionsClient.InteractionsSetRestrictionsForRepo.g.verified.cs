@@ -126,7 +126,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.InteractionLimitResponse> InteractionsSetRestrictionsForRepoAsync(
             string owner,
             string repo,
-            global::G.InteractionGroup? limit,
+            global::G.InteractionGroup limit,
             global::G.InteractionExpiry? expiry = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

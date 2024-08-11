@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_suite")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleCheckSuite? CheckSuite { get; set; }
+        public required global::G.SimpleCheckSuite CheckSuite { get; set; }
 
         /// <summary>
         /// 

@@ -13,13 +13,13 @@ namespace G
         /// Hypermedia Link with Type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timeline", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.LinkWithType? Timeline { get; set; } = default!;
+        public global::G.LinkWithType Timeline { get; set; } = default!;
 
         /// <summary>
         /// Hypermedia Link with Type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.LinkWithType? User { get; set; } = default!;
+        public global::G.LinkWithType User { get; set; } = default!;
 
         /// <summary>
         /// Hypermedia Link with Type

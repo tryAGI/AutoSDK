@@ -118,7 +118,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.InteractionLimitResponse> InteractionsSetRestrictionsForOrgAsync(
             string org,
-            global::G.InteractionGroup? limit,
+            global::G.InteractionGroup limit,
             global::G.InteractionExpiry? expiry = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

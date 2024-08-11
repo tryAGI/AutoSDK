@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Actor? Actor { get; set; }
+        public required global::G.Actor Actor { get; set; }
 
         /// <summary>
         /// 

@@ -42,7 +42,7 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrganizationSimpleWebhooks? Organization { get; set; } = default!;
+        public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -67,7 +67,7 @@ namespace G
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("team", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksTeam? Team { get; set; } = default!;
+        public global::G.WebhooksTeam Team { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

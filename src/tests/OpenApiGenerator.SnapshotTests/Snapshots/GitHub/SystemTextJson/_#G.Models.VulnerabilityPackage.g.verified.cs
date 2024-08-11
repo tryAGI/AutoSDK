@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("ecosystem")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecurityAdvisoryEcosystemsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SecurityAdvisoryEcosystems? Ecosystem { get; set; }
+        public required global::G.SecurityAdvisoryEcosystems Ecosystem { get; set; }
 
         /// <summary>
         /// The unique package name within its ecosystem.

@@ -37,7 +37,7 @@ namespace G
         /// A commit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleCommit? HeadCommit { get; set; } = default!;
+        public global::G.SimpleCommit HeadCommit { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

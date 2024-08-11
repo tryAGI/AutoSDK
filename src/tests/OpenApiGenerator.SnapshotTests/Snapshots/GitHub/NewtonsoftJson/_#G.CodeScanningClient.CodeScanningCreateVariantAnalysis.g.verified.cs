@@ -139,7 +139,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodeScanningVariantAnalysis> CodeScanningCreateVariantAnalysisAsync(
             string owner,
             string repo,
-            global::G.CodeScanningVariantAnalysisLanguage? language,
+            global::G.CodeScanningVariantAnalysisLanguage language,
             string queryPack,
             global::System.Collections.Generic.IList<string>? repositories = default,
             global::System.Collections.Generic.IList<string>? repositoryLists = default,

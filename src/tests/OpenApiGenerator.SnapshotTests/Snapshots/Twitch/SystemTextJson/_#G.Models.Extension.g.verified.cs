@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("icon_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ExtensionIconUrls? IconUrls { get; set; }
+        public required global::G.ExtensionIconUrls IconUrls { get; set; }
 
         /// <summary>
         /// The extension’s ID.

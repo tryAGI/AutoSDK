@@ -110,7 +110,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.InteractionLimitResponse> InteractionsSetRestrictionsForAuthenticatedUserAsync(
-            global::G.InteractionGroup? limit,
+            global::G.InteractionGroup limit,
             global::G.InteractionExpiry? expiry = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -19,19 +19,19 @@ namespace G
         /// A GitHub repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("controller_repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleRepository? ControllerRepo { get; set; } = default!;
+        public global::G.SimpleRepository ControllerRepo { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? Actor { get; set; } = default!;
+        public global::G.SimpleUser Actor { get; set; } = default!;
 
         /// <summary>
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_language", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisLanguage? QueryLanguage { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; } = default!;
 
         /// <summary>
         /// The download url for the query pack.

@@ -13,7 +13,7 @@ namespace G
         /// The source of an image block.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ImageBlockSource? Source { get; set; } = default!;
+        public global::G.ImageBlockSource Source { get; set; } = default!;
 
         /// <summary>
         /// The type of content block.<br/>

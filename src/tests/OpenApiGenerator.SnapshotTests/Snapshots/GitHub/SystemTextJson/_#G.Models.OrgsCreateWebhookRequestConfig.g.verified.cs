@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public required string Url { get; set; }
 
         /// <summary>
         /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>

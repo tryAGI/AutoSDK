@@ -13,19 +13,19 @@ namespace G
         /// Hypermedia Link
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Link? Self { get; set; } = default!;
+        public global::G.Link Self { get; set; } = default!;
 
         /// <summary>
         /// Hypermedia Link
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Link? Html { get; set; } = default!;
+        public global::G.Link Html { get; set; } = default!;
 
         /// <summary>
         /// Hypermedia Link
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Link? PullRequest { get; set; } = default!;
+        public global::G.Link PullRequest { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -55,7 +55,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inviter", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? Inviter { get; set; } = default!;
+        public global::G.SimpleUser Inviter { get; set; } = default!;
 
         /// <summary>
         /// 

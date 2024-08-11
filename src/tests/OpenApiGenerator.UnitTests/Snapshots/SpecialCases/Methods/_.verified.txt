@@ -99,7 +99,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::System.Collections.Generic.IList<global::G.Pet>?,
+      CSharpType: global::System.Collections.Generic.IList<global::G.Pet>,
       IsArray: true,
       IsEnum: false,
       IsBase64: false,
@@ -213,7 +213,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Error?,
+      CSharpType: global::G.Error,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -344,7 +344,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Pet?,
+      CSharpType: global::G.Pet,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,

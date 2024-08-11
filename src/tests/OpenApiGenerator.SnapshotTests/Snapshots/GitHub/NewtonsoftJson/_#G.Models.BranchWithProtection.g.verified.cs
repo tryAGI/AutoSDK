@@ -19,7 +19,7 @@ namespace G
         /// Commit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Commit? Commit { get; set; } = default!;
+        public global::G.Commit Commit { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// Branch Protection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protection", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BranchProtection? Protection { get; set; } = default!;
+        public global::G.BranchProtection Protection { get; set; } = default!;
 
         /// <summary>
         /// 

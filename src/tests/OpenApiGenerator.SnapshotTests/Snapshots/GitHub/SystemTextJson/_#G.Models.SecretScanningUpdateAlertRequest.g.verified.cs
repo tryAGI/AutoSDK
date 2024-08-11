@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SecretScanningAlertState? State { get; set; }
+        public required global::G.SecretScanningAlertState State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.

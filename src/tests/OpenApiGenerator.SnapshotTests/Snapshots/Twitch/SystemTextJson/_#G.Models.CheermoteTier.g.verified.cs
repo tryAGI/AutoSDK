@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheermoteImages? Images { get; set; }
+        public required global::G.CheermoteImages Images { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether users can cheer at this tier level.

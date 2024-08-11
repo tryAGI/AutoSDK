@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_repositories")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EnabledRepositoriesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.EnabledRepositories? EnabledRepositories { get; set; }
+        public required global::G.EnabledRepositories EnabledRepositories { get; set; }
 
         /// <summary>
         /// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.

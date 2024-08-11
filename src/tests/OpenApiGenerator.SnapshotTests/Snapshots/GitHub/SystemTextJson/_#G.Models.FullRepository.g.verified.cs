@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// 

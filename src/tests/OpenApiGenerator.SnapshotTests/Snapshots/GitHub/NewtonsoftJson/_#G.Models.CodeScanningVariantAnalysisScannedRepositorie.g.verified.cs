@@ -13,13 +13,13 @@ namespace G
         /// Repository Identifier
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisRepository? Repository { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analysis_status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisStatus? AnalysisStatus { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisStatus AnalysisStatus { get; set; } = default!;
 
         /// <summary>
         /// The number of results in the case of a successful analysis. This is only available for successful analyses.

@@ -121,7 +121,7 @@ namespace G
         /// Team Organization
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TeamOrganization? Organization { get; set; } = default!;
+        public global::G.TeamOrganization Organization { get; set; } = default!;
 
         /// <summary>
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>

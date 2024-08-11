@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionStreamResponseDelta? Delta { get; set; }
+        public required global::G.ChatCompletionStreamResponseDelta Delta { get; set; }
 
         /// <summary>
         /// Log probability information for the choice.

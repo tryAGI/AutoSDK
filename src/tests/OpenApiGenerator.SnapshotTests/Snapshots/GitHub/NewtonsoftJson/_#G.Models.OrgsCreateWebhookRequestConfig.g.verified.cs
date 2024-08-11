@@ -14,7 +14,7 @@ namespace G
         /// Example: https://example.com/webhook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>

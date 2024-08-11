@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Runner? Runner { get; set; }
+        public required global::G.Runner Runner { get; set; }
 
         /// <summary>
         /// The base64 encoded runner configuration.

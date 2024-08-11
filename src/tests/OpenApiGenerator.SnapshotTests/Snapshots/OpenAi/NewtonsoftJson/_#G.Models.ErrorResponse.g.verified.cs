@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Error? Error { get; set; } = default!;
+        public global::G.Error Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

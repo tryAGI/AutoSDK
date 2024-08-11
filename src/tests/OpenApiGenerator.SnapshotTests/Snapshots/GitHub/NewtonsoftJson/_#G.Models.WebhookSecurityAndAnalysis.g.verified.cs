@@ -42,7 +42,7 @@ namespace G
         /// Full Repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FullRepository? Repository { get; set; } = default!;
+        public global::G.FullRepository Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("images", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CheermoteImages? Images { get; set; } = default!;
+        public global::G.CheermoteImages Images { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that determines whether users can cheer at this tier level.

@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeline")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.LinkWithType? Timeline { get; set; }
+        public required global::G.LinkWithType Timeline { get; set; }
 
         /// <summary>
         /// Hypermedia Link with Type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.LinkWithType? User { get; set; }
+        public required global::G.LinkWithType User { get; set; }
 
         /// <summary>
         /// Hypermedia Link with Type

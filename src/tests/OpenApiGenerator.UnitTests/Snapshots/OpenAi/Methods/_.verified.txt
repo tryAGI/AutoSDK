@@ -1383,7 +1383,7 @@ A list of functions the model may generate JSON inputs for.
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateChatCompletionRequest?,
+      CSharpType: global::G.CreateChatCompletionRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -1430,7 +1430,7 @@ A list of functions the model may generate JSON inputs for.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.CreateChatCompletionResponse?,
+      CSharpType: global::G.CreateChatCompletionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -2523,7 +2523,7 @@ Example: user-1234,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateCompletionRequest?,
+      CSharpType: global::G.CreateCompletionRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -2565,7 +2565,7 @@ Example: user-1234,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.CreateCompletionResponse?,
+      CSharpType: global::G.CreateCompletionResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -3034,7 +3034,7 @@ Example: user-1234,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateImageRequest?,
+      CSharpType: global::G.CreateImageRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -3066,7 +3066,7 @@ Example: user-1234,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ImagesResponse?,
+      CSharpType: global::G.ImagesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -3574,7 +3574,7 @@ Example: user-1234,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateImageEditRequest?,
+      CSharpType: global::G.CreateImageEditRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -3606,7 +3606,7 @@ Example: user-1234,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ImagesResponse?,
+      CSharpType: global::G.ImagesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4007,7 +4007,7 @@ Example: user-1234,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateImageVariationRequest?,
+      CSharpType: global::G.CreateImageVariationRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4037,7 +4037,7 @@ Example: user-1234,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ImagesResponse?,
+      CSharpType: global::G.ImagesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4526,7 +4526,7 @@ Example: user-1234,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateEmbeddingRequest?,
+      CSharpType: global::G.CreateEmbeddingRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4555,7 +4555,7 @@ Example: user-1234,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.CreateEmbeddingResponse?,
+      CSharpType: global::G.CreateEmbeddingResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -4894,7 +4894,7 @@ Default Value: 1,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateSpeechRequest?,
+      CSharpType: global::G.CreateSpeechRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5382,7 +5382,7 @@ Default Value: [segment],
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateTranscriptionRequest?,
+      CSharpType: global::G.CreateTranscriptionRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -5816,7 +5816,7 @@ Default Value: 0,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateTranslationRequest?,
+      CSharpType: global::G.CreateTranslationRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6028,7 +6028,7 @@ Default Value: 0,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListFilesResponse?,
+      CSharpType: global::G.ListFilesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6232,7 +6232,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateFileRequest?,
+      CSharpType: global::G.CreateFileRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6258,7 +6258,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.OpenAIFile?,
+      CSharpType: global::G.OpenAIFile,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6396,7 +6396,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteFileResponse?,
+      CSharpType: global::G.DeleteFileResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6528,7 +6528,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.OpenAIFile?,
+      CSharpType: global::G.OpenAIFile,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6904,7 +6904,7 @@ For guidance on the proper filename extensions for each purpose, please follow t
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateUploadRequest?,
+      CSharpType: global::G.CreateUploadRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -6932,7 +6932,7 @@ For guidance on the proper filename extensions for each purpose, please follow t
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Upload?,
+      CSharpType: global::G.Upload,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7128,7 +7128,7 @@ It is possible to add multiple Parts in parallel. You can decide the intended or
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.AddUploadPartRequest?,
+      CSharpType: global::G.AddUploadPartRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7153,7 +7153,7 @@ It is possible to add multiple Parts in parallel. You can decide the intended or
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.UploadPart?,
+      CSharpType: global::G.UploadPart,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7370,7 +7370,7 @@ The number of bytes uploaded upon completion must match the number of bytes init
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CompleteUploadRequest?,
+      CSharpType: global::G.CompleteUploadRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7396,7 +7396,7 @@ The number of bytes uploaded upon completion must match the number of bytes init
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Upload?,
+      CSharpType: global::G.Upload,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7537,7 +7537,7 @@ Cancels the Upload. No Parts may be added after an Upload is cancelled.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Upload?,
+      CSharpType: global::G.Upload,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -7983,7 +7983,7 @@ Response includes details of the enqueued job including job status and the name 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateFineTuningJobRequest?,
+      CSharpType: global::G.CreateFineTuningJobRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8014,7 +8014,7 @@ Response includes details of the enqueued job including job status and the name 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.FineTuningJob?,
+      CSharpType: global::G.FineTuningJob,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8201,7 +8201,7 @@ List your organization's fine-tuning jobs
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListPaginatedFineTuningJobsResponse?,
+      CSharpType: global::G.ListPaginatedFineTuningJobsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8337,7 +8337,7 @@ Get info about a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.FineTuningJob?,
+      CSharpType: global::G.FineTuningJob,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8562,7 +8562,7 @@ Get status updates for a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListFineTuningJobEventsResponse?,
+      CSharpType: global::G.ListFineTuningJobEventsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8696,7 +8696,7 @@ Immediately cancel a fine-tune job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.FineTuningJob?,
+      CSharpType: global::G.FineTuningJob,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -8921,7 +8921,7 @@ List checkpoints for a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListFineTuningJobCheckpointsResponse?,
+      CSharpType: global::G.ListFineTuningJobCheckpointsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9016,7 +9016,7 @@ List checkpoints for a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListModelsResponse?,
+      CSharpType: global::G.ListModelsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9147,7 +9147,7 @@ List checkpoints for a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Model12?,
+      CSharpType: global::G.Model12,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9281,7 +9281,7 @@ List checkpoints for a fine-tuning job.
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteModelResponse?,
+      CSharpType: global::G.DeleteModelResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9556,7 +9556,7 @@ Example: text-moderation-stable,
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateModerationRequest?,
+      CSharpType: global::G.CreateModerationRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9582,7 +9582,7 @@ Example: text-moderation-stable,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.CreateModerationResponse?,
+      CSharpType: global::G.CreateModerationResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -9836,7 +9836,7 @@ Example: text-moderation-stable,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListAssistantsResponse?,
+      CSharpType: global::G.ListAssistantsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10516,7 +10516,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateAssistantRequest?,
+      CSharpType: global::G.CreateAssistantRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10550,7 +10550,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.AssistantObject?,
+      CSharpType: global::G.AssistantObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -10692,7 +10692,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.AssistantObject?,
+      CSharpType: global::G.AssistantObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11346,7 +11346,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ModifyAssistantRequest?,
+      CSharpType: global::G.ModifyAssistantRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11380,7 +11380,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.AssistantObject?,
+      CSharpType: global::G.AssistantObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11523,7 +11523,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteAssistantResponse?,
+      CSharpType: global::G.DeleteAssistantResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11755,7 +11755,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ThreadObject?,
+      CSharpType: global::G.ThreadObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -11889,7 +11889,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ThreadObject?,
+      CSharpType: global::G.ThreadObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12075,7 +12075,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ModifyThreadRequest?,
+      CSharpType: global::G.ModifyThreadRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12101,7 +12101,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ThreadObject?,
+      CSharpType: global::G.ThreadObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12236,7 +12236,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteThreadResponse?,
+      CSharpType: global::G.DeleteThreadResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12566,7 +12566,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListMessagesResponse?,
+      CSharpType: global::G.ListMessagesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12926,7 +12926,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateMessageRequest?,
+      CSharpType: global::G.CreateMessageRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -12954,7 +12954,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.MessageObject?,
+      CSharpType: global::G.MessageObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -13135,7 +13135,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.MessageObject?,
+      CSharpType: global::G.MessageObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -13331,7 +13331,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ModifyMessageRequest?,
+      CSharpType: global::G.ModifyMessageRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -13356,7 +13356,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.MessageObject?,
+      CSharpType: global::G.MessageObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -13538,7 +13538,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteMessageResponse?,
+      CSharpType: global::G.DeleteMessageResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -14495,7 +14495,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateThreadAndRunRequest?,
+      CSharpType: global::G.CreateThreadAndRunRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -14535,7 +14535,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -14851,7 +14851,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListRunsResponse?,
+      CSharpType: global::G.ListRunsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -15866,7 +15866,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateRunRequest?,
+      CSharpType: global::G.CreateRunRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -15906,7 +15906,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16100,7 +16100,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16309,7 +16309,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ModifyRunRequest?,
+      CSharpType: global::G.ModifyRunRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16334,7 +16334,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16604,7 +16604,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.SubmitToolOutputsRunRequest?,
+      CSharpType: global::G.SubmitToolOutputsRunRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16630,7 +16630,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -16825,7 +16825,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunObject?,
+      CSharpType: global::G.RunObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -17179,7 +17179,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListRunStepsResponse?,
+      CSharpType: global::G.ListRunStepsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -17389,7 +17389,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.RunStepObject?,
+      CSharpType: global::G.RunStepObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -17656,7 +17656,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListVectorStoresResponse?,
+      CSharpType: global::G.ListVectorStoresResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -17987,7 +17987,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateVectorStoreRequest?,
+      CSharpType: global::G.CreateVectorStoreRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18016,7 +18016,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreObject?,
+      CSharpType: global::G.VectorStoreObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18156,7 +18156,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreObject?,
+      CSharpType: global::G.VectorStoreObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18384,7 +18384,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.UpdateVectorStoreRequest?,
+      CSharpType: global::G.UpdateVectorStoreRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18411,7 +18411,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreObject?,
+      CSharpType: global::G.VectorStoreObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18552,7 +18552,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteVectorStoreResponse?,
+      CSharpType: global::G.DeleteVectorStoreResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -18892,7 +18892,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListVectorStoreFilesResponse?,
+      CSharpType: global::G.ListVectorStoreFilesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19127,7 +19127,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateVectorStoreFileRequest?,
+      CSharpType: global::G.CreateVectorStoreFileRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19153,7 +19153,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreFileObject?,
+      CSharpType: global::G.VectorStoreFileObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19328,7 +19328,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreFileObject?,
+      CSharpType: global::G.VectorStoreFileObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19504,7 +19504,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.DeleteVectorStoreFileResponse?,
+      CSharpType: global::G.DeleteVectorStoreFileResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19761,7 +19761,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.CreateVectorStoreFileBatchRequest?,
+      CSharpType: global::G.CreateVectorStoreFileBatchRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19787,7 +19787,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreFileBatchObject?,
+      CSharpType: global::G.VectorStoreFileBatchObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -19960,7 +19960,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreFileBatchObject?,
+      CSharpType: global::G.VectorStoreFileBatchObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -20134,7 +20134,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.VectorStoreFileBatchObject?,
+      CSharpType: global::G.VectorStoreFileBatchObject,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -20515,7 +20515,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListVectorStoreFilesResponse?,
+      CSharpType: global::G.ListVectorStoreFilesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -20770,7 +20770,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Batch?,
+      CSharpType: global::G.Batch,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -20958,7 +20958,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListBatchesResponse?,
+      CSharpType: global::G.ListBatchesResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21092,7 +21092,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Batch?,
+      CSharpType: global::G.Batch,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21242,7 +21242,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Batch?,
+      CSharpType: global::G.Batch,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21816,7 +21816,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ListAuditLogsResponse?,
+      CSharpType: global::G.ListAuditLogsResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -21989,7 +21989,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.InviteListResponse?,
+      CSharpType: global::G.InviteListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22139,7 +22139,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.InviteRequest?,
+      CSharpType: global::G.InviteRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22165,7 +22165,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Invite?,
+      CSharpType: global::G.Invite,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22302,7 +22302,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Invite?,
+      CSharpType: global::G.Invite,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22440,7 +22440,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.InviteDeleteResponse?,
+      CSharpType: global::G.InviteDeleteResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22611,7 +22611,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.UserListResponse?,
+      CSharpType: global::G.UserListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22745,7 +22745,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.User?,
+      CSharpType: global::G.User,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22861,7 +22861,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.UserRoleUpdateRequest?,
+      CSharpType: global::G.UserRoleUpdateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -22886,7 +22886,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.User?,
+      CSharpType: global::G.User,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23022,7 +23022,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.UserDeleteResponse?,
+      CSharpType: global::G.UserDeleteResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23232,7 +23232,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectListResponse?,
+      CSharpType: global::G.ProjectListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23341,7 +23341,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ProjectCreateRequest?,
+      CSharpType: global::G.ProjectCreateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23366,7 +23366,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Project?,
+      CSharpType: global::G.Project,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23501,7 +23501,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Project?,
+      CSharpType: global::G.Project,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23611,7 +23611,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ProjectUpdateRequest?,
+      CSharpType: global::G.ProjectUpdateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23636,7 +23636,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Project?,
+      CSharpType: global::G.Project,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23772,7 +23772,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.Project?,
+      CSharpType: global::G.Project,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -23984,7 +23984,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectUserListResponse?,
+      CSharpType: global::G.ProjectUserListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24172,7 +24172,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ProjectUserCreateRequest?,
+      CSharpType: global::G.ProjectUserCreateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24198,7 +24198,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectUser?,
+      CSharpType: global::G.ProjectUser,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24371,7 +24371,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectUser?,
+      CSharpType: global::G.ProjectUser,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24487,7 +24487,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ProjectUserUpdateRequest?,
+      CSharpType: global::G.ProjectUserUpdateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24512,7 +24512,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectUser?,
+      CSharpType: global::G.ProjectUser,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24686,7 +24686,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectUserDeleteResponse?,
+      CSharpType: global::G.ProjectUserDeleteResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -24895,7 +24895,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectServiceAccountListResponse?,
+      CSharpType: global::G.ProjectServiceAccountListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25042,7 +25042,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     IsDeprecated: false,
     RequestType: {
-      CSharpType: global::G.ProjectServiceAccountCreateRequest?,
+      CSharpType: global::G.ProjectServiceAccountCreateRequest,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25067,7 +25067,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectServiceAccountCreateResponse?,
+      CSharpType: global::G.ProjectServiceAccountCreateResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25240,7 +25240,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectServiceAccount?,
+      CSharpType: global::G.ProjectServiceAccount,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25413,7 +25413,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectServiceAccountDeleteResponse?,
+      CSharpType: global::G.ProjectServiceAccountDeleteResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25622,7 +25622,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectApiKeyListResponse?,
+      CSharpType: global::G.ProjectApiKeyListResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25794,7 +25794,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectApiKey?,
+      CSharpType: global::G.ProjectApiKey,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,
@@ -25968,7 +25968,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::G.ProjectApiKeyDeleteResponse?,
+      CSharpType: global::G.ProjectApiKeyDeleteResponse,
       IsArray: false,
       IsEnum: false,
       IsBase64: false,

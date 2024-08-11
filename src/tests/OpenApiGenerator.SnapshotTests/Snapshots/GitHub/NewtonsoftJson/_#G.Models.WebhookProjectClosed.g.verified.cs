@@ -42,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksProject? Project { get; set; } = default!;
+        public global::G.WebhooksProject Project { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -55,7 +55,7 @@ namespace G
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

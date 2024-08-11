@@ -51,7 +51,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectServiceAccountApiKey? ApiKey { get; set; }
+        public required global::G.ProjectServiceAccountApiKey ApiKey { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

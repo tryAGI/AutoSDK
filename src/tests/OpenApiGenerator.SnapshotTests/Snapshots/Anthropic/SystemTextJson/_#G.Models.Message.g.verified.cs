@@ -32,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageRole? Role { get; set; }
+        public required global::G.MessageRole Role { get; set; }
 
         /// <summary>
         /// The model that handled the request.

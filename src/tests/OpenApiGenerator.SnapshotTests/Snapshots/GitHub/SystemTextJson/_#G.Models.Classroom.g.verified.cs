@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleClassroomOrganization? Organization { get; set; }
+        public required global::G.SimpleClassroomOrganization Organization { get; set; }
 
         /// <summary>
         /// The URL of the classroom on GitHub Classroom.<br/>

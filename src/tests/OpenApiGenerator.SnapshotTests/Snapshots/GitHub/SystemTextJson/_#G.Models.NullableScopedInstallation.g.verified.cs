@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AppPermissions? Permissions { get; set; }
+        public required global::G.AppPermissions Permissions { get; set; }
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
@@ -55,7 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Account { get; set; }
+        public required global::G.SimpleUser Account { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

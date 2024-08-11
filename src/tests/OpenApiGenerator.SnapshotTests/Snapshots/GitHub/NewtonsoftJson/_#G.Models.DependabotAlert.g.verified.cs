@@ -31,25 +31,25 @@ namespace G
         /// Details for the GitHub Security Advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_advisory", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DependabotAlertSecurityAdvisory? SecurityAdvisory { get; set; } = default!;
+        public global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; } = default!;
 
         /// <summary>
         /// Details pertaining to one vulnerable version range for the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_vulnerability", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DependabotAlertSecurityVulnerability? SecurityVulnerability { get; set; } = default!;
+        public global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; } = default!;
 
         /// <summary>
         /// The REST API URL of the alert resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// The GitHub URL of the alert resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

@@ -36,13 +36,13 @@ namespace G
         /// The pusher type for the event. Can be either `user` or a deploy key.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pusher_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? PusherType { get; set; } = default!;
+        public string PusherType { get; set; } = default!;
 
         /// <summary>
         /// The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Ref { get; set; } = default!;
+        public string Ref { get; set; } = default!;
 
         /// <summary>
         /// The type of Git ref object deleted in the repository.
@@ -55,13 +55,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

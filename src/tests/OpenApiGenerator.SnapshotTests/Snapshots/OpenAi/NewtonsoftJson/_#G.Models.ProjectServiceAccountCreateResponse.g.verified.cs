@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_key", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectServiceAccountApiKey? ApiKey { get; set; } = default!;
+        public global::G.ProjectServiceAccountApiKey ApiKey { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

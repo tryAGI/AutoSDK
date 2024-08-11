@@ -129,7 +129,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Author { get; set; }
+        public required global::G.SimpleUser Author { get; set; }
 
         /// <summary>
         /// 

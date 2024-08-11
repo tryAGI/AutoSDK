@@ -45,7 +45,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_column")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksProjectColumn? ProjectColumn { get; set; }
+        public required global::G.WebhooksProjectColumn ProjectColumn { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>

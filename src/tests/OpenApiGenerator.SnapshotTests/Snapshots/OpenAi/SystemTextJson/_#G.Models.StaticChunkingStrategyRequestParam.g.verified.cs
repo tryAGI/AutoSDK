@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("static")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.StaticChunkingStrategy? Static { get; set; }
+        public required global::G.StaticChunkingStrategy Static { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Creator { get; set; }
+        public required global::G.SimpleUser Creator { get; set; }
 
         /// <summary>
         /// 

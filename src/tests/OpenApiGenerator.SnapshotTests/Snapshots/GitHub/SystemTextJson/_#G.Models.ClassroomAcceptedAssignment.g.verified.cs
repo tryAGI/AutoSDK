@@ -61,14 +61,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleClassroomRepository? Repository { get; set; }
+        public required global::G.SimpleClassroomRepository Repository { get; set; }
 
         /// <summary>
         /// A GitHub Classroom assignment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleClassroomAssignment? Assignment { get; set; }
+        public required global::G.SimpleClassroomAssignment Assignment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

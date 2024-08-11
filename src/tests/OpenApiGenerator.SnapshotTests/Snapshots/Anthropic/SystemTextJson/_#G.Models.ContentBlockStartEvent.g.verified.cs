@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Block? ContentBlock { get; set; }
+        public required global::G.Block ContentBlock { get; set; }
 
         /// <summary>
         /// The index of the content block.
@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageStreamEventType? Type { get; set; }
+        public required global::G.MessageStreamEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

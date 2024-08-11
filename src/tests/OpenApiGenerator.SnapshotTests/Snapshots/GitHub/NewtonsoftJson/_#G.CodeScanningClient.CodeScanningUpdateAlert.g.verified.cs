@@ -141,7 +141,7 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
-            global::G.CodeScanningAlertSetState? state,
+            global::G.CodeScanningAlertSetState state,
             global::G.CodeScanningAlertDismissedReason? dismissedReason = default,
             string? dismissedComment = default,
             global::System.Threading.CancellationToken cancellationToken = default)

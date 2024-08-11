@@ -82,7 +82,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AppPermissions? Permissions { get; set; }
+        public required global::G.AppPermissions Permissions { get; set; }
 
         /// <summary>
         /// 

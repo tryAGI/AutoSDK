@@ -13,7 +13,7 @@ namespace G
         /// The SHA of the commit to which the analysis you are uploading relates.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitSha { get; set; } = default!;
+        public string CommitSha { get; set; } = default!;
 
         /// <summary>
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,<br/>
@@ -21,13 +21,13 @@ namespace G
         /// Example: refs/heads/main
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Ref { get; set; } = default!;
+        public string Ref { get; set; } = default!;
 
         /// <summary>
         /// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sarif", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Sarif { get; set; } = default!;
+        public string Sarif { get; set; } = default!;
 
         /// <summary>
         /// The base directory used in the analysis, as it appears in the SARIF file.<br/>

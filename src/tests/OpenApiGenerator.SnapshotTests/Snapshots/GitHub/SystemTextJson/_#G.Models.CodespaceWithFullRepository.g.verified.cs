@@ -44,21 +44,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billable_owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? BillableOwner { get; set; }
+        public required global::G.SimpleUser BillableOwner { get; set; }
 
         /// <summary>
         /// Full Repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FullRepository? Repository { get; set; }
+        public required global::G.FullRepository Repository { get; set; }
 
         /// <summary>
         /// A description of the machine powering a codespace.

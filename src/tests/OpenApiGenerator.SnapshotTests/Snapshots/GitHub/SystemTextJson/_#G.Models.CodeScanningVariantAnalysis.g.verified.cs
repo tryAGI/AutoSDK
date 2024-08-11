@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controller_repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleRepository? ControllerRepo { get; set; }
+        public required global::G.SimpleRepository ControllerRepo { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Actor { get; set; }
+        public required global::G.SimpleUser Actor { get; set; }
 
         /// <summary>
         /// The language targeted by the CodeQL query
@@ -36,7 +36,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("query_language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningVariantAnalysisLanguage? QueryLanguage { get; set; }
+        public required global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; }
 
         /// <summary>
         /// The download url for the query pack.

@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrganizationSimpleWebhooks? Organization { get; set; }
+        public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
 
         /// <summary>
         /// A git repository
@@ -59,14 +59,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks? Sender { get; set; }
+        public required global::G.SimpleUserWebhooks Sender { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("team")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksTeam1? Team { get; set; }
+        public required global::G.WebhooksTeam1 Team { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

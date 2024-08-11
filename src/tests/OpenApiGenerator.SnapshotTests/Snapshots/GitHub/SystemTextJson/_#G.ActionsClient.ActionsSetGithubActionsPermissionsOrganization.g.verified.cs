@@ -90,7 +90,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ActionsSetGithubActionsPermissionsOrganizationAsync(
             string org,
-            global::G.EnabledRepositories? enabledRepositories,
+            global::G.EnabledRepositories enabledRepositories,
             global::G.AllowedActions? allowedActions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionResponseMessage? Message { get; set; }
+        public required global::G.ChatCompletionResponseMessage Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

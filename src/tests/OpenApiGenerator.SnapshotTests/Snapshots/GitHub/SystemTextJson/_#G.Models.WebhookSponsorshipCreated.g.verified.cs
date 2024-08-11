@@ -52,14 +52,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks? Sender { get; set; }
+        public required global::G.SimpleUserWebhooks Sender { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sponsorship")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksSponsorship? Sponsorship { get; set; }
+        public required global::G.WebhooksSponsorship Sponsorship { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

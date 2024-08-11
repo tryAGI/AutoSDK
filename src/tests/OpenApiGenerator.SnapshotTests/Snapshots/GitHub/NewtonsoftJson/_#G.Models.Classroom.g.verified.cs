@@ -34,7 +34,7 @@ namespace G
         /// A GitHub organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleClassroomOrganization? Organization { get; set; } = default!;
+        public global::G.SimpleClassroomOrganization Organization { get; set; } = default!;
 
         /// <summary>
         /// The URL of the classroom on GitHub Classroom.<br/>

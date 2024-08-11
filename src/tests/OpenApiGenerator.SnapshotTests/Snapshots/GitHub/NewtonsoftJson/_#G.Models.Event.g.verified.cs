@@ -25,7 +25,7 @@ namespace G
         /// Actor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Actor? Actor { get; set; } = default!;
+        public global::G.Actor Actor { get; set; } = default!;
 
         /// <summary>
         /// 

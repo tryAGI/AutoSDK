@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? User { get; set; }
+        public required global::G.SimpleUser User { get; set; }
 
         /// <summary>
         /// The comment submitted with the deployment review<br/>

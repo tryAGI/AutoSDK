@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuditLogEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuditLogEventType? Type { get; set; }
+        public required global::G.AuditLogEventType Type { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of the event.
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuditLogActor? Actor { get; set; }
+        public required global::G.AuditLogActor Actor { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.

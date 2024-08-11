@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seat_breakdown")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CopilotSeatBreakdown? SeatBreakdown { get; set; }
+        public required global::G.CopilotSeatBreakdown SeatBreakdown { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.

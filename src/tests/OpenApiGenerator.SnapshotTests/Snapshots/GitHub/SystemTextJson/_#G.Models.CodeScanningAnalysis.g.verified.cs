@@ -15,28 +15,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Ref { get; set; }
+        public required string Ref { get; set; }
 
         /// <summary>
         /// The SHA of the commit to which the analysis you are uploading relates.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitSha { get; set; }
+        public required string CommitSha { get; set; }
 
         /// <summary>
         /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AnalysisKey { get; set; }
+        public required string AnalysisKey { get; set; }
 
         /// <summary>
         /// Identifies the variable values associated with the environment in which this analysis was performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Environment { get; set; }
+        public required string Environment { get; set; }
 
         /// <summary>
         /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public required string Url { get; set; }
 
         /// <summary>
         /// An identifier for the upload.<br/>
@@ -92,14 +92,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sarif_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SarifId { get; set; }
+        public required string SarifId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAnalysisTool? Tool { get; set; }
+        public required global::G.CodeScanningAnalysisTool Tool { get; set; }
 
         /// <summary>
         /// 

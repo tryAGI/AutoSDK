@@ -70,7 +70,7 @@ namespace G
         /// The permissions granted to the user access token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AppPermissions? Permissions { get; set; } = default!;
+        public global::G.AppPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// 

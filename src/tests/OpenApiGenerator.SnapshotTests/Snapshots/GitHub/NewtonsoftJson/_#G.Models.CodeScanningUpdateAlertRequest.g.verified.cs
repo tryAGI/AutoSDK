@@ -13,7 +13,7 @@ namespace G
         /// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAlertSetState? State { get; set; } = default!;
+        public global::G.CodeScanningAlertSetState State { get; set; } = default!;
 
         /// <summary>
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.

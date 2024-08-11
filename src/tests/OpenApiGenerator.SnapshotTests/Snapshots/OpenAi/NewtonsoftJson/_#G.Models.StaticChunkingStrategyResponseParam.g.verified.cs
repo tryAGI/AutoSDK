@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("static", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.StaticChunkingStrategy? Static { get; set; } = default!;
+        public global::G.StaticChunkingStrategy Static { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

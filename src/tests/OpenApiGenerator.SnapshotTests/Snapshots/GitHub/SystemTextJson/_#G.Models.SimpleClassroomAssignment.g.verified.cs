@@ -148,7 +148,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classroom")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleClassroom? Classroom { get; set; }
+        public required global::G.SimpleClassroom Classroom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_run")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheckRunWithSimpleCheckSuite? CheckRun { get; set; }
+        public required global::G.CheckRunWithSimpleCheckSuite CheckRun { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -45,7 +45,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks? Repository { get; set; }
+        public required global::G.RepositoryWebhooks Repository { get; set; }
 
         /// <summary>
         /// The action requested by the user.
@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks? Sender { get; set; }
+        public required global::G.SimpleUserWebhooks Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

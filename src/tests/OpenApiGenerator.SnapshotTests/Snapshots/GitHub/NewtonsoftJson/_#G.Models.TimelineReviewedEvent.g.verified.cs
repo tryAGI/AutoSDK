@@ -32,7 +32,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? User { get; set; } = default!;
+        public global::G.SimpleUser User { get; set; } = default!;
 
         /// <summary>
         /// The text of the review.<br/>
@@ -95,7 +95,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuthorAssociation? AuthorAssociation { get; set; } = default!;
+        public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -51,14 +51,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PusherType { get; set; }
+        public required string PusherType { get; set; }
 
         /// <summary>
         /// The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Ref { get; set; }
+        public required string Ref { get; set; }
 
         /// <summary>
         /// The type of Git ref object created in the repository.
@@ -74,14 +74,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks? Repository { get; set; }
+        public required global::G.RepositoryWebhooks Repository { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks? Sender { get; set; }
+        public required global::G.SimpleUserWebhooks Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

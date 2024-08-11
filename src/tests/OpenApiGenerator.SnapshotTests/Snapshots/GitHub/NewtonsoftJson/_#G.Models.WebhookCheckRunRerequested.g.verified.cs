@@ -19,7 +19,7 @@ namespace G
         /// A check performed on the code of a given code change
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("check_run", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CheckRunWithSimpleCheckSuite? CheckRun { get; set; } = default!;
+        public global::G.CheckRunWithSimpleCheckSuite CheckRun { get; set; } = default!;
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -41,13 +41,13 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryWebhooks? Repository { get; set; } = default!;
+        public global::G.RepositoryWebhooks Repository { get; set; } = default!;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

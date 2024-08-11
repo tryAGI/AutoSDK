@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_mismatch_repos", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup? AccessMismatchRepos { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup AccessMismatchRepos { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("no_codeql_db_repos", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup? NoCodeqlDbRepos { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup NoCodeqlDbRepos { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("over_limit_repos", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup? OverLimitRepos { get; set; } = default!;
+        public global::G.CodeScanningVariantAnalysisSkippedRepoGroup OverLimitRepos { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

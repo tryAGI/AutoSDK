@@ -190,9 +190,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodeScanningSarifsReceipt> CodeScanningUploadSarifAsync(
             string owner,
             string repo,
-            string? commitSha,
-            string? @ref,
-            string? sarif,
+            string commitSha,
+            string @ref,
+            string sarif,
             string? checkoutUri = default,
             global::System.DateTime startedAt = default,
             string? toolName = default,

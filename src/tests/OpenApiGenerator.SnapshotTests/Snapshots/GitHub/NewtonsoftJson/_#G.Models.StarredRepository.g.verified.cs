@@ -19,7 +19,7 @@ namespace G
         /// A repository on GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Repository? Repo { get; set; } = default!;
+        public global::G.Repository Repo { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

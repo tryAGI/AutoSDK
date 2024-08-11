@@ -19,7 +19,7 @@ namespace G
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDeltaObject? Data { get; set; } = default!;
+        public global::G.RunStepDeltaObject Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

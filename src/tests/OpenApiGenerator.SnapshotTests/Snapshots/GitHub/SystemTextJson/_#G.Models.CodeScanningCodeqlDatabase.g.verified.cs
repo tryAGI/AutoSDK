@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploader")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Uploader { get; set; }
+        public required global::G.SimpleUser Uploader { get; set; }
 
         /// <summary>
         /// The MIME type of the CodeQL database file.

@@ -150,14 +150,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("starter_code_repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleClassroomRepository? StarterCodeRepository { get; set; }
+        public required global::G.SimpleClassroomRepository StarterCodeRepository { get; set; }
 
         /// <summary>
         /// A GitHub Classroom classroom
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classroom")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Classroom? Classroom { get; set; }
+        public required global::G.Classroom Classroom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

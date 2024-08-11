@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksChanges8? Changes { get; set; } = default!;
+        public global::G.WebhooksChanges8 Changes { get; set; } = default!;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -55,13 +55,13 @@ namespace G
         /// The GitHub user that triggered the event. This property is included in every webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks? Sender { get; set; } = default!;
+        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sponsorship", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksSponsorship? Sponsorship { get; set; } = default!;
+        public global::G.WebhooksSponsorship Sponsorship { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

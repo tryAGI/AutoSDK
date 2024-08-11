@@ -26,7 +26,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? User { get; set; } = default!;
+        public global::G.SimpleUser User { get; set; } = default!;
 
         /// <summary>
         /// The comment submitted with the deployment review<br/>

@@ -177,7 +177,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TruncationObject? TruncationStrategy { get; set; }
+        public required global::G.TruncationObject TruncationStrategy { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.<br/>
@@ -189,7 +189,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantsApiToolChoiceOption? ToolChoice { get; set; }
+        public required global::G.AssistantsApiToolChoiceOption ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
@@ -207,7 +207,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public required global::G.AssistantsApiResponseFormatOption ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Inviter { get; set; }
+        public required global::G.SimpleUser Inviter { get; set; }
 
         /// <summary>
         /// 

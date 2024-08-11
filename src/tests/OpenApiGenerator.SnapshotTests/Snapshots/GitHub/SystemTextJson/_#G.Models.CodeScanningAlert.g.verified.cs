@@ -34,21 +34,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public required string Url { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public required string HtmlUrl { get; set; }
 
         /// <summary>
         /// The REST API URL for fetching the list of instances for an alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? InstancesUrl { get; set; }
+        public required string InstancesUrl { get; set; }
 
         /// <summary>
         /// State of a code scanning alert.
@@ -56,7 +56,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAlertState? State { get; set; }
+        public required global::G.CodeScanningAlertState State { get; set; }
 
         /// <summary>
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -97,21 +97,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAlertRule? Rule { get; set; }
+        public required global::G.CodeScanningAlertRule Rule { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAnalysisTool? Tool { get; set; }
+        public required global::G.CodeScanningAnalysisTool Tool { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("most_recent_instance")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAlertInstance? MostRecentInstance { get; set; }
+        public required global::G.CodeScanningAlertInstance MostRecentInstance { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

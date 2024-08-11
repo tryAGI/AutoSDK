@@ -41,7 +41,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectsV2ItemContentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectsV2ItemContentType? ContentType { get; set; }
+        public required global::G.ProjectsV2ItemContentType ContentType { get; set; }
 
         /// <summary>
         /// A GitHub user.

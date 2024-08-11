@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SecurityAdvisoryCreditTypes? Type { get; set; }
+        public required global::G.SecurityAdvisoryCreditTypes Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

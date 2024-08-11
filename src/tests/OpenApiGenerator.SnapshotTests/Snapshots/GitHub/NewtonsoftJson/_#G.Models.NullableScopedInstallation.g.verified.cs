@@ -13,7 +13,7 @@ namespace G
         /// The permissions granted to the user access token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AppPermissions? Permissions { get; set; } = default!;
+        public global::G.AppPermissions Permissions { get; set; } = default!;
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
@@ -49,7 +49,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? Account { get; set; } = default!;
+        public global::G.SimpleUser Account { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

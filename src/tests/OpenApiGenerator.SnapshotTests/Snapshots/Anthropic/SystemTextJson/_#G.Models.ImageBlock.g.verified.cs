@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ImageBlockSource? Source { get; set; }
+        public required global::G.ImageBlockSource Source { get; set; }
 
         /// <summary>
         /// The type of content block.<br/>

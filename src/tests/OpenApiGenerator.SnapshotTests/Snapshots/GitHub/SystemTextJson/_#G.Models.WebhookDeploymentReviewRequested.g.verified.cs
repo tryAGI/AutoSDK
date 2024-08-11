@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrganizationSimpleWebhooks? Organization { get; set; }
+        public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -54,7 +54,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryWebhooks? Repository { get; set; }
+        public required global::G.RepositoryWebhooks Repository { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks? Sender { get; set; }
+        public required global::G.SimpleUserWebhooks Sender { get; set; }
 
         /// <summary>
         /// 
