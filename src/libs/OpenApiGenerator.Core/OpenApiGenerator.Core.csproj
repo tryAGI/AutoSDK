@@ -19,7 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.16" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.17" />
     <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
   </ItemGroup>
   
