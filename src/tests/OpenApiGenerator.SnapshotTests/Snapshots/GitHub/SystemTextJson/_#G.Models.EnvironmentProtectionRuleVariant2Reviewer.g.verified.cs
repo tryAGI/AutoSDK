@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewer")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.SimpleUser?, global::G.Team?>? Reviewer { get; set; }
+        public global::System.AnyOf<global::G.SimpleUser, global::G.Team>? Reviewer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

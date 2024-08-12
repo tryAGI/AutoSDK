@@ -13,6 +13,7 @@ public readonly record struct TypeData(
     bool IsDate,
     bool IsDateTime,
     bool IsBinary,
+    bool IsValueType,
     int AnyOfCount,
     int OneOfCount,
     int AllOfCount,
@@ -33,6 +34,7 @@ public readonly record struct TypeData(
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         AnyOfCount: 0,
         OneOfCount: 0,
         AllOfCount: 0,
@@ -50,6 +52,9 @@ public readonly record struct TypeData(
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
     public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
     public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
+    public string CSharpTypeWithNullabilityForValueTypes => IsValueType
+        ? CSharpTypeWithNullability
+        : CSharpTypeWithoutNullability;
 
     public bool IsReferenceable =>
         CSharpTypeWithoutNullability is "string" or "int" or "long" or "float" or "double" or "bool" ||
@@ -123,6 +128,7 @@ public readonly record struct TypeData(
         
         return new TypeData(
             CSharpType: GetCSharpType(context),
+            IsValueType: ContextIsValueType(context),
             IsArray: context.Schema.Type == "array",
             IsEnum: context.Schema.IsEnum(),
             IsBase64: context.Schema.IsBase64(),
@@ -142,6 +148,27 @@ public readonly record struct TypeData(
             GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);
     }
     
+    public static bool ContextIsValueType(SchemaContext context)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        
+        return (context.Schema.Type, context.Schema.Format) switch
+        {
+            (_, _) when context.IsAnyOfLikeStructure => true,
+            (_, _) when context.IsEnum => true,
+
+            ("boolean", _) => true,
+            ("integer", _) => true,
+            ("number", _) => true,
+            ("string", null) => true,
+            ("string", "date") => true,
+            ("string", "date-time") => true,
+            ("string", "password") => true,
+            
+            _ => false,
+        };
+    }
+    
     public static string GetCSharpType(SchemaContext context, SchemaContext? additionalContext = null)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
@@ -152,9 +179,9 @@ public readonly record struct TypeData(
             (_, _) when context.Schema.IsOneOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (_, _) when context.Schema.IsAllOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             
-            (_, _) when context.Schema.IsAnyOf() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (_, _) when context.Schema.IsOneOf() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
-            (_, _) when context.Schema.IsAllOf() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (_, _) when context.Schema.IsAnyOf() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsOneOf() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsAllOf() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),

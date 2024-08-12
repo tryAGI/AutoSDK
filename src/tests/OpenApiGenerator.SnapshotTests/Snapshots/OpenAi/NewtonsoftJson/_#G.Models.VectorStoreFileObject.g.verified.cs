@@ -57,7 +57,7 @@ namespace G
         /// The strategy used to chunk the file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
-        public global::System.OneOf<global::G.StaticChunkingStrategyResponseParam?, global::G.OtherChunkingStrategyResponseParam?>? ChunkingStrategy { get; set; }
+        public global::System.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

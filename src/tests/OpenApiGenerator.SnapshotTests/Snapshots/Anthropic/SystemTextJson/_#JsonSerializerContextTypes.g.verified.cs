@@ -38,7 +38,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.Block>?>? Type6 { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.Block>>? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>

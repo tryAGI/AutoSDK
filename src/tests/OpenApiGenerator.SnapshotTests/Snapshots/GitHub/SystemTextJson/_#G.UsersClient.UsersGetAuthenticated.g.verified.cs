@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.PrivateUser?, global::G.PublicUser?>> UsersGetAuthenticatedAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.PrivateUser, global::G.PublicUser>> UsersGetAuthenticatedAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -78,7 +78,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.PrivateUser?, global::G.PublicUser?>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.OneOf<global::G.PrivateUser, global::G.PublicUser>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

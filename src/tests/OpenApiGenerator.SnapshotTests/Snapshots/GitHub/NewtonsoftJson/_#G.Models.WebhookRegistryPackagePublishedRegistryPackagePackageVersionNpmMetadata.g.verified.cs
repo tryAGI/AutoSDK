@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?>? Author { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor>? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bugs")]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?>? Bugs { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs>? Bugs { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dist")]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?>? Dist { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist>? Dist { get; set; }
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?>? Repository { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository>? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -183,7 +183,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("directories")]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?>? Directories { get; set; }
+        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories>? Directories { get; set; }
 
         /// <summary>
         /// 

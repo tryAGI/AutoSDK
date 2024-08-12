@@ -17,14 +17,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::G.SimpleUser?, global::G.Team?, global::G.Organization?> Assignee { get; set; }
+        public required global::System.OneOf<global::G.SimpleUser, global::G.Team, global::G.Organization> Assignee { get; set; }
 
         /// <summary>
         /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigning_team")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1))]
-        public global::System.OneOf<global::G.Team?>? AssigningTeam { get; set; }
+        public global::System.OneOf<global::G.Team>? AssigningTeam { get; set; }
 
         /// <summary>
         /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.

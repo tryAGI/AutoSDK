@@ -25,7 +25,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<global::G.SimpleUser?, global::G.Enterprise?>? Account { get; set; }
+        public required global::System.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; }
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved

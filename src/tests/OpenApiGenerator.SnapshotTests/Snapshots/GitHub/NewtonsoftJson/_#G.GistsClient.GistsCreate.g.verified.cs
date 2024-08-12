@@ -114,7 +114,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GistSimple> GistsCreateAsync(
             global::G.GistsCreateRequestFiles files,
             string? description = default,
-            global::System.OneOf<bool, global::G.GistsCreateRequestPublic?>? @public = default,
+            global::System.OneOf<bool?, global::G.GistsCreateRequestPublic?>? @public = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.GistsCreateRequest

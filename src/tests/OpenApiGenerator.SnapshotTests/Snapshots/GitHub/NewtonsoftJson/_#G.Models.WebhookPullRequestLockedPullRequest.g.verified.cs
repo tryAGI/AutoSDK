@@ -237,7 +237,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requested_reviewers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1?, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2?>> RequestedReviewers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestLockedPullRequestRequestedReviewerVariant2>> RequestedReviewers { get; set; } = default!;
 
         /// <summary>
         /// 

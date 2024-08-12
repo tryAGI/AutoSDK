@@ -185,7 +185,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateCompletionResponse> CreateCompletionAsync(
             global::System.AnyOf<string?, global::G.CreateCompletionRequestModel?> model,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?, global::System.Collections.Generic.IList<int>?, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>?>? prompt,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
             int? bestOf = 1,
             bool? echo = false,
             double? frequencyPenalty = 0,
@@ -195,7 +195,7 @@ namespace G
             int? n = 1,
             double? presencePenalty = 0,
             int? seed = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = false,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

@@ -15,7 +15,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step_details")]
-        public global::System.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject?, global::G.RunStepDeltaStepDetailsToolCallsObject?>? StepDetails { get; set; }
+        public global::System.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject, global::G.RunStepDeltaStepDetailsToolCallsObject>? StepDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

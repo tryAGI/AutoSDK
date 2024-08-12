@@ -81,6 +81,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             content,
@@ -97,6 +98,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestSystemMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestSystemMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestSystemMessage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -120,6 +122,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             content,
@@ -136,6 +139,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestUserMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestUserMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestUserMessage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -159,6 +163,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             content,
@@ -178,6 +183,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestAssistantMessage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -201,6 +207,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             role,
@@ -217,6 +224,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestToolMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestToolMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestToolMessage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -240,6 +248,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             role,
@@ -256,6 +265,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestFunctionMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestFunctionMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestFunctionMessage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -289,6 +299,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -304,6 +315,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartText,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -337,6 +349,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -352,6 +365,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartText,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -375,6 +389,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -390,6 +405,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartImage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartImage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartImage,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -423,6 +439,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -438,6 +455,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartText,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -461,6 +479,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -476,6 +495,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartRefusal,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartRefusal?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartRefusal,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -509,6 +529,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -524,6 +545,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestMessageContentPartText,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -565,6 +587,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           IsComponent: false,
           Properties: [
             None,
@@ -585,6 +608,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: ChatCompletionToolChoiceOptionVariant1,
           ShortCSharpTypeWithNullability: ChatCompletionToolChoiceOptionVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionToolChoiceOptionVariant1?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
         },
@@ -608,6 +632,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -623,6 +648,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: ChatCompletionNamedToolChoice,
           ShortCSharpTypeWithNullability: ChatCompletionNamedToolChoice?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionNamedToolChoice,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -664,6 +690,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           IsComponent: false,
           Properties: [
             Auto
@@ -680,6 +707,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
           ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionVariant1?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
         },
@@ -703,6 +731,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type
@@ -717,6 +746,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: ResponseFormatText,
           ShortCSharpTypeWithNullability: ResponseFormatText?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ResponseFormatText,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -740,6 +770,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type
@@ -754,6 +785,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: ResponseFormatJsonObject,
           ShortCSharpTypeWithNullability: ResponseFormatJsonObject?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ResponseFormatJsonObject,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -777,6 +809,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -792,6 +825,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: ResponseFormatJsonSchema,
           ShortCSharpTypeWithNullability: ResponseFormatJsonSchema?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ResponseFormatJsonSchema,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -831,6 +865,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           IsComponent: false,
           Properties: [
             None,
@@ -851,6 +886,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionVariant1,
           ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiToolChoiceOptionVariant1?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
         },
@@ -874,6 +910,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -889,6 +926,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AssistantsNamedToolChoice,
           ShortCSharpTypeWithNullability: AssistantsNamedToolChoice?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsNamedToolChoice,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -922,6 +960,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type
@@ -936,6 +975,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AutoChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: AutoChunkingStrategyRequestParam?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.AutoChunkingStrategyRequestParam,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -959,6 +999,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             type,
@@ -974,6 +1015,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: StaticChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: StaticChunkingStrategyRequestParam?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.StaticChunkingStrategyRequestParam,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1027,6 +1069,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           OneOfCount: 1,
           IsComponent: true,
           Properties: null,
@@ -1040,6 +1083,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1052,6 +1096,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: ThreadStreamEventVariant1,
               ShortCSharpTypeWithNullability: ThreadStreamEventVariant1?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.ThreadStreamEventVariant1,
               IsReferenceable: false,
               ConverterType: 
             }
@@ -1064,6 +1109,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ThreadStreamEvent,
           ShortCSharpTypeWithNullability: ThreadStreamEvent?,
           IsAnyOf: true,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ThreadStreamEvent?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ThreadStreamEventJsonConverter
         },
@@ -1087,6 +1133,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           OneOfCount: 10,
           IsComponent: true,
           Properties: null,
@@ -1100,6 +1147,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1112,6 +1160,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant1,
               ShortCSharpTypeWithNullability: RunStreamEventVariant1?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant1,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1123,6 +1172,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1135,6 +1185,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant2,
               ShortCSharpTypeWithNullability: RunStreamEventVariant2?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant2,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1146,6 +1197,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1158,6 +1210,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant3,
               ShortCSharpTypeWithNullability: RunStreamEventVariant3?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant3,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1169,6 +1222,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1181,6 +1235,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant4,
               ShortCSharpTypeWithNullability: RunStreamEventVariant4?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant4,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1192,6 +1247,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1204,6 +1260,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant5,
               ShortCSharpTypeWithNullability: RunStreamEventVariant5?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant5,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1215,6 +1272,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1227,6 +1285,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant6,
               ShortCSharpTypeWithNullability: RunStreamEventVariant6?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant6,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1238,6 +1297,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1250,6 +1310,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant7,
               ShortCSharpTypeWithNullability: RunStreamEventVariant7?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant7,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1261,6 +1322,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1273,6 +1335,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant8,
               ShortCSharpTypeWithNullability: RunStreamEventVariant8?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant8,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1284,6 +1347,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1296,6 +1360,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant9,
               ShortCSharpTypeWithNullability: RunStreamEventVariant9?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant9,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1307,6 +1372,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1319,6 +1385,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStreamEventVariant10,
               ShortCSharpTypeWithNullability: RunStreamEventVariant10?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant10,
               IsReferenceable: false,
               ConverterType: 
             }
@@ -1331,6 +1398,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEvent,
           ShortCSharpTypeWithNullability: RunStreamEvent?,
           IsAnyOf: true,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEvent?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventJsonConverter
         },
@@ -1354,6 +1422,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           OneOfCount: 7,
           IsComponent: true,
           Properties: null,
@@ -1367,6 +1436,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1379,6 +1449,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant1,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant1?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant1,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1390,6 +1461,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1402,6 +1474,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant2,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant2?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant2,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1413,6 +1486,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1425,6 +1499,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant3,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant3?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant3,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1436,6 +1511,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1448,6 +1524,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant4,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant4?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant4,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1459,6 +1536,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1471,6 +1549,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant5,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant5?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant5,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1482,6 +1561,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1494,6 +1574,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant6,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant6?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant6,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1505,6 +1586,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1517,6 +1599,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant7,
               ShortCSharpTypeWithNullability: RunStepStreamEventVariant7?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant7,
               IsReferenceable: false,
               ConverterType: 
             }
@@ -1529,6 +1612,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEvent,
           ShortCSharpTypeWithNullability: RunStepStreamEvent?,
           IsAnyOf: true,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEvent?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventJsonConverter
         },
@@ -1552,6 +1636,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           OneOfCount: 5,
           IsComponent: true,
           Properties: null,
@@ -1565,6 +1650,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1577,6 +1663,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: MessageStreamEventVariant1,
               ShortCSharpTypeWithNullability: MessageStreamEventVariant1?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant1,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1588,6 +1675,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1600,6 +1688,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: MessageStreamEventVariant2,
               ShortCSharpTypeWithNullability: MessageStreamEventVariant2?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant2,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1611,6 +1700,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1623,6 +1713,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: MessageStreamEventVariant3,
               ShortCSharpTypeWithNullability: MessageStreamEventVariant3?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant3,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1634,6 +1725,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1646,6 +1738,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: MessageStreamEventVariant4,
               ShortCSharpTypeWithNullability: MessageStreamEventVariant4?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant4,
               IsReferenceable: false,
               ConverterType: 
             },
@@ -1657,6 +1750,7 @@ integrate the Assistants API with streaming.
               IsDate: false,
               IsDateTime: false,
               IsBinary: false,
+              IsValueType: false,
               IsComponent: false,
               Properties: null,
               EnumValues: null,
@@ -1669,6 +1763,7 @@ integrate the Assistants API with streaming.
               ShortCSharpTypeWithoutNullability: MessageStreamEventVariant5,
               ShortCSharpTypeWithNullability: MessageStreamEventVariant5?,
               IsAnyOf: false,
+              CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant5,
               IsReferenceable: false,
               ConverterType: 
             }
@@ -1681,6 +1776,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEvent,
           ShortCSharpTypeWithNullability: MessageStreamEvent?,
           IsAnyOf: true,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEvent?,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventJsonConverter
         },
@@ -1704,6 +1800,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             event,
@@ -1719,6 +1816,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ErrorEvent,
           ShortCSharpTypeWithNullability: ErrorEvent?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ErrorEvent,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1742,6 +1840,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             event,
@@ -1757,6 +1856,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: DoneEvent,
           ShortCSharpTypeWithNullability: DoneEvent?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.DoneEvent,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1790,6 +1890,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1802,6 +1903,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ThreadStreamEventVariant1,
           ShortCSharpTypeWithNullability: ThreadStreamEventVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ThreadStreamEventVariant1,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1835,6 +1937,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1847,6 +1950,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant1,
           ShortCSharpTypeWithNullability: RunStreamEventVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant1,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1870,6 +1974,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1882,6 +1987,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant2,
           ShortCSharpTypeWithNullability: RunStreamEventVariant2?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant2,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1905,6 +2011,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1917,6 +2024,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant3,
           ShortCSharpTypeWithNullability: RunStreamEventVariant3?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant3,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1940,6 +2048,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1952,6 +2061,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant4,
           ShortCSharpTypeWithNullability: RunStreamEventVariant4?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant4,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -1975,6 +2085,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -1987,6 +2098,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant5,
           ShortCSharpTypeWithNullability: RunStreamEventVariant5?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant5,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2010,6 +2122,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2022,6 +2135,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant6,
           ShortCSharpTypeWithNullability: RunStreamEventVariant6?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant6,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2045,6 +2159,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2057,6 +2172,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant7,
           ShortCSharpTypeWithNullability: RunStreamEventVariant7?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant7,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2080,6 +2196,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2092,6 +2209,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant8,
           ShortCSharpTypeWithNullability: RunStreamEventVariant8?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant8,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2115,6 +2233,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2127,6 +2246,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant9,
           ShortCSharpTypeWithNullability: RunStreamEventVariant9?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant9,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2150,6 +2270,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2162,6 +2283,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant10,
           ShortCSharpTypeWithNullability: RunStreamEventVariant10?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStreamEventVariant10,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2195,6 +2317,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2207,6 +2330,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant1,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant1,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2230,6 +2354,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2242,6 +2367,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant2,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant2?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant2,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2265,6 +2391,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2277,6 +2404,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant3,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant3?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant3,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2300,6 +2428,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2312,6 +2441,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant4,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant4?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant4,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2335,6 +2465,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2347,6 +2478,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant5,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant5?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant5,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2370,6 +2502,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2382,6 +2515,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant6,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant6?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant6,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2405,6 +2539,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2417,6 +2552,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant7,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant7?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.RunStepStreamEventVariant7,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2450,6 +2586,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2462,6 +2599,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant1,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant1,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2485,6 +2623,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2497,6 +2636,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant2,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant2?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant2,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2520,6 +2660,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2532,6 +2673,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant3,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant3?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant3,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2555,6 +2697,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2567,6 +2710,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant4,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant4?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant4,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2590,6 +2734,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2602,6 +2747,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant5,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant5?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.MessageStreamEventVariant5,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2635,6 +2781,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -2647,6 +2794,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: FineTuneChatCompletionRequestAssistantMessageVariant1,
           ShortCSharpTypeWithNullability: FineTuneChatCompletionRequestAssistantMessageVariant1?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1,
           IsReferenceable: false,
           ConverterType: 
         },
@@ -2670,6 +2818,7 @@ integrate the Assistants API with streaming.
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: true,
           Properties: [
             content,
@@ -2689,6 +2838,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionRequestAssistantMessage,
           IsReferenceable: false,
           ConverterType: 
         },

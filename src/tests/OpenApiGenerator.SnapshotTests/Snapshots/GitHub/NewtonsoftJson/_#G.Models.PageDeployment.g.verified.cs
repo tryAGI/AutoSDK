@@ -15,7 +15,7 @@ namespace G
         /// The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<int, string?> Id { get; set; } = default!;
+        public global::System.OneOf<int?, string?> Id { get; set; } = default!;
 
         /// <summary>
         /// The URI to monitor GitHub Pages deployment status.<br/>

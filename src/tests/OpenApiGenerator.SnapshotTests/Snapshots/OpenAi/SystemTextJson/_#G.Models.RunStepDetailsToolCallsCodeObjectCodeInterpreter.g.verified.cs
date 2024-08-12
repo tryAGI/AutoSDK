@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject?, global::G.RunStepDetailsToolCallsCodeOutputImageObject?>> Outputs { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>> Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

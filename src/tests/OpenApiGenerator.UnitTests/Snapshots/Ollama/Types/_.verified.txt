@@ -7,6 +7,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -31,6 +32,7 @@
     ShortCSharpTypeWithoutNullability: GenerateCompletionRequest,
     ShortCSharpTypeWithNullability: GenerateCompletionRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateCompletionRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -42,6 +44,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -54,6 +57,7 @@
     ShortCSharpTypeWithoutNullability: string,
     ShortCSharpTypeWithNullability: string?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: string?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -65,6 +69,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -77,6 +82,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -89,6 +95,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -101,6 +108,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<string>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -112,6 +120,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -124,6 +133,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -136,6 +146,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -148,6 +159,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<long>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -159,6 +171,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -171,6 +184,7 @@
     ShortCSharpTypeWithoutNullability: long,
     ShortCSharpTypeWithNullability: long?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: long?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -182,6 +196,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       num_keep,
@@ -224,6 +239,7 @@
     ShortCSharpTypeWithoutNullability: RequestOptions,
     ShortCSharpTypeWithNullability: RequestOptions?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.RequestOptions,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -235,6 +251,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -247,6 +264,7 @@
     ShortCSharpTypeWithoutNullability: int,
     ShortCSharpTypeWithNullability: int?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: int?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -258,6 +276,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -270,6 +289,7 @@
     ShortCSharpTypeWithoutNullability: float,
     ShortCSharpTypeWithNullability: float?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: float?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -281,6 +301,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -293,6 +314,7 @@
     ShortCSharpTypeWithoutNullability: bool,
     ShortCSharpTypeWithNullability: bool?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: bool?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -304,6 +326,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: true,
     Properties: [
       Json
@@ -320,6 +343,7 @@
     ShortCSharpTypeWithoutNullability: ResponseFormat,
     ShortCSharpTypeWithNullability: ResponseFormat?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ResponseFormat?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
   },
@@ -331,6 +355,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       version
@@ -345,6 +370,7 @@
     ShortCSharpTypeWithoutNullability: VersionResponse,
     ShortCSharpTypeWithNullability: VersionResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.VersionResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -356,6 +382,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -380,6 +407,7 @@
     ShortCSharpTypeWithoutNullability: GenerateCompletionResponse,
     ShortCSharpTypeWithNullability: GenerateCompletionResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateCompletionResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -391,6 +419,7 @@
     IsDate: false,
     IsDateTime: true,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -403,6 +432,7 @@
     ShortCSharpTypeWithoutNullability: global::System.DateTime,
     ShortCSharpTypeWithNullability: global::System.DateTime?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.DateTime?,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -414,6 +444,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -433,6 +464,7 @@
     ShortCSharpTypeWithoutNullability: GenerateChatCompletionRequest,
     ShortCSharpTypeWithNullability: GenerateChatCompletionRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateChatCompletionRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -444,6 +476,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -456,6 +489,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -468,6 +502,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -480,6 +515,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<global::G.Message>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -491,6 +527,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       role,
@@ -507,6 +544,7 @@
     ShortCSharpTypeWithoutNullability: Message,
     ShortCSharpTypeWithNullability: Message?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.Message,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -518,6 +556,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: [
       System,
@@ -538,6 +577,7 @@
     ShortCSharpTypeWithoutNullability: MessageRole,
     ShortCSharpTypeWithNullability: MessageRole?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.MessageRole?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
   },
@@ -549,6 +589,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       message,
@@ -573,6 +614,7 @@
     ShortCSharpTypeWithoutNullability: GenerateChatCompletionResponse,
     ShortCSharpTypeWithNullability: GenerateChatCompletionResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateChatCompletionResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -584,6 +626,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     AnyOfCount: 2,
     IsComponent: true,
     Properties: null,
@@ -597,6 +640,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -609,6 +653,7 @@
         ShortCSharpTypeWithoutNullability: string,
         ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: string?,
         IsReferenceable: true,
         ConverterType: 
       },
@@ -620,6 +665,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: [
           Stop,
@@ -640,6 +686,7 @@
         ShortCSharpTypeWithoutNullability: DoneReasonVariant2,
         ShortCSharpTypeWithNullability: DoneReasonVariant2?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: global::G.DoneReasonVariant2?,
         IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter
       }
@@ -652,6 +699,7 @@
     ShortCSharpTypeWithoutNullability: DoneReason,
     ShortCSharpTypeWithNullability: DoneReason?,
     IsAnyOf: true,
+    CSharpTypeWithNullabilityForValueTypes: global::G.DoneReason?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.DoneReasonJsonConverter
   },
@@ -663,6 +711,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: [
       Stop,
@@ -683,6 +732,7 @@
     ShortCSharpTypeWithoutNullability: DoneReasonVariant2,
     ShortCSharpTypeWithNullability: DoneReasonVariant2?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.DoneReasonVariant2?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter
   },
@@ -694,6 +744,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -711,6 +762,7 @@
     ShortCSharpTypeWithoutNullability: GenerateEmbeddingRequest,
     ShortCSharpTypeWithNullability: GenerateEmbeddingRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateEmbeddingRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -722,6 +774,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       embedding
@@ -736,6 +789,7 @@
     ShortCSharpTypeWithoutNullability: GenerateEmbeddingResponse,
     ShortCSharpTypeWithNullability: GenerateEmbeddingResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.GenerateEmbeddingResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -747,6 +801,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -759,6 +814,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -771,6 +827,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -783,6 +840,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<double>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -794,6 +852,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -806,6 +865,7 @@
     ShortCSharpTypeWithoutNullability: double,
     ShortCSharpTypeWithNullability: double?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: double?,
     IsReferenceable: true,
     ConverterType: 
   },
@@ -817,6 +877,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -835,6 +896,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelRequest,
     ShortCSharpTypeWithNullability: CreateModelRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.CreateModelRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -846,6 +908,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       status
@@ -860,6 +923,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelResponse,
     ShortCSharpTypeWithNullability: CreateModelResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.CreateModelResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -871,6 +935,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     AnyOfCount: 2,
     IsComponent: true,
     Properties: null,
@@ -884,6 +949,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -896,6 +962,7 @@
         ShortCSharpTypeWithoutNullability: string,
         ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: string?,
         IsReferenceable: true,
         ConverterType: 
       },
@@ -907,6 +974,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: [
           CreatingSystemLayer,
@@ -927,6 +995,7 @@
         ShortCSharpTypeWithoutNullability: CreateModelStatusVariant2,
         ShortCSharpTypeWithNullability: CreateModelStatusVariant2?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: global::G.CreateModelStatusVariant2?,
         IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter
       }
@@ -939,6 +1008,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelStatus,
     ShortCSharpTypeWithNullability: CreateModelStatus?,
     IsAnyOf: true,
+    CSharpTypeWithNullabilityForValueTypes: global::G.CreateModelStatus?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusJsonConverter
   },
@@ -950,6 +1020,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: [
       CreatingSystemLayer,
@@ -970,6 +1041,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelStatusVariant2,
     ShortCSharpTypeWithNullability: CreateModelStatusVariant2?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.CreateModelStatusVariant2?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter
   },
@@ -981,6 +1053,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       models
@@ -995,6 +1068,7 @@
     ShortCSharpTypeWithoutNullability: ModelsResponse,
     ShortCSharpTypeWithNullability: ModelsResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ModelsResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1006,6 +1080,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -1018,6 +1093,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -1030,6 +1106,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -1042,6 +1119,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<global::G.Model>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1053,6 +1131,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -1071,6 +1150,7 @@
     ShortCSharpTypeWithoutNullability: Model,
     ShortCSharpTypeWithNullability: Model?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.Model,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1082,6 +1162,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       parent_model,
@@ -1101,6 +1182,7 @@
     ShortCSharpTypeWithoutNullability: ModelDetails,
     ShortCSharpTypeWithNullability: ModelDetails?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ModelDetails,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1112,6 +1194,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       general.architecture,
@@ -1129,6 +1212,7 @@
     ShortCSharpTypeWithoutNullability: ModelInformation,
     ShortCSharpTypeWithNullability: ModelInformation?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ModelInformation,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1140,6 +1224,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       models
@@ -1154,6 +1239,7 @@
     ShortCSharpTypeWithoutNullability: ProcessResponse,
     ShortCSharpTypeWithNullability: ProcessResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ProcessResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1165,6 +1251,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -1177,6 +1264,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: false,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -1189,6 +1277,7 @@
         ShortCSharpTypeWithoutNullability: ,
         ShortCSharpTypeWithNullability: ?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: ,
         IsReferenceable: false,
         ConverterType: 
       }
@@ -1201,6 +1290,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ProcessModel>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ProcessModel>?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<global::G.ProcessModel>,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1212,6 +1302,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -1231,6 +1322,7 @@
     ShortCSharpTypeWithoutNullability: ProcessModel,
     ShortCSharpTypeWithNullability: ProcessModel?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ProcessModel,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1242,6 +1334,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model
@@ -1256,6 +1349,7 @@
     ShortCSharpTypeWithoutNullability: ModelInfoRequest,
     ShortCSharpTypeWithNullability: ModelInfoRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ModelInfoRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1267,6 +1361,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       license,
@@ -1288,6 +1383,7 @@
     ShortCSharpTypeWithoutNullability: ModelInfo,
     ShortCSharpTypeWithNullability: ModelInfo?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.ModelInfo,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1299,6 +1395,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       source,
@@ -1314,6 +1411,7 @@
     ShortCSharpTypeWithoutNullability: CopyModelRequest,
     ShortCSharpTypeWithNullability: CopyModelRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.CopyModelRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1325,6 +1423,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model
@@ -1339,6 +1438,7 @@
     ShortCSharpTypeWithoutNullability: DeleteModelRequest,
     ShortCSharpTypeWithNullability: DeleteModelRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.DeleteModelRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1350,6 +1450,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -1368,6 +1469,7 @@
     ShortCSharpTypeWithoutNullability: PullModelRequest,
     ShortCSharpTypeWithNullability: PullModelRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PullModelRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1379,6 +1481,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       status,
@@ -1396,6 +1499,7 @@
     ShortCSharpTypeWithoutNullability: PullModelResponse,
     ShortCSharpTypeWithNullability: PullModelResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PullModelResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1407,6 +1511,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     AnyOfCount: 2,
     IsComponent: true,
     Properties: null,
@@ -1420,6 +1525,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -1432,6 +1538,7 @@
         ShortCSharpTypeWithoutNullability: string,
         ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: string?,
         IsReferenceable: true,
         ConverterType: 
       },
@@ -1443,6 +1550,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: [
           PullingManifest,
@@ -1469,6 +1577,7 @@
         ShortCSharpTypeWithoutNullability: PullModelStatusVariant2,
         ShortCSharpTypeWithNullability: PullModelStatusVariant2?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: global::G.PullModelStatusVariant2?,
         IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter
       }
@@ -1481,6 +1590,7 @@
     ShortCSharpTypeWithoutNullability: PullModelStatus,
     ShortCSharpTypeWithNullability: PullModelStatus?,
     IsAnyOf: true,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PullModelStatus?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusJsonConverter
   },
@@ -1492,6 +1602,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: [
       PullingManifest,
@@ -1518,6 +1629,7 @@
     ShortCSharpTypeWithoutNullability: PullModelStatusVariant2,
     ShortCSharpTypeWithNullability: PullModelStatusVariant2?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PullModelStatusVariant2?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter
   },
@@ -1529,6 +1641,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       model,
@@ -1547,6 +1660,7 @@
     ShortCSharpTypeWithoutNullability: PushModelRequest,
     ShortCSharpTypeWithNullability: PushModelRequest?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PushModelRequest,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1558,6 +1672,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: false,
     IsComponent: true,
     Properties: [
       status,
@@ -1575,6 +1690,7 @@
     ShortCSharpTypeWithoutNullability: PushModelResponse,
     ShortCSharpTypeWithNullability: PushModelResponse?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PushModelResponse,
     IsReferenceable: false,
     ConverterType: 
   },
@@ -1586,6 +1702,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     AnyOfCount: 2,
     IsComponent: true,
     Properties: null,
@@ -1599,6 +1716,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: null,
         EnumValues: null,
@@ -1611,6 +1729,7 @@
         ShortCSharpTypeWithoutNullability: string,
         ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: string?,
         IsReferenceable: true,
         ConverterType: 
       },
@@ -1622,6 +1741,7 @@
         IsDate: false,
         IsDateTime: false,
         IsBinary: false,
+        IsValueType: true,
         IsComponent: false,
         Properties: [
           RetrievingManifest,
@@ -1644,6 +1764,7 @@
         ShortCSharpTypeWithoutNullability: PushModelStatusVariant2,
         ShortCSharpTypeWithNullability: PushModelStatusVariant2?,
         IsAnyOf: false,
+        CSharpTypeWithNullabilityForValueTypes: global::G.PushModelStatusVariant2?,
         IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter
       }
@@ -1656,6 +1777,7 @@
     ShortCSharpTypeWithoutNullability: PushModelStatus,
     ShortCSharpTypeWithNullability: PushModelStatus?,
     IsAnyOf: true,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PushModelStatus?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusJsonConverter
   },
@@ -1667,6 +1789,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: false,
+    IsValueType: true,
     IsComponent: false,
     Properties: [
       RetrievingManifest,
@@ -1689,6 +1812,7 @@
     ShortCSharpTypeWithoutNullability: PushModelStatusVariant2,
     ShortCSharpTypeWithNullability: PushModelStatusVariant2?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: global::G.PushModelStatusVariant2?,
     IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter
   },
@@ -1700,6 +1824,7 @@
     IsDate: false,
     IsDateTime: false,
     IsBinary: true,
+    IsValueType: false,
     IsComponent: false,
     Properties: null,
     EnumValues: null,
@@ -1712,6 +1837,7 @@
     ShortCSharpTypeWithoutNullability: byte[],
     ShortCSharpTypeWithNullability: byte[]?,
     IsAnyOf: false,
+    CSharpTypeWithNullabilityForValueTypes: byte[],
     IsReferenceable: false,
     ConverterType: 
   }

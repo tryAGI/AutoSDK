@@ -143,7 +143,7 @@ namespace G
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType valueType,
             bool required = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? defaultValue = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? defaultValue = default,
             string? description = default,
             global::System.Collections.Generic.IList<string>? allowedValues = default,
             global::System.Threading.CancellationToken cancellationToken = default)

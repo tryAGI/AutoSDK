@@ -29,7 +29,7 @@ namespace G
         /// <param name="code"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.AllOf<global::G.Integration?, global::G.AppsCreateFromManifestResponse2?>> AppsCreateFromManifestAsync(
+        public async global::System.Threading.Tasks.Task<global::System.AllOf<global::G.Integration, global::G.AppsCreateFromManifestResponse2>> AppsCreateFromManifestAsync(
             string code,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,7 +84,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.AllOf<global::G.Integration?, global::G.AppsCreateFromManifestResponse2?>?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.AllOf<global::G.Integration, global::G.AppsCreateFromManifestResponse2>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref string branch,
-            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2?, global::System.Collections.Generic.IList<string>?> request);
+            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request);
         partial void PrepareReposSetUserAccessRestrictionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             string branch,
-            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2?, global::System.Collections.Generic.IList<string>?> request);
+            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request);
         partial void ProcessReposSetUserAccessRestrictionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,7 +46,7 @@ namespace G
             string owner,
             string repo,
             string branch,
-            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2?, global::System.Collections.Generic.IList<string>?> request,
+            global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -134,7 +134,7 @@ namespace G
             string branch,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2?, global::System.Collections.Generic.IList<string>?>
+            var request = new global::System.OneOf<global::G.ReposSetUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>>
             {
             };
 

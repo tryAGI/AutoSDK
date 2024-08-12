@@ -59,7 +59,7 @@ namespace G
         /// Built-in deployment protection rules for the environment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protection_rules")]
-        public global::System.Collections.Generic.IList<global::System.AnyOf<global::G.EnvironmentProtectionRuleVariant1?, global::G.EnvironmentProtectionRuleVariant2?, global::G.EnvironmentProtectionRuleVariant3?>>? ProtectionRules { get; set; }
+        public global::System.Collections.Generic.IList<global::System.AnyOf<global::G.EnvironmentProtectionRuleVariant1, global::G.EnvironmentProtectionRuleVariant2, global::G.EnvironmentProtectionRuleVariant3>>? ProtectionRules { get; set; }
 
         /// <summary>
         /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.

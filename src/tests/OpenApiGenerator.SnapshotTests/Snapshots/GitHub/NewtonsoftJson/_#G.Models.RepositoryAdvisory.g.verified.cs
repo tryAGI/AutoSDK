@@ -57,13 +57,13 @@ namespace G
         /// The author of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.SimpleUser?>? Author { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleUser>? Author { get; set; } = default!;
 
         /// <summary>
         /// The publisher of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("publisher", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.SimpleUser?>? Publisher { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleUser>? Publisher { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -165,7 +165,7 @@ namespace G
         /// A temporary private fork of the advisory's repository for collaborating on a fix.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_fork", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.SimpleRepository?>? PrivateFork { get; set; } = default!;
+        public global::System.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

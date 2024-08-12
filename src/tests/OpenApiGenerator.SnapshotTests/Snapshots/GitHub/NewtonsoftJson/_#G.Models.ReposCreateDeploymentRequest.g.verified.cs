@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload")]
-        public global::System.OneOf<global::G.ReposCreateDeploymentRequestPayload?, string?>? Payload { get; set; }
+        public global::System.OneOf<global::G.ReposCreateDeploymentRequestPayload, string?>? Payload { get; set; }
 
         /// <summary>
         /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).<br/>

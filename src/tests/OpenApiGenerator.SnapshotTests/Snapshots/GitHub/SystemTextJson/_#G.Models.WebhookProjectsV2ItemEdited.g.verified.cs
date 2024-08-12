@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.WebhookProjectsV2ItemEditedChangesVariant1?, global::G.WebhookProjectsV2ItemEditedChangesVariant2?>? Changes { get; set; }
+        public global::System.OneOf<global::G.WebhookProjectsV2ItemEditedChangesVariant1, global::G.WebhookProjectsV2ItemEditedChangesVariant2>? Changes { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>

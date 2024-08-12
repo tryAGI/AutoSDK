@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public")]
-        public global::System.OneOf<bool, global::G.GistsCreateRequestPublic?>? Public { get; set; }
+        public global::System.OneOf<bool?, global::G.GistsCreateRequestPublic?>? Public { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

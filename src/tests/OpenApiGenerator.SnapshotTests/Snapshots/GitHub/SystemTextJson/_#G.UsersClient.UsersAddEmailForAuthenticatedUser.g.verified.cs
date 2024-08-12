@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUsersAddEmailForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request);
+            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string?> request);
         partial void PrepareUsersAddEmailForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request);
+            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string?> request);
         partial void ProcessUsersAddEmailForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Email>> UsersAddEmailForAuthenticatedUserAsync(
-            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?> request,
+            global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string?> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -102,7 +102,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Email>> UsersAddEmailForAuthenticatedUserAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2?, global::System.Collections.Generic.IList<string>?, string?>
+            var request = new global::System.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string?>
             {
             };
 

@@ -133,7 +133,7 @@ namespace G
             string? cname = default,
             bool httpsEnforced = default,
             global::G.ReposUpdateInformationAboutPagesSiteRequestBuildType? buildType = default,
-            global::System.AnyOf<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceVariant1?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceVariant2?>? source = default,
+            global::System.AnyOf<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceVariant1?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceVariant2>? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposUpdateInformationAboutPagesSiteRequest

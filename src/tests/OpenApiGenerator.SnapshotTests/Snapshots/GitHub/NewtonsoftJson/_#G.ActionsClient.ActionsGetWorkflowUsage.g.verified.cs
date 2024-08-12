@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::System.OneOf<int, string?> workflowId);
+            ref global::System.OneOf<int?, string?> workflowId);
         partial void PrepareActionsGetWorkflowUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::System.OneOf<int, string?> workflowId);
+            global::System.OneOf<int?, string?> workflowId);
         partial void ProcessActionsGetWorkflowUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.WorkflowUsage> ActionsGetWorkflowUsageAsync(
             string owner,
             string repo,
-            global::System.OneOf<int, string?> workflowId,
+            global::System.OneOf<int?, string?> workflowId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

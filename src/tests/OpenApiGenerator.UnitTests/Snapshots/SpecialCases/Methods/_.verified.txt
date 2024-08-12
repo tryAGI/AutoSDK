@@ -19,6 +19,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -31,6 +32,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: int?,
           IsReferenceable: true,
           ConverterType: 
         },
@@ -83,6 +85,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: false,
       Properties: null,
       EnumValues: null,
@@ -95,6 +98,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: ,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -106,6 +110,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: true,
       Properties: null,
       EnumValues: null,
@@ -118,6 +123,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: false,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -130,6 +136,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: ,
           IsReferenceable: false,
           ConverterType: 
         }
@@ -142,6 +149,7 @@
       ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
       ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: global::System.Collections.Generic.IList<global::G.Pet>,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -197,6 +205,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: false,
       Properties: null,
       EnumValues: null,
@@ -209,6 +218,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: ,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -220,6 +230,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: true,
       Properties: [
         code,
@@ -235,6 +246,7 @@
       ShortCSharpTypeWithoutNullability: Error,
       ShortCSharpTypeWithNullability: Error?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: global::G.Error,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -264,6 +276,7 @@
           IsDate: false,
           IsDateTime: false,
           IsBinary: false,
+          IsValueType: true,
           IsComponent: false,
           Properties: null,
           EnumValues: null,
@@ -276,6 +289,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          CSharpTypeWithNullabilityForValueTypes: string?,
           IsReferenceable: true,
           ConverterType: 
         },
@@ -328,6 +342,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: false,
       Properties: null,
       EnumValues: null,
@@ -340,6 +355,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: ,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -351,6 +367,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: true,
       Properties: [
         4,
@@ -370,6 +387,7 @@
       ShortCSharpTypeWithoutNullability: Pet,
       ShortCSharpTypeWithNullability: Pet?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: global::G.Pet,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -424,6 +442,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: false,
       Properties: null,
       EnumValues: null,
@@ -436,6 +455,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: ,
       IsReferenceable: false,
       ConverterType: 
     },
@@ -447,6 +467,7 @@
       IsDate: false,
       IsDateTime: false,
       IsBinary: false,
+      IsValueType: false,
       IsComponent: false,
       Properties: null,
       EnumValues: null,
@@ -459,6 +480,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      CSharpTypeWithNullabilityForValueTypes: ,
       IsReferenceable: false,
       ConverterType: 
     },

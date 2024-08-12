@@ -22,7 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<global::G.SimpleUser?, global::G.Enterprise?>? Account { get; set; } = default!;
+        public global::System.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; } = default!;
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved

@@ -63,7 +63,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_job")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1?, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2?> WorkflowJob { get; set; }
+        public required global::System.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> WorkflowJob { get; set; }
 
         /// <summary>
         /// A request for a specific ref(branch,sha,tag) to be deployed
