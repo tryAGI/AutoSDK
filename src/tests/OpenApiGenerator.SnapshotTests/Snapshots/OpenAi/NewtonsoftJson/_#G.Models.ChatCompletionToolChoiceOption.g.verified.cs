@@ -20,9 +20,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionToolChoiceOptionVariant1? Value1 { get; init; }
+        public global::G.ChatCompletionToolChoiceOptionEnum? Value1 { get; init; }
 #else
-        public global::G.ChatCompletionToolChoiceOptionVariant1? Value1 { get; }
+        public global::G.ChatCompletionToolChoiceOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionVariant1 value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionToolChoiceOptionVariant1?(ChatCompletionToolChoiceOption @this) => @this.Value1;
+        public static implicit operator global::G.ChatCompletionToolChoiceOptionEnum?(ChatCompletionToolChoiceOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionVariant1? value)
+        public ChatCompletionToolChoiceOption(global::G.ChatCompletionToolChoiceOptionEnum? value)
         {
             Value1 = value;
         }
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionToolChoiceOption(
-            global::G.ChatCompletionToolChoiceOptionVariant1? value1,
+            global::G.ChatCompletionToolChoiceOptionEnum? value1,
             global::G.ChatCompletionNamedToolChoice? value2
             )
         {
@@ -122,7 +122,7 @@ namespace G
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::G.ChatCompletionToolChoiceOptionVariant1),
+                typeof(global::G.ChatCompletionToolChoiceOptionEnum),
                 Value2,
                 typeof(global::G.ChatCompletionNamedToolChoice),
             };
@@ -140,7 +140,7 @@ namespace G
         public bool Equals(ChatCompletionToolChoiceOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionToolChoiceOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionToolChoiceOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionNamedToolChoice?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

@@ -17,10 +17,10 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ChatCompletionToolChoiceOptionVariant1? value1 = default;
+            global::G.ChatCompletionToolChoiceOptionEnum? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionToolChoiceOptionVariant1>(ref readerCopy, options);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionToolChoiceOptionEnum>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -42,12 +42,12 @@ namespace OpenApiGenerator.JsonConverters
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ChatCompletionToolChoiceOptionVariant1).Name}, {typeof(global::G.ChatCompletionNamedToolChoice).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ChatCompletionToolChoiceOptionEnum).Name}, {typeof(global::G.ChatCompletionNamedToolChoice).Name}>");
             }
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionToolChoiceOptionVariant1>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionToolChoiceOptionEnum>(ref reader, options);
             }
 
             else if (value2 != null)
@@ -67,12 +67,12 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ChatCompletionToolChoiceOptionVariant1).Name}, {typeof(global::G.ChatCompletionNamedToolChoice).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ChatCompletionToolChoiceOptionEnum).Name}, {typeof(global::G.ChatCompletionNamedToolChoice).Name}> object.");
             }
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.ChatCompletionToolChoiceOptionVariant1), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.ChatCompletionToolChoiceOptionEnum), options);
             }
 
             else if (value.IsValue2)

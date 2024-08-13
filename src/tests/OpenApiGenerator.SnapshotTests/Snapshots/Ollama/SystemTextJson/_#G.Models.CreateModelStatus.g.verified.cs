@@ -50,9 +50,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateModelStatusVariant2? Value2 { get; init; }
+        public global::G.CreateModelStatusEnum? Value2 { get; init; }
 #else
-        public global::G.CreateModelStatusVariant2? Value2 { get; }
+        public global::G.CreateModelStatusEnum? Value2 { get; }
 #endif
 
         /// <summary>
@@ -66,17 +66,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateModelStatus(global::G.CreateModelStatusVariant2 value) => new CreateModelStatus(value);
+        public static implicit operator CreateModelStatus(global::G.CreateModelStatusEnum value) => new CreateModelStatus(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateModelStatusVariant2?(CreateModelStatus @this) => @this.Value2;
+        public static implicit operator global::G.CreateModelStatusEnum?(CreateModelStatus @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelStatus(global::G.CreateModelStatusVariant2? value)
+        public CreateModelStatus(global::G.CreateModelStatusEnum? value)
         {
             Value2 = value;
         }
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         public CreateModelStatus(
             string? value1,
-            global::G.CreateModelStatusVariant2? value2
+            global::G.CreateModelStatusEnum? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace G
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::G.CreateModelStatusVariant2),
+                typeof(global::G.CreateModelStatusEnum),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -136,7 +136,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelStatusVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelStatusEnum?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

@@ -30,11 +30,11 @@ namespace OpenApiGenerator.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.PullModelStatusVariant2? value2 = default;
+            global::G.PullModelStatusEnum? value2 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusEnum).Name}");
                 value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -47,7 +47,7 @@ namespace OpenApiGenerator.JsonConverters
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for AnyOf<{typeof(string).Name}, {typeof(global::G.PullModelStatusVariant2).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for AnyOf<{typeof(string).Name}, {typeof(global::G.PullModelStatusEnum).Name}>");
             }
 
             if (value1 != null)
@@ -59,8 +59,8 @@ namespace OpenApiGenerator.JsonConverters
 
             else if (value2 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusEnum).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             return result;
@@ -77,7 +77,7 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid AnyOf<{typeof(string).Name}, {typeof(global::G.PullModelStatusVariant2).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid AnyOf<{typeof(string).Name}, {typeof(global::G.PullModelStatusEnum).Name}> object.");
             }
 
             if (value.IsValue1)
@@ -89,8 +89,8 @@ namespace OpenApiGenerator.JsonConverters
 
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullModelStatusEnum?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullModelStatusEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
         }

@@ -1691,7 +1691,7 @@ Default Value: auto,
     FileNameWithoutExtension: G.Models.ResponseFormatJsonSchemaType
   },
   {
-    Id: ChatCompletionToolChoiceOptionVariant1,
+    Id: ChatCompletionToolChoiceOptionEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -1838,10 +1838,10 @@ Default Value: auto,
 `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
 ,
     IsDeprecated: false,
-    ClassName: ChatCompletionToolChoiceOptionVariant1,
-    GlobalClassName: global::G.ChatCompletionToolChoiceOptionVariant1,
-    ExternalClassName: ChatCompletionToolChoiceOptionVariant1,
-    FileNameWithoutExtension: G.Models.ChatCompletionToolChoiceOptionVariant1
+    ClassName: ChatCompletionToolChoiceOptionEnum,
+    GlobalClassName: global::G.ChatCompletionToolChoiceOptionEnum,
+    ExternalClassName: ChatCompletionToolChoiceOptionEnum,
+    FileNameWithoutExtension: G.Models.ChatCompletionToolChoiceOptionEnum
   },
   {
     Id: ChatCompletionNamedToolChoiceType,
@@ -10759,7 +10759,7 @@ Default Value: mp3,
     FileNameWithoutExtension: G.Models.UploadPartObject
   },
   {
-    Id: AssistantsApiResponseFormatOptionVariant1,
+    Id: AssistantsApiResponseFormatOptionEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -10832,10 +10832,10 @@ Default Value: mp3,
 `auto` is the default value
 ,
     IsDeprecated: false,
-    ClassName: AssistantsApiResponseFormatOptionVariant1,
-    GlobalClassName: global::G.AssistantsApiResponseFormatOptionVariant1,
-    ExternalClassName: AssistantsApiResponseFormatOptionVariant1,
-    FileNameWithoutExtension: G.Models.AssistantsApiResponseFormatOptionVariant1
+    ClassName: AssistantsApiResponseFormatOptionEnum,
+    GlobalClassName: global::G.AssistantsApiResponseFormatOptionEnum,
+    ExternalClassName: AssistantsApiResponseFormatOptionEnum,
+    FileNameWithoutExtension: G.Models.AssistantsApiResponseFormatOptionEnum
   },
   {
     Id: AssistantObjectObject,
@@ -12459,7 +12459,7 @@ Default Value: mp3,
     FileNameWithoutExtension: G.Models.TruncationObjectType
   },
   {
-    Id: AssistantsApiToolChoiceOptionVariant1,
+    Id: AssistantsApiToolChoiceOptionEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -12606,10 +12606,10 @@ Default Value: mp3,
 `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
 ,
     IsDeprecated: false,
-    ClassName: AssistantsApiToolChoiceOptionVariant1,
-    GlobalClassName: global::G.AssistantsApiToolChoiceOptionVariant1,
-    ExternalClassName: AssistantsApiToolChoiceOptionVariant1,
-    FileNameWithoutExtension: G.Models.AssistantsApiToolChoiceOptionVariant1
+    ClassName: AssistantsApiToolChoiceOptionEnum,
+    GlobalClassName: global::G.AssistantsApiToolChoiceOptionEnum,
+    ExternalClassName: AssistantsApiToolChoiceOptionEnum,
+    FileNameWithoutExtension: G.Models.AssistantsApiToolChoiceOptionEnum
   },
   {
     Id: AssistantsNamedToolChoiceType,

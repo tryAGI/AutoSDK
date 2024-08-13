@@ -17,10 +17,10 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.AssistantsApiResponseFormatOptionVariant1? value1 = default;
+            global::G.AssistantsApiResponseFormatOptionEnum? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormatOptionVariant1>(ref readerCopy, options);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormatOptionEnum>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -66,12 +66,12 @@ namespace OpenApiGenerator.JsonConverters
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionEnum).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}>");
             }
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormatOptionVariant1>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiResponseFormatOptionEnum>(ref reader, options);
             }
 
             else if (value2 != null)
@@ -101,12 +101,12 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionVariant1).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AssistantsApiResponseFormatOptionEnum).Name}, {typeof(global::G.ResponseFormatText).Name}, {typeof(global::G.ResponseFormatJsonObject).Name}, {typeof(global::G.ResponseFormatJsonSchema).Name}> object.");
             }
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.AssistantsApiResponseFormatOptionVariant1), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.AssistantsApiResponseFormatOptionEnum), options);
             }
 
             else if (value.IsValue2)

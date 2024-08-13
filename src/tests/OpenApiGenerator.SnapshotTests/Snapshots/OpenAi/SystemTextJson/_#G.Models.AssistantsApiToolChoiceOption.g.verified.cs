@@ -19,9 +19,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantsApiToolChoiceOptionVariant1? Value1 { get; init; }
+        public global::G.AssistantsApiToolChoiceOptionEnum? Value1 { get; init; }
 #else
-        public global::G.AssistantsApiToolChoiceOptionVariant1? Value1 { get; }
+        public global::G.AssistantsApiToolChoiceOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionVariant1 value) => new AssistantsApiToolChoiceOption(value);
+        public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantsApiToolChoiceOptionVariant1?(AssistantsApiToolChoiceOption @this) => @this.Value1;
+        public static implicit operator global::G.AssistantsApiToolChoiceOptionEnum?(AssistantsApiToolChoiceOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionVariant1? value)
+        public AssistantsApiToolChoiceOption(global::G.AssistantsApiToolChoiceOptionEnum? value)
         {
             Value1 = value;
         }
@@ -89,7 +89,7 @@ namespace G
         /// 
         /// </summary>
         public AssistantsApiToolChoiceOption(
-            global::G.AssistantsApiToolChoiceOptionVariant1? value1,
+            global::G.AssistantsApiToolChoiceOptionEnum? value1,
             global::G.AssistantsNamedToolChoice? value2
             )
         {
@@ -121,7 +121,7 @@ namespace G
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::G.AssistantsApiToolChoiceOptionVariant1),
+                typeof(global::G.AssistantsApiToolChoiceOptionEnum),
                 Value2,
                 typeof(global::G.AssistantsNamedToolChoice),
             };
@@ -139,7 +139,7 @@ namespace G
         public bool Equals(AssistantsApiToolChoiceOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiToolChoiceOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiToolChoiceOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.AssistantsNamedToolChoice?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

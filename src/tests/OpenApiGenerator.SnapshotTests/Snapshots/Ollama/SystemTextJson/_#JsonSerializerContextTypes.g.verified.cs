@@ -90,7 +90,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReasonVariant2? Type19 { get; set; }
+        public global::G.DoneReasonEnum? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +122,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelStatusVariant2? Type27 { get; set; }
+        public global::G.CreateModelStatusEnum? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -186,7 +186,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatusVariant2? Type43 { get; set; }
+        public global::G.PullModelStatusEnum? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -202,7 +202,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelStatusVariant2? Type47 { get; set; }
+        public global::G.PushModelStatusEnum? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>

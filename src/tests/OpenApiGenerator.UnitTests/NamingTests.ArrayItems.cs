@@ -7,23 +7,15 @@ public partial class NamingTests
     {
         var models = PrepareModels(@"openapi: 3.0.1
 info:
-    title: OpenAI API
-    description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
-    termsOfService: https://openai.com/policies/terms-of-use
-    contact:
-        name: OpenAI Support
-        url: https://help.openai.com/
-    license:
-        name: MIT
-        url: https://github.com/openai/openai-openapi/blob/master/LICENSE
-    version: '2.3.0'
+  title: Fake
+  version: 1.0.0
 paths:
-    /fake/fake:
-        post:
-            operationId: createChatCompletion
-            responses:
-                '200':
-                    description: OK
+  /fake:
+    get:
+      operationId: fake
+      responses:
+        '200':
+            description: OK
 components:
     schemas:
         CreateCompletionResponse:

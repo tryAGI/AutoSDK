@@ -1088,7 +1088,7 @@ A list of tools the model may call. Currently, only functions are supported as a
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.ChatCompletionToolChoiceOptionVariant1?,
+              CSharpType: global::G.ChatCompletionToolChoiceOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -1111,14 +1111,14 @@ A list of tools the model may call. Currently, only functions are supported as a
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.ChatCompletionToolChoiceOptionVariant1,
-              CSharpTypeWithNullability: global::G.ChatCompletionToolChoiceOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: ChatCompletionToolChoiceOptionVariant1,
-              ShortCSharpTypeWithNullability: ChatCompletionToolChoiceOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.ChatCompletionToolChoiceOptionEnum,
+              CSharpTypeWithNullability: global::G.ChatCompletionToolChoiceOptionEnum?,
+              ShortCSharpTypeWithoutNullability: ChatCompletionToolChoiceOptionEnum,
+              ShortCSharpTypeWithNullability: ChatCompletionToolChoiceOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionToolChoiceOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.ChatCompletionToolChoiceOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.ChatCompletionNamedToolChoice?,
@@ -10885,7 +10885,7 @@ Example: 1,
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpType: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -10904,14 +10904,14 @@ Example: 1,
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.ResponseFormatText?,
@@ -11759,7 +11759,7 @@ Example: 1,
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpType: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -11778,14 +11778,14 @@ Example: 1,
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.ResponseFormatText?,
@@ -14923,7 +14923,7 @@ The maximum number of completion tokens that may be used over the course of the 
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiToolChoiceOptionVariant1?,
+              CSharpType: global::G.AssistantsApiToolChoiceOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -14946,14 +14946,14 @@ The maximum number of completion tokens that may be used over the course of the 
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiToolChoiceOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiToolChoiceOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.AssistantsNamedToolChoice?,
@@ -15066,7 +15066,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpType: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -15085,14 +15085,14 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.ResponseFormatText?,
@@ -16366,7 +16366,7 @@ The maximum number of completion tokens that may be used over the course of the 
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiToolChoiceOptionVariant1?,
+              CSharpType: global::G.AssistantsApiToolChoiceOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -16389,14 +16389,14 @@ The maximum number of completion tokens that may be used over the course of the 
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiToolChoiceOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiToolChoiceOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.AssistantsNamedToolChoice?,
@@ -16509,7 +16509,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           EnumValues: null,
           SubTypes: [
             {
-              CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpType: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsArray: false,
               IsEnum: true,
               IsBase64: false,
@@ -16528,14 +16528,14 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
               Namespace: G,
               IsDeprecated: false,
               GenerateJsonSerializerContextTypes: false,
-              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
-              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
-              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
-              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionEnum,
+              CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionEnum?,
+              ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionEnum,
+              ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionEnum?,
               IsAnyOf: false,
-              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionVariant1?,
+              CSharpTypeWithNullabilityForValueTypes: global::G.AssistantsApiResponseFormatOptionEnum?,
               IsReferenceable: true,
-              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
+              ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumJsonConverter
             },
             {
               CSharpType: global::G.ResponseFormatText?,
@@ -28046,8 +28046,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.ResponseFormatJsonObjectTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionEnumJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionEnumNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter,
@@ -28176,8 +28176,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.UploadObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.UploadPartObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.UploadPartObjectNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionEnumNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantObjectObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantObjectObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeJsonConverter,
@@ -28198,8 +28198,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.TruncationObjectTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.TruncationObjectTypeNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionEnumJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionEnumNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantsNamedToolChoiceTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunObjectObjectJsonConverter,

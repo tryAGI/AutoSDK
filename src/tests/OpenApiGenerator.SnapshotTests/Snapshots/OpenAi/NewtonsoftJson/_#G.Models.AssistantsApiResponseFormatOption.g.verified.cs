@@ -18,9 +18,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantsApiResponseFormatOptionVariant1? Value1 { get; init; }
+        public global::G.AssistantsApiResponseFormatOptionEnum? Value1 { get; init; }
 #else
-        public global::G.AssistantsApiResponseFormatOptionVariant1? Value1 { get; }
+        public global::G.AssistantsApiResponseFormatOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionVariant1 value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantsApiResponseFormatOptionVariant1?(AssistantsApiResponseFormatOption @this) => @this.Value1;
+        public static implicit operator global::G.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionVariant1? value)
+        public AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum? value)
         {
             Value1 = value;
         }
@@ -158,7 +158,7 @@ namespace G
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(
-            global::G.AssistantsApiResponseFormatOptionVariant1? value1,
+            global::G.AssistantsApiResponseFormatOptionEnum? value1,
             global::G.ResponseFormatText? value2,
             global::G.ResponseFormatJsonObject? value3,
             global::G.ResponseFormatJsonSchema? value4
@@ -196,7 +196,7 @@ namespace G
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::G.AssistantsApiResponseFormatOptionVariant1),
+                typeof(global::G.AssistantsApiResponseFormatOptionEnum),
                 Value2,
                 typeof(global::G.ResponseFormatText),
                 Value3,
@@ -218,7 +218,7 @@ namespace G
         public bool Equals(AssistantsApiResponseFormatOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiResponseFormatOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatText?>.Default.Equals(Value2, other.Value2) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonObject?>.Default.Equals(Value3, other.Value3) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonSchema?>.Default.Equals(Value4, other.Value4) 

@@ -87,6 +87,15 @@ public static class ModelNameGenerator
             className = $"{context.Parent?.ComputeClassName()}";
         }
         
+        // Special case for anyOf/oneOf/allOf with a single Enum type without reference
+        else if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
+            context.Parent?.Children
+                .Count(x => x.IsEnum && x is { IsReference: false }) == 1)
+        {
+            var variantName = ComputeHelperName(context)!;
+            className = className[..^variantName.Length] + "Enum";
+        }
+        
         // Special case for array items with pluralized property name
         if (context.Hint is Hint.ArrayItem &&
             className.EndsWith("sItem", StringComparison.Ordinal))

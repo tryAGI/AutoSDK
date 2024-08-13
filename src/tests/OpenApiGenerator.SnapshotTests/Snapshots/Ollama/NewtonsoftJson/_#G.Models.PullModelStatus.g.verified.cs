@@ -51,9 +51,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PullModelStatusVariant2? Value2 { get; init; }
+        public global::G.PullModelStatusEnum? Value2 { get; init; }
 #else
-        public global::G.PullModelStatusVariant2? Value2 { get; }
+        public global::G.PullModelStatusEnum? Value2 { get; }
 #endif
 
         /// <summary>
@@ -67,17 +67,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PullModelStatus(global::G.PullModelStatusVariant2 value) => new PullModelStatus(value);
+        public static implicit operator PullModelStatus(global::G.PullModelStatusEnum value) => new PullModelStatus(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PullModelStatusVariant2?(PullModelStatus @this) => @this.Value2;
+        public static implicit operator global::G.PullModelStatusEnum?(PullModelStatus @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public PullModelStatus(global::G.PullModelStatusVariant2? value)
+        public PullModelStatus(global::G.PullModelStatusEnum? value)
         {
             Value2 = value;
         }
@@ -87,7 +87,7 @@ namespace G
         /// </summary>
         public PullModelStatus(
             string? value1,
-            global::G.PullModelStatusVariant2? value2
+            global::G.PullModelStatusEnum? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::G.PullModelStatusVariant2),
+                typeof(global::G.PullModelStatusEnum),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -137,7 +137,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PullModelStatusVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PullModelStatusEnum?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

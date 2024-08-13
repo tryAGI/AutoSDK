@@ -234,7 +234,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     FileNameWithoutExtension: G.Models.MessageRole
   },
   {
-    Id: DoneReasonVariant2,
+    Id: DoneReasonEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -379,13 +379,13 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     ],
     Summary: ,
     IsDeprecated: false,
-    ClassName: DoneReasonVariant2,
-    GlobalClassName: global::G.DoneReasonVariant2,
-    ExternalClassName: DoneReasonVariant2,
-    FileNameWithoutExtension: G.Models.DoneReasonVariant2
+    ClassName: DoneReasonEnum,
+    GlobalClassName: global::G.DoneReasonEnum,
+    ExternalClassName: DoneReasonEnum,
+    FileNameWithoutExtension: G.Models.DoneReasonEnum
   },
   {
-    Id: CreateModelStatusVariant2,
+    Id: CreateModelStatusEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -530,13 +530,13 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     ],
     Summary: ,
     IsDeprecated: false,
-    ClassName: CreateModelStatusVariant2,
-    GlobalClassName: global::G.CreateModelStatusVariant2,
-    ExternalClassName: CreateModelStatusVariant2,
-    FileNameWithoutExtension: G.Models.CreateModelStatusVariant2
+    ClassName: CreateModelStatusEnum,
+    GlobalClassName: global::G.CreateModelStatusEnum,
+    ExternalClassName: CreateModelStatusEnum,
+    FileNameWithoutExtension: G.Models.CreateModelStatusEnum
   },
   {
-    Id: PullModelStatusVariant2,
+    Id: PullModelStatusEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -792,13 +792,13 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     ],
     Summary: ,
     IsDeprecated: false,
-    ClassName: PullModelStatusVariant2,
-    GlobalClassName: global::G.PullModelStatusVariant2,
-    ExternalClassName: PullModelStatusVariant2,
-    FileNameWithoutExtension: G.Models.PullModelStatusVariant2
+    ClassName: PullModelStatusEnum,
+    GlobalClassName: global::G.PullModelStatusEnum,
+    ExternalClassName: PullModelStatusEnum,
+    FileNameWithoutExtension: G.Models.PullModelStatusEnum
   },
   {
-    Id: PushModelStatusVariant2,
+    Id: PushModelStatusEnum,
     Parents: null,
     Namespace: G,
     Settings: {
@@ -980,9 +980,9 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     ],
     Summary: ,
     IsDeprecated: false,
-    ClassName: PushModelStatusVariant2,
-    GlobalClassName: global::G.PushModelStatusVariant2,
-    ExternalClassName: PushModelStatusVariant2,
-    FileNameWithoutExtension: G.Models.PushModelStatusVariant2
+    ClassName: PushModelStatusEnum,
+    GlobalClassName: global::G.PushModelStatusEnum,
+    ExternalClassName: PushModelStatusEnum,
+    FileNameWithoutExtension: G.Models.PushModelStatusEnum
   }
 ]

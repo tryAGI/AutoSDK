@@ -50,9 +50,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DoneReasonVariant2? Value2 { get; init; }
+        public global::G.DoneReasonEnum? Value2 { get; init; }
 #else
-        public global::G.DoneReasonVariant2? Value2 { get; }
+        public global::G.DoneReasonEnum? Value2 { get; }
 #endif
 
         /// <summary>
@@ -66,17 +66,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DoneReason(global::G.DoneReasonVariant2 value) => new DoneReason(value);
+        public static implicit operator DoneReason(global::G.DoneReasonEnum value) => new DoneReason(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DoneReasonVariant2?(DoneReason @this) => @this.Value2;
+        public static implicit operator global::G.DoneReasonEnum?(DoneReason @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public DoneReason(global::G.DoneReasonVariant2? value)
+        public DoneReason(global::G.DoneReasonEnum? value)
         {
             Value2 = value;
         }
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         public DoneReason(
             string? value1,
-            global::G.DoneReasonVariant2? value2
+            global::G.DoneReasonEnum? value2
             )
         {
             Value1 = value1;
@@ -119,7 +119,7 @@ namespace G
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::G.DoneReasonVariant2),
+                typeof(global::G.DoneReasonEnum),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -136,7 +136,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DoneReasonVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.DoneReasonEnum?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 
