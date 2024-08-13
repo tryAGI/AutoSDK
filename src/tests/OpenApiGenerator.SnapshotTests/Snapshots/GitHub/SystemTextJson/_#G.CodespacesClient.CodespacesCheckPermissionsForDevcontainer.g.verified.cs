@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// Example: master
         /// </param>
         /// <param name="devcontainerPath">

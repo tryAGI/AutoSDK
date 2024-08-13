@@ -64,6 +64,8 @@ public class SchemaContext
          : null;
     public string? ClassName { get; set; }
     
+    public AnyOfData? AnyOfData { get; set; }
+    
     public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
     
     public bool IsAnyOf => Schema.IsAnyOf();
@@ -335,6 +337,10 @@ public class SchemaContext
         if (IsProperty || Hint is Models.Hint.Parameter)
         {
             PropertyData = Models.PropertyData.FromSchemaContext(this);
+        }
+        if (IsAnyOfLikeStructure)
+        {
+            AnyOfData = global::OpenApiGenerator.Core.Models.AnyOfData.FromSchemaContext(this);
         }
     }
     

@@ -179,7 +179,7 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// The ref to deploy. This can be a branch, tag, or SHA.
         /// </param>
         /// <param name="task">

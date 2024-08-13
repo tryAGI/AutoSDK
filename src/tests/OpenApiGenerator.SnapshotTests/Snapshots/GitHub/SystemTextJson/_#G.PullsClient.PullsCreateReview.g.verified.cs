@@ -144,7 +144,7 @@ namespace G
         /// <param name="body">
         /// **Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.
         /// </param>
-        /// <param name="@event">
+        /// <param name="event">
         /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </param>
         /// <param name="comments">

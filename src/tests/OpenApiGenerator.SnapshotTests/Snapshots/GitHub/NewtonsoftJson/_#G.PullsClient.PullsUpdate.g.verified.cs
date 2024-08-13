@@ -141,7 +141,7 @@ namespace G
         /// <param name="state">
         /// State of this Pull Request. Either `open` or `closed`.
         /// </param>
-        /// <param name="@base">
+        /// <param name="base">
         /// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
         /// </param>
         /// <param name="maintainerCanModify">

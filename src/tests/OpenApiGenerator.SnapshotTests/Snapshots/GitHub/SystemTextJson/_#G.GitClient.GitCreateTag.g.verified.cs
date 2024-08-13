@@ -167,7 +167,7 @@ namespace G
         /// <param name="message">
         /// The tag message.
         /// </param>
-        /// <param name="@object">
+        /// <param name="object">
         /// The SHA of the git object this is tagging.
         /// </param>
         /// <param name="type">

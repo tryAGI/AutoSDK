@@ -115,7 +115,7 @@ namespace G
         /// <param name="name">
         /// A name for the new repository.
         /// </param>
-        /// <param name="@private">
+        /// <param name="private">
         /// Whether the new repository should be private.<br/>
         /// Default Value: false
         /// </param>

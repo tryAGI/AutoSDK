@@ -166,18 +166,25 @@ public static class Data
         
         var computeDataClassesTime = Stopwatch.StartNew();
         
-        Dictionary<string, ModelData> classes = filteredSchemaContexts
+        var classes = filteredSchemaContexts
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
             .Select(x => x.ClassData)
             .Where(x => x is not null)
             .Select(x => x!.Value)
-            .ToDictionary(x => x.ClassName, x => x);
-        Dictionary<string, ModelData> enums = filteredSchemaContexts
+            .ToImmutableArray();
+        var enums = filteredSchemaContexts
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
             .Select(x => x.EnumData)
             .Where(x => x is not null)
             .Select(x => x!.Value)
-            .ToDictionary(x => x.ClassName, x => x);
+            .ToImmutableArray();
+        var anyOfDatas = filteredSchemaContexts
+            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
+            .Select(x => x.AnyOfData)
+            .Where(x => x is not null)
+            .Select(x => x!.Value)
+            .Distinct()
+            .ToImmutableArray();
 
         var operations = settings.GenerateSdk || settings.GenerateMethods ? openApiDocument.Paths!.SelectMany(path =>
                 path.Value.Operations
@@ -278,72 +285,6 @@ public static class Data
             ..operationsAsMethods,
             ..constructors,
         ];
-        
-        var isTrimming =
-            settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
-            (!string.IsNullOrWhiteSpace(settings.JsonSerializerContext) ||
-             settings.GenerateJsonSerializerContextTypes);
-        var anyOfs = filteredSchemaContexts
-            .Where(x => x is { IsComponent: false, Schema.AnyOf.Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.Schema.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Distinct()
-            .ToImmutableArray();
-        var oneOfs = filteredSchemaContexts
-            .Where(x => x is { IsComponent: false, Schema.OneOf.Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.Schema.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Distinct()
-            .ToImmutableArray();
-        var allOfs = filteredSchemaContexts
-            .Where(x => x is { IsComponent: false, Schema.AllOf.Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.Schema.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<PropertyData>.Empty))
-            .Distinct()
-            .ToImmutableArray();
-        anyOfs = anyOfs
-            .Concat(filteredSchemaContexts
-                .Where(x => x is { IsComponent: true, IsReference: false, Schema.AnyOf.Count: >0 })
-                .Select(schema => new AnyOfData(
-                    "AnyOf",
-                    schema.Schema.AnyOf.Count,
-                    settings.JsonSerializerType,
-                    isTrimming,
-                    settings.Namespace,
-                    schema.Id,
-                    schema.Schema.GetSummary(),
-                    schema.Children.Where(x => x.Hint == Hint.AnyOf).ToList().ToAnyOfProperties(schema.Id))))
-            .ToImmutableArray();
-        oneOfs = oneOfs
-            .Concat(filteredSchemaContexts
-                .Where(x => x is { IsComponent: true, IsReference: false, Schema.OneOf.Count: >0 })
-                .Select(schema => new AnyOfData(
-                    "OneOf",
-                    schema.Schema.OneOf.Count,
-                    settings.JsonSerializerType,
-                    isTrimming,
-                    settings.Namespace,
-                    schema.Id,
-                    schema.Schema.GetSummary(),
-                    schema.Children.Where(x => x.Hint == Hint.OneOf).ToList().ToAnyOfProperties(schema.Id))))
-            .ToImmutableArray();
-        allOfs = allOfs
-            .Concat(filteredSchemaContexts
-                .Where(x => x is { IsComponent: true, IsReference: false, Schema.AllOf.Count: >0 })
-                .Select(schema => new AnyOfData(
-                    "AllOf",
-                    schema.Schema.AllOf.Count,
-                    settings.JsonSerializerType,
-                    isTrimming,
-                    settings.Namespace,
-                    schema.Id,
-                    schema.Schema.GetSummary(),
-                    schema.Children.Where(x => x.Hint == Hint.AllOf).ToList().ToAnyOfProperties(schema.Id))))
-            .ToImmutableArray();
-
-        AnyOfData[] anyOfDatas =
-        [
-            ..anyOfs,
-            ..oneOfs,
-            ..allOfs,
-        ];
 
         var types =
             settings.GenerateJsonSerializerContextTypes
@@ -358,26 +299,26 @@ public static class Data
                 : [];
         
         classes = classes
-            .Select(x => new KeyValuePair<string, ModelData>(x.Key, x.Value with
+            .Select(x => x with
             {
                 SchemaContext = default!,
-            }))
-            .ToDictionary(x => x.Key, x => x.Value);
+            })
+            .ToImmutableArray();
         enums = enums
-            .Select(x => new KeyValuePair<string, ModelData>(x.Key, x.Value with
+            .Select(x => x with
             {
                 SchemaContext = default!,
-            }))
-            .ToDictionary(x => x.Key, x => x.Value);
+            })
+            .ToImmutableArray();
 
         var converters = enums
             .Where(x =>
-                x.Value.Style == ModelStyle.Enumeration &&
-                x.Value.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+                x.Style == ModelStyle.Enumeration &&
+                x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
             .SelectMany(x => new[]
             {
-                $"global::OpenApiGenerator.JsonConverters.{x.Value.ClassName}JsonConverter",
-                $"global::OpenApiGenerator.JsonConverters.{x.Value.ClassName}NullableJsonConverter"
+                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
+                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
             })
             .Concat(anyOfDatas
                 .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
@@ -400,10 +341,10 @@ public static class Data
         }
         
         return new Models.Data(
-            Classes: classes.Values.ToImmutableArray(),
-            Enums: enums.Values.ToImmutableArray(),
+            Classes: classes,
+            Enums: enums,
             Methods: methods.ToImmutableArray(),
-            AnyOfs: anyOfDatas.ToImmutableArray(),
+            AnyOfs: anyOfDatas,
             Types: types,
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()

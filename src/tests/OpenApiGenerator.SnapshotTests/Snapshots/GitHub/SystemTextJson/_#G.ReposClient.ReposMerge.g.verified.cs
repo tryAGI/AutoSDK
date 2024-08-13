@@ -111,7 +111,7 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="@base">
+        /// <param name="base">
         /// The name of the base branch that the head will be merged into.
         /// </param>
         /// <param name="head">

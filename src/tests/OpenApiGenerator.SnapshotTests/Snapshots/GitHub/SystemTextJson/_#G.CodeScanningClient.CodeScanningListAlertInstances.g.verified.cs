@@ -48,7 +48,7 @@ namespace G
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </param>

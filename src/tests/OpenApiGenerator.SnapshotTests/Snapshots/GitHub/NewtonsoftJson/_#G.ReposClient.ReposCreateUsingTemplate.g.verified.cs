@@ -128,7 +128,7 @@ namespace G
         /// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="@private">
+        /// <param name="private">
         /// Either `true` to create a new private repository or `false` to create a new public one.<br/>
         /// Default Value: false
         /// </param>

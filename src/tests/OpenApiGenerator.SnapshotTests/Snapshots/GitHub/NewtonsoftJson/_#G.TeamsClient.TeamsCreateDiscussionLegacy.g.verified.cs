@@ -119,7 +119,7 @@ namespace G
         /// <param name="body">
         /// The discussion post's body text.
         /// </param>
-        /// <param name="@private">
+        /// <param name="private">
         /// Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.<br/>
         /// Default Value: false
         /// </param>

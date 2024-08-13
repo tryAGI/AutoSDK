@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="@ref"></param>
+        /// <param name="ref"></param>
         /// <param name="timePeriod">
         /// Default Value: day
         /// </param>

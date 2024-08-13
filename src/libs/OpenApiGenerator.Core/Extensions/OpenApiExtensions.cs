@@ -208,10 +208,10 @@ public static class OpenApiExtensions
         
         return schemas.Select((x, i) => PropertyData.Default with
         {
-            Type = x.TypeData ?? throw new InvalidOperationException("TypeData is required"),
+            Type = x.TypeData ?? TypeData.Default,
             Name = useSmartNames
                 ? SmartNamedAnyOfNames.ComputeSmartName(
-                    x.TypeData.Value.ShortCSharpTypeWithoutNullability,
+                    (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
                     className)
                 : $"Value{i + 1}",
         }).ToImmutableArray();

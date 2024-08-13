@@ -125,7 +125,7 @@ namespace G
         /// The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.<br/>
         /// Example: ddc951f4b1293222421f2c8df679786153acf689
         /// </param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// The repository branch that triggered this snapshot.<br/>
         /// Example: refs/heads/main
         /// </param>

@@ -96,7 +96,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="workflowId"></param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// The git reference for the workflow. The reference can be a branch or tag name.
         /// </param>
         /// <param name="inputs">

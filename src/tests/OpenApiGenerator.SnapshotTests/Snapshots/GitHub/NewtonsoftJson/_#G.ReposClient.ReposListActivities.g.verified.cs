@@ -56,7 +56,7 @@ namespace G
         /// </param>
         /// <param name="before"></param>
         /// <param name="after"></param>
-        /// <param name="@ref"></param>
+        /// <param name="ref"></param>
         /// <param name="actor"></param>
         /// <param name="timePeriod"></param>
         /// <param name="activityType"></param>

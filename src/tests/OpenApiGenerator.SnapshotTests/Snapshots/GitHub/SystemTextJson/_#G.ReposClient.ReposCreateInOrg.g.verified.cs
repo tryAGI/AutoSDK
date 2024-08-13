@@ -117,7 +117,7 @@ namespace G
         /// <param name="homepage">
         /// A URL with more information about the repository.
         /// </param>
-        /// <param name="@private">
+        /// <param name="private">
         /// Whether the repository is private.<br/>
         /// Default Value: false
         /// </param>

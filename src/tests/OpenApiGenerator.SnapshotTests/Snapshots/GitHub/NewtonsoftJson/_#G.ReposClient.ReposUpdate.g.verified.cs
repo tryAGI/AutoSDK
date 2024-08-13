@@ -122,7 +122,7 @@ namespace G
         /// <param name="homepage">
         /// A URL with more information about the repository.
         /// </param>
-        /// <param name="@private">
+        /// <param name="private">
         /// Either `true` to make the repository private or `false` to make it public. Default: `false`.  <br/>
         /// **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.<br/>
         /// Default Value: false

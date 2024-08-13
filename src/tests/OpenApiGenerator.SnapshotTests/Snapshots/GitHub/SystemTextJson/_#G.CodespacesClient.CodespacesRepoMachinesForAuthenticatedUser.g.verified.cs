@@ -41,7 +41,7 @@ namespace G
         /// Example: WestUs2
         /// </param>
         /// <param name="clientIp"></param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// Example: main
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

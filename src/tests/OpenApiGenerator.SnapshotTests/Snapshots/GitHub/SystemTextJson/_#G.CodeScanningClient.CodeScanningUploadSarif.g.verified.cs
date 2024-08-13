@@ -162,7 +162,7 @@ namespace G
         /// <param name="commitSha">
         /// The SHA of the commit to which the analysis you are uploading relates.
         /// </param>
-        /// <param name="@ref">
+        /// <param name="ref">
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,<br/>
         /// `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.<br/>
         /// Example: refs/heads/main

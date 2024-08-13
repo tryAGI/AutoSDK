@@ -9,6 +9,15 @@
     Properties: null
   },
   {
+    SubType: AllOf,
+    Count: 1,
+    IsTrimming: false,
+    Namespace: System,
+    Name: ,
+    Summary: ,
+    Properties: null
+  },
+  {
     SubType: AnyOf,
     Count: 3,
     IsTrimming: false,
@@ -56,15 +65,6 @@
   {
     SubType: OneOf,
     Count: 3,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
-    Summary: ,
-    Properties: null
-  },
-  {
-    SubType: AllOf,
-    Count: 1,
     IsTrimming: false,
     Namespace: System,
     Name: ,
