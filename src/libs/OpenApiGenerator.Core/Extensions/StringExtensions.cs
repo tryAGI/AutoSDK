@@ -174,13 +174,14 @@ public static class StringExtensions
         int level = 4)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
+        parameterName = parameterName ?? throw new ArgumentNullException(nameof(parameterName));
         
         var spaces = new string(' ', level);
         var value = ToXmlDocumentation(text, level);
         
         return string.IsNullOrWhiteSpace(text)
-            ? $@"/// <param name=""{parameterName}""></param>"
-            : $@"/// <param name=""{parameterName}"">
+            ? $@"/// <param name=""{parameterName.TrimStart('@')}""></param>"
+            : $@"/// <param name=""{parameterName.TrimStart('@')}"">
 {value}
 {spaces}/// </param>";
     }
