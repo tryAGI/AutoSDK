@@ -114,3 +114,5 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ## 📚Examples of use in real SDKs📚
 - https://github.com/tryAGI/OpenAI
 - https://github.com/tryAGI/Ollama
+- https://github.com/tryAGI/Anthropic
+- https://github.com/HavenDV/GitHub.NET
