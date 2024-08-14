@@ -1,10 +1,8 @@
-using System.Collections.Immutable;
 using System.Globalization;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
-using OpenApiGenerator.Core.Helpers;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
 using OpenApiGenerator.Core.Serialization;
@@ -197,24 +195,6 @@ public static class OpenApiExtensions
             //OpenApiObject @object => $"{{{string.Join(", ", @object.Select(x => $"{x.Key}: {GetString(x.Value)}"))}}}",
             _ => null,
         };
-    }
-
-    public static ImmutableArray<PropertyData> ToAnyOfProperties(
-        this IList<SchemaContext> schemas,
-        string key)
-    {
-        var useSmartNames = schemas.All(x => x.Schema.Reference != null);
-        var className = key.ToClassName();
-        
-        return schemas.Select((x, i) => PropertyData.Default with
-        {
-            Type = x.TypeData ?? TypeData.Default,
-            Name = useSmartNames
-                ? SmartNamedAnyOfNames.ComputeSmartName(
-                    (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
-                    className)
-                : $"Value{i + 1}",
-        }).ToImmutableArray();
     }
 
     internal static string ToCSharpName(this string text, Settings settings, SchemaContext? parent)

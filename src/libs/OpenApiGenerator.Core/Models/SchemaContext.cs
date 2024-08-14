@@ -65,6 +65,7 @@ public class SchemaContext
     public string? ClassName { get; set; }
     
     public AnyOfData? AnyOfData { get; set; }
+    public string? VariantName { get; init; }
     
     public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
     

@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Helpers;
 using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
@@ -18,6 +19,16 @@ public readonly record struct AnyOfData(
     public static AnyOfData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        
+        var children = context.Children
+            .Where(x => x.Hint == (context.IsAnyOf
+                ? Hint.AnyOf
+                : context.IsOneOf
+                    ? Hint.OneOf
+                    : Hint.AllOf))
+            .ToList();
+        var useSmartNames = children.All(x => x.Schema.Reference != null);
+        var className = context.Id.ToClassName();
         
         return new AnyOfData(
             SubType: context.IsAnyOf
@@ -45,11 +56,15 @@ public readonly record struct AnyOfData(
                 ? context.Schema.GetSummary()
                 : string.Empty,
             Properties: context.IsComponent
-                ? context.Children.Where(x => x.Hint == (context.IsAnyOf
-                    ? Hint.AnyOf
-                    : context.IsOneOf
-                        ? Hint.OneOf
-                        : Hint.AllOf)).ToList().ToAnyOfProperties(context.Id)
+                ? children.Select((x, i) => PropertyData.Default with
+                {
+                    Type = x.TypeData ?? TypeData.Default,
+                    Name = useSmartNames
+                        ? SmartNamedAnyOfNames.ComputeSmartName(
+                            (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
+                            className)
+                        : $"Value{i + 1}",
+                }).ToImmutableArray()
                 : ImmutableArray<PropertyData>.Empty);
     }
 }
