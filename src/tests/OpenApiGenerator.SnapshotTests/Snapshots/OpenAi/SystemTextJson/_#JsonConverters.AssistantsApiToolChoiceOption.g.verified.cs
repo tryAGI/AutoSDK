@@ -35,25 +35,21 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.AssistantsApiToolChoiceOption(
                 value1,
-
                 value2
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AssistantsApiToolChoiceOptionEnum).Name}, {typeof(global::G.AssistantsNamedToolChoice).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsApiToolChoiceOptionEnum>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantsNamedToolChoice>(ref reader, options);
             }
+
             return result;
         }
 
@@ -65,16 +61,10 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AssistantsApiToolChoiceOptionEnum).Name}, {typeof(global::G.AssistantsNamedToolChoice).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.AssistantsApiToolChoiceOptionEnum), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.AssistantsNamedToolChoice), options);

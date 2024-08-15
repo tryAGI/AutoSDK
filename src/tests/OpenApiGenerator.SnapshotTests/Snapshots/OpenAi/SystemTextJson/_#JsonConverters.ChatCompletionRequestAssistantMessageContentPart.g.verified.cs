@@ -35,25 +35,21 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.ChatCompletionRequestAssistantMessageContentPart(
                 text,
-
                 refusal
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::G.ChatCompletionRequestMessageContentPartRefusal).Name}>");
-            }
 
             if (text != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartText>(ref reader, options);
             }
-
             else if (refusal != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartRefusal>(ref reader, options);
             }
+
             return result;
         }
 
@@ -65,16 +61,10 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::G.ChatCompletionRequestMessageContentPartRefusal).Name}> object.");
-            }
-
             if (value.IsText)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.ChatCompletionRequestMessageContentPartText), options);
             }
-
             else if (value.IsRefusal)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Refusal, typeof(global::G.ChatCompletionRequestMessageContentPartRefusal), options);

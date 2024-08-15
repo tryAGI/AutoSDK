@@ -13,7 +13,8 @@ public readonly record struct AnyOfData(
     string Namespace,
     string Name,
     string Summary,
-    ImmutableArray<PropertyData> Properties
+    ImmutableArray<PropertyData> Properties,
+    Settings Settings
 )
 {
     public static AnyOfData FromSchemaContext(SchemaContext context)
@@ -65,6 +66,7 @@ public readonly record struct AnyOfData(
                             className)
                         : $"Value{i + 1}",
                 }).ToImmutableArray()
-                : ImmutableArray<PropertyData>.Empty);
+                : ImmutableArray<PropertyData>.Empty,
+            Settings: context.Settings);
     }
 }

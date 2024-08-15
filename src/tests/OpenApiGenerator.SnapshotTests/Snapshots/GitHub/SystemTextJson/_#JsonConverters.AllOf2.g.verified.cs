@@ -34,25 +34,21 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::System.AllOf<T1, T2>(
                 value1,
-
                 value2
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for AllOf<{typeof(T1).Name}, {typeof(T2).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader, options);
             }
+
             return result;
         }
 
@@ -64,16 +60,10 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid AllOf<{typeof(T1).Name}, {typeof(T2).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(T1), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(T2), options);

@@ -81,7 +81,33 @@
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -90,7 +116,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -99,7 +151,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -108,7 +186,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -117,7 +221,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -408,7 +538,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value3,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AllOf,
@@ -417,7 +573,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -1210,7 +1392,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value20,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AllOf,
@@ -1219,7 +1427,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -1228,7 +1462,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -1964,7 +2224,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: convertedNoteTo,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -3027,7 +3313,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: stateChangeEvent,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4568,7 +4880,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value16,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4577,7 +4915,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AllOf,
@@ -4710,7 +5074,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4719,7 +5109,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4803,7 +5219,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4887,7 +5329,33 @@ Conditions for an organization ruleset. The conditions object should contain bot
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -4896,6 +5364,32 @@ Conditions for an organization ruleset. The conditions object should contain bot
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   }
 ]

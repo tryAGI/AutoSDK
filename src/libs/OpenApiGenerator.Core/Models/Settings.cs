@@ -29,6 +29,7 @@ public readonly record struct Settings(
     bool GenerateJsonSerializerContextTypes,
 
     bool GenerateModels,
+    bool ValidateAnyOfs,
     ModelStyle ModelStyle,
     ImmutableArray<string> IncludeModels,
     ImmutableArray<string> ExcludeModels,
@@ -61,6 +62,7 @@ public readonly record struct Settings(
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
         GenerateModels: false,
+        ValidateAnyOfs: false,
         ModelStyle: default,
         IncludeModels: ImmutableArray<string>.Empty,
         ExcludeModels: ImmutableArray<string>.Empty,

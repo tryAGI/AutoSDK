@@ -24,18 +24,16 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::System.AnyOf<T1>(
                 value1
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for AnyOf<{typeof(T1).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
+
             return result;
         }
 
@@ -46,11 +44,6 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
-
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid AnyOf<{typeof(T1).Name}> object.");
-            }
 
             if (value.IsValue1)
             {

@@ -54,39 +54,31 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::System.OneOf<T1, T2, T3, T4>(
                 value1,
-
                 value2,
-
                 value3,
-
                 value4
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(T1).Name}, {typeof(T2).Name}, {typeof(T3).Name}, {typeof(T4).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader, options);
             }
-
             else if (value3 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref reader, options);
             }
-
             else if (value4 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref reader, options);
             }
+
             return result;
         }
 
@@ -98,26 +90,18 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(T1).Name}, {typeof(T2).Name}, {typeof(T3).Name}, {typeof(T4).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(T1), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(T2), options);
             }
-
             else if (value.IsValue3)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(T3), options);
             }
-
             else if (value.IsValue4)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(T4), options);

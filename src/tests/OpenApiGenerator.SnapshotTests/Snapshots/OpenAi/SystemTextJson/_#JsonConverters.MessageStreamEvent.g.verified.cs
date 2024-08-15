@@ -65,46 +65,36 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.MessageStreamEvent(
                 value1,
-
                 value2,
-
                 value3,
-
                 value4,
-
                 value5
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.MessageStreamEventVariant1).Name}, {typeof(global::G.MessageStreamEventVariant2).Name}, {typeof(global::G.MessageStreamEventVariant3).Name}, {typeof(global::G.MessageStreamEventVariant4).Name}, {typeof(global::G.MessageStreamEventVariant5).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEventVariant1>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEventVariant2>(ref reader, options);
             }
-
             else if (value3 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEventVariant3>(ref reader, options);
             }
-
             else if (value4 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEventVariant4>(ref reader, options);
             }
-
             else if (value5 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEventVariant5>(ref reader, options);
             }
+
             return result;
         }
 
@@ -116,31 +106,22 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.MessageStreamEventVariant1).Name}, {typeof(global::G.MessageStreamEventVariant2).Name}, {typeof(global::G.MessageStreamEventVariant3).Name}, {typeof(global::G.MessageStreamEventVariant4).Name}, {typeof(global::G.MessageStreamEventVariant5).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.MessageStreamEventVariant1), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.MessageStreamEventVariant2), options);
             }
-
             else if (value.IsValue3)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::G.MessageStreamEventVariant3), options);
             }
-
             else if (value.IsValue4)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::G.MessageStreamEventVariant4), options);
             }
-
             else if (value.IsValue5)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(global::G.MessageStreamEventVariant5), options);

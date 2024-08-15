@@ -121,6 +121,7 @@ public class GenerateCommand : Command
             JsonSerializerContext: $"{@namespace}.SourceGenerationContext",
             GenerateJsonSerializerContextTypes: true,
             GenerateModels: false,
+            ValidateAnyOfs: false,
             ModelStyle: default,
             IncludeModels: [],
             ExcludeModels: [],

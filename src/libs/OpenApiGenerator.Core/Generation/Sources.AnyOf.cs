@@ -10,7 +10,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, _, _, @namespace, className, summary, fixedTypes) = anyOfData;
+        var (subType, count, _, _, @namespace, className, summary, fixedTypes, _) = anyOfData;
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
         var classNameWithoutTypes = string.IsNullOrWhiteSpace(className)
             ? $"{subType}"

@@ -29,6 +29,7 @@ public class CacheTests
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
         GenerateModels: false,
+        ValidateAnyOfs: false,
         ModelStyle: default,
         IncludeModels: ImmutableArray.Create(["123", "456"]),
         ExcludeModels: [],

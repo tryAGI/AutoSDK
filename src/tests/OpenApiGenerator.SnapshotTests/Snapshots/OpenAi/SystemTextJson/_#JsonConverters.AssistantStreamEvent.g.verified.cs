@@ -75,53 +75,41 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.AssistantStreamEvent(
                 thread,
-
                 run,
-
                 runStep,
-
                 message,
-
                 error,
-
                 done
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ThreadStreamEvent).Name}, {typeof(global::G.RunStreamEvent).Name}, {typeof(global::G.RunStepStreamEvent).Name}, {typeof(global::G.MessageStreamEvent).Name}, {typeof(global::G.ErrorEvent).Name}, {typeof(global::G.DoneEvent).Name}>");
-            }
 
             if (thread != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThreadStreamEvent>(ref reader, options);
             }
-
             else if (run != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEvent>(ref reader, options);
             }
-
             else if (runStep != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEvent>(ref reader, options);
             }
-
             else if (message != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEvent>(ref reader, options);
             }
-
             else if (error != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ErrorEvent>(ref reader, options);
             }
-
             else if (done != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DoneEvent>(ref reader, options);
             }
+
             return result;
         }
 
@@ -133,36 +121,26 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ThreadStreamEvent).Name}, {typeof(global::G.RunStreamEvent).Name}, {typeof(global::G.RunStepStreamEvent).Name}, {typeof(global::G.MessageStreamEvent).Name}, {typeof(global::G.ErrorEvent).Name}, {typeof(global::G.DoneEvent).Name}> object.");
-            }
-
             if (value.IsThread)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thread, typeof(global::G.ThreadStreamEvent), options);
             }
-
             else if (value.IsRun)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeof(global::G.RunStreamEvent), options);
             }
-
             else if (value.IsRunStep)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStep, typeof(global::G.RunStepStreamEvent), options);
             }
-
             else if (value.IsMessage)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message, typeof(global::G.MessageStreamEvent), options);
             }
-
             else if (value.IsError)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeof(global::G.ErrorEvent), options);
             }
-
             else if (value.IsDone)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Done, typeof(global::G.DoneEvent), options);

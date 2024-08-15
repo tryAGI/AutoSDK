@@ -6,7 +6,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -15,7 +41,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -24,7 +76,33 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -242,7 +320,33 @@
         ArgumentName: function,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -292,7 +396,33 @@
         ArgumentName: text,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -382,7 +512,33 @@
         ArgumentName: image,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -472,7 +628,33 @@
         ArgumentName: refusal,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -522,7 +704,33 @@
         ArgumentName: text,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AllOf,
@@ -613,7 +821,33 @@
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -716,7 +950,33 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -725,7 +985,33 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -734,7 +1020,33 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -743,7 +1055,33 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -920,7 +1258,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: value4,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -929,7 +1293,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Namespace: System,
     Name: ,
     Summary: ,
-    Properties: null
+    Properties: null,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -1030,7 +1420,33 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -1119,7 +1535,33 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ArgumentName: @static,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -1960,7 +2402,33 @@ integrate the Assistants API with streaming.
         ArgumentName: done,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -2007,7 +2475,33 @@ integrate the Assistants API with streaming.
         ArgumentName: value1,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -2387,7 +2881,33 @@ integrate the Assistants API with streaming.
         ArgumentName: value10,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -2656,7 +3176,33 @@ integrate the Assistants API with streaming.
         ArgumentName: value7,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: OneOf,
@@ -2851,6 +3397,32 @@ integrate the Assistants API with streaming.
         ArgumentName: value5,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   }
 ]

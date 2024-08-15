@@ -29,6 +29,7 @@ public partial class DataTests : VerifyBase
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
         GenerateModels: false,
+        ValidateAnyOfs: false,
         ModelStyle: default,
         IncludeModels: [],
         ExcludeModels: [],

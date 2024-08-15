@@ -11,7 +11,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, jsonSerializerType, isTrimming, @namespace, name, _, fixedTypes) = anyOfData;
+        var (subType, count, jsonSerializerType, isTrimming, @namespace, name, _, fixedTypes, _) = anyOfData;
         if (jsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
@@ -73,18 +73,19 @@ namespace OpenApiGenerator.JsonConverters
             {{
             }}
 ").Inject()}
-        
+
             var result = new {typeNameWithTypes}(
-{allTypes.Select(x => $@"
+{allTypes.Select(x => $@" 
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
+{(anyOfData.Settings.ValidateAnyOfs ? @$" 
             if (!result.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {subType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
-            }}
+            }}" : " ")}
 
-{allTypes.Select((x, i) => $@"
+{allTypes.Select((x, i) => $@" 
             {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
             {{
 {(isTrimming ? $@" 
@@ -96,7 +97,7 @@ namespace OpenApiGenerator.JsonConverters
  ")}
             }}
 ").Inject().TrimEnd(',')}
-        
+
             return result;
         }}
 
@@ -108,13 +109,14 @@ namespace OpenApiGenerator.JsonConverters
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(isTrimming ? @"
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+{(anyOfData.Settings.ValidateAnyOfs ? @$" 
 
             if (!value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid {subType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}> object."");
-            }}
+            }}" : " ")}
 
-{allTypes.Select((x, i) => $@"
+{allTypes.Select((x, i) => $@" 
             {(i == 0 ? "" : "else ")}if (value.Is{x.Name})
             {{
 {(isTrimming ? $@" 
@@ -135,7 +137,7 @@ namespace OpenApiGenerator.JsonConverters
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, jsonSerializerType, _, _, _, _, fixedTypes) = anyOfData;
+        var (subType, count, jsonSerializerType, _, _, _, _, fixedTypes, _) = anyOfData;
         if (jsonSerializerType == JsonSerializerType.NewtonsoftJson ||
             !fixedTypes.IsEmpty)
         {

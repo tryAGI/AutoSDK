@@ -85,60 +85,46 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.RunStepStreamEvent(
                 value1,
-
                 value2,
-
                 value3,
-
                 value4,
-
                 value5,
-
                 value6,
-
                 value7
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.RunStepStreamEventVariant1).Name}, {typeof(global::G.RunStepStreamEventVariant2).Name}, {typeof(global::G.RunStepStreamEventVariant3).Name}, {typeof(global::G.RunStepStreamEventVariant4).Name}, {typeof(global::G.RunStepStreamEventVariant5).Name}, {typeof(global::G.RunStepStreamEventVariant6).Name}, {typeof(global::G.RunStepStreamEventVariant7).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant1>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant2>(ref reader, options);
             }
-
             else if (value3 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant3>(ref reader, options);
             }
-
             else if (value4 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant4>(ref reader, options);
             }
-
             else if (value5 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant5>(ref reader, options);
             }
-
             else if (value6 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant6>(ref reader, options);
             }
-
             else if (value7 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEventVariant7>(ref reader, options);
             }
+
             return result;
         }
 
@@ -150,41 +136,30 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.RunStepStreamEventVariant1).Name}, {typeof(global::G.RunStepStreamEventVariant2).Name}, {typeof(global::G.RunStepStreamEventVariant3).Name}, {typeof(global::G.RunStepStreamEventVariant4).Name}, {typeof(global::G.RunStepStreamEventVariant5).Name}, {typeof(global::G.RunStepStreamEventVariant6).Name}, {typeof(global::G.RunStepStreamEventVariant7).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.RunStepStreamEventVariant1), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.RunStepStreamEventVariant2), options);
             }
-
             else if (value.IsValue3)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::G.RunStepStreamEventVariant3), options);
             }
-
             else if (value.IsValue4)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::G.RunStepStreamEventVariant4), options);
             }
-
             else if (value.IsValue5)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(global::G.RunStepStreamEventVariant5), options);
             }
-
             else if (value.IsValue6)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeof(global::G.RunStepStreamEventVariant6), options);
             }
-
             else if (value.IsValue7)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, typeof(global::G.RunStepStreamEventVariant7), options);

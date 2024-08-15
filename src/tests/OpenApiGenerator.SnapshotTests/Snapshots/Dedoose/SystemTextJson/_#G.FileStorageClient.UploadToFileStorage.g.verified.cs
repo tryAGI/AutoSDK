@@ -63,8 +63,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/uploadtofilestorage?name={name}&projectId={projectId}&uploadType={uploadType}", global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Convert.ToBase64String(request);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: global::System.Convert.ToBase64String(request),
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/octet-stream");
             httpRequest.Content = __httpRequestContent;

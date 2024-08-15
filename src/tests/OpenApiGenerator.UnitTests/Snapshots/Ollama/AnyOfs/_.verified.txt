@@ -89,7 +89,33 @@
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: true,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -181,7 +207,33 @@
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: true,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -281,7 +333,33 @@ Example: pulling manifest,
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: true,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   },
   {
     SubType: AnyOf,
@@ -375,6 +453,32 @@ Example: pulling manifest,
         ArgumentName: value2,
         ParameterDefaultValue: default
       }
-    ]
+    ],
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      ClsCompliantEnumPrefix: x,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      ExcludeDeprecatedOperations: false,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: true,
+      GenerateModels: false,
+      ValidateAnyOfs: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    }
   }
 ]

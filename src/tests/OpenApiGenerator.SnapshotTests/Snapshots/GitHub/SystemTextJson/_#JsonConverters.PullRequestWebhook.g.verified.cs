@@ -35,25 +35,21 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.PullRequestWebhook(
                 value1,
-
                 value2
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for AllOf<{typeof(global::G.PullRequest).Name}, {typeof(global::G.PullRequestWebhookVariant2).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequest>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequestWebhookVariant2>(ref reader, options);
             }
+
             return result;
         }
 
@@ -65,16 +61,10 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid AllOf<{typeof(global::G.PullRequest).Name}, {typeof(global::G.PullRequestWebhookVariant2).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.PullRequest), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.PullRequestWebhookVariant2), options);

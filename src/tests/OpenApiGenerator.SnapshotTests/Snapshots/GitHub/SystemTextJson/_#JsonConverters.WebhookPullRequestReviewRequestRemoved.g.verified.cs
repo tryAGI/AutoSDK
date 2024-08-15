@@ -35,25 +35,21 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::G.WebhookPullRequestReviewRequestRemoved(
                 value1,
-
                 value2
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant1).Name}, {typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant2).Name}>");
-            }
 
             if (value1 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WebhookPullRequestReviewRequestRemovedVariant1>(ref reader, options);
             }
-
             else if (value2 != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WebhookPullRequestReviewRequestRemovedVariant2>(ref reader, options);
             }
+
             return result;
         }
 
@@ -65,16 +61,10 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant1).Name}, {typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant2).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant1), options);
             }
-
             else if (value.IsValue2)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant2), options);

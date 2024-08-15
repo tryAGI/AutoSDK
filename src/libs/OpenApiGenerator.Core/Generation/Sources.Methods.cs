@@ -299,8 +299,9 @@ namespace {endPoint.Namespace}
             : jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext);
 
         return $@" 
+            var __httpRequestContentBody = {requestContent};
             var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: {requestContent},
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{endPoint.RequestMediaType}"");
             httpRequest.Content = __httpRequestContent;
