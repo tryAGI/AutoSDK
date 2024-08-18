@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageDeltaContentImageFileObjectType Type { get; set; } = global::G.MessageDeltaContentImageFileObjectType.ImageFile;
+        public global::G.MessageDeltaContentImageFileObjectType Type { get; set; }
 
         /// <summary>
         /// 

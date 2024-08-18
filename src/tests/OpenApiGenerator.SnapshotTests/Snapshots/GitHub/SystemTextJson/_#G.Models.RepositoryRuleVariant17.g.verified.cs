@@ -15,8 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleVariant17TypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleVariant17Type Type { get; set; } = global::G.RepositoryRuleVariant17Type.FileExtensionRestriction;
+        public global::G.RepositoryRuleVariant17Type Type { get; set; }
 
         /// <summary>
         /// 

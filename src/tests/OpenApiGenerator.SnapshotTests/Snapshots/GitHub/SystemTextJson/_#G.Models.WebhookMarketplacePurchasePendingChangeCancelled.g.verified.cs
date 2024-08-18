@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMarketplacePurchasePendingChangeCancelledActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookMarketplacePurchasePendingChangeCancelledAction Action { get; set; } = global::G.WebhookMarketplacePurchasePendingChangeCancelledAction.PendingChangeCancelled;
+        public global::G.WebhookMarketplacePurchasePendingChangeCancelledAction Action { get; set; }
 
         /// <summary>
         /// 

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventVariant3Event Event { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.MessageStreamEventVariant3Event Event { get; set; }
 
         /// <summary>
         /// Represents a message delta i.e. any changed fields on a message during streaming.

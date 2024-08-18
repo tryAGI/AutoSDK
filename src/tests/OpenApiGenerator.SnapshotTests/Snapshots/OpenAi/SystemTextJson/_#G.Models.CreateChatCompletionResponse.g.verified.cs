@@ -57,8 +57,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateChatCompletionResponseObject Object { get; set; } = global::G.CreateChatCompletionResponseObject.ChatCompletion;
+        public global::G.CreateChatCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

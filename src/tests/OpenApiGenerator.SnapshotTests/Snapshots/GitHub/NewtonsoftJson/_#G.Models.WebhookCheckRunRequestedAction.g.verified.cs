@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCheckRunRequestedActionAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookCheckRunRequestedActionAction Action { get; set; }
 
         /// <summary>
         /// A check performed on the code of a given code change

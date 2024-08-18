@@ -52,8 +52,8 @@ namespace G
         ///   <br/>
         /// If an error occurs, this field is set to an empty string.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.StreamType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.StreamType Type { get; set; }
 
         /// <summary>
         /// The stream’s title. Is an empty string if not set.

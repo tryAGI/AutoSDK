@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// The object type, which is always "text_completion"
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateCompletionResponseObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

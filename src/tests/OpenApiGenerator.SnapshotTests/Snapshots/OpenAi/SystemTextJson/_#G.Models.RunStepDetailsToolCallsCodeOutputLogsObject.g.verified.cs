@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; } = global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType.Logs;
+        public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.

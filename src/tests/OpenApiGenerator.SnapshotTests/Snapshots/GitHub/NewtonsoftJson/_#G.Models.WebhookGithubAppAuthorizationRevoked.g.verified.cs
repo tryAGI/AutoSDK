@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookGithubAppAuthorizationRevokedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookGithubAppAuthorizationRevokedAction Action { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

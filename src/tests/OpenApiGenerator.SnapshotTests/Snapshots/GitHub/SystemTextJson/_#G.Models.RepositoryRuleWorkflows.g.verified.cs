@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleWorkflowsTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleWorkflowsType Type { get; set; } = global::G.RepositoryRuleWorkflowsType.Workflows;
+        public global::G.RepositoryRuleWorkflowsType Type { get; set; }
 
         /// <summary>
         /// 

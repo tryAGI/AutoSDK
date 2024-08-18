@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AutoChunkingStrategyRequestParamType Type { get; set; } = global::G.AutoChunkingStrategyRequestParamType.Auto;
+        public global::G.AutoChunkingStrategyRequestParamType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookIssueCommentDeletedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookIssueCommentDeletedAction Action { get; set; }
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.

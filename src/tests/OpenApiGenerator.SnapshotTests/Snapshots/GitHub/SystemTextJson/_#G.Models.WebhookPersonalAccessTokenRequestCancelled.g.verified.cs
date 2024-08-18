@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPersonalAccessTokenRequestCancelledActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPersonalAccessTokenRequestCancelledAction Action { get; set; } = global::G.WebhookPersonalAccessTokenRequestCancelledAction.Cancelled;
+        public global::G.WebhookPersonalAccessTokenRequestCancelledAction Action { get; set; }
 
         /// <summary>
         /// Details of a Personal Access Token Request.

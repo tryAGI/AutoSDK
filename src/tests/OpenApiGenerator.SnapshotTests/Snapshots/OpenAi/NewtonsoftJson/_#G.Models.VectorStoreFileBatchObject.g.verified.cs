@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `vector_store.file_batch`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreFileBatchObjectObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.VectorStoreFileBatchObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.

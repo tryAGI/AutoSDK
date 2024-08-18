@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunToolCallObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunToolCallObjectType Type { get; set; } = global::G.RunToolCallObjectType.Function;
+        public global::G.RunToolCallObjectType Type { get; set; }
 
         /// <summary>
         /// The function definition.

@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `chat.completion`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateChatCompletionFunctionResponseObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.CreateChatCompletionFunctionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

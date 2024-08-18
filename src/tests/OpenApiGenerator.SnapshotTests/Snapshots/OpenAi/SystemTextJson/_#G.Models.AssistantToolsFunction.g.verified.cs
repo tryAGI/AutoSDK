@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantToolsFunctionType Type { get; set; } = global::G.AssistantToolsFunctionType.Function;
+        public global::G.AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>
         /// 

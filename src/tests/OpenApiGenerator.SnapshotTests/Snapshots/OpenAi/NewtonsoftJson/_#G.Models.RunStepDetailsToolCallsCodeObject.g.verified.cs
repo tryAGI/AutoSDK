@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDetailsToolCallsCodeObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>
         /// The Code Interpreter tool call definition.

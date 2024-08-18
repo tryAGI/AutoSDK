@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertReopenedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookCodeScanningAlertReopenedAction Action { get; set; }
 
         /// <summary>
         /// The code scanning alert involved in the event.

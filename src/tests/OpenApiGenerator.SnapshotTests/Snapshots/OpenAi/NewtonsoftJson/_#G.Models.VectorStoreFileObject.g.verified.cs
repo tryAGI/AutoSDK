@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `vector_store.file`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreFileObjectObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.

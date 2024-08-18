@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCreationTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleCreationType Type { get; set; } = global::G.RepositoryRuleCreationType.Creation;
+        public global::G.RepositoryRuleCreationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

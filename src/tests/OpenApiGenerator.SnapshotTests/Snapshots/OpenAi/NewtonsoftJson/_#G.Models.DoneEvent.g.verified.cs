@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DoneEventEvent Event { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.DoneEventEvent Event { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DoneEventData Data { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("data")]
+        public global::G.DoneEventData Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Always `refusal`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDeltaContentRefusalObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentRefusalObjectType Type { get; set; }
 
         /// <summary>
         /// 

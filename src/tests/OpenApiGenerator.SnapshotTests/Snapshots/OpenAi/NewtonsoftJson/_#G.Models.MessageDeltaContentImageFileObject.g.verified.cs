@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Always `image_file`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDeltaContentImageFileObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentImageFileObjectType Type { get; set; }
 
         /// <summary>
         /// 

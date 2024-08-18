@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionMessageToolCallType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ChatCompletionMessageToolCallType Type { get; set; }
 
         /// <summary>
         /// The function that the model called.

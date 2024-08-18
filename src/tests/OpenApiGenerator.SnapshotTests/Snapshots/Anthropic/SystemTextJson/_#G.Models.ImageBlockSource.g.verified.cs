@@ -29,8 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ImageBlockSourceTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ImageBlockSourceType Type { get; set; } = global::G.ImageBlockSourceType.Base64;
+        public global::G.ImageBlockSourceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

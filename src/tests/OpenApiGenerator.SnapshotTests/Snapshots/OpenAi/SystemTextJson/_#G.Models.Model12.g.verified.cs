@@ -28,8 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ModelObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ModelObject Object { get; set; } = global::G.ModelObject.Model;
+        public global::G.ModelObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the model.

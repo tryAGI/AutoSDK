@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageContentRefusalObjectType Type { get; set; } = global::G.MessageContentRefusalObjectType.Refusal;
+        public global::G.MessageContentRefusalObjectType Type { get; set; }
 
         /// <summary>
         /// 

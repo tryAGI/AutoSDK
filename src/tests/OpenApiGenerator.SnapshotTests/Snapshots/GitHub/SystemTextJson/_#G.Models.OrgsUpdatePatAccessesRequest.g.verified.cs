@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgsUpdatePatAccessesRequestActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrgsUpdatePatAccessesRequestAction Action { get; set; } = global::G.OrgsUpdatePatAccessesRequestAction.Revoke;
+        public global::G.OrgsUpdatePatAccessesRequestAction Action { get; set; }
 
         /// <summary>
         /// The IDs of the fine-grained personal access tokens.

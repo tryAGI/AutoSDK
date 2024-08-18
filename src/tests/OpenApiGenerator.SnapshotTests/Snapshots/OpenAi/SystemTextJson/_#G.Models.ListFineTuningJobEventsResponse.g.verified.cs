@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ListFineTuningJobEventsResponseObject Object { get; set; } = global::G.ListFineTuningJobEventsResponseObject.List;
+        public global::G.ListFineTuningJobEventsResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

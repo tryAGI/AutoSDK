@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCustomPropertyDeletedActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCustomPropertyDeletedAction Action { get; set; } = global::G.WebhookCustomPropertyDeletedAction.Deleted;
+        public global::G.WebhookCustomPropertyDeletedAction Action { get; set; }
 
         /// <summary>
         /// 

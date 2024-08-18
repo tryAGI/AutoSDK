@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The type of response format being defined: `json_schema`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ResponseFormatJsonSchemaType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>
         /// 

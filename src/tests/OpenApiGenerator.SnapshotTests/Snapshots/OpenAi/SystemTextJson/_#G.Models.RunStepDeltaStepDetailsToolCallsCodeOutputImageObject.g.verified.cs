@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; } = global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.Image;
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>
         /// 

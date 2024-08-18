@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Always `static`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.StaticChunkingStrategyResponseParamType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.StaticChunkingStrategyResponseParamType Type { get; set; }
 
         /// <summary>
         /// 

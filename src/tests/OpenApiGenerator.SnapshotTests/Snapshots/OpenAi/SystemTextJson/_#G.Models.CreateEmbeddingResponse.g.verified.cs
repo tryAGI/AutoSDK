@@ -28,8 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateEmbeddingResponseObject Object { get; set; } = global::G.CreateEmbeddingResponseObject.List;
+        public global::G.CreateEmbeddingResponseObject Object { get; set; }
 
         /// <summary>
         /// The usage information for the request.

@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DeleteFileResponseObject Object { get; set; } = global::G.DeleteFileResponseObject.File;
+        public global::G.DeleteFileResponseObject Object { get; set; }
 
         /// <summary>
         /// 

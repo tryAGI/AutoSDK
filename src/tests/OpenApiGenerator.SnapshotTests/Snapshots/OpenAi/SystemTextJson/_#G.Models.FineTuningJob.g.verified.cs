@@ -65,8 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FineTuningJobObject Object { get; set; } = global::G.FineTuningJobObject.FineTuningJob;
+        public global::G.FineTuningJobObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the fine-tuning job.

@@ -62,8 +62,8 @@ namespace G
         ///   <br/>
         /// * BITS\_IN\_EXTENSION
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("product_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ExtensionTransactionProductType ProductType { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("product_type")]
+        public global::G.ExtensionTransactionProductType ProductType { get; set; }
 
         /// <summary>
         /// Contains details about the digital product.

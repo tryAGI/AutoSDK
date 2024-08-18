@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookSponsorshipPendingCancellationAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookSponsorshipPendingCancellationAction Action { get; set; }
 
         /// <summary>
         /// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.

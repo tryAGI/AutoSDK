@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectApiKeyObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectApiKeyObject Object { get; set; } = global::G.ProjectApiKeyObject.OrganizationProjectApiKey;
+        public global::G.ProjectApiKeyObject Object { get; set; }
 
         /// <summary>
         /// The redacted value of the API key

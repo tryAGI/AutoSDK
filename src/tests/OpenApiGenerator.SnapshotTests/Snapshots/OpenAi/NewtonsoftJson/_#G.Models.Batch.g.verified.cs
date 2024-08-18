@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `batch`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BatchObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.BatchObject Object { get; set; }
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.

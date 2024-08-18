@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookMembershipAddedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookMembershipAddedAction Action { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// The scope of the membership. Currently, can only be `team`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookMembershipAddedScope Scope { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("scope")]
+        public global::G.WebhookMembershipAddedScope Scope { get; set; }
 
         /// <summary>
         /// 

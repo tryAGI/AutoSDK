@@ -124,7 +124,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.BasicError> OrgsUpdatePatAccessAsync(
             string org,
             int patId,
-            global::G.OrgsUpdatePatAccessRequestAction action,
+            global::G.OrgsUpdatePatAccessRequestAction action = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgsUpdatePatAccessRequest

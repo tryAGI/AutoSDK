@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageDeltaContentTextObjectType Type { get; set; } = global::G.MessageDeltaContentTextObjectType.Text;
+        public global::G.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// 

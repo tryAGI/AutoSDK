@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleRequiredSignaturesTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleRequiredSignaturesType Type { get; set; } = global::G.RepositoryRuleRequiredSignaturesType.RequiredSignatures;
+        public global::G.RepositoryRuleRequiredSignaturesType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -114,7 +114,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrgMembership> OrgsUpdateMembershipForAuthenticatedUserAsync(
             string org,
-            global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState state,
+            global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgsUpdateMembershipForAuthenticatedUserRequest

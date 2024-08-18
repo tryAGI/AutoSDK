@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionMessageToolCallType Type { get; set; } = global::G.ChatCompletionMessageToolCallType.Function;
+        public global::G.ChatCompletionMessageToolCallType Type { get; set; }
 
         /// <summary>
         /// The function that the model called.

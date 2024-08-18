@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `organization.project`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectObject Object { get; set; }
 
         /// <summary>
         /// The name of the project. This appears in reporting.

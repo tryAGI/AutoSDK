@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookSecretScanningAlertValidatedActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookSecretScanningAlertValidatedAction Action { get; set; } = global::G.WebhookSecretScanningAlertValidatedAction.Validated;
+        public global::G.WebhookSecretScanningAlertValidatedAction Action { get; set; }
 
         /// <summary>
         /// 

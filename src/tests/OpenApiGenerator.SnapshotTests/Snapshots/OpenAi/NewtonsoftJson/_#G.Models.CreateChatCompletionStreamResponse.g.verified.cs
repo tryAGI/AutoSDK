@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateChatCompletionStreamResponseObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
         /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPersonalAccessTokenRequestApprovedActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPersonalAccessTokenRequestApprovedAction Action { get; set; } = global::G.WebhookPersonalAccessTokenRequestApprovedAction.Approved;
+        public global::G.WebhookPersonalAccessTokenRequestApprovedAction Action { get; set; }
 
         /// <summary>
         /// Details of a Personal Access Token Request.

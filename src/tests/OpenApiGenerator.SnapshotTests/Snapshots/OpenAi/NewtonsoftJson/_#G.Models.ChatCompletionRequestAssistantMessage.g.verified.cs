@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// The role of the messages author, in this case `assistant`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionRequestAssistantMessageRole Role { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionRequestAssistantMessageRole Role { get; set; }
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

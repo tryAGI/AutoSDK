@@ -24,8 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionRequestUserMessageRole Role { get; set; } = global::G.ChatCompletionRequestUserMessageRole.User;
+        public global::G.ChatCompletionRequestUserMessageRole Role { get; set; }
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

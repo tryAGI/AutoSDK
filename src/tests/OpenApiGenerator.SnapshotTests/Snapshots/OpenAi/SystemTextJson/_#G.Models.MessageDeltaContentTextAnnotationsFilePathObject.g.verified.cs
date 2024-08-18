@@ -21,8 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; } = global::G.MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath;
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// The text in the message content that needs to be replaced.

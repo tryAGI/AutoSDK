@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStreamEventVariant3Event Event { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.RunStreamEventVariant3Event Event { get; set; }
 
         /// <summary>
         /// Represents an execution run on a [thread](/docs/api-reference/threads).

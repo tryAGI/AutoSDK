@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleRequiredLinearHistoryTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleRequiredLinearHistoryType Type { get; set; } = global::G.RepositoryRuleRequiredLinearHistoryType.RequiredLinearHistory;
+        public global::G.RepositoryRuleRequiredLinearHistoryType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

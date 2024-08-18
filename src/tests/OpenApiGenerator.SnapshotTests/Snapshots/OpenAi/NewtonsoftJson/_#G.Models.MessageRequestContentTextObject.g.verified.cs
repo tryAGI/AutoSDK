@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Always `text`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageRequestContentTextObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// Text content to be sent to the model

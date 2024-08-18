@@ -56,8 +56,8 @@ namespace G
         /// <summary>
         /// The object type, which is always "fine_tuning.job".
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FineTuningJobObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.FineTuningJobObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the fine-tuning job.

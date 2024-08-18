@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `thread`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ThreadObjectObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ThreadObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.

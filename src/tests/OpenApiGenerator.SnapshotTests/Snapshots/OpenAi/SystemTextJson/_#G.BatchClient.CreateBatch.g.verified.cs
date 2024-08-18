@@ -117,7 +117,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Batch> CreateBatchAsync(
             string inputFileId,
             global::G.CreateBatchRequestEndpoint endpoint,
-            global::G.CreateBatchRequestCompletionWindow completionWindow,
+            global::G.CreateBatchRequestCompletionWindow completionWindow = default,
             global::G.CreateBatchRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

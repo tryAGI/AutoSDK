@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// The type of webhook. The only valid value is 'web'.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPingHookName Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public global::G.WebhookPingHookName Name { get; set; }
 
         /// <summary>
         /// 

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageRequestContentTextObjectType Type { get; set; } = global::G.MessageRequestContentTextObjectType.Text;
+        public global::G.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// Text content to be sent to the model

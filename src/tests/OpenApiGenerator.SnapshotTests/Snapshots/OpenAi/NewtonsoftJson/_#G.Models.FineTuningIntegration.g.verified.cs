@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FineTuningIntegrationType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.FineTuningIntegrationType Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>

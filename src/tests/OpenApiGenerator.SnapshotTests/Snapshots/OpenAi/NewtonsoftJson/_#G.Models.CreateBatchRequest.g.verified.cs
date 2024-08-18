@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completion_window", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completion_window")]
+        public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
         /// Optional custom metadata for the batch.

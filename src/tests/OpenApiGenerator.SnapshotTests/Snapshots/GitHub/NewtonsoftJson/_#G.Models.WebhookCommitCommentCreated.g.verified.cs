@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The action performed. Can be `created`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCommitCommentCreatedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookCommitCommentCreatedAction Action { get; set; }
 
         /// <summary>
         /// The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.

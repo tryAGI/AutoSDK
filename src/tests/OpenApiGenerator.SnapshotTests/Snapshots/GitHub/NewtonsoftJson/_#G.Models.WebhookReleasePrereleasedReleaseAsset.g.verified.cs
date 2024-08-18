@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// State of the release asset.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookReleasePrereleasedReleaseAssetState State { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("state")]
+        public global::G.WebhookReleasePrereleasedReleaseAssetState State { get; set; }
 
         /// <summary>
         /// 

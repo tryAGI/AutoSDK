@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectUserObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectUserObject Object { get; set; } = global::G.ProjectUserObject.OrganizationProjectUser;
+        public global::G.ProjectUserObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints

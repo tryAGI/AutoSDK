@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Action to apply to the fine-grained personal access token.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OrgsUpdatePatAccessRequestAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.OrgsUpdatePatAccessRequestAction Action { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

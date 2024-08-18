@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `organization.project.api_key`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectApiKeyObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectApiKeyObject Object { get; set; }
 
         /// <summary>
         /// The redacted value of the API key

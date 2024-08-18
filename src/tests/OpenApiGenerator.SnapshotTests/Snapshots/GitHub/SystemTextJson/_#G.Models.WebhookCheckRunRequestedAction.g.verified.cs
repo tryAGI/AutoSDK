@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckRunRequestedActionActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCheckRunRequestedActionAction Action { get; set; } = global::G.WebhookCheckRunRequestedActionAction.RequestedAction;
+        public global::G.WebhookCheckRunRequestedActionAction Action { get; set; }
 
         /// <summary>
         /// A check performed on the code of a given code change

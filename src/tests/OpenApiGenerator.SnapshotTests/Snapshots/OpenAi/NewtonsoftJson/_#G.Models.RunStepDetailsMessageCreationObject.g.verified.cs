@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Always `message_creation`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDetailsMessageCreationObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RunStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>
         /// 

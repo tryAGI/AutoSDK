@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("anchor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreExpirationAfterAnchor Anchor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("anchor")]
+        public global::G.VectorStoreExpirationAfterAnchor Anchor { get; set; }
 
         /// <summary>
         /// The number of days after the anchor time that the vector store will expire.

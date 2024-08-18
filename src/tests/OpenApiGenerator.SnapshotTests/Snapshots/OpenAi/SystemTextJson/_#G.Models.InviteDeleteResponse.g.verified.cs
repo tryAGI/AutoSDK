@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.InviteDeleteResponseObject Object { get; set; } = global::G.InviteDeleteResponseObject.OrganizationInviteDeleted;
+        public global::G.InviteDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// 

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ResponseFormatJsonSchemaType Type { get; set; } = global::G.ResponseFormatJsonSchemaType.JsonSchema;
+        public global::G.ResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>
         /// 

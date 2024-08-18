@@ -120,8 +120,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksAlertStateJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksAlertState State { get; set; } = global::G.WebhooksAlertState.Open;
+        public global::G.WebhooksAlertState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

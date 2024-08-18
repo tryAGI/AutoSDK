@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectUserDeleteResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectUserDeleteResponseObject Object { get; set; } = global::G.ProjectUserDeleteResponseObject.OrganizationProjectUserDeleted;
+        public global::G.ProjectUserDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// 

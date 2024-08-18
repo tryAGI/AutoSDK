@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListAuditLogsResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ListAuditLogsResponseObject Object { get; set; } = global::G.ListAuditLogsResponseObject.List;
+        public global::G.ListAuditLogsResponseObject Object { get; set; }
 
         /// <summary>
         /// 

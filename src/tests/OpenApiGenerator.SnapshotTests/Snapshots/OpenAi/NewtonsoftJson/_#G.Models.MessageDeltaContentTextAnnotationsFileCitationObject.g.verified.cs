@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Always `file_citation`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>
         /// The text in the message content that needs to be replaced.

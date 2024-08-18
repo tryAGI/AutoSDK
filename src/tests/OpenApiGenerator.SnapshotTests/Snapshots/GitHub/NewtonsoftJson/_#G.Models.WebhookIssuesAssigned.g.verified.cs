@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The action that was performed.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookIssuesAssignedAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookIssuesAssignedAction Action { get; set; }
 
         /// <summary>
         /// 

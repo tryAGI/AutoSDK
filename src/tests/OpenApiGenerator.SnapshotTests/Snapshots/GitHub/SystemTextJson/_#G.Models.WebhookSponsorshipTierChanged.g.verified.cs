@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookSponsorshipTierChangedActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookSponsorshipTierChangedAction Action { get; set; } = global::G.WebhookSponsorshipTierChangedAction.TierChanged;
+        public global::G.WebhookSponsorshipTierChangedAction Action { get; set; }
 
         /// <summary>
         /// 

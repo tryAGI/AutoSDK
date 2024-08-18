@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectServiceAccountCreateResponseObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectServiceAccountCreateResponseObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Service accounts can only have one role of type `member`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProjectServiceAccountCreateResponseRole Role { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>
         /// 

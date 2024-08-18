@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The object type, which is always `organization.user`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.UserObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.UserObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints

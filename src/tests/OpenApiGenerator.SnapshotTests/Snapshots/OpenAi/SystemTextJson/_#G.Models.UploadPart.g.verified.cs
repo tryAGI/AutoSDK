@@ -35,8 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UploadPartObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.UploadPartObject Object { get; set; } = global::G.UploadPartObject.UploadPart;
+        public global::G.UploadPartObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

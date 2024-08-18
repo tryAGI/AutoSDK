@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPersonalAccessTokenRequestCancelledAction Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public global::G.WebhookPersonalAccessTokenRequestCancelledAction Action { get; set; }
 
         /// <summary>
         /// Details of a Personal Access Token Request.

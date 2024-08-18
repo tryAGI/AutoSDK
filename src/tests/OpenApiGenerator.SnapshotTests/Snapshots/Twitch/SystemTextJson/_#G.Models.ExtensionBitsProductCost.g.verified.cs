@@ -23,8 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionBitsProductCostTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ExtensionBitsProductCostType Type { get; set; } = global::G.ExtensionBitsProductCostType.Bits;
+        public global::G.ExtensionBitsProductCostType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

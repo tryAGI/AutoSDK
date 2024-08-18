@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCommitMessagePatternTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleCommitMessagePatternType Type { get; set; } = global::G.RepositoryRuleCommitMessagePatternType.CommitMessagePattern;
+        public global::G.RepositoryRuleCommitMessagePatternType Type { get; set; }
 
         /// <summary>
         /// 

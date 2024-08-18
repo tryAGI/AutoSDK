@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.VectorStoreExpirationAfterAnchor Anchor { get; set; } = global::G.VectorStoreExpirationAfterAnchor.LastActiveAt;
+        public global::G.VectorStoreExpirationAfterAnchor Anchor { get; set; }
 
         /// <summary>
         /// The number of days after the anchor time that the vector store will expire.

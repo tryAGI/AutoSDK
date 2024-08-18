@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionRequestMessageContentPartImageType Type { get; set; } = global::G.ChatCompletionRequestMessageContentPartImageType.ImageUrl;
+        public global::G.ChatCompletionRequestMessageContentPartImageType Type { get; set; }
 
         /// <summary>
         /// 

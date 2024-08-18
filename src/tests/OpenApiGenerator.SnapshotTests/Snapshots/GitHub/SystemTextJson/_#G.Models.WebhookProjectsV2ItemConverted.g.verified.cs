@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookProjectsV2ItemConvertedActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookProjectsV2ItemConvertedAction Action { get; set; } = global::G.WebhookProjectsV2ItemConvertedAction.Converted;
+        public global::G.WebhookProjectsV2ItemConvertedAction Action { get; set; }
 
         /// <summary>
         /// 

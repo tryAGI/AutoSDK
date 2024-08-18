@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantToolsFileSearchType Type { get; set; } = global::G.AssistantToolsFileSearchType.FileSearch;
+        public global::G.AssistantToolsFileSearchType Type { get; set; }
 
         /// <summary>
         /// Overrides for the file search tool.

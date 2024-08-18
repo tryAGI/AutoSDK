@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.StaticChunkingStrategyResponseParamType Type { get; set; } = global::G.StaticChunkingStrategyResponseParamType.Static;
+        public global::G.StaticChunkingStrategyResponseParamType Type { get; set; }
 
         /// <summary>
         /// 

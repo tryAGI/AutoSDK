@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ContentFileTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContentFileType Type { get; set; } = global::G.ContentFileType.File;
+        public global::G.ContentFileType Type { get; set; }
 
         /// <summary>
         /// 

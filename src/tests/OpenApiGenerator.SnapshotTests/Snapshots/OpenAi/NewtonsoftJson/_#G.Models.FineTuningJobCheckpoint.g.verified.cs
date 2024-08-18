@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FineTuningJobCheckpointObject Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.FineTuningJobCheckpointObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
