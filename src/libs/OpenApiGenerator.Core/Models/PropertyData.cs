@@ -55,13 +55,20 @@ public readonly record struct PropertyData(
             ? new HashSet<string>(context.Parent.Schema.Required)
             : [];
         
+        var isRequired = context.Hint is Hint.Parameter
+            ? context.Parameter?.Required == true || context.Parameter?.In == Microsoft.OpenApi.Models.ParameterLocation.Path
+            : requiredProperties.Contains(propertyName);
+        // Special case for enums with a single value.
+        if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
+        {
+            isRequired = false;
+        }
+        
         return new PropertyData(
             Id: propertyName,
             Name: name,
             Type: type,
-            IsRequired: context.Hint is Hint.Parameter
-                ? context.Parameter?.Required == true || context.Parameter?.In == Microsoft.OpenApi.Models.ParameterLocation.Path
-                : requiredProperties.Contains(propertyName),
+            IsRequired: isRequired,
             IsMultiPartFormDataFilename: false,
             ParameterLocation: context.Parameter?.In,
             ParameterStyle: context.Parameter?.Style,
