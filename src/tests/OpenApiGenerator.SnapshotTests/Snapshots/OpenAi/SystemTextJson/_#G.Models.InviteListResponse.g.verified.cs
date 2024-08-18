@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteListResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.InviteListResponseObject Object { get; set; }
+        public required global::G.InviteListResponseObject Object { get; set; } = global::G.InviteListResponseObject.List;
 
         /// <summary>
         /// 

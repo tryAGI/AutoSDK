@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionRequestMessageContentPartTextType Type { get; set; }
+        public required global::G.ChatCompletionRequestMessageContentPartTextType Type { get; set; } = global::G.ChatCompletionRequestMessageContentPartTextType.Text;
 
         /// <summary>
         /// The text content.

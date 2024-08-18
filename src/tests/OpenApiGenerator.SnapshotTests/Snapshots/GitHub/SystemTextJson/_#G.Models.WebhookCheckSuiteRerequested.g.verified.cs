@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckSuiteRerequestedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCheckSuiteRerequestedAction Action { get; set; }
+        public required global::G.WebhookCheckSuiteRerequestedAction Action { get; set; } = global::G.WebhookCheckSuiteRerequestedAction.Rerequested;
 
         /// <summary>
         /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).

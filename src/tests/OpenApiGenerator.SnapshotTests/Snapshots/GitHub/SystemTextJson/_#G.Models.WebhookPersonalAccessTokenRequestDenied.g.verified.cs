@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPersonalAccessTokenRequestDeniedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPersonalAccessTokenRequestDeniedAction Action { get; set; }
+        public required global::G.WebhookPersonalAccessTokenRequestDeniedAction Action { get; set; } = global::G.WebhookPersonalAccessTokenRequestDeniedAction.Denied;
 
         /// <summary>
         /// Details of a Personal Access Token Request.

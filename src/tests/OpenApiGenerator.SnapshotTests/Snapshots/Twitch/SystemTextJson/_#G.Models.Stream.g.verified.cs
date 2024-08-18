@@ -61,7 +61,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StreamTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.StreamType Type { get; set; }
+        public required global::G.StreamType Type { get; set; } = global::G.StreamType.Live;
 
         /// <summary>
         /// The stream’s title. Is an empty string if not set.

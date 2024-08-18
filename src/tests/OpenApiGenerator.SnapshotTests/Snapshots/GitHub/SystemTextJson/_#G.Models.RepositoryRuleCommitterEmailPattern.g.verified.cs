@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCommitterEmailPatternTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleCommitterEmailPatternType Type { get; set; }
+        public required global::G.RepositoryRuleCommitterEmailPatternType Type { get; set; } = global::G.RepositoryRuleCommitterEmailPatternType.CommitterEmailPattern;
 
         /// <summary>
         /// 

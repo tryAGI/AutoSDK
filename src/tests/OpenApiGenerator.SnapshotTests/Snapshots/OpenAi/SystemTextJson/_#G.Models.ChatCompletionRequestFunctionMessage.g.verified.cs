@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; }
+        public required global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; } = global::G.ChatCompletionRequestFunctionMessageRole.Function;
 
         /// <summary>
         /// The contents of the function message.

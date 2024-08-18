@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStreamEventVariant5EventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStreamEventVariant5Event Event { get; set; }
+        public required global::G.RunStreamEventVariant5Event Event { get; set; } = global::G.RunStreamEventVariant5Event.ThreadRunCompleted;
 
         /// <summary>
         /// Represents an execution run on a [thread](/docs/api-reference/threads).

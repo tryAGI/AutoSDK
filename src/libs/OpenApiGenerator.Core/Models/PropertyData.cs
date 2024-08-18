@@ -13,7 +13,7 @@ public readonly record struct PropertyData(
     ParameterLocation? ParameterLocation,
     ParameterStyle? ParameterStyle,
     bool? ParameterExplode,
-    JsonSerializerType JsonSerializerType,
+    Settings Settings,
     string? DefaultValue,
     bool IsDeprecated,
     string Summary,
@@ -30,7 +30,7 @@ public readonly record struct PropertyData(
         ParameterExplode: null,
         DefaultValue: null,
         IsDeprecated: false,
-        JsonSerializerType: JsonSerializerType.SystemTextJson,
+        Settings: Settings.Default,
         Summary: string.Empty,
         ConverterType: string.Empty);
 
@@ -66,7 +66,7 @@ public readonly record struct PropertyData(
             ParameterLocation: context.Parameter?.In,
             ParameterStyle: context.Parameter?.Style,
             ParameterExplode: context.Parameter?.Explode,
-            JsonSerializerType: context.Settings.JsonSerializerType,
+            Settings: context.Settings,
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
@@ -224,7 +224,7 @@ public readonly record struct PropertyData(
     {
         get
         {
-            if (Type.EnumValues.Length != 0 && JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            if (Type.EnumValues.Length != 0 && Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
             {
                 return ParameterName + "Value";
             }

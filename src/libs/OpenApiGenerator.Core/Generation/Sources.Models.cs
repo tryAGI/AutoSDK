@@ -63,6 +63,12 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {
             return " = default!;";
         }
+
+        // Special case for enums with a single value.
+        if (property is { IsRequired: true, Type: { IsEnum: true, EnumValues.Length: 1 } })
+        {
+            return $" = {property.Type.CSharpTypeWithoutNullability}.{property.Type.EnumValues[0].ToEnumValue(property.Settings).Name};";
+        }
         
         return property.IsRequired || string.IsNullOrWhiteSpace(property.DefaultValue) ? string.Empty : $" = {property.DefaultValue};";
     }

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCustomPropertyUpdatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCustomPropertyUpdatedAction Action { get; set; }
+        public required global::G.WebhookCustomPropertyUpdatedAction Action { get; set; } = global::G.WebhookCustomPropertyUpdatedAction.Updated;
 
         /// <summary>
         /// Custom property defined on an organization

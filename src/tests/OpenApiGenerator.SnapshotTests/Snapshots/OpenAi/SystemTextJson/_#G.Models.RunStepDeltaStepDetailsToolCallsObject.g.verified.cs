@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepDeltaStepDetailsToolCallsObjectType Type { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsObjectType Type { get; set; } = global::G.RunStepDeltaStepDetailsToolCallsObjectType.ToolCalls;
 
         /// <summary>
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.

@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantObjectObject Object { get; set; }
+        public required global::G.AssistantObjectObject Object { get; set; } = global::G.AssistantObjectObject.Assistant;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the assistant was created.

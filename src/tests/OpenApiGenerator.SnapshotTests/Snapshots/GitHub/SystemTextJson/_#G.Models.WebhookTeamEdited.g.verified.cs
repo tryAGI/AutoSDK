@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookTeamEditedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookTeamEditedAction Action { get; set; }
+        public required global::G.WebhookTeamEditedAction Action { get; set; } = global::G.WebhookTeamEditedAction.Edited;
 
         /// <summary>
         /// The changes to the team if the action was `edited`.

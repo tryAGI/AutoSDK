@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDependabotAlertReopenedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDependabotAlertReopenedAction Action { get; set; }
+        public required global::G.WebhookDependabotAlertReopenedAction Action { get; set; } = global::G.WebhookDependabotAlertReopenedAction.Reopened;
 
         /// <summary>
         /// A Dependabot alert.

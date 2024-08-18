@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestEditedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestEditedAction Action { get; set; }
+        public required global::G.WebhookPullRequestEditedAction Action { get; set; } = global::G.WebhookPullRequestEditedAction.Edited;
 
         /// <summary>
         /// The changes to the comment if the action was `edited`.

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OtherChunkingStrategyResponseParamType Type { get; set; }
+        public required global::G.OtherChunkingStrategyResponseParamType Type { get; set; } = global::G.OtherChunkingStrategyResponseParamType.Other;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

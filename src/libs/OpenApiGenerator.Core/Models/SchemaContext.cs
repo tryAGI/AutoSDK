@@ -85,8 +85,8 @@ public class SchemaContext
             
             if (Schema.IsBinary())
             {
-                return new []
-                {
+                return
+                [
                     PropertyData.Value,
                     PropertyData.Value with
                     {
@@ -99,12 +99,12 @@ public class SchemaContext
                             JsonSerializerType = Settings.JsonSerializerType,
                             GenerateJsonSerializerContextTypes = Settings.GenerateJsonSerializerContextTypes,
                         },
-                        JsonSerializerType = Settings.JsonSerializerType,
-                    },
-                };
+                        Settings = Settings,
+                    }
+                ];
             }
 
-            return new [] { PropertyData.Value };
+            return [PropertyData.Value];
         }
     }
 

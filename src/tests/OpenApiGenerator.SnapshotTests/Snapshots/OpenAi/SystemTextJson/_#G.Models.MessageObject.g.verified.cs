@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageObjectObject Object { get; set; }
+        public required global::G.MessageObjectObject Object { get; set; } = global::G.MessageObjectObject.ThreadMessage;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.

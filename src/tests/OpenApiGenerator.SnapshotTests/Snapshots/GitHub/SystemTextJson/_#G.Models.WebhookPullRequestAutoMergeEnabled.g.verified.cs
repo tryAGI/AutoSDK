@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestAutoMergeEnabledActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestAutoMergeEnabledAction Action { get; set; }
+        public required global::G.WebhookPullRequestAutoMergeEnabledAction Action { get; set; } = global::G.WebhookPullRequestAutoMergeEnabledAction.AutoMergeEnabled;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

@@ -245,6 +245,14 @@ public static class OpenApiExtensions
         Settings settings)
     {
         var id = any.GetString() ?? string.Empty;
+        
+        return id.ToEnumValue(settings);
+    }
+    
+    public static PropertyData ToEnumValue(
+        this string id,
+        Settings settings)
+    {
         var name = id
             .ReplacePlusAndMinusOnStart()
             .ToPropertyName()

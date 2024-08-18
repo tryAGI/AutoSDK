@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectObject Object { get; set; }
+        public required global::G.ProjectObject Object { get; set; } = global::G.ProjectObject.OrganizationProject;
 
         /// <summary>
         /// The name of the project. This appears in reporting.

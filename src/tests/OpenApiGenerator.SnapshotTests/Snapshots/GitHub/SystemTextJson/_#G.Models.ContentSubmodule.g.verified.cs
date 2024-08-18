@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ContentSubmoduleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContentSubmoduleType Type { get; set; }
+        public required global::G.ContentSubmoduleType Type { get; set; } = global::G.ContentSubmoduleType.Submodule;
 
         /// <summary>
         /// 

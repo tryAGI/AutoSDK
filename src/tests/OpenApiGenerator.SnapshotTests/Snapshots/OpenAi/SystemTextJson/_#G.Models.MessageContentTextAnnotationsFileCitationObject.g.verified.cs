@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
+        public required global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; } = global::G.MessageContentTextAnnotationsFileCitationObjectType.FileCitation;
 
         /// <summary>
         /// The text in the message content that needs to be replaced.

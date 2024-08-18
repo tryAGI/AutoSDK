@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectListResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectListResponseObject Object { get; set; }
+        public required global::G.ProjectListResponseObject Object { get; set; } = global::G.ProjectListResponseObject.List;
 
         /// <summary>
         /// 

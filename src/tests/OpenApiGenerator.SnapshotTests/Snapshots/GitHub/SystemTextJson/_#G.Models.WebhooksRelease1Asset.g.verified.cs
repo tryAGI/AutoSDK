@@ -78,7 +78,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksRelease1AssetStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksRelease1AssetState State { get; set; }
+        public required global::G.WebhooksRelease1AssetState State { get; set; } = global::G.WebhooksRelease1AssetState.Uploaded;
 
         /// <summary>
         /// 

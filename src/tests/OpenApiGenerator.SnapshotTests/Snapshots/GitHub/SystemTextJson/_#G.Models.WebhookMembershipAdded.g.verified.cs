@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMembershipAddedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookMembershipAddedAction Action { get; set; }
+        public required global::G.WebhookMembershipAddedAction Action { get; set; } = global::G.WebhookMembershipAddedAction.Added;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -61,7 +61,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMembershipAddedScopeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookMembershipAddedScope Scope { get; set; }
+        public required global::G.WebhookMembershipAddedScope Scope { get; set; } = global::G.WebhookMembershipAddedScope.Team;
 
         /// <summary>
         /// 

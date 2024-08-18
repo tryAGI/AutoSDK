@@ -50,7 +50,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateCompletionResponseObject Object { get; set; }
+        public required global::G.CreateCompletionResponseObject Object { get; set; } = global::G.CreateCompletionResponseObject.TextCompletion;
 
         /// <summary>
         /// Usage statistics for the completion request.

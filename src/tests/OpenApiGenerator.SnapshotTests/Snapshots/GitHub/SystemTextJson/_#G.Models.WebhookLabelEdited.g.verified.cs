@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookLabelEditedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookLabelEditedAction Action { get; set; }
+        public required global::G.WebhookLabelEditedAction Action { get; set; } = global::G.WebhookLabelEditedAction.Edited;
 
         /// <summary>
         /// The changes to the label if the action was `edited`.

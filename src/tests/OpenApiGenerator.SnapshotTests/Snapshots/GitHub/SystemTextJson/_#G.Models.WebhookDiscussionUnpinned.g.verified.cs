@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDiscussionUnpinnedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDiscussionUnpinnedAction Action { get; set; }
+        public required global::G.WebhookDiscussionUnpinnedAction Action { get; set; } = global::G.WebhookDiscussionUnpinnedAction.Unpinned;
 
         /// <summary>
         /// A Discussion in a repository.

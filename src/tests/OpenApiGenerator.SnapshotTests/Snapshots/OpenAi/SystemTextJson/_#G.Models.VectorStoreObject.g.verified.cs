@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.VectorStoreObjectObject Object { get; set; }
+        public required global::G.VectorStoreObjectObject Object { get; set; } = global::G.VectorStoreObjectObject.VectorStore;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.

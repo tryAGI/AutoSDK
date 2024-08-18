@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleNonFastForwardTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleNonFastForwardType Type { get; set; }
+        public required global::G.RepositoryRuleNonFastForwardType Type { get; set; } = global::G.RepositoryRuleNonFastForwardType.NonFastForward;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

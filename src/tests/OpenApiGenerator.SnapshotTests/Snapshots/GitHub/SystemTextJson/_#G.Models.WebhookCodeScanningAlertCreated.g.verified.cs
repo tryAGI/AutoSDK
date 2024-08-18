@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertCreatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertCreatedAction Action { get; set; }
+        public required global::G.WebhookCodeScanningAlertCreatedAction Action { get; set; } = global::G.WebhookCodeScanningAlertCreatedAction.Created;
 
         /// <summary>
         /// The code scanning alert involved in the event.

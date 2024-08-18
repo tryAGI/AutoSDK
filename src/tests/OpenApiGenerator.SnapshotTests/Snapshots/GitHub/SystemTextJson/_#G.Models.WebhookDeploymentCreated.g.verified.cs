@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentCreatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentCreatedAction Action { get; set; }
+        public required global::G.WebhookDeploymentCreatedAction Action { get; set; } = global::G.WebhookDeploymentCreatedAction.Created;
 
         /// <summary>
         /// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).

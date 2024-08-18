@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant4EventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepStreamEventVariant4Event Event { get; set; }
+        public required global::G.RunStepStreamEventVariant4Event Event { get; set; } = global::G.RunStepStreamEventVariant4Event.ThreadRunStepCompleted;
 
         /// <summary>
         /// Represents a step in execution of a run.

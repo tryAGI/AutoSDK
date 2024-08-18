@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.VectorStoreFileObjectObject Object { get; set; }
+        public required global::G.VectorStoreFileObjectObject Object { get; set; } = global::G.VectorStoreFileObjectObject.VectorStoreFile;
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleUpdateTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleUpdateType Type { get; set; }
+        public required global::G.RepositoryRuleUpdateType Type { get; set; } = global::G.RepositoryRuleUpdateType.Update;
 
         /// <summary>
         /// 

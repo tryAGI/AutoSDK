@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ThreadStreamEventVariant1EventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ThreadStreamEventVariant1Event Event { get; set; }
+        public required global::G.ThreadStreamEventVariant1Event Event { get; set; } = global::G.ThreadStreamEventVariant1Event.ThreadCreated;
 
         /// <summary>
         /// Represents a thread that contains [messages](/docs/api-reference/messages).

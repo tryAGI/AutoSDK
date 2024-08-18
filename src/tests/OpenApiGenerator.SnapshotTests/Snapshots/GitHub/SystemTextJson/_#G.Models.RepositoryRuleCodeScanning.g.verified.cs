@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCodeScanningTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleCodeScanningType Type { get; set; }
+        public required global::G.RepositoryRuleCodeScanningType Type { get; set; } = global::G.RepositoryRuleCodeScanningType.CodeScanning;
 
         /// <summary>
         /// 

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleRequiredStatusChecksTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleRequiredStatusChecksType Type { get; set; }
+        public required global::G.RepositoryRuleRequiredStatusChecksType Type { get; set; } = global::G.RepositoryRuleRequiredStatusChecksType.RequiredStatusChecks;
 
         /// <summary>
         /// 

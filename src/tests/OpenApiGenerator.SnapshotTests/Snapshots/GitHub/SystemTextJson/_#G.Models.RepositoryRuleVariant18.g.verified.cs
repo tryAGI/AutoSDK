@@ -16,7 +16,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleVariant18TypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRuleVariant18Type Type { get; set; }
+        public required global::G.RepositoryRuleVariant18Type Type { get; set; } = global::G.RepositoryRuleVariant18Type.MaxFileSize;
 
         /// <summary>
         /// 

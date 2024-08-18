@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.VectorStoreFileBatchObjectObject Object { get; set; }
+        public required global::G.VectorStoreFileBatchObjectObject Object { get; set; } = global::G.VectorStoreFileBatchObjectObject.VectorStoreFilesBatch;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.

@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListFilesResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ListFilesResponseObject Object { get; set; }
+        public required global::G.ListFilesResponseObject Object { get; set; } = global::G.ListFilesResponseObject.List;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

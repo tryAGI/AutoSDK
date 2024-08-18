@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewRequestedVariant2ActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestedVariant2Action Action { get; set; }
+        public required global::G.WebhookPullRequestReviewRequestedVariant2Action Action { get; set; } = global::G.WebhookPullRequestReviewRequestedVariant2Action.ReviewRequested;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMergeGroupDestroyedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookMergeGroupDestroyedAction Action { get; set; }
+        public required global::G.WebhookMergeGroupDestroyedAction Action { get; set; } = global::G.WebhookMergeGroupDestroyedAction.Destroyed;
 
         /// <summary>
         /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).

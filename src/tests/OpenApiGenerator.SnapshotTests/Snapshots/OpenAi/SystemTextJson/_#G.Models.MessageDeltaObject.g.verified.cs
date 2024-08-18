@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageDeltaObjectObject Object { get; set; }
+        public required global::G.MessageDeltaObjectObject Object { get; set; } = global::G.MessageDeltaObjectObject.ThreadMessageDelta;
 
         /// <summary>
         /// The delta containing the fields that have changed on the Message.

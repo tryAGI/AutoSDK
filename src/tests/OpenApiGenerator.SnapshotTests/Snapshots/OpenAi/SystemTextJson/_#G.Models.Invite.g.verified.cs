@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.InviteObject Object { get; set; }
+        public required global::G.InviteObject Object { get; set; } = global::G.InviteObject.OrganizationInvite;
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints

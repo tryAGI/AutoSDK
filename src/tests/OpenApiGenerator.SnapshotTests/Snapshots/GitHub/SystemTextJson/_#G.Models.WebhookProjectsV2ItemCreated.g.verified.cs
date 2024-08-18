@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookProjectsV2ItemCreatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookProjectsV2ItemCreatedAction Action { get; set; }
+        public required global::G.WebhookProjectsV2ItemCreatedAction Action { get; set; } = global::G.WebhookProjectsV2ItemCreatedAction.Created;
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>

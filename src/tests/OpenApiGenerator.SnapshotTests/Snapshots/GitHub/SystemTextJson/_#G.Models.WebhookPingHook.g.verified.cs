@@ -68,7 +68,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPingHookNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPingHookName Name { get; set; }
+        public required global::G.WebhookPingHookName Name { get; set; } = global::G.WebhookPingHookName.Web;
 
         /// <summary>
         /// 

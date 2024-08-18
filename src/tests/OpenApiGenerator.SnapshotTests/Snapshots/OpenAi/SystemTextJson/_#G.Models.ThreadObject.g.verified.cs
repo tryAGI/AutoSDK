@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ThreadObjectObject Object { get; set; }
+        public required global::G.ThreadObjectObject Object { get; set; } = global::G.ThreadObjectObject.Thread;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.

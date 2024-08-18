@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewCommentCreatedAction Action { get; set; }
+        public required global::G.WebhookPullRequestReviewCommentCreatedAction Action { get; set; } = global::G.WebhookPullRequestReviewCommentCreatedAction.Created;
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.

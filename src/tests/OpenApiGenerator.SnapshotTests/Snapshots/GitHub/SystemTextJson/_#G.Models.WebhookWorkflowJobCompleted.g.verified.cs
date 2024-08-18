@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobCompletedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowJobCompletedAction Action { get; set; }
+        public required global::G.WebhookWorkflowJobCompletedAction Action { get; set; } = global::G.WebhookWorkflowJobCompletedAction.Completed;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

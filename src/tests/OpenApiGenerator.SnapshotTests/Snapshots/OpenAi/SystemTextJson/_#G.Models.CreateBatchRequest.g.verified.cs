@@ -32,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
+        public required global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; } = global::G.CreateBatchRequestCompletionWindow.x24h;
 
         /// <summary>
         /// Optional custom metadata for the batch.

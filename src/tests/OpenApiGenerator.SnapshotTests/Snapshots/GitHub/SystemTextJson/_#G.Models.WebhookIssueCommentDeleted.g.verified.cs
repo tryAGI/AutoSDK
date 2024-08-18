@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssueCommentDeletedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssueCommentDeletedAction Action { get; set; }
+        public required global::G.WebhookIssueCommentDeletedAction Action { get; set; } = global::G.WebhookIssueCommentDeletedAction.Deleted;
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.

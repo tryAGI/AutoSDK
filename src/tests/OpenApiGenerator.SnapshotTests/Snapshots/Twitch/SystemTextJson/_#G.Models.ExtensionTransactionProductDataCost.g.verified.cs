@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionTransactionProductDataCostTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ExtensionTransactionProductDataCostType Type { get; set; }
+        public required global::G.ExtensionTransactionProductDataCostType Type { get; set; } = global::G.ExtensionTransactionProductDataCostType.Bits;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -28,7 +28,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; } = global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType.Function;
 
         /// <summary>
         /// The definition of the function that was called.

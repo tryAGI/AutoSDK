@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookOrgBlockBlockedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookOrgBlockBlockedAction Action { get; set; }
+        public required global::G.WebhookOrgBlockBlockedAction Action { get; set; } = global::G.WebhookOrgBlockBlockedAction.Blocked;
 
         /// <summary>
         /// 

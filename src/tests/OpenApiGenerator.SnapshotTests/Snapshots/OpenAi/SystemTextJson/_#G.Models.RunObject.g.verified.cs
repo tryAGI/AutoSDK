@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunObjectObject Object { get; set; }
+        public required global::G.RunObjectObject Object { get; set; } = global::G.RunObjectObject.ThreadRun;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was created.

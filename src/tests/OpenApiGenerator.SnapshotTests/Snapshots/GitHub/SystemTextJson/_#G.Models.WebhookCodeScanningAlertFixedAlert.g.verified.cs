@@ -77,7 +77,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertFixedAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertFixedAlertState State { get; set; }
+        public required global::G.WebhookCodeScanningAlertFixedAlertState State { get; set; } = global::G.WebhookCodeScanningAlertFixedAlertState.Fixed;
 
         /// <summary>
         /// 

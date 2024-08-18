@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AssistantToolsFileSearchTypeOnlyType Type { get; set; }
+        public required global::G.AssistantToolsFileSearchTypeOnlyType Type { get; set; } = global::G.AssistantToolsFileSearchTypeOnlyType.FileSearch;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

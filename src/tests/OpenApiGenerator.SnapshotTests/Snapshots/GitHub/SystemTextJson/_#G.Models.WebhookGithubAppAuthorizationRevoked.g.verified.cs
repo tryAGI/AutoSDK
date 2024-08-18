@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookGithubAppAuthorizationRevokedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookGithubAppAuthorizationRevokedAction Action { get; set; }
+        public required global::G.WebhookGithubAppAuthorizationRevokedAction Action { get; set; } = global::G.WebhookGithubAppAuthorizationRevokedAction.Revoked;
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

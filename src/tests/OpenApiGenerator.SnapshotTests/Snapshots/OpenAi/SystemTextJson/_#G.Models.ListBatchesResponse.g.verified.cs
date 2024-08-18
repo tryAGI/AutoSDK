@@ -41,7 +41,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ListBatchesResponseObject Object { get; set; }
+        public required global::G.ListBatchesResponseObject Object { get; set; } = global::G.ListBatchesResponseObject.List;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

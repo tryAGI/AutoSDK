@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DoneEventEventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DoneEventEvent Event { get; set; }
+        public required global::G.DoneEventEvent Event { get; set; } = global::G.DoneEventEvent.Done;
 
         /// <summary>
         /// 
@@ -23,7 +23,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DoneEventDataJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DoneEventData Data { get; set; }
+        public required global::G.DoneEventData Data { get; set; } = global::G.DoneEventData.DONE;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

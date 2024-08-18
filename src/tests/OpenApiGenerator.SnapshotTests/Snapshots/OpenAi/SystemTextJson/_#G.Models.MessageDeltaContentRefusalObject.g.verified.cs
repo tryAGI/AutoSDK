@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageDeltaContentRefusalObjectType Type { get; set; }
+        public required global::G.MessageDeltaContentRefusalObjectType Type { get; set; } = global::G.MessageDeltaContentRefusalObjectType.Refusal;
 
         /// <summary>
         /// 

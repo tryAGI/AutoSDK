@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookBranchProtectionRuleEditedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookBranchProtectionRuleEditedAction Action { get; set; }
+        public required global::G.WebhookBranchProtectionRuleEditedAction Action { get; set; } = global::G.WebhookBranchProtectionRuleEditedAction.Edited;
 
         /// <summary>
         /// If the action was `edited`, the changes to the rule.

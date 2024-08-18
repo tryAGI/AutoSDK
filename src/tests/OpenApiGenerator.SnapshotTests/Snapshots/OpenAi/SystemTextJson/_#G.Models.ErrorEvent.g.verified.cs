@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ErrorEventEventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ErrorEventEvent Event { get; set; }
+        public required global::G.ErrorEventEvent Event { get; set; } = global::G.ErrorEventEvent.Error;
 
         /// <summary>
         /// 

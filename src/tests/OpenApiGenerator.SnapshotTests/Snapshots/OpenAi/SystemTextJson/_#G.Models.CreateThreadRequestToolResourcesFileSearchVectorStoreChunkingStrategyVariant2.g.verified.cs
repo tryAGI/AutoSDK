@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2TypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type Type { get; set; }
+        public required global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type Type { get; set; } = global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type.Static;
 
         /// <summary>
         /// 

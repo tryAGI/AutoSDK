@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookInstallationNewPermissionsAcceptedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookInstallationNewPermissionsAcceptedAction Action { get; set; }
+        public required global::G.WebhookInstallationNewPermissionsAcceptedAction Action { get; set; } = global::G.WebhookInstallationNewPermissionsAcceptedAction.NewPermissionsAccepted;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

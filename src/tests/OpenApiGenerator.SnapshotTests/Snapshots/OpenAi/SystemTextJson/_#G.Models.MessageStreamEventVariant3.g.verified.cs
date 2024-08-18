@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant3EventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageStreamEventVariant3Event Event { get; set; }
+        public required global::G.MessageStreamEventVariant3Event Event { get; set; } = global::G.MessageStreamEventVariant3Event.ThreadMessageDelta;
 
         /// <summary>
         /// Represents a message delta i.e. any changed fields on a message during streaming.

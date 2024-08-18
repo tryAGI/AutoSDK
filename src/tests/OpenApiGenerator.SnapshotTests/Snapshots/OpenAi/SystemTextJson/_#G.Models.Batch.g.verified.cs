@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BatchObject Object { get; set; }
+        public required global::G.BatchObject Object { get; set; } = global::G.BatchObject.Batch;
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.

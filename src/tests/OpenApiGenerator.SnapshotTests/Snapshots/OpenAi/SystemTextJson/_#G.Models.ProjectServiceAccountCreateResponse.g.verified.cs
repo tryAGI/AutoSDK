@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectServiceAccountCreateResponseObject Object { get; set; }
+        public required global::G.ProjectServiceAccountCreateResponseObject Object { get; set; } = global::G.ProjectServiceAccountCreateResponseObject.OrganizationProjectServiceAccount;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProjectServiceAccountCreateResponseRole Role { get; set; }
+        public required global::G.ProjectServiceAccountCreateResponseRole Role { get; set; } = global::G.ProjectServiceAccountCreateResponseRole.Member;
 
         /// <summary>
         /// 
