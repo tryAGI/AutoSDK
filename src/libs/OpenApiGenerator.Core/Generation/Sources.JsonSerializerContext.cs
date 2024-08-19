@@ -26,6 +26,7 @@ public static partial class Sources
 
 namespace {endPoint.Namespace}
 {{
+    {string.Empty.ToXmlDocumentationSummary(level: 4)}
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[] 
@@ -36,7 +37,7 @@ namespace {endPoint.Namespace}
         }})]
 {(types.IsEmpty ? " " : $@"
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{endPoint.Namespace}.JsonSerializerContextTypes))]")}
-    internal sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
