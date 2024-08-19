@@ -1,12 +1,12 @@
-﻿name: Build and test
+﻿name: Test
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  build-test:
-    name: Build, test and publish
+  test:
+    name: Test
     uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:
       generate-build-number: false
