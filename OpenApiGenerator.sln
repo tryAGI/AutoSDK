@@ -50,6 +50,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{7E829AE4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.IntegrationTests.Cli", "src\tests\OpenApiGenerator.IntegrationTests.Cli\OpenApiGenerator.IntegrationTests.Cli.csproj", "{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{D89B8087-C384-4519-B2BB-4417698B5801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +88,10 @@ Global
 		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,7 @@ Global
 		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{7E829AE4-1ACD-43C0-87ED-9902566DF437} = {94FE90BF-FA05-46C6-A207-6E454A236659}
 		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18} = {D89B8087-C384-4519-B2BB-4417698B5801}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}
