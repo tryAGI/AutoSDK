@@ -39,18 +39,16 @@
   </ItemGroup>
 
   <PropertyGroup Label="Versioning">
-    <Version>0.15.8</Version>
-    <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
     <MinVerTagPrefix>v</MinVerTagPrefix>
     <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
 
-<!--  <ItemGroup Label="Versioning">-->
-<!--    <PackageReference Include="MinVer" Version="4.3.0">-->
-<!--      <PrivateAssets>all</PrivateAssets>-->
-<!--      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
-<!--    </PackageReference>-->
-<!--  </ItemGroup>-->
+  <ItemGroup Label="Versioning">
+    <PackageReference Include="MinVer" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
   <PropertyGroup Label="Analyzers">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
