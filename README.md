@@ -115,4 +115,7 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 - https://github.com/tryAGI/OpenAI
 - https://github.com/tryAGI/Ollama
 - https://github.com/tryAGI/Anthropic
+- https://github.com/tryAGI/LangSmith
+- https://github.com/tryAGI/Replicate
+- https://github.com/tryAGI/DeepInfra
 - https://github.com/HavenDV/GitHub.NET
