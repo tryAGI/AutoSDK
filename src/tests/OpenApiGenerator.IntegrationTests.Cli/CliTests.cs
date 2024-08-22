@@ -30,9 +30,9 @@ public class CliTests
                     "run",
                     "--project", "src/libs/OpenApiGenerator.Cli",
                     "generate", spec.StartsWith("http") ? spec : $"specs/{spec}",
-                    "--output", tempDirectory,
                     "--namespace", "Oag",
-                    // --json-serializer-type SystemTextJson --target-framework netstandard2.0 --generate-sdk
+                    "--targetFramework", "net8.0",
+                    "--output", tempDirectory,
                 ])
                 .WithWorkingDirectory(repositoryDirectory)
                 .ExecuteBufferedAsync();

@@ -6,7 +6,7 @@
 
   <ItemGroup Label="Base packages">
     <PackageReference Include="CliWrap" Version="3.6.6" />
-    <PackageReference Include="DotnetCliWrapper" Version="0.1.0" />
+    <PackageReference Include="DotnetCliWrapper" Version="0.2.0" />
     <PackageReference Include="GitHubActionsTestLogger" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
