@@ -462,7 +462,7 @@
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListModelsResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -784,7 +784,7 @@
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ModelObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -3264,7 +3264,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -4408,7 +4408,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -4578,7 +4578,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -4925,7 +4925,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartRefusalTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -5236,7 +5236,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -5549,7 +5549,7 @@ The contents of the user message.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -5925,7 +5925,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -6310,7 +6310,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -6812,7 +6812,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -7123,7 +7123,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -7838,7 +7838,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -8311,7 +8311,7 @@ Default Value: false,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatTextTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -8418,7 +8418,7 @@ Default Value: false,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -8564,7 +8564,7 @@ Default Value: false,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -9029,7 +9029,7 @@ Default Value: false,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -9979,7 +9979,7 @@ Default Value: false,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -13389,7 +13389,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -15040,7 +15040,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionFunctionResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -15613,7 +15613,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -16161,7 +16161,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.FineTuningJobObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -17295,7 +17295,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.FineTuningIntegrationTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -18220,7 +18220,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -23958,7 +23958,7 @@ Example: text-moderation-stable,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListFilesResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -24317,7 +24317,7 @@ Example: text-moderation-stable,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OpenAIFileObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -24947,7 +24947,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -27477,7 +27477,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -27844,7 +27844,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.FineTuningJobEventObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -28040,7 +28040,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -28714,7 +28714,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.FineTuningJobCheckpointObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -30072,7 +30072,7 @@ Example: user-1234,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -30396,7 +30396,7 @@ The embedding vector, which is a list of floats. The length of vector depends on
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.EmbeddingObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -34949,7 +34949,7 @@ The Upload object can accept byte chunks in the form of Parts.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.UploadPartObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -36115,7 +36115,7 @@ The upload Part represents a chunk of bytes we can add to an Upload object.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -37088,7 +37088,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -37195,7 +37195,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -37472,7 +37472,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -39891,7 +39891,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1TypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -39998,7 +39998,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2TypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -41961,7 +41961,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteAssistantResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -42449,7 +42449,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -43068,7 +43068,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -44999,7 +44999,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -45361,7 +45361,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunToolCallObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -47840,7 +47840,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -48187,7 +48187,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -48534,7 +48534,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -52348,7 +52348,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1TypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -52455,7 +52455,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2TypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -53489,7 +53489,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -55027,7 +55027,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -55578,7 +55578,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -56624,7 +56624,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentTextObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -56986,7 +56986,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -57448,7 +57448,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -57910,7 +57910,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageContentRefusalObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -58376,7 +58376,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -58809,7 +58809,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -59219,7 +59219,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -59644,7 +59644,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -60232,7 +60232,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -60757,7 +60757,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -60990,7 +60990,7 @@ Default Value: auto,
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -61609,7 +61609,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteMessageResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -62160,7 +62160,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -63233,7 +63233,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsMessageCreationObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -63506,7 +63506,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -63767,7 +63767,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -64129,7 +64129,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -64299,7 +64299,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -64635,7 +64635,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFileSearchObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -64907,7 +64907,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFunctionObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -65582,7 +65582,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -65915,7 +65915,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -66188,7 +66188,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -66512,7 +66512,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -66937,7 +66937,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -67170,7 +67170,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -67569,7 +67569,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -67904,7 +67904,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -68684,7 +68684,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -68917,7 +68917,7 @@ An array of tool calls the run step was involved in. These can be associated wit
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.VectorStoreObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -70443,7 +70443,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -70550,7 +70550,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -71716,7 +71716,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteVectorStoreResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -71886,7 +71886,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -72612,7 +72612,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -72785,7 +72785,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -73622,7 +73622,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -73792,7 +73792,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -74765,7 +74765,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ThreadStreamEventVariant1EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -74941,7 +74941,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant1EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -75139,7 +75139,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant2EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -75337,7 +75337,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant3EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -75535,7 +75535,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant4EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -75733,7 +75733,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant5EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -75931,7 +75931,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant6EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -76129,7 +76129,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant7EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -76327,7 +76327,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant8EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -76525,7 +76525,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -76723,7 +76723,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -76921,7 +76921,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -77110,7 +77110,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant2EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -77299,7 +77299,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant3EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -77475,7 +77475,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant4EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -77664,7 +77664,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant5EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -77853,7 +77853,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant6EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78042,7 +78042,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant7EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78231,7 +78231,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant1EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78416,7 +78416,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant2EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78601,7 +78601,7 @@ Represents a step in execution of a run.
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant3EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78777,7 +78777,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant4EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -78962,7 +78962,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant5EventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -79147,7 +79147,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ErrorEventEventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -79322,7 +79322,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DoneEventEventJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -79389,7 +79389,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DoneEventDataJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -79559,7 +79559,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -82811,7 +82811,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -89776,7 +89776,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListAuditLogsResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -90161,7 +90161,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.InviteObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -90723,7 +90723,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.InviteListResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -91280,7 +91280,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.InviteDeleteResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -91513,7 +91513,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.UserObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -91941,7 +91941,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.UserListResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -92435,7 +92435,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.UserDeleteResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -92731,7 +92731,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -93096,7 +93096,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectListResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -93853,7 +93853,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectUserObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -94943,7 +94943,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectUserDeleteResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -95176,7 +95176,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -95541,7 +95541,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountListResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -96029,7 +96029,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -96222,7 +96222,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -96461,7 +96461,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -96820,7 +96820,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectServiceAccountDeleteResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -97053,7 +97053,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectApiKeyObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -97723,7 +97723,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectApiKeyListResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -98108,7 +98108,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ProjectApiKeyDeleteResponseObjectJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
@@ -98481,7 +98481,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,

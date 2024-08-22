@@ -29162,7 +29162,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter
         },
-        IsRequired: true,
+        IsRequired: false,
         IsMultiPartFormDataFilename: false,
         Settings: {
           TargetFramework: netstandard2.0,
