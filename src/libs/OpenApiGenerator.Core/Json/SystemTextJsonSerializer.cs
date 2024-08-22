@@ -93,11 +93,11 @@ public class SystemTextJsonSerializer : IJsonSerializer
             result.StartsWith("UInt16", StringComparison.Ordinal) ||
             result.StartsWith("UInt32", StringComparison.Ordinal) ||
             result.StartsWith("UInt64", StringComparison.Ordinal) ||
-            result.StartsWith("Single", StringComparison.Ordinal) ||
-            result.StartsWith("Double", StringComparison.Ordinal) ||
-            result.StartsWith("Decimal", StringComparison.Ordinal) ||
-            result.StartsWith("Char", StringComparison.Ordinal) ||
-            result.StartsWith("Byte", StringComparison.Ordinal)) &&
+            result.Equals("Single", StringComparison.Ordinal) ||
+            result.Equals("Double", StringComparison.Ordinal) ||
+            result.Equals("Decimal", StringComparison.Ordinal) ||
+            result.Equals("Char", StringComparison.Ordinal) ||
+            result.Equals("Byte", StringComparison.Ordinal)) &&
             !result.EndsWith("Array", StringComparison.Ordinal)) ||
             result.StartsWith("AnyOf", StringComparison.Ordinal) ||
             result.StartsWith("OneOf", StringComparison.Ordinal) ||
