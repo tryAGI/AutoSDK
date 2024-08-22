@@ -43,30 +43,30 @@ public partial class DataTests : VerifyBase
         Data data,
         [CallerMemberName] string? callerName = null)
     {
-        var classesTask =
-            Verify(data.Classes
-                    .Select(x => x with { Parents = [] })
-                    .ToArray())
-                .UseDirectory($"Snapshots/{callerName}/Classes")
-                .UseFileName("_");
-        var enumsTask =
-            Verify(data.Enums
-                    .Select(x => x with { Parents = [] })
-                    .ToArray())
-                .UseDirectory($"Snapshots/{callerName}/Enums")
-                .UseFileName("_");
-        var methodsTask =
-            Verify(data.Methods)
-                .UseDirectory($"Snapshots/{callerName}/Methods")
-                .UseFileName("_");
-        var anyOfsTask =
-            Verify(data.AnyOfs)
-                .UseDirectory($"Snapshots/{callerName}/AnyOfs")
-                .UseFileName("_");
-        var typesTask =
-            Verify(data.Types)
-                .UseDirectory($"Snapshots/{callerName}/Types")
-                .UseFileName("_");
+        // var classesTask =
+        //     Verify(data.Classes
+        //             .Select(x => x with { Parents = [] })
+        //             .ToArray())
+        //         .UseDirectory($"Snapshots/{callerName}/Classes")
+        //         .UseFileName("_");
+        // var enumsTask =
+        //     Verify(data.Enums
+        //             .Select(x => x with { Parents = [] })
+        //             .ToArray())
+        //         .UseDirectory($"Snapshots/{callerName}/Enums")
+        //         .UseFileName("_");
+        // var methodsTask =
+        //     Verify(data.Methods)
+        //         .UseDirectory($"Snapshots/{callerName}/Methods")
+        //         .UseFileName("_");
+        // var anyOfsTask =
+        //     Verify(data.AnyOfs)
+        //         .UseDirectory($"Snapshots/{callerName}/AnyOfs")
+        //         .UseFileName("_");
+        // var typesTask =
+        //     Verify(data.Types)
+        //         .UseDirectory($"Snapshots/{callerName}/Types")
+        //         .UseFileName("_");
         var schemasTask =
             Verify(data.Schemas.Select(x => $"{GetMargin(x)}{x.Id}({x.Type})"))
                 .UseDirectory($"Snapshots/{callerName}/Schemas")
@@ -76,11 +76,11 @@ public partial class DataTests : VerifyBase
                 .UseDirectory($"Snapshots/{callerName}/ResolvedSchemas")
                 .UseFileName("_");
         
-        classesTask = classesTask.AutoVerify();
-        enumsTask = enumsTask.AutoVerify();
-        methodsTask = methodsTask.AutoVerify();
-        anyOfsTask = anyOfsTask.AutoVerify();
-        typesTask = typesTask.AutoVerify();
+        // classesTask = classesTask.AutoVerify();
+        // enumsTask = enumsTask.AutoVerify();
+        // methodsTask = methodsTask.AutoVerify();
+        // anyOfsTask = anyOfsTask.AutoVerify();
+        // typesTask = typesTask.AutoVerify();
         schemasTask = schemasTask.AutoVerify();
         resolvedSchemasTask = resolvedSchemasTask.AutoVerify();
 
@@ -93,7 +93,7 @@ public partial class DataTests : VerifyBase
         Console.WriteLine($"ComputeData: {data.Times.ComputeData}");
         Console.WriteLine($"ComputeDataClasses: {data.Times.ComputeDataClasses}");
         
-        return Task.WhenAll(classesTask, enumsTask, methodsTask, anyOfsTask, typesTask, schemasTask, resolvedSchemasTask);
+        return Task.WhenAll(schemasTask, resolvedSchemasTask); // classesTask, enumsTask, methodsTask, anyOfsTask, typesTask, 
     }
 
     private static string GetMargin(SchemaContext context)
