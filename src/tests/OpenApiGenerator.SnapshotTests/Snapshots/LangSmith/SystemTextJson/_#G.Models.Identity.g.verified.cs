@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? TenantId { get; set; }
+        public global::System.AnyOf<string, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -49,6 +49,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string, object>? LsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool ReadOnly { get; set; }
@@ -58,21 +65,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RoleName { get; set; }
+        public global::System.AnyOf<string?, object>? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = "workspace";
+        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

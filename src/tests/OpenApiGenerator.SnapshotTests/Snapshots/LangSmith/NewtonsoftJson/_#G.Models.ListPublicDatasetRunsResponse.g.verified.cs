@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursors", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Cursors { get; set; } = default!;
+        public global::G.ListPublicDatasetRunsResponseCursors Cursors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parsed_query")]
-        public global::System.AnyOf<string?, object?>? ParsedQuery { get; set; }
+        public global::System.AnyOf<string?, object>? ParsedQuery { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

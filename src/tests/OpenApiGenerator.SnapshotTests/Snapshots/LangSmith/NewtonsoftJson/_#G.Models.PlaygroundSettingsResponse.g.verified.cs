@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Settings { get; set; } = default!;
+        public global::G.PlaygroundSettingsResponseSettings Settings { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string?, object?>? Name { get; set; }
+        public global::System.AnyOf<string?, object>? Name { get; set; }
 
         /// <summary>
         /// 

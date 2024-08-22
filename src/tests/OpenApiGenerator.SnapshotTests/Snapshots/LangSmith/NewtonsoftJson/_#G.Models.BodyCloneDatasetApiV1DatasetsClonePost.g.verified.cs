@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("as_of")]
-        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime, string?>?, object?>? AsOf { get; set; }
+        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string?>?, object>? AsOf { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples")]
-        public global::System.Collections.Generic.IList<string?>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<string>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

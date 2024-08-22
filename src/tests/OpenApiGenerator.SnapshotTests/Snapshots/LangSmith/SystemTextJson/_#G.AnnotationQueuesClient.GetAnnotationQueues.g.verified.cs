@@ -8,19 +8,21 @@ namespace G
     {
         partial void PrepareGetAnnotationQueuesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> ids,
-            ref global::System.AnyOf<string, object> name,
-            ref global::System.AnyOf<string, object> nameContains,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
+            ref global::System.AnyOf<string?, object>? name,
+            ref global::System.AnyOf<string?, object>? nameContains,
             ref int offset,
-            ref int limit);
+            ref int limit,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> ids,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
             int offset,
-            int limit);
+            int limit,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,14 +44,16 @@ namespace G
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
+        /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchema>> GetAnnotationQueuesAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> ids,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
             int offset,
             int limit,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -60,11 +64,12 @@ namespace G
                 name: ref name,
                 nameContains: ref nameContains,
                 offset: ref offset,
-                limit: ref limit);
+                limit: ref limit,
+                tagValueId: ref tagValueId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/annotation-queues?ids={ids}&name={name}&name_contains={nameContains}&offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/annotation-queues?ids={ids}&name={name}&name_contains={nameContains}&offset={offset}&limit={limit}&tag_value_id={tagValueId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -76,7 +81,8 @@ namespace G
                 name: name,
                 nameContains: nameContains,
                 offset: offset,
-                limit: limit);
+                limit: limit,
+                tagValueId: tagValueId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -111,7 +117,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchema>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchemaWithSize>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

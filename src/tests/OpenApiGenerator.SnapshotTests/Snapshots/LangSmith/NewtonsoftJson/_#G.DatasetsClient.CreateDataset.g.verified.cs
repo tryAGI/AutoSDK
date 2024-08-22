@@ -44,11 +44,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/datasets", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -107,19 +108,23 @@ namespace G
         /// </param>
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="externallyManaged">
+        /// Default Value: false
+        /// </param>
         /// <param name="id"></param>
         /// <param name="extra"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
             string name,
-            global::System.AnyOf<string?, object?>? description = default,
+            global::System.AnyOf<string?, object>? description = default,
             global::System.DateTime createdAt = default,
-            global::System.AnyOf<global::G.DataType?, object?>? dataType = default,
-            global::System.AnyOf<object?, object?>? inputsSchemaDefinition = default,
-            global::System.AnyOf<object?, object?>? outputsSchemaDefinition = default,
-            global::System.AnyOf<string?, object?>? id = default,
-            global::System.AnyOf<object?, object?>? extra = default,
+            global::System.AnyOf<global::G.DataType2?, object>? dataType = default,
+            global::System.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
+            global::System.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
+            global::System.AnyOf<bool?, object>? externallyManaged = default,
+            global::System.AnyOf<string, object>? id = default,
+            global::System.AnyOf<global::G.DatasetCreateExtra, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.DatasetCreate
@@ -130,6 +135,7 @@ namespace G
                 DataType = dataType,
                 InputsSchemaDefinition = inputsSchemaDefinition,
                 OutputsSchemaDefinition = outputsSchemaDefinition,
+                ExternallyManaged = externallyManaged,
                 Id = id,
                 Extra = extra,
             };

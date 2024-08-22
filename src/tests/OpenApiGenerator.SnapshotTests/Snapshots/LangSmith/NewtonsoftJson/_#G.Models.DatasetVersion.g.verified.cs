@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Tags { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// 

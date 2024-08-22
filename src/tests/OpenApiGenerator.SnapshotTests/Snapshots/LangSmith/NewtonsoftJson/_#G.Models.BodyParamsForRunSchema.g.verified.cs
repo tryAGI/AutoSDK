@@ -15,103 +15,103 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Id { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace")]
-        public global::System.AnyOf<string?, object?>? Trace { get; set; }
+        public global::System.AnyOf<string, object>? Trace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run")]
-        public global::System.AnyOf<string?, object?>? ParentRun { get; set; }
+        public global::System.AnyOf<string, object>? ParentRun { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::System.AnyOf<global::G.RunTypeEnum?, object?>? RunType { get; set; }
+        public global::System.AnyOf<global::G.RunTypeEnum?, object>? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Session { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Session { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? ReferenceExample { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ReferenceExample { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_order")]
-        public global::System.AnyOf<int, object?>? ExecutionOrder { get; set; }
+        public global::System.AnyOf<int?, object>? ExecutionOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? StartTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? EndTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.AnyOf<bool, object?>? Error { get; set; }
+        public global::System.AnyOf<bool?, object>? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query")]
-        public global::System.AnyOf<string?, object?>? Query { get; set; }
+        public global::System.AnyOf<string?, object>? Query { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::System.AnyOf<string?, object?>? Filter { get; set; }
+        public global::System.AnyOf<string?, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter")]
-        public global::System.AnyOf<string?, object?>? TraceFilter { get; set; }
+        public global::System.AnyOf<string?, object>? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter")]
-        public global::System.AnyOf<string?, object?>? TreeFilter { get; set; }
+        public global::System.AnyOf<string?, object>? TreeFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_root")]
-        public global::System.AnyOf<bool, object?>? IsRoot { get; set; }
+        public global::System.AnyOf<bool?, object>? IsRoot { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_source_type")]
-        public global::System.AnyOf<global::G.RunsFilterDataSourceTypeEnum?, object?>? DataSourceType { get; set; }
+        public global::System.AnyOf<global::G.RunsFilterDataSourceTypeEnum?, object>? DataSourceType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursor")]
-        public global::System.AnyOf<string?, object?>? Cursor { get; set; }
+        public global::System.AnyOf<string?, object>? Cursor { get; set; }
 
         /// <summary>
         /// Default Value: 100
@@ -129,7 +129,7 @@ namespace G
         /// Default Value: desc
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("order")]
-        public global::System.AllOf<global::G.RunDateOrder?>? Order { get; set; } = "desc";
+        public global::System.AllOf<global::G.RunDateOrder?>? Order { get; set; } = global::G.RunDateOrder.Desc;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

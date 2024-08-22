@@ -13,13 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Inputs { get; set; } = default!;
+        public global::G.SearchDatasetRequestInputs Inputs { get; set; } = default!;
 
         /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
         public int Limit { get; set; } = 5;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("debug")]
+        public bool Debug { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

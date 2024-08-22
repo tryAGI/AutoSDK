@@ -15,37 +15,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hub_ref")]
-        public global::System.AnyOf<string?, object?>? HubRef { get; set; }
+        public global::System.AnyOf<string?, object>? HubRef { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?>?, object?>? Prompt { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, object>? Prompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
-        public global::System.AnyOf<string?, object?>? TemplateFormat { get; set; }
+        public global::System.AnyOf<string?, object>? TemplateFormat { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::System.AnyOf<object?, object?>? Schema { get; set; }
+        public global::System.AnyOf<global::G.EvaluatorStructuredOutputSchema, object>? Schema { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variable_mapping")]
-        public global::System.AnyOf<object?, object?>? VariableMapping { get; set; }
+        public global::System.AnyOf<global::G.EvaluatorStructuredOutputVariableMapping, object>? VariableMapping { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Model { get; set; } = default!;
+        public global::G.EvaluatorStructuredOutputModel Model { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

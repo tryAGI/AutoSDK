@@ -30,7 +30,7 @@ namespace G
         /// <param name="sessionIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DeleteTracerSessionsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteTracerSessionsApiV1SessionsDeleteResponse> DeleteTracerSessionsAsync(
             global::System.Collections.Generic.IList<string> sessionIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,7 +85,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteTracerSessionsApiV1SessionsDeleteResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

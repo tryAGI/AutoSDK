@@ -49,11 +49,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets/{datasetId}/runs", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -120,8 +121,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::System.Collections.Generic.IList<global::G.ExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
             string datasetId,
             global::System.Collections.Generic.IList<string> sessionIds,
-            global::System.AnyOf<string?, object?>? comparativeExperimentId = default,
-            global::System.AnyOf<object?, object?>? filters = default,
+            global::System.AnyOf<string, object>? comparativeExperimentId = default,
+            global::System.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? filters = default,
             int offset = 0,
             int limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)

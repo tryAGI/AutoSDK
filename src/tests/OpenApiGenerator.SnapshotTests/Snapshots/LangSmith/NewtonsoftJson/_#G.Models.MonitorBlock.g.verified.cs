@@ -33,31 +33,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subtitle")]
-        public global::System.AnyOf<string?, object?>? Subtitle { get; set; }
+        public global::System.AnyOf<string?, object>? Subtitle { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rows", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>> Rows { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.MonitorBlockRowItem>> Rows { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chart_spec", Required = global::Newtonsoft.Json.Required.Always)]
-        public object ChartSpec { get; set; } = default!;
+        public global::G.MonitorBlockChartSpec ChartSpec { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("click_target")]
-        public global::System.AnyOf<string?, object?>? ClickTarget { get; set; }
+        public global::System.AnyOf<string?, object>? ClickTarget { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("toggleable_marks")]
-        public global::System.AnyOf<object?, object?>? ToggleableMarks { get; set; }
+        public global::System.AnyOf<global::G.MonitorBlockToggleableMarks, object>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -24,21 +24,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<double, object?>? Min { get; set; }
+        public global::System.AnyOf<double?, object>? Min { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<double, object?>? Max { get; set; }
+        public global::System.AnyOf<double?, object>? Max { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("categories")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCategory>?, object?>? Categories { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCategory>, object>? Categories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

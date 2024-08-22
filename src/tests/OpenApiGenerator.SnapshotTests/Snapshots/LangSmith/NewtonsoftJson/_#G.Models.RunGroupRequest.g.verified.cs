@@ -20,26 +20,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("group_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunGroupBy GroupBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("group_by")]
+        public global::G.RunGroupBy GroupBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::System.AnyOf<string?, object?>? Filter { get; set; }
+        public global::System.AnyOf<string?, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? StartTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? EndTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// Default Value: 0

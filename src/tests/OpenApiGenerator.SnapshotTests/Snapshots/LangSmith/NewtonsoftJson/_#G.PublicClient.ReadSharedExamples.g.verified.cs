@@ -10,24 +10,24 @@ namespace G
         partial void PrepareReadSharedExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            ref global::System.AnyOf<global::System.DateTime, string> asOf,
-            ref global::System.AnyOf<string, object> metadata,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<global::System.DateTime?, string?>? asOf,
+            ref global::System.AnyOf<string?, object>? metadata,
             ref int offset,
             ref int limit,
-            global::System.Collections.Generic.IList<global::G.ExampleSelect> select,
-            ref global::System.AnyOf<string, object> filter);
+            global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
+            ref global::System.AnyOf<string?, object>? filter);
         partial void PrepareReadSharedExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<global::System.DateTime, string> asOf,
-            global::System.AnyOf<string, object> metadata,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
+            global::System.AnyOf<string?, object>? metadata,
             int offset,
             int limit,
-            global::System.Collections.Generic.IList<global::G.ExampleSelect> select,
-            global::System.AnyOf<string, object> filter);
+            global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
+            global::System.AnyOf<string?, object>? filter);
         partial void ProcessReadSharedExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,13 +62,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadSharedExamplesAsync(
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<global::System.DateTime, string> asOf,
-            global::System.AnyOf<string, object> metadata,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
+            global::System.AnyOf<string?, object>? metadata,
             int offset,
             int limit,
-            global::System.Collections.Generic.IList<global::G.ExampleSelect> select,
-            global::System.AnyOf<string, object> filter,
+            global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
+            global::System.AnyOf<string?, object>? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -86,7 +86,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/examples?id={id}&as_of={asOf}&metadata={metadata}&offset={offset}&limit={limit}&{string.Join("&", select.Select(static x => $"select={x}"))}&filter={filter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/examples?id={id}&as_of={asOf}&metadata={metadata}&offset={offset}&limit={limit}&{string.Join("&", select?.Select(static x => $"select={x}") ?? global::System.Array.Empty<string>())}&filter={filter}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

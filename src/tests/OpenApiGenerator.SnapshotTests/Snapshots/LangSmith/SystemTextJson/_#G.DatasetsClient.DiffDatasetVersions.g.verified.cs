@@ -9,14 +9,14 @@ namespace G
         partial void PrepareDiffDatasetVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<global::System.DateTime, string> fromVersion,
-            ref global::System.AnyOf<global::System.DateTime, string> toVersion);
+            ref global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
+            ref global::System.AnyOf<global::System.DateTime?, string?> toVersion);
         partial void PrepareDiffDatasetVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, string> fromVersion,
-            global::System.AnyOf<global::System.DateTime, string> toVersion);
+            global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
+            global::System.AnyOf<global::System.DateTime?, string?> toVersion);
         partial void ProcessDiffDatasetVersionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetDiffInfo> DiffDatasetVersionsAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, string> fromVersion,
-            global::System.AnyOf<global::System.DateTime, string> toVersion,
+            global::System.AnyOf<global::System.DateTime?, string?> fromVersion,
+            global::System.AnyOf<global::System.DateTime?, string?> toVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

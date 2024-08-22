@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? ComparativeExperimentId { get; set; }
+        public global::System.AnyOf<string, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<object?, object?>? Filters { get; set; }
+        public global::System.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Default Value: 0

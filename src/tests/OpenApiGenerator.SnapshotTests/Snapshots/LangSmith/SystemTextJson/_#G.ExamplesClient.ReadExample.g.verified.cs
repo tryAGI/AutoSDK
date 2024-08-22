@@ -9,12 +9,12 @@ namespace G
         partial void PrepareReadExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string exampleId,
-            ref global::System.AnyOf<global::System.DateTime, string> asOf);
+            ref global::System.AnyOf<global::System.DateTime?, string?>? asOf);
         partial void PrepareReadExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string exampleId,
-            global::System.AnyOf<global::System.DateTime, string> asOf);
+            global::System.AnyOf<global::System.DateTime?, string?>? asOf);
         partial void ProcessReadExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> ReadExampleAsync(
             string exampleId,
-            global::System.AnyOf<global::System.DateTime, string> asOf,
+            global::System.AnyOf<global::System.DateTime?, string?>? asOf,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

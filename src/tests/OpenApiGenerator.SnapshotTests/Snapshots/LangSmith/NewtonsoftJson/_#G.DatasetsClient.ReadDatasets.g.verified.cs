@@ -8,25 +8,29 @@ namespace G
     {
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            ref global::System.AnyOf<global::G.DataType, object> dataType,
-            ref global::System.AnyOf<string, object> name,
-            ref global::System.AnyOf<string, object> nameContains,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
+            ref global::System.AnyOf<string?, object>? name,
+            ref global::System.AnyOf<string?, object>? nameContains,
+            ref global::System.AnyOf<string?, object>? metadata,
             ref int offset,
             ref int limit,
-            ref global::System.AllOf<global::G.SortByDatasetColumn> sortBy,
-            ref bool sortByDesc);
+            ref global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
+            ref bool sortByDesc,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void PrepareReadDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<global::G.DataType, object> dataType,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string?, object>? metadata,
             int offset,
             int limit,
-            global::System.AllOf<global::G.SortByDatasetColumn> sortBy,
-            bool sortByDesc);
+            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
+            bool sortByDesc,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void ProcessReadDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,6 +48,7 @@ namespace G
         /// <param name="dataType"></param>
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
+        /// <param name="metadata"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -56,17 +61,20 @@ namespace G
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
+        /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<global::G.DataType, object> dataType,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string?, object>? metadata,
             int offset,
             int limit,
-            global::System.AllOf<global::G.SortByDatasetColumn> sortBy,
+            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
             bool sortByDesc,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -77,14 +85,16 @@ namespace G
                 dataType: ref dataType,
                 name: ref name,
                 nameContains: ref nameContains,
+                metadata: ref metadata,
                 offset: ref offset,
                 limit: ref limit,
                 sortBy: ref sortBy,
-                sortByDesc: ref sortByDesc);
+                sortByDesc: ref sortByDesc,
+                tagValueId: ref tagValueId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets?id={id}&data_type={dataType}&name={name}&name_contains={nameContains}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets?id={id}&data_type={dataType}&name={name}&name_contains={nameContains}&metadata={metadata}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}&tag_value_id={tagValueId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -96,10 +106,12 @@ namespace G
                 dataType: dataType,
                 name: name,
                 nameContains: nameContains,
+                metadata: metadata,
                 offset: offset,
                 limit: limit,
                 sortBy: sortBy,
-                sortByDesc: sortByDesc);
+                sortByDesc: sortByDesc,
+                tagValueId: tagValueId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

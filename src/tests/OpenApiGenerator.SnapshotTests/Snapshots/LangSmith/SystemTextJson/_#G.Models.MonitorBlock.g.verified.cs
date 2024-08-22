@@ -37,35 +37,35 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subtitle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? Subtitle { get; set; }
+        public global::System.AnyOf<string?, object>? Subtitle { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>> Rows { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.MonitorBlockRowItem>> Rows { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_spec")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object ChartSpec { get; set; }
+        public required global::G.MonitorBlockChartSpec ChartSpec { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("click_target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? ClickTarget { get; set; }
+        public global::System.AnyOf<string?, object>? ClickTarget { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toggleable_marks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<object?, object?>? ToggleableMarks { get; set; }
+        public global::System.AnyOf<global::G.MonitorBlockToggleableMarks, object>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

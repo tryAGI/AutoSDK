@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> SetCompanyInfoAsync(
+        public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
             global::G.StripeBusinessInfoInput request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -43,11 +43,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/orgs/current/business-info", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -90,7 +91,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -105,10 +106,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> SetCompanyInfoAsync(
-            global::System.AnyOf<global::G.StripeBusinessBillingInfo?, object?>? companyInfo = default,
-            global::System.AnyOf<global::G.StripeTaxId?, object?>? taxId = default,
-            global::System.AnyOf<string?, object?>? invoiceEmail = default,
+        public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+            global::System.AnyOf<global::G.StripeBusinessBillingInfo, object>? companyInfo = default,
+            global::System.AnyOf<global::G.StripeTaxId, object>? taxId = default,
+            global::System.AnyOf<string?, object>? invoiceEmail = default,
             bool isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

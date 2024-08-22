@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::System.AnyOf<object?, object?>? Filters { get; set; }
+        public global::System.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparative_experiment_id")]
-        public global::System.AnyOf<string?, object?>? ComparativeExperimentId { get; set; }
+        public global::System.AnyOf<string, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

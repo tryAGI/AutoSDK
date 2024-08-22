@@ -40,21 +40,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startup_plan_approval_date")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? StartupPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? StartupPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partner_plan_approval_date")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? PartnerPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? PartnerPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("premier_plan_approval_date")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? PremierPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? PremierPlanApprovalDate { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -63,10 +63,22 @@ namespace G
         public bool CanServeDatasets { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("can_use_langgraph_cloud")]
+        public bool CanUseLanggraphCloud { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_langgraph_cloud_deployments")]
+        public int MaxLanggraphCloudDeployments { get; set; } = 1;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
-        public object? Flags { get; set; }
+        public global::G.OrganizationConfigFlags? Flags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

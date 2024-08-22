@@ -23,7 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -35,19 +35,25 @@ namespace G
         /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::System.AnyOf<global::G.DataType?, object?>? DataType { get; set; } = global::G.DataType.Kv;
+        public global::System.AnyOf<global::G.DataType2?, object>? DataType { get; set; } = global::G.DataType2.Kv;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::System.AnyOf<object?, object?>? InputsSchemaDefinition { get; set; }
+        public global::System.AnyOf<global::G.DatasetPublicSchemaInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::System.AnyOf<object?, object?>? OutputsSchemaDefinition { get; set; }
+        public global::System.AnyOf<global::G.DatasetPublicSchemaOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("externally_managed")]
+        public global::System.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
 
         /// <summary>
         /// 

@@ -2,6 +2,8 @@ openapi: 3.0.1
 info:
   title: LangSmith
   version: 0.1.0
+servers:
+  - url: https://api.smith.langchain.com
 paths:
   '/api/v1/sessions/{session_id}':
     get:
@@ -184,6 +186,13 @@ paths:
             title: Sort By Desc
             type: boolean
             default: true
+        - name: metadata
+          in: query
+          schema:
+            title: Metadata
+            anyOf:
+              - type: string
+              - type: 'null'
         - name: sort_by_feedback_key
           in: query
           schema:
@@ -206,6 +215,16 @@ paths:
             minimum: 1
             type: integer
             default: 100
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
         - name: facets
           in: query
           schema:
@@ -1018,6 +1037,42 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/orgs/current/members/basic/batch:
+    post:
+      tags:
+        - orgs
+      summary: Add Basic Auth Members To Current Org
+      description: Batch add up to 500 users to the org and specified workspaces in basic auth mode.
+      operationId: add_basic_auth_members_to_current_org_api_v1_orgs_current_members_basic_batch_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Payloads
+              type: array
+              items:
+                $ref: '#/components/schemas/BasicAuthMemberCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Add Basic Auth Members To Current Org Api V1 Orgs Current Members Basic Batch Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserWithPassword'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/orgs/current/members/{identity_id}/pending':
     delete:
       tags:
@@ -1111,7 +1166,7 @@ paths:
       tags:
         - orgs
       summary: Remove Member From Current Org
-      description: Hard delete a user from the current organization.
+      description: Remove a user from the current organization.
       operationId: remove_member_from_current_org_api_v1_orgs_current_members__identity_id__delete
       parameters:
         - name: identity_id
@@ -1156,6 +1211,35 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OrgIdentityPatch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - OrganizationId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/orgs/members/basic:
+    patch:
+      tags:
+        - orgs
+      summary: Update Current User
+      description: Update a user's full_name/password (basic auth only)
+      operationId: update_current_user_api_v1_orgs_members_basic_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BasicAuthUserPatch'
         required: true
       responses:
         '200':
@@ -1947,6 +2031,9 @@ paths:
           schema:
             title: Data Type
             anyOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/DataType'
               - $ref: '#/components/schemas/DataType'
               - type: 'null'
         - name: name
@@ -1960,6 +2047,13 @@ paths:
           in: query
           schema:
             title: Name Contains
+            anyOf:
+              - type: string
+              - type: 'null'
+        - name: metadata
+          in: query
+          schema:
+            title: Metadata
             anyOf:
               - type: string
               - type: 'null'
@@ -1991,6 +2085,16 @@ paths:
             title: Sort By Desc
             type: boolean
             default: true
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -2060,6 +2164,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Dataset'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/datasets/upload-experiment:
+    post:
+      tags:
+        - datasets
+      summary: Upload Experiment
+      description: Upload an experiment that has already been run.
+      operationId: upload_experiment_api_v1_datasets_upload_experiment_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperimentResultsUpload'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperimentResultsUploadResult'
         '422':
           description: Validation Error
           content:
@@ -2844,13 +2978,13 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  '/api/v1/datasets/{dataset_id}/serve':
+  '/api/v1/datasets/{dataset_id}/index':
     post:
       tags:
         - datasets
-      summary: Serve
-      description: Serve a dataset.
-      operationId: serve_api_v1_datasets__dataset_id__serve_post
+      summary: Index
+      description: Index a dataset.
+      operationId: index_api_v1_datasets__dataset_id__index_post
       parameters:
         - name: dataset_id
           in: path
@@ -2863,7 +2997,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DatasetServeRequest'
+              $ref: '#/components/schemas/DatasetIndexRequest'
         required: true
       responses:
         '200':
@@ -2881,13 +3015,12 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  '/api/v1/datasets/{dataset_id}/unserve':
-    post:
+    delete:
       tags:
         - datasets
-      summary: Unserve
-      description: Serve a dataset.
-      operationId: unserve_api_v1_datasets__dataset_id__unserve_post
+      summary: Remove Index
+      description: Remove an index for a dataset.
+      operationId: remove_index_api_v1_datasets__dataset_id__index_delete
       parameters:
         - name: dataset_id
           in: path
@@ -2902,6 +3035,37 @@ paths:
           content:
             application/json:
               schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    get:
+      tags:
+        - datasets
+      summary: Get Index Info
+      description: Get index info.
+      operationId: get_index_info_api_v1_datasets__dataset_id__index_get
+      parameters:
+        - name: dataset_id
+          in: path
+          required: true
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetIndexInfo'
         '422':
           description: Validation Error
           content:
@@ -2940,6 +3104,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SearchDatasetResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/datasets/{dataset_id}/generate':
+    post:
+      tags:
+        - datasets
+      summary: Generate
+      description: Generate synthetic examples for a dataset.
+      operationId: generate_api_v1_datasets__dataset_id__generate_post
+      parameters:
+        - name: dataset_id
+          in: path
+          required: true
+          schema:
+            title: Dataset Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateSyntheticExamplesBody'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -3364,7 +3565,6 @@ paths:
       tags:
         - run
       summary: Query Runs
-      description: Get all runs by query in body payload.
       operationId: query_runs_api_v1_runs_query_post
       requestBody:
         content:
@@ -4982,6 +5182,16 @@ paths:
             minimum: 1
             type: integer
             default: 100
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -4991,7 +5201,7 @@ paths:
                 title: Response Get Annotation Queues Api V1 Annotation Queues Get
                 type: array
                 items:
-                  $ref: '#/components/schemas/AnnotationQueueSchema'
+                  $ref: '#/components/schemas/AnnotationQueueSchemaWithSize'
         '422':
           description: Validation Error
           content:
@@ -5289,6 +5499,37 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  '/api/v1/annotation-queues/{queue_id}/total_size':
+    get:
+      tags:
+        - annotation-queues
+      summary: Get Total Size From Annotation Queue
+      operationId: get_total_size_from_annotation_queue_api_v1_annotation_queues__queue_id__total_size_get
+      parameters:
+        - name: queue_id
+          in: path
+          required: true
+          schema:
+            title: Queue Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnnotationQueueSizeSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   '/api/v1/annotation-queues/{queue_id}/size':
     get:
       tags:
@@ -5310,6 +5551,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnnotationQueueSizeSchema'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/annotation-queues/status/{annotation_queue_run_id}':
+    post:
+      tags:
+        - annotation-queues
+      summary: Create Identity Annotation Queue Run Status
+      operationId: create_identity_annotation_queue_run_status_api_v1_annotation_queues_status__annotation_queue_run_id__post
+      parameters:
+        - name: annotation_queue_run_id
+          in: path
+          required: true
+          schema:
+            title: Annotation Queue Run Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdentityAnnotationQueueRunStatusCreateSchema'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
         '422':
           description: Validation Error
           content:
@@ -6358,6 +6635,17 @@ paths:
         - workspaces
       summary: Get Current Workspace Stats
       operationId: get_current_workspace_stats_api_v1_workspaces_current_stats_get
+      parameters:
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -6365,6 +6653,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TenantStats'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
       security:
         - ApiKey: [ ]
         - TenantId: [ ]
@@ -6682,6 +6976,489 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
+  /api/v1/workspaces/current/tag-keys:
+    get:
+      tags:
+        - workspaces
+      summary: List Tag Keys
+      operationId: list_tag_keys_api_v1_workspaces_current_tag_keys_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tag Keys Api V1 Workspaces Current Tag Keys Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagKey'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - workspaces
+      summary: Create Tag Key
+      operationId: create_tag_key_api_v1_workspaces_current_tag_keys_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagKeyCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagKey'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/workspaces/current/tag-keys/{tag_key_id}':
+    patch:
+      tags:
+        - workspaces
+      summary: Update Tag Key
+      operationId: update_tag_key_api_v1_workspaces_current_tag_keys__tag_key_id__patch
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagKeyUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagKey'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    get:
+      tags:
+        - workspaces
+      summary: Get Tag Key
+      operationId: get_tag_key_api_v1_workspaces_current_tag_keys__tag_key_id__get
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagKey'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - workspaces
+      summary: Delete Tag Key
+      operationId: delete_tag_key_api_v1_workspaces_current_tag_keys__tag_key_id__delete
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/workspaces/current/tag-keys/{tag_key_id}/tag-values':
+    post:
+      tags:
+        - workspaces
+      summary: Create Tag Value
+      operationId: create_tag_value_api_v1_workspaces_current_tag_keys__tag_key_id__tag_values_post
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagValueCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagValue'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    get:
+      tags:
+        - workspaces
+      summary: List Tag Values
+      operationId: list_tag_values_api_v1_workspaces_current_tag_keys__tag_key_id__tag_values_get
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tag Values Api V1 Workspaces Current Tag Keys  Tag Key Id  Tag Values Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagValue'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/workspaces/current/tag-keys/{tag_key_id}/tag-values/{tag_value_id}':
+    get:
+      tags:
+        - workspaces
+      summary: Get Tag Value
+      operationId: get_tag_value_api_v1_workspaces_current_tag_keys__tag_key_id__tag_values__tag_value_id__get
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+        - name: tag_value_id
+          in: path
+          required: true
+          schema:
+            title: Tag Value Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagValue'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - workspaces
+      summary: Update Tag Value
+      operationId: update_tag_value_api_v1_workspaces_current_tag_keys__tag_key_id__tag_values__tag_value_id__patch
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+        - name: tag_value_id
+          in: path
+          required: true
+          schema:
+            title: Tag Value Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagValueUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagValue'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - workspaces
+      summary: Delete Tag Value
+      operationId: delete_tag_value_api_v1_workspaces_current_tag_keys__tag_key_id__tag_values__tag_value_id__delete
+      parameters:
+        - name: tag_key_id
+          in: path
+          required: true
+          schema:
+            title: Tag Key Id
+            type: string
+            format: uuid
+        - name: tag_value_id
+          in: path
+          required: true
+          schema:
+            title: Tag Value Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/workspaces/current/taggings:
+    post:
+      tags:
+        - workspaces
+      summary: Create Tagging
+      operationId: create_tagging_api_v1_workspaces_current_taggings_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaggingCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tagging'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    get:
+      tags:
+        - workspaces
+      summary: List Taggings
+      operationId: list_taggings_api_v1_workspaces_current_taggings_get
+      parameters:
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: string
+                format: uuid
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Taggings Api V1 Workspaces Current Taggings Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaggingsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/workspaces/current/taggings/{tagging_id}':
+    delete:
+      tags:
+        - workspaces
+      summary: Delete Tagging
+      operationId: delete_tagging_api_v1_workspaces_current_taggings__tagging_id__delete
+      parameters:
+        - name: tagging_id
+          in: path
+          required: true
+          schema:
+            title: Tagging Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/workspaces/current/tags:
+    get:
+      tags:
+        - workspaces
+      summary: List Tags
+      operationId: list_tags_api_v1_workspaces_current_tags_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tags Api V1 Workspaces Current Tags Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagKeyWithValues'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/workspaces/current/tags/resource:
+    get:
+      tags:
+        - workspaces
+      summary: List Tags For Resource
+      operationId: list_tags_for_resource_api_v1_workspaces_current_tags_resource_get
+      parameters:
+        - name: resource_type
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/ResourceType'
+        - name: resource_id
+          in: query
+          required: true
+          schema:
+            title: Resource Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Tags For Resource Api V1 Workspaces Current Tags Resource Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/TagKeyWithValuesAndTaggings'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
   /api/v1/playground-settings:
     get:
       tags:
@@ -6880,6 +7657,358 @@ paths:
         - ApiKey: [ ]
         - OrganizationId: [ ]
         - BearerAuth: [ ]
+  /api/v1/charts/section:
+    get:
+      tags:
+        - charts
+      summary: Read Sections
+      description: Get all sections for the tenant.
+      operationId: read_sections_api_v1_charts_section_get
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 100
+        - name: offset
+          in: query
+          schema:
+            title: Offset
+            minimum: 0
+            type: integer
+            default: 0
+        - name: title_contains
+          in: query
+          schema:
+            title: Title Contains
+            anyOf:
+              - type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Read Sections Api V1 Charts Section Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    post:
+      tags:
+        - charts
+      summary: Create Section
+      description: Create a new section.
+      operationId: create_section_api_v1_charts_section_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/charts:
+    post:
+      tags:
+        - charts
+      summary: Read Charts
+      description: Get all charts for the tenant.
+      operationId: read_charts_api_v1_charts_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/charts/preview:
+    post:
+      tags:
+        - charts
+      summary: Read Chart Preview
+      description: Get a preview for a chart without actually creating it.
+      operationId: read_chart_preview_api_v1_charts_preview_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartPreviewRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleCustomChartResponseBase'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/charts/create:
+    post:
+      tags:
+        - charts
+      summary: Create Chart
+      description: Create a new chart.
+      operationId: create_chart_api_v1_charts_create_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/charts/{chart_id}':
+    post:
+      tags:
+        - charts
+      summary: Read Single Chart
+      description: Get a single chart by ID.
+      operationId: read_single_chart_api_v1_charts__chart_id__post
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleCustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    patch:
+      tags:
+        - charts
+      summary: Update Chart
+      description: Update a chart.
+      operationId: update_chart_api_v1_charts__chart_id__patch
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - charts
+      summary: Delete Chart
+      description: Delete a chart.
+      operationId: delete_chart_api_v1_charts__chart_id__delete
+      parameters:
+        - name: chart_id
+          in: path
+          required: true
+          schema:
+            title: Chart Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  '/api/v1/charts/section/{section_id}':
+    patch:
+      tags:
+        - charts
+      summary: Update Section
+      description: Update a section.
+      operationId: update_section_api_v1_charts_section__section_id__patch
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomChartsSectionUpdate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomChartsSectionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+    delete:
+      tags:
+        - charts
+      summary: Delete Section
+      description: Delete a section.
+      operationId: delete_section_api_v1_charts_section__section_id__delete
+      parameters:
+        - name: section_id
+          in: path
+          required: true
+          schema:
+            title: Section Id
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - ApiKey: [ ]
+        - TenantId: [ ]
+        - BearerAuth: [ ]
+  /api/v1/ok:
+    get:
+      summary: Ok
+      operationId: ok_api_v1_ok_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
   /api/v1/repos:
     get:
       tags:
@@ -6984,6 +8113,16 @@ paths:
               - type: boolean
               - type: 'null'
             default: false
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
         - name: sort_field
           in: query
           schema:
@@ -7310,6 +8449,16 @@ paths:
               - type: boolean
               - type: 'null'
             default: false
+        - name: tag_value_id
+          in: query
+          schema:
+            title: Tag Value Id
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  format: uuid
+              - type: 'null'
       responses:
         '200':
           description: Successful Response
@@ -7887,16 +9036,6 @@ paths:
         - ApiKey: [ ]
         - TenantId: [ ]
         - BearerAuth: [ ]
-  /ok:
-    get:
-      summary: Ok
-      operationId: ok_ok_get
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: { }
 components:
   schemas:
     APIFeedbackSource:
@@ -8022,6 +9161,24 @@ components:
             - type: string
               format: uuid
             - type: 'null'
+        num_reviewers_per_item:
+          title: Num Reviewers Per Item
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
+        enable_reservations:
+          title: Enable Reservations
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: true
+        reservation_minutes:
+          title: Reservation Minutes
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
         id:
           title: Id
           type: string
@@ -8103,6 +9260,24 @@ components:
             - type: string
               format: uuid
             - type: 'null'
+        num_reviewers_per_item:
+          title: Num Reviewers Per Item
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
+        enable_reservations:
+          title: Enable Reservations
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: true
+        reservation_minutes:
+          title: Reservation Minutes
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
         id:
           title: Id
           type: string
@@ -8112,6 +9287,67 @@ components:
           type: string
           format: uuid
       description: AnnotationQueue schema.
+    AnnotationQueueSchemaWithSize:
+      title: AnnotationQueueSchemaWithSize
+      required:
+        - name
+        - id
+        - tenant_id
+        - total_runs
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        default_dataset:
+          title: Default Dataset
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        num_reviewers_per_item:
+          title: Num Reviewers Per Item
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
+        enable_reservations:
+          title: Enable Reservations
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: true
+        reservation_minutes:
+          title: Reservation Minutes
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant_id:
+          title: Tenant Id
+          type: string
+          format: uuid
+        total_runs:
+          title: Total Runs
+          type: integer
+      description: AnnotationQueue schema with size.
     AnnotationQueueSizeSchema:
       title: AnnotationQueueSizeSchema
       required:
@@ -8142,6 +9378,21 @@ components:
             - type: string
               format: uuid
             - type: 'null'
+        num_reviewers_per_item:
+          title: Num Reviewers Per Item
+          anyOf:
+            - type: integer
+            - type: 'null'
+          default: 1
+        enable_reservations:
+          title: Enable Reservations
+          type: boolean
+          default: true
+        reservation_minutes:
+          title: Reservation Minutes
+          anyOf:
+            - type: integer
+            - type: 'null'
       description: AnnotationQueue update schema.
     AppFeedbackSource:
       title: AppFeedbackSource
@@ -8171,6 +9422,56 @@ components:
             - type: object
             - type: 'null'
       description: Auto eval feedback source.
+    BasicAuthMemberCreate:
+      title: BasicAuthMemberCreate
+      required:
+        - email
+      type: object
+      properties:
+        user_id:
+          title: User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        email:
+          title: Email
+          type: string
+        read_only:
+          title: Read Only
+          anyOf:
+            - type: boolean
+            - type: 'null'
+        role_id:
+          title: Role Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        password:
+          title: Password
+          anyOf:
+            - type: string
+            - type: 'null'
+        full_name:
+          title: Full Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        workspace_role_id:
+          title: Workspace Role Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        workspace_ids:
+          title: Workspace Ids
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
     BasicAuthResponse:
       title: BasicAuthResponse
       required:
@@ -8180,6 +9481,20 @@ components:
         access_token:
           title: Access Token
           type: string
+    BasicAuthUserPatch:
+      title: BasicAuthUserPatch
+      type: object
+      properties:
+        password:
+          title: Password
+          anyOf:
+            - type: string
+            - type: 'null'
+        full_name:
+          title: Full Name
+          anyOf:
+            - type: string
+            - type: 'null'
     BatchIngestConfig:
       title: BatchIngestConfig
       type: object
@@ -8924,6 +10239,484 @@ components:
           type: array
           items:
             type: string
+    CustomChartCreate:
+      title: CustomChartCreate
+      required:
+        - title
+        - chart_type
+        - series
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - maximum: 100.0
+              minimum: 0.0
+              type: integer
+            - type: 'null'
+        chart_type:
+          $ref: '#/components/schemas/CustomChartType'
+        series:
+          title: Series
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartSeriesCreate'
+        section_id:
+          title: Section Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        metadata:
+          title: Metadata
+          anyOf:
+            - type: object
+            - type: 'null'
+    CustomChartCreatePreview:
+      title: CustomChartCreatePreview
+      required:
+        - series
+      type: object
+      properties:
+        series:
+          title: Series
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartSeries'
+    CustomChartMetric:
+      title: CustomChartMetric
+      enum:
+        - run_count
+        - latency_p50
+        - latency_p99
+        - first_token_p50
+        - first_token_p99
+        - total_tokens
+        - prompt_tokens
+        - completion_tokens
+        - median_tokens
+        - feedback
+        - feedback_score_avg
+        - feedback_values
+        - total_cost
+        - prompt_cost
+        - completion_cost
+        - error_rate
+        - streaming_rate
+      type: string
+      description: Metrics you can chart.
+    CustomChartPreviewRequest:
+      title: CustomChartPreviewRequest
+      required:
+        - bucket_info
+        - chart
+      type: object
+      properties:
+        bucket_info:
+          $ref: '#/components/schemas/CustomChartsRequestBase'
+        chart:
+          $ref: '#/components/schemas/CustomChartCreatePreview'
+    CustomChartResponse:
+      title: CustomChartResponse
+      required:
+        - id
+        - title
+        - index
+        - chart_type
+        - section_id
+        - series
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        index:
+          title: Index
+          type: integer
+        chart_type:
+          $ref: '#/components/schemas/CustomChartType'
+        section_id:
+          title: Section Id
+          type: string
+          format: uuid
+        metadata:
+          title: Metadata
+          anyOf:
+            - type: object
+            - type: 'null'
+        series:
+          title: Series
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/CustomChartSeries'
+            - type: 'null'
+    CustomChartSeries:
+      title: CustomChartSeries
+      required:
+        - name
+        - filters
+        - metric
+        - id
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        filters:
+          $ref: '#/components/schemas/CustomChartSeriesFilters'
+        metric:
+          $ref: '#/components/schemas/CustomChartMetric'
+        feedback_key:
+          title: Feedback Key
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+    CustomChartSeriesCreate:
+      title: CustomChartSeriesCreate
+      required:
+        - name
+        - filters
+        - metric
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        filters:
+          $ref: '#/components/schemas/CustomChartSeriesFilters'
+        metric:
+          $ref: '#/components/schemas/CustomChartMetric'
+        feedback_key:
+          title: Feedback Key
+          anyOf:
+            - type: string
+            - type: 'null'
+    CustomChartSeriesFilters:
+      title: CustomChartSeriesFilters
+      required:
+        - session
+      type: object
+      properties:
+        filter:
+          title: Filter
+          anyOf:
+            - type: string
+            - type: 'null'
+        trace_filter:
+          title: Trace Filter
+          anyOf:
+            - type: string
+            - type: 'null'
+        tree_filter:
+          title: Tree Filter
+          anyOf:
+            - type: string
+            - type: 'null'
+        session:
+          title: Session
+          minItems: 1
+          type: array
+          items:
+            type: string
+            format: uuid
+    CustomChartSeriesUpdate:
+      title: CustomChartSeriesUpdate
+      required:
+        - name
+        - filters
+        - metric
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        filters:
+          $ref: '#/components/schemas/CustomChartSeriesFilters'
+        metric:
+          $ref: '#/components/schemas/CustomChartMetric'
+        feedback_key:
+          title: Feedback Key
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+    CustomChartType:
+      title: CustomChartType
+      enum:
+        - line
+        - bar
+      type: string
+      description: Enum for custom chart types.
+    CustomChartUpdate:
+      title: CustomChartUpdate
+      type: object
+      properties:
+        title:
+          title: Title
+          anyOf:
+            - type: string
+            - $ref: '#/components/schemas/Missing'
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - $ref: '#/components/schemas/Missing'
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - type: integer
+            - $ref: '#/components/schemas/Missing'
+        chart_type:
+          title: Chart Type
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartType'
+            - $ref: '#/components/schemas/Missing'
+        series:
+          title: Series
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/CustomChartSeriesUpdate'
+            - $ref: '#/components/schemas/Missing'
+        section_id:
+          title: Section Id
+          anyOf:
+            - type: string
+              format: uuid
+            - $ref: '#/components/schemas/Missing'
+        metadata:
+          title: Metadata
+          anyOf:
+            - type: object
+            - $ref: '#/components/schemas/Missing'
+            - type: 'null'
+    CustomChartsDataPoint:
+      title: CustomChartsDataPoint
+      required:
+        - series_id
+        - timestamp
+        - value
+      type: object
+      properties:
+        series_id:
+          title: Series Id
+          type: string
+        timestamp:
+          title: Timestamp
+          type: string
+          format: date-time
+        value:
+          title: Value
+          anyOf:
+            - type: integer
+            - type: number
+            - type: object
+            - type: 'null'
+    CustomChartsRequest:
+      title: CustomChartsRequest
+      required:
+        - start_time
+      type: object
+      properties:
+        timezone:
+          title: Timezone
+          type: string
+          default: UTC
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        stride:
+          allOf:
+            - $ref: '#/components/schemas/TimedeltaInput'
+          default:
+            days: 0
+            minutes: 15
+            hours: 0
+        after_index:
+          title: After Index
+          anyOf:
+            - type: integer
+            - type: 'null'
+        tag_value_id:
+          title: Tag Value Id
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
+    CustomChartsRequestBase:
+      title: CustomChartsRequestBase
+      required:
+        - start_time
+      type: object
+      properties:
+        timezone:
+          title: Timezone
+          type: string
+          default: UTC
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        stride:
+          allOf:
+            - $ref: '#/components/schemas/TimedeltaInput'
+          default:
+            days: 0
+            minutes: 15
+            hours: 0
+    CustomChartsResponse:
+      title: CustomChartsResponse
+      required:
+        - sections
+      type: object
+      properties:
+        sections:
+          title: Sections
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartsSection'
+    CustomChartsSection:
+      title: CustomChartsSection
+      required:
+        - title
+        - id
+        - charts
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - maximum: 100.0
+              minimum: 0.0
+              type: integer
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        charts:
+          title: Charts
+          type: array
+          items:
+            $ref: '#/components/schemas/SingleCustomChartResponse'
+    CustomChartsSectionCreate:
+      title: CustomChartsSectionCreate
+      required:
+        - title
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - maximum: 100.0
+              minimum: 0.0
+              type: integer
+            - type: 'null'
+    CustomChartsSectionResponse:
+      title: CustomChartsSectionResponse
+      required:
+        - title
+        - id
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - maximum: 100.0
+              minimum: 0.0
+              type: integer
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+    CustomChartsSectionUpdate:
+      title: CustomChartsSectionUpdate
+      type: object
+      properties:
+        title:
+          title: Title
+          anyOf:
+            - type: string
+            - $ref: '#/components/schemas/Missing'
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - $ref: '#/components/schemas/Missing'
+            - type: 'null'
+        index:
+          title: Index
+          anyOf:
+            - type: integer
+            - $ref: '#/components/schemas/Missing'
     CustomerVisiblePlanInfo:
       title: CustomerVisiblePlanInfo
       required:
@@ -8990,6 +10783,12 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        externally_managed:
+          title: Externally Managed
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: false
         id:
           title: Id
           type: string
@@ -9048,6 +10847,12 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        externally_managed:
+          title: Externally Managed
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: false
         id:
           title: Id
           anyOf:
@@ -9087,6 +10892,40 @@ components:
             type: string
             format: uuid
       description: Dataset diff schema.
+    DatasetIndexInfo:
+      title: DatasetIndexInfo
+      required:
+        - dataset_id
+      type: object
+      properties:
+        dataset_id:
+          title: Dataset Id
+          type: string
+          format: uuid
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+        last_updated_version:
+          title: Last Updated Version
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+      description: Dataset schema for serving.
+    DatasetIndexRequest:
+      title: DatasetIndexRequest
+      type: object
+      properties:
+        tag:
+          title: Tag
+          anyOf:
+            - type: string
+            - type: 'null'
+          default: latest
+      description: Dataset schema for serving.
     DatasetPublicSchema:
       title: DatasetPublicSchema
       required:
@@ -9122,6 +10961,12 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        externally_managed:
+          title: Externally Managed
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: false
         id:
           title: Id
           type: string
@@ -9165,6 +11010,12 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        externally_managed:
+          title: Externally Managed
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          default: false
         id:
           title: Id
           type: string
@@ -9173,17 +11024,6 @@ components:
           title: Tenant Id
           type: string
           format: uuid
-    DatasetServeRequest:
-      title: DatasetServeRequest
-      type: object
-      properties:
-        tag:
-          title: Tag
-          anyOf:
-            - type: string
-            - type: 'null'
-          default: latest
-      description: Dataset schema for serving.
     DatasetShareSchema:
       title: DatasetShareSchema
       required:
@@ -9307,15 +11147,12 @@ components:
     Example:
       title: Example
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -9336,6 +11173,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -9357,13 +11197,9 @@ components:
     ExampleBulkCreate:
       title: ExampleBulkCreate
       required:
-        - inputs
         - dataset_id
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -9384,38 +11220,43 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          anyOf:
+            - type: object
+            - type: 'null'
+        split:
+          title: Split
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+            - type: 'null'
+          default: base
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        use_source_run_io:
+          title: Use Source Run Io
+          type: boolean
+          default: false
         created_at:
           title: Created At
           anyOf:
             - type: string
               format: date-time
             - type: 'null'
-        split:
-          title: Split
-          anyOf:
-            - type: array
-              items:
-                type: string
-            - type: string
-            - type: 'null'
-          default: base
-        id:
-          title: Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
       description: Example class with optional created_at field to prevent multiple versions when bulk creating examples.
     ExampleCreate:
       title: ExampleCreate
       required:
-        - inputs
         - dataset_id
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -9436,15 +11277,10 @@ components:
           anyOf:
             - type: object
             - type: 'null'
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        id:
-          title: Id
+        inputs:
+          title: Inputs
           anyOf:
-            - type: string
-              format: uuid
+            - type: object
             - type: 'null'
         split:
           title: Split
@@ -9455,6 +11291,20 @@ components:
             - type: string
             - type: 'null'
           default: base
+        id:
+          title: Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        use_source_run_io:
+          title: Use Source Run Io
+          type: boolean
+          default: false
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
       description: Create class for Example.
     ExampleListOrder:
       title: ExampleListOrder
@@ -9553,16 +11403,13 @@ components:
     ExampleWithRuns:
       title: ExampleWithRuns
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -9583,6 +11430,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -9609,16 +11459,13 @@ components:
     ExampleWithRunsCH:
       title: ExampleWithRunsCH
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -9639,6 +11486,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -9662,6 +11512,135 @@ components:
           items:
             $ref: '#/components/schemas/RunSchemaComparisonView'
       description: Example schema with list of runs.
+    ExperimentResultRow:
+      title: ExperimentResultRow
+      required:
+        - inputs
+        - start_time
+        - end_time
+      type: object
+      properties:
+        row_id:
+          title: Row Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
+        expected_outputs:
+          title: Expected Outputs
+          anyOf:
+            - type: object
+            - type: 'null'
+        actual_outputs:
+          title: Actual Outputs
+          anyOf:
+            - type: object
+            - type: 'null'
+        evaluation_scores:
+          title: Evaluation Scores
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/FeedbackCreateCoreSchema'
+            - type: 'null'
+        start_time:
+          title: Start Time
+          type: string
+          format: date-time
+        end_time:
+          title: End Time
+          type: string
+          format: date-time
+        run_name:
+          title: Run Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        error:
+          title: Error
+          anyOf:
+            - type: string
+            - type: 'null'
+        run_metadata:
+          title: Run Metadata
+          anyOf:
+            - type: object
+            - type: 'null'
+      description: Class for a single row in the uploaded experiment results.
+    ExperimentResultsUpload:
+      title: ExperimentResultsUpload
+      required:
+        - experiment_name
+        - results
+        - experiment_start_time
+        - experiment_end_time
+      type: object
+      properties:
+        experiment_name:
+          title: Experiment Name
+          type: string
+        experiment_description:
+          title: Experiment Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        dataset_id:
+          title: Dataset Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        dataset_name:
+          title: Dataset Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        dataset_description:
+          title: Dataset Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        summary_experiment_scores:
+          title: Summary Experiment Scores
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/FeedbackCreateCoreSchema'
+            - type: 'null'
+        results:
+          title: Results
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperimentResultRow'
+        experiment_start_time:
+          title: Experiment Start Time
+          type: string
+          format: date-time
+        experiment_end_time:
+          title: Experiment End Time
+          type: string
+          format: date-time
+        experiment_metadata:
+          title: Experiment Metadata
+          anyOf:
+            - type: object
+            - type: 'null'
+      description: Class for uploading the results of an already-run experiment.
+    ExperimentResultsUploadResult:
+      title: ExperimentResultsUploadResult
+      required:
+        - dataset
+        - experiment
+      type: object
+      properties:
+        dataset:
+          $ref: '#/components/schemas/Dataset'
+        experiment:
+          $ref: '#/components/schemas/TracerSession'
+      description: Class for uploading the results of an already-run experiment.
     FeedbackCategory:
       title: FeedbackCategory
       required:
@@ -9730,8 +11709,8 @@ components:
           anyOf:
             - type: boolean
             - type: 'null'
-    FeedbackCreateSchema:
-      title: FeedbackCreateSchema
+    FeedbackCreateCoreSchema:
+      title: FeedbackCreateCoreSchema
       required:
         - key
       type: object
@@ -9744,18 +11723,6 @@ components:
           title: Modified At
           type: string
           format: date-time
-        session_id:
-          title: Session Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
-        run_id:
-          title: Run Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
         key:
           title: Key
           maxLength: 180
@@ -9795,6 +11762,92 @@ components:
             - type: 'null'
         comparative_experiment_id:
           title: Comparative Experiment Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        feedback_source:
+          title: Feedback Source
+          anyOf:
+            - $ref: '#/components/schemas/AppFeedbackSource'
+            - $ref: '#/components/schemas/APIFeedbackSource'
+            - $ref: '#/components/schemas/ModelFeedbackSource'
+            - $ref: '#/components/schemas/AutoEvalFeedbackSource'
+            - type: 'null'
+        feedback_config:
+          anyOf:
+            - $ref: '#/components/schemas/FeedbackConfig'
+            - type: 'null'
+      description: Schema used for creating feedback without run id or session id.
+    FeedbackCreateSchema:
+      title: FeedbackCreateSchema
+      required:
+        - key
+      type: object
+      properties:
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        modified_at:
+          title: Modified At
+          type: string
+          format: date-time
+        key:
+          title: Key
+          maxLength: 180
+          type: string
+        score:
+          title: Score
+          anyOf:
+            - type: number
+            - type: integer
+            - type: boolean
+            - type: 'null'
+        value:
+          title: Value
+          anyOf:
+            - type: number
+            - type: integer
+            - type: boolean
+            - type: string
+            - type: object
+            - type: 'null'
+        comment:
+          title: Comment
+          anyOf:
+            - type: string
+            - type: 'null'
+        correction:
+          title: Correction
+          anyOf:
+            - type: object
+            - type: string
+            - type: 'null'
+        feedback_group_id:
+          title: Feedback Group Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        comparative_experiment_id:
+          title: Comparative Experiment Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        session_id:
+          title: Session Id
           anyOf:
             - type: string
               format: uuid
@@ -9947,18 +12000,6 @@ components:
           title: Modified At
           type: string
           format: date-time
-        session_id:
-          title: Session Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
-        run_id:
-          title: Run Id
-          anyOf:
-            - type: string
-              format: uuid
-            - type: 'null'
         key:
           title: Key
           type: string
@@ -9997,6 +12038,18 @@ components:
             - type: 'null'
         comparative_experiment_id:
           title: Comparative Experiment Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        run_id:
+          title: Run Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        session_id:
+          title: Session Id
           anyOf:
             - type: string
               format: uuid
@@ -10281,6 +12334,23 @@ components:
             - type: boolean
             - type: 'null'
       description: Fields to fork a repo
+    GenerateSyntheticExamplesBody:
+      title: GenerateSyntheticExamplesBody
+      required:
+        - num_examples
+      type: object
+      properties:
+        example_ids:
+          title: Example Ids
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
+        num_examples:
+          title: Num Examples
+          type: integer
     GetRepoResponse:
       title: GetRepoResponse
       required:
@@ -10330,6 +12400,12 @@ components:
           title: User Id
           type: string
           format: uuid
+        ls_user_id:
+          title: Ls User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
         read_only:
           title: Read Only
           type: boolean
@@ -10348,6 +12424,22 @@ components:
           allOf:
             - $ref: '#/components/schemas/AccessScope'
           default: workspace
+    IdentityAnnotationQueueRunStatusCreateSchema:
+      title: IdentityAnnotationQueueRunStatusCreateSchema
+      type: object
+      properties:
+        status:
+          title: Status
+          anyOf:
+            - type: string
+            - type: 'null'
+        override_added_at:
+          title: Override Added At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+      description: Identity annotation queue run status create schema.
     IdentityCreate:
       title: IdentityCreate
       required:
@@ -10606,6 +12698,12 @@ components:
           title: User Id
           type: string
           format: uuid
+        ls_user_id:
+          title: Ls User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
         read_only:
           title: Read Only
           type: boolean
@@ -10891,18 +12989,16 @@ components:
         - allow_backfill_rules
         - playground_comparative
         - show_dataset_schemas
+        - compare_trace_enabled
+        - consolidate_playground_comparative
+        - resource_tags
+        - langgraph_deploy_own_cloud_enabled
       type: string
       description: 'Feature flags for orgs (cannot subclass an enum and may diverge from tenant flags, so maintained separately).'
     OrgIdentityPatch:
       title: OrgIdentityPatch
-      required:
-        - role_id
       type: object
       properties:
-        role_id:
-          title: Role Id
-          type: string
-          format: uuid
         password:
           title: Password
           anyOf:
@@ -10912,6 +13008,12 @@ components:
           title: Full Name
           anyOf:
             - type: string
+            - type: 'null'
+        role_id:
+          title: Role Id
+          anyOf:
+            - type: string
+              format: uuid
             - type: 'null'
     OrgMemberIdentity:
       title: OrgMemberIdentity
@@ -10945,6 +13047,12 @@ components:
           title: User Id
           type: string
           format: uuid
+        ls_user_id:
+          title: Ls User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
         read_only:
           title: Read Only
           type: boolean
@@ -11237,6 +13345,14 @@ components:
           title: Can Serve Datasets
           type: boolean
           default: false
+        can_use_langgraph_cloud:
+          title: Can Use Langgraph Cloud
+          type: boolean
+          default: false
+        max_langgraph_cloud_deployments:
+          title: Max Langgraph Cloud Deployments
+          type: integer
+          default: 1
         flags:
           title: Flags
           type: object
@@ -11256,6 +13372,10 @@ components:
             allow_backfill_rules: false
             playground_comparative: false
             show_dataset_schemas: false
+            compare_trace_enabled: false
+            consolidate_playground_comparative: false
+            resource_tags: false
+            langgraph_deploy_own_cloud_enabled: false
       description: Organization level configuration. May include any field that exists in tenant config and additional fields.
     OrganizationDashboardColorScheme:
       title: OrganizationDashboardColorScheme
@@ -11652,16 +13772,13 @@ components:
     PublicExampleWithRuns:
       title: PublicExampleWithRuns
       required:
-        - inputs
         - dataset_id
+        - inputs
         - id
         - name
         - runs
       type: object
       properties:
-        inputs:
-          title: Inputs
-          type: object
         outputs:
           title: Outputs
           anyOf:
@@ -11682,6 +13799,9 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs:
+          title: Inputs
+          type: object
         created_at:
           title: Created At
           type: string
@@ -11975,6 +14095,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RunsGenerateQueryFeedbackKeys'
+    Resource:
+      title: Resource
+      required:
+        - tagging_id
+        - resource_name
+        - resource_id
+      type: object
+      properties:
+        tagging_id:
+          title: Tagging Id
+          type: string
+          format: uuid
+        resource_name:
+          title: Resource Name
+          type: string
+        resource_id:
+          title: Resource Id
+          type: string
+          format: uuid
+    ResourceType:
+      title: ResourceType
+      enum:
+        - prompt
+        - project
+        - queue
+        - deployment
+        - experiment
+        - dataset
+        - charts_section
+      type: string
     ResponseBodyForRunsGenerateQuery:
       title: ResponseBodyForRunsGenerateQuery
       required:
@@ -12286,6 +14436,11 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs_preview:
+          title: Inputs Preview
+          anyOf:
+            - type: string
+            - type: 'null'
         run_type:
           $ref: '#/components/schemas/RunTypeEnum'
         start_time:
@@ -12322,6 +14477,11 @@ components:
           title: Outputs
           anyOf:
             - type: object
+            - type: 'null'
+        outputs_preview:
+          title: Outputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         parent_run_id:
           title: Parent Run Id
@@ -12484,6 +14644,11 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs_preview:
+          title: Inputs Preview
+          anyOf:
+            - type: string
+            - type: 'null'
         run_type:
           $ref: '#/components/schemas/RunTypeEnum'
         start_time:
@@ -12520,6 +14685,11 @@ components:
           title: Outputs
           anyOf:
             - type: object
+            - type: 'null'
+        outputs_preview:
+          title: Outputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         parent_run_id:
           title: Parent Run Id
@@ -12973,6 +15143,11 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs_preview:
+          title: Inputs Preview
+          anyOf:
+            - type: string
+            - type: 'null'
         run_type:
           $ref: '#/components/schemas/RunTypeEnum'
         start_time:
@@ -13009,6 +15184,11 @@ components:
           title: Outputs
           anyOf:
             - type: object
+            - type: 'null'
+        outputs_preview:
+          title: Outputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         parent_run_id:
           title: Parent Run Id
@@ -13210,6 +15390,11 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        inputs_preview:
+          title: Inputs Preview
+          anyOf:
+            - type: string
+            - type: 'null'
         run_type:
           $ref: '#/components/schemas/RunTypeEnum'
         start_time:
@@ -13246,6 +15431,11 @@ components:
           title: Outputs
           anyOf:
             - type: object
+            - type: 'null'
+        outputs_preview:
+          title: Outputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         parent_run_id:
           title: Parent Run Id
@@ -13374,6 +15564,7 @@ components:
         - status
         - session_id
         - app_path
+        - queue_run_id
       type: object
       properties:
         name:
@@ -13383,6 +15574,11 @@ components:
           title: Inputs
           anyOf:
             - type: object
+            - type: 'null'
+        inputs_preview:
+          title: Inputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         run_type:
           $ref: '#/components/schemas/RunTypeEnum'
@@ -13420,6 +15616,11 @@ components:
           title: Outputs
           anyOf:
             - type: object
+            - type: 'null'
+        outputs_preview:
+          title: Outputs Preview
+          anyOf:
+            - type: string
             - type: 'null'
         parent_run_id:
           title: Parent Run Id
@@ -13601,6 +15802,10 @@ components:
           title: Trace Upgrade
           type: boolean
           default: false
+        queue_run_id:
+          title: Queue Run Id
+          type: string
+          format: uuid
         last_reviewed_time:
           title: Last Reviewed Time
           anyOf:
@@ -13609,6 +15814,12 @@ components:
             - type: 'null'
         added_at:
           title: Added At
+          anyOf:
+            - type: string
+              format: date-time
+            - type: 'null'
+        effective_added_at:
+          title: Effective Added At
           anyOf:
             - type: string
               format: date-time
@@ -13627,9 +15838,11 @@ components:
         - extra
         - events
         - inputs
+        - inputs_preview
         - inputs_s3_urls
         - inputs_or_signed_url
         - outputs
+        - outputs_preview
         - outputs_s3_urls
         - outputs_or_signed_url
         - s3_urls
@@ -13812,8 +16025,14 @@ components:
           type: object
         limit:
           title: Limit
+          maximum: 100.0
+          minimum: 1.0
           type: integer
           default: 5
+        debug:
+          title: Debug
+          type: boolean
+          default: false
       description: Dataset schema for serving.
     SearchDatasetResponse:
       title: SearchDatasetResponse
@@ -13832,6 +16051,7 @@ components:
       required:
         - inputs
         - outputs
+        - id
       type: object
       properties:
         inputs:
@@ -13840,6 +16060,15 @@ components:
         outputs:
           title: Outputs
           type: object
+        id:
+          title: Id
+          type: string
+          format: uuid
+        debug_info:
+          title: Debug Info
+          anyOf:
+            - type: object
+            - type: 'null'
       description: Dataset schema for serving.
     SecretKey:
       title: SecretKey
@@ -14034,6 +16263,60 @@ components:
           title: Name
           type: string
       description: Simple experiment info schema for use with comparative experiments
+    SingleCustomChartResponse:
+      title: SingleCustomChartResponse
+      required:
+        - data
+        - id
+        - title
+        - index
+        - chart_type
+        - series
+      type: object
+      properties:
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartsDataPoint'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        metadata:
+          title: Metadata
+          anyOf:
+            - type: object
+            - type: 'null'
+        index:
+          title: Index
+          type: integer
+        chart_type:
+          $ref: '#/components/schemas/CustomChartType'
+        series:
+          title: Series
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartSeries'
+    SingleCustomChartResponseBase:
+      title: SingleCustomChartResponseBase
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomChartsDataPoint'
     SortByComparativeExperimentColumn:
       title: SortByComparativeExperimentColumn
       enum:
@@ -14279,6 +16562,361 @@ components:
         count:
           title: Count
           type: integer
+    TagKey:
+      title: TagKey
+      required:
+        - key
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+    TagKeyCreate:
+      title: TagKeyCreate
+      required:
+        - key
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+    TagKeyUpdate:
+      title: TagKeyUpdate
+      type: object
+      properties:
+        key:
+          title: Key
+          anyOf:
+            - maxLength: 255
+              minLength: 1
+              type: string
+            - type: 'null'
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+    TagKeyWithValues:
+      title: TagKeyWithValues
+      required:
+        - key
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        values:
+          title: Values
+          type: array
+          items:
+            $ref: '#/components/schemas/TagValue'
+    TagKeyWithValuesAndTaggings:
+      title: TagKeyWithValuesAndTaggings
+      required:
+        - key
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        key:
+          title: Key
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        values:
+          title: Values
+          type: array
+          items:
+            $ref: '#/components/schemas/TagValueWithTaggings'
+    TagValue:
+      title: TagValue
+      required:
+        - value
+        - id
+        - tag_key_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        value:
+          title: Value
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tag_key_id:
+          title: Tag Key Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+    TagValueCreate:
+      title: TagValueCreate
+      required:
+        - value
+      type: object
+      properties:
+        value:
+          title: Value
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+    TagValueUpdate:
+      title: TagValueUpdate
+      type: object
+      properties:
+        value:
+          title: Value
+          anyOf:
+            - maxLength: 255
+              minLength: 1
+              type: string
+            - type: 'null'
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+    TagValueWithTaggings:
+      title: TagValueWithTaggings
+      required:
+        - value
+        - id
+        - tag_key_id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        value:
+          title: Value
+          maxLength: 255
+          minLength: 1
+          type: string
+        description:
+          title: Description
+          anyOf:
+            - type: string
+            - type: 'null'
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tag_key_id:
+          title: Tag Key Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        taggings:
+          title: Taggings
+          type: array
+          items:
+            $ref: '#/components/schemas/Tagging'
+    Tagging:
+      title: Tagging
+      required:
+        - tag_value_id
+        - resource_type
+        - resource_id
+        - id
+        - created_at
+      type: object
+      properties:
+        tag_value_id:
+          title: Tag Value Id
+          type: string
+          format: uuid
+        resource_type:
+          $ref: '#/components/schemas/ResourceType'
+        resource_id:
+          title: Resource Id
+          type: string
+          format: uuid
+        id:
+          title: Id
+          type: string
+          format: uuid
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+    TaggingCreate:
+      title: TaggingCreate
+      required:
+        - tag_value_id
+        - resource_type
+        - resource_id
+      type: object
+      properties:
+        tag_value_id:
+          title: Tag Value Id
+          type: string
+          format: uuid
+        resource_type:
+          $ref: '#/components/schemas/ResourceType'
+        resource_id:
+          title: Resource Id
+          type: string
+          format: uuid
+    TaggingsByResourceType:
+      title: TaggingsByResourceType
+      type: object
+      properties:
+        prompts:
+          title: Prompts
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        projects:
+          title: Projects
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        queues:
+          title: Queues
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        deployments:
+          title: Deployments
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        experiments:
+          title: Experiments
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        datasets:
+          title: Datasets
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        charts_sections:
+          title: Charts Sections
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+    TaggingsResponse:
+      title: TaggingsResponse
+      required:
+        - tag_key
+        - tag_key_id
+        - tag_value
+        - tag_value_id
+        - resources
+      type: object
+      properties:
+        tag_key:
+          title: Tag Key
+          type: string
+        tag_key_id:
+          title: Tag Key Id
+          type: string
+          format: uuid
+        tag_value:
+          title: Tag Value
+          type: string
+        tag_value_id:
+          title: Tag Value Id
+          type: string
+          format: uuid
+        resources:
+          $ref: '#/components/schemas/TaggingsByResourceType'
     TenantBulkUnshareRequest:
       title: TenantBulkUnshareRequest
       type: object
@@ -14498,6 +17136,7 @@ components:
         - tracer_session_count
         - repo_count
         - annotation_queue_count
+        - charts_count
       type: object
       properties:
         tenant_id:
@@ -14515,6 +17154,9 @@ components:
           type: integer
         annotation_queue_count:
           title: Annotation Queue Count
+          type: integer
+        charts_count:
+          title: Charts Count
           type: integer
       description: Stats for a tenant.
     TenantUsageLimitInfo:
@@ -15019,6 +17661,51 @@ components:
         - monthly_longlived_traces
       type: string
       description: Type of usage limit.
+    UserWithPassword:
+      title: UserWithPassword
+      required:
+        - id
+        - created_at
+        - updated_at
+        - email
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          format: uuid
+        ls_user_id:
+          title: Ls User Id
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        email:
+          title: Email
+          type: string
+        full_name:
+          title: Full Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        avatar_url:
+          title: Avatar Url
+          anyOf:
+            - type: string
+            - type: 'null'
+        password:
+          title: Password
+          anyOf:
+            - type: string
+            - type: 'null'
     ValidationError:
       title: ValidationError
       required:
@@ -15473,3 +18160,5 @@ components:
       type: apiKey
       name: X-Organization-Id
       in: header
+security:
+  - ApiKey: [ ]

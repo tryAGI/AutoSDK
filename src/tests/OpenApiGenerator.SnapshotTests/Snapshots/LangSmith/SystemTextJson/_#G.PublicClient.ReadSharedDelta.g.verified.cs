@@ -49,11 +49,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/datasets/runs/delta", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -124,10 +125,10 @@ namespace G
             string baselineSessionId,
             global::System.Collections.Generic.IList<string> comparisonSessionIds,
             string feedbackKey,
-            global::System.AnyOf<object?, object?>? filters = default,
+            global::System.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
             int offset = 0,
             int limit = 100,
-            global::System.AnyOf<string?, object?>? comparativeExperimentId = default,
+            global::System.AnyOf<string, object>? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryFeedbackDelta

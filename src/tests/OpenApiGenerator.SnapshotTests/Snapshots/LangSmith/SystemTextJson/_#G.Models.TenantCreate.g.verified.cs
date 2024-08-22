@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? OrganizationId { get; set; }
+        public global::System.AnyOf<string, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? TenantHandle { get; set; }
+        public global::System.AnyOf<string?, object>? TenantHandle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

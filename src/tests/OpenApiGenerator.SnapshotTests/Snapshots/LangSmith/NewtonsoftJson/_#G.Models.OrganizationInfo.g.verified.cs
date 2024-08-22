@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<string?, object?>? Id { get; set; }
+        public global::System.AnyOf<string, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_name")]
-        public global::System.AnyOf<string?, object?>? DisplayName { get; set; }
+        public global::System.AnyOf<string?, object>? DisplayName { get; set; }
 
         /// <summary>
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier")]
-        public global::System.AnyOf<global::G.PaymentPlanTier?, object?>? Tier { get; set; }
+        public global::System.AnyOf<global::G.PaymentPlanTier?, object>? Tier { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public global::System.Collections.Generic.IList<string?>? Permissions { get; set; }
+        public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
 
         /// <summary>
         /// Default Value: false

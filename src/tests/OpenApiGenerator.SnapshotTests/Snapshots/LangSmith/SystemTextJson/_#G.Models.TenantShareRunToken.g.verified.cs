@@ -16,8 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TenantShareRunTokenTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TenantShareRunTokenType Type { get; set; }
+        public global::G.TenantShareRunTokenType Type { get; set; }
 
         /// <summary>
         /// 
@@ -45,28 +44,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RunName { get; set; }
+        public global::System.AnyOf<string?, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RunType { get; set; }
+        public global::System.AnyOf<string?, object>? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? SessionId { get; set; }
+        public global::System.AnyOf<string, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? SessionName { get; set; }
+        public global::System.AnyOf<string?, object>? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

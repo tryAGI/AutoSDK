@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "";
+        public const string BaseUrl = "https://api.smith.langchain.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
@@ -118,6 +118,11 @@ namespace G
         /// 
         /// </summary>
         public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChartsClient Charts => new ChartsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// 

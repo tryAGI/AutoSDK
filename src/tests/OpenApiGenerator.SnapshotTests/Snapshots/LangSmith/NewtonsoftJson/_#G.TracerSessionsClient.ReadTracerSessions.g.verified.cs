@@ -8,35 +8,39 @@ namespace G
     {
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<bool, object> referenceFree,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> referenceDataset,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            ref global::System.AnyOf<string, object> name,
-            ref global::System.AnyOf<string, object> nameContains,
-            ref global::System.AnyOf<string, object> datasetVersion,
-            ref global::System.AllOf<global::G.SessionSortableColumns> sortBy,
+            ref global::System.AnyOf<bool?, object>? referenceFree,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<string?, object>? name,
+            ref global::System.AnyOf<string?, object>? nameContains,
+            ref global::System.AnyOf<string?, object>? datasetVersion,
+            ref global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             ref bool sortByDesc,
-            ref global::System.AnyOf<string, object> sortByFeedbackKey,
+            ref global::System.AnyOf<string?, object>? metadata,
+            ref global::System.AnyOf<string?, object>? sortByFeedbackKey,
             ref int offset,
             ref int limit,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             ref bool facets,
-            ref global::System.AnyOf<string, object> accept);
+            ref global::System.AnyOf<string?, object>? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<bool, object> referenceFree,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> referenceDataset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
-            global::System.AnyOf<string, object> datasetVersion,
-            global::System.AllOf<global::G.SessionSortableColumns> sortBy,
+            global::System.AnyOf<bool?, object>? referenceFree,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string?, object>? datasetVersion,
+            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<string, object> sortByFeedbackKey,
+            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<string?, object>? sortByFeedbackKey,
             int offset,
             int limit,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             bool facets,
-            global::System.AnyOf<string, object> accept);
+            global::System.AnyOf<string?, object>? accept);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,6 +66,7 @@ namespace G
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="sortByFeedbackKey"></param>
         /// <param name="offset">
         /// Default Value: 0
@@ -69,6 +74,7 @@ namespace G
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
+        /// <param name="tagValueId"></param>
         /// <param name="facets">
         /// Default Value: false
         /// </param>
@@ -76,19 +82,21 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
-            global::System.AnyOf<bool, object> referenceFree,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> referenceDataset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> id,
-            global::System.AnyOf<string, object> name,
-            global::System.AnyOf<string, object> nameContains,
-            global::System.AnyOf<string, object> datasetVersion,
-            global::System.AllOf<global::G.SessionSortableColumns> sortBy,
+            global::System.AnyOf<bool?, object>? referenceFree,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<string?, object>? name,
+            global::System.AnyOf<string?, object>? nameContains,
+            global::System.AnyOf<string?, object>? datasetVersion,
+            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<string, object> sortByFeedbackKey,
+            global::System.AnyOf<string?, object>? metadata,
+            global::System.AnyOf<string?, object>? sortByFeedbackKey,
             int offset,
             int limit,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             bool facets,
-            global::System.AnyOf<string, object> accept,
+            global::System.AnyOf<string?, object>? accept,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -103,15 +111,17 @@ namespace G
                 datasetVersion: ref datasetVersion,
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc,
+                metadata: ref metadata,
                 sortByFeedbackKey: ref sortByFeedbackKey,
                 offset: ref offset,
                 limit: ref limit,
+                tagValueId: ref tagValueId,
                 facets: ref facets,
                 accept: ref accept);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/sessions?reference_free={referenceFree}&reference_dataset={referenceDataset}&id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&facets={facets}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/sessions?reference_free={referenceFree}&reference_dataset={referenceDataset}&id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&metadata={metadata}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&tag_value_id={tagValueId}&facets={facets}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -127,9 +137,11 @@ namespace G
                 datasetVersion: datasetVersion,
                 sortBy: sortBy,
                 sortByDesc: sortByDesc,
+                metadata: metadata,
                 sortByFeedbackKey: sortByFeedbackKey,
                 offset: offset,
                 limit: limit,
+                tagValueId: tagValueId,
                 facets: facets,
                 accept: accept);
 

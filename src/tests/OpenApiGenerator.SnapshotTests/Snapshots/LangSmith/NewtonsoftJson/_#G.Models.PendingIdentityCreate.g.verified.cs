@@ -27,31 +27,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? WorkspaceIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_role_id")]
-        public global::System.AnyOf<string?, object?>? WorkspaceRoleId { get; set; }
+        public global::System.AnyOf<string, object>? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("password")]
-        public global::System.AnyOf<string?, object?>? Password { get; set; }
+        public global::System.AnyOf<string?, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string?, object?>? FullName { get; set; }
+        public global::System.AnyOf<string?, object>? FullName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

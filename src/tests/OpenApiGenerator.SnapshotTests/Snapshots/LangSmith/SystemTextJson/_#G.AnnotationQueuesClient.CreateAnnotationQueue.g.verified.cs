@@ -43,11 +43,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/annotation-queues", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -102,15 +103,27 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="defaultDataset"></param>
+        /// <param name="numReviewersPerItem">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="enableReservations">
+        /// Default Value: true
+        /// </param>
+        /// <param name="reservationMinutes">
+        /// Default Value: 1
+        /// </param>
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AnnotationQueueSchema> CreateAnnotationQueueAsync(
             string name,
-            global::System.AnyOf<string?, object?>? description = default,
+            global::System.AnyOf<string?, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.DateTime updatedAt = default,
-            global::System.AnyOf<string?, object?>? defaultDataset = default,
+            global::System.AnyOf<string, object>? defaultDataset = default,
+            global::System.AnyOf<int?, object>? numReviewersPerItem = default,
+            global::System.AnyOf<bool?, object>? enableReservations = default,
+            global::System.AnyOf<int?, object>? reservationMinutes = default,
             string? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -121,6 +134,9 @@ namespace G
                 CreatedAt = createdAt,
                 UpdatedAt = updatedAt,
                 DefaultDataset = defaultDataset,
+                NumReviewersPerItem = numReviewersPerItem,
+                EnableReservations = enableReservations,
+                ReservationMinutes = reservationMinutes,
                 Id = id,
             };
 

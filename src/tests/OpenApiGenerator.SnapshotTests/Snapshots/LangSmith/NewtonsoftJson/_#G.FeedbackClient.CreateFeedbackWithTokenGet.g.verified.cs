@@ -9,18 +9,18 @@ namespace G
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string token,
-            ref global::System.AnyOf<double, int, bool, object> score,
-            ref global::System.AnyOf<double, int, bool, string, object> value,
-            ref global::System.AnyOf<string, object> comment,
-            ref global::System.AnyOf<string, object> correction);
+            ref global::System.AnyOf<double?, int?, bool?, object>? score,
+            ref global::System.AnyOf<double?, int?, bool?, string?, object>? value,
+            ref global::System.AnyOf<string?, object>? comment,
+            ref global::System.AnyOf<string?, object>? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string token,
-            global::System.AnyOf<double, int, bool, object> score,
-            global::System.AnyOf<double, int, bool, string, object> value,
-            global::System.AnyOf<string, object> comment,
-            global::System.AnyOf<string, object> correction);
+            global::System.AnyOf<double?, int?, bool?, object>? score,
+            global::System.AnyOf<double?, int?, bool?, string?, object>? value,
+            global::System.AnyOf<string?, object>? comment,
+            global::System.AnyOf<string?, object>? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,12 +41,12 @@ namespace G
         /// <param name="correction"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> CreateFeedbackWithTokenGetAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             string token,
-            global::System.AnyOf<double, int, bool, object> score,
-            global::System.AnyOf<double, int, bool, string, object> value,
-            global::System.AnyOf<string, object> comment,
-            global::System.AnyOf<string, object> correction,
+            global::System.AnyOf<double?, int?, bool?, object>? score,
+            global::System.AnyOf<double?, int?, bool?, string?, object>? value,
+            global::System.AnyOf<string?, object>? comment,
+            global::System.AnyOf<string?, object>? correction,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -108,7 +108,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

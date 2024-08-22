@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.AnyOf<global::System.DateTime, object?>? CreatedAt { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_by_user_id")]
-        public global::System.AnyOf<string?, object?>? CreatedByUserId { get; set; }
+        public global::System.AnyOf<string, object>? CreatedByUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::System.AnyOf<global::System.DateTime, object?>? ModifiedAt { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
 
         /// <summary>
         /// 

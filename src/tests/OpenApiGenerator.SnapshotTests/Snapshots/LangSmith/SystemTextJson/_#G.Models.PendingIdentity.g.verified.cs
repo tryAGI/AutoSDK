@@ -29,42 +29,42 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? WorkspaceIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_role_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? WorkspaceRoleId { get; set; }
+        public global::System.AnyOf<string, object>? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("password")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? Password { get; set; }
+        public global::System.AnyOf<string?, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? FullName { get; set; }
+        public global::System.AnyOf<string?, object>? FullName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = "workspace";
+        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 
@@ -78,21 +78,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? UserId { get; set; }
+        public global::System.AnyOf<string, object>? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? TenantId { get; set; }
+        public global::System.AnyOf<string, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? OrganizationId { get; set; }
+        public global::System.AnyOf<string, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? RoleName { get; set; }
+        public global::System.AnyOf<string?, object>? RoleName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

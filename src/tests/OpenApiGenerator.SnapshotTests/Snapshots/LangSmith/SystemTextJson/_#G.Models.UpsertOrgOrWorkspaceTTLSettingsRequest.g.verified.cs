@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TraceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TraceTier3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TraceTier DefaultTraceTier { get; set; }
+        public required global::G.TraceTier3 DefaultTraceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,19 +21,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min")]
-        public global::System.AnyOf<double, object?>? Min { get; set; }
+        public global::System.AnyOf<double?, object>? Min { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max")]
-        public global::System.AnyOf<double, object?>? Max { get; set; }
+        public global::System.AnyOf<double?, object>? Max { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("categories")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCategory>?, object?>? Categories { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCategory>, object>? Categories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

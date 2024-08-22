@@ -11,16 +11,16 @@ namespace G
             ref string ruleId,
             ref int limit,
             ref int offset,
-            ref global::System.AnyOf<global::System.DateTime, object> startTime,
-            ref global::System.AnyOf<global::System.DateTime, object> endTime);
+            ref global::System.AnyOf<global::System.DateTime?, object>? startTime,
+            ref global::System.AnyOf<global::System.DateTime?, object>? endTime);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string ruleId,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.DateTime, object> startTime,
-            global::System.AnyOf<global::System.DateTime, object> endTime);
+            global::System.AnyOf<global::System.DateTime?, object>? startTime,
+            global::System.AnyOf<global::System.DateTime?, object>? endTime);
         partial void ProcessListRuleLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,8 +49,8 @@ namespace G
             string ruleId,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.DateTime, object> startTime,
-            global::System.AnyOf<global::System.DateTime, object> endTime,
+            global::System.AnyOf<global::System.DateTime?, object>? startTime,
+            global::System.AnyOf<global::System.DateTime?, object>? endTime,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

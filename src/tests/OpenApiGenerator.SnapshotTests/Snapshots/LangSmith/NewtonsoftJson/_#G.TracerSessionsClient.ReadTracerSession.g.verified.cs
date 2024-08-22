@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string sessionId,
             ref bool includeStats,
-            ref global::System.AnyOf<string, object> accept);
+            ref global::System.AnyOf<string?, object>? accept);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string sessionId,
             bool includeStats,
-            global::System.AnyOf<string, object> accept);
+            global::System.AnyOf<string?, object>? accept);
         partial void ProcessReadTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
             string sessionId,
             bool includeStats,
-            global::System.AnyOf<string, object> accept,
+            global::System.AnyOf<string?, object>? accept,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

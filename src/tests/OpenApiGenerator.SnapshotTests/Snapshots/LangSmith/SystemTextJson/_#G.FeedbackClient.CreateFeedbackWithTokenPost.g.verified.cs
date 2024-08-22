@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> CreateFeedbackWithTokenPostAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
             string token,
             global::G.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -49,11 +49,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/feedback/tokens/{token}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -97,7 +98,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -113,13 +114,13 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> CreateFeedbackWithTokenPostAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
             string token,
-            global::System.AnyOf<double, int, bool, object?>? score = default,
-            global::System.AnyOf<double, int, bool, string?, object?>? value = default,
-            global::System.AnyOf<string?, object?>? comment = default,
-            global::System.AnyOf<object?, string?, object?>? correction = default,
-            global::System.AnyOf<object?, object?>? metadata = default,
+            global::System.AnyOf<double?, int?, bool?, object>? score = default,
+            global::System.AnyOf<double?, int?, bool?, string?, object>? value = default,
+            global::System.AnyOf<string?, object>? comment = default,
+            global::System.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaCorrection, string?, object>? correction = default,
+            global::System.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FeedbackCreateWithTokenExtendedSchema

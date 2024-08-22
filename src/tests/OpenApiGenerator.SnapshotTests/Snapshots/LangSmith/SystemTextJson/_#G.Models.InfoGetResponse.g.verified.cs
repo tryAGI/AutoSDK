@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license_expiration_time")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime, object?>? LicenseExpirationTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
 
         /// <summary>
         /// Batch ingest config.
@@ -35,7 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instance_flags")]
-        public object? InstanceFlags { get; set; }
+        public global::G.InfoGetResponseInstanceFlags? InstanceFlags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

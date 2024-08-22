@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_urls", Required = global::Newtonsoft.Json.Required.Always)]
-        public object FeedbackUrls { get; set; } = default!;
+        public global::G.ResponseBodyForRunsGenerateQueryFeedbackUrls FeedbackUrls { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

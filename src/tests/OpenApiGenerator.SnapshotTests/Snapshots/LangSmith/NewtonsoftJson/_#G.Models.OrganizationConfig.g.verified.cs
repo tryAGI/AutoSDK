@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("startup_plan_approval_date")]
-        public global::System.AnyOf<string?, object?>? StartupPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? StartupPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("partner_plan_approval_date")]
-        public global::System.AnyOf<string?, object?>? PartnerPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? PartnerPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("premier_plan_approval_date")]
-        public global::System.AnyOf<string?, object?>? PremierPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string?, object>? PremierPlanApprovalDate { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -60,10 +60,22 @@ namespace G
         public bool CanServeDatasets { get; set; } = false;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("can_use_langgraph_cloud")]
+        public bool CanUseLanggraphCloud { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_langgraph_cloud_deployments")]
+        public int MaxLanggraphCloudDeployments { get; set; } = 1;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("flags")]
-        public object? Flags { get; set; }
+        public global::G.OrganizationConfigFlags? Flags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

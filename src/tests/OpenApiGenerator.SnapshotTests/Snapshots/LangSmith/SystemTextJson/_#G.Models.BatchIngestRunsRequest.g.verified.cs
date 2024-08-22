@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("post")]
-        public global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPost?>? Post { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPostItem>? Post { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch")]
-        public global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPatch?>? Patch { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPatchItem>? Patch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

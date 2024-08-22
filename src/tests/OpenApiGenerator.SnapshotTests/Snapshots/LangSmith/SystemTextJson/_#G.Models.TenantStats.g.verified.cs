@@ -45,6 +45,13 @@ namespace G
         public required int AnnotationQueueCount { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("charts_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ChartsCount { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

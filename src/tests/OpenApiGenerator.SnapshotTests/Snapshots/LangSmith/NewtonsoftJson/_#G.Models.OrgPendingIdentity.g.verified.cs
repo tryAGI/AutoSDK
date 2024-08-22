@@ -27,37 +27,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? WorkspaceIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_role_id")]
-        public global::System.AnyOf<string?, object?>? WorkspaceRoleId { get; set; }
+        public global::System.AnyOf<string, object>? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("password")]
-        public global::System.AnyOf<string?, object?>? Password { get; set; }
+        public global::System.AnyOf<string?, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string?, object?>? FullName { get; set; }
+        public global::System.AnyOf<string?, object>? FullName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = "workspace";
+        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 
@@ -69,19 +69,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
-        public global::System.AnyOf<string?, object?>? UserId { get; set; }
+        public global::System.AnyOf<string, object>? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<string?, object?>? TenantId { get; set; }
+        public global::System.AnyOf<string, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::System.AnyOf<string?, object?>? OrganizationId { get; set; }
+        public global::System.AnyOf<string, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -93,13 +93,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string?, object?>? RoleName { get; set; }
+        public global::System.AnyOf<string?, object>? RoleName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_ids")]
-        public global::System.Collections.Generic.IList<string?>? TenantIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? TenantIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

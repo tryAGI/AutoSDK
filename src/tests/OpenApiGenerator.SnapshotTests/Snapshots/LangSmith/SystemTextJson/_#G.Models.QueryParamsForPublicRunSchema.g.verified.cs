@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Id { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

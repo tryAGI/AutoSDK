@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_limit_type")]
-        public global::System.AnyOf<global::G.TenantUsageLimitType?, object?>? UsageLimitType { get; set; }
+        public global::System.AnyOf<global::G.TenantUsageLimitType?, object>? UsageLimitType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_limit")]
-        public global::System.AnyOf<int, object?>? TenantLimit { get; set; }
+        public global::System.AnyOf<int?, object>? TenantLimit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

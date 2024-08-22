@@ -33,25 +33,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string?, object?>? SessionId { get; set; }
+        public global::System.AnyOf<string, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::System.AnyOf<string?, object?>? SessionName { get; set; }
+        public global::System.AnyOf<string?, object>? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id")]
-        public global::System.AnyOf<string?, object?>? DatasetId { get; set; }
+        public global::System.AnyOf<string, object>? DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_name")]
-        public global::System.AnyOf<string?, object?>? DatasetName { get; set; }
+        public global::System.AnyOf<string?, object>? DatasetName { get; set; }
 
         /// <summary>
         /// 
@@ -69,43 +69,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::System.AnyOf<string?, object?>? Filter { get; set; }
+        public global::System.AnyOf<string?, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter")]
-        public global::System.AnyOf<string?, object?>? TraceFilter { get; set; }
+        public global::System.AnyOf<string?, object>? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter")]
-        public global::System.AnyOf<string?, object?>? TreeFilter { get; set; }
+        public global::System.AnyOf<string?, object>? TreeFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue_id")]
-        public global::System.AnyOf<string?, object?>? AddToAnnotationQueueId { get; set; }
+        public global::System.AnyOf<string, object>? AddToAnnotationQueueId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue_name")]
-        public global::System.AnyOf<string?, object?>? AddToAnnotationQueueName { get; set; }
+        public global::System.AnyOf<string?, object>? AddToAnnotationQueueName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset_id")]
-        public global::System.AnyOf<string?, object?>? AddToDatasetId { get; set; }
+        public global::System.AnyOf<string, object>? AddToDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset_name")]
-        public global::System.AnyOf<string?, object?>? AddToDatasetName { get; set; }
+        public global::System.AnyOf<string?, object>? AddToDatasetName { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("corrections_dataset_id")]
-        public global::System.AnyOf<string?, object?>? CorrectionsDatasetId { get; set; }
+        public global::System.AnyOf<string, object>? CorrectionsDatasetId { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -129,19 +129,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_few_shot_examples")]
-        public global::System.AnyOf<int, object?>? NumFewShotExamples { get; set; }
+        public global::System.AnyOf<int?, object>? NumFewShotExamples { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluators")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>?, object?>? Evaluators { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>, object>? Evaluators { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alerts")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>?, object?>? Alerts { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? Alerts { get; set; }
 
         /// <summary>
         /// 
@@ -171,7 +171,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("backfill_from")]
-        public global::System.AnyOf<global::System.DateTime, object?>? BackfillFrom { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? BackfillFrom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

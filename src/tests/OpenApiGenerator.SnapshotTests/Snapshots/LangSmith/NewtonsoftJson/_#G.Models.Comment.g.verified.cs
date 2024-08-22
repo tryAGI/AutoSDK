@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment_by")]
-        public global::System.AnyOf<string?, object?>? CommentBy { get; set; }
+        public global::System.AnyOf<string, object>? CommentBy { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id")]
-        public global::System.AnyOf<string?, object?>? ParentId { get; set; }
+        public global::System.AnyOf<string, object>? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment_by_name")]
-        public global::System.AnyOf<string?, object?>? CommentByName { get; set; }
+        public global::System.AnyOf<string?, object>? CommentByName { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("liked_by_auth_user")]
-        public global::System.AnyOf<bool, object?>? LikedByAuthUser { get; set; }
+        public global::System.AnyOf<bool?, object>? LikedByAuthUser { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

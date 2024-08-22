@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TenantShareDatasetTokenType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.TenantShareDatasetTokenType Type { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_name")]
-        public global::System.AnyOf<string?, object?>? DatasetName { get; set; }
+        public global::System.AnyOf<string?, object>? DatasetName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

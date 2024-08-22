@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license_expiration_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? LicenseExpirationTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
 
         /// <summary>
         /// Batch ingest config.
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instance_flags")]
-        public object? InstanceFlags { get; set; }
+        public global::G.InfoGetResponseInstanceFlags? InstanceFlags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

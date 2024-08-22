@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_only")]
-        public global::System.AnyOf<bool, object?>? ReadOnly { get; set; }
+        public global::System.AnyOf<bool?, object>? ReadOnly { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
             string id,
             global::G.ModelPriceMapUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -48,11 +48,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/model-price-map/{id}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -96,7 +97,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UpdateModelPriceApiV1ModelPriceMapIdPutResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -115,15 +116,15 @@ namespace G
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
             string id,
             string name,
             string matchPattern,
-            global::System.AnyOf<double, string> promptCost,
-            global::System.AnyOf<double, string> completionCost,
-            global::System.AnyOf<global::System.DateTime, object?>? startTime = default,
-            global::System.Collections.Generic.IList<string?>? matchPath = default,
-            global::System.AnyOf<string?, object?>? provider = default,
+            global::System.AnyOf<double?, string?> promptCost,
+            global::System.AnyOf<double?, string?> completionCost,
+            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.Collections.Generic.IList<string>? matchPath = default,
+            global::System.AnyOf<string?, object>? provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ModelPriceMapUpdateSchema

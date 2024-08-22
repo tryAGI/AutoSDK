@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.OrganizationDashboardType type,
-            ref global::System.AnyOf<global::G.OrganizationDashboardColorScheme, object> colorScheme);
+            ref global::System.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme);
         partial void PrepareGetDashboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.OrganizationDashboardType type,
-            global::System.AnyOf<global::G.OrganizationDashboardColorScheme, object> colorScheme);
+            global::System.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme);
         partial void ProcessGetDashboardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrganizationDashboardSchema> GetDashboardAsync(
             global::G.OrganizationDashboardType type,
-            global::System.AnyOf<global::G.OrganizationDashboardColorScheme, object> colorScheme,
+            global::System.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

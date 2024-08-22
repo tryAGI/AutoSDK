@@ -29,14 +29,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::System.AllOf<global::G.TimedeltaInput?>? Interval { get; set; }
+        public global::System.AllOf<global::G.TimedeltaInput>? Interval { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::System.AllOf<global::G.TimedeltaInput?>? Stride { get; set; }
+        public global::System.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

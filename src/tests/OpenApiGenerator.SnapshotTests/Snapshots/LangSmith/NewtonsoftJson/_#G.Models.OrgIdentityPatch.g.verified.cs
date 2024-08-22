@@ -14,20 +14,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RoleId { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("password")]
-        public global::System.AnyOf<string?, object?>? Password { get; set; }
+        public global::System.AnyOf<string?, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string?, object?>? FullName { get; set; }
+        public global::System.AnyOf<string?, object>? FullName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role_id")]
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

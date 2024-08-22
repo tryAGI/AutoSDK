@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string?, object?>? SessionId { get; set; }
+        public global::System.AnyOf<string, object>? SessionId { get; set; }
 
         /// <summary>
         /// 

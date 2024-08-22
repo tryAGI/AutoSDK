@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -33,31 +33,37 @@ namespace G
         /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::System.AnyOf<global::G.DataType?, object?>? DataType { get; set; } = global::G.DataType.Kv;
+        public global::System.AnyOf<global::G.DataType2?, object>? DataType { get; set; } = global::G.DataType2.Kv;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::System.AnyOf<object?, object?>? InputsSchemaDefinition { get; set; }
+        public global::System.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::System.AnyOf<object?, object?>? OutputsSchemaDefinition { get; set; }
+        public global::System.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("externally_managed")]
+        public global::System.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<string?, object?>? Id { get; set; }
+        public global::System.AnyOf<string, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<object?, object?>? Extra { get; set; }
+        public global::System.AnyOf<global::G.DatasetCreateExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

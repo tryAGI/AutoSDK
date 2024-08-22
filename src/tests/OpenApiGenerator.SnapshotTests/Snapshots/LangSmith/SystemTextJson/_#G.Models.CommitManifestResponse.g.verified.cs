@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Manifest { get; set; }
+        public required global::G.CommitManifestResponseManifest Manifest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>?, object?>? Examples { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>, object>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

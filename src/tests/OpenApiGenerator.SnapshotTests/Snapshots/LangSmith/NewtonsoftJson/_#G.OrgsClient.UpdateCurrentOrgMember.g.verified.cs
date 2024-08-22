@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateCurrentOrgMemberAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
             string identityId,
             global::G.OrgIdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -47,13 +47,14 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/orgs/current/members/{identityId}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -97,7 +98,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -106,23 +107,23 @@ namespace G
         /// This is used for updating a user's role (all auth modes) or full_name/password (basic auth)
         /// </summary>
         /// <param name="identityId"></param>
-        /// <param name="roleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
+        /// <param name="roleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateCurrentOrgMemberAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
             string identityId,
-            string roleId,
-            global::System.AnyOf<string?, object?>? password = default,
-            global::System.AnyOf<string?, object?>? fullName = default,
+            global::System.AnyOf<string?, object>? password = default,
+            global::System.AnyOf<string?, object>? fullName = default,
+            global::System.AnyOf<string, object>? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgIdentityPatch
             {
-                RoleId = roleId,
                 Password = password,
                 FullName = fullName,
+                RoleId = roleId,
             };
 
             return await UpdateCurrentOrgMemberAsync(

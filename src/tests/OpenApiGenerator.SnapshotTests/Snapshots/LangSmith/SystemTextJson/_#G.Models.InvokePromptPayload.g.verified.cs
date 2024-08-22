@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Inputs { get; set; }
+        public required global::G.InvokePromptPayloadInputs Inputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

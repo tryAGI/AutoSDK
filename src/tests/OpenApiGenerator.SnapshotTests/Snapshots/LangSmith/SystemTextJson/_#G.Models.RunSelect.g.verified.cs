@@ -52,6 +52,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        InputsPreview,
+        /// <summary>
+        /// 
+        /// </summary>
         InputsS3Urls,
         /// <summary>
         /// 
@@ -61,6 +65,10 @@ namespace G
         /// 
         /// </summary>
         Outputs,
+        /// <summary>
+        /// 
+        /// </summary>
+        OutputsPreview,
         /// <summary>
         /// 
         /// </summary>
@@ -213,9 +221,11 @@ namespace G
                 RunSelect.Extra => "extra",
                 RunSelect.Events => "events",
                 RunSelect.Inputs => "inputs",
+                RunSelect.InputsPreview => "inputs_preview",
                 RunSelect.InputsS3Urls => "inputs_s3_urls",
                 RunSelect.InputsOrSignedUrl => "inputs_or_signed_url",
                 RunSelect.Outputs => "outputs",
+                RunSelect.OutputsPreview => "outputs_preview",
                 RunSelect.OutputsS3Urls => "outputs_s3_urls",
                 RunSelect.OutputsOrSignedUrl => "outputs_or_signed_url",
                 RunSelect.S3Urls => "s3_urls",
@@ -268,9 +278,11 @@ namespace G
                 "extra" => RunSelect.Extra,
                 "events" => RunSelect.Events,
                 "inputs" => RunSelect.Inputs,
+                "inputs_preview" => RunSelect.InputsPreview,
                 "inputs_s3_urls" => RunSelect.InputsS3Urls,
                 "inputs_or_signed_url" => RunSelect.InputsOrSignedUrl,
                 "outputs" => RunSelect.Outputs,
+                "outputs_preview" => RunSelect.OutputsPreview,
                 "outputs_s3_urls" => RunSelect.OutputsS3Urls,
                 "outputs_or_signed_url" => RunSelect.OutputsOrSignedUrl,
                 "s3_urls" => RunSelect.S3Urls,

@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareGroupRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<string, object> accept,
+            ref global::System.AnyOf<string?, object>? accept,
             global::G.RunGroupRequest request);
         partial void PrepareGroupRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<string, object> accept,
+            global::System.AnyOf<string?, object>? accept,
             global::G.RunGroupRequest request);
         partial void ProcessGroupRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,8 +32,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> GroupRunsAsync(
-            global::System.AnyOf<string, object> accept,
+        public async global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+            global::System.AnyOf<string?, object>? accept,
             global::G.RunGroupRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -49,11 +49,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/runs/group", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -97,7 +98,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GroupRunsApiV1RunsGroupPostResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -119,13 +120,13 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> GroupRunsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             string sessionId,
-            global::G.RunGroupBy groupBy,
-            global::System.AnyOf<string, object> accept = default,
-            global::System.AnyOf<string?, object?>? filter = default,
-            global::System.AnyOf<global::System.DateTime, object?>? startTime = default,
-            global::System.AnyOf<global::System.DateTime, object?>? endTime = default,
+            global::System.AnyOf<string?, object>? accept = default,
+            global::G.RunGroupBy groupBy = default,
+            global::System.AnyOf<string?, object>? filter = default,
+            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             int offset = 0,
             int limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)

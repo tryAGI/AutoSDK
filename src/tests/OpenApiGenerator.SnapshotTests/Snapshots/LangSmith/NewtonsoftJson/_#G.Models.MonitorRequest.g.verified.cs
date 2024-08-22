@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval")]
-        public global::System.AllOf<global::G.TimedeltaInput?>? Interval { get; set; }
+        public global::System.AllOf<global::G.TimedeltaInput>? Interval { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
-        public global::System.AllOf<global::G.TimedeltaInput?>? Stride { get; set; }
+        public global::System.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

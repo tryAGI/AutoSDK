@@ -14,16 +14,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Inputs { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<object?, object?>? Outputs { get; set; }
+        public global::System.AnyOf<global::G.ExampleOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -37,14 +30,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_run_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? SourceRunId { get; set; }
+        public global::System.AnyOf<string, object>? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<object?, object?>? Metadata { get; set; }
+        public global::System.AnyOf<global::G.ExampleMetadata, object>? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.ExampleInputs Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime, object?>? ModifiedAt { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

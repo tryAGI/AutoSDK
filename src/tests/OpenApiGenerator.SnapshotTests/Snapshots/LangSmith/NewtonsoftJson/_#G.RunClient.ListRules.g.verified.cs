@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareListRulesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<string, object> datasetId,
-            ref global::System.AnyOf<string, object> sessionId);
+            ref global::System.AnyOf<string, object>? datasetId,
+            ref global::System.AnyOf<string, object>? sessionId);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<string, object> datasetId,
-            global::System.AnyOf<string, object> sessionId);
+            global::System.AnyOf<string, object>? datasetId,
+            global::System.AnyOf<string, object>? sessionId);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,8 +33,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
-            global::System.AnyOf<string, object> datasetId,
-            global::System.AnyOf<string, object> sessionId,
+            global::System.AnyOf<string, object>? datasetId,
+            global::System.AnyOf<string, object>? sessionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string?, object?>? Name { get; set; }
+        public global::System.AnyOf<string?, object>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<object?, object?>? Extra { get; set; }
+        public global::System.AnyOf<global::G.ComparativeExperimentBaseExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

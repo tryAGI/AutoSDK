@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("address")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.StripeCustomerAddress?, object?>? Address { get; set; }
+        public global::System.AnyOf<global::G.StripeCustomerAddress, object>? Address { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

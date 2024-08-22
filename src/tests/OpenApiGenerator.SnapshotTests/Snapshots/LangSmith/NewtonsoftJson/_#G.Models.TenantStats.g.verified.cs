@@ -40,6 +40,12 @@ namespace G
         public int AnnotationQueueCount { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("charts_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ChartsCount { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

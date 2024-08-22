@@ -1,4 +1,5 @@
 ﻿//HintName: G.ExamplesClient.UploadExamples.g.cs
+using System.Linq;
 
 #nullable enable
 
@@ -49,11 +50,30 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/examples/upload/{datasetId}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{datasetId}"),
+                name: "dataset_id");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "file",
+                fileName: request.Filename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.InputKeys.Select(x => x))}]"),
+                name: "input_keys");
+            if (request.OutputKeys != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.OutputKeys.Select(x => x))}]"),
+                    name: "output_keys");
+            }
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -117,7 +137,7 @@ namespace G
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::System.Collections.Generic.IList<string?>? outputKeys = default,
+            global::System.Collections.Generic.IList<string>? outputKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost

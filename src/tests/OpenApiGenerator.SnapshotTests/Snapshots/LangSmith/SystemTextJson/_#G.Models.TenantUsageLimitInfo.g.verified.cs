@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_limit_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.TenantUsageLimitType?, object?>? UsageLimitType { get; set; }
+        public global::System.AnyOf<global::G.TenantUsageLimitType?, object>? UsageLimitType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_limit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<int, object?>? TenantLimit { get; set; }
+        public global::System.AnyOf<int?, object>? TenantLimit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

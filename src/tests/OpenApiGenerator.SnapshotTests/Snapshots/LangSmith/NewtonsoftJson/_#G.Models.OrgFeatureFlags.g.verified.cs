@@ -75,6 +75,26 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="show_dataset_schemas")]
         ShowDatasetSchemas,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="compare_trace_enabled")]
+        CompareTraceEnabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="consolidate_playground_comparative")]
+        ConsolidatePlaygroundComparative,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="resource_tags")]
+        ResourceTags,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="langgraph_deploy_own_cloud_enabled")]
+        LanggraphDeployOwnCloudEnabled,
     }
 
     /// <summary>
@@ -102,6 +122,10 @@ namespace G
                 OrgFeatureFlags.AllowBackfillRules => "allow_backfill_rules",
                 OrgFeatureFlags.PlaygroundComparative => "playground_comparative",
                 OrgFeatureFlags.ShowDatasetSchemas => "show_dataset_schemas",
+                OrgFeatureFlags.CompareTraceEnabled => "compare_trace_enabled",
+                OrgFeatureFlags.ConsolidatePlaygroundComparative => "consolidate_playground_comparative",
+                OrgFeatureFlags.ResourceTags => "resource_tags",
+                OrgFeatureFlags.LanggraphDeployOwnCloudEnabled => "langgraph_deploy_own_cloud_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -125,6 +149,10 @@ namespace G
                 "allow_backfill_rules" => OrgFeatureFlags.AllowBackfillRules,
                 "playground_comparative" => OrgFeatureFlags.PlaygroundComparative,
                 "show_dataset_schemas" => OrgFeatureFlags.ShowDatasetSchemas,
+                "compare_trace_enabled" => OrgFeatureFlags.CompareTraceEnabled,
+                "consolidate_playground_comparative" => OrgFeatureFlags.ConsolidatePlaygroundComparative,
+                "resource_tags" => OrgFeatureFlags.ResourceTags,
+                "langgraph_deploy_own_cloud_enabled" => OrgFeatureFlags.LanggraphDeployOwnCloudEnabled,
                 _ => null,
             };
         }

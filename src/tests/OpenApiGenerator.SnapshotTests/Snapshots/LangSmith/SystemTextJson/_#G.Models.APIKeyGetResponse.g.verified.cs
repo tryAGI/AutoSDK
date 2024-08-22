@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime, object?>? CreatedAt { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
 
         /// <summary>
         /// 

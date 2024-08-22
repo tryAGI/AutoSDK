@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<object?, object?>? Payload { get; set; }
+        public global::System.AnyOf<global::G.RuleLogActionResponsePayload, object>? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

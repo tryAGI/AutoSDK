@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_deltas", Required = global::Newtonsoft.Json.Required.Always)]
-        public object FeedbackDeltas { get; set; } = default!;
+        public global::G.SessionFeedbackDeltaFeedbackDeltas FeedbackDeltas { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

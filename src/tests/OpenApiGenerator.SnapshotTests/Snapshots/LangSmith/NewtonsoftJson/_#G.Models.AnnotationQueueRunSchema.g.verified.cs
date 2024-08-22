@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_reviewed_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? LastReviewedTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? LastReviewedTime { get; set; }
 
         /// <summary>
         /// 

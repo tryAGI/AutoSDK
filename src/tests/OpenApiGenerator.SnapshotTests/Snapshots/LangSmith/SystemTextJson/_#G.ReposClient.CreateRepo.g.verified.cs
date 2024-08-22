@@ -44,11 +44,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/repos", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -109,9 +110,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> CreateRepoAsync(
             string repoHandle,
             bool isPublic,
-            global::System.AnyOf<string?, object?>? description = default,
-            global::System.AnyOf<string?, object?>? readme = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? tags = default,
+            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string?, object>? readme = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRepoRequest

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareGetDatasetVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<string, object> search,
-            ref global::System.AnyOf<string, object> example,
+            ref global::System.AnyOf<string?, object>? search,
+            ref global::System.AnyOf<string, object>? example,
             ref int limit,
             ref int offset);
         partial void PrepareGetDatasetVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<string, object> search,
-            global::System.AnyOf<string, object> example,
+            global::System.AnyOf<string?, object>? search,
+            global::System.AnyOf<string, object>? example,
             int limit,
             int offset);
         partial void ProcessGetDatasetVersionsResponse(
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DatasetVersion>> GetDatasetVersionsAsync(
             string datasetId,
-            global::System.AnyOf<string, object> search,
-            global::System.AnyOf<string, object> example,
+            global::System.AnyOf<string?, object>? search,
+            global::System.AnyOf<string, object>? example,
             int limit,
             int offset,
             global::System.Threading.CancellationToken cancellationToken = default)

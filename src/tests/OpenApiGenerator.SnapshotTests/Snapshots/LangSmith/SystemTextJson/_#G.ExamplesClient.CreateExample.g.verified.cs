@@ -44,11 +44,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/examples", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,39 +100,44 @@ namespace G
         /// Create Example<br/>
         /// Create a new example.
         /// </summary>
-        /// <param name="inputs"></param>
         /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
         /// <param name="sourceRunId"></param>
         /// <param name="metadata"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="id"></param>
+        /// <param name="inputs"></param>
         /// <param name="split">
         /// Default Value: base
         /// </param>
+        /// <param name="id"></param>
+        /// <param name="useSourceRunIo">
+        /// Default Value: false
+        /// </param>
+        /// <param name="createdAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> CreateExampleAsync(
-            object inputs,
             string datasetId,
-            global::System.AnyOf<object?, object?>? outputs = default,
-            global::System.AnyOf<string?, object?>? sourceRunId = default,
-            global::System.AnyOf<object?, object?>? metadata = default,
+            global::System.AnyOf<global::G.ExampleCreateOutputs, object>? outputs = default,
+            global::System.AnyOf<string, object>? sourceRunId = default,
+            global::System.AnyOf<global::G.ExampleCreateMetadata, object>? metadata = default,
+            global::System.AnyOf<global::G.ExampleCreateInputs, object>? inputs = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<string, object>? id = default,
+            bool useSourceRunIo = false,
             global::System.DateTime createdAt = default,
-            global::System.AnyOf<string?, object?>? id = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, string?, object?>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ExampleCreate
             {
-                Inputs = inputs,
                 Outputs = outputs,
                 DatasetId = datasetId,
                 SourceRunId = sourceRunId,
                 Metadata = metadata,
-                CreatedAt = createdAt,
-                Id = id,
+                Inputs = inputs,
                 Split = split,
+                Id = id,
+                UseSourceRunIo = useSourceRunIo,
+                CreatedAt = createdAt,
             };
 
             return await CreateExampleAsync(

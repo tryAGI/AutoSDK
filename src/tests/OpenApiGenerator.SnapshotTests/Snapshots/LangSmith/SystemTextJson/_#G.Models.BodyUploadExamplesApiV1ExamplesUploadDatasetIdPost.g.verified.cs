@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_keys")]
-        public global::System.Collections.Generic.IList<string?>? OutputKeys { get; set; }
+        public global::System.Collections.Generic.IList<string>? OutputKeys { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

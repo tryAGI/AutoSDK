@@ -10,35 +10,37 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
             ref int offset,
-            ref global::System.AnyOf<string, object> tenantHandle,
-            ref global::System.AnyOf<string, object> tenantId,
-            ref global::System.AnyOf<string, object> query,
-            ref global::System.AnyOf<bool, object> hasCommits,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> tags,
-            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived, object> isArchived,
-            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic, object> isPublic,
-            ref global::System.AnyOf<string, object> upstreamRepoOwner,
-            ref global::System.AnyOf<string, object> upstreamRepoHandle,
-            ref global::System.AnyOf<bool, object> matchPrefix,
-            ref global::System.AnyOf<string, object> sortField,
-            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirection, global::G.ListReposApiV1ReposGetSortDirection, object> sortDirection);
+            ref global::System.AnyOf<string?, object>? tenantHandle,
+            ref global::System.AnyOf<string, object>? tenantId,
+            ref global::System.AnyOf<string?, object>? query,
+            ref global::System.AnyOf<bool?, object>? hasCommits,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
+            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
+            ref global::System.AnyOf<string?, object>? upstreamRepoOwner,
+            ref global::System.AnyOf<string?, object>? upstreamRepoHandle,
+            ref global::System.AnyOf<bool?, object>? matchPrefix,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            ref global::System.AnyOf<string?, object>? sortField,
+            ref global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
             int offset,
-            global::System.AnyOf<string, object> tenantHandle,
-            global::System.AnyOf<string, object> tenantId,
-            global::System.AnyOf<string, object> query,
-            global::System.AnyOf<bool, object> hasCommits,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> tags,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived, object> isArchived,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic, object> isPublic,
-            global::System.AnyOf<string, object> upstreamRepoOwner,
-            global::System.AnyOf<string, object> upstreamRepoHandle,
-            global::System.AnyOf<bool, object> matchPrefix,
-            global::System.AnyOf<string, object> sortField,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirection, global::G.ListReposApiV1ReposGetSortDirection, object> sortDirection);
+            global::System.AnyOf<string?, object>? tenantHandle,
+            global::System.AnyOf<string, object>? tenantId,
+            global::System.AnyOf<string?, object>? query,
+            global::System.AnyOf<bool?, object>? hasCommits,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
+            global::System.AnyOf<string?, object>? upstreamRepoOwner,
+            global::System.AnyOf<string?, object>? upstreamRepoHandle,
+            global::System.AnyOf<bool?, object>? matchPrefix,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            global::System.AnyOf<string?, object>? sortField,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -70,6 +72,7 @@ namespace G
         /// <param name="matchPrefix">
         /// Default Value: false
         /// </param>
+        /// <param name="tagValueId"></param>
         /// <param name="sortField"></param>
         /// <param name="sortDirection"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -77,18 +80,19 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListReposResponse> ListReposAsync(
             int limit,
             int offset,
-            global::System.AnyOf<string, object> tenantHandle,
-            global::System.AnyOf<string, object> tenantId,
-            global::System.AnyOf<string, object> query,
-            global::System.AnyOf<bool, object> hasCommits,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> tags,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived, object> isArchived,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic, object> isPublic,
-            global::System.AnyOf<string, object> upstreamRepoOwner,
-            global::System.AnyOf<string, object> upstreamRepoHandle,
-            global::System.AnyOf<bool, object> matchPrefix,
-            global::System.AnyOf<string, object> sortField,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirection, global::G.ListReposApiV1ReposGetSortDirection, object> sortDirection,
+            global::System.AnyOf<string?, object>? tenantHandle,
+            global::System.AnyOf<string, object>? tenantId,
+            global::System.AnyOf<string?, object>? query,
+            global::System.AnyOf<bool?, object>? hasCommits,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
+            global::System.AnyOf<string?, object>? upstreamRepoOwner,
+            global::System.AnyOf<string?, object>? upstreamRepoHandle,
+            global::System.AnyOf<bool?, object>? matchPrefix,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            global::System.AnyOf<string?, object>? sortField,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -107,12 +111,13 @@ namespace G
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 matchPrefix: ref matchPrefix,
+                tagValueId: ref tagValueId,
                 sortField: ref sortField,
                 sortDirection: ref sortDirection);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/repos?limit={limit}&offset={offset}&tenant_handle={tenantHandle}&tenant_id={tenantId}&query={query}&has_commits={hasCommits}&tags={tags}&is_archived={isArchived}&is_public={isPublic}&upstream_repo_owner={upstreamRepoOwner}&upstream_repo_handle={upstreamRepoHandle}&match_prefix={matchPrefix}&sort_field={sortField}&sort_direction={sortDirection}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/repos?limit={limit}&offset={offset}&tenant_handle={tenantHandle}&tenant_id={tenantId}&query={query}&has_commits={hasCommits}&tags={tags}&is_archived={isArchived}&is_public={isPublic}&upstream_repo_owner={upstreamRepoOwner}&upstream_repo_handle={upstreamRepoHandle}&match_prefix={matchPrefix}&tag_value_id={tagValueId}&sort_field={sortField}&sort_direction={sortDirection}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -132,6 +137,7 @@ namespace G
                 upstreamRepoOwner: upstreamRepoOwner,
                 upstreamRepoHandle: upstreamRepoHandle,
                 matchPrefix: matchPrefix,
+                tagValueId: tagValueId,
                 sortField: sortField,
                 sortDirection: sortDirection);
 

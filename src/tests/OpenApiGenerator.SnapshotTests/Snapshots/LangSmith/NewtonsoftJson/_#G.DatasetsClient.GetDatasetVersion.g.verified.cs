@@ -9,14 +9,14 @@ namespace G
         partial void PrepareGetDatasetVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<global::System.DateTime, object> asOf,
-            ref global::System.AnyOf<string, object> tag);
+            ref global::System.AnyOf<global::System.DateTime?, object>? asOf,
+            ref global::System.AnyOf<string?, object>? tag);
         partial void PrepareGetDatasetVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, object> asOf,
-            global::System.AnyOf<string, object> tag);
+            global::System.AnyOf<global::System.DateTime?, object>? asOf,
+            global::System.AnyOf<string?, object>? tag);
         partial void ProcessGetDatasetVersionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetVersion> GetDatasetVersionAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, object> asOf,
-            global::System.AnyOf<string, object> tag,
+            global::System.AnyOf<global::System.DateTime?, object>? asOf,
+            global::System.AnyOf<string?, object>? tag,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

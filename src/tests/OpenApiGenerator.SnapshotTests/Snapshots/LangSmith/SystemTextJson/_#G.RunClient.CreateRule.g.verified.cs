@@ -44,11 +44,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/runs/rules", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -130,22 +131,22 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunRulesSchema> CreateRuleAsync(
             string displayName,
             double samplingRate,
-            global::System.AnyOf<string?, object?>? sessionId = default,
+            global::System.AnyOf<string, object>? sessionId = default,
             bool isEnabled = true,
-            global::System.AnyOf<string?, object?>? datasetId = default,
-            global::System.AnyOf<string?, object?>? filter = default,
-            global::System.AnyOf<string?, object?>? traceFilter = default,
-            global::System.AnyOf<string?, object?>? treeFilter = default,
-            global::System.AnyOf<global::System.DateTime, object?>? backfillFrom = default,
+            global::System.AnyOf<string, object>? datasetId = default,
+            global::System.AnyOf<string?, object>? filter = default,
+            global::System.AnyOf<string?, object>? traceFilter = default,
+            global::System.AnyOf<string?, object>? treeFilter = default,
+            global::System.AnyOf<global::System.DateTime?, object>? backfillFrom = default,
             bool useCorrectionsDataset = false,
-            global::System.AnyOf<int, object?>? numFewShotExamples = default,
+            global::System.AnyOf<int?, object>? numFewShotExamples = default,
             bool extendOnly = false,
-            global::System.AnyOf<string?, object?>? addToAnnotationQueueId = default,
-            global::System.AnyOf<string?, object?>? addToDatasetId = default,
+            global::System.AnyOf<string, object>? addToAnnotationQueueId = default,
+            global::System.AnyOf<string, object>? addToDatasetId = default,
             bool addToDatasetPreferCorrection = false,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>?, object?>? evaluators = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>?, object?>? alerts = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>?, object?>? webhooks = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>, object>? evaluators = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? alerts = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>, object>? webhooks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.RunRulesCreateSchema

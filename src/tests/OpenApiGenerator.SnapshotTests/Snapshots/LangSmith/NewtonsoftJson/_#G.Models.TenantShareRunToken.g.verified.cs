@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TenantShareRunTokenType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.TenantShareRunTokenType Type { get; set; }
 
         /// <summary>
         /// 
@@ -39,25 +39,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::System.AnyOf<string?, object?>? RunName { get; set; }
+        public global::System.AnyOf<string?, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::System.AnyOf<string?, object?>? RunType { get; set; }
+        public global::System.AnyOf<string?, object>? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string?, object?>? SessionId { get; set; }
+        public global::System.AnyOf<string, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::System.AnyOf<string?, object?>? SessionName { get; set; }
+        public global::System.AnyOf<string?, object>? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

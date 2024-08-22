@@ -8,33 +8,33 @@ namespace G
     {
         partial void PrepareReadFeedbacksArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             ref int limit,
             ref int offset,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            ref global::System.AnyOf<bool, object> hasComment,
-            ref global::System.AnyOf<bool, object> hasScore,
-            ref global::System.AnyOf<global::G.FeedbackLevel, object> level,
-            ref global::System.AnyOf<global::System.DateTime, object> maxCreatedAt,
-            ref global::System.AnyOf<global::System.DateTime, object> minCreatedAt);
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            ref global::System.AnyOf<bool?, object>? hasComment,
+            ref global::System.AnyOf<bool?, object>? hasScore,
+            ref global::System.AnyOf<global::G.FeedbackLevel?, object>? level,
+            ref global::System.AnyOf<global::System.DateTime?, object>? maxCreatedAt,
+            ref global::System.AnyOf<global::System.DateTime?, object>? minCreatedAt);
         partial void PrepareReadFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            global::System.AnyOf<bool, object> hasComment,
-            global::System.AnyOf<bool, object> hasScore,
-            global::System.AnyOf<global::G.FeedbackLevel, object> level,
-            global::System.AnyOf<global::System.DateTime, object> maxCreatedAt,
-            global::System.AnyOf<global::System.DateTime, object> minCreatedAt);
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            global::System.AnyOf<bool?, object>? hasComment,
+            global::System.AnyOf<bool?, object>? hasScore,
+            global::System.AnyOf<global::G.FeedbackLevel?, object>? level,
+            global::System.AnyOf<global::System.DateTime?, object>? maxCreatedAt,
+            global::System.AnyOf<global::System.DateTime?, object>? minCreatedAt);
         partial void ProcessReadFeedbacksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -67,18 +67,18 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadFeedbacksAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            global::System.AnyOf<bool, object> hasComment,
-            global::System.AnyOf<bool, object> hasScore,
-            global::System.AnyOf<global::G.FeedbackLevel, object> level,
-            global::System.AnyOf<global::System.DateTime, object> maxCreatedAt,
-            global::System.AnyOf<global::System.DateTime, object> minCreatedAt,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            global::System.AnyOf<bool?, object>? hasComment,
+            global::System.AnyOf<bool?, object>? hasScore,
+            global::System.AnyOf<global::G.FeedbackLevel?, object>? level,
+            global::System.AnyOf<global::System.DateTime?, object>? maxCreatedAt,
+            global::System.AnyOf<global::System.DateTime?, object>? minCreatedAt,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

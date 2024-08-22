@@ -15,7 +15,7 @@ namespace G
         /// Default Value: pagerduty
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::System.AnyOf<global::G.RunRulesAlertType?, object?>? Type { get; set; } = global::G.RunRulesAlertType.Pagerduty;
+        public global::System.AnyOf<global::G.RunRulesAlertType?, object>? Type { get; set; } = global::G.RunRulesAlertType.Pagerduty;
 
         /// <summary>
         /// 
@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary")]
-        public global::System.AnyOf<string?, object?>? Summary { get; set; }
+        public global::System.AnyOf<string?, object>? Summary { get; set; }
 
         /// <summary>
         /// Default Value: warning
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
-        public global::System.AnyOf<global::G.PagerdutySeverity?, object?>? Severity { get; set; } = global::G.PagerdutySeverity.Warning;
+        public global::System.AnyOf<global::G.PagerdutySeverity?, object>? Severity { get; set; } = global::G.PagerdutySeverity.Warning;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

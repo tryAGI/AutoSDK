@@ -14,13 +14,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Inputs { get; set; }
+        public required global::G.SearchDatasetRequestInputs Inputs { get; set; }
 
         /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int Limit { get; set; } = 5;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("debug")]
+        public bool Debug { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

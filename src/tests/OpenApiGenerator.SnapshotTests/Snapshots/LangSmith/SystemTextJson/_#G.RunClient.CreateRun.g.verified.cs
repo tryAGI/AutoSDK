@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> CreateRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateRunApiV1RunsPostResponse> CreateRunAsync(
             global::G.CreateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -44,11 +44,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/runs", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -91,7 +92,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateRunApiV1RunsPostResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -121,27 +122,27 @@ namespace G
         /// <param name="outputAttachments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> CreateRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateRunApiV1RunsPostResponse> CreateRunAsync(
             string name,
             global::G.CreateRunRequestRunType runType,
-            global::System.OneOf<object?, object?>? inputs = default,
-            global::System.OneOf<string?, double, object?>? startTime = default,
-            global::System.OneOf<string?, double, object?>? endTime = default,
-            global::System.OneOf<object?, object?>? extra = default,
-            global::System.OneOf<string?, object?>? error = default,
-            global::System.OneOf<object?, object?>? serialized = default,
-            global::System.OneOf<object?, object?>? outputs = default,
-            global::System.OneOf<string?, object?>? parentRunId = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<object?>?, object?>? events = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<string?>?, object?>? tags = default,
-            global::System.OneOf<string?, object?>? traceId = default,
-            global::System.OneOf<string?, object?>? dottedOrder = default,
-            global::System.OneOf<string?, object?>? id = default,
-            global::System.OneOf<string?, object?>? sessionId = default,
-            global::System.OneOf<string?, object?>? sessionName = default,
-            global::System.OneOf<string?, object?>? referenceExampleId = default,
-            global::System.OneOf<object?, object?>? inputAttachments = default,
-            global::System.OneOf<object?, object?>? outputAttachments = default,
+            global::System.OneOf<global::G.CreateRunRequestInputs, object>? inputs = default,
+            global::System.OneOf<string?, double?, object>? startTime = default,
+            global::System.OneOf<string?, double?, object>? endTime = default,
+            global::System.OneOf<global::G.CreateRunRequestExtra, object>? extra = default,
+            global::System.OneOf<string?, object>? error = default,
+            global::System.OneOf<global::G.CreateRunRequestSerialized, object>? serialized = default,
+            global::System.OneOf<global::G.CreateRunRequestOutputs, object>? outputs = default,
+            global::System.OneOf<string, object>? parentRunId = default,
+            global::System.OneOf<global::System.Collections.Generic.IList<global::G.CreateRunRequestEventsVariant1Item>, object>? events = default,
+            global::System.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            global::System.OneOf<string, object>? traceId = default,
+            global::System.OneOf<string?, object>? dottedOrder = default,
+            global::System.OneOf<string, object>? id = default,
+            global::System.OneOf<string, object>? sessionId = default,
+            global::System.OneOf<string?, object>? sessionName = default,
+            global::System.OneOf<string, object>? referenceExampleId = default,
+            global::System.OneOf<global::G.CreateRunRequestInputAttachments, object>? inputAttachments = default,
+            global::System.OneOf<global::G.CreateRunRequestOutputAttachments, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRunRequest

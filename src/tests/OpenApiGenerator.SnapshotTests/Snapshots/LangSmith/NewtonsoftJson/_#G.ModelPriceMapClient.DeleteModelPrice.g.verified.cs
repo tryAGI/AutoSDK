@@ -28,7 +28,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DeleteModelPriceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteModelPriceApiV1ModelPriceMapIdDeleteResponse> DeleteModelPriceAsync(
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -83,7 +83,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteModelPriceApiV1ModelPriceMapIdDeleteResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

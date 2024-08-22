@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Settings { get; set; }
+        public required global::G.PlaygroundSettingsCreateRequestSettings Settings { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object?>? Name { get; set; }
+        public global::System.AnyOf<string?, object>? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

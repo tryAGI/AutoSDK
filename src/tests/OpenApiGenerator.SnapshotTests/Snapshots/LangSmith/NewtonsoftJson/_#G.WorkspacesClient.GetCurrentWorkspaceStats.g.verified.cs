@@ -7,10 +7,12 @@ namespace G
     public partial class WorkspacesClient
     {
         partial void PrepareGetCurrentWorkspaceStatsArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void PrepareGetCurrentWorkspaceStatsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
         partial void ProcessGetCurrentWorkspaceStatsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,26 +25,30 @@ namespace G
         /// <summary>
         /// Get Current Workspace Stats
         /// </summary>
+        /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TenantStats> GetCurrentWorkspaceStatsAsync(
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareGetCurrentWorkspaceStatsArguments(
-                httpClient: _httpClient);
+                httpClient: _httpClient,
+                tagValueId: ref tagValueId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/workspaces/current/stats", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/workspaces/current/stats?tag_value_id={tagValueId}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
             PrepareGetCurrentWorkspaceStatsRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest);
+                httpRequestMessage: httpRequest,
+                tagValueId: tagValueId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

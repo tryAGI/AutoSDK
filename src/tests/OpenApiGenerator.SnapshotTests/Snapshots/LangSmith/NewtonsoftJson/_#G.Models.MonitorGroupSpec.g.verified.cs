@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public global::System.AnyOf<string?, object?>? Tag { get; set; }
+        public global::System.AnyOf<string?, object>? Tag { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.MetadataKeyValue?, object?>? Metadata { get; set; }
+        public global::System.AnyOf<global::G.MetadataKeyValue, object>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

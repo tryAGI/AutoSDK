@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? EndTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<object?, object?>? Extra { get; set; }
+        public global::System.AnyOf<global::G.TracerSessionCreateExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -39,31 +39,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset_id")]
-        public global::System.AnyOf<string?, object?>? DefaultDatasetId { get; set; }
+        public global::System.AnyOf<string, object>? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_dataset_id")]
-        public global::System.AnyOf<string?, object?>? ReferenceDatasetId { get; set; }
+        public global::System.AnyOf<string, object>? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_tier")]
-        public global::System.AnyOf<global::G.TraceTier?, object?>? TraceTier { get; set; }
+        public global::System.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<string?, object?>? Id { get; set; }
+        public global::System.AnyOf<string, object>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,4 +1,5 @@
 ﻿//HintName: G.DatasetsClient.UploadCsvDataset.g.cs
+using System.Linq;
 
 #nullable enable
 
@@ -44,11 +45,45 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/datasets/upload", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "file",
+                fileName: request.Filename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.InputKeys.Select(x => x))}]"),
+                name: "input_keys");
+            if (request.Name != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.Name?.Value1?.ToString() ?? request.Name?.Value2?.ToString() ?? string.Empty),
+                    name: "name");
+            } 
+            if (request.DataType != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.DataType?.Value1?.ToValueString() ?? string.Empty),
+                    name: "data_type");
+            } 
+            if (request.OutputKeys != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.OutputKeys.Select(x => x))}]"),
+                    name: "output_keys");
+            } 
+            if (request.Description != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent(request.Description?.Value1?.ToString() ?? request.Description?.Value2?.ToString() ?? string.Empty),
+                    name: "description");
+            }
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -114,10 +149,10 @@ namespace G
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::System.AnyOf<string?, object?>? name = default,
-            global::System.AllOf<global::G.DataType?>? dataType = default,
-            global::System.Collections.Generic.IList<string?>? outputKeys = default,
-            global::System.AnyOf<string?, object?>? description = default,
+            global::System.AnyOf<string?, object>? name = default,
+            global::System.AllOf<global::G.DataType2?>? dataType = default,
+            global::System.Collections.Generic.IList<string>? outputKeys = default,
+            global::System.AnyOf<string?, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyUploadCsvDatasetApiV1DatasetsUploadPost

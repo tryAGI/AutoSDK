@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("loc", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.AnyOf<string, int>> Loc { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.AnyOf<string?, int?>> Loc { get; set; } = default!;
 
         /// <summary>
         /// 

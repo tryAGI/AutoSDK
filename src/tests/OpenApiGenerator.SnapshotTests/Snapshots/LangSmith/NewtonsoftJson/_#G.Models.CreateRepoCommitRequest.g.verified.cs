@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Manifest { get; set; } = default!;
+        public global::G.CreateRepoCommitRequestManifest Manifest { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit")]
-        public global::System.AnyOf<string?, object?>? ParentCommit { get; set; }
+        public global::System.AnyOf<string?, object>? ParentCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? ExampleRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ExampleRunIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

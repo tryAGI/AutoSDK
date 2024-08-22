@@ -9,30 +9,30 @@ namespace G
         partial void PrepareReadSharedDatasetFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             ref int limit,
             ref int offset,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            ref global::System.AnyOf<bool, object> hasComment,
-            ref global::System.AnyOf<bool, object> hasScore,
-            ref global::System.AnyOf<global::G.FeedbackLevel, object> level);
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            ref global::System.AnyOf<bool?, object>? hasComment,
+            ref global::System.AnyOf<bool?, object>? hasScore,
+            ref global::System.AnyOf<global::G.FeedbackLevel?, object>? level);
         partial void PrepareReadSharedDatasetFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            global::System.AnyOf<bool, object> hasComment,
-            global::System.AnyOf<bool, object> hasScore,
-            global::System.AnyOf<global::G.FeedbackLevel, object> level);
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            global::System.AnyOf<bool?, object>? hasComment,
+            global::System.AnyOf<bool?, object>? hasScore,
+            global::System.AnyOf<global::G.FeedbackLevel?, object>? level);
         partial void ProcessReadSharedDatasetFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,16 +65,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadSharedDatasetFeedbackAsync(
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> run,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> key,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> session,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object> source,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
             int limit,
             int offset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object> user,
-            global::System.AnyOf<bool, object> hasComment,
-            global::System.AnyOf<bool, object> hasScore,
-            global::System.AnyOf<global::G.FeedbackLevel, object> level,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
+            global::System.AnyOf<bool?, object>? hasComment,
+            global::System.AnyOf<bool?, object>? hasScore,
+            global::System.AnyOf<global::G.FeedbackLevel?, object>? level,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

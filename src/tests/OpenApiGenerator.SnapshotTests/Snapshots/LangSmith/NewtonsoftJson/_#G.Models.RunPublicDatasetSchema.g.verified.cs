@@ -21,7 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::System.AnyOf<object?, object?>? Inputs { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaInputs, object>? Inputs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("inputs_preview")]
+        public global::System.AnyOf<string?, object>? InputsPreview { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -39,19 +45,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? EndTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<object?, object?>? Extra { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.AnyOf<string?, object?>? Error { get; set; }
+        public global::System.AnyOf<string?, object>? Error { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -63,61 +69,67 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public global::System.AnyOf<object?, object?>? Serialized { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaSerialized, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<object?, object?>? Outputs { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaOutputs, object>? Outputs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("outputs_preview")]
+        public global::System.AnyOf<string?, object>? OutputsPreview { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.AnyOf<string?, object?>? ParentRunId { get; set; }
+        public global::System.AnyOf<string, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_id")]
-        public global::System.AnyOf<string?, object?>? ManifestId { get; set; }
+        public global::System.AnyOf<string, object>? ManifestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_s3_id")]
-        public global::System.AnyOf<string?, object?>? ManifestS3Id { get; set; }
+        public global::System.AnyOf<string, object>? ManifestS3Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<object?>?, object?>? Events { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunPublicDatasetSchemaEventsVariant1Item>, object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Tags { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_s3_urls")]
-        public global::System.AnyOf<object?, object?>? InputsS3Urls { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaInputsS3Urls, object>? InputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_s3_urls")]
-        public global::System.AnyOf<object?, object?>? OutputsS3Urls { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaOutputsS3Urls, object>? OutputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("s3_urls")]
-        public global::System.AnyOf<object?, object?>? S3Urls { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaS3Urls, object>? S3Urls { get; set; }
 
         /// <summary>
         /// 
@@ -147,31 +159,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("child_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? ChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direct_child_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? DirectChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? DirectChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? ParentRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ParentRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::System.AnyOf<object?, object?>? FeedbackStats { get; set; }
+        public global::System.AnyOf<global::G.RunPublicDatasetSchemaFeedbackStats, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::System.AnyOf<string?, object?>? ReferenceExampleId { get; set; }
+        public global::System.AnyOf<string, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -195,31 +207,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_cost")]
-        public global::System.AnyOf<string?, object?>? TotalCost { get; set; }
+        public global::System.AnyOf<string?, object>? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost")]
-        public global::System.AnyOf<string?, object?>? PromptCost { get; set; }
+        public global::System.AnyOf<string?, object>? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost")]
-        public global::System.AnyOf<string?, object?>? CompletionCost { get; set; }
+        public global::System.AnyOf<string?, object>? CompletionCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price_model_id")]
-        public global::System.AnyOf<string?, object?>? PriceModelId { get; set; }
+        public global::System.AnyOf<string, object>? PriceModelId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_token_time")]
-        public global::System.AnyOf<global::System.DateTime, object?>? FirstTokenTime { get; set; }
+        public global::System.AnyOf<global::System.DateTime?, object>? FirstTokenTime { get; set; }
 
         /// <summary>
         /// 

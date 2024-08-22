@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<string?, object?>? TenantId { get; set; }
+        public global::System.AnyOf<string, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -44,6 +44,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
+        public global::System.AnyOf<string, object>? LsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_only", Required = global::Newtonsoft.Json.Required.Always)]
         public bool ReadOnly { get; set; } = default!;
 
@@ -51,37 +57,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string?, object?>? RoleId { get; set; }
+        public global::System.AnyOf<string, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string?, object?>? RoleName { get; set; }
+        public global::System.AnyOf<string?, object>? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = "workspace";
+        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
-        public global::System.AnyOf<string?, object?>? Email { get; set; }
+        public global::System.AnyOf<string?, object>? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string?, object?>? FullName { get; set; }
+        public global::System.AnyOf<string?, object>? FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url")]
-        public global::System.AnyOf<string?, object?>? AvatarUrl { get; set; }
+        public global::System.AnyOf<string?, object>? AvatarUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

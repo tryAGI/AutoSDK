@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, object?>? Id { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

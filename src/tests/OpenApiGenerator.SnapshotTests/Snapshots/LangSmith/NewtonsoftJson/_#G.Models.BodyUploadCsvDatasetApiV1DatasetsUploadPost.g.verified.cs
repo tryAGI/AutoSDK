@@ -33,25 +33,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string?, object?>? Name { get; set; }
+        public global::System.AnyOf<string?, object>? Name { get; set; }
 
         /// <summary>
         /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::System.AllOf<global::G.DataType?>? DataType { get; set; } = "kv";
+        public global::System.AllOf<global::G.DataType2?>? DataType { get; set; } = global::G.DataType2.Kv;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_keys")]
-        public global::System.Collections.Generic.IList<string?>? OutputKeys { get; set; }
+        public global::System.Collections.Generic.IList<string>? OutputKeys { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object?>? Description { get; set; }
+        public global::System.AnyOf<string?, object>? Description { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

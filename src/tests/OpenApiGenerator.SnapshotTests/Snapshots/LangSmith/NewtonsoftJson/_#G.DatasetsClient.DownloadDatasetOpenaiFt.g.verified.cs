@@ -9,12 +9,12 @@ namespace G
         partial void PrepareDownloadDatasetOpenaiFtArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
-            ref global::System.AnyOf<global::System.DateTime, object> asOf);
+            ref global::System.AnyOf<global::System.DateTime?, object>? asOf);
         partial void PrepareDownloadDatasetOpenaiFtRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, object> asOf);
+            global::System.AnyOf<global::System.DateTime?, object>? asOf);
         partial void ProcessDownloadDatasetOpenaiFtResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,9 +34,9 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> DownloadDatasetOpenaiFtAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse> DownloadDatasetOpenaiFtAsync(
             string datasetId,
-            global::System.AnyOf<global::System.DateTime, object> asOf,
+            global::System.AnyOf<global::System.DateTime?, object>? asOf,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -92,7 +92,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

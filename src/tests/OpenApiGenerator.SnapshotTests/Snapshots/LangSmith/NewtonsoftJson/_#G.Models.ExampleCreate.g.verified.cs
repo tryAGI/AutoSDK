@@ -14,14 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Inputs { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<object?, object?>? Outputs { get; set; }
+        public global::System.AnyOf<global::G.ExampleCreateOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -33,31 +27,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_run_id")]
-        public global::System.AnyOf<string?, object?>? SourceRunId { get; set; }
+        public global::System.AnyOf<string, object>? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<object?, object?>? Metadata { get; set; }
+        public global::System.AnyOf<global::G.ExampleCreateMetadata, object>? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("inputs")]
+        public global::System.AnyOf<global::G.ExampleCreateInputs, object>? Inputs { get; set; }
+
+        /// <summary>
+        /// Default Value: base
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("split")]
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? Split { get; set; } = "base";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public global::System.AnyOf<string, object>? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("use_source_run_io")]
+        public bool UseSourceRunIo { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime CreatedAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<string?, object?>? Id { get; set; }
-
-        /// <summary>
-        /// Default Value: base
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string?>?, string?, object?>? Split { get; set; } = "base";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

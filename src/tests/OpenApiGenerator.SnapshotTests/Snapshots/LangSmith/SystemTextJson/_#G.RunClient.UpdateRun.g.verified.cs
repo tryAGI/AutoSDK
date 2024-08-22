@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
             string runId,
             global::G.UpdateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -47,13 +47,14 @@ namespace G
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Patch,
+                method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/runs/{runId}", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -97,7 +98,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateRunApiV1RunsRunIdPatchResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -120,20 +121,20 @@ namespace G
         /// <param name="outputAttachments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
             string runId,
-            global::System.OneOf<string?, object?>? traceId = default,
-            global::System.OneOf<string?, object?>? dottedOrder = default,
-            global::System.OneOf<string?, object?>? parentRunId = default,
-            global::System.OneOf<string?, double, object?>? endTime = default,
-            global::System.OneOf<string?, object?>? error = default,
-            global::System.OneOf<object?, object?>? inputs = default,
-            global::System.OneOf<object?, object?>? outputs = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<object?>?, object?>? events = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<string?>?, object?>? tags = default,
-            global::System.OneOf<object?, object?>? extra = default,
-            global::System.OneOf<object?, object?>? inputAttachments = default,
-            global::System.OneOf<object?, object?>? outputAttachments = default,
+            global::System.OneOf<string, object>? traceId = default,
+            global::System.OneOf<string?, object>? dottedOrder = default,
+            global::System.OneOf<string, object>? parentRunId = default,
+            global::System.OneOf<string?, double?, object>? endTime = default,
+            global::System.OneOf<string?, object>? error = default,
+            global::System.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,
+            global::System.OneOf<global::G.UpdateRunRequestOutputs, object>? outputs = default,
+            global::System.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? events = default,
+            global::System.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            global::System.OneOf<global::G.UpdateRunRequestExtra, object>? extra = default,
+            global::System.OneOf<global::G.UpdateRunRequestInputAttachments, object>? inputAttachments = default,
+            global::System.OneOf<global::G.UpdateRunRequestOutputAttachments, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateRunRequest
