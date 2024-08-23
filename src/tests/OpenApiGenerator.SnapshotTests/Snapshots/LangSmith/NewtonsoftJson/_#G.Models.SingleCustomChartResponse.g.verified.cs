@@ -60,6 +60,12 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.CustomChartSeries> Series { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("common_filters")]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

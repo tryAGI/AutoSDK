@@ -61,6 +61,13 @@ namespace G
         public global::System.AnyOf<global::G.CustomChartUpdateMetadata, global::G.Missing, object>? Metadata { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

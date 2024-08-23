@@ -22,8 +22,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CustomChartSeriesFilters Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.

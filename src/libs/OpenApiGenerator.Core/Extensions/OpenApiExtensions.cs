@@ -92,8 +92,25 @@ public static class OpenApiExtensions
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AnyOf)
                 .First(x => x.Schema.Enum.Any());
+
+            var value = context.Schema.Default.ToEnumValue(context.Settings).Name;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                if (context.Children
+                    .Where(x => x.Hint is Hint.AnyOf)
+                    .Any(x => x.Schema.Type == "string"))
+                {
+                    value = context.Schema.Default.GetString();
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        return $"\"{value}\"";
+                    }
+                }
+                
+                return null;
+            }
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + value;
         }
         if (context.Schema.OneOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {

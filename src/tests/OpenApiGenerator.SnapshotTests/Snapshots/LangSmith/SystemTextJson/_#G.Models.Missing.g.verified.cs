@@ -9,6 +9,12 @@ namespace G
     /// </summary>
     public sealed partial class Missing
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("__missing__")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MissingMissing1JsonConverter))]
+        public global::G.MissingMissing1 Missing1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -200,6 +200,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CustomChartTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CustomChartMetricJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CustomChartMetricNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MissingMissing1JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MissingMissing1NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PaymentPlanTierJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PaymentPlanTierNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ExampleListOrderJsonConverter(),

@@ -9,6 +9,11 @@ namespace G
     /// </summary>
     public sealed partial class Missing
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("__missing__")]
+        public global::G.MissingMissing1 Missing1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -69,6 +69,13 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.CustomChartSeries> Series { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

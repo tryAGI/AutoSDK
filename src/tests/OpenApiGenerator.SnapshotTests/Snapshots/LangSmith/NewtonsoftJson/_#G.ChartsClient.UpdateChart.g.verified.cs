@@ -114,6 +114,7 @@ namespace G
         /// <param name="series"></param>
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
+        /// <param name="commonFilters"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
@@ -125,6 +126,7 @@ namespace G
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series = default,
             global::System.AnyOf<string, global::G.Missing>? sectionId = default,
             global::System.AnyOf<global::G.CustomChartUpdateMetadata, global::G.Missing, object>? metadata = default,
+            global::System.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartUpdate
@@ -136,6 +138,7 @@ namespace G
                 Series = series,
                 SectionId = sectionId,
                 Metadata = metadata,
+                CommonFilters = commonFilters,
             };
 
             return await UpdateChartAsync(

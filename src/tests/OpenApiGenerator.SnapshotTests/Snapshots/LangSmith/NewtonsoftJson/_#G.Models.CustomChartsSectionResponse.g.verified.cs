@@ -36,6 +36,12 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_at_capacity")]
+        public global::System.AnyOf<bool?, object>? IsAtCapacity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

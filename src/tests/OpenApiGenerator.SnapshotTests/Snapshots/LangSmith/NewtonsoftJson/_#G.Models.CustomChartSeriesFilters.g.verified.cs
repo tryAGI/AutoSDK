@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("session", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Session { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("session")]
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("filters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CustomChartSeriesFilters Filters { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("filters")]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.

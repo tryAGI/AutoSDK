@@ -54,6 +54,12 @@ namespace G
         public global::System.AnyOf<global::G.CustomChartCreateMetadata, object>? Metadata { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("common_filters")]
+        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
