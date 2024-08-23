@@ -38,7 +38,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{7E829AE4
 		specs\ollama.yaml = specs\ollama.yaml
 		specs\github.yaml = specs\github.yaml
 		specs\ipinfo.yaml = specs\ipinfo.yaml
-		specs\langsmith.json = specs\langsmith.json
 		specs\langsmith.yaml = specs\langsmith.yaml
 		specs\openai.yaml = specs\openai.yaml
 		specs\petstore.yaml = specs\petstore.yaml

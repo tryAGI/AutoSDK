@@ -10280,6 +10280,10 @@ components:
           anyOf:
             - type: object
             - type: 'null'
+        common_filters:
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
     CustomChartCreatePreview:
       title: CustomChartCreatePreview
       required:
@@ -10291,6 +10295,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomChartSeries'
+        common_filters:
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
     CustomChartMetric:
       title: CustomChartMetric
       enum:
@@ -10372,7 +10380,6 @@ components:
       title: CustomChartSeries
       required:
         - name
-        - filters
         - metric
         - id
       type: object
@@ -10381,7 +10388,9 @@ components:
           title: Name
           type: string
         filters:
-          $ref: '#/components/schemas/CustomChartSeriesFilters'
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
         metric:
           $ref: '#/components/schemas/CustomChartMetric'
         feedback_key:
@@ -10397,7 +10406,6 @@ components:
       title: CustomChartSeriesCreate
       required:
         - name
-        - filters
         - metric
       type: object
       properties:
@@ -10405,7 +10413,9 @@ components:
           title: Name
           type: string
         filters:
-          $ref: '#/components/schemas/CustomChartSeriesFilters'
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
         metric:
           $ref: '#/components/schemas/CustomChartMetric'
         feedback_key:
@@ -10415,8 +10425,6 @@ components:
             - type: 'null'
     CustomChartSeriesFilters:
       title: CustomChartSeriesFilters
-      required:
-        - session
       type: object
       properties:
         filter:
@@ -10436,16 +10444,17 @@ components:
             - type: 'null'
         session:
           title: Session
-          minItems: 1
-          type: array
-          items:
-            type: string
-            format: uuid
+          anyOf:
+            - minItems: 1
+              type: array
+              items:
+                type: string
+                format: uuid
+            - type: 'null'
     CustomChartSeriesUpdate:
       title: CustomChartSeriesUpdate
       required:
         - name
-        - filters
         - metric
       type: object
       properties:
@@ -10453,7 +10462,9 @@ components:
           title: Name
           type: string
         filters:
-          $ref: '#/components/schemas/CustomChartSeriesFilters'
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
         metric:
           $ref: '#/components/schemas/CustomChartMetric'
         feedback_key:
@@ -10483,22 +10494,30 @@ components:
           anyOf:
             - type: string
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         description:
           title: Description
           anyOf:
             - type: string
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         index:
           title: Index
           anyOf:
             - type: integer
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         chart_type:
           title: Chart Type
           anyOf:
             - $ref: '#/components/schemas/CustomChartType'
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         series:
           title: Series
           anyOf:
@@ -10506,18 +10525,32 @@ components:
               items:
                 $ref: '#/components/schemas/CustomChartSeriesUpdate'
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         section_id:
           title: Section Id
           anyOf:
             - type: string
               format: uuid
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         metadata:
           title: Metadata
           anyOf:
             - type: object
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
+        common_filters:
+          title: Common Filters
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - $ref: '#/components/schemas/Missing'
+            - type: 'null'
+          default:
+            __missing__: __missing__
     CustomChartsDataPoint:
       title: CustomChartsDataPoint
       required:
@@ -10697,6 +10730,11 @@ components:
           title: Id
           type: string
           format: uuid
+        is_at_capacity:
+          title: Is At Capacity
+          anyOf:
+            - type: boolean
+            - type: 'null'
     CustomChartsSectionUpdate:
       title: CustomChartsSectionUpdate
       type: object
@@ -10706,17 +10744,23 @@ components:
           anyOf:
             - type: string
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
         description:
           title: Description
           anyOf:
             - type: string
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         index:
           title: Index
           anyOf:
             - type: integer
             - $ref: '#/components/schemas/Missing'
+          default:
+            __missing__: __missing__
     CustomerVisiblePlanInfo:
       title: CustomerVisiblePlanInfo
       required:
@@ -11049,24 +11093,32 @@ components:
             - type: string
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         description:
           title: Description
           anyOf:
             - type: string
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         inputs_schema_definition:
           title: Inputs Schema Definition
           anyOf:
             - type: object
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         outputs_schema_definition:
           title: Outputs Schema Definition
           anyOf:
             - type: object
             - $ref: '#/components/schemas/Missing'
             - type: 'null'
+          default:
+            __missing__: __missing__
         patch_examples:
           title: Patch Examples
           anyOf:
@@ -12752,7 +12804,15 @@ components:
           type: string
     Missing:
       title: Missing
+      required:
+        - __missing__
       type: object
+      properties:
+        __missing__:
+          title: '  Missing  '
+          enum:
+            - __missing__
+          type: string
     ModelFeedbackSource:
       title: ModelFeedbackSource
       type: object
@@ -16306,6 +16366,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomChartSeries'
+        common_filters:
+          anyOf:
+            - $ref: '#/components/schemas/CustomChartSeriesFilters'
+            - type: 'null'
     SingleCustomChartResponseBase:
       title: SingleCustomChartResponseBase
       required:
