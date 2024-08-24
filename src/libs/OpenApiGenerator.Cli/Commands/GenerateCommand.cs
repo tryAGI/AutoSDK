@@ -20,11 +20,11 @@ public class GenerateCommand : Command
             description: "Output file path");
         var targetFrameworkOption = new Option<string>(
             aliases: ["--targetFramework", "-t"],
-            getDefaultValue: () =>  "netstandard2.0",
+            getDefaultValue: () => Settings.Default.TargetFramework,
             description: "TargetFramework for the generated code");
         var namespaceOption = new Option<string>(
             aliases: ["--namespace", "-n"],
-            getDefaultValue: () => string.Empty,
+            getDefaultValue: () => Settings.Default.Namespace,
             description: "Namespace for the generated code");
         var clientClassNameOption = new Option<string>(
             aliases: ["--clientClassName", "-c"],
@@ -32,7 +32,7 @@ public class GenerateCommand : Command
             description: "Client class name");
         var methodNamingConventionOption = new Option<MethodNamingConvention>(
             aliases: ["--methodNamingConvention", "-m"],
-            getDefaultValue: () => MethodNamingConvention.MethodAndPath,
+            getDefaultValue: () => Settings.Default.MethodNamingConvention,
             description: "Method Naming Convention");
         var singleFileOption = new Option<bool>(
             aliases: ["--single-file", "-s"],
@@ -40,7 +40,7 @@ public class GenerateCommand : Command
             description: "Generate all models in a single file");
         var excludeDeprecatedOption = new Option<bool>(
             aliases: ["--exclude-deprecated-operations", "-e"],
-            getDefaultValue: () => false,
+            getDefaultValue: () => Settings.Default.ExcludeDeprecatedOperations,
             description: "Exclude deprecated operations");
         var clsCompliantEnumPrefixOption = new Option<string>(
             aliases: ["--clsCompliantEnumPrefix"],
