@@ -139,6 +139,7 @@ public class GenerateCommand : Command
                 .Select(x => Sources.Method(x)))
             .Concat(data.Authorizations
                 .Select(x => Sources.Authorization(x)))
+            .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
             .Concat(data.AnyOfs
                 .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
