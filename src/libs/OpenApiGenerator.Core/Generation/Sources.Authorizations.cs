@@ -9,7 +9,6 @@ public static partial class Sources
     public static string GenerateAuthorization(
         Authorization authorization)
     {
-        var methodName = $"AuthorizeUsing{authorization.Scheme.ToPropertyName()}";
         var body = (authorization.Type, authorization.Scheme, authorization.In) switch
         {
             (SecuritySchemeType.Http, "bearer", _) => $@" 
@@ -67,6 +66,49 @@ namespace {authorization.Settings.Namespace}
     public sealed partial class {authorization.Settings.ClassName}
     {{
 {body}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateMainAuthorizationConstructor(
+        Authorization authorization)
+    {
+        var methodName = (authorization.Type, authorization.Scheme, authorization.In) switch
+        {
+            (SecuritySchemeType.Http, "bearer", _) => "AuthorizeUsingBearer",
+            (SecuritySchemeType.Http, "basic", _) => "AuthorizeUsingBasic",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "AuthorizeUsingApiKey",
+            _ => string.Empty,
+        };
+        string[] parameters = (authorization.Type, authorization.Scheme, authorization.In) switch
+        {
+            (SecuritySchemeType.Http, "bearer", _) => ["apiKey"],
+            (SecuritySchemeType.Http, "basic", _) => ["username", "password"],
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
+            _ => [],
+        };
+        if (parameters.Length == 0)
+        {
+            return string.Empty;
+        }
+        
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public sealed partial class {authorization.Settings.ClassName}
+    {{
+        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?)""/>
+        public {authorization.Settings.ClassName}(
+{string.Concat(parameters.Select(x => $@" 
+            string {x},
+"))}
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null) : this(httpClient, baseUri)
+        {{
+            {methodName}({string.Join(", ", parameters.Select(x => $"{x}"))});
+        }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

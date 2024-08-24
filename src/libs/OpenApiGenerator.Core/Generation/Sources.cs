@@ -166,6 +166,22 @@ public static partial class Sources
             Text: GenerateAuthorization(authorization));
     }
     
+    public static FileWithName MainAuthorizationConstructor(
+        EquatableArray<Authorization> authorizations,
+        CancellationToken cancellationToken = default)
+    {
+        if (authorizations.IsEmpty)
+        {
+            return FileWithName.Empty;
+        }
+        
+        var mainAuthorization = authorizations[0];
+        
+        return new FileWithName(
+            Name: $"{mainAuthorization.Settings.Namespace}.{mainAuthorization.Settings.ClassName}.Constructors.{mainAuthorization.Scheme.ToPropertyName()}.g.cs",
+            Text: GenerateMainAuthorizationConstructor(mainAuthorization));
+    }
+    
     public static FileWithName Polyfills(
         Settings settings,
         CancellationToken cancellationToken = default)
