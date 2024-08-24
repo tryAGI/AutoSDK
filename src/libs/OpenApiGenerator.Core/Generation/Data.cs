@@ -5,6 +5,7 @@ using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Helpers;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Clients;
 using OpenApiGenerator.Core.Naming.Models;
 
 namespace OpenApiGenerator.Core.Generation;
@@ -236,14 +237,14 @@ public static class Data
                 RequestMediaType: string.Empty,
                 Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
-                        .. includedTags.Select(x => PropertyData.Default with
+                        .. includedTags.Select(tag => PropertyData.Default with
                         {
-                            Name = PropertyData.SanitizeName(x.Name.ToClassName(), settings.ClsCompliantEnumPrefix),
+                            Name = ClientNameGenerator.GeneratePropertyName(settings, tag),
                             Type = TypeData.Default with
                             {
-                                CSharpType = $"{x.Name.ToClassName()}Client",
+                                CSharpType = ClientNameGenerator.Generate(settings, tag),
                             },
-                            Summary = x.Description ?? string.Empty,
+                            Summary = tag.Description ?? string.Empty,
                         })
                     ]
                     : [],
@@ -260,10 +261,10 @@ public static class Data
         {
             constructors = constructors.Concat(
                 includedTags
-                    .Select(x => new EndPoint(
+                    .Select(tag => new EndPoint(
                         Id: "Constructors",
                         Namespace: settings.Namespace,
-                        ClassName: $"{x.Name.ToClassName()}Client",
+                        ClassName: ClientNameGenerator.Generate(settings, tag),
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Stream: false,
                         Path: string.Empty,
@@ -271,7 +272,7 @@ public static class Data
                         Properties: ImmutableArray<PropertyData>.Empty,
                         HttpMethod: OperationType.Get,
                         ContentType: ContentType.String,
-                        Summary: x.Description?.ClearForXml() ?? string.Empty,
+                        Summary: tag.Description?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
                         IsDeprecated: false,

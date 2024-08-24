@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Naming.Clients;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -181,7 +182,7 @@ public readonly record struct EndPoint(
             Id: id,
             Namespace: settings.Namespace,
             ClassName: settings.GroupByTags && firstTag != null
-                ? firstTag.Name.ToClassName() + "Client"
+                ? ClientNameGenerator.Generate(settings, firstTag)
                 : settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: responses

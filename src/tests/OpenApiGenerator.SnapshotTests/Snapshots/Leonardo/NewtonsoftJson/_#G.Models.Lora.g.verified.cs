@@ -1,0 +1,78 @@
+﻿//HintName: G.Models.Lora.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class Lora
+    {
+        /// <summary>
+        /// Unique identifier for the element. Elements can be found from the List Elements endpoint.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("akUUID")]
+        public string? AkUUID { get; set; }
+
+        /// <summary>
+        /// Name of the creator of the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("creatorName")]
+        public string? CreatorName { get; set; }
+
+        /// <summary>
+        /// Name of the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Description for the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// URL of the element image
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("urlImage")]
+        public string? UrlImage { get; set; }
+
+        /// <summary>
+        /// Base model version for the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("baseModel")]
+        public string? BaseModel { get; set; }
+
+        /// <summary>
+        /// Default weight for the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("weightDefault")]
+        public int? WeightDefault { get; set; }
+
+        /// <summary>
+        /// Minimum weight for the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("weightMin")]
+        public int? WeightMin { get; set; }
+
+        /// <summary>
+        /// Maximum weight for the element
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("weightMax")]
+        public int? WeightMax { get; set; }
+
+        /// <summary>
+        /// Type name for introspection purposes
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("__typename")]
+        public string? Typename { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

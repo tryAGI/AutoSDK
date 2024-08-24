@@ -110,7 +110,7 @@ public static class ModelNameGenerator
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
-        context.ClassName = context.ComputeClassName();
+        context.ClassName = PropertyData.SanitizeName(context.ComputeClassName(), context.Settings.ClsCompliantEnumPrefix);
         context.Id = context.ClassName;
         
         return context.Id;
