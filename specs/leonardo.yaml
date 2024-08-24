@@ -1,0 +1,3103 @@
+openapi: 3.0.1
+info:
+  title: Rest Endpoints
+  description: Leonardo.Ai API OpenAPI specification.
+  version: v1.0.0
+servers:
+  - url: https://cloud.leonardo.ai/api/rest/v1
+    description: Leonardo.Ai API server
+paths:
+  /me:
+    get:
+      tags:
+        - User
+      summary: Get user information
+      description: 'This endpoint will return your user information such as your user id, username, token renewal date and current amounts of the following: subscription tokens, gpt (prompt generation) tokens, and model training tokens'
+      operationId: getUserSelf
+      responses:
+        '200':
+          description: Responses for GET /me
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_details:
+                    type: array
+                    items:
+                      title: user_details
+                      type: object
+                      properties:
+                        user:
+                          title: users
+                          type: object
+                          properties:
+                            id:
+                              $ref: '#/components/schemas/uuid'
+                            username:
+                              title: String
+                              type: string
+                              description: Username of the user.
+                              nullable: true
+                          description: columns and relationships of "users"
+                          nullable: true
+                        tokenRenewalDate:
+                          title: timestamp
+                          type: string
+                          description: User Plan Token Renewal Date.
+                          nullable: true
+                        paidTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of paid tokens the user has.
+                          nullable: true
+                        subscriptionTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of user plan subscription tokens the user has.
+                        subscriptionGptTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of user plan GPT tokens the user has.
+                        subscriptionModelTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of model training tokens the user has.
+                        apiConcurrencySlots:
+                          title: Int
+                          type: integer
+                          description: API Concurrency Slots.
+                        apiPaidTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of API paid tokens the user has.
+                          nullable: true
+                        apiSubscriptionTokens:
+                          title: Int
+                          type: integer
+                          description: Current balance of Enterprise API subscriptions tokens the user has.
+                        apiPlanTokenRenewalDate:
+                          title: timestamp
+                          type: string
+                          description: API Plan Token Renewal Date.
+                          nullable: true
+                      description: columns and relationships of "user_details"
+  /generations:
+    post:
+      tags:
+        - Image
+      summary: Create a Generation of Images
+      description: This endpoint will generate images
+      operationId: createGeneration
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - prompt
+              type: object
+              properties:
+                alchemy:
+                  title: Boolean
+                  type: boolean
+                  description: 'Enable to use Alchemy. Note: The appropriate Alchemy version is selected for the specified model. For example, XL models will use Alchemy V2.'
+                  default: true
+                  nullable: true
+                contrastRatio:
+                  title: Float
+                  type: number
+                  description: Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive.
+                  nullable: true
+                controlnets:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/controlnet_input'
+                  nullable: true
+                elements:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/element_input'
+                  nullable: true
+                expandedDomain:
+                  title: Boolean
+                  type: boolean
+                  description: Enable to use the Expanded Domain feature of Alchemy.
+                  nullable: true
+                fantasyAvatar:
+                  title: Boolean
+                  type: boolean
+                  description: Enable to use the Fantasy Avatar feature.
+                  nullable: true
+                guidance_scale:
+                  title: Int
+                  type: integer
+                  description: How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20.
+                  nullable: true
+                height:
+                  title: Int
+                  type: integer
+                  description: 'The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.'
+                  default: 768
+                  nullable: true
+                highContrast:
+                  title: Boolean
+                  type: boolean
+                  description: 'Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode.'
+                  nullable: true
+                highResolution:
+                  title: Boolean
+                  type: boolean
+                  description: Enable to use the High Resolution feature of Prompt Magic.
+                  nullable: true
+                imagePrompts:
+                  type: array
+                  items:
+                    title: String
+                    type: string
+                    nullable: true
+                  nullable: true
+                imagePromptWeight:
+                  title: Float
+                  type: number
+                  nullable: true
+                init_generation_image_id:
+                  title: String
+                  type: string
+                  description: The ID of an existing image to use in image2image.
+                  nullable: true
+                init_image_id:
+                  title: String
+                  type: string
+                  description: The ID of an Init Image to use in image2image.
+                  nullable: true
+                init_strength:
+                  title: Float
+                  type: number
+                  description: How strongly the generated images should reflect the original image in image2image. Must be a float between 0.1 and 0.9.
+                  nullable: true
+                modelId:
+                  title: String
+                  type: string
+                  description: 'The model ID used for image generation. If not provided, uses sd_version to determine the version of Stable Diffusion to use. In-app, model IDs are under the Finetune Models menu. Click on the platform model or your custom model, then click View More. For platform models, you can also use the List Platform Models API.'
+                  default: b24e16ff-06e3-43eb-8d33-4416c2d75876
+                  nullable: true
+                negative_prompt:
+                  title: String
+                  type: string
+                  description: The negative prompt used for the image generation
+                  nullable: true
+                num_images:
+                  title: Int
+                  type: integer
+                  description: 'The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.'
+                  default: 4
+                  nullable: true
+                num_inference_steps:
+                  title: Int
+                  type: integer
+                  description: The Step Count to use for the generation. Must be between 10 and 60. Default is 15.
+                  nullable: true
+                photoReal:
+                  $ref: '#/components/schemas/photoRealArg'
+                photoRealVersion:
+                  $ref: '#/components/schemas/photoRealVersion'
+                photoRealStrength:
+                  $ref: '#/components/schemas/photoRealStrengthArg'
+                presetStyle:
+                  $ref: '#/components/schemas/sd_generation_style'
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate images
+                  default: A majestic cat in the snow
+                promptMagic:
+                  $ref: '#/components/schemas/promptMagicArg'
+                promptMagicStrength:
+                  $ref: '#/components/schemas/promptMagicStrengthArg'
+                promptMagicVersion:
+                  $ref: '#/components/schemas/promptMagicVersionArg'
+                public:
+                  title: Boolean
+                  type: boolean
+                  description: Whether the generated images should show in the community feed.
+                  nullable: true
+                scheduler:
+                  $ref: '#/components/schemas/sd_generation_schedulers'
+                sd_version:
+                  $ref: '#/components/schemas/sd_versions'
+                seed:
+                  $ref: '#/components/schemas/bigint'
+                tiling:
+                  title: Boolean
+                  type: boolean
+                  description: Whether the generated images should tile on all axis.
+                  nullable: true
+                transparency:
+                  title: TransparencyType
+                  enum:
+                    - disabled
+                    - foreground_only
+                  type: string
+                  description: Which type of transparency this image should use
+                  nullable: true
+                unzoom:
+                  title: Boolean
+                  type: boolean
+                  description: Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set).
+                  nullable: true
+                unzoomAmount:
+                  title: Float
+                  type: number
+                  description: How much the image should be unzoomed (requires an init_image_id and unzoom to be set to true).
+                  nullable: true
+                upscaleRatio:
+                  title: Float
+                  type: number
+                  description: How much the image should be upscaled. (Enterprise Only)
+                  nullable: true
+                width:
+                  title: Int
+                  type: integer
+                  description: 'The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.'
+                  default: 1024
+                  nullable: true
+                controlNet:
+                  title: Boolean
+                  type: boolean
+                  description: This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+                  nullable: true
+                  deprecated: true
+                controlNetType:
+                  $ref: '#/components/schemas/controlnet_type'
+                weighting:
+                  title: Float
+                  type: number
+                  description: This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+                  nullable: true
+                  deprecated: true
+                canvasRequest:
+                  title: Boolean
+                  type: boolean
+                  description: Whether the generation is for the Canvas Editor feature.
+                  nullable: true
+                canvasRequestType:
+                  $ref: '#/components/schemas/canvasRequestType'
+                canvasInitId:
+                  title: String
+                  type: string
+                  description: The ID of an initial image to use in Canvas Editor request.
+                  nullable: true
+                canvasMaskId:
+                  title: String
+                  type: string
+                  description: The ID of a mask image to use in Canvas Editor request.
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /generations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdGenerationJob:
+                    title: SDGenerationOutput
+                    type: object
+                    properties:
+                      generationId:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Image Generation. Available for Production API Users.
+                        nullable: true
+                    nullable: true
+  '/generations/{id}':
+    get:
+      tags:
+        - Image
+      summary: Get a Single Generation
+      description: This endpoint will provide information about a specific generation
+      operationId: getGenerationById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the generation to return.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /generations/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  generations_by_pk:
+                    title: generations
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      generated_images:
+                        type: array
+                        items:
+                          title: generated_images
+                          type: object
+                          properties:
+                            generated_image_variation_generics:
+                              type: array
+                              items:
+                                title: generated_image_variation_generic
+                                type: object
+                                properties:
+                                  id:
+                                    $ref: '#/components/schemas/uuid'
+                                  status:
+                                    $ref: '#/components/schemas/job_status'
+                                  transformType:
+                                    $ref: '#/components/schemas/VARIATION_TYPE'
+                                  url:
+                                    title: String
+                                    type: string
+                                    nullable: true
+                                description: columns and relationships of "generated_image_variation_generic"
+                            fantasyAvatar:
+                              title: Boolean
+                              type: boolean
+                              description: If fantasyAvatar feature was used.
+                              nullable: true
+                            id:
+                              $ref: '#/components/schemas/uuid'
+                            imageToVideo:
+                              $ref: '#/components/schemas/imageToVideo'
+                            likeCount:
+                              title: Int
+                              type: integer
+                            motion:
+                              $ref: '#/components/schemas/motion'
+                            motionModel:
+                              $ref: '#/components/schemas/motionModel'
+                            motionMP4URL:
+                              $ref: '#/components/schemas/motionMP4URL'
+                            motionStrength:
+                              $ref: '#/components/schemas/motionStrength'
+                            nsfw:
+                              title: Boolean
+                              type: boolean
+                            url:
+                              title: String
+                              type: string
+                          description: columns and relationships of "generated_images"
+                      generation_elements:
+                        type: array
+                        items:
+                          title: generation_elements
+                          type: object
+                          properties:
+                            id:
+                              $ref: '#/components/schemas/bigint'
+                            lora:
+                              title: loras
+                              type: object
+                              properties:
+                                akUUID:
+                                  $ref: '#/components/schemas/lora'
+                                baseModel:
+                                  $ref: '#/components/schemas/sd_versions'
+                                description:
+                                  $ref: '#/components/schemas/lora'
+                                name:
+                                  $ref: '#/components/schemas/lora'
+                                urlImage:
+                                  $ref: '#/components/schemas/lora'
+                                weightDefault:
+                                  $ref: '#/components/schemas/lora'
+                                weightMax:
+                                  $ref: '#/components/schemas/lora'
+                                weightMin:
+                                  $ref: '#/components/schemas/lora'
+                              description: Element used for the generation.
+                              nullable: true
+                            weightApplied:
+                              $ref: '#/components/schemas/numeric'
+                          description: This table captures the elements that are applied to Generations.
+                      guidanceScale:
+                        $ref: '#/components/schemas/float8'
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      imageHeight:
+                        title: Int
+                        type: integer
+                      imageWidth:
+                        title: Int
+                        type: integer
+                      inferenceSteps:
+                        title: Int
+                        type: integer
+                        nullable: true
+                      initStrength:
+                        $ref: '#/components/schemas/float8'
+                      modelId:
+                        $ref: '#/components/schemas/uuid'
+                      negativePrompt:
+                        title: String
+                        type: string
+                        nullable: true
+                      photoReal:
+                        $ref: '#/components/schemas/photoRealRes'
+                      photoRealStrength:
+                        $ref: '#/components/schemas/photoRealStrengthRes'
+                      presetStyle:
+                        $ref: '#/components/schemas/sd_generation_style'
+                      prompt:
+                        title: String
+                        type: string
+                      promptMagic:
+                        $ref: '#/components/schemas/promptMagicRes'
+                      promptMagicStrength:
+                        $ref: '#/components/schemas/promptMagicStrengthRes'
+                      promptMagicVersion:
+                        $ref: '#/components/schemas/promptMagicVersionRes'
+                      public:
+                        title: Boolean
+                        type: boolean
+                      scheduler:
+                        $ref: '#/components/schemas/sd_generation_schedulers'
+                      sdVersion:
+                        $ref: '#/components/schemas/sd_versions'
+                      seed:
+                        $ref: '#/components/schemas/bigint'
+                      status:
+                        $ref: '#/components/schemas/job_status'
+                    description: columns and relationships of "generations"
+                    nullable: true
+    delete:
+      tags:
+        - Image
+      summary: Delete a Single Generation
+      description: This endpoint deletes a specific generation
+      operationId: deleteGenerationById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the generation to delete.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for DELETE /generations/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  delete_generations_by_pk:
+                    title: generations
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "generations"
+                    nullable: true
+  '/generations/user/{userId}':
+    get:
+      tags:
+        - Image
+      summary: Get generations by user ID
+      description: This endpoint returns all generations by a specific user
+      operationId: getGenerationsByUserId
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: userId
+          in: path
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /generations/user/{userId}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  generations:
+                    type: array
+                    items:
+                      title: generations
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        generated_images:
+                          type: array
+                          items:
+                            title: generated_images
+                            type: object
+                            properties:
+                              generated_image_variation_generics:
+                                type: array
+                                items:
+                                  title: generated_image_variation_generic
+                                  type: object
+                                  properties:
+                                    id:
+                                      $ref: '#/components/schemas/uuid'
+                                    status:
+                                      $ref: '#/components/schemas/job_status'
+                                    transformType:
+                                      $ref: '#/components/schemas/VARIATION_TYPE'
+                                    url:
+                                      title: String
+                                      type: string
+                                      nullable: true
+                                  description: columns and relationships of "generated_image_variation_generic"
+                              id:
+                                $ref: '#/components/schemas/uuid'
+                              imageToVideo:
+                                $ref: '#/components/schemas/imageToVideo'
+                              likeCount:
+                                title: Int
+                                type: integer
+                              motion:
+                                $ref: '#/components/schemas/motion'
+                              motionModel:
+                                $ref: '#/components/schemas/motionModel'
+                              motionMP4URL:
+                                $ref: '#/components/schemas/motionMP4URL'
+                              motionStrength:
+                                $ref: '#/components/schemas/motionStrength'
+                              nsfw:
+                                title: Boolean
+                                type: boolean
+                              url:
+                                title: String
+                                type: string
+                            description: columns and relationships of "generated_images"
+                        generation_elements:
+                          type: array
+                          items:
+                            title: generation_elements
+                            type: object
+                            properties:
+                              id:
+                                $ref: '#/components/schemas/bigint'
+                              lora:
+                                title: elements
+                                type: object
+                                properties:
+                                  akUUID:
+                                    $ref: '#/components/schemas/lora'
+                                  baseModel:
+                                    $ref: '#/components/schemas/sd_versions'
+                                  description:
+                                    $ref: '#/components/schemas/lora'
+                                  name:
+                                    $ref: '#/components/schemas/lora'
+                                  urlImage:
+                                    $ref: '#/components/schemas/lora'
+                                  weightDefault:
+                                    $ref: '#/components/schemas/lora'
+                                  weightMax:
+                                    $ref: '#/components/schemas/lora'
+                                  weightMin:
+                                    $ref: '#/components/schemas/lora'
+                                description: Element used for the generation.
+                                nullable: true
+                              weightApplied:
+                                $ref: '#/components/schemas/numeric'
+                            description: 'This table captures the elements that are applied to a Generations, also the order and weightings used when applied.'
+                        guidanceScale:
+                          $ref: '#/components/schemas/float8'
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        imageHeight:
+                          title: Int
+                          type: integer
+                        imageWidth:
+                          title: Int
+                          type: integer
+                        inferenceSteps:
+                          title: Int
+                          type: integer
+                          nullable: true
+                        initStrength:
+                          $ref: '#/components/schemas/float8'
+                        modelId:
+                          $ref: '#/components/schemas/uuid'
+                        negativePrompt:
+                          title: String
+                          type: string
+                          nullable: true
+                        photoReal:
+                          $ref: '#/components/schemas/photoRealRes'
+                        photoRealStrength:
+                          $ref: '#/components/schemas/photoRealStrengthRes'
+                        presetStyle:
+                          $ref: '#/components/schemas/sd_generation_style'
+                        prompt:
+                          title: String
+                          type: string
+                        promptMagic:
+                          $ref: '#/components/schemas/promptMagicRes'
+                        promptMagicStrength:
+                          $ref: '#/components/schemas/promptMagicStrengthRes'
+                        promptMagicVersion:
+                          $ref: '#/components/schemas/promptMagicVersionRes'
+                        public:
+                          title: Boolean
+                          type: boolean
+                        scheduler:
+                          $ref: '#/components/schemas/sd_generation_schedulers'
+                        sdVersion:
+                          $ref: '#/components/schemas/sd_versions'
+                        seed:
+                          $ref: '#/components/schemas/bigint'
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                      description: columns and relationships of "generations"
+  /generations-texture:
+    post:
+      tags:
+        - Texture
+      summary: Create Texture Generation
+      description: This endpoint will generate a texture generation.
+      operationId: createTextureGeneration
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                front_rotation_offset:
+                  title: Int
+                  type: integer
+                  nullable: true
+                modelAssetId:
+                  title: String
+                  type: string
+                negative_prompt:
+                  title: String
+                  type: string
+                  nullable: true
+                preview:
+                  title: Boolean
+                  type: boolean
+                  nullable: true
+                preview_direction:
+                  title: String
+                  type: string
+                  nullable: true
+                prompt:
+                  title: String
+                  type: string
+                sd_version:
+                  title: String
+                  type: string
+                  nullable: true
+                seed:
+                  $ref: '#/components/schemas/bigint'
+      responses:
+        '200':
+          description: Responses for POST /api/rest/v1/generations-texture
+          content:
+            application/json:
+              schema:
+                properties:
+                  textureGenerationJob:
+                    title: TextureGenerationJobOutput
+                    type: object
+                    properties:
+                      id:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Texture Generation. Available for Production API Users.
+                        nullable: true
+                    nullable: true
+  /generations-motion-svd:
+    post:
+      tags:
+        - Motion
+      summary: Create SVD Motion Generation
+      description: This endpoint will generate a SVD motion generation.
+      operationId: createSVDMotionGeneration
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - imageId
+              type: object
+              properties:
+                imageId:
+                  title: String
+                  type: string
+                  description: 'The ID of the image, supports generated images, variation images, and init images.'
+                isPublic:
+                  $ref: '#/components/schemas/public'
+                isInitImage:
+                  $ref: '#/components/schemas/isInitImage'
+                isVariation:
+                  $ref: '#/components/schemas/isVariation'
+                motionStrength:
+                  $ref: '#/components/schemas/motionStrength'
+      responses:
+        '200':
+          description: Responses for POST /generations-motion-svd
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdGenerationJob:
+                    title: MotionSvdGenerationOutput
+                    type: object
+                    properties:
+                      generationId:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  /generations-lcm:
+    post:
+      tags:
+        - Realtime Canvas
+      summary: Create LCM Generation
+      description: This endpoint will generate a LCM image generation.
+      operationId: createLCMGeneration
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - imageDataUrl
+                - prompt
+              type: object
+              properties:
+                imageDataUrl:
+                  title: String
+                  type: string
+                  description: 'Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`'
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate images
+                guidance:
+                  title: Float
+                  type: number
+                  description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
+                  nullable: true
+                strength:
+                  title: Float
+                  type: number
+                  description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
+                  nullable: true
+                requestTimestamp:
+                  $ref: '#/components/schemas/timestamp'
+                style:
+                  $ref: '#/components/schemas/lcm_generation_style'
+                steps:
+                  title: Int
+                  type: integer
+                  description: The number of steps to use for the generation. Must be between 4 and 16.
+                  nullable: true
+                width:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                height:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                seed:
+                  $ref: '#/components/schemas/bigint'
+      responses:
+        '200':
+          description: Responses for POST /generations-lcm
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lcmGenerationJob:
+                    title: LcmGenerationOutput
+                    type: object
+                    properties:
+                      imageDataUrl:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      requestTimestamp:
+                        $ref: '#/components/schemas/timestamp'
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  /lcm-instant-refine:
+    post:
+      tags:
+        - Realtime Canvas
+      summary: Perform instant refine on a LCM image
+      description: This endpoint will perform instant refine on a LCM image
+      operationId: performInstantRefine
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - imageDataUrl
+                - prompt
+              type: object
+              properties:
+                imageDataUrl:
+                  title: String
+                  type: string
+                  description: 'Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`'
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate images
+                guidance:
+                  title: Float
+                  type: number
+                  description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
+                  nullable: true
+                strength:
+                  title: Float
+                  type: number
+                  description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
+                  nullable: true
+                requestTimestamp:
+                  $ref: '#/components/schemas/timestamp'
+                style:
+                  $ref: '#/components/schemas/lcm_generation_style'
+                steps:
+                  title: Int
+                  type: integer
+                  description: The number of steps to use for the generation. Must be between 4 and 16.
+                  nullable: true
+                width:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                height:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                seed:
+                  $ref: '#/components/schemas/bigint'
+      responses:
+        '200':
+          description: Responses for POST /lcm-instant-refine
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lcmGenerationJob:
+                    title: LcmGenerationOutput
+                    type: object
+                    properties:
+                      imageDataUrl:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      requestTimestamp:
+                        $ref: '#/components/schemas/timestamp'
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  /lcm-inpainting:
+    post:
+      tags:
+        - Realtime Canvas
+      summary: Perform inpainting on a LCM image
+      description: This endpoint will perform a inpainting on a LCM image
+      operationId: performInpaintingLCM
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - imageDataUrl
+                - maskDataUrl
+                - prompt
+              type: object
+              properties:
+                imageDataUrl:
+                  title: String
+                  type: string
+                  description: 'Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`'
+                maskDataUrl:
+                  title: String
+                  type: string
+                  description: 'Image data of the mask layer used for inpainting. In base64 format. Prefix: `data:image/jpeg;base64,`. Mask should be white on black where generation is applied to the white area.'
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate images
+                guidance:
+                  title: Float
+                  type: number
+                  description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
+                  nullable: true
+                strength:
+                  title: Float
+                  type: number
+                  description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
+                  nullable: true
+                requestTimestamp:
+                  $ref: '#/components/schemas/timestamp'
+                style:
+                  $ref: '#/components/schemas/lcm_generation_style'
+                steps:
+                  title: Int
+                  type: integer
+                  description: The number of steps to use for the generation. Must be between 4 and 16.
+                  nullable: true
+                width:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                height:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                seed:
+                  $ref: '#/components/schemas/bigint'
+      responses:
+        '200':
+          description: Responses for POST /lcm-inpainting
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lcmGenerationJob:
+                    title: LcmGenerationOutput
+                    type: object
+                    properties:
+                      imageDataUrl:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      requestTimestamp:
+                        $ref: '#/components/schemas/timestamp'
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  /lcm-upscale:
+    post:
+      tags:
+        - Realtime Canvas
+      summary: Perform Alchemy Upscale on a LCM image
+      description: This endpoint will perform Alchemy Upscale on a LCM image
+      operationId: performAlchemyUpscaleLCM
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - imageDataUrl
+                - prompt
+              type: object
+              properties:
+                imageDataUrl:
+                  title: String
+                  type: string
+                  description: 'Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`'
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate images
+                guidance:
+                  title: Float
+                  type: number
+                  description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
+                  nullable: true
+                strength:
+                  title: Float
+                  type: number
+                  description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
+                  nullable: true
+                requestTimestamp:
+                  $ref: '#/components/schemas/timestamp'
+                style:
+                  $ref: '#/components/schemas/lcm_generation_style'
+                steps:
+                  title: Int
+                  type: integer
+                  description: The number of steps to use for the generation. Must be between 4 and 16.
+                  nullable: true
+                width:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                height:
+                  title: Int
+                  type: integer
+                  description: 'The output width of the image. Must be 512, 640 or 1024.'
+                  default: 512
+                  nullable: true
+                seed:
+                  $ref: '#/components/schemas/bigint'
+                refineCreative:
+                  title: Boolean
+                  type: boolean
+                  description: Refine creative
+                  nullable: true
+                refineStrength:
+                  title: Float
+                  type: number
+                  description: Must be a float between 0.5 and 0.9.
+                  nullable: true
+      responses:
+        '200':
+          description: Responses for POST /lcm-upscale
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lcmGenerationJob:
+                    title: LcmGenerationOutput
+                    type: object
+                    properties:
+                      imageDataUrl:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      generationId:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      variationId:
+                        title: Array of Strings
+                        type: array
+                        items:
+                          type: string
+                      generatedImageId:
+                        title: String
+                        type: string
+                      requestTimestamp:
+                        $ref: '#/components/schemas/timestamp'
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  '/generations-texture/model/{modelId}':
+    get:
+      tags:
+        - Texture
+      summary: Get texture generations by 3D Model ID
+      description: This endpoint gets the specific texture generations by the 3d model id.
+      operationId: getTextureGenerationsByModelId
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: modelId
+          in: path
+          description: _"modelId" is required (enter it either in parameters or request body)_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  title: Int
+                  type: integer
+                  nullable: true
+                modelId:
+                  $ref: '#/components/schemas/uuid'
+                offset:
+                  title: Int
+                  type: integer
+                  nullable: true
+      responses:
+        '200':
+          description: 'Responses for GET /api/rest/v1/generations-texture/model/{modelId}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  model_asset_texture_generations:
+                    type: array
+                    items:
+                      title: model_asset_texture_generations
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        model_asset_texture_images:
+                          type: array
+                          items:
+                            title: model_asset_texture_images
+                            type: object
+                            properties:
+                              id:
+                                $ref: '#/components/schemas/uuid'
+                              type:
+                                $ref: '#/components/schemas/MODEL_ASSET_TEXTURE_TYPES'
+                              url:
+                                title: String
+                                type: string
+                            description: columns and relationships of "model_asset_texture_images"
+                        negativePrompt:
+                          title: String
+                          type: string
+                          nullable: true
+                        prompt:
+                          title: String
+                          type: string
+                        seed:
+                          $ref: '#/components/schemas/bigint'
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                      description: columns and relationships of "model_asset_texture_generations"
+  '/generations-texture/{id}':
+    get:
+      tags:
+        - Texture
+      summary: Get Texture Generation by ID
+      description: This endpoint gets the specific texture generation.
+      operationId: getTextureGenerationById
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: id
+          in: path
+          description: _"id" is required (enter it either in parameters or request body)_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: 'Responses for GET /api/rest/v1/generations-texture/{id}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  model_asset_texture_generations_by_pk:
+                    title: model_asset_texture_generations
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      model_asset_texture_images:
+                        type: array
+                        items:
+                          title: model_asset_texture_images
+                          type: object
+                          properties:
+                            id:
+                              $ref: '#/components/schemas/uuid'
+                            type:
+                              $ref: '#/components/schemas/MODEL_ASSET_TEXTURE_TYPES'
+                            url:
+                              title: String
+                              type: string
+                          description: columns and relationships of "model_asset_texture_images"
+                      negativePrompt:
+                        title: String
+                        type: string
+                        nullable: true
+                      prompt:
+                        title: String
+                        type: string
+                      seed:
+                        $ref: '#/components/schemas/bigint'
+                      status:
+                        $ref: '#/components/schemas/job_status'
+                    description: columns and relationships of "model_asset_texture_generations"
+                    nullable: true
+    delete:
+      tags:
+        - Texture
+      summary: Delete Texture Generation by ID
+      description: This endpoint deletes the specific texture generation.
+      operationId: deleteTextureGenerationById
+      parameters:
+        - name: id
+          in: path
+          description: _"id" is required (enter it either in parameters or request body)_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: 'Responses for DELETE /api/rest/v1/generations-texture/{id}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  delete_model_asset_texture_generations_by_pk:
+                    title: model_asset_texture_generations
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "model_asset_texture_generations"
+                    nullable: true
+  /models-3d/upload:
+    post:
+      tags:
+        - 3D Model Assets
+      summary: Upload 3D Model
+      description: This endpoint returns presigned details to upload a 3D model to S3
+      operationId: uploadModelAsset
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelExtension:
+                  title: String
+                  type: string
+                name:
+                  title: String
+                  type: string
+                  nullable: true
+      responses:
+        '200':
+          description: Responses for POST /api/rest/v1/models-3d/upload
+          content:
+            application/json:
+              schema:
+                properties:
+                  uploadModelAsset:
+                    title: ModelAssetUploadOutput
+                    type: object
+                    properties:
+                      modelFields:
+                        title: String
+                        type: string
+                        nullable: true
+                      modelId:
+                        title: String
+                        type: string
+                        nullable: true
+                      modelKey:
+                        title: String
+                        type: string
+                        nullable: true
+                      modelUrl:
+                        title: String
+                        type: string
+                        nullable: true
+                    nullable: true
+  '/models-3d/user/{userId}':
+    get:
+      tags:
+        - 3D Model Assets
+      summary: Get 3D models by user ID
+      description: This endpoint returns all 3D models by a specific user
+      operationId: get3DModelsByUserId
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: userId
+          in: path
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: 'Responses for GET /api/rest/v1/models-3d/user/{userId}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  model_assets:
+                    type: array
+                    items:
+                      title: model_assets
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        meshUrl:
+                          title: String
+                          type: string
+                        name:
+                          title: String
+                          type: string
+                          nullable: true
+                        updatedAt:
+                          $ref: '#/components/schemas/timestamp'
+                        userId:
+                          $ref: '#/components/schemas/uuid'
+                      description: columns and relationships of "model_assets"
+  '/models-3d/{id}':
+    get:
+      tags:
+        - 3D Model Assets
+      summary: Get 3D Model by ID
+      description: This endpoint gets the specific 3D model
+      operationId: get3DModelById
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: id
+          in: path
+          description: _"id" is required (enter it either in parameters or request body)_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: 'Responses for GET /api/rest/v1/models-3d/{id}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  model_assets_by_pk:
+                    title: model_assets
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      meshUrl:
+                        title: String
+                        type: string
+                      name:
+                        title: String
+                        type: string
+                        nullable: true
+                      updatedAt:
+                        $ref: '#/components/schemas/timestamp'
+                      userId:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "model_assets"
+                    nullable: true
+    delete:
+      tags:
+        - 3D Model Assets
+      summary: Delete 3D Model by ID
+      description: This endpoint deletes the specific 3D Model
+      operationId: delete3DModelById
+      parameters:
+        - name: id
+          in: path
+          description: _"id" is required (enter it either in parameters or request body)_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: 'Responses for DELETE /api/rest/v1/models-3d/{id}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  delete_model_assets_by_pk:
+                    title: model_assets
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "model_assets"
+                    nullable: true
+  /init-image:
+    post:
+      tags:
+        - Init Images
+      summary: Upload init image
+      description: This endpoint returns presigned details to upload an init image to S3
+      operationId: uploadInitImage
+      requestBody:
+        description: Query parameters provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - extension
+              type: object
+              properties:
+                extension:
+                  title: String
+                  type: string
+                  description: 'Has to be png, jpg, jpeg, or webp.'
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /init-image
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadInitImage:
+                    title: InitImageUploadOutput
+                    type: object
+                    properties:
+                      fields:
+                        title: String
+                        type: string
+                        nullable: true
+                      id:
+                        title: String
+                        type: string
+                        nullable: true
+                      key:
+                        title: String
+                        type: string
+                        nullable: true
+                      url:
+                        title: String
+                        type: string
+                        nullable: true
+                    nullable: true
+  '/init-image/{id}':
+    get:
+      tags:
+        - Init Images
+      summary: Get single init image
+      description: This endpoint will return a single init image
+      operationId: getInitImageById
+      parameters:
+        - name: id
+          in: path
+          description: _"id" is required_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /init-image/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  init_images_by_pk:
+                    title: init_images
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      url:
+                        title: String
+                        type: string
+                    description: columns and relationships of "init_images"
+                    nullable: true
+    delete:
+      tags:
+        - Init Images
+      summary: Delete init image
+      description: This endpoint deletes an init image
+      operationId: deleteInitImageById
+      parameters:
+        - name: id
+          in: path
+          description: _"id" is required_
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for DELETE /init-image/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  delete_init_images_by_pk:
+                    title: init_images
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "init_images"
+                    nullable: true
+  /canvas-init-image:
+    post:
+      tags:
+        - Init Images
+      summary: Upload Canvas Editor init and mask image
+      description: This endpoint returns presigned details to upload an init image and a mask image to S3
+      operationId: uploadCanvasInitImage
+      requestBody:
+        description: Query parameters provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - initExtension
+                - maskExtension
+              type: object
+              properties:
+                initExtension:
+                  title: String
+                  type: string
+                  description: 'Has to be png, jpg, jpeg, or webp.'
+                maskExtension:
+                  title: String
+                  type: string
+                  description: 'Has to be png, jpg, jpeg, or webp.'
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /canvas-init-image
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadCanvasInitImage:
+                    title: CanvasInitImageUploadOutput
+                    type: object
+                    properties:
+                      initImageId:
+                        title: String
+                        type: string
+                        nullable: true
+                      initFields:
+                        title: String
+                        type: string
+                        nullable: true
+                      initKey:
+                        title: String
+                        type: string
+                        nullable: true
+                      initUrl:
+                        title: String
+                        type: string
+                        nullable: true
+                      maskImageId:
+                        title: String
+                        type: string
+                        nullable: true
+                      maskFields:
+                        title: String
+                        type: string
+                        nullable: true
+                      maskKey:
+                        title: String
+                        type: string
+                        nullable: true
+                      maskUrl:
+                        title: String
+                        type: string
+                        nullable: true
+                    nullable: true
+  /variations/unzoom:
+    post:
+      tags:
+        - Variation
+      summary: Create unzoom
+      description: This endpoint will create an unzoom variation for the provided image ID
+      operationId: createVariationUnzoom
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  title: String
+                  type: string
+                isVariation:
+                  title: Boolean
+                  type: boolean
+                  nullable: true
+      responses:
+        '200':
+          description: Responses for POST /api/rest/v1/variations/unzoom
+          content:
+            application/json:
+              schema:
+                properties:
+                  sdUnzoomJob:
+                    title: SDUnzoomOutput
+                    type: object
+                    properties:
+                      id:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Unzoom Variation. Available for Production API Users.
+                        nullable: true
+                    nullable: true
+  /variations/upscale:
+    post:
+      tags:
+        - Variation
+      summary: Create upscale
+      description: This endpoint will create an upscale for the provided image ID
+      operationId: createVariationUpscale
+      requestBody:
+        description: Query parameters are provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - id
+              type: object
+              properties:
+                id:
+                  title: String
+                  type: string
+      responses:
+        '200':
+          description: Responses for POST /variations/upscale
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdUpscaleJob:
+                    title: SDUpscaleJobOutput
+                    type: object
+                    properties:
+                      id:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Upscale Variation. Available for Production API Users.
+                        nullable: true
+                    nullable: true
+  /variations/nobg:
+    post:
+      tags:
+        - Variation
+      summary: Create no background
+      description: This endpoint will create a no background variation of the provided image ID
+      operationId: createVariationNoBG
+      requestBody:
+        description: Query parameters are provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - id
+              type: object
+              properties:
+                id:
+                  title: String
+                  type: string
+                isVariation:
+                  title: Boolean
+                  type: boolean
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /variations/nobg
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdNobgJob:
+                    title: SDUpscaleJobOutput
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for No Background Variation. Available for Production API Users.
+                        nullable: true
+  /variations/universal-upscaler:
+    post:
+      tags:
+        - Variation
+      summary: Create using Universal Upscaler
+      description: This endpoint will create a high resolution image using Universal Upscaler
+      operationId: CreateUniversalUpscalerJob
+      requestBody:
+        description: Query parameters are provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                initImageId:
+                  title: String
+                  type: string
+                  description: The ID of the init image uploaded
+                  nullable: true
+                generatedImageId:
+                  title: String
+                  type: string
+                  description: The ID of the generated image
+                  nullable: true
+                variationId:
+                  title: String
+                  type: string
+                  description: The ID of the variation image
+                  nullable: true
+                upscalerStyle:
+                  $ref: '#/components/schemas/universal_upscaler_style'
+                creativityStrength:
+                  title: Int
+                  type: integer
+                  description: 'The creativity strength of the universal upscaler, must be integer between 1 and 10'
+                  default: 5
+                  nullable: true
+                upscaleMultiplier:
+                  title: Float
+                  type: number
+                  description: 'The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00'
+                  default: 1.5
+                  nullable: true
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt for the universal upscaler
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /variations/universal-upscaler
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  universalUpscaler:
+                    title: UniversalUpscalerOutput
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Universal Upscaler Variation. Available for Production API Users.
+                        nullable: true
+  '/variations/{id}':
+    get:
+      tags:
+        - Variation
+      summary: Get variation by ID
+      description: This endpoint will get the variation by ID
+      operationId: getVariationById
+      parameters:
+        - name: id
+          in: path
+          description: '"id" is required'
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /variations/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  generated_image_variation_generic:
+                    type: array
+                    items:
+                      title: generated_image_variation_generic
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                        transformType:
+                          $ref: '#/components/schemas/VARIATION_TYPE'
+                        url:
+                          title: String
+                          type: string
+                          nullable: true
+                      description: columns and relationships of "generated_image_variation_generic"
+  /datasets:
+    post:
+      tags:
+        - Dataset
+      summary: Create a Dataset
+      description: This endpoint creates a new dataset
+      operationId: createDataset
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+              type: object
+              properties:
+                name:
+                  title: String
+                  type: string
+                  description: The name of the dataset.
+                description:
+                  title: String
+                  type: string
+                  description: A description for the dataset.
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /datasets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  insert_datasets_one:
+                    title: datasets
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "datasets"
+                    nullable: true
+  '/datasets/{id}':
+    get:
+      tags:
+        - Dataset
+      summary: Get a Single Dataset by ID
+      description: This endpoint gets the specific dataset
+      operationId: getDatasetById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the dataset to return.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /datasets/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  datasets_by_pk:
+                    title: datasets
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      dataset_images:
+                        type: array
+                        items:
+                          title: dataset_images
+                          type: object
+                          properties:
+                            createdAt:
+                              $ref: '#/components/schemas/timestamp'
+                            id:
+                              $ref: '#/components/schemas/uuid'
+                            url:
+                              title: String
+                              type: string
+                          description: columns and relationships of "dataset_images"
+                      description:
+                        title: String
+                        type: string
+                        nullable: true
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      name:
+                        title: String
+                        type: string
+                      updatedAt:
+                        $ref: '#/components/schemas/timestamp'
+                    description: columns and relationships of "datasets"
+                    nullable: true
+    delete:
+      tags:
+        - Dataset
+      summary: Delete a Single Dataset by ID
+      description: This endpoint deletes the specific dataset
+      operationId: deleteDatasetById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the dataset to delete.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for DELETE /datasets/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  delete_datasets_by_pk:
+                    title: datasets
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "datasets"
+                    nullable: true
+  '/datasets/{datasetId}/upload':
+    post:
+      tags:
+        - Dataset
+      summary: Upload dataset image
+      description: This endpoint returns presigned details to upload a dataset image to S3
+      operationId: uploadDatasetImage
+      parameters:
+        - name: datasetId
+          in: path
+          description: _"datasetId" is required
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Query parameters provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - extension
+              type: object
+              properties:
+                extension:
+                  title: String
+                  type: string
+                  description: 'Has to be png, jpg, jpeg, or webp.'
+        required: true
+      responses:
+        '200':
+          description: 'Responses for POST /datasets/{datasetId}/upload'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadDatasetImage:
+                    title: DatasetUploadOutput
+                    type: object
+                    properties:
+                      fields:
+                        title: String
+                        type: string
+                        nullable: true
+                      id:
+                        title: String
+                        type: string
+                        nullable: true
+                      key:
+                        title: String
+                        type: string
+                        nullable: true
+                      url:
+                        title: String
+                        type: string
+                        nullable: true
+                    nullable: true
+  '/datasets/{datasetId}/upload/gen':
+    post:
+      tags:
+        - Dataset
+      summary: Upload a Single Generated Image to a Dataset
+      description: This endpoint will upload a previously generated image to the dataset
+      operationId: uploadDatasetImageFromGen
+      parameters:
+        - name: datasetId
+          in: path
+          description: The ID of the dataset to upload the image to.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - generatedImageId
+              type: object
+              properties:
+                generatedImageId:
+                  title: String
+                  type: string
+                  description: The ID of the image to upload to the dataset.
+        required: true
+      responses:
+        '200':
+          description: 'Responses for POST /datasets/{datasetId}/upload/gen'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadDatasetImageFromGen:
+                    title: DatasetGenUploadOutput
+                    type: object
+                    properties:
+                      id:
+                        title: String
+                        type: string
+                        nullable: true
+                    nullable: true
+  /models:
+    post:
+      tags:
+        - Models
+      summary: Train a Custom Model
+      description: This endpoint will train a new custom model
+      operationId: createModel
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+                - datasetId
+                - instance_prompt
+              type: object
+              properties:
+                name:
+                  title: String
+                  type: string
+                  description: The name of the model.
+                description:
+                  title: String
+                  type: string
+                  description: The description of the model.
+                  default: ''
+                  nullable: true
+                datasetId:
+                  title: String
+                  type: string
+                  description: The ID of the dataset to train the model on.
+                instance_prompt:
+                  title: String
+                  type: string
+                  description: The instance prompt to use during training.
+                modelType:
+                  $ref: '#/components/schemas/custom_model_type'
+                nsfw:
+                  title: Boolean
+                  type: boolean
+                  description: Whether or not the model is NSFW.
+                  default: false
+                  nullable: true
+                resolution:
+                  title: Int
+                  type: integer
+                  description: The resolution for training. Must be 512 or 768.
+                  default: 512
+                  nullable: true
+                sd_Version:
+                  $ref: '#/components/schemas/sd_versions'
+                strength:
+                  $ref: '#/components/schemas/strength'
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /models
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdTrainingJob:
+                    title: SDTrainingOutput
+                    type: object
+                    properties:
+                      customModelId:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Model Training. Available for Production API Users.
+                        nullable: true
+                    nullable: true
+  '/models/{id}':
+    get:
+      tags:
+        - Models
+      summary: Get a Single Custom Model by ID
+      description: This endpoint gets the specific custom model
+      operationId: getModelById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the custom model to return.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /models/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  custom_models_by_pk:
+                    title: custom_models
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      description:
+                        title: String
+                        type: string
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                      instancePrompt:
+                        title: String
+                        type: string
+                        nullable: true
+                      modelHeight:
+                        title: Int
+                        type: integer
+                      modelWidth:
+                        title: Int
+                        type: integer
+                      name:
+                        title: String
+                        type: string
+                      public:
+                        title: Boolean
+                        type: boolean
+                      sdVersion:
+                        $ref: '#/components/schemas/sd_versions'
+                      status:
+                        $ref: '#/components/schemas/job_status'
+                      type:
+                        $ref: '#/components/schemas/custom_model_type'
+                      updatedAt:
+                        $ref: '#/components/schemas/timestamp'
+                    description: columns and relationships of "custom_models"
+                    nullable: true
+    delete:
+      tags:
+        - Models
+      summary: Delete a Single Custom Model by ID
+      description: This endpoint will delete a specific custom model
+      operationId: deleteModelById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the model to delete.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for DELETE /models/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  delete_custom_models_by_pk:
+                    title: custom_models
+                    type: object
+                    properties:
+                      id:
+                        $ref: '#/components/schemas/uuid'
+                    description: columns and relationships of "custom_models"
+                    nullable: true
+  /platformModels:
+    get:
+      tags:
+        - Models
+      summary: List Platform Models
+      description: Get a list of public Platform Models available for use with generations.
+      operationId: listPlatformModels
+      responses:
+        '200':
+          description: Responses for GET /api/rest/v1/platformModels
+          content:
+            application/json:
+              schema:
+                properties:
+                  custom_models:
+                    type: array
+                    items:
+                      title: custom_models
+                      type: object
+                      properties:
+                        description:
+                          title: String
+                          type: string
+                        featured:
+                          title: Boolean
+                          type: boolean
+                        generated_image:
+                          title: generated_images
+                          type: object
+                          properties:
+                            id:
+                              $ref: '#/components/schemas/uuid'
+                            url:
+                              title: String
+                              type: string
+                          description: columns and relationships of "generated_images"
+                          nullable: true
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        name:
+                          title: String
+                          type: string
+                        nsfw:
+                          title: Boolean
+                          type: boolean
+                      description: columns and relationships of "custom_models"
+  /elements:
+    get:
+      tags:
+        - Elements
+      summary: List Elements
+      description: Get a list of public Elements available for use with generations.
+      operationId: listElements
+      responses:
+        '200':
+          description: Responses for GET /api/rest/v1/elements
+          content:
+            application/json:
+              schema:
+                properties:
+                  loras:
+                    type: array
+                    items:
+                      title: loras
+                      type: object
+                      properties:
+                        akUUID:
+                          $ref: '#/components/schemas/lora'
+                        baseModel:
+                          $ref: '#/components/schemas/sd_versions'
+                        creatorName:
+                          $ref: '#/components/schemas/lora'
+                        description:
+                          $ref: '#/components/schemas/lora'
+                        name:
+                          $ref: '#/components/schemas/lora'
+                        urlImage:
+                          $ref: '#/components/schemas/lora'
+                        weightDefault:
+                          $ref: '#/components/schemas/lora'
+                        weightMax:
+                          $ref: '#/components/schemas/lora'
+                        weightMin:
+                          $ref: '#/components/schemas/lora'
+                      description: columns and relationships of "elements"
+  /prompt/random:
+    post:
+      tags:
+        - Prompt
+      summary: Generate a Random prompt
+      description: This endpoint returns a random prompt
+      operationId: promptRandom
+      responses:
+        '200':
+          description: Responses for POST /prompt/random
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  promptGeneration:
+                    title: promptGenerationOutput
+                    type: object
+                    properties:
+                      prompt:
+                        title: String
+                        type: string
+                        description: The random prompt generated.
+                        default: The random prompt generated.
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Random Prompt Generation. Available for Production API Users.
+                        default: 4
+  /prompt/improve:
+    post:
+      tags:
+        - Prompt
+      summary: Improve a Prompt
+      description: This endpoint returns a improved prompt
+      operationId: promptImprove
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - prompt
+              type: object
+              properties:
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt to improve.
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /prompt/improve
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  promptGeneration:
+                    title: promptGenerationOutput
+                    type: object
+                    properties:
+                      prompt:
+                        title: String
+                        type: string
+                        description: The improved prompt.
+                        default: The improved prompt.
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Random Prompt Generation. Available for Production API Users.
+                        default: 4
+  /pricing-calculator:
+    post:
+      tags:
+        - Pricing Calculator
+      summary: Calculating API Cost
+      description: This endpoint returns the cost used for generating images using a particular service type.
+      operationId: pricingCalculator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                service:
+                  $ref: '#/components/schemas/pricingCalculatorServices'
+                serviceParams:
+                  title: Object
+                  type: object
+                  properties:
+                    IMAGE_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        imageHeight:
+                          $ref: '#/components/schemas/imageHeight'
+                        imageWidth:
+                          $ref: '#/components/schemas/imageHeight'
+                        numImages:
+                          $ref: '#/components/schemas/numImages'
+                        inferenceSteps:
+                          title: Int
+                          type: integer
+                          description: The Step Count to use for the generation. Must be between 10 and 60.
+                        promptMagic:
+                          $ref: '#/components/schemas/promptMagicArg'
+                        promptMagicStrength:
+                          $ref: '#/components/schemas/promptMagicStrengthArg'
+                        promptMagicVersion:
+                          $ref: '#/components/schemas/promptMagicVersionArg'
+                        alchemyMode:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Alchemy.
+                        highResolution:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use high resolution.
+                        loraCount:
+                          title: Int
+                          type: integer
+                          description: The number of elements used for the generation.
+                          nullable: true
+                        isModelCustom:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use custom model.
+                          nullable: true
+                        controlnetsCost:
+                          title: Int
+                          type: integer
+                          description: The total cost of controlnets input.
+                          nullable: true
+                        isSDXL:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use SDXL model.
+                          nullable: true
+                        isSDXLLightning:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use SDXL Lightning model.
+                          nullable: true
+                      description: Parameters for IMAGE_GENERATION service
+                      nullable: true
+                    FANTASY_AVATAR_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        imageHeight:
+                          $ref: '#/components/schemas/imageHeight'
+                        imageWidth:
+                          $ref: '#/components/schemas/imageHeight'
+                        numImages:
+                          $ref: '#/components/schemas/numImages'
+                      description: Parameters for FANTASY_AVATAR_GENERATION service
+                      nullable: true
+                    MOTION_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        durationSeconds:
+                          title: Int
+                          type: integer
+                          description: The total duration of the motion generation in seconds.
+                      description: Parameters for MOTION_GENERATION service
+                      nullable: true
+                    LCM_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        height:
+                          title: Int
+                          type: integer
+                          description: 'The output height of the image. Must be 512, 640 or 1024.'
+                          nullable: true
+                        width:
+                          title: Int
+                          type: integer
+                          description: 'The output width of the image. Must be 512, 640 or 1024.'
+                          nullable: true
+                        instantRefine:
+                          title: Boolean
+                          type: boolean
+                          description: Enable for instant upscale
+                          nullable: true
+                        refine:
+                          title: Boolean
+                          type: boolean
+                          description: Enable for normal alchemy upscale
+                          nullable: true
+                      description: Parameters for LCM_GENERATION service
+                      nullable: true
+                    MODEL_TRAINING:
+                      title: Object
+                      type: object
+                      properties:
+                        resolution:
+                          title: Int
+                          type: integer
+                          description: The resolution for training. Must be 512 or 768.
+                      description: Parameters for MODEL_TRAINING service
+                      nullable: true
+                    TEXTURE_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        preview:
+                          title: Boolean
+                          type: boolean
+                      description: Parameters for TEXTURE_GENERATION service
+                      nullable: true
+                    UNIVERSAL_UPSCALER:
+                      title: Object
+                      type: object
+                      properties:
+                        megapixel:
+                          title: Int
+                          type: integer
+                          description: The maximum upscaled image size is 20 megapixels.
+                      description: Parameters for UNIVERSAL_UPSCALER service
+                      nullable: true
+                  description: Parameters for the service
+      responses:
+        '200':
+          description: Responses for POST /pricing-calculator
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calculateProductionApiServiceCost:
+                    title: calculateProductionApiServiceCost
+                    type: object
+                    properties:
+                      cost:
+                        title: Int
+                        type: integer
+                        description: API service cost to generate the image.
+                    nullable: true
+components:
+  schemas:
+    apiCreditCost:
+      title: Int
+      type: integer
+      description: 'API credits cost, available for Production API users.'
+      nullable: true
+    isVariation:
+      title: Boolean
+      type: boolean
+      description: If it is a variation image.
+      nullable: true
+    isInitImage:
+      title: Boolean
+      type: boolean
+      description: 'If it is an init image uploaded by the user. This image is uploaded from endpoint: Upload init image.'
+      nullable: true
+    imageToVideo:
+      title: Boolean
+      type: boolean
+      description: If it is an image to video generation.
+      nullable: true
+    sd_versions:
+      title: sd_versions
+      enum:
+        - v1_5
+        - v2
+        - v3
+        - SDXL_0_8
+        - SDXL_0_9
+        - SDXL_1_0
+        - SDXL_LIGHTNING
+      type: string
+      description: 'The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models'
+    lora:
+      type: object
+      properties:
+        akUUID:
+          type: string
+          description: Unique identifier for the element. Elements can be found from the List Elements endpoint.
+          nullable: true
+        creatorName:
+          type: string
+          description: Name of the creator of the element
+          nullable: true
+        name:
+          type: string
+          description: Name of the element
+          nullable: true
+        description:
+          type: string
+          description: Description for the element
+          nullable: true
+        urlImage:
+          type: string
+          description: URL of the element image
+          nullable: true
+        baseModel:
+          type: string
+          description: Base model version for the element
+          nullable: true
+        weightDefault:
+          type: integer
+          description: Default weight for the element
+          nullable: true
+        weightMin:
+          type: integer
+          description: Minimum weight for the element
+          nullable: true
+        weightMax:
+          type: integer
+          description: Maximum weight for the element
+          nullable: true
+        __typename:
+          type: string
+          description: Type name for introspection purposes
+    motion:
+      title: Boolean
+      type: boolean
+      description: If generation is of motion type.
+      nullable: true
+    motionModel:
+      title: String
+      type: string
+      description: The name of the motion model.
+      nullable: true
+    motionMP4URL:
+      title: String
+      type: string
+      description: The URL of the motion MP4.
+      nullable: true
+    motionStrength:
+      title: Int
+      type: integer
+      description: The motion strength.
+      nullable: true
+    public:
+      title: Boolean
+      type: boolean
+      description: Whether the generation is public or not
+      nullable: true
+    strength:
+      title: strength
+      enum:
+        - VERY_LOW
+        - LOW
+        - MEDIUM
+        - HIGH
+      type: string
+      description: 'When training using the PIXEL_ART model type, this influences the training strength.'
+      default: MEDIUM
+    job_status:
+      title: job_status
+      enum:
+        - PENDING
+        - COMPLETE
+        - FAILED
+      type: string
+      description: The status of the current task.
+    MODEL_ASSET_TEXTURE_TYPES:
+      title: MODEL_ASSET_TEXTURE_TYPES
+      enum:
+        - ALBEDO
+        - NORMAL
+        - ROUGHNESS
+        - DISPLACEMENT
+        - HDRP_MASK
+      type: string
+      description: When training model assets these are the texture types available to use.
+      default: NORMAL
+    custom_model_type:
+      title: custom_model_type
+      enum:
+        - GENERAL
+        - BUILDINGS
+        - CHARACTERS
+        - ENVIRONMENTS
+        - FASHION
+        - ILLUSTRATIONS
+        - GAME_ITEMS
+        - GRAPHICAL_ELEMENTS
+        - PHOTOGRAPHY
+        - PIXEL_ART
+        - PRODUCT_DESIGN
+        - TEXTURES
+        - UI_ELEMENTS
+        - VECTOR
+      type: string
+      description: The category the most accurately reflects the model.
+      default: GENERAL
+    sd_generation_schedulers:
+      title: sd_generation_schedulers
+      enum:
+        - KLMS
+        - EULER_ANCESTRAL_DISCRETE
+        - EULER_DISCRETE
+        - DDIM
+        - DPM_SOLVER
+        - PNDM
+        - LEONARDO
+      type: string
+      description: The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
+    VARIATION_TYPE:
+      title: VARIATION_TYPE
+      enum:
+        - OUTPAINT
+        - INPAINT
+        - UPSCALE
+        - UNZOOM
+        - NOBG
+      type: string
+      description: The type of variation.
+    timestamp:
+      title: timestamp
+      type: string
+    controlnet_input:
+      title: controlnet_input
+      type: object
+      properties:
+        initImageId:
+          title: String
+          type: string
+          description: The ID of the init image
+        initImageType:
+          enum:
+            - GENERATED
+            - UPLOADED
+          type: string
+          description: Type indicating whether the init image is uploaded or generated.
+        preprocessorId:
+          title: numeric
+          type: number
+          description: ID of the controlnet. A list of compatible IDs can be found in our guides.
+        weight:
+          title: Float
+          type: number
+          description: Weight for the controlnet
+          nullable: true
+        strengthType:
+          enum:
+            - Low
+            - Mid
+            - High
+            - Ultra
+            - Max
+          type: string
+          description: 'Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.'
+          nullable: true
+    element_input:
+      title: element_input
+      type: object
+      properties:
+        akUUID:
+          title: String
+          type: string
+          description: Unique identifier for element. Elements can be found from the List Elements endpoint.
+          nullable: true
+        weight:
+          title: Float
+          type: number
+          description: Weight for the element
+          nullable: true
+    float8:
+      title: float8
+      type: number
+      nullable: true
+    numeric:
+      title: numeric
+      type: number
+      nullable: true
+    bigint:
+      title: bigint
+      type: integer
+      nullable: true
+    sd_generation_style:
+      title: sd_generation_style
+      enum:
+        - ANIME
+        - BOKEH
+        - CINEMATIC
+        - CINEMATIC_CLOSEUP
+        - CREATIVE
+        - DYNAMIC
+        - ENVIRONMENT
+        - FASHION
+        - FILM
+        - FOOD
+        - GENERAL
+        - HDR
+        - ILLUSTRATION
+        - LEONARDO
+        - LONG_EXPOSURE
+        - MACRO
+        - MINIMALISTIC
+        - MONOCHROME
+        - MOODY
+        - NONE
+        - NEUTRAL
+        - PHOTOGRAPHY
+        - PORTRAIT
+        - RAYTRACED
+        - RENDER_3D
+        - RETRO
+        - SKETCH_BW
+        - SKETCH_COLOR
+        - STOCK_PHOTO
+        - VIBRANT
+        - UNPROCESSED
+      type: string
+      description: 'The style to generate images with. When photoReal is enabled, refer to the Guide section for a full list. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE.'
+      default: DYNAMIC
+      nullable: true
+    lcm_generation_style:
+      title: lcm_generation_style
+      enum:
+        - ANIME
+        - CINEMATIC
+        - DIGITAL_ART
+        - DYNAMIC
+        - ENVIRONMENT
+        - FANTASY_ART
+        - ILLUSTRATION
+        - PHOTOGRAPHY
+        - RENDER_3D
+        - RAYTRACED
+        - SKETCH_BW
+        - SKETCH_COLOR
+        - VIBRANT
+        - NONE
+      type: string
+      description: The style to generate LCM images with.
+      nullable: true
+    universal_upscaler_style:
+      title: universal_upscaler_style
+      enum:
+        - GENERAL
+        - CINEMATIC
+        - 2D ART & ILLUSTRATION
+        - CG ART & GAME ASSETS
+      type: string
+      description: The style to upscale images using universal upscaler with.
+      default: GENERAL
+      nullable: true
+    controlnet_type:
+      title: controlnet_type
+      enum:
+        - POSE
+        - CANNY
+        - DEPTH
+      type: string
+      description: This parameter will be deprecated in September 2024. Please use the controlnets array instead.
+      deprecated: true
+    uuid:
+      title: uuid
+      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+      type: string
+      nullable: true
+    photoRealArg:
+      title: Boolean
+      type: boolean
+      description: Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId (for photoRealVersion V1).
+      nullable: true
+    photoRealVersion:
+      title: String
+      type: string
+      description: The version of photoReal to use. Must be v1 or v2.
+      nullable: true
+    photoRealRes:
+      title: Boolean
+      type: boolean
+      description: If photoReal feature was used.
+      nullable: true
+    photoRealStrengthArg:
+      title: Float
+      type: number
+      description: 'Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified.'
+      nullable: true
+    photoRealStrengthRes:
+      title: Float
+      type: number
+      description: 'Depth of field of photoReal used. 0.55 is low, 0.5 is medium, and 0.45 is high. Default is 0.55.'
+      nullable: true
+    promptMagicArg:
+      title: Boolean
+      type: boolean
+      description: Enable to use Prompt Magic.
+      nullable: true
+    promptMagicRes:
+      title: Boolean
+      type: boolean
+      description: If prompt magic was used.
+      nullable: true
+    promptMagicVersionArg:
+      title: String
+      type: string
+      description: 'Prompt magic version v2 or v3, for use when promptMagic: true'
+      nullable: true
+    promptMagicVersionRes:
+      title: String
+      type: string
+      description: Version of prompt magic used.
+      nullable: true
+    promptMagicStrengthArg:
+      title: Float
+      type: number
+      description: Strength of prompt magic. Must be a float between 0.1 and 1.0
+      nullable: true
+    promptMagicStrengthRes:
+      title: Float
+      type: number
+      description: Strength of prompt magic used.
+      nullable: true
+    pricingCalculatorServices:
+      title: pricingCalculatorServices
+      enum:
+        - IMAGE_GENERATION
+        - FANTASY_AVATAR_GENERATION
+        - MOTION_GENERATION
+        - LCM_GENERATION
+        - MODEL_TRAINING
+        - TEXTURE_GENERATION
+        - UNIVERSAL_UPSCALER
+      type: string
+      description: The services to be chosen for calculating the API credit cost.
+    imageHeight:
+      title: Int
+      type: integer
+      description: 'The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features'
+    imageWidth:
+      title: Int
+      type: integer
+      description: 'The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features'
+    numImages:
+      title: Int
+      type: integer
+      description: 'The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.'
+    canvasRequestType:
+      title: canvasRequestType
+      enum:
+        - INPAINT
+        - OUTPAINT
+        - SKETCH2IMG
+        - IMG2IMG
+      type: string
+      description: The type of request for the Canvas Editor.
+      nullable: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: 'Bearer HTTP authentication. Allowed headers `Authorization: Bearer <api_key>`'
+      scheme: bearer
+      bearerFormat: auth-scheme
+security:
+  - bearerAuth: [ ]
+tags:
+  - name: Dataset
+  - name: Elements
+  - name: Image
+  - name: Init Images
+  - name: Motion
+  - name: Models
+  - name: Pricing Calculator
+  - name: Prompt
+  - name: Realtime Canvas
+  - name: Texture
+  - name: User
+  - name: Variation
+  - name: 3D Model Assets

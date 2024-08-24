@@ -42,6 +42,14 @@ public partial class DataTests
             H.Resources.github_yaml.AsString(),
             DefaultSettings)));
     }
+    
+    [TestMethod]
+    public Task Leonardo()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.leonardo_yaml.AsString(),
+            DefaultSettings)));
+    }
 
     [TestMethod]
     public Task LangSmith()

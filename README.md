@@ -17,6 +17,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Supports OneOf/AnyOf/AllOf/Not schemas
 - Supports Enums for System.Text.Json
 - Efficient O(n) implementation, fully suitable for large/super large OpenAPI specifications
+- Used in 10+ real SDKs and adapted to solve various problems
 
 # 🚀Quick start🚀
 ## CLI (Recommended)
@@ -118,4 +119,5 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 - https://github.com/tryAGI/LangSmith
 - https://github.com/tryAGI/Replicate
 - https://github.com/tryAGI/DeepInfra
+- https://github.com/tryAGI/Leonardo
 - https://github.com/HavenDV/GitHub.NET

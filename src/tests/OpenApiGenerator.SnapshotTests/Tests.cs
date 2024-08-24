@@ -73,6 +73,24 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Leonardo(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.leonardo_yaml.FileName,
+                text: H.Resources.leonardo_yaml.AsString())
+        ], new Dictionary<string, string>
+        {
+            //["build_property.OpenApiGenerator_MethodNamingConvention"] = "OperationIdSplit",
+            //["build_property.OpenApiGenerator_ExcludeDeprecatedOperations"] = "true",
+            //["build_property.OpenApiGenerator_JsonSerializerContext"] = "SourceGenerationContext",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        });
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Anthropic(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
