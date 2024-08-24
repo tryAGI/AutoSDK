@@ -101,9 +101,8 @@ namespace {authorization.Settings.Namespace}
     {{
         /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?)""/>
         public {authorization.Settings.ClassName}(
-{string.Concat(parameters.Select(x => $@" 
-            string {x},
-"))}
+{string.Join("\n", parameters.Select(x => $@" 
+            string {x},"))}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null) : this(httpClient, baseUri)
         {{
