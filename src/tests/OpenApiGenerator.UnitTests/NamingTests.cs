@@ -13,7 +13,7 @@ public partial class NamingTests
     {
         var settings = Settings.Default;
         var openApiDocument = yaml.GetOpenApiDocument();
-        var schemaContexts = openApiDocument.GetSchemaContexts(settings);
+        var schemaContexts = openApiDocument.GetSchemas(settings);
         
         var models = schemaContexts
             .Where(x => x.IsModel)

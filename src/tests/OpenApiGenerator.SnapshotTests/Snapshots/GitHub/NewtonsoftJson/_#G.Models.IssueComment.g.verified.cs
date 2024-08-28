@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the issue comment<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;

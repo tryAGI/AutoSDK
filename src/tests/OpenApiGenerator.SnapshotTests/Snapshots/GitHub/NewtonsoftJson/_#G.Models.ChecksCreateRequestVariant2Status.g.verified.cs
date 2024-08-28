@@ -7,13 +7,49 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChecksCreateRequestVariant2Status
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ChecksCreateRequestVariant2Status
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ChecksCreateRequestVariant2StatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ChecksCreateRequestVariant2Status value)
+        {
+            return value switch
+            {
+                ChecksCreateRequestVariant2Status.Queued => "queued",
+                ChecksCreateRequestVariant2Status.InProgress => "in_progress",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ChecksCreateRequestVariant2Status? ToEnum(string value)
+        {
+            return value switch
+            {
+                "queued" => ChecksCreateRequestVariant2Status.Queued,
+                "in_progress" => ChecksCreateRequestVariant2Status.InProgress,
+                _ => null,
+            };
+        }
     }
 }

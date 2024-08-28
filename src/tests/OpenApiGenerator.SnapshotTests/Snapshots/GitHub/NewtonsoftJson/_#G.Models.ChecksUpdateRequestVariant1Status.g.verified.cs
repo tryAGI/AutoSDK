@@ -7,13 +7,42 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChecksUpdateRequestVariant1Status
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ChecksUpdateRequestVariant1Status
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ChecksUpdateRequestVariant1StatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ChecksUpdateRequestVariant1Status value)
+        {
+            return value switch
+            {
+                ChecksUpdateRequestVariant1Status.Completed => "completed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ChecksUpdateRequestVariant1Status? ToEnum(string value)
+        {
+            return value switch
+            {
+                "completed" => ChecksUpdateRequestVariant1Status.Completed,
+                _ => null,
+            };
+        }
     }
 }

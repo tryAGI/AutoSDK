@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
-        /// Example: 208045946
+        /// Example: 208045946L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;

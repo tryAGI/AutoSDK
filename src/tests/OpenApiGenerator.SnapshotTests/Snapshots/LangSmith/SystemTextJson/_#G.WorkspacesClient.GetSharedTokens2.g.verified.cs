@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.GetSharedTokens.g.cs
+﻿//HintName: G.WorkspacesClient.GetSharedTokens2.g.cs
 
 #nullable enable
 
@@ -6,20 +6,20 @@ namespace G
 {
     public partial class WorkspacesClient
     {
-        partial void PrepareGetSharedTokensArguments(
+        partial void PrepareGetSharedTokens2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
             ref int offset);
-        partial void PrepareGetSharedTokensRequest(
+        partial void PrepareGetSharedTokens2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
             int offset);
-        partial void ProcessGetSharedTokensResponse(
+        partial void ProcessGetSharedTokens2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetSharedTokensResponseContent(
+        partial void ProcessGetSharedTokens2ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -36,14 +36,14 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokensAsync(
+        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokens2Async(
             int limit,
             int offset,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetSharedTokensArguments(
+            PrepareGetSharedTokens2Arguments(
                 httpClient: _httpClient,
                 limit: ref limit,
                 offset: ref offset);
@@ -55,7 +55,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetSharedTokensRequest(
+            PrepareGetSharedTokens2Request(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 limit: limit,
@@ -69,17 +69,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetSharedTokensResponse(
+            ProcessGetSharedTokens2Response(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetSharedTokensResponseContent(
+            ProcessGetSharedTokens2ResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -94,7 +94,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TenantShareTokensResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TenantShareTokensResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

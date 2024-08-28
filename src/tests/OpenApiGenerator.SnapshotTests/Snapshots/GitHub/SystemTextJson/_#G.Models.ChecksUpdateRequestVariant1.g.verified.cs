@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChecksUpdateRequestVariant1StatusJsonConverter))]
         public global::G.ChecksUpdateRequestVariant1Status? Status { get; set; }
 
         /// <summary>

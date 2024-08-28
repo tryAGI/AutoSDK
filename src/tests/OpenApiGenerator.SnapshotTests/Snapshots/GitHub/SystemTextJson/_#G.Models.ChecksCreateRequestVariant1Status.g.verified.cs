@@ -7,13 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChecksCreateRequestVariant1Status
+    public enum ChecksCreateRequestVariant1Status
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Completed,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ChecksCreateRequestVariant1StatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ChecksCreateRequestVariant1Status value)
+        {
+            return value switch
+            {
+                ChecksCreateRequestVariant1Status.Completed => "completed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ChecksCreateRequestVariant1Status? ToEnum(string value)
+        {
+            return value switch
+            {
+                "completed" => ChecksCreateRequestVariant1Status.Completed,
+                _ => null,
+            };
+        }
     }
 }

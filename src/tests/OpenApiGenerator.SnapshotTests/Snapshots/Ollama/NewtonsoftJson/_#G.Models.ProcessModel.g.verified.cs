@@ -19,7 +19,7 @@ namespace G
 
         /// <summary>
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500
+        /// Example: 7323310500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public long Size { get; set; }
@@ -45,7 +45,7 @@ namespace G
 
         /// <summary>
         /// Size of the model on disk.<br/>
-        /// Example: 7323310500
+        /// Example: 7323310500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_vram")]
         public long SizeVram { get; set; }

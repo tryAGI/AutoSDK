@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChecksCreateRequestVariant1Status Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChecksCreateRequestVariant1StatusJsonConverter))]
+        public global::G.ChecksCreateRequestVariant1Status Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
