@@ -120,7 +120,7 @@ public class SchemaContext
         {
             return "class";
         }
-        if (schema.Type == "boolean")
+        if (schema.IsBoolean())
         {
             return "bool";
         }
