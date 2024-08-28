@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
-        /// Example: 208045946
+        /// Example: 208045946L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -1,4 +1,4 @@
-﻿//HintName: G.TtlSettingsClient.ListTtlSettings.g.cs
+﻿//HintName: G.TtlSettingsClient.ListTtlSettings2.g.cs
 
 #nullable enable
 
@@ -6,16 +6,16 @@ namespace G
 {
     public partial class TtlSettingsClient
     {
-        partial void PrepareListTtlSettingsArguments(
+        partial void PrepareListTtlSettings2Arguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareListTtlSettingsRequest(
+        partial void PrepareListTtlSettings2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessListTtlSettingsResponse(
+        partial void ProcessListTtlSettings2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListTtlSettingsResponseContent(
+        partial void ProcessListTtlSettings2ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -26,12 +26,12 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TTLSettings>> ListTtlSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TTLSettings>> ListTtlSettings2Async(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareListTtlSettingsArguments(
+            PrepareListTtlSettings2Arguments(
                 httpClient: _httpClient);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -41,7 +41,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareListTtlSettingsRequest(
+            PrepareListTtlSettings2Request(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest);
 
@@ -53,17 +53,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessListTtlSettingsResponse(
+            ProcessListTtlSettings2Response(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessListTtlSettingsResponseContent(
+            ProcessListTtlSettings2ResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -78,7 +78,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.TTLSettings>?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.TTLSettings>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

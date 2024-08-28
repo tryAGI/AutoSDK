@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChecksCreateRequestVariant1Status Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.ChecksCreateRequestVariant1Status Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

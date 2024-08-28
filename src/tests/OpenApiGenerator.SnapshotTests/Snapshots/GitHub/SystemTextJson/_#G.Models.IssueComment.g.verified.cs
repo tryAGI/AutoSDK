@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the issue comment<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

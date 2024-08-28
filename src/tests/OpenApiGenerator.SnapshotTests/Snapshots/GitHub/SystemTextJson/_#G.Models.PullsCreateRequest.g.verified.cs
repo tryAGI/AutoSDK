@@ -56,7 +56,7 @@ namespace G
 
         /// <summary>
         /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
         public long Issue { get; set; }

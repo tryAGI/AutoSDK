@@ -72,7 +72,7 @@ public partial class DataTests : VerifyBase
                 .UseDirectory($"Snapshots/{callerName}/Schemas")
                 .UseFileName("_");
         var resolvedSchemasTask =
-            Verify(ToResolvedStrings(data.ResolvedSchemas.Where(x => x.Parent == null)))
+            Verify(ToResolvedStrings(data.FilteredSchemas.Where(x => x.Parent == null)))
                 .UseDirectory($"Snapshots/{callerName}/ResolvedSchemas")
                 .UseFileName("_");
         

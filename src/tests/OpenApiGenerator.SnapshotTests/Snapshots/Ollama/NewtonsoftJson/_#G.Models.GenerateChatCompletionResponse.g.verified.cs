@@ -44,14 +44,14 @@ namespace G
 
         /// <summary>
         /// Time spent generating the response.<br/>
-        /// Example: 5589157167
+        /// Example: 5589157167L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_duration")]
         public long TotalDuration { get; set; }
 
         /// <summary>
         /// Time spent in nanoseconds loading the model.<br/>
-        /// Example: 3013701500
+        /// Example: 3013701500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("load_duration")]
         public long LoadDuration { get; set; }
@@ -65,7 +65,7 @@ namespace G
 
         /// <summary>
         /// Time spent in nanoseconds evaluating the prompt.<br/>
-        /// Example: 1160282000
+        /// Example: 1160282000L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_eval_duration")]
         public long PromptEvalDuration { get; set; }
@@ -79,7 +79,7 @@ namespace G
 
         /// <summary>
         /// Time in nanoseconds spent generating the response.<br/>
-        /// Example: 1325948000
+        /// Example: 1325948000L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eval_duration")]
         public long EvalDuration { get; set; }

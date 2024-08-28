@@ -10,7 +10,7 @@ namespace G
     public sealed partial class IssueEvent
     {
         /// <summary>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
