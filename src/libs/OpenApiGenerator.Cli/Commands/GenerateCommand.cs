@@ -91,11 +91,13 @@ public class GenerateCommand : Command
         
         if (string.IsNullOrWhiteSpace(@namespace))
         {
-            @namespace = name.ToPropertyName();
+            @namespace = name.ToPropertyName()
+                .UseWordSeparator('\\', '-', '.', '_', '/');
         }
         if (string.IsNullOrWhiteSpace(clientClassName))
         {
-            clientClassName = $"{name.ToPropertyName()}Api";
+            clientClassName = $"{name.ToPropertyName()
+                .UseWordSeparator('\\', '-', '.', '_', '/')}Api";
         }
         
         var settings = new Settings(

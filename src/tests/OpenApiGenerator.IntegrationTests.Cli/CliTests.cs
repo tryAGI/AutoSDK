@@ -12,8 +12,11 @@ public class CliTests
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]
-    [DataRow("replicate.json")]
-    //[DataRow("special-cases.yaml")]
+    [DataRow("replicate.yaml")]
+    [DataRow("huggingface.yaml")]
+    [DataRow("ai21.yaml")]
+    [DataRow("cohere.yaml")]
+    [DataRow("special-cases.yaml")]
     [DataRow("twitch.json")]
     [DataRow("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json")]
     public async Task Run(string spec)
