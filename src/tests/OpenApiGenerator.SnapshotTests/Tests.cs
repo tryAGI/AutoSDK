@@ -188,8 +188,8 @@ public partial class Tests
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
-                path: H.Resources.replicate_json.FileName,
-                text: H.Resources.replicate_json.AsString())
+                path: H.Resources.replicate_yaml.FileName,
+                text: H.Resources.replicate_yaml.AsString())
         ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_MethodNamingConvention"] = "OperationIdWithDots",

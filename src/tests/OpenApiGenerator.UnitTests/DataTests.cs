@@ -28,7 +28,7 @@ public partial class DataTests
     public Task Replicate()
     {
         return VerifyAsync(Data.Prepare((
-            H.Resources.replicate_json.AsString(),
+            H.Resources.replicate_yaml.AsString(),
             DefaultSettings with
             {
                 MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
