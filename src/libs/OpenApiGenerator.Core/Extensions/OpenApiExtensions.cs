@@ -34,18 +34,6 @@ public static class OpenApiExtensions
 
         return openApiDocument;
     }
-
-    public static string GetMethodName(this OpenApiOperation operation, string path, OperationType operationType, MethodNamingConvention convention, MethodNamingConvention fallback)
-    {
-        operation = operation ?? throw new ArgumentNullException(nameof(operation));
-        
-        var mainGenerator = convention.GetGenerator();
-        var fallbackGenerator = fallback.GetGenerator();
-        
-        return mainGenerator.TryGenerate(operation, path, operationType) ??
-               fallbackGenerator.TryGenerate(operation, path, operationType) ??
-               throw new InvalidOperationException("Failed to generate method name");
-    }
     
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/

@@ -1,3 +1,5 @@
+using OpenApiGenerator.Core.Models;
+
 namespace OpenApiGenerator.Core.Naming.Methods;
 
 public enum MethodNamingConvention
@@ -20,5 +22,17 @@ public static class MethodNamingConventionExtensions
             MethodNamingConvention.OperationIdSplit => new OperationIdSplitGenerator(),
             _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null),
         };
+    }
+
+    public static string GetMethodName(this OperationContext operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+        
+        var mainGenerator = operation.Settings.MethodNamingConvention.GetGenerator();
+        var fallbackGenerator = operation.Settings.MethodNamingConventionFallback.GetGenerator();
+        
+        return mainGenerator.TryGenerate(operation) ??
+               fallbackGenerator.TryGenerate(operation) ??
+               throw new InvalidOperationException("Failed to generate method name");
     }
 }

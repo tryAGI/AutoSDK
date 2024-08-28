@@ -22,7 +22,7 @@ public static class Data
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
-        var schemas = openApiDocument.GetSchemaContexts(settings);
+        var schemas = openApiDocument.GetSchemas(settings);
         
         traversalTreeTime.Stop();
         
@@ -160,12 +160,15 @@ public static class Data
             .Distinct()
             .ToImmutableArray();
 
-        var operations = settings.GenerateSdk || settings.GenerateMethods ? openApiDocument.Paths!.SelectMany(path =>
-                path.Value.Operations
-                    .Where(x =>
+        var operations = openApiDocument.GetOperations(settings, filteredSchemas);
+        ModelNameGenerator.ResolveCollisions(operations);
+        
+        var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
+                ? operations
+                    .Where(operation =>
                     {
                         if (settings.ExcludeDeprecatedOperations &&
-                            x.Value.Deprecated)
+                            operation.Operation.Deprecated)
                         {
                             return false;
                         }
@@ -174,20 +177,17 @@ public static class Data
                             return true;
                         }
                     
-                        var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
-                            settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
-                        
                         return (includedOperationIds.Count == 0 ||
-                                includedOperationIds.Contains(methodName) ||
-                                (x.Value.OperationId != null && includedOperationIds.Contains(x.Value.OperationId))) &&
-                               !excludedOperationIds.Contains(methodName) &&
-                               (x.Value.OperationId == null || !excludedOperationIds.Contains(x.Value.OperationId));
+                                includedOperationIds.Contains(operation.MethodName) ||
+                                (operation.Operation.OperationId != null && includedOperationIds.Contains(operation.Operation.OperationId))) &&
+                               !excludedOperationIds.Contains(operation.MethodName) &&
+                               (operation.Operation.OperationId == null || !excludedOperationIds.Contains(operation.Operation.OperationId));
                     })
-                    .Select(x => (Path: path, Operation: x)))
-            .ToArray() : [];
+                    .ToArray()
+                : [];
         
-        var operationsAsMethods = operations
-            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key, filteredSchemas.Where(y => y.Operation == x.Operation.Value).ToArray()))
+        var operationsAsMethods = filteredOperations
+            .Select(EndPoint.FromSchema)
             .ToArray();
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
