@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 
 namespace OpenApiGenerator.Core.Extensions;
@@ -47,7 +48,16 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == "string" && schema.Enum.Any();
+        return schema.Enum.Any() && schema.Type is "string" or null;
+    }
+    
+    public static bool IsBoolean(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type == "boolean" ||
+               schema.Default is OpenApiBoolean;
     }
     
     public static bool IsBase64(

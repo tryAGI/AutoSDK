@@ -213,7 +213,7 @@ public readonly record struct TypeData(
             ("array", _) =>
                 ($"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(), true),
             
-            (null, null) when context.IsClass =>
+            (null, null) when context.IsClass || context.IsEnum =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (null, null)  => ("object", true),
             ("null", _)  => ("object", true),
