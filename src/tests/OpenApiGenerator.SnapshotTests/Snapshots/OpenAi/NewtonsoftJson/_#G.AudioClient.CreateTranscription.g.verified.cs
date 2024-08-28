@@ -171,7 +171,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string?, global::G.CreateTranscriptionRequestModel?> model,
+            global::System.AnyOf<string, global::G.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
             global::G.CreateTranscriptionRequestResponseFormat? responseFormat = global::G.CreateTranscriptionRequestResponseFormat.Json,

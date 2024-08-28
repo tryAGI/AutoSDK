@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string?, object>? RoleName { get; set; }
+        public global::System.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: workspace

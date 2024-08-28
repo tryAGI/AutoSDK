@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory1))]
-        public global::System.AnyOf<string?>? Model { get; set; }
+        public global::System.AnyOf<string>? Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.

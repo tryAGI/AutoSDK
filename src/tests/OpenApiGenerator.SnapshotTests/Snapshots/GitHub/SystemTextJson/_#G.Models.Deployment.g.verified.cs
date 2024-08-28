@@ -62,7 +62,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::G.DeploymentPayload, string?> Payload { get; set; }
+        public required global::System.OneOf<global::G.DeploymentPayload, string> Payload { get; set; }
 
         /// <summary>
         /// Example: staging

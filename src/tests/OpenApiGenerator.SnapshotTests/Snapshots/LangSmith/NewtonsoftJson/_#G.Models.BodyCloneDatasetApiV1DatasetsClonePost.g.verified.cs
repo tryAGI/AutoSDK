@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("as_of")]
-        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string?>?, object>? AsOf { get; set; }
+        public global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string>?, object>? AsOf { get; set; }
 
         /// <summary>
         /// 

@@ -151,7 +151,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string?, global::G.CreateTranslationRequestModel?> model,
+            global::System.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
             string? responseFormat = "json",
             double temperature = 0,

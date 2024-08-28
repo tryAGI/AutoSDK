@@ -169,7 +169,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageVariationAsync(
             byte[] image,
             string imagename,
-            global::System.AnyOf<string?, global::G.CreateImageVariationRequestModel?>? model = default,
+            global::System.AnyOf<string, global::G.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageVariationRequestResponseFormat? responseFormat = global::G.CreateImageVariationRequestResponseFormat.Url,
             global::G.CreateImageVariationRequestSize? size = global::G.CreateImageVariationRequestSize.x1024x1024,

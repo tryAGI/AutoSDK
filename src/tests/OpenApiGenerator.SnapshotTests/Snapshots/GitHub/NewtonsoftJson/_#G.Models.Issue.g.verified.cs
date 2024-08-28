@@ -106,7 +106,7 @@ namespace G
         /// Example: [bug, registration]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<string?, global::G.IssueLabel>> Labels { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.IssueLabel>> Labels { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.

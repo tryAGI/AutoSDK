@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label")]
-        public global::System.AnyOf<string?, object>? Label { get; set; }
+        public global::System.AnyOf<string, object>? Label { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

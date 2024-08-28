@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_handle")]
-        public global::System.AnyOf<string?, object>? TenantHandle { get; set; }
+        public global::System.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string?, object>? RoleName { get; set; }
+        public global::System.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// 

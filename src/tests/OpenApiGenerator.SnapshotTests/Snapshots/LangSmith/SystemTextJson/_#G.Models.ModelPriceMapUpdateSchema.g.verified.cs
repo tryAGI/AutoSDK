@@ -44,7 +44,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<double?, string?> PromptCost { get; set; }
+        public required global::System.AnyOf<double?, string> PromptCost { get; set; }
 
         /// <summary>
         /// 
@@ -52,14 +52,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<double?, string?> CompletionCost { get; set; }
+        public required global::System.AnyOf<double?, string> CompletionCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Provider { get; set; }
+        public global::System.AnyOf<string, object>? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -170,7 +170,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunObject> CreateRunAsync(
             string threadId,
             string assistantId,
-            global::System.AnyOf<string?, global::G.CreateRunRequestModel?>? model = default,
+            global::System.AnyOf<string, global::G.CreateRunRequestModel?>? model = default,
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? additionalMessages = default,

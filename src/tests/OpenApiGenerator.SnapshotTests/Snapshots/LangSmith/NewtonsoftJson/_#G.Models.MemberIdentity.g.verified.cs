@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string?, object>? RoleName { get; set; }
+        public global::System.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
@@ -75,19 +75,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
-        public global::System.AnyOf<string?, object>? Email { get; set; }
+        public global::System.AnyOf<string, object>? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string?, object>? FullName { get; set; }
+        public global::System.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url")]
-        public global::System.AnyOf<string?, object>? AvatarUrl { get; set; }
+        public global::System.AnyOf<string, object>? AvatarUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

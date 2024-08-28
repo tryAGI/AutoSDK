@@ -121,7 +121,7 @@ namespace G
             global::System.AnyOf<string, object>? sourceRunId = default,
             global::System.AnyOf<global::G.ExampleCreateMetadata, object>? metadata = default,
             global::System.AnyOf<global::G.ExampleCreateInputs, object>? inputs = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::System.AnyOf<string, object>? id = default,
             bool useSourceRunIo = false,
             global::System.DateTime createdAt = default,

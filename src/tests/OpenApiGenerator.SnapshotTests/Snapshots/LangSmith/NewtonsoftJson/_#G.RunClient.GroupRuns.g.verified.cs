@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareGroupRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<string?, object>? accept,
+            ref global::System.AnyOf<string, object>? accept,
             global::G.RunGroupRequest request);
         partial void PrepareGroupRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<string?, object>? accept,
+            global::System.AnyOf<string, object>? accept,
             global::G.RunGroupRequest request);
         partial void ProcessGroupRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
-            global::System.AnyOf<string?, object>? accept,
+            global::System.AnyOf<string, object>? accept,
             global::G.RunGroupRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,9 +122,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
             string sessionId,
-            global::System.AnyOf<string?, object>? accept = default,
+            global::System.AnyOf<string, object>? accept = default,
             global::G.RunGroupBy groupBy = default,
-            global::System.AnyOf<string?, object>? filter = default,
+            global::System.AnyOf<string, object>? filter = default,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             int offset = 0,

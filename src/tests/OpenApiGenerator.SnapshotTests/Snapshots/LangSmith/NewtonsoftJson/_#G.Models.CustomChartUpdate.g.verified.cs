@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title")]
-        public global::System.AnyOf<string?, global::G.Missing>? Title { get; set; }
+        public global::System.AnyOf<string, global::G.Missing>? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, global::G.Missing, object>? Description { get; set; }
+        public global::System.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// 

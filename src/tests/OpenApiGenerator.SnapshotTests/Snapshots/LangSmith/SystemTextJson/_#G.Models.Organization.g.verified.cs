@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? DisplayName { get; set; }
+        public global::System.AnyOf<string, object>? DisplayName { get; set; }
 
         /// <summary>
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.

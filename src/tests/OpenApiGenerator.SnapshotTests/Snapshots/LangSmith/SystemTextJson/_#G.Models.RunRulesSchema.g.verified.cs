@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? SessionName { get; set; }
+        public global::System.AnyOf<string, object>? SessionName { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? DatasetName { get; set; }
+        public global::System.AnyOf<string, object>? DatasetName { get; set; }
 
         /// <summary>
         /// 
@@ -78,21 +78,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Filter { get; set; }
+        public global::System.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TraceFilter { get; set; }
+        public global::System.AnyOf<string, object>? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree_filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TreeFilter { get; set; }
+        public global::System.AnyOf<string, object>? TreeFilter { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_annotation_queue_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? AddToAnnotationQueueName { get; set; }
+        public global::System.AnyOf<string, object>? AddToAnnotationQueueName { get; set; }
 
         /// <summary>
         /// 
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("add_to_dataset_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? AddToDatasetName { get; set; }
+        public global::System.AnyOf<string, object>? AddToDatasetName { get; set; }
 
         /// <summary>
         /// Default Value: false

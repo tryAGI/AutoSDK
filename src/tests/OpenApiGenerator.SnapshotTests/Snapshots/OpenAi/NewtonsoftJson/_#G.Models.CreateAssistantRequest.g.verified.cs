@@ -16,7 +16,7 @@ namespace G
         /// Example: gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, global::G.CreateAssistantRequestModel?> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateAssistantRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.

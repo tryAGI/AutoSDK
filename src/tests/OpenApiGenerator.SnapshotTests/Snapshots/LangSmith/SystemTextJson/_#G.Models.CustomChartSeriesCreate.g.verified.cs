@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? FeedbackKey { get; set; }
+        public global::System.AnyOf<string, object>? FeedbackKey { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

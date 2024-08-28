@@ -52,73 +52,56 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return $"[global::System.Text.Json.Serialization.JsonConverter(typeof({type}))]";
     }
 
-    private static readonly char[] ContextTypeSeparators = [',', '<', '>', '['];
-    
-    public static string GetContextType(string type)
+    public static string GetContextType(TypeData typeData, bool makeNullableRootIfValueType)
     {
-        type = type ?? throw new ArgumentNullException(nameof(type));
+        var shortTypeWithoutSubTypes = typeData.ShortCSharpTypeWithoutNullability.Contains("<") ?
+            typeData.ShortCSharpTypeWithoutNullability[..typeData.ShortCSharpTypeWithoutNullability.IndexOf('<')] :
+            typeData.ShortCSharpTypeWithoutNullability;
         
-        var result = string.Concat(type
-            .Replace("global::", string.Empty)
-            .Replace("?", string.Empty)
-            .Replace("System.Collections.Generic.", string.Empty)
-            .Replace("System.", string.Empty)
-            .Split(ContextTypeSeparators, StringSplitOptions.RemoveEmptyEntries)
-            .Select(x => x.Trim() switch
-            {
-                "]" => "Array",
-                "bool" => "Boolean",
-                "short" => "Int16",
-                "int" => "Int32",
-                "long" => "Int64",
-                "sbyte" => "SByte",
-                "ushort" => "UInt16",
-                "uint" => "UInt32",
-                "ulong" => "UInt64",
-                "float" => "Single",
-                "double" => "Double",
-                "decimal" => "Decimal",
-                "string" => "String",
-                "char" => "Char",
-                "byte" => "Byte",
-                "object" => "Object",
-                _ => x.Trim(),
-            }));
-        result =
-            ((result.StartsWith("Boolean", StringComparison.Ordinal) ||
-            result.StartsWith("Int16", StringComparison.Ordinal) ||
-            result.StartsWith("Int32", StringComparison.Ordinal) ||
-            result.StartsWith("Int64", StringComparison.Ordinal) ||
-            result.StartsWith("SByte", StringComparison.Ordinal) ||
-            result.StartsWith("UInt16", StringComparison.Ordinal) ||
-            result.StartsWith("UInt32", StringComparison.Ordinal) ||
-            result.StartsWith("UInt64", StringComparison.Ordinal) ||
-            result.Equals("Single", StringComparison.Ordinal) ||
-            result.Equals("Double", StringComparison.Ordinal) ||
-            result.Equals("Decimal", StringComparison.Ordinal) ||
-            result.Equals("Char", StringComparison.Ordinal) ||
-            result.Equals("Byte", StringComparison.Ordinal)) &&
-            !result.EndsWith("Array", StringComparison.Ordinal)) ||
-            result.StartsWith("AnyOf", StringComparison.Ordinal) ||
-            result.StartsWith("OneOf", StringComparison.Ordinal) ||
-            result.StartsWith("AllOf", StringComparison.Ordinal)
-                ? "Nullable" + result 
-                : result;
-        
-        return result;
+        return (typeData.IsValueType &&
+                (typeData.CSharpType.EndsWith("?", StringComparison.Ordinal) ||
+                 makeNullableRootIfValueType) ? "Nullable" : string.Empty) + typeData switch
+        {
+            _ when typeData.IsBase64 || typeData.IsBinary => string.Empty,
+            { IsArray: true, SubTypes.Length: 1 } => "IList",
+            { AnyOfCount: > 0, IsComponent: false } => "AnyOf",
+            { OneOfCount: > 0, IsComponent: false } => "OneOf",
+            { AllOfCount: > 0, IsComponent: false } => "AllOf",
+            { ShortCSharpTypeWithoutNullability: "bool" } => "Boolean",
+            { ShortCSharpTypeWithoutNullability: "string" } => "String",
+            { ShortCSharpTypeWithoutNullability: "short" } => "Int16",
+            { ShortCSharpTypeWithoutNullability: "int" } => "Int32",
+            { ShortCSharpTypeWithoutNullability: "long" } => "Int64",
+            { ShortCSharpTypeWithoutNullability: "sbyte" } => "SByte",
+            { ShortCSharpTypeWithoutNullability: "ushort" } => "UInt16",
+            { ShortCSharpTypeWithoutNullability: "uint" } => "UInt32",
+            { ShortCSharpTypeWithoutNullability: "ulong" } => "UInt64",
+            { ShortCSharpTypeWithoutNullability: "float" } => "Single",
+            { ShortCSharpTypeWithoutNullability: "double" } => "Double",
+            { ShortCSharpTypeWithoutNullability: "decimal" } => "Decimal",
+            { ShortCSharpTypeWithoutNullability: "char" } => "Char",
+            { ShortCSharpTypeWithoutNullability: "byte" } => "Byte",
+            { ShortCSharpTypeWithoutNullability: "object" } => "Object",
+            _ => shortTypeWithoutSubTypes,
+        } + (typeData is { IsComponent: true, IsAnyOf: true }
+                   ? string.Empty
+                   : string.Concat(typeData.SubTypes.Select(x => GetContextType(x, makeNullableRootIfValueType: false)))) 
+            + (typeData.IsBase64 || typeData.IsBinary
+                ? "Array"
+                : string.Empty);
     }
     
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? "global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type.ShortCSharpTypeWithoutNullability)})";
+            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type, makeNullableRootIfValueType: true)})";
     }
     
     public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>(__content, _jsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type.ShortCSharpTypeWithNullability)})";
+            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type, makeNullableRootIfValueType: true)})";
     }
 }

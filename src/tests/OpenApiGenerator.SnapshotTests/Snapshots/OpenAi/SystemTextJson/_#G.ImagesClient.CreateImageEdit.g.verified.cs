@@ -198,7 +198,7 @@ namespace G
             string prompt,
             byte[]? mask = default,
             string? maskname = default,
-            global::System.AnyOf<string?, global::G.CreateImageEditRequestModel?>? model = default,
+            global::System.AnyOf<string, global::G.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageEditRequestSize? size = global::G.CreateImageEditRequestSize.x1024x1024,
             global::G.CreateImageEditRequestResponseFormat? responseFormat = global::G.CreateImageEditRequestResponseFormat.Url,

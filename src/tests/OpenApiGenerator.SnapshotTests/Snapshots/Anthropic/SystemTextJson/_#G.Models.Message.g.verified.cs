@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author.

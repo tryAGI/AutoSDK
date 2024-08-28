@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Description { get; set; }
+        public global::System.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("readme")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Readme { get; set; }
+        public global::System.AnyOf<string, object>? Readme { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string?, object> Owner { get; set; }
+        public required global::System.AnyOf<string, object> Owner { get; set; }
 
         /// <summary>
         /// 
@@ -143,7 +143,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_commit_hash")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? LastCommitHash { get; set; }
+        public global::System.AnyOf<string, object>? LastCommitHash { get; set; }
 
         /// <summary>
         /// 
@@ -157,14 +157,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_full_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? OriginalRepoFullName { get; set; }
+        public global::System.AnyOf<string, object>? OriginalRepoFullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_full_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? UpstreamRepoFullName { get; set; }
+        public global::System.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

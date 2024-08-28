@@ -122,9 +122,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FilterView> UpdateFilterViewAsync(
             string sessionId,
             string viewId,
-            global::System.AnyOf<string?, object>? filterString = default,
-            global::System.AnyOf<string?, object>? displayName = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? filterString = default,
+            global::System.AnyOf<string, object>? displayName = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FilterViewUpdate

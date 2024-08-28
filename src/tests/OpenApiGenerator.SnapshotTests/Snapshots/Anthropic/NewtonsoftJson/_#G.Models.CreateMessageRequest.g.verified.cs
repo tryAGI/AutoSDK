@@ -18,7 +18,7 @@ namespace G
         /// Example: claude-3-5-sonnet-20240620
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, global::G.CreateMessageRequestModel?> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateMessageRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// Input messages.<br/>

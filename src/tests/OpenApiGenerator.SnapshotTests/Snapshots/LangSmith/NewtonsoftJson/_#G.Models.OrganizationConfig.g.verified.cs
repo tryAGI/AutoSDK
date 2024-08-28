@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("startup_plan_approval_date")]
-        public global::System.AnyOf<string?, object>? StartupPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string, object>? StartupPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("partner_plan_approval_date")]
-        public global::System.AnyOf<string?, object>? PartnerPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string, object>? PartnerPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("premier_plan_approval_date")]
-        public global::System.AnyOf<string?, object>? PremierPlanApprovalDate { get; set; }
+        public global::System.AnyOf<string, object>? PremierPlanApprovalDate { get; set; }
 
         /// <summary>
         /// Default Value: false

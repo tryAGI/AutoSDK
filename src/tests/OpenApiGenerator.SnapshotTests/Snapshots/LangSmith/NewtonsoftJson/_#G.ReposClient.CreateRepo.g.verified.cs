@@ -110,8 +110,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> CreateRepoAsync(
             string repoHandle,
             bool isPublic,
-            global::System.AnyOf<string?, object>? description = default,
-            global::System.AnyOf<string?, object>? readme = default,
+            global::System.AnyOf<string, object>? description = default,
+            global::System.AnyOf<string, object>? readme = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

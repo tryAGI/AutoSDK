@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subtitle")]
-        public global::System.AnyOf<string?, object>? Subtitle { get; set; }
+        public global::System.AnyOf<string, object>? Subtitle { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("click_target")]
-        public global::System.AnyOf<string?, object>? ClickTarget { get; set; }
+        public global::System.AnyOf<string, object>? ClickTarget { get; set; }
 
         /// <summary>
         /// 

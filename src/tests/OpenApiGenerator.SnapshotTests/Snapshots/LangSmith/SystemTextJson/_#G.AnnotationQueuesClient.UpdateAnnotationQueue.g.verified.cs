@@ -119,8 +119,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
             string queueId,
-            global::System.AnyOf<string?, object>? name = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<string, object>? defaultDataset = default,
             global::System.AnyOf<int?, object>? numReviewersPerItem = default,
             bool enableReservations = true,

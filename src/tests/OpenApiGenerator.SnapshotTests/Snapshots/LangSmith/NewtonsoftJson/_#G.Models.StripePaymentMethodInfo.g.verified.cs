@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("brand")]
-        public global::System.AnyOf<string?, object>? Brand { get; set; }
+        public global::System.AnyOf<string, object>? Brand { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last4")]
-        public global::System.AnyOf<string?, object>? Last4 { get; set; }
+        public global::System.AnyOf<string, object>? Last4 { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
-        public global::System.AnyOf<string?, object>? Email { get; set; }
+        public global::System.AnyOf<string, object>? Email { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

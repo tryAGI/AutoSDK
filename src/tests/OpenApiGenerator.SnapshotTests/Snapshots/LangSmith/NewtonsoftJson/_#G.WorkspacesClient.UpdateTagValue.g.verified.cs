@@ -119,8 +119,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TagValue> UpdateTagValueAsync(
             string tagKeyId,
             string tagValueId,
-            global::System.AnyOf<string?, object>? value = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? value = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TagValueUpdate

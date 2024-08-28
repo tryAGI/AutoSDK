@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::System.AnyOf<string?, object>? Type { get; set; }
+        public global::System.AnyOf<string, object>? Type { get; set; }
 
         /// <summary>
         /// 

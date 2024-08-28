@@ -116,7 +116,7 @@ namespace G
             string title,
             global::G.CustomChartType chartType,
             global::System.Collections.Generic.IList<global::G.CustomChartSeriesCreate> series,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<int?, object>? index = default,
             global::System.AnyOf<string, object>? sectionId = default,
             global::System.AnyOf<global::G.CustomChartCreateMetadata, object>? metadata = default,

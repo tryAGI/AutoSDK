@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Type { get; set; }
+        public global::System.AnyOf<string, object>? Type { get; set; }
 
         /// <summary>
         /// 

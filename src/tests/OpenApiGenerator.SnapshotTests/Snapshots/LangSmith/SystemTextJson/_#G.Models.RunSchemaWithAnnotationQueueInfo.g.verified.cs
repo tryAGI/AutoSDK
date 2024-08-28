@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_preview")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? InputsPreview { get; set; }
+        public global::System.AnyOf<string, object>? InputsPreview { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Error { get; set; }
+        public global::System.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -92,7 +92,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_preview")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? OutputsPreview { get; set; }
+        public global::System.AnyOf<string, object>? OutputsPreview { get; set; }
 
         /// <summary>
         /// 
@@ -236,21 +236,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? TotalCost { get; set; }
+        public global::System.AnyOf<string, object>? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? PromptCost { get; set; }
+        public global::System.AnyOf<string, object>? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? CompletionCost { get; set; }
+        public global::System.AnyOf<string, object>? CompletionCost { get; set; }
 
         /// <summary>
         /// 

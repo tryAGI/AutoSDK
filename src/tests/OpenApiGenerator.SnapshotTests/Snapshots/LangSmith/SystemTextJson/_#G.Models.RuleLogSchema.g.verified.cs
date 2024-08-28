@@ -30,14 +30,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? RunName { get; set; }
+        public global::System.AnyOf<string, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? RunType { get; set; }
+        public global::System.AnyOf<string, object>? RunType { get; set; }
 
         /// <summary>
         /// 

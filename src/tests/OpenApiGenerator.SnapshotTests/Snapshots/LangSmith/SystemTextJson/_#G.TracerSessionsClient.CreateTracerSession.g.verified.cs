@@ -128,7 +128,7 @@ namespace G
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.AnyOf<global::G.TracerSessionCreateExtra, object>? extra = default,
             string? name = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<string, object>? defaultDatasetId = default,
             global::System.AnyOf<string, object>? referenceDatasetId = default,
             global::System.AnyOf<global::G.TraceTier3?, object>? traceTier = default,

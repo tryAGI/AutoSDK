@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_key")]
-        public global::System.AnyOf<string?, object>? FeedbackKey { get; set; }
+        public global::System.AnyOf<string, object>? FeedbackKey { get; set; }
 
         /// <summary>
         /// 

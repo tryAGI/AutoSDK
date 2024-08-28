@@ -28,7 +28,7 @@ namespace G
         /// Example: gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
+        public global::System.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.

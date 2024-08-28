@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, global::System.Collections.Generic.IList<string>> Error { get; set; } = default!;
+        public global::System.AnyOf<string, global::System.Collections.Generic.IList<string>> Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

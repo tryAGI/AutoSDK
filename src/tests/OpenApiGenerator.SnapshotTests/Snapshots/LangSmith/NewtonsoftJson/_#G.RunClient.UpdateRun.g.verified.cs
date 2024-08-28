@@ -124,10 +124,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
             string runId,
             global::System.OneOf<string, object>? traceId = default,
-            global::System.OneOf<string?, object>? dottedOrder = default,
+            global::System.OneOf<string, object>? dottedOrder = default,
             global::System.OneOf<string, object>? parentRunId = default,
-            global::System.OneOf<string?, double?, object>? endTime = default,
-            global::System.OneOf<string?, object>? error = default,
+            global::System.OneOf<string, double?, object>? endTime = default,
+            global::System.OneOf<string, object>? error = default,
             global::System.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,
             global::System.OneOf<global::G.UpdateRunRequestOutputs, object>? outputs = default,
             global::System.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? events = default,

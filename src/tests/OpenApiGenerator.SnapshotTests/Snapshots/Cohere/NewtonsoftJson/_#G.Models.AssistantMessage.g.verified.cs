@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::G.TextContent>>>? Content { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.TextContent>>>? Content { get; set; }
 
         /// <summary>
         /// 

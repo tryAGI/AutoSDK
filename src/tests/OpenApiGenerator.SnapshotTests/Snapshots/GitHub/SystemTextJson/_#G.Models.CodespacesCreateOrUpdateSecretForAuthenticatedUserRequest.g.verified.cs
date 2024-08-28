@@ -28,7 +28,7 @@ namespace G
         /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repository_ids")]
-        public global::System.Collections.Generic.IList<global::System.AnyOf<int?, string?>>? SelectedRepositoryIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.AnyOf<int?, string>>? SelectedRepositoryIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

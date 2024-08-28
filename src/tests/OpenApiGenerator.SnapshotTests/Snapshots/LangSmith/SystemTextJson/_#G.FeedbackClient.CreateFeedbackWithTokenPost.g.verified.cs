@@ -117,9 +117,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
             string token,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
-            global::System.AnyOf<double?, int?, bool?, string?, object>? value = default,
-            global::System.AnyOf<string?, object>? comment = default,
-            global::System.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaCorrection, string?, object>? correction = default,
+            global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::System.AnyOf<string, object>? comment = default,
+            global::System.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? correction = default,
             global::System.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

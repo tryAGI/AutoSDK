@@ -15,7 +15,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public global::System.AnyOf<string?, object>? Tag { get; set; } = "latest";
+        public global::System.AnyOf<string, object>? Tag { get; set; } = "latest";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

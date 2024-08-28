@@ -140,7 +140,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageAsync(
             string prompt,
-            global::System.AnyOf<string?, global::G.CreateImageRequestModel?>? model = default,
+            global::System.AnyOf<string, global::G.CreateImageRequestModel?>? model = default,
             int? n = 1,
             global::G.CreateImageRequestQuality? quality = global::G.CreateImageRequestQuality.Standard,
             global::G.CreateImageRequestResponseFormat? responseFormat = global::G.CreateImageRequestResponseFormat.Url,

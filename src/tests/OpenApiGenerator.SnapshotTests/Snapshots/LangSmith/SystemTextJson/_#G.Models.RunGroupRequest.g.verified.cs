@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Filter { get; set; }
+        public global::System.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// 

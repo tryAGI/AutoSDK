@@ -75,25 +75,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query")]
-        public global::System.AnyOf<string?, object>? Query { get; set; }
+        public global::System.AnyOf<string, object>? Query { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::System.AnyOf<string?, object>? Filter { get; set; }
+        public global::System.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter")]
-        public global::System.AnyOf<string?, object>? TraceFilter { get; set; }
+        public global::System.AnyOf<string, object>? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter")]
-        public global::System.AnyOf<string?, object>? TreeFilter { get; set; }
+        public global::System.AnyOf<string, object>? TreeFilter { get; set; }
 
         /// <summary>
         /// 

@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object>? DottedOrder { get; set; }
+        public global::System.OneOf<string, object>? DottedOrder { get; set; }
 
         /// <summary>
         /// 
@@ -37,14 +37,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::System.OneOf<string?, double?, object>? EndTime { get; set; }
+        public global::System.OneOf<string, double?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object>? Error { get; set; }
+        public global::System.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 

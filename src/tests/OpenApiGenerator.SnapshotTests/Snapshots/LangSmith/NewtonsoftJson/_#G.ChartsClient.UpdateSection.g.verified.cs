@@ -114,8 +114,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> UpdateSectionAsync(
             string sectionId,
-            global::System.AnyOf<string?, global::G.Missing>? title = default,
-            global::System.AnyOf<string?, global::G.Missing, object>? description = default,
+            global::System.AnyOf<string, global::G.Missing>? title = default,
+            global::System.AnyOf<string, global::G.Missing, object>? description = default,
             global::System.AnyOf<int?, global::G.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

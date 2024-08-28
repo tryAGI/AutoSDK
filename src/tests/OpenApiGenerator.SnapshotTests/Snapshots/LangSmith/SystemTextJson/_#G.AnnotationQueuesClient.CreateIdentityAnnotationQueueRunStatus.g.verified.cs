@@ -111,7 +111,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
             string annotationQueueRunId,
-            global::System.AnyOf<string?, object>? status = default,
+            global::System.AnyOf<string, object>? status = default,
             global::System.AnyOf<global::System.DateTime?, object>? overrideAddedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::System.AnyOf<string?, object>? Filter { get; set; }
+        public global::System.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// 

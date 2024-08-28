@@ -21,6 +21,11 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessCreatePredictionsModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a prediction using an official model<br/>
         /// Start a new prediction for an official model using the inputs you provide.<br/>
@@ -60,7 +65,7 @@ namespace G
         /// }<br/>
         /// ```<br/>
         /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
+        /// All input parameters, output values, and logs are automatically removed after an hour, by default, for predictions created through the API.<br/>
         /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
         /// </summary>
         /// <param name="modelOwner"></param>
@@ -68,7 +73,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreatePredictionsModelsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.PredictionResponse> CreatePredictionsModelsAsync(
             string modelOwner,
             string modelName,
             global::G.PredictionRequest request,
@@ -115,7 +120,30 @@ namespace G
             ProcessCreatePredictionsModelsResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCreatePredictionsModelsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.PredictionResponse?>(__content, _jsonSerializerOptions) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -157,7 +185,7 @@ namespace G
         /// }<br/>
         /// ```<br/>
         /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
+        /// All input parameters, output values, and logs are automatically removed after an hour, by default, for predictions created through the API.<br/>
         /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
         /// </summary>
         /// <param name="modelOwner"></param>
@@ -175,8 +203,9 @@ namespace G
         /// - you don't need to use the file again (Replicate will not store it)
         /// </param>
         /// <param name="stream">
+        /// **This field is deprecated.**<br/>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
-        /// If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+        /// This field is no longer needed as the returned prediction will always have a `stream` entry in its `url` property if the model supports streaming.
         /// </param>
         /// <param name="webhook">
         /// An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
@@ -201,7 +230,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreatePredictionsModelsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.PredictionResponse> CreatePredictionsModelsAsync(
             string modelOwner,
             string modelName,
             global::G.PredictionRequestInput input,
@@ -218,7 +247,7 @@ namespace G
                 WebhookEventsFilter = webhookEventsFilter,
             };
 
-            await CreatePredictionsModelsAsync(
+            return await CreatePredictionsModelsAsync(
                 modelOwner: modelOwner,
                 modelName: modelName,
                 request: request,

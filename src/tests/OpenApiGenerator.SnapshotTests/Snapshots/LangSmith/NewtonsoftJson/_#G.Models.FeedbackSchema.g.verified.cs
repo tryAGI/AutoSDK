@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::System.AnyOf<double?, int?, bool?, string?, global::G.FeedbackSchemaValue, object>? Value { get; set; }
+        public global::System.AnyOf<double?, int?, bool?, string, global::G.FeedbackSchemaValue, object>? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment")]
-        public global::System.AnyOf<string?, object>? Comment { get; set; }
+        public global::System.AnyOf<string, object>? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::System.AnyOf<global::G.FeedbackSchemaCorrection, string?, object>? Correction { get; set; }
+        public global::System.AnyOf<global::G.FeedbackSchemaCorrection, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 

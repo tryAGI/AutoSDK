@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::System.AnyOf<string?, object>? Status { get; set; }
+        public global::System.AnyOf<string, object>? Status { get; set; }
 
         /// <summary>
         /// 

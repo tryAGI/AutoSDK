@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("brand")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Brand { get; set; }
+        public global::System.AnyOf<string, object>? Brand { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last4")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Last4 { get; set; }
+        public global::System.AnyOf<string, object>? Last4 { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Email { get; set; }
+        public global::System.AnyOf<string, object>? Email { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

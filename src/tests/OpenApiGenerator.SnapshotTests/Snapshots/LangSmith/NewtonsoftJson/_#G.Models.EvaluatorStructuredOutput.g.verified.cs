@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hub_ref")]
-        public global::System.AnyOf<string?, object>? HubRef { get; set; }
+        public global::System.AnyOf<string, object>? HubRef { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
-        public global::System.AnyOf<string?, object>? TemplateFormat { get; set; }
+        public global::System.AnyOf<string, object>? TemplateFormat { get; set; }
 
         /// <summary>
         /// 

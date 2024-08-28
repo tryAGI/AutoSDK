@@ -107,10 +107,24 @@ public readonly record struct TypeData(
         }
         if (context.Schema.IsArray())
         {
-            subTypes = [Default with
-            {
-                IsEnum = context.Schema.Items.IsEnum(),
-            }];
+            subTypes = [
+                context.Children
+                    .FirstOrDefault(x => x is { Hint: Hint.ArrayItem, TypeData: not null })
+                    ?.TypeData ??
+                Default with
+                {
+                    IsEnum = context.Schema.Items.IsEnum(),
+                },
+            ];
+        }
+        if (context.Schema.IsBinary() || context.Schema.IsBase64())
+        {
+            subTypes = [
+                Default with
+                {
+                    CSharpType = "byte",
+                },
+            ];
         }
         
         var enumValues = ImmutableArray<string>.Empty;
@@ -129,7 +143,7 @@ public readonly record struct TypeData(
         return new TypeData(
             CSharpType: GetCSharpType(context),
             IsValueType: ContextIsValueType(context),
-            IsArray: context.Schema.Type == "array",
+            IsArray: context.Schema.IsArray(),
             IsEnum: context.Schema.IsEnum(),
             IsBase64: context.Schema.IsBase64(),
             IsDate: context.Schema.IsDate(),
@@ -160,7 +174,6 @@ public readonly record struct TypeData(
             ("boolean", _) => true,
             ("integer", _) => true,
             ("number", _) => true,
-            ("string", null) => true,
             ("string", "date") => true,
             ("string", "date-time") => true,
             ("string", "password") => true,

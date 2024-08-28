@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::System.AnyOf<string?, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::System.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Whether or not to stream the result one token at a time using<br/>

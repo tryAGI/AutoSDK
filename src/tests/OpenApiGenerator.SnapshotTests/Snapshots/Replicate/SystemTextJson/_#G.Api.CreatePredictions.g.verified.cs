@@ -46,6 +46,7 @@ namespace G
         ///   "input": {<br/>
         ///     "text": "Alice"<br/>
         ///   },<br/>
+        ///   "output": null,<br/>
         ///   "logs": "",<br/>
         ///   "error": null,<br/>
         ///   "status": "starting",<br/>
@@ -136,6 +137,7 @@ namespace G
         ///   "input": {<br/>
         ///     "text": "Alice"<br/>
         ///   },<br/>
+        ///   "output": null,<br/>
         ///   "logs": "",<br/>
         ///   "error": null,<br/>
         ///   "status": "starting",<br/>
@@ -163,8 +165,9 @@ namespace G
         /// - you don't need to use the file again (Replicate will not store it)
         /// </param>
         /// <param name="stream">
+        /// **This field is deprecated.**<br/>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
-        /// If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+        /// This field is no longer needed as the returned prediction will always have a `stream` entry in its `url` property if the model supports streaming.
         /// </param>
         /// <param name="version">
         /// The ID of the model version that you want to run.

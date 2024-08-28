@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.Missing>? Title { get; set; }
+        public global::System.AnyOf<string, global::G.Missing>? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::System.AnyOf<string?, global::G.Missing, object>? Description { get; set; }
+        public global::System.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// 

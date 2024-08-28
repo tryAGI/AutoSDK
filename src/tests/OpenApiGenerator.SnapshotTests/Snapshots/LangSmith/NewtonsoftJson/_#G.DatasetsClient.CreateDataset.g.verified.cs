@@ -117,7 +117,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
             string name,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.AnyOf<global::G.DataType2?, object>? dataType = default,
             global::System.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,

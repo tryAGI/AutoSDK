@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
             ref int offset,
-            ref global::System.AnyOf<string?, object>? titleContains);
+            ref global::System.AnyOf<string, object>? titleContains);
         partial void PrepareReadSectionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
             int offset,
-            global::System.AnyOf<string?, object>? titleContains);
+            global::System.AnyOf<string, object>? titleContains);
         partial void ProcessReadSectionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,7 +42,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomChartsSectionResponse>> ReadSectionsAsync(
             int limit,
             int offset,
-            global::System.AnyOf<string?, object>? titleContains,
+            global::System.AnyOf<string, object>? titleContains,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

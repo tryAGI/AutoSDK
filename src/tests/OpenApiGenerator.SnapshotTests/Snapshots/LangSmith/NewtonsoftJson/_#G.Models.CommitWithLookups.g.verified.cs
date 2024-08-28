@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit_hash")]
-        public global::System.AnyOf<string?, object>? ParentCommitHash { get; set; }
+        public global::System.AnyOf<string, object>? ParentCommitHash { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

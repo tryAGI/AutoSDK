@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<double?, string?> PromptCost { get; set; } = default!;
+        public global::System.AnyOf<double?, string> PromptCost { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<double?, string?> CompletionCost { get; set; } = default!;
+        public global::System.AnyOf<double?, string> CompletionCost { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::System.AnyOf<string?, object>? Provider { get; set; }
+        public global::System.AnyOf<string, object>? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

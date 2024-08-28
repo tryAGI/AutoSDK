@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object>? Description { get; set; }
+        public global::System.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("readme")]
-        public global::System.AnyOf<string?, object>? Readme { get; set; }
+        public global::System.AnyOf<string, object>? Readme { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, object> Owner { get; set; } = default!;
+        public global::System.AnyOf<string, object> Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -123,7 +123,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_commit_hash")]
-        public global::System.AnyOf<string?, object>? LastCommitHash { get; set; }
+        public global::System.AnyOf<string, object>? LastCommitHash { get; set; }
 
         /// <summary>
         /// 
@@ -135,13 +135,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_repo_full_name")]
-        public global::System.AnyOf<string?, object>? OriginalRepoFullName { get; set; }
+        public global::System.AnyOf<string, object>? OriginalRepoFullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upstream_repo_full_name")]
-        public global::System.AnyOf<string?, object>? UpstreamRepoFullName { get; set; }
+        public global::System.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

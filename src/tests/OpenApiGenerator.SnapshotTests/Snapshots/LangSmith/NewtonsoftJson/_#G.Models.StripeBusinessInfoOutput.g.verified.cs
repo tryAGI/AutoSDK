@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invoice_email")]
-        public global::System.AnyOf<string?, object>? InvoiceEmail { get; set; }
+        public global::System.AnyOf<string, object>? InvoiceEmail { get; set; }
 
         /// <summary>
         /// Default Value: false

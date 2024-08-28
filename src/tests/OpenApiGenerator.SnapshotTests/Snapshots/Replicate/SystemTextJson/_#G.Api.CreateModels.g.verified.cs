@@ -44,7 +44,8 @@ namespace G
         ///   "default_example": null,<br/>
         ///   "latest_version": null,<br/>
         /// }<br/>
-        /// ```
+        /// ```<br/>
+        /// Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -120,7 +121,8 @@ namespace G
         ///   "default_example": null,<br/>
         ///   "latest_version": null,<br/>
         /// }<br/>
-        /// ```
+        /// ```<br/>
+        /// Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.
         /// </summary>
         /// <param name="coverImageUrl">
         /// A URL for the model's cover image. This should be an image file.

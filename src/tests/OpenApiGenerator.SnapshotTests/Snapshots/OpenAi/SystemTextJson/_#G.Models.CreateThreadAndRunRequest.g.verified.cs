@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
+        public global::System.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.

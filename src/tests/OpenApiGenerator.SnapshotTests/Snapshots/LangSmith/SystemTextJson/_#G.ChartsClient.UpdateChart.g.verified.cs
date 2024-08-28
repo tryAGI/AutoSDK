@@ -119,8 +119,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
             string chartId,
-            global::System.AnyOf<string?, global::G.Missing>? title = default,
-            global::System.AnyOf<string?, global::G.Missing, object>? description = default,
+            global::System.AnyOf<string, global::G.Missing>? title = default,
+            global::System.AnyOf<string, global::G.Missing, object>? description = default,
             global::System.AnyOf<int?, global::G.Missing>? index = default,
             global::System.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series = default,

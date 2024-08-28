@@ -115,8 +115,8 @@ namespace G
             global::System.AnyOf<string, object>? roleId = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? workspaceIds = default,
             global::System.AnyOf<string, object>? workspaceRoleId = default,
-            global::System.AnyOf<string?, object>? password = default,
-            global::System.AnyOf<string?, object>? fullName = default,
+            global::System.AnyOf<string, object>? password = default,
+            global::System.AnyOf<string, object>? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PendingIdentityCreate

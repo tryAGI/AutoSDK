@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::System.OneOf<string?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId, int?>? Id { get; set; }
+        public global::System.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId, int?>? Id { get; set; }
 
         /// <summary>
         /// 
@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
-        public global::System.OneOf<bool?, string?, int?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>? Value { get; set; }
+        public global::System.OneOf<bool?, string, int?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<int?, string?> Id { get; set; }
+        public required global::System.OneOf<int?, string> Id { get; set; }
 
         /// <summary>
         /// The URI to monitor GitHub Pages deployment status.<br/>

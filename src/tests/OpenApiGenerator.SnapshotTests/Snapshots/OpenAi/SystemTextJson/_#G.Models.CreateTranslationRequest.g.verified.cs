@@ -32,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string?, global::G.CreateTranslationRequestModel?> Model { get; set; }
+        public required global::System.AnyOf<string, global::G.CreateTranslationRequestModel?> Model { get; set; }
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.

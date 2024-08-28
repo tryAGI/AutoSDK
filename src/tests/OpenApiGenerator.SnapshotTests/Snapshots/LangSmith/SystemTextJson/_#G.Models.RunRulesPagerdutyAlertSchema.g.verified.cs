@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, object>? Summary { get; set; }
+        public global::System.AnyOf<string, object>? Summary { get; set; }
 
         /// <summary>
         /// Default Value: warning

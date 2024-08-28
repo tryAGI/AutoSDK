@@ -26,8 +26,9 @@ namespace G
         public required global::G.VersionPredictionRequestInput Input { get; set; }
 
         /// <summary>
+        /// **This field is deprecated.**<br/>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
-        /// If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+        /// This field is no longer needed as the returned prediction will always have a `stream` entry in its `url` property if the model supports streaming.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool Stream { get; set; }

@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object>? Description { get; set; }
+        public global::System.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -117,19 +117,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_cost")]
-        public global::System.AnyOf<string?, object>? TotalCost { get; set; }
+        public global::System.AnyOf<string, object>? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost")]
-        public global::System.AnyOf<string?, object>? PromptCost { get; set; }
+        public global::System.AnyOf<string, object>? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost")]
-        public global::System.AnyOf<string?, object>? CompletionCost { get; set; }
+        public global::System.AnyOf<string, object>? CompletionCost { get; set; }
 
         /// <summary>
         /// 

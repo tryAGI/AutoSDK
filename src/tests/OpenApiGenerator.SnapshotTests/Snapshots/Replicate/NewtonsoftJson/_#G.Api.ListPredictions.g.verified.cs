@@ -33,6 +33,7 @@ namespace G
         ///     {<br/>
         ///       "completed_at": "2023-09-08T16:19:34.791859Z",<br/>
         ///       "created_at": "2023-09-08T16:19:34.907244Z",<br/>
+        ///       "data_removed": false,<br/>
         ///       "error": null,<br/>
         ///       "id": "gm3qorzdhgbfurvjtvhg6dckhu",<br/>
         ///       "input": {<br/>
@@ -58,9 +59,10 @@ namespace G
         /// `id` will be the unique ID of the prediction.<br/>
         /// `source` will indicate how the prediction was created. Possible values are `web` or `api`.<br/>
         /// `status` will be the status of the prediction. Refer to [get a single prediction](#predictions.get) for possible values.<br/>
-        /// `urls` will be a convenience object that can be used to construct new API requests for the given prediction.<br/>
+        /// `urls` will be a convenience object that can be used to construct new API requests for the given prediction. If the requested model version supports streaming, this will have a `stream` entry with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).<br/>
         /// `model` will be the model identifier string in the format of `{model_owner}/{model_name}`.<br/>
-        /// `version` will be the unique ID of model version used to create the prediction.
+        /// `version` will be the unique ID of model version used to create the prediction.<br/>
+        /// `data_removed` will be `true` if the input and output data has been deleted.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

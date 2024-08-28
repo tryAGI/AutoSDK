@@ -25,7 +25,7 @@ namespace G
         /// Model deletion has some restrictions:<br/>
         /// - You can only delete models you own.<br/>
         /// - You can only delete private models.<br/>
-        /// - You can only delete models that have versions associated with them (currently these will need to be deleted seperately).<br/>
+        /// - You can only delete models that have no versions associated with them. Currently you'll need to [delete the model's versions](#models.versions.delete) before you can delete the model itself.<br/>
         /// Example cURL request:<br/>
         /// ```command<br/>
         /// curl -s -X DELETE \<br/>

@@ -155,7 +155,7 @@ namespace G
             int maxTokens = 4096,
             double temperature = default,
             double topP = 1,
-            global::System.AnyOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::System.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool stream = false,
             global::G.MockResponseConfig? mockResponse = default,
             global::System.Collections.Generic.IList<global::G.DocumentSchema>? documents = default,

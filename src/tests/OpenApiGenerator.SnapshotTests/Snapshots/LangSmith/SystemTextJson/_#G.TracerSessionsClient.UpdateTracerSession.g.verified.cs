@@ -117,8 +117,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> UpdateTracerSessionAsync(
             string sessionId,
-            global::System.AnyOf<string?, object>? name = default,
-            global::System.AnyOf<string?, object>? description = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<string, object>? defaultDatasetId = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.AnyOf<global::G.TracerSessionUpdateExtra, object>? extra = default,

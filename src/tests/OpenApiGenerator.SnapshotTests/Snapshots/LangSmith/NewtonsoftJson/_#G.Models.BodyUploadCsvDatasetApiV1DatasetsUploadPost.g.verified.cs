@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string?, object>? Name { get; set; }
+        public global::System.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
         /// Default Value: kv
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string?, object>? Description { get; set; }
+        public global::System.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

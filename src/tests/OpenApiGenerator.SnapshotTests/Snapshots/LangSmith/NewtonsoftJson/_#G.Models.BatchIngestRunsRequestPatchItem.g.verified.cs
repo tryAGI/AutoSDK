@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string?, double?> EndTime { get; set; } = default!;
+        public global::System.OneOf<string, double?> EndTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.OneOf<string?, object>? Error { get; set; }
+        public global::System.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 

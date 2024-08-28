@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dotted_order")]
-        public global::System.OneOf<string?, object>? DottedOrder { get; set; }
+        public global::System.OneOf<string, object>? DottedOrder { get; set; }
 
         /// <summary>
         /// 
@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.OneOf<string?, double?, object>? EndTime { get; set; }
+        public global::System.OneOf<string, double?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.OneOf<string?, object>? Error { get; set; }
+        public global::System.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 

@@ -38,14 +38,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string?, double?> EndTime { get; set; }
+        public required global::System.OneOf<string, double?> EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, object>? Error { get; set; }
+        public global::System.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 

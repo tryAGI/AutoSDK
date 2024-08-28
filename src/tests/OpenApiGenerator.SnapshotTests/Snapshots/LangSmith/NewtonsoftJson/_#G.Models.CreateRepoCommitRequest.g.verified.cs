@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit")]
-        public global::System.AnyOf<string?, object>? ParentCommit { get; set; }
+        public global::System.AnyOf<string, object>? ParentCommit { get; set; }
 
         /// <summary>
         /// 

@@ -15,7 +15,7 @@ namespace G
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>
         /// The refusal message by the assistant.

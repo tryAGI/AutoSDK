@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? Split { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
 
         /// <summary>
         /// 

@@ -45,7 +45,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? Split { get; set; } = "base";
+        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; } = "base";
 
         /// <summary>
         /// 

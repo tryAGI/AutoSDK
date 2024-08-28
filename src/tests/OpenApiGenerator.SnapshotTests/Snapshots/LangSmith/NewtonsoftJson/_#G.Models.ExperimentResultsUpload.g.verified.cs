@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experiment_description")]
-        public global::System.AnyOf<string?, object>? ExperimentDescription { get; set; }
+        public global::System.AnyOf<string, object>? ExperimentDescription { get; set; }
 
         /// <summary>
         /// 
@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_name")]
-        public global::System.AnyOf<string?, object>? DatasetName { get; set; }
+        public global::System.AnyOf<string, object>? DatasetName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_description")]
-        public global::System.AnyOf<string?, object>? DatasetDescription { get; set; }
+        public global::System.AnyOf<string, object>? DatasetDescription { get; set; }
 
         /// <summary>
         /// 

@@ -120,7 +120,7 @@ namespace G
             global::System.AnyOf<global::G.ExampleUpdateInputs, object>? inputs = default,
             global::System.AnyOf<global::G.ExampleUpdateOutputs, object>? outputs = default,
             global::System.AnyOf<global::G.ExampleUpdateMetadata, object>? metadata = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string?, object>? split = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ExampleUpdate

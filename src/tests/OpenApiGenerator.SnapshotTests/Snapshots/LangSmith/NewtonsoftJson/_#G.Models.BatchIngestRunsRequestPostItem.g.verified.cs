@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string?, double?> StartTime { get; set; } = default!;
+        public global::System.OneOf<string, double?> StartTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.OneOf<string?, double?, object>? EndTime { get; set; }
+        public global::System.OneOf<string, double?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.OneOf<string?, object>? Error { get; set; }
+        public global::System.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::System.OneOf<string?, object>? SessionName { get; set; }
+        public global::System.OneOf<string, object>? SessionName { get; set; }
 
         /// <summary>
         /// 

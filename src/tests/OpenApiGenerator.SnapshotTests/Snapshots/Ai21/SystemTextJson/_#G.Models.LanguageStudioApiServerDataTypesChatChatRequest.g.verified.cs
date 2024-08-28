@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::System.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Whether or not to stream the result one token at a time using<br/>

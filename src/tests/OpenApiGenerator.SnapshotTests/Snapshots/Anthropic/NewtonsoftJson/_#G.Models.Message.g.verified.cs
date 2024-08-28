@@ -22,7 +22,7 @@ namespace G
         /// The content of the message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; } = default!;
 
         /// <summary>
         /// The role of the messages author.

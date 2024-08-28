@@ -22,7 +22,7 @@ namespace G
         /// Example: gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, global::G.CreateChatCompletionRequestModel?> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -106,7 +106,7 @@ namespace G
         /// Up to 4 sequences where the API will stop generating further tokens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>

@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::System.OneOf<string?, int?, global::System.Collections.Generic.IList<string>>? Value { get; set; }
+        public global::System.OneOf<string, int?, global::System.Collections.Generic.IList<string>>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

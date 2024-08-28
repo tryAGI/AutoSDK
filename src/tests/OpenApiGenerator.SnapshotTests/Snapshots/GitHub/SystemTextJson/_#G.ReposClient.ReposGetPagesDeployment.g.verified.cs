@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::System.OneOf<int?, string?> pagesDeploymentId);
+            ref global::System.OneOf<int?, string> pagesDeploymentId);
         partial void PrepareReposGetPagesDeploymentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::System.OneOf<int?, string?> pagesDeploymentId);
+            global::System.OneOf<int?, string> pagesDeploymentId);
         partial void ProcessReposGetPagesDeploymentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,7 +39,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PagesDeploymentStatus> ReposGetPagesDeploymentAsync(
             string owner,
             string repo,
-            global::System.OneOf<int?, string?> pagesDeploymentId,
+            global::System.OneOf<int?, string> pagesDeploymentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -10,31 +10,31 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string shareToken,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            ref global::System.AnyOf<string?, object>? name,
-            ref global::System.AnyOf<string?, object>? nameContains,
-            ref global::System.AnyOf<string?, object>? datasetVersion,
+            ref global::System.AnyOf<string, object>? name,
+            ref global::System.AnyOf<string, object>? nameContains,
+            ref global::System.AnyOf<string, object>? datasetVersion,
             ref global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             ref bool sortByDesc,
-            ref global::System.AnyOf<string?, object>? sortByFeedbackKey,
+            ref global::System.AnyOf<string, object>? sortByFeedbackKey,
             ref int offset,
             ref int limit,
             ref bool facets,
-            ref global::System.AnyOf<string?, object>? accept);
+            ref global::System.AnyOf<string, object>? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string shareToken,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
-            global::System.AnyOf<string?, object>? datasetVersion,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
+            global::System.AnyOf<string, object>? datasetVersion,
             global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<string?, object>? sortByFeedbackKey,
+            global::System.AnyOf<string, object>? sortByFeedbackKey,
             int offset,
             int limit,
             bool facets,
-            global::System.AnyOf<string?, object>? accept);
+            global::System.AnyOf<string, object>? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,16 +75,16 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             string shareToken,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<string?, object>? name,
-            global::System.AnyOf<string?, object>? nameContains,
-            global::System.AnyOf<string?, object>? datasetVersion,
+            global::System.AnyOf<string, object>? name,
+            global::System.AnyOf<string, object>? nameContains,
+            global::System.AnyOf<string, object>? datasetVersion,
             global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<string?, object>? sortByFeedbackKey,
+            global::System.AnyOf<string, object>? sortByFeedbackKey,
             int offset,
             int limit,
             bool facets,
-            global::System.AnyOf<string?, object>? accept,
+            global::System.AnyOf<string, object>? accept,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

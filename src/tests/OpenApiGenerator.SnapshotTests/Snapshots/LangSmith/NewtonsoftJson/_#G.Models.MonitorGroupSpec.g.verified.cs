@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public global::System.AnyOf<string?, object>? Tag { get; set; }
+        public global::System.AnyOf<string, object>? Tag { get; set; }
 
         /// <summary>
         /// 

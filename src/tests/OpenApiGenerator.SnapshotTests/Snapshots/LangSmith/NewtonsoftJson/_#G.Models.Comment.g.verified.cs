@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment_by_name")]
-        public global::System.AnyOf<string?, object>? CommentByName { get; set; }
+        public global::System.AnyOf<string, object>? CommentByName { get; set; }
 
         /// <summary>
         /// 

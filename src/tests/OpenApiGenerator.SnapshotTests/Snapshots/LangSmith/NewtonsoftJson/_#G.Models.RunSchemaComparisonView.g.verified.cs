@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_preview")]
-        public global::System.AnyOf<string?, object>? InputsPreview { get; set; }
+        public global::System.AnyOf<string, object>? InputsPreview { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.AnyOf<string?, object>? Error { get; set; }
+        public global::System.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_preview")]
-        public global::System.AnyOf<string?, object>? OutputsPreview { get; set; }
+        public global::System.AnyOf<string, object>? OutputsPreview { get; set; }
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dotted_order")]
-        public global::System.AnyOf<string?, object>? DottedOrder { get; set; }
+        public global::System.AnyOf<string, object>? DottedOrder { get; set; }
 
         /// <summary>
         /// 
@@ -183,19 +183,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_cost")]
-        public global::System.AnyOf<string?, object>? TotalCost { get; set; }
+        public global::System.AnyOf<string, object>? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost")]
-        public global::System.AnyOf<string?, object>? PromptCost { get; set; }
+        public global::System.AnyOf<string, object>? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost")]
-        public global::System.AnyOf<string?, object>? CompletionCost { get; set; }
+        public global::System.AnyOf<string, object>? CompletionCost { get; set; }
 
         /// <summary>
         /// 
@@ -213,7 +213,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app_path")]
-        public global::System.AnyOf<string?, object>? AppPath { get; set; }
+        public global::System.AnyOf<string, object>? AppPath { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

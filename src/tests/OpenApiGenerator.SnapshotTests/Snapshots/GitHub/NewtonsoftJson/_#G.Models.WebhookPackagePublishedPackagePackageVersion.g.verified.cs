@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::System.OneOf<string?, global::G.WebhookPackagePublishedPackagePackageVersionBody>? Body { get; set; }
+        public global::System.OneOf<string, global::G.WebhookPackagePublishedPackagePackageVersionBody>? Body { get; set; }
 
         /// <summary>
         /// 

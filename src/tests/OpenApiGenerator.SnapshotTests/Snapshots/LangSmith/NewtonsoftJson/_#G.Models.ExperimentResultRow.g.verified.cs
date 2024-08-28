@@ -57,13 +57,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::System.AnyOf<string?, object>? RunName { get; set; }
+        public global::System.AnyOf<string, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.AnyOf<string?, object>? Error { get; set; }
+        public global::System.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 

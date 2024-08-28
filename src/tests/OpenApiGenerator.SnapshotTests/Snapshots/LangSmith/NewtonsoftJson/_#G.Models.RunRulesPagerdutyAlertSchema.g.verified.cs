@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary")]
-        public global::System.AnyOf<string?, object>? Summary { get; set; }
+        public global::System.AnyOf<string, object>? Summary { get; set; }
 
         /// <summary>
         /// Default Value: warning

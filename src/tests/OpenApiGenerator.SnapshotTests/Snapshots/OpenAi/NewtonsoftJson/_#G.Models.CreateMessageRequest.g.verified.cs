@@ -23,7 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> Content { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> Content { get; set; } = default!;
 
         /// <summary>
         /// A list of files attached to the message, and the tools they should be added to.

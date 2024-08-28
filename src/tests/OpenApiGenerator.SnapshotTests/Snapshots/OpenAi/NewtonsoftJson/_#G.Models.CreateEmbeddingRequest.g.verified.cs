@@ -16,14 +16,14 @@ namespace G
         /// Example: The quick brown fox jumped over the lazy dog
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; } = default!;
 
         /// <summary>
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.<br/>
         /// Example: text-embedding-3-small
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string?, global::G.CreateEmbeddingRequestModel?> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateEmbeddingRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).<br/>

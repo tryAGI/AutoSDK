@@ -197,7 +197,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string?, global::G.CreateChatCompletionRequestModel?> model,
+            global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
             global::G.CreateChatCompletionRequestLogitBias? logitBias = default,
             bool? logprobs = false,
@@ -208,7 +208,7 @@ namespace G
             global::System.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonObject, global::G.ResponseFormatJsonSchema>? responseFormat = default,
             int? seed = default,
             global::G.CreateChatCompletionRequestServiceTier? serviceTier = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = false,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
