@@ -118,14 +118,49 @@ public static class ModelNameGenerator
     
     public static void ResolveCollisions(IReadOnlyCollection<SchemaContext> contexts)
     {
-        foreach (var group in contexts
-            .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
-            .GroupBy(x => x.Id))
+        while (true)
         {
-            var i = 2;
-            foreach (var context in group.Skip(1))
+            var contextsWithCollision = contexts
+                .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
+                .GroupBy(x => x.Id)
+                .Where(x => x.Count() > 1)
+                .ToArray();
+            if (contextsWithCollision.Length == 0)
             {
-                context.Id += $"{i++}";
+                break;
+            }
+            
+            foreach (var group in contextsWithCollision)
+            {
+                var i = 2;
+                foreach (var context in group.Skip(1))
+                {
+                    context.Id += $"{i++}";
+                }
+            }
+        }
+    }
+    
+    public static void ResolveCollisions(IReadOnlyCollection<OperationContext> contexts)
+    {
+        while (true)
+        {
+            var schemasWithCollision = contexts
+                .GroupBy(x => x.MethodName)
+                .Where(x => x.Count() > 1)
+                .ToArray();
+            if (schemasWithCollision.Length == 0)
+            {
+                break;
+            }
+            
+            foreach (var group in schemasWithCollision)
+            {
+                var i = 2;
+                foreach (var context in group.Skip(1))
+                {
+                    context.MethodName += $"{i++}";
+                }
             }
         }
     }

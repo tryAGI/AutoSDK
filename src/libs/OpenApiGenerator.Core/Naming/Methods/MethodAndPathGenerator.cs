@@ -1,15 +1,16 @@
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Naming.Methods;
 
 public class MethodAndPathGenerator : IMethodNameGenerator
 {
-    public string TryGenerate(OpenApiOperation operation, string path, OperationType operationType)
+    public string? TryGenerate(OperationContext operation)
     {
-        path = path ?? throw new ArgumentNullException(nameof(path));
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
-        var prefix = operationType switch
+        var prefix = operation.OperationType switch
         {
             OperationType.Get => "get",
             OperationType.Post => "create",
@@ -19,9 +20,10 @@ public class MethodAndPathGenerator : IMethodNameGenerator
             OperationType.Head => "head",
             OperationType.Options => "options",
             OperationType.Trace => "trace",
-            _ => throw new NotSupportedException($"OperationType {operationType} is not supported."),
+            _ => throw new NotSupportedException($"OperationType {operation.OperationType} is not supported."),
         };
         
+        var path = operation.OperationPath;
         path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
         path = path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase) ? path[3..] : path;
         path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
