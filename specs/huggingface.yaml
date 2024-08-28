@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  title: HuggingFace API
+  description: APIs for sampling from and fine-tuning language models
+  version: '1.0.0'
+servers:
+  - url: https://api-inference.huggingface.co/
+tags:
+  - name: HuggingFace
+    description: The HuggingFace REST API
+paths:
+  /models/{modelId}:
+    post:
+      operationId: generateText
+      parameters:
+        - in: path
+          name: modelId
+          schema:
+            type: string
+          required: true
+          description: Model ID of the user to get
+      tags:
+        - HuggingFace
+      summary: Creates a completion for the provided prompt and parameters.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateTextRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateTextResponse'
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          anyOf:
+            - type: string
+            - type: array
+              items:
+                type: string
+      required:
+        - error
+
+    GenerateTextRequest:
+      type: object
+      properties:
+        inputs:
+          description: |
+            The prompt that you want to complete.
+          nullable: true
+          type: string
+          default: ''
+          example: "This is a test."
+        parameters:
+          $ref: '#/components/schemas/GenerateTextRequestParameters'
+        options:
+          $ref: '#/components/schemas/GenerateTextRequestOptions'
+      required:
+        - inputs
+
+    GenerateTextRequestParameters:
+      type: object
+      properties:
+        top_k:
+          type: integer
+          example: 1
+          nullable: true
+          description: &completions_top_k_description |
+            Integer to define the top tokens considered within the sample operation to create new text.
+        top_p:
+          type: number
+          example: 1
+          nullable: true
+          description: |
+            Float to define the tokens that are within the sample operation of text generation.
+            Add tokens in the sample for more probable to least probable until the sum of the probabilities is greater than top_p.
+        temperature:
+          type: number
+          minimum: 0
+          maximum: 100
+          default: 1
+          example: 1
+          nullable: true
+          description: |
+            The temperature of the sampling operation.
+            
+            1 means regular sampling,
+            0 means always take the highest score,
+            100.0 is getting closer to uniform probability.
+        repetition_penalty:
+          type: number
+          minimum: 0
+          maximum: 100
+          example: 1
+          nullable: true
+          description: |
+            The more a token is used within generation the more it is penalized to not be picked in successive generation passes.
+        max_new_tokens:
+          type: integer
+          minimum: 1
+          maximum: 250
+          example: 250
+          nullable: true
+          description: |
+            The amount of new tokens to be generated, this does not include the input length it is a estimate of the size of generated text you want.
+            Each new tokens slows down the request, so look for balance between response times and length of text generated.
+        max_time:
+          type: number
+          minimum: 0
+          maximum: 120
+          example: 1
+          nullable: true
+          description: |
+            The amount of time in seconds that the query should take maximum. Network can cause some overhead so it will be a soft limit. Use that in combination with max_new_tokens for best results.
+        return_full_text:
+          description: >
+            If set to False, the return results will not contain the original query making it easier for prompting.
+          default: true
+        num_return_sequences:
+          type: integer
+          default: 1
+          example: 1
+          nullable: true
+          description: |
+            The number of proposition you want to be returned.
+        do_sample:
+          description: >
+            Whether or not to use sampling, use greedy decoding otherwise.
+          default: true
+
+    GenerateTextRequestOptions:
+      type: object
+      properties:
+        use_cache:
+          description: >
+            There is a cache layer on the inference API to speedup requests we have already seen.
+            Most models can use those results as is as models are deterministic (meaning the results will be the same anyway).
+            However if you use a non deterministic model,
+            you can set this parameter to prevent the caching mechanism from being used resulting in a real new query.
+          default: true
+        wait_for_model:
+          description: >
+            If the model is not ready, wait for it instead of receiving 503.
+            It limits the number of requests required to get your inference done.
+            It is advised to only set this flag to true after receiving a 503 error as it will limit hanging
+            in your application to known places.
+          default: false
+    
+    GenerateTextResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenerateTextResponseValue'
+    
+    GenerateTextResponseValue:
+      type: object
+      properties:
+        generated_text:
+          type: string
+          description: |
+            The resulting completion up to and excluding the stop sequences.
+      required:
+        - generated_text

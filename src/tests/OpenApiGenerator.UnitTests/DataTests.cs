@@ -74,4 +74,28 @@ public partial class DataTests
             H.Resources.dedoose_json.AsString(),
             DefaultSettings)));
     }
+
+    [TestMethod]
+    public Task Ai21()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.ai21_yaml.AsString(),
+            DefaultSettings)));
+    }
+
+    [TestMethod]
+    public Task HuggingFace()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.huggingface_yaml.AsString(),
+            DefaultSettings)));
+    }
+
+    [TestMethod]
+    public Task Cohere()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.cohere_yaml.AsString(),
+            DefaultSettings)));
+    }
 }

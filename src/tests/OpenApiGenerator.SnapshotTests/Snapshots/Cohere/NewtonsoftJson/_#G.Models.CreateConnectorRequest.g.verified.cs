@@ -1,0 +1,68 @@
+﻿//HintName: G.Models.CreateConnectorRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CreateConnectorRequest
+    {
+        /// <summary>
+        /// A human-readable name for the connector.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// A description of the connector.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// The URL of the connector that will be used to search for documents.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
+
+        /// <summary>
+        /// A list of fields to exclude from the prompt (fields remain in the document).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("excludes")]
+        public global::System.Collections.Generic.IList<string>? Excludes { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("oauth")]
+        public global::G.CreateConnectorOAuth? Oauth { get; set; }
+
+        /// <summary>
+        /// Whether the connector is active or not.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("active")]
+        public bool Active { get; set; } = true;
+
+        /// <summary>
+        /// Whether a chat request should continue or not if the request to this connector fails.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("continue_on_failure")]
+        public bool ContinueOnFailure { get; set; } = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("service_auth")]
+        public global::G.CreateConnectorServiceAuth? ServiceAuth { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}
