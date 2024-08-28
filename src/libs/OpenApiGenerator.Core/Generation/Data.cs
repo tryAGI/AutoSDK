@@ -22,62 +22,35 @@ public static class Data
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
-        var schemaContexts = openApiDocument.GetSchemaContexts(settings);
+        var schemas = openApiDocument.GetSchemaContexts(settings);
         
         traversalTreeTime.Stop();
         
         var namingTime = Stopwatch.StartNew();
 
-        foreach (var context in schemaContexts.Where(x => x.IsModel))
+        foreach (var schema in schemas.Where(x => x.IsModel))
         {
-            _ = ModelNameGenerator.ComputeId(context);
+            _ = ModelNameGenerator.ComputeId(schema);
         }
 
-        ModelNameGenerator.ResolveCollisions(schemaContexts);
+        ModelNameGenerator.ResolveCollisions(schemas);
         
         namingTime.Stop();
         
         var resolveReferencesTime = Stopwatch.StartNew();
         
-        var componentSchemaContexts = schemaContexts
+        var componentSchemas = schemas
             .Where(x => x.IsComponent)
             .ToDictionary(x => x.ComponentId!, x => x);
         
-        foreach (var context in schemaContexts.Where(x => x.IsReference))
+        foreach (var context in schemas.Where(x => x.IsReference))
         {
-            context.ResolvedReference = componentSchemaContexts[context.ReferenceId!];
+            context.ResolvedReference = componentSchemas[context.ReferenceId!];
             context.Id = context.ResolvedReference.Id;
             context.TypeData = context.ResolvedReference.TypeData;
-            // context.TypeData = context.ResolvedReference.TypeData;
-            // context.PropertyData = context.ResolvedReference.PropertyData;
-            // context.TypeData = Models.TypeData.FromSchemaContext(context);
-            // if (context.IsProperty)
-            // {
-            //     context.PropertyData = Models.PropertyData.FromSchemaContext(context);
-            // }
         }
         
         resolveReferencesTime.Stop();
-        
-        // foreach (var context in schemaContexts)
-        // {
-        //     context.ComputeData();
-        // }
-        // foreach (var context in schemaContexts.Where(x => x.IsReference))
-        // {
-        //     context.TypeData = context.ResolvedReference!.TypeData;
-        //     //context.PropertyData = context.ResolvedReference!.PropertyData;
-        //     // context.EnumData = context.ResolvedReference!.EnumData;
-        //     // context.ClassData = context.ResolvedReference!.ClassData;
-        // }
-        // foreach (var context in schemaContexts)
-        // {
-        //     context.ComputeData();
-        // }
-        // foreach (var context in schemaContexts)
-        // {
-        //     context.ComputeData();
-        // }
         
         var filteringTime = Stopwatch.StartNew();
 
@@ -116,14 +89,14 @@ public static class Data
             };
         }
 
-        var maxDepth = schemaContexts.Count == 0
+        var maxDepth = schemas.Count == 0
             ? 20
-            : schemaContexts.Max(x => x.Depth);
-        foreach (var context in schemaContexts.Where(x => x.Operation != null))
+            : schemas.Max(x => x.Depth);
+        foreach (var context in schemas.Where(x => x.Operation != null))
         {
             context.ComputeTags(maxDepth: maxDepth);
         }
-        foreach (var context in schemaContexts)
+        foreach (var context in schemas)
         {
             context.ComputeTags(maxDepth: maxDepth);
         }
@@ -136,8 +109,8 @@ public static class Data
                                   includedModels.Count > 0 ||
                                   excludedModels.Count > 0 ||
                                   !settings.GenerateModels;
-        var filteredSchemaContexts = isFilteringRequired
-            ? schemaContexts
+        var filteredSchemas = isFilteringRequired
+            ? schemas
                 .Where(x =>
                     (settings.GenerateModels ||
                      settings.GenerateSdk ||
@@ -152,34 +125,34 @@ public static class Data
                 .SelectMany(x => x.WithAllChildren())
                 .Distinct()
                 .ToArray()
-            : schemaContexts;
+            : schemas;
         
         filteringTime.Stop();
         
         var computeDataTime = Stopwatch.StartNew();
 
-        foreach (var context in filteredSchemaContexts)
+        foreach (var schema in filteredSchemas)
         {
-            context.ComputeData();
+            schema.ComputeData();
         }
         
         computeDataTime.Stop();
         
         var computeDataClassesTime = Stopwatch.StartNew();
         
-        var classes = filteredSchemaContexts
+        var classes = filteredSchemas
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
             .Select(x => x.ClassData)
             .Where(x => x is not null)
             .Select(x => x!.Value)
             .ToImmutableArray();
-        var enums = filteredSchemaContexts
+        var enums = filteredSchemas
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
             .Select(x => x.EnumData)
             .Where(x => x is not null)
             .Select(x => x!.Value)
             .ToImmutableArray();
-        var anyOfDatas = filteredSchemaContexts
+        var anyOfDatas = filteredSchemas
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
             .Select(x => x.AnyOfData)
             .Where(x => x is not null)
@@ -214,7 +187,7 @@ public static class Data
             .ToArray() : [];
         
         var operationsAsMethods = operations
-            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key, filteredSchemaContexts.Where(y => y.Operation == x.Operation.Value).ToArray()))
+            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key, filteredSchemas.Where(y => y.Operation == x.Operation.Value).ToArray()))
             .ToArray();
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
@@ -289,7 +262,7 @@ public static class Data
 
         var types =
             settings.GenerateJsonSerializerContextTypes
-                ? filteredSchemaContexts
+                ? filteredSchemas
                     .Where(x =>
                         x is { TypeData: not null } &&
                         !string.IsNullOrWhiteSpace(x.TypeData!.Value.CSharpType))
@@ -368,8 +341,8 @@ public static class Data
                 RequestType: TypeData.Default,
                 ResponseType: TypeData.Default,
                 Converters: converters),
-            Schemas: schemaContexts,
-            ResolvedSchemas: filteredSchemaContexts,
+            Schemas: schemas,
+            FilteredSchemas: filteredSchemas,
             Times: new Times(
                 TraversalTree: traversalTreeTime.Elapsed,
                 Naming: namingTime.Elapsed,
