@@ -106,8 +106,19 @@ namespace {authorization.Settings.Namespace}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null) : this(httpClient, baseUri)
         {{
+            Authorizing(_httpClient, {string.Join(", ", parameters.Select(x => $"ref {x}"))});
+
             {methodName}({string.Join(", ", parameters.Select(x => $"{x}"))});
+
+            Authorized(_httpClient);
         }}
+
+        partial void Authorizing(
+            global::System.Net.Http.HttpClient client,
+{string.Join("\n", parameters.Select(x => $@" 
+            ref string {x},")).TrimEnd(',')});
+        partial void Authorized(
+            global::System.Net.Http.HttpClient client);
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

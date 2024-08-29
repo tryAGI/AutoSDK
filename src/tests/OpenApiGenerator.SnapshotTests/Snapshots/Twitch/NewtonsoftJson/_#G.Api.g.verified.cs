@@ -195,6 +195,8 @@ namespace G
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
             _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
+
+            Initialized(_httpClient);
         }
 
         /// <inheritdoc/>
@@ -203,6 +205,8 @@ namespace G
             _httpClient.Dispose();
         }
 
+        partial void Initialized(
+            global::System.Net.Http.HttpClient client);
         partial void PrepareArguments(
             global::System.Net.Http.HttpClient client);
         partial void PrepareRequest(

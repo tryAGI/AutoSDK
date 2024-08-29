@@ -63,6 +63,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.BlockDeltaJsonConverter(),
                 }
             };
+
+            Initialized(_httpClient);
         }
 
         /// <inheritdoc/>
@@ -71,6 +73,8 @@ namespace G
             _httpClient.Dispose();
         }
 
+        partial void Initialized(
+            global::System.Net.Http.HttpClient client);
         partial void PrepareArguments(
             global::System.Net.Http.HttpClient client);
         partial void PrepareRequest(

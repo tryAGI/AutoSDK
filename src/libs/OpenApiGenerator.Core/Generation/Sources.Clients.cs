@@ -50,6 +50,8 @@ namespace {endPoint.Namespace}
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
 {(hasOptions ? $@" 
             _jsonSerializerOptions = _jsonSerializerOptions ?? {(endPoint.Id == "MainConstructor" ? serializer.CreateDefaultSettings(endPoint.Converters) : $"new {serializer.GetOptionsType()}()")};" : " ")}
+
+            Initialized(_httpClient);
         }}
 
         /// <inheritdoc/>
@@ -58,6 +60,8 @@ namespace {endPoint.Namespace}
             _httpClient.Dispose();
         }}
 
+        partial void Initialized(
+            global::System.Net.Http.HttpClient client);
         partial void PrepareArguments(
             global::System.Net.Http.HttpClient client);
         partial void PrepareRequest(
