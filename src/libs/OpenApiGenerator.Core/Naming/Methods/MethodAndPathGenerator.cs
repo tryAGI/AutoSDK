@@ -28,6 +28,6 @@ public class MethodAndPathGenerator : IMethodNameGenerator
         path = path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase) ? path[3..] : path;
         path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
         
-        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/')}";
+        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/', '\\', '-', '.', '_', '/', '}', '{')}";
     }
 }
