@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Release>> ReposListReleasesAsync(
             string owner,
             string repo,
-            int perPage,
-            int page,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -61,12 +61,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryAdvisory>> SecurityAdvisoriesListRepositoryAdvisoriesAsync(
             string owner,
             string repo,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort,
-            string? before,
-            string? after,
-            int perPage,
-            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListRepositoryAdvisoriesDirection.Desc,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort = global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort.Created,
+            string? before = default,
+            string? after = default,
+            int perPage = 30,
+            global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

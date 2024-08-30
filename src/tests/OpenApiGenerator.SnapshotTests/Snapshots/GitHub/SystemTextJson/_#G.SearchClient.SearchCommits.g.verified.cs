@@ -53,10 +53,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchCommitsResponse> SearchCommitsAsync(
             string q,
-            global::G.SearchCommitsSort? sort,
-            global::G.SearchCommitsOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchCommitsSort? sort = default,
+            global::G.SearchCommitsOrder? order = global::G.SearchCommitsOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

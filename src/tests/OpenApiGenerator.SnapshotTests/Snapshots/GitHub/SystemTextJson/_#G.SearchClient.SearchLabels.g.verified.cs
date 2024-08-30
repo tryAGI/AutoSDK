@@ -57,10 +57,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SearchLabelsResponse> SearchLabelsAsync(
             int repositoryId,
             string q,
-            global::G.SearchLabelsSort? sort,
-            global::G.SearchLabelsOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchLabelsSort? sort = default,
+            global::G.SearchLabelsOrder? order = global::G.SearchLabelsOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

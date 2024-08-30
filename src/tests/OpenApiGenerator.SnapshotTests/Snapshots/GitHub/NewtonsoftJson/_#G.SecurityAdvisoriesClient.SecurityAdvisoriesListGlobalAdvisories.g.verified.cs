@@ -86,22 +86,22 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.GlobalAdvisory>> SecurityAdvisoriesListGlobalAdvisoriesAsync(
-            string? ghsaId,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesType? type,
-            string? cveId,
-            global::G.SecurityAdvisoryEcosystems? ecosystem,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes,
-            bool isWithdrawn,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? affects,
-            string? published,
-            string? updated,
-            string? modified,
-            string? before,
-            string? after,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
-            int perPage,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort,
+            string? ghsaId = default,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesType? type = global::G.SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed,
+            string? cveId = default,
+            global::G.SecurityAdvisoryEcosystems? ecosystem = default,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes = default,
+            bool isWithdrawn = default,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? affects = default,
+            string? published = default,
+            string? updated = default,
+            string? modified = default,
+            string? before = default,
+            string? after = default,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,
+            int perPage = 30,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

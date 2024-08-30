@@ -58,12 +58,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite>> ReposGetOrgRuleSuitesAsync(
             string org,
-            int repositoryName,
-            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
-            string? actorName,
-            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
-            int perPage,
-            int page,
+            int repositoryName = default,
+            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod = global::G.ReposGetOrgRuleSuitesTimePeriod.Day,
+            string? actorName = default,
+            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetOrgRuleSuitesRuleSuiteResult.All,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

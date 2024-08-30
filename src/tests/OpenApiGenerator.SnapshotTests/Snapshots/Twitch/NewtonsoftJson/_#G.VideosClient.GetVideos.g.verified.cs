@@ -61,16 +61,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetVideosResponse> GetVideosAsync(
-            global::System.Collections.Generic.IList<string>? id,
-            string? userId,
-            string? gameId,
-            string? language,
-            global::G.GetVideosPeriod? period,
-            global::G.GetVideosSort? sort,
-            global::G.GetVideosType? type,
-            string? first,
-            string? after,
-            string? before,
+            global::System.Collections.Generic.IList<string>? id = default,
+            string? userId = default,
+            string? gameId = default,
+            string? language = default,
+            global::G.GetVideosPeriod? period = default,
+            global::G.GetVideosSort? sort = default,
+            global::G.GetVideosType? type = default,
+            string? first = default,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

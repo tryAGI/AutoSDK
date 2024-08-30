@@ -71,16 +71,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>> SecretScanningListAlertsForOrgAsync(
             string org,
-            global::G.SecretScanningListAlertsForOrgState? state,
-            string? secretType,
-            string? resolution,
-            global::G.SecretScanningListAlertsForOrgSort? sort,
-            global::G.SecretScanningListAlertsForOrgDirection? direction,
-            int page,
-            int perPage,
-            string? before,
-            string? after,
-            string? validity,
+            global::G.SecretScanningListAlertsForOrgState? state = default,
+            string? secretType = default,
+            string? resolution = default,
+            global::G.SecretScanningListAlertsForOrgSort? sort = global::G.SecretScanningListAlertsForOrgSort.Created,
+            global::G.SecretScanningListAlertsForOrgDirection? direction = global::G.SecretScanningListAlertsForOrgDirection.Desc,
+            int page = 1,
+            int perPage = 30,
+            string? before = default,
+            string? after = default,
+            string? validity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

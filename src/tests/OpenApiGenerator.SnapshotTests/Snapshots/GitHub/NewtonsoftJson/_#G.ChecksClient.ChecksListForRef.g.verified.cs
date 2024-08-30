@@ -66,12 +66,12 @@ namespace G
             string owner,
             string repo,
             string @ref,
-            string? checkName,
-            global::G.ChecksListForRefStatus? status,
-            global::G.ChecksListForRefFilter? filter,
-            int perPage,
-            int page,
-            int appId,
+            string? checkName = default,
+            global::G.ChecksListForRefStatus? status = default,
+            global::G.ChecksListForRefFilter? filter = global::G.ChecksListForRefFilter.Latest,
+            int perPage = 30,
+            int page = 1,
+            int appId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

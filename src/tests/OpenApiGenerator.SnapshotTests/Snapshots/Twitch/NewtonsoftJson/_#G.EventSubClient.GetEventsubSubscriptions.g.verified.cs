@@ -44,10 +44,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetEventSubSubscriptionsResponse> GetEventsubSubscriptionsAsync(
-            global::G.GetEventsubSubscriptionsStatus? status,
-            global::G.GetEventsubSubscriptionsType? type,
-            string? userId,
-            string? after,
+            global::G.GetEventsubSubscriptionsStatus? status = default,
+            global::G.GetEventsubSubscriptionsType? type = default,
+            string? userId = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

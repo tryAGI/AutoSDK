@@ -56,16 +56,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagAsync(
-            string? token,
-            string? projectId,
-            string? title,
-            string? description,
-            bool isWeighted,
-            double weightMin,
-            double weightMax,
-            double weightDefault,
-            bool allowDecimalWeights,
-            int color,
+            string? token = default,
+            string? projectId = default,
+            string? title = default,
+            string? description = default,
+            bool isWeighted = default,
+            double weightMin = default,
+            double weightMax = default,
+            double weightDefault = default,
+            bool allowDecimalWeights = default,
+            int color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

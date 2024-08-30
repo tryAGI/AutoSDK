@@ -74,15 +74,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantsAsync(
             string org,
-            int perPage,
-            int page,
-            global::G.OrgsListPatGrantsSort? sort,
-            global::G.OrgsListPatGrantsDirection? direction,
-            global::System.Collections.Generic.IList<string>? owner,
-            string? repository,
-            string? permission,
-            global::System.DateTime lastUsedBefore,
-            global::System.DateTime lastUsedAfter,
+            int perPage = 30,
+            int page = 1,
+            global::G.OrgsListPatGrantsSort? sort = global::G.OrgsListPatGrantsSort.CreatedAt,
+            global::G.OrgsListPatGrantsDirection? direction = global::G.OrgsListPatGrantsDirection.Desc,
+            global::System.Collections.Generic.IList<string>? owner = default,
+            string? repository = default,
+            string? permission = default,
+            global::System.DateTime lastUsedBefore = default,
+            global::System.DateTime lastUsedAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

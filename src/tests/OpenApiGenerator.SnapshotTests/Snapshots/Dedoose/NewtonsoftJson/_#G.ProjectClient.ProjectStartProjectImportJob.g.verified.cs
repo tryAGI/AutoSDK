@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartProjectImportJobAsync(
-            string? token,
-            string? projectId,
-            string? fileURI,
-            string? password,
+            string? token = default,
+            string? projectId = default,
+            string? fileURI = default,
+            string? password = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -44,7 +44,7 @@ namespace G
             string moderatorId,
             string sessionId,
             string sourceSlotId,
-            string? destinationSlotId,
+            string? destinationSlotId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

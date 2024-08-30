@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdateExcerptRangeAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? excerptId,
-            int newStart,
-            int newEnd,
-            string? updatedTextURI,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? excerptId = default,
+            int newStart = default,
+            int newEnd = default,
+            string? updatedTextURI = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

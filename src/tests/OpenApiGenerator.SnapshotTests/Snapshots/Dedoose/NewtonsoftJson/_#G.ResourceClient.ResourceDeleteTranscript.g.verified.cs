@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceDeleteTranscriptResponse> ResourceDeleteTranscriptAsync(
-            string? token,
-            string? projectIdKey,
-            string? id,
-            string? creator,
-            string? projectId,
-            string? resourceId,
-            string? dataPath,
-            global::System.DateTime created,
+            string? token = default,
+            string? projectIdKey = default,
+            string? id = default,
+            string? creator = default,
+            string? projectId = default,
+            string? resourceId = default,
+            string? dataPath = default,
+            global::System.DateTime created = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

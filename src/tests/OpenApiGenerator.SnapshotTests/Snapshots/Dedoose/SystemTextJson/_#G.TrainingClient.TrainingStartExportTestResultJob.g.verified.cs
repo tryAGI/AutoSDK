@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TrainingStartExportTestResultJobAsync(
-            string? token,
-            string? projectId,
-            string? testResultId,
-            string? fileExtension,
-            string? cryptoKey,
+            string? token = default,
+            string? projectId = default,
+            string? testResultId = default,
+            string? fileExtension = default,
+            string? cryptoKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

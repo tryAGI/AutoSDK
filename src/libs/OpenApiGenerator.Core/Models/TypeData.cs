@@ -220,7 +220,7 @@ public readonly record struct TypeData(
             ("integer", "int64") => ("long", false),
             ("number", "float") => ("float", false),
             ("number", "double") => ("double", false),
-            ("string", "byte") => ("byte[]", false),
+            ("string", "byte") => ("byte[]", true),
             ("string", "binary") => ("byte[]", true),
             ("string", "date") => ("global::System.DateTime", false),
             ("string", "date-time") => ("global::System.DateTime", false),

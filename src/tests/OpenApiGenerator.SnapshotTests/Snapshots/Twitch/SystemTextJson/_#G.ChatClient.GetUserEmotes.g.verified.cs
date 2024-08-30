@@ -40,8 +40,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetUserEmotesResponse> GetUserEmotesAsync(
             string userId,
-            string? broadcasterId,
-            string? after,
+            string? broadcasterId = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

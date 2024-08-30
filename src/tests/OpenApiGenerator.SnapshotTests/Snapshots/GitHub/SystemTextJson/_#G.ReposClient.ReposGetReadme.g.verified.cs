@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ContentFile> ReposGetReadmeAsync(
             string owner,
             string repo,
-            string? @ref,
+            string? @ref = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

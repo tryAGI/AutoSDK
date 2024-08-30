@@ -41,9 +41,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.GetAllStreamTagsResponse> GetAllStreamTagsAsync(
-            global::System.Collections.Generic.IList<string>? tagId,
-            int first,
-            string? after,
+            global::System.Collections.Generic.IList<string>? tagId = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

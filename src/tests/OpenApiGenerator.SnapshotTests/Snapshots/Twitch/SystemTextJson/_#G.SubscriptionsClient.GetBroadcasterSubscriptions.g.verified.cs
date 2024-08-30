@@ -47,10 +47,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBroadcasterSubscriptionsResponse> GetBroadcasterSubscriptionsAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string>? userId,
-            string? first,
-            string? after,
-            string? before,
+            global::System.Collections.Generic.IList<string>? userId = default,
+            string? first = default,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartGetDesDataFromFileJobResponse> DescriptorStartGetDesDataFromFileJobAsync(
-            string? token,
-            string? localFileURL,
-            string? setId,
-            string? projectId,
+            string? token = default,
+            string? localFileURL = default,
+            string? setId = default,
+            string? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

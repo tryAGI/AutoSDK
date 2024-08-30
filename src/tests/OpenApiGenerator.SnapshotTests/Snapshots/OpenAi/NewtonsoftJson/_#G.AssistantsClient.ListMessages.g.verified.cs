@@ -49,11 +49,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int limit,
-            global::G.ListMessagesOrder? order,
-            string? after,
-            string? before,
-            string? runId,
+            int limit = 20,
+            global::G.ListMessagesOrder? order = global::G.ListMessagesOrder.Desc,
+            string? after = default,
+            string? before = default,
+            string? runId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

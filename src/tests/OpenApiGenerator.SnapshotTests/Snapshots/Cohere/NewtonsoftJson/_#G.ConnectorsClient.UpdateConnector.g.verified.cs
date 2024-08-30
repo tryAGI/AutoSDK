@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateConnectorResponse> UpdateConnectorAsync(
             string id,
-            string? xClientName,
             global::G.UpdateConnectorRequest request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

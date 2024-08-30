@@ -87,17 +87,17 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Issue>> IssuesListForRepoAsync(
             string owner,
             string repo,
-            string? milestone,
-            global::G.IssuesListForRepoState? state,
-            string? assignee,
-            string? creator,
-            string? mentioned,
-            string? labels,
-            global::G.IssuesListForRepoSort? sort,
-            global::G.IssuesListForRepoDirection? direction,
-            global::System.DateTime since,
-            int perPage,
-            int page,
+            string? milestone = default,
+            global::G.IssuesListForRepoState? state = global::G.IssuesListForRepoState.Open,
+            string? assignee = default,
+            string? creator = default,
+            string? mentioned = default,
+            string? labels = default,
+            global::G.IssuesListForRepoSort? sort = global::G.IssuesListForRepoSort.Created,
+            global::G.IssuesListForRepoDirection? direction = global::G.IssuesListForRepoDirection.Desc,
+            global::System.DateTime since = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

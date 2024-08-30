@@ -40,9 +40,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListConnectorsResponse> ListConnectorsAsync(
-            double limit,
-            double offset,
-            string? xClientName,
+            double limit = 30,
+            double offset = 0,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

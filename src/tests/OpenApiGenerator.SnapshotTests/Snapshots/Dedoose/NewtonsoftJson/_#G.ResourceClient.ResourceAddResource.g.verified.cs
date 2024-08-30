@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceAddResourceAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? title,
-            string? description,
-            int resourceType,
-            string? fileURL,
-            int length,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? title = default,
+            string? description = default,
+            int resourceType = default,
+            string? fileURL = default,
+            int length = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

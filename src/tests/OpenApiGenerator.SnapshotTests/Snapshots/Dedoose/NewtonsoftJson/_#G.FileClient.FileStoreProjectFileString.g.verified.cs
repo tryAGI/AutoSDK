@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> FileStoreProjectFileStringAsync(
-            string? token,
-            string? projectId,
-            int fileStorageType,
-            string? extension,
-            string? text,
+            string? token = default,
+            string? projectId = default,
+            int fileStorageType = default,
+            string? extension = default,
+            string? text = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

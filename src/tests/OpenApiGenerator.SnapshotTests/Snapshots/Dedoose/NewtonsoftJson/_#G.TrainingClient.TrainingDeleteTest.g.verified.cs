@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TrainingTest> TrainingDeleteTestAsync(
-            string? token,
-            string? projectIdKey,
-            string? id,
-            int testType,
-            string? title,
-            string? description,
-            global::System.DateTime createdOn,
-            string? projectId,
-            int excerptCount,
-            int tagCount,
-            string? creator,
+            string? token = default,
+            string? projectIdKey = default,
+            string? id = default,
+            int testType = default,
+            string? title = default,
+            string? description = default,
+            global::System.DateTime createdOn = default,
+            string? projectId = default,
+            int excerptCount = default,
+            int tagCount = default,
+            string? creator = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

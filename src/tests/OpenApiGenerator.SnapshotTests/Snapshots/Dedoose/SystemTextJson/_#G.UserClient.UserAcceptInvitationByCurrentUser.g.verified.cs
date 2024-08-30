@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserAcceptInvitationByCurrentUserResponse> UserAcceptInvitationByCurrentUserAsync(
-            string? token,
-            string? invitationId,
+            string? token = default,
+            string? invitationId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

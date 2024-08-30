@@ -54,14 +54,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetStreamsResponse> GetStreamsAsync(
-            global::System.Collections.Generic.IList<string>? userId,
-            global::System.Collections.Generic.IList<string>? userLogin,
-            global::System.Collections.Generic.IList<string>? gameId,
-            global::G.GetStreamsType? type,
-            global::System.Collections.Generic.IList<string>? language,
-            int first,
-            string? before,
-            string? after,
+            global::System.Collections.Generic.IList<string>? userId = default,
+            global::System.Collections.Generic.IList<string>? userLogin = default,
+            global::System.Collections.Generic.IList<string>? gameId = default,
+            global::G.GetStreamsType? type = default,
+            global::System.Collections.Generic.IList<string>? language = default,
+            int first = default,
+            string? before = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

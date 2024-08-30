@@ -34,8 +34,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
-            string? xClientName,
             global::G.ChatRequest request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

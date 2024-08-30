@@ -57,16 +57,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddDocumentExcerptWithTagsAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? resourceId,
-            string? title,
-            string? description,
-            int startIndex,
-            int endIndex,
-            string? excerptText,
-            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? resourceId = default,
+            string? title = default,
+            string? description = default,
+            int startIndex = default,
+            int endIndex = default,
+            string? excerptText = default,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

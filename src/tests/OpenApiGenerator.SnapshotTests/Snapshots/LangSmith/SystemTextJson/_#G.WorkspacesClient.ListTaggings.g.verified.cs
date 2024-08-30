@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TaggingsResponse>> ListTaggingsAsync(
-            global::System.AnyOf<string, object>? tagValueId,
+            global::System.AnyOf<string, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

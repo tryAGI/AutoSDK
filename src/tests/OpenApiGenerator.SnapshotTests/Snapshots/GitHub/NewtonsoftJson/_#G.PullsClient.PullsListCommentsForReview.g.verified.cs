@@ -58,8 +58,8 @@ namespace G
             string repo,
             int pullNumber,
             int reviewId,
-            int perPage,
-            int page,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

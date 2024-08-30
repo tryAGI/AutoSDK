@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptDeleteExcerptAsync(
-            string? token,
-            string? projectId,
-            string? excerptId,
+            string? token = default,
+            string? projectId = default,
+            string? excerptId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

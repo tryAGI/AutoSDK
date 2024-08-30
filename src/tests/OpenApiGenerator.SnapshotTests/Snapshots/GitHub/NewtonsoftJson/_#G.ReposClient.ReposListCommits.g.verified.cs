@@ -86,14 +86,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Commit>> ReposListCommitsAsync(
             string owner,
             string repo,
-            string? sha,
-            string? path,
-            string? author,
-            string? committer,
-            global::System.DateTime since,
-            global::System.DateTime until,
-            int perPage,
-            int page,
+            string? sha = default,
+            string? path = default,
+            string? author = default,
+            string? committer = default,
+            global::System.DateTime since = default,
+            global::System.DateTime until = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

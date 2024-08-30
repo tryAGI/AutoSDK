@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChatSettingsResponse> GetChatSettingsAsync(
             string broadcasterId,
-            string? moderatorId,
+            string? moderatorId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

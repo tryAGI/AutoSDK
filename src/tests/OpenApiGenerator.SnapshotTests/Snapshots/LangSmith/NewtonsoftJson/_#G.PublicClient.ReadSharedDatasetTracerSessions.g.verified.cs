@@ -74,17 +74,17 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            global::System.AnyOf<string, object>? datasetVersion,
-            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
-            bool sortByDesc,
-            global::System.AnyOf<string, object>? sortByFeedbackKey,
-            int offset,
-            int limit,
-            bool facets,
-            global::System.AnyOf<string, object>? accept,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? nameContains = default,
+            global::System.AnyOf<string, object>? datasetVersion = default,
+            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            bool sortByDesc = true,
+            global::System.AnyOf<string, object>? sortByFeedbackKey = default,
+            int offset = 0,
+            int limit = 100,
+            bool facets = false,
+            global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

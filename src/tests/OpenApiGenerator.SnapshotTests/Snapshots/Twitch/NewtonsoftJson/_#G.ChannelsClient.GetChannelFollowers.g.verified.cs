@@ -43,10 +43,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChannelFollowersResponse> GetChannelFollowersAsync(
-            string? userId,
             string broadcasterId,
-            int first,
-            string? after,
+            string? userId = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

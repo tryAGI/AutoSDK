@@ -88,14 +88,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>> CodeScanningListRecentAnalysesAsync(
             string owner,
             string repo,
-            string? toolName,
-            string? toolGuid,
-            int page,
-            int perPage,
-            string? @ref,
-            string? sarifId,
-            global::G.CodeScanningListRecentAnalysesDirection? direction,
-            global::G.CodeScanningListRecentAnalysesSort? sort,
+            string? toolName = default,
+            string? toolGuid = default,
+            int page = 1,
+            int perPage = 30,
+            string? @ref = default,
+            string? sarifId = default,
+            global::G.CodeScanningListRecentAnalysesDirection? direction = global::G.CodeScanningListRecentAnalysesDirection.Desc,
+            global::G.CodeScanningListRecentAnalysesSort? sort = global::G.CodeScanningListRecentAnalysesSort.Created,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

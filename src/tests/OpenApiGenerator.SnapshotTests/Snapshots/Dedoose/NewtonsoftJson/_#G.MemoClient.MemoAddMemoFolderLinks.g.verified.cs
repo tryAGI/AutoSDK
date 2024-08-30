@@ -39,10 +39,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoAddMemoFolderLinksResponse> MemoAddMemoFolderLinksAsync(
-            string? token,
-            string? projectId,
-            string? memoId,
-            global::System.Collections.Generic.IList<string>? folderIds,
+            string? token = default,
+            string? projectId = default,
+            string? memoId = default,
+            global::System.Collections.Generic.IList<string>? folderIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

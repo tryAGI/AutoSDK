@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSetAccountCPUPMOverrideResponse> AdminSetAccountCPUPMOverrideAsync(
-            string? token,
-            string? accountId,
-            double cpupmOverride,
-            global::System.DateTime endDate,
+            string? token = default,
+            string? accountId = default,
+            double cpupmOverride = default,
+            global::System.DateTime endDate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -49,7 +49,7 @@ namespace G
             string moderatorId,
             string unbanRequestId,
             string status,
-            string? resolutionText,
+            string? resolutionText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FinetuneDownloadResult> GetFinetuneDownloadAsync(
             string ftId,
-            int checkpointStep,
-            string? output,
+            int checkpointStep = default,
+            string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

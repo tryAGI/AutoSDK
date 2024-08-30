@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> AccountGrantAdminAsync(
-            string? token,
-            string? accountId,
-            string? userId,
+            string? token = default,
+            string? accountId = default,
+            string? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

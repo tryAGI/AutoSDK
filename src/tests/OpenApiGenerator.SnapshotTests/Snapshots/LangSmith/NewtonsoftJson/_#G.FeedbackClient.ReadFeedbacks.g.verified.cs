@@ -67,18 +67,18 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadFeedbacksAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
-            int limit,
-            int offset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user,
-            global::System.AnyOf<bool?, object>? hasComment,
-            global::System.AnyOf<bool?, object>? hasScore,
-            global::System.AnyOf<global::G.FeedbackLevel?, object>? level,
-            global::System.AnyOf<global::System.DateTime?, object>? maxCreatedAt,
-            global::System.AnyOf<global::System.DateTime?, object>? minCreatedAt,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? run = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source = default,
+            int limit = 100,
+            int offset = 0,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? user = default,
+            global::System.AnyOf<bool?, object>? hasComment = default,
+            global::System.AnyOf<bool?, object>? hasScore = default,
+            global::System.AnyOf<global::G.FeedbackLevel?, object>? level = default,
+            global::System.AnyOf<global::System.DateTime?, object>? maxCreatedAt = default,
+            global::System.AnyOf<global::System.DateTime?, object>? minCreatedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetConduitShardsResponse> GetConduitShardsAsync(
             string conduitId,
-            string? status,
-            string? after,
+            string? status = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

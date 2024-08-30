@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserRegisterConnectionAsync(
-            string? token,
-            string? userId,
-            string? connectionKey,
+            string? token = default,
+            string? userId = default,
+            string? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

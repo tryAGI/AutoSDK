@@ -33,8 +33,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
-            global::System.AnyOf<string, object>? accept,
             global::G.RunGroupRequest request,
+            global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

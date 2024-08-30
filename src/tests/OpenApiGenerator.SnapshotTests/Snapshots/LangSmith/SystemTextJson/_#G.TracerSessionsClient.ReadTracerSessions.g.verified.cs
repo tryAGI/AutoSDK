@@ -82,21 +82,21 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
-            global::System.AnyOf<bool?, object>? referenceFree,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            global::System.AnyOf<string, object>? datasetVersion,
-            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
-            bool sortByDesc,
-            global::System.AnyOf<string, object>? metadata,
-            global::System.AnyOf<string, object>? sortByFeedbackKey,
-            int offset,
-            int limit,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
-            bool facets,
-            global::System.AnyOf<string, object>? accept,
+            global::System.AnyOf<bool?, object>? referenceFree = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? nameContains = default,
+            global::System.AnyOf<string, object>? datasetVersion = default,
+            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            bool sortByDesc = true,
+            global::System.AnyOf<string, object>? metadata = default,
+            global::System.AnyOf<string, object>? sortByFeedbackKey = default,
+            int offset = 0,
+            int limit = 100,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            bool facets = false,
+            global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

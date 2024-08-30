@@ -35,8 +35,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task BlockUserAsync(
             string targetUserId,
-            global::G.BlockUserSourceContext? sourceContext,
-            global::G.BlockUserReason? reason,
+            global::G.BlockUserSourceContext? sourceContext = default,
+            global::G.BlockUserReason? reason = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

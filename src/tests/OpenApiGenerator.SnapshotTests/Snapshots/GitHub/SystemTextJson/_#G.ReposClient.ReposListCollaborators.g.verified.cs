@@ -57,10 +57,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Collaborator>> ReposListCollaboratorsAsync(
             string owner,
             string repo,
-            global::G.ReposListCollaboratorsAffiliation? affiliation,
-            global::G.ReposListCollaboratorsPermission? permission,
-            int perPage,
-            int page,
+            global::G.ReposListCollaboratorsAffiliation? affiliation = global::G.ReposListCollaboratorsAffiliation.All,
+            global::G.ReposListCollaboratorsPermission? permission = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

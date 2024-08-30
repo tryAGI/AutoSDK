@@ -41,10 +41,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
-            int count,
-            global::G.GetBitsLeaderboardPeriod? period,
-            global::System.DateTime startedAt,
-            string? userId,
+            int count = default,
+            global::G.GetBitsLeaderboardPeriod? period = default,
+            global::System.DateTime startedAt = default,
+            string? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

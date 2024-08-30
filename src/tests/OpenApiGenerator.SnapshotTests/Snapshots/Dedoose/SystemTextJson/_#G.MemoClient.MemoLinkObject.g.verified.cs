@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoLinkObjectResponse> MemoLinkObjectAsync(
-            string? token,
-            string? projectId,
-            string? memoId,
-            string? id1,
-            int position1,
-            string? id2,
-            int position2,
-            string? id3,
-            int position3,
-            string? id4,
-            int position4,
+            string? token = default,
+            string? projectId = default,
+            string? memoId = default,
+            string? id1 = default,
+            int position1 = default,
+            string? id2 = default,
+            int position2 = default,
+            string? id3 = default,
+            int position3 = default,
+            string? id4 = default,
+            int position4 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

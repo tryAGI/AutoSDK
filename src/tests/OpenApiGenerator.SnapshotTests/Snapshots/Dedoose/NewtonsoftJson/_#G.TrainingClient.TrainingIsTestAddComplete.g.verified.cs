@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> TrainingIsTestAddCompleteAsync(
-            string? token,
-            string? addTestWorkerId,
+            string? token = default,
+            string? addTestWorkerId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

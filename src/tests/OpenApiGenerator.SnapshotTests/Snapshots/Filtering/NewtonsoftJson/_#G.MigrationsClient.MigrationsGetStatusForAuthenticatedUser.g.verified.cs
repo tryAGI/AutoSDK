@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsGetStatusForAuthenticatedUserAsync(
             int migrationId,
-            global::System.Collections.Generic.IList<string>? exclude,
+            global::System.Collections.Generic.IList<string>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

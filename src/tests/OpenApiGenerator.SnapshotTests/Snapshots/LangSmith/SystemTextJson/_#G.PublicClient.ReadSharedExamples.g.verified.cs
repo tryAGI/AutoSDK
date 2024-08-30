@@ -62,13 +62,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadSharedExamplesAsync(
             string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            global::System.AnyOf<string, object>? metadata,
-            int offset,
-            int limit,
-            global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
-            global::System.AnyOf<string, object>? filter,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::System.AnyOf<string, object>? metadata = default,
+            int offset = 0,
+            int limit = 100,
+            global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
+            global::System.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

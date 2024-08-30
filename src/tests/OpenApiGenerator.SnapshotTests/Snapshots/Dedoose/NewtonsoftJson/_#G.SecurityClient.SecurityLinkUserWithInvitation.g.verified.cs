@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SecurityLinkUserWithInvitationResponse> SecurityLinkUserWithInvitationAsync(
-            string? token,
-            string? userId,
-            string? projectId,
-            string? groupId,
-            string? invitationId,
+            string? token = default,
+            string? userId = default,
+            string? projectId = default,
+            string? groupId = default,
+            string? invitationId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

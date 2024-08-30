@@ -34,8 +34,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1J2GrandeCompleteResponse> V1J2GrandeCompleteAsync(
-            string? model,
             global::G.CompletionBody request,
+            string? model = "j2-grande",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

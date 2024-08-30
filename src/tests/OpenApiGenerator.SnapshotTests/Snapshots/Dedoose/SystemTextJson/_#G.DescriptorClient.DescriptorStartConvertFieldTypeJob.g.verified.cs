@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartConvertFieldTypeJobResponse> DescriptorStartConvertFieldTypeJobAsync(
-            string? token,
-            string? projectId,
-            string? setId,
-            string? fieldId,
-            int newFieldType,
+            string? token = default,
+            string? projectId = default,
+            string? setId = default,
+            string? fieldId = default,
+            int newFieldType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

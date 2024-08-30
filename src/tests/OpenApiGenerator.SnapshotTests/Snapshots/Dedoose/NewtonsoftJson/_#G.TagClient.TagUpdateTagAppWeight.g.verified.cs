@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagUpdateTagAppWeightResponse> TagUpdateTagAppWeightAsync(
-            string? token,
-            string? currentProjectId,
-            string? tagAppId,
-            double newWeight,
+            string? token = default,
+            string? currentProjectId = default,
+            string? tagAppId = default,
+            double newWeight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

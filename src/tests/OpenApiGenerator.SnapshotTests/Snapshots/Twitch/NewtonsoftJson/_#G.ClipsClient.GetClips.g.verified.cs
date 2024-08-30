@@ -59,15 +59,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetClipsResponse> GetClipsAsync(
-            string? broadcasterId,
-            string? gameId,
-            global::System.Collections.Generic.IList<string>? id,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
-            int first,
-            string? before,
-            string? after,
-            bool isFeatured,
+            string? broadcasterId = default,
+            string? gameId = default,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::System.DateTime startedAt = default,
+            global::System.DateTime endedAt = default,
+            int first = default,
+            string? before = default,
+            string? after = default,
+            bool isFeatured = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

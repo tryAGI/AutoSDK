@@ -54,9 +54,9 @@ namespace G
             string org,
             string teamSlug,
             int discussionNumber,
-            global::G.ReactionsListForTeamDiscussionInOrgContent? content,
-            int perPage,
-            int page,
+            global::G.ReactionsListForTeamDiscussionInOrgContent? content = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

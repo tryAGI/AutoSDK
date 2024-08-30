@@ -47,12 +47,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGameAnalyticsResponse> GetGameAnalyticsAsync(
-            string? gameId,
-            global::G.GetGameAnalyticsType? type,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
-            int first,
-            string? after,
+            string? gameId = default,
+            global::G.GetGameAnalyticsType? type = default,
+            global::System.DateTime startedAt = default,
+            global::System.DateTime endedAt = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

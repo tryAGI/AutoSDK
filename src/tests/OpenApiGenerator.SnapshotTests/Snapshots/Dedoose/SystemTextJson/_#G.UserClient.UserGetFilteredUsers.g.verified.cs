@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserGetFilteredUsersResponse> UserGetFilteredUsersAsync(
-            string? token,
-            string? projectId,
-            string? filter,
-            int maxResults,
+            string? token = default,
+            string? projectId = default,
+            string? filter = default,
+            int maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

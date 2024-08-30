@@ -55,10 +55,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchIssuesAndPullRequestsResponse> SearchIssuesAndPullRequestsAsync(
             string q,
-            global::G.SearchIssuesAndPullRequestsSort? sort,
-            global::G.SearchIssuesAndPullRequestsOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchIssuesAndPullRequestsSort? sort = default,
+            global::G.SearchIssuesAndPullRequestsOrder? order = global::G.SearchIssuesAndPullRequestsOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

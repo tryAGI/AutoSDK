@@ -44,7 +44,7 @@ namespace G
             string owner,
             string repo,
             int rulesetId,
-            bool includesParents,
+            bool includesParents = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

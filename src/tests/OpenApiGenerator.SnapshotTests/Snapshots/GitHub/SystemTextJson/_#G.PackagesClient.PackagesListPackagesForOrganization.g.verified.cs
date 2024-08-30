@@ -49,9 +49,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForOrganizationAsync(
             global::G.PackagesListPackagesForOrganizationPackageType packageType,
             string org,
-            global::G.PackagesListPackagesForOrganizationVisibility? visibility,
-            int page,
-            int perPage,
+            global::G.PackagesListPackagesForOrganizationVisibility? visibility = default,
+            int page = 1,
+            int perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -60,11 +60,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PullRequestReviewComment>> PullsListReviewCommentsForRepoAsync(
             string owner,
             string repo,
-            global::G.PullsListReviewCommentsForRepoSort? sort,
-            global::G.PullsListReviewCommentsForRepoDirection? direction,
-            global::System.DateTime since,
-            int perPage,
-            int page,
+            global::G.PullsListReviewCommentsForRepoSort? sort = default,
+            global::G.PullsListReviewCommentsForRepoDirection? direction = default,
+            global::System.DateTime since = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

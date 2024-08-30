@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UploadToFileStorageAsync(
-            string? token,
-            string? name,
-            string? projectId,
-            int uploadType,
             byte[] request,
+            string? token = default,
+            string? name = default,
+            string? projectId = default,
+            int uploadType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

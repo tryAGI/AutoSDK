@@ -54,15 +54,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExportStartExportBubbleChartJobResponse> ExportStartExportBubbleChartJobAsync(
-            string? token,
-            string? projectId,
-            string? title,
-            global::System.Collections.Generic.IList<string>? columnLabels,
-            global::System.Collections.Generic.IList<string>? rowLabels,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
-            float maxCount,
-            bool colorByTotal,
-            string? extension,
+            string? token = default,
+            string? projectId = default,
+            string? title = default,
+            global::System.Collections.Generic.IList<string>? columnLabels = default,
+            global::System.Collections.Generic.IList<string>? rowLabels = default,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows = default,
+            float maxCount = default,
+            bool colorByTotal = default,
+            string? extension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

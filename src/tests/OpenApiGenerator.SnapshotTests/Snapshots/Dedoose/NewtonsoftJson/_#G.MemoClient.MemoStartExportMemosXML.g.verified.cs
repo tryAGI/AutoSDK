@@ -51,14 +51,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> MemoStartExportMemosXMLAsync(
-            string? token,
-            string? projectId,
-            global::System.Collections.Generic.IList<string>? memoIds,
-            int codeSelection,
-            int mediaSelection,
-            int excerptsSelection,
-            int descriptorsSelection,
-            string? symKey,
+            string? token = default,
+            string? projectId = default,
+            global::System.Collections.Generic.IList<string>? memoIds = default,
+            int codeSelection = default,
+            int mediaSelection = default,
+            int excerptsSelection = default,
+            int descriptorsSelection = default,
+            string? symKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

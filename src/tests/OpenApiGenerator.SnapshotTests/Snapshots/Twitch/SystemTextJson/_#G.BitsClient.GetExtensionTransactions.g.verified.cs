@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionTransactionsResponse> GetExtensionTransactionsAsync(
             string extensionId,
-            global::System.Collections.Generic.IList<string>? id,
-            int first,
-            string? after,
+            global::System.Collections.Generic.IList<string>? id = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

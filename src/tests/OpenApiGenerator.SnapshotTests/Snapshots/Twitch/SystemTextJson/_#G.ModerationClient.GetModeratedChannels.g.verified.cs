@@ -40,8 +40,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetModeratedChannelsResponse> GetModeratedChannelsAsync(
             string userId,
-            string? after,
-            int first,
+            string? after = default,
+            int first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

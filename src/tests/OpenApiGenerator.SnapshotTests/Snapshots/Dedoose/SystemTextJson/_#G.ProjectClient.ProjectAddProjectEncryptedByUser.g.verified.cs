@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Project> ProjectAddProjectEncryptedByUserAsync(
-            string? token,
-            string? userId,
-            string? title,
-            string? decription,
-            string? symKeyHash,
+            string? token = default,
+            string? userId = default,
+            string? title = default,
+            string? decription = default,
+            string? symKeyHash = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

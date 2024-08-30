@@ -40,9 +40,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGamesResponse> GetGamesAsync(
-            global::System.Collections.Generic.IList<string>? id,
-            global::System.Collections.Generic.IList<string>? name,
-            global::System.Collections.Generic.IList<string>? igdbId,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::System.Collections.Generic.IList<string>? name = default,
+            global::System.Collections.Generic.IList<string>? igdbId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

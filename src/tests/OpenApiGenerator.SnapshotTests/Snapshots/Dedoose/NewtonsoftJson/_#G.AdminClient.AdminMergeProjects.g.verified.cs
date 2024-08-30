@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminMergeProjectsResponse> AdminMergeProjectsAsync(
-            string? token,
-            string? project1Id,
-            string? project2Id,
-            string? newTitle,
-            string? newDescription,
-            string? creatorId,
-            bool mergeCodes,
+            string? token = default,
+            string? project1Id = default,
+            string? project2Id = default,
+            string? newTitle = default,
+            string? newDescription = default,
+            string? creatorId = default,
+            bool mergeCodes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

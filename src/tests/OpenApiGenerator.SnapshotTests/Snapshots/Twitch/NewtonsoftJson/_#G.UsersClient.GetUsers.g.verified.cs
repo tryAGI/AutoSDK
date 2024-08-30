@@ -42,8 +42,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetUsersResponse> GetUsersAsync(
-            global::System.Collections.Generic.IList<string>? id,
-            global::System.Collections.Generic.IList<string>? login,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::System.Collections.Generic.IList<string>? login = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

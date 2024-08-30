@@ -16,8 +16,8 @@ namespace G
             global::System.DateTime createStamp,
             ref string? createByIDL,
             ref string? descriptorSetIDL,
-            byte[] valuesData,
-            byte[] dynamicValuesData);
+            byte[]? valuesData,
+            byte[]? dynamicValuesData);
         partial void PrepareDescriptorDeleteDescriptorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -29,8 +29,8 @@ namespace G
             global::System.DateTime createStamp,
             string? createByIDL,
             string? descriptorSetIDL,
-            byte[] valuesData,
-            byte[] dynamicValuesData);
+            byte[]? valuesData,
+            byte[]? dynamicValuesData);
         partial void ProcessDescriptorDeleteDescriptorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,16 +56,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Descriptor> DescriptorDeleteDescriptorAsync(
-            string? token,
-            string? projectIdKey,
-            string? projectId,
-            string? id,
-            string? projectIDL,
-            global::System.DateTime createStamp,
-            string? createByIDL,
-            string? descriptorSetIDL,
-            byte[] valuesData,
-            byte[] dynamicValuesData,
+            string? token = default,
+            string? projectIdKey = default,
+            string? projectId = default,
+            string? id = default,
+            string? projectIDL = default,
+            global::System.DateTime createStamp = default,
+            string? createByIDL = default,
+            string? descriptorSetIDL = default,
+            byte[]? valuesData = default,
+            byte[]? dynamicValuesData = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

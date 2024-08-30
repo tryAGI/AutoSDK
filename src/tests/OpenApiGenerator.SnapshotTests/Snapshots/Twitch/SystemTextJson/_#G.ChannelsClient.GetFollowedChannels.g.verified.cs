@@ -42,9 +42,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetFollowedChannelsResponse> GetFollowedChannelsAsync(
             string userId,
-            string? broadcasterId,
-            int first,
-            string? after,
+            string? broadcasterId = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

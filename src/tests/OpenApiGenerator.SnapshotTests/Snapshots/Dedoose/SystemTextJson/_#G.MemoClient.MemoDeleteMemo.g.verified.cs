@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Memo> MemoDeleteMemoAsync(
-            string? token,
-            string? projectIdKey,
-            string? id,
-            string? projectId,
-            string? title,
-            string? createdUserId,
-            string? lastEditUserId,
-            global::System.DateTime createStamp,
-            global::System.DateTime lastEditStamp,
-            string? folderId,
-            string? dataURI,
+            string? token = default,
+            string? projectIdKey = default,
+            string? id = default,
+            string? projectId = default,
+            string? title = default,
+            string? createdUserId = default,
+            string? lastEditUserId = default,
+            global::System.DateTime createStamp = default,
+            global::System.DateTime lastEditStamp = default,
+            string? folderId = default,
+            string? dataURI = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

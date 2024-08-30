@@ -44,11 +44,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetStreamMarkersResponse> GetStreamMarkersAsync(
-            string? userId,
-            string? videoId,
-            string? first,
-            string? before,
-            string? after,
+            string? userId = default,
+            string? videoId = default,
+            string? first = default,
+            string? before = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

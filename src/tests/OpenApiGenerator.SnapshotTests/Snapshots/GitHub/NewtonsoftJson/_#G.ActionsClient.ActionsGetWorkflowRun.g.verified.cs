@@ -46,7 +46,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            bool excludePullRequests,
+            bool excludePullRequests = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

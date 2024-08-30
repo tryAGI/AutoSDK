@@ -45,9 +45,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchChannelsResponse> SearchChannelsAsync(
             string query,
-            bool liveOnly,
-            int first,
-            string? after,
+            bool liveOnly = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

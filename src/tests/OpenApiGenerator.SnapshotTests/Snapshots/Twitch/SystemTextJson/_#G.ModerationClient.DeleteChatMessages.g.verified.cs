@@ -35,7 +35,7 @@ namespace G
         public async global::System.Threading.Tasks.Task DeleteChatMessagesAsync(
             string broadcasterId,
             string moderatorId,
-            string? messageId,
+            string? messageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

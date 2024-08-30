@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsGetStatusForOrgAsync(
             string org,
             int migrationId,
-            global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>? exclude,
+            global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

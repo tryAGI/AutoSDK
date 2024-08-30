@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminGetUserFullDetailsByUserResponse> AdminGetUserFullDetailsByUserAsync(
-            string? token,
-            string? userId,
+            string? token = default,
+            string? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

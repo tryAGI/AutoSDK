@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SecurityImpersonateUserResponse> SecurityImpersonateUserAsync(
-            string? token,
-            string? username,
-            string? email,
+            string? token = default,
+            string? username = default,
+            string? email = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

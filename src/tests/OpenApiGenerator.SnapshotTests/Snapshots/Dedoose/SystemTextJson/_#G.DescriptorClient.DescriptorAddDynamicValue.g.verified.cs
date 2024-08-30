@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorAddDynamicValueResponse> DescriptorAddDynamicValueAsync(
-            string? token,
-            string? projectId,
-            string? setId,
-            string? descriptorId,
-            string? fieldId,
-            string? resourceId,
-            string? data,
-            string? optionId,
+            string? token = default,
+            string? projectId = default,
+            string? setId = default,
+            string? descriptorId = default,
+            string? fieldId = default,
+            string? resourceId = default,
+            string? data = default,
+            string? optionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

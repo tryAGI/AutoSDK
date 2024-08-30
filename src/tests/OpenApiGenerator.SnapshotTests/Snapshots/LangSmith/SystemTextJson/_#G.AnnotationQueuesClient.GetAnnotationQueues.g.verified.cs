@@ -48,12 +48,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            int offset,
-            int limit,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ids = default,
+            global::System.AnyOf<string, object>? name = default,
+            global::System.AnyOf<string, object>? nameContains = default,
+            int offset = 0,
+            int limit = 100,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

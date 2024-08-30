@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddNewUserToAccountResponse> AdminAddNewUserToAccountAsync(
-            string? token,
-            string? accountId,
-            string? username,
-            string? firstName,
-            string? lastName,
-            string? email,
-            string? phone,
-            string? encryptedPass,
+            string? token = default,
+            string? accountId = default,
+            string? username = default,
+            string? firstName = default,
+            string? lastName = default,
+            string? email = default,
+            string? phone = default,
+            string? encryptedPass = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

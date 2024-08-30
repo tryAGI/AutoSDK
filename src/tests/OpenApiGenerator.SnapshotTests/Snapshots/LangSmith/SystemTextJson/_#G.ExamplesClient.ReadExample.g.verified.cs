@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> ReadExampleAsync(
             string exampleId,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
+            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

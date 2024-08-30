@@ -49,11 +49,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetChannelStreamScheduleResponse> GetChannelStreamScheduleAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string>? id,
-            global::System.DateTime startTime,
-            string? utcOffset,
-            int first,
-            string? after,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::System.DateTime startTime = default,
+            string? utcOffset = default,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -40,8 +40,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetHypeTrainEventsResponse> GetHypeTrainEventsAsync(
             string broadcasterId,
-            int first,
-            string? after,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

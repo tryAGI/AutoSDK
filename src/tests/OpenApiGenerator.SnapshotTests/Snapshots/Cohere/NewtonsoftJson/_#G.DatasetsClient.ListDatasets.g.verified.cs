@@ -50,13 +50,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListDatasetsResponse> ListDatasetsAsync(
-            string? datasetType,
-            global::System.DateTime before,
-            global::System.DateTime after,
-            double limit,
-            double offset,
-            global::G.DatasetValidationStatus? validationStatus,
-            string? xClientName,
+            string? datasetType = default,
+            global::System.DateTime before = default,
+            global::System.DateTime after = default,
+            double limit = default,
+            double offset = default,
+            global::G.DatasetValidationStatus? validationStatus = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

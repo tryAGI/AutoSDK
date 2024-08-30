@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SecurityUnlinkUserFromProjectResponse> SecurityUnlinkUserFromProjectAsync(
-            string? token,
-            string? userId,
-            string? projectId,
+            string? token = default,
+            string? userId = default,
+            string? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

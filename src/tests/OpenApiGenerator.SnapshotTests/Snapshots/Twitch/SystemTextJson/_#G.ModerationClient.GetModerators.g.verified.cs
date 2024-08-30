@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetModeratorsResponse> GetModeratorsAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string>? userId,
-            string? first,
-            string? after,
+            global::System.Collections.Generic.IList<string>? userId = default,
+            string? first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

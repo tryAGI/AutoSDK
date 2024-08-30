@@ -46,9 +46,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForOrgAsync(
             string org,
-            global::G.ProjectsListForOrgState? state,
-            int perPage,
-            int page,
+            global::G.ProjectsListForOrgState? state = global::G.ProjectsListForOrgState.Open,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

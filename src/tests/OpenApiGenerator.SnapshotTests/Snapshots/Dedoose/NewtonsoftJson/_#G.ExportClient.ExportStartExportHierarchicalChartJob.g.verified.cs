@@ -39,10 +39,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExportStartExportHierarchicalChartJobResponse> ExportStartExportHierarchicalChartJobAsync(
-            string? token,
-            string? projectId,
-            string? title,
-            global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems,
+            string? token = default,
+            string? projectId = default,
+            string? title = default,
+            global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

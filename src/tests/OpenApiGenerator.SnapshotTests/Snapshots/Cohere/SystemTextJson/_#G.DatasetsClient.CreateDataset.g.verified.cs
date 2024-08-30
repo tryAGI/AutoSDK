@@ -62,14 +62,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateDatasetResponse> CreateDatasetAsync(
             string name,
             global::G.DatasetType type,
-            bool keepOriginalFile,
-            bool skipMalformedInput,
-            global::System.Collections.Generic.IList<string>? keepFields,
-            global::System.Collections.Generic.IList<string>? optionalFields,
-            string? textSeparator,
-            string? csvDelimiter,
-            string? xClientName,
             global::G.CreateDatasetRequest request,
+            bool keepOriginalFile = default,
+            bool skipMalformedInput = default,
+            global::System.Collections.Generic.IList<string>? keepFields = default,
+            global::System.Collections.Generic.IList<string>? optionalFields = default,
+            string? textSeparator = default,
+            string? csvDelimiter = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

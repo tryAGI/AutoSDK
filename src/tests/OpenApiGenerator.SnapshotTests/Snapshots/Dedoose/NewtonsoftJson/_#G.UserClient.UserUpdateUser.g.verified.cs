@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserUpdateUserResponse> UserUpdateUserAsync(
-            string? token,
-            string? userId,
-            string? firstName,
-            string? lastName,
-            string? phone,
-            string? email,
-            string? password,
+            string? token = default,
+            string? userId = default,
+            string? firstName = default,
+            string? lastName = default,
+            string? phone = default,
+            string? email = default,
+            string? password = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

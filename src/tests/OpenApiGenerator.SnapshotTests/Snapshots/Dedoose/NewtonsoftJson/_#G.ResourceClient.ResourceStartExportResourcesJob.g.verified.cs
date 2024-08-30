@@ -42,11 +42,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartExportResourcesJobAsync(
-            string? token,
-            string? projectId,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            bool includeDescriptorInfo,
-            bool includeCodeCounts,
+            string? token = default,
+            string? projectId = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool includeDescriptorInfo = default,
+            bool includeCodeCounts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

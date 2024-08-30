@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoUnlinkObjectResponse> MemoUnlinkObjectAsync(
-            string? token,
-            string? projectId,
-            string? memoId,
-            string? resourceId,
-            string? excerptId,
-            string? descriptorId,
-            string? tagId,
+            string? token = default,
+            string? projectId = default,
+            string? memoId = default,
+            string? resourceId = default,
+            string? excerptId = default,
+            string? descriptorId = default,
+            string? tagId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

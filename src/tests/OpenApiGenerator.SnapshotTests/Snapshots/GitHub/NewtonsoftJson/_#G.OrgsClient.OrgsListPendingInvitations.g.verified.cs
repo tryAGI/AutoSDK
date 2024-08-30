@@ -51,10 +51,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>> OrgsListPendingInvitationsAsync(
             string org,
-            int perPage,
-            int page,
-            global::G.OrgsListPendingInvitationsRole? role,
-            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource,
+            int perPage = 30,
+            int page = 1,
+            global::G.OrgsListPendingInvitationsRole? role = global::G.OrgsListPendingInvitationsRole.All,
+            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = global::G.OrgsListPendingInvitationsInvitationSource.All,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

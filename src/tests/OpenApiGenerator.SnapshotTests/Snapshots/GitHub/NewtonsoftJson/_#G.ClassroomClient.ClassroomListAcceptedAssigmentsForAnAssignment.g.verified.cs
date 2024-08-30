@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ClassroomAcceptedAssignment>> ClassroomListAcceptedAssigmentsForAnAssignmentAsync(
             int assignmentId,
-            int page,
-            int perPage,
+            int page = 1,
+            int perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

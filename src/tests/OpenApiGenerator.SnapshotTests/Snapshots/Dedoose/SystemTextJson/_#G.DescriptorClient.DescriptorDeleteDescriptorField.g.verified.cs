@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorField> DescriptorDeleteDescriptorFieldAsync(
-            string? token,
-            string? projectIdKey,
-            string? projectId,
-            string? id,
-            string? projectIDL,
-            string? descriptorSetIDL,
-            int type,
-            string? title,
-            string? description,
-            bool isDynamicField,
-            int sortOrder,
+            string? token = default,
+            string? projectIdKey = default,
+            string? projectId = default,
+            string? id = default,
+            string? projectIDL = default,
+            string? descriptorSetIDL = default,
+            int type = default,
+            string? title = default,
+            string? description = default,
+            bool isDynamicField = default,
+            int sortOrder = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

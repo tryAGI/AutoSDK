@@ -60,10 +60,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchCodeResponse> SearchCodeAsync(
             string q,
-            global::G.SearchCodeSort? sort,
-            global::G.SearchCodeOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchCodeSort? sort = default,
+            global::G.SearchCodeOrder? order = global::G.SearchCodeOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -43,8 +43,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetBlockedTermsResponse> GetBlockedTermsAsync(
             string broadcasterId,
             string moderatorId,
-            int first,
-            string? after,
+            int first = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

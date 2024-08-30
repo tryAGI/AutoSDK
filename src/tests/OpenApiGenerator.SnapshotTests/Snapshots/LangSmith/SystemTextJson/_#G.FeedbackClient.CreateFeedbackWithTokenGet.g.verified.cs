@@ -43,10 +43,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             string token,
-            global::System.AnyOf<double?, int?, bool?, object>? score,
-            global::System.AnyOf<double?, int?, bool?, string, object>? value,
-            global::System.AnyOf<string, object>? comment,
-            global::System.AnyOf<string, object>? correction,
+            global::System.AnyOf<double?, int?, bool?, object>? score = default,
+            global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::System.AnyOf<string, object>? comment = default,
+            global::System.AnyOf<string, object>? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

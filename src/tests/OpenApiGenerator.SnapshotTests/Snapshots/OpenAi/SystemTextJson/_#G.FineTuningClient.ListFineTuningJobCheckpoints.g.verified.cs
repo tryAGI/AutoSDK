@@ -40,8 +40,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListFineTuningJobCheckpointsResponse> ListFineTuningJobCheckpointsAsync(
             string fineTuningJobId,
-            string? after,
-            int limit,
+            string? after = default,
+            int limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

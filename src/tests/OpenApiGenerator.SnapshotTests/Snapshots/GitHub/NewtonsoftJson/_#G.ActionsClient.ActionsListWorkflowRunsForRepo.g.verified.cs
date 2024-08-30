@@ -74,16 +74,16 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListWorkflowRunsForRepoResponse> ActionsListWorkflowRunsForRepoAsync(
             string owner,
             string repo,
-            string? actor,
-            string? branch,
-            string? @event,
-            global::G.ActionsListWorkflowRunsForRepoStatus? status,
-            int perPage,
-            int page,
-            global::System.DateTime created,
-            bool excludePullRequests,
-            int checkSuiteId,
-            string? headSha,
+            string? actor = default,
+            string? branch = default,
+            string? @event = default,
+            global::G.ActionsListWorkflowRunsForRepoStatus? status = default,
+            int perPage = 30,
+            int page = 1,
+            global::System.DateTime created = default,
+            bool excludePullRequests = false,
+            int checkSuiteId = default,
+            string? headSha = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

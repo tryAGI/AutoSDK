@@ -47,7 +47,7 @@ namespace G
             global::G.PackagesRestorePackageForOrgPackageType packageType,
             string packageName,
             string org,
-            string? token,
+            string? token = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -38,8 +38,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1J2MidCustomModelCompleteResponse> V1J2MidCustomModelCompleteAsync(
             string customModelName,
-            string? customModelType,
             global::G.CompletionBody request,
+            string? customModelType = "j2-mid",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

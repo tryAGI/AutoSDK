@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagWithParentAsync(
-            string? token,
-            string? proejctId,
-            string? parentTagId,
-            string? title,
-            string? description,
-            bool isWeighted,
-            double weightMin,
-            double weightMax,
-            double weightDefault,
-            bool allowDecimalWeights,
-            double color,
+            string? token = default,
+            string? proejctId = default,
+            string? parentTagId = default,
+            string? title = default,
+            string? description = default,
+            bool isWeighted = default,
+            double weightMin = default,
+            double weightMax = default,
+            double weightDefault = default,
+            bool allowDecimalWeights = default,
+            double color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

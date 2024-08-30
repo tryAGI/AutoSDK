@@ -79,16 +79,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>> CodeScanningListAlertsForOrgAsync(
             string org,
-            string? toolName,
-            string? toolGuid,
-            string? before,
-            string? after,
-            int page,
-            int perPage,
-            global::G.CodeScanningListAlertsForOrgDirection? direction,
-            global::G.CodeScanningAlertStateQuery? state,
-            global::G.CodeScanningListAlertsForOrgSort? sort,
-            global::G.CodeScanningAlertSeverity? severity,
+            string? toolName = default,
+            string? toolGuid = default,
+            string? before = default,
+            string? after = default,
+            int page = 1,
+            int perPage = 30,
+            global::G.CodeScanningListAlertsForOrgDirection? direction = global::G.CodeScanningListAlertsForOrgDirection.Desc,
+            global::G.CodeScanningAlertStateQuery? state = default,
+            global::G.CodeScanningListAlertsForOrgSort? sort = global::G.CodeScanningListAlertsForOrgSort.Created,
+            global::G.CodeScanningAlertSeverity? severity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

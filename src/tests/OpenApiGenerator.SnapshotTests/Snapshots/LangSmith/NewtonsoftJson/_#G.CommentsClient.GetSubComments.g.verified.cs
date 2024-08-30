@@ -48,8 +48,8 @@ namespace G
             string owner,
             string repo,
             string parentCommentId,
-            int limit,
-            int offset,
+            int limit = 20,
+            int offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -34,8 +34,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPaginatedFineTuningJobsResponse> ListPaginatedFineTuningJobsAsync(
-            string? after,
-            int limit,
+            string? after = default,
+            int limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

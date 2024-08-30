@@ -59,7 +59,7 @@ namespace G
             string owner,
             string repo,
             string path,
-            string? @ref,
+            string? @ref = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

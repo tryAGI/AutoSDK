@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantRepositoriesAsync(
             string org,
             int patId,
-            int perPage,
-            int page,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

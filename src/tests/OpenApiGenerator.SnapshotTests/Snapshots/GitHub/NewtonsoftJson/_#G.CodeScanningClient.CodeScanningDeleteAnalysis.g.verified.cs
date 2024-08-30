@@ -92,7 +92,7 @@ namespace G
             string owner,
             string repo,
             int analysisId,
-            string? confirmDelete,
+            string? confirmDelete = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

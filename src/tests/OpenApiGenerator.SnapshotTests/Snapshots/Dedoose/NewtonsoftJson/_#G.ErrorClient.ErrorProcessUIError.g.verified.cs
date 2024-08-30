@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ErrorProcessUIErrorResponse> ErrorProcessUIErrorAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? workspace,
-            string? errorCode,
-            string? message,
-            string? currentTarget,
-            string? stacktrace,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? workspace = default,
+            string? errorCode = default,
+            string? message = default,
+            string? currentTarget = default,
+            string? stacktrace = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

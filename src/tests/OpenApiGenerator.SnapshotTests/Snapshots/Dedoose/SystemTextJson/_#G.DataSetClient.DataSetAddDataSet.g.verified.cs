@@ -75,22 +75,22 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DataSetVO> DataSetAddDataSetAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? title,
-            string? description,
-            bool areExcerptsFiltered,
-            bool areResourcesFiltered,
-            bool areDescriptorsFiltered,
-            bool areTagsFiltered,
-            bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string>? excerptIds,
-            global::System.Collections.Generic.IList<string>? descriptorIds,
-            global::System.Collections.Generic.IList<string>? userIds,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            global::System.Collections.Generic.IList<string>? tagIds,
-            global::System.Collections.Generic.IList<string>? excludedExcerptIds,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? title = default,
+            string? description = default,
+            bool areExcerptsFiltered = default,
+            bool areResourcesFiltered = default,
+            bool areDescriptorsFiltered = default,
+            bool areTagsFiltered = default,
+            bool areUsersFiltered = default,
+            global::System.Collections.Generic.IList<string>? excerptIds = default,
+            global::System.Collections.Generic.IList<string>? descriptorIds = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
+            global::System.Collections.Generic.IList<string>? tagIds = default,
+            global::System.Collections.Generic.IList<string>? excludedExcerptIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

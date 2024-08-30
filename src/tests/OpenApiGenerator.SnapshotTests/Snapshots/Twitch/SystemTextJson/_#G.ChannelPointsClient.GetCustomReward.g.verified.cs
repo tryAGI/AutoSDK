@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardResponse> GetCustomRewardAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string>? id,
-            bool onlyManageableRewards,
+            global::System.Collections.Generic.IList<string>? id = default,
+            bool onlyManageableRewards = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

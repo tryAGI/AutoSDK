@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoDeleteFolderAsync(
-            string? token,
-            string? projectIdKey,
-            string? id,
-            string? projectId,
-            string? title,
+            string? token = default,
+            string? projectIdKey = default,
+            string? id = default,
+            string? projectId = default,
+            string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

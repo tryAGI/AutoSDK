@@ -39,9 +39,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>> AppsListWebhookDeliveriesAsync(
-            int perPage,
-            string? cursor,
-            bool redelivery,
+            int perPage = 30,
+            string? cursor = default,
+            bool redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

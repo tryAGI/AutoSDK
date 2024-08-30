@@ -41,11 +41,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FileEmailFileResponse> FileEmailFileAsync(
-            string? token,
-            string? fileURI,
-            string? attachmentFileName,
-            string? emailAddress,
-            string? subject,
+            string? token = default,
+            string? fileURI = default,
+            string? attachmentFileName = default,
+            string? emailAddress = default,
+            string? subject = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

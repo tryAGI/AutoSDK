@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
             string sessionId,
-            bool includeStats,
-            global::System.AnyOf<string, object>? accept,
+            bool includeStats = false,
+            global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

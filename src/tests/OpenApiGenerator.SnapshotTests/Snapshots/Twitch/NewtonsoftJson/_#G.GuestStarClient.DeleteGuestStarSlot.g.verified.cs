@@ -48,7 +48,7 @@ namespace G
             string sessionId,
             string guestId,
             string slotId,
-            string? shouldReinviteGuest,
+            string? shouldReinviteGuest = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

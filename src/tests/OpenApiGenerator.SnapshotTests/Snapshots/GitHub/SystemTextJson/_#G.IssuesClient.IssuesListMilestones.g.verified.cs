@@ -60,11 +60,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Milestone>> IssuesListMilestonesAsync(
             string owner,
             string repo,
-            global::G.IssuesListMilestonesState? state,
-            global::G.IssuesListMilestonesSort? sort,
-            global::G.IssuesListMilestonesDirection? direction,
-            int perPage,
-            int page,
+            global::G.IssuesListMilestonesState? state = global::G.IssuesListMilestonesState.Open,
+            global::G.IssuesListMilestonesSort? sort = global::G.IssuesListMilestonesSort.DueOn,
+            global::G.IssuesListMilestonesDirection? direction = global::G.IssuesListMilestonesDirection.Asc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -117,10 +117,12 @@ namespace {endPoint.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         public async {taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
+{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOf ? " " : @" 

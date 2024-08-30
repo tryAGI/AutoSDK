@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserInviteUserToProjectResponse> UserInviteUserToProjectAsync(
-            string? token,
-            string? projectId,
-            string? email,
-            string? groupId,
+            string? token = default,
+            string? projectId = default,
+            string? email = default,
+            string? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

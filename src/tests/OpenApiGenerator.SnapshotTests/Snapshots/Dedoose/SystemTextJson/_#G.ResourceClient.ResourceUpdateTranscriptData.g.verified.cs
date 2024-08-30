@@ -57,16 +57,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateTranscriptDataResponse> ResourceUpdateTranscriptDataAsync(
-            string? token,
-            string? projectIdKey,
-            string? id,
-            string? creator,
-            string? projectId,
-            string? resourceId,
-            string? dataPath,
-            global::System.DateTime created,
-            string? transcriptData,
-            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems,
+            string? token = default,
+            string? projectIdKey = default,
+            string? id = default,
+            string? creator = default,
+            string? projectId = default,
+            string? resourceId = default,
+            string? dataPath = default,
+            global::System.DateTime created = default,
+            string? transcriptData = default,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

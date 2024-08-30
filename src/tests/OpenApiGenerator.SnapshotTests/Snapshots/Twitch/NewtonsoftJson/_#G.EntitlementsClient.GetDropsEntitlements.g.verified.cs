@@ -60,12 +60,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetDropsEntitlementsResponse> GetDropsEntitlementsAsync(
-            global::System.Collections.Generic.IList<string>? id,
-            string? userId,
-            string? gameId,
-            global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
-            string? after,
-            int first,
+            global::System.Collections.Generic.IList<string>? id = default,
+            string? userId = default,
+            string? gameId = default,
+            global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus = default,
+            string? after = default,
+            int first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

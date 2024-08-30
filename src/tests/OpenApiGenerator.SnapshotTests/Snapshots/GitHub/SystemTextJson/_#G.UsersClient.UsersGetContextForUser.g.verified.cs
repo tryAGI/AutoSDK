@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Hovercard> UsersGetContextForUserAsync(
             string username,
-            global::G.UsersGetContextForUserSubjectType? subjectType,
-            string? subjectId,
+            global::G.UsersGetContextForUserSubjectType? subjectType = default,
+            string? subjectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

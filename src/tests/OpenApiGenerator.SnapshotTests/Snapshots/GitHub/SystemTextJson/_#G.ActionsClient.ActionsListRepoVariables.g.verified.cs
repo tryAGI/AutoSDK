@@ -47,8 +47,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListRepoVariablesResponse> ActionsListRepoVariablesAsync(
             string owner,
             string repo,
-            int perPage,
-            int page,
+            int perPage = 10,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

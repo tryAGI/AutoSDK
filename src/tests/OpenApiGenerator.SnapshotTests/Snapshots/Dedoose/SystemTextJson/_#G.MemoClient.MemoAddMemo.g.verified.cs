@@ -54,15 +54,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoAndLinks> MemoAddMemoAsync(
-            string? token,
-            string? projectId,
-            string? title,
-            string? dataPath,
-            global::System.Collections.Generic.IList<string>? folderIds,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? descriptors,
-            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? tags,
+            string? token = default,
+            string? projectId = default,
+            string? title = default,
+            string? dataPath = default,
+            global::System.Collections.Generic.IList<string>? folderIds = default,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources = default,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts = default,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? descriptors = default,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

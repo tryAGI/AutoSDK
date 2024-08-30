@@ -59,17 +59,17 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserUpdateUserInfoResponse> UserUpdateUserInfoAsync(
-            string? token,
-            string? userId,
-            string? firstName,
-            string? lastName,
-            string? email,
-            string? phone,
-            string? address,
-            string? city,
-            string? state,
-            string? country,
-            string? zip,
+            string? token = default,
+            string? userId = default,
+            string? firstName = default,
+            string? lastName = default,
+            string? email = default,
+            string? phone = default,
+            string? address = default,
+            string? city = default,
+            string? state = default,
+            string? country = default,
+            string? zip = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

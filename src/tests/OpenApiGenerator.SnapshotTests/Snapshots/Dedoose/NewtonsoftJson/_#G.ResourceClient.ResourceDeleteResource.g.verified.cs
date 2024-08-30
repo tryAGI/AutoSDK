@@ -71,21 +71,21 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceDeleteResourceAsync(
-            string? token,
-            string? currentProjectId,
-            string? projectIdKey,
-            string? projectId,
-            string? id,
-            string? projectIDL,
-            string? title,
-            string? description,
-            int type,
-            string? dataPath,
-            int length,
-            global::System.DateTime createStamp,
-            string? createByUserIDL,
-            bool isDataLocked,
-            string? metaData,
+            string? token = default,
+            string? currentProjectId = default,
+            string? projectIdKey = default,
+            string? projectId = default,
+            string? id = default,
+            string? projectIDL = default,
+            string? title = default,
+            string? description = default,
+            int type = default,
+            string? dataPath = default,
+            int length = default,
+            global::System.DateTime createStamp = default,
+            string? createByUserIDL = default,
+            bool isDataLocked = default,
+            string? metaData = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

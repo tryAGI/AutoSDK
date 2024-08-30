@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunSchema> ReadRunAsync(
             string runId,
-            bool excludeS3StoredAttributes,
+            bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

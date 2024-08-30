@@ -51,9 +51,9 @@ namespace G
             string broadcasterId,
             string moderatorId,
             string status,
-            string? userId,
-            string? after,
-            int first,
+            string? userId = default,
+            string? after = default,
+            int first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

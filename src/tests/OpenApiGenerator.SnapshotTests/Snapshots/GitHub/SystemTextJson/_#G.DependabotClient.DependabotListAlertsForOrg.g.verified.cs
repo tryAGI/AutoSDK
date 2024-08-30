@@ -77,18 +77,18 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DependabotAlertWithRepository>> DependabotListAlertsForOrgAsync(
             string org,
-            string? state,
-            string? severity,
-            string? ecosystem,
-            string? package,
-            global::G.DependabotListAlertsForOrgScope? scope,
-            global::G.DependabotListAlertsForOrgSort? sort,
-            global::G.DependabotListAlertsForOrgDirection? direction,
-            string? before,
-            string? after,
-            int first,
-            int last,
-            int perPage,
+            string? state = default,
+            string? severity = default,
+            string? ecosystem = default,
+            string? package = default,
+            global::G.DependabotListAlertsForOrgScope? scope = default,
+            global::G.DependabotListAlertsForOrgSort? sort = global::G.DependabotListAlertsForOrgSort.Created,
+            global::G.DependabotListAlertsForOrgDirection? direction = global::G.DependabotListAlertsForOrgDirection.Desc,
+            string? before = default,
+            string? after = default,
+            int first = 30,
+            int last = default,
+            int perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

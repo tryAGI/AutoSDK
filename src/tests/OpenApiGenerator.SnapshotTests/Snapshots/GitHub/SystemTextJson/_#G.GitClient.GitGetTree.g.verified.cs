@@ -44,7 +44,7 @@ namespace G
             string owner,
             string repo,
             string treeSha,
-            string? recursive,
+            string? recursive = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

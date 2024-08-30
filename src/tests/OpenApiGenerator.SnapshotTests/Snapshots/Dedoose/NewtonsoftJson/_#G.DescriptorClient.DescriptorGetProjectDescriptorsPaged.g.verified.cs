@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Descriptor>> DescriptorGetProjectDescriptorsPagedAsync(
-            string? token,
-            string? projectId,
-            int page,
-            int pageSize,
+            string? token = default,
+            string? projectId = default,
+            int page = default,
+            int pageSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -48,13 +48,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddPDFImageExcerptAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            string? resourceId,
-            int start,
-            int end,
-            global::System.Collections.Generic.IList<string>? tagIdsToApply,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            string? resourceId = default,
+            int start = default,
+            int end = default,
+            global::System.Collections.Generic.IList<string>? tagIdsToApply = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

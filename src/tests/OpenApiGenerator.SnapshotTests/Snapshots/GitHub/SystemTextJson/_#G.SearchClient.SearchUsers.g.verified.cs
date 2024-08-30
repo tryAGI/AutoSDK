@@ -54,10 +54,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchUsersResponse> SearchUsersAsync(
             string q,
-            global::G.SearchUsersSort? sort,
-            global::G.SearchUsersOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchUsersSort? sort = default,
+            global::G.SearchUsersOrder? order = global::G.SearchUsersOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -53,15 +53,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagLink> TagDeleteTagLinkAsync(
-            string? token,
-            string? currentProjectId,
-            string? projectIdKey,
-            string? projectId,
-            string? id,
-            string? projectIDL,
-            string? tag1IDL,
-            string? tag2IDL,
-            bool isParentChildLink,
+            string? token = default,
+            string? currentProjectId = default,
+            string? projectIdKey = default,
+            string? projectId = default,
+            string? id = default,
+            string? projectIDL = default,
+            string? tag1IDL = default,
+            string? tag2IDL = default,
+            bool isParentChildLink = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

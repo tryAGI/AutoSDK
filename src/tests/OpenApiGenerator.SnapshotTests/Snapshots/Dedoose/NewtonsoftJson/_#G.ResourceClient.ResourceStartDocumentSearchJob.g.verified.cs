@@ -35,9 +35,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartDocumentSearchJobAsync(
-            string? token,
-            string? projectId,
-            string? searchText,
+            string? token = default,
+            string? projectId = default,
+            string? searchText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

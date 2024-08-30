@@ -51,10 +51,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetPublicSchema> ReadSharedDatasetAsync(
             string shareToken,
-            int offset,
-            int limit,
-            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
-            bool sortByDesc,
+            int offset = 0,
+            int limit = 100,
+            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
+            bool sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

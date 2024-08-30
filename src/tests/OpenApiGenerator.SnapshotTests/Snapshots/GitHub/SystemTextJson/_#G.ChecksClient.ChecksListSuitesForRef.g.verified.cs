@@ -57,10 +57,10 @@ namespace G
             string owner,
             string repo,
             string @ref,
-            int appId,
-            string? checkName,
-            int perPage,
-            int page,
+            int appId = default,
+            string? checkName = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

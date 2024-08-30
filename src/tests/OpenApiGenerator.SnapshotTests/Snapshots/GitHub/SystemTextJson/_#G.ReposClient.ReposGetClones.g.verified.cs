@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CloneTraffic> ReposGetClonesAsync(
             string owner,
             string repo,
-            global::G.ReposGetClonesPer? per,
+            global::G.ReposGetClonesPer? per = global::G.ReposGetClonesPer.Day,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

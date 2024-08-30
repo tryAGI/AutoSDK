@@ -53,11 +53,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
             string broadcasterId,
             string rewardId,
-            global::G.GetCustomRewardRedemptionStatus? status,
-            global::System.Collections.Generic.IList<string>? id,
-            global::G.GetCustomRewardRedemptionSort? sort,
-            string? after,
-            int first,
+            global::G.GetCustomRewardRedemptionStatus? status = default,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::G.GetCustomRewardRedemptionSort? sort = default,
+            string? after = default,
+            int first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

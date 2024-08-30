@@ -35,8 +35,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTeamsResponse> GetTeamsAsync(
-            string? name,
-            string? id,
+            string? name = default,
+            string? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

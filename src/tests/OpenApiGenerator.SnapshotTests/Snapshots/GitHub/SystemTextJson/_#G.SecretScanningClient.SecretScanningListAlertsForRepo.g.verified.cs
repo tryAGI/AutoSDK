@@ -75,16 +75,16 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SecretScanningAlert>> SecretScanningListAlertsForRepoAsync(
             string owner,
             string repo,
-            global::G.SecretScanningListAlertsForRepoState? state,
-            string? secretType,
-            string? resolution,
-            global::G.SecretScanningListAlertsForRepoSort? sort,
-            global::G.SecretScanningListAlertsForRepoDirection? direction,
-            int page,
-            int perPage,
-            string? before,
-            string? after,
-            string? validity,
+            global::G.SecretScanningListAlertsForRepoState? state = default,
+            string? secretType = default,
+            string? resolution = default,
+            global::G.SecretScanningListAlertsForRepoSort? sort = global::G.SecretScanningListAlertsForRepoSort.Created,
+            global::G.SecretScanningListAlertsForRepoDirection? direction = global::G.SecretScanningListAlertsForRepoDirection.Desc,
+            int page = 1,
+            int perPage = 30,
+            string? before = default,
+            string? after = default,
+            string? validity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

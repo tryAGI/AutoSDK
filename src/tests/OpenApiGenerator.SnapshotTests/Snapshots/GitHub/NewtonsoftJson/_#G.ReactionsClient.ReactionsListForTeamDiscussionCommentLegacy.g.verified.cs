@@ -55,9 +55,9 @@ namespace G
             int teamId,
             int discussionNumber,
             int commentNumber,
-            global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content,
-            int perPage,
-            int page,
+            global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

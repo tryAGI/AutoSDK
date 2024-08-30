@@ -38,10 +38,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartExportFieldsJobResponse> DescriptorStartExportFieldsJobAsync(
-            string? token,
-            string? projectId,
-            string? setId,
-            string? fileExtension,
+            string? token = default,
+            string? projectId = default,
+            string? setId = default,
+            string? fileExtension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -42,10 +42,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListAssistantsResponse> ListAssistantsAsync(
-            int limit,
-            global::G.ListAssistantsOrder? order,
-            string? after,
-            string? before,
+            int limit = 20,
+            global::G.ListAssistantsOrder? order = global::G.ListAssistantsOrder.Desc,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

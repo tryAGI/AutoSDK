@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceStartExportDocumentJobWithRTLResponse> ResourceStartExportDocumentJobWithRTLAsync(
-            string? token,
-            string? projectId,
-            string? resourceId,
-            bool includeExRegions,
-            bool rtl,
-            string? exportExtension,
-            string? encryptedSymKey,
+            string? token = default,
+            string? projectId = default,
+            string? resourceId = default,
+            bool includeExRegions = default,
+            bool rtl = default,
+            string? exportExtension = default,
+            string? encryptedSymKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

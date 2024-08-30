@@ -47,10 +47,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DatasetVersion>> GetDatasetVersionsAsync(
             string datasetId,
-            global::System.AnyOf<string, object>? search,
-            global::System.AnyOf<string, object>? example,
-            int limit,
-            int offset,
+            global::System.AnyOf<string, object>? search = default,
+            global::System.AnyOf<string, object>? example = default,
+            int limit = 100,
+            int offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

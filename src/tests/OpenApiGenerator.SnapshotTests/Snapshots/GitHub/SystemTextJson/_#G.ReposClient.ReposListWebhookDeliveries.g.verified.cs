@@ -50,9 +50,9 @@ namespace G
             string owner,
             string repo,
             int hookId,
-            int perPage,
-            string? cursor,
-            bool redelivery,
+            int perPage = 30,
+            string? cursor = default,
+            bool redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -65,12 +65,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Deployment>> ReposListDeploymentsAsync(
             string owner,
             string repo,
-            string? sha,
-            string? @ref,
-            string? task,
-            string? environment,
-            int perPage,
-            int page,
+            string? sha = "none",
+            string? @ref = "none",
+            string? task = "none",
+            string? environment = "none",
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

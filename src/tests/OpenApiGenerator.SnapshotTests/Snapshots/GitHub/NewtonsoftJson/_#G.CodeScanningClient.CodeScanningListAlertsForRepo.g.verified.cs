@@ -85,15 +85,15 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAlertItems>> CodeScanningListAlertsForRepoAsync(
             string owner,
             string repo,
-            string? toolName,
-            string? toolGuid,
-            int page,
-            int perPage,
-            string? @ref,
-            global::G.CodeScanningListAlertsForRepoDirection? direction,
-            global::G.CodeScanningListAlertsForRepoSort? sort,
-            global::G.CodeScanningAlertStateQuery? state,
-            global::G.CodeScanningAlertSeverity? severity,
+            string? toolName = default,
+            string? toolGuid = default,
+            int page = 1,
+            int perPage = 30,
+            string? @ref = default,
+            global::G.CodeScanningListAlertsForRepoDirection? direction = global::G.CodeScanningListAlertsForRepoDirection.Desc,
+            global::G.CodeScanningListAlertsForRepoSort? sort = global::G.CodeScanningListAlertsForRepoSort.Created,
+            global::G.CodeScanningAlertStateQuery? state = default,
+            global::G.CodeScanningAlertSeverity? severity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

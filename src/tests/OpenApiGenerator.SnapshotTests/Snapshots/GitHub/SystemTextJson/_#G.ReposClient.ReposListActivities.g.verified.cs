@@ -65,14 +65,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Activity>> ReposListActivitiesAsync(
             string owner,
             string repo,
-            global::G.ReposListActivitiesDirection? direction,
-            int perPage,
-            string? before,
-            string? after,
-            string? @ref,
-            string? actor,
-            global::G.ReposListActivitiesTimePeriod? timePeriod,
-            global::G.ReposListActivitiesActivityType? activityType,
+            global::G.ReposListActivitiesDirection? direction = global::G.ReposListActivitiesDirection.Desc,
+            int perPage = 30,
+            string? before = default,
+            string? after = default,
+            string? @ref = default,
+            string? actor = default,
+            global::G.ReposListActivitiesTimePeriod? timePeriod = default,
+            global::G.ReposListActivitiesActivityType? activityType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

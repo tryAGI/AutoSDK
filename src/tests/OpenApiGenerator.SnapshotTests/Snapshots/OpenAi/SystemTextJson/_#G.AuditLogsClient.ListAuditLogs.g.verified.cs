@@ -56,15 +56,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListAuditLogsResponse> ListAuditLogsAsync(
-            global::G.ListAuditLogsEffectiveAt? effectiveAt,
-            global::System.Collections.Generic.IList<string>? projectIds,
-            global::System.Collections.Generic.IList<global::G.AuditLogEventType>? eventTypes,
-            global::System.Collections.Generic.IList<string>? actorIds,
-            global::System.Collections.Generic.IList<string>? actorEmails,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            int limit,
-            string? after,
-            string? before,
+            global::G.ListAuditLogsEffectiveAt? effectiveAt = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::G.AuditLogEventType>? eventTypes = default,
+            global::System.Collections.Generic.IList<string>? actorIds = default,
+            global::System.Collections.Generic.IList<string>? actorEmails = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
+            int limit = 20,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -78,21 +78,21 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListReposResponse> ListReposAsync(
-            int limit,
-            int offset,
-            global::System.AnyOf<string, object>? tenantHandle,
-            global::System.AnyOf<string, object>? tenantId,
-            global::System.AnyOf<string, object>? query,
-            global::System.AnyOf<bool?, object>? hasCommits,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived2?, object>? isArchived,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic2?, object>? isPublic,
-            global::System.AnyOf<string, object>? upstreamRepoOwner,
-            global::System.AnyOf<string, object>? upstreamRepoHandle,
-            global::System.AnyOf<bool?, object>? matchPrefix,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
-            global::System.AnyOf<string, object>? sortField,
-            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection,
+            int limit = 20,
+            int offset = 0,
+            global::System.AnyOf<string, object>? tenantHandle = default,
+            global::System.AnyOf<string, object>? tenantId = default,
+            global::System.AnyOf<string, object>? query = default,
+            global::System.AnyOf<bool?, object>? hasCommits = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsArchived2?, object>? isArchived = default,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetIsPublic2?, object>? isPublic = default,
+            global::System.AnyOf<string, object>? upstreamRepoOwner = default,
+            global::System.AnyOf<string, object>? upstreamRepoHandle = default,
+            global::System.AnyOf<bool?, object>? matchPrefix = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<string, object>? sortField = default,
+            global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

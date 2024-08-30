@@ -56,10 +56,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CopilotUsageMetrics>> CopilotUsageMetricsForEnterpriseAsync(
             string enterprise,
-            string? since,
-            string? until,
-            int page,
-            int perPage,
+            string? since = default,
+            string? until = default,
+            int page = 1,
+            int perPage = 28,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

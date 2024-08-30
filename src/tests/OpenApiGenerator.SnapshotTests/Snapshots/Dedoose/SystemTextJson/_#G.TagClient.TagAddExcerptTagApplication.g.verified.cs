@@ -47,13 +47,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagAppDTO> TagAddExcerptTagApplicationAsync(
-            string? token,
-            string? userId,
-            string? projectId,
-            string? resourceId,
-            string? excerptId,
-            string? tagId,
-            double weight,
+            string? token = default,
+            string? userId = default,
+            string? projectId = default,
+            string? resourceId = default,
+            string? excerptId = default,
+            string? tagId = default,
+            double weight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

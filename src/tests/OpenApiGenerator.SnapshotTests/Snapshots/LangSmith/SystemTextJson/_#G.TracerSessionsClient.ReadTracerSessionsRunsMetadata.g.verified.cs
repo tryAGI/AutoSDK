@@ -47,10 +47,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RootModelDictStrListStr> ReadTracerSessionsRunsMetadataAsync(
             string sessionId,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime,
-            int k,
-            bool rootRunsOnly,
+            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
+            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+            int k = 10,
+            bool rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

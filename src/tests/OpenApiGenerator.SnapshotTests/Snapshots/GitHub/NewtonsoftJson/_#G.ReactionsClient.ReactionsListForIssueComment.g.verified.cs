@@ -52,9 +52,9 @@ namespace G
             string owner,
             string repo,
             int commentId,
-            global::G.ReactionsListForIssueCommentContent? content,
-            int perPage,
-            int page,
+            global::G.ReactionsListForIssueCommentContent? content = default,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -51,12 +51,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FileResponse>> V1LibraryManagementAsync(
-            string? name,
-            string? path,
-            global::G.FileStatus? status,
-            global::System.Collections.Generic.IList<string>? label,
-            int limit,
-            int offset,
+            string? name = default,
+            string? path = default,
+            global::G.FileStatus? status = default,
+            global::System.Collections.Generic.IList<string>? label = default,
+            int limit = 1000,
+            int offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

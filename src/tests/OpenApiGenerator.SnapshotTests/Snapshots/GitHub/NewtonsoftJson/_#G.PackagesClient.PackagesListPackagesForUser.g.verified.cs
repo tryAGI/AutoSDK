@@ -48,10 +48,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForUserAsync(
             global::G.PackagesListPackagesForUserPackageType packageType,
-            global::G.PackagesListPackagesForUserVisibility? visibility,
             string username,
-            int page,
-            int perPage,
+            global::G.PackagesListPackagesForUserVisibility? visibility = default,
+            int page = 1,
+            int perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

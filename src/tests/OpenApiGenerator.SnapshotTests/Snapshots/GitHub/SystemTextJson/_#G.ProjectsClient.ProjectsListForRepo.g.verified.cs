@@ -50,9 +50,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForRepoAsync(
             string owner,
             string repo,
-            global::G.ProjectsListForRepoState? state,
-            int perPage,
-            int page,
+            global::G.ProjectsListForRepoState? state = global::G.ProjectsListForRepoState.Open,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

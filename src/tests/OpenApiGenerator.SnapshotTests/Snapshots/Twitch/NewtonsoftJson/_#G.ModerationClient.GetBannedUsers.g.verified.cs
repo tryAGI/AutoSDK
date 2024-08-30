@@ -46,10 +46,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBannedUsersResponse> GetBannedUsersAsync(
             string broadcasterId,
-            global::System.Collections.Generic.IList<string>? userId,
-            int first,
-            string? after,
-            string? before,
+            global::System.Collections.Generic.IList<string>? userId = default,
+            int first = default,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

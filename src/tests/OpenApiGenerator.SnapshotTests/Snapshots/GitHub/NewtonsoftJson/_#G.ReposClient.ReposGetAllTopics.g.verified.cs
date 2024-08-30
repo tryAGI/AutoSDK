@@ -44,8 +44,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Topic> ReposGetAllTopicsAsync(
             string owner,
             string repo,
-            int page,
-            int perPage,
+            int page = 1,
+            int perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

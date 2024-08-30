@@ -45,12 +45,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorImportFieldsResponse> DescriptorImportFieldsAsync(
-            string? token,
-            string? projectId,
-            string? userId,
-            global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
-            string? existingSetId,
-            string? newSetTitle,
+            string? token = default,
+            string? projectId = default,
+            string? userId = default,
+            global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos = default,
+            string? existingSetId = default,
+            string? newSetTitle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

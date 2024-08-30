@@ -49,9 +49,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForksAsync(
             string owner,
             string repo,
-            global::G.ReposListForksSort? sort,
-            int perPage,
-            int page,
+            global::G.ReposListForksSort? sort = global::G.ReposListForksSort.Newest,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

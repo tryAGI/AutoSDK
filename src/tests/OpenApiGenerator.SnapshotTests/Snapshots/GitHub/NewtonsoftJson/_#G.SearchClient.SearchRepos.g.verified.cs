@@ -53,10 +53,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchReposResponse> SearchReposAsync(
             string q,
-            global::G.SearchReposSort? sort,
-            global::G.SearchReposOrder? order,
-            int perPage,
-            int page,
+            global::G.SearchReposSort? sort = default,
+            global::G.SearchReposOrder? order = global::G.SearchReposOrder.Desc,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

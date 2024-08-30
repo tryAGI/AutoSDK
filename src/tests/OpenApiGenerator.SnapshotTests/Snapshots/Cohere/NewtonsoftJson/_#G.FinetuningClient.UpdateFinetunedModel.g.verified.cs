@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateFinetunedModelResponse> UpdateFinetunedModelAsync(
             string id,
-            string? xClientName,
             global::G.UpdateFinetunedModelRequest request,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

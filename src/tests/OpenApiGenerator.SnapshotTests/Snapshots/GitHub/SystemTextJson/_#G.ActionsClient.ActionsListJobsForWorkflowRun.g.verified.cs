@@ -57,9 +57,9 @@ namespace G
             string owner,
             string repo,
             int runId,
-            global::G.ActionsListJobsForWorkflowRunFilter? filter,
-            int perPage,
-            int page,
+            global::G.ActionsListJobsForWorkflowRunFilter? filter = global::G.ActionsListJobsForWorkflowRunFilter.Latest,
+            int perPage = 30,
+            int page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
