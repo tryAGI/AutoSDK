@@ -122,7 +122,8 @@ public static class ModelNameGenerator
         {
             var contextsWithCollision = contexts
                 .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
-                .GroupBy(x => x.Id)
+                // Sometimes there are still collisions for file names with different casing
+                .GroupBy(x => x.Id.ToUpperInvariant())
                 .Where(x => x.Count() > 1)
                 .ToArray();
             if (contextsWithCollision.Length == 0)
