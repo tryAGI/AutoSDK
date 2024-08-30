@@ -1,6 +1,6 @@
 using System.Collections.Immutable;
-using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Naming.Methods;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.Core.Models;
 

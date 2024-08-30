@@ -2,7 +2,7 @@ using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator.Core.Serialization;
+namespace OpenApiGenerator.Core.Serialization.Form;
 
 public static class ParameterSerializer
 {

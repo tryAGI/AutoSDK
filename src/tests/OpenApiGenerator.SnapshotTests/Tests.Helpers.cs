@@ -4,7 +4,7 @@ using H.Generators.Tests.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Testing;
-using OpenApiGenerator.Core.Json;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.SnapshotTests;
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
-using OpenApiGenerator.Core.Json;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.SnapshotTests;
 

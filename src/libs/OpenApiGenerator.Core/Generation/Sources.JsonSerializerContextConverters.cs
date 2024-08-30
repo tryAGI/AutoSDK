@@ -1,6 +1,6 @@
 using OpenApiGenerator.Core.Extensions;
-using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.Core.Generation;
 

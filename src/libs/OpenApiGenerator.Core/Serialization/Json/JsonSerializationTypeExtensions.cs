@@ -1,4 +1,4 @@
-namespace OpenApiGenerator.Core.Json;
+namespace OpenApiGenerator.Core.Serialization.Json;
 
 public static class JsonSerializationTypeExtensions
 {

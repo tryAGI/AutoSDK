@@ -1,7 +1,6 @@
-using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator.Core.Json;
+namespace OpenApiGenerator.Core.Serialization.Json;
 
 public class NewtonsoftJsonSerializer : IJsonSerializer
 {

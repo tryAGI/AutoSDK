@@ -4,8 +4,8 @@ using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Core.Models;
-using OpenApiGenerator.Core.Naming.Methods;
 using OpenApiGenerator.Core.Serialization;
+using OpenApiGenerator.Core.Serialization.Form;
 
 namespace OpenApiGenerator.Core.Extensions;
 

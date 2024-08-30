@@ -3,10 +3,10 @@ using System.Diagnostics;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Helpers;
-using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Clients;
 using OpenApiGenerator.Core.Naming.Models;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.Core.Generation;
 

@@ -1,6 +1,6 @@
 using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator.Core.Json;
+namespace OpenApiGenerator.Core.Serialization.Json;
 
 public interface IJsonSerializer
 {

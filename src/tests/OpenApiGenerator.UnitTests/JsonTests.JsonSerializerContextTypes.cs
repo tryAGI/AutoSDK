@@ -1,5 +1,5 @@
 ﻿using OpenApiGenerator.Core.Models;
-using static OpenApiGenerator.Core.Json.SystemTextJsonSerializer;
+using static OpenApiGenerator.Core.Serialization.Json.SystemTextJsonSerializer;
 
 namespace OpenApiGenerator.UnitTests;
 
