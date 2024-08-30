@@ -27,8 +27,9 @@ namespace G
         /// The Unix timestamp (in seconds) of when the chat completion was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Created { get; set; }
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
         /// The model used for the chat completion.

@@ -21,7 +21,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
@@ -39,7 +39,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finished_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? FinishedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? FinishedAt { get; set; } = default!;
 
         /// <summary>
         /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
@@ -111,7 +111,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("estimated_finish")]
-        public int? EstimatedFinish { get; set; }
+        public global::System.DateTimeOffset? EstimatedFinish { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -34,14 +34,16 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
-        public int? ArchivedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`

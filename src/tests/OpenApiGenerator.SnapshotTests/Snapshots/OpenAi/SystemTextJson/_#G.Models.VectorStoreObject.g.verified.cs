@@ -27,8 +27,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the vector store.
@@ -69,14 +70,16 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public int? ExpiresAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was last active.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_active_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? LastActiveAt { get; set; }
+        public required global::System.DateTimeOffset? LastActiveAt { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

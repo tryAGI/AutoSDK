@@ -49,8 +49,9 @@ namespace G
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AddedAt { get; set; }
+        public required global::System.DateTimeOffset AddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

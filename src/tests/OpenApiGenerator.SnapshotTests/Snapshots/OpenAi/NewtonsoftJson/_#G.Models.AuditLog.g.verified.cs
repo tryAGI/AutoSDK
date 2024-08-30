@@ -25,7 +25,7 @@ namespace G
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effective_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int EffectiveAt { get; set; } = default!;
+        public global::System.DateTimeOffset EffectiveAt { get; set; } = default!;
 
         /// <summary>
         /// The project that the action was scoped to. Absent for actions not scoped to projects.

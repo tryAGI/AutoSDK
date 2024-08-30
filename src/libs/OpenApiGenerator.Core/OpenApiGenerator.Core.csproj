@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net4.6.2;netstandard2.0;net6.0;net8.0</TargetFrameworks>
-    <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227</NoWarn>
+    <NoWarn>$(NoWarn);CA1031;CA1307;CA1724;CA1056;CA1054;CA1865;CA1847;CA2227;CA1862</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Label="Global Usings">

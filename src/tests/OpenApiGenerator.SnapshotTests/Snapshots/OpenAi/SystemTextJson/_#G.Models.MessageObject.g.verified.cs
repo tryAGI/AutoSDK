@@ -29,8 +29,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
@@ -58,15 +59,17 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CompletedAt { get; set; }
+        public required global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? IncompleteAt { get; set; }
+        public required global::System.DateTimeOffset? IncompleteAt { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.

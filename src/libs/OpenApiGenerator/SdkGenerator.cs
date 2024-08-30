@@ -22,6 +22,10 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.Polyfills(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        settings
+            .SelectAndReportExceptions((x, c) => Sources.UnixTimestampJsonConverter(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
         
         var data = context.AdditionalTextsProvider
             .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase) ||

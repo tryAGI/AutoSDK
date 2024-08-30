@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
@@ -75,25 +75,25 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expired_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? ExpiredAt { get; set; } = default!;
+        public global::System.DateTimeOffset? ExpiredAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was cancelled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cancelled_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CancelledAt { get; set; } = default!;
+        public global::System.DateTimeOffset? CancelledAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? FailedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? FailedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CompletedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? CompletedAt { get; set; } = default!;
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

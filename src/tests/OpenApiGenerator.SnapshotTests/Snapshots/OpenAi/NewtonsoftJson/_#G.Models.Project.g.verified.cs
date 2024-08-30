@@ -31,13 +31,13 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived_at")]
-        public int? ArchivedAt { get; set; }
+        public global::System.DateTimeOffset? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`

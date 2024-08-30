@@ -147,6 +147,7 @@ public class GenerateCommand : Command
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
             .Concat([Sources.JsonSerializerContextTypes(data.Types)])
             .Concat([Sources.Polyfills(settings)])
+            .Concat([Sources.UnixTimestampJsonConverter(settings)])
             .Where(x => !x.IsEmpty)
             .ToArray();
         

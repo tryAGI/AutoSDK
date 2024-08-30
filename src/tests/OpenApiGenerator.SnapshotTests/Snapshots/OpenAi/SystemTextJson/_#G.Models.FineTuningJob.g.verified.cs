@@ -22,8 +22,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
@@ -43,8 +44,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? FinishedAt { get; set; }
+        public required global::System.DateTimeOffset? FinishedAt { get; set; }
 
         /// <summary>
         /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
@@ -127,7 +129,8 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("estimated_finish")]
-        public int? EstimatedFinish { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? EstimatedFinish { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

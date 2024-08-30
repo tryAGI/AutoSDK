@@ -43,19 +43,19 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invited_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int InvitedAt { get; set; } = default!;
+        public global::System.DateTimeOffset InvitedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ExpiresAt { get; set; } = default!;
+        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accepted_at")]
-        public int AcceptedAt { get; set; }
+        public global::System.DateTimeOffset AcceptedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

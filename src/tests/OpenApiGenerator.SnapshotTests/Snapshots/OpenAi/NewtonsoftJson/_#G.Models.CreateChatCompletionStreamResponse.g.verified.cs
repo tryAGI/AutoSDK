@@ -26,7 +26,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Created { get; set; } = default!;
+        public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
         /// The model to generate the completion.

@@ -19,7 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) when the model was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Created { get; set; } = default!;
+        public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "model".

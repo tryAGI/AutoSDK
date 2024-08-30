@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
@@ -51,13 +51,13 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CompletedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? CompletedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("incomplete_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? IncompleteAt { get; set; } = default!;
+        public global::System.DateTimeOffset? IncompleteAt { get; set; } = default!;
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.

@@ -25,7 +25,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The name of the vector store.
@@ -61,13 +61,13 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public int? ExpiresAt { get; set; }
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was last active.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_active_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? LastActiveAt { get; set; } = default!;
+        public global::System.DateTimeOffset? LastActiveAt { get; set; } = default!;
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

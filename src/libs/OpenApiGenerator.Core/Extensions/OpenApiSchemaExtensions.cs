@@ -91,4 +91,30 @@ public static class OpenApiSchemaExtensions
 
         return schema.Type == "string" && schema.Format == "binary";
     }
+    
+    public static bool IsUnixTimestamp(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        // Example from OpenAI spec:
+        // created_at:
+        //  type: integer
+        //  description: The Unix timestamp (in seconds) for when the batch was created.
+        
+        return (schema.Type == "integer" &&
+               schema.Format is
+                    // https://github.com/OAI/OpenAPI-Specification/issues/2565
+                    "timestamp" or 
+                    "unix-timestamp" or 
+                    "unix-time" or 
+                    "unix-epoch" or 
+                    "epoch") ||
+               (schema.Type == "integer" &&
+               schema.Format is
+                   null or
+                   "int64" or
+                   "int32" &&
+               schema.Description?.ToUpperInvariant().Contains("UNIX TIMESTAMP") == true);
+    }
 }

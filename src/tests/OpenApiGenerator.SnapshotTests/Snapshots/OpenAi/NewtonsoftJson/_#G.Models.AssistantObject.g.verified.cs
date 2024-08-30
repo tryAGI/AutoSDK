@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the assistant was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.

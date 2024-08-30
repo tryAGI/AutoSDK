@@ -14,6 +14,7 @@ public readonly record struct TypeData(
     bool IsDateTime,
     bool IsBinary,
     bool IsValueType,
+    bool IsUnixTimestamp,
     int AnyOfCount,
     int OneOfCount,
     int AllOfCount,
@@ -35,6 +36,7 @@ public readonly record struct TypeData(
         IsDateTime: false,
         IsBinary: false,
         IsValueType: false,
+        IsUnixTimestamp: false,
         AnyOfCount: 0,
         OneOfCount: 0,
         AllOfCount: 0,
@@ -61,15 +63,18 @@ public readonly record struct TypeData(
         IsAnyOf ||
         IsEnum;
     
-    public string ConverterType => IsEnum || ((AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0) && IsComponent)
-        ? $"global::OpenApiGenerator.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
-        : AnyOfCount > 0
-            ? $"global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
-            : OneOfCount > 0
-                ? $"global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
-                : AllOfCount > 0
-                    ? $"global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
-                    : string.Empty;
+    public string ConverterType =>
+        IsUnixTimestamp
+            ? "global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter"
+            : IsEnum || ((AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0) && IsComponent)
+                ? $"global::OpenApiGenerator.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
+                : AnyOfCount > 0
+                    ? $"global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
+                    : OneOfCount > 0
+                        ? $"global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
+                        : AllOfCount > 0
+                            ? $"global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
+                            : string.Empty;
     
     public static TypeData FromSchemaContext(SchemaContext context)
     {
@@ -149,6 +154,7 @@ public readonly record struct TypeData(
             IsDate: context.Schema.IsDate(),
             IsDateTime: context.Schema.IsDateTime(),
             IsBinary: context.Schema.IsBinary(),
+            IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
             AnyOfCount: context.Schema.AnyOf?.Count ?? 0,
             OneOfCount: context.Schema.OneOf?.Count ?? 0,
             AllOfCount: context.Schema.AllOf?.Count ?? 0,
@@ -188,6 +194,8 @@ public readonly record struct TypeData(
         
         var (type, reference) = (context.Schema.Type, context.Schema.Format) switch
         {
+            (_, _) when context.Schema.IsUnixTimestamp() => ("global::System.DateTimeOffset", false),
+            
             (_, _) when context.Schema.IsAnyOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (_, _) when context.Schema.IsOneOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (_, _) when context.Schema.IsAllOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),

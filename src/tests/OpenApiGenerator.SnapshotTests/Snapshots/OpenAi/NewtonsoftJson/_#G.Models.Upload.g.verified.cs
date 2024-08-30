@@ -19,7 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The name of the file to be uploaded.
@@ -49,7 +49,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ExpiresAt { get; set; } = default!;
+        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "upload".

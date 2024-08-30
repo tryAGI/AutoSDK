@@ -100,6 +100,15 @@ public static partial class Sources
             Text: GenerateAnyOfJsonConverterFactory(anyOf, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName UnixTimestampJsonConverter(
+        Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: "JsonConverters.UnixTimestamp.g.cs",
+            Text: GenerateUnixTimestampJsonConverter(settings, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName JsonSerializerContextTypes(
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)

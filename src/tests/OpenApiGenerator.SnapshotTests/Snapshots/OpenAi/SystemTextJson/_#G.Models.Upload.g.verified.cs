@@ -20,8 +20,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreatedAt { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the file to be uploaded.
@@ -56,8 +57,9 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExpiresAt { get; set; }
+        public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
         /// <summary>
         /// The object type, which is always "upload".

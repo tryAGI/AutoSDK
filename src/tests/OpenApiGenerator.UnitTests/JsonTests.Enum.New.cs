@@ -44,7 +44,8 @@ public partial class JsonTests
     [
         typeof(TestEnumJsonStringEnumConverter),
         typeof(TestEnumNullableJsonStringEnumConverter),
-        typeof(AnyOfConverterFactorySystemTextJson)
+        typeof(AnyOfConverterFactorySystemTextJson),
+        typeof(UnixTimestampJsonConverterSystemTextJson),
     ])]
 [JsonSerializable(typeof(TestEnumClass))]
 [JsonSerializable(typeof(TestEnumClassAnyOf))]
@@ -53,4 +54,5 @@ public partial class JsonTests
 [JsonSerializable(typeof(PullModelResponse2))]
 [JsonSerializable(typeof(AnyOf<PullModelResponse, PullModelResponse2>))]
 [JsonSerializable(typeof(AnyOf<PullModelResponse2, PullModelResponse>))]
+[JsonSerializable(typeof(DateTimeOffset))]
 internal sealed partial class TestSourceGenerationContext : JsonSerializerContext;

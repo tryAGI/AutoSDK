@@ -19,7 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Part was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the Upload object that this Part was added to.

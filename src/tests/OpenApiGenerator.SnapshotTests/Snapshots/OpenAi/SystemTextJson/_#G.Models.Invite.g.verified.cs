@@ -50,21 +50,24 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int InvitedAt { get; set; }
+        public required global::System.DateTimeOffset InvitedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExpiresAt { get; set; }
+        public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
-        public int AcceptedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset AcceptedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

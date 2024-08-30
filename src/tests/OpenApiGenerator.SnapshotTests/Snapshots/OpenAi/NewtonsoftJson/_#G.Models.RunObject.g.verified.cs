@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
@@ -63,31 +63,31 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? ExpiresAt { get; set; } = default!;
+        public global::System.DateTimeOffset? ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? StartedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? StartedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cancelled_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CancelledAt { get; set; } = default!;
+        public global::System.DateTimeOffset? CancelledAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? FailedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? FailedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CompletedAt { get; set; } = default!;
+        public global::System.DateTimeOffset? CompletedAt { get; set; } = default!;
 
         /// <summary>
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.

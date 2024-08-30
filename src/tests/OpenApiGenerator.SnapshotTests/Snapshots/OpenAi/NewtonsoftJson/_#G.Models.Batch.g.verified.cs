@@ -67,55 +67,55 @@ namespace G
         /// The Unix timestamp (in seconds) for when the batch was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreatedAt { get; set; } = default!;
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in_progress_at")]
-        public int InProgressAt { get; set; }
+        public global::System.DateTimeOffset InProgressAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public int ExpiresAt { get; set; }
+        public global::System.DateTimeOffset ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started finalizing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finalizing_at")]
-        public int FinalizingAt { get; set; }
+        public global::System.DateTimeOffset FinalizingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
-        public int CompletedAt { get; set; }
+        public global::System.DateTimeOffset CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failed_at")]
-        public int FailedAt { get; set; }
+        public global::System.DateTimeOffset FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch expired.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expired_at")]
-        public int ExpiredAt { get; set; }
+        public global::System.DateTimeOffset ExpiredAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started cancelling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cancelling_at")]
-        public int CancellingAt { get; set; }
+        public global::System.DateTimeOffset CancellingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was cancelled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cancelled_at")]
-        public int CancelledAt { get; set; }
+        public global::System.DateTimeOffset CancelledAt { get; set; }
 
         /// <summary>
         /// The request counts for different statuses within the batch.

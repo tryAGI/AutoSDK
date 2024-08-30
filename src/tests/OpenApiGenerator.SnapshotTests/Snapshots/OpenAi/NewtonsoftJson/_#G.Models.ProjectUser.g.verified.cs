@@ -43,7 +43,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("added_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public int AddedAt { get; set; } = default!;
+        public global::System.DateTimeOffset AddedAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
