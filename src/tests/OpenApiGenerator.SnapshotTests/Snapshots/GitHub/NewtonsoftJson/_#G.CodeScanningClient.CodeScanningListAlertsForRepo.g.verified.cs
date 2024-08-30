@@ -145,7 +145,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&direction={directionValue}&sort={sortValue}&state={stateValue}&severity={severityValue}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&state={(global::System.Uri.EscapeDataString(stateValue?.ToString() ?? string.Empty))}&severity={(global::System.Uri.EscapeDataString(severityValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

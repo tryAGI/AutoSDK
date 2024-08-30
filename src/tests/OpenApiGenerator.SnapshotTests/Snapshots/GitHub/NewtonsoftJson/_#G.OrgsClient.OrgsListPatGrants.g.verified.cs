@@ -113,7 +113,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/personal-access-tokens?per_page={perPage}&page={page}&sort={sortValue}&direction={directionValue}&{string.Join("&", owner?.Select(static x => $"owner={x}") ?? global::System.Array.Empty<string>())}&repository={repository}&permission={permission}&last_used_before={lastUsedBefore:yyyy-MM-ddTHH:mm:ssZ}&last_used_after={lastUsedAfter:yyyy-MM-ddTHH:mm:ssZ}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/personal-access-tokens?per_page={perPage}&page={page}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&{string.Join("&", owner?.Select(static x => $"owner={x}") ?? global::System.Array.Empty<string>())}&repository={repository}&permission={permission}&last_used_before={lastUsedBefore:yyyy-MM-ddTHH:mm:ssZ}&last_used_after={lastUsedAfter:yyyy-MM-ddTHH:mm:ssZ}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

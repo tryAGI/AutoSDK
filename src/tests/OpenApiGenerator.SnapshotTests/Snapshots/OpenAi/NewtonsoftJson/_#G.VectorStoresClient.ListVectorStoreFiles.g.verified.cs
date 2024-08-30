@@ -83,7 +83,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={orderValue}&after={after}&before={before}&filter={filterValue}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={(global::System.Uri.EscapeDataString(orderValue?.ToString() ?? string.Empty))}&after={after}&before={before}&filter={(global::System.Uri.EscapeDataString(filterValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

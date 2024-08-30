@@ -172,7 +172,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/advisories?ghsa_id={ghsaId}&type={typeValue}&cve_id={cveId}&ecosystem={ecosystemValue}&severity={severityValue}&cwes={cwes}&is_withdrawn={isWithdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&direction={directionValue}&per_page={perPage}&sort={sortValue}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/advisories?ghsa_id={ghsaId}&type={(global::System.Uri.EscapeDataString(typeValue?.ToString() ?? string.Empty))}&cve_id={cveId}&ecosystem={(global::System.Uri.EscapeDataString(ecosystemValue?.ToString() ?? string.Empty))}&severity={(global::System.Uri.EscapeDataString(severityValue?.ToString() ?? string.Empty))}&cwes={cwes}&is_withdrawn={isWithdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&per_page={perPage}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

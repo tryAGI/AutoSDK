@@ -72,7 +72,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/studio/v1/library/files?name={name}&path={path}&status={status}&{string.Join("&", label?.Select(static x => $"label={x}") ?? global::System.Array.Empty<string>())}&limit={limit}&offset={offset}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/studio/v1/library/files?name={name}&path={path}&status={(global::System.Uri.EscapeDataString(status?.ToValueString() ?? string.Empty))}&{string.Join("&", label?.Select(static x => $"label={x}") ?? global::System.Array.Empty<string>())}&limit={limit}&offset={offset}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

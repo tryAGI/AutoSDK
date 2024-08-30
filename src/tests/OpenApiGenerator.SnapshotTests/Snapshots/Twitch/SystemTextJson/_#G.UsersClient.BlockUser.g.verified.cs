@@ -49,7 +49,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/blocks?target_user_id={targetUserId}&source_context={sourceContext}&reason={reason}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/blocks?target_user_id={targetUserId}&source_context={(global::System.Uri.EscapeDataString(sourceContext?.ToValueString() ?? string.Empty))}&reason={(global::System.Uri.EscapeDataString(reason?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

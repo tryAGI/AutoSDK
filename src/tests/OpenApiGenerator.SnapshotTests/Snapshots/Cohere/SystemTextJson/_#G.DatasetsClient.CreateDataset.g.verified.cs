@@ -91,7 +91,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={type}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={(global::System.Uri.EscapeDataString(type.ToValueString() ?? string.Empty))}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),

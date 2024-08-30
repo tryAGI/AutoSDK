@@ -79,7 +79,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userLogin?.Select(static x => $"userLogin={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", gameId?.Select(static x => $"gameId={x}") ?? global::System.Array.Empty<string>())}&type={type}&{string.Join("&", language?.Select(static x => $"language={x}") ?? global::System.Array.Empty<string>())}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userLogin?.Select(static x => $"userLogin={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", gameId?.Select(static x => $"gameId={x}") ?? global::System.Array.Empty<string>())}&type={(global::System.Uri.EscapeDataString(type?.ToValueString() ?? string.Empty))}&{string.Join("&", language?.Select(static x => $"language={x}") ?? global::System.Array.Empty<string>())}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

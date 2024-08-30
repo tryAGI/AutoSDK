@@ -58,7 +58,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/models?page_size={pageSize}&page_token={pageToken}&endpoint={endpoint}&default_only={defaultOnly}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/models?page_size={pageSize}&page_token={pageToken}&endpoint={(global::System.Uri.EscapeDataString(endpoint?.ToValueString() ?? string.Empty))}&default_only={defaultOnly}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

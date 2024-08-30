@@ -123,7 +123,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={@event}&status={statusValue}&per_page={perPage}&page={page}&created={created:yyyy-MM-ddTHH:mm:ssZ}&exclude_pull_requests={excludePullRequests}&check_suite_id={checkSuiteId}&head_sha={headSha}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={@event}&status={(global::System.Uri.EscapeDataString(statusValue?.ToString() ?? string.Empty))}&per_page={perPage}&page={page}&created={created:yyyy-MM-ddTHH:mm:ssZ}&exclude_pull_requests={excludePullRequests}&check_suite_id={checkSuiteId}&head_sha={headSha}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

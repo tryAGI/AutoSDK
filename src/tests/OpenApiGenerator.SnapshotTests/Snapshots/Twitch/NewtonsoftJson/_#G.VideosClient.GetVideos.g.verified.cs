@@ -113,7 +113,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/videos?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&user_id={userId}&game_id={gameId}&language={language}&period={periodValue}&sort={sortValue}&type={typeValue}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/videos?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&user_id={userId}&game_id={gameId}&language={language}&period={(global::System.Uri.EscapeDataString(periodValue?.ToString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&type={(global::System.Uri.EscapeDataString(typeValue?.ToString() ?? string.Empty))}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

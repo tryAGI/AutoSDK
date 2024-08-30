@@ -73,7 +73,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?datasetType={datasetType}&before={before:yyyy-MM-ddTHH:mm:ssZ}&after={after:yyyy-MM-ddTHH:mm:ssZ}&limit={limit}&offset={offset}&validationStatus={validationStatus}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?datasetType={datasetType}&before={before:yyyy-MM-ddTHH:mm:ssZ}&after={after:yyyy-MM-ddTHH:mm:ssZ}&limit={limit}&offset={offset}&validationStatus={(global::System.Uri.EscapeDataString(validationStatus?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

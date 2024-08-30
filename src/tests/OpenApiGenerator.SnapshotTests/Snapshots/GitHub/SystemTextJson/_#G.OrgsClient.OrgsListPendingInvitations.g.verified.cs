@@ -69,7 +69,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/invitations?per_page={perPage}&page={page}&role={role}&invitation_source={invitationSource}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/invitations?per_page={perPage}&page={page}&role={(global::System.Uri.EscapeDataString(role?.ToValueString() ?? string.Empty))}&invitation_source={(global::System.Uri.EscapeDataString(invitationSource?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

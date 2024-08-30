@@ -92,7 +92,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/activity?direction={direction}&per_page={perPage}&before={before}&after={after}&ref={@ref}&actor={actor}&time_period={timePeriod}&activity_type={activityType}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/activity?direction={(global::System.Uri.EscapeDataString(direction?.ToValueString() ?? string.Empty))}&per_page={perPage}&before={before}&after={after}&ref={@ref}&actor={actor}&time_period={(global::System.Uri.EscapeDataString(timePeriod?.ToValueString() ?? string.Empty))}&activity_type={(global::System.Uri.EscapeDataString(activityType?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

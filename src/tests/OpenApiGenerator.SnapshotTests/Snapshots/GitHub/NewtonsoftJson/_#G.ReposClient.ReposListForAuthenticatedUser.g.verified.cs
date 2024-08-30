@@ -124,7 +124,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/repos?visibility={visibilityValue}&affiliation={affiliation}&type={typeValue}&sort={sortValue}&direction={directionValue}&per_page={perPage}&page={page}&since={since:yyyy-MM-ddTHH:mm:ssZ}&before={before:yyyy-MM-ddTHH:mm:ssZ}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/repos?visibility={(global::System.Uri.EscapeDataString(visibilityValue?.ToString() ?? string.Empty))}&affiliation={affiliation}&type={(global::System.Uri.EscapeDataString(typeValue?.ToString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&per_page={perPage}&page={page}&since={since:yyyy-MM-ddTHH:mm:ssZ}&before={before:yyyy-MM-ddTHH:mm:ssZ}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

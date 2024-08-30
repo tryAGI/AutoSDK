@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Serialization.Json;
 
 namespace OpenApiGenerator.Core.Serialization.Form;
 
@@ -42,6 +43,12 @@ public static class ParameterSerializer
             return string.Empty;
         }
 
+        if (parameter.Type.IsEnum)
+        {
+            return parameter.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson
+                ? $"{parameter.Id}={{(global::System.Uri.EscapeDataString({parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToValueString() ?? string.Empty))}}"
+                : $"{parameter.Id}={{(global::System.Uri.EscapeDataString({parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString() ?? string.Empty))}}";
+        }
         if (parameter.Type.IsArray)
         {
             if (parameter.ParameterExplode == true)

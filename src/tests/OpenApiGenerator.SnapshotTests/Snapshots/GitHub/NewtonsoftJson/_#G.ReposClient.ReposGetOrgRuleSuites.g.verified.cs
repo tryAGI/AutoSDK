@@ -96,7 +96,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/rulesets/rule-suites?repository_name={repositoryName}&time_period={timePeriodValue}&actor_name={actorName}&rule_suite_result={ruleSuiteResultValue}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/rulesets/rule-suites?repository_name={repositoryName}&time_period={(global::System.Uri.EscapeDataString(timePeriodValue?.ToString() ?? string.Empty))}&actor_name={actorName}&rule_suite_result={(global::System.Uri.EscapeDataString(ruleSuiteResultValue?.ToString() ?? string.Empty))}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

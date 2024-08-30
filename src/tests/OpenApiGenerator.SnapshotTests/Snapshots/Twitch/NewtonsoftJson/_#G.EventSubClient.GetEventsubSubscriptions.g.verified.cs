@@ -155,7 +155,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/eventsub/subscriptions?status={statusValue}&type={typeValue}&user_id={userId}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/eventsub/subscriptions?status={(global::System.Uri.EscapeDataString(statusValue?.ToString() ?? string.Empty))}&type={(global::System.Uri.EscapeDataString(typeValue?.ToString() ?? string.Empty))}&user_id={userId}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
