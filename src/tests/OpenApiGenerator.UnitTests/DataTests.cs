@@ -60,6 +60,14 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public Task Together()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.together_yaml.AsString(),
+            DefaultSettings)));
+    }
+
+    [TestMethod]
     public Task SpecialCases()
     {
         return VerifyAsync(Data.Prepare((
