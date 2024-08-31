@@ -19,7 +19,6 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.CreateThreadRequestToolResourcesFileSearch? FileSearch { get; set; }
 
         /// <summary>

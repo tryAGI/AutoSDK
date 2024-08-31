@@ -46,6 +46,8 @@ namespace G
             global::G.PullsRequestReviewersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: _httpClient);
             PreparePullsRequestReviewersArguments(

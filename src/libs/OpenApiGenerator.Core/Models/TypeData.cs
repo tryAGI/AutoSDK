@@ -155,9 +155,15 @@ public readonly record struct TypeData(
             IsDateTime: context.Schema.IsDateTime(),
             IsBinary: context.Schema.IsBinary(),
             IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
-            AnyOfCount: context.Schema.AnyOf?.Count ?? 0,
-            OneOfCount: context.Schema.OneOf?.Count ?? 0,
-            AllOfCount: context.Schema.AllOf?.Count ?? 0,
+            AnyOfCount: context.Schema.IsAnyOf() // Sometimes here AnyOf with only required properties
+                ? context.Schema.AnyOf?.Count ?? 0
+                : 0,
+            OneOfCount: context.Schema.IsOneOf() // Sometimes here OneOf with only required properties
+                ? context.Schema.OneOf?.Count ?? 0
+                : 0,
+            AllOfCount: context.Schema.IsAllOf() // Sometimes here AllOf with only required properties
+                ? context.Schema.AllOf?.Count ?? 0
+                : 0,
             IsComponent: context.IsComponent,
             Properties: properties,
             EnumValues: enumValues,
