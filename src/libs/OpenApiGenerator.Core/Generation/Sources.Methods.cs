@@ -202,7 +202,7 @@ namespace {endPoint.Namespace}
             }" : @"
             response.EnsureSuccessStatusCode();")}
 
-{(endPoint.ContentType == ContentType.String ? $@" 
+{(endPoint.ContentType == ContentType.String && endPoint.ResponseType.CSharpTypeWithoutNullability is not "string" ? $@" 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
                 throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
