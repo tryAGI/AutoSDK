@@ -20,7 +20,7 @@ public partial class DataTests
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]
     [DataRow("replicate.yaml")]
-    [DataRow("specialcases.yaml")]
+    [DataRow("special-cases.yaml")]
     [DataRow("together.yaml")]
     [DataRow("twitch.json")]
     public Task PrepareData(string resourceName)
