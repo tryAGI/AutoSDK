@@ -223,6 +223,18 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task AssemblyAi(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.assemblyai_yaml.FileName,
+                text: H.Resources.assemblyai_yaml.AsString())
+        ]);
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task GitHub(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
