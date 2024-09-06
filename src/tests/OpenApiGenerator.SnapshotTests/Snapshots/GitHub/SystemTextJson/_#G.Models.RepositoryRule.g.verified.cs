@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct RepositoryRule : global::System.IEquatable<RepositoryRule>
     {
         /// <summary>
-        /// 
+        /// Only allow users with bypass permission to create matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleCreation? Value1 { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Only allow users with bypass permission to update matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleUpdate? Value2 { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Only allow users with bypass permissions to delete matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleDeletion? Value3 { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Prevent merge commits from being pushed to matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleRequiredLinearHistory? Value4 { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleRequiredDeployments? Value5 { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Commits pushed to matching refs must have verified signatures.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleRequiredSignatures? Value6 { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRulePullRequest? Value7 { get; init; }
@@ -257,7 +257,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleRequiredStatusChecks? Value8 { get; init; }
@@ -292,7 +292,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Prevent users with push access from force pushing to refs.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleNonFastForward? Value9 { get; init; }
@@ -327,7 +327,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Parameters to be used for the commit_message_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleCommitMessagePattern? Value10 { get; init; }
@@ -362,7 +362,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Parameters to be used for the commit_author_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleCommitAuthorEmailPattern? Value11 { get; init; }
@@ -397,7 +397,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Parameters to be used for the committer_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleCommitterEmailPattern? Value12 { get; init; }
@@ -432,7 +432,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Parameters to be used for the branch_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleBranchNamePattern? Value13 { get; init; }
@@ -467,7 +467,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Parameters to be used for the tag_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleTagNamePattern? Value14 { get; init; }
@@ -502,7 +502,8 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Note: file_path_restriction is in beta and subject to change.<br/>
+        /// Prevent commits that include changes in specified file paths from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant15? Value15 { get; init; }
@@ -537,7 +538,8 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Note: max_file_path_length is in beta and subject to change.<br/>
+        /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant16? Value16 { get; init; }
@@ -572,7 +574,8 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Note: file_extension_restriction is in beta and subject to change.<br/>
+        /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant17? Value17 { get; init; }
@@ -607,7 +610,8 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Note: max_file_size is in beta and subject to change.<br/>
+        /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant18? Value18 { get; init; }
@@ -642,7 +646,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleWorkflows? Value19 { get; init; }
@@ -677,7 +681,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleCodeScanning? Value20 { get; init; }

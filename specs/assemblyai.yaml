@@ -1,0 +1,5020 @@
+openapi: 3.0.1
+info:
+  title: AssemblyAI API
+  description: AssemblyAI API
+  termsOfService: https://www.assemblyai.com/legal/terms-of-service
+  contact:
+    name: API Support
+    url: https://www.assemblyai.com/docs/
+    email: support@assemblyai.com
+  version: '1.3.2'
+servers:
+  - url: https://api.assemblyai.com
+    description: AssemblyAI API
+paths:
+  /v2/upload:
+    post:
+      tags:
+        - transcript
+      summary: Upload a media file
+      description: Upload a media file to AssemblyAI's servers.
+      operationId: uploadFile
+      requestBody:
+        content:
+          application/octet-stream: { }
+      responses:
+        '200':
+          description: Media file uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile'
+          x-label: Media file uploaded
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: files
+      x-fern-sdk-method-name: upload
+  /v2/transcript:
+    post:
+      tags:
+        - transcript
+      summary: Transcribe audio
+      description: Create a transcript from a media file that is accessible via a URL.
+      operationId: createTranscript
+      requestBody:
+        description: Params to create a transcript
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranscriptParams'
+        required: true
+      responses:
+        '200':
+          description: Transcript created and queued for processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transcript'
+          links:
+            GetTranscriptById:
+              $ref: '#/components/links/GetTranscriptById'
+            GetTranscriptSentencesById:
+              $ref: '#/components/links/GetTranscriptSentencesById'
+            GetTranscriptParagraphsById:
+              $ref: '#/components/links/GetTranscriptParagraphsById'
+            GetTranscriptSubtitlesById:
+              $ref: '#/components/links/GetTranscriptSubtitlesById'
+            GetTranscriptRedactedAudioById:
+              $ref: '#/components/links/GetTranscriptRedactedAudioById'
+            WordSearchByTranscriptId:
+              $ref: '#/components/links/WordSearchByTranscriptId'
+            DeleteTranscriptById:
+              $ref: '#/components/links/DeleteTranscriptById'
+          x-label: Transcript created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      callbacks:
+        transcriptReadyWebhook:
+          '{$request.body#/webhook_url}':
+            post:
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/TranscriptReadyNotification'
+                required: true
+              responses:
+                2XX:
+                  description: Successfully received the notification
+                4XX:
+                  description: Invalid request
+                5XX:
+                  description: Unexpected error
+        redactedAudioWebhook:
+          '{$request.body#/webhook_url}':
+            post:
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/RedactedAudioNotification'
+                required: true
+              responses:
+                2XX:
+                  description: Successfully received the notification
+                4XX:
+                  description: Invalid request
+                5XX:
+                  description: Unexpected error
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: submit
+      x-fern-request-name: TranscriptParams
+    get:
+      tags:
+        - transcript
+      summary: List transcripts
+      description: "Retrieve a list of transcripts you created.\nTranscripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.\n"
+      operationId: listTranscripts
+      parameters:
+        - name: limit
+          in: query
+          description: Maximum amount of transcripts to retrieve
+          schema:
+            $ref: '#/components/schemas/ListTranscriptParams'
+          x-label: Limit
+        - name: status
+          in: query
+          description: Filter by transcript status
+          schema:
+            $ref: '#/components/schemas/TranscriptStatus'
+          x-label: Status
+        - name: created_on
+          in: query
+          description: Only get transcripts created on this date
+          schema:
+            $ref: '#/components/schemas/ListTranscriptParams'
+          x-label: Created on
+        - name: before_id
+          in: query
+          description: Get transcripts that were created before this transcript ID
+          schema:
+            $ref: '#/components/schemas/ListTranscriptParams'
+          x-label: Before ID
+        - name: after_id
+          in: query
+          description: Get transcripts that were created after this transcript ID
+          schema:
+            $ref: '#/components/schemas/ListTranscriptParams'
+          x-label: After ID
+        - name: throttled_only
+          in: query
+          description: 'Only get throttled transcripts, overrides the status filter'
+          schema:
+            $ref: '#/components/schemas/ListTranscriptParams'
+          x-label: Throttled only
+      responses:
+        '200':
+          description: "A list of transcripts. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.\n"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscriptList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: list
+      x-fern-request-name: ListTranscriptParams
+  '/v2/transcript/{transcript_id}':
+    get:
+      tags:
+        - transcript
+      summary: Get transcript
+      description: Get the transcript resource. The transcript is ready when the "status" is "completed".
+      operationId: getTranscript
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+      responses:
+        '200':
+          description: The transcript resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transcript'
+          links:
+            GetTranscriptById:
+              $ref: '#/components/links/GetTranscriptById'
+            GetTranscriptSentencesById:
+              $ref: '#/components/links/GetTranscriptSentencesById'
+            GetTranscriptParagraphsById:
+              $ref: '#/components/links/GetTranscriptParagraphsById'
+            GetTranscriptSubtitlesById:
+              $ref: '#/components/links/GetTranscriptSubtitlesById'
+            GetTranscriptRedactedAudioById:
+              $ref: '#/components/links/GetTranscriptRedactedAudioById'
+            WordSearchByTranscriptId:
+              $ref: '#/components/links/WordSearchByTranscriptId'
+            DeleteTranscriptById:
+              $ref: '#/components/links/DeleteTranscriptById'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: get
+      x-fern-request-name: GetTranscriptParams
+    delete:
+      tags:
+        - transcript
+      summary: Delete transcript
+      description: Remove the data from the transcript and mark it as deleted.
+      operationId: deleteTranscript
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+      responses:
+        '200':
+          description: The deleted transcript response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transcript'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: delete
+  '/v2/transcript/{transcript_id}/{subtitle_format}':
+    get:
+      tags:
+        - transcript
+      summary: Get subtitles for transcript
+      description: Export your transcript in SRT or VTT format to use with a video player for subtitles and closed captions.
+      operationId: getSubtitles
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+        - name: subtitle_format
+          in: path
+          description: The format of the captions
+          required: true
+          schema:
+            $ref: '#/components/schemas/SubtitleFormat'
+          x-label: Subtitle format
+        - name: chars_per_caption
+          in: query
+          description: The maximum number of characters per caption
+          schema:
+            type: integer
+          x-label: Number of characters per caption
+      responses:
+        '200':
+          description: The exported captions as text
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "WEBVTT\n00:12.340 --> 00:16.220\nLast year I showed these two slides said that demonstrate\n00:16.200 --> 00:20.040\nthat the Arctic ice cap which for most of the last 3,000,000 years has been the\n00:20.020 --> 00:25.040\nsize of the lower 48 States has shrunk by 40% but this understates\n"
+              examples:
+                srt:
+                  $ref: '#/components/examples/SrtSubtitlesResponse'
+                vtt:
+                  $ref: '#/components/examples/VttSubtitlesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: getSubtitles
+      x-fern-request-name: GetSubtitlesParams
+  '/v2/transcript/{transcript_id}/sentences':
+    get:
+      tags:
+        - transcript
+      summary: Get sentences in transcript
+      description: Get the transcript split by sentences. The API will attempt to semantically segment the transcript into sentences to create more reader-friendly transcripts.
+      operationId: getTranscriptSentences
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+      responses:
+        '200':
+          description: Exported sentences
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentencesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: getSentences
+      x-fern-request-name: GetSentencesParams
+  '/v2/transcript/{transcript_id}/paragraphs':
+    get:
+      tags:
+        - transcript
+      summary: Get paragraphs in transcript
+      description: Get the transcript split by paragraphs. The API will attempt to semantically segment your transcript into paragraphs to create more reader-friendly transcripts.
+      operationId: getTranscriptParagraphs
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+      responses:
+        '200':
+          description: Exported paragraphs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParagraphsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: getParagraphs
+      x-fern-request-name: GetParagraphsParams
+  '/v2/transcript/{transcript_id}/word-search':
+    get:
+      tags:
+        - transcript
+      summary: Search words in transcript
+      description: 'Search through the transcript for keywords. You can search for individual words, numbers, or phrases containing up to five words or numbers.'
+      operationId: wordSearch
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+        - name: words
+          in: query
+          description: Keywords to search for
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-label: Word
+          x-label: Words
+      responses:
+        '200':
+          description: Word search response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WordSearchResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: wordSearch
+      x-fern-request-name: WordSearchParams
+  '/v2/transcript/{transcript_id}/redacted-audio':
+    get:
+      tags:
+        - transcript
+      summary: Get redacted audio
+      description: Retrieve the redacted audio object containing the status and URL to the redacted audio.
+      operationId: getRedactedAudio
+      parameters:
+        - name: transcript_id
+          in: path
+          description: ID of the transcript
+          required: true
+          schema:
+            type: string
+          x-label: Transcript ID
+      responses:
+        '200':
+          description: The redacted audio object containing the status and URL to the redacted audio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedactedAudioResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: transcripts
+      x-fern-sdk-method-name: getRedactedAudio
+      x-fern-request-name: GetRedactedAudioParams
+  /v2/realtime/token:
+    post:
+      tags:
+        - streaming
+      summary: Create temporary authentication token for Streaming STT
+      description: Create a temporary authentication token for Streaming Speech-to-Text
+      operationId: createTemporaryToken
+      requestBody:
+        description: Params to create a temporary authentication token
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRealtimeTemporaryTokenParams'
+        required: true
+      responses:
+        '200':
+          description: Temporary authentication token generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RealtimeTemporaryTokenResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: realtime
+      x-fern-sdk-method-name: createTemporaryToken
+      x-fern-request-name: CreateRealtimeTemporaryTokenParams
+  /lemur/v3/generate/task:
+    post:
+      tags:
+        - LeMUR
+      summary: Run a task using LeMUR
+      description: Use the LeMUR task endpoint to input your own LLM prompt.
+      operationId: lemurTask
+      requestBody:
+        description: Params to run the task
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LemurTaskParams'
+        required: true
+      responses:
+        '200':
+          description: LeMUR task response
+          headers:
+            X-RateLimit-Limit:
+              description: Maximum number of allowed requests in a 60 second window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Number of remaining requests in the current time window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Number of seconds until the remaining requests resets to the value of X-RateLimit-Limit.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemurTaskResponse'
+          links:
+            PurgeLemurRequestDataById:
+              $ref: '#/components/links/PurgeLemurRequestDataById'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: task
+      x-fern-request-name: LemurTaskParams
+  /lemur/v3/generate/summary:
+    post:
+      tags:
+        - LeMUR
+      summary: Summarize a transcript using LeMUR
+      description: "Custom Summary allows you to distill a piece of audio into a few impactful sentences.\nYou can give the model context to obtain more targeted results while outputting the results in a variety of formats described in human language.\n"
+      operationId: lemurSummary
+      requestBody:
+        description: Params to generate the summary
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LemurSummaryParams'
+        required: true
+      responses:
+        '200':
+          description: LeMUR summary response
+          headers:
+            X-RateLimit-Limit:
+              description: Maximum number of allowed requests in a 60 second window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Number of remaining requests in the current time window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Number of seconds until the remaining requests resets to the value of X-RateLimit-Limit.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemurSummaryResponse'
+          links:
+            PurgeLemurRequestDataById:
+              $ref: '#/components/links/PurgeLemurRequestDataById'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: summary
+      x-fern-request-name: LemurSummaryParams
+  /lemur/v3/generate/question-answer:
+    post:
+      tags:
+        - LeMUR
+      summary: Ask questions using LeMUR
+      description: "Question & Answer allows you to ask free-form questions about a single transcript or a group of transcripts.\nThe questions can be any whose answers you find useful, such as judging whether a caller is likely to become a customer or whether all items on a meeting's agenda were covered.\n"
+      operationId: lemurQuestionAnswer
+      requestBody:
+        description: Params to ask questions about the transcripts
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LemurQuestionAnswerParams'
+        required: true
+      responses:
+        '200':
+          description: LeMUR question & answer response
+          headers:
+            X-RateLimit-Limit:
+              description: Maximum number of allowed requests in a 60 second window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Number of remaining requests in the current time window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Number of seconds until the remaining requests resets to the value of X-RateLimit-Limit.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemurQuestionAnswerResponse'
+          links:
+            PurgeLemurRequestDataById:
+              $ref: '#/components/links/PurgeLemurRequestDataById'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: questionAnswer
+      x-fern-request-name: LemurQuestionAnswerParams
+  /lemur/v3/generate/action-items:
+    post:
+      tags:
+        - LeMUR
+      summary: Extract action items
+      description: Use LeMUR to generate a list of action items from a transcript
+      operationId: lemurActionItems
+      requestBody:
+        description: Params to generate action items from transcripts
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LemurActionItemsParams'
+        required: true
+      responses:
+        '200':
+          description: LeMUR action items response
+          headers:
+            X-RateLimit-Limit:
+              description: Maximum number of allowed requests in a 60 second window.
+              schema:
+                type: integer
+            X-RateLimit-Remaining:
+              description: Number of remaining requests in the current time window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: Number of seconds until the remaining requests resets to the value of X-RateLimit-Limit.
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemurActionItemsResponse'
+          links:
+            PurgeLemurRequestDataById:
+              $ref: '#/components/links/PurgeLemurRequestDataById'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-label: Extract action items using LeMUR
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: actionItems
+      x-fern-request-name: LemurActionItemsParams
+  '/lemur/v3/{request_id}':
+    get:
+      tags:
+        - LeMUR
+      summary: Retrieve LeMUR response
+      description: "Retrieve a LeMUR response that was previously generated.\n"
+      operationId: getLemurResponse
+      parameters:
+        - name: request_id
+          in: path
+          description: "The ID of the LeMUR request you previously made.\nThis would be found in the response of the original request.\n"
+          required: true
+          schema:
+            type: string
+          x-label: LeMUR request ID
+      responses:
+        '200':
+          description: LeMUR response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemurResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: getResponse
+      x-fern-request-name: GetLemurResponseParams
+    delete:
+      tags:
+        - LeMUR
+      summary: Purge LeMUR request data
+      description: "Delete the data for a previously submitted LeMUR request.\nThe LLM response data, as well as any context provided in the original request will be removed.\n"
+      operationId: purgeLemurRequestData
+      parameters:
+        - name: request_id
+          in: path
+          description: The ID of the LeMUR request whose data you want to delete. This would be found in the response of the original request.
+          required: true
+          schema:
+            type: string
+          x-label: LeMUR request ID
+      responses:
+        '200':
+          description: LeMUR request data deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurgeLemurRequestDataResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-fern-sdk-group-name: lemur
+      x-fern-sdk-method-name: purgeRequestData
+      x-fern-request-name: PurgeLemurRequestDataParams
+components:
+  schemas:
+    TranscriptWebhookNotification:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/TranscriptReadyNotification'
+        - $ref: '#/components/schemas/RedactedAudioNotification'
+      additionalProperties: false
+      description: The notifications sent to the webhook URL.
+      x-label: Transcript webhook notification
+      x-fern-sdk-group-name: transcripts
+    TranscriptReadyNotification:
+      required:
+        - transcript_id
+        - status
+      type: object
+      properties:
+        transcript_id:
+          type: string
+          description: The ID of the transcript
+          format: uuid
+          x-label: Transcript ID
+        status:
+          $ref: '#/components/schemas/TranscriptReadyStatus'
+      additionalProperties: false
+      description: The notification when the transcript status is completed or error.
+      example:
+        transcript_id: 9ea68fd3-f953-42c1-9742-976c447fb463
+        status: completed
+      x-label: Transcript ready notification
+      x-fern-sdk-group-name: transcripts
+    RedactedAudioNotification:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/RedactedAudioResponse'
+      additionalProperties: false
+      description: The notification when the redacted audio is ready.
+      x-label: Redacted audio notification
+      x-fern-sdk-group-name: transcripts
+    RedactedAudioResponse:
+      required:
+        - status
+        - redacted_audio_url
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/RedactedAudioStatus'
+        redacted_audio_url:
+          type: string
+          description: The URL of the redacted audio file
+          format: url
+          x-label: Redacted audio URL
+      additionalProperties: false
+      example:
+        redacted_audio_url: https://s3.us-west-2.amazonaws.com/api.assembly.ai.usw2/redacted-audio/785efd9e-0e20-45e1-967b-3db17770ed9f.wav?AWSAccessKeyId=ASIAVASQFLPGLUP5JD7Y&Signature=z1r2MOA46esiiAmk%2FreBkL8rl6g%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEPv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHxKoUJdd5P%2Fdy4WlfvRNppQtauTy7OuAb5azR2OIoYSAiEA8iPx4xAx0pbZztT4e7fGnzPS4phvNCnYKflIijUoxDsq%2BwMIMxAEGgwzNDQ4MzkyNDg4NDQiDJxsCgo0cDg789FV0CrYAwPK3CHbRHoNPFiQ%2FO6EdHZ4OSFRcS%2FDvDyHQRNnYNSwG4JB2mUMWEVw808JWTya%2But4wEcmPiUCVJMTvh70cxhILAxP84CBTuWGM%2Fszbj4tn1thjVsqovf9YZmP17OCFa77Bc9%2F9RwtRaABEqJ2eb6%2Bsir7w0MMzhe1z%2F%2B1PUKxicJAZasBv3Ova%2BTY2eNkPZHQ4Njie4X5sh05b%2BrKnz58E7GTQ1sHZQDYHZecwb5fP0B3LR0vuqNtK%2BdpMAxw5H7BinQ4rdccLmsLLMQeVn8jdRDZNEvsdmoeQL0y0qD%2BUcyGMJoAjMT4FnXhBhVxc3bgkVUbHlZMn48FNCYcmzM8UB9wGmSnr6iQoqEaFElfQVbvAzsW7lnlfLROZxMvGXyliobPYPSaYZlVYgHcIxeWuOAXRtEtmL2jbaX4ghCVgJBVO3BBzTgub2jB0KPU6lYZLLM4kf%2B8hKX8iyxSRc6ZVEefTcyruoDppjB028pA9q75hLH1CZwhfLoM%2F3z5f0aFCl05zQnaa10nbcKj0hERELf4FXqS8yWbSutlRcd7Rr9o8jN31QGUscpsuIvl%2FpyJcZmItX8nO%2FF0s1QjrIi11DLYD9YoOh7eVkN8eKKn5w4cHldVI2sw4NCPqgY6pQE%2BM9va2ad1%2BNrXeQ9t8K41lojTN0BFmM8ERD5fF77xcTlW8VdV%2FiJeLLHDvnYYWVKcga9hSROlmsqvMyn3Tmhz7KQbIepSAOKhcHM%2FyUaLfErvCtjXGwo8nsKForL7SKiGkaRCBmwfQtkSVP6m4tGT50YdGxakh54f8uyC55SbkElknRbpl5haiZ%2F82UddFBkdPcM3t0s7vwbEy%2BbilYyetOr6htc%3D&Expires=1698966551
+        status: redacted_audio_ready
+      x-label: Redacted audio response
+      x-fern-sdk-group-name: transcripts
+    RedactedAudioStatus:
+      enum:
+        - redacted_audio_ready
+      type: string
+      description: The status of the redacted audio
+      x-label: Redacted audio status
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        redacted_audio_ready:
+          label: Redacted audio is ready
+    SubtitleFormat:
+      enum:
+        - srt
+        - vtt
+      type: string
+      description: Format of the subtitles
+      x-label: Subtitle format
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        srt:
+          label: SRT
+        vtt:
+          label: VTT
+    WordSearchResponse:
+      required:
+        - id
+        - total_count
+        - matches
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the transcript
+          format: uuid
+          x-label: Transcript ID
+        total_count:
+          type: integer
+          description: 'The total count of all matched instances. For e.g., word 1 matched 2 times, and word 2 matched 3 times, `total_count` will equal 5.'
+          x-label: Total count of matches
+        matches:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordSearchMatch'
+          description: The matches of the search
+          x-label: Matches
+      additionalProperties: false
+      example:
+        id: d5a3d302-066e-43fb-b63b-8f57baf185db
+        total_count: 10
+        matches:
+          - text: smoke
+            count: 6
+            timestamps:
+              - 
+                - 250
+                - 650
+              - 
+                - 49168
+                - 49398
+              - 
+                - 55284
+                - 55594
+              - 
+                - 168888
+                - 169118
+              - 
+                - 215108
+                - 215386
+              - 
+                - 225944
+                - 226170
+            indexes:
+              - 0
+              - 136
+              - 156
+              - 486
+              - 652
+              - 698
+          - text: wildfires
+            count: 4
+            timestamps:
+              - 
+                - 1668
+                - 2346
+              - 
+                - 33852
+                - 34546
+              - 
+                - 50118
+                - 51110
+              - 
+                - 231356
+                - 232354
+            indexes:
+              - 4
+              - 90
+              - 140
+              - 716
+      x-label: Word search response
+      x-fern-sdk-group-name: transcripts
+    WordSearchMatch:
+      required:
+        - text
+        - count
+        - timestamps
+        - indexes
+      type: object
+      properties:
+        text:
+          type: string
+          description: The matched word
+          x-label: Text
+        count:
+          type: integer
+          description: The total amount of times the word is in the transcript
+          x-label: Count
+        timestamps:
+          type: array
+          items:
+            $ref: '#/components/schemas/WordSearchTimestamp'
+          description: An array of timestamps
+          x-label: Timestamps
+        indexes:
+          type: array
+          items:
+            type: integer
+            x-label: Index
+          description: An array of all index locations for that word within the `words` array of the completed transcript
+          x-label: Indexes
+      additionalProperties: false
+      example:
+        text: smoke
+        count: 6
+        timestamps:
+          - 
+            - 250
+            - 650
+          - 
+            - 49168
+            - 49398
+          - 
+            - 55284
+            - 55594
+          - 
+            - 168888
+            - 169118
+          - 
+            - 215108
+            - 215386
+          - 
+            - 225944
+            - 226170
+        indexes:
+          - 0
+          - 136
+          - 156
+          - 486
+          - 652
+          - 698
+      x-label: Word search match
+      x-fern-sdk-group-name: transcripts
+    WordSearchTimestamp:
+      type: array
+      items:
+        type: integer
+        description: Timestamp in milliseconds
+        x-label: Timestamp
+      description: 'An array of timestamps structured as [`start_time`, `end_time`] in milliseconds'
+      example:
+        - 250
+        - 650
+      x-label: Word search timestamp
+      x-fern-sdk-group-name: transcripts
+    Timestamp:
+      required:
+        - start
+        - end
+      type: object
+      properties:
+        start:
+          type: integer
+          description: The start time in milliseconds
+          x-label: Start
+        end:
+          type: integer
+          description: The end time in milliseconds
+          x-label: End
+      additionalProperties: false
+      description: Timestamp containing a start and end property in milliseconds
+      example:
+        start: 3978
+        end: 5114
+      x-label: Timestamp
+      x-fern-sdk-group-name: transcripts
+    TranscriptOptionalParams:
+      type: object
+      properties:
+        language_code:
+          oneOf:
+            - anyOf:
+                - $ref: '#/components/schemas/TranscriptLanguageCode'
+                - type: string
+            - type: 'null'
+          description: "The language of your audio file. Possible values are found in [Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages).\nThe default value is 'en_us'.\n"
+          default: en_us
+          x-label: Language code
+          x-ts-type: 'LiteralUnion<TranscriptLanguageCode, string> | null'
+          x-go-type: TranscriptLanguageCode
+        language_detection:
+          type: boolean
+          description: 'Enable [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection), either true or false.'
+          default: false
+          x-label: Language detection
+        language_confidence_threshold:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: "The confidence threshold for the automatically detected language.\nAn error will be returned if the language confidence is below this threshold.\nDefaults to 0.\n"
+          format: float
+          default: 0
+          x-label: Language confidence threshold
+        speech_model:
+          oneOf:
+            - $ref: '#/components/schemas/SpeechModel'
+            - type: 'null'
+          description: 'The speech model to use for the transcription. When `null`, the "best" model is used.'
+          default: best
+          x-label: Speech model
+        punctuate:
+          type: boolean
+          description: 'Enable Automatic Punctuation, can be true or false'
+          default: true
+          x-label: Punctuate
+        format_text:
+          type: boolean
+          description: 'Enable Text Formatting, can be true or false'
+          default: true
+          x-label: Format text
+        disfluencies:
+          type: boolean
+          description: 'Transcribe Filler Words, like "umm", in your media file; can be true or false'
+          default: false
+          x-label: Disfluencies
+        dual_channel:
+          type: boolean
+          description: 'Enable [Dual Channel](https://www.assemblyai.com/docs/models/speech-recognition#dual-channel-transcription) transcription, can be true or false.'
+          default: false
+          x-label: Dual channel
+        webhook_url:
+          type: string
+          description: "The URL to which we send webhook requests.\nWe sends two different types of webhook requests.\nOne request when a transcript is completed or failed, and one request when the redacted audio is ready if redact_pii_audio is enabled.\n"
+          format: url
+          x-label: Webhook URL
+        webhook_auth_header_name:
+          description: The header name to be sent with the transcript completed or failed webhook requests
+          default: 
+          x-label: Webhook auth header name
+        webhook_auth_header_value:
+          description: The header value to send back with the transcript completed or failed webhook requests for added security
+          default: 
+          x-label: Webhook auth header value
+        auto_highlights:
+          type: boolean
+          description: 'Enable Key Phrases, either true or false'
+          default: false
+          x-label: Key phrases
+        audio_start_from:
+          type: integer
+          description: 'The point in time, in milliseconds, to begin transcribing in your media file'
+          x-label: Audio start from
+        audio_end_at:
+          type: integer
+          description: 'The point in time, in milliseconds, to stop transcribing in your media file'
+          x-label: Audio end at
+        word_boost:
+          type: array
+          items:
+            type: string
+            x-label: Word to boost
+          description: The list of custom vocabulary to boost transcription probability for
+          x-label: Word boost
+        boost_param:
+          $ref: '#/components/schemas/TranscriptBoostParam'
+        filter_profanity:
+          type: boolean
+          description: 'Filter profanity from the transcribed text, can be true or false'
+          default: false
+          x-label: Filter profanity
+        redact_pii:
+          type: boolean
+          description: 'Redact PII from the transcribed text using the Redact PII model, can be true or false'
+          default: false
+          x-label: Redact PII
+        redact_pii_audio:
+          type: boolean
+          description: 'Generate a copy of the original media file with spoken PII "beeped" out, can be true or false. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.'
+          default: false
+          x-label: Redact PII audio
+        redact_pii_audio_quality:
+          $ref: '#/components/schemas/RedactPiiAudioQuality'
+        redact_pii_policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/PiiPolicy'
+          description: 'The list of PII Redaction policies to enable. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.'
+          x-label: Redact PII policies
+        redact_pii_sub:
+          oneOf:
+            - $ref: '#/components/schemas/SubstitutionPolicy'
+            - type: 'null'
+          description: 'The replacement logic for detected PII, can be "entity_type" or "hash". See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.'
+          default: hash
+          x-label: Redact PII substitution
+        speaker_labels:
+          type: boolean
+          description: 'Enable [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization), can be true or false'
+          default: false
+          x-label: Speaker labels
+        speakers_expected:
+          description: 'Tells the speaker label model how many speakers it should attempt to identify, up to 10. See [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) for more details.'
+          default: 
+          x-label: Speakers expected
+        content_safety:
+          type: boolean
+          description: 'Enable [Content Moderation](https://www.assemblyai.com/docs/models/content-moderation), can be true or false'
+          default: false
+          x-label: Content Moderation
+        content_safety_confidence:
+          maximum: 100
+          minimum: 25
+          type: integer
+          description: The confidence threshold for the Content Moderation model. Values must be between 25 and 100.
+          default: 50
+          x-label: Content Moderation confidence
+        iab_categories:
+          type: boolean
+          description: 'Enable [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection), can be true or false'
+          default: false
+          x-label: Topic Detection
+        custom_spelling:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptCustomSpelling'
+          description: Customize how words are spelled and formatted using to and from values
+          x-label: Custom spellings
+        sentiment_analysis:
+          type: boolean
+          description: 'Enable [Sentiment Analysis](https://www.assemblyai.com/docs/models/sentiment-analysis), can be true or false'
+          default: false
+          x-label: Sentiment Analysis
+        auto_chapters:
+          type: boolean
+          description: 'Enable [Auto Chapters](https://www.assemblyai.com/docs/models/auto-chapters), can be true or false'
+          default: false
+          x-label: Auto chapters
+        entity_detection:
+          type: boolean
+          description: 'Enable [Entity Detection](https://www.assemblyai.com/docs/models/entity-detection), can be true or false'
+          default: false
+          x-label: Entity Detection
+        speech_threshold:
+          maximum: 1
+          minimum: 0
+          description: "Reject audio files that contain less than this fraction of speech.\nValid values are in the range [0, 1] inclusive.\n"
+          format: float
+          default: 0
+          x-label: Speech threshold
+        summarization:
+          type: boolean
+          description: 'Enable [Summarization](https://www.assemblyai.com/docs/models/summarization), can be true or false'
+          default: false
+          x-label: Enable Summarization
+        summary_model:
+          $ref: '#/components/schemas/SummaryModel'
+        summary_type:
+          $ref: '#/components/schemas/SummaryType'
+        custom_topics:
+          type: boolean
+          description: 'Enable custom topics, either true or false'
+          default: false
+          x-label: Enable custom topics
+        topics:
+          type: array
+          items:
+            type: string
+            x-label: Topic
+          description: The list of custom topics
+          x-label: Custom topics
+      additionalProperties: false
+      description: The parameters for creating a transcript
+      example:
+        speech_model: 
+        language_code: en_us
+        language_detection: true
+        language_confidence_threshold: 0.7
+        punctuate: true
+        format_text: true
+        dual_channel: true
+        webhook_url: https://your-webhook-url.tld/path
+        webhook_auth_header_name: webhook-secret
+        webhook_auth_header_value: webhook-secret-value
+        auto_highlights: true
+        audio_start_from: 10
+        audio_end_at: 280
+        word_boost:
+          - aws
+          - azure
+          - google cloud
+        boost_param: high
+        filter_profanity: true
+        redact_pii: true
+        redact_pii_audio: true
+        redact_pii_audio_quality: mp3
+        redact_pii_policies:
+          - us_social_security_number
+          - credit_card_number
+        redact_pii_sub: hash
+        speaker_labels: true
+        speakers_expected: 2
+        content_safety: true
+        iab_categories: true
+        custom_spelling: [ ]
+        disfluencies: false
+        sentiment_analysis: true
+        auto_chapters: true
+        entity_detection: true
+        speech_threshold: 0.5
+        summarization: true
+        summary_model: informative
+        summary_type: bullets
+        custom_topics: true
+        topics: [ ]
+      x-label: Optional transcript parameters
+      x-fern-sdk-group-name: transcripts
+    TranscriptParams:
+      type: object
+      allOf:
+        - required:
+            - audio_url
+          type: object
+          properties:
+            audio_url:
+              type: string
+              description: The URL of the audio or video file to transcribe.
+              format: url
+              x-label: Audio URL
+          additionalProperties: false
+        - $ref: '#/components/schemas/TranscriptOptionalParams'
+      additionalProperties: false
+      description: The parameters for creating a transcript
+      example:
+        speech_model: 
+        language_code: en_us
+        language_detection: true
+        language_confidence_threshold: 0.7
+        audio_url: https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3
+        punctuate: true
+        format_text: true
+        dual_channel: true
+        webhook_url: https://your-webhook-url/path
+        webhook_auth_header_name: webhook-secret
+        webhook_auth_header_value: webhook-secret-value
+        auto_highlights: true
+        audio_start_from: 10
+        audio_end_at: 280
+        word_boost:
+          - aws
+          - azure
+          - google cloud
+        boost_param: high
+        filter_profanity: true
+        redact_pii: true
+        redact_pii_audio: true
+        redact_pii_audio_quality: mp3
+        redact_pii_policies:
+          - us_social_security_number
+          - credit_card_number
+        redact_pii_sub: hash
+        speaker_labels: true
+        speakers_expected: 2
+        content_safety: true
+        iab_categories: true
+        custom_spelling: [ ]
+        disfluencies: false
+        sentiment_analysis: true
+        auto_chapters: true
+        entity_detection: true
+        speech_threshold: 0.5
+        summarization: true
+        summary_model: informative
+        summary_type: bullets
+        custom_topics: true
+        topics: [ ]
+      x-label: Transcript parameters
+      x-fern-sdk-group-name: transcripts
+    SummaryModel:
+      enum:
+        - informative
+        - conversational
+        - catchy
+      type: string
+      description: The model to summarize the transcript
+      x-label: Summary model
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        informative:
+          label: Informative
+        conversational:
+          label: Conversational
+        catchy:
+          label: Catchy
+    SummaryType:
+      enum:
+        - bullets
+        - bullets_verbose
+        - gist
+        - headline
+        - paragraph
+      type: string
+      description: The type of summary
+      x-label: Summary type
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        bullets:
+          label: Bullets
+        bullets_verbose:
+          label: Bullets verbose
+        gist:
+          label: Gist
+        headline:
+          label: Headline
+        paragraph:
+          label: Paragraph
+    TranscriptBoostParam:
+      enum:
+        - low
+        - default
+        - high
+      type: string
+      description: How much to boost specified words
+      x-label: Word boost level
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        low:
+          label: Low
+        default:
+          label: Default
+        high:
+          label: High
+    TranscriptCustomSpelling:
+      required:
+        - from
+        - to
+      type: object
+      properties:
+        from:
+          type: array
+          items:
+            type: string
+            description: Word or phrase to replace
+            x-label: Word or phrase
+          description: Words or phrases to replace
+          x-label: From
+        to:
+          type: string
+          description: Word or phrase to replace with
+          x-label: To
+      additionalProperties: false
+      description: 'Object containing words or phrases to replace, and the word or phrase to replace with'
+      example:
+        from:
+          - dicarlo
+        to: Decarlo
+      x-label: Custom spelling
+      x-fern-sdk-group-name: transcripts
+    TranscriptUtterance:
+      required:
+        - confidence
+        - start
+        - end
+        - text
+        - words
+        - speaker
+      type: object
+      properties:
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: The confidence score for the transcript of this utterance
+          format: double
+          x-label: Confidence
+        start:
+          type: integer
+          description: 'The starting time, in milliseconds, of the utterance in the audio file'
+          x-label: Start
+        end:
+          type: integer
+          description: 'The ending time, in milliseconds, of the utterance in the audio file'
+          x-label: End
+        text:
+          type: string
+          description: The text for this utterance
+          x-label: Text
+        words:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptWord'
+          description: The words in the utterance.
+          x-label: Words
+        speaker:
+          type: string
+          description: 'The speaker of this utterance, where each speaker is assigned a sequential capital letter - e.g. "A" for Speaker A, "B" for Speaker B, etc.'
+          x-label: Speaker
+      additionalProperties: false
+      example:
+        confidence: 0.9359033333333334
+        end: 26950
+        speaker: A
+        start: 250
+        text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor.'
+        words:
+          - text: Smoke
+            start: 250
+            end: 650
+            confidence: 0.97503
+            speaker: A
+          - text: from
+            start: 730
+            end: 1022
+            confidence: 0.99999
+            speaker: A
+          - text: hundreds
+            start: 1076
+            end: 1418
+            confidence: 0.99843
+            speaker: A
+          - text: of
+            start: 1434
+            end: 1614
+            confidence: 0.85
+            speaker: A
+          - text: wildfires
+            start: 1652
+            end: 2346
+            confidence: 0.89657
+            speaker: A
+          - text: in
+            start: 2378
+            end: 2526
+            confidence: 0.99994
+            speaker: A
+          - text: Canada
+            start: 2548
+            end: 3130
+            confidence: 0.93864
+            speaker: A
+          - text: is
+            start: 3210
+            end: 3454
+            confidence: 0.999
+            speaker: A
+          - text: triggering
+            start: 3492
+            end: 3946
+            confidence: 0.75366
+            speaker: A
+          - text: air
+            start: 3978
+            end: 4174
+            confidence: 1
+            speaker: A
+          - text: quality
+            start: 4212
+            end: 4558
+            confidence: 0.87745
+            speaker: A
+          - text: alerts
+            start: 4644
+            end: 5114
+            confidence: 0.94739
+            speaker: A
+          - text: throughout
+            start: 5162
+            end: 5466
+            confidence: 0.99726
+            speaker: A
+          - text: the
+            start: 5498
+            end: 5694
+            confidence: 0.79
+            speaker: A
+          - text: US.
+            start: 5732
+            end: 6382
+            confidence: 0.88
+            speaker: A
+      x-label: Utterance
+      x-fern-sdk-group-name: transcripts
+    SubstitutionPolicy:
+      enum:
+        - entity_name
+        - hash
+      type: string
+      description: 'The replacement logic for detected PII, can be "entity_name" or "hash". See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.'
+      x-label: Redact PII substitution
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        entity_name:
+          label: Entity name
+        hash:
+          label: Hash
+    RedactPiiAudioQuality:
+      enum:
+        - mp3
+        - wav
+      type: string
+      description: 'Controls the filetype of the audio created by redact_pii_audio. Currently supports mp3 (default) and wav. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.'
+      example: mp3
+      x-label: Redact PII audio quality
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        mp3:
+          description: MP3 audio format is lower quality and lower size than WAV.
+          casing:
+            camel: mp3
+            snake: mp3
+            pascal: Mp3
+            screamingSnake: MP3
+        wav:
+          description: WAV audio format is the highest quality (no compression) and larger size than MP3.
+      x-aai-enum:
+        mp3:
+          label: MP3
+        wav:
+          label: WAV
+    PiiPolicy:
+      enum:
+        - account_number
+        - banking_information
+        - blood_type
+        - credit_card_cvv
+        - credit_card_expiration
+        - credit_card_number
+        - date
+        - date_interval
+        - date_of_birth
+        - drivers_license
+        - drug
+        - duration
+        - email_address
+        - event
+        - filename
+        - gender_sexuality
+        - healthcare_number
+        - injury
+        - ip_address
+        - language
+        - location
+        - marital_status
+        - medical_condition
+        - medical_process
+        - money_amount
+        - nationality
+        - number_sequence
+        - occupation
+        - organization
+        - passport_number
+        - password
+        - person_age
+        - person_name
+        - phone_number
+        - physical_attribute
+        - political_affiliation
+        - religion
+        - statistics
+        - time
+        - url
+        - us_social_security_number
+        - username
+        - vehicle_id
+        - zodiac_sign
+      type: string
+      description: The type of PII to redact
+      x-label: PII policy
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        account_number:
+          description: 'Customer account or membership identification number (e.g., Policy No. 10042992, Member ID: HZ-5235-001)'
+        banking_information:
+          description: 'Banking information, including account and routing numbers'
+        blood_type:
+          description: 'Blood type (e.g., O-, AB positive)'
+        credit_card_cvv:
+          description: 'Credit card verification code (e.g., CVV: 080)'
+        credit_card_expiration:
+          description: Expiration date of a credit card
+        credit_card_number:
+          description: Credit card number
+        date:
+          description: 'Specific calendar date (e.g., December 18)'
+        date_interval:
+          description: 'Broader time periods, including date ranges, months, seasons, years, and decades (e.g., 2020-2021, 5-9 May, January 1984)'
+        date_of_birth:
+          description: 'Date of birth (e.g., Date of Birth: March 7,1961)'
+        drivers_license:
+          description: 'Driver''s license number. (e.g., DL# 356933-540)'
+        drug:
+          description: 'Medications, vitamins, or supplements (e.g., Advil, Acetaminophen, Panadol)'
+        duration:
+          description: 'Periods of time, specified as a number and a unit of time (e.g., 8 months, 2 years)'
+        email_address:
+          description: 'Email address (e.g., support@assemblyai.com)'
+        event:
+          description: 'Name of an event or holiday (e.g., Olympics, Yom Kippur)'
+        filename:
+          description: 'Names of computer files, including the extension or filepath (e.g., Taxes/2012/brad-tax-returns.pdf)'
+        gender_sexuality:
+          description: 'Terms indicating gender identity or sexual orientation, including slang terms (e.g., female, bisexual, trans)'
+        healthcare_number:
+          description: 'Healthcare numbers and health plan beneficiary numbers (e.g., Policy No.: 5584-486-674-YM)'
+        injury:
+          description: 'Bodily injury (e.g., I broke my arm, I have a sprained wrist)'
+        ip_address:
+          description: 'Internet IP address, including IPv4 and IPv6 formats (e.g., 192.168.0.1)'
+        language:
+          description: 'Name of a natural language (e.g., Spanish, French)'
+        location:
+          description: 'Any Location reference including mailing address, postal code, city, state, province, country, or coordinates. (e.g., Lake Victoria, 145 Windsor St., 90210)'
+        marital_status:
+          description: 'Terms indicating marital status (e.g., Single, common-law, ex-wife, married)'
+        medical_condition:
+          description: 'Name of a medical condition, disease, syndrome, deficit, or disorder (e.g., chronic fatigue syndrome, arrhythmia, depression)'
+        medical_process:
+          description: 'Medical process, including treatments, procedures, and tests (e.g., heart surgery, CT scan)'
+        money_amount:
+          description: 'Name and/or amount of currency (e.g., 15 pesos, $94.50)'
+        nationality:
+          description: 'Terms indicating nationality, ethnicity, or race (e.g., American, Asian, Caucasian)'
+        number_sequence:
+          description: Numerical PII (including alphanumeric strings) that doesn't fall under other categories
+        occupation:
+          description: 'Job title or profession (e.g., professor, actors, engineer, CPA)'
+        organization:
+          description: 'Name of an organization (e.g., CNN, McDonalds, University of Alaska, Northwest General Hospital)'
+        passport_number:
+          description: 'Passport numbers, issued by any country (e.g., PA4568332, NU3C6L86S12)'
+        password:
+          description: 'Account passwords, PINs, access keys, or verification answers (e.g., 27%alfalfa, temp1234, My mother''s maiden name is Smith)'
+        person_age:
+          description: 'Number associated with an age (e.g., 27, 75)'
+        person_name:
+          description: 'Name of a person (e.g., Bob, Doug Jones, Dr. Kay Martinez, MD)'
+        phone_number:
+          description: Telephone or fax number
+        physical_attribute:
+          description: 'Distinctive bodily attributes, including terms indicating race (e.g., I''m 190cm tall, He belongs to the Black students'' association)'
+        political_affiliation:
+          description: 'Terms referring to a political party, movement, or ideology (e.g., Republican, Liberal)'
+        religion:
+          description: 'Terms indicating religious affiliation (e.g., Hindu, Catholic)'
+        statistics:
+          description: 'Medical statistics (e.g., 18%, 18 percent)'
+        time:
+          description: 'Expressions indicating clock times (e.g., 19:37:28, 10pm EST)'
+        url:
+          description: 'Internet addresses (e.g., https://www.assemblyai.com/)'
+        us_social_security_number:
+          description: Social Security Number or equivalent
+        username:
+          description: 'Usernames, login names, or handles (e.g., @AssemblyAI)'
+        vehicle_id:
+          description: 'Vehicle identification numbers (VINs), vehicle serial numbers, and license plate numbers (e.g., 5FNRL38918B111818, BIF7547)'
+        zodiac_sign:
+          description: 'Names of Zodiac signs (e.g., Aries, Taurus)'
+      x-aai-enum:
+        account_number:
+          label: Account number
+        banking_information:
+          label: Banking information
+        blood_type:
+          label: Blood type
+        credit_card_cvv:
+          label: Credit card CVV
+        credit_card_expiration:
+          label: Credit card expiration
+        credit_card_number:
+          label: Credit card number
+        date:
+          label: Date
+        date_interval:
+          label: Date interval
+        date_of_birth:
+          label: Date of birth
+        drivers_license:
+          label: Driver's license
+        drug:
+          label: Drug
+        duration:
+          label: Duration
+        email_address:
+          label: Email address
+        event:
+          label: Event
+        filename:
+          label: Filename
+        gender_sexuality:
+          label: Gender sexuality
+        healthcare_number:
+          label: Healthcare number
+        injury:
+          label: Injury
+        ip_address:
+          label: IP address
+        language:
+          label: Language
+        location:
+          label: Location
+        marital_status:
+          label: Marital status
+        medical_condition:
+          label: Medical condition
+        medical_process:
+          label: Medical process
+        money_amount:
+          label: Money amount
+        nationality:
+          label: Nationality
+        number_sequence:
+          label: Number sequence
+        occupation:
+          label: Occupation
+        organization:
+          label: Organization
+        passport_number:
+          label: Passport number
+        password:
+          label: Password
+        person_age:
+          label: Person age
+        person_name:
+          label: Person name
+        phone_number:
+          label: Phone number
+        physical_attribute:
+          label: Physical attribute
+        political_affiliation:
+          label: Political affiliation
+        religion:
+          label: Religion
+        statistics:
+          label: Statistics
+        time:
+          label: Time
+        url:
+          label: URL
+        us_social_security_number:
+          label: US Social Security Number
+        username:
+          label: Username
+        vehicle_id:
+          label: Vehicle ID
+        zodiac_sign:
+          label: Zodiac sign
+    SpeechModel:
+      enum:
+        - best
+        - nano
+      type: string
+      description: The speech model to use for the transcription.
+      x-label: Speech model
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        best:
+          name: Best
+          description: The best model optimized for accuracy.
+        nano:
+          name: Nano
+          description: 'A lightweight, lower cost model for a wide range of languages.'
+      x-aai-enum:
+        best:
+          label: Best
+        nano:
+          label: Nano
+    TranscriptLanguageCode:
+      enum:
+        - en
+        - en_au
+        - en_uk
+        - en_us
+        - es
+        - fr
+        - de
+        - it
+        - pt
+        - nl
+        - af
+        - sq
+        - am
+        - ar
+        - hy
+        - as
+        - az
+        - ba
+        - eu
+        - be
+        - bn
+        - bs
+        - br
+        - bg
+        - my
+        - ca
+        - zh
+        - hr
+        - cs
+        - da
+        - et
+        - fo
+        - fi
+        - gl
+        - ka
+        - el
+        - gu
+        - ht
+        - ha
+        - haw
+        - he
+        - hi
+        - hu
+        - is
+        - id
+        - ja
+        - jw
+        - kn
+        - kk
+        - km
+        - ko
+        - lo
+        - la
+        - lv
+        - ln
+        - lt
+        - lb
+        - mk
+        - mg
+        - ms
+        - ml
+        - mt
+        - mi
+        - mr
+        - mn
+        - ne
+        - no
+        - nn
+        - oc
+        - pa
+        - ps
+        - fa
+        - pl
+        - ro
+        - ru
+        - sa
+        - sr
+        - sn
+        - sd
+        - si
+        - sk
+        - sl
+        - so
+        - su
+        - sw
+        - sv
+        - tl
+        - tg
+        - ta
+        - tt
+        - te
+        - th
+        - bo
+        - tr
+        - tk
+        - uk
+        - ur
+        - uz
+        - vi
+        - cy
+        - yi
+        - yo
+      type: string
+      description: "The language of your audio file. Possible values are found in [Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages).\nThe default value is 'en_us'.\n"
+      x-label: Language code
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        en:
+          label: English (global)
+        en_au:
+          label: English (Australian)
+        en_uk:
+          label: English (British)
+        en_us:
+          label: English (US)
+        es:
+          label: Spanish
+        fr:
+          label: French
+        de:
+          label: German
+        it:
+          label: Italian
+        pt:
+          label: Portuguese
+        nl:
+          label: Dutch
+        af:
+          label: Afrikaans
+        sq:
+          label: Albanian
+        am:
+          label: Amharic
+        ar:
+          label: Arabic
+        hy:
+          label: Armenian
+        as:
+          label: Assamese
+        az:
+          label: Azerbaijani
+        ba:
+          label: Bashkir
+        eu:
+          label: Basque
+        be:
+          label: Belarusian
+        bn:
+          label: Bengali
+        bs:
+          label: Bosnian
+        br:
+          label: Breton
+        bg:
+          label: Bulgarian
+        my:
+          label: Burmese
+        ca:
+          label: Catalan
+        zh:
+          label: Chinese
+        hr:
+          label: Croatian
+        cs:
+          label: Czech
+        da:
+          label: Danish
+        et:
+          label: Estonian
+        fo:
+          label: Faroese
+        fi:
+          label: Finnish
+        gl:
+          label: Galician
+        ka:
+          label: Georgian
+        el:
+          label: Greek
+        gu:
+          label: Gujarati
+        ht:
+          label: Haitian
+        ha:
+          label: Hausa
+        haw:
+          label: Hawaiian
+        he:
+          label: Hebrew
+        hi:
+          label: Hindi
+        hu:
+          label: Hungarian
+        is:
+          label: Icelandic
+        id:
+          label: Indonesian
+        ja:
+          label: Japanese
+        jw:
+          label: Javanese
+        kn:
+          label: Kannada
+        kk:
+          label: Kazakh
+        km:
+          label: Khmer
+        ko:
+          label: Korean
+        lo:
+          label: Lao
+        la:
+          label: Latin
+        lv:
+          label: Latvian
+        ln:
+          label: Lingala
+        lt:
+          label: Lithuanian
+        lb:
+          label: Luxembourgish
+        mk:
+          label: Macedonian
+        mg:
+          label: Malagasy
+        ms:
+          label: Malay
+        ml:
+          label: Malayalam
+        mt:
+          label: Maltese
+        mi:
+          label: Maori
+        mr:
+          label: Marathi
+        mn:
+          label: Mongolian
+        ne:
+          label: Nepali
+        no:
+          label: Norwegian
+        nn:
+          label: Norwegian Nynorsk
+        oc:
+          label: Occitan
+        pa:
+          label: Panjabi
+        ps:
+          label: Pashto
+        fa:
+          label: Persian
+        pl:
+          label: Polish
+        ro:
+          label: Romanian
+        ru:
+          label: Russian
+        sa:
+          label: Sanskrit
+        sr:
+          label: Serbian
+        sn:
+          label: Shona
+        sd:
+          label: Sindhi
+        si:
+          label: Sinhala
+        sk:
+          label: Slovak
+        sl:
+          label: Slovenian
+        so:
+          label: Somali
+        su:
+          label: Sundanese
+        sw:
+          label: Swahili
+        sv:
+          label: Swedish
+        tl:
+          label: Tagalog
+        tg:
+          label: Tajik
+        ta:
+          label: Tamil
+        tt:
+          label: Tatar
+        te:
+          label: Telugu
+        th:
+          label: Thai
+        bo:
+          label: Tibetan
+        tr:
+          label: Turkish
+        tk:
+          label: Turkmen
+        uk:
+          label: Ukrainian
+        ur:
+          label: Urdu
+        uz:
+          label: Uzbek
+        vi:
+          label: Vietnamese
+        cy:
+          label: Welsh
+        yi:
+          label: Yiddish
+        yo:
+          label: Yoruba
+    TranscriptStatus:
+      enum:
+        - queued
+        - processing
+        - completed
+        - error
+      type: string
+      description: 'The status of your transcript. Possible values are queued, processing, completed, or error.'
+      x-label: Status
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        queued:
+          description: The audio file is in the queue to be processed by the API.
+        processing:
+          description: The audio file is being processed by the API.
+        completed:
+          description: The transcript job has been completed successfully.
+        error:
+          description: An error occurred while processing the audio file.
+      x-aai-enum:
+        queued:
+          label: Queued
+        processing:
+          label: Processing
+        completed:
+          label: Completed
+        error:
+          label: Error
+    TranscriptReadyStatus:
+      enum:
+        - completed
+        - error
+      type: string
+      description: The status of the transcript. Either completed or error.
+      x-label: Status
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        completed:
+          description: The transcript job has been completed successfully.
+        error:
+          description: An error occurred while processing the audio file.
+      x-aai-enum:
+        completed:
+          label: Completed
+        error:
+          label: Error
+    Transcript:
+      required:
+        - id
+        - speech_model
+        - language_model
+        - acoustic_model
+        - status
+        - audio_url
+        - webhook_auth
+        - auto_highlights
+        - redact_pii
+        - summarization
+        - language_confidence_threshold
+        - language_confidence
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of your transcript
+          format: uuid
+          x-label: ID
+        audio_url:
+          type: string
+          description: The URL of the media that was transcribed
+          format: url
+          x-label: Audio URL
+        status:
+          $ref: '#/components/schemas/TranscriptStatus'
+        language_code:
+          anyOf:
+            - $ref: '#/components/schemas/TranscriptLanguageCode'
+            - type: string
+          description: "The language of your audio file.\nPossible values are found in [Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages).\nThe default value is 'en_us'.\n"
+          x-label: Language code
+          x-ts-type: 'LiteralUnion<TranscriptLanguageCode, string>'
+          x-go-type: TranscriptLanguageCode
+        language_detection:
+          description: 'Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false'
+          x-label: Language detection
+        language_confidence_threshold:
+          maximum: 1
+          minimum: 0
+          description: "The confidence threshold for the automatically detected language.\nAn error will be returned if the language confidence is below this threshold.\n"
+          format: float
+          x-label: Language confidence threshold
+        language_confidence:
+          maximum: 1
+          minimum: 0
+          description: 'The confidence score for the detected language, between 0.0 (low confidence) and 1.0 (high confidence)'
+          format: double
+          x-label: Language confidence
+        speech_model:
+          oneOf:
+            - $ref: '#/components/schemas/SpeechModel'
+            - type: 'null'
+          description: 'The speech model used for the transcription. When `null`, the default model is used.'
+          default: 
+          x-label: Speech model
+        text:
+          description: The textual transcript of your media file
+          x-label: Text
+        words:
+          items:
+            $ref: '#/components/schemas/TranscriptWord'
+          description: "An array of temporally-sequential word objects, one for each word in the transcript.\nSee [Speech recognition](https://www.assemblyai.com/docs/models/speech-recognition) for more information.\n"
+          x-label: Words
+        utterances:
+          items:
+            $ref: '#/components/schemas/TranscriptUtterance'
+          description: "When dual_channel or speaker_labels is enabled, a list of turn-by-turn utterance objects.\nSee [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) for more information.\n"
+          x-label: Utterances
+        confidence:
+          maximum: 1
+          minimum: 0
+          description: 'The confidence score for the transcript, between 0.0 (low confidence) and 1.0 (high confidence)'
+          format: double
+          x-label: Confidence
+        audio_duration:
+          description: 'The duration of this transcript object''s media file, in seconds'
+          x-label: Audio duration
+        punctuate:
+          description: 'Whether Automatic Punctuation is enabled, either true or false'
+          x-label: Punctuate
+        format_text:
+          description: 'Whether Text Formatting is enabled, either true or false'
+          x-label: Format text
+        disfluencies:
+          description: 'Transcribe Filler Words, like "umm", in your media file; can be true or false'
+          x-label: Disfluencies
+        dual_channel:
+          description: 'Whether [Dual channel transcription](https://www.assemblyai.com/docs/models/speech-recognition#dual-channel-transcription) was enabled in the transcription request, either true or false'
+          x-label: Dual channel
+        webhook_url:
+          description: "The URL to which we send webhook requests.\nWe sends two different types of webhook requests.\nOne request when a transcript is completed or failed, and one request when the redacted audio is ready if redact_pii_audio is enabled.\n"
+          format: url
+          x-label: Webhook URL
+        webhook_status_code:
+          description: 'The status code we received from your server when delivering the transcript completed or failed webhook request, if a webhook URL was provided'
+          x-label: Webhook HTTP status code
+        webhook_auth:
+          type: boolean
+          description: Whether webhook authentication details were provided
+          x-label: Webhook auth enabled
+        webhook_auth_header_name:
+          description: The header name to be sent with the transcript completed or failed webhook requests
+          x-label: Webhook auth header name
+        speed_boost:
+          description: Whether speed boost is enabled
+          deprecated: true
+          x-label: Speed boost
+        auto_highlights:
+          type: boolean
+          description: 'Whether Key Phrases is enabled, either true or false'
+          x-label: Key Phrases
+        auto_highlights_result:
+          oneOf:
+            - $ref: '#/components/schemas/AutoHighlightsResult'
+            - type: 'null'
+          description: "An array of results for the Key Phrases model, if it is enabled.\nSee [Key Phrases](https://www.assemblyai.com/docs/models/key-phrases) for more information.\n"
+          x-label: Key Phrases result
+        audio_start_from:
+          description: 'The point in time, in milliseconds, in the file at which the transcription was started'
+          x-label: Audio start from
+        audio_end_at:
+          description: 'The point in time, in milliseconds, in the file at which the transcription was terminated'
+          x-label: Audio end at
+        word_boost:
+          type: array
+          items:
+            type: string
+            x-label: Boosted word
+          description: The list of custom vocabulary to boost transcription probability for
+          x-label: Word boost
+        boost_param:
+          description: The word boost parameter value
+          x-label: Boost
+        filter_profanity:
+          description: 'Whether [Profanity Filtering](https://www.assemblyai.com/docs/models/speech-recognition#profanity-filtering) is enabled, either true or false'
+          x-label: Filter profanity
+        redact_pii:
+          type: boolean
+          description: 'Whether [PII Redaction](https://www.assemblyai.com/docs/models/pii-redaction) is enabled, either true or false'
+          x-label: Redact PII
+        redact_pii_audio:
+          description: "Whether a redacted version of the audio file was generated,\neither true or false. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.\n"
+          x-label: Redact PII audio
+        redact_pii_audio_quality:
+          oneOf:
+            - $ref: '#/components/schemas/RedactPiiAudioQuality'
+            - type: 'null'
+          description: "The audio quality of the PII-redacted audio file, if redact_pii_audio is enabled.\nSee [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.\n"
+          x-label: Redact PII audio quality
+        redact_pii_policies:
+          items:
+            $ref: '#/components/schemas/PiiPolicy'
+          description: "The list of PII Redaction policies that were enabled, if PII Redaction is enabled.\nSee [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.\n"
+          x-label: Redact PII policies
+        redact_pii_sub:
+          $ref: '#/components/schemas/SubstitutionPolicy'
+        speaker_labels:
+          description: 'Whether [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, can be true or false'
+          x-label: Speaker labels
+        speakers_expected:
+          description: 'Tell the speaker label model how many speakers it should attempt to identify, up to 10. See [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) for more details.'
+          x-label: Speakers expected
+        content_safety:
+          description: 'Whether [Content Moderation](https://www.assemblyai.com/docs/models/content-moderation) is enabled, can be true or false'
+          x-label: Content Moderation
+        content_safety_labels:
+          oneOf:
+            - $ref: '#/components/schemas/ContentSafetyLabelsResult'
+            - type: 'null'
+          description: "An array of results for the Content Moderation model, if it is enabled.\nSee [Content moderation](https://www.assemblyai.com/docs/models/content-moderation) for more information.\n"
+          x-label: Content Moderation labels
+        iab_categories:
+          description: 'Whether [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) is enabled, can be true or false'
+          x-label: Topic Detection
+        iab_categories_result:
+          oneOf:
+            - $ref: '#/components/schemas/TopicDetectionModelResult'
+            - type: 'null'
+          description: "The result of the Topic Detection model, if it is enabled.\nSee [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) for more information.\n"
+          x-label: Topic Detection result
+        custom_spelling:
+          items:
+            $ref: '#/components/schemas/TranscriptCustomSpelling'
+          description: Customize how words are spelled and formatted using to and from values
+          x-label: Custom spellings
+        auto_chapters:
+          description: 'Whether [Auto Chapters](https://www.assemblyai.com/docs/models/auto-chapters) is enabled, can be true or false'
+          x-label: Auto Chapters enabled
+        chapters:
+          items:
+            $ref: '#/components/schemas/Chapter'
+          description: An array of temporally sequential chapters for the audio file
+          x-label: Chapters
+        summarization:
+          type: boolean
+          description: 'Whether [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled, either true or false'
+          x-label: Summarization enabled
+        summary_type:
+          description: 'The type of summary generated, if [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled'
+          x-label: Summary type
+        summary_model:
+          description: "The Summarization model used to generate the summary,\nif [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled\n"
+          x-label: Summary model
+        summary:
+          description: 'The generated summary of the media file, if [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled'
+          x-label: Summary
+        custom_topics:
+          description: 'Whether custom topics is enabled, either true or false'
+          x-label: Custom topics enabled
+        topics:
+          type: array
+          items:
+            type: string
+            x-label: Topic
+          description: The list of custom topics provided if custom topics is enabled
+          x-label: Topics
+        sentiment_analysis:
+          description: 'Whether [Sentiment Analysis](https://www.assemblyai.com/docs/models/sentiment-analysis) is enabled, can be true or false'
+          x-label: Sentiment Analysis
+        sentiment_analysis_results:
+          items:
+            $ref: '#/components/schemas/SentimentAnalysisResult'
+          description: "An array of results for the Sentiment Analysis model, if it is enabled.\nSee [Sentiment Analysis](https://www.assemblyai.com/docs/models/sentiment-analysis) for more information.\n"
+          x-label: Sentiment Analysis results
+        entity_detection:
+          description: 'Whether [Entity Detection](https://www.assemblyai.com/docs/models/entity-detection) is enabled, can be true or false'
+          x-label: Entity Detection
+        entities:
+          items:
+            $ref: '#/components/schemas/Entity'
+          description: "An array of results for the Entity Detection model, if it is enabled.\nSee [Entity detection](https://www.assemblyai.com/docs/models/entity-detection) for more information.\n"
+          x-label: Entities
+        speech_threshold:
+          maximum: 1
+          minimum: 0
+          description: "Defaults to null. Reject audio files that contain less than this fraction of speech.\nValid values are in the range [0, 1] inclusive.\n"
+          format: float
+          x-label: Speech threshold
+        throttled:
+          description: True while a request is throttled and false when a request is no longer throttled
+          x-label: Throttled
+        error:
+          type: string
+          description: Error message of why the transcript failed
+          x-label: Error
+        language_model:
+          type: string
+          description: The language model that was used for the transcript
+          deprecated: true
+          x-label: Language model
+        acoustic_model:
+          type: string
+          description: The acoustic model that was used for the transcript
+          deprecated: true
+          x-label: Acoustic model
+      additionalProperties: false
+      description: A transcript object
+      example:
+        id: 9ea68fd3-f953-42c1-9742-976c447fb463
+        speech_model: 
+        language_model: assemblyai_default
+        acoustic_model: assemblyai_default
+        language_code: en_us
+        language_detection: true
+        language_confidence_threshold: 0.7
+        language_confidence: 0.9959
+        status: completed
+        audio_url: https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3
+        text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning. What is it about the conditions right now that have caused this round of wildfires to affect so many people so far away? Well, there''s a couple of things. The season has been pretty dry already. And then the fact that we''re getting hit in the US. Is because there''s a couple of weather systems that are essentially channeling the smoke from those Canadian wildfires through Pennsylvania into the Mid Atlantic and the Northeast and kind of just dropping the smoke there. So what is it in this haze that makes it harmful? And I''m assuming it is harmful. It is. The levels outside right now in Baltimore are considered unhealthy. And most of that is due to what''s called particulate matter, which are tiny particles, microscopic smaller than the width of your hair that can get into your lungs and impact your respiratory system, your cardiovascular system, and even your neurological your brain. What makes this particularly harmful? Is it the volume of particulant? Is it something in particular? What is it exactly? Can you just drill down on that a little bit more? Yeah. So the concentration of particulate matter I was looking at some of the monitors that we have was reaching levels of what are, in science, big 150 micrograms per meter cubed, which is more than ten times what the annual average should be and about four times higher than what you''re supposed to have on a 24 hours average. And so the concentrations of these particles in the air are just much, much higher than we typically see. And exposure to those high levels can lead to a host of health problems. And who is most vulnerable? I noticed that in New York City, for example, they''re canceling outdoor activities. And so here it is in the early days of summer, and they have to keep all the kids inside. So who tends to be vulnerable in a situation like this? It''s the youngest. So children, obviously, whose bodies are still developing. The elderly, who are their bodies are more in decline and they''re more susceptible to the health impacts of breathing, the poor air quality. And then people who have preexisting health conditions, people with respiratory conditions or heart conditions can be triggered by high levels of air pollution. Could this get worse? That''s a good question. In some areas, it''s much worse than others. And it just depends on kind of where the smoke is concentrated. I think New York has some of the higher concentrations right now, but that''s going to change as that air moves away from the New York area. But over the course of the next few days, we will see different areas being hit at different times with the highest concentrations. I was going to ask you about more fires start burning. I don''t expect the concentrations to go up too much higher. I was going to ask you how and you started to answer this, but how much longer could this last? Or forgive me if I''m asking you to speculate, but what do you think? Well, I think the fires are going to burn for a little bit longer, but the key for us in the US. Is the weather system changing. And so right now, it''s kind of the weather systems that are pulling that air into our mid Atlantic and Northeast region. As those weather systems change and shift, we''ll see that smoke going elsewhere and not impact us in this region as much. And so I think that''s going to be the defining factor. And I think the next couple of days we''re going to see a shift in that weather pattern and start to push the smoke away from where we are. And finally, with the impacts of climate change, we are seeing more wildfires. Will we be seeing more of these kinds of wide ranging air quality consequences or circumstances? I mean, that is one of the predictions for climate change. Looking into the future, the fire season is starting earlier and lasting longer, and we''re seeing more frequent fires. So, yeah, this is probably something that we''ll be seeing more frequently. This tends to be much more of an issue in the Western US. So the eastern US. Getting hit right now is a little bit new. But yeah, I think with climate change moving forward, this is something that is going to happen more frequently. That''s Peter De Carlo, associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University. Sergeant Carlo, thanks so much for joining us and sharing this expertise with us. Thank you for having me.'
+        words:
+          - text: Smoke
+            start: 250
+            end: 650
+            confidence: 0.97465
+            speaker: 
+          - text: from
+            start: 730
+            end: 1022
+            confidence: 0.99999
+            speaker: 
+          - text: hundreds
+            start: 1076
+            end: 1418
+            confidence: 0.99844
+            speaker: 
+          - text: of
+            start: 1434
+            end: 1614
+            confidence: 0.84
+            speaker: 
+          - text: wildfires
+            start: 1652
+            end: 2346
+            confidence: 0.89572
+            speaker: 
+          - text: in
+            start: 2378
+            end: 2526
+            confidence: 0.99994
+            speaker: 
+          - text: Canada
+            start: 2548
+            end: 3130
+            confidence: 0.93953
+            speaker: 
+          - text: is
+            start: 3210
+            end: 3454
+            confidence: 0.999
+            speaker: 
+          - text: triggering
+            start: 3492
+            end: 3946
+            confidence: 0.74794
+            speaker: 
+          - text: air
+            start: 3978
+            end: 4174
+            confidence: 1
+            speaker: 
+          - text: quality
+            start: 4212
+            end: 4558
+            confidence: 0.88077
+            speaker: 
+          - text: alerts
+            start: 4644
+            end: 5114
+            confidence: 0.94814
+            speaker: 
+          - text: throughout
+            start: 5162
+            end: 5466
+            confidence: 0.99726
+            speaker: 
+          - text: the
+            start: 5498
+            end: 5694
+            confidence: 0.79
+            speaker: 
+          - text: US.
+            start: 5732
+            end: 6382
+            confidence: 0.89
+            speaker: 
+        utterances:
+          - confidence: 0.9359033333333334
+            end: 26950
+            speaker: A
+            start: 250
+            text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor.'
+            words:
+              - text: Smoke
+                start: 250
+                end: 650
+                confidence: 0.97503
+                speaker: A
+              - text: from
+                start: 730
+                end: 1022
+                confidence: 0.99999
+                speaker: A
+              - text: hundreds
+                start: 1076
+                end: 1418
+                confidence: 0.99843
+                speaker: A
+              - text: of
+                start: 1434
+                end: 1614
+                confidence: 0.85
+                speaker: A
+              - text: wildfires
+                start: 1652
+                end: 2346
+                confidence: 0.89657
+                speaker: A
+              - text: in
+                start: 2378
+                end: 2526
+                confidence: 0.99994
+                speaker: A
+              - text: Canada
+                start: 2548
+                end: 3130
+                confidence: 0.93864
+                speaker: A
+              - text: is
+                start: 3210
+                end: 3454
+                confidence: 0.999
+                speaker: A
+              - text: triggering
+                start: 3492
+                end: 3946
+                confidence: 0.75366
+                speaker: A
+              - text: air
+                start: 3978
+                end: 4174
+                confidence: 1
+                speaker: A
+              - text: quality
+                start: 4212
+                end: 4558
+                confidence: 0.87745
+                speaker: A
+              - text: alerts
+                start: 4644
+                end: 5114
+                confidence: 0.94739
+                speaker: A
+              - text: throughout
+                start: 5162
+                end: 5466
+                confidence: 0.99726
+                speaker: A
+              - text: the
+                start: 5498
+                end: 5694
+                confidence: 0.79
+                speaker: A
+              - text: US.
+                start: 5732
+                end: 6382
+                confidence: 0.88
+                speaker: A
+        confidence: 0.9404651451800253
+        audio_duration: 281
+        punctuate: true
+        format_text: true
+        dual_channel: false
+        webhook_url: https://your-webhook-url.tld/path
+        webhook_status_code: 200
+        webhook_auth: true
+        webhook_auth_header_name: webhook-secret
+        auto_highlights_result:
+          status: success
+          results:
+            - count: 1
+              rank: 0.08
+              text: air quality alerts
+              timestamps:
+                - start: 3978
+                  end: 5114
+            - count: 1
+              rank: 0.08
+              text: wide ranging air quality consequences
+              timestamps:
+                - start: 235388
+                  end: 238694
+            - count: 1
+              rank: 0.07
+              text: more wildfires
+              timestamps:
+                - start: 230972
+                  end: 232354
+            - count: 1
+              rank: 0.07
+              text: air pollution
+              timestamps:
+                - start: 156004
+                  end: 156910
+            - count: 3
+              rank: 0.07
+              text: weather systems
+              timestamps:
+                - start: 47344
+                  end: 47958
+                - start: 205268
+                  end: 205818
+                - start: 211588
+                  end: 213434
+            - count: 2
+              rank: 0.06
+              text: high levels
+              timestamps:
+                - start: 121128
+                  end: 121646
+                - start: 155412
+                  end: 155866
+            - count: 1
+              rank: 0.06
+              text: health conditions
+              timestamps:
+                - start: 152138
+                  end: 152666
+            - count: 2
+              rank: 0.06
+              text: Peter de Carlo
+              timestamps:
+                - start: 18948
+                  end: 19930
+                - start: 268298
+                  end: 269194
+            - count: 1
+              rank: 0.06
+              text: New York City
+              timestamps:
+                - start: 125768
+                  end: 126274
+            - count: 1
+              rank: 0.05
+              text: respiratory conditions
+              timestamps:
+                - start: 152964
+                  end: 153786
+            - count: 3
+              rank: 0.05
+              text: New York
+              timestamps:
+                - start: 125768
+                  end: 126034
+                - start: 171448
+                  end: 171938
+                - start: 176008
+                  end: 176322
+            - count: 3
+              rank: 0.05
+              text: climate change
+              timestamps:
+                - start: 229548
+                  end: 230230
+                - start: 244576
+                  end: 245162
+                - start: 263348
+                  end: 263950
+            - count: 1
+              rank: 0.05
+              text: Johns Hopkins University Varsity
+              timestamps:
+                - start: 23972
+                  end: 25490
+            - count: 1
+              rank: 0.05
+              text: heart conditions
+              timestamps:
+                - start: 153988
+                  end: 154506
+            - count: 1
+              rank: 0.05
+              text: air quality warnings
+              timestamps:
+                - start: 12308
+                  end: 13434
+        auto_highlights: true
+        audio_start_from: 10
+        audio_end_at: 280
+        word_boost:
+          - aws
+          - azure
+          - google cloud
+        boost_param: high
+        filter_profanity: true
+        redact_pii: true
+        redact_pii_audio: true
+        redact_pii_audio_quality: mp3
+        redact_pii_policies:
+          - us_social_security_number
+          - credit_card_number
+        redact_pii_sub: hash
+        speaker_labels: true
+        content_safety: true
+        iab_categories: true
+        content_safety_labels:
+          status: success
+          results:
+            - text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+              labels:
+                - label: disasters
+                  confidence: 0.8142836093902588
+                  severity: 0.4093044400215149
+              sentences_idx_start: 0
+              sentences_idx_end: 5
+              timestamp:
+                start: 250
+                end: 28840
+          summary:
+            disasters: 0.9940800441842205
+            health_issues: 0.9216489289040967
+          severity_score_summary:
+            disasters:
+              low: 0.5733263024656846
+              medium: 0.42667369753431533
+              high: 0
+            health_issues:
+              low: 0.22863814977924785
+              medium: 0.45014154926938227
+              high: 0.32122030095136983
+        iab_categories_result:
+          status: success
+          results:
+            - text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+              labels:
+                - relevance: 0.988274097442627
+                  label: Home&Garden>IndoorEnvironmentalQuality
+                - relevance: 0.5821335911750793
+                  label: NewsAndPolitics>Weather
+                - relevance: 0.0042327106930315495
+                  label: MedicalHealth>DiseasesAndConditions>LungAndRespiratoryHealth
+                - relevance: 0.0033971222583204508
+                  label: NewsAndPolitics>Disasters
+                - relevance: 0.002469958271831274
+                  label: BusinessAndFinance>Business>GreenSolutions
+                - relevance: 0.0014376690378412604
+                  label: MedicalHealth>DiseasesAndConditions>Cancer
+                - relevance: 0.0014294233405962586
+                  label: Science>Environment
+                - relevance: 0.001234519761055708
+                  label: Travel>TravelLocations>PolarTravel
+                - relevance: 0.0010231725173071027
+                  label: MedicalHealth>DiseasesAndConditions>ColdAndFlu
+                - relevance: 0.0007445293595083058
+                  label: BusinessAndFinance>Industries>PowerAndEnergyIndustry
+              timestamp:
+                start: 250
+                end: 28840
+          summary:
+            NewsAndPolitics>Weather: 1
+            Home&Garden>IndoorEnvironmentalQuality: 0.9043831825256348
+            Science>Environment: 0.16117265820503235
+            BusinessAndFinance>Industries>EnvironmentalServicesIndustry: 0.14393523335456848
+            MedicalHealth>DiseasesAndConditions>LungAndRespiratoryHealth: 0.11401086300611496
+            BusinessAndFinance>Business>GreenSolutions: 0.06348437070846558
+            NewsAndPolitics>Disasters: 0.05041387677192688
+            Travel>TravelLocations>PolarTravel: 0.01308488193899393
+            HealthyLiving: 0.008222488686442375
+            MedicalHealth>DiseasesAndConditions>ColdAndFlu: 0.0022315620444715023
+            MedicalHealth>DiseasesAndConditions>HeartAndCardiovascularDiseases: 0.00213034451007843
+            HealthyLiving>Wellness>SmokingCessation: 0.001540527562610805
+            MedicalHealth>DiseasesAndConditions>Injuries: 0.0013950627762824297
+            BusinessAndFinance>Industries>PowerAndEnergyIndustry: 0.0012570273829624057
+            MedicalHealth>DiseasesAndConditions>Cancer: 0.001097781932912767
+            MedicalHealth>DiseasesAndConditions>Allergies: 0.0010148967849090695
+            MedicalHealth>DiseasesAndConditions>MentalHealth: 0.000717321818228811
+            Style&Fashion>PersonalCare>DeodorantAndAntiperspirant: 0.0006022014422342181
+            Technology&Computing>Computing>ComputerNetworking: 0.0005461975233629346
+            MedicalHealth>DiseasesAndConditions>Injuries>FirstAid: 0.0004885646631009877
+        custom_spelling: 
+        throttled: 
+        auto_chapters: true
+        summarization: true
+        summary_type: bullets
+        summary_model: informative
+        custom_topics: true
+        topics: [ ]
+        speech_threshold: 0.5
+        disfluencies: false
+        sentiment_analysis: true
+        chapters:
+          - summary: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. In some places, the air quality warnings include the warning to stay inside.'
+            gist: Smoggy air quality alerts across US
+            headline: Smoke from hundreds of wildfires in Canada is triggering air quality alerts across US
+            start: 250
+            end: 28840
+          - summary: 'Air pollution levels in Baltimore are considered unhealthy. Exposure to high levels can lead to a host of health problems. With climate change, we are seeing more wildfires. Will we be seeing more of these kinds of wide ranging air quality consequences?'
+            gist: What is it about the conditions right now that have caused this round
+            headline: High particulate matter in wildfire smoke can lead to serious health problems
+            start: 29610
+            end: 280340
+        sentiment_analysis_results: 
+        entity_detection: true
+        entities:
+          - entity_type: location
+            text: Canada
+            start: 2548
+            end: 3130
+          - entity_type: location
+            text: the US
+            start: 5498
+            end: 6382
+          - entity_type: location
+            text: Maine
+            start: 7492
+            end: 7914
+          - entity_type: location
+            text: Maryland
+            start: 8212
+            end: 8634
+          - entity_type: location
+            text: Minnesota
+            start: 8932
+            end: 9578
+          - entity_type: person_name
+            text: Peter de Carlo
+            start: 18948
+            end: 19930
+          - entity_type: occupation
+            text: associate professor
+            start: 20292
+            end: 21194
+          - entity_type: organization
+            text: Department of Environmental Health and Engineering
+            start: 21508
+            end: 23706
+          - entity_type: organization
+            text: Johns Hopkins University Varsity
+            start: 23972
+            end: 25490
+          - entity_type: occupation
+            text: professor
+            start: 26076
+            end: 26950
+          - entity_type: location
+            text: the US
+            start: 45184
+            end: 45898
+          - entity_type: nationality
+            text: Canadian
+            start: 49728
+            end: 50086
+        summary: '- Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. In some places, the air quality warnings include the warning to stay inside.\n- Air pollution levels in Baltimore are considered unhealthy. Exposure to high levels can lead to a host of health problems. With climate change, we are seeing more wildfires. Will we be seeing more of these kinds of wide ranging air quality consequences?'
+        speakers_expected: 2
+      x-label: Transcript
+      x-fern-sdk-group-name: transcripts
+    TopicDetectionModelResult:
+      required:
+        - status
+        - results
+        - summary
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/AudioIntelligenceModelStatus'
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopicDetectionResult'
+          description: An array of results for the Topic Detection model
+          x-label: Results
+        summary:
+          type: object
+          additionalProperties:
+            maximum: 1
+            minimum: 0
+            type: number
+            format: double
+          description: The overall relevance of topic to the entire audio file
+          x-label: Summary
+      description: "The result of the Topic Detection model, if it is enabled.\nSee [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) for more information.\n"
+      example:
+        status: success
+        results:
+          - text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+            labels:
+              - relevance: 0.988274097442627
+                label: Home&Garden>IndoorEnvironmentalQuality
+              - relevance: 0.5821335911750793
+                label: NewsAndPolitics>Weather
+              - relevance: 0.0042327106930315495
+                label: MedicalHealth>DiseasesAndConditions>LungAndRespiratoryHealth
+              - relevance: 0.0033971222583204508
+                label: NewsAndPolitics>Disasters
+              - relevance: 0.002469958271831274
+                label: BusinessAndFinance>Business>GreenSolutions
+              - relevance: 0.0014376690378412604
+                label: MedicalHealth>DiseasesAndConditions>Cancer
+              - relevance: 0.0014294233405962586
+                label: Science>Environment
+              - relevance: 0.001234519761055708
+                label: Travel>TravelLocations>PolarTravel
+              - relevance: 0.0010231725173071027
+                label: MedicalHealth>DiseasesAndConditions>ColdAndFlu
+              - relevance: 0.0007445293595083058
+                label: BusinessAndFinance>Industries>PowerAndEnergyIndustry
+            timestamp:
+              start: 250
+              end: 28840
+        summary:
+          NewsAndPolitics>Weather: 1
+          Home&Garden>IndoorEnvironmentalQuality: 0.9043831825256348
+          Science>Environment: 0.16117265820503235
+          BusinessAndFinance>Industries>EnvironmentalServicesIndustry: 0.14393523335456848
+          MedicalHealth>DiseasesAndConditions>LungAndRespiratoryHealth: 0.11401086300611496
+          BusinessAndFinance>Business>GreenSolutions: 0.06348437070846558
+          NewsAndPolitics>Disasters: 0.05041387677192688
+          Travel>TravelLocations>PolarTravel: 0.01308488193899393
+          HealthyLiving: 0.008222488686442375
+          MedicalHealth>DiseasesAndConditions>ColdAndFlu: 0.0022315620444715023
+          MedicalHealth>DiseasesAndConditions>HeartAndCardiovascularDiseases: 0.00213034451007843
+          HealthyLiving>Wellness>SmokingCessation: 0.001540527562610805
+          MedicalHealth>DiseasesAndConditions>Injuries: 0.0013950627762824297
+          BusinessAndFinance>Industries>PowerAndEnergyIndustry: 0.0012570273829624057
+          MedicalHealth>DiseasesAndConditions>Cancer: 0.001097781932912767
+          MedicalHealth>DiseasesAndConditions>Allergies: 0.0010148967849090695
+          MedicalHealth>DiseasesAndConditions>MentalHealth: 0.000717321818228811
+          Style&Fashion>PersonalCare>DeodorantAndAntiperspirant: 0.0006022014422342181
+          Technology&Computing>Computing>ComputerNetworking: 0.0005461975233629346
+          MedicalHealth>DiseasesAndConditions>Injuries>FirstAid: 0.0004885646631009877
+      x-label: Topic Detection result
+      x-fern-sdk-group-name: transcripts
+    ContentSafetyLabelsResult:
+      required:
+        - status
+        - results
+        - summary
+        - severity_score_summary
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/AudioIntelligenceModelStatus'
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContentSafetyLabelResult'
+          x-label: Results
+        summary:
+          type: object
+          additionalProperties:
+            maximum: 1
+            minimum: 0
+            type: number
+            description: A confidence score for the presence of the sensitive topic "topic" across the entire audio file
+            format: double
+          description: A summary of the Content Moderation confidence results for the entire audio file
+          x-label: Summary
+        severity_score_summary:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/SeverityScoreSummary'
+          description: A summary of the Content Moderation severity results for the entire audio file
+          x-label: Severity score summary
+      description: "An array of results for the Content Moderation model, if it is enabled.\nSee [Content moderation](https://www.assemblyai.com/docs/models/content-moderation) for more information.\n"
+      example:
+        status: success
+        results:
+          - text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+            labels:
+              - label: disasters
+                confidence: 0.8142836093902588
+                severity: 0.4093044400215149
+            sentences_idx_start: 0
+            sentences_idx_end: 5
+            timestamp:
+              start: 250
+              end: 28840
+        summary:
+          disasters: 0.9940800441842205
+          health_issues: 0.9216489289040967
+        severity_score_summary:
+          disasters:
+            low: 0.5733263024656846
+            medium: 0.42667369753431533
+            high: 0
+          health_issues:
+            low: 0.22863814977924785
+            medium: 0.45014154926938227
+            high: 0.32122030095136983
+      x-label: Content Moderation labels result
+      x-fern-sdk-group-name: transcripts
+    Chapter:
+      required:
+        - gist
+        - headline
+        - summary
+        - start
+        - end
+      type: object
+      properties:
+        gist:
+          type: string
+          description: An ultra-short summary (just a few words) of the content spoken in the chapter
+          x-label: Gist
+        headline:
+          type: string
+          description: A single sentence summary of the content spoken during the chapter
+          x-label: Headline
+        summary:
+          type: string
+          description: A one paragraph summary of the content spoken during the chapter
+          x-label: Summary
+        start:
+          type: integer
+          description: 'The starting time, in milliseconds, for the chapter'
+          x-label: Start
+        end:
+          type: integer
+          description: 'The starting time, in milliseconds, for the chapter'
+          x-label: End
+      additionalProperties: false
+      description: Chapter of the audio file
+      example:
+        summary: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. In some places, the air quality warnings include the warning to stay inside.'
+        gist: Smoggy air quality alerts across US
+        headline: Smoke from hundreds of wildfires in Canada is triggering air quality alerts across US
+        start: 250
+        end: 28840
+      x-label: Chapter
+      x-fern-sdk-group-name: transcripts
+    Entity:
+      required:
+        - entity_type
+        - text
+        - start
+        - end
+      type: object
+      properties:
+        entity_type:
+          $ref: '#/components/schemas/EntityType'
+        text:
+          type: string
+          description: The text for the detected entity
+          x-label: Text
+        start:
+          type: integer
+          description: 'The starting time, in milliseconds, at which the detected entity appears in the audio file'
+          x-label: Start
+        end:
+          type: integer
+          description: 'The ending time, in milliseconds, for the detected entity in the audio file'
+          x-label: End
+      additionalProperties: false
+      description: A detected entity
+      example:
+        entity_type: location
+        text: Canada
+        start: 2548
+        end: 3130
+      x-label: Entity
+      x-fern-sdk-group-name: transcripts
+    EntityType:
+      enum:
+        - account_number
+        - banking_information
+        - blood_type
+        - credit_card_cvv
+        - credit_card_expiration
+        - credit_card_number
+        - date
+        - date_interval
+        - date_of_birth
+        - drivers_license
+        - drug
+        - duration
+        - email_address
+        - event
+        - filename
+        - gender_sexuality
+        - healthcare_number
+        - injury
+        - ip_address
+        - language
+        - location
+        - marital_status
+        - medical_condition
+        - medical_process
+        - money_amount
+        - nationality
+        - number_sequence
+        - occupation
+        - organization
+        - passport_number
+        - password
+        - person_age
+        - person_name
+        - phone_number
+        - physical_attribute
+        - political_affiliation
+        - religion
+        - statistics
+        - time
+        - url
+        - us_social_security_number
+        - username
+        - vehicle_id
+        - zodiac_sign
+      type: string
+      description: The type of entity for the detected entity
+      x-label: Entity type
+      x-fern-sdk-group-name: transcripts
+      x-fern-enum:
+        account_number:
+          description: 'Customer account or membership identification number (e.g., Policy No. 10042992, Member ID: HZ-5235-001)'
+        banking_information:
+          description: 'Banking information, including account and routing numbers'
+        blood_type:
+          description: 'Blood type (e.g., O-, AB positive)'
+        credit_card_cvv:
+          description: 'Credit card verification code (e.g., CVV: 080)'
+        credit_card_expiration:
+          description: Expiration date of a credit card
+        credit_card_number:
+          description: Credit card number
+        date:
+          description: 'Specific calendar date (e.g., December 18)'
+        date_interval:
+          description: 'Broader time periods, including date ranges, months, seasons, years, and decades (e.g., 2020-2021, 5-9 May, January 1984)'
+        date_of_birth:
+          description: 'Date of birth (e.g., Date of Birth: March 7,1961)'
+        drivers_license:
+          description: 'Driver''s license number. (e.g., DL# 356933-540)'
+        drug:
+          description: 'Medications, vitamins, or supplements (e.g., Advil, Acetaminophen, Panadol)'
+        duration:
+          description: 'Periods of time, specified as a number and a unit of time (e.g., 8 months, 2 years)'
+        email_address:
+          description: 'Email address (e.g., support@assemblyai.com)'
+        event:
+          description: 'Name of an event or holiday (e.g., Olympics, Yom Kippur)'
+        filename:
+          description: 'Names of computer files, including the extension or filepath (e.g., Taxes/2012/brad-tax-returns.pdf)'
+        gender_sexuality:
+          description: 'Terms indicating gender identity or sexual orientation, including slang terms (e.g., female, bisexual, trans)'
+        healthcare_number:
+          description: 'Healthcare numbers and health plan beneficiary numbers (e.g., Policy No.: 5584-486-674-YM)'
+        injury:
+          description: 'Bodily injury (e.g., I broke my arm, I have a sprained wrist)'
+        ip_address:
+          description: 'Internet IP address, including IPv4 and IPv6 formats (e.g., 192.168.0.1)'
+        language:
+          description: 'Name of a natural language (e.g., Spanish, French)'
+        location:
+          description: 'Any Location reference including mailing address, postal code, city, state, province, country, or coordinates. (e.g., Lake Victoria, 145 Windsor St., 90210)'
+        marital_status:
+          description: 'Terms indicating marital status (e.g., Single, common-law, ex-wife, married)'
+        medical_condition:
+          description: 'Name of a medical condition, disease, syndrome, deficit, or disorder (e.g., chronic fatigue syndrome, arrhythmia, depression)'
+        medical_process:
+          description: 'Medical process, including treatments, procedures, and tests (e.g., heart surgery, CT scan)'
+        money_amount:
+          description: 'Name and/or amount of currency (e.g., 15 pesos, $94.50)'
+        nationality:
+          description: 'Terms indicating nationality, ethnicity, or race (e.g., American, Asian, Caucasian)'
+        number_sequence:
+          description: Numerical PII (including alphanumeric strings) that doesn't fall under other categories
+        occupation:
+          description: 'Job title or profession (e.g., professor, actors, engineer, CPA)'
+        organization:
+          description: 'Name of an organization (e.g., CNN, McDonalds, University of Alaska, Northwest General Hospital)'
+        passport_number:
+          description: 'Passport numbers, issued by any country (e.g., PA4568332, NU3C6L86S12)'
+        password:
+          description: 'Account passwords, PINs, access keys, or verification answers (e.g., 27%alfalfa, temp1234, My mother''s maiden name is Smith)'
+        person_age:
+          description: 'Number associated with an age (e.g., 27, 75)'
+        person_name:
+          description: 'Name of a person (e.g., Bob, Doug Jones, Dr. Kay Martinez, MD)'
+        phone_number:
+          description: Telephone or fax number
+        physical_attribute:
+          description: 'Distinctive bodily attributes, including terms indicating race (e.g., I''m 190cm tall, He belongs to the Black students'' association)'
+        political_affiliation:
+          description: 'Terms referring to a political party, movement, or ideology (e.g., Republican, Liberal)'
+        religion:
+          description: 'Terms indicating religious affiliation (e.g., Hindu, Catholic)'
+        statistics:
+          description: 'Medical statistics (e.g., 18%, 18 percent)'
+        time:
+          description: 'Expressions indicating clock times (e.g., 19:37:28, 10pm EST)'
+        url:
+          description: 'Internet addresses (e.g., https://www.assemblyai.com/)'
+        us_social_security_number:
+          description: Social Security Number or equivalent
+        username:
+          description: 'Usernames, login names, or handles (e.g., @AssemblyAI)'
+        vehicle_id:
+          description: 'Vehicle identification numbers (VINs), vehicle serial numbers, and license plate numbers (e.g., 5FNRL38918B111818, BIF7547)'
+        zodiac_sign:
+          description: 'Names of Zodiac signs (e.g., Aries, Taurus)'
+      x-aai-enum:
+        account_number:
+          label: Account number
+        banking_information:
+          label: Banking information
+        blood_type:
+          label: Blood type
+        credit_card_cvv:
+          label: Credit card CVV
+        credit_card_expiration:
+          label: Credit card expiration
+        credit_card_number:
+          label: Credit card number
+        date:
+          label: Date
+        date_interval:
+          label: Date interval
+        date_of_birth:
+          label: Date of birth
+        drivers_license:
+          label: Driver's license
+        drug:
+          label: Drug
+        duration:
+          label: Duration
+        email_address:
+          label: Email address
+        event:
+          label: Event
+        filename:
+          label: Filename
+        gender_sexuality:
+          label: Gender sexuality
+        healthcare_number:
+          label: Healthcare number
+        injury:
+          label: Injury
+        ip_address:
+          label: IP address
+        language:
+          label: Language
+        location:
+          label: Location
+        marital_status:
+          label: Marital status
+        medical_condition:
+          label: Medical condition
+        medical_process:
+          label: Medical process
+        money_amount:
+          label: Money amount
+        nationality:
+          label: Nationality
+        number_sequence:
+          label: Number sequence
+        occupation:
+          label: Occupation
+        organization:
+          label: Organization
+        passport_number:
+          label: Passport number
+        password:
+          label: Password
+        person_age:
+          label: Person age
+        person_name:
+          label: Person name
+        phone_number:
+          label: Phone number
+        physical_attribute:
+          label: Physical attribute
+        political_affiliation:
+          label: Political affiliation
+        religion:
+          label: Religion
+        statistics:
+          label: Statistics
+        time:
+          label: Time
+        url:
+          label: URL
+        us_social_security_number:
+          label: US Social Security Number
+        username:
+          label: Username
+        vehicle_id:
+          label: Vehicle ID
+        zodiac_sign:
+          label: Zodiac sign
+    SentimentAnalysisResult:
+      required:
+        - text
+        - start
+        - end
+        - sentiment
+        - confidence
+      type: object
+      properties:
+        text:
+          type: string
+          description: The transcript of the sentence
+          x-label: Text
+        start:
+          type: integer
+          description: 'The starting time, in milliseconds, of the sentence'
+          x-label: Start
+        end:
+          type: integer
+          description: 'The ending time, in milliseconds, of the sentence'
+          x-label: End
+        sentiment:
+          $ref: '#/components/schemas/Sentiment'
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: 'The confidence score for the detected sentiment of the sentence, from 0 to 1'
+          format: double
+          x-label: Confidence
+        speaker:
+          description: 'The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null'
+          x-label: Speaker
+      additionalProperties: false
+      description: The result of the Sentiment Analysis model
+      example:
+        text: Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US.
+        start: 250
+        end: 6350
+        sentiment: NEGATIVE
+        confidence: 0.8181032538414001
+        speaker: 
+      x-label: Sentiment Analysis result
+      x-fern-sdk-group-name: transcripts
+    Sentiment:
+      enum:
+        - POSITIVE
+        - NEUTRAL
+        - NEGATIVE
+      x-label: Sentiment
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        POSITIVE:
+          label: Positive
+        NEUTRAL:
+          label: Neutral
+        NEGATIVE:
+          label: Negative
+    TopicDetectionResult:
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text in the transcript in which a detected topic occurs
+          x-label: Text
+        labels:
+          type: array
+          items:
+            required:
+              - relevance
+              - label
+            type: object
+            properties:
+              relevance:
+                maximum: 1
+                minimum: 0
+                type: number
+                description: How relevant the detected topic is of a detected topic
+                format: double
+                x-label: Relevance
+              label:
+                type: string
+                description: 'The IAB taxonomical label for the label of the detected topic, where > denotes supertopic/subtopic relationship'
+                x-label: Label
+            additionalProperties: false
+            x-label: Label
+          x-label: Labels
+        timestamp:
+          $ref: '#/components/schemas/Timestamp'
+      additionalProperties: false
+      description: The result of the topic detection model
+      example:
+        text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+        labels:
+          - relevance: 0.988274097442627
+            label: Home&Garden>IndoorEnvironmentalQuality
+          - relevance: 0.5821335911750793
+            label: NewsAndPolitics>Weather
+          - relevance: 0.0042327106930315495
+            label: MedicalHealth>DiseasesAndConditions>LungAndRespiratoryHealth
+          - relevance: 0.0033971222583204508
+            label: NewsAndPolitics>Disasters
+          - relevance: 0.002469958271831274
+            label: BusinessAndFinance>Business>GreenSolutions
+          - relevance: 0.0014376690378412604
+            label: MedicalHealth>DiseasesAndConditions>Cancer
+          - relevance: 0.0014294233405962586
+            label: Science>Environment
+          - relevance: 0.001234519761055708
+            label: Travel>TravelLocations>PolarTravel
+          - relevance: 0.0010231725173071027
+            label: MedicalHealth>DiseasesAndConditions>ColdAndFlu
+          - relevance: 0.0007445293595083058
+            label: BusinessAndFinance>Industries>PowerAndEnergyIndustry
+        timestamp:
+          start: 250
+          end: 28840
+      x-label: Topic detection result
+      x-fern-sdk-group-name: transcripts
+    ContentSafetyLabel:
+      required:
+        - label
+        - confidence
+        - severity
+      type: object
+      properties:
+        label:
+          type: string
+          description: The label of the sensitive topic
+          x-label: Label
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: 'The confidence score for the topic being discussed, from 0 to 1'
+          format: double
+          x-label: Confidence
+        severity:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: 'How severely the topic is discussed in the section, from 0 to 1'
+          format: double
+          x-label: Severity
+      additionalProperties: false
+      example:
+        label: disasters
+        confidence: 0.8142836093902588
+        severity: 0.4093044400215149
+      x-label: Content Moderation label
+      x-fern-sdk-group-name: transcripts
+    ContentSafetyLabelResult:
+      required:
+        - text
+        - labels
+        - sentences_idx_start
+        - sentences_idx_end
+        - timestamp
+      type: object
+      properties:
+        text:
+          type: string
+          description: The transcript of the section flagged by the Content Moderation model
+          x-label: Text
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContentSafetyLabel'
+          description: 'An array of safety labels, one per sensitive topic that was detected in the section'
+          x-label: Labels
+        sentences_idx_start:
+          type: integer
+          description: The sentence index at which the section begins
+          x-label: Sentence index start
+        sentences_idx_end:
+          type: integer
+          description: The sentence index at which the section ends
+          x-label: Sentence index end
+        timestamp:
+          $ref: '#/components/schemas/Timestamp'
+      additionalProperties: false
+      example:
+        text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter de Carlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University Varsity. Good morning, professor. Good morning.'
+        labels:
+          - label: disasters
+            confidence: 0.8142836093902588
+            severity: 0.4093044400215149
+        sentences_idx_start: 0
+        sentences_idx_end: 5
+        timestamp:
+          start: 250
+          end: 28840
+      x-label: Content Moderation label result
+      x-fern-sdk-group-name: transcripts
+    SeverityScoreSummary:
+      required:
+        - low
+        - medium
+        - high
+      type: object
+      properties:
+        low:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Low
+        medium:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Medium
+        high:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: High
+      example:
+        low: 0.5733263024656846
+        medium: 0.42667369753431533
+        high: 0
+      x-label: Severity score summary
+      x-fern-sdk-group-name: transcripts
+    AutoHighlightsResult:
+      required:
+        - status
+        - results
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/AudioIntelligenceModelStatus'
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutoHighlightResult'
+          description: A temporally-sequential array of Key Phrases
+          x-label: Results
+      description: "An array of results for the Key Phrases model, if it is enabled.\nSee [Key phrases](https://www.assemblyai.com/docs/models/key-phrases) for more information.\n"
+      example:
+        status: success
+        results:
+          - count: 1
+            rank: 0.08
+            text: air quality alerts
+            timestamps:
+              - start: 3978
+                end: 5114
+          - count: 1
+            rank: 0.08
+            text: wide ranging air quality consequences
+            timestamps:
+              - start: 235388
+                end: 238694
+          - count: 1
+            rank: 0.07
+            text: more wildfires
+            timestamps:
+              - start: 230972
+                end: 232354
+          - count: 1
+            rank: 0.07
+            text: air pollution
+            timestamps:
+              - start: 156004
+                end: 156910
+          - count: 3
+            rank: 0.07
+            text: weather systems
+            timestamps:
+              - start: 47344
+                end: 47958
+              - start: 205268
+                end: 205818
+              - start: 211588
+                end: 213434
+          - count: 2
+            rank: 0.06
+            text: high levels
+            timestamps:
+              - start: 121128
+                end: 121646
+              - start: 155412
+                end: 155866
+          - count: 1
+            rank: 0.06
+            text: health conditions
+            timestamps:
+              - start: 152138
+                end: 152666
+          - count: 2
+            rank: 0.06
+            text: Peter de Carlo
+            timestamps:
+              - start: 18948
+                end: 19930
+              - start: 268298
+                end: 269194
+          - count: 1
+            rank: 0.06
+            text: New York City
+            timestamps:
+              - start: 125768
+                end: 126274
+          - count: 1
+            rank: 0.05
+            text: respiratory conditions
+            timestamps:
+              - start: 152964
+                end: 153786
+          - count: 3
+            rank: 0.05
+            text: New York
+            timestamps:
+              - start: 125768
+                end: 126034
+              - start: 171448
+                end: 171938
+              - start: 176008
+                end: 176322
+          - count: 3
+            rank: 0.05
+            text: climate change
+            timestamps:
+              - start: 229548
+                end: 230230
+              - start: 244576
+                end: 245162
+              - start: 263348
+                end: 263950
+          - count: 1
+            rank: 0.05
+            text: Johns Hopkins University Varsity
+            timestamps:
+              - start: 23972
+                end: 25490
+          - count: 1
+            rank: 0.05
+            text: heart conditions
+            timestamps:
+              - start: 153988
+                end: 154506
+          - count: 1
+            rank: 0.05
+            text: air quality warnings
+            timestamps:
+              - start: 12308
+                end: 13434
+      x-label: Auto highlights result
+      x-fern-sdk-group-name: transcripts
+    AutoHighlightResult:
+      required:
+        - count
+        - rank
+        - text
+        - timestamps
+      type: object
+      properties:
+        count:
+          type: integer
+          description: The total number of times the key phrase appears in the audio file
+          x-label: Count
+        rank:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: The total relevancy to the overall audio file of this key phrase - a greater number means more relevant
+          format: float
+          x-label: Rank
+        text:
+          type: string
+          description: The text itself of the key phrase
+          x-label: Text
+        timestamps:
+          type: array
+          items:
+            $ref: '#/components/schemas/Timestamp'
+          description: The timestamp of the of the key phrase
+          x-label: Timestamps
+      additionalProperties: false
+      example:
+        count: 1
+        rank: 0.08
+        text: air quality alerts
+        timestamps:
+          - start: 3978
+            end: 5114
+      x-label: Auto highlight result
+      x-fern-sdk-group-name: transcripts
+    TranscriptWord:
+      required:
+        - confidence
+        - start
+        - end
+        - text
+      type: object
+      properties:
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Confidence
+        start:
+          type: integer
+          x-label: Start
+        end:
+          type: integer
+          x-label: End
+        text:
+          type: string
+          x-label: Text
+        speaker:
+          description: 'The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null'
+          x-label: Speaker
+      additionalProperties: false
+      example:
+        text: Smoke
+        start: 250
+        end: 650
+        confidence: 0.97465
+        speaker: 
+      x-label: Word
+      x-fern-sdk-group-name: transcripts
+    TranscriptSentence:
+      required:
+        - text
+        - start
+        - end
+        - confidence
+        - words
+      type: object
+      properties:
+        text:
+          type: string
+          x-label: Text
+        start:
+          type: integer
+          x-label: Start
+        end:
+          type: integer
+          x-label: End
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Confidence
+        words:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptWord'
+          x-label: Words
+        speaker:
+          description: 'The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null'
+          x-label: Speaker
+      additionalProperties: false
+      example:
+        text: Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US.
+        start: 250
+        end: 6350
+        confidence: 0.72412
+        words:
+          - text: Smoke
+            start: 250
+            end: 650
+            confidence: 0.72412
+            speaker: 
+          - text: from
+            start: 730
+            end: 1022
+            confidence: 0.99996
+            speaker: 
+          - text: hundreds
+            start: 1076
+            end: 1466
+            confidence: 0.99992
+            speaker: 
+          - text: of
+            start: 1498
+            end: 1646
+            confidence: 1
+            speaker: 
+        speaker: 
+      x-label: Sentence
+      x-fern-sdk-group-name: transcripts
+    SentencesResponse:
+      required:
+        - id
+        - confidence
+        - audio_duration
+        - sentences
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          x-label: Transcript ID
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Confidence
+        audio_duration:
+          type: number
+          x-label: Audio duration
+        sentences:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptSentence'
+          x-label: Sentences
+      additionalProperties: false
+      example:
+        sentences:
+          - text: Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US.
+            start: 250
+            end: 6350
+            confidence: 0.72412
+            words:
+              - text: Smoke
+                start: 250
+                end: 650
+                confidence: 0.72412
+                speaker: 
+              - text: from
+                start: 730
+                end: 1022
+                confidence: 0.99996
+                speaker: 
+              - text: hundreds
+                start: 1076
+                end: 1466
+                confidence: 0.99992
+                speaker: 
+              - text: of
+                start: 1498
+                end: 1646
+                confidence: 1
+                speaker: 
+            speaker: 
+          - text: Skylines from Maine to Maryland to Minnesota are gray and smoggy.
+            start: 6500
+            end: 11050
+            confidence: 0.99819
+            words:
+              - text: Skylines
+                start: 6500
+                end: 7306
+                confidence: 0.99819
+                speaker: 
+              - text: from
+                start: 7338
+                end: 7534
+                confidence: 0.99987
+                speaker: 
+              - text: Maine
+                start: 7572
+                end: 7962
+                confidence: 0.9972
+                speaker: 
+              - text: to
+                start: 8026
+                end: 8206
+                confidence: 1
+                speaker: 
+              - text: Maryland
+                start: 8228
+                end: 8650
+                confidence: 0.5192
+                speaker: 
+              - text: to
+                start: 8730
+                end: 8926
+                confidence: 1
+                speaker: 
+            speaker: 
+        id: d5a3d302-066e-43fb-b63b-8f57baf185db
+        confidence: 0.9579390654205628
+        audio_duration: 281
+      x-label: Sentences response
+      x-fern-sdk-group-name: transcripts
+    TranscriptParagraph:
+      required:
+        - text
+        - start
+        - end
+        - confidence
+        - words
+      type: object
+      properties:
+        text:
+          type: string
+          x-label: Text
+        start:
+          type: integer
+          x-label: Start
+        end:
+          type: integer
+          x-label: End
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Confidence
+        words:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptWord'
+          x-label: Words
+        speaker:
+          description: 'The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null'
+          x-label: Speaker
+      additionalProperties: false
+      example:
+        text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter Decarlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University. Good morning, professor.'
+        start: 250
+        end: 26950
+        confidence: 0.73033
+        words:
+          - text: Smoke
+            start: 250
+            end: 650
+            confidence: 0.73033
+            speaker: 
+          - text: from
+            start: 730
+            end: 1022
+            confidence: 1
+            speaker: 
+          - text: hundreds
+            start: 1076
+            end: 1466
+            confidence: 0.99992
+            speaker: 
+          - text: of
+            start: 1498
+            end: 1646
+            confidence: 1
+            speaker: 
+      x-label: Paragraph
+      x-fern-sdk-group-name: transcripts
+    ParagraphsResponse:
+      required:
+        - id
+        - confidence
+        - audio_duration
+        - paragraphs
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          x-label: Transcript ID
+        confidence:
+          maximum: 1
+          minimum: 0
+          type: number
+          format: double
+          x-label: Confidence
+        audio_duration:
+          type: number
+          x-label: Audio duration
+        paragraphs:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptParagraph'
+          x-label: Paragraphs
+      additionalProperties: false
+      example:
+        paragraphs:
+          - text: 'Smoke from hundreds of wildfires in Canada is triggering air quality alerts throughout the US. Skylines from Maine to Maryland to Minnesota are gray and smoggy. And in some places, the air quality warnings include the warning to stay inside. We wanted to better understand what''s happening here and why, so we called Peter Decarlo, an associate professor in the Department of Environmental Health and Engineering at Johns Hopkins University. Good morning, professor.'
+            start: 250
+            end: 26950
+            confidence: 0.73033
+            words:
+              - text: Smoke
+                start: 250
+                end: 650
+                confidence: 0.73033
+                speaker: 
+              - text: from
+                start: 730
+                end: 1022
+                confidence: 1
+                speaker: 
+              - text: hundreds
+                start: 1076
+                end: 1466
+                confidence: 0.99992
+                speaker: 
+              - text: of
+                start: 1498
+                end: 1646
+                confidence: 1
+                speaker: 
+          - text: 'Good morning. So what is it about the conditions right now that have caused this round of wildfires to affect so many people so far away? Well, there''s a couple of things. The season has been pretty dry already, and then the fact that we''re getting hit in the US. Is because there''s a couple of weather systems that are essentially channeling the smoke from those Canadian wildfires through Pennsylvania into the Mid Atlantic and the Northeast and kind of just dropping the smoke there.'
+            start: 27850
+            end: 56190
+            confidence: 0.99667
+            words:
+              - text: Good
+                start: 27850
+                end: 28262
+                confidence: 0.99667
+                speaker: 
+              - text: morning.
+                start: 28316
+                end: 28920
+                confidence: 0.99742
+                speaker: 
+              - text: So
+                start: 29290
+                end: 29702
+                confidence: 0.94736
+                speaker: 
+        id: d5a3d302-066e-43fb-b63b-8f57baf185db
+        confidence: 0.9578730257009361
+        audio_duration: 281
+      x-label: Paragraphs response
+      x-fern-sdk-group-name: transcripts
+    PageDetails:
+      required:
+        - limit
+        - result_count
+        - current_url
+        - prev_url
+        - next_url
+      type: object
+      properties:
+        limit:
+          type: integer
+          description: The number of results this page is limited to
+          x-label: Limit
+        result_count:
+          type: integer
+          description: The actual number of results in the page
+          x-label: Result count
+        current_url:
+          type: string
+          description: The URL used to retrieve the current page of transcripts
+          format: url
+          x-label: Current URL
+        prev_url:
+          description: The URL to the next page of transcripts. The previous URL always points to a page with older transcripts.
+          format: url
+          x-label: Previous URL
+        next_url:
+          description: The URL to the next page of transcripts. The next URL always points to a page with newer transcripts.
+          format: url
+          x-label: Next URL
+      additionalProperties: false
+      description: Details of the transcript page. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
+      example:
+        limit: 10
+        result_count: 10
+        current_url: https://api.assemblyai.com/v2/transcript?limit=10
+        prev_url: https://api.assemblyai.com/v2/transcript?limit=10&before_id=62npeahu2b-a8ea-4112-854c-69542c20d90c
+        next_url: https://api.assemblyai.com/v2/transcript?limit=10&after_id=62nfw3mlar-01ad-4631-92f6-629929496eed
+      x-label: Page details
+      x-fern-sdk-group-name: transcripts
+    ListTranscriptParams:
+      type: object
+      properties:
+        limit:
+          maximum: 200
+          minimum: 1
+          type: integer
+          description: Maximum amount of transcripts to retrieve
+          format: int64
+          default: 10
+          x-label: Limit
+        status:
+          $ref: '#/components/schemas/TranscriptStatus'
+        created_on:
+          type: string
+          description: Only get transcripts created on this date
+          format: date
+          x-label: Created on
+        before_id:
+          type: string
+          description: Get transcripts that were created before this transcript ID
+          format: uuid
+          x-label: Before ID
+        after_id:
+          type: string
+          description: Get transcripts that were created after this transcript ID
+          format: uuid
+          x-label: After ID
+        throttled_only:
+          type: boolean
+          description: 'Only get throttled transcripts, overrides the status filter'
+          default: false
+          x-label: Throttled only
+      additionalProperties: false
+      example:
+        after_id: a7c5cafd-2c2e-4bdd-b0b2-69dade2f7a1b
+        before_id: 9ea68fd3-f953-42c1-9742-976c447fb463
+        created_on: '2023-11-03'
+        limit: 2
+        status: completed
+        throttled_only: false
+      x-label: List transcript parameters
+      x-fern-sdk-group-name: transcripts
+      x-fern-ignore: true
+    TranscriptListItem:
+      required:
+        - id
+        - resource_url
+        - status
+        - created
+        - completed
+        - audio_url
+        - error
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          x-label: ID
+        resource_url:
+          type: string
+          format: url
+          x-label: Resource URL
+        status:
+          $ref: '#/components/schemas/TranscriptStatus'
+        created:
+          pattern: '^(?:(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2}(?:\.\d+)?))$'
+          type: string
+          x-label: Created
+          x-fern-type: datetime
+          x-ts-type: Date
+        completed:
+          pattern: '^(?:(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2}(?:\.\d+)?))$'
+          x-label: Completed
+          x-fern-type: optional<datetime>
+          x-ts-type: Date | null
+        audio_url:
+          type: string
+          format: url
+          x-label: Audio URL
+        error:
+          description: Error message of why the transcript failed
+          x-label: Error
+      additionalProperties: false
+      example:
+        id: 9ea68fd3-f953-42c1-9742-976c447fb463
+        resource_url: https://api.assemblyai.com/v2/transcript/9ea68fd3-f953-42c1-9742-976c447fb463
+        status: completed
+        created: '2023-11-02T21:49:25.586965'
+        completed: '2023-11-02T21:49:25.586965'
+        audio_url: https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3
+        error: 
+      x-label: Transcript list item
+      x-fern-sdk-group-name: transcripts
+    TranscriptList:
+      required:
+        - page_details
+        - transcripts
+      type: object
+      properties:
+        page_details:
+          $ref: '#/components/schemas/PageDetails'
+        transcripts:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptListItem'
+          x-label: Transcripts
+      additionalProperties: false
+      description: A list of transcripts. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
+      example:
+        page_details:
+          limit: 3
+          result_count: 3
+          current_url: https://api.assemblyai.com/v2/transcript?limit=3
+          prev_url: https://api.assemblyai.com/v2/transcript?limit=3&before_id=28a73d01-98db-41dd-9e98-2533ba0af117
+          next_url: https://api.assemblyai.com/v2/transcript?limit=3&after_id=b33f4691-85b7-4f31-be12-a87cef1c1229
+        transcripts:
+          - id: b33f4691-85b7-4f31-be12-a87cef1c1229
+            resource_url: https://api.assemblyai.com/v2/transcript/b33f4691-85b7-4f31-be12-a87cef1c1229
+            status: completed
+            created: '2024-03-11T21:29:59.9368510+04:00'
+            completed: '2024-03-11T21:30:07.3142230+04:00'
+            audio_url: http://deleted_by_user
+            error: 
+          - id: ce522f10-d204-42e8-a838-6b95098145cc
+            resource_url: https://api.assemblyai.com/v2/transcript/ce522f10-d204-42e8-a838-6b95098145cc
+            status: error
+            created: '2024-03-11T21:23:59.9794200+04:00'
+            completed: 
+            audio_url: https://storage.googleapis.com/client-docs-samples/nbc.mp3
+            error: 'Download error, unable to download https://storage.googleapis.com/client-docs-samples/nbc.mp3. Please make sure the file exists and is accessible from the internet.'
+          - id: 28a73d01-98db-41dd-9e98-2533ba0af117
+            resource_url: https://api.assemblyai.com/v2/transcript/28a73d01-98db-41dd-9e98-2533ba0af117
+            status: completed
+            created: '2024-03-11T21:12:57.3722150+04:00'
+            completed: '2024-03-11T21:13:03.2670200+04:00'
+            audio_url: https://storage.googleapis.com/aai-docs-samples/nbc.mp3
+            error: 
+      x-label: Transcript list
+      x-fern-sdk-group-name: transcripts
+    UploadedFile:
+      required:
+        - upload_url
+      type: object
+      properties:
+        upload_url:
+          type: string
+          description: 'A URL that points to your audio file, accessible only by AssemblyAI''s servers'
+          format: url
+          x-label: Uploaded file URL
+      additionalProperties: false
+      example:
+        upload_url: https://cdn.assemblyai.com/upload/f756988d-47e2-4ca3-96ce-04bb168f8f2a
+      x-label: Uploaded file
+      x-fern-sdk-group-name: files
+    CreateRealtimeTemporaryTokenParams:
+      required:
+        - expires_in
+      type: object
+      properties:
+        expires_in:
+          minimum: 60
+          type: integer
+          description: The amount of time until the token expires in seconds
+          x-label: Expires in
+      additionalProperties: false
+      example:
+        expires_in: 480
+      x-label: Create Streaming STT temporary token parameters
+      x-fern-sdk-group-name: realtime
+    RealtimeTemporaryTokenResponse:
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          type: string
+          description: The temporary authentication token for Streaming Speech-to-Text
+          x-label: Temporary authentication token
+      additionalProperties: false
+      example:
+        token: fe4145dd1e7a2e149488dcd2d553a8018a89833fc5084837d66fd1bcf5a105d4
+      x-label: Streaming STT temporary token response
+      x-fern-sdk-group-name: realtime
+    AudioIntelligenceModelStatus:
+      enum:
+        - success
+        - unavailable
+      type: string
+      description: 'Either success, or unavailable in the rare case that the model failed'
+      x-label: Audio intelligence model status
+      x-fern-sdk-group-name: transcripts
+      x-aai-enum:
+        success:
+          label: Success
+        unavailable:
+          label: Unavailable
+    PurgeLemurRequestDataResponse:
+      required:
+        - request_id
+        - request_id_to_purge
+        - deleted
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: The ID of the deletion request of the LeMUR request
+          format: uuid
+          x-label: Purge request ID
+        request_id_to_purge:
+          type: string
+          description: The ID of the LeMUR request to purge the data for
+          format: uuid
+          x-label: LeMUR request ID to purge
+        deleted:
+          type: boolean
+          description: Whether the request data was deleted
+          x-label: Deleted
+      additionalProperties: false
+      example:
+        request_id: 914fe7e4-f10a-4364-8946-34614c2873f6
+        request_id_to_purge: b7eb03ec-1650-4181-949b-75d9de317de1
+        deleted: true
+      x-label: Purge LeMUR request data response
+      x-fern-sdk-group-name: lemur
+    LemurBaseResponse:
+      required:
+        - request_id
+        - usage
+      type: object
+      properties:
+        request_id:
+          type: string
+          description: The ID of the LeMUR request
+          format: uuid
+          x-label: LeMUR request ID
+        usage:
+          $ref: '#/components/schemas/LemurUsage'
+      additionalProperties: false
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR base response
+      x-fern-sdk-group-name: lemur
+    LemurStringResponse:
+      type: object
+      allOf:
+        - required:
+            - response
+          type: object
+          properties:
+            response:
+              type: string
+              description: The response generated by LeMUR.
+              x-label: Response
+          additionalProperties: false
+        - $ref: '#/components/schemas/LemurBaseResponse'
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        response: "Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n"
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR string response
+      x-fern-sdk-group-name: lemur
+    LemurTaskResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurStringResponse'
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        response: "Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n"
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR task response
+      x-fern-sdk-group-name: lemur
+    LemurSummaryResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurStringResponse'
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        response: "- Wildfires in Canada are sending smoke and air pollution across parts of the US, triggering air quality alerts from Maine to Minnesota. Concentrations of particulate matter have exceeded safety levels.\n\n- Weather systems are channeling the smoke through Pennsylvania into the Mid-Atlantic and Northeast regions. New York City has canceled outdoor activities to keep children and vulnerable groups indoors.\n\n- Very small particulate matter can enter the lungs and impact respiratory, cardiovascular and neurological health. Young children, the elderly and those with preexisting conditions are most at risk.\n\n- The conditions causing the poor air quality could get worse or shift to different areas in coming days depending on weather patterns. More wildfires may also contribute to higher concentrations.\n\n- Climate change is leading to longer and more severe fire seasons. Events of smoke traveling long distances and affecting air quality over wide areas will likely become more common in the future.\"\n"
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR summary response
+      x-fern-sdk-group-name: lemur
+    LemurActionItemsResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurStringResponse'
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        response: "Here are some potential action items based on the transcript:\n\n- Monitor air quality levels in affected areas and issue warnings as needed.\n\n- Advise vulnerable populations like children, the elderly, and those with respiratory conditions to limit time outdoors.\n\n- Have schools cancel outdoor activities when air quality is poor.\n\n- Educate the public on health impacts of smoke inhalation and precautions to take.\n\n- Track progression of smoke plumes using weather and air quality monitoring systems.\n\n- Coordinate cross-regionally to manage smoke exposure as air masses shift.\n\n- Plan for likely increase in such events due to climate change. Expand monitoring and forecasting capabilities.\n\n- Conduct research to better understand health impacts of wildfire smoke and mitigation strategies.\n\n- Develop strategies to prevent and manage wildfires to limit air quality impacts.\n"
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR action items response
+      x-fern-sdk-group-name: lemur
+    LemurQuestionAnswerResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurBaseResponse'
+        - required:
+            - response
+          type: object
+          properties:
+            response:
+              type: array
+              items:
+                $ref: '#/components/schemas/LemurQuestionAnswer'
+              description: The answers generated by LeMUR and their questions
+              x-label: Question & answers
+          additionalProperties: false
+      example:
+        request_id: 5e1b27c2-691f-4414-8bc5-f14678442f9e
+        response:
+          - answer: 'CA, US'
+            question: Where are there wildfires?
+          - answer: yes
+            question: Is global warming affecting wildfires?
+        usage:
+          input_tokens: 27
+          output_tokens: 3
+      x-label: LeMUR question & answer response
+      x-fern-sdk-group-name: lemur
+    LemurQuestionAnswer:
+      required:
+        - question
+        - answer
+      type: object
+      properties:
+        question:
+          type: string
+          description: The question for LeMUR to answer
+          x-label: Question
+        answer:
+          type: string
+          description: The answer generated by LeMUR
+          x-label: Answer
+      additionalProperties: false
+      description: An answer generated by LeMUR and its question
+      example:
+        answer: 'CA, US'
+        question: Where are there wildfires?
+      x-label: Question & answer
+      x-fern-sdk-group-name: lemur
+    LemurResponse:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/LemurStringResponse'
+        - $ref: '#/components/schemas/LemurQuestionAnswerResponse'
+      x-label: LeMUR response
+      x-fern-sdk-group-name: lemur
+    LemurBaseParams:
+      type: object
+      properties:
+        transcript_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+            x-label: Transcript ID
+          description: "A list of completed transcripts with text. Up to a maximum of 100 files or 100 hours, whichever is lower.\nUse either transcript_ids or input_text as input into LeMUR.\n"
+          x-label: Transcript IDs
+        input_text:
+          type: string
+          description: "Custom formatted transcript data. Maximum size is the context limit of the selected model, which defaults to 100000.\nUse either transcript_ids or input_text as input into LeMUR.\n"
+          x-label: Input text
+        context:
+          oneOf:
+            - type: string
+            - type: object
+          description: Context to provide the model. This can be a string or a free-form JSON value.
+          x-label: Context
+        final_model:
+          anyOf:
+            - $ref: '#/components/schemas/LemurModel'
+            - type: string
+          description: "The model that is used for the final prompt after compression is performed.\n"
+          default: default
+          x-label: Final model
+          x-ts-type: 'LiteralUnion<LemurModel, string>'
+          x-go-type: LeMURModel
+        max_output_size:
+          type: integer
+          description: 'Max output size in tokens, up to 4000'
+          default: 2000
+          x-label: Maximum output size
+        temperature:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: "The temperature to use for the model.\nHigher values result in answers that are more creative, lower values are more conservative.\nCan be any value between 0.0 and 1.0 inclusive.\n"
+          format: float
+          default: 0
+          x-label: Temperature
+      additionalProperties: false
+      example:
+        transcript_ids:
+          - 85f9b381-e90c-46ed-beca-7d76245d375e
+          - 7c3acd18-df4d-4432-88f5-1e89f8827eea
+        context: This is an interview about wildfires.
+        final_model: default
+        temperature: 0
+        max_output_size: 3000
+      x-label: LeMUR base parameters
+      x-fern-sdk-group-name: lemur
+    LemurTaskParams:
+      type: object
+      allOf:
+        - required:
+            - prompt
+          type: object
+          properties:
+            prompt:
+              type: string
+              description: 'Your text to prompt the model to produce a desired output, including any context you want to pass into the model.'
+              x-label: Prompt
+          additionalProperties: false
+        - $ref: '#/components/schemas/LemurBaseParams'
+      example:
+        transcript_ids:
+          - 64nygnr62k-405c-4ae8-8a6b-d90b40ff3cce
+        prompt: List all the locations affected by wildfires.
+        context: This is an interview about wildfires.
+        final_model: default
+        temperature: 0
+        max_output_size: 3000
+      x-label: LeMUR task parameters
+      x-fern-sdk-group-name: lemur
+    LemurSummaryParams:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurBaseParams'
+        - type: object
+          properties:
+            answer_format:
+              type: string
+              description: "How you want the summary to be returned. This can be any text. Examples: \"TLDR\", \"bullet points\"\n"
+              x-label: Answer format
+          additionalProperties: false
+      example:
+        transcript_ids:
+          - 47b95ba5-8889-44d8-bc80-5de38306e582
+        context: This is an interview about wildfires.
+        final_model: default
+        temperature: 0
+        max_output_size: 3000
+      x-label: LeMUR summary parameters
+      x-fern-sdk-group-name: lemur
+    LemurQuestionAnswerParams:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurBaseParams'
+        - required:
+            - questions
+          type: object
+          properties:
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/LemurQuestion'
+              description: A list of questions to ask
+              x-label: Questions
+          additionalProperties: false
+      example:
+        transcript_ids:
+          - 64nygnr62k-405c-4ae8-8a6b-d90b40ff3cce
+        context: This is an interview about wildfires.
+        questions:
+          - question: Where are there wildfires?
+            answer_format: List of countries in ISO 3166-1 alpha-2 format
+            answer_options:
+              - US
+              - CA
+          - question: Is global warming affecting wildfires?
+            answer_options:
+              - yes
+              - no
+        final_model: default
+        temperature: 0
+        max_output_size: 3000
+      x-label: LeMUR question & answer parameters
+      x-fern-sdk-group-name: lemur
+    LemurQuestion:
+      required:
+        - question
+      type: object
+      properties:
+        question:
+          type: string
+          description: The question you wish to ask. For more complex questions use default model.
+          x-label: Question
+        context:
+          oneOf:
+            - type: string
+            - type: object
+          description: Any context about the transcripts you wish to provide. This can be a string or any object.
+          x-label: Context
+        answer_format:
+          type: string
+          description: "How you want the answer to be returned. This can be any text. Can't be used with answer_options. Examples: \"short sentence\", \"bullet points\"\n"
+          x-label: Answer format
+        answer_options:
+          type: array
+          items:
+            type: string
+            x-label: Answer option
+          description: "What discrete options to return. Useful for precise responses. Can't be used with answer_format. Example: [\"Yes\", \"No\"]\n"
+          x-label: Answer options
+      additionalProperties: false
+      example:
+        question: Where are there wildfires?
+        answer_format: List of countries in ISO 3166-1 alpha-2 format
+      x-label: LeMUR question
+      x-fern-sdk-group-name: lemur
+    LemurActionItemsParams:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/LemurBaseParams'
+        - type: object
+          properties:
+            answer_format:
+              type: string
+              description: "How you want the action items to be returned. This can be any text.\nDefaults to \"Bullet Points\".\n"
+              default: Bullet Points
+              x-label: Answer format
+          additionalProperties: false
+      example:
+        transcript_ids:
+          - 64nygnr62k-405c-4ae8-8a6b-d90b40ff3cce
+        context: This is an interview about wildfires.
+        answer_format: Bullet Points
+        final_model: default
+        temperature: 0
+        max_output_size: 3000
+      x-label: LeMUR action items parameters
+      x-fern-sdk-group-name: lemur
+    LemurModel:
+      enum:
+        - anthropic/claude-3-5-sonnet
+        - anthropic/claude-3-opus
+        - anthropic/claude-3-haiku
+        - anthropic/claude-3-sonnet
+        - anthropic/claude-2-1
+        - anthropic/claude-2
+        - default
+        - anthropic/claude-instant-1-2
+        - basic
+        - assemblyai/mistral-7b
+      type: string
+      description: "The model that is used for the final prompt after compression is performed.\n"
+      x-label: LeMUR model
+      x-fern-sdk-group-name: lemur
+      x-fern-enum:
+        anthropic/claude-3-5-sonnet:
+          description: "Claude 3.5 Sonnet is Anthropic's most intelligent model to date, outperforming Claude 3 Opus on a wide range of evaluations, with the speed and cost of Claude 3 Sonnet.\n"
+          casing:
+            camel: anthropicClaude3_5_Sonnet
+            snake: anthropic_claude3_5_sonnet
+            pascal: AnthropicClaude3_5_Sonnet
+            screamingSnake: ANTHROPIC_CLAUDE3_5_SONNET
+        anthropic/claude-3-opus:
+          description: "Claude 3 Opus is good at handling complex analysis, longer tasks with many steps, and higher-order math and coding tasks.\n"
+          casing:
+            camel: anthropicClaude3_Opus
+            snake: anthropic_claude3_opus
+            pascal: AnthropicClaude3_Opus
+            screamingSnake: ANTHROPIC_CLAUDE3_OPUS
+        anthropic/claude-3-haiku:
+          description: "Claude 3 Haiku is the fastest model that can execute lightweight actions.\n"
+          casing:
+            camel: anthropicClaude3_Haiku
+            snake: anthropic_claude3_haiku
+            pascal: AnthropicClaude3_Haiku
+            screamingSnake: ANTHROPIC_CLAUDE3_HAIKU
+        anthropic/claude-3-sonnet:
+          description: "Claude 3 Sonnet is a legacy model with a balanced combination of performance and speed for efficient, high-throughput tasks.\n"
+          casing:
+            camel: anthropicClaude3_Sonnet
+            snake: anthropic_claude3_sonnet
+            pascal: AnthropicClaude3_Sonnet
+            screamingSnake: ANTHROPIC_CLAUDE3_SONNET
+        anthropic/claude-2-1:
+          description: "Claude 2.1 is a legacy model similar to Claude 2.0. The key difference is that it minimizes model hallucination and system prompts, has a larger context window, and performs better in citations.\n"
+          casing:
+            camel: anthropicClaude2_1
+            snake: anthropic_claude2_1
+            pascal: AnthropicClaude2_1
+            screamingSnake: ANTHROPIC_CLAUDE2_1
+        anthropic/claude-2-0:
+          description: "Claude 2.0 is a legacy model that has good complex reasoning. It offers more nuanced responses and improved contextual comprehension.\n"
+          casing:
+            camel: anthropicClaude2_0
+            snake: anthropic_claude2_0
+            pascal: AnthropicClaude2_0
+            screamingSnake: ANTHROPIC_CLAUDE2_0
+        default:
+          description: Legacy model. The same as Claude 2.0.
+        anthropic/claude-instant-1-2:
+          description: "Claude Instant is a legacy model that is optimized for speed and cost. Claude Instant can complete requests up to 20% faster than Claude 2.0.\n"
+          casing:
+            camel: anthropicClaudeInstant1_2
+            snake: anthropic_claude_instant1_2
+            pascal: AnthropicClaudeInstant1_2
+            screamingSnake: ANTHROPIC_CLAUDE_INSTANT1_2
+        basic:
+          description: Legacy model. The same as Claude Instant.
+        assemblyai/mistral-7b:
+          description: "LeMUR Mistral 7B is an LLM self-hosted by AssemblyAI. It's the fastest and cheapest of the LLM options. We recommend it for use cases like basic summaries and factual Q&A.\n"
+          casing:
+            camel: assemblyaiMistral7b
+            snake: assemblyai_mistral7b
+            pascal: AssemblyaiMistral7b
+            screamingSnake: ASSEMBLYAI_MISTRAL7B
+      x-aai-enum:
+        anthropic/claude-3-5-sonnet:
+          label: Claude 3.5 Sonnet (on Anthropic)
+        anthropic/claude-3-opus:
+          label: Claude 3 Opus (on Anthropic)
+        anthropic/claude-3-haiku:
+          label: Claude 3 Haiku (on Anthropic)
+        anthropic/claude-3-sonnet:
+          label: Claude 3 Sonnet (on Anthropic)
+        anthropic/claude-2-1:
+          label: Claude 2.1 (on Anthropic)
+        anthropic/claude-2:
+          label: Claude 2 (on Anthropic)
+        default:
+          label: Default
+        anthropic/claude-instant-1-2:
+          label: Claude Instant 1.2 (on Anthropic)
+        basic:
+          label: Basic
+        assemblyai/mistral-7b:
+          label: Mistral 7B (hosted by AssemblyAI)
+    LemurUsage:
+      required:
+        - input_tokens
+        - output_tokens
+      type: object
+      properties:
+        input_tokens:
+          minimum: 0
+          type: integer
+          description: The number of input tokens used by the model
+          x-label: Input tokens
+        output_tokens:
+          minimum: 0
+          type: integer
+          description: The number of output tokens generated by the model
+          x-label: Output tokens
+      additionalProperties: false
+      description: The usage numbers for the LeMUR request
+      x-label: Usage
+      x-fern-sdk-group-name: lemur
+    Error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          x-label: Error message
+        status:
+          type: string
+          x-label: Status
+      additionalProperties: false
+      example:
+        error: format_text must be a Boolean
+      x-label: Error
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      x-label: Bad request
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      x-label: Unauthorized
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      x-label: Not found
+    TooManyRequests:
+      description: Too many requests
+      headers:
+        Retry-After:
+          description: The number of seconds to wait before retrying the request
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      x-label: Too many requests
+    InternalServerError:
+      description: An error occurred while processing the request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      x-label: Internal server error
+    ServiceUnavailable:
+      description: Service unavailable
+      x-label: Service unavailable
+    GatewayTimeout:
+      description: Gateway timeout
+      x-label: Gateway timeout
+  examples:
+    VttSubtitlesResponse:
+      value: "WEBVTT\n00:12.340 --> 00:16.220\nLast year I showed these two slides said that demonstrate\n00:16.200 --> 00:20.040\nthat the Arctic ice cap which for most of the last 3,000,000 years has been the\n00:20.020 --> 00:25.040\nsize of the lower 48 States has shrunk by 40% but this understates\n"
+    SrtSubtitlesResponse:
+      value: "1\n00:00:13,160 --> 00:00:16,694\nLast year I showed these two slides that demonstrate that the Arctic\n\n2\n00:00:16,734 --> 00:00:20,214\nice cap, which for most of the last 3 million years has been the size\n\n3\n00:00:20,254 --> 00:00:23,274\nof the lower 48 states, has shrunk by 40%.\n"
+    DeleteTranscriptResponse:
+      value:
+        id: 47b95ba5-8889-44d8-bc80-5de38306e582
+        language_model: assemblyai_default
+        acoustic_model: assemblyai_default
+        language_code: 'null'
+        language_detection: 'false'
+        language_confidence_threshold: 'null'
+        language_confidence: 'null'
+        status: completed
+        audio_url: http://deleted_by_user
+        text: Deleted by user.
+        words: 'null'
+        utterances: 'null'
+        confidence: 'null'
+        audio_duration: '390'
+        punctuate: 'null'
+        format_text: 'null'
+        dual_channel: 'null'
+        webhook_url: http://deleted_by_user
+        webhook_status_code: 'null'
+        webhook_auth: 'false'
+        webhook_auth_header_name: 'null'
+        speed_boost: 'null'
+        auto_highlights_result: 'null'
+        auto_highlights: 'false'
+        audio_start_from: 'null'
+        audio_end_at: 'null'
+        word_boost: 'null'
+        boost_param: 'null'
+        filter_profanity: 'null'
+        redact_pii: 'false'
+        redact_pii_audio: 'null'
+        redact_pii_audio_quality: 'null'
+        redact_pii_policies: 'null'
+        redact_pii_sub: 'null'
+        speaker_labels: 'null'
+        speaker_count: 'null'
+        error: 'null'
+        content_safety: 'null'
+        iab_categories: 'null'
+        content_safety_labels: 'null'
+        iab_categories_result: 'null'
+        custom_spelling: 'null'
+        cluster_id: 'null'
+        throttled: 'null'
+        auto_chapters: 'false'
+        summarization: 'false'
+        summary_type: 'null'
+        summary_model: 'null'
+        custom_topics: 'null'
+        topics: 'null'
+        speech_threshold: 'null'
+        speech_model: 'null'
+        chapters: 'null'
+        disfluencies: 'true'
+        entity_detection: 'false'
+        entities: 'null'
+        speakers_expected: 'null'
+        summary: 'null'
+        sentiment_analysis: 'false'
+        sentiment_analysis_results: 'null'
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      name: Authorization
+      in: header
+  links:
+    GetTranscriptById:
+      operationId: getTranscript
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}`.'
+    GetTranscriptSentencesById:
+      operationId: getSentences
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}/sentences`.'
+    GetTranscriptParagraphsById:
+      operationId: getParagraphs
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}/paragraphs`.'
+    GetTranscriptSubtitlesById:
+      operationId: getSubtitles
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}/{subtitle_format}`.'
+    GetTranscriptRedactedAudioById:
+      operationId: getRedactedAudio
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}/redacted-audio`.'
+    WordSearchByTranscriptId:
+      operationId: wordSearch
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `GET /v2/transcript/{transcript_id}/word-search`.'
+    DeleteTranscriptById:
+      operationId: deleteTranscript
+      parameters:
+        transcript_id: $response.body#/id
+      description: 'The transcript ID can be used as the `transcript_id` parameter in `DELETE /v2/transcript/{transcript_id}`.'
+    PurgeLemurRequestDataById:
+      operationId: purgeLemurRequestData
+      parameters:
+        request_id: $response.body#/request_id
+      description: 'The LeMUR request ID can be used as the `request_id` parameter in `DELETE /lemur/v3/{request_id}`.'
+security:
+  - ApiKey: [ ]
+tags:
+  - name: transcript
+    description: Transcript related operations
+    externalDocs:
+      url: https://www.assemblyai.com/docs/guides/transcribing-an-audio-file
+  - name: LeMUR
+    description: LeMUR related operations
+    externalDocs:
+      url: https://www.assemblyai.com/docs/guides/processing-audio-with-llms-using-lemur
+  - name: streaming
+    description: Streaming Speech-to-Text
+    externalDocs:
+      url: https://www.assemblyai.com/docs/speech-to-text/streaming

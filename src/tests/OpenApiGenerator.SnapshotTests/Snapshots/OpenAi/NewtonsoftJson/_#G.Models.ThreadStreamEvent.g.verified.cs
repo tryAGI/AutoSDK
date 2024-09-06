@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ThreadStreamEventVariant1? Value1 { get; init; }

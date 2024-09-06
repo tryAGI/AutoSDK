@@ -15,7 +15,7 @@ namespace G
     public readonly partial struct AssistantsApiResponseFormatOption : global::System.IEquatable<AssistantsApiResponseFormatOption>
     {
         /// <summary>
-        /// 
+        /// `auto` is the default value
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantsApiResponseFormatOptionEnum? Value1 { get; init; }

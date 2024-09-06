@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct PullRequestWebhook : global::System.IEquatable<PullRequestWebhook>
     {
         /// <summary>
-        /// 
+        /// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PullRequest? Value1 { get; init; }

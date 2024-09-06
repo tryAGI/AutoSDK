@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// 
+        /// A start event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStartEvent? Start { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A delta event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageDeltaEvent? Delta { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A stop event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStopEvent? Stop { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A start event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStartEvent? ContentBlockStart { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A delta event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockDeltaEvent? ContentBlockDelta { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A stop event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStopEvent? ContentBlockStop { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A ping event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PingEvent? Ping { get; init; }

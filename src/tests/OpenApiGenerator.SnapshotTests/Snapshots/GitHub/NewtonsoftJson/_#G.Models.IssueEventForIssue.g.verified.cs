@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct IssueEventForIssue : global::System.IEquatable<IssueEventForIssue>
     {
         /// <summary>
-        /// 
+        /// Labeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LabeledIssueEvent? Labeled { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Unlabeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UnlabeledIssueEvent? Unlabeled { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Assigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssignedIssueEvent? Assigned { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Unassigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UnassignedIssueEvent? Unassigned { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Milestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MilestonedIssueEvent? Milestoned { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Demilestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DemilestonedIssueEvent? Demilestoned { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Renamed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RenamedIssueEvent? Renamed { get; init; }
@@ -257,7 +257,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Requested Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewRequestedIssueEvent? ReviewRequested { get; init; }
@@ -292,7 +292,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Request Removed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemoved { get; init; }
@@ -327,7 +327,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Dismissed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewDismissedIssueEvent? ReviewDismissed { get; init; }
@@ -362,7 +362,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Locked Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LockedIssueEvent? Locked { get; init; }
@@ -397,7 +397,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Added to Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AddedToProjectIssueEvent? AddedToProject { get; init; }
@@ -432,7 +432,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Moved Column in Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProject { get; init; }
@@ -467,7 +467,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Removed from Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RemovedFromProjectIssueEvent? RemovedFromProject { get; init; }
@@ -502,7 +502,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Converted Note to Issue Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteTo { get; init; }

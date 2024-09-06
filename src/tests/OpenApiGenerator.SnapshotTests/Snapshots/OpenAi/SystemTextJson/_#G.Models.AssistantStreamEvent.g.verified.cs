@@ -166,7 +166,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ErrorEvent? Error { get; init; }
@@ -201,7 +201,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DoneEvent? Done { get; init; }

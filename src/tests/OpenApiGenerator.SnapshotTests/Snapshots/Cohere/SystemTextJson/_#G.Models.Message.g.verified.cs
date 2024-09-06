@@ -12,7 +12,8 @@ namespace G
     public readonly partial struct Message : global::System.IEquatable<Message>
     {
         /// <summary>
-        /// 
+        /// Represents a single message in the chat history, excluding the current user turn. It has two properties: `role` and `message`. The `role` identifies the sender (`CHATBOT`, `SYSTEM`, or `USER`), while the `message` contains the text content.<br/>
+        /// The chat_history parameter should not be used for `SYSTEM` messages in most cases. Instead, to add a `SYSTEM` role message at the beginning of a conversation, the `preamble` parameter should be used.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatMessage? Chat { get; init; }
@@ -47,7 +48,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolMessage? Tool { get; init; }

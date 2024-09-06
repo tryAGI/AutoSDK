@@ -12,7 +12,8 @@ namespace G
     public readonly partial struct WebhookConfigInsecureSsl : global::System.IEquatable<WebhookConfigInsecureSsl>
     {
         /// <summary>
-        /// 
+        /// Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**<br/>
+        /// Example: "0"
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value1 { get; init; }
