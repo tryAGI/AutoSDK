@@ -4,7 +4,6 @@ using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Core.Models;
-using OpenApiGenerator.Core.Serialization;
 using OpenApiGenerator.Core.Serialization.Form;
 
 namespace OpenApiGenerator.Core.Extensions;
@@ -71,6 +70,12 @@ public static class OpenApiExtensions
         {
             return string.Empty;
         }
+
+        // Replace to extensions?
+        // if (context.CombinedEnumOriginalSchema != null)
+        // {
+        //     return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.CombinedEnumOriginalSchema.Value.Value.Enum.First().ToEnumValue(context.Settings).Name;
+        // }
         if (context.Schema.Enum.Any() && context.Schema.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
             return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;

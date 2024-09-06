@@ -70,7 +70,7 @@ namespace {@namespace}
         public {x.Type.CSharpTypeWithNullability} {x.Name} {{ get; }}
 #endif
 
-        {x.Summary.ToXmlDocumentationSummary(level: 8)}
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif

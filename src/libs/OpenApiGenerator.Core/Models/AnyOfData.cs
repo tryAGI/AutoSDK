@@ -65,6 +65,7 @@ public readonly record struct AnyOfData(
                             (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
                             className)
                         : $"Value{i + 1}",
+                    Summary = x.Schema.GetSummary(),
                 }).ToImmutableArray()
                 : ImmutableArray<PropertyData>.Empty,
             Settings: context.Settings);
