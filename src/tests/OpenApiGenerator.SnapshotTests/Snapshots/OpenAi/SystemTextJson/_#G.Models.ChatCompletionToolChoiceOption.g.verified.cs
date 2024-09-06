@@ -17,7 +17,7 @@ namespace G
     public readonly partial struct ChatCompletionToolChoiceOption : global::System.IEquatable<ChatCompletionToolChoiceOption>
     {
         /// <summary>
-        /// 
+        /// `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionToolChoiceOptionEnum? Value1 { get; init; }
@@ -52,7 +52,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Specifies a tool the model should use. Use to force the model to call a specific function.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionNamedToolChoice? Value2 { get; init; }

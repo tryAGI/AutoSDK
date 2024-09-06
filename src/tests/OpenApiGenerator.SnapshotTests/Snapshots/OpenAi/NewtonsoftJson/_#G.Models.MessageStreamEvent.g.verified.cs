@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEventVariant1? Value1 { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEventVariant2? Value2 { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEventVariant3? Value3 { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEventVariant4? Value4 { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEventVariant5? Value5 { get; init; }

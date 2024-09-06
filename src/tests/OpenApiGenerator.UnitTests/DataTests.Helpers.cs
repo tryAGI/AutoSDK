@@ -41,7 +41,7 @@ public partial class DataTests : VerifyBase
 
     private Task VerifyAsync(
         Data data,
-        [CallerMemberName] string? callerName = null)
+        string resourceName)
     {
         // var classesTask =
         //     Verify(data.Classes
@@ -69,11 +69,11 @@ public partial class DataTests : VerifyBase
         //         .UseFileName("_");
         var schemasTask =
             Verify(data.Schemas.Select(x => $"{GetMargin(x)}{x.Id}({x.Type})"))
-                .UseDirectory($"Snapshots/{callerName}/Schemas")
+                .UseDirectory($"Snapshots/{resourceName}/Schemas")
                 .UseFileName("_");
         var resolvedSchemasTask =
             Verify(ToResolvedStrings(data.FilteredSchemas.Where(x => x.Parent == null)))
-                .UseDirectory($"Snapshots/{callerName}/ResolvedSchemas")
+                .UseDirectory($"Snapshots/{resourceName}/ResolvedSchemas")
                 .UseFileName("_");
         
         // classesTask = classesTask.AutoVerify();

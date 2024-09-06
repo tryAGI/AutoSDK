@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct RunStreamEvent : global::System.IEquatable<RunStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant1? Value1 { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant2? Value2 { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant3? Value3 { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant4? Value4 { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant5? Value5 { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant6? Value6 { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant7? Value7 { get; init; }
@@ -257,7 +257,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant8? Value8 { get; init; }
@@ -292,7 +292,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant9? Value9 { get; init; }
@@ -327,7 +327,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEventVariant10? Value10 { get; init; }

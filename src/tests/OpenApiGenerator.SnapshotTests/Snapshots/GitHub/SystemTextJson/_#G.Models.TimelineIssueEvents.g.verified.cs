@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct TimelineIssueEvents : global::System.IEquatable<TimelineIssueEvents>
     {
         /// <summary>
-        /// 
+        /// Labeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LabeledIssueEvent? LabeledEvent { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Unlabeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UnlabeledIssueEvent? UnlabeledEvent { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Milestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MilestonedIssueEvent? MilestonedEvent { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Demilestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DemilestonedIssueEvent? DemilestonedEvent { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Renamed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RenamedIssueEvent? RenamedEvent { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Requested Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewRequestedIssueEvent? ReviewRequestedEvent { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Request Removed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedEvent { get; init; }
@@ -257,7 +257,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Review Dismissed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReviewDismissedIssueEvent? ReviewDismissedEvent { get; init; }
@@ -292,7 +292,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Locked Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LockedIssueEvent? LockedEvent { get; init; }
@@ -327,7 +327,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Added to Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AddedToProjectIssueEvent? AddedToProjectEvent { get; init; }
@@ -362,7 +362,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Moved Column in Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MovedColumnInProjectIssueEvent? MovedColumnInProjectEvent { get; init; }
@@ -397,7 +397,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Removed from Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RemovedFromProjectIssueEvent? RemovedFromProjectEvent { get; init; }
@@ -432,7 +432,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Converted Note to Issue Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConvertedNoteToIssueIssueEvent? ConvertedNoteToEvent { get; init; }
@@ -467,7 +467,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Comment Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineCommentEvent? CommentEvent { get; init; }
@@ -502,7 +502,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Cross Referenced Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineCrossReferencedEvent? CrossReferencedEvent { get; init; }
@@ -537,7 +537,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Committed Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineCommittedEvent? CommittedEvent { get; init; }
@@ -572,7 +572,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Reviewed Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineReviewedEvent? ReviewedEvent { get; init; }
@@ -607,7 +607,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Line Commented Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineLineCommentedEvent? LineCommentedEvent { get; init; }
@@ -642,7 +642,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Commit Commented Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineCommitCommentedEvent? CommitCommentedEvent { get; init; }
@@ -677,7 +677,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Assigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineAssignedIssueEvent? AssignedEvent { get; init; }
@@ -712,7 +712,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Timeline Unassigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TimelineUnassignedIssueEvent? UnassignedEvent { get; init; }
@@ -747,7 +747,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// State Change Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StateChangeIssueEvent? StateChangeEvent { get; init; }

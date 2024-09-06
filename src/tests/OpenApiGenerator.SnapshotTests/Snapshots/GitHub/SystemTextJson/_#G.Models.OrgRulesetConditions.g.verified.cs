@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct OrgRulesetConditions : global::System.IEquatable<OrgRulesetConditions>
     {
         /// <summary>
-        /// 
+        /// Conditions to target repositories by name and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? Value1 { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Conditions to target repositories by id and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? Value2 { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Conditions to target repositories by property and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? Value3 { get; init; }

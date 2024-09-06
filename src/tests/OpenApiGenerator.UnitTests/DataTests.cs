@@ -5,105 +5,37 @@ namespace OpenApiGenerator.UnitTests;
 
 public partial class DataTests
 {
-    [TestMethod]
-    public Task OpenAi()
+    [DataTestMethod]
+    [DataRow("ai21.yaml")]
+    [DataRow("anthropic.yaml")]
+    [DataRow("assemblyai.yaml")]
+    [DataRow("cohere.yaml")]
+    [DataRow("dedoose.json")]
+    [DataRow("github.yaml")]
+    [DataRow("huggingface.yaml")]
+    [DataRow("ipinfo.yaml")]
+    [DataRow("langsmith.yaml")]
+    [DataRow("leonardo.yaml")]
+    [DataRow("ollama.yaml")]
+    [DataRow("openai.yaml")]
+    [DataRow("petstore.yaml")]
+    [DataRow("replicate.yaml")]
+    [DataRow("specialcases.yaml")]
+    [DataRow("together.yaml")]
+    [DataRow("twitch.json")]
+    public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
-            H.Resources.openai_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task Ollama()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.ollama_yaml.AsString(),
+            new H.Resource(resourceName).AsString(),
             DefaultSettings with
             {
                 GenerateJsonSerializerContextTypes = true,
-            })));
-    }
-
-    [TestMethod]
-    public Task Replicate()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.replicate_yaml.AsString(),
-            DefaultSettings with
-            {
-                MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
-            })));
-    }
-    
-    [TestMethod]
-    public Task GitHub()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.github_yaml.AsString(),
-            DefaultSettings)));
-    }
-    
-    [TestMethod]
-    public Task Leonardo()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.leonardo_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task LangSmith()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.langsmith_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task Together()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.together_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task SpecialCases()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.specialcases_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task Dedoose()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.dedoose_json.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task Ai21()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.ai21_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task HuggingFace()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.huggingface_yaml.AsString(),
-            DefaultSettings)));
-    }
-
-    [TestMethod]
-    public Task Cohere()
-    {
-        return VerifyAsync(Data.Prepare((
-            H.Resources.cohere_yaml.AsString(),
-            DefaultSettings)));
+                MethodNamingConvention = resourceName switch
+                {
+                    "replicate.yaml" => MethodNamingConvention.OperationIdWithDots,
+                    _ => default,
+                }
+            })),
+            resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
 }

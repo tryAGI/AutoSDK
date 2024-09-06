@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct BlockDelta : global::System.IEquatable<BlockDelta>
     {
         /// <summary>
-        /// 
+        /// A delta in a streaming text block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextBlockDelta? Text { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A delta in a streaming input JSON.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputJsonBlockDelta? InputJson { get; init; }

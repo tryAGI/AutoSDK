@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct RunStepStreamEvent : global::System.IEquatable<RunStepStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant1? Value1 { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant2? Value2 { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant3? Value3 { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant4? Value4 { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant5? Value5 { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant6? Value6 { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/runs/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStepStreamEventVariant7? Value7 { get; init; }

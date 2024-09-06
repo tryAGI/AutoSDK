@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct Block : global::System.IEquatable<Block>
     {
         /// <summary>
-        /// 
+        /// A block of text content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextBlock? Text { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A block of image content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageBlock? Image { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// The tool the model wants to use.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolUseBlock? ToolUse { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// The result of using a tool.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolResultBlock? ToolResult { get; init; }

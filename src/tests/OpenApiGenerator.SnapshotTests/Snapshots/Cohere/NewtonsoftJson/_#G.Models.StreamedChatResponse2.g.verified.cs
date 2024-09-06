@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct StreamedChatResponse2 : global::System.IEquatable<StreamedChatResponse2>
     {
         /// <summary>
-        /// 
+        /// A streamed event which signifies that a stream has started.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatMessageStartEvent? MessageStartEvent { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentStartEvent? ContentStartEvent { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which contains a delta of chat text content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentDeltaEvent? ContentDeltaEvent { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentEndEvent? ContentEndEvent { get; init; }
@@ -152,7 +152,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed event which contains a delta of tool plan text.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolPlanDeltaEvent? ToolPlanDeltaEvent { get; init; }
@@ -187,7 +187,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallStartEvent? ToolCallStartEvent { get; init; }
@@ -222,7 +222,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a delta in tool call arguments.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallDeltaEvent? ToolCallDeltaEvent { get; init; }
@@ -257,7 +257,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallEndEvent? ToolCallEndEvent { get; init; }
@@ -292,7 +292,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A streamed event which signifies that the chat message has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatMessageEndEvent? MessageEndEvent { get; init; }

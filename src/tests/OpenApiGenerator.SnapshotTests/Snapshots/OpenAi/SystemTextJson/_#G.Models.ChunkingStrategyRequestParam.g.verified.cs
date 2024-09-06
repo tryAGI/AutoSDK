@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
         /// <summary>
-        /// 
+        /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AutoChunkingStrategyRequestParam? Auto { get; init; }

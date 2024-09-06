@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct ChatContentEndEvent : global::System.IEquatable<ChatContentEndEvent>
     {
         /// <summary>
-        /// 
+        /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatStreamEventType? Value1 { get; init; }

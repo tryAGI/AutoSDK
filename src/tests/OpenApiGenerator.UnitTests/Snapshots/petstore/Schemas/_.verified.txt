@@ -1,0 +1,18 @@
+﻿[
+  Pet(class),
+    Id(long),
+    Name(string),
+    Tag(string),
+  Pets(array),
+    Pet(ref),
+  Error(class),
+    Code(int),
+    Message(string),
+  ListPetsLimit(int),
+  ShowPetByIdPetId(string),
+  Pets(ref),
+  Error(ref),
+  Error(ref),
+  Pet(ref),
+  Error(ref)
+]

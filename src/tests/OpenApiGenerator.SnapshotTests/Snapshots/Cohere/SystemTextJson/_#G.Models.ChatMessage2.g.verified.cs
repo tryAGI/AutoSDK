@@ -12,7 +12,7 @@ namespace G
     public readonly partial struct ChatMessage2 : global::System.IEquatable<ChatMessage2>
     {
         /// <summary>
-        /// 
+        /// A message from the user.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UserMessage? UserMessage { get; init; }
@@ -47,7 +47,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantMessage? AssistantMessage { get; init; }
@@ -82,7 +82,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A message from the system.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SystemMessage? SystemMessage { get; init; }
@@ -117,7 +117,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// A message from the system.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolMessage2? Tool { get; init; }
