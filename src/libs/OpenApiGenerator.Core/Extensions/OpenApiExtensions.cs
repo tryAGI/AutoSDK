@@ -1,5 +1,8 @@
+using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.OpenApi;
 using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
@@ -31,6 +34,106 @@ public static class OpenApiExtensions
         openApiDocument.SecurityRequirements ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
+        return openApiDocument;
+    }
+    
+    public static OpenApiDocument Simplify(
+        this OpenApiDocument openApiDocument)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        var schemasToRemove = new List<KeyValuePair<string, OpenApiSchema>>();
+        var schemasToAdd = new List<KeyValuePair<string, OpenApiSchema>>();
+        foreach (var schema in openApiDocument.Components.Schemas)
+        {
+            // If schema is OneOf and all children have only one enum value, combine them into one schema.
+            if (schema.Value.IsOneOf() &&
+                schema.Value.OneOf.All(child =>
+                    child.Properties.Any(subChild =>
+                        subChild.Value.IsEnum() &&
+                        subChild.Value.Enum.Count == 1)))
+            {
+                var subChildren = schema.Value.OneOf
+                    .Select(child =>
+                        child.Properties.First(subChild =>
+                            subChild.Value.IsEnum() &&
+                            subChild.Value.Enum.Count == 1))
+                    .ToList();
+                var newEnum = new OpenApiSchema
+                {
+                    Enum = subChildren
+                        .Select(x => x.Value.Enum.First())
+                        .ToArray(),
+                    Type = "string",
+                }.WithKey(schema.Key.ToPropertyName() + subChildren.First().Key.ToPropertyName());
+                schemasToAdd.Add(newEnum);
+
+                foreach (var child in schema.Value.OneOf)
+                {
+                    var subChild = child.Properties.First(subChild =>
+                        subChild.Value.IsEnum() &&
+                        subChild.Value.Enum.Count == 1);
+                    child.Properties.Remove(subChild);
+                    var newSubChild = new KeyValuePair<string, OpenApiSchema>(
+                        subChild.Key,
+                        new OpenApiSchema
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Id = newEnum.Key,
+                                Type = ReferenceType.Schema,
+                            },
+                        });
+                    child.Properties.Add(newSubChild);
+                    
+                    newSubChild.Value.Extensions["x-original-schema"] = new OpenApiString(
+                        subChild.Value.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0));
+                }
+
+                // Remove duplicated schemas from OneOf.
+                // Skip schemas with references.
+                if (schema.Value.OneOf.Any(x => x.Reference == null))
+                {
+                    var duplicatedSchemas = new List<OpenApiSchema>();
+                    foreach (var group in schema.Value.OneOf
+                                 .GroupBy(x => x.Properties
+                                     .Select(y => (y.Key, y.Value.Type, y.Value.Format, y.Value.Reference?.Id))
+                                     .ToImmutableArray().AsEquatableArray())
+                                 .Where(x => x.Count() > 1))
+                    {
+                        var first = group.First();
+                        foreach (var schemaToRemove in group.Skip(1))
+                        {
+                            first.Description += $"\n{schemaToRemove.Description}";
+                            duplicatedSchemas.Add(schemaToRemove);
+                        }
+                    }
+
+                    foreach (var duplicatedSchema in duplicatedSchemas)
+                    {
+                        schema.Value.OneOf.Remove(duplicatedSchema);
+                    }
+                }
+                
+                // Simplify OneOf with only one schema.
+                if (schema.Value.OneOf.Count == 1)
+                {
+                    schemasToRemove.Add(schema);
+                    schemasToAdd.Add(new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key,
+                        schema.Value.OneOf.First()));
+                }
+            }
+        }
+        foreach (var schema in schemasToRemove)
+        {
+            openApiDocument.Components.Schemas.Remove(schema);
+        }
+        foreach (var schema in schemasToAdd)
+        {
+            openApiDocument.Components.Schemas.Add(schema);
+        }
+        
         return openApiDocument;
     }
     

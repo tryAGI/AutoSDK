@@ -12,6 +12,19 @@ public static class SmartNamedAnyOfNames
             nameWords.Except(classNameWords));
     }
     
+    public static string ComputeSmartNameForCombinedEnums(string[] names)
+    {
+        var words = names
+            .SelectMany(SplitToWordsByUpperCharacters)
+            .GroupBy(x => x)
+            .Where(x => x.Count() == names.Length)
+            .Select(x => x.Key)
+            .ToArray();
+        
+        // Combine the repeated words from all names
+        return string.Concat(words);
+    }
+    
     public static IReadOnlyList<string> SplitToWordsByUpperCharacters(string text)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
