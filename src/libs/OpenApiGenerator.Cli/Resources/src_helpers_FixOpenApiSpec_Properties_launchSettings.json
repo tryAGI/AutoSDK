@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FixOpenApiSpec": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../../../src/libs/$SolutionName$/openapi.yaml"
+    }
+  }
+}

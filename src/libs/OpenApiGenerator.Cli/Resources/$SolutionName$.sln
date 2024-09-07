@@ -1,0 +1,84 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E793AF18-4371-4EBD-96FC-195EB1798855}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		src\Directory.Build.props = src\Directory.Build.props
+		LICENSE = LICENSE
+		README.md = README.md
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{61E7E11E-4558-434C-ACE8-06316A3097B3}"
+	ProjectSection(SolutionItems) = preProject
+		src\libs\Directory.Build.props = src\libs\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AAA11B78-2764-4520-A97E-46AA7089A588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$SolutionName$", "src\libs\$SolutionName$\$SolutionName$.csproj", "{0028BC85-0064-4CE8-A21A-C1F5E922BD59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$SolutionName$.IntegrationTests", "src\tests\$SolutionName$.IntegrationTests\$SolutionName$.IntegrationTests.csproj", "{592ADBC9-C951-4AF7-A163-B6C63B970B19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{B761B212-7CAB-46A7-BB98-B76EDE56530D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixOpenApiSpec", "src\helpers\FixOpenApiSpec\FixOpenApiSpec.csproj", "{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{2E33DFAF-4E36-4549-832E-202AAB6D1B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimmingHelper", "src\helpers\TrimmingHelper\TrimmingHelper.csproj", "{4BB0367D-803F-430B-AE3B-853811C48A94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{02762835-D98C-4E26-B6AC-992CC318DCEC}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
+		.github\workflows\auto-update.yml = .github\workflows\auto-update.yml
+		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0028BC85-0064-4CE8-A21A-C1F5E922BD59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0028BC85-0064-4CE8-A21A-C1F5E922BD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0028BC85-0064-4CE8-A21A-C1F5E922BD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0028BC85-0064-4CE8-A21A-C1F5E922BD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E33DFAF-4E36-4549-832E-202AAB6D1B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E33DFAF-4E36-4549-832E-202AAB6D1B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E33DFAF-4E36-4549-832E-202AAB6D1B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E33DFAF-4E36-4549-832E-202AAB6D1B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB0367D-803F-430B-AE3B-853811C48A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB0367D-803F-430B-AE3B-853811C48A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB0367D-803F-430B-AE3B-853811C48A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB0367D-803F-430B-AE3B-853811C48A94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0028BC85-0064-4CE8-A21A-C1F5E922BD59} = {61E7E11E-4558-434C-ACE8-06316A3097B3}
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19} = {AAA11B78-2764-4520-A97E-46AA7089A588}
+		{67BDEAD9-10A3-4D84-8D71-ED3FCF8C30B8} = {B761B212-7CAB-46A7-BB98-B76EDE56530D}
+		{2E33DFAF-4E36-4549-832E-202AAB6D1B52} = {B761B212-7CAB-46A7-BB98-B76EDE56530D}
+		{4BB0367D-803F-430B-AE3B-853811C48A94} = {B761B212-7CAB-46A7-BB98-B76EDE56530D}
+		{02762835-D98C-4E26-B6AC-992CC318DCEC} = {E793AF18-4371-4EBD-96FC-195EB1798855}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
+	EndGlobalSection
+EndGlobal

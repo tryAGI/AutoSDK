@@ -73,4 +73,38 @@ public class CliTests
             Directory.Delete(tempDirectory, recursive: true);
         }
     }
+    
+    [TestMethod]
+    public async Task Initialize()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            _ = await CliWrap.Cli.Wrap("dotnet")
+                .WithArguments([
+                    "run",
+                    "--project", "src/libs/OpenApiGenerator.Cli",
+                    "init",
+                    "TestAPI",
+                    "TestApi",
+                    "http://localhost/testspec.yaml",
+                    "TestCompany",
+                    "--output", tempDirectory,
+                ])
+                .WithWorkingDirectory(repositoryDirectory)
+                .ExecuteBufferedAsync();
+
+            Directory.EnumerateFiles(tempDirectory, "*", SearchOption.AllDirectories)
+                .Should()
+                .NotBeEmpty();
+        }
+        finally
+        {
+            Directory.Delete(tempDirectory, recursive: true);
+        }
+    }
 }

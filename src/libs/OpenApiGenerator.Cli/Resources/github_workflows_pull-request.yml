@@ -1,0 +1,15 @@
+﻿name: Test
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test
+    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
+    with:
+      generate-build-number: false
+      conventional-commits-publish-conditions: false
+      enable-caching: false
+      additional-test-arguments: '--logger GitHubActions'
