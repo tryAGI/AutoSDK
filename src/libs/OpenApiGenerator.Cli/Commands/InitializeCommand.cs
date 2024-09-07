@@ -71,12 +71,12 @@ public class InitializeCommand : Command
         {
             H.Resources.__gitignore,
             H.Resources.__SolutionName__sln,
+            H.Resources.__github_dependabot_yml,
+            H.Resources.__github_workflows_auto_merge_yml,
+            H.Resources.__github_workflows_auto_update_yml,
+            H.Resources.__github_workflows_dotnet_yml,
+            H.Resources.__github_workflows_pull_request_yml,
             H.Resources.assets_nuget_icon_png,
-            H.Resources.github_dependabot_yml,
-            H.Resources.github_workflows_auto_merge_yml,
-            H.Resources.github_workflows_auto_update_yml,
-            H.Resources.github_workflows_dotnet_yml,
-            H.Resources.github_workflows_pull_request_yml,
             H.Resources.global_json,
             H.Resources.LICENSE,
             H.Resources.README_md,
@@ -98,9 +98,9 @@ public class InitializeCommand : Command
         {
             resources.AddRange(new []
             {
+                H.Resources.__github_workflows_mkdocs_yml,
                 H.Resources.docs_css_extra_css,
                 H.Resources.docs_media_icon128_png,
-                H.Resources.github_workflows_mkdocs_yml,
                 H.Resources.mkdocs_yml,
                 H.Resources.src_helpers_GenerateDocs_GenerateDocs_csproj,
                 H.Resources.src_helpers_GenerateDocs_Program_cs,
