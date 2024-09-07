@@ -233,7 +233,14 @@ public readonly record struct TypeData(
             ("string", "date") => ("global::System.DateTime", false),
             ("string", "date-time") => ("global::System.DateTime", false),
             ("string", "password") => ("string", true),
-            //("string", "uri") => ("global::System.Uri", true),
+            
+            // Possible future types - not supported yet
+            // ("string", "time") => ("global::System.TimeOnly", false),
+            // ("string", "date") => ("global::System.DateOnly", false),
+            // ("string", "period") => ("global::System.TimeSpan", false),
+            // ("string", "duration") => ("global::System.TimeSpan", false),
+            // ("string", "uri") => ("global::System.Uri", true),
+            
             (null, "url") => ("string", true),
 
             ("integer", _) => ("int", false),
