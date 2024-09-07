@@ -1,5 +1,5 @@
 ﻿var solutionDirectory = args.ElementAtOrDefault(0) ?? Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "../../../../../.."));
-var sampleDirectory = Path.Combine(solutionDirectory, "src", "tests", "$SolutionName$.IntegrationTests");
+var sampleDirectory = Path.Combine(solutionDirectory, "src", "tests", "IntegrationTests");
 var mkDocsPath = Path.Combine(solutionDirectory, "mkdocs.yml");
 
 var newDir = Path.Combine(solutionDirectory, "docs", "samples");
