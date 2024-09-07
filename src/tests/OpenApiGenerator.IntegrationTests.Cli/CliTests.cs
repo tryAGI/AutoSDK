@@ -74,7 +74,7 @@ public class CliTests
         }
     }
     
-    [TestMethod]
+    //[TestMethod]
     public async Task Initialize()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

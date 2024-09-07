@@ -110,7 +110,7 @@ public class InitializeCommand : Command
         {
             await File.WriteAllTextAsync(
                 Path.Combine(outputPath, Replace(resource.FileName)
-                    .Replace("_", Path.PathSeparator.ToString(), StringComparison.OrdinalIgnoreCase)),
+                    .Replace("_", Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase)),
                 Replace(resource.AsString())).ConfigureAwait(false);
         }
 
