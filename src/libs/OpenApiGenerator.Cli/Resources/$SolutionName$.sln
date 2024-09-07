@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AAA11B78
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$SolutionName$", "src\libs\$SolutionName$\$SolutionName$.csproj", "{0028BC85-0064-4CE8-A21A-C1F5E922BD59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$SolutionName$.IntegrationTests", "src\tests\$SolutionName$.IntegrationTests\$SolutionName$.IntegrationTests.csproj", "{592ADBC9-C951-4AF7-A163-B6C63B970B19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$SolutionName$.IntegrationTests", "src\tests\IntegrationTests\$SolutionName$.IntegrationTests.csproj", "{592ADBC9-C951-4AF7-A163-B6C63B970B19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{B761B212-7CAB-46A7-BB98-B76EDE56530D}"
 EndProject
