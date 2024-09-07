@@ -69,6 +69,7 @@ public class InitializeCommand : Command
 
         var resources = new List<H.Resource>
         {
+            H.Resources.__gitignore,
             H.Resources.__SolutionName__sln,
             H.Resources.assets_nuget_icon_png,
             H.Resources.github_dependabot_yml,
