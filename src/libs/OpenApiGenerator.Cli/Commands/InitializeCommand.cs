@@ -117,9 +117,19 @@ public class InitializeCommand : Command
                 Directory.CreateDirectory(directory);
             }
             
-            await File.WriteAllTextAsync(
-                path,
-                Replace(resource.AsString())).ConfigureAwait(false);
+            var extension = Path.GetExtension(path);
+            if (extension.ToUpperInvariant() is ".PNG" or ".JPG" or ".JPEG" or ".GIF" or ".SVG" or ".SNK")
+            {
+                await File.WriteAllBytesAsync(
+                    path,
+                    resource.AsBytes()).ConfigureAwait(false);
+            }
+            else
+            {
+                await File.WriteAllTextAsync(
+                    path,
+                    Replace(resource.AsString())).ConfigureAwait(false);
+            }
         }
 
         Console.WriteLine("Done.");
