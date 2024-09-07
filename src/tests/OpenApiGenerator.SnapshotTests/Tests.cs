@@ -270,8 +270,8 @@ public partial class Tests
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
-                path: H.Resources.specialcases_yaml.FileName,
-                text: H.Resources.specialcases_yaml.AsString())
+                path: H.Resources.special_cases_yaml.FileName,
+                text: H.Resources.special_cases_yaml.AsString())
         ]);
     }
     
