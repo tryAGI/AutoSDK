@@ -109,9 +109,16 @@ public class InitializeCommand : Command
         
         foreach (var resource in resources)
         {
+            var path = Path.Combine(outputPath, Replace(resource.FileName)
+                .Replace("_", Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase));
+            var directory = Path.GetDirectoryName(path);
+            if (!string.IsNullOrWhiteSpace(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            
             await File.WriteAllTextAsync(
-                Path.Combine(outputPath, Replace(resource.FileName)
-                    .Replace("_", Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase)),
+                path,
                 Replace(resource.AsString())).ConfigureAwait(false);
         }
 
