@@ -1,33 +1,7 @@
-site_name: HuggingFace .NET Documentation
+site_name: $SolutionName$ .NET Documentation
 nav:
 - Overview: index.md
 # EXAMPLES #
-
-#  - Quick Start: QuickStart.md
-#  - Architecture: Architecture.md
-#  - FAQ: FAQ.md
-#  - Contributing Guide: ContributingGuide.md
-#  - Tutorials:
-#      - Configure the native library loading: Tutorials/NativeLibraryConfig.md
-#      - Use executors: Tutorials/Executors.md
-#      - Use ChatSession: Tutorials/ChatSession.md
-#      - Understand LLamaContext: Tutorials/UnderstandLLamaContext.md
-#      - Get embeddings: Tutorials/GetEmbeddings.md
-#      - Quantize the model: Tutorials/Quantization.md
-#
-#  - Advanced Tutorials:
-#      - Customize the native library loading: AdvancedTutorials/CustomizeNativeLibraryLoading.md
-#
-#  - Integrations:
-#      - semantic-kernel integration: Integrations/semantic-kernel.md
-#      - kernel-memory integration: Integrations/kernel-memory.md
-#      - BotSharp integration: Integrations/BotSharp.md
-#      - Langchain integration: Integrations/Langchain.md
-#
-#  - Examples:
-#      - Bacthed executor - multi-output to one input: Examples/BatchedExecutorFork.md
-#      - Batched executor - basic guidance: Examples/BatchedExecutorGuidance.md
-#      - Batched executor - rewinding to an earlier state: Examples/BatchedExecutorRewind.md
         
 theme:
   name: material
