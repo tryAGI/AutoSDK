@@ -24,7 +24,7 @@
   <ItemGroup>
     <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
-    <None Include="$(OutputPath)\$(AssemblyName).Core.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\$(AssemblyName).SourceGenerators.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\SharpYaml.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
