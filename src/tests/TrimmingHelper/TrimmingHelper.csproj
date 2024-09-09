@@ -11,21 +11,21 @@
   </PropertyGroup>
 
 <!--  <ItemGroup>-->
-<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama\OpenApiGenerator.IntegrationTests.Ollama.csproj" />-->
-<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj" />-->
-<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />-->
-<!--    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.IpInfo\OpenApiGenerator.IntegrationTests.IpInfo.csproj" />-->
+<!--    <ProjectReference Include="..\AutoSDK.IntegrationTests.Ollama\AutoSDK.IntegrationTests.Ollama.csproj" />-->
+<!--    <ProjectReference Include="..\AutoSDK.IntegrationTests.OpenAI\AutoSDK.IntegrationTests.OpenAI.csproj" />-->
+<!--    <ProjectReference Include="..\AutoSDK.IntegrationTests.Twitch\AutoSDK.IntegrationTests.Twitch.csproj" />-->
+<!--    <ProjectReference Include="..\AutoSDK.IntegrationTests.IpInfo\AutoSDK.IntegrationTests.IpInfo.csproj" />-->
 <!--  </ItemGroup>-->
 <!--  -->
 <!--  <ItemGroup>-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo.Data" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch.Data" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama.Models" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI" />-->
-<!--    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI.Models" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.IpInfo" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.IpInfo.Data" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.Twitch" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.Twitch.Data" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.Ollama" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.Ollama.Models" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.OpenAI" />-->
+<!--    <TrimmerRootAssembly Include="AutoSDK.IntegrationTests.OpenAI.Models" />-->
 <!--  </ItemGroup>-->
 
   <PropertyGroup Label="Publish">

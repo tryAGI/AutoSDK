@@ -1,0 +1,82 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);OAG001</WarningsAsErrors>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- Used as default namespace name if AutoSDK_Namespace is not specified -->
+    <CompilerVisibleProperty Include="AssemblyName"/>
+    <CompilerVisibleProperty Include="PackageId"/>
+
+    <!-- Used as default TargetFramework if AutoSDK_TargetFramework is not specified -->
+    <CompilerVisibleProperty Include="TargetFramework"/>
+
+    <!-- Namespace. Default: $(TargetFramework) or "netstandard2.0" -->
+    <CompilerVisibleProperty Include="AutoSDK_TargetFramework"/>
+    <!-- Namespace. Default: $(PackageId) or $(AssemblyName) or "AutoSDK" -->
+    <CompilerVisibleProperty Include="AutoSDK_Namespace"/>
+    <!-- Namespace. Default: $(PackageId)Api or $(AssemblyName)Api or "Api" -->
+    <CompilerVisibleProperty Include="AutoSDK_ClassName"/>
+    <!-- Prefix for enums which start with a number to make them CLS compliant. Default: "x". Pass empty string to disable prefixing(it will be non-CLS compliant '_') -->
+    <CompilerVisibleProperty Include="AutoSDK_ClsCompliantEnumPrefix"/>
+    <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
+    <CompilerVisibleProperty Include="AutoSDK_NamingConvention"/>
+    <!-- SystemTextJson/NewtonsoftJson. Default: SystemTextJson -->
+    <CompilerVisibleProperty Include="AutoSDK_JsonSerializerType"/>
+    <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
+    <CompilerVisibleProperty Include="AutoSDK_UseRequiredKeyword"/>
+
+    <!-- Methods generation -->
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateConstructors"/>
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GroupByTags"/>
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateMethods"/>
+    <!-- SimpleOperationId/MethodAndPath/OperationIdWithDots. Default: SimpleOperationId -->
+    <CompilerVisibleProperty Include="AutoSDK_MethodNamingConvention"/>
+    <!-- SimpleOperationId/MethodAndPath/OperationIdWithDots. Default: MethodAndPath -->
+    <CompilerVisibleProperty Include="AutoSDK_MethodNamingConventionFallback"/>
+    <!-- true/false. Default: false. Not Implemented. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateMethodsAsHttpClientExtensions"/>
+    <!-- true/false. Default: false. Not Implemented. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateMethodsUsingSystemNetHttpJson"/>
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_ExcludeOperationIds"/>
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="AutoSDK_IncludeTags"/>
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_ExcludeTags"/>
+    <!-- Full name with namespace of JsonSerializerContext to enable trimming support for System.Text.Json. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_JsonSerializerContext"/>
+    <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateJsonSerializerContextTypes"/>
+
+    <!-- Models generation -->
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateModels"/>
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_ValidateAnyOfs"/>
+    <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
+    <CompilerVisibleProperty Include="AutoSDK_ModelStyle"/>
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="AutoSDK_IncludeModels"/>
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_ExcludeModels"/>
+    
+    <!-- true/false. Default: true -->
+    <CompilerVisibleProperty Include="AutoSDK_GeneratePolyfills"/>
+    
+    <!-- Generates full sdk(all methods/models) -->
+    <!-- true/false. Default: true -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateSdk"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="**\*.yaml" />
+  </ItemGroup>
+
+</Project>

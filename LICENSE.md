@@ -1,41 +1,41 @@
-# OpenApiGenerator License
+# AutoSDK License
 
 ## License Selection Guide
 
-Welcome to OpenApiGenerator! This guide will help you understand how to select the appropriate license for our library, based on your usage context.
+Welcome to AutoSDK! This guide will help you understand how to select the appropriate license for our library, based on your usage context.
 
-The licensing options for OpenApiGenerator include the MIT license (which is free), and two tiers of paid licenses: the Professional License and the Enterprise License.
+The licensing options for AutoSDK include the MIT license (which is free), and two tiers of paid licenses: the Professional License and the Enterprise License.
 
 ### License Equality
 
-We believe in offering the full power of OpenApiGenerator to all our users, regardless of the license they choose. Whether you're operating under our Community MIT, Professional, or Enterprise licenses, you can enjoy the same comprehensive range of features:
+We believe in offering the full power of AutoSDK to all our users, regardless of the license they choose. Whether you're operating under our Community MIT, Professional, or Enterprise licenses, you can enjoy the same comprehensive range of features:
 
-- Full access to all OpenApiGenerator features.
+- Full access to all AutoSDK features.
 - Support for commercial usage.
 - Freedom to create and deploy unlimited closed-source projects, applications, and APIs.
-- Possibility to sell OpenApiGenerator-based SDK generation as a service.
+- Possibility to sell AutoSDK-based SDK generation as a service.
 
 ### Non-profit Usage
 
-If you represent an open-source project, a charitable organization, or are using OpenApiGenerator for educational purposes or training courses, you can also use OpenApiGenerator for free under the MIT license.
+If you represent an open-source project, a charitable organization, or are using AutoSDK for educational purposes or training courses, you can also use AutoSDK for free under the MIT license.
 
 ### Small Businesses
 
-For companies generating less than $1M USD in annual gross revenue, you can use OpenApiGenerator under the MIT license for free.
+For companies generating less than $1M USD in annual gross revenue, you can use AutoSDK under the MIT license for free.
 
 ### Larger Businesses
 
-Companies with an annual gross revenue exceeding $1M USD are required to purchase a paid license. The type of license you need depends on the number of developers working on projects that use OpenApiGenerator:
+Companies with an annual gross revenue exceeding $1M USD are required to purchase a paid license. The type of license you need depends on the number of developers working on projects that use AutoSDK:
 
-Professional License - If there are up to 10 developers in your company who are using OpenApiGenerator, you need to purchase the Professional License. There will still be a limitation here - you can't sell OpenApiGenerator-based SDK generation as a service.
+Professional License - If there are up to 10 developers in your company who are using AutoSDK, you need to purchase the Professional License. There will still be a limitation here - you can't sell AutoSDK-based SDK generation as a service.
 
-Enterprise License - If your company has more than 10 developers using OpenApiGenerator, the Enterprise License is the right choice. You can also sell SDK generation based on OpenApiGenerator as a service.
+Enterprise License - If your company has more than 10 developers using AutoSDK, the Enterprise License is the right choice. You can also sell SDK generation based on AutoSDK as a service.
 
 ### Beyond Compliance
 
-Remember, purchasing a license isn't just about adhering to our guidelines, but also supporting the development of OpenApiGenerator. Your contribution helps us to improve the library and offer top-notch support to all users.
+Remember, purchasing a license isn't just about adhering to our guidelines, but also supporting the development of AutoSDK. Your contribution helps us to improve the library and offer top-notch support to all users.
 
-## OpenApiGenerator Community MIT License
+## AutoSDK Community MIT License
 
 ### License Permissions
 
@@ -51,11 +51,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-## OpenApiGenerator Professional and Enterprise Use License
+## AutoSDK Professional and Enterprise Use License
 
 ### Do No Harm
 
-By downloading or using the Software, the Licensee agrees not to utilize the software in a manner which is disparaging to OpenApiGenerator, and not to rent, lease or otherwise transfer rights to the Software.
+By downloading or using the Software, the Licensee agrees not to utilize the software in a manner which is disparaging to AutoSDK, and not to rent, lease or otherwise transfer rights to the Software.
 
 ### License Permissions
 
@@ -75,11 +75,11 @@ D. If you wish to use the Software in a non-production environment, such as for 
 
 ### Ownership
 
-OpenApiGenerator shall at all times retain ownership of the OpenApiGenerator Software library and all subsequent copies.
+AutoSDK shall at all times retain ownership of the AutoSDK Software library and all subsequent copies.
 
 ### Copyright
 
-Title, ownership rights, and intellectual property rights in and to the Software shall remain with OpenApiGenerator. The Software is protected by the international copyright laws. Title, ownership rights, and intellectual property rights in and to the content accessed through the Software is the property of the applicable content owner and may be protected by applicable copyright or other law. This License gives you no rights to such content.
+Title, ownership rights, and intellectual property rights in and to the Software shall remain with AutoSDK. The Software is protected by the international copyright laws. Title, ownership rights, and intellectual property rights in and to the content accessed through the Software is the property of the applicable content owner and may be protected by applicable copyright or other law. This License gives you no rights to such content.
 
 ### Limitation Of Liability
 

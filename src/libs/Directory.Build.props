@@ -18,7 +18,7 @@
     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <Authors>havendv</Authors>
-    <Copyright>Konstantin Stukov, OpenApiGenerator contributors</Copyright>
+    <Copyright>Konstantin Stukov, AutoSDK contributors</Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>nuget_icon.png</PackageIcon>

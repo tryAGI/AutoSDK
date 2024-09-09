@@ -1,4 +1,4 @@
-# OpenApiGenerator
+# AutoSDK
 Allows you to partially (for example, only models) or completely generate a native (without dependencies) C# client sdk according to the OpenAPI specification.  
 Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 
@@ -37,30 +37,30 @@ It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks
 ## Source generator
 - Install the package
 ```bash
-dotnet add package OpenApiGenerator
+dotnet add package AutoSDK
 ```
-- Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/HavenDV/OpenApiGenerator/blob/76c06e6e2265bc875d0619cfe96e28002fba1d3d/src/libs/OpenApiGenerator/OpenApiGenerator.props):
+- Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/HavenDV/AutoSDK/blob/76c06e6e2265bc875d0619cfe96e28002fba1d3d/src/libs/AutoSDK/AutoSDK.props):
 ```xml
 <!-- This generator automatically detects all .yaml files in the project directory and adds them to the generation -->
 <!-- If your yaml file is not in the project directory, you can specify it manually -->
-<ItemGroup Label="OpenApiGenerator">
+<ItemGroup Label="AutoSDK">
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../docs/openapi.yaml" />
 </ItemGroup>
 
 <!-- All settings optional -->
-<PropertyGroup Label="OpenApiGenerator">
-    <OpenApiGenerator_Namespace>Ollama</OpenApiGenerator_Namespace>
-    <OpenApiGenerator_ClassName>OllamaApi</OpenApiGenerator_ClassName>
+<PropertyGroup Label="AutoSDK">
+    <AutoSDK_Namespace>Ollama</AutoSDK_Namespace>
+    <AutoSDK_ClassName>OllamaApi</AutoSDK_ClassName>
 
     <!-- By default, it generates all models/methods. You can disable this behavior using these properties -->
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
-    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
-    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
-    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
-    <OpenApiGenerator_IncludeOperationIds>getPet;deletePet</OpenApiGenerator_IncludeOperationIds>
-    <OpenApiGenerator_ExcludeOperationIds>getPet;deletePet</OpenApiGenerator_ExcludeOperationIds>
-    <OpenApiGenerator_IncludeModels>Pet;Model</OpenApiGenerator_IncludeModels>
-    <OpenApiGenerator_ExcludeModels>Pet;Model</OpenApiGenerator_ExcludeModels>
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateModels>true</AutoSDK_GenerateModels>
+    <AutoSDK_GenerateMethods>true</AutoSDK_GenerateMethods>
+    <AutoSDK_GenerateConstructors>true</AutoSDK_GenerateConstructors>
+    <AutoSDK_IncludeOperationIds>getPet;deletePet</AutoSDK_IncludeOperationIds>
+    <AutoSDK_ExcludeOperationIds>getPet;deletePet</AutoSDK_ExcludeOperationIds>
+    <AutoSDK_IncludeModels>Pet;Model</AutoSDK_IncludeModels>
+    <AutoSDK_ExcludeModels>Pet;Model</AutoSDK_ExcludeModels>
 </PropertyGroup>
 ```
 - It's all! Now you can build your project and use the generated code. You also can use IDE to see the generated code in any moment, this is a example for Rider:  
@@ -74,10 +74,10 @@ CLI generates Trimming/NativeAOT compatible code by default.
 Since there are two source generators involved, we will have to create a second project so that the generator for the JsonSerializerContext will “see” our models
 - Create new project for your models. And disable methods/constructors generation:
 ```xml
-<PropertyGroup Label="OpenApiGenerator">
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
-    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
-    <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
+<PropertyGroup Label="AutoSDK">
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateModels>true</AutoSDK_GenerateModels>
+    <AutoSDK_GenerateJsonSerializerContextTypes>true</AutoSDK_GenerateJsonSerializerContextTypes>
 </PropertyGroup>
 ```
 - Reference this project in your main project.
@@ -88,16 +88,16 @@ using System.Text.Json.Serialization;
 namespace Namespace;
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
-[JsonSerializable(typeof(OpenApiGeneratorTrimmableSupport))]
+[JsonSerializable(typeof(AutoSDKTrimmableSupport))]
 internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```
 - Add the following settings to your main csproj file:
 ```xml
-<PropertyGroup Label="OpenApiGenerator">
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
-    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
-    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
-    <OpenApiGenerator_JsonSerializerContext>Namespace.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
+<PropertyGroup Label="AutoSDK">
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateMethods>true</AutoSDK_GenerateMethods>
+    <AutoSDK_GenerateConstructors>true</AutoSDK_GenerateConstructors>
+    <AutoSDK_JsonSerializerContext>Namespace.SourceGenerationContext</AutoSDK_JsonSerializerContext>
 </PropertyGroup>
 ```
 - Add these settings to your new and main csproj file to enable trimming(or use Directory.Build.props file):

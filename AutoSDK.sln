@@ -1,0 +1,125 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32314.265
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}"
+	ProjectSection(SolutionItems) = preProject
+		src\libs\Directory.Build.props = src\libs\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94FE90BF-FA05-46C6-A207-6E454A236659}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		src\Directory.Build.props = src\Directory.Build.props
+		README.md = README.md
+		LICENSE.md = LICENSE.md
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.SnapshotTests", "src\tests\AutoSDK.SnapshotTests\AutoSDK.SnapshotTests.csproj", "{440B9C75-CA33-47F3-9EDF-A7CD6886155C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.UnitTests", "src\tests\AutoSDK.UnitTests\AutoSDK.UnitTests.csproj", "{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimmingHelper", "src\tests\TrimmingHelper\TrimmingHelper.csproj", "{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{7E829AE4-1ACD-43C0-87ED-9902566DF437}"
+	ProjectSection(SolutionItems) = preProject
+		specs\ollama.yaml = specs\ollama.yaml
+		specs\github.yaml = specs\github.yaml
+		specs\ipinfo.yaml = specs\ipinfo.yaml
+		specs\langsmith.yaml = specs\langsmith.yaml
+		specs\openai.yaml = specs\openai.yaml
+		specs\petstore.yaml = specs\petstore.yaml
+		specs\special-cases.yaml = specs\special-cases.yaml
+		specs\twitch.json = specs\twitch.json
+		specs\dedoose.json = specs\dedoose.json
+		specs\anthropic.yaml = specs\anthropic.yaml
+		specs\leonardo.yaml = specs\leonardo.yaml
+		specs\ai21.yaml = specs\ai21.yaml
+		specs\huggingface.yaml = specs\huggingface.yaml
+		specs\cohere.yaml = specs\cohere.yaml
+		specs\replicate.yaml = specs\replicate.yaml
+		specs\together.yaml = specs\together.yaml
+		specs\assemblyai.yaml = specs\assemblyai.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.IntegrationTests.Cli", "src\tests\AutoSDK.IntegrationTests.Cli\AutoSDK.IntegrationTests.Cli.csproj", "{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{D89B8087-C384-4519-B2BB-4417698B5801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{9460B888-5D2E-4FB4-B22D-BCDC6889F484}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main.yml = .github\workflows\main.yml
+		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK", "src\libs\AutoSDK\AutoSDK.csproj", "{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.CLI", "src\libs\AutoSDK.CLI\AutoSDK.CLI.csproj", "{A08FCA2E-1091-400F-9452-137AF5412529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.SourceGenerators", "src\libs\AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.csproj", "{8427A331-9C50-4071-A647-4AAE233D4661}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08FCA2E-1091-400F-9452-137AF5412529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08FCA2E-1091-400F-9452-137AF5412529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08FCA2E-1091-400F-9452-137AF5412529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08FCA2E-1091-400F-9452-137AF5412529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8427A331-9C50-4071-A647-4AAE233D4661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8427A331-9C50-4071-A647-4AAE233D4661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8427A331-9C50-4071-A647-4AAE233D4661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8427A331-9C50-4071-A647-4AAE233D4661}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{7E829AE4-1ACD-43C0-87ED-9902566DF437} = {94FE90BF-FA05-46C6-A207-6E454A236659}
+		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18} = {D89B8087-C384-4519-B2BB-4417698B5801}
+		{9460B888-5D2E-4FB4-B22D-BCDC6889F484} = {94FE90BF-FA05-46C6-A207-6E454A236659}
+		{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
+		{A08FCA2E-1091-400F-9452-137AF5412529} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
+		{8427A331-9C50-4071-A647-4AAE233D4661} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}
+	EndGlobalSection
+EndGlobal
