@@ -240,6 +240,7 @@ public readonly record struct TypeData(
             // ("string", "period") => ("global::System.TimeSpan", false),
             // ("string", "duration") => ("global::System.TimeSpan", false),
             // ("string", "uri") => ("global::System.Uri", true),
+            // ("string", "uuid") => ("global::System.Guid", false),
             
             (null, "url") => ("string", true),
 

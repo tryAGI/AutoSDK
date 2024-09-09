@@ -14,11 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		src\Directory.Build.props = src\Directory.Build.props
 		README.md = README.md
-		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
 		LICENSE.md = LICENSE.md
-		.github\workflows\main.yml = .github\workflows\main.yml
 		.github\dependabot.yml = .github\dependabot.yml
-		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator", "src\libs\OpenApiGenerator\OpenApiGenerator.csproj", "{A16594C6-F868-4564-AB59-F53DB2F57EAA}"
@@ -59,6 +56,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{D89B8087-C384-4519-B2BB-4417698B5801}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{9460B888-5D2E-4FB4-B22D-BCDC6889F484}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main.yml = .github\workflows\main.yml
+		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +117,7 @@ Global
 		{7E829AE4-1ACD-43C0-87ED-9902566DF437} = {94FE90BF-FA05-46C6-A207-6E454A236659}
 		{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{7EBF81E0-41AC-4AA3-AA31-087CEFB8DA18} = {D89B8087-C384-4519-B2BB-4417698B5801}
+		{9460B888-5D2E-4FB4-B22D-BCDC6889F484} = {94FE90BF-FA05-46C6-A207-6E454A236659}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}
