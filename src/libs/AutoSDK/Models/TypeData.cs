@@ -146,8 +146,10 @@ public readonly record struct TypeData(
                 .ToImmutableArray();
         }
         
+        var type = GetCSharpType(context);
+        
         return new TypeData(
-            CSharpType: GetCSharpType(context),
+            CSharpType: type,
             IsValueType: ContextIsValueType(context),
             IsArray: context.Schema.IsArray(),
             IsEnum: context.Schema.IsEnum(),
@@ -169,7 +171,9 @@ public readonly record struct TypeData(
             Properties: properties,
             EnumValues: enumValues,
             SubTypes: subTypes,
-            Namespace: context.Settings.Namespace,
+            Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
+                ? "System"
+                : context.Settings.Namespace,
             IsDeprecated: context.Schema.Deprecated,
             JsonSerializerType: context.Settings.JsonSerializerType,
             GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);

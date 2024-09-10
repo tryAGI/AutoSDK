@@ -47,6 +47,18 @@ public partial class JsonTests
         
         GetContextType(TypeData.Default with
         {
+            Namespace = "System.Collections.Generic",
+            CSharpType = "global::System.Collections.Generic.IList<global::System.Guid>",
+            IsArray = true,
+            SubTypes = [
+                TypeData.Default with { 
+                    Namespace = "System",
+                    CSharpType = "global::System.Guid" }
+            ],
+        }, makeNullableRootIfValueType: true).Should().Be("IListGuid");
+
+        GetContextType(TypeData.Default with
+        {
             CSharpType = "byte[]",
             IsBinary = true,
             SubTypes = [
@@ -88,9 +100,9 @@ public partial class JsonTests
         
         GetContextType(TypeData.Default with
         {
-            Namespace = "System",
+            Namespace = "G",
             IsValueType = true,
-            CSharpType = "global::System.AllOf<Integration?, AppsCreateFromManifestResponse>",
+            CSharpType = "global::G.AllOf<Integration?, AppsCreateFromManifestResponse>",
             SubTypes = [
                 TypeData.Default with
                 {
@@ -105,9 +117,9 @@ public partial class JsonTests
         
         GetContextType(TypeData.Default with
         {
-            Namespace = "System",
+            Namespace = "Cohere",
             IsValueType = true,
-            CSharpType = "global::System.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>",
+            CSharpType = "global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>",
             SubTypes = [
                 TypeData.Default with
                 {
