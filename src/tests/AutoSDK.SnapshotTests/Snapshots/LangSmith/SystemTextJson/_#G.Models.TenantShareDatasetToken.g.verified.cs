@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DatasetId { get; set; }
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// 

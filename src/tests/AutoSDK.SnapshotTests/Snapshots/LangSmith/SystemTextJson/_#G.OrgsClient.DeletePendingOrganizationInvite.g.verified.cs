@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeletePendingOrganizationInviteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string organizationId);
+            ref global::System.Guid organizationId);
         partial void PrepareDeletePendingOrganizationInviteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string organizationId);
+            global::System.Guid organizationId);
         partial void ProcessDeletePendingOrganizationInviteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeletePendingOrganizationInviteApiV1OrgsPendingOrganizationIdDeleteResponse> DeletePendingOrganizationInviteAsync(
-            string organizationId,
+            global::System.Guid organizationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

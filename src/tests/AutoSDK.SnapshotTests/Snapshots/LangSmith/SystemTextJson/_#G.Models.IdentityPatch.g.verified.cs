@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RoleId { get; set; }
+        public required global::System.Guid RoleId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,16 +10,16 @@ namespace G
         partial void PrepareMemoStartCopyMemosToDocumentsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
-            global::System.Collections.Generic.IList<string>? memoIds);
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
+            global::System.Collections.Generic.IList<global::System.Guid>? memoIds);
         partial void PrepareMemoStartCopyMemosToDocumentsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
-            global::System.Collections.Generic.IList<string>? memoIds);
+            global::System.Guid projectId,
+            global::System.Guid userId,
+            global::System.Collections.Generic.IList<global::System.Guid>? memoIds);
         partial void ProcessMemoStartCopyMemosToDocumentsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,9 +40,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoStartCopyMemosToDocumentsJobResponse> MemoStartCopyMemosToDocumentsJobAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
-            global::System.Collections.Generic.IList<string>? memoIds = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? memoIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

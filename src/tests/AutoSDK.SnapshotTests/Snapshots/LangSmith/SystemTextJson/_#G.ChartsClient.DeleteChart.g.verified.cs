@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteChartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string chartId);
+            ref global::System.Guid chartId);
         partial void PrepareDeleteChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string chartId);
+            global::System.Guid chartId);
         partial void ProcessDeleteChartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteChartApiV1ChartsChartIdDeleteResponse> DeleteChartAsync(
-            string chartId,
+            global::System.Guid chartId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

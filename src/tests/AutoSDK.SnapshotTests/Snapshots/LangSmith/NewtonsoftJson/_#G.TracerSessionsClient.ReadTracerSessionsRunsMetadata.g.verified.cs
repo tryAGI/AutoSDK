@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareReadTracerSessionsRunsMetadataArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId,
+            ref global::System.Guid sessionId,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
             ref global::System.AnyOf<global::System.DateTime?, object>? startTime,
             ref int k,
@@ -16,7 +16,7 @@ namespace G
         partial void PrepareReadTracerSessionsRunsMetadataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId,
+            global::System.Guid sessionId,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
             global::System.AnyOf<global::System.DateTime?, object>? startTime,
             int k,
@@ -46,7 +46,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RootModelDictStrListStr> ReadTracerSessionsRunsMetadataAsync(
-            string sessionId,
+            global::System.Guid sessionId,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             int k = 10,

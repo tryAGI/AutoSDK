@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminProcessPaymentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
+            ref global::System.Guid accountId,
             ref double amount,
             ref string? memo);
         partial void PrepareAdminProcessPaymentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
+            global::System.Guid accountId,
             double amount,
             string? memo);
         partial void ProcessAdminProcessPaymentResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminProcessPaymentResponse> AdminProcessPaymentAsync(
             string? token = default,
-            string? accountId = default,
+            global::System.Guid accountId = default,
             double amount = default,
             string? memo = default,
             global::System.Threading.CancellationToken cancellationToken = default)

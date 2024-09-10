@@ -9,14 +9,14 @@ namespace G
         partial void PrepareResourceStartAddPDFSwfResourceJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? title,
             ref string? fileUri);
         partial void PrepareResourceStartAddPDFSwfResourceJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? title,
             string? fileUri);
         partial void ProcessResourceStartAddPDFSwfResourceJobResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartAddPDFSwfResourceJobAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? title = default,
             string? fileUri = default,
             global::System.Threading.CancellationToken cancellationToken = default)

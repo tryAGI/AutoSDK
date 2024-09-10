@@ -14,7 +14,7 @@ namespace G
             ref string? labels,
             ref global::G.IssuesListForOrgSort? sort,
             ref global::G.IssuesListForOrgDirection? direction,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListForOrgRequest(
@@ -96,7 +96,7 @@ namespace G
                 labels: ref labels,
                 sort: ref sort,
                 direction: ref direction,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

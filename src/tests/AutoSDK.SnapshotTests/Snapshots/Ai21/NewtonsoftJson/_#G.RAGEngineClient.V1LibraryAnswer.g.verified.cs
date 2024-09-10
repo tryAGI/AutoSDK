@@ -121,7 +121,7 @@ namespace G
             int maxSegments = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
-            global::System.Collections.Generic.IList<string>? fileIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AnswerLength? answerLength = default,
             global::G.Mode? mode = default,
             global::System.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,

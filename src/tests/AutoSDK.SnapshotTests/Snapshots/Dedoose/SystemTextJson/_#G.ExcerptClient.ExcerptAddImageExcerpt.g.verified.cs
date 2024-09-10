@@ -10,22 +10,22 @@ namespace G
         partial void PrepareExcerptAddImageExcerptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
-            ref string? resourceId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
+            ref global::System.Guid resourceId,
             ref int start,
             ref int end,
-            global::System.Collections.Generic.IList<string>? tagIdsToApply);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply);
         partial void PrepareExcerptAddImageExcerptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
-            string? resourceId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
+            global::System.Guid resourceId,
             int start,
             int end,
-            global::System.Collections.Generic.IList<string>? tagIdsToApply);
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply);
         partial void ProcessExcerptAddImageExcerptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,12 +49,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddImageExcerptAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid resourceId = default,
             int start = default,
             int end = default,
-            global::System.Collections.Generic.IList<string>? tagIdsToApply = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

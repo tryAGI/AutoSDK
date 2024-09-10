@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string queueId);
+            ref global::System.Guid queueId);
         partial void PrepareDeleteAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string queueId);
+            global::System.Guid queueId);
         partial void ProcessDeleteAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteAnnotationQueueApiV1AnnotationQueuesQueueIdDeleteResponse> DeleteAnnotationQueueAsync(
-            string queueId,
+            global::System.Guid queueId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

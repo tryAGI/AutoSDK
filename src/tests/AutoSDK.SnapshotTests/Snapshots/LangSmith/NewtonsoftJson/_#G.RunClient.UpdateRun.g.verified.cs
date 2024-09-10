@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateRunArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string runId,
+            ref global::System.Guid runId,
             global::G.UpdateRunRequest request);
         partial void PrepareUpdateRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string runId,
+            global::System.Guid runId,
             global::G.UpdateRunRequest request);
         partial void ProcessUpdateRunResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
-            string runId,
+            global::System.Guid runId,
             global::G.UpdateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,10 +122,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
-            string runId,
-            global::System.OneOf<string, object>? traceId = default,
+            global::System.Guid runId,
+            global::System.OneOf<global::System.Guid?, object>? traceId = default,
             global::System.OneOf<string, object>? dottedOrder = default,
-            global::System.OneOf<string, object>? parentRunId = default,
+            global::System.OneOf<global::System.Guid?, object>? parentRunId = default,
             global::System.OneOf<string, double?, object>? endTime = default,
             global::System.OneOf<string, object>? error = default,
             global::System.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,

@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset")]
-        public global::System.AnyOf<string, object>? DefaultDataset { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1

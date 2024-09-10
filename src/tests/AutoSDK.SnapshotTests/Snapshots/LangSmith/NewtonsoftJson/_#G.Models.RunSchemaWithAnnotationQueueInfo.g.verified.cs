@@ -87,19 +87,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.AnyOf<string, object>? ParentRunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_id")]
-        public global::System.AnyOf<string, object>? ManifestId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_s3_id")]
-        public global::System.AnyOf<string, object>? ManifestS3Id { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestS3Id { get; set; }
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TraceId { get; set; } = default!;
+        public global::System.Guid TraceId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -147,7 +147,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -159,19 +159,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("child_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direct_child_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? DirectChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? DirectChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ParentRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ParentRunIds { get; set; }
 
         /// <summary>
         /// 
@@ -183,7 +183,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::System.AnyOf<string, object>? ReferenceExampleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -225,7 +225,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price_model_id")]
-        public global::System.AnyOf<string, object>? PriceModelId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? PriceModelId { get; set; }
 
         /// <summary>
         /// 
@@ -237,7 +237,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string SessionId { get; set; } = default!;
+        public global::System.Guid SessionId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -261,7 +261,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("share_token")]
-        public global::System.AnyOf<string, object>? ShareToken { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ShareToken { get; set; }
 
         /// <summary>
         /// 
@@ -291,7 +291,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queue_run_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string QueueRunId { get; set; } = default!;
+        public global::System.Guid QueueRunId { get; set; } = default!;
 
         /// <summary>
         /// 

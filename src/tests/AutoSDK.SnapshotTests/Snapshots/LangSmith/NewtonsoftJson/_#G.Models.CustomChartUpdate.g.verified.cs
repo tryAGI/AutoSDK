@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("section_id")]
-        public global::System.AnyOf<string, global::G.Missing>? SectionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, global::G.Missing>? SectionId { get; set; }
 
         /// <summary>
         /// 

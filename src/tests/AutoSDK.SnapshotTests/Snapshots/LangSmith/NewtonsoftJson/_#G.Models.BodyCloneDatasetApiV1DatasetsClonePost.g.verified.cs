@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_dataset_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TargetDatasetId { get; set; } = default!;
+        public global::System.Guid TargetDatasetId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_dataset_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string SourceDatasetId { get; set; } = default!;
+        public global::System.Guid SourceDatasetId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples")]
-        public global::System.Collections.Generic.IList<string>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

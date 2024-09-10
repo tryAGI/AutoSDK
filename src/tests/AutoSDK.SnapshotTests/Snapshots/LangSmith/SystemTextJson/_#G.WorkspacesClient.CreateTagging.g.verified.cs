@@ -104,9 +104,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tagging> CreateTaggingAsync(
-            string tagValueId,
+            global::System.Guid tagValueId,
             global::G.ResourceType resourceType,
-            string resourceId,
+            global::System.Guid resourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TaggingCreate

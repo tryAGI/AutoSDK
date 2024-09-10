@@ -37,14 +37,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TenantId { get; set; }
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -86,14 +86,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_repo_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? OriginalRepoId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? OriginalRepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstream_repo_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? UpstreamRepoId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? UpstreamRepoId { get; set; }
 
         /// <summary>
         /// 

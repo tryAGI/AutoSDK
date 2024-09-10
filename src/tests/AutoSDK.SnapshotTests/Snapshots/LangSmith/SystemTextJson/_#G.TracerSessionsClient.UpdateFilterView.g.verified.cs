@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareUpdateFilterViewArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId,
-            ref string viewId,
+            ref global::System.Guid sessionId,
+            ref global::System.Guid viewId,
             global::G.FilterViewUpdate request);
         partial void PrepareUpdateFilterViewRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId,
-            string viewId,
+            global::System.Guid sessionId,
+            global::System.Guid viewId,
             global::G.FilterViewUpdate request);
         partial void ProcessUpdateFilterViewResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,8 +36,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> UpdateFilterViewAsync(
-            string sessionId,
-            string viewId,
+            global::System.Guid sessionId,
+            global::System.Guid viewId,
             global::G.FilterViewUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -120,8 +120,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> UpdateFilterViewAsync(
-            string sessionId,
-            string viewId,
+            global::System.Guid sessionId,
+            global::System.Guid viewId,
             global::System.AnyOf<string, object>? filterString = default,
             global::System.AnyOf<string, object>? displayName = default,
             global::System.AnyOf<string, object>? description = default,

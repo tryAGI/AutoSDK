@@ -10,8 +10,8 @@ namespace G
         partial void PrepareDataSetAddDataSetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
             ref string? title,
             ref string? description,
             ref bool areExcerptsFiltered,
@@ -19,18 +19,18 @@ namespace G
             ref bool areDescriptorsFiltered,
             ref bool areTagsFiltered,
             ref bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string>? excerptIds,
-            global::System.Collections.Generic.IList<string>? descriptorIds,
-            global::System.Collections.Generic.IList<string>? userIds,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            global::System.Collections.Generic.IList<string>? tagIds,
-            global::System.Collections.Generic.IList<string>? excludedExcerptIds);
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? excludedExcerptIds);
         partial void PrepareDataSetAddDataSetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
             string? title,
             string? description,
             bool areExcerptsFiltered,
@@ -38,12 +38,12 @@ namespace G
             bool areDescriptorsFiltered,
             bool areTagsFiltered,
             bool areUsersFiltered,
-            global::System.Collections.Generic.IList<string>? excerptIds,
-            global::System.Collections.Generic.IList<string>? descriptorIds,
-            global::System.Collections.Generic.IList<string>? userIds,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            global::System.Collections.Generic.IList<string>? tagIds,
-            global::System.Collections.Generic.IList<string>? excludedExcerptIds);
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? excludedExcerptIds);
         partial void ProcessDataSetAddDataSetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -76,8 +76,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DataSetVO> DataSetAddDataSetAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
             string? title = default,
             string? description = default,
             bool areExcerptsFiltered = default,
@@ -85,12 +85,12 @@ namespace G
             bool areDescriptorsFiltered = default,
             bool areTagsFiltered = default,
             bool areUsersFiltered = default,
-            global::System.Collections.Generic.IList<string>? excerptIds = default,
-            global::System.Collections.Generic.IList<string>? descriptorIds = default,
-            global::System.Collections.Generic.IList<string>? userIds = default,
-            global::System.Collections.Generic.IList<string>? resourceIds = default,
-            global::System.Collections.Generic.IList<string>? tagIds = default,
-            global::System.Collections.Generic.IList<string>? excludedExcerptIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? userIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? resourceIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? excludedExcerptIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

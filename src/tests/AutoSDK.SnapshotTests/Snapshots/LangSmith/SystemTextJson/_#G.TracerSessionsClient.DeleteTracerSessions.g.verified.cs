@@ -9,11 +9,11 @@ namespace G
     {
         partial void PrepareDeleteTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<string> sessionIds);
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds);
         partial void PrepareDeleteTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<string> sessionIds);
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds);
         partial void ProcessDeleteTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +31,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteTracerSessionsApiV1SessionsDeleteResponse> DeleteTracerSessionsAsync(
-            global::System.Collections.Generic.IList<string> sessionIds,
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

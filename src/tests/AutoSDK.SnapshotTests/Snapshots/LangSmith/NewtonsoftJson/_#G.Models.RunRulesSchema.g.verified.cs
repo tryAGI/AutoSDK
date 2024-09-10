@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TenantId { get; set; } = default!;
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// Default Value: true
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string, object>? SessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id")]
-        public global::System.AnyOf<string, object>? DatasetId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue_id")]
-        public global::System.AnyOf<string, object>? AddToAnnotationQueueId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? AddToAnnotationQueueId { get; set; }
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset_id")]
-        public global::System.AnyOf<string, object>? AddToDatasetId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? AddToDatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("corrections_dataset_id")]
-        public global::System.AnyOf<string, object>? CorrectionsDatasetId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? CorrectionsDatasetId { get; set; }
 
         /// <summary>
         /// Default Value: false

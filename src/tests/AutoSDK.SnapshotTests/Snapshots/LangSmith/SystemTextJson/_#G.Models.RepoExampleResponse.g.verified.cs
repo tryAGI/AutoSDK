@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SessionId { get; set; }
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

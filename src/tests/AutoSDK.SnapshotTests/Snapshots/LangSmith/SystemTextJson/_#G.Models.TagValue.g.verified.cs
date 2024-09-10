@@ -30,14 +30,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TagKeyId { get; set; }
+        public required global::System.Guid TagKeyId { get; set; }
 
         /// <summary>
         /// 

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteTagKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string tagKeyId);
+            ref global::System.Guid tagKeyId);
         partial void PrepareDeleteTagKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string tagKeyId);
+            global::System.Guid tagKeyId);
         partial void ProcessDeleteTagKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse> DeleteTagKeyAsync(
-            string tagKeyId,
+            global::System.Guid tagKeyId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

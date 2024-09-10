@@ -9,12 +9,12 @@ namespace G
     {
         partial void PrepareUploadExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost request);
         partial void PrepareUploadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost request);
         partial void ProcessUploadExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,7 +34,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> UploadExamplesAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -133,7 +133,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> UploadExamplesAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,

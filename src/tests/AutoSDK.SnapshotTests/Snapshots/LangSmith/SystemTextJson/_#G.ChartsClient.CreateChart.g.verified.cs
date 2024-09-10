@@ -118,7 +118,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CustomChartSeriesCreate> series,
             global::System.AnyOf<string, object>? description = default,
             global::System.AnyOf<int?, object>? index = default,
-            global::System.AnyOf<string, object>? sectionId = default,
+            global::System.AnyOf<global::System.Guid?, object>? sectionId = default,
             global::System.AnyOf<global::G.CustomChartCreateMetadata, object>? metadata = default,
             global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)

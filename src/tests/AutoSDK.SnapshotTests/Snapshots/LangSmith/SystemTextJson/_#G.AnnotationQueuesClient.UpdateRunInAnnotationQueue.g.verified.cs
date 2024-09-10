@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareUpdateRunInAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string queueId,
-            ref string queueRunId,
+            ref global::System.Guid queueId,
+            ref global::System.Guid queueRunId,
             global::G.AnnotationQueueRunUpdateSchema request);
         partial void PrepareUpdateRunInAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string queueId,
-            string queueRunId,
+            global::System.Guid queueId,
+            global::System.Guid queueRunId,
             global::G.AnnotationQueueRunUpdateSchema request);
         partial void ProcessUpdateRunInAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,8 +35,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse> UpdateRunInAnnotationQueueAsync(
-            string queueId,
-            string queueRunId,
+            global::System.Guid queueId,
+            global::System.Guid queueRunId,
             global::G.AnnotationQueueRunUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,8 +117,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse> UpdateRunInAnnotationQueueAsync(
-            string queueId,
-            string queueRunId,
+            global::System.Guid queueId,
+            global::System.Guid queueRunId,
             global::System.AnyOf<global::System.DateTime?, object>? lastReviewedTime = default,
             global::System.AnyOf<global::System.DateTime?, object>? addedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)

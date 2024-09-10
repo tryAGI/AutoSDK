@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? extensionId,
             ref global::G.GetExtensionAnalyticsType? type,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
+            ref global::System.DateTime startedAt,
+            ref global::System.DateTime endedAt,
             ref int first,
             ref string? after);
         partial void PrepareGetExtensionAnalyticsRequest(
@@ -61,8 +61,8 @@ namespace G
                 httpClient: _httpClient,
                 extensionId: ref extensionId,
                 type: ref type,
-                startedAt: startedAt,
-                endedAt: endedAt,
+                startedAt: ref startedAt,
+                endedAt: ref endedAt,
                 first: ref first,
                 after: ref after);
 

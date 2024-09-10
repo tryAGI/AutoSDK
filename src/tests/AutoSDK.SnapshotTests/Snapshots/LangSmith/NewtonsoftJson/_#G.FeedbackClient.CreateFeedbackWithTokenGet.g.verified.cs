@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
+            ref global::System.Guid token,
             ref global::System.AnyOf<double?, int?, bool?, object>? score,
             ref global::System.AnyOf<double?, int?, bool?, string, object>? value,
             ref global::System.AnyOf<string, object>? comment,
@@ -16,7 +16,7 @@ namespace G
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
+            global::System.Guid token,
             global::System.AnyOf<double?, int?, bool?, object>? score,
             global::System.AnyOf<double?, int?, bool?, string, object>? value,
             global::System.AnyOf<string, object>? comment,
@@ -42,7 +42,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
-            string token,
+            global::System.Guid token,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
             global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
             global::System.AnyOf<string, object>? comment = default,

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGetTagKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string tagKeyId);
+            ref global::System.Guid tagKeyId);
         partial void PrepareGetTagKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string tagKeyId);
+            global::System.Guid tagKeyId);
         partial void ProcessGetTagKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagKey> GetTagKeyAsync(
-            string tagKeyId,
+            global::System.Guid tagKeyId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

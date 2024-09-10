@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string, object>? RoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? WorkspaceIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_role_id")]
-        public global::System.AnyOf<string, object>? WorkspaceRoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 

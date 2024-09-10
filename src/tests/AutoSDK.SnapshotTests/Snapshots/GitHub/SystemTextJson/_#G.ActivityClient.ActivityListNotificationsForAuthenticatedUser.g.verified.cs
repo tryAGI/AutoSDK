@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref bool all,
             ref bool participating,
-            global::System.DateTime since,
-            global::System.DateTime before,
+            ref global::System.DateTime since,
+            ref global::System.DateTime before,
             ref int page,
             ref int perPage);
         partial void PrepareActivityListNotificationsForAuthenticatedUserRequest(
@@ -67,8 +67,8 @@ namespace G
                 httpClient: _httpClient,
                 all: ref all,
                 participating: ref participating,
-                since: since,
-                before: before,
+                since: ref since,
+                before: ref before,
                 page: ref page,
                 perPage: ref perPage);
 

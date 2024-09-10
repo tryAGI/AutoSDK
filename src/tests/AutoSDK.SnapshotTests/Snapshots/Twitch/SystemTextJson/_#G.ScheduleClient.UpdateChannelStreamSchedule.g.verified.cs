@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             ref bool isVacationEnabled,
-            global::System.DateTime vacationStartTime,
-            global::System.DateTime vacationEndTime,
+            ref global::System.DateTime vacationStartTime,
+            ref global::System.DateTime vacationEndTime,
             ref string? timezone);
         partial void PrepareUpdateChannelStreamScheduleRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,8 +52,8 @@ namespace G
                 httpClient: _httpClient,
                 broadcasterId: ref broadcasterId,
                 isVacationEnabled: ref isVacationEnabled,
-                vacationStartTime: vacationStartTime,
-                vacationEndTime: vacationEndTime,
+                vacationStartTime: ref vacationStartTime,
+                vacationEndTime: ref vacationEndTime,
                 timezone: ref timezone);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

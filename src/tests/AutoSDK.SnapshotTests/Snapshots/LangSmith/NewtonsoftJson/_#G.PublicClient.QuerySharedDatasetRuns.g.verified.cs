@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareQuerySharedDatasetRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             global::G.BodyParamsForRunSchema request);
         partial void PrepareQuerySharedDatasetRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.BodyParamsForRunSchema request);
         partial void ProcessQuerySharedDatasetRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPublicDatasetRunsResponse> QuerySharedDatasetRunsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.BodyParamsForRunSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -136,13 +136,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPublicDatasetRunsResponse> QuerySharedDatasetRunsAsync(
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
-            global::System.AnyOf<string, object>? trace = default,
-            global::System.AnyOf<string, object>? parentRun = default,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::System.AnyOf<global::System.Guid?, object>? trace = default,
+            global::System.AnyOf<global::System.Guid?, object>? parentRun = default,
             global::System.AnyOf<global::G.RunTypeEnum?, object>? runType = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceExample = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceExample = default,
             global::System.AnyOf<int?, object>? executionOrder = default,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,

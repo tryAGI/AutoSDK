@@ -9,7 +9,7 @@ namespace G
         partial void PrepareAccountUpdateAccountUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
+            ref global::System.Guid userId,
             ref string? firstName,
             ref string? lastName,
             ref string? phone,
@@ -19,7 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
+            global::System.Guid userId,
             string? firstName,
             string? lastName,
             string? phone,
@@ -48,7 +48,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> AccountUpdateAccountUserAsync(
             string? token = default,
-            string? userId = default,
+            global::System.Guid userId = default,
             string? firstName = default,
             string? lastName = default,
             string? phone = default,

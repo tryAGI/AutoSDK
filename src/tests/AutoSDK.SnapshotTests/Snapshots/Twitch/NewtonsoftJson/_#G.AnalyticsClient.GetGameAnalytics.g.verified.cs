@@ -10,8 +10,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? gameId,
             ref global::G.GetGameAnalyticsType? type,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
+            ref global::System.DateTime startedAt,
+            ref global::System.DateTime endedAt,
             ref int first,
             ref string? after);
         partial void PrepareGetGameAnalyticsRequest(
@@ -61,8 +61,8 @@ namespace G
                 httpClient: _httpClient,
                 gameId: ref gameId,
                 type: ref type,
-                startedAt: startedAt,
-                endedAt: endedAt,
+                startedAt: ref startedAt,
+                endedAt: ref endedAt,
                 first: ref first,
                 after: ref after);
 

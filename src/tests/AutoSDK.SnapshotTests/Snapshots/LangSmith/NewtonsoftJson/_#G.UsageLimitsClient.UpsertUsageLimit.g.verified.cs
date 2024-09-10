@@ -110,7 +110,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UsageLimit> UpsertUsageLimitAsync(
             global::G.UsageLimitType2 limitType,
             int limitValue,
-            string? id = default,
+            global::System.Guid id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpsertUsageLimit

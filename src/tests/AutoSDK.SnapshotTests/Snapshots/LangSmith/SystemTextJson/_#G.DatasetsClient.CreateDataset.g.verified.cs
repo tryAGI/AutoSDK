@@ -123,7 +123,7 @@ namespace G
             global::System.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::System.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
             global::System.AnyOf<bool?, object>? externallyManaged = default,
-            global::System.AnyOf<string, object>? id = default,
+            global::System.AnyOf<global::System.Guid?, object>? id = default,
             global::System.AnyOf<global::G.DatasetCreateExtra, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

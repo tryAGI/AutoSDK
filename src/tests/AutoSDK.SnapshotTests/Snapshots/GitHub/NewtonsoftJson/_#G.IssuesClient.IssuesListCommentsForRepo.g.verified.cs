@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref global::G.IssuesListCommentsForRepoSort? sort,
             ref global::G.IssuesListCommentsForRepoDirection? direction,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListCommentsForRepoRequest(
@@ -77,7 +77,7 @@ namespace G
                 repo: ref repo,
                 sort: ref sort,
                 direction: ref direction,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

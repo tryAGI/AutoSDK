@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples_modified", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ExamplesModified { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesModified { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples_added", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ExamplesAdded { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesAdded { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples_removed", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ExamplesRemoved { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ExamplesRemoved { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

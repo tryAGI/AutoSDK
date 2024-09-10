@@ -59,7 +59,8 @@ public readonly record struct TypeData(
         : CSharpTypeWithoutNullability;
 
     public bool IsReferenceable =>
-        CSharpTypeWithoutNullability is "string" or "int" or "long" or "float" or "double" or "bool" ||
+        IsValueType ||
+        CSharpTypeWithoutNullability is "string" ||
         IsAnyOf ||
         IsEnum;
     
@@ -189,6 +190,7 @@ public readonly record struct TypeData(
             ("string", "date") => true,
             ("string", "date-time") => true,
             ("string", "password") => true,
+            ("string", "uuid") => true,
             
             _ => false,
         };
@@ -240,7 +242,7 @@ public readonly record struct TypeData(
             // ("string", "period") => ("global::System.TimeSpan", false),
             // ("string", "duration") => ("global::System.TimeSpan", false),
             // ("string", "uri") => ("global::System.Uri", true),
-            // ("string", "uuid") => ("global::System.Guid", false),
+            ("string", "uuid") => ("global::System.Guid", false),
             
             (null, "url") => ("string", true),
 

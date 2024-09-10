@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid DescriptorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fieldId")]
-        public string? FieldId { get; set; }
+        public global::System.Guid FieldId { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optionId")]
-        public string? OptionId { get; set; }
+        public global::System.Guid? OptionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

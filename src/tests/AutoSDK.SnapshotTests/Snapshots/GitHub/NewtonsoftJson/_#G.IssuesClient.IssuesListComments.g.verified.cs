@@ -11,7 +11,7 @@ namespace G
             ref string owner,
             ref string repo,
             ref int issueNumber,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListCommentsRequest(
@@ -70,7 +70,7 @@ namespace G
                 owner: ref owner,
                 repo: ref repo,
                 issueNumber: ref issueNumber,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

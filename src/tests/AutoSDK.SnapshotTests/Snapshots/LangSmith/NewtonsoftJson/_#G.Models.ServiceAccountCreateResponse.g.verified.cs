@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OrganizationId { get; set; } = default!;
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_workspace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, object> DefaultWorkspaceId { get; set; } = default!;
+        public global::System.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_identity_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OrganizationIdentityId { get; set; } = default!;
+        public global::System.Guid OrganizationIdentityId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

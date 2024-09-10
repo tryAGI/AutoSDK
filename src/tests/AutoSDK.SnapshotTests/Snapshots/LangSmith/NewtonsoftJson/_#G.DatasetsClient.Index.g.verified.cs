@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.DatasetIndexRequest request);
         partial void PrepareIndexRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.DatasetIndexRequest request);
         partial void ProcessIndexResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,7 +113,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<string, object>? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

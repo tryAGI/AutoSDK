@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OrganizationId { get; set; } = default!;
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<string, object>? TenantId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -39,13 +39,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string UserId { get; set; } = default!;
+        public global::System.Guid UserId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::System.AnyOf<string, object>? LsUserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string, object>? RoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_ids")]
-        public global::System.Collections.Generic.IList<string>? TenantIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? TenantIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

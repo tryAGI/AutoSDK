@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareAddRunsToAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string queueId,
-            global::System.Collections.Generic.IList<string> request);
+            ref global::System.Guid queueId,
+            global::System.Collections.Generic.IList<global::System.Guid> request);
         partial void PrepareAddRunsToAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string queueId,
-            global::System.Collections.Generic.IList<string> request);
+            global::System.Guid queueId,
+            global::System.Collections.Generic.IList<global::System.Guid> request);
         partial void ProcessAddRunsToAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,8 +32,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueRunSchema>> AddRunsToAnnotationQueueAsync(
-            string queueId,
-            global::System.Collections.Generic.IList<string> request,
+            global::System.Guid queueId,
+            global::System.Collections.Generic.IList<global::System.Guid> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

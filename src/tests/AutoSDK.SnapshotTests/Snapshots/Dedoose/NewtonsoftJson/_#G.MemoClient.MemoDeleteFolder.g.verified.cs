@@ -10,16 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref string? id,
-            ref string? projectId,
+            ref global::System.Guid id,
+            ref global::System.Guid projectId,
             ref string? title);
         partial void PrepareMemoDeleteFolderRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            string? id,
-            string? projectId,
+            global::System.Guid id,
+            global::System.Guid projectId,
             string? title);
         partial void ProcessMemoDeleteFolderResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,8 +43,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoDeleteFolderAsync(
             string? token = default,
             string? projectIdKey = default,
-            string? id = default,
-            string? projectId = default,
+            global::System.Guid id = default,
+            global::System.Guid projectId = default,
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

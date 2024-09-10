@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteServiceAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string serviceAccountId);
+            ref global::System.Guid serviceAccountId);
         partial void PrepareDeleteServiceAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string serviceAccountId);
+            global::System.Guid serviceAccountId);
         partial void ProcessDeleteServiceAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ServiceAccountDeleteResponse> DeleteServiceAccountAsync(
-            string serviceAccountId,
+            global::System.Guid serviceAccountId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

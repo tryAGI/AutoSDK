@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RuleId { get; set; } = default!;
+        public global::System.Guid RuleId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RunId { get; set; } = default!;
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_session_id")]
-        public global::System.AnyOf<string, object>? RunSessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RunSessionId { get; set; }
 
         /// <summary>
         /// 

@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
-        public global::System.AnyOf<string, object>? UserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? UserId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

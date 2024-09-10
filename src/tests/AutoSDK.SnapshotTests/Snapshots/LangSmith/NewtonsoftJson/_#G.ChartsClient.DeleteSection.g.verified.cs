@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sectionId);
+            ref global::System.Guid sectionId);
         partial void PrepareDeleteSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sectionId);
+            global::System.Guid sectionId);
         partial void ProcessDeleteSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse> DeleteSectionAsync(
-            string sectionId,
+            global::System.Guid sectionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

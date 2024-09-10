@@ -9,13 +9,13 @@ namespace G
         partial void PrepareProjectCheckEncryptedDataArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? encryptedSymKey);
         partial void PrepareProjectCheckEncryptedDataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? encryptedSymKey);
         partial void ProcessProjectCheckEncryptedDataResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectCheckEncryptedDataResponse> ProjectCheckEncryptedDataAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? encryptedSymKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

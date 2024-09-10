@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TenantId { get; set; } = default!;
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 

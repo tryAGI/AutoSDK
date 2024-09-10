@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accountId")]
-        public string? AccountId { get; set; }
+        public global::System.Guid AccountId { get; set; }
 
         /// <summary>
         /// 

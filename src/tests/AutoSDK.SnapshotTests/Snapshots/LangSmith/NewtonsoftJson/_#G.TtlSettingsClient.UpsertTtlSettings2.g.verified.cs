@@ -104,7 +104,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettings2Async(
             global::G.TraceTier3 defaultTraceTier,
-            global::System.AnyOf<string, object>? tenantId = default,
+            global::System.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpsertTTLSettingsRequest

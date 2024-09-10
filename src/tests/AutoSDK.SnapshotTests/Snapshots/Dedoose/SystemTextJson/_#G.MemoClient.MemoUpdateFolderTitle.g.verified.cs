@@ -9,15 +9,15 @@ namespace G
         partial void PrepareMemoUpdateFolderTitleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? folderId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid folderId,
             ref string? title);
         partial void PrepareMemoUpdateFolderTitleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? folderId,
+            global::System.Guid projectId,
+            global::System.Guid folderId,
             string? title);
         partial void ProcessMemoUpdateFolderTitleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoUpdateFolderTitleAsync(
             string? token = default,
-            string? projectId = default,
-            string? folderId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid folderId = default,
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

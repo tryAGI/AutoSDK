@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid DescriptorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourceId")]
-        public string? ResourceId { get; set; }
+        public global::System.Guid ResourceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

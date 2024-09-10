@@ -9,7 +9,7 @@ namespace G
         partial void PrepareAccountUpdateAccountPWPolicyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
+            ref global::System.Guid accountId,
             ref bool enforcePolicy,
             ref int minLength,
             ref bool requireChar,
@@ -24,7 +24,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
+            global::System.Guid accountId,
             bool enforcePolicy,
             int minLength,
             bool requireChar,
@@ -63,7 +63,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AccountVO> AccountUpdateAccountPWPolicyAsync(
             string? token = default,
-            string? accountId = default,
+            global::System.Guid accountId = default,
             bool enforcePolicy = default,
             int minLength = default,
             bool requireChar = default,

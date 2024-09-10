@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeletePendingWorkspaceInviteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id);
+            ref global::System.Guid id);
         partial void PrepareDeletePendingWorkspaceInviteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id);
+            global::System.Guid id);
         partial void ProcessDeletePendingWorkspaceInviteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeletePendingWorkspaceInviteApiV1WorkspacesPendingIdDeleteResponse> DeletePendingWorkspaceInviteAsync(
-            string id,
+            global::System.Guid id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

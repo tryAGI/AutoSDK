@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareDownloadDatasetCsvArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             ref global::System.AnyOf<global::System.DateTime?, object>? asOf);
         partial void PrepareDownloadDatasetCsvRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<global::System.DateTime?, object>? asOf);
         partial void ProcessDownloadDatasetCsvResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DownloadDatasetCsvApiV1DatasetsDatasetIdCsvGetResponse> DownloadDatasetCsvAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<global::System.DateTime?, object>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

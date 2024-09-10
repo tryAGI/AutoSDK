@@ -19,7 +19,7 @@ namespace G
         /// Unique identifier for the generated reply. Useful for submitting feedback.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_id")]
-        public string? GenerationId { get; set; }
+        public global::System.Guid GenerationId { get; set; }
 
         /// <summary>
         /// Inline citations for the generated reply.

@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("row_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? RowId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RowId { get; set; }
 
         /// <summary>
         /// 

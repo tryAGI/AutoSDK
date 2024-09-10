@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Examples { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> Examples { get; set; }
 
         /// <summary>
         /// Default Value: false

@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string DatasetId { get; set; } = default!;
+        public global::System.Guid DatasetId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("share_token", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ShareToken { get; set; } = default!;
+        public global::System.Guid ShareToken { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

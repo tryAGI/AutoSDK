@@ -63,34 +63,34 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_group_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? FeedbackGroupId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? FeedbackGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ComparativeExperimentId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? RunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? SessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 

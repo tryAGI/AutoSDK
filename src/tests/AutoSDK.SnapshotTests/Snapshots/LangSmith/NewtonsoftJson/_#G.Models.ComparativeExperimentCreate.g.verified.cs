@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experiment_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ExperimentIds { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ExperimentIds { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_dataset_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ReferenceDatasetId { get; set; } = default!;
+        public global::System.Guid ReferenceDatasetId { get; set; } = default!;
 
         /// <summary>
         /// 

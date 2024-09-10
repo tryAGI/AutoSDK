@@ -9,15 +9,15 @@ namespace G
         partial void PrepareDescriptorStartExportFieldsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? setId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid setId,
             ref string? fileExtension);
         partial void PrepareDescriptorStartExportFieldsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? setId,
+            global::System.Guid projectId,
+            global::System.Guid setId,
             string? fileExtension);
         partial void ProcessDescriptorStartExportFieldsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartExportFieldsJobResponse> DescriptorStartExportFieldsJobAsync(
             string? token = default,
-            string? projectId = default,
-            string? setId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid setId = default,
             string? fileExtension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

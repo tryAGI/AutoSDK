@@ -108,8 +108,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
             string displayName,
-            string? id = default,
-            global::System.AnyOf<string, object>? organizationId = default,
+            global::System.Guid id = default,
+            global::System.AnyOf<global::System.Guid?, object>? organizationId = default,
             global::System.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

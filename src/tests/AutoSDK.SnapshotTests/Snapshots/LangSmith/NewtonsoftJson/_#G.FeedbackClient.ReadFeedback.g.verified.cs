@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareReadFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string feedbackId);
+            ref global::System.Guid feedbackId);
         partial void PrepareReadFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string feedbackId);
+            global::System.Guid feedbackId);
         partial void ProcessReadFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> ReadFeedbackAsync(
-            string feedbackId,
+            global::System.Guid feedbackId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

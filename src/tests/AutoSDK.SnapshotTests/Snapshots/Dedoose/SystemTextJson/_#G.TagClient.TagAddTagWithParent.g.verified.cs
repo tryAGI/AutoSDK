@@ -9,8 +9,8 @@ namespace G
         partial void PrepareTagAddTagWithParentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? proejctId,
-            ref string? parentTagId,
+            ref global::System.Guid proejctId,
+            ref global::System.Guid parentTagId,
             ref string? title,
             ref string? description,
             ref bool isWeighted,
@@ -23,8 +23,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? proejctId,
-            string? parentTagId,
+            global::System.Guid proejctId,
+            global::System.Guid parentTagId,
             string? title,
             string? description,
             bool isWeighted,
@@ -60,8 +60,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagWithParentAsync(
             string? token = default,
-            string? proejctId = default,
-            string? parentTagId = default,
+            global::System.Guid proejctId = default,
+            global::System.Guid parentTagId = default,
             string? title = default,
             string? description = default,
             bool isWeighted = default,

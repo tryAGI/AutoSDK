@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_key_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TagKeyId { get; set; } = default!;
+        public global::System.Guid TagKeyId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_value_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TagValueId { get; set; } = default!;
+        public global::System.Guid TagValueId { get; set; } = default!;
 
         /// <summary>
         /// 

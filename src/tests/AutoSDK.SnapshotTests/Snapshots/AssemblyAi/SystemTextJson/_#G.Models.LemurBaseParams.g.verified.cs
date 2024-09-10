@@ -16,7 +16,7 @@ namespace G
         /// Use either transcript_ids or input_text as input into LeMUR.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcript_ids")]
-        public global::System.Collections.Generic.IList<string>? TranscriptIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? TranscriptIds { get; set; }
 
         /// <summary>
         /// Custom formatted transcript data. Maximum size is the context limit of the selected model, which defaults to 100000.<br/>

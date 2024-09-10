@@ -19,7 +19,7 @@ namespace G
         /// Unique identifier for the generated search query. Useful for submitting feedback.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string GenerationId { get; set; } = default!;
+        public global::System.Guid GenerationId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

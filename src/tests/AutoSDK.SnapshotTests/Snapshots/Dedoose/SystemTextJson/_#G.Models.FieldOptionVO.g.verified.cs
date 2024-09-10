@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exitingOptionId")]
-        public string? ExitingOptionId { get; set; }
+        public global::System.Guid? ExitingOptionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteComparativeExperimentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string comparativeExperimentId);
+            ref global::System.Guid comparativeExperimentId);
         partial void PrepareDeleteComparativeExperimentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string comparativeExperimentId);
+            global::System.Guid comparativeExperimentId);
         partial void ProcessDeleteComparativeExperimentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteComparativeExperimentApiV1DatasetsComparativeComparativeExperimentIdDeleteResponse> DeleteComparativeExperimentAsync(
-            string comparativeExperimentId,
+            global::System.Guid comparativeExperimentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

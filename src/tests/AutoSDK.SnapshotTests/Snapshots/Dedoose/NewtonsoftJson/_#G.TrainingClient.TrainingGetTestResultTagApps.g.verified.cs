@@ -9,16 +9,16 @@ namespace G
         partial void PrepareTrainingGetTestResultTagAppsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? testId,
-            ref string? testResultId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid testId,
+            ref global::System.Guid testResultId);
         partial void PrepareTrainingGetTestResultTagAppsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? testId,
-            string? testResultId);
+            global::System.Guid projectId,
+            global::System.Guid testId,
+            global::System.Guid testResultId);
         partial void ProcessTrainingGetTestResultTagAppsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>> TrainingGetTestResultTagAppsAsync(
             string? token = default,
-            string? projectId = default,
-            string? testId = default,
-            string? testResultId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid testId = default,
+            global::System.Guid testResultId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

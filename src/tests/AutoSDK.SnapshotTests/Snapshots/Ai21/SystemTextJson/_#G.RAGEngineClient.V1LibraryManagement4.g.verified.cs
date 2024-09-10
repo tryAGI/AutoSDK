@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareV1LibraryManagement4Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string fileId);
+            ref global::System.Guid fileId);
         partial void PrepareV1LibraryManagement4Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string fileId);
+            global::System.Guid fileId);
         partial void ProcessV1LibraryManagement4Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1LibraryManagement4Async(
-            string fileId,
+            global::System.Guid fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

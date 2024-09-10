@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DatasetId { get; set; }
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_run_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? SourceRunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? Id { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// Default Value: false

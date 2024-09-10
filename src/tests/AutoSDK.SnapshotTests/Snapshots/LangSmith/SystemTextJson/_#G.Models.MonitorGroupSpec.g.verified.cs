@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Session { get; set; }
+        public required global::System.Guid Session { get; set; }
 
         /// <summary>
         /// 

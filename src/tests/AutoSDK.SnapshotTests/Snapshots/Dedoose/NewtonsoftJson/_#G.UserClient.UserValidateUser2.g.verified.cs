@@ -11,14 +11,14 @@ namespace G
             ref string? token,
             ref string? username,
             ref string? rsaEncryptedPass,
-            ref string? connectionKey);
+            ref global::System.Guid connectionKey);
         partial void PrepareUserValidateUser2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? username,
             string? rsaEncryptedPass,
-            string? connectionKey);
+            global::System.Guid connectionKey);
         partial void ProcessUserValidateUser2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
             string? token = default,
             string? username = default,
             string? rsaEncryptedPass = default,
-            string? connectionKey = default,
+            global::System.Guid connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

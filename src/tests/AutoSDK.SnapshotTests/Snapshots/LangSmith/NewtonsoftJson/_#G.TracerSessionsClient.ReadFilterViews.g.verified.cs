@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareReadFilterViewsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId);
+            ref global::System.Guid sessionId);
         partial void PrepareReadFilterViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId);
+            global::System.Guid sessionId);
         partial void ProcessReadFilterViewsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FilterView>> ReadFilterViewsAsync(
-            string sessionId,
+            global::System.Guid sessionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

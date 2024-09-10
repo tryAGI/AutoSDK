@@ -49,14 +49,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? DefaultDatasetId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ReferenceDatasetId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -154,7 +154,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TenantId { get; set; }
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminSetAccountCPUPMOverrideArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
+            ref global::System.Guid accountId,
             ref double cpupmOverride,
-            global::System.DateTime endDate);
+            ref global::System.DateTime endDate);
         partial void PrepareAdminSetAccountCPUPMOverrideRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
+            global::System.Guid accountId,
             double cpupmOverride,
             global::System.DateTime endDate);
         partial void ProcessAdminSetAccountCPUPMOverrideResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSetAccountCPUPMOverrideResponse> AdminSetAccountCPUPMOverrideAsync(
             string? token = default,
-            string? accountId = default,
+            global::System.Guid accountId = default,
             double cpupmOverride = default,
             global::System.DateTime endDate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -51,7 +51,7 @@ namespace G
                 token: ref token,
                 accountId: ref accountId,
                 cpupmOverride: ref cpupmOverride,
-                endDate: endDate);
+                endDate: ref endDate);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

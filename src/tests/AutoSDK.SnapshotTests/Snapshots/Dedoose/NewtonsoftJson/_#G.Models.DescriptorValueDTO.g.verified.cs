@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid DescriptorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fieldId")]
-        public string? FieldId { get; set; }
+        public global::System.Guid FieldId { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("optionId")]
-        public string? OptionId { get; set; }
+        public global::System.Guid? OptionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

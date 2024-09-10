@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareListRuleLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string ruleId,
+            ref global::System.Guid ruleId,
             ref int limit,
             ref int offset,
             ref global::System.AnyOf<global::System.DateTime?, object>? startTime,
@@ -16,7 +16,7 @@ namespace G
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string ruleId,
+            global::System.Guid ruleId,
             int limit,
             int offset,
             global::System.AnyOf<global::System.DateTime?, object>? startTime,
@@ -46,7 +46,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleLogSchema>> ListRuleLogsAsync(
-            string ruleId,
+            global::System.Guid ruleId,
             int limit = 720,
             int offset = 0,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,

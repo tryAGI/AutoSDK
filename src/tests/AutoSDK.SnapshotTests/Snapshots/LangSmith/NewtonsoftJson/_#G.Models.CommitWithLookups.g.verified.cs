@@ -15,25 +15,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ManifestId { get; set; } = default!;
+        public global::System.Guid ManifestId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RepoId { get; set; } = default!;
+        public global::System.Guid RepoId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id")]
-        public global::System.AnyOf<string, object>? ParentId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_run_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ExampleRunIds { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ExampleRunIds { get; set; } = default!;
 
         /// <summary>
         /// 

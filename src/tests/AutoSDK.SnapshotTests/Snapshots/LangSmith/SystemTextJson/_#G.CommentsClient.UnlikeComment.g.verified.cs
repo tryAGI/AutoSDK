@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string parentCommentId);
+            ref global::System.Guid parentCommentId);
         partial void PrepareUnlikeCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string parentCommentId);
+            global::System.Guid parentCommentId);
         partial void ProcessUnlikeCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UnlikeCommentApiV1CommentsOwnerRepoParentCommentIdLikeDeleteResponse> UnlikeCommentAsync(
             string owner,
             string repo,
-            string parentCommentId,
+            global::System.Guid parentCommentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

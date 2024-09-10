@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Id { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace")]
-        public global::System.AnyOf<string, object>? Trace { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? Trace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run")]
-        public global::System.AnyOf<string, object>? ParentRun { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentRun { get; set; }
 
         /// <summary>
         /// 
@@ -39,13 +39,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Session { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Session { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ReferenceExample { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ReferenceExample { get; set; }
 
         /// <summary>
         /// 

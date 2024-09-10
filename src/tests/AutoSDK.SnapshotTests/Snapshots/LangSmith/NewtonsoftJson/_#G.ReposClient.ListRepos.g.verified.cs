@@ -11,7 +11,7 @@ namespace G
             ref int limit,
             ref int offset,
             ref global::System.AnyOf<string, object>? tenantHandle,
-            ref global::System.AnyOf<string, object>? tenantId,
+            ref global::System.AnyOf<global::System.Guid?, object>? tenantId,
             ref global::System.AnyOf<string, object>? query,
             ref global::System.AnyOf<bool?, object>? hasCommits,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
@@ -20,7 +20,7 @@ namespace G
             ref global::System.AnyOf<string, object>? upstreamRepoOwner,
             ref global::System.AnyOf<string, object>? upstreamRepoHandle,
             ref global::System.AnyOf<bool?, object>? matchPrefix,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
             ref global::System.AnyOf<string, object>? sortField,
             ref global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
         partial void PrepareListReposRequest(
@@ -29,7 +29,7 @@ namespace G
             int limit,
             int offset,
             global::System.AnyOf<string, object>? tenantHandle,
-            global::System.AnyOf<string, object>? tenantId,
+            global::System.AnyOf<global::System.Guid?, object>? tenantId,
             global::System.AnyOf<string, object>? query,
             global::System.AnyOf<bool?, object>? hasCommits,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags,
@@ -38,7 +38,7 @@ namespace G
             global::System.AnyOf<string, object>? upstreamRepoOwner,
             global::System.AnyOf<string, object>? upstreamRepoHandle,
             global::System.AnyOf<bool?, object>? matchPrefix,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
             global::System.AnyOf<string, object>? sortField,
             global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection);
         partial void ProcessListReposResponse(
@@ -81,7 +81,7 @@ namespace G
             int limit = 20,
             int offset = 0,
             global::System.AnyOf<string, object>? tenantHandle = default,
-            global::System.AnyOf<string, object>? tenantId = default,
+            global::System.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::System.AnyOf<string, object>? query = default,
             global::System.AnyOf<bool?, object>? hasCommits = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
@@ -90,7 +90,7 @@ namespace G
             global::System.AnyOf<string, object>? upstreamRepoOwner = default,
             global::System.AnyOf<string, object>? upstreamRepoHandle = default,
             global::System.AnyOf<bool?, object>? matchPrefix = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.AnyOf<string, object>? sortField = default,
             global::System.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?, object>? sortDirection = default,
             global::System.Threading.CancellationToken cancellationToken = default)

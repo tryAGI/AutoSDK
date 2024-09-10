@@ -9,17 +9,17 @@ namespace G
         partial void PrepareDescriptorStartConvertFieldTypeJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? setId,
-            ref string? fieldId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid setId,
+            ref global::System.Guid fieldId,
             ref int newFieldType);
         partial void PrepareDescriptorStartConvertFieldTypeJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? setId,
-            string? fieldId,
+            global::System.Guid projectId,
+            global::System.Guid setId,
+            global::System.Guid fieldId,
             int newFieldType);
         partial void ProcessDescriptorStartConvertFieldTypeJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,9 +42,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartConvertFieldTypeJobResponse> DescriptorStartConvertFieldTypeJobAsync(
             string? token = default,
-            string? projectId = default,
-            string? setId = default,
-            string? fieldId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid setId = default,
+            global::System.Guid fieldId = default,
             int newFieldType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

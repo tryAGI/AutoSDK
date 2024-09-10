@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareShareDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             ref bool shareProjects);
         partial void PrepareShareDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             bool shareProjects);
         partial void ProcessShareDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetShareSchema> ShareDatasetAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             bool shareProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

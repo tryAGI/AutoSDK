@@ -51,7 +51,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("section_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::G.Missing>? SectionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, global::G.Missing>? SectionId { get; set; }
 
         /// <summary>
         /// 

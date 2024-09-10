@@ -13,7 +13,7 @@ namespace G
         /// The ID of the LeMUR request
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RequestId { get; set; } = default!;
+        public global::System.Guid RequestId { get; set; } = default!;
 
         /// <summary>
         /// The usage numbers for the LeMUR request

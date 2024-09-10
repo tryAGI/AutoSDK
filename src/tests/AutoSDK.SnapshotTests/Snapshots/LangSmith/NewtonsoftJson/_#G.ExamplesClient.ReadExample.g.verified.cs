@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareReadExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string exampleId,
+            ref global::System.Guid exampleId,
             ref global::System.AnyOf<global::System.DateTime?, string>? asOf);
         partial void PrepareReadExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string exampleId,
+            global::System.Guid exampleId,
             global::System.AnyOf<global::System.DateTime?, string>? asOf);
         partial void ProcessReadExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> ReadExampleAsync(
-            string exampleId,
+            global::System.Guid exampleId,
             global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

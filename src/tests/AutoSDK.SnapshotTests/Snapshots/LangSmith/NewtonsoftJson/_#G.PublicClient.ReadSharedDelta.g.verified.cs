@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareReadSharedDeltaArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             global::G.QueryFeedbackDelta request);
         partial void PrepareReadSharedDeltaRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryFeedbackDelta request);
         partial void ProcessReadSharedDeltaResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SessionFeedbackDelta> ReadSharedDeltaAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryFeedbackDelta request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -121,14 +121,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SessionFeedbackDelta> ReadSharedDeltaAsync(
-            string shareToken,
-            string baselineSessionId,
-            global::System.Collections.Generic.IList<string> comparisonSessionIds,
+            global::System.Guid shareToken,
+            global::System.Guid baselineSessionId,
+            global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
             string feedbackKey,
             global::System.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
             int offset = 0,
             int limit = 100,
-            global::System.AnyOf<string, object>? comparativeExperimentId = default,
+            global::System.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryFeedbackDelta

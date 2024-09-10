@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareGetRunFromAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string queueId,
+            ref global::System.Guid queueId,
             ref int index);
         partial void PrepareGetRunFromAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string queueId,
+            global::System.Guid queueId,
             int index);
         partial void ProcessGetRunFromAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunSchemaWithAnnotationQueueInfo> GetRunFromAnnotationQueueAsync(
-            string queueId,
+            global::System.Guid queueId,
             int index,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -9,8 +9,8 @@ namespace G
     {
         partial void PrepareReadSharedExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.Guid shareToken,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
             ref global::System.AnyOf<string, object>? metadata,
             ref int offset,
@@ -20,8 +20,8 @@ namespace G
         partial void PrepareReadSharedExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::System.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.AnyOf<string, object>? metadata,
             int offset,
@@ -61,8 +61,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadSharedExamplesAsync(
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.AnyOf<string, object>? metadata = default,
             int offset = 0,

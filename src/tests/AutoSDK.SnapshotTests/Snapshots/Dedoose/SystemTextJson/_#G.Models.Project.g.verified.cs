@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("adminIDL")]
-        public string? AdminIDL { get; set; }
+        public global::System.Guid AdminIDL { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdBy")]
-        public string? CreatedBy { get; set; }
+        public global::System.Guid CreatedBy { get; set; }
 
         /// <summary>
         /// 

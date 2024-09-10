@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tagId")]
-        public string? TagId { get; set; }
+        public global::System.Guid TagId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceId")]
-        public string? ResourceId { get; set; }
+        public global::System.Guid ResourceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excerptId")]
-        public string? ExcerptId { get; set; }
+        public global::System.Guid? ExcerptId { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userId")]
-        public string? UserId { get; set; }
+        public global::System.Guid UserId { get; set; }
 
         /// <summary>
         /// 

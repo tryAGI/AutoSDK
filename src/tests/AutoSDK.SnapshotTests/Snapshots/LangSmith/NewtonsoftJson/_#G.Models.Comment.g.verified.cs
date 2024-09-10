@@ -15,25 +15,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment_by")]
-        public global::System.AnyOf<string, object>? CommentBy { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? CommentBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CommentOn { get; set; } = default!;
+        public global::System.Guid CommentOn { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id")]
-        public global::System.AnyOf<string, object>? ParentId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
 
         /// <summary>
         /// 

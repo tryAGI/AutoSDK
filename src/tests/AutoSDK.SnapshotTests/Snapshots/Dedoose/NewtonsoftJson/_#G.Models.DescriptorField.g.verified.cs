@@ -19,25 +19,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIDL")]
-        public string? ProjectIDL { get; set; }
+        public global::System.Guid ProjectIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("descriptorSetIDL")]
-        public string? DescriptorSetIDL { get; set; }
+        public global::System.Guid DescriptorSetIDL { get; set; }
 
         /// <summary>
         /// 

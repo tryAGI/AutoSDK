@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.DatasetUpdate request);
         partial void PrepareUpdateDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.DatasetUpdate request);
         partial void ProcessUpdateDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.DatasetUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,7 +115,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<string, global::G.Missing, object>? name = default,
             global::System.AnyOf<string, global::G.Missing, object>? description = default,
             global::System.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? inputsSchemaDefinition = default,

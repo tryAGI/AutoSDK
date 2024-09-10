@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareReadTracerSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId,
+            ref global::System.Guid sessionId,
             ref bool includeStats,
             ref global::System.AnyOf<string, object>? accept);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId,
+            global::System.Guid sessionId,
             bool includeStats,
             global::System.AnyOf<string, object>? accept);
         partial void ProcessReadTracerSessionResponse(
@@ -38,7 +38,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
-            string sessionId,
+            global::System.Guid sessionId,
             bool includeStats = false,
             global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)

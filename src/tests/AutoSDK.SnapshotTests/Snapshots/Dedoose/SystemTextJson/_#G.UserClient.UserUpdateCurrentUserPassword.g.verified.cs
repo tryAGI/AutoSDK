@@ -9,13 +9,13 @@ namespace G
         partial void PrepareUserUpdateCurrentUserPasswordArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
+            ref global::System.Guid userId,
             ref string? encryptedPass);
         partial void PrepareUserUpdateCurrentUserPasswordRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
+            global::System.Guid userId,
             string? encryptedPass);
         partial void ProcessUserUpdateCurrentUserPasswordResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserUpdateCurrentUserPasswordResponse> UserUpdateCurrentUserPasswordAsync(
             string? token = default,
-            string? userId = default,
+            global::System.Guid userId = default,
             string? encryptedPass = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

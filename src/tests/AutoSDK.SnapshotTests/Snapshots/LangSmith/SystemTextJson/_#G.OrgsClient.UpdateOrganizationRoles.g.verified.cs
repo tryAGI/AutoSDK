@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateOrganizationRolesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string roleId,
+            ref global::System.Guid roleId,
             global::G.UpdateRoleRequest request);
         partial void PrepareUpdateOrganizationRolesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string roleId,
+            global::System.Guid roleId,
             global::G.UpdateRoleRequest request);
         partial void ProcessUpdateOrganizationRolesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Role> UpdateOrganizationRolesAsync(
-            string roleId,
+            global::System.Guid roleId,
             global::G.UpdateRoleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -111,7 +111,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Role> UpdateOrganizationRolesAsync(
-            string roleId,
+            global::System.Guid roleId,
             string displayName,
             string description,
             global::System.Collections.Generic.IList<string> permissions,

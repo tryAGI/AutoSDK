@@ -10,21 +10,21 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref string? id,
-            ref string? creator,
-            ref string? projectId,
-            ref string? resourceId,
+            ref global::System.Guid id,
+            ref global::System.Guid creator,
+            ref global::System.Guid projectId,
+            ref global::System.Guid resourceId,
             ref string? dataPath,
-            global::System.DateTime created);
+            ref global::System.DateTime created);
         partial void PrepareResourceDeleteTranscriptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            string? id,
-            string? creator,
-            string? projectId,
-            string? resourceId,
+            global::System.Guid id,
+            global::System.Guid creator,
+            global::System.Guid projectId,
+            global::System.Guid resourceId,
             string? dataPath,
             global::System.DateTime created);
         partial void ProcessResourceDeleteTranscriptResponse(
@@ -52,10 +52,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ResourceDeleteTranscriptResponse> ResourceDeleteTranscriptAsync(
             string? token = default,
             string? projectIdKey = default,
-            string? id = default,
-            string? creator = default,
-            string? projectId = default,
-            string? resourceId = default,
+            global::System.Guid id = default,
+            global::System.Guid creator = default,
+            global::System.Guid projectId = default,
+            global::System.Guid resourceId = default,
             string? dataPath = default,
             global::System.DateTime created = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -71,7 +71,7 @@ namespace G
                 projectId: ref projectId,
                 resourceId: ref resourceId,
                 dataPath: ref dataPath,
-                created: created);
+                created: ref created);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

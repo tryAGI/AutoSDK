@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareReadExamplesWithRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.QueryExampleSchemaWithRuns request);
         partial void PrepareReadExamplesWithRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.QueryExampleSchemaWithRuns request);
         partial void ProcessReadExamplesWithRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::System.Collections.Generic.IList<global::G.ExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.QueryExampleSchemaWithRuns request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -119,9 +119,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::System.Collections.Generic.IList<global::G.ExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadExamplesWithRunsAsync(
-            string datasetId,
-            global::System.Collections.Generic.IList<string> sessionIds,
-            global::System.AnyOf<string, object>? comparativeExperimentId = default,
+            global::System.Guid datasetId,
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::System.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? filters = default,
             int offset = 0,
             int limit = 20,

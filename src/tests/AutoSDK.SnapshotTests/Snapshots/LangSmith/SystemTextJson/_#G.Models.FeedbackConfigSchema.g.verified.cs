@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TenantId { get; set; }
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 

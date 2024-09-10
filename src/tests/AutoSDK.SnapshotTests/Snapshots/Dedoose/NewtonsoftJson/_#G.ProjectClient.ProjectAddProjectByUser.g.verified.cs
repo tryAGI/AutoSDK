@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectAddProjectByUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
+            ref global::System.Guid userId,
             ref string? title,
             ref string? decription);
         partial void PrepareProjectAddProjectByUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
+            global::System.Guid userId,
             string? title,
             string? decription);
         partial void ProcessProjectAddProjectByUserResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Project> ProjectAddProjectByUserAsync(
             string? token = default,
-            string? userId = default,
+            global::System.Guid userId = default,
             string? title = default,
             string? decription = default,
             global::System.Threading.CancellationToken cancellationToken = default)

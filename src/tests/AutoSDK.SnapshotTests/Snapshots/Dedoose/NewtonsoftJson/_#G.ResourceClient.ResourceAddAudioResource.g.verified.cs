@@ -9,8 +9,8 @@ namespace G
         partial void PrepareResourceAddAudioResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
             ref string? title,
             ref string? description,
             ref string? videoUploadURL);
@@ -18,8 +18,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
             string? title,
             string? description,
             string? videoUploadURL);
@@ -45,8 +45,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceAddAudioResourceAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
             string? title = default,
             string? description = default,
             string? videoUploadURL = default,

@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RuleId { get; set; }
+        public required global::System.Guid RuleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RunId { get; set; }
+        public required global::System.Guid RunId { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_session_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? RunSessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RunSessionId { get; set; }
 
         /// <summary>
         /// 

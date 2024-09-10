@@ -9,7 +9,7 @@ namespace G
         partial void PrepareProjectAddProjectEncryptedByUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
+            ref global::System.Guid userId,
             ref string? title,
             ref string? decription,
             ref string? symKeyHash);
@@ -17,7 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
+            global::System.Guid userId,
             string? title,
             string? decription,
             string? symKeyHash);
@@ -42,7 +42,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Project> ProjectAddProjectEncryptedByUserAsync(
             string? token = default,
-            string? userId = default,
+            global::System.Guid userId = default,
             string? title = default,
             string? decription = default,
             string? symKeyHash = default,

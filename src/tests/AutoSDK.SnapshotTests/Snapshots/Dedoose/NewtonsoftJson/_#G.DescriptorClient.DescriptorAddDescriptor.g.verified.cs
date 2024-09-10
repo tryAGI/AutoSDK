@@ -9,17 +9,17 @@ namespace G
         partial void PrepareDescriptorAddDescriptorArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
-            ref string? setId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
+            ref global::System.Guid setId,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO> request);
         partial void PrepareDescriptorAddDescriptorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
-            string? setId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
+            global::System.Guid setId,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO> request);
         partial void ProcessDescriptorAddDescriptorResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,9 +43,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorWithValues> DescriptorAddDescriptorAsync(
             global::System.Collections.Generic.IList<global::G.FieldValueDTO> request,
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
-            string? setId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid setId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

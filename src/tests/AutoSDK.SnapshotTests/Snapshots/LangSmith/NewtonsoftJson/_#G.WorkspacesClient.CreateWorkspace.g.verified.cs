@@ -107,7 +107,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateWorkspaceAsync(
             string displayName,
-            string? id = default,
+            global::System.Guid id = default,
             global::System.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareReadDatasetShareStateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId);
+            ref global::System.Guid datasetId);
         partial void PrepareReadDatasetShareStateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId);
+            global::System.Guid datasetId);
         partial void ProcessReadDatasetShareStateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::G.DatasetShareSchema, object>> ReadDatasetShareStateAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

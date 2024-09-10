@@ -40,7 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileIds")]
-        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 
         /// <summary>
         /// Default Value: default

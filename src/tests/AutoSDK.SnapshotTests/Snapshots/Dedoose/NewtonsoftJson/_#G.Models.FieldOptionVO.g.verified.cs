@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exitingOptionId")]
-        public string? ExitingOptionId { get; set; }
+        public global::System.Guid? ExitingOptionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

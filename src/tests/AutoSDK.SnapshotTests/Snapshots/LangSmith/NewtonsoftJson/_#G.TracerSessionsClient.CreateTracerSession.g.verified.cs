@@ -129,10 +129,10 @@ namespace G
             global::System.AnyOf<global::G.TracerSessionCreateExtra, object>? extra = default,
             string? name = default,
             global::System.AnyOf<string, object>? description = default,
-            global::System.AnyOf<string, object>? defaultDatasetId = default,
-            global::System.AnyOf<string, object>? referenceDatasetId = default,
+            global::System.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
+            global::System.AnyOf<global::System.Guid?, object>? referenceDatasetId = default,
             global::System.AnyOf<global::G.TraceTier3?, object>? traceTier = default,
-            global::System.AnyOf<string, object>? id = default,
+            global::System.AnyOf<global::System.Guid?, object>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TracerSessionCreate

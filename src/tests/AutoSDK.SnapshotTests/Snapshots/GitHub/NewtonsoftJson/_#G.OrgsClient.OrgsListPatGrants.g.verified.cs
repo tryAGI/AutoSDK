@@ -17,8 +17,8 @@ namespace G
             global::System.Collections.Generic.IList<string>? owner,
             ref string? repository,
             ref string? permission,
-            global::System.DateTime lastUsedBefore,
-            global::System.DateTime lastUsedAfter);
+            ref global::System.DateTime lastUsedBefore,
+            ref global::System.DateTime lastUsedAfter);
         partial void PrepareOrgsListPatGrantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -97,8 +97,8 @@ namespace G
                 owner: owner,
                 repository: ref repository,
                 permission: ref permission,
-                lastUsedBefore: lastUsedBefore,
-                lastUsedAfter: lastUsedAfter);
+                lastUsedBefore: ref lastUsedBefore,
+                lastUsedAfter: ref lastUsedAfter);
 
             var sortValue = sort switch
             {

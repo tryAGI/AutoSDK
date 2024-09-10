@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TenantId { get; set; } = default!;
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 

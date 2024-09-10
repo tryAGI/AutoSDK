@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string exampleId);
+            ref global::System.Guid exampleId);
         partial void PrepareDeleteExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string exampleId);
+            global::System.Guid exampleId);
         partial void ProcessDeleteExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteExampleApiV1ExamplesExampleIdDeleteResponse> DeleteExampleAsync(
-            string exampleId,
+            global::System.Guid exampleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

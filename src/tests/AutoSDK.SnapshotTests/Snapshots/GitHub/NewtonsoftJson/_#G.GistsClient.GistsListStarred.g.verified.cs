@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareGistsListStarredArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareGistsListStarredRequest(
@@ -49,7 +49,7 @@ namespace G
                 client: _httpClient);
             PrepareGistsListStarredArguments(
                 httpClient: _httpClient,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

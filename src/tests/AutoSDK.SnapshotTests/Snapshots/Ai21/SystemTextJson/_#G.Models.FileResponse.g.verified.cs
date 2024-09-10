@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FileId { get; set; }
+        public required global::System.Guid FileId { get; set; }
 
         /// <summary>
         /// The name of the file. This is the local file name from when the file was<br/>
@@ -76,7 +76,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdBy")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedBy { get; set; }
+        public required global::System.Guid CreatedBy { get; set; }
 
         /// <summary>
         /// The date when the file was uploaded.

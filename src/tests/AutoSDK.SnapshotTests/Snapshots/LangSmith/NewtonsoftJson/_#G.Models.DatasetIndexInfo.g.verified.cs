@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string DatasetId { get; set; } = default!;
+        public global::System.Guid DatasetId { get; set; } = default!;
 
         /// <summary>
         /// Default Value: latest

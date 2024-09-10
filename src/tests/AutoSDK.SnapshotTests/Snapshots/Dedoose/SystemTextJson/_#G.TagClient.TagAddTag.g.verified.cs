@@ -9,7 +9,7 @@ namespace G
         partial void PrepareTagAddTagArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? title,
             ref string? description,
             ref bool isWeighted,
@@ -22,7 +22,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? title,
             string? description,
             bool isWeighted,
@@ -57,7 +57,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? title = default,
             string? description = default,
             bool isWeighted = default,

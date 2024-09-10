@@ -9,14 +9,14 @@ namespace G
         partial void PrepareTrainingGetTestTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? testId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid testId);
         partial void PrepareTrainingGetTestTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? testId);
+            global::System.Guid projectId,
+            global::System.Guid testId);
         partial void ProcessTrainingGetTestTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTestTag>> TrainingGetTestTagsAsync(
             string? token = default,
-            string? projectId = default,
-            string? testId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid testId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

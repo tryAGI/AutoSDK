@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RunId { get; set; } = default!;
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 

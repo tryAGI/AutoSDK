@@ -9,14 +9,14 @@ namespace G
         partial void PrepareExcerptGetExcerptsByProjectIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref int page,
             ref int pageSize);
         partial void PrepareExcerptGetExcerptsByProjectIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             int page,
             int pageSize);
         partial void ProcessExcerptGetExcerptsByProjectIdResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Excerpt>> ExcerptGetExcerptsByProjectIdAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             int page = default,
             int pageSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)

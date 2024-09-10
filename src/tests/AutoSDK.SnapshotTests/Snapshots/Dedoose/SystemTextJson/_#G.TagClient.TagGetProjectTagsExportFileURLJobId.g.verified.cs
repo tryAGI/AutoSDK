@@ -9,7 +9,7 @@ namespace G
         partial void PrepareTagGetProjectTagsExportFileURLJobIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? fileExtension,
             ref bool includeExcerpts,
             ref string? encryptedSymKey);
@@ -17,7 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? fileExtension,
             bool includeExcerpts,
             string? encryptedSymKey);
@@ -42,7 +42,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TagGetProjectTagsExportFileURLJobIdAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? fileExtension = default,
             bool includeExcerpts = default,
             string? encryptedSymKey = default,

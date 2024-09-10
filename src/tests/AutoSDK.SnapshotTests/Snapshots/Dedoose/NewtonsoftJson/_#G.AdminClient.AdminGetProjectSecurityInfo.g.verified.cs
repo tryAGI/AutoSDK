@@ -9,12 +9,12 @@ namespace G
         partial void PrepareAdminGetProjectSecurityInfoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId);
+            ref global::System.Guid projectId);
         partial void PrepareAdminGetProjectSecurityInfoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId);
+            global::System.Guid projectId);
         partial void ProcessAdminGetProjectSecurityInfoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminGetProjectSecurityInfoResponse> AdminGetProjectSecurityInfoAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

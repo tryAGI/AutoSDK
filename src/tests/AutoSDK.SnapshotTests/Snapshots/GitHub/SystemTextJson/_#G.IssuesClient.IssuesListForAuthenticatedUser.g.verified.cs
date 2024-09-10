@@ -13,7 +13,7 @@ namespace G
             ref string? labels,
             ref global::G.IssuesListForAuthenticatedUserSort? sort,
             ref global::G.IssuesListForAuthenticatedUserDirection? direction,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PrepareIssuesListForAuthenticatedUserRequest(
@@ -91,7 +91,7 @@ namespace G
                 labels: ref labels,
                 sort: ref sort,
                 direction: ref direction,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

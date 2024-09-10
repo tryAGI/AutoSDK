@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareReadSharedDatasetExamplesWithRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             global::G.QueryExampleSchemaWithRuns request);
         partial void PrepareReadSharedDatasetExamplesWithRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryExampleSchemaWithRuns request);
         partial void ProcessReadSharedDatasetExamplesWithRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryExampleSchemaWithRuns request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -119,9 +119,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
-            string shareToken,
-            global::System.Collections.Generic.IList<string> sessionIds,
-            global::System.AnyOf<string, object>? comparativeExperimentId = default,
+            global::System.Guid shareToken,
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::System.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? filters = default,
             int offset = 0,
             int limit = 20,

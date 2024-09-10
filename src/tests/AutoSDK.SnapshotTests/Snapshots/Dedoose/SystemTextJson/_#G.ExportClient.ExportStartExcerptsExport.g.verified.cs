@@ -9,7 +9,7 @@ namespace G
         partial void PrepareExportStartExcerptsExportArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? fileExtension,
             ref int exCopyMode,
             ref int sortMode,
@@ -25,12 +25,12 @@ namespace G
             ref bool tagRange,
             ref bool memos,
             ref string? symKeyEncrypted,
-            global::System.Collections.Generic.IList<string> request);
+            global::System.Collections.Generic.IList<global::System.Guid> request);
         partial void PrepareExportStartExcerptsExportRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? fileExtension,
             int exCopyMode,
             int sortMode,
@@ -46,7 +46,7 @@ namespace G
             bool tagRange,
             bool memos,
             string? symKeyEncrypted,
-            global::System.Collections.Generic.IList<string> request);
+            global::System.Collections.Generic.IList<global::System.Guid> request);
         partial void ProcessExportStartExcerptsExportResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -80,9 +80,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ExportStartExcerptsExportAsync(
-            global::System.Collections.Generic.IList<string> request,
+            global::System.Collections.Generic.IList<global::System.Guid> request,
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? fileExtension = default,
             int exCopyMode = default,
             int sortMode = default,

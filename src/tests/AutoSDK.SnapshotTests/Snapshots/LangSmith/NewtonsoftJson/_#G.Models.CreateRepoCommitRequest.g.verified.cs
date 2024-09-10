@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_run_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ExampleRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleRunIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

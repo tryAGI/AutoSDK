@@ -9,14 +9,14 @@ namespace G
         partial void PrepareSecurityUnlinkUserFromProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
-            ref string? projectId);
+            ref global::System.Guid userId,
+            ref global::System.Guid projectId);
         partial void PrepareSecurityUnlinkUserFromProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
-            string? projectId);
+            global::System.Guid userId,
+            global::System.Guid projectId);
         partial void ProcessSecurityUnlinkUserFromProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SecurityUnlinkUserFromProjectResponse> SecurityUnlinkUserFromProjectAsync(
             string? token = default,
-            string? userId = default,
-            string? projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

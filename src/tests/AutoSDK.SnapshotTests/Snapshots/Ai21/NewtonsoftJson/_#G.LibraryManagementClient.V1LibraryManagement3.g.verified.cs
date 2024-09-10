@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareV1LibraryManagement3Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string fileId,
+            ref global::System.Guid fileId,
             global::G.FilesUpdateRequest request);
         partial void PrepareV1LibraryManagement3Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string fileId,
+            global::System.Guid fileId,
             global::G.FilesUpdateRequest request);
         partial void ProcessV1LibraryManagement3Response(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1LibraryManagementResponse> V1LibraryManagement3Async(
-            string fileId,
+            global::System.Guid fileId,
             global::G.FilesUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -133,7 +133,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1LibraryManagementResponse> V1LibraryManagement3Async(
-            string fileId,
+            global::System.Guid fileId,
             string? publicUrl = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)

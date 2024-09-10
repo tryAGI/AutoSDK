@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateChartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string chartId,
+            ref global::System.Guid chartId,
             global::G.CustomChartUpdate request);
         partial void PrepareUpdateChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string chartId,
+            global::System.Guid chartId,
             global::G.CustomChartUpdate request);
         partial void ProcessUpdateChartResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
-            string chartId,
+            global::System.Guid chartId,
             global::G.CustomChartUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -118,13 +118,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
-            string chartId,
+            global::System.Guid chartId,
             global::System.AnyOf<string, global::G.Missing>? title = default,
             global::System.AnyOf<string, global::G.Missing, object>? description = default,
             global::System.AnyOf<int?, global::G.Missing>? index = default,
             global::System.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series = default,
-            global::System.AnyOf<string, global::G.Missing>? sectionId = default,
+            global::System.AnyOf<global::System.Guid?, global::G.Missing>? sectionId = default,
             global::System.AnyOf<global::G.CustomChartUpdateMetadata, global::G.Missing, object>? metadata = default,
             global::System.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)

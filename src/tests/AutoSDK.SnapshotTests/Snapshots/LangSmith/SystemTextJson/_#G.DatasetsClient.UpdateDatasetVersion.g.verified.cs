@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateDatasetVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.PutDatasetVersionsSchema request);
         partial void PrepareUpdateDatasetVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.PutDatasetVersionsSchema request);
         partial void ProcessUpdateDatasetVersionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetVersion> UpdateDatasetVersionAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.PutDatasetVersionsSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,7 +112,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetVersion> UpdateDatasetVersionAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.DateTime asOf,
             string tag,
             global::System.Threading.CancellationToken cancellationToken = default)

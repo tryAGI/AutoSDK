@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareTriggerRuleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string ruleId);
+            ref global::System.Guid ruleId);
         partial void PrepareTriggerRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string ruleId);
+            global::System.Guid ruleId);
         partial void ProcessTriggerRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunRulesSchema> TriggerRuleAsync(
-            string ruleId,
+            global::System.Guid ruleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

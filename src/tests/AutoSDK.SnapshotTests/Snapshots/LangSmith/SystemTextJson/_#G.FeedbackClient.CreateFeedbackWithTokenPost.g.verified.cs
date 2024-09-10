@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareCreateFeedbackWithTokenPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string token,
+            ref global::System.Guid token,
             global::G.FeedbackCreateWithTokenExtendedSchema request);
         partial void PrepareCreateFeedbackWithTokenPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string token,
+            global::System.Guid token,
             global::G.FeedbackCreateWithTokenExtendedSchema request);
         partial void ProcessCreateFeedbackWithTokenPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
-            string token,
+            global::System.Guid token,
             global::G.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,7 +115,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
-            string token,
+            global::System.Guid token,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
             global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
             global::System.AnyOf<string, object>? comment = default,

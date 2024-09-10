@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateExampleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string exampleId,
+            ref global::System.Guid exampleId,
             global::G.ExampleUpdate request);
         partial void PrepareUpdateExampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string exampleId,
+            global::System.Guid exampleId,
             global::G.ExampleUpdate request);
         partial void ProcessUpdateExampleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
-            string exampleId,
+            global::System.Guid exampleId,
             global::G.ExampleUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,8 +115,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
-            string exampleId,
-            global::System.AnyOf<string, object>? datasetId = default,
+            global::System.Guid exampleId,
+            global::System.AnyOf<global::System.Guid?, object>? datasetId = default,
             global::System.AnyOf<global::G.ExampleUpdateInputs, object>? inputs = default,
             global::System.AnyOf<global::G.ExampleUpdateOutputs, object>? outputs = default,
             global::System.AnyOf<global::G.ExampleUpdateMetadata, object>? metadata = default,

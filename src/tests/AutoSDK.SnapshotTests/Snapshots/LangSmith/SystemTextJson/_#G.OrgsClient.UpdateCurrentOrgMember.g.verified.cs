@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateCurrentOrgMemberArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string identityId,
+            ref global::System.Guid identityId,
             global::G.OrgIdentityPatch request);
         partial void PrepareUpdateCurrentOrgMemberRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string identityId,
+            global::System.Guid identityId,
             global::G.OrgIdentityPatch request);
         partial void ProcessUpdateCurrentOrgMemberResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
-            string identityId,
+            global::System.Guid identityId,
             global::G.OrgIdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,10 +113,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
-            string identityId,
+            global::System.Guid identityId,
             global::System.AnyOf<string, object>? password = default,
             global::System.AnyOf<string, object>? fullName = default,
-            global::System.AnyOf<string, object>? roleId = default,
+            global::System.AnyOf<global::System.Guid?, object>? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgIdentityPatch

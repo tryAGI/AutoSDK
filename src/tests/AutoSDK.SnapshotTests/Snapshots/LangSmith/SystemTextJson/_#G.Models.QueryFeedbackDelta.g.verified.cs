@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("baseline_session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string BaselineSessionId { get; set; }
+        public required global::System.Guid BaselineSessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparison_session_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ComparisonSessionIds { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ComparisonSessionIds { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ComparativeExperimentId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

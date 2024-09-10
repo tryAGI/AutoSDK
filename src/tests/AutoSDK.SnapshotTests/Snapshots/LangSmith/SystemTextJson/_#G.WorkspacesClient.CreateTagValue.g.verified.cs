@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareCreateTagValueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string tagKeyId,
+            ref global::System.Guid tagKeyId,
             global::G.TagValueCreate request);
         partial void PrepareCreateTagValueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string tagKeyId,
+            global::System.Guid tagKeyId,
             global::G.TagValueCreate request);
         partial void ProcessCreateTagValueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagValue> CreateTagValueAsync(
-            string tagKeyId,
+            global::System.Guid tagKeyId,
             global::G.TagValueCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,7 +110,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagValue> CreateTagValueAsync(
-            string tagKeyId,
+            global::System.Guid tagKeyId,
             string value,
             global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)

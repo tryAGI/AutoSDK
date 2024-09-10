@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateAnnotationQueueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string queueId,
+            ref global::System.Guid queueId,
             global::G.AnnotationQueueUpdateSchema request);
         partial void PrepareUpdateAnnotationQueueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string queueId,
+            global::System.Guid queueId,
             global::G.AnnotationQueueUpdateSchema request);
         partial void ProcessUpdateAnnotationQueueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
-            string queueId,
+            global::System.Guid queueId,
             global::G.AnnotationQueueUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -118,10 +118,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
-            string queueId,
+            global::System.Guid queueId,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? description = default,
-            global::System.AnyOf<string, object>? defaultDataset = default,
+            global::System.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::System.AnyOf<int?, object>? numReviewersPerItem = default,
             bool enableReservations = true,
             global::System.AnyOf<int?, object>? reservationMinutes = default,

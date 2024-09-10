@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("adminId")]
-        public string? AdminId { get; set; }
+        public global::System.Guid? AdminId { get; set; }
 
         /// <summary>
         /// 

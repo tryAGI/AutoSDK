@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareCreateIdentityAnnotationQueueRunStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string annotationQueueRunId,
+            ref global::System.Guid annotationQueueRunId,
             global::G.IdentityAnnotationQueueRunStatusCreateSchema request);
         partial void PrepareCreateIdentityAnnotationQueueRunStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string annotationQueueRunId,
+            global::System.Guid annotationQueueRunId,
             global::G.IdentityAnnotationQueueRunStatusCreateSchema request);
         partial void ProcessCreateIdentityAnnotationQueueRunStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
-            string annotationQueueRunId,
+            global::System.Guid annotationQueueRunId,
             global::G.IdentityAnnotationQueueRunStatusCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,7 +110,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateIdentityAnnotationQueueRunStatusApiV1AnnotationQueuesStatusAnnotationQueueRunIdPostResponse> CreateIdentityAnnotationQueueRunStatusAsync(
-            string annotationQueueRunId,
+            global::System.Guid annotationQueueRunId,
             global::System.AnyOf<string, object>? status = default,
             global::System.AnyOf<global::System.DateTime?, object>? overrideAddedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)

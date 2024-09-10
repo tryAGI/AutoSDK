@@ -15,14 +15,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ExperimentIds { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ExperimentIds { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ReferenceDatasetId { get; set; }
+        public required global::System.Guid ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid DescriptorId { get; set; }
 
         /// <summary>
         /// 

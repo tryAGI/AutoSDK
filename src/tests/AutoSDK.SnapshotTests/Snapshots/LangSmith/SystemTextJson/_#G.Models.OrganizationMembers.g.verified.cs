@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string OrganizationId { get; set; }
+        public required global::System.Guid OrganizationId { get; set; }
 
         /// <summary>
         /// 

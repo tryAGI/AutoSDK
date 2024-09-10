@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_modified")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ExamplesModified { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesModified { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_added")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ExamplesAdded { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesAdded { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples_removed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ExamplesRemoved { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ExamplesRemoved { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

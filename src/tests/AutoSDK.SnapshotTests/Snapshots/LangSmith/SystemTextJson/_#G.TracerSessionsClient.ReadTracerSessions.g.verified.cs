@@ -9,8 +9,8 @@ namespace G
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.AnyOf<bool?, object>? referenceFree,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::System.AnyOf<string, object>? name,
             ref global::System.AnyOf<string, object>? nameContains,
             ref global::System.AnyOf<string, object>? datasetVersion,
@@ -20,15 +20,15 @@ namespace G
             ref global::System.AnyOf<string, object>? sortByFeedbackKey,
             ref int offset,
             ref int limit,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
             ref bool facets,
             ref global::System.AnyOf<string, object>? accept);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.AnyOf<bool?, object>? referenceFree,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::System.AnyOf<string, object>? name,
             global::System.AnyOf<string, object>? nameContains,
             global::System.AnyOf<string, object>? datasetVersion,
@@ -38,7 +38,7 @@ namespace G
             global::System.AnyOf<string, object>? sortByFeedbackKey,
             int offset,
             int limit,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
             bool facets,
             global::System.AnyOf<string, object>? accept);
         partial void ProcessReadTracerSessionsResponse(
@@ -83,8 +83,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
             global::System.AnyOf<bool?, object>? referenceFree = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceDataset = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? nameContains = default,
             global::System.AnyOf<string, object>? datasetVersion = default,
@@ -94,7 +94,7 @@ namespace G
             global::System.AnyOf<string, object>? sortByFeedbackKey = default,
             int offset = 0,
             int limit = 100,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             bool facets = false,
             global::System.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)

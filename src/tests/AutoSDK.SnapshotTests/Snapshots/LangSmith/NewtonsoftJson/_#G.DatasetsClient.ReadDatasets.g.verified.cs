@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
             ref global::System.AnyOf<string, object>? name,
             ref global::System.AnyOf<string, object>? nameContains,
@@ -17,11 +17,11 @@ namespace G
             ref int limit,
             ref global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
             ref bool sortByDesc,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void PrepareReadDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
             global::System.AnyOf<string, object>? name,
             global::System.AnyOf<string, object>? nameContains,
@@ -30,7 +30,7 @@ namespace G
             int limit,
             global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId);
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void ProcessReadDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,7 +65,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType = default,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? nameContains = default,
@@ -74,7 +74,7 @@ namespace G
             int limit = 100,
             global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
             bool sortByDesc = true,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

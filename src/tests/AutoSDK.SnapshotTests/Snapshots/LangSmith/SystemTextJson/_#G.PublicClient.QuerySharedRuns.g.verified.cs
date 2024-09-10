@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareQuerySharedRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             global::G.QueryParamsForPublicRunSchema request);
         partial void PrepareQuerySharedRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryParamsForPublicRunSchema request);
         partial void ProcessQuerySharedRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPublicRunsResponse> QuerySharedRunsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.QueryParamsForPublicRunSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -111,8 +111,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPublicRunsResponse> QuerySharedRunsAsync(
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryParamsForPublicRunSchema

@@ -10,14 +10,14 @@ namespace G
         partial void PrepareDescriptorDeleteDescriptorsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            global::System.Collections.Generic.IList<string>? descriptorsIds);
+            ref global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorsIds);
         partial void PrepareDescriptorDeleteDescriptorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            global::System.Collections.Generic.IList<string>? descriptorsIds);
+            global::System.Guid projectId,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorsIds);
         partial void ProcessDescriptorDeleteDescriptorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorDeleteDescriptorsResponse> DescriptorDeleteDescriptorsAsync(
             string? token = default,
-            string? projectId = default,
-            global::System.Collections.Generic.IList<string>? descriptorsIds = default,
+            global::System.Guid projectId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorsIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareReadSingleChartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string chartId,
+            ref global::System.Guid chartId,
             global::G.CustomChartsRequest request);
         partial void PrepareReadSingleChartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string chartId,
+            global::System.Guid chartId,
             global::G.CustomChartsRequest request);
         partial void ProcessReadSingleChartResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SingleCustomChartResponse> ReadSingleChartAsync(
-            string chartId,
+            global::System.Guid chartId,
             global::G.CustomChartsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -118,13 +118,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SingleCustomChartResponse> ReadSingleChartAsync(
-            string chartId,
+            global::System.Guid chartId,
             global::System.DateTime startTime,
             string? timezone = "UTC",
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.AllOf<global::G.TimedeltaInput>? stride = default,
             global::System.AnyOf<int?, object>? afterIndex = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartsRequest

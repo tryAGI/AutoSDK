@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RequestId { get; set; }
+        public required global::System.Guid RequestId { get; set; }
 
         /// <summary>
         /// The usage numbers for the LeMUR request

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcript_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TranscriptId { get; set; }
+        public required global::System.Guid TranscriptId { get; set; }
 
         /// <summary>
         /// The status of the transcript. Either completed or error.

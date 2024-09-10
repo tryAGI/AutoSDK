@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteModelPriceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id);
+            ref global::System.Guid id);
         partial void PrepareDeleteModelPriceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id);
+            global::System.Guid id);
         partial void ProcessDeleteModelPriceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteModelPriceApiV1ModelPriceMapIdDeleteResponse> DeleteModelPriceAsync(
-            string id,
+            global::System.Guid id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

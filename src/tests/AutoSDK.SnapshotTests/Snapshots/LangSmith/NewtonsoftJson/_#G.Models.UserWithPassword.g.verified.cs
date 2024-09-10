@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::System.AnyOf<string, object>? LsUserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
 
         /// <summary>
         /// 

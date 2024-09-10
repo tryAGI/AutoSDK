@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileIds")]
-        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 
         /// <summary>
         /// Default Value: default

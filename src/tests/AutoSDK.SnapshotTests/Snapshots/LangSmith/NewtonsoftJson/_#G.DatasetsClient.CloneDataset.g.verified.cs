@@ -107,10 +107,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> CloneDatasetAsync(
-            string targetDatasetId,
-            string sourceDatasetId,
+            global::System.Guid targetDatasetId,
+            global::System.Guid sourceDatasetId,
             global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string>?, object>? asOf = default,
-            global::System.Collections.Generic.IList<string>? examples = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyCloneDatasetApiV1DatasetsClonePost

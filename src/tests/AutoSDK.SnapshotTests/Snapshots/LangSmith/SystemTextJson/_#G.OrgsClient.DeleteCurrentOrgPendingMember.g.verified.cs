@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteCurrentOrgPendingMemberArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string identityId);
+            ref global::System.Guid identityId);
         partial void PrepareDeleteCurrentOrgPendingMemberRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string identityId);
+            global::System.Guid identityId);
         partial void ProcessDeleteCurrentOrgPendingMemberResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteCurrentOrgPendingMemberApiV1OrgsCurrentMembersIdentityIdPendingDeleteResponse> DeleteCurrentOrgPendingMemberAsync(
-            string identityId,
+            global::System.Guid identityId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareResourceCloneDocumentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? resourceId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid resourceId,
             ref bool cloneExcerpts,
             ref bool cloneTagApps);
         partial void PrepareResourceCloneDocumentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? resourceId,
+            global::System.Guid projectId,
+            global::System.Guid resourceId,
             bool cloneExcerpts,
             bool cloneTagApps);
         partial void ProcessResourceCloneDocumentResponse(
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceServiceCloneDocumentControllerOutput> ResourceCloneDocumentAsync(
             string? token = default,
-            string? projectId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid resourceId = default,
             bool cloneExcerpts = default,
             bool cloneTagApps = default,
             global::System.Threading.CancellationToken cancellationToken = default)

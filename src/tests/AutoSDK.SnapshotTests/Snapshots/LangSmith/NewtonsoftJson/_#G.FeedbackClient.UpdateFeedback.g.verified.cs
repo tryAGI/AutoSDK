@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string feedbackId,
+            ref global::System.Guid feedbackId,
             global::G.FeedbackUpdateSchema request);
         partial void PrepareUpdateFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string feedbackId,
+            global::System.Guid feedbackId,
             global::G.FeedbackUpdateSchema request);
         partial void ProcessUpdateFeedbackResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
-            string feedbackId,
+            global::System.Guid feedbackId,
             global::G.FeedbackUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,7 +115,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
-            string feedbackId,
+            global::System.Guid feedbackId,
             global::System.AnyOf<double?, int?, bool?, object>? score = default,
             global::System.AnyOf<double?, int?, bool?, string, global::G.FeedbackUpdateSchemaValue, object>? value = default,
             global::System.AnyOf<string, object>? comment = default,

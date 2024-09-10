@@ -9,13 +9,13 @@ namespace G
         partial void PrepareProjectRenameProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? newTitle);
         partial void PrepareProjectRenameProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? newTitle);
         partial void ProcessProjectRenameProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectRenameProjectResponse> ProjectRenameProjectAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? newTitle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

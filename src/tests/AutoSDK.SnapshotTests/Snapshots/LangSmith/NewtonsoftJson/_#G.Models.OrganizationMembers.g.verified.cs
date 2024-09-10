@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string OrganizationId { get; set; } = default!;
+        public global::System.Guid OrganizationId { get; set; } = default!;
 
         /// <summary>
         /// 

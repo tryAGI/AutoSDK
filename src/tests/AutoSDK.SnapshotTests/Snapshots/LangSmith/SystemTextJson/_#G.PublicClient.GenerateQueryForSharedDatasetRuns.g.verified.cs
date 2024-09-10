@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareGenerateQueryForSharedDatasetRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             global::G.RequestBodyForRunsGenerateQuery request);
         partial void PrepareGenerateQueryForSharedDatasetRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.RequestBodyForRunsGenerateQuery request);
         partial void ProcessGenerateQueryForSharedDatasetRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResponseBodyForRunsGenerateQuery> GenerateQueryForSharedDatasetRunsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::G.RequestBodyForRunsGenerateQuery request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,7 +112,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResponseBodyForRunsGenerateQuery> GenerateQueryForSharedDatasetRunsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             string query,
             global::System.Collections.Generic.IList<global::G.RunsGenerateQueryFeedbackKeys>? feedbackKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)

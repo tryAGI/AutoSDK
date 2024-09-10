@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset")]
-        public global::System.AnyOf<string, object>? DefaultDataset { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -63,13 +63,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TenantId { get; set; } = default!;
+        public global::System.Guid TenantId { get; set; } = default!;
 
         /// <summary>
         /// 

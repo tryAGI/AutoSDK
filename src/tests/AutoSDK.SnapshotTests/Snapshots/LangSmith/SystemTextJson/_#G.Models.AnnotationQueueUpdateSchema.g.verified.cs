@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? DefaultDataset { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1

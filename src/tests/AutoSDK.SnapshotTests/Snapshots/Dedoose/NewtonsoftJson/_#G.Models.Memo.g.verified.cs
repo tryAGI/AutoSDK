@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -37,13 +37,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createdUserId")]
-        public string? CreatedUserId { get; set; }
+        public global::System.Guid CreatedUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lastEditUserId")]
-        public string? LastEditUserId { get; set; }
+        public global::System.Guid LastEditUserId { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("folderId")]
-        public string? FolderId { get; set; }
+        public global::System.Guid? FolderId { get; set; }
 
         /// <summary>
         /// 

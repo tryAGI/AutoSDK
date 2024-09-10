@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fieldId")]
-        public string? FieldId { get; set; }
+        public global::System.Guid FieldId { get; set; }
 
         /// <summary>
         /// 

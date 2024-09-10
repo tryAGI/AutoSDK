@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? UserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? UserId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

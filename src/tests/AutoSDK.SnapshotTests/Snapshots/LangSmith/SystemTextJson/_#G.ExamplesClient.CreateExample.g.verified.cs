@@ -116,13 +116,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> CreateExampleAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<global::G.ExampleCreateOutputs, object>? outputs = default,
-            global::System.AnyOf<string, object>? sourceRunId = default,
+            global::System.AnyOf<global::System.Guid?, object>? sourceRunId = default,
             global::System.AnyOf<global::G.ExampleCreateMetadata, object>? metadata = default,
             global::System.AnyOf<global::G.ExampleCreateInputs, object>? inputs = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
-            global::System.AnyOf<string, object>? id = default,
+            global::System.AnyOf<global::System.Guid?, object>? id = default,
             bool useSourceRunIo = false,
             global::System.DateTime createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)

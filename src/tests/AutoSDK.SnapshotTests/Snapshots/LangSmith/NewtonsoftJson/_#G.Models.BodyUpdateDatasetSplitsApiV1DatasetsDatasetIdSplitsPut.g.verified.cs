@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Examples { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> Examples { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false

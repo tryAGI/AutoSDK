@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareSearchArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.SearchDatasetRequest request);
         partial void PrepareSearchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.SearchDatasetRequest request);
         partial void ProcessSearchResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.SearchDatasetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,7 +117,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.SearchDatasetRequestInputs inputs,
             int limit = 5,
             bool debug = false,

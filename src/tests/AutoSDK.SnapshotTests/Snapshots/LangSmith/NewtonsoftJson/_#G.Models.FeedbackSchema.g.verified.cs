@@ -57,31 +57,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_group_id")]
-        public global::System.AnyOf<string, object>? FeedbackGroupId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? FeedbackGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparative_experiment_id")]
-        public global::System.AnyOf<string, object>? ComparativeExperimentId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id")]
-        public global::System.AnyOf<string, object>? RunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string, object>? SessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 

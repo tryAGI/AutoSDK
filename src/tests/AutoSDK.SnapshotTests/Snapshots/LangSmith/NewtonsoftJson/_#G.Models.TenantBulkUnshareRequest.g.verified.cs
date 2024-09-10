@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("share_tokens")]
-        public global::System.Collections.Generic.IList<string>? ShareTokens { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? ShareTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

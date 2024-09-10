@@ -16,21 +16,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Id { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? Trace { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? Trace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ParentRun { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentRun { get; set; }
 
         /// <summary>
         /// 
@@ -44,14 +44,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Session { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Session { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ReferenceExample { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ReferenceExample { get; set; }
 
         /// <summary>
         /// 

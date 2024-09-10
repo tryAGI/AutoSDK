@@ -9,14 +9,14 @@ namespace G
         partial void PrepareUserLinkUsertoAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
-            ref string? accountId);
+            ref global::System.Guid userId,
+            ref global::System.Guid accountId);
         partial void PrepareUserLinkUsertoAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
-            string? accountId);
+            global::System.Guid userId,
+            global::System.Guid accountId);
         partial void ProcessUserLinkUsertoAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserLinkUsertoAccountResponse> UserLinkUsertoAccountAsync(
             string? token = default,
-            string? userId = default,
-            string? accountId = default,
+            global::System.Guid userId = default,
+            global::System.Guid accountId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

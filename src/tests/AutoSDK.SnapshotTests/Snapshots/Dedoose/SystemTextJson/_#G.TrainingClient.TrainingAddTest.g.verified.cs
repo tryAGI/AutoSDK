@@ -10,22 +10,22 @@ namespace G
         partial void PrepareTrainingAddTestArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref int trainingTestType,
             ref string? title,
             ref string? description,
-            ref string? createdUserId,
+            ref global::System.Guid createdUserId,
             global::System.Collections.Generic.IList<string>? exIds,
             global::System.Collections.Generic.IList<string>? tagIds);
         partial void PrepareTrainingAddTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             int trainingTestType,
             string? title,
             string? description,
-            string? createdUserId,
+            global::System.Guid createdUserId,
             global::System.Collections.Generic.IList<string>? exIds,
             global::System.Collections.Generic.IList<string>? tagIds);
         partial void ProcessTrainingAddTestResponse(
@@ -52,11 +52,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TrainingAddTestAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             int trainingTestType = default,
             string? title = default,
             string? description = default,
-            string? createdUserId = default,
+            global::System.Guid createdUserId = default,
             global::System.Collections.Generic.IList<string>? exIds = default,
             global::System.Collections.Generic.IList<string>? tagIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)

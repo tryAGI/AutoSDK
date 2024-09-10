@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteUsageLimitArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string usageLimitId);
+            ref global::System.Guid usageLimitId);
         partial void PrepareDeleteUsageLimitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string usageLimitId);
+            global::System.Guid usageLimitId);
         partial void ProcessDeleteUsageLimitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteUsageLimitApiV1UsageLimitsUsageLimitIdDeleteResponse> DeleteUsageLimitAsync(
-            string usageLimitId,
+            global::System.Guid usageLimitId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

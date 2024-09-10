@@ -104,7 +104,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntities2Async(
-            global::System.Collections.Generic.IList<string>? shareTokens = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TenantBulkUnshareRequest

@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string parentCommentId,
+            ref global::System.Guid parentCommentId,
             global::G.CreateCommentRequest request);
         partial void PrepareCreateSubCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string parentCommentId,
+            global::System.Guid parentCommentId,
             global::G.CreateCommentRequest request);
         partial void ProcessCreateSubCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Comment> CreateSubCommentAsync(
             string owner,
             string repo,
-            string parentCommentId,
+            global::System.Guid parentCommentId,
             global::G.CreateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -125,7 +125,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Comment> CreateSubCommentAsync(
             string owner,
             string repo,
-            string parentCommentId,
+            global::System.Guid parentCommentId,
             string content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareResourceGetResourceSyncItemsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? resourceId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid resourceId);
         partial void PrepareResourceGetResourceSyncItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? resourceId);
+            global::System.Guid projectId,
+            global::System.Guid resourceId);
         partial void ProcessResourceGetResourceSyncItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceGetResourceSyncItemsResponse> ResourceGetResourceSyncItemsAsync(
             string? token = default,
-            string? projectId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid resourceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

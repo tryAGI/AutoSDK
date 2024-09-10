@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareReadSharedDatasetRunArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string runId,
-            ref string shareToken,
+            ref global::System.Guid runId,
+            ref global::System.Guid shareToken,
             ref bool excludeS3StoredAttributes);
         partial void PrepareReadSharedDatasetRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string runId,
-            string shareToken,
+            global::System.Guid runId,
+            global::System.Guid shareToken,
             bool excludeS3StoredAttributes);
         partial void ProcessReadSharedDatasetRunResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,8 +38,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunPublicDatasetSchema> ReadSharedDatasetRunAsync(
-            string runId,
-            string shareToken,
+            global::System.Guid runId,
+            global::System.Guid shareToken,
             bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

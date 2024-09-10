@@ -13,7 +13,7 @@ namespace G
         /// The ID of the transcript
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TranscriptId { get; set; } = default!;
+        public global::System.Guid TranscriptId { get; set; } = default!;
 
         /// <summary>
         /// The status of the transcript. Either completed or error.

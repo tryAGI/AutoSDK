@@ -32,13 +32,13 @@ namespace G
         /// Get transcripts that were created before this transcript ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("before_id")]
-        public string? BeforeId { get; set; }
+        public global::System.Guid BeforeId { get; set; }
 
         /// <summary>
         /// Get transcripts that were created after this transcript ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("after_id")]
-        public string? AfterId { get; set; }
+        public global::System.Guid AfterId { get; set; }
 
         /// <summary>
         /// Only get throttled transcripts, overrides the status filter<br/>

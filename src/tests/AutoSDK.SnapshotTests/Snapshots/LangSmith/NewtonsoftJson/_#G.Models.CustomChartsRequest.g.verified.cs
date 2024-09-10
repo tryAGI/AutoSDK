@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_value_id")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? TagValueId { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? TagValueId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

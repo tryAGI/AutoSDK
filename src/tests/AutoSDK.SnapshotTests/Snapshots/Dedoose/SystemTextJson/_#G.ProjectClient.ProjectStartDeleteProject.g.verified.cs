@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectStartDeleteProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId);
         partial void PrepareProjectStartDeleteProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId);
+            global::System.Guid projectId,
+            global::System.Guid userId);
         partial void ProcessProjectStartDeleteProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartDeleteProjectAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

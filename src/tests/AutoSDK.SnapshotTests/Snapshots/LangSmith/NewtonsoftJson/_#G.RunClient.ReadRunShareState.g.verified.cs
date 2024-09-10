@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareReadRunShareStateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string runId);
+            ref global::System.Guid runId);
         partial void PrepareReadRunShareStateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string runId);
+            global::System.Guid runId);
         partial void ProcessReadRunShareStateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::G.RunShareSchema, object>> ReadRunShareStateAsync(
-            string runId,
+            global::System.Guid runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

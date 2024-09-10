@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string apiKeyId);
+            ref global::System.Guid apiKeyId);
         partial void PrepareDeleteApiKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string apiKeyId);
+            global::System.Guid apiKeyId);
         partial void ProcessDeleteApiKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyGetResponse> DeleteApiKeyAsync(
-            string apiKeyId,
+            global::System.Guid apiKeyId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

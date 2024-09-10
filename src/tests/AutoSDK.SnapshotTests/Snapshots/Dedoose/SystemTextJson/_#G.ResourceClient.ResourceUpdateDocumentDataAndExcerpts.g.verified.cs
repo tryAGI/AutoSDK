@@ -10,9 +10,9 @@ namespace G
         partial void PrepareResourceUpdateDocumentDataAndExcerptsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
-            ref string? resourceId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
+            ref global::System.Guid resourceId,
             ref string? updatedTextDataURI,
             ref int updatedLength,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
@@ -20,9 +20,9 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
-            string? resourceId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
+            global::System.Guid resourceId,
             string? updatedTextDataURI,
             int updatedLength,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
@@ -49,9 +49,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateDocumentDataAndExcerptsResponse> ResourceUpdateDocumentDataAndExcerptsAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid resourceId = default,
             string? updatedTextDataURI = default,
             int updatedLength = default,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts = default,

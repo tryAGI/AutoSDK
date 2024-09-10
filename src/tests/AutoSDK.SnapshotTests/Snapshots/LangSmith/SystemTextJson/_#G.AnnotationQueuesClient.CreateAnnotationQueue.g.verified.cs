@@ -120,11 +120,11 @@ namespace G
             global::System.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.DateTime updatedAt = default,
-            global::System.AnyOf<string, object>? defaultDataset = default,
+            global::System.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::System.AnyOf<int?, object>? numReviewersPerItem = default,
             global::System.AnyOf<bool?, object>? enableReservations = default,
             global::System.AnyOf<int?, object>? reservationMinutes = default,
-            string? id = default,
+            global::System.Guid id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.AnnotationQueueCreateSchema

@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateDatasetSplitsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request);
         partial void PrepareUpdateDatasetSplitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request);
         partial void ProcessUpdateDatasetSplitsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,8 +31,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> UpdateDatasetSplitsAsync(
-            string datasetId,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> UpdateDatasetSplitsAsync(
+            global::System.Guid datasetId,
             global::G.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,7 +97,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<string>?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::System.Guid>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -112,10 +112,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> UpdateDatasetSplitsAsync(
-            string datasetId,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> UpdateDatasetSplitsAsync(
+            global::System.Guid datasetId,
             string splitName,
-            global::System.Collections.Generic.IList<string> examples,
+            global::System.Collections.Generic.IList<global::System.Guid> examples,
             bool remove = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

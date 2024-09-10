@@ -19,25 +19,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIDL")]
-        public string? ProjectIDL { get; set; }
+        public global::System.Guid ProjectIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("takenBy")]
-        public string? TakenBy { get; set; }
+        public global::System.Guid TakenBy { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTestIDL")]
-        public string? TrainingTestIDL { get; set; }
+        public global::System.Guid TrainingTestIDL { get; set; }
 
         /// <summary>
         /// 

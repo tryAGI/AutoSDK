@@ -9,16 +9,16 @@ namespace G
         partial void PrepareSecurityAddGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? title,
-            ref string? accessListId);
+            ref global::System.Guid accessListId);
         partial void PrepareSecurityAddGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? title,
-            string? accessListId);
+            global::System.Guid accessListId);
         partial void ProcessSecurityAddGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserGroup> SecurityAddGroupAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? title = default,
-            string? accessListId = default,
+            global::System.Guid accessListId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

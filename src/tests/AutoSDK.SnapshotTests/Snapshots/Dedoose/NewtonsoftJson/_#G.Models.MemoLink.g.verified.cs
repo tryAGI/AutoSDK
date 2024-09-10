@@ -19,43 +19,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("memoId")]
-        public string? MemoId { get; set; }
+        public global::System.Guid MemoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourceId")]
-        public string? ResourceId { get; set; }
+        public global::System.Guid? ResourceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excerptId")]
-        public string? ExcerptId { get; set; }
+        public global::System.Guid? ExcerptId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid? DescriptorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tagId")]
-        public string? TagId { get; set; }
+        public global::System.Guid? TagId { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createUserId")]
-        public string? CreateUserId { get; set; }
+        public global::System.Guid CreateUserId { get; set; }
 
         /// <summary>
         /// 

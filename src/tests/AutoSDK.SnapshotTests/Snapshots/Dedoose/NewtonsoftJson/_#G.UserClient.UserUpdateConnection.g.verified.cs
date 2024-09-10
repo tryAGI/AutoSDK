@@ -9,16 +9,16 @@ namespace G
         partial void PrepareUserUpdateConnectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
-            ref string? connectionKey,
-            ref string? projectId);
+            ref global::System.Guid userId,
+            ref global::System.Guid connectionKey,
+            ref global::System.Guid projectId);
         partial void PrepareUserUpdateConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
-            string? connectionKey,
-            string? projectId);
+            global::System.Guid userId,
+            global::System.Guid connectionKey,
+            global::System.Guid projectId);
         partial void ProcessUserUpdateConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserUpdateConnectionAsync(
             string? token = default,
-            string? userId = default,
-            string? connectionKey = default,
-            string? projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid connectionKey = default,
+            global::System.Guid projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

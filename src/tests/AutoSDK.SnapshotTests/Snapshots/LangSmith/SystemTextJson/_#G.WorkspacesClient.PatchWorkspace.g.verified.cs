@@ -8,12 +8,12 @@ namespace G
     {
         partial void PreparePatchWorkspaceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string workspaceId,
+            ref global::System.Guid workspaceId,
             global::G.WorkspacePatch request);
         partial void PreparePatchWorkspaceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string workspaceId,
+            global::System.Guid workspaceId,
             global::G.WorkspacePatch request);
         partial void ProcessPatchWorkspaceResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> PatchWorkspaceAsync(
-            string workspaceId,
+            global::System.Guid workspaceId,
             global::G.WorkspacePatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,7 +109,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> PatchWorkspaceAsync(
-            string workspaceId,
+            global::System.Guid workspaceId,
             string displayName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

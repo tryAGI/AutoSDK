@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareUpdateTagValueArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string tagKeyId,
-            ref string tagValueId,
+            ref global::System.Guid tagKeyId,
+            ref global::System.Guid tagValueId,
             global::G.TagValueUpdate request);
         partial void PrepareUpdateTagValueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string tagKeyId,
-            string tagValueId,
+            global::System.Guid tagKeyId,
+            global::System.Guid tagValueId,
             global::G.TagValueUpdate request);
         partial void ProcessUpdateTagValueResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,8 +35,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagValue> UpdateTagValueAsync(
-            string tagKeyId,
-            string tagValueId,
+            global::System.Guid tagKeyId,
+            global::System.Guid tagValueId,
             global::G.TagValueUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,8 +117,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagValue> UpdateTagValueAsync(
-            string tagKeyId,
-            string tagValueId,
+            global::System.Guid tagKeyId,
+            global::System.Guid tagValueId,
             global::System.AnyOf<string, object>? value = default,
             global::System.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)

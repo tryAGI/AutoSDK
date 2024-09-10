@@ -9,8 +9,8 @@ namespace G
         partial void PrepareResourceStartExportDocumentJobWithRTLArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? resourceId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid resourceId,
             ref bool includeExRegions,
             ref bool rtl,
             ref string? exportExtension,
@@ -19,8 +19,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? resourceId,
+            global::System.Guid projectId,
+            global::System.Guid resourceId,
             bool includeExRegions,
             bool rtl,
             string? exportExtension,
@@ -48,8 +48,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceStartExportDocumentJobWithRTLResponse> ResourceStartExportDocumentJobWithRTLAsync(
             string? token = default,
-            string? projectId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid resourceId = default,
             bool includeExRegions = default,
             bool rtl = default,
             string? exportExtension = default,

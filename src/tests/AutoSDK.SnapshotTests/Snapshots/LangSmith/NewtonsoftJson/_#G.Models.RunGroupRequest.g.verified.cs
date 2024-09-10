@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string SessionId { get; set; } = default!;
+        public global::System.Guid SessionId { get; set; } = default!;
 
         /// <summary>
         /// 

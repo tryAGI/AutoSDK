@@ -99,21 +99,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ParentRunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ManifestId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest_s3_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ManifestS3Id { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestS3Id { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TraceId { get; set; }
+        public required global::System.Guid TraceId { get; set; }
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -183,21 +183,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("child_run_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("direct_child_run_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? DirectChildRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? DirectChildRunIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ParentRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ParentRunIds { get; set; }
 
         /// <summary>
         /// 
@@ -211,7 +211,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ReferenceExampleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -257,7 +257,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? PriceModelId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? PriceModelId { get; set; }
 
         /// <summary>
         /// 
@@ -271,7 +271,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SessionId { get; set; }
+        public required global::System.Guid SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -299,7 +299,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ShareToken { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ShareToken { get; set; }
 
         /// <summary>
         /// 

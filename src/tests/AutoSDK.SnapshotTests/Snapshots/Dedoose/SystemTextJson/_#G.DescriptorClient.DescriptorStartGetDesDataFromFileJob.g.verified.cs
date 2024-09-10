@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? localFileURL,
-            ref string? setId,
-            ref string? projectId);
+            ref global::System.Guid setId,
+            ref global::System.Guid projectId);
         partial void PrepareDescriptorStartGetDesDataFromFileJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? localFileURL,
-            string? setId,
-            string? projectId);
+            global::System.Guid setId,
+            global::System.Guid projectId);
         partial void ProcessDescriptorStartGetDesDataFromFileJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,8 +40,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorStartGetDesDataFromFileJobResponse> DescriptorStartGetDesDataFromFileJobAsync(
             string? token = default,
             string? localFileURL = default,
-            string? setId = default,
-            string? projectId = default,
+            global::System.Guid setId = default,
+            global::System.Guid projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

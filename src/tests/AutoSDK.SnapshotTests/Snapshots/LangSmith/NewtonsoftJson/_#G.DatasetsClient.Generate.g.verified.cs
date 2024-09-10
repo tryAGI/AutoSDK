@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             global::G.GenerateSyntheticExamplesBody request);
         partial void PrepareGenerateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.GenerateSyntheticExamplesBody request);
         partial void ProcessGenerateResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::G.GenerateSyntheticExamplesBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,9 +112,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             int numExamples,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? exampleIds = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.GenerateSyntheticExamplesBody

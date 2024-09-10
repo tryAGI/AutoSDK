@@ -50,7 +50,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? TagValueId { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? TagValueId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

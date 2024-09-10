@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareGetSharedRunByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id,
-            ref string shareToken,
+            ref global::System.Guid id,
+            ref global::System.Guid shareToken,
             ref bool excludeS3StoredAttributes);
         partial void PrepareGetSharedRunByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id,
-            string shareToken,
+            global::System.Guid id,
+            global::System.Guid shareToken,
             bool excludeS3StoredAttributes);
         partial void ProcessGetSharedRunByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,8 +38,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunPublicSchema> GetSharedRunByIdAsync(
-            string id,
-            string shareToken,
+            global::System.Guid id,
+            global::System.Guid shareToken,
             bool excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

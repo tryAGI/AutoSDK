@@ -9,12 +9,12 @@ namespace G
         partial void PrepareAdminStartAddDemoProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId);
+            ref global::System.Guid userId);
         partial void PrepareAdminStartAddDemoProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId);
+            global::System.Guid userId);
         partial void ProcessAdminStartAddDemoProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminStartAddDemoProjectResponse> AdminStartAddDemoProjectAsync(
             string? token = default,
-            string? userId = default,
+            global::System.Guid userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

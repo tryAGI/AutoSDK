@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<string, object>? RoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? WorkspaceIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_role_id")]
-        public global::System.AnyOf<string, object>? WorkspaceRoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
@@ -63,25 +63,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
-        public global::System.AnyOf<string, object>? UserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<string, object>? TenantId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::System.AnyOf<string, object>? OrganizationId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 

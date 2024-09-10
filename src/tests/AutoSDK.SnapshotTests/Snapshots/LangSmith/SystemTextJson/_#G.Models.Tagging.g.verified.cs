@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TagValueId { get; set; }
+        public required global::System.Guid TagValueId { get; set; }
 
         /// <summary>
         /// 
@@ -29,14 +29,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResourceId { get; set; }
+        public required global::System.Guid ResourceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 

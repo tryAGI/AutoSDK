@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAccountGrantAdminArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
-            ref string? userId);
+            ref global::System.Guid accountId,
+            ref global::System.Guid userId);
         partial void PrepareAccountGrantAdminRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
-            string? userId);
+            global::System.Guid accountId,
+            global::System.Guid userId);
         partial void ProcessAccountGrantAdminResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> AccountGrantAdminAsync(
             string? token = default,
-            string? accountId = default,
-            string? userId = default,
+            global::System.Guid accountId = default,
+            global::System.Guid userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

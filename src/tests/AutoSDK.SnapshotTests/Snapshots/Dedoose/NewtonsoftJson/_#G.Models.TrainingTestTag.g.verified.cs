@@ -19,19 +19,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTestIDL")]
-        public string? TrainingTestIDL { get; set; }
+        public global::System.Guid TrainingTestIDL { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTagParentIDL")]
-        public string? TrainingTagParentIDL { get; set; }
+        public global::System.Guid? TrainingTagParentIDL { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIDL")]
-        public string? ProjectIDL { get; set; }
+        public global::System.Guid ProjectIDL { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

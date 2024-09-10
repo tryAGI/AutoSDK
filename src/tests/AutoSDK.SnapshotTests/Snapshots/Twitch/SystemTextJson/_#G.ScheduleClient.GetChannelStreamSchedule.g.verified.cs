@@ -11,7 +11,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             global::System.Collections.Generic.IList<string>? id,
-            global::System.DateTime startTime,
+            ref global::System.DateTime startTime,
             ref string? utcOffset,
             ref int first,
             ref string? after);
@@ -62,7 +62,7 @@ namespace G
                 httpClient: _httpClient,
                 broadcasterId: ref broadcasterId,
                 id: id,
-                startTime: startTime,
+                startTime: ref startTime,
                 utcOffset: ref utcOffset,
                 first: ref first,
                 after: ref after);

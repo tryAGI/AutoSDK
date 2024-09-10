@@ -10,14 +10,14 @@ namespace G
         partial void PrepareExcerptStartDeleteExcerptsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? currentProjectId,
-            global::System.Collections.Generic.IList<string>? excerptIds);
+            ref global::System.Guid currentProjectId,
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds);
         partial void PrepareExcerptStartDeleteExcerptsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? currentProjectId,
-            global::System.Collections.Generic.IList<string>? excerptIds);
+            global::System.Guid currentProjectId,
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds);
         partial void ProcessExcerptStartDeleteExcerptsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ExcerptStartDeleteExcerptsJobAsync(
             string? token = default,
-            string? currentProjectId = default,
-            global::System.Collections.Generic.IList<string>? excerptIds = default,
+            global::System.Guid currentProjectId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? excerptIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

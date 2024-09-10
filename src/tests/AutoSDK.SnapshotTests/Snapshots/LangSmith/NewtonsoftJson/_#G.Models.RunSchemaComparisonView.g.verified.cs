@@ -87,19 +87,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.AnyOf<string, object>? ParentRunId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_id")]
-        public global::System.AnyOf<string, object>? ManifestId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_s3_id")]
-        public global::System.AnyOf<string, object>? ManifestS3Id { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ManifestS3Id { get; set; }
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TraceId { get; set; } = default!;
+        public global::System.Guid TraceId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -147,19 +147,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string SessionId { get; set; } = default!;
+        public global::System.Guid SessionId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::System.AnyOf<string, object>? ReferenceExampleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 

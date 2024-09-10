@@ -9,14 +9,14 @@ namespace G
         partial void PrepareDescriptorForceDeleteDescriptorSetPolledArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectIDL,
-            ref string? descriptorSetId);
+            ref global::System.Guid projectIDL,
+            ref global::System.Guid descriptorSetId);
         partial void PrepareDescriptorForceDeleteDescriptorSetPolledRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectIDL,
-            string? descriptorSetId);
+            global::System.Guid projectIDL,
+            global::System.Guid descriptorSetId);
         partial void ProcessDescriptorForceDeleteDescriptorSetPolledResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DescriptorForceDeleteDescriptorSetPolledAsync(
             string? token = default,
-            string? projectIDL = default,
-            string? descriptorSetId = default,
+            global::System.Guid projectIDL = default,
+            global::System.Guid descriptorSetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -116,7 +116,7 @@ namespace G
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.AllOf<global::G.TimedeltaInput>? stride = default,
             global::System.AnyOf<int?, object>? afterIndex = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? tagValueId = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartsRequest

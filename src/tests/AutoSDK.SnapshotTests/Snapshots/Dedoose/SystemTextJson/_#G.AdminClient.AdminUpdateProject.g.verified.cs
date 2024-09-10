@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAdminUpdateProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? title,
-            ref string? adminId);
+            ref global::System.Guid adminId);
         partial void PrepareAdminUpdateProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? title,
-            string? adminId);
+            global::System.Guid adminId);
         partial void ProcessAdminUpdateProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminUpdateProjectResponse> AdminUpdateProjectAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? title = default,
-            string? adminId = default,
+            global::System.Guid adminId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

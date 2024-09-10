@@ -9,8 +9,8 @@ namespace G
         partial void PrepareListDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? datasetType,
-            global::System.DateTime before,
-            global::System.DateTime after,
+            ref global::System.DateTime before,
+            ref global::System.DateTime after,
             ref double limit,
             ref double offset,
             ref global::G.DatasetValidationStatus? validationStatus,
@@ -64,8 +64,8 @@ namespace G
             PrepareListDatasetsArguments(
                 httpClient: _httpClient,
                 datasetType: ref datasetType,
-                before: before,
-                after: after,
+                before: ref before,
+                after: ref after,
                 limit: ref limit,
                 offset: ref offset,
                 validationStatus: ref validationStatus,

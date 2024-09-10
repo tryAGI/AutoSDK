@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RequestId { get; set; }
+        public required global::System.Guid RequestId { get; set; }
 
         /// <summary>
         /// The ID of the LeMUR request to purge the data for
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id_to_purge")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RequestIdToPurge { get; set; }
+        public required global::System.Guid RequestIdToPurge { get; set; }
 
         /// <summary>
         /// Whether the request data was deleted

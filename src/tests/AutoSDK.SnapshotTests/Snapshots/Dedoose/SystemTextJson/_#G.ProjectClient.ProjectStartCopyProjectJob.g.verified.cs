@@ -9,16 +9,16 @@ namespace G
         partial void PrepareProjectStartCopyProjectJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
-            ref string? projectId,
+            ref global::System.Guid userId,
+            ref global::System.Guid projectId,
             ref string? title,
             ref string? decription);
         partial void PrepareProjectStartCopyProjectJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
-            string? projectId,
+            global::System.Guid userId,
+            global::System.Guid projectId,
             string? title,
             string? decription);
         partial void ProcessProjectStartCopyProjectJobResponse(
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartCopyProjectJobAsync(
             string? token = default,
-            string? userId = default,
-            string? projectId = default,
+            global::System.Guid userId = default,
+            global::System.Guid projectId = default,
             string? title = default,
             string? decription = default,
             global::System.Threading.CancellationToken cancellationToken = default)

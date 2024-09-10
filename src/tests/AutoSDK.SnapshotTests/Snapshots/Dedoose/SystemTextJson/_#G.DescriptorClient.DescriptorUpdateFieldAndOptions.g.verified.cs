@@ -10,21 +10,21 @@ namespace G
         partial void PrepareDescriptorUpdateFieldAndOptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? fieldId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid fieldId,
             ref string? title,
             ref string? description,
-            global::System.Collections.Generic.IList<string>? deletedOptionIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? deletedOptionIds,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void PrepareDescriptorUpdateFieldAndOptionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? fieldId,
+            global::System.Guid projectId,
+            global::System.Guid fieldId,
             string? title,
             string? description,
-            global::System.Collections.Generic.IList<string>? deletedOptionIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? deletedOptionIds,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void ProcessDescriptorUpdateFieldAndOptionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,11 +50,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorUpdateFieldAndOptionsAsync(
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             string? token = default,
-            string? projectId = default,
-            string? fieldId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid fieldId = default,
             string? title = default,
             string? description = default,
-            global::System.Collections.Generic.IList<string>? deletedOptionIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? deletedOptionIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

@@ -9,23 +9,23 @@ namespace G
         partial void PrepareDescriptorAddDescriptorFieldArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? title,
             ref string? description,
             ref double type,
             ref bool isDynamic,
-            ref string? setId,
+            ref global::System.Guid setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void PrepareDescriptorAddDescriptorFieldRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? title,
             string? description,
             double type,
             bool isDynamic,
-            string? setId,
+            global::System.Guid setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void ProcessDescriptorAddDescriptorFieldResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,12 +52,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorAddDescriptorFieldAsync(
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? title = default,
             string? description = default,
             double type = default,
             bool isDynamic = default,
-            string? setId = default,
+            global::System.Guid setId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

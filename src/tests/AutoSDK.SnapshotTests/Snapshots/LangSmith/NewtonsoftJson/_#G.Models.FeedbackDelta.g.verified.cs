@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("improved_examples", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> ImprovedExamples { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> ImprovedExamples { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("regressed_examples", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> RegressedExamples { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Guid> RegressedExamples { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

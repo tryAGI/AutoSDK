@@ -9,14 +9,14 @@ namespace G
         partial void PrepareTagRemoveTagApplicationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? tagAppId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid tagAppId);
         partial void PrepareTagRemoveTagApplicationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? tagAppId);
+            global::System.Guid projectId,
+            global::System.Guid tagAppId);
         partial void ProcessTagRemoveTagApplicationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagAppDTO> TagRemoveTagApplicationAsync(
             string? token = default,
-            string? projectId = default,
-            string? tagAppId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid tagAppId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

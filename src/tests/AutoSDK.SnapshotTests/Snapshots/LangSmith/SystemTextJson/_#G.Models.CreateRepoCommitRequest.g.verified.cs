@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_run_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? ExampleRunIds { get; set; }
+        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleRunIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

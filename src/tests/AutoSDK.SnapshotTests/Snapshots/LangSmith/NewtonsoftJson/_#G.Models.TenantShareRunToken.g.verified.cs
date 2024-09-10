@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string RunId { get; set; } = default!;
+        public global::System.Guid RunId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<string, object>? SessionId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 

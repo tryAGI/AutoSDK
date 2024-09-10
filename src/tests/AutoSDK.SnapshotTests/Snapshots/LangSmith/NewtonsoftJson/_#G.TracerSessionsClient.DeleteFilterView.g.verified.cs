@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareDeleteFilterViewArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId,
-            ref string viewId);
+            ref global::System.Guid sessionId,
+            ref global::System.Guid viewId);
         partial void PrepareDeleteFilterViewRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId,
-            string viewId);
+            global::System.Guid sessionId,
+            global::System.Guid viewId);
         partial void ProcessDeleteFilterViewResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,8 +33,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DeleteFilterViewApiV1SessionsSessionIdViewsViewIdDeleteResponse> DeleteFilterViewAsync(
-            string sessionId,
-            string viewId,
+            global::System.Guid sessionId,
+            global::System.Guid viewId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

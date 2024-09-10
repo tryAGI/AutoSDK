@@ -9,15 +9,15 @@ namespace G
         partial void PrepareExcerptUpdateExcerptTextArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectIDL,
-            ref string? excerptId,
+            ref global::System.Guid projectIDL,
+            ref global::System.Guid excerptId,
             ref string? text);
         partial void PrepareExcerptUpdateExcerptTextRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectIDL,
-            string? excerptId,
+            global::System.Guid projectIDL,
+            global::System.Guid excerptId,
             string? text);
         partial void ProcessExcerptUpdateExcerptTextResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdateExcerptTextAsync(
             string? token = default,
-            string? projectIDL = default,
-            string? excerptId = default,
+            global::System.Guid projectIDL = default,
+            global::System.Guid excerptId = default,
             string? text = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

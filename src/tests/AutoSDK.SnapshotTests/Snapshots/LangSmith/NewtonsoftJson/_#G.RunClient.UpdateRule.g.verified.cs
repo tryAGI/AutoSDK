@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateRuleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string ruleId,
+            ref global::System.Guid ruleId,
             global::G.RunRulesCreateSchema request);
         partial void PrepareUpdateRuleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string ruleId,
+            global::System.Guid ruleId,
             global::G.RunRulesCreateSchema request);
         partial void ProcessUpdateRuleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunRulesSchema> UpdateRuleAsync(
-            string ruleId,
+            global::System.Guid ruleId,
             global::G.RunRulesCreateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -136,12 +136,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunRulesSchema> UpdateRuleAsync(
-            string ruleId,
+            global::System.Guid ruleId,
             string displayName,
             double samplingRate,
-            global::System.AnyOf<string, object>? sessionId = default,
+            global::System.AnyOf<global::System.Guid?, object>? sessionId = default,
             bool isEnabled = true,
-            global::System.AnyOf<string, object>? datasetId = default,
+            global::System.AnyOf<global::System.Guid?, object>? datasetId = default,
             global::System.AnyOf<string, object>? filter = default,
             global::System.AnyOf<string, object>? traceFilter = default,
             global::System.AnyOf<string, object>? treeFilter = default,
@@ -149,8 +149,8 @@ namespace G
             bool useCorrectionsDataset = false,
             global::System.AnyOf<int?, object>? numFewShotExamples = default,
             bool extendOnly = false,
-            global::System.AnyOf<string, object>? addToAnnotationQueueId = default,
-            global::System.AnyOf<string, object>? addToDatasetId = default,
+            global::System.AnyOf<global::System.Guid?, object>? addToAnnotationQueueId = default,
+            global::System.AnyOf<global::System.Guid?, object>? addToDatasetId = default,
             bool addToDatasetPreferCorrection = false,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>, object>? evaluators = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? alerts = default,

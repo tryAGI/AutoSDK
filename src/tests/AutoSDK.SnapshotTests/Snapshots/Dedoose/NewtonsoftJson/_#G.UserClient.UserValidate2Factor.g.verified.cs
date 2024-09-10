@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? username,
-            ref string? connectionKey,
+            ref global::System.Guid connectionKey,
             ref string? encryptedAuthToken);
         partial void PrepareUserValidate2FactorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? username,
-            string? connectionKey,
+            global::System.Guid connectionKey,
             string? encryptedAuthToken);
         partial void ProcessUserValidate2FactorResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.User> UserValidate2FactorAsync(
             string? token = default,
             string? username = default,
-            string? connectionKey = default,
+            global::System.Guid connectionKey = default,
             string? encryptedAuthToken = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

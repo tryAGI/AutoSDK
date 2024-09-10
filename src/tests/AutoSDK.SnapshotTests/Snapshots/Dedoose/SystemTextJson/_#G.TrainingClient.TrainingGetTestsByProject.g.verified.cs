@@ -9,12 +9,12 @@ namespace G
         partial void PrepareTrainingGetTestsByProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId);
+            ref global::System.Guid projectId);
         partial void PrepareTrainingGetTestsByProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId);
+            global::System.Guid projectId);
         partial void ProcessTrainingGetTestsByProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTest>> TrainingGetTestsByProjectAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

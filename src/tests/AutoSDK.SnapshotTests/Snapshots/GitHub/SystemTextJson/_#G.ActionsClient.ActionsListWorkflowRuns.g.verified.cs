@@ -17,7 +17,7 @@ namespace G
             ref global::G.ActionsListWorkflowRunsStatus? status,
             ref int perPage,
             ref int page,
-            global::System.DateTime created,
+            ref global::System.DateTime created,
             ref bool excludePullRequests,
             ref int checkSuiteId,
             ref string? headSha);
@@ -102,7 +102,7 @@ namespace G
                 status: ref status,
                 perPage: ref perPage,
                 page: ref page,
-                created: created,
+                created: ref created,
                 excludePullRequests: ref excludePullRequests,
                 checkSuiteId: ref checkSuiteId,
                 headSha: ref headSha);

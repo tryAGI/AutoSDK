@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.OneOf<string, object>? ParentRunId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TraceId { get; set; } = default!;
+        public global::System.Guid TraceId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -99,13 +99,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.OneOf<string, object>? SessionId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::System.OneOf<string, object>? ReferenceExampleId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 

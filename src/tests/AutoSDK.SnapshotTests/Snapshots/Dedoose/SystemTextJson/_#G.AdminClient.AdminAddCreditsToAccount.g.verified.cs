@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminAddCreditsToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
+            ref global::System.Guid accountId,
             ref double credits,
             ref string? reason);
         partial void PrepareAdminAddCreditsToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
+            global::System.Guid accountId,
             double credits,
             string? reason);
         partial void ProcessAdminAddCreditsToAccountResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddCreditsToAccountResponse> AdminAddCreditsToAccountAsync(
             string? token = default,
-            string? accountId = default,
+            global::System.Guid accountId = default,
             double credits = default,
             string? reason = default,
             global::System.Threading.CancellationToken cancellationToken = default)

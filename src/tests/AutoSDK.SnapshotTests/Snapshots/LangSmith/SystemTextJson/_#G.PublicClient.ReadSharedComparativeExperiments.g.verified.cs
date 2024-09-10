@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareReadSharedComparativeExperimentsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             ref global::System.AnyOf<string, object>? name,
             ref global::System.AnyOf<string, object>? nameContains,
             ref int offset,
@@ -18,7 +18,7 @@ namespace G
         partial void PrepareReadSharedComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             global::System.AnyOf<string, object>? name,
             global::System.AnyOf<string, object>? nameContains,
             int offset,
@@ -56,7 +56,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PublicComparativeExperiment>> ReadSharedComparativeExperimentsAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? nameContains = default,
             int offset = 0,

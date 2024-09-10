@@ -9,7 +9,7 @@ namespace G
         partial void PrepareAdminSubmitPaymentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? accountId,
+            ref global::System.Guid accountId,
             ref double amount,
             ref string? firstName,
             ref string? lastName,
@@ -29,7 +29,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? accountId,
+            global::System.Guid accountId,
             double amount,
             string? firstName,
             string? lastName,
@@ -78,7 +78,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSubmitPaymentResponse> AdminSubmitPaymentAsync(
             string? token = default,
-            string? accountId = default,
+            global::System.Guid accountId = default,
             double amount = default,
             string? firstName = default,
             string? lastName = default,

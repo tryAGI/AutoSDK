@@ -9,16 +9,16 @@ namespace G
         partial void PrepareResourceStartAddImageResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? userId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid userId,
             ref string? fileName,
             ref string? fileURI);
         partial void PrepareResourceStartAddImageResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? userId,
+            global::System.Guid projectId,
+            global::System.Guid userId,
             string? fileName,
             string? fileURI);
         partial void ProcessResourceStartAddImageResourceResponse(
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartAddImageResourceAsync(
             string? token = default,
-            string? projectId = default,
-            string? userId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid userId = default,
             string? fileName = default,
             string? fileURI = default,
             global::System.Threading.CancellationToken cancellationToken = default)

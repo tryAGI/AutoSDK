@@ -14,8 +14,8 @@ namespace G
             ref string? path,
             ref string? author,
             ref string? committer,
-            global::System.DateTime since,
-            global::System.DateTime until,
+            ref global::System.DateTime since,
+            ref global::System.DateTime until,
             ref int perPage,
             ref int page);
         partial void PrepareReposListCommitsRequest(
@@ -106,8 +106,8 @@ namespace G
                 path: ref path,
                 author: ref author,
                 committer: ref committer,
-                since: since,
-                until: until,
+                since: ref since,
+                until: ref until,
                 perPage: ref perPage,
                 page: ref page);
 

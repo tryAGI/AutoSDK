@@ -8,8 +8,8 @@ namespace G
     {
         partial void PrepareReadSharedDatasetTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.Guid shareToken,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::System.AnyOf<string, object>? name,
             ref global::System.AnyOf<string, object>? nameContains,
             ref global::System.AnyOf<string, object>? datasetVersion,
@@ -23,8 +23,8 @@ namespace G
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::System.AnyOf<string, object>? name,
             global::System.AnyOf<string, object>? nameContains,
             global::System.AnyOf<string, object>? datasetVersion,
@@ -73,8 +73,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
-            string shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.Guid shareToken,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? nameContains = default,
             global::System.AnyOf<string, object>? datasetVersion = default,

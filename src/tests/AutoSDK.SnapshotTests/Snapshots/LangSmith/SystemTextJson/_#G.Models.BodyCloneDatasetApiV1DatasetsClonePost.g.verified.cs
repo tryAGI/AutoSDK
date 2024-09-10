@@ -16,14 +16,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TargetDatasetId { get; set; }
+        public required global::System.Guid TargetDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SourceDatasetId { get; set; }
+        public required global::System.Guid SourceDatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
-        public global::System.Collections.Generic.IList<string>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

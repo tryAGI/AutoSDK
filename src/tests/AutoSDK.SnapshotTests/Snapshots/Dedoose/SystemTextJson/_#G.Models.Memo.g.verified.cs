@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public string? ProjectId { get; set; }
+        public global::System.Guid ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -37,13 +37,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdUserId")]
-        public string? CreatedUserId { get; set; }
+        public global::System.Guid CreatedUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastEditUserId")]
-        public string? LastEditUserId { get; set; }
+        public global::System.Guid LastEditUserId { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("folderId")]
-        public string? FolderId { get; set; }
+        public global::System.Guid? FolderId { get; set; }
 
         /// <summary>
         /// 

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? DefaultDataset { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -70,14 +70,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TenantId { get; set; }
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

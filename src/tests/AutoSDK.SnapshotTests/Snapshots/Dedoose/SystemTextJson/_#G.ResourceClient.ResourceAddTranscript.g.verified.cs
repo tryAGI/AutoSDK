@@ -9,17 +9,17 @@ namespace G
         partial void PrepareResourceAddTranscriptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? currentUserId,
-            ref string? resourceId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid currentUserId,
+            ref global::System.Guid resourceId,
             ref string? transcriptData);
         partial void PrepareResourceAddTranscriptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? currentUserId,
-            string? resourceId,
+            global::System.Guid projectId,
+            global::System.Guid currentUserId,
+            global::System.Guid resourceId,
             string? transcriptData);
         partial void ProcessResourceAddTranscriptResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,9 +42,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceAddTranscriptResponse> ResourceAddTranscriptAsync(
             string? token = default,
-            string? projectId = default,
-            string? currentUserId = default,
-            string? resourceId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid currentUserId = default,
+            global::System.Guid resourceId = default,
             string? transcriptData = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

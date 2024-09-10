@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUnshareRunArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string runId);
+            ref global::System.Guid runId);
         partial void PrepareUnshareRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string runId);
+            global::System.Guid runId);
         partial void ProcessUnshareRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UnshareRunApiV1RunsRunIdShareDeleteResponse> UnshareRunAsync(
-            string runId,
+            global::System.Guid runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

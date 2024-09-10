@@ -9,12 +9,12 @@ namespace G
         partial void PrepareListTagsForResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.ResourceType resourceType,
-            ref string resourceId);
+            ref global::System.Guid resourceId);
         partial void PrepareListTagsForResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.ResourceType resourceType,
-            string resourceId);
+            global::System.Guid resourceId);
         partial void ProcessListTagsForResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TagKeyWithValuesAndTaggings>> ListTagsForResourceAsync(
             global::G.ResourceType resourceType,
-            string resourceId,
+            global::System.Guid resourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

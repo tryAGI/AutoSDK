@@ -8,12 +8,12 @@ namespace G
     {
         partial void PreparePatchCurrentWorkspaceMemberArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string identityId,
+            ref global::System.Guid identityId,
             global::G.IdentityPatch request);
         partial void PreparePatchCurrentWorkspaceMemberRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string identityId,
+            global::System.Guid identityId,
             global::G.IdentityPatch request);
         partial void ProcessPatchCurrentWorkspaceMemberResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse> PatchCurrentWorkspaceMemberAsync(
-            string identityId,
+            global::System.Guid identityId,
             global::G.IdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,8 +110,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse> PatchCurrentWorkspaceMemberAsync(
-            string identityId,
-            string roleId,
+            global::System.Guid identityId,
+            global::System.Guid roleId,
             global::System.AnyOf<bool?, object>? readOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

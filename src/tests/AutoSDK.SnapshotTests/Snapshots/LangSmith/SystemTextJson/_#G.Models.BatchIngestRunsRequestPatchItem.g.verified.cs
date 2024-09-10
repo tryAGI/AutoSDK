@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TraceId { get; set; }
+        public required global::System.Guid TraceId { get; set; }
 
         /// <summary>
         /// 
@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string, object>? ParentRunId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeletePersonalAccessTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string patId);
+            ref global::System.Guid patId);
         partial void PrepareDeletePersonalAccessTokenRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string patId);
+            global::System.Guid patId);
         partial void ProcessDeletePersonalAccessTokenResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyGetResponse> DeletePersonalAccessTokenAsync(
-            string patId,
+            global::System.Guid patId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

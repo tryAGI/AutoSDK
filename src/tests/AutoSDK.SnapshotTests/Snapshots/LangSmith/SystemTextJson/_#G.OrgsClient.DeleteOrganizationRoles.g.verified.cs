@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareDeleteOrganizationRolesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string roleId);
+            ref global::System.Guid roleId);
         partial void PrepareDeleteOrganizationRolesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string roleId);
+            global::System.Guid roleId);
         partial void ProcessDeleteOrganizationRolesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Role> DeleteOrganizationRolesAsync(
-            string roleId,
+            global::System.Guid roleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

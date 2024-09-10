@@ -15,8 +15,8 @@ namespace G
             ref global::G.ReposListForAuthenticatedUserDirection? direction,
             ref int perPage,
             ref int page,
-            global::System.DateTime since,
-            global::System.DateTime before);
+            ref global::System.DateTime since,
+            ref global::System.DateTime before);
         partial void PrepareReposListForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -89,8 +89,8 @@ namespace G
                 direction: ref direction,
                 perPage: ref perPage,
                 page: ref page,
-                since: since,
-                before: before);
+                since: ref since,
+                before: ref before);
 
             var visibilityValue = visibility switch
             {

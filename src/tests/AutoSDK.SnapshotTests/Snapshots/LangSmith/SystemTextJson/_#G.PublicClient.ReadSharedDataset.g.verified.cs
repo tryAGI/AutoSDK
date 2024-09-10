@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareReadSharedDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string shareToken,
+            ref global::System.Guid shareToken,
             ref int offset,
             ref int limit,
             ref global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
@@ -16,7 +16,7 @@ namespace G
         partial void PrepareReadSharedDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string shareToken,
+            global::System.Guid shareToken,
             int offset,
             int limit,
             global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
@@ -50,7 +50,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetPublicSchema> ReadSharedDatasetAsync(
-            string shareToken,
+            global::System.Guid shareToken,
             int offset = 0,
             int limit = 100,
             global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,

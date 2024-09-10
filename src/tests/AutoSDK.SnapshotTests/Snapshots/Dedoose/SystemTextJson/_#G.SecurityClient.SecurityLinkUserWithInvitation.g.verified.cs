@@ -9,18 +9,18 @@ namespace G
         partial void PrepareSecurityLinkUserWithInvitationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? userId,
-            ref string? projectId,
-            ref string? groupId,
-            ref string? invitationId);
+            ref global::System.Guid userId,
+            ref global::System.Guid projectId,
+            ref global::System.Guid groupId,
+            ref global::System.Guid invitationId);
         partial void PrepareSecurityLinkUserWithInvitationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? userId,
-            string? projectId,
-            string? groupId,
-            string? invitationId);
+            global::System.Guid userId,
+            global::System.Guid projectId,
+            global::System.Guid groupId,
+            global::System.Guid invitationId);
         partial void ProcessSecurityLinkUserWithInvitationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,10 +42,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SecurityLinkUserWithInvitationResponse> SecurityLinkUserWithInvitationAsync(
             string? token = default,
-            string? userId = default,
-            string? projectId = default,
-            string? groupId = default,
-            string? invitationId = default,
+            global::System.Guid userId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid groupId = default,
+            global::System.Guid invitationId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

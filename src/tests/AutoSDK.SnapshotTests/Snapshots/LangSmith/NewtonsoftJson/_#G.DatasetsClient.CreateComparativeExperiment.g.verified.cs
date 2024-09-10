@@ -111,9 +111,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ComparativeExperimentBase> CreateComparativeExperimentAsync(
-            global::System.Collections.Generic.IList<string> experimentIds,
-            string referenceDatasetId,
-            string? id = default,
+            global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
+            global::System.Guid referenceDatasetId,
+            global::System.Guid id = default,
             global::System.AnyOf<string, object>? name = default,
             global::System.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,

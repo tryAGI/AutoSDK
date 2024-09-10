@@ -12,8 +12,8 @@ namespace G
             ref string repo,
             ref bool all,
             ref bool participating,
-            global::System.DateTime since,
-            global::System.DateTime before,
+            ref global::System.DateTime since,
+            ref global::System.DateTime before,
             ref int perPage,
             ref int page);
         partial void PrepareActivityListRepoNotificationsForAuthenticatedUserRequest(
@@ -77,8 +77,8 @@ namespace G
                 repo: ref repo,
                 all: ref all,
                 participating: ref participating,
-                since: since,
-                before: before,
+                since: ref since,
+                before: ref before,
                 perPage: ref perPage,
                 page: ref page);
 

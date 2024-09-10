@@ -9,14 +9,14 @@ namespace G
         partial void PrepareExcerptDeleteExcerptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? excerptId);
+            ref global::System.Guid projectId,
+            ref global::System.Guid excerptId);
         partial void PrepareExcerptDeleteExcerptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? excerptId);
+            global::System.Guid projectId,
+            global::System.Guid excerptId);
         partial void ProcessExcerptDeleteExcerptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptDeleteExcerptAsync(
             string? token = default,
-            string? projectId = default,
-            string? excerptId = default,
+            global::System.Guid projectId = default,
+            global::System.Guid excerptId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

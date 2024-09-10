@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("descriptorId")]
-        public string? DescriptorId { get; set; }
+        public global::System.Guid DescriptorId { get; set; }
 
         /// <summary>
         /// 

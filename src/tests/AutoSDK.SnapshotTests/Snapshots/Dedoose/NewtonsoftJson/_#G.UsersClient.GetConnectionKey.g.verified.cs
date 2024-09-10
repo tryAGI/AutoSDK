@@ -28,7 +28,7 @@ namespace G
         /// <param name="token"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> GetConnectionKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Guid> GetConnectionKeyAsync(
             string? token = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,7 +82,9 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return __content;
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Guid?>(__content, _jsonSerializerOptions) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

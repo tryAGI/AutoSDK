@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref global::G.PullsListReviewCommentsForRepoSort? sort,
             ref global::G.PullsListReviewCommentsForRepoDirection? direction,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref int perPage,
             ref int page);
         partial void PreparePullsListReviewCommentsForRepoRequest(
@@ -75,7 +75,7 @@ namespace G
                 repo: ref repo,
                 sort: ref sort,
                 direction: ref direction,
-                since: since,
+                since: ref since,
                 perPage: ref perPage,
                 page: ref page);
 

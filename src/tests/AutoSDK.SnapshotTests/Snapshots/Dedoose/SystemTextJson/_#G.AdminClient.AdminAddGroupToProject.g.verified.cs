@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAdminAddGroupToProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? groupTitle,
-            ref string? groupACLId);
+            ref global::System.Guid groupACLId);
         partial void PrepareAdminAddGroupToProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? groupTitle,
-            string? groupACLId);
+            global::System.Guid groupACLId);
         partial void ProcessAdminAddGroupToProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddGroupToProjectResponse> AdminAddGroupToProjectAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? groupTitle = default,
-            string? groupACLId = default,
+            global::System.Guid groupACLId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

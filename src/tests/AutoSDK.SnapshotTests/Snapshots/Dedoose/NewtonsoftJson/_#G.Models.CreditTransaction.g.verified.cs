@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        public global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountId")]
-        public string? AccountId { get; set; }
+        public global::System.Guid AccountId { get; set; }
 
         /// <summary>
         /// 

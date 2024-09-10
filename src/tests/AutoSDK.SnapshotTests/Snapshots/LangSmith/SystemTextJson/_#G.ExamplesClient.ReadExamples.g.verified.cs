@@ -9,12 +9,12 @@ namespace G
     {
         partial void PrepareReadExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
             ref global::System.AnyOf<string, object>? metadata,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
             ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
-            ref global::System.AnyOf<string, object>? dataset,
+            ref global::System.AnyOf<global::System.Guid?, object>? dataset,
             ref int offset,
             ref int limit,
             ref global::System.AllOf<global::G.ExampleListOrder?>? order,
@@ -24,12 +24,12 @@ namespace G
         partial void PrepareReadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::System.AnyOf<global::System.DateTime?, string>? asOf,
             global::System.AnyOf<string, object>? metadata,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
-            global::System.AnyOf<string, object>? dataset,
+            global::System.AnyOf<global::System.Guid?, object>? dataset,
             int offset,
             int limit,
             global::System.AllOf<global::G.ExampleListOrder?>? order,
@@ -75,12 +75,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadExamplesAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.AnyOf<string, object>? metadata = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
             global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
-            global::System.AnyOf<string, object>? dataset = default,
+            global::System.AnyOf<global::System.Guid?, object>? dataset = default,
             int offset = 0,
             int limit = 100,
             global::System.AllOf<global::G.ExampleListOrder?>? order = default,

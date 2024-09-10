@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("improved_examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> ImprovedExamples { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> ImprovedExamples { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("regressed_examples")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> RegressedExamples { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Guid> RegressedExamples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

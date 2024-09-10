@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id")]
-        public global::System.OneOf<string, object>? TraceId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? TraceId { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.OneOf<string, object>? ParentRunId { get; set; }
+        public global::System.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 

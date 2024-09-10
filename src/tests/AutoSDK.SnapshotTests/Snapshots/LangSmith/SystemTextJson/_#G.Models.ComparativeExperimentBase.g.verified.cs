@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TenantId { get; set; }
+        public required global::System.Guid TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ReferenceDatasetId { get; set; }
+        public required global::System.Guid ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 

@@ -10,14 +10,14 @@ namespace G
         partial void PrepareMemoAddMemoFolderLinksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
+            ref global::System.Guid projectId,
             ref string? memoId,
             global::System.Collections.Generic.IList<string>? folderIds);
         partial void PrepareMemoAddMemoFolderLinksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
+            global::System.Guid projectId,
             string? memoId,
             global::System.Collections.Generic.IList<string>? folderIds);
         partial void ProcessMemoAddMemoFolderLinksResponse(
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoAddMemoFolderLinksResponse> MemoAddMemoFolderLinksAsync(
             string? token = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             string? memoId = default,
             global::System.Collections.Generic.IList<string>? folderIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)

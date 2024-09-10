@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int perPage,
             ref int page,
-            global::System.DateTime since,
+            ref global::System.DateTime since,
             ref string? outdated);
         partial void PrepareAppsListInstallationsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -56,7 +56,7 @@ namespace G
                 httpClient: _httpClient,
                 perPage: ref perPage,
                 page: ref page,
-                since: since,
+                since: ref since,
                 outdated: ref outdated);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

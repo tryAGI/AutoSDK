@@ -106,9 +106,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Identity> AddMemberToCurrentWorkspaceAsync(
-            string userId,
+            global::System.Guid userId,
             global::System.AnyOf<bool?, object>? readOnly = default,
-            global::System.AnyOf<string, object>? roleId = default,
+            global::System.AnyOf<global::System.Guid?, object>? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.IdentityCreate

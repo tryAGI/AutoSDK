@@ -10,17 +10,17 @@ namespace G
         partial void PrepareDescriptorStartExportDescriptorsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? projectId,
-            ref string? setId,
-            global::System.Collections.Generic.IList<string>? descriptorIds,
+            ref global::System.Guid projectId,
+            ref global::System.Guid setId,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
             ref string? fileExtension);
         partial void PrepareDescriptorStartExportDescriptorsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? projectId,
-            string? setId,
-            global::System.Collections.Generic.IList<string>? descriptorIds,
+            global::System.Guid projectId,
+            global::System.Guid setId,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
             string? fileExtension);
         partial void ProcessDescriptorStartExportDescriptorsJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DescriptorStartExportDescriptorsJobAsync(
             string? token = default,
-            string? projectId = default,
-            string? setId = default,
-            global::System.Collections.Generic.IList<string>? descriptorIds = default,
+            global::System.Guid projectId = default,
+            global::System.Guid setId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds = default,
             string? fileExtension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareDiffDatasetVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string datasetId,
+            ref global::System.Guid datasetId,
             ref global::System.AnyOf<global::System.DateTime?, string> fromVersion,
             ref global::System.AnyOf<global::System.DateTime?, string> toVersion);
         partial void PrepareDiffDatasetVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<global::System.DateTime?, string> fromVersion,
             global::System.AnyOf<global::System.DateTime?, string> toVersion);
         partial void ProcessDiffDatasetVersionsResponse(
@@ -36,7 +36,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetDiffInfo> DiffDatasetVersionsAsync(
-            string datasetId,
+            global::System.Guid datasetId,
             global::System.AnyOf<global::System.DateTime?, string> fromVersion,
             global::System.AnyOf<global::System.DateTime?, string> toVersion,
             global::System.Threading.CancellationToken cancellationToken = default)

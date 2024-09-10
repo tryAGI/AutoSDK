@@ -9,15 +9,15 @@ namespace G
         partial void PrepareTagUpdateTagAppWeightArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref string? currentProjectId,
-            ref string? tagAppId,
+            ref global::System.Guid currentProjectId,
+            ref global::System.Guid tagAppId,
             ref double newWeight);
         partial void PrepareTagUpdateTagAppWeightRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            string? currentProjectId,
-            string? tagAppId,
+            global::System.Guid currentProjectId,
+            global::System.Guid tagAppId,
             double newWeight);
         partial void ProcessTagUpdateTagAppWeightResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagUpdateTagAppWeightResponse> TagUpdateTagAppWeightAsync(
             string? token = default,
-            string? currentProjectId = default,
-            string? tagAppId = default,
+            global::System.Guid currentProjectId = default,
+            global::System.Guid tagAppId = default,
             double newWeight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

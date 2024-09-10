@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareCreateFilterViewArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId,
+            ref global::System.Guid sessionId,
             global::G.FilterViewCreate request);
         partial void PrepareCreateFilterViewRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId,
+            global::System.Guid sessionId,
             global::G.FilterViewCreate request);
         partial void ProcessCreateFilterViewResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> CreateFilterViewAsync(
-            string sessionId,
+            global::System.Guid sessionId,
             global::G.FilterViewCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,7 +113,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> CreateFilterViewAsync(
-            string sessionId,
+            global::System.Guid sessionId,
             string filterString,
             string displayName,
             global::System.AnyOf<string, object>? description = default,

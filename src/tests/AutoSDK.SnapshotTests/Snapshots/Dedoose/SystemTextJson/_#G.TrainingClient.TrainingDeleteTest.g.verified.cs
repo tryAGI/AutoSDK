@@ -10,29 +10,29 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref string? id,
+            ref global::System.Guid id,
             ref int testType,
             ref string? title,
             ref string? description,
-            global::System.DateTime createdOn,
-            ref string? projectId,
+            ref global::System.DateTime createdOn,
+            ref global::System.Guid projectId,
             ref int excerptCount,
             ref int tagCount,
-            ref string? creator);
+            ref global::System.Guid creator);
         partial void PrepareTrainingDeleteTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            string? id,
+            global::System.Guid id,
             int testType,
             string? title,
             string? description,
             global::System.DateTime createdOn,
-            string? projectId,
+            global::System.Guid projectId,
             int excerptCount,
             int tagCount,
-            string? creator);
+            global::System.Guid creator);
         partial void ProcessTrainingDeleteTestResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,15 +61,15 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TrainingTest> TrainingDeleteTestAsync(
             string? token = default,
             string? projectIdKey = default,
-            string? id = default,
+            global::System.Guid id = default,
             int testType = default,
             string? title = default,
             string? description = default,
             global::System.DateTime createdOn = default,
-            string? projectId = default,
+            global::System.Guid projectId = default,
             int excerptCount = default,
             int tagCount = default,
-            string? creator = default,
+            global::System.Guid creator = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -82,7 +82,7 @@ namespace G
                 testType: ref testType,
                 title: ref title,
                 description: ref description,
-                createdOn: createdOn,
+                createdOn: ref createdOn,
                 projectId: ref projectId,
                 excerptCount: ref excerptCount,
                 tagCount: ref tagCount,

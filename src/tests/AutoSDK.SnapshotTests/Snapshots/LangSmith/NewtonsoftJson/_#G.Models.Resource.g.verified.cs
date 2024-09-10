@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tagging_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string TaggingId { get; set; } = default!;
+        public global::System.Guid TaggingId { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ResourceId { get; set; } = default!;
+        public global::System.Guid ResourceId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

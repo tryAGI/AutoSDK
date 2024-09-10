@@ -16,21 +16,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string OrganizationId { get; set; }
+        public required global::System.Guid OrganizationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? TenantId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -44,14 +44,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string UserId { get; set; }
+        public required global::System.Guid UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? LsUserId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? RoleId { get; set; }
+        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 

@@ -119,12 +119,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunStats> StatsRunsAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? id = default,
-            global::System.AnyOf<string, object>? trace = default,
-            global::System.AnyOf<string, object>? parentRun = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::System.AnyOf<global::System.Guid?, object>? trace = default,
+            global::System.AnyOf<global::System.Guid?, object>? parentRun = default,
             global::System.AnyOf<global::G.RunTypeEnum?, object>? runType = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? session = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? referenceExample = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
+            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceExample = default,
             global::System.AnyOf<int?, object>? executionOrder = default,
             global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::System.AnyOf<global::System.DateTime?, object>? endTime = default,

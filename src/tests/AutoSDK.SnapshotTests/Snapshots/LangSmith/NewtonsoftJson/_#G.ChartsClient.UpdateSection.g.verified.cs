@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareUpdateSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sectionId,
+            ref global::System.Guid sectionId,
             global::G.CustomChartsSectionUpdate request);
         partial void PrepareUpdateSectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sectionId,
+            global::System.Guid sectionId,
             global::G.CustomChartsSectionUpdate request);
         partial void ProcessUpdateSectionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> UpdateSectionAsync(
-            string sectionId,
+            global::System.Guid sectionId,
             global::G.CustomChartsSectionUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,7 +113,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> UpdateSectionAsync(
-            string sectionId,
+            global::System.Guid sectionId,
             global::System.AnyOf<string, global::G.Missing>? title = default,
             global::System.AnyOf<string, global::G.Missing, object>? description = default,
             global::System.AnyOf<int?, global::G.Missing>? index = default,

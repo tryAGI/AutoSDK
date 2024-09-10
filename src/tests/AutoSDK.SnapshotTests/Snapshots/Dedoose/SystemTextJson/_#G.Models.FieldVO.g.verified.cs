@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fieldId")]
-        public string? FieldId { get; set; }
+        public global::System.Guid FieldId { get; set; }
 
         /// <summary>
         /// 

@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DatasetId { get; set; }
+        public required global::System.Guid DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("share_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ShareToken { get; set; }
+        public required global::System.Guid ShareToken { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

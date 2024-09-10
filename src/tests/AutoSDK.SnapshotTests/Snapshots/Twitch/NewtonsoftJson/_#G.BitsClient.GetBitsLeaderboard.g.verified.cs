@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int count,
             ref global::G.GetBitsLeaderboardPeriod? period,
-            global::System.DateTime startedAt,
+            ref global::System.DateTime startedAt,
             ref string? userId);
         partial void PrepareGetBitsLeaderboardRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,7 +53,7 @@ namespace G
                 httpClient: _httpClient,
                 count: ref count,
                 period: ref period,
-                startedAt: startedAt,
+                startedAt: ref startedAt,
                 userId: ref userId);
 
             var periodValue = period switch
