@@ -11,7 +11,7 @@ namespace G
             ref global::System.Guid shareToken,
             ref int offset,
             ref int limit,
-            ref global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
+            ref global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy,
             ref bool sortByDesc);
         partial void PrepareReadSharedDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -19,7 +19,7 @@ namespace G
             global::System.Guid shareToken,
             int offset,
             int limit,
-            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy,
+            global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy,
             bool sortByDesc);
         partial void ProcessReadSharedDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -53,7 +53,7 @@ namespace G
             global::System.Guid shareToken,
             int offset = 0,
             int limit = 100,
-            global::System.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
+            global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
             bool sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

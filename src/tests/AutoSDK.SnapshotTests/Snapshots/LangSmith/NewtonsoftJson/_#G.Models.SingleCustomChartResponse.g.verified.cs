@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.SingleCustomChartResponseMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.SingleCustomChartResponseMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

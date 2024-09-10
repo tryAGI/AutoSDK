@@ -39,25 +39,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::System.AnyOf<string, object>? RunName { get; set; }
+        public global::G.AnyOf<string, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::System.AnyOf<string, object>? RunType { get; set; }
+        public global::G.AnyOf<string, object>? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::System.AnyOf<string, object>? SessionName { get; set; }
+        public global::G.AnyOf<string, object>? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

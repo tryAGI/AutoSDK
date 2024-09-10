@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.
@@ -38,14 +38,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_key")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? FeedbackKey { get; set; }
+        public global::G.AnyOf<string, object>? FeedbackKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

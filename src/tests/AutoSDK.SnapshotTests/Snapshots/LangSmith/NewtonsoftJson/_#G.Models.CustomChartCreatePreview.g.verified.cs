@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("debug_info")]
-        public global::System.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
+        public global::G.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

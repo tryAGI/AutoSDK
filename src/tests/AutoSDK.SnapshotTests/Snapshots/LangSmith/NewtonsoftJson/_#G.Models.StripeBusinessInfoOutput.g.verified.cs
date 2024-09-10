@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company_info")]
-        public global::System.AnyOf<global::G.StripeBusinessBillingInfo, object>? CompanyInfo { get; set; }
+        public global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? CompanyInfo { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tax_id")]
-        public global::System.AnyOf<global::G.StripeTaxId, object>? TaxId { get; set; }
+        public global::G.AnyOf<global::G.StripeTaxId, object>? TaxId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invoice_email")]
-        public global::System.AnyOf<string, object>? InvoiceEmail { get; set; }
+        public global::G.AnyOf<string, object>? InvoiceEmail { get; set; }
 
         /// <summary>
         /// Default Value: false

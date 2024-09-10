@@ -22,7 +22,7 @@ public static partial class Sources
             ? $"{subType}JsonConverter{types}"
             : $"{name}JsonConverter";
         var typeNameWithTypes = string.IsNullOrWhiteSpace(name)
-            ? $"global::System.{subType}{types}"
+            ? $"global::{@namespace}.{subType}{types}"
             : $"global::{@namespace}.{name}";
         var allTypes = fixedTypes.IsEmpty
             ? Enumerable
@@ -156,7 +156,7 @@ namespace AutoSDK.JsonConverters
         /// <inheritdoc />
         public override bool CanConvert(global::System.Type? typeToConvert)
         {{
-            return typeToConvert is {{ IsGenericType: true }} && typeToConvert.GetGenericTypeDefinition() == typeof(global::System.{subType}{types});
+            return typeToConvert is {{ IsGenericType: true }} && typeToConvert.GetGenericTypeDefinition() == typeof(global::{anyOfData.Settings.Namespace}.{subType}{types});
         }}
 
         /// <inheritdoc />

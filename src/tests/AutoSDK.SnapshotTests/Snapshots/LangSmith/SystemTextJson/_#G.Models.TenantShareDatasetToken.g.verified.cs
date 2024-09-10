@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? DatasetName { get; set; }
+        public global::G.AnyOf<string, object>? DatasetName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -123,8 +123,8 @@ namespace G
             string owner,
             string repo,
             global::G.CreateRepoCommitRequestManifest manifest,
-            global::System.AnyOf<string, object>? parentCommit = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
+            global::G.AnyOf<string, object>? parentCommit = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRepoCommitRequest

@@ -30,7 +30,7 @@ namespace G
         /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.RerankDocument>> Documents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> Documents { get; set; } = default!;
 
         /// <summary>
         /// The number of most relevant documents or indices to return, defaults to the length of the documents

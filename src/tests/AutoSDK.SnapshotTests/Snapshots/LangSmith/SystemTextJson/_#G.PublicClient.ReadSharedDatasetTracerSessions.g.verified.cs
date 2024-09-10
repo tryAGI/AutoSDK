@@ -9,32 +9,32 @@ namespace G
         partial void PrepareReadSharedDatasetTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::System.AnyOf<string, object>? name,
-            ref global::System.AnyOf<string, object>? nameContains,
-            ref global::System.AnyOf<string, object>? datasetVersion,
-            ref global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref global::G.AnyOf<string, object>? name,
+            ref global::G.AnyOf<string, object>? nameContains,
+            ref global::G.AnyOf<string, object>? datasetVersion,
+            ref global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
             ref bool sortByDesc,
-            ref global::System.AnyOf<string, object>? sortByFeedbackKey,
+            ref global::G.AnyOf<string, object>? sortByFeedbackKey,
             ref int offset,
             ref int limit,
             ref bool facets,
-            ref global::System.AnyOf<string, object>? accept);
+            ref global::G.AnyOf<string, object>? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            global::System.AnyOf<string, object>? datasetVersion,
-            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            global::G.AnyOf<string, object>? name,
+            global::G.AnyOf<string, object>? nameContains,
+            global::G.AnyOf<string, object>? datasetVersion,
+            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
             bool sortByDesc,
-            global::System.AnyOf<string, object>? sortByFeedbackKey,
+            global::G.AnyOf<string, object>? sortByFeedbackKey,
             int offset,
             int limit,
             bool facets,
-            global::System.AnyOf<string, object>? accept);
+            global::G.AnyOf<string, object>? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -74,17 +74,17 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::System.AnyOf<string, object>? name = default,
-            global::System.AnyOf<string, object>? nameContains = default,
-            global::System.AnyOf<string, object>? datasetVersion = default,
-            global::System.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::G.AnyOf<string, object>? name = default,
+            global::G.AnyOf<string, object>? nameContains = default,
+            global::G.AnyOf<string, object>? datasetVersion = default,
+            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
             bool sortByDesc = true,
-            global::System.AnyOf<string, object>? sortByFeedbackKey = default,
+            global::G.AnyOf<string, object>? sortByFeedbackKey = default,
             int offset = 0,
             int limit = 100,
             bool facets = false,
-            global::System.AnyOf<string, object>? accept = default,
+            global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

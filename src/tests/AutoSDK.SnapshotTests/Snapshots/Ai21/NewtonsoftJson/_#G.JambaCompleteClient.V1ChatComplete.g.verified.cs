@@ -36,7 +36,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
             string authorization,
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -146,20 +146,20 @@ namespace G
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
             string authorization,
             global::G.ModelName model,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> messages,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> messages,
             global::System.Collections.Generic.IList<global::G.ToolDefinition>? tools = default,
             int n = 1,
             int maxTokens = 4096,
             double temperature = default,
             double topP = 1,
-            global::System.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool stream = false,
             global::G.MockResponseConfig? mockResponse = default,
             global::System.Collections.Generic.IList<global::G.DocumentSchema>? documents = default,
-            global::System.AllOf<global::G.ResponseFormat>? responseFormat = default,
+            global::G.AllOf<global::G.ResponseFormat>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.LanguageStudioApiServerDataTypesChatChatRequest

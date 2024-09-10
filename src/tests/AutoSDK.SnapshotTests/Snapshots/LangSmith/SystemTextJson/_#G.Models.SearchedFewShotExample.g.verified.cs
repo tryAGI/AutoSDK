@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("debug_info")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
+        public global::G.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

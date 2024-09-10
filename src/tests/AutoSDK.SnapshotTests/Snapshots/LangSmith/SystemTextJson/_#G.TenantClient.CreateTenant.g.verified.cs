@@ -109,8 +109,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
             string displayName,
             global::System.Guid id = default,
-            global::System.AnyOf<global::System.Guid?, object>? organizationId = default,
-            global::System.AnyOf<string, object>? tenantHandle = default,
+            global::G.AnyOf<global::System.Guid?, object>? organizationId = default,
+            global::G.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TenantCreate

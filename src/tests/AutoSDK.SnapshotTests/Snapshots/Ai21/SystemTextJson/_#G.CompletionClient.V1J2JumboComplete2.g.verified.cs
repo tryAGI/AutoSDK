@@ -159,9 +159,9 @@ namespace G
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             int topKReturn = 0,
             global::G.CompletionBodyLogitBias? logitBias = default,
-            global::System.AllOf<global::G.Penalty>? frequencyPenalty = default,
-            global::System.AllOf<global::G.Penalty>? presencePenalty = default,
-            global::System.AllOf<global::G.Penalty>? countPenalty = default,
+            global::G.AllOf<global::G.Penalty>? frequencyPenalty = default,
+            global::G.AllOf<global::G.Penalty>? presencePenalty = default,
+            global::G.AllOf<global::G.Penalty>? countPenalty = default,
             int epoch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

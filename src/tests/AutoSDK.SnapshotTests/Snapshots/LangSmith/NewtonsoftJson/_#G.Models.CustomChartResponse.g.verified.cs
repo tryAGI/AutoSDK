@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -51,13 +51,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.CustomChartResponseMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.CustomChartResponseMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("series", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeries>, object> Series { get; set; } = default!;
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeries>, object> Series { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

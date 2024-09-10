@@ -47,9 +47,7 @@ public readonly record struct AnyOfData(
                 context.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
                 (!string.IsNullOrWhiteSpace(context.Settings.JsonSerializerContext) ||
                  context.Settings.GenerateJsonSerializerContextTypes),
-            Namespace: context.IsComponent
-                ? context.Settings.Namespace
-                : "System",
+            Namespace: context.Settings.Namespace,
             Name: context.IsComponent
                 ? context.Id
                 : string.Empty,

@@ -13,7 +13,7 @@ namespace G
             ref string commit,
             ref bool getExamples,
             ref bool isView,
-            ref global::System.AnyOf<bool?, object>? includeModel);
+            ref global::G.AnyOf<bool?, object>? includeModel);
         partial void PrepareGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             string commit,
             bool getExamples,
             bool isView,
-            global::System.AnyOf<bool?, object>? includeModel);
+            global::G.AnyOf<bool?, object>? includeModel);
         partial void ProcessGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,7 +56,7 @@ namespace G
             string commit,
             bool getExamples = false,
             bool isView = false,
-            global::System.AnyOf<bool?, object>? includeModel = default,
+            global::G.AnyOf<bool?, object>? includeModel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

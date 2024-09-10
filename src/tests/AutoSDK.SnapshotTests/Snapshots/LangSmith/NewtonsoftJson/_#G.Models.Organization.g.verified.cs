@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_name")]
-        public global::System.AnyOf<string, object>? DisplayName { get; set; }
+        public global::G.AnyOf<string, object>? DisplayName { get; set; }
 
         /// <summary>
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.
@@ -51,13 +51,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier")]
-        public global::System.AnyOf<global::G.PaymentPlanTier?, object>? Tier { get; set; }
+        public global::G.AnyOf<global::G.PaymentPlanTier?, object>? Tier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payment_method")]
-        public global::System.AnyOf<global::G.StripePaymentMethodInfo, object>? PaymentMethod { get; set; }
+        public global::G.AnyOf<global::G.StripePaymentMethodInfo, object>? PaymentMethod { get; set; }
 
         /// <summary>
         /// 
@@ -69,19 +69,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_of_billing_period")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndOfBillingPeriod { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndOfBillingPeriod { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_plan")]
-        public global::System.AnyOf<global::G.CustomerVisiblePlanInfo, object>? CurrentPlan { get; set; }
+        public global::G.AnyOf<global::G.CustomerVisiblePlanInfo, object>? CurrentPlan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upcoming_plan")]
-        public global::System.AnyOf<global::G.CustomerVisiblePlanInfo, object>? UpcomingPlan { get; set; }
+        public global::G.AnyOf<global::G.CustomerVisiblePlanInfo, object>? UpcomingPlan { get; set; }
 
         /// <summary>
         /// Default Value: false

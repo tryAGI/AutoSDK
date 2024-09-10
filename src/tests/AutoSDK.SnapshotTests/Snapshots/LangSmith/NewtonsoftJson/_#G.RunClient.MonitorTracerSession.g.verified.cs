@@ -111,8 +111,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.MonitorResponse> MonitorTracerSessionAsync(
             global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> groups,
             string? timezone = "UTC",
-            global::System.AllOf<global::G.TimedeltaInput>? interval = default,
-            global::System.AllOf<global::G.TimedeltaInput>? stride = default,
+            global::G.AllOf<global::G.TimedeltaInput>? interval = default,
+            global::G.AllOf<global::G.TimedeltaInput>? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.MonitorRequest

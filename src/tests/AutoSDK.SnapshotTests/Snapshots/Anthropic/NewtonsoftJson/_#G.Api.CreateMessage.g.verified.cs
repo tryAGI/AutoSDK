@@ -308,7 +308,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Message> CreateMessageAsync(
-            global::System.AnyOf<string, global::G.CreateMessageRequestModel?> model,
+            global::G.AnyOf<string, global::G.CreateMessageRequestModel?> model,
             global::System.Collections.Generic.IList<global::G.Message> messages,
             int maxTokens,
             global::G.CreateMessageRequestMetadata? metadata = default,

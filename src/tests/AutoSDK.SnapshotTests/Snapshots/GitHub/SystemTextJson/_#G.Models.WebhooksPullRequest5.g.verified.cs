@@ -266,7 +266,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhooksPullRequest5RequestedReviewerVariant1, global::G.WebhooksPullRequest5RequestedReviewerVariant2>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 

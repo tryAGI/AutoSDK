@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("password")]
-        public global::System.AnyOf<string, object>? Password { get; set; }
+        public global::G.AnyOf<string, object>? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string, object>? FullName { get; set; }
+        public global::G.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareListTaggingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Guid?, object>? tagValueId);
+            ref global::G.AnyOf<global::System.Guid?, object>? tagValueId);
         partial void PrepareListTaggingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Guid?, object>? tagValueId);
+            global::G.AnyOf<global::System.Guid?, object>? tagValueId);
         partial void ProcessListTaggingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TaggingsResponse>> ListTaggingsAsync(
-            global::System.AnyOf<global::System.Guid?, object>? tagValueId = default,
+            global::G.AnyOf<global::System.Guid?, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

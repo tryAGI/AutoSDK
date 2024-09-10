@@ -22,7 +22,7 @@ namespace G
         /// - **Subsequent messages** will have an object `{"content": __token__}` with the generated token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta> Delta { get; set; } = default!;
+        public global::G.AnyOf<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta> Delta { get; set; } = default!;
 
         /// <summary>
         /// 

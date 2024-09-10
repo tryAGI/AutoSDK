@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<global::G.ExampleWithRunsCHOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<global::G.ExampleWithRunsCHOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_run_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.ExampleWithRunsCHMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.ExampleWithRunsCHMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::System.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
 
         /// <summary>
         /// 

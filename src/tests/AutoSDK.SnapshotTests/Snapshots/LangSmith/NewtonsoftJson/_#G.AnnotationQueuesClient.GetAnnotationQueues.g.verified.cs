@@ -8,21 +8,21 @@ namespace G
     {
         partial void PrepareGetAnnotationQueuesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
-            ref global::System.AnyOf<string, object>? name,
-            ref global::System.AnyOf<string, object>? nameContains,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
+            ref global::G.AnyOf<string, object>? name,
+            ref global::G.AnyOf<string, object>? nameContains,
             ref int offset,
             ref int limit,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
+            global::G.AnyOf<string, object>? name,
+            global::G.AnyOf<string, object>? nameContains,
             int offset,
             int limit,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,12 +48,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AnnotationQueueSchemaWithSize>> GetAnnotationQueuesAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
-            global::System.AnyOf<string, object>? name = default,
-            global::System.AnyOf<string, object>? nameContains = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
+            global::G.AnyOf<string, object>? name = default,
+            global::G.AnyOf<string, object>? nameContains = default,
             int offset = 0,
             int limit = 100,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

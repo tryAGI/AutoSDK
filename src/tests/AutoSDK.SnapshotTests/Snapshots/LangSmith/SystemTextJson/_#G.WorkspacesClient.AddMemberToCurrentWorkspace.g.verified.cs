@@ -107,8 +107,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Identity> AddMemberToCurrentWorkspaceAsync(
             global::System.Guid userId,
-            global::System.AnyOf<bool?, object>? readOnly = default,
-            global::System.AnyOf<global::System.Guid?, object>? roleId = default,
+            global::G.AnyOf<bool?, object>? readOnly = default,
+            global::G.AnyOf<global::System.Guid?, object>? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.IdentityCreate

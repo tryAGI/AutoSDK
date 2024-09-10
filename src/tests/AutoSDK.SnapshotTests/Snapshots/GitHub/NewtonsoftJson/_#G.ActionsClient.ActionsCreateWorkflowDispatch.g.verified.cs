@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref global::System.OneOf<int?, string> workflowId,
+            ref global::G.OneOf<int?, string> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request);
         partial void PrepareActionsCreateWorkflowDispatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            global::System.OneOf<int?, string> workflowId,
+            global::G.OneOf<int?, string> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request);
         partial void ProcessActionsCreateWorkflowDispatchResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
             string owner,
             string repo,
-            global::System.OneOf<int?, string> workflowId,
+            global::G.OneOf<int?, string> workflowId,
             global::G.ActionsCreateWorkflowDispatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,7 +108,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
             string owner,
             string repo,
-            global::System.OneOf<int?, string> workflowId,
+            global::G.OneOf<int?, string> workflowId,
             string @ref,
             global::G.ActionsCreateWorkflowDispatchRequestInputs? inputs = default,
             global::System.Threading.CancellationToken cancellationToken = default)

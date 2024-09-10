@@ -15,31 +15,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string, global::G.Missing, object>? Name { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::System.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::System.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("patch_examples")]
-        public global::System.AnyOf<global::G.DatasetUpdatePatchExamples, object>? PatchExamples { get; set; }
+        public global::G.AnyOf<global::G.DatasetUpdatePatchExamples, object>? PatchExamples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

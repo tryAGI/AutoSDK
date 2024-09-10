@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>, object>? Examples { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>, object>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

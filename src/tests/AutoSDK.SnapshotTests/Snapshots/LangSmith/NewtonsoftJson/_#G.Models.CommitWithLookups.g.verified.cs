@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit_hash")]
-        public global::System.AnyOf<string, object>? ParentCommitHash { get; set; }
+        public global::G.AnyOf<string, object>? ParentCommitHash { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

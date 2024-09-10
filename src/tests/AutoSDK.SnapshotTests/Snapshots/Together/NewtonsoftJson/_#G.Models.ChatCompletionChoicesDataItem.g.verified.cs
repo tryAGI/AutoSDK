@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public global::System.AllOf<global::G.ChatCompletionChoicesDataItemLogprobs, global::G.LogprobsPart>? Logprobs { get; set; }
+        public global::G.AllOf<global::G.ChatCompletionChoicesDataItemLogprobs, global::G.LogprobsPart>? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareGetDatasetVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            ref global::System.AnyOf<string, object>? tag);
+            ref global::G.AnyOf<global::System.DateTime?, object>? asOf,
+            ref global::G.AnyOf<string, object>? tag);
         partial void PrepareGetDatasetVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf,
-            global::System.AnyOf<string, object>? tag);
+            global::G.AnyOf<global::System.DateTime?, object>? asOf,
+            global::G.AnyOf<string, object>? tag);
         partial void ProcessGetDatasetVersionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetVersion> GetDatasetVersionAsync(
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf = default,
-            global::System.AnyOf<string, object>? tag = default,
+            global::G.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::G.AnyOf<string, object>? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

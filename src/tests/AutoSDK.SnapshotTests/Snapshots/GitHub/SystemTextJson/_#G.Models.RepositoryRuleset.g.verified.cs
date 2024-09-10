@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.RepositoryRulesetConditions, global::G.OrgRulesetConditions?>? Conditions { get; set; }
+        public global::G.AnyOf<global::G.RepositoryRulesetConditions, global::G.OrgRulesetConditions?>? Conditions { get; set; }
 
         /// <summary>
         /// 

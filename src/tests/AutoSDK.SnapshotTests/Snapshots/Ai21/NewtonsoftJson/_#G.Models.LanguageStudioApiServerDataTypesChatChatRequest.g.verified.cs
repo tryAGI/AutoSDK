@@ -21,7 +21,7 @@ namespace G
         /// messages
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> Messages { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::System.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Whether or not to stream the result one token at a time using<br/>
@@ -86,7 +86,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.AllOf<global::G.ResponseFormat>? ResponseFormat { get; set; }
+        public global::G.AllOf<global::G.ResponseFormat>? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

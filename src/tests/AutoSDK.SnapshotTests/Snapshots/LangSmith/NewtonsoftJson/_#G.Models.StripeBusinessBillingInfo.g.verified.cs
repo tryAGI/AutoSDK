@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("address")]
-        public global::System.AnyOf<global::G.StripeCustomerAddress, object>? Address { get; set; }
+        public global::G.AnyOf<global::G.StripeCustomerAddress, object>? Address { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

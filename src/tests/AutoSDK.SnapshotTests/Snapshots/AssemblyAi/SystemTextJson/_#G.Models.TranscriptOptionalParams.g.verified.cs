@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::System.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; } = "en_us";
+        public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; } = "en_us";
 
         /// <summary>
         /// Enable [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection), either true or false.<br/>
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; } = global::G.SpeechModel2.Best;
+        public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; } = global::G.SpeechModel2.Best;
 
         /// <summary>
         /// Enable Automatic Punctuation, can be true or false<br/>
@@ -165,7 +165,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_sub")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; } = global::G.SubstitutionPolicy.Hash;
+        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; } = global::G.SubstitutionPolicy.Hash;
 
         /// <summary>
         /// Enable [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization), can be true or false<br/>

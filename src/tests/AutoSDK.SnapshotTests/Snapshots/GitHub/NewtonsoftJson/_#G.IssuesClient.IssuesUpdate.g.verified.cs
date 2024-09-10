@@ -160,13 +160,13 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
-            global::System.OneOf<string, int?>? title = default,
+            global::G.OneOf<string, int?>? title = default,
             string? body = default,
             string? assignee = default,
             global::G.IssuesUpdateRequestState? state = default,
             global::G.IssuesUpdateRequestStateReason? stateReason = default,
-            global::System.OneOf<string, int?>? milestone = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.IssuesUpdateRequestLabel>>? labels = default,
+            global::G.OneOf<string, int?>? milestone = default,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.IssuesUpdateRequestLabel>>? labels = default,
             global::System.Collections.Generic.IList<string>? assignees = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

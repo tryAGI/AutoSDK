@@ -9,7 +9,7 @@ namespace AutoSDK.JsonConverters
         /// <inheritdoc />
         public override bool CanConvert(global::System.Type? typeToConvert)
         {
-            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::System.AnyOf<,,,,,>);
+            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::G.AnyOf<,,,,,>);
         }
 
         /// <inheritdoc />

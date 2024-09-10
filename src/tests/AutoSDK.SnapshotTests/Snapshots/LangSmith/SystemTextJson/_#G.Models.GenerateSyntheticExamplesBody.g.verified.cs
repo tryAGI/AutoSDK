@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleIds { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleIds { get; set; }
 
         /// <summary>
         /// 

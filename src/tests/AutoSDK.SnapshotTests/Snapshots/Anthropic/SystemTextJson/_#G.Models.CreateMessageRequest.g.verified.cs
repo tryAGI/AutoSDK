@@ -20,7 +20,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::G.CreateMessageRequestModel?> Model { get; set; }
+        public required global::G.AnyOf<string, global::G.CreateMessageRequestModel?> Model { get; set; }
 
         /// <summary>
         /// Input messages.<br/>

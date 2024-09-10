@@ -67,7 +67,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.SimpleUser>? Author { get; set; }
+        public required global::G.AllOf<global::G.SimpleUser>? Author { get; set; }
 
         /// <summary>
         /// The publisher of the advisory.
@@ -75,7 +75,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.SimpleUser>? Publisher { get; set; }
+        public required global::G.AllOf<global::G.SimpleUser>? Publisher { get; set; }
 
         /// <summary>
         /// 
@@ -196,7 +196,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; }
+        public required global::G.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

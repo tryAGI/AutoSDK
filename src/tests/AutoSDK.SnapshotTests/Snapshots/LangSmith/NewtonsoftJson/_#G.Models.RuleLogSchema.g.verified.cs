@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::System.AnyOf<string, object>? RunName { get; set; }
+        public global::G.AnyOf<string, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::System.AnyOf<string, object>? RunType { get; set; }
+        public global::G.AnyOf<string, object>? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_session_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? RunSessionId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? RunSessionId { get; set; }
 
         /// <summary>
         /// 
@@ -57,31 +57,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue")]
-        public global::System.AnyOf<global::G.RuleLogActionResponse, object>? AddToAnnotationQueue { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponse, object>? AddToAnnotationQueue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset")]
-        public global::System.AnyOf<global::G.RuleLogActionResponse, object>? AddToDataset { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponse, object>? AddToDataset { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluators")]
-        public global::System.AnyOf<global::G.RuleLogActionResponse, object>? Evaluators { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponse, object>? Evaluators { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alerts")]
-        public global::System.AnyOf<global::G.RuleLogActionResponse, object>? Alerts { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponse, object>? Alerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhooks")]
-        public global::System.AnyOf<global::G.RuleLogActionResponse, object>? Webhooks { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponse, object>? Webhooks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

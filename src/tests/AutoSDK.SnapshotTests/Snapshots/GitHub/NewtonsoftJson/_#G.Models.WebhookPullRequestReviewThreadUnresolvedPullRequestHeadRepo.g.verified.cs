@@ -128,7 +128,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; } = default!;
+        public global::G.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The default branch of the repository.
@@ -440,7 +440,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pushed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; } = default!;
+        public global::G.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; } = default!;
 
         /// <summary>
         /// 

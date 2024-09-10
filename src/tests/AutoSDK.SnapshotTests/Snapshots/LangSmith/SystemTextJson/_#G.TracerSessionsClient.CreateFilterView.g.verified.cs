@@ -116,7 +116,7 @@ namespace G
             global::System.Guid sessionId,
             string filterString,
             string displayName,
-            global::System.AnyOf<string, object>? description = default,
+            global::G.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FilterViewCreate

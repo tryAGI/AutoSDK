@@ -22,7 +22,7 @@ namespace G
         /// If a string is provided, it will be treated as a text content block.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> Content { get; set; } = default!;
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> Content { get; set; } = default!;
 
         /// <summary>
         /// Documents seen by the model when generating the reply.

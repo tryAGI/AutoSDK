@@ -108,7 +108,7 @@ namespace G
             global::G.CreateEventRequestEventType eventType,
             string owner,
             string repo,
-            global::System.AnyOf<string, object>? commit = default,
+            global::G.AnyOf<string, object>? commit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateEventRequest

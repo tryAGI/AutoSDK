@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.
@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_key")]
-        public global::System.AnyOf<string, object>? FeedbackKey { get; set; }
+        public global::G.AnyOf<string, object>? FeedbackKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

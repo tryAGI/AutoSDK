@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.TextContent>>>? Content { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>? Content { get; set; }
 
         /// <summary>
         /// 

@@ -149,11 +149,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Issue> IssuesCreateAsync(
             string owner,
             string repo,
-            global::System.OneOf<string, int?> title,
+            global::G.OneOf<string, int?> title,
             string? body = default,
             string? assignee = default,
-            global::System.OneOf<string, int?>? milestone = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.IssuesCreateRequestLabel>>? labels = default,
+            global::G.OneOf<string, int?>? milestone = default,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.IssuesCreateRequestLabel>>? labels = default,
             global::System.Collections.Generic.IList<string>? assignees = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

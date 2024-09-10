@@ -9,12 +9,12 @@ namespace G
         partial void PrepareDownloadDatasetOpenaiArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.AnyOf<global::System.DateTime?, object>? asOf);
+            ref global::G.AnyOf<global::System.DateTime?, object>? asOf);
         partial void PrepareDownloadDatasetOpenaiRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf);
+            global::G.AnyOf<global::System.DateTime?, object>? asOf);
         partial void ProcessDownloadDatasetOpenaiResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse> DownloadDatasetOpenaiAsync(
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::G.AnyOf<global::System.DateTime?, object>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

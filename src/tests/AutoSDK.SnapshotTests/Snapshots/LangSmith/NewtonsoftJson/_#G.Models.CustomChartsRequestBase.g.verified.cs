@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
-        public global::System.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
+        public global::G.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

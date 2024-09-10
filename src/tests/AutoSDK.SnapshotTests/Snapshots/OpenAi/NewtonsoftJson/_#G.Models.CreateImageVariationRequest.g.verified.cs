@@ -29,7 +29,7 @@ namespace G
         /// Example: dall-e-2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::System.AnyOf<string, global::G.CreateImageVariationRequestModel?>? Model { get; set; } = global::G.CreateImageVariationRequestModel.DallE2;
+        public global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? Model { get; set; } = global::G.CreateImageVariationRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>

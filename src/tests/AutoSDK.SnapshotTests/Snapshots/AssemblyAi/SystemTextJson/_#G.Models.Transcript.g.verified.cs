@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
+        public global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
 
         /// <summary>
         /// Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false
@@ -69,7 +69,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; }
+        public required global::G.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; }
 
         /// <summary>
         /// The textual transcript of your media file
@@ -174,7 +174,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_highlights_result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
+        public global::G.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
 
         /// <summary>
         /// The point in time, in milliseconds, in the file at which the transcription was started
@@ -226,7 +226,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_audio_quality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
+        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
         /// The list of PII Redaction policies that were enabled, if PII Redaction is enabled.<br/>
@@ -266,7 +266,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_safety_labels")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
+        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
 
         /// <summary>
         /// Whether [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) is enabled, can be true or false
@@ -280,7 +280,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iab_categories_result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
+        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
 
         /// <summary>
         /// Customize how words are spelled and formatted using to and from values

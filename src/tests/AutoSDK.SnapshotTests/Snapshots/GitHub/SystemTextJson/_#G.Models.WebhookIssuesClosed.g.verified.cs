@@ -40,7 +40,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookIssuesClosedIssueVariant1, global::G.WebhookIssuesClosedIssueVariant2> Issue { get; set; }
+        public required global::G.AllOf<global::G.WebhookIssuesClosedIssueVariant1, global::G.WebhookIssuesClosedIssueVariant2> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>

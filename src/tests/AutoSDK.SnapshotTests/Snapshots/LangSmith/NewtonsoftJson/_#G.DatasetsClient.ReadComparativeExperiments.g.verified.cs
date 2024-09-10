@@ -9,23 +9,23 @@ namespace G
         partial void PrepareReadComparativeExperimentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.AnyOf<string, object>? name,
-            ref global::System.AnyOf<string, object>? nameContains,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref global::G.AnyOf<string, object>? name,
+            ref global::G.AnyOf<string, object>? nameContains,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref int offset,
             ref int limit,
-            ref global::System.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            ref global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
             ref bool sortByDesc);
         partial void PrepareReadComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::System.AnyOf<string, object>? name,
-            global::System.AnyOf<string, object>? nameContains,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            global::G.AnyOf<string, object>? name,
+            global::G.AnyOf<string, object>? nameContains,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             int offset,
             int limit,
-            global::System.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
             bool sortByDesc);
         partial void ProcessReadComparativeExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -60,12 +60,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ComparativeExperiment>> ReadComparativeExperimentsAsync(
             global::System.Guid datasetId,
-            global::System.AnyOf<string, object>? name = default,
-            global::System.AnyOf<string, object>? nameContains = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::G.AnyOf<string, object>? name = default,
+            global::G.AnyOf<string, object>? nameContains = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             int offset = 0,
             int limit = 100,
-            global::System.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
+            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
             bool sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

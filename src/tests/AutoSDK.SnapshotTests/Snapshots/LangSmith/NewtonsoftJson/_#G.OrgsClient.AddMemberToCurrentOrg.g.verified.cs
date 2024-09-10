@@ -112,11 +112,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
             bool readOnly = false,
-            global::System.AnyOf<global::System.Guid?, object>? roleId = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
-            global::System.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,
-            global::System.AnyOf<string, object>? password = default,
-            global::System.AnyOf<string, object>? fullName = default,
+            global::G.AnyOf<global::System.Guid?, object>? roleId = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
+            global::G.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,
+            global::G.AnyOf<string, object>? password = default,
+            global::G.AnyOf<string, object>? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PendingIdentityCreate

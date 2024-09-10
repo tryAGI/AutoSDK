@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_config")]
-        public global::System.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_lower_score_better")]
-        public global::System.AnyOf<bool?, object>? IsLowerScoreBetter { get; set; }
+        public global::G.AnyOf<bool?, object>? IsLowerScoreBetter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

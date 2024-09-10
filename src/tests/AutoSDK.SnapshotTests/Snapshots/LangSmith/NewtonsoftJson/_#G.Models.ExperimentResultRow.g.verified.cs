@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("row_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? RowId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? RowId { get; set; }
 
         /// <summary>
         /// 
@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expected_outputs")]
-        public global::System.AnyOf<global::G.ExperimentResultRowExpectedOutputs, object>? ExpectedOutputs { get; set; }
+        public global::G.AnyOf<global::G.ExperimentResultRowExpectedOutputs, object>? ExpectedOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actual_outputs")]
-        public global::System.AnyOf<global::G.ExperimentResultRowActualOutputs, object>? ActualOutputs { get; set; }
+        public global::G.AnyOf<global::G.ExperimentResultRowActualOutputs, object>? ActualOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_scores")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? EvaluationScores { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? EvaluationScores { get; set; }
 
         /// <summary>
         /// 
@@ -57,19 +57,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::System.AnyOf<string, object>? RunName { get; set; }
+        public global::G.AnyOf<string, object>? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.AnyOf<string, object>? Error { get; set; }
+        public global::G.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_metadata")]
-        public global::System.AnyOf<global::G.ExperimentResultRowRunMetadata, object>? RunMetadata { get; set; }
+        public global::G.AnyOf<global::G.ExperimentResultRowRunMetadata, object>? RunMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

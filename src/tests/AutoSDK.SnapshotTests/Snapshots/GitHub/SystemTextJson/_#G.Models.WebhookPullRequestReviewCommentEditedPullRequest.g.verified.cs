@@ -198,7 +198,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestReviewCommentEditedPullRequestRequestedReviewerVariant2>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 

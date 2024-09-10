@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<global::G.ExampleBulkCreateOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<global::G.ExampleBulkCreateOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -27,31 +27,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_run_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.ExampleBulkCreateMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.ExampleBulkCreateMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::System.AnyOf<global::G.ExampleBulkCreateInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<global::G.ExampleBulkCreateInputs, object>? Inputs { get; set; }
 
         /// <summary>
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; } = "base";
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; } = "base";
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

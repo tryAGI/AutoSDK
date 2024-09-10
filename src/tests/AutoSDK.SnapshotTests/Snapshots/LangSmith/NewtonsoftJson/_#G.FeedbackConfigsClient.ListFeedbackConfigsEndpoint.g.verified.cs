@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareListFeedbackConfigsEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackConfigSchema>> ListFeedbackConfigsEndpointAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

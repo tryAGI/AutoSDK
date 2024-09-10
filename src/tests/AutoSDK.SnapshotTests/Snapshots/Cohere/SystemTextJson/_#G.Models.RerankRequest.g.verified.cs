@@ -32,7 +32,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<string, global::G.RerankDocument>> Documents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.RerankDocument>> Documents { get; set; }
 
         /// <summary>
         /// The number of most relevant documents or indices to return, defaults to the length of the documents

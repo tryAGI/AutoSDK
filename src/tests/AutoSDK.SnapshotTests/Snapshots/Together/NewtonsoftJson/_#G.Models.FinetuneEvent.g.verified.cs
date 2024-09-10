@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
-        public global::System.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
+        public global::G.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
 
         /// <summary>
         /// 

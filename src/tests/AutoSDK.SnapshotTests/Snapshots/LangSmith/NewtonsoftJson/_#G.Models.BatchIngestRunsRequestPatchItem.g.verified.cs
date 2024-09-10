@@ -27,61 +27,61 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::System.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, double?> EndTime { get; set; } = default!;
+        public global::G.OneOf<string, double?> EndTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::System.OneOf<string, object>? Error { get; set; }
+        public global::G.OneOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::System.OneOf<global::G.BatchIngestRunsRequestPatchItemInputs, object>? Inputs { get; set; }
+        public global::G.OneOf<global::G.BatchIngestRunsRequestPatchItemInputs, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.OneOf<global::G.BatchIngestRunsRequestPatchItemOutputs, object>? Outputs { get; set; }
+        public global::G.OneOf<global::G.BatchIngestRunsRequestPatchItemOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.OneOf<global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPatchItemEventsVariant1Item>, object>? Events { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPatchItemEventsVariant1Item>, object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.OneOf<global::G.BatchIngestRunsRequestPatchItemExtra, object>? Extra { get; set; }
+        public global::G.OneOf<global::G.BatchIngestRunsRequestPatchItemExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_attachments")]
-        public global::System.OneOf<global::G.BatchIngestRunsRequestPatchItemInputAttachments, object>? InputAttachments { get; set; }
+        public global::G.OneOf<global::G.BatchIngestRunsRequestPatchItemInputAttachments, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_attachments")]
-        public global::System.OneOf<global::G.BatchIngestRunsRequestPatchItemOutputAttachments, object>? OutputAttachments { get; set; }
+        public global::G.OneOf<global::G.BatchIngestRunsRequestPatchItemOutputAttachments, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// 

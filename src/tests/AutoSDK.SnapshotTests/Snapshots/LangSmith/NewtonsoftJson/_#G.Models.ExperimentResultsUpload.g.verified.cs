@@ -21,31 +21,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experiment_description")]
-        public global::System.AnyOf<string, object>? ExperimentDescription { get; set; }
+        public global::G.AnyOf<string, object>? ExperimentDescription { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? DatasetId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_name")]
-        public global::System.AnyOf<string, object>? DatasetName { get; set; }
+        public global::G.AnyOf<string, object>? DatasetName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_description")]
-        public global::System.AnyOf<string, object>? DatasetDescription { get; set; }
+        public global::G.AnyOf<string, object>? DatasetDescription { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary_experiment_scores")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? SummaryExperimentScores { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? SummaryExperimentScores { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experiment_metadata")]
-        public global::System.AnyOf<global::G.ExperimentResultsUploadExperimentMetadata, object>? ExperimentMetadata { get; set; }
+        public global::G.AnyOf<global::G.ExperimentResultsUploadExperimentMetadata, object>? ExperimentMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

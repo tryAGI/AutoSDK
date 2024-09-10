@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string, global::G.WebhookPackagePublishedPackagePackageVersionBody>? Body { get; set; }
+        public global::G.OneOf<string, global::G.WebhookPackagePublishedPackagePackageVersionBody>? Body { get; set; }
 
         /// <summary>
         /// 

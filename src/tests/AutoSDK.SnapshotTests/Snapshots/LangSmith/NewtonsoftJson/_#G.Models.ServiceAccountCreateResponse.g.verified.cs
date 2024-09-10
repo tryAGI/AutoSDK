@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_workspace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; } = default!;
+        public global::G.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; } = default!;
 
         /// <summary>
         /// 

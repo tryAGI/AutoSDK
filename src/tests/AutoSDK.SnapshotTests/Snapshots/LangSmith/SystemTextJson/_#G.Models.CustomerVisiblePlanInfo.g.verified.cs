@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ends_on")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndsOn { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndsOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -116,11 +116,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
-            global::System.AnyOf<string, global::G.Missing, object>? name = default,
-            global::System.AnyOf<string, global::G.Missing, object>? description = default,
-            global::System.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? inputsSchemaDefinition = default,
-            global::System.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? outputsSchemaDefinition = default,
-            global::System.AnyOf<global::G.DatasetUpdatePatchExamples, object>? patchExamples = default,
+            global::G.AnyOf<string, global::G.Missing, object>? name = default,
+            global::G.AnyOf<string, global::G.Missing, object>? description = default,
+            global::G.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? inputsSchemaDefinition = default,
+            global::G.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? outputsSchemaDefinition = default,
+            global::G.AnyOf<global::G.DatasetUpdatePatchExamples, object>? patchExamples = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.DatasetUpdate

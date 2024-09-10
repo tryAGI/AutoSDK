@@ -9,18 +9,18 @@ namespace G
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
-            ref global::System.AnyOf<double?, int?, bool?, object>? score,
-            ref global::System.AnyOf<double?, int?, bool?, string, object>? value,
-            ref global::System.AnyOf<string, object>? comment,
-            ref global::System.AnyOf<string, object>? correction);
+            ref global::G.AnyOf<double?, int?, bool?, object>? score,
+            ref global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            ref global::G.AnyOf<string, object>? comment,
+            ref global::G.AnyOf<string, object>? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
-            global::System.AnyOf<double?, int?, bool?, object>? score,
-            global::System.AnyOf<double?, int?, bool?, string, object>? value,
-            global::System.AnyOf<string, object>? comment,
-            global::System.AnyOf<string, object>? correction);
+            global::G.AnyOf<double?, int?, bool?, object>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            global::G.AnyOf<string, object>? comment,
+            global::G.AnyOf<string, object>? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,10 +43,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::System.AnyOf<double?, int?, bool?, object>? score = default,
-            global::System.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::System.AnyOf<string, object>? comment = default,
-            global::System.AnyOf<string, object>? correction = default,
+            global::G.AnyOf<double?, int?, bool?, object>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::G.AnyOf<string, object>? comment = default,
+            global::G.AnyOf<string, object>? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

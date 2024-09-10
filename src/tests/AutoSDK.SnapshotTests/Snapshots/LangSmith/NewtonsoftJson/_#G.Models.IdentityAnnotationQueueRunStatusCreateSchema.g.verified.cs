@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::System.AnyOf<string, object>? Status { get; set; }
+        public global::G.AnyOf<string, object>? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("override_added_at")]
-        public global::System.AnyOf<global::System.DateTime?, object>? OverrideAddedAt { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? OverrideAddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

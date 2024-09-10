@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -39,25 +39,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset")]
-        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_reviewers_per_item")]
-        public global::System.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
+        public global::G.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_reservations")]
-        public global::System.AnyOf<bool?, object>? EnableReservations { get; set; } = true;
+        public global::G.AnyOf<bool?, object>? EnableReservations { get; set; } = true;
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reservation_minutes")]
-        public global::System.AnyOf<int?, object>? ReservationMinutes { get; set; } = 1;
+        public global::G.AnyOf<int?, object>? ReservationMinutes { get; set; } = 1;
 
         /// <summary>
         /// 

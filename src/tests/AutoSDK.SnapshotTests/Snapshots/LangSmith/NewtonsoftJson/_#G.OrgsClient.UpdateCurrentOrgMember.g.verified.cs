@@ -114,9 +114,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
-            global::System.AnyOf<string, object>? password = default,
-            global::System.AnyOf<string, object>? fullName = default,
-            global::System.AnyOf<global::System.Guid?, object>? roleId = default,
+            global::G.AnyOf<string, object>? password = default,
+            global::G.AnyOf<string, object>? fullName = default,
+            global::G.AnyOf<global::System.Guid?, object>? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgIdentityPatch

@@ -54,7 +54,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<global::G.DeploymentPayload, string> Payload { get; set; } = default!;
+        public global::G.OneOf<global::G.DeploymentPayload, string> Payload { get; set; } = default!;
 
         /// <summary>
         /// Example: staging

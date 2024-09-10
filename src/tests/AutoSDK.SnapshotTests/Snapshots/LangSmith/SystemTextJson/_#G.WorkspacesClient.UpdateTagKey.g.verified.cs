@@ -111,8 +111,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagKey> UpdateTagKeyAsync(
             global::System.Guid tagKeyId,
-            global::System.AnyOf<string, object>? key = default,
-            global::System.AnyOf<string, object>? description = default,
+            global::G.AnyOf<string, object>? key = default,
+            global::G.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TagKeyUpdate

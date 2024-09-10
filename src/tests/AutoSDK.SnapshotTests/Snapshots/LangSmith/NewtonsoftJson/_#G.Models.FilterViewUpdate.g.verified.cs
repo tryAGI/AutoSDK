@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter_string")]
-        public global::System.AnyOf<string, object>? FilterString { get; set; }
+        public global::G.AnyOf<string, object>? FilterString { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_name")]
-        public global::System.AnyOf<string, object>? DisplayName { get; set; }
+        public global::G.AnyOf<string, object>? DisplayName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

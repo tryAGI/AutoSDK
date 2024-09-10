@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_ids")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleIds { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleIds { get; set; }
 
         /// <summary>
         /// 

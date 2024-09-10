@@ -107,9 +107,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
-            global::System.AnyOf<global::G.StripeBusinessBillingInfo, object>? companyInfo = default,
-            global::System.AnyOf<global::G.StripeTaxId, object>? taxId = default,
-            global::System.AnyOf<string, object>? invoiceEmail = default,
+            global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? companyInfo = default,
+            global::G.AnyOf<global::G.StripeTaxId, object>? taxId = default,
+            global::G.AnyOf<string, object>? invoiceEmail = default,
             bool isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

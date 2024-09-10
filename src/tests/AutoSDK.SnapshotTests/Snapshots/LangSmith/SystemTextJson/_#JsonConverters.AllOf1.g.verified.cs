@@ -4,10 +4,10 @@
 namespace AutoSDK.JsonConverters
 {
     /// <inheritdoc />
-    public class AllOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::System.AllOf<T1>>
+    public class AllOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::G.AllOf<T1>>
     {
         /// <inheritdoc />
-        public override global::System.AllOf<T1> Read(
+        public override global::G.AllOf<T1> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -25,7 +25,7 @@ namespace AutoSDK.JsonConverters
             {
             }
 
-            var result = new global::System.AllOf<T1>(
+            var result = new global::G.AllOf<T1>(
                 value1
                 );
 
@@ -40,7 +40,7 @@ namespace AutoSDK.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.AllOf<T1> value,
+            global::G.AllOf<T1> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 

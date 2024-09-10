@@ -109,7 +109,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> CloneDatasetAsync(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,
-            global::System.AnyOf<global::System.AnyOf<global::System.DateTime?, string>?, object>? asOf = default,
+            global::G.AnyOf<global::G.AnyOf<global::System.DateTime?, string>?, object>? asOf = default,
             global::System.Collections.Generic.IList<global::System.Guid>? examples = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

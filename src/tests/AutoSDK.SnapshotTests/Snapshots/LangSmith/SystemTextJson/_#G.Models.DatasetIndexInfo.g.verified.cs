@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? Tag { get; set; } = "latest";
+        public global::G.AnyOf<string, object>? Tag { get; set; } = "latest";
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_updated_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime?, object>? LastUpdatedVersion { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? LastUpdatedVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

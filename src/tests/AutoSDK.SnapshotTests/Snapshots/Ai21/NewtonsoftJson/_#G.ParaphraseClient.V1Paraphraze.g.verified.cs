@@ -110,7 +110,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1ParaphrazeResponse> V1ParaphrazeAsync(
             string text,
-            global::System.AllOf<global::G.StyleType?>? style = default,
+            global::G.AllOf<global::G.StyleType?>? style = default,
             int startIndex = 0,
             int endIndex = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<bool?, global::G.GistsCreateRequestPublic?>? Public { get; set; }
+        public global::G.OneOf<bool?, global::G.GistsCreateRequestPublic?>? Public { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

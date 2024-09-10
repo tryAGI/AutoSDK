@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
+        public global::G.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
 
         /// <summary>
         /// The model that is used for the final prompt after compression is performed.<br/>
@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("final_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
+        public global::G.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
 
         /// <summary>
         /// Max output size in tokens, up to 4000<br/>

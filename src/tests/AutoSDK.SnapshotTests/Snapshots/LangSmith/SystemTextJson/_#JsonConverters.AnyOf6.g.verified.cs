@@ -4,10 +4,10 @@
 namespace AutoSDK.JsonConverters
 {
     /// <inheritdoc />
-    public class AnyOfJsonConverter<T1, T2, T3, T4, T5, T6> : global::System.Text.Json.Serialization.JsonConverter<global::System.AnyOf<T1, T2, T3, T4, T5, T6>>
+    public class AnyOfJsonConverter<T1, T2, T3, T4, T5, T6> : global::System.Text.Json.Serialization.JsonConverter<global::G.AnyOf<T1, T2, T3, T4, T5, T6>>
     {
         /// <inheritdoc />
-        public override global::System.AnyOf<T1, T2, T3, T4, T5, T6> Read(
+        public override global::G.AnyOf<T1, T2, T3, T4, T5, T6> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -75,7 +75,7 @@ namespace AutoSDK.JsonConverters
             {
             }
 
-            var result = new global::System.AnyOf<T1, T2, T3, T4, T5, T6>(
+            var result = new global::G.AnyOf<T1, T2, T3, T4, T5, T6>(
                 value1,
                 value2,
                 value3,
@@ -115,7 +115,7 @@ namespace AutoSDK.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.AnyOf<T1, T2, T3, T4, T5, T6> value,
+            global::G.AnyOf<T1, T2, T3, T4, T5, T6> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 

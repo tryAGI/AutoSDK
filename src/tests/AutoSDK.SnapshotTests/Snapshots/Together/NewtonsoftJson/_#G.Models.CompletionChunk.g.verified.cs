@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.UsageData, global::G.CompletionChunkUsage> Usage { get; set; } = default!;
+        public global::G.AllOf<global::G.UsageData, global::G.CompletionChunkUsage> Usage { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AllOf<global::G.FinishReason?, global::G.CompletionChunkFinishReason> FinishReason { get; set; } = default!;
+        public global::G.AllOf<global::G.FinishReason?, global::G.CompletionChunkFinishReason> FinishReason { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

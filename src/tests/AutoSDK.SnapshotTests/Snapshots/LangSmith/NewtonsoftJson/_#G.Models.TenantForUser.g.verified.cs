@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_handle")]
-        public global::System.AnyOf<string, object>? TenantHandle { get; set; }
+        public global::G.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -57,19 +57,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string, object>? RoleName { get; set; }
+        public global::G.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? Permissions { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? Permissions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

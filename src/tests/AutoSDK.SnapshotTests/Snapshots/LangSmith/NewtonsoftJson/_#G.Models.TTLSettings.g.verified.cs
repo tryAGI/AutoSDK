@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
 
         /// <summary>
         /// 

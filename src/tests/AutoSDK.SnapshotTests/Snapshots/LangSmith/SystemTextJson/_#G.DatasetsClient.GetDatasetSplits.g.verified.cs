@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetDatasetSplitsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::System.AnyOf<global::System.DateTime?, string>? asOf);
+            ref global::G.AnyOf<global::System.DateTime?, string>? asOf);
         partial void PrepareGetDatasetSplitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf);
+            global::G.AnyOf<global::System.DateTime?, string>? asOf);
         partial void ProcessGetDatasetSplitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> GetDatasetSplitsAsync(
             global::System.Guid datasetId,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

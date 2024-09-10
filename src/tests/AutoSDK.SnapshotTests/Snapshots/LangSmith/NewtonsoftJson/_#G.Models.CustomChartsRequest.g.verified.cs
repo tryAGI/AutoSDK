@@ -27,25 +27,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
-        public global::System.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
+        public global::G.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("after_index")]
-        public global::System.AnyOf<int?, object>? AfterIndex { get; set; }
+        public global::G.AnyOf<int?, object>? AfterIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_value_id")]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? TagValueId { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? TagValueId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

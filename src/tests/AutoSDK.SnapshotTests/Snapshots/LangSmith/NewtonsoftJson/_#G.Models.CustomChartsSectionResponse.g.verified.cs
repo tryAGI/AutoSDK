@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
-        public global::System.AnyOf<int?, object>? Index { get; set; }
+        public global::G.AnyOf<int?, object>? Index { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_at_capacity")]
-        public global::System.AnyOf<bool?, object>? IsAtCapacity { get; set; }
+        public global::G.AnyOf<bool?, object>? IsAtCapacity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -52,7 +52,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; }
+        public required global::G.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

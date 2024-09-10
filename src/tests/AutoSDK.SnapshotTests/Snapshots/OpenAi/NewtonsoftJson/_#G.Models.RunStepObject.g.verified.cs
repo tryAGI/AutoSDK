@@ -63,7 +63,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step_details", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject> StepDetails { get; set; } = default!;
+        public global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject> StepDetails { get; set; } = default!;
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.

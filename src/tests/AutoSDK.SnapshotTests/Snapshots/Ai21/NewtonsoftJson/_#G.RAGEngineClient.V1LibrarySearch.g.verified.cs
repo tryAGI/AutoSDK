@@ -119,7 +119,7 @@ namespace G
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
-            global::System.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,
+            global::G.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,
             int maxNeighbors = 1,
             double retrievalSimilarityThreshold = default,
             double hybridSearchAlpha = default,

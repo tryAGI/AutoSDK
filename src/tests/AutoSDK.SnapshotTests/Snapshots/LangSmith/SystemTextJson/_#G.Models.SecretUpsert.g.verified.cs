@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, object> Value { get; set; }
+        public required global::G.AnyOf<string, object> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

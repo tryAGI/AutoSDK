@@ -29,14 +29,14 @@ namespace G
         /// Context to provide the model. This can be a string or a free-form JSON value.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public global::System.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
+        public global::G.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
 
         /// <summary>
         /// The model that is used for the final prompt after compression is performed.<br/>
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("final_model")]
-        public global::System.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
+        public global::G.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
 
         /// <summary>
         /// Max output size in tokens, up to 4000<br/>

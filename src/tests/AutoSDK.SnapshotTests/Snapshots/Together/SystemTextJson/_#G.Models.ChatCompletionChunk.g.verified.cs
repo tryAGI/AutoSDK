@@ -57,7 +57,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
-        public global::System.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
+        public global::G.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

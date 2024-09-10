@@ -10,24 +10,24 @@ namespace G
         partial void PrepareReadSharedExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            ref global::System.AnyOf<string, object>? metadata,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref global::G.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::G.AnyOf<string, object>? metadata,
             ref int offset,
             ref int limit,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
-            ref global::System.AnyOf<string, object>? filter);
+            ref global::G.AnyOf<string, object>? filter);
         partial void PrepareReadSharedExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            global::System.AnyOf<string, object>? metadata,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf,
+            global::G.AnyOf<string, object>? metadata,
             int offset,
             int limit,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
-            global::System.AnyOf<string, object>? filter);
+            global::G.AnyOf<string, object>? filter);
         partial void ProcessReadSharedExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,13 +62,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadSharedExamplesAsync(
             global::System.Guid shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
-            global::System.AnyOf<string, object>? metadata = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::G.AnyOf<string, object>? metadata = default,
             int offset = 0,
             int limit = 100,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
-            global::System.AnyOf<string, object>? filter = default,
+            global::G.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -9,33 +9,33 @@ namespace G
     {
         partial void PrepareReadExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            ref global::System.AnyOf<string, object>? metadata,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
-            ref global::System.AnyOf<global::System.Guid?, object>? dataset,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            ref global::G.AnyOf<global::System.DateTime?, string>? asOf,
+            ref global::G.AnyOf<string, object>? metadata,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
+            ref global::G.AnyOf<global::System.Guid?, object>? dataset,
             ref int offset,
             ref int limit,
-            ref global::System.AllOf<global::G.ExampleListOrder?>? order,
-            ref global::System.AnyOf<double?, object>? randomSeed,
+            ref global::G.AllOf<global::G.ExampleListOrder?>? order,
+            ref global::G.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
-            ref global::System.AnyOf<string, object>? filter);
+            ref global::G.AnyOf<string, object>? filter);
         partial void PrepareReadExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf,
-            global::System.AnyOf<string, object>? metadata,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
-            global::System.AnyOf<global::System.Guid?, object>? dataset,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf,
+            global::G.AnyOf<string, object>? metadata,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits,
+            global::G.AnyOf<global::System.Guid?, object>? dataset,
             int offset,
             int limit,
-            global::System.AllOf<global::G.ExampleListOrder?>? order,
-            global::System.AnyOf<double?, object>? randomSeed,
+            global::G.AllOf<global::G.ExampleListOrder?>? order,
+            global::G.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
-            global::System.AnyOf<string, object>? filter);
+            global::G.AnyOf<string, object>? filter);
         partial void ProcessReadExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -75,18 +75,18 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadExamplesAsync(
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::System.AnyOf<global::System.DateTime?, string>? asOf = default,
-            global::System.AnyOf<string, object>? metadata = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
-            global::System.AnyOf<global::System.Guid?, object>? dataset = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
+            global::G.AnyOf<string, object>? metadata = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
+            global::G.AnyOf<global::System.Guid?, object>? dataset = default,
             int offset = 0,
             int limit = 100,
-            global::System.AllOf<global::G.ExampleListOrder?>? order = default,
-            global::System.AnyOf<double?, object>? randomSeed = default,
+            global::G.AllOf<global::G.ExampleListOrder?>? order = default,
+            global::G.AnyOf<double?, object>? randomSeed = default,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
-            global::System.AnyOf<string, object>? filter = default,
+            global::G.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

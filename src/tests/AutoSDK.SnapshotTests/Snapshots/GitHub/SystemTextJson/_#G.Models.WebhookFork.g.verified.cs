@@ -25,7 +25,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("forkee")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2> Forkee { get; set; }
+        public required global::G.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2> Forkee { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>

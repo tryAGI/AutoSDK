@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_in")]
-        public global::System.AnyOf<global::G.TimedeltaInput, object>? ExpiresIn { get; set; }
+        public global::G.AnyOf<global::G.TimedeltaInput, object>? ExpiresIn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public global::System.AnyOf<global::System.DateTime?, object>? ExpiresAt { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? ExpiresAt { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_config")]
-        public global::System.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

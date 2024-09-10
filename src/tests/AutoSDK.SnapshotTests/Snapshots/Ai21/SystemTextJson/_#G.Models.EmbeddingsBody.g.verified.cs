@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::System.AllOf<global::G.EmbedType?>? Type { get; set; } = global::G.EmbedType.Segment;
+        public global::G.AllOf<global::G.EmbedType?>? Type { get; set; } = global::G.EmbedType.Segment;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

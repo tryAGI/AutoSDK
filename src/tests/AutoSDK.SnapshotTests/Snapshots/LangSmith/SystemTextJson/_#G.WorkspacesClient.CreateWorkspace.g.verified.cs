@@ -108,7 +108,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateWorkspaceAsync(
             string displayName,
             global::System.Guid id = default,
-            global::System.AnyOf<string, object>? tenantHandle = default,
+            global::G.AnyOf<string, object>? tenantHandle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.WorkspaceCreate

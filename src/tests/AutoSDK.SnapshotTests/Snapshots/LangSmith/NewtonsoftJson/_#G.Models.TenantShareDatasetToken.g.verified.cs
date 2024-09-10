@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_name")]
-        public global::System.AnyOf<string, object>? DatasetName { get; set; }
+        public global::G.AnyOf<string, object>? DatasetName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

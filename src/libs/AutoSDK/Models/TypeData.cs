@@ -208,9 +208,9 @@ public readonly record struct TypeData(
             (_, _) when context.Schema.IsOneOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             (_, _) when context.Schema.IsAllOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
             
-            (_, _) when context.Schema.IsAnyOf() => ($"global::System.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
-            (_, _) when context.Schema.IsOneOf() => ($"global::System.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
-            (_, _) when context.Schema.IsAllOf() => ($"global::System.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsAnyOf() => ($"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsOneOf() => ($"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsAllOf() => ($"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
                 ($"global::{context.Settings.Namespace}.{context.Id}", true),

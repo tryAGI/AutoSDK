@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Guid?, object>? CommentBy { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? CommentBy { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment_by_name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? CommentByName { get; set; }
+        public global::G.AnyOf<string, object>? CommentByName { get; set; }
 
         /// <summary>
         /// 
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("liked_by_auth_user")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<bool?, object>? LikedByAuthUser { get; set; }
+        public global::G.AnyOf<bool?, object>? LikedByAuthUser { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
-        public global::System.AnyOf<int?, object>? Index { get; set; }
+        public global::G.AnyOf<int?, object>? Index { get; set; }
 
         /// <summary>
         /// 

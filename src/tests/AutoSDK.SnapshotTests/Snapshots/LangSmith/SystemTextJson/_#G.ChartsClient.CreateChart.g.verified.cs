@@ -116,11 +116,11 @@ namespace G
             string title,
             global::G.CustomChartType chartType,
             global::System.Collections.Generic.IList<global::G.CustomChartSeriesCreate> series,
-            global::System.AnyOf<string, object>? description = default,
-            global::System.AnyOf<int?, object>? index = default,
-            global::System.AnyOf<global::System.Guid?, object>? sectionId = default,
-            global::System.AnyOf<global::G.CustomChartCreateMetadata, object>? metadata = default,
-            global::System.AnyOf<global::G.CustomChartSeriesFilters, object>? commonFilters = default,
+            global::G.AnyOf<string, object>? description = default,
+            global::G.AnyOf<int?, object>? index = default,
+            global::G.AnyOf<global::System.Guid?, object>? sectionId = default,
+            global::G.AnyOf<global::G.CustomChartCreateMetadata, object>? metadata = default,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartCreate

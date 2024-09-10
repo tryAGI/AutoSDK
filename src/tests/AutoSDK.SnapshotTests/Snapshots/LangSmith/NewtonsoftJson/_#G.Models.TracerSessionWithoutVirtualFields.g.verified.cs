@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<global::G.TracerSessionWithoutVirtualFieldsExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<global::G.TracerSessionWithoutVirtualFieldsExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -39,25 +39,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_dataset_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? ReferenceDatasetId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_tier")]
-        public global::System.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
+        public global::G.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_run_start_time_live")]
-        public global::System.AnyOf<global::System.DateTime?, object>? LastRunStartTimeLive { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? LastRunStartTimeLive { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

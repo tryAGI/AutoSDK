@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.ReposCreateDeploymentRequestPayload, string>? Payload { get; set; }
+        public global::G.OneOf<global::G.ReposCreateDeploymentRequestPayload, string>? Payload { get; set; }
 
         /// <summary>
         /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).<br/>

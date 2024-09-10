@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<int?, double?, global::G.CustomChartsDataPointValue, object> Value { get; set; } = default!;
+        public global::G.AnyOf<int?, double?, global::G.CustomChartsDataPointValue, object> Value { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

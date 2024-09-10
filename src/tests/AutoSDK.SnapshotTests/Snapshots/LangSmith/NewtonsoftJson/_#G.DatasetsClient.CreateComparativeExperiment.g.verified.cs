@@ -114,11 +114,11 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
             global::System.Guid referenceDatasetId,
             global::System.Guid id = default,
-            global::System.AnyOf<string, object>? name = default,
-            global::System.AnyOf<string, object>? description = default,
+            global::G.AnyOf<string, object>? name = default,
+            global::G.AnyOf<string, object>? description = default,
             global::System.DateTime createdAt = default,
             global::System.DateTime modifiedAt = default,
-            global::System.AnyOf<global::G.ComparativeExperimentCreateExtra, object>? extra = default,
+            global::G.AnyOf<global::G.ComparativeExperimentCreateExtra, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ComparativeExperimentCreate

@@ -75,19 +75,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
-        public global::System.AllOf<global::G.Penalty>? FrequencyPenalty { get; set; }
+        public global::G.AllOf<global::G.Penalty>? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presencePenalty")]
-        public global::System.AllOf<global::G.Penalty>? PresencePenalty { get; set; }
+        public global::G.AllOf<global::G.Penalty>? PresencePenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("countPenalty")]
-        public global::System.AllOf<global::G.Penalty>? CountPenalty { get; set; }
+        public global::G.AllOf<global::G.Penalty>? CountPenalty { get; set; }
 
         /// <summary>
         /// 

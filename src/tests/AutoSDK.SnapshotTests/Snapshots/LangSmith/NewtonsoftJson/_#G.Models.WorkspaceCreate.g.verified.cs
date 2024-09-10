@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_handle")]
-        public global::System.AnyOf<string, object>? TenantHandle { get; set; }
+        public global::G.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

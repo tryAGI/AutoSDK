@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -57,37 +57,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::System.AnyOf<string, object>? RoleName { get; set; }
+        public global::G.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::System.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
+        public global::G.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
-        public global::System.AnyOf<string, object>? Email { get; set; }
+        public global::G.AnyOf<string, object>? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::System.AnyOf<string, object>? FullName { get; set; }
+        public global::G.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url")]
-        public global::System.AnyOf<string, object>? AvatarUrl { get; set; }
+        public global::G.AnyOf<string, object>? AvatarUrl { get; set; }
 
         /// <summary>
         /// 

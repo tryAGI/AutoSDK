@@ -125,10 +125,10 @@ namespace G
             global::System.Guid baselineSessionId,
             global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
             string feedbackKey,
-            global::System.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
+            global::G.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
             int offset = 0,
             int limit = 100,
-            global::System.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
+            global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryFeedbackDelta

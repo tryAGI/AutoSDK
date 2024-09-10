@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory1))]
-        public global::System.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
+        public global::G.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
 
         /// <summary>
         /// 

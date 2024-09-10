@@ -17,7 +17,7 @@ namespace G
         /// Example: gpt-4o-mini
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> Model { get; set; } = default!;
+        public global::G.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.<br/>

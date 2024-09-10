@@ -106,7 +106,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1EmbedResponse> V1EmbedAsync(
             global::System.Collections.Generic.IList<string> texts,
-            global::System.AllOf<global::G.EmbedType?>? type = default,
+            global::G.AllOf<global::G.EmbedType?>? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.EmbeddingsBody

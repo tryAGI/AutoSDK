@@ -116,11 +116,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
-            global::System.AnyOf<double?, int?, bool?, object>? score = default,
-            global::System.AnyOf<double?, int?, bool?, string, global::G.FeedbackUpdateSchemaValue, object>? value = default,
-            global::System.AnyOf<string, object>? comment = default,
-            global::System.AnyOf<global::G.FeedbackUpdateSchemaCorrection, string, object>? correction = default,
-            global::System.AnyOf<global::G.FeedbackConfig, object>? feedbackConfig = default,
+            global::G.AnyOf<double?, int?, bool?, object>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string, global::G.FeedbackUpdateSchemaValue, object>? value = default,
+            global::G.AnyOf<string, object>? comment = default,
+            global::G.AnyOf<global::G.FeedbackUpdateSchemaCorrection, string, object>? correction = default,
+            global::G.AnyOf<global::G.FeedbackConfig, object>? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FeedbackUpdateSchema

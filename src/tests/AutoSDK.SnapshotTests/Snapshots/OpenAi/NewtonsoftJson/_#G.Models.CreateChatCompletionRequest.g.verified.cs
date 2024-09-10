@@ -22,7 +22,7 @@ namespace G
         /// Example: gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; } = default!;
+        public global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -82,7 +82,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonObject, global::G.ResponseFormatJsonSchema>? ResponseFormat { get; set; }
+        public global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonObject, global::G.ResponseFormatJsonSchema>? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>
@@ -106,7 +106,7 @@ namespace G
         /// Up to 4 sequences where the API will stop generating further tokens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -178,7 +178,7 @@ namespace G
         /// `none` is the default when no functions are present. `auto` is the default if functions are present.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_call")]
-        public global::System.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
+        public global::G.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.<br/>

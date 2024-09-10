@@ -52,7 +52,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; } = global::G.CreateImageEditRequestModel.DallE2;
+        public global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; } = global::G.CreateImageEditRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.<br/>

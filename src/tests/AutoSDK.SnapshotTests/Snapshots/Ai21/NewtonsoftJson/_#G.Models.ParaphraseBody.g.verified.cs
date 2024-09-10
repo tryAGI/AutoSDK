@@ -21,7 +21,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
-        public global::System.AllOf<global::G.StyleType?>? Style { get; set; } = global::G.StyleType.General;
+        public global::G.AllOf<global::G.StyleType?>? Style { get; set; } = global::G.StyleType.General;
 
         /// <summary>
         /// Default Value: 0

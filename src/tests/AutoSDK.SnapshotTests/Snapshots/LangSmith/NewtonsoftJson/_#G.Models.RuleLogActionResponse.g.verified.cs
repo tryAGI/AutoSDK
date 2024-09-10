@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload")]
-        public global::System.AnyOf<global::G.RuleLogActionResponsePayload, object>? Payload { get; set; }
+        public global::G.AnyOf<global::G.RuleLogActionResponsePayload, object>? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

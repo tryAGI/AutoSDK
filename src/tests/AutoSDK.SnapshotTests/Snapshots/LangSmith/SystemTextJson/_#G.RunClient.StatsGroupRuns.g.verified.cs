@@ -116,9 +116,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunGroupStats> StatsGroupRunsAsync(
             global::System.Guid sessionId,
             global::G.RunGroupBy groupBy = default,
-            global::System.AnyOf<string, object>? filter = default,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::System.AnyOf<global::System.DateTime?, object>? endTime = default,
+            global::G.AnyOf<string, object>? filter = default,
+            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
             int offset = 0,
             int limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)

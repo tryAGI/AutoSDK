@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGenerateApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.AllOf<global::G.APIKeyCreateRequest> request);
+            global::G.AllOf<global::G.APIKeyCreateRequest> request);
         partial void PrepareGenerateApiKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.AllOf<global::G.APIKeyCreateRequest> request);
+            global::G.AllOf<global::G.APIKeyCreateRequest> request);
         partial void ProcessGenerateApiKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyCreateResponse> GenerateApiKeyAsync(
-            global::System.AllOf<global::G.APIKeyCreateRequest> request,
+            global::G.AllOf<global::G.APIKeyCreateRequest> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -103,7 +103,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.APIKeyCreateResponse> GenerateApiKeyAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::System.AllOf<global::G.APIKeyCreateRequest>
+            var request = new global::G.AllOf<global::G.APIKeyCreateRequest>
             {
             };
 

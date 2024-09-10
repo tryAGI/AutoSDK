@@ -15,19 +15,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::System.AnyOf<string, object>? Type { get; set; }
+        public global::G.AnyOf<string, object>? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.FeedbackSourceMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.FeedbackSourceMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? UserId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? UserId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

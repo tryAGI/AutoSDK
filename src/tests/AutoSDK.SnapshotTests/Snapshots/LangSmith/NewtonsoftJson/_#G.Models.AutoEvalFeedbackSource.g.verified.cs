@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::System.AnyOf<global::G.AutoEvalFeedbackSourceMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<global::G.AutoEvalFeedbackSourceMetadata, object>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

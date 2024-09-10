@@ -109,7 +109,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.EmbeddingsResponse> EmbeddingsAsync(
             string model,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.EmbeddingsRequest

@@ -15,25 +15,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string, object>? Name { get; set; }
+        public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset")]
-        public global::System.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_reviewers_per_item")]
-        public global::System.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
+        public global::G.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
 
         /// <summary>
         /// Default Value: true
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reservation_minutes")]
-        public global::System.AnyOf<int?, object>? ReservationMinutes { get; set; }
+        public global::G.AnyOf<int?, object>? ReservationMinutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ends_on")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndsOn { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndsOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

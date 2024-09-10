@@ -35,7 +35,7 @@ namespace G
         /// The default value is 'en_us'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_code")]
-        public global::System.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
+        public global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
 
         /// <summary>
         /// Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false
@@ -60,7 +60,7 @@ namespace G
         /// The speech model used for the transcription. When `null`, the default model is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; } = default!;
+        public global::G.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; } = default!;
 
         /// <summary>
         /// The textual transcript of your media file
@@ -162,7 +162,7 @@ namespace G
         /// See [Key Phrases](https://www.assemblyai.com/docs/models/key-phrases) for more information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_highlights_result")]
-        public global::System.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
+        public global::G.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
 
         /// <summary>
         /// The point in time, in milliseconds, in the file at which the transcription was started
@@ -212,7 +212,7 @@ namespace G
         /// See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_audio_quality")]
-        public global::System.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
+        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
         /// The list of PII Redaction policies that were enabled, if PII Redaction is enabled.<br/>
@@ -250,7 +250,7 @@ namespace G
         /// See [Content moderation](https://www.assemblyai.com/docs/models/content-moderation) for more information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_safety_labels")]
-        public global::System.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
+        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
 
         /// <summary>
         /// Whether [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) is enabled, can be true or false
@@ -263,7 +263,7 @@ namespace G
         /// See [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) for more information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("iab_categories_result")]
-        public global::System.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
+        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
 
         /// <summary>
         /// Customize how words are spelled and formatted using to and from values

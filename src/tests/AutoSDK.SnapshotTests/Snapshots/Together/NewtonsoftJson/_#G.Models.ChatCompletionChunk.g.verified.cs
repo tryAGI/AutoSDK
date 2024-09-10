@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public global::System.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
+        public global::G.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,7 +25,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
+        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

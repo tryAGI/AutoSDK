@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license_expiration_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
 
         /// <summary>
         /// Batch ingest config.

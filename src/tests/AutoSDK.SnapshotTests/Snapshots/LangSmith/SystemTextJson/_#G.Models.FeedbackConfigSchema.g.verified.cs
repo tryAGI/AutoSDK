@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_lower_score_better")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<bool?, object>? IsLowerScoreBetter { get; set; }
+        public global::G.AnyOf<bool?, object>? IsLowerScoreBetter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

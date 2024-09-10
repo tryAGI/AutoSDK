@@ -15,37 +15,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::System.AnyOf<string, object>? Name { get; set; }
+        public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::System.AnyOf<string, object>? Description { get; set; }
+        public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::System.AnyOf<global::G.TracerSessionUpdateExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<global::G.TracerSessionUpdateExtra, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_tier")]
-        public global::System.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
+        public global::G.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

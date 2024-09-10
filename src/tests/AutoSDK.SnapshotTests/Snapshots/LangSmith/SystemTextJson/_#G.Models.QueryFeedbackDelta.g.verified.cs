@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? Filters { get; set; }
+        public global::G.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

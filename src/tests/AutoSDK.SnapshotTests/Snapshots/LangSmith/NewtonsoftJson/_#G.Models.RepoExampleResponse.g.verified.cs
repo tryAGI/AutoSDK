@@ -21,19 +21,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::System.AnyOf<global::G.RepoExampleResponseInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<global::G.RepoExampleResponseInputs, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<global::G.RepoExampleResponseOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<global::G.RepoExampleResponseOutputs, object>? Outputs { get; set; }
 
         /// <summary>
         /// 

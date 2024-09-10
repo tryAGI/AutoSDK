@@ -38,7 +38,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.UsageData, global::G.CompletionChunkUsage> Usage { get; set; }
+        public required global::G.AllOf<global::G.UsageData, global::G.CompletionChunkUsage> Usage { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AllOf<global::G.FinishReason?, global::G.CompletionChunkFinishReason> FinishReason { get; set; }
+        public required global::G.AllOf<global::G.FinishReason?, global::G.CompletionChunkFinishReason> FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

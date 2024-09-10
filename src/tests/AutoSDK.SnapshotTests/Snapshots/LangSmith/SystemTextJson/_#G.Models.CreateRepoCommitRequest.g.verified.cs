@@ -23,14 +23,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_commit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? ParentCommit { get; set; }
+        public global::G.AnyOf<string, object>? ParentCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("example_run_ids")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleRunIds { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleRunIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparative_experiment_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::System.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? Filters { get; set; }
+        public global::G.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? Filters { get; set; }
 
         /// <summary>
         /// Default Value: 0

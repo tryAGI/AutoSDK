@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::System.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
 
         /// <summary>
         /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
@@ -39,19 +39,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<double?, string> PromptCost { get; set; } = default!;
+        public global::G.AnyOf<double?, string> PromptCost { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<double?, string> CompletionCost { get; set; } = default!;
+        public global::G.AnyOf<double?, string> CompletionCost { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::System.AnyOf<string, object>? Provider { get; set; }
+        public global::G.AnyOf<string, object>? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -142,7 +142,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; }
+        public required global::G.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; }
 
         /// <summary>
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
@@ -497,7 +497,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; }
+        public required global::G.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; }
 
         /// <summary>
         /// 

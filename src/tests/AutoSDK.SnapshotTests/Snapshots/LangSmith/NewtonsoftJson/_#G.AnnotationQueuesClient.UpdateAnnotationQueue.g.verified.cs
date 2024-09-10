@@ -119,12 +119,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
-            global::System.AnyOf<string, object>? name = default,
-            global::System.AnyOf<string, object>? description = default,
-            global::System.AnyOf<global::System.Guid?, object>? defaultDataset = default,
-            global::System.AnyOf<int?, object>? numReviewersPerItem = default,
+            global::G.AnyOf<string, object>? name = default,
+            global::G.AnyOf<string, object>? description = default,
+            global::G.AnyOf<global::System.Guid?, object>? defaultDataset = default,
+            global::G.AnyOf<int?, object>? numReviewersPerItem = default,
             bool enableReservations = true,
-            global::System.AnyOf<int?, object>? reservationMinutes = default,
+            global::G.AnyOf<int?, object>? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.AnnotationQueueUpdateSchema

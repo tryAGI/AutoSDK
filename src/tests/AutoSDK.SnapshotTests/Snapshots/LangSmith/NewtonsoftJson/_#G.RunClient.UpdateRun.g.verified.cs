@@ -123,18 +123,18 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
             global::System.Guid runId,
-            global::System.OneOf<global::System.Guid?, object>? traceId = default,
-            global::System.OneOf<string, object>? dottedOrder = default,
-            global::System.OneOf<global::System.Guid?, object>? parentRunId = default,
-            global::System.OneOf<string, double?, object>? endTime = default,
-            global::System.OneOf<string, object>? error = default,
-            global::System.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,
-            global::System.OneOf<global::G.UpdateRunRequestOutputs, object>? outputs = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? events = default,
-            global::System.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::System.OneOf<global::G.UpdateRunRequestExtra, object>? extra = default,
-            global::System.OneOf<global::G.UpdateRunRequestInputAttachments, object>? inputAttachments = default,
-            global::System.OneOf<global::G.UpdateRunRequestOutputAttachments, object>? outputAttachments = default,
+            global::G.OneOf<global::System.Guid?, object>? traceId = default,
+            global::G.OneOf<string, object>? dottedOrder = default,
+            global::G.OneOf<global::System.Guid?, object>? parentRunId = default,
+            global::G.OneOf<string, double?, object>? endTime = default,
+            global::G.OneOf<string, object>? error = default,
+            global::G.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,
+            global::G.OneOf<global::G.UpdateRunRequestOutputs, object>? outputs = default,
+            global::G.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? events = default,
+            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            global::G.OneOf<global::G.UpdateRunRequestExtra, object>? extra = default,
+            global::G.OneOf<global::G.UpdateRunRequestInputAttachments, object>? inputAttachments = default,
+            global::G.OneOf<global::G.UpdateRunRequestOutputAttachments, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateRunRequest

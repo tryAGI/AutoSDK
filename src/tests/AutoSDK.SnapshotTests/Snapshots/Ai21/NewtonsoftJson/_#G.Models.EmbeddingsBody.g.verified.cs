@@ -21,7 +21,7 @@ namespace G
         /// Default Value: segment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::System.AllOf<global::G.EmbedType?>? Type { get; set; } = global::G.EmbedType.Segment;
+        public global::G.AllOf<global::G.EmbedType?>? Type { get; set; } = global::G.EmbedType.Segment;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, object>? Name { get; set; }
+        public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

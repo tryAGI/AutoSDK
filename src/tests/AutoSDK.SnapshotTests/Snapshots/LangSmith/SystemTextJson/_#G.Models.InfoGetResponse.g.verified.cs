@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license_expiration_time")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
+        public global::G.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
 
         /// <summary>
         /// Batch ingest config.

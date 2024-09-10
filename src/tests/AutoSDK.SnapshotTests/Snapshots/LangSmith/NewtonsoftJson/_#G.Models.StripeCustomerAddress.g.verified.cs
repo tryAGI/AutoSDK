@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line2")]
-        public global::System.AnyOf<string, object>? Line2 { get; set; }
+        public global::G.AnyOf<string, object>? Line2 { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public global::System.AnyOf<string, object>? State { get; set; }
+        public global::G.AnyOf<string, object>? State { get; set; }
 
         /// <summary>
         /// 

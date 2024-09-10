@@ -124,7 +124,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AnswerLength? answerLength = default,
             global::G.Mode? mode = default,
-            global::System.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,
+            global::G.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,
             double retrievalSimilarityThreshold = default,
             double hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default)

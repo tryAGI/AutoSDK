@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::System.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::System.AnyOf<global::G.AccessScope?, object>? AccessScope { get; set; }
+        public global::G.AnyOf<global::G.AccessScope?, object>? AccessScope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

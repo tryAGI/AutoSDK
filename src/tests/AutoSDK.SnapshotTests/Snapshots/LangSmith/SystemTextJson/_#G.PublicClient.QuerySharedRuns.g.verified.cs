@@ -112,7 +112,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPublicRunsResponse> QuerySharedRunsAsync(
             global::System.Guid shareToken,
-            global::System.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryParamsForPublicRunSchema

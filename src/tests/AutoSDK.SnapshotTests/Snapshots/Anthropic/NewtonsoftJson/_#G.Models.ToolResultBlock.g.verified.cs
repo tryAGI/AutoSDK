@@ -23,7 +23,7 @@ namespace G
         /// These content blocks can use the text or image types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; } = default!;
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; } = default!;
 
         /// <summary>
         /// Set to `true` if the tool execution resulted in an error.

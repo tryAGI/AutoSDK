@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.ToolContent>> ToolContent { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ToolContent>> ToolContent { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

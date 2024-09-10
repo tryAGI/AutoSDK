@@ -9,16 +9,16 @@ namespace G
         partial void PrepareReadTracerSessionsRunsMetadataArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
-            ref global::System.AnyOf<global::System.DateTime?, object>? startTime,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
+            ref global::G.AnyOf<global::System.DateTime?, object>? startTime,
             ref int k,
             ref bool rootRunsOnly);
         partial void PrepareReadTracerSessionsRunsMetadataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
+            global::G.AnyOf<global::System.DateTime?, object>? startTime,
             int k,
             bool rootRunsOnly);
         partial void ProcessReadTracerSessionsRunsMetadataResponse(
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RootModelDictStrListStr> ReadTracerSessionsRunsMetadataAsync(
             global::System.Guid sessionId,
-            global::System.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
-            global::System.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
+            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
             int k = 10,
             bool rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
