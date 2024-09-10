@@ -43,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{7E829AE4
 		specs\replicate.yaml = specs\replicate.yaml
 		specs\together.yaml = specs\together.yaml
 		specs\assemblyai.yaml = specs\assemblyai.yaml
+		specs\mystic.yaml = specs\mystic.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.IntegrationTests.Cli", "src\tests\AutoSDK.IntegrationTests.Cli\AutoSDK.IntegrationTests.Cli.csproj", "{41F1B4D8-5F6F-40FB-A1C2-A5E6A4B62AA7}"

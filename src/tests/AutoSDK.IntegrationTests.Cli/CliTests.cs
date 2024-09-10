@@ -20,6 +20,7 @@ public class CliTests
     [DataRow("twitch.json")]
     [DataRow("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json")]
     [DataRow("together.yaml")]
+    [DataRow("mystic.yaml")]
     public async Task Generate(string spec)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

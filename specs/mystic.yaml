@@ -1,0 +1,4592 @@
+openapi: 3.0.1
+info:
+  title: Mystic API
+  version: 4.0.0
+servers:
+  - url: https://www.mystic.ai
+paths:
+  /v4/pipelines:
+    get:
+      tags:
+        - Pipelines
+      summary: Index
+      description: Retrieve a paginated set of pipelines.
+      operationId: index_v4_pipelines_get
+      parameters:
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_PipelineGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Pipelines
+      summary: Create
+      description: Upload a new pipeline.
+      operationId: create_v4_pipelines_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PipelineCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineGet'
+        '400':
+          description: Invalid request data
+          content:
+            application/json:
+              example:
+                detail:
+                  message: 'Must start with your username followed by a forward slash. Example: marjory92/falcon:main'
+                  parameter: pointer
+        '401':
+          description: Not authenticated
+          content:
+            application/json:
+              example:
+                detail:
+                  message: Not authenticated.
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/by-family/{pipeline_family_name}':
+    get:
+      tags:
+        - Pipelines
+      summary: List Pipelines By Family
+      description: "Retrieve all pipelines for a given pipeline family.\nInclude private pipelines if the user owns the family."
+      operationId: list_pipelines_by_family_v4_pipelines_by_family__pipeline_family_name__get
+      parameters:
+        - name: pipeline_family_name
+          in: path
+          required: true
+          schema:
+            title: Pipeline Family Name
+            type: string
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+        - name: public
+          in: query
+          description: Filter by public status
+          schema:
+            title: Public
+            type: boolean
+            description: Filter by public status
+        - name: hardware
+          in: query
+          description: Filter by hardware/accelerator type
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Accelerator'
+            description: Filter by hardware/accelerator type
+        - name: cluster_id
+          in: query
+          description: Filter by cluster ID
+          schema:
+            title: Cluster Id
+            type: string
+            description: Filter by cluster ID
+        - name: node_pool
+          in: query
+          description: Filter by node pool
+          schema:
+            title: Node Pool
+            type: string
+            description: Filter by node pool
+        - name: created_at
+          in: query
+          description: Filter by datetime in the format 'created_at=start:end'
+          schema:
+            title: Created At
+            type: string
+            description: Filter by datetime in the format 'created_at=start:end'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_GetMetaAndPointers_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/by-pointer/{pointer}':
+    get:
+      tags:
+        - Pipelines
+      summary: Retrieve By Pointer
+      description: "Retrieve details for a pipeline by pointer name.\n\nNote that the fields this endpoint returns are dependent on the provided\nquery parameters and will omit any empty fields.\nAccepted query parameters are:\n- include_pointers: include any pointers that point to this pipeline"
+      operationId: retrieve_by_pointer_v4_pipelines_by_pointer__pointer__get
+      parameters:
+        - name: pointer
+          in: path
+          required: true
+          schema:
+            title: Pointer
+            type: string
+        - name: include_pointers
+          in: query
+          schema:
+            title: Include Pointers
+            type: boolean
+            default: false
+        - name: include_extras
+          in: query
+          schema:
+            title: Include Extras
+            type: boolean
+            default: false
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/app__schemas__pipeline__GetDetailed'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/pipelines/owned-or-used:
+    get:
+      tags:
+        - Pipelines
+      summary: Owned Or Used
+      description: Get a lean list of pipelines that the user/team has either used or owns.
+      operationId: owned_or_used_v4_pipelines_owned_or_used_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Owned Or Used V4 Pipelines Owned Or Used Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/GetLean'
+      security:
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}':
+    get:
+      tags:
+        - Pipelines
+      summary: Retrieve
+      description: "Retrieve details for a pipeline.\n\nNote that the fields this endpoint returns are dependent on the provided\nquery parameters and will omit any empty fields.\nAccepted query parameters are:\n- include_pointers: include any pointers that point to this pipeline"
+      operationId: retrieve_v4_pipelines__pipeline_id__get
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: include_pointers
+          in: query
+          schema:
+            title: Include Pointers
+            type: boolean
+            default: false
+        - name: include_extras
+          in: query
+          schema:
+            title: Include Extras
+            type: boolean
+            default: false
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/app__schemas__pipeline__GetDetailed'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    delete:
+      tags:
+        - Pipelines
+      summary: Delete
+      description: Delete a pipeline.
+      operationId: delete_v4_pipelines__pipeline_id__delete
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    patch:
+      tags:
+        - Pipelines
+      summary: Patch
+      description: Update selected fields on a pipeline
+      operationId: patch_v4_pipelines__pipeline_id__patch
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDetailedPatch'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/clone':
+    post:
+      tags:
+        - Pipelines
+      summary: Clone
+      operationId: clone_v4_pipelines__pipeline_id__clone_post
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClonePipeline'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/image':
+    patch:
+      tags:
+        - Pipelines
+      summary: Patch Image
+      description: "Update the image avatar of a pipeline. The new image url\nwill be available in the response."
+      operationId: patch_image_v4_pipelines__pipeline_id__image_patch
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_patch_image_v4_pipelines__pipeline_id__image_patch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDetailedPatch'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/readme':
+    get:
+      tags:
+        - Pipelines
+      summary: Retrieve Readme
+      description: Retrieve a pipeline's readme.
+      operationId: retrieve_readme_v4_pipelines__pipeline_id__readme_get
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetReadme'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/avg_cost':
+    get:
+      tags:
+        - Pipelines
+      summary: Retrieve Avg Cost
+      description: Retrieve a pipeline's average cost per run over the past 1000 runs.
+      operationId: retrieve_avg_cost_v4_pipelines__pipeline_id__avg_cost_get
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id_or_pointer}/warmup':
+    post:
+      tags:
+        - Pipelines
+      summary: Pipeline Warmup
+      operationId: pipeline_warmup_v4_pipelines__pipeline_id_or_pointer__warmup_post
+      parameters:
+        - name: pipeline_id_or_pointer
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PipelineWarmup'
+        required: true
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id_or_pointer}/cooldown':
+    post:
+      tags:
+        - Pipelines
+      summary: Pipeline Cooldown
+      operationId: pipeline_cooldown_v4_pipelines__pipeline_id_or_pointer__cooldown_post
+      parameters:
+        - name: pipeline_id_or_pointer
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PipelineCooldown'
+        required: true
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/scaling':
+    get:
+      tags:
+        - Pipelines
+      summary: Retrieve Scaling Info
+      description: Get real-time scaling information for the given pipeline.
+      operationId: retrieve_scaling_info_v4_pipelines__pipeline_id__scaling_get
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineScalingInfo'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipelines/{pipeline_id}/scaling-history':
+    get:
+      tags:
+        - Pipelines
+      summary: Historical Pipeline Scaling
+      operationId: historical_pipeline_scaling_v4_pipelines__pipeline_id__scaling_history_get
+      parameters:
+        - name: pipeline_id
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+        - name: pipeline_id_or_pointer
+          in: query
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+        - name: start
+          in: query
+          required: true
+          schema:
+            title: Start
+            type: string
+            format: date-time
+        - name: end
+          in: query
+          required: true
+          schema:
+            title: End
+            type: string
+            format: date-time
+        - name: interval_unit
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/DurationUnit'
+        - name: interval_value
+          in: query
+          required: true
+          schema:
+            title: Interval Value
+            type: integer
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/users/me:
+    get:
+      tags:
+        - Users
+      summary: Get Logged In User
+      description: Retrieve the currently logged in user.
+      operationId: get_logged_in_user_v4_users_me_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGet'
+      security:
+        - APIKeyCookie: [ ]
+  /v4/users/team-invites:
+    get:
+      tags:
+        - Users
+      summary: Index
+      description: Retrieve a paginated set of invites to all teams.
+      operationId: index_v4_users_team_invites_get
+      parameters:
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_TeamInviteGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/users/{username}':
+    get:
+      tags:
+        - Users
+      summary: Get User Public Profile
+      description: Retrieve a user's public profile
+      operationId: get_user_public_profile_v4_users__username__get
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            title: Username
+            pattern: '[a-z0-9][a-z0-9-_]{1,22}[a-z0-9]'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPublicGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /v4/tokens/validate:
+    get:
+      tags:
+        - Tokens
+      summary: Validate
+      description: Validates a header token or cookie JWT.
+      operationId: validate_v4_tokens_validate_get
+      responses:
+        '204':
+          description: Successful Response
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/tokens:
+    get:
+      tags:
+        - Tokens
+      summary: Index
+      description: Retrieve a Catalyst API Bearer token for an authenticated user.
+      operationId: index_v4_tokens_get
+      parameters:
+        - name: all_team
+          in: query
+          schema:
+            title: All Team
+            type: boolean
+            default: false
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_TokenGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Tokens
+      summary: Create
+      description: "Create a new Catalyst API Bearer token for an authenticated user.\n\nThis token will be associated with a team if a team_id is present in the JWT."
+      operationId: create_v4_tokens_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenCreate'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/tokens/{token_id}':
+    get:
+      tags:
+        - Tokens
+      summary: Retrieve
+      description: Retrieve an API Bearer token for an authenticated user.
+      operationId: retrieve_v4_tokens__token_id__get
+      parameters:
+        - name: token_id
+          in: path
+          required: true
+          schema:
+            title: Token Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - APIKeyCookie: [ ]
+    delete:
+      tags:
+        - Tokens
+      summary: Delete
+      description: Delete an API Bearer token for an authenticated user.
+      operationId: delete_v4_tokens__token_id__delete
+      parameters:
+        - name: token_id
+          in: path
+          required: true
+          schema:
+            title: Token Id
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - APIKeyCookie: [ ]
+    patch:
+      tags:
+        - Tokens
+      summary: Patch
+      description: Update selected fields of an API Bearer token for an authenticated user.
+      operationId: patch_v4_tokens__token_id__patch
+      parameters:
+        - name: token_id
+          in: path
+          required: true
+          schema:
+            title: Token Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenPatch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - APIKeyCookie: [ ]
+  /v4/runs:
+    get:
+      tags:
+        - Runs
+      summary: Index
+      description: "Retrieve a paginated set of runs that satisfy query parameters.\n\nSupported query params:\n\n- `pipeline_id`: filter by a given pipeline ID\n    - e.g. `pipeline_id=pipeline_some-random-string`\n- `order_by`: order by a given field\n    - supported fields are `created_at`, `state`, `compute_time_ms`; default\n        is `created_at:desc`\n    - e.g. `order_by=compute_time_ms:desc`\n- include_pointers: include any pointers that point to the pipelines the runs were\nexecuted against"
+      operationId: index_v4_runs_get
+      parameters:
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: include_pointers
+          in: query
+          schema:
+            title: Include Pointers
+            type: boolean
+            default: false
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_RunGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Runs
+      summary: Submit Run
+      description: Submits a new run request
+      operationId: submit_run_v4_runs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRunResult'
+        '401':
+          description: Not authenticated
+          content:
+            application/json:
+              example:
+                detail:
+                  message: Not authenticated.
+        '402':
+          description: Account deactivated due to billing. Please add a payment method.
+          content:
+            application/json:
+              example:
+                detail:
+                  message: Account deactivated due to billing.
+        '403':
+          description: 'Permission denied (for example, accessing a pipeline that is owned by another user)'
+          content:
+            application/json:
+              example:
+                detail:
+                  message: Permission denied accessing resource instance
+                  parameter: pipeline
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              example:
+                detail:
+                  message: Pipeline not found
+        '503':
+          description: This pipeline is currently starting up. This is normal behaviour for pipelines that are new or have not been run in a while. Please wait a few minutes before next run.
+          content:
+            application/json:
+              example:
+                id: run_9602357c47ec478fae194cbbbd701751
+                created_at: 1705589076.999664
+                updated_at: 1705589076.999664
+                pipeline_id: pipeline_f04db29be7e34264ac7e544095fc4315
+                state: no_resources_available
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/runs/stream:
+    post:
+      tags:
+        - Runs
+      summary: Stream Run
+      description: "Submit a new streaming run request, where the run output is streamed as\nit becomes available, rather than waiting for all the data to be\ngenerated."
+      operationId: stream_run_v4_runs_stream_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/runs/{run_id}':
+    get:
+      tags:
+        - Runs
+      summary: Retrieve
+      description: Retrieve the details of a run.
+      operationId: retrieve_v4_runs__run_id__get
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            title: Run Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRunResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/runs/{run_id}/detailed':
+    get:
+      tags:
+        - Runs
+      summary: Retrieve Detailed
+      description: Retrieve a more detailed version of a run.
+      operationId: retrieve_detailed_v4_runs__run_id__detailed_get
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            title: Run Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/app__schemas__run__GetDetailed'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/billing/upcoming-invoice:
+    get:
+      tags:
+        - Billing
+      summary: Upcoming Invoice
+      operationId: upcoming_invoice_v4_billing_upcoming_invoice_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUpcomingInvoice'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/pointers:
+    get:
+      tags:
+        - Pointers
+      summary: Index
+      description: "Retrieve a paginated set of pipeline pointers that satisfy query parameters.\n\nUsers are authorised to query for pointers:\n\n-related to a given pipeline family\n    `pipeline_name=marjory92/falcon`"
+      operationId: index_v4_pointers_get
+      parameters:
+        - name: pipeline_name
+          in: query
+          schema:
+            title: Pipeline Name
+            type: string
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_PointerGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Pointers
+      summary: Create
+      description: Create a pipeline pointer instance.
+      operationId: create_v4_pointers_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PointerCreate'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointerGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pointers/{pointer}':
+    delete:
+      tags:
+        - Pointers
+      summary: Delete
+      operationId: delete_v4_pointers__pointer__delete
+      parameters:
+        - name: pointer
+          in: path
+          required: true
+          schema:
+            title: Pointer
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    patch:
+      tags:
+        - Pointers
+      summary: Pointers Patch
+      description: Update a pipeline pointer instance.
+      operationId: pointers_patch_v4_pointers__pointer__patch
+      parameters:
+        - name: pointer
+          in: path
+          required: true
+          schema:
+            title: Pointer
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PointerPatch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointerGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/pipeline-families:
+    get:
+      tags:
+        - Pipeline Families
+      summary: Index
+      description: "List pipeline families.\n\nDepending on parameters this can mean all public families, or a user/team's\nspecific families.\nCan also be ordered and filtered based on family name."
+      operationId: index_v4_pipeline_families_get
+      parameters:
+        - name: user_id
+          in: query
+          schema:
+            title: User Id
+            type: string
+        - name: team_id
+          in: query
+          schema:
+            title: Team Id
+            type: string
+        - name: order_by
+          in: query
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/OrderBy'
+            default: popular
+        - name: search
+          in: query
+          schema:
+            title: Search
+            maxLength: 255
+            type: string
+        - name: include_all_run
+          in: query
+          schema:
+            title: Include All Run
+            type: boolean
+            default: false
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_PipelineFamilyGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/pipeline-families/{pipeline_family_name}':
+    get:
+      tags:
+        - Pipeline Families
+      summary: Retrieve
+      description: "Retrieve a pipeline family by name with its latest pipeline.\nIf the user/selected team owns the family, the latest pipeline may be a\nprivate pipeline, otherwise it will only be public."
+      operationId: retrieve_v4_pipeline_families__pipeline_family_name__get
+      parameters:
+        - name: pipeline_family_name
+          in: path
+          required: true
+          schema:
+            title: Pipeline Family Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineFamilyGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/files:
+    get:
+      tags:
+        - Files
+      summary: Index
+      description: Retrieve a paginated set of pipeline file instances.
+      operationId: index_v4_files_get
+      parameters:
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_Any_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Files
+      summary: Create
+      description: Create a new file.
+      operationId: create_v4_files_post
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_create_v4_files_post'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/files/{file_id}':
+    get:
+      tags:
+        - Files
+      summary: Retrieve
+      description: Retrieve a file instance.
+      operationId: retrieve_v4_files__file_id__get
+      parameters:
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            title: File Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/metrics/pipelines:
+    get:
+      tags:
+        - Metrics
+      summary: Used Pipelines
+      description: "Retrieve paginated metrics for all pipelines used by a user, optionally\nfiltered by 'search'."
+      operationId: used_pipelines_v4_metrics_pipelines_get
+      parameters:
+        - name: search
+          in: query
+          schema:
+            title: Search
+            type: string
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_PipelineMetrics_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/metrics/top-pipelines-usage:
+    get:
+      tags:
+        - Metrics
+      summary: Top Pipelines Usage
+      description: "Retrieve usage metrics for top 'num_pipelines' (in terms of number of\nruns) for the provided time period."
+      operationId: top_pipelines_usage_v4_metrics_top_pipelines_usage_get
+      parameters:
+        - name: num_pipelines
+          in: query
+          schema:
+            title: Num Pipelines
+            type: integer
+            default: 20
+        - name: cluster_id
+          in: query
+          schema:
+            title: Cluster Id
+            type: string
+        - name: start
+          in: query
+          required: true
+          schema:
+            title: Start
+            type: string
+            format: date-time
+        - name: end
+          in: query
+          required: true
+          schema:
+            title: End
+            type: string
+            format: date-time
+        - name: interval_unit
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/DurationUnit'
+        - name: interval_value
+          in: query
+          required: true
+          schema:
+            title: Interval Value
+            type: integer
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/metrics/overall-usage-summary:
+    get:
+      tags:
+        - Metrics
+      summary: Overall Usage Summary
+      operationId: overall_usage_summary_v4_metrics_overall_usage_summary_get
+      parameters:
+        - name: start
+          in: query
+          required: true
+          schema:
+            title: Start
+            type: string
+            format: date-time
+        - name: end
+          in: query
+          required: true
+          schema:
+            title: End
+            type: string
+            format: date-time
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OverallUsageSummary'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/logs/run/{run_id}':
+    get:
+      tags:
+        - Logs
+      summary: Get Run Logs
+      description: Get the pipeline logs for a run
+      operationId: get_run_logs_v4_logs_run__run_id__get
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            title: Run Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/logs/pipeline-startup/{pipeline_id_or_pointer}':
+    get:
+      tags:
+        - Logs
+      summary: Get Pipeline Startup Logs
+      description: Get the logs for pipeline starting up
+      operationId: get_pipeline_startup_logs_v4_logs_pipeline_startup__pipeline_id_or_pointer__get
+      parameters:
+        - name: pipeline_id_or_pointer
+          in: path
+          required: true
+          schema:
+            title: Pipeline Id Or Pointer
+            type: string
+        - name: pipeline_id
+          in: query
+          schema:
+            title: Pipeline Id
+            type: string
+        - name: pointer
+          in: query
+          schema:
+            title: Pointer
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/credentials:
+    get:
+      tags:
+        - Cloud
+        - credentials
+      summary: List Credentials
+      description: List all credentials belonging to a user
+      operationId: list_credentials_v4_cloud_credentials_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Credentials V4 Cloud Credentials Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CredentialGet'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/cloud/credentials/{credential_id}':
+    delete:
+      tags:
+        - Cloud
+        - credentials
+      summary: Delete Cloud Credential
+      operationId: delete_cloud_credential_v4_cloud_credentials__credential_id__delete
+      parameters:
+        - name: credential_id
+          in: path
+          required: true
+          schema:
+            title: Credential Id
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/gcp/auth:
+    get:
+      tags:
+        - Cloud
+        - GCP
+      summary: Auth Gcp
+      operationId: auth_gcp_v4_cloud_provider_gcp_auth_get
+      parameters:
+        - name: credential_id
+          in: query
+          schema:
+            title: Credential Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/gcp/callback:
+    get:
+      tags:
+        - Cloud
+        - GCP
+      summary: Callback Gcp
+      operationId: callback_gcp_v4_cloud_provider_gcp_callback_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+  /v4/cloud/provider/gcp/service-accounts:
+    post:
+      tags:
+        - Cloud
+        - GCP
+      summary: Create Gcp Service Account
+      operationId: create_gcp_service_account_v4_cloud_provider_gcp_service_accounts_post
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_create_gcp_service_account_v4_cloud_provider_gcp_service_accounts_post'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/gcp/projects:
+    get:
+      tags:
+        - Cloud
+        - GCP
+      summary: List Projects
+      description: Get all projects on a user's cloud account
+      operationId: list_projects_v4_cloud_provider_gcp_projects_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Projects V4 Cloud Provider Gcp Projects Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectGet'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/cloud/provider/gcp/projects/{project_id}/regions':
+    get:
+      tags:
+        - Cloud
+        - GCP
+      summary: List Regions
+      description: Get all the available regions under a project
+      operationId: list_regions_v4_cloud_provider_gcp_projects__project_id__regions_get
+      parameters:
+        - name: project_id
+          in: path
+          required: true
+          schema:
+            title: Project Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Regions V4 Cloud Provider Gcp Projects  Project Id  Regions Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/RegionGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/gcp/accelerator-availability:
+    get:
+      tags:
+        - Cloud
+        - GCP
+      summary: Get Accelerator Availability
+      operationId: get_accelerator_availability_v4_cloud_provider_gcp_accelerator_availability_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+  /v4/cloud/provider/aws/auth:
+    post:
+      tags:
+        - Cloud
+        - AWS
+      summary: Auth Aws
+      operationId: auth_aws_v4_cloud_provider_aws_auth_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AWSAuthCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/aws/accelerator-availability:
+    get:
+      tags:
+        - Cloud
+        - AWS
+      summary: Get Accelerator Availability
+      operationId: get_accelerator_availability_v4_cloud_provider_aws_accelerator_availability_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+  /v4/cloud/provider/azure/auth:
+    post:
+      tags:
+        - Cloud
+        - Azure
+      summary: Auth Azure
+      operationId: auth_azure_v4_cloud_provider_azure_auth_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AzureAuthCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/cloud/provider/azure/accelerator-availability:
+    get:
+      tags:
+        - Cloud
+        - Azure
+      summary: Get Accelerator Availability
+      operationId: get_accelerator_availability_v4_cloud_provider_azure_accelerator_availability_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+  /v4/clusters:
+    get:
+      tags:
+        - Cluster
+      summary: List Clusters
+      description: List all clusters belonging to a user/team
+      operationId: list_clusters_v4_clusters_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Clusters V4 Clusters Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClusterGet'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Cluster
+      summary: Create Cluster
+      operationId: create_cluster_v4_clusters_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/clusters/{cluster_id}/node-pools':
+    get:
+      tags:
+        - Cluster
+      summary: List Node Pools
+      description: List node pools for a given cluster
+      operationId: list_node_pools_v4_clusters__cluster_id__node_pools_get
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Node Pools V4 Clusters  Cluster Id  Node Pools Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/NodePool'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Cluster
+      summary: Create Node Pool
+      operationId: create_node_pool_v4_clusters__cluster_id__node_pools_post
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NodePoolCreate'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/clusters/{cluster_id}':
+    get:
+      tags:
+        - Cluster
+      summary: Retrieve Cluster
+      description: Retrieve a cluster for a user
+      operationId: retrieve_cluster_v4_clusters__cluster_id__get
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    delete:
+      tags:
+        - Cluster
+      summary: Delete Cluster
+      operationId: delete_cluster_v4_clusters__cluster_id__delete
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/clusters/{cluster_id}/pipelines':
+    get:
+      tags:
+        - Cluster
+      summary: List Pipelines
+      description: List pipelines deployed to a given cluster
+      operationId: list_pipelines_v4_clusters__cluster_id__pipelines_get
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_ClusterDeployedPipelineGet_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/clusters/{cluster_id}/node-pools/{node_pool_name}':
+    delete:
+      tags:
+        - Cluster
+      summary: Delete Node Pool
+      operationId: delete_node_pool_v4_clusters__cluster_id__node_pools__node_pool_name__delete
+      parameters:
+        - name: cluster_id
+          in: path
+          required: true
+          schema:
+            title: Cluster Id
+            type: string
+        - name: node_pool_name
+          in: path
+          required: true
+          schema:
+            title: Node Pool Name
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  /v4/resources:
+    post:
+      tags:
+        - resources
+      summary: Set Pod Info
+      operationId: set_pod_info_v4_resources_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourcePodInfo'
+        required: true
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - HTTPBearer: [ ]
+  /v4/scaling-configs:
+    get:
+      tags:
+        - Scaling configurations
+      summary: Index
+      description: Retrieve a paginated set of scaling configurations
+      operationId: index_v4_scaling_configs_get
+      parameters:
+        - name: public
+          in: query
+          schema:
+            title: Public
+            type: boolean
+            default: false
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_ScalingConfigGetWithPipelineCount_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    post:
+      tags:
+        - Scaling configurations
+      summary: Create
+      description: Create a scaling configuration for pipelines
+      operationId: create_v4_scaling_configs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScalingConfigCreate'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScalingConfigGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/scaling-configs/pipelines/{name}':
+    get:
+      tags:
+        - Scaling configurations
+      summary: Get Pipeline List
+      description: Get a list of pipelines scoped to the user which use a scaling configuration
+      operationId: get_pipeline_list_v4_scaling_configs_pipelines__name__get
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            title: Name
+            type: string
+        - name: skip
+          in: query
+          schema:
+            title: Skip
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            title: Limit
+            type: integer
+            default: 20
+        - name: order_by
+          in: query
+          schema:
+            title: Order By
+            pattern: '[^:]*(:(asc|desc))?$'
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paginated_GetLean_'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+  '/v4/scaling-configs/{name}':
+    get:
+      tags:
+        - Scaling configurations
+      summary: Get By Name
+      description: Retrieve a scaling configuration
+      operationId: get_by_name_v4_scaling_configs__name__get
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            title: Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScalingConfigGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    delete:
+      tags:
+        - Scaling configurations
+      summary: Delete
+      description: Delete a scaling configuration
+      operationId: delete_v4_scaling_configs__name__delete
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            title: Name
+            type: string
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+    patch:
+      tags:
+        - Scaling configurations
+      summary: Patch
+      description: Patch a scaling configuration
+      operationId: patch_v4_scaling_configs__name__patch
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            title: Name
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScalingConfigPatch'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScalingConfigGet'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - HTTPBearer: [ ]
+        - APIKeyCookie: [ ]
+components:
+  schemas:
+    AWSAuthCreate:
+      title: AWSAuthCreate
+      required:
+        - role_arn
+      type: object
+      properties:
+        role_arn:
+          title: Role Arn
+          type: string
+      description: Base model for schemas.
+    Accelerator:
+      title: Accelerator
+      enum:
+        - nvidia_t4
+        - nvidia_a100
+        - nvidia_a100_80gb
+        - nvidia_h100
+        - nvidia_l4
+        - cpu
+        - nvidia_a100_5gb
+        - nvidia_a100_10gb
+        - nvidia_a100_20gb
+        - nvidia_a100_80gb_10gb
+        - nvidia_a100_80gb_20gb
+        - nvidia_a100_80gb_40gb
+        - nvidia_a10
+        - nvidia_a10_12gb
+        - nvidia_a10_8gb
+        - nvidia_a10_4gb
+        - nvidia_h100_10gb
+        - nvidia_h100_20gb
+        - nvidia_h100_40gb
+        - nvidia_h100_80gb
+      type: string
+      description: An enumeration.
+    AccountTier:
+      title: AccountTier
+      enum:
+        - BASIC
+        - STARTER
+        - PRO
+        - BYOC
+      type: string
+      description: Defines various account tiers with different access levels and permissions.
+    AzureAuthCreate:
+      title: AzureAuthCreate
+      required:
+        - client_id
+        - client_secret
+        - tenant_id
+        - subscription_id
+      type: object
+      properties:
+        client_id:
+          title: Client Id
+          type: string
+        client_secret:
+          title: Client Secret
+          type: string
+        tenant_id:
+          title: Tenant Id
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+      description: Base model for schemas.
+    Body_create_gcp_service_account_v4_cloud_provider_gcp_service_accounts_post:
+      title: Body_create_gcp_service_account_v4_cloud_provider_gcp_service_accounts_post
+      required:
+        - service_account_file
+      type: object
+      properties:
+        credential_id:
+          title: Credential Id
+          type: string
+        service_account_file:
+          title: Service Account File
+          type: string
+          format: binary
+    Body_create_v4_files_post:
+      title: Body_create_v4_files_post
+      required:
+        - pfile
+      type: object
+      properties:
+        pfile:
+          title: Pfile
+          type: string
+          format: binary
+    Body_patch_image_v4_pipelines__pipeline_id__image_patch:
+      title: Body_patch_image_v4_pipelines__pipeline_id__image_patch
+      required:
+        - image_file
+      type: object
+      properties:
+        image_file:
+          title: Image File
+          type: string
+          format: binary
+    ClonePipeline:
+      title: ClonePipeline
+      required:
+        - cluster
+      type: object
+      properties:
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterConfig'
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+      description: Base model for schemas.
+    ClusterDeployedPipelineGet:
+      title: ClusterDeployedPipelineGet
+      required:
+        - id
+        - name
+        - pointers
+        - node_pool
+        - replicas
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+        node_pool:
+          title: Node Pool
+          type: string
+        replicas:
+          $ref: '#/components/schemas/PipelineScaling'
+      description: Base model for schemas.
+    ClusterGet:
+      title: ClusterGet
+      required:
+        - id
+        - provider
+        - name
+        - state
+        - credential_id
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        provider:
+          title: Provider
+          type: string
+        name:
+          title: Name
+          type: string
+        state:
+          title: State
+          type: string
+        credential_id:
+          title: Credential Id
+          type: string
+        error_message:
+          title: Error Message
+          type: string
+        location:
+          title: Location
+          type: string
+      description: Base model for schemas.
+    ClusterRunResult:
+      title: ClusterRunResult
+      required:
+        - id
+        - created_at
+        - updated_at
+        - pipeline_id
+        - state
+      type: object
+      properties:
+        inputs:
+          title: Inputs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunInput'
+        outputs:
+          title: Outputs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunOutput'
+        error:
+          $ref: '#/components/schemas/ContainerRunError'
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        state:
+          $ref: '#/components/schemas/RunState'
+        queue_position:
+          title: Queue Position
+          type: integer
+      description: Base model for schemas.
+    ContainerRunError:
+      title: ContainerRunError
+      required:
+        - type
+        - message
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ContainerRunErrorType'
+        message:
+          title: Message
+          type: string
+        traceback:
+          title: Traceback
+          type: string
+      description: Base model for schemas.
+    ContainerRunErrorType:
+      title: ContainerRunErrorType
+      enum:
+        - input_error
+        - cuda_oom
+        - cuda_error
+        - oom
+        - pipeline_error
+        - startup_error
+        - pipeline_loading
+        - timeout
+        - unknown
+      type: string
+      description: An enumeration.
+    CredentialGet:
+      title: CredentialGet
+      required:
+        - id
+        - provider
+        - auth_error
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        provider:
+          title: Provider
+          type: string
+        auth_error:
+          title: Auth Error
+          type: boolean
+      description: Base model for schemas.
+    DurationUnit:
+      title: DurationUnit
+      enum:
+        - seconds
+        - minutes
+        - hours
+        - days
+        - weeks
+      type: string
+      description: An enumeration.
+    GetDetailedPatch:
+      title: GetDetailedPatch
+      required:
+        - public
+        - name
+        - image
+        - input_variables
+        - output_variables
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        public:
+          title: Public
+          type: boolean
+        description:
+          title: Description
+          type: string
+        website_url:
+          title: Website Url
+          type: string
+        repository_url:
+          title: Repository Url
+          type: string
+        paper_url:
+          title: Paper Url
+          type: string
+        license_url:
+          title: License Url
+          type: string
+        image_url:
+          title: Image Url
+          type: string
+        readme:
+          title: Readme
+          type: string
+        name:
+          title: Name
+          type: string
+        image:
+          title: Image
+          type: string
+        input_variables:
+          title: Input Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        output_variables:
+          title: Output Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        extras:
+          title: Extras
+          type: object
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterGetLean'
+        scaling_config:
+          title: Scaling Config
+          type: string
+        failed_state_info:
+          $ref: '#/components/schemas/PipelineContainerState'
+      description: Response from patching a pipeline (includes readme)
+    GetLean:
+      title: GetLean
+      required:
+        - id
+        - name
+        - pointers
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        image_url:
+          title: Image Url
+          type: string
+      description: Base model for schemas.
+    GetMetaAndPointers:
+      title: GetMetaAndPointers
+      required:
+        - public
+        - pointers
+        - id
+        - created_at
+      type: object
+      properties:
+        public:
+          title: Public
+          type: boolean
+        description:
+          title: Description
+          type: string
+        website_url:
+          title: Website Url
+          type: string
+        repository_url:
+          title: Repository Url
+          type: string
+        paper_url:
+          title: Paper Url
+          type: string
+        license_url:
+          title: License Url
+          type: string
+        image_url:
+          title: Image Url
+          type: string
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterGetLean'
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+      description: Base model for schemas.
+    GetReadme:
+      title: GetReadme
+      type: object
+      properties:
+        readme:
+          title: Readme
+          type: string
+      description: Base model for schemas.
+    GetUpcomingInvoice:
+      title: GetUpcomingInvoice
+      required:
+        - credits_used
+        - credits_total
+        - start_date
+        - end_date
+      type: object
+      properties:
+        credits_used:
+          title: Credits Used
+          type: integer
+        credits_total:
+          title: Credits Total
+          type: integer
+        start_date:
+          title: Start Date
+          type: string
+          format: date-time
+        end_date:
+          title: End Date
+          type: string
+          format: date-time
+      description: "Details about a customer's upcoming invoice, including free credit usage in\ncents and billing period"
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    IOVariable:
+      title: IOVariable
+      required:
+        - run_io_type
+      type: object
+      properties:
+        run_io_type:
+          $ref: '#/components/schemas/RunIOType'
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        examples:
+          title: Examples
+          type: array
+          items: { }
+        gt:
+          title: Gt
+          type: integer
+        ge:
+          title: Ge
+          type: integer
+        lt:
+          title: Lt
+          type: integer
+        le:
+          title: Le
+          type: integer
+        multiple_of:
+          title: Multiple Of
+          type: integer
+        allow_inf_nan:
+          title: Allow Inf Nan
+          type: boolean
+        max_digits:
+          title: Max Digits
+          type: integer
+        decimal_places:
+          title: Decimal Places
+          type: integer
+        min_length:
+          title: Min Length
+          type: integer
+        max_length:
+          title: Max Length
+          type: integer
+        choices:
+          title: Choices
+          type: array
+          items: { }
+        dict_schema:
+          title: Dict Schema
+          type: array
+          items:
+            type: object
+        default:
+          title: Default
+        optional:
+          title: Optional
+          type: boolean
+      description: Base model for schemas.
+    NodePool:
+      title: NodePool
+      required:
+        - name
+        - accelerators
+        - status
+        - console_link
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        status:
+          title: Status
+          type: string
+        autoscaling:
+          $ref: '#/components/schemas/NodePoolAutoscaling'
+        console_link:
+          title: Console Link
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        use_spot_instances:
+          title: Use Spot Instances
+          type: boolean
+          default: false
+        num_pipelines:
+          title: Num Pipelines
+          type: integer
+          default: 0
+      description: Base model for schemas.
+    NodePoolAutoscaling:
+      title: NodePoolAutoscaling
+      required:
+        - min_nodes
+        - max_nodes
+        - current_nodes
+      type: object
+      properties:
+        min_nodes:
+          title: Min Nodes
+          type: integer
+        max_nodes:
+          title: Max Nodes
+          type: integer
+        current_nodes:
+          title: Current Nodes
+          type: integer
+      description: Base model for schemas.
+    NodePoolCreate:
+      title: NodePoolCreate
+      required:
+        - accelerators
+      type: object
+      properties:
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        spot:
+          title: Spot
+          type: boolean
+          default: true
+      description: Base model for schemas.
+    OrderBy:
+      title: OrderBy
+      enum:
+        - popular
+        - recent
+      description: An enumeration.
+    OverallUsageSummary:
+      title: OverallUsageSummary
+      required:
+        - start
+        - end
+        - run_count
+        - failed_run_count
+        - total_compute_time_ms
+      type: object
+      properties:
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        start:
+          title: Start
+          type: number
+        end:
+          title: End
+          type: number
+        run_count:
+          title: Run Count
+          type: integer
+        failed_run_count:
+          title: Failed Run Count
+          type: integer
+        total_compute_time_ms:
+          title: Total Compute Time Ms
+          type: integer
+        successful_run_count_change:
+          title: Successful Run Count Change
+          type: number
+        failed_run_count_change:
+          title: Failed Run Count Change
+          type: number
+      description: Base model for schemas.
+    Paginated_Any_:
+      title: 'Paginated[Any]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items: { }
+      description: Response for paginated resource lists.
+    Paginated_ClusterDeployedPipelineGet_:
+      title: 'Paginated[ClusterDeployedPipelineGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/ClusterDeployedPipelineGet'
+      description: Response for paginated resource lists.
+    Paginated_GetLean_:
+      title: 'Paginated[GetLean]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 10000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/GetLean'
+      description: Response model for a paginated set of a given resource.
+    Paginated_GetMetaAndPointers_:
+      title: 'Paginated[GetMetaAndPointers]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/GetMetaAndPointers'
+      description: Response for paginated resource lists.
+    Paginated_PipelineFamilyGet_:
+      title: 'Paginated[PipelineFamilyGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineFamilyGet'
+      description: Response for paginated resource lists.
+    Paginated_PipelineGet_:
+      title: 'Paginated[PipelineGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineGet'
+      description: Response for paginated resource lists.
+    Paginated_PipelineMetrics_:
+      title: 'Paginated[PipelineMetrics]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineMetrics'
+      description: Response for paginated resource lists.
+    Paginated_PointerGet_:
+      title: 'Paginated[PointerGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/PointerGet'
+      description: Response for paginated resource lists.
+    Paginated_RunGet_:
+      title: 'Paginated[RunGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/RunGet'
+      description: Response for paginated resource lists.
+    Paginated_ScalingConfigGetWithPipelineCount_:
+      title: 'Paginated[ScalingConfigGetWithPipelineCount]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 10000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/ScalingConfigGetWithPipelineCount'
+      description: Response model for a paginated set of a given resource.
+    Paginated_TeamInviteGet_:
+      title: 'Paginated[TeamInviteGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 10000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamInviteGet'
+      description: Response model for a paginated set of a given resource.
+    Paginated_TokenGet_:
+      title: 'Paginated[TokenGet]'
+      required:
+        - skip
+        - limit
+        - total
+        - data
+      type: object
+      properties:
+        skip:
+          title: Skip
+          minimum: 0.0
+          type: integer
+        limit:
+          title: Limit
+          maximum: 1000.0
+          minimum: 1.0
+          type: integer
+        total:
+          title: Total
+          minimum: 0.0
+          type: integer
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenGet'
+      description: Response for paginated resource lists.
+    Patch:
+      title: Patch
+      type: object
+      properties:
+        public:
+          title: Public
+          type: boolean
+        description:
+          title: Description
+          type: string
+        website_url:
+          title: Website Url
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        repository_url:
+          title: Repository Url
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        paper_url:
+          title: Paper Url
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        license_url:
+          title: License Url
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        image_url:
+          title: Image Url
+          maxLength: 2083
+          minLength: 1
+          type: string
+          format: uri
+        readme:
+          title: Readme
+          type: string
+        input_variables:
+          title: Input Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        output_variables:
+          title: Output Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        extras:
+          title: Extras
+          type: object
+        scaling_config:
+          title: Scaling Config
+          type: string
+      additionalProperties: false
+      description: Base model for schemas.
+    PipelineClusterConfig:
+      title: PipelineClusterConfig
+      required:
+        - id
+        - node_pool
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        node_pool:
+          title: Node Pool
+          type: string
+    PipelineClusterGetLean:
+      title: PipelineClusterGetLean
+      required:
+        - id
+        - node_pool
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        node_pool:
+          title: Node Pool
+          type: string
+        name:
+          title: Name
+          type: string
+        provider:
+          title: Provider
+          type: string
+      description: A lean representation of a cluster when returned from an API call
+    PipelineContainerState:
+      title: PipelineContainerState
+      required:
+        - state
+      type: object
+      properties:
+        state:
+          $ref: '#/components/schemas/PipelineState'
+        message:
+          title: Message
+          type: string
+        current_run:
+          title: Current Run
+          type: string
+      description: Base model for schemas.
+    PipelineCooldown:
+      title: PipelineCooldown
+      type: object
+      properties:
+        duration:
+          title: Duration
+          type: integer
+          default: 1800
+      description: Base model for schemas.
+    PipelineCreate:
+      title: PipelineCreate
+      required:
+        - name
+        - image
+        - input_variables
+        - output_variables
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        image:
+          title: Image
+          type: string
+        input_variables:
+          title: Input Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        output_variables:
+          title: Output Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterConfig'
+        scaling_config:
+          title: Scaling Config
+          type: string
+        description:
+          title: Description
+          type: string
+        readme:
+          title: Readme
+          type: string
+        extras:
+          title: Extras
+          type: object
+      description: Base model for schemas.
+    PipelineFamilyGet:
+      title: PipelineFamilyGet
+      required:
+        - name
+        - run_count
+        - latest_at
+        - pipeline_id
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        run_count:
+          title: Run Count
+          type: integer
+        description:
+          title: Description
+          type: string
+        latest_at:
+          title: Latest At
+          type: string
+          format: date-time
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        image_url:
+          title: Image Url
+          type: string
+      description: Base model for schemas.
+    PipelineGet:
+      title: PipelineGet
+      required:
+        - name
+        - image
+        - input_variables
+        - output_variables
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        image:
+          title: Image
+          type: string
+        input_variables:
+          title: Input Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        output_variables:
+          title: Output Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        extras:
+          title: Extras
+          type: object
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterGetLean'
+        scaling_config:
+          title: Scaling Config
+          type: string
+        failed_state_info:
+          $ref: '#/components/schemas/PipelineContainerState'
+      description: Base model for schemas.
+    PipelineMetrics:
+      title: PipelineMetrics
+      required:
+        - pipeline_id
+        - pipeline_name
+        - pointers
+        - run_count
+        - failed_run_count
+        - avg_compute_time_ms
+        - total_compute_time_ms
+      type: object
+      properties:
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        pipeline_name:
+          title: Pipeline Name
+          type: string
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+        run_count:
+          title: Run Count
+          type: integer
+        failed_run_count:
+          title: Failed Run Count
+          type: integer
+        last_run_at:
+          title: Last Run At
+          type: string
+          format: date-time
+        last_failed_at:
+          title: Last Failed At
+          type: string
+          format: date-time
+        avg_compute_time_ms:
+          title: Avg Compute Time Ms
+          type: integer
+        total_compute_time_ms:
+          title: Total Compute Time Ms
+          type: integer
+      description: Base model for schemas.
+    PipelineScaling:
+      title: PipelineScaling
+      required:
+        - desired
+        - current
+      type: object
+      properties:
+        desired:
+          title: Desired
+          type: integer
+        current:
+          title: Current
+          type: integer
+      description: Base model for schemas.
+    PipelineScalingInfo:
+      title: PipelineScalingInfo
+      required:
+        - current_replicas
+        - desired_replicas
+        - current_pipeline_states
+      type: object
+      properties:
+        current_replicas:
+          title: Current Replicas
+          type: integer
+        desired_replicas:
+          title: Desired Replicas
+          type: integer
+        current_pipeline_states:
+          title: Current Pipeline States
+          type: object
+          additionalProperties:
+            type: integer
+      description: Base model for schemas.
+    PipelineState:
+      title: PipelineState
+      enum:
+        - not_loaded
+        - loading
+        - loaded
+        - load_failed
+        - startup_failed
+        - container_failed
+        - failed
+      type: string
+      description: An enumeration.
+    PipelineWarmup:
+      title: PipelineWarmup
+      required:
+        - minimum_nodes
+      type: object
+      properties:
+        minimum_nodes:
+          title: Minimum Nodes
+          type: integer
+        duration:
+          title: Duration
+          type: integer
+          default: 300
+      description: Base model for schemas.
+    PointerCreate:
+      title: PointerCreate
+      required:
+        - pointer_or_pipeline_id
+        - pointer
+      type: object
+      properties:
+        pointer_or_pipeline_id:
+          title: Pointer Or Pipeline Id
+          type: string
+        pointer:
+          title: Pointer
+          type: string
+        locked:
+          title: Locked
+          type: boolean
+      description: Base model for schemas.
+    PointerGet:
+      title: PointerGet
+      required:
+        - id
+        - pointer
+        - pipeline_id
+        - locked
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        pointer:
+          title: Pointer
+          type: string
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        locked:
+          title: Locked
+          type: boolean
+      description: Base model for schemas.
+    PointerPatch:
+      title: PointerPatch
+      type: object
+      properties:
+        pointer_or_pipeline_id:
+          title: Pointer Or Pipeline Id
+          type: string
+        locked:
+          title: Locked
+          type: boolean
+      description: Base model for schemas.
+    ProjectGet:
+      title: ProjectGet
+      required:
+        - project_id
+        - name
+        - state
+        - display_name
+      type: object
+      properties:
+        project_id:
+          title: Project Id
+          type: string
+        name:
+          title: Name
+          type: string
+        state:
+          title: State
+          type: string
+        display_name:
+          title: Display Name
+          type: string
+      description: Base model for schemas.
+    RegionGet:
+      title: RegionGet
+      required:
+        - id
+        - kind
+        - name
+        - self_link
+        - status
+        - zones
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        kind:
+          title: Kind
+          type: string
+        name:
+          title: Name
+          type: string
+        self_link:
+          title: Self Link
+          type: string
+        status:
+          title: Status
+          type: string
+        zones:
+          title: Zones
+          type: array
+          items:
+            type: string
+      description: Base model for schemas.
+    ResourcePodInfo:
+      title: ResourcePodInfo
+      required:
+        - pod_name
+        - pod_ip
+        - node_name
+        - state
+      type: object
+      properties:
+        pod_name:
+          title: Pod Name
+          type: string
+        pod_ip:
+          title: Pod Ip
+          type: string
+        node_name:
+          title: Node Name
+          type: string
+        state:
+          $ref: '#/components/schemas/PipelineState'
+        current_run:
+          title: Current Run
+          type: string
+      description: Base model for schemas.
+    RunCreate:
+      title: RunCreate
+      required:
+        - pipeline
+        - inputs
+      type: object
+      properties:
+        pipeline:
+          title: Pipeline
+          type: string
+        inputs:
+          title: Inputs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunInput'
+        async_run:
+          title: Async Run
+          type: boolean
+          default: false
+        wait_for_resources:
+          title: Wait For Resources
+          type: boolean
+        run_id:
+          title: Run Id
+          type: string
+      description: Base model for schemas.
+    RunGet:
+      title: RunGet
+      required:
+        - id
+        - created_at
+        - updated_at
+        - pipeline_id
+        - state
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+        state:
+          $ref: '#/components/schemas/RunState'
+        compute_time_ms:
+          title: Compute Time Ms
+          type: integer
+        started_at:
+          title: Started At
+          type: string
+          format: date-time
+        ended_at:
+          title: Ended At
+          type: string
+          format: date-time
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+      description: A brief view of a run
+    RunIOType:
+      title: RunIOType
+      enum:
+        - integer
+        - string
+        - fp
+        - dictionary
+        - boolean
+        - none
+        - array
+        - pkl
+        - file
+        - stream
+      type: string
+      description: An enumeration.
+    RunInput:
+      title: RunInput
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/RunIOType'
+        value:
+          title: Value
+        file_name:
+          title: File Name
+          type: string
+        file_path:
+          title: File Path
+          type: string
+        file_url:
+          title: File Url
+          type: string
+      description: Base model for schemas.
+    RunOutput:
+      title: RunOutput
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/RunIOType'
+        value:
+          title: Value
+        file:
+          $ref: '#/components/schemas/RunOutputFile'
+      description: Base model for schemas.
+    RunOutputFile:
+      title: RunOutputFile
+      required:
+        - name
+        - path
+        - size
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        path:
+          title: Path
+          type: string
+        url:
+          title: Url
+          type: string
+        size:
+          title: Size
+          type: integer
+      description: Base model for schemas.
+    RunState:
+      title: RunState
+      enum:
+        - created
+        - routing
+        - queued
+        - running
+        - completed
+        - failed
+        - no_resources_available
+        - node_preempted
+        - unknown
+      type: string
+      description: An enumeration.
+    ScalingConfigCreate:
+      title: ScalingConfigCreate
+      required:
+        - name
+        - type
+        - args
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        minimum_nodes:
+          title: Minimum Nodes
+          minimum: 0.0
+          type: integer
+          default: 0
+        maximum_nodes:
+          title: Maximum Nodes
+          minimum: 0.0
+          type: integer
+          default: 100
+        type:
+          $ref: '#/components/schemas/ScalingConfigType'
+        args:
+          title: Args
+          type: object
+      description: Base model for schemas.
+    ScalingConfigGet:
+      title: ScalingConfigGet
+      required:
+        - name
+        - type
+        - args
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        minimum_nodes:
+          title: Minimum Nodes
+          minimum: 0.0
+          type: integer
+          default: 0
+        maximum_nodes:
+          title: Maximum Nodes
+          minimum: 0.0
+          type: integer
+          default: 100
+        type:
+          $ref: '#/components/schemas/ScalingConfigType'
+        args:
+          title: Args
+          type: object
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+      description: Base model for schemas.
+    ScalingConfigGetWithPipelineCount:
+      title: ScalingConfigGetWithPipelineCount
+      required:
+        - name
+        - type
+        - args
+        - id
+        - created_at
+        - updated_at
+        - pipeline_count
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        minimum_nodes:
+          title: Minimum Nodes
+          minimum: 0.0
+          type: integer
+          default: 0
+        maximum_nodes:
+          title: Maximum Nodes
+          minimum: 0.0
+          type: integer
+          default: 100
+        type:
+          $ref: '#/components/schemas/ScalingConfigType'
+        args:
+          title: Args
+          type: object
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        pipeline_count:
+          title: Pipeline Count
+          type: integer
+      description: Base model for schemas.
+    ScalingConfigPatch:
+      title: ScalingConfigPatch
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ScalingConfigType'
+        args:
+          title: Args
+          type: object
+        minimum_nodes:
+          title: Minimum Nodes
+          minimum: 0.0
+          type: integer
+        maximum_nodes:
+          title: Maximum Nodes
+          minimum: 0.0
+          type: integer
+      additionalProperties: false
+      description: "Tag type for marking schemas for patching.\n\nA Patchable schema is one used for updating other schemas."
+    ScalingConfigType:
+      title: ScalingConfigType
+      enum:
+        - windows
+      type: string
+      description: An enumeration.
+    TeamInviteGet:
+      title: TeamInviteGet
+      required:
+        - id
+        - created_at
+        - updated_at
+        - email
+        - team_id
+        - team_name
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        email:
+          title: Email
+          type: string
+        team_id:
+          title: Team Id
+          type: string
+        team_name:
+          title: Team Name
+          type: string
+      description: Representation of an invitation to a team when returned from an API call.
+    TokenCreate:
+      title: TokenCreate
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          format: date-time
+      description: Model for creating an API token
+    TokenGet:
+      title: TokenGet
+      required:
+        - id
+        - created_at
+        - updated_at
+        - value
+        - name
+        - is_active
+        - is_enabled
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        value:
+          title: Value
+          type: string
+        name:
+          title: Name
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          format: date-time
+        last_used:
+          title: Last Used
+          type: string
+          format: date-time
+        is_active:
+          title: Is Active
+          type: boolean
+        is_enabled:
+          title: Is Enabled
+          type: boolean
+        team_id:
+          title: Team Id
+          type: string
+      description: API token representation when returned from an API call.
+    TokenPatch:
+      title: TokenPatch
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        is_enabled:
+          title: Is Enabled
+          type: boolean
+      additionalProperties: false
+      description: Model for patching an API token
+    UserGet:
+      title: UserGet
+      required:
+        - email
+        - username
+        - id
+        - has_password
+      type: object
+      properties:
+        firstname:
+          title: Firstname
+          type: string
+        lastname:
+          title: Lastname
+          type: string
+        company:
+          title: Company
+          type: string
+        job_title:
+          title: Job Title
+          type: string
+        avatar_colour:
+          title: Avatar Colour
+          type: string
+        show_tutorial:
+          title: Show Tutorial
+          type: boolean
+        email:
+          title: Email
+          type: string
+        username:
+          title: Username
+          type: string
+        id:
+          title: Id
+          type: string
+        has_password:
+          title: Has Password
+          type: boolean
+        roles:
+          title: Roles
+          type: array
+          items:
+            type: string
+        teams:
+          title: Teams
+          type: array
+          items:
+            $ref: '#/components/schemas/UserTeam'
+        selected_team:
+          title: Selected Team
+          type: string
+      description: Base model for schemas.
+    UserPublicGet:
+      title: UserPublicGet
+      required:
+        - id
+        - username
+        - created_at
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        username:
+          title: Username
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        avatar_colour:
+          title: Avatar Colour
+          type: string
+      description: Base model for schemas.
+    UserTeam:
+      title: UserTeam
+      required:
+        - id
+        - name
+        - role
+        - account_tier
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        name:
+          title: Name
+          type: string
+        role:
+          title: Role
+          type: string
+        account_tier:
+          $ref: '#/components/schemas/AccountTier'
+      description: "Simple schema for returning info about teams a user is in, plus their\nrole in that team."
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    app__schemas__pipeline__GetDetailed:
+      title: GetDetailed
+      required:
+        - public
+        - name
+        - image
+        - input_variables
+        - output_variables
+        - id
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        public:
+          title: Public
+          type: boolean
+        description:
+          title: Description
+          type: string
+        website_url:
+          title: Website Url
+          type: string
+        repository_url:
+          title: Repository Url
+          type: string
+        paper_url:
+          title: Paper Url
+          type: string
+        license_url:
+          title: License Url
+          type: string
+        image_url:
+          title: Image Url
+          type: string
+        name:
+          title: Name
+          type: string
+        image:
+          title: Image
+          type: string
+        input_variables:
+          title: Input Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        output_variables:
+          title: Output Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/IOVariable'
+        extras:
+          title: Extras
+          type: object
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+        cluster:
+          $ref: '#/components/schemas/PipelineClusterGetLean'
+        scaling_config:
+          title: Scaling Config
+          type: string
+        failed_state_info:
+          $ref: '#/components/schemas/PipelineContainerState'
+        pointers:
+          title: Pointers
+          type: array
+          items:
+            type: string
+      description: Base model for schemas.
+    app__schemas__run__GetDetailed:
+      title: GetDetailed
+      required:
+        - id
+        - created_at
+        - updated_at
+        - pipeline_id
+        - state
+      type: object
+      properties:
+        inputs:
+          title: Inputs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunInput'
+        outputs:
+          title: Outputs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunOutput'
+        error:
+          $ref: '#/components/schemas/ContainerRunError'
+        id:
+          title: Id
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        pipeline_id:
+          title: Pipeline Id
+          type: string
+        state:
+          $ref: '#/components/schemas/RunState'
+        queue_position:
+          title: Queue Position
+          type: integer
+        compute_time_ms:
+          title: Compute Time Ms
+          type: integer
+        started_at:
+          title: Started At
+          type: string
+          format: date-time
+        ended_at:
+          title: Ended At
+          type: string
+          format: date-time
+        accelerators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accelerator'
+      description: Base model for schemas.
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer
+    APIKeyCookie:
+      type: apiKey
+      name: access-token
+      in: cookie

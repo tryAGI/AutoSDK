@@ -22,6 +22,7 @@ public partial class DataTests
     [DataRow("replicate.yaml")]
     [DataRow("special-cases.yaml")]
     [DataRow("together.yaml")]
+    [DataRow("mystic.yaml")]
     [DataRow("twitch.json")]
     public Task PrepareData(string resourceName)
     {
