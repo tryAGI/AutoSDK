@@ -23,9 +23,9 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 ## CLI (Recommended)
 You can use the CLI to generate the code.
 ```bash
-dotnet tool install --global openapigenerator.cli --prerelease
+dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-oag generate openapi.yaml \
+autosdk generate openapi.yaml \
     --namespace Namespace \
     --clientClassName YourApi \
     --targetFramework net8.0 \

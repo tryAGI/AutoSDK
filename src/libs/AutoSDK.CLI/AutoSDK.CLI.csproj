@@ -10,7 +10,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackAsTool>true</PackAsTool>
-    <ToolCommandName>oag</ToolCommandName>
+    <ToolCommandName>autosdk</ToolCommandName>
     <Description>Allows you to partially (for example, only models) or completely generate a native (without dependencies) C# client sdk according to the OpenAPI specification. Inspired by NSwag.</Description>
     <PackageTags>openapi;sdk;generator;source generator;dotnet;netstandard;netframework;native;nswag;incremental;cli</PackageTags>
   </PropertyGroup>
