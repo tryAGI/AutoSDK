@@ -58,7 +58,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
 		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
 		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
-		.github\workflows\test-cli.yml = .github\workflows\test-cli.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK", "src\libs\AutoSDK\AutoSDK.csproj", "{E9217A8E-9457-40F6-9FBC-EE9BE7A93B39}"
