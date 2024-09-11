@@ -58,53 +58,48 @@ public class GenerateCommand : Command
 
         this.SetHandler(
             HandleAsync,
-            inputOption,
-            outputOption,
-            targetFrameworkOption,
-            namespaceOption,
-            clientClassNameOption,
-            singleFileOption,
-            excludeDeprecatedOption,
-            clsCompliantEnumPrefixOption);
+            new GenerateSettingsBinder(
+                inputOption,
+                outputOption,
+                targetFrameworkOption,
+                namespaceOption,
+                clientClassNameOption,
+                methodNamingConventionOption,
+                singleFileOption,
+                excludeDeprecatedOption,
+                clsCompliantEnumPrefixOption));
     }
 
     private static async Task HandleAsync(
-        string inputPath,
-        string outputPath,
-        string targetFramework,
-        string @namespace,
-        string clientClassName,
-        bool generateAsSingleFile,
-        bool excludeDeprecatedOperations,
-        string clsCompliantEnumPrefix)
+        GenerateSettings arguments)
     {
-        Console.WriteLine($"Loading {inputPath}...");
+        Console.WriteLine($"Loading {arguments.Input}...");
         
         using var client = new HttpClient();
-        var yaml = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
-            ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
-            : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
+        var yaml = arguments.Input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+            ? await client.GetStringAsync(new Uri(arguments.Input)).ConfigureAwait(false)
+            : await File.ReadAllTextAsync(arguments.Input).ConfigureAwait(false);
         
         Console.WriteLine("Generating...");
         
-        var name = Path.GetFileNameWithoutExtension(inputPath);
+        var name = Path.GetFileNameWithoutExtension(arguments.Input);
         
-        if (string.IsNullOrWhiteSpace(@namespace))
+        if (string.IsNullOrWhiteSpace(arguments.Namespace))
         {
-            @namespace = name.ToPropertyName()
+            arguments.Namespace = name.ToPropertyName()
                 .UseWordSeparator('\\', '-', '.', '_', '/');
         }
-        if (string.IsNullOrWhiteSpace(clientClassName))
+        if (string.IsNullOrWhiteSpace(arguments.ClientClassName))
         {
-            clientClassName = $"{name.ToPropertyName()
+            arguments.ClientClassName = $"{name.ToPropertyName()
                 .UseWordSeparator('\\', '-', '.', '_', '/')}Api";
         }
         
         var settings = new Settings(
-            TargetFramework: targetFramework,
-            Namespace: @namespace,
-            ClassName: clientClassName,
-            ClsCompliantEnumPrefix: clsCompliantEnumPrefix,
+            TargetFramework: arguments.TargetFramework,
+            Namespace: arguments.Namespace,
+            ClassName: arguments.ClientClassName,
+            ClsCompliantEnumPrefix: arguments.ClsCompliantEnumPrefix,
             NamingConvention: default,
             JsonSerializerType: default,
             UseRequiredKeyword: default,
@@ -119,8 +114,8 @@ public class GenerateCommand : Command
             ExcludeOperationIds: [],
             IncludeTags: [],
             ExcludeTags: [],
-            ExcludeDeprecatedOperations: excludeDeprecatedOperations,
-            JsonSerializerContext: $"{@namespace}.SourceGenerationContext",
+            ExcludeDeprecatedOperations: arguments.ExcludeDeprecatedOperations,
+            JsonSerializerContext: $"{arguments.Namespace}.SourceGenerationContext",
             GenerateJsonSerializerContextTypes: true,
             GenerateModels: false,
             ValidateAnyOfs: false,
@@ -151,18 +146,18 @@ public class GenerateCommand : Command
             .Where(x => !x.IsEmpty)
             .ToArray();
         
-        Directory.CreateDirectory(outputPath);
+        Directory.CreateDirectory(arguments.Output);
         
-        if (generateAsSingleFile)
+        if (arguments.SingleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
-            await File.WriteAllTextAsync(Path.Combine(outputPath, $"{name}.cs"), text).ConfigureAwait(false);
+            await File.WriteAllTextAsync(Path.Combine(arguments.Output, $"{name}.cs"), text).ConfigureAwait(false);
             return;
         }
         
         foreach (var file in files)
         {
-            await File.WriteAllTextAsync(Path.Combine(outputPath, file.Name), file.Text).ConfigureAwait(false);
+            await File.WriteAllTextAsync(Path.Combine(arguments.Output, file.Name), file.Text).ConfigureAwait(false);
         }
         
         Console.WriteLine("Done.");
