@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Welcome to the **HeyGen API** Postman Collection. This collection provides a convenient way to interact with the HeyGen API directly from Postman.<br/>
     /// **Documentation**: [https://docs.heygen.com](https://docs.heygen.com/)  <br/>
-    /// **Guides**: [https://docs.heygen.com/docs&lt;br&gt;](https://docs.heygen.com/docs/quick-start)**API Reference**: [https://docs.heygen.com/reference](https://docs.heygen.com/reference/authentication-1)<br/>
+    /// **Guides**: [https://docs.heygen.com/docs](https://docs.heygen.com/docs/quick-start)**API Reference**: [https://docs.heygen.com/reference](https://docs.heygen.com/reference/authentication-1)<br/>
     /// ## Authorization<br/>
     /// To send requests to the API endpoints, you must use a valid API token. You can get your API token from the [Settings &amp;gt; API ](https://app.heygen.com/settings?nav=API) page in your HeyGen account.<br/>
     /// 1. In Postman, go to the **Environments** tab on the left panel.<br/>

@@ -289,6 +289,7 @@ public static class OpenApiExtensions
 
         return text
             .Replace("\r\n", "\n")
+            .Replace("<br>", string.Empty)
             .Replace("&", "&amp;")
             .Replace("<", "&lt;")
             .Replace(">", "&gt;");
