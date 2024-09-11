@@ -13,17 +13,14 @@ namespace AutoSDK.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             var
             readerCopy = reader;
             string? value1 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -33,9 +30,7 @@ namespace AutoSDK.JsonConverters
             global::G.CreateModelStatusEnum? value2 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusEnum> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusEnum).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateModelStatusEnum>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -48,15 +43,11 @@ namespace AutoSDK.JsonConverters
 
             if (value1 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<string>(ref reader, options);
             }
             else if (value2 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusEnum> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusEnum).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateModelStatusEnum>(ref reader, options);
             }
 
             return result;
@@ -68,20 +59,15 @@ namespace AutoSDK.JsonConverters
             global::G.CreateModelStatus value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsValue1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(string), options);
             }
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusEnum?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.CreateModelStatusEnum), options);
             }
         }
     }

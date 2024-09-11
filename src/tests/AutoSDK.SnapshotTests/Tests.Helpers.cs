@@ -1,5 +1,4 @@
 ﻿using System.Collections.Immutable;
-using System.Runtime.CompilerServices;
 using H.Generators.Tests.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -14,8 +13,8 @@ public partial class Tests : VerifyBase
     private async Task CheckSourceAsync<T>(
         JsonSerializerType jsonSerializerType,
         AdditionalText[] additionalTexts,
+        string callerName,
         Dictionary<string, string>? globalOptions = null,
-        [CallerMemberName] string? callerName = null,
         CancellationToken cancellationToken = default,
         params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()

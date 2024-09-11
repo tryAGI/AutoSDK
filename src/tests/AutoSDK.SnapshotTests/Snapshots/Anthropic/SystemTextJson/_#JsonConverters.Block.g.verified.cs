@@ -13,17 +13,14 @@ namespace AutoSDK.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             var
             readerCopy = reader;
             global::G.TextBlock? text = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextBlock).Name}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TextBlock>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -33,9 +30,7 @@ namespace AutoSDK.JsonConverters
             global::G.ImageBlock? image = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageBlock).Name}");
-                image = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImageBlock>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -45,9 +40,7 @@ namespace AutoSDK.JsonConverters
             global::G.ToolUseBlock? toolUse = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolUseBlock).Name}");
-                toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                toolUse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolUseBlock>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -57,9 +50,7 @@ namespace AutoSDK.JsonConverters
             global::G.ToolResultBlock? toolResult = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultBlock).Name}");
-                toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                toolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolResultBlock>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -74,27 +65,19 @@ namespace AutoSDK.JsonConverters
 
             if (text != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextBlock).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TextBlock>(ref reader, options);
             }
             else if (image != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageBlock).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImageBlock>(ref reader, options);
             }
             else if (toolUse != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolUseBlock).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolUseBlock>(ref reader, options);
             }
             else if (toolResult != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultBlock).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolResultBlock>(ref reader, options);
             }
 
             return result;
@@ -106,32 +89,23 @@ namespace AutoSDK.JsonConverters
             global::G.Block value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.TextBlock), options);
             }
             else if (value.IsImage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeof(global::G.ImageBlock), options);
             }
             else if (value.IsToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeof(global::G.ToolUseBlock), options);
             }
             else if (value.IsToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeof(global::G.ToolResultBlock), options);
             }
         }
     }
