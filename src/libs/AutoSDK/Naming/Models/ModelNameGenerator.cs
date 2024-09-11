@@ -147,7 +147,7 @@ public static class ModelNameGenerator
         while (true)
         {
             var schemasWithCollision = contexts
-                .GroupBy(x => x.MethodName)
+                .GroupBy(x => (x.MethodName, x.Tags.FirstOrDefault() ?? string.Empty))
                 .Where(x => x.Count() > 1)
                 .ToArray();
             if (schemasWithCollision.Length == 0)

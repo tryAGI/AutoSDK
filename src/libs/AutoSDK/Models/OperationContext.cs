@@ -11,10 +11,10 @@ public class OperationContext
     public required OperationType OperationType { get; init; }
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
-
-    public string MethodName { get; set; } = string.Empty;
     
     public HashSet<string> Tags { get; set; } = [];
+
+    public string MethodName { get; set; } = string.Empty;
     
     public static OperationContext FromOperation(
         Settings settings,
@@ -34,6 +34,7 @@ public class OperationContext
             Schemas = filteredSchemas
                 .Where(schema => schema.Operation == operation)
                 .ToArray(),
+            Tags = [..operation.Tags.Select(tag => tag.Name)]
         };
         context.MethodName = context.GetMethodName();
         
