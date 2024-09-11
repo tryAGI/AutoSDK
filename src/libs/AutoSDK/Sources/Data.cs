@@ -217,7 +217,7 @@ public static class Data
                             {
                                 CSharpType = ClientNameGenerator.Generate(settings, tag),
                             },
-                            Summary = tag.Description ?? string.Empty,
+                            Summary = tag.Description?.ClearForXml() ?? string.Empty,
                         })
                     ]
                     : [],

@@ -5,8 +5,8 @@ namespace AutoSDK.IntegrationTests;
 [TestClass]
 public class CliTests
 {
-    //[DataTestMethod]
-    //[DataRow("github.yaml")]
+    // [DataTestMethod]
+    // [DataRow("github.yaml")]
     [DataRow("ipinfo.yaml")]
     [DataRow("langsmith.yaml")]
     [DataRow("ollama.yaml")]
@@ -21,6 +21,7 @@ public class CliTests
     [DataRow("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json")]
     [DataRow("together.yaml")]
     [DataRow("mystic.yaml")]
+    [DataRow("heygen.yaml")]
     public async Task Generate(string spec)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -53,6 +54,7 @@ public class CliTests
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Label=""Analyzers"">
