@@ -58,74 +58,51 @@ public class GenerateCommand : Command
 
         this.SetHandler(
             HandleAsync,
-            new GenerateSettingsBinder(
-                inputOption,
-                outputOption,
+            inputOption,
+            outputOption,
+            singleFileOption,
+            new SettingsBinder(
                 targetFrameworkOption,
                 namespaceOption,
                 clientClassNameOption,
                 methodNamingConventionOption,
-                singleFileOption,
                 excludeDeprecatedOption,
                 clsCompliantEnumPrefixOption));
     }
 
     private static async Task HandleAsync(
-        GenerateSettings arguments)
+        string input,
+        string output,
+        bool singleFile,
+        Settings settings)
     {
-        Console.WriteLine($"Loading {arguments.Input}...");
+        Console.WriteLine($"Loading {input}...");
         
         using var client = new HttpClient();
-        var yaml = arguments.Input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
-            ? await client.GetStringAsync(new Uri(arguments.Input)).ConfigureAwait(false)
-            : await File.ReadAllTextAsync(arguments.Input).ConfigureAwait(false);
+        var yaml = input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+            ? await client.GetStringAsync(new Uri(input)).ConfigureAwait(false)
+            : await File.ReadAllTextAsync(input).ConfigureAwait(false);
         
         Console.WriteLine("Generating...");
         
-        var name = Path.GetFileNameWithoutExtension(arguments.Input);
+        var name = Path.GetFileNameWithoutExtension(input);
         
-        if (string.IsNullOrWhiteSpace(arguments.Namespace))
+        if (string.IsNullOrWhiteSpace(settings.Namespace))
         {
-            arguments.Namespace = name.ToPropertyName()
-                .UseWordSeparator('\\', '-', '.', '_', '/');
+            settings = settings with
+            {
+                Namespace = name.ToPropertyName()
+                    .UseWordSeparator('\\', '-', '.', '_', '/'),
+            };
         }
-        if (string.IsNullOrWhiteSpace(arguments.ClientClassName))
+        if (string.IsNullOrWhiteSpace(settings.ClassName))
         {
-            arguments.ClientClassName = $"{name.ToPropertyName()
-                .UseWordSeparator('\\', '-', '.', '_', '/')}Api";
+            settings = settings with
+            {
+                ClassName = $"{name.ToPropertyName()
+                    .UseWordSeparator('\\', '-', '.', '_', '/')}Api",
+            };
         }
-        
-        var settings = new Settings(
-            TargetFramework: arguments.TargetFramework,
-            Namespace: arguments.Namespace,
-            ClassName: arguments.ClientClassName,
-            ClsCompliantEnumPrefix: arguments.ClsCompliantEnumPrefix,
-            NamingConvention: default,
-            JsonSerializerType: default,
-            UseRequiredKeyword: default,
-            GenerateConstructors: false,
-            GroupByTags: true,
-            GenerateMethods: false,
-            MethodNamingConvention: default,
-            MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
-            GenerateMethodsAsHttpClientExtensions: false,
-            GenerateMethodsUsingSystemNetHttpJson: false,
-            IncludeOperationIds: [],
-            ExcludeOperationIds: [],
-            IncludeTags: [],
-            ExcludeTags: [],
-            ExcludeDeprecatedOperations: arguments.ExcludeDeprecatedOperations,
-            JsonSerializerContext: $"{arguments.Namespace}.SourceGenerationContext",
-            GenerateJsonSerializerContextTypes: true,
-            GenerateModels: false,
-            ValidateAnyOfs: false,
-            ModelStyle: default,
-            IncludeModels: [],
-            ExcludeModels: [],
-            GeneratePolyfills: true,
-            GenerateSdk: true,
-            FromCli: true
-        );
 
         var data = Generation.Data.Prepare((yaml, settings));
         var files = data.Enums
@@ -146,18 +123,18 @@ public class GenerateCommand : Command
             .Where(x => !x.IsEmpty)
             .ToArray();
         
-        Directory.CreateDirectory(arguments.Output);
+        Directory.CreateDirectory(output);
         
-        if (arguments.SingleFile)
+        if (singleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
-            await File.WriteAllTextAsync(Path.Combine(arguments.Output, $"{name}.cs"), text).ConfigureAwait(false);
+            await File.WriteAllTextAsync(Path.Combine(output, $"{name}.cs"), text).ConfigureAwait(false);
             return;
         }
         
         foreach (var file in files)
         {
-            await File.WriteAllTextAsync(Path.Combine(arguments.Output, file.Name), file.Text).ConfigureAwait(false);
+            await File.WriteAllTextAsync(Path.Combine(output, file.Name), file.Text).ConfigureAwait(false);
         }
         
         Console.WriteLine("Done.");
