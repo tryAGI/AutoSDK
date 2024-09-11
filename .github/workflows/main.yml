@@ -70,6 +70,7 @@ jobs:
 
       - name: Build
         run: dotnet build TestProject
+          /p:TreatWarningsAsErrors=true
 
   release:
     name: Release
