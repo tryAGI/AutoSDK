@@ -31,12 +31,17 @@ public class InitializeCommand : Command
             aliases: ["--add-mkdocs", "-m"],
             getDefaultValue: () => true,
             description: "Adds MkDocs to the solution");
+        var addTests = new Option<bool>(
+            aliases: ["--add-tests", "-t"],
+            getDefaultValue: () => true,
+            description: "Adds integration tests to the solution");
         AddArgument(solutionName);
         AddArgument(apiName);
         AddArgument(openApiSpec);
         AddArgument(company);
         AddOption(output);
         AddOption(addMkDocs);
+        AddOption(addTests);
 
         this.SetHandler(
             HandleAsync,
@@ -45,7 +50,8 @@ public class InitializeCommand : Command
             openApiSpec,
             company,
             output,
-            addMkDocs);
+            addMkDocs,
+            addTests);
     }
 
     private static async Task HandleAsync(
@@ -54,7 +60,8 @@ public class InitializeCommand : Command
         string openApiSpec,
         string company,
         string outputPath,
-        bool addMkDocs)
+        bool addMkDocs,
+        bool addTests)
     {
         Console.WriteLine("Initializing...");
 
@@ -90,9 +97,6 @@ public class InitializeCommand : Command
             H.Resources.src_libs__SolutionName___SolutionName__csproj,
             H.Resources.src_libs__SolutionName__generate_sh,
             H.Resources.src_libs_Directory_Build_props,
-            H.Resources.src_tests_IntegrationTests__SolutionName__IntegrationTests_csproj,
-            H.Resources.src_tests_IntegrationTests_Tests_cs,
-            H.Resources.src_tests_IntegrationTests_Tests_Test_cs,
         };
         if (addMkDocs)
         {
@@ -104,6 +108,15 @@ public class InitializeCommand : Command
                 H.Resources.mkdocs_yml,
                 H.Resources.src_helpers_GenerateDocs_GenerateDocs_csproj,
                 H.Resources.src_helpers_GenerateDocs_Program_cs,
+            });
+        }
+        if (addTests)
+        {
+            resources.AddRange(new []
+            {
+                H.Resources.src_tests_IntegrationTests__SolutionName__IntegrationTests_csproj,
+                H.Resources.src_tests_IntegrationTests_Tests_cs,
+                H.Resources.src_tests_IntegrationTests_Tests_Test_cs,
             });
         }
         
