@@ -63,6 +63,10 @@ public partial class Tests
 
         var globalOptions = callerName switch
         {
+            "Mystic" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_MethodNamingConvention"] = "Summary",
+            },
             "Replicate" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdWithDots",

@@ -1,0 +1,84 @@
+﻿//HintName: G.BillingClient.UpcomingInvoice.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class BillingClient
+    {
+        partial void PrepareUpcomingInvoiceArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareUpcomingInvoiceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessUpcomingInvoiceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessUpcomingInvoiceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Upcoming Invoice
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.GetUpcomingInvoice> UpcomingInvoiceAsync(
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUpcomingInvoiceArguments(
+                httpClient: _httpClient);
+
+            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/v4/billing/upcoming-invoice", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUpcomingInvoiceRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest);
+
+            using var response = await _httpClient.SendAsync(
+                request: httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUpcomingInvoiceResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessUpcomingInvoiceResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetUpcomingInvoice?>(__content, _jsonSerializerOptions) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+        }
+    }
+}
