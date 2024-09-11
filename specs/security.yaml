@@ -1,0 +1,88 @@
+# https://swagger.io/docs/specification/authentication/
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Security Example
+  license:
+    name: MIT
+paths:
+  /orders:
+    get:
+      summary: Gets a list of orders
+      security:
+        - OAuth2: [read]   # Use OAuth with a different scope
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not authenticated
+        '403':
+          description: Access token does not have the required scope
+  /billing_info:
+    get:
+      summary: Gets the account billing info
+      security:
+        - OAuth2: [admin]   # Use OAuth with a different scope
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not authenticated
+        '403':
+          description: Access token does not have the required scope
+  /ping:
+    get:
+      summary: Checks if the server is running
+      security: []   # No security
+      responses:
+        '200':
+          description: Server is up and running
+        default:
+          description: Something is wrong
+          
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+    OpenID:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://example.com/oauth/authorize
+          tokenUrl: https://example.com/oauth/token
+          scopes:
+            read: Grants read access
+            write: Grants write access
+            admin: Grants access to admin operations
+    apiKey1:
+      type: apiKey
+      in: header
+      name: X-API-Key1
+    apiKey2:
+      type: apiKey
+      in: header
+      name: X-API-Key2
+            
+security:
+  - ApiKeyAuth: []
+  - BasicAuth: []
+  - apiKey1: []
+    apiKey2: []
+  - OAuth2:
+      - read
+      - write
+      - admin
+  - OpenId:
+      - scopeA
+      - scopeB
