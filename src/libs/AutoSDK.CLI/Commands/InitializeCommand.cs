@@ -156,7 +156,14 @@ EndProject", string.Empty);
         
         string Replace(string content)
         {
-            var newContent = content
+            var newContent = content;
+            
+            foreach (var (key, value) in replaces)
+            {
+                newContent = newContent.Replace(key, value, StringComparison.OrdinalIgnoreCase);
+            }
+            
+            newContent = newContent
                 .Replace("$SolutionName$", solutionName, StringComparison.OrdinalIgnoreCase)
                 .Replace("$ApiName$", apiName, StringComparison.OrdinalIgnoreCase)
                 .Replace("$OpenApiSpec$", openApiSpec, StringComparison.OrdinalIgnoreCase)
@@ -164,10 +171,6 @@ EndProject", string.Empty);
                 .Replace("$CompanyName$", company, StringComparison.OrdinalIgnoreCase)
                 .Replace("$SolutionNameUppercase$", solutionName.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase)
                 ;
-            foreach (var (key, value) in replaces)
-            {
-                newContent = newContent.Replace(key, value, StringComparison.OrdinalIgnoreCase);
-            }
             
             return newContent;
         }
