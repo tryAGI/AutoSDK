@@ -4,8 +4,9 @@ namespace AutoSDK.Naming.Methods;
 
 public enum MethodNamingConvention
 {
-    SimpleOperationId,
+    OperationId,
     MethodAndPath,
+    Summary,
     OperationIdWithDots,
     OperationIdSplit,
 }
@@ -16,8 +17,9 @@ public static class MethodNamingConventionExtensions
     {
         return operation switch
         {
-            MethodNamingConvention.SimpleOperationId => new SimpleOperationIdGenerator(),
+            MethodNamingConvention.OperationId => new OperationIdGenerator(),
             MethodNamingConvention.OperationIdWithDots => new OperationIdWithDotsGenerator(),
+            MethodNamingConvention.Summary => new SummaryGenerator(),
             MethodNamingConvention.MethodAndPath => new MethodAndPathGenerator(),
             MethodNamingConvention.OperationIdSplit => new OperationIdSplitGenerator(),
             _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null),
