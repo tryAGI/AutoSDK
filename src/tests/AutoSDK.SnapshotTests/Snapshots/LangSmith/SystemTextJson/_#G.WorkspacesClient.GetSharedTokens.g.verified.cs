@@ -1,54 +1,65 @@
-﻿//HintName: G.RAGEngineClient.V1LibraryManagement4.g.cs
+﻿//HintName: G.WorkspacesClient.GetSharedTokens.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class RAGEngineClient
+    public partial class WorkspacesClient
     {
-        partial void PrepareV1LibraryManagement4Arguments(
+        partial void PrepareGetSharedTokensArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid fileId);
-        partial void PrepareV1LibraryManagement4Request(
+            ref int limit,
+            ref int offset);
+        partial void PrepareGetSharedTokensRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid fileId);
-        partial void ProcessV1LibraryManagement4Response(
+            int limit,
+            int offset);
+        partial void ProcessGetSharedTokensResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessV1LibraryManagement4ResponseContent(
+        partial void ProcessGetSharedTokensResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate Documents Signed Url
+        /// Get Shared Tokens<br/>
+        /// List all shared entities and their tokens by the workspace.
         /// </summary>
-        /// <param name="fileId"></param>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> V1LibraryManagement4Async(
-            global::System.Guid fileId,
+        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokensAsync(
+            int limit = 50,
+            int offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareV1LibraryManagement4Arguments(
+            PrepareGetSharedTokensArguments(
                 httpClient: _httpClient,
-                fileId: ref fileId);
+                limit: ref limit,
+                offset: ref offset);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/studio/v1/library/files/{fileId}/download", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/workspaces/current/shared?limit={limit}&offset={offset}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareV1LibraryManagement4Request(
+            PrepareGetSharedTokensRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                fileId: fileId);
+                limit: limit,
+                offset: offset);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -58,7 +69,7 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessV1LibraryManagement4Response(
+            ProcessGetSharedTokensResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -68,7 +79,7 @@ namespace G
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessV1LibraryManagement4ResponseContent(
+            ProcessGetSharedTokensResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -82,7 +93,9 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return __content;
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TenantShareTokensResponse?>(__content, _jsonSerializerOptions) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

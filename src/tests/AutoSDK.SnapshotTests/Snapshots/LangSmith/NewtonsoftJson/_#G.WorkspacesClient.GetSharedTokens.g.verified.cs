@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.GetSharedTokens2.g.cs
+﻿//HintName: G.WorkspacesClient.GetSharedTokens.g.cs
 
 #nullable enable
 
@@ -6,20 +6,20 @@ namespace G
 {
     public partial class WorkspacesClient
     {
-        partial void PrepareGetSharedTokens2Arguments(
+        partial void PrepareGetSharedTokensArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
             ref int offset);
-        partial void PrepareGetSharedTokens2Request(
+        partial void PrepareGetSharedTokensRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
             int offset);
-        partial void ProcessGetSharedTokens2Response(
+        partial void ProcessGetSharedTokensResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetSharedTokens2ResponseContent(
+        partial void ProcessGetSharedTokensResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -36,14 +36,14 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokens2Async(
+        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokensAsync(
             int limit = 50,
             int offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetSharedTokens2Arguments(
+            PrepareGetSharedTokensArguments(
                 httpClient: _httpClient,
                 limit: ref limit,
                 offset: ref offset);
@@ -55,7 +55,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetSharedTokens2Request(
+            PrepareGetSharedTokensRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 limit: limit,
@@ -69,7 +69,7 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetSharedTokens2Response(
+            ProcessGetSharedTokensResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -79,7 +79,7 @@ namespace G
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetSharedTokens2ResponseContent(
+            ProcessGetSharedTokensResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);

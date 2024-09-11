@@ -34,6 +34,7 @@ public partial class DataTests
                 GenerateJsonSerializerContextTypes = true,
                 MethodNamingConvention = resourceName switch
                 {
+                    "mystic.yaml" => MethodNamingConvention.Summary,
                     "replicate.yaml" => MethodNamingConvention.OperationIdWithDots,
                     _ => default,
                 }

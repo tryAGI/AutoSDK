@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.BulkUnshareEntities2.g.cs
+﻿//HintName: G.WorkspacesClient.BulkUnshareEntities.g.cs
 
 #nullable enable
 
@@ -6,18 +6,18 @@ namespace G
 {
     public partial class WorkspacesClient
     {
-        partial void PrepareBulkUnshareEntities2Arguments(
+        partial void PrepareBulkUnshareEntitiesArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.TenantBulkUnshareRequest request);
-        partial void PrepareBulkUnshareEntities2Request(
+        partial void PrepareBulkUnshareEntitiesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.TenantBulkUnshareRequest request);
-        partial void ProcessBulkUnshareEntities2Response(
+        partial void ProcessBulkUnshareEntitiesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBulkUnshareEntities2ResponseContent(
+        partial void ProcessBulkUnshareEntitiesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntities2Async(
+        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
             global::G.TenantBulkUnshareRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -37,7 +37,7 @@ namespace G
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareBulkUnshareEntities2Arguments(
+            PrepareBulkUnshareEntitiesArguments(
                 httpClient: _httpClient,
                 request: request);
 
@@ -54,7 +54,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareBulkUnshareEntities2Request(
+            PrepareBulkUnshareEntitiesRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -67,7 +67,7 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessBulkUnshareEntities2Response(
+            ProcessBulkUnshareEntitiesResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -77,7 +77,7 @@ namespace G
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessBulkUnshareEntities2ResponseContent(
+            ProcessBulkUnshareEntitiesResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -103,7 +103,7 @@ namespace G
         /// <param name="shareTokens"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntities2Async(
+        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntitiesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,7 +112,7 @@ namespace G
                 ShareTokens = shareTokens,
             };
 
-            return await BulkUnshareEntities2Async(
+            return await BulkUnshareEntitiesAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

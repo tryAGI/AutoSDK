@@ -1,49 +1,54 @@
-﻿//HintName: G.TtlSettingsClient.ListTtlSettings2.g.cs
+﻿//HintName: G.RAGEngineClient.V1LibraryManagement.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class TtlSettingsClient
+    public partial class RAGEngineClient
     {
-        partial void PrepareListTtlSettings2Arguments(
-            global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareListTtlSettings2Request(
+        partial void PrepareV1LibraryManagementArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessListTtlSettings2Response(
+            ref global::System.Guid fileId);
+        partial void PrepareV1LibraryManagementRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Guid fileId);
+        partial void ProcessV1LibraryManagementResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListTtlSettings2ResponseContent(
+        partial void ProcessV1LibraryManagementResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List Ttl Settings<br/>
-        /// List out the configured TTL settings for a given tenant.
+        /// Generate Documents Signed Url
         /// </summary>
+        /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TTLSettings>> ListTtlSettings2Async(
+        public async global::System.Threading.Tasks.Task<string> V1LibraryManagementAsync(
+            global::System.Guid fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareListTtlSettings2Arguments(
-                httpClient: _httpClient);
+            PrepareV1LibraryManagementArguments(
+                httpClient: _httpClient,
+                fileId: ref fileId);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ttl-settings", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/studio/v1/library/files/{fileId}/download", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareListTtlSettings2Request(
+            PrepareV1LibraryManagementRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest);
+                httpRequestMessage: httpRequest,
+                fileId: fileId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -53,17 +58,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessListTtlSettings2Response(
+            ProcessV1LibraryManagementResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessListTtlSettings2ResponseContent(
+            ProcessV1LibraryManagementResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -77,9 +82,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.TTLSettings>?>(__content, _jsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

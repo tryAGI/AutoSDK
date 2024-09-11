@@ -1,4 +1,4 @@
-﻿//HintName: G.TtlSettingsClient.UpsertTtlSettings2.g.cs
+﻿//HintName: G.TtlSettingsClient.UpsertTtlSettings.g.cs
 
 #nullable enable
 
@@ -6,18 +6,18 @@ namespace G
 {
     public partial class TtlSettingsClient
     {
-        partial void PrepareUpsertTtlSettings2Arguments(
+        partial void PrepareUpsertTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.UpsertTTLSettingsRequest request);
-        partial void PrepareUpsertTtlSettings2Request(
+        partial void PrepareUpsertTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.UpsertTTLSettingsRequest request);
-        partial void ProcessUpsertTtlSettings2Response(
+        partial void ProcessUpsertTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpsertTtlSettings2ResponseContent(
+        partial void ProcessUpsertTtlSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettings2Async(
+        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
             global::G.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -36,14 +36,14 @@ namespace G
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareUpsertTtlSettings2Arguments(
+            PrepareUpsertTtlSettingsArguments(
                 httpClient: _httpClient,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ttl-settings", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -53,7 +53,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareUpsertTtlSettings2Request(
+            PrepareUpsertTtlSettingsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -66,17 +66,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessUpsertTtlSettings2Response(
+            ProcessUpsertTtlSettingsResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessUpsertTtlSettings2ResponseContent(
+            ProcessUpsertTtlSettingsResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -91,7 +91,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TTLSettings?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TTLSettings?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -102,7 +102,7 @@ namespace G
         /// <param name="defaultTraceTier"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettings2Async(
+        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
             global::G.TraceTier3 defaultTraceTier,
             global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -113,7 +113,7 @@ namespace G
                 DefaultTraceTier = defaultTraceTier,
             };
 
-            return await UpsertTtlSettings2Async(
+            return await UpsertTtlSettingsAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

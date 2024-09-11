@@ -1,65 +1,49 @@
-﻿//HintName: G.WorkspacesClient.GetSharedTokens2.g.cs
+﻿//HintName: G.TtlSettingsClient.ListTtlSettings.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class WorkspacesClient
+    public partial class TtlSettingsClient
     {
-        partial void PrepareGetSharedTokens2Arguments(
+        partial void PrepareListTtlSettingsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset);
-        partial void PrepareGetSharedTokens2Request(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset);
-        partial void ProcessGetSharedTokens2Response(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetSharedTokens2ResponseContent(
+        partial void ProcessListTtlSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get Shared Tokens<br/>
-        /// List all shared entities and their tokens by the workspace.
+        /// List Ttl Settings<br/>
+        /// List out the configured TTL settings for a given tenant.
         /// </summary>
-        /// <param name="limit">
-        /// Default Value: 50
-        /// </param>
-        /// <param name="offset">
-        /// Default Value: 0
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokens2Async(
-            int limit = 50,
-            int offset = 0,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TTLSettings>> ListTtlSettingsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetSharedTokens2Arguments(
-                httpClient: _httpClient,
-                limit: ref limit,
-                offset: ref offset);
+            PrepareListTtlSettingsArguments(
+                httpClient: _httpClient);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/workspaces/current/shared?limit={limit}&offset={offset}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ttl-settings", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetSharedTokens2Request(
+            PrepareListTtlSettingsRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
-                limit: limit,
-                offset: offset);
+                httpRequestMessage: httpRequest);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -69,17 +53,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetSharedTokens2Response(
+            ProcessListTtlSettingsResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetSharedTokens2ResponseContent(
+            ProcessListTtlSettingsResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -94,7 +78,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TenantShareTokensResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.TTLSettings>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

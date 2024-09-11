@@ -1,49 +1,48 @@
-﻿//HintName: G.WorkspacesClient.BulkUnshareEntities2.g.cs
+﻿//HintName: G.TtlSettingsClient.UpsertTtlSettings.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class WorkspacesClient
+    public partial class TtlSettingsClient
     {
-        partial void PrepareBulkUnshareEntities2Arguments(
+        partial void PrepareUpsertTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.TenantBulkUnshareRequest request);
-        partial void PrepareBulkUnshareEntities2Request(
+            global::G.UpsertTTLSettingsRequest request);
+        partial void PrepareUpsertTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.TenantBulkUnshareRequest request);
-        partial void ProcessBulkUnshareEntities2Response(
+            global::G.UpsertTTLSettingsRequest request);
+        partial void ProcessUpsertTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBulkUnshareEntities2ResponseContent(
+        partial void ProcessUpsertTtlSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Bulk Unshare Entities<br/>
-        /// Bulk unshare entities by share tokens for the workspace.
+        /// Upsert Ttl Settings
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntities2Async(
-            global::G.TenantBulkUnshareRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
+            global::G.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareBulkUnshareEntities2Arguments(
+            PrepareUpsertTtlSettingsArguments(
                 httpClient: _httpClient,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/workspaces/current/shared", global::System.UriKind.RelativeOrAbsolute));
+                method: global::System.Net.Http.HttpMethod.Put,
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/ttl-settings", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -54,7 +53,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareBulkUnshareEntities2Request(
+            PrepareUpsertTtlSettingsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -67,7 +66,7 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessBulkUnshareEntities2Response(
+            ProcessUpsertTtlSettingsResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -77,7 +76,7 @@ namespace G
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessBulkUnshareEntities2ResponseContent(
+            ProcessUpsertTtlSettingsResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -92,27 +91,29 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TTLSettings?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// Bulk Unshare Entities<br/>
-        /// Bulk unshare entities by share tokens for the workspace.
+        /// Upsert Ttl Settings
         /// </summary>
-        /// <param name="shareTokens"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="defaultTraceTier"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BulkUnshareEntitiesApiV1WorkspacesCurrentSharedDeleteResponse> BulkUnshareEntities2Async(
-            global::System.Collections.Generic.IList<global::System.Guid>? shareTokens = default,
+        public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
+            global::G.TraceTier3 defaultTraceTier,
+            global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.TenantBulkUnshareRequest
+            var request = new global::G.UpsertTTLSettingsRequest
             {
-                ShareTokens = shareTokens,
+                TenantId = tenantId,
+                DefaultTraceTier = defaultTraceTier,
             };
 
-            return await BulkUnshareEntities2Async(
+            return await UpsertTtlSettingsAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
