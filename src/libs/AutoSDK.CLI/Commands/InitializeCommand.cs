@@ -98,6 +98,7 @@ public class InitializeCommand : Command
             H.Resources.src_libs__SolutionName__generate_sh,
             H.Resources.src_libs_Directory_Build_props,
         };
+        var replaces = new Dictionary<string, string>();
         if (addMkDocs)
         {
             resources.AddRange(new []
@@ -118,6 +119,11 @@ public class InitializeCommand : Command
                 H.Resources.src_tests_IntegrationTests_Tests_cs,
                 H.Resources.src_tests_IntegrationTests_Tests_Test_cs,
             });
+        }
+        else
+        {
+            replaces.Add(@"Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""$SolutionName$.IntegrationTests"", ""src\tests\IntegrationTests\$SolutionName$.IntegrationTests.csproj"", ""{592ADBC9-C951-4AF7-A163-B6C63B970B19}""
+EndProject", string.Empty);
         }
         
         foreach (var resource in resources)
@@ -150,7 +156,7 @@ public class InitializeCommand : Command
         
         string Replace(string content)
         {
-            return content
+            var newContent = content
                 .Replace("$SolutionName$", solutionName, StringComparison.OrdinalIgnoreCase)
                 .Replace("$ApiName$", apiName, StringComparison.OrdinalIgnoreCase)
                 .Replace("$OpenApiSpec$", openApiSpec, StringComparison.OrdinalIgnoreCase)
@@ -158,6 +164,12 @@ public class InitializeCommand : Command
                 .Replace("$CompanyName$", company, StringComparison.OrdinalIgnoreCase)
                 .Replace("$SolutionNameUppercase$", solutionName.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase)
                 ;
+            foreach (var (key, value) in replaces)
+            {
+                newContent = newContent.Replace(key, value, StringComparison.OrdinalIgnoreCase);
+            }
+            
+            return newContent;
         }
     }
 }
