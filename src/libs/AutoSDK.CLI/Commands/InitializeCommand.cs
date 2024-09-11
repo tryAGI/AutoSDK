@@ -124,6 +124,13 @@ public class InitializeCommand : Command
         {
             replaces.Add(@"Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""$SolutionName$.IntegrationTests"", ""src\tests\IntegrationTests\$SolutionName$.IntegrationTests.csproj"", ""{592ADBC9-C951-4AF7-A163-B6C63B970B19}""
 EndProject", string.Empty);
+            replaces.Add(@"
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19}.Release|Any CPU.Build.0 = Release|Any CPU", string.Empty);
+            replaces.Add(@"
+		{592ADBC9-C951-4AF7-A163-B6C63B970B19} = {AAA11B78-2764-4520-A97E-46AA7089A588}", string.Empty);
         }
         
         foreach (var resource in resources)
