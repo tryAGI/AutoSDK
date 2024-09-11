@@ -1,0 +1,70 @@
+name: Test CLI
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  test-specs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        spec:
+          - ai21.yaml
+          - anthropic.yaml
+          - assemblyai.yaml
+          - cohere.yaml
+          #- github.yaml
+          - huggingface.yaml
+          - ipinfo.yaml
+          - langsmith.yaml
+          - leonardo.yaml
+          - mystic.yaml
+          - ollama.yaml
+          - openai.yaml
+          - petstore.yaml
+          - replicate.yaml
+          - special-cases.yaml
+          - together.yaml
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Generate code
+        run: dotnet run --project src/libs/AutoSDK.CLI
+          generate ${{ matrix.spec }}
+          --namespace Oag
+          --targetFramework net8.0
+          --output TestProject
+
+      - name: Create .csproj file
+        run: |
+          cat <<EOF > TestProject/TestProject.csproj
+          <Project Sdk="Microsoft.NET.Sdk">
+          
+            <PropertyGroup>
+              <TargetFramework>net8.0</TargetFramework>
+              <LangVersion>preview</LangVersion>
+              <Nullable>enable</Nullable>
+              <ImplicitUsings>enable</ImplicitUsings>
+              <WarningsAsErrors>true</WarningsAsErrors>
+            </PropertyGroup>
+          
+            <PropertyGroup Label="Analyzers">
+              <EnableNETAnalyzers>true</EnableNETAnalyzers>
+              <AnalysisLevel>latest</AnalysisLevel>
+              <AnalysisMode>All</AnalysisMode>
+              <GenerateDocumentationFile>true</GenerateDocumentationFile>
+            </PropertyGroup>
+          
+          </Project>
+          EOF
+          
+      - name: Build
+        run: dotnet build TestProject
