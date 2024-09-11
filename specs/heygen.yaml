@@ -1,0 +1,923 @@
+openapi: 3.0.3
+info:
+  title: HeyGen API
+  description: >-
+    Welcome to the **HeyGen API** Postman Collection. This collection provides a
+    convenient way to interact with the HeyGen API directly from Postman.
+
+
+    **Documentation**: [https://docs.heygen.com](https://docs.heygen.com/)  
+
+    **Guides**:
+    [https://docs.heygen.com/docs<br>](https://docs.heygen.com/docs/quick-start)**API
+    Reference**:
+    [https://docs.heygen.com/reference](https://docs.heygen.com/reference/authentication-1)
+
+
+    ## Authorization
+
+
+    To send requests to the API endpoints, you must use a valid API token. You
+    can get your API token from the [Settings &gt; API
+    ](https://app.heygen.com/settings?nav=API) page in your HeyGen account.
+
+
+    1. In Postman, go to the **Environments** tab on the left panel.
+        
+    2. Select the **My HeyGen API Environment** environment provided by HeyGen.
+        
+    3. Update the `heygen-api-token` value with your current HeyGen API token.
+        
+    4. Ensure **My HeyGen API Environment** is selected as the active
+    environment using the environment selector at the top right corner of
+    Postman.
+        
+
+    ### 400 response
+
+
+    A 400 error response typically indicates that your request body is
+    corrupted. To avoid this, ensure that your request body is correctly
+    formatted and includes all necessary elements, such as closing parentheses.
+
+
+    ### **Need some help?**
+
+
+    If you need assistance, you can reach out to us through the following
+    channels:
+
+
+    - **Customer Support Chat:** Available in our web interface.
+        
+    - **Emails:** api@heygen.com,
+    [support@heygen.com](https://mailto:support@heygen.com)
+        
+    - **Community Discussions:** Check out our [discussions
+    channel](https://null) – there's a good chance our community has the answer
+    you're looking for.
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: https://api.heygen.com
+  - url: https://upload.heygen.com
+paths:
+  /v1/voice.list:
+    get:
+      tags:
+        - Lists
+      summary: v1/voice.list
+      description: v1/voice.list
+      operationId: v1VoiceList
+      responses:
+        '200':
+          description: ''
+  /v1/avatar.list:
+    get:
+      tags:
+        - Lists
+      summary: v1/avatar.list
+      description: v1/avatar.list
+      operationId: v1AvatarList
+      responses:
+        '200':
+          description: ''
+  /v2/voices:
+    get:
+      tags:
+        - Lists
+      summary: v2/voices
+      description: v2/voices
+      operationId: v2Voices
+      responses:
+        '200':
+          description: ''
+  /v2/avatars:
+    get:
+      tags:
+        - Lists
+      summary: v2/avatars
+      description: v2/avatars
+      operationId: v2Avatars
+      responses:
+        '200':
+          description: ''
+  /v1/video.list:
+    get:
+      tags:
+        - Lists
+      summary: v1/video.list
+      description: v1/video.list
+      operationId: v1VideoList
+      responses:
+        '200':
+          description: ''
+  /v2/video/generate:
+    post:
+      tags:
+        - Create Video API
+      summary: v2/video/generate
+      description: >-
+        Generated Video:
+        [https://app.heygen.com/share/67cd13935445457eaa99040070bdb545](https://app.heygen.com/share/67cd13935445457eaa99040070bdb545)
+
+
+        <img
+        src="https://resource.heygen.ai/video/gifs/67cd13935445457eaa99040070bdb545.gif"
+        alt="">
+      operationId: v2VideoGenerate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                aspect_ratio:
+                  nullable: true
+                  example: null
+                callback_id:
+                  nullable: true
+                  example: null
+                dimension:
+                  type: object
+                  properties:
+                    height:
+                      type: number
+                      example: 720
+                    width:
+                      type: number
+                      example: 1280
+                test:
+                  type: boolean
+                  example: true
+                title:
+                  type: string
+                  example: My Title
+                video_inputs:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      character:
+                        type: object
+                        properties:
+                          avatar_id:
+                            type: string
+                            example: Kristin_public_3_20240108
+                          avatar_style:
+                            type: string
+                            example: normal
+                          type:
+                            type: string
+                            example: avatar
+                      voice:
+                        type: object
+                        properties:
+                          input_text:
+                            type: string
+                            example: >-
+                              Welcome to the new era of video creation with
+                              HeyGen! Simply type your script to get started!
+                          type:
+                            type: string
+                            example: text
+                          voice_id:
+                            type: string
+                            example: 2f72ee82b83d4b00af16c4771d611752
+                  example:
+                    - character:
+                        avatar_id: Kristin_public_3_20240108
+                        avatar_style: normal
+                        type: avatar
+                      voice:
+                        input_text: >-
+                          Welcome to the new era of video creation with HeyGen!
+                          Simply type your script to get started!
+                        type: text
+                        voice_id: 2f72ee82b83d4b00af16c4771d611752
+            examples:
+              v2/video/generate:
+                value:
+                  aspect_ratio: null
+                  callback_id: null
+                  dimension:
+                    height: 720
+                    width: 1280
+                  test: true
+                  title: My Title
+                  video_inputs:
+                    - character:
+                        avatar_id: Kristin_public_3_20240108
+                        avatar_style: normal
+                        type: avatar
+                      voice:
+                        input_text: >-
+                          Welcome to the new era of video creation with HeyGen!
+                          Simply type your script to get started!
+                        type: text
+                        voice_id: 2f72ee82b83d4b00af16c4771d611752
+      responses:
+        '200':
+          description: ''
+  /v1/video.delete:
+    delete:
+      tags:
+        - Create Video API
+      summary: v1/video.delete
+      description: v1/video.delete
+      operationId: v1VideoDelete
+      parameters:
+        - name: video_id
+          in: query
+          schema:
+            type: string
+            example: <video_id>
+      responses:
+        '200':
+          description: ''
+  /v2/templates:
+    get:
+      tags:
+        - Template API
+      summary: v2/templates
+      description: v2/templates
+      operationId: v2Templates
+      responses:
+        '200':
+          description: ''
+  /v2/template/<id>:
+    get:
+      tags:
+        - Template API
+      summary: v2/template/<id>
+      description: v2/template/<id>
+      operationId: v2TemplateId
+      responses:
+        '200':
+          description: ''
+  /v2/template/<id>/generate:
+    post:
+      tags:
+        - Template API
+      summary: v2/template/generate
+      description: >-
+        Generated Video:
+        [https://app.heygen.com/videos/7cba9d29d6db46b88471221fdbc4fb75](https://app.heygen.com/videos/7cba9d29d6db46b88471221fdbc4fb75)
+
+
+        <img
+        src="https://resource.heygen.ai/video/gifs/7cba9d29d6db46b88471221fdbc4fb75.gif"
+        alt="">
+      operationId: v2TemplateGenerate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                caption:
+                  type: boolean
+                  example: false
+                dimension:
+                  type: object
+                  properties:
+                    height:
+                      type: number
+                      example: 720
+                    width:
+                      type: number
+                      example: 1280
+                test:
+                  type: boolean
+                  example: false
+                title:
+                  type: string
+                  example: New Video
+                variables:
+                  type: object
+                  properties:
+                    first_name:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: first_name
+                        properties:
+                          type: object
+                          properties:
+                            content:
+                              type: string
+                              example: John
+                        type:
+                          type: string
+                          example: text
+            examples:
+              v2/template/generate:
+                value:
+                  caption: false
+                  dimension:
+                    height: 720
+                    width: 1280
+                  test: false
+                  title: New Video
+                  variables:
+                    first_name:
+                      name: first_name
+                      properties:
+                        content: John
+                      type: text
+      responses:
+        '200':
+          description: ''
+  /v2/video_translate/target_languages:
+    get:
+      tags:
+        - Video Translate API
+      summary: v2/video_translate/target_languages
+      description: v2/video_translate/target_languages
+      operationId: v2VideoTranslateTargetLanguages
+      requestBody:
+        content:
+          application/json:
+            examples:
+              v2/video_translate/target_languages:
+                value: ''
+      responses:
+        '200':
+          description: ''
+  /v2/video_translate:
+    post:
+      tags:
+        - Video Translate API
+      summary: v2/video_translate
+      description: >-
+        Generated Video:
+        [https://app.heygen.com/video-translation/share/dab5a987e6154b0cb7e606c858043fa9](https://app.heygen.com/video-translation/share/dab5a987e6154b0cb7e606c858043fa9)
+      operationId: v2VideoTranslate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                output_language:
+                  type: string
+                  example: English - American Accent
+                speaker_num:
+                  type: number
+                  example: 1
+                title:
+                  type: string
+                  example: My Title
+                translate_audio_only:
+                  type: boolean
+                  example: false
+                video_url:
+                  type: string
+                  example: https://static.heygen.ai/heygen/asset/originalnew.mp4
+            examples:
+              v2/video_translate:
+                value:
+                  output_language: English - American Accent
+                  speaker_num: 1
+                  title: My Title
+                  translate_audio_only: false
+                  video_url: https://static.heygen.ai/heygen/asset/originalnew.mp4
+      responses:
+        '200':
+          description: ''
+  /v2/video_translate/<id>:
+    get:
+      tags:
+        - Video Translate API
+      summary: v2/video_translate/<id> (status)
+      description: v2/video_translate/<id> (status)
+      operationId: v2VideoTranslateIdStatus
+      requestBody:
+        content:
+          application/json:
+            examples:
+              v2/video_translate/<id> (status):
+                value: ''
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.new:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.new
+      description: streaming.new
+      operationId: streamingNew
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quality:
+                  type: string
+                  example: medium
+            examples:
+              streaming.new:
+                value:
+                  quality: medium
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.start:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.start
+      description: streaming.start
+      operationId: streamingStart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sdp:
+                  type: object
+                  properties:
+                    sdp:
+                      type: string
+                      example: "v=0\r\no=- 865306769317114273 1711711067 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=fingerprint:sha-256 5B:57:56:56:47:37:A2:76:46:2B:FA:72:6D:61:1D:70:98:8A:4B:8D:BD:E9:54:7E:0E:8D:86:7B:13:BD:5B:B3\r\na=extmap-allow-mixed\r\na=group:BUNDLE 0 1 2\r\nm=video 9 UDP/TLS/RTP/SAVPF 96\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:0\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=ssrc:771866534 cname:pion\r\na=ssrc:771866534 msid:pion video\r\na=ssrc:771866534 mslabel:pion\r\na=ssrc:771866534 label:video\r\na=msid:pion video\r\na=sendonly\r\na=candidate:211536166 1 udp 2130706431 192.168.95.148 58919 typ host\r\na=candidate:211536166 2 udp 2130706431 192.168.95.148 58919 typ host\r\na=candidate:233762139 1 udp 2130706431 172.17.0.1 39783 typ host\r\na=candidate:233762139 2 udp 2130706431 172.17.0.1 39783 typ host\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 33743 typ srflx raddr 0.0.0.0 rport 33743\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 33743 typ srflx raddr 0.0.0.0 rport 33743\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 52509 typ srflx raddr 0.0.0.0 rport 52509\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 52509 typ srflx raddr 0.0.0.0 rport 52509\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 48068 typ srflx raddr 0.0.0.0 rport 48068\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 48068 typ srflx raddr 0.0.0.0 rport 48068\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 39574 typ srflx raddr 0.0.0.0 rport 39574\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 39574 typ srflx raddr 0.0.0.0 rport 39574\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 60127 typ srflx raddr 0.0.0.0 rport 60127\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 60127 typ srflx raddr 0.0.0.0 rport 60127\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 55901 typ relay raddr 0.0.0.0 rport 38018\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 55901 typ relay raddr 0.0.0.0 rport 38018\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 26906 typ relay raddr 192.168.95.148 rport 37276\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 26906 typ relay raddr 192.168.95.148 rport 37276\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 48909 typ relay raddr 192.168.95.148 rport 51224\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 48909 typ relay raddr 192.168.95.148 rport 51224\r\na=end-of-candidates\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:1\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:4043859165 cname:pion\r\na=ssrc:4043859165 msid:pion audio\r\na=ssrc:4043859165 mslabel:pion\r\na=ssrc:4043859165 label:audio\r\na=msid:pion audio\r\na=sendrecv\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:2\r\na=sendrecv\r\na=sctp-port:5000\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\n"
+                    type:
+                      type: string
+                      example: offer
+                session_id:
+                  type: string
+                  example: f8c1f5bd-edbd-11ee-ac61-06daf6be75b4
+            examples:
+              streaming.start:
+                value:
+                  sdp:
+                    sdp: "v=0\r\no=- 865306769317114273 1711711067 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=fingerprint:sha-256 5B:57:56:56:47:37:A2:76:46:2B:FA:72:6D:61:1D:70:98:8A:4B:8D:BD:E9:54:7E:0E:8D:86:7B:13:BD:5B:B3\r\na=extmap-allow-mixed\r\na=group:BUNDLE 0 1 2\r\nm=video 9 UDP/TLS/RTP/SAVPF 96\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:0\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=ssrc:771866534 cname:pion\r\na=ssrc:771866534 msid:pion video\r\na=ssrc:771866534 mslabel:pion\r\na=ssrc:771866534 label:video\r\na=msid:pion video\r\na=sendonly\r\na=candidate:211536166 1 udp 2130706431 192.168.95.148 58919 typ host\r\na=candidate:211536166 2 udp 2130706431 192.168.95.148 58919 typ host\r\na=candidate:233762139 1 udp 2130706431 172.17.0.1 39783 typ host\r\na=candidate:233762139 2 udp 2130706431 172.17.0.1 39783 typ host\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 33743 typ srflx raddr 0.0.0.0 rport 33743\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 33743 typ srflx raddr 0.0.0.0 rport 33743\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 52509 typ srflx raddr 0.0.0.0 rport 52509\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 52509 typ srflx raddr 0.0.0.0 rport 52509\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 48068 typ srflx raddr 0.0.0.0 rport 48068\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 48068 typ srflx raddr 0.0.0.0 rport 48068\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 39574 typ srflx raddr 0.0.0.0 rport 39574\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 39574 typ srflx raddr 0.0.0.0 rport 39574\r\na=candidate:2409875042 1 udp 1694498815 3.145.204.238 60127 typ srflx raddr 0.0.0.0 rport 60127\r\na=candidate:2409875042 2 udp 1694498815 3.145.204.238 60127 typ srflx raddr 0.0.0.0 rport 60127\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 55901 typ relay raddr 0.0.0.0 rport 38018\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 55901 typ relay raddr 0.0.0.0 rport 38018\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 26906 typ relay raddr 192.168.95.148 rport 37276\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 26906 typ relay raddr 192.168.95.148 rport 37276\r\na=candidate:551173388 1 udp 16777215 34.203.251.67 48909 typ relay raddr 192.168.95.148 rport 51224\r\na=candidate:551173388 2 udp 16777215 34.203.251.67 48909 typ relay raddr 192.168.95.148 rport 51224\r\na=end-of-candidates\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:1\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:4043859165 cname:pion\r\na=ssrc:4043859165 msid:pion audio\r\na=ssrc:4043859165 mslabel:pion\r\na=ssrc:4043859165 label:audio\r\na=msid:pion audio\r\na=sendrecv\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=setup:actpass\r\na=mid:2\r\na=sendrecv\r\na=sctp-port:5000\r\na=ice-ufrag:WGLlXrCpTGFDczaD\r\na=ice-pwd:ikkYSSwwcEqeapAGiibnhMltrcdcsDPE\r\n"
+                    type: offer
+                  session_id: f8c1f5bd-edbd-11ee-ac61-06daf6be75b4
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.list:
+    get:
+      tags:
+        - Streaming API
+      summary: streaming.list
+      description: streaming.list
+      operationId: streamingList
+      requestBody:
+        content:
+          text/plain:
+            examples:
+              streaming.list:
+                value: ''
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.ice:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.ice
+      description: streaming.ice
+      operationId: streamingIce
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                candidate:
+                  type: object
+                  properties:
+                    candidate:
+                      type: string
+                      example: <CANDIDATE>
+                    sdpMLineIndex:
+                      type: string
+                      example: <SDP_MLINE_INDEX>
+                    sdpMid:
+                      type: string
+                      example: <SDP_MID>
+                    usernameFragment:
+                      type: string
+                      example: <USERNAME_FRAGMENT>
+                session_id:
+                  type: string
+                  example: <SESSION_ID>
+            examples:
+              streaming.ice:
+                value:
+                  candidate:
+                    candidate: <CANDIDATE>
+                    sdpMLineIndex: <SDP_MLINE_INDEX>
+                    sdpMid: <SDP_MID>
+                    usernameFragment: <USERNAME_FRAGMENT>
+                  session_id: <SESSION_ID>
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.task:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.task
+      description: streaming.task
+      operationId: streamingTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  example: <session_id>
+                text:
+                  type: string
+                  example: Hey, there!
+            examples:
+              streaming.task:
+                value:
+                  session_id: <session_id>
+                  text: Hey, there!
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.stop:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.stop
+      description: streaming.stop
+      operationId: streamingStop
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  example: <session_id>
+            examples:
+              streaming.stop:
+                value:
+                  session_id: <session_id>
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.interrupt:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.interrupt
+      description: >-
+        This is endpoint is to interrupt a speaking avatar. If the avatar is not
+        speaking, it doesn't do anything.
+      operationId: streamingInterrupt
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  example: <session_id>
+            examples:
+              streaming.interrupt:
+                value:
+                  session_id: <session_id>
+      responses:
+        '200':
+          description: ''
+  /v1/streaming.create_token:
+    post:
+      tags:
+        - Streaming API
+      summary: streaming.create_token
+      description: streaming.create_token
+      operationId: streamingCreateToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              streaming.create_token:
+                value: {}
+      responses:
+        '200':
+          description: ''
+  /v1/streaming/avatar.list:
+    get:
+      tags:
+        - Streaming API
+      summary: streaming/avatar.list
+      description: streaming/avatar.list
+      operationId: streamingAvatarList
+      requestBody:
+        content:
+          text/plain:
+            examples:
+              streaming/avatar.list:
+                value: ''
+      responses:
+        '200':
+          description: ''
+  /v1/webhook/webhook.list:
+    get:
+      tags:
+        - Webhooks
+      summary: v1/webhook/webhook.list
+      description: v1/webhook/webhook.list
+      operationId: v1WebhookWebhookList
+      responses:
+        '200':
+          description: ''
+  /v1/webhook/endpoint.add:
+    post:
+      tags:
+        - Webhooks
+      summary: v1/webhook/endpoint.add
+      description: v1/webhook/endpoint.add
+      operationId: v1WebhookEndpointAdd
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                events:
+                  type: array
+                  items: {}
+                  example: []
+                url:
+                  type: string
+                  example: <url>
+            examples:
+              v1/webhook/endpoint.add:
+                value:
+                  events: []
+                  url: <url>
+      responses:
+        '200':
+          description: ''
+  /v1/webhook/endpoint.delete:
+    delete:
+      tags:
+        - Webhooks
+      summary: v1/webhook/endpoint.delete
+      description: v1/webhook/endpoint.delete
+      operationId: v1WebhookEndpointDelete
+      parameters:
+        - name: endpoint_id
+          in: query
+          schema:
+            type: string
+            example: <endpoint_id>
+      responses:
+        '200':
+          description: ''
+  /v1/webhook/endpoint.list:
+    get:
+      tags:
+        - Webhooks
+      summary: v1/webhook/endpoint.list
+      description: v1/webhook/endpoint.list
+      operationId: v1WebhookEndpointList
+      responses:
+        '200':
+          description: ''
+  /v1/talking_photo.list:
+    get:
+      tags:
+        - Talking Photo
+      summary: v1/talking_photo.list
+      description: v1/talking_photo.list
+      operationId: v1TalkingPhotoList
+      responses:
+        '200':
+          description: ''
+  /v1/talking_photo:
+    post:
+      tags:
+        - Talking Photo
+      summary: v1/talking_photo (upload)
+      description: v1/talking_photo (upload)
+      operationId: v1TalkingPhotoUpload
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: ''
+  /v2/talking_photo/<id>:
+    delete:
+      tags:
+        - Talking Photo
+      summary: v2/talking_photo/<id> (delete)
+      description: v2/talking_photo/<id> (delete)
+      operationId: v2TalkingPhotoIdDelete
+      responses:
+        '200':
+          description: ''
+  /v1/personalized_video/add_contact:
+    post:
+      tags:
+        - Personalized Video
+      summary: personalized_video/add_contact
+      description: personalized_video/add_contact
+      operationId: personalizedVideoAddContact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project_id:
+                  type: string
+                  example: <project_id>
+                variables_list:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        example: john@mail.com
+                      first_name:
+                        type: string
+                        example: John
+                  example:
+                    - email: john@mail.com
+                      first_name: John
+            examples:
+              personalized_video/add_contact:
+                value:
+                  project_id: <project_id>
+                  variables_list:
+                    - email: john@mail.com
+                      first_name: John
+      responses:
+        '200':
+          description: ''
+  /v1/personalized_video/audience/detail:
+    get:
+      tags:
+        - Personalized Video
+      summary: personalized_video/audience/detail
+      description: personalized_video/audience/detail
+      operationId: personalizedVideoAudienceDetail
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: <video-id>
+      responses:
+        '200':
+          description: ''
+  /v1/personalized_video/project/detail:
+    get:
+      tags:
+        - Personalized Video
+      summary: personalized_video/project/detail
+      description: personalized_video/project/detail
+      operationId: personalizedVideoProjectDetail
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: <project-id>
+      responses:
+        '200':
+          description: ''
+  /v2/user/remaining_quota:
+    get:
+      tags:
+        - User
+      summary: v2/user/remaining_quota
+      description: v2/user/remaining_quota
+      operationId: v2UserRemainingQuota
+      responses:
+        '200':
+          description: ''
+  /v1/asset:
+    post:
+      tags:
+        - Assets
+      summary: v1/asset (upload)
+      description: v1/asset (upload)
+      operationId: v1AssetUpload
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: ''
+  /v1/video_status.get:
+    get:
+      summary: v1/video_status.get
+      description: v1/video_status.get
+      operationId: v1VideoStatusGet
+      parameters:
+        - name: video_id
+          in: query
+          schema:
+            type: string
+            example: <video_id>
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: X-Api-Key
+      in: header
+security:
+  - apiKey: []
+tags:
+  - name: Lists
+  - name: Create Video API
+    description: >-
+      Create personalized avatar videos with ease using the **HeyGen API**. By
+      selecting an avatar and a voice, you can create engaging videos for
+      various purposes. 🌟
+
+
+      **Guide**:
+      [https://docs.heygen.com/docs/create-video<br>](https://docs.heygen.com/docs/create-video)**Reference**:
+      [https://docs.heygen.com/reference/create-an-avatar-video-v2](https://docs.heygen.com/reference/create-an-avatar-video-v2)
+  - name: Template API
+    description: >-
+      Templates enable you to add and customize existing text, images, videos,
+      audios (coming soon), voices and avatars, while avatar videos consist only
+      of avatars without these elements. If you plan to use it within a workflow
+      and need richer content, templates are likely a better fit for your use
+      case compared to simple talking avatar videos. 🌟
+
+
+      **Quick Comparison:**
+
+
+      - **Avatar Videos:** Avatar videos are centered around avatars delivering
+      content without any additional elements. They are ideal for
+      straightforward, avatar-focused communication.
+          
+      - **Template Videos:** In contrast, template videos offer a wide canvas
+      for creativity. They enable you to customize existing text, images,
+      videos, audios, voices and avatars seamlessly. If you need a richer, more
+      versatile content format for your workflow, templates are the perfect
+      choice.
+          
+
+      **Guide**:
+      [https://docs.heygen.com/docs/generate-video-from-template-v2](https://docs.heygen.com/docs/generate-video-from-template-v2)  
+
+      **Reference**:
+      [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2)
+  - name: Video Translate API
+    description: "The\_[Video Translate](https://labs.heygen.com/video-translate)\_by HeyGen\_provides a powerful solution for effortlessly translating videos, integrating natural voice cloning and authentic speaking styles seamlessly. Now, you can harness its capabilities programmatically through the\_**Video Translate API**!\n\n**Guide**: [https://docs.heygen.com/docs/video-translate-api<br>](https://docs.heygen.com/docs/video-translate-api)**Reference**: [https://docs.heygen.com/reference/video-translate](https://docs.heygen.com/reference/video-translate)"
+  - name: Streaming API
+    description: >-
+      HeyGen's **Streaming API** allows developers to seamlessly integrate
+      dynamic digital avatars into their applications for immersive and
+      interactive user experiences. With this API, you can create _virtual
+      assistants, real-time training simulations,_ and more, with a focus on
+      real-time, low-latency communication between _users_ and _avatars_ with
+      power of WebRTC.
+
+
+      **Guide**:
+      [https://docs.heygen.com/docs/streaming-api<br>](https://docs.heygen.com/docs/streaming-api)**Reference**:
+      [https://docs.heygen.com/reference/new-session](https://docs.heygen.com/reference/new-session)
+  - name: Webhooks
+    description: "Webhook events are how the\_**HeyGen**\_notifies your\__endpoints_\_when a variety of interactions or events happen, including when avatar video processing\__succeeds_\_or\__fails_. Webhook events are sent by HeyGen as POST requests to your webhook endpoint.\n\n**Guide**: [https://docs.heygen.com/docs/using-heygens-webhook-events<br>](https://docs.heygen.com/docs/using-heygens-webhook-events)**Reference**: [https://docs.heygen.com/reference/add-a-webhook-endpoint](https://docs.heygen.com/reference/add-a-webhook-endpoint)"
+  - name: Talking Photo
+    description: >-
+      These API endpoints allow you to manage photo avatars in your account.
+
+
+      **Reference**:
+      [https://docs.heygen.com/reference/upload-talking-photo](https://docs.heygen.com/reference/upload-talking-photo)
+  - name: Personalized Video
+    description: "Import contacts into your HeyGen\_**Personalized Video**\_campaign.\_\n\n**Guide**: [https://docs.heygen.com/docs/import-contacts-via-api](https://docs.heygen.com/docs/import-contacts-via-api)  \nReference: [https://docs.heygen.com/reference/add-contact](https://docs.heygen.com/reference/add-contact)"
+  - name: User
+    description: >-
+      Obtain information about your account.
+
+
+      **Reference**:
+      [https://docs.heygen.com/reference/get-remaining-quota-v2](https://docs.heygen.com/reference/get-remaining-quota-v2)
+  - name: Assets
+    description: >-
+      Upload an image or video asset to your account.
+
+
+      **Reference**:
+      [https://docs.heygen.com/reference/upload-asset-1](https://docs.heygen.com/reference/upload-asset-1)

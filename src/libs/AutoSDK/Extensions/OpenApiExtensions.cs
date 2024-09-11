@@ -288,6 +288,7 @@ public static class OpenApiExtensions
         text = text ?? throw new ArgumentNullException(nameof(text));
 
         return text
+            .Replace("\r\n", "\n")
             .Replace("&", "&amp;")
             .Replace("<", "&lt;")
             .Replace(">", "&gt;");

@@ -46,11 +46,17 @@ public partial class Tests
     [DataRow("Twitch", "twitch.json", JsonSerializerType.SystemTextJson)]
     [DataRow("Filtering", "github.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("Filtering", "github.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "heygen.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "heygen.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")
         {
             return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [], callerName);
+        }
+        if (string.IsNullOrWhiteSpace(callerName))
+        {
+            callerName = Path.GetFileNameWithoutExtension(fileName);
         }
         
         var resource = new H.Resource(fileName);
