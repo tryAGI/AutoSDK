@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		LICENSE.md = LICENSE.md
 		.github\dependabot.yml = .github\dependabot.yml
+		mkdocs.yml = mkdocs.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSDK.SnapshotTests", "src\tests\AutoSDK.SnapshotTests\AutoSDK.SnapshotTests.csproj", "{440B9C75-CA33-47F3-9EDF-A7CD6886155C}"
