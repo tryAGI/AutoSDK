@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCheckSuiteRequestedCheckSuiteAppOwnerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCheckSuiteRequestedCheckSuiteAppOwnerTypeJsonConverter))]
         public global::G.WebhookCheckSuiteRequestedCheckSuiteAppOwnerType? Type { get; set; }
 
         /// <summary>

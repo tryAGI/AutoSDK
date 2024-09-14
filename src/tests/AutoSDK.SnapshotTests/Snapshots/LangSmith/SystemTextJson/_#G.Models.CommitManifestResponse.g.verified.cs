@@ -29,7 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>, object>? Examples { get; set; }
 
         /// <summary>

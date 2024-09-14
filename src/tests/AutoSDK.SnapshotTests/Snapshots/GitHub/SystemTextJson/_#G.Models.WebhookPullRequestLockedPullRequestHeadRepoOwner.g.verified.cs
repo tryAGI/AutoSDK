@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestLockedPullRequestHeadRepoOwnerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestLockedPullRequestHeadRepoOwnerTypeJsonConverter))]
         public global::G.WebhookPullRequestLockedPullRequestHeadRepoOwnerType? Type { get; set; }
 
         /// <summary>

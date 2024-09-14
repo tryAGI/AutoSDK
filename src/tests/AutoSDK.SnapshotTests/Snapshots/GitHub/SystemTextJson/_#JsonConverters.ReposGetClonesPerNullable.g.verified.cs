@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposGetClonesPerNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposGetClonesPerNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposGetClonesPer?>

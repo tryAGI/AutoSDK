@@ -140,7 +140,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; }
 
@@ -405,7 +405,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
@@ -414,7 +414,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -516,7 +516,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; }
 
@@ -544,14 +544,14 @@ namespace G
         /// The default value for a squash merge commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit title.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -662,7 +662,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility Visibility { get; set; }
 

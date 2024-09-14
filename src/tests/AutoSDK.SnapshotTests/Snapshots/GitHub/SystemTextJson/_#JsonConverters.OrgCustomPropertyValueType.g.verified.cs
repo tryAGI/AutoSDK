@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgCustomPropertyValueType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgCustomPropertyValueTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgCustomPropertyValueType>

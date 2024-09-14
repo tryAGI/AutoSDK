@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AuthorAssociationNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AuthorAssociationNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AuthorAssociation?>

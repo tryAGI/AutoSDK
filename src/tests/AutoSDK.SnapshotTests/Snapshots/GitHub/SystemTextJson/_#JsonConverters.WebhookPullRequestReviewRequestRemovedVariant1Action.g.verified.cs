@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1Action.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestReviewRequestRemovedVariant1ActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestReviewRequestRemovedVariant1Action>

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatStreamEventEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatStreamEventEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatStreamEventEventType EventType { get; set; }
 

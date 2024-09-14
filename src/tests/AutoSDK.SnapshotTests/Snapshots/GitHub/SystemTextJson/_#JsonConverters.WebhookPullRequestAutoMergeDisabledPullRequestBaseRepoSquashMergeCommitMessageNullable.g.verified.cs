@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessageNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessageNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage?>

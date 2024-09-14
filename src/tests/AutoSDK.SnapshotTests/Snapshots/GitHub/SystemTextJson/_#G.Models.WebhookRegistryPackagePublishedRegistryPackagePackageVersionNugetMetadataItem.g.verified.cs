@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId, int?>? Id { get; set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory4))]
         public global::G.OneOf<bool?, string, int?, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>? Value { get; set; }
 
         /// <summary>

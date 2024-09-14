@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPullRequestsNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPullRequestsNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssueCommentCreatedIssueVariant1PerformedViaGithubAppPermissionsPullRequests?>

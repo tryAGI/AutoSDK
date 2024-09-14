@@ -43,7 +43,7 @@ namespace G
         /// Example: read
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryInvitationPermissionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryInvitationPermissionsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryInvitationPermissions Permissions { get; set; }
 

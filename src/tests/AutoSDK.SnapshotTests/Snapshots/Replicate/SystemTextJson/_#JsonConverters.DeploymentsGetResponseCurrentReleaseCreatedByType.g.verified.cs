@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DeploymentsGetResponseCurrentReleaseCreatedByType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DeploymentsGetResponseCurrentReleaseCreatedByTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeploymentsGetResponseCurrentReleaseCreatedByType>

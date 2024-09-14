@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectsListCollaboratorsAffiliation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectsListCollaboratorsAffiliationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectsListCollaboratorsAffiliation>

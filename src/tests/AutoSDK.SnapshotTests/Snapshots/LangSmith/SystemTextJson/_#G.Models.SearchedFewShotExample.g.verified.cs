@@ -36,7 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("debug_info")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
 
         /// <summary>

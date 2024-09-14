@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunObjectLastErrorCode.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunObjectLastErrorCodeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunObjectLastErrorCode>

@@ -51,7 +51,7 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCodeScanningAlertFixedAlertRuleSeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertFixedAlertRuleSeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookCodeScanningAlertFixedAlertRuleSeverity? Severity { get; set; }
 

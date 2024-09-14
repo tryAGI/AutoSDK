@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PagerdutySeverity.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PagerdutySeverityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PagerdutySeverity>

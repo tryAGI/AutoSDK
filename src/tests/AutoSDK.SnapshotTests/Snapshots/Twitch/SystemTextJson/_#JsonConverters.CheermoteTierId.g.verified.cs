@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CheermoteTierId.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CheermoteTierIdJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CheermoteTierId>

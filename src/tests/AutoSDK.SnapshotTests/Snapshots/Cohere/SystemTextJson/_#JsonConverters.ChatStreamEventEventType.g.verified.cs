@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatStreamEventEventType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatStreamEventEventTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatStreamEventEventType>

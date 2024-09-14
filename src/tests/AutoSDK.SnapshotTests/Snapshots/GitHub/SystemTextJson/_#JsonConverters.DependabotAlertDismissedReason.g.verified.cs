@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DependabotAlertDismissedReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DependabotAlertDismissedReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DependabotAlertDismissedReason>

@@ -33,14 +33,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor>? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bugs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs>? Bugs { get; set; }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dist")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist>? Dist { get; set; }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository>? Repository { get; set; }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("directories")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories>? Directories { get; set; }
 
         /// <summary>

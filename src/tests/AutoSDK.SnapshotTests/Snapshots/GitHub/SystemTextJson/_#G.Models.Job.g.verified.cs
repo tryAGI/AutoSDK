@@ -73,7 +73,7 @@ namespace G
         /// Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.JobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.JobStatus Status { get; set; }
 
@@ -82,7 +82,7 @@ namespace G
         /// Example: success
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.JobConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.JobConclusion? Conclusion { get; set; }
 

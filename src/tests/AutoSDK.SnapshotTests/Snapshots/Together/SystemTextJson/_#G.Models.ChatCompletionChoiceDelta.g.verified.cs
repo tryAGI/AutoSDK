@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionChoiceDeltaRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChoiceDeltaRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatCompletionChoiceDeltaRole Role { get; set; }
 

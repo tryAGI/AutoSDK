@@ -20,7 +20,7 @@ namespace G
         /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPathJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPathJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath Path { get; set; }
 

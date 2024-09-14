@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GetBitsLeaderboardPeriod.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GetBitsLeaderboardPeriodJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GetBitsLeaderboardPeriod>

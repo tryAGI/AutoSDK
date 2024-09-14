@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActionsReviewPendingDeploymentsForRunRequestStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActionsReviewPendingDeploymentsForRunRequestState?>

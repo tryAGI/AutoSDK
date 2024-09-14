@@ -58,7 +58,7 @@ namespace G
         /// Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MilestoneStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MilestoneState State { get; set; }
 

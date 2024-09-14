@@ -106,7 +106,7 @@ namespace G
         /// Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PullRequestState State { get; set; }
 
@@ -245,7 +245,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 

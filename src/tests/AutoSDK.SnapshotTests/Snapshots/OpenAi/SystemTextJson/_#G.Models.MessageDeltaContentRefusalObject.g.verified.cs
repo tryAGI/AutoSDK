@@ -20,7 +20,7 @@ namespace G
         /// Always `refusal`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentRefusalObjectType Type { get; set; }
 
         /// <summary>

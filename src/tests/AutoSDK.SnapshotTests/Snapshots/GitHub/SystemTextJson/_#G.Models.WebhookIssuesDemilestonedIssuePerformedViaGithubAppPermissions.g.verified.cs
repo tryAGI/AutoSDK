@@ -13,245 +13,245 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsActionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsActionsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsActions? Actions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("administration")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsAdministrationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsAdministrationJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsAdministration? Administration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsChecksJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsChecksJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsChecks? Checks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_references")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContentReferencesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContentReferencesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContentReferences? ContentReferences { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contents")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContentsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContentsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsContents? Contents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployments")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDeploymentsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDeploymentsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDeployments? Deployments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("discussions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDiscussionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDiscussionsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsDiscussions? Discussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEmailsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEmailsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEmails? Emails { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environments")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEnvironmentsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEnvironmentsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsEnvironments? Environments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsIssuesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsIssuesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsIssues? Issues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsKeysJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsKeysJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsKeys? Keys { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMembersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMembersJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMembers? Members { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMetadataJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMetadataJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_administration")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationAdministrationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationAdministrationJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationAdministration? OrganizationAdministration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_hooks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationHooksJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationHooksJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationHooks? OrganizationHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_packages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPackagesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPackagesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPackages? OrganizationPackages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_plan")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPlanJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPlanJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationPlan? OrganizationPlan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_projects")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationProjectsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationProjectsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationProjects? OrganizationProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_secrets")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSecretsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSecretsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSecrets? OrganizationSecrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_self_hosted_runners")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunnersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunnersJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? OrganizationSelfHostedRunners { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_user_blocking")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationUserBlockingJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationUserBlockingJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking? OrganizationUserBlocking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("packages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPackagesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPackagesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPackages? Packages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPagesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPagesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPages? Pages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPullRequestsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPullRequestsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsPullRequests? PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_hooks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryHooksJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryHooksJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryHooks? RepositoryHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_projects")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryProjectsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryProjectsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsRepositoryProjects? RepositoryProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_alerts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecretScanningAlertsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecretScanningAlertsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts? SecretScanningAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secrets")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecretsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecretsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecrets? Secrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_events")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityEventsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityEventsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityEvents? SecurityEvents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_scanning_alert")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityScanningAlertJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityScanningAlertJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert? SecurityScanningAlert { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSingleFileJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSingleFileJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsSingleFile? SingleFile { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsStatusesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsStatusesJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsStatuses? Statuses { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("team_discussions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsTeamDiscussionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsTeamDiscussionsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsTeamDiscussions? TeamDiscussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerability_alerts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsVulnerabilityAlertsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsVulnerabilityAlertsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts? VulnerabilityAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflows")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsWorkflowsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsWorkflowsJsonConverter))]
         public global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissionsWorkflows? Workflows { get; set; }
 
         /// <summary>

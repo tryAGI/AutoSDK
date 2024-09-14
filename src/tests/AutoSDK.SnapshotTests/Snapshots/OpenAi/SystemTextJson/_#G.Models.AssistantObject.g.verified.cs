@@ -22,14 +22,14 @@ namespace G
         /// The object type, which is always `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantObjectObjectJsonConverter))]
         public global::G.AssistantObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the assistant was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -105,7 +105,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
         public global::G.AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
 
         /// <summary>

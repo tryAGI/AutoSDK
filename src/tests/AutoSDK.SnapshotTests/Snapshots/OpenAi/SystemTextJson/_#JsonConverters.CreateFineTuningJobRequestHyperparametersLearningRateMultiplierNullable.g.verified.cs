@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateFineTuningJobRequestHyperparametersLearningRateMultiplierNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?>

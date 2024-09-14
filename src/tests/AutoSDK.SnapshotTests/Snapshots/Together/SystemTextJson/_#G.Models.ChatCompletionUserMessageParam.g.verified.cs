@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter))]
         public global::G.ChatCompletionUserMessageParamRole Role { get; set; }
 
         /// <summary>

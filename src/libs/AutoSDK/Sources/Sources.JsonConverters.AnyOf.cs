@@ -41,7 +41,7 @@ public static partial class Sources
         return $@"#nullable enable
 {(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
 ")}
-namespace AutoSDK.JsonConverters
+namespace {@namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public class {classNameWithTypes} : global::System.Text.Json.Serialization.JsonConverter<{typeNameWithTypes}>
@@ -148,7 +148,7 @@ namespace AutoSDK.JsonConverters
 
         return $@"#nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace {anyOfData.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public sealed class {subType}JsonConverterFactory{count} : global::System.Text.Json.Serialization.JsonConverterFactory

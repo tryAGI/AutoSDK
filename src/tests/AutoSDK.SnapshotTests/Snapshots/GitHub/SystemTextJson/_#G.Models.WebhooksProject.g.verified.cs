@@ -83,7 +83,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhooksProjectStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksProjectStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhooksProjectState State { get; set; }
 

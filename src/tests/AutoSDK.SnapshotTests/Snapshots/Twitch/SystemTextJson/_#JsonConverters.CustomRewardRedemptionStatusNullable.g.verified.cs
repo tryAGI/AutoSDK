@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CustomRewardRedemptionStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CustomRewardRedemptionStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CustomRewardRedemptionStatus?>

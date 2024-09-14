@@ -13,7 +13,7 @@ public static partial class Sources
         {
             return $@"#nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace {settings.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public class UnixTimestampJsonConverter : global::Newtonsoft.Json.JsonConverter<global::System.DateTimeOffset>
@@ -55,7 +55,7 @@ namespace AutoSDK.JsonConverters
 
         return $@"#nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace {settings.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public class UnixTimestampJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::System.DateTimeOffset>

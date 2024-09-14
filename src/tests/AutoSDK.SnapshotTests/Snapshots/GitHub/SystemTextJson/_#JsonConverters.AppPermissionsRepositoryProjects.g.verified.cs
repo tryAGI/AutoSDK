@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsRepositoryProjects.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsRepositoryProjectsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsRepositoryProjects>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsOrganizationUserBlockingNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsOrganizationUserBlockingNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsOrganizationUserBlocking?>

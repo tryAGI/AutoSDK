@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleParamsCodeScanningToolAlertsThresholdNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleParamsCodeScanningToolAlertsThresholdNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleParamsCodeScanningToolAlertsThreshold?>

@@ -34,7 +34,7 @@ namespace G
         /// Example: chat
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ModelInfoTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelInfoTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ModelInfoType Type { get; set; }
 

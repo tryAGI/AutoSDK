@@ -41,7 +41,7 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CustomModelTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomModelTypeJsonConverter))]
         public global::G.CustomModelType? ModelType { get; set; } = global::G.CustomModelType.GENERAL;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace G
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_Version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdVersionsJsonConverter))]
         public global::G.SdVersions? SdVersion { get; set; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace G
         /// Default Value: MEDIUM
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StrengthJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StrengthJsonConverter))]
         public global::G.Strength? Strength { get; set; } = global::G.Strength.MEDIUM;
 
         /// <summary>

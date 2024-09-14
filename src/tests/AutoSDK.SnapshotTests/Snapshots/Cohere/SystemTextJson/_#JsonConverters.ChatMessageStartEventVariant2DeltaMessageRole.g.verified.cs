@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatMessageStartEventVariant2DeltaMessageRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatMessageStartEventVariant2DeltaMessageRole>

@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FinetuneEventObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinetuneEventObjectJsonConverter))]
         public global::G.FinetuneEventObject? Object { get; set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory1))]
         public global::G.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FinetuneEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinetuneEventTypeJsonConverter))]
         public global::G.FinetuneEventType? Type { get; set; }
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
         public global::G.ProjectServiceAccountCreateResponseObject Object { get; set; }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         /// Service accounts can only have one role of type `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
         public global::G.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>

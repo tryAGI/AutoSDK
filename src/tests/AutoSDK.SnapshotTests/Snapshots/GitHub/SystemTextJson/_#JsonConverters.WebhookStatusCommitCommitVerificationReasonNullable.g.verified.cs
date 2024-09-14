@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookStatusCommitCommitVerificationReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookStatusCommitCommitVerificationReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookStatusCommitCommitVerificationReason?>

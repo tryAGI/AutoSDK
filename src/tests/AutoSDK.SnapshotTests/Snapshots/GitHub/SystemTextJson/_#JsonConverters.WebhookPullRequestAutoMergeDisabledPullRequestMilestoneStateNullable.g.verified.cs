@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestMilestoneStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestAutoMergeDisabledPullRequestMilestoneStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestAutoMergeDisabledPullRequestMilestoneState?>

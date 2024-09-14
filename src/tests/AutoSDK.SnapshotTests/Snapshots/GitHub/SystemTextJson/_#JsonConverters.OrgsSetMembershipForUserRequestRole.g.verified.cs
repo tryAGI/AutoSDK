@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsSetMembershipForUserRequestRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsSetMembershipForUserRequestRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsSetMembershipForUserRequestRole>

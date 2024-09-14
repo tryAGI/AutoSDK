@@ -17,7 +17,7 @@ namespace G
         ///  * `spam`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssuesLockRequestLockReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesLockRequestLockReasonJsonConverter))]
         public global::G.IssuesLockRequestLockReason? LockReason { get; set; }
 
         /// <summary>

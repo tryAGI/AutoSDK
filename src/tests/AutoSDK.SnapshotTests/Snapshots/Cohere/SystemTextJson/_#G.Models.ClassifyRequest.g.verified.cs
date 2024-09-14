@@ -45,7 +45,7 @@ namespace G
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ClassifyRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClassifyRequestTruncateJsonConverter))]
         public global::G.ClassifyRequestTruncate? Truncate { get; set; } = global::G.ClassifyRequestTruncate.END;
 
         /// <summary>

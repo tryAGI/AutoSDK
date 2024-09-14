@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookWorkflowJobInProgressWorkflowJobVariant1ConclusionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant1Conclusion>

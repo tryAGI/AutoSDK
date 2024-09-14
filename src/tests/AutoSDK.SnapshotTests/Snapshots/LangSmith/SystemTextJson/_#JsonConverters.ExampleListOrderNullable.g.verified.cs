@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExampleListOrderNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExampleListOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExampleListOrder?>

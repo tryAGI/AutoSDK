@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RuleLogActionOutcomeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleLogActionOutcomeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RuleLogActionOutcome Outcome { get; set; }
 
@@ -23,7 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.RuleLogActionResponsePayload, object>? Payload { get; set; }
 
         /// <summary>

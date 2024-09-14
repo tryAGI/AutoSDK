@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsOrganizationCopilotSeatManagement.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsOrganizationCopilotSeatManagementJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsOrganizationCopilotSeatManagement>

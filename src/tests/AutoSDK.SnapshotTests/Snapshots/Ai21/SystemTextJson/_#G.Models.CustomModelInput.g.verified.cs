@@ -13,7 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CustomModelTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomModelTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CustomModelType ModelType { get; set; }
 

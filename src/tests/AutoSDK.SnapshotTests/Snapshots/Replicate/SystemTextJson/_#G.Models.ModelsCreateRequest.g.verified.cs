@@ -64,7 +64,7 @@ namespace G
         /// Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ModelsCreateRequestVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelsCreateRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ModelsCreateRequestVisibility Visibility { get; set; }
 

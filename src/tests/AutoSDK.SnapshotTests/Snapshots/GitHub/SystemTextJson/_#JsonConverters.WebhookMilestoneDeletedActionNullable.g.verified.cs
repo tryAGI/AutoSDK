@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookMilestoneDeletedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookMilestoneDeletedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookMilestoneDeletedAction?>

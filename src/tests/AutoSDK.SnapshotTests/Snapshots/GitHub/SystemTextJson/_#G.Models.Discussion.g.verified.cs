@@ -41,7 +41,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DiscussionAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiscussionAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DiscussionAuthorAssociation AuthorAssociation { get; set; }
 
@@ -127,7 +127,7 @@ namespace G
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DiscussionStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DiscussionState State { get; set; }
 
@@ -136,7 +136,7 @@ namespace G
         /// Example: resolved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DiscussionStateReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DiscussionStateReason? StateReason { get; set; }
 

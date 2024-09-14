@@ -13,7 +13,7 @@ namespace G
         /// `user` or `service_account`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter))]
         public global::G.ProjectApiKeyOwnerType? Type { get; set; }
 
         /// <summary>

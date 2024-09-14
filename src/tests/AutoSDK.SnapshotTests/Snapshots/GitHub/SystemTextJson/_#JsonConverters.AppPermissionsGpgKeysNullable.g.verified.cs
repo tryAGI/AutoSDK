@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsGpgKeysNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsGpgKeysNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsGpgKeys?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SdGenerationSchedulersNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SdGenerationSchedulersNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SdGenerationSchedulers?>

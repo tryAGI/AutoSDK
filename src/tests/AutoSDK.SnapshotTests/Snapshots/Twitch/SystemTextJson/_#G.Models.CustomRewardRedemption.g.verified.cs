@@ -80,7 +80,7 @@ namespace G
         /// * UNFULFILLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CustomRewardRedemptionStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomRewardRedemptionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CustomRewardRedemptionStatus Status { get; set; }
 

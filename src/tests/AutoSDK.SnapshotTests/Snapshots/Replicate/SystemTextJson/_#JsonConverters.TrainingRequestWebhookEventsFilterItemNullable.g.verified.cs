@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TrainingRequestWebhookEventsFilterItemNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TrainingRequestWebhookEventsFilterItemNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TrainingRequestWebhookEventsFilterItem?>

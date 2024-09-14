@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateMessageRequestModel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateMessageRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateMessageRequestModel>

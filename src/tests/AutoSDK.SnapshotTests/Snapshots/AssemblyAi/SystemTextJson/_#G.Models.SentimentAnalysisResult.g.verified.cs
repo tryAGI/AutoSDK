@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sentiment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SentimentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SentimentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.Sentiment Sentiment { get; set; }
 

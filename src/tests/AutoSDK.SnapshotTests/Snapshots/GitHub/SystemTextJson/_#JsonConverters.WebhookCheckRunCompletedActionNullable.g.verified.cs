@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookCheckRunCompletedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookCheckRunCompletedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookCheckRunCompletedAction?>

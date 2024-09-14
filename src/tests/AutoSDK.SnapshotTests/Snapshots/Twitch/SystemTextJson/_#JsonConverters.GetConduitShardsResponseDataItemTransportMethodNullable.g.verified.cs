@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GetConduitShardsResponseDataItemTransportMethodNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GetConduitShardsResponseDataItemTransportMethodNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GetConduitShardsResponseDataItemTransportMethod?>

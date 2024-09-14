@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsUpdateInOrgRequestNotificationSetting.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsUpdateInOrgRequestNotificationSettingJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsUpdateInOrgRequestNotificationSetting>

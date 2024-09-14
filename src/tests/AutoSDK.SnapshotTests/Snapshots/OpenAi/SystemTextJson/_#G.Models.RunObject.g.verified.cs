@@ -22,14 +22,14 @@ namespace G
         /// The object type, which is always `thread.run`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunObjectObjectJsonConverter))]
         public global::G.RunObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -51,7 +51,7 @@ namespace G
         /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RunObjectStatus Status { get; set; }
 
@@ -73,7 +73,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? ExpiresAt { get; set; }
 
@@ -81,7 +81,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? StartedAt { get; set; }
 
@@ -89,7 +89,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? CancelledAt { get; set; }
 
@@ -97,7 +97,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? FailedAt { get; set; }
 
@@ -105,7 +105,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? CompletedAt { get; set; }
 
@@ -192,7 +192,7 @@ namespace G
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AssistantsApiToolChoiceOption ToolChoice { get; set; }
 
@@ -210,7 +210,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AssistantsApiResponseFormatOption ResponseFormat { get; set; }
 

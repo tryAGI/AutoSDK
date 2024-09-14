@@ -13,7 +13,7 @@ namespace G
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
         public global::G.RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>

@@ -21,7 +21,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter))]
         public global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; } = global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto;
 
         /// <summary>

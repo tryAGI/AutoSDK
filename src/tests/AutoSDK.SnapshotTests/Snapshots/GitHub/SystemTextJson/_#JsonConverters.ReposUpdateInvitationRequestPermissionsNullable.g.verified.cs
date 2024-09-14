@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposUpdateInvitationRequestPermissionsNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposUpdateInvitationRequestPermissionsNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposUpdateInvitationRequestPermissions?>

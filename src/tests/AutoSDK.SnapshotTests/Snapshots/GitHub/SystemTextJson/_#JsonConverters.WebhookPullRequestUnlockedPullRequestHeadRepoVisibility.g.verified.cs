@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestUnlockedPullRequestHeadRepoVisibility.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestUnlockedPullRequestHeadRepoVisibilityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestUnlockedPullRequestHeadRepoVisibility>

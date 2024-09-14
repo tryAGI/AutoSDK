@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookCodeScanningAlertAppearedInBranchAlertDismissedReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FeedbackLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FeedbackLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FeedbackLevel?>

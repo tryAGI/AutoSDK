@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookProjectCardMovedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookProjectCardMovedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookProjectCardMovedAction?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunDateOrder.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunDateOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunDateOrder>

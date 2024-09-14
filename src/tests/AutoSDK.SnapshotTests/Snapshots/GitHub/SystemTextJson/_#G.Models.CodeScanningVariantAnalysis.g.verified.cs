@@ -34,7 +34,7 @@ namespace G
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; }
 
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningVariantAnalysisStatus2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisStatus2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningVariantAnalysisStatus2 Status { get; set; }
 
@@ -81,7 +81,7 @@ namespace G
         /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningVariantAnalysisFailureReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisFailureReasonJsonConverter))]
         public global::G.CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
 
         /// <summary>

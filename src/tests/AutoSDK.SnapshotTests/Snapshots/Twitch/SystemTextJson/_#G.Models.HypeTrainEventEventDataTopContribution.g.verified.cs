@@ -24,7 +24,7 @@ namespace G
         /// * OTHER — Covers other contribution methods not listed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.HypeTrainEventEventDataTopContributionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.HypeTrainEventEventDataTopContributionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.HypeTrainEventEventDataTopContributionType Type { get; set; }
 

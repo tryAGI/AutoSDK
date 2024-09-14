@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoOwnerTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoOwnerTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoOwnerType?>

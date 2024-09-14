@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookLabelDeletedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookLabelDeletedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookLabelDeletedAction?>

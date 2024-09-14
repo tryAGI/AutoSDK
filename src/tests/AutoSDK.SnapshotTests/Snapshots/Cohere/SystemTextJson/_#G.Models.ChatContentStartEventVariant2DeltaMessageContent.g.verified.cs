@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatContentStartEventVariant2DeltaMessageContentTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatContentStartEventVariant2DeltaMessageContentTypeJsonConverter))]
         public global::G.ChatContentStartEventVariant2DeltaMessageContentType? Type { get; set; }
 
         /// <summary>

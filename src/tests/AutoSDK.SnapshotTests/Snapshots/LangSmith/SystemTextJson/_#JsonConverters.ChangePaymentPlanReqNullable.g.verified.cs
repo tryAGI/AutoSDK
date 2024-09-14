@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChangePaymentPlanReqNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChangePaymentPlanReqNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChangePaymentPlanReq?>

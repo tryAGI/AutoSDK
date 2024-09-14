@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateChannelGuestStarSettingsBodyGroupLayout.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateChannelGuestStarSettingsBodyGroupLayoutJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateChannelGuestStarSettingsBodyGroupLayout>

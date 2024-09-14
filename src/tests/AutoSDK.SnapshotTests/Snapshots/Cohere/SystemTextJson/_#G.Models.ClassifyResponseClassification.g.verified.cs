@@ -61,7 +61,7 @@ namespace G
         /// The type of classification performed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ClassifyResponseClassificationClassificationType ClassificationType { get; set; }
 

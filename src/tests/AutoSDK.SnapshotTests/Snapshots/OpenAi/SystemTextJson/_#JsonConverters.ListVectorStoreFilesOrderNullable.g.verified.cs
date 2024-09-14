@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListVectorStoreFilesOrderNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListVectorStoreFilesOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListVectorStoreFilesOrder?>

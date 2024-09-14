@@ -28,7 +28,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
 
@@ -44,7 +44,7 @@ namespace G
         /// Example: scale
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace G
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>

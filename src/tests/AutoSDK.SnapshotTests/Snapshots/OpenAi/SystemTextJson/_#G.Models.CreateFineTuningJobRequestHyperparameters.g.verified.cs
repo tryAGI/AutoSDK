@@ -17,7 +17,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
 
         /// <summary>

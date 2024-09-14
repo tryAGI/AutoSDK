@@ -22,7 +22,7 @@ namespace G
         /// The content of the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> Content { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// The role of the messages author.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageRole Role { get; set; }
 
@@ -50,7 +50,7 @@ namespace G
         /// null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StopReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StopReasonJsonConverter))]
         public global::G.StopReason? StopReason { get; set; }
 
         /// <summary>

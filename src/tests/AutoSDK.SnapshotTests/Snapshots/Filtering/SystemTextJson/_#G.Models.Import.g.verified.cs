@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ImportStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImportStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ImportStatus Status { get; set; }
 

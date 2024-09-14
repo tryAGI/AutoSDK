@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunObjectRequiredActionType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunObjectRequiredActionTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunObjectRequiredActionType>

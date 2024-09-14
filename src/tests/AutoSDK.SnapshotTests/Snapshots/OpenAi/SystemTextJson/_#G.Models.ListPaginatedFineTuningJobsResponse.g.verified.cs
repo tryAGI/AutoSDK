@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter))]
         public global::G.ListPaginatedFineTuningJobsResponseObject Object { get; set; }
 
         /// <summary>

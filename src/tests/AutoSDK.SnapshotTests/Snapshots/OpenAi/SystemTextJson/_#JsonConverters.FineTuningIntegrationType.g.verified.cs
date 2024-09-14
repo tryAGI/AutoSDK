@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FineTuningIntegrationType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FineTuningIntegrationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FineTuningIntegrationType>

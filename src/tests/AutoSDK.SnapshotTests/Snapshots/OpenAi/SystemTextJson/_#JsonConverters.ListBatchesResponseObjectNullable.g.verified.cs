@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListBatchesResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListBatchesResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListBatchesResponseObject?>

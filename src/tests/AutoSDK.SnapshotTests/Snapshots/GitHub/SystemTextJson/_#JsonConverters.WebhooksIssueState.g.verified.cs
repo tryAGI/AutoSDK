@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksIssueState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksIssueStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksIssueState>

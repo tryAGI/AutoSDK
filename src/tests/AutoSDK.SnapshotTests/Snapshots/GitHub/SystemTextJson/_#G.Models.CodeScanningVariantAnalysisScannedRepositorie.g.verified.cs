@@ -20,7 +20,7 @@ namespace G
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningVariantAnalysisStatus AnalysisStatus { get; set; }
 

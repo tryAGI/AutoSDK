@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitTitle.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitTitleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitTitle>

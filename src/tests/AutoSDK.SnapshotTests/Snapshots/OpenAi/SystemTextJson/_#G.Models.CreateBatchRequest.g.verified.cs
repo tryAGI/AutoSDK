@@ -22,7 +22,7 @@ namespace G
         /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CreateBatchRequestEndpoint Endpoint { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
         public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>

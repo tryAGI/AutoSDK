@@ -36,7 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.UsageData, global::G.CompletionChunkUsage> Usage { get; set; }
 
@@ -44,7 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.FinishReason?, global::G.CompletionChunkFinishReason> FinishReason { get; set; }
 

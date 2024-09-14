@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuneEventObject2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventObject2JsonConverter))]
         public global::G.FineTuneEventObject2 Object { get; set; }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuneEventLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventLevelJsonConverter))]
         public global::G.FineTuneEventLevel? Level { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuneEventType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventType2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.FineTuneEventType2 Type { get; set; }
 

@@ -20,7 +20,7 @@ namespace G
         /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MigrationsStartImportRequestVcsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MigrationsStartImportRequestVcsJsonConverter))]
         public global::G.MigrationsStartImportRequestVcs? Vcs { get; set; }
 
         /// <summary>

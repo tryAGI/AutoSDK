@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ContentDirectoryItemType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ContentDirectoryItemTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ContentDirectoryItemType>

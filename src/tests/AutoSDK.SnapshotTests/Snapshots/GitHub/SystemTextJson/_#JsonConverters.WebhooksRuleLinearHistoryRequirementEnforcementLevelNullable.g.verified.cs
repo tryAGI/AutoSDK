@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksRuleLinearHistoryRequirementEnforcementLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksRuleLinearHistoryRequirementEnforcementLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksRuleLinearHistoryRequirementEnforcementLevel?>

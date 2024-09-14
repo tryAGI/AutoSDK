@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActionsGetActionsCacheListDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActionsGetActionsCacheListDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActionsGetActionsCacheListDirection>

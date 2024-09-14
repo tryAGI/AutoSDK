@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookTeamAddedToRepositoryRepositoryVisibilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookTeamAddedToRepositoryRepositoryVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookTeamAddedToRepositoryRepositoryVisibility?>

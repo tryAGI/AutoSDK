@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionRequestMessageContentPartImageTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionRequestMessageContentPartImageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionRequestMessageContentPartImageType?>

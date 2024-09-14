@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
         public global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
 
         /// <summary>

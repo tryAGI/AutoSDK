@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MergedUpstreamMergeTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MergedUpstreamMergeTypeJsonConverter))]
         public global::G.MergedUpstreamMergeType? MergeType { get; set; }
 
         /// <summary>

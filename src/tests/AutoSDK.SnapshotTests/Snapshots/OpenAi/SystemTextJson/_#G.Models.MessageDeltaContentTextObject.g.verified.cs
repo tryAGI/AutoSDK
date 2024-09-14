@@ -20,7 +20,7 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>

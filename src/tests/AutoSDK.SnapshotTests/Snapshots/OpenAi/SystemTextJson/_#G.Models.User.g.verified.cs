@@ -13,7 +13,7 @@ namespace G
         /// The object type, which is always `organization.user`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UserObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserObjectJsonConverter))]
         public global::G.UserObject Object { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UserRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UserRole Role { get; set; }
 
@@ -49,7 +49,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset AddedAt { get; set; }
 

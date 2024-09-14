@@ -27,7 +27,7 @@ namespace G
         /// Example: direct
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependencyRelationshipJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyRelationshipJsonConverter))]
         public global::G.DependencyRelationship? Relationship { get; set; }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace G
         /// Example: runtime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependencyScopeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyScopeJsonConverter))]
         public global::G.DependencyScope? Scope { get; set; }
 
         /// <summary>

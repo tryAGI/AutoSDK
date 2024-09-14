@@ -25,7 +25,7 @@ namespace G
         /// State of this Pull Request. Either `open` or `closed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullsUpdateRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullsUpdateRequestStateJsonConverter))]
         public global::G.PullsUpdateRequestState? State { get; set; }
 
         /// <summary>

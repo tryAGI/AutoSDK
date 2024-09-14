@@ -13,7 +13,7 @@ namespace G
         /// The type of actor. Is either `session` or `api_key`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuditLogActorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorTypeJsonConverter))]
         public global::G.AuditLogActorType? Type { get; set; }
 
         /// <summary>

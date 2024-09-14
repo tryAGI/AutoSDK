@@ -50,7 +50,7 @@ namespace G
         /// The type of Git ref object deleted in the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookDeleteRefTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeleteRefTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookDeleteRefType RefType { get; set; }
 

@@ -13,7 +13,7 @@ namespace G
         /// The status of the redacted audio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RedactedAudioStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RedactedAudioStatusJsonConverter))]
         public global::G.RedactedAudioStatus Status { get; set; }
 
         /// <summary>

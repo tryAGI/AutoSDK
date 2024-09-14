@@ -40,7 +40,7 @@ namespace G
         /// Reason why the model is done generating a response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("done_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DoneReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DoneReasonJsonConverter))]
         public global::G.DoneReason? DoneReason { get; set; }
 
         /// <summary>

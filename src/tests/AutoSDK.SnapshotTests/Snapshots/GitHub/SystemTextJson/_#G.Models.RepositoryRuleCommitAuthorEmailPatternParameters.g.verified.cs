@@ -25,7 +25,7 @@ namespace G
         /// The operator to use for matching.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleCommitAuthorEmailPatternParametersOperatorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleCommitAuthorEmailPatternParametersOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryRuleCommitAuthorEmailPatternParametersOperator Operator { get; set; }
 

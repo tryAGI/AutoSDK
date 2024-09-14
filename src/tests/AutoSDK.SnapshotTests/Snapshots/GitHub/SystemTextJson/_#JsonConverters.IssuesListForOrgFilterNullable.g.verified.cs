@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.IssuesListForOrgFilterNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class IssuesListForOrgFilterNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.IssuesListForOrgFilter?>

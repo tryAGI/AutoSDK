@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SummarizeRequestExtractiveness.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SummarizeRequestExtractivenessJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SummarizeRequestExtractiveness>

@@ -15,7 +15,7 @@ namespace G
         /// The title of the issue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, int?>? Title { get; set; }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         /// The open or closed state of the issue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssuesUpdateRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateRequestStateJsonConverter))]
         public global::G.IssuesUpdateRequestState? State { get; set; }
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace G
         /// Example: not_planned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssuesUpdateRequestStateReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateRequestStateReasonJsonConverter))]
         public global::G.IssuesUpdateRequestStateReason? StateReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, int?>? Milestone { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PollStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PollStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PollStatus?>

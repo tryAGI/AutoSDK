@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListMessagesOrder.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListMessagesOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListMessagesOrder>

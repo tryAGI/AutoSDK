@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2PrivacyNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2PrivacyNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestAssignedPullRequestRequestedReviewerVariant2Privacy?>

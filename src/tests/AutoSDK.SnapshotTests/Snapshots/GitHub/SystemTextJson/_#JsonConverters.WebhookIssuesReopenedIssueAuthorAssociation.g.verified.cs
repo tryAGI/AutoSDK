@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookIssuesReopenedIssueAuthorAssociation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookIssuesReopenedIssueAuthorAssociationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssuesReopenedIssueAuthorAssociation>

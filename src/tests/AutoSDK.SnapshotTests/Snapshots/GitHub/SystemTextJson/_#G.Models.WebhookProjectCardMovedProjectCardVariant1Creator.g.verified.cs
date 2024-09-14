@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookProjectCardMovedProjectCardVariant1CreatorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookProjectCardMovedProjectCardVariant1CreatorTypeJsonConverter))]
         public global::G.WebhookProjectCardMovedProjectCardVariant1CreatorType? Type { get; set; }
 
         /// <summary>

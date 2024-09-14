@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobVariant1ConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobVariant1ConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Conclusion? Conclusion { get; set; }
 
@@ -140,7 +140,7 @@ namespace G
         /// The current status of the job. Can be `queued`, `in_progress`, `waiting`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobVariant1StatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobVariant1StatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1Status Status { get; set; }
 

@@ -69,7 +69,7 @@ namespace G
         /// Example: FLAT_RATE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MarketplaceListingPlanPriceModel PriceModel { get; set; }
 

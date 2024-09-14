@@ -38,7 +38,7 @@ namespace G
         /// Example: individual
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SimpleClassroomAssignmentTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SimpleClassroomAssignmentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.SimpleClassroomAssignmentType Type { get; set; }
 

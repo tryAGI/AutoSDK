@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AuditLogActorApiKeyType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AuditLogActorApiKeyTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AuditLogActorApiKeyType>

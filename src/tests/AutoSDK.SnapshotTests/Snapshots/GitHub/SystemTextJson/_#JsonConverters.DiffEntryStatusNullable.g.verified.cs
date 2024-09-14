@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DiffEntryStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DiffEntryStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DiffEntryStatus?>

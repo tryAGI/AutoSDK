@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunTypeEnum.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunTypeEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunTypeEnum>

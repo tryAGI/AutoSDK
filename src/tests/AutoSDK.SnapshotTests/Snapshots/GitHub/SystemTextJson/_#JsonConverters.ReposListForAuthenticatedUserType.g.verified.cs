@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposListForAuthenticatedUserType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposListForAuthenticatedUserTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposListForAuthenticatedUserType>

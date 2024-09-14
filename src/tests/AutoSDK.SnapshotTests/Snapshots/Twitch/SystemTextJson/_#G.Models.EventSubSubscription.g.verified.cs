@@ -37,7 +37,7 @@ namespace G
         /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EventSubSubscriptionStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EventSubSubscriptionStatus Status { get; set; }
 
@@ -45,7 +45,7 @@ namespace G
         /// The subscription's type. See [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EventSubSubscriptionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EventSubSubscriptionType Type { get; set; }
 

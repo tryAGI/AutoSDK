@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateConduitShardsBodyShardTransportMethod.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateConduitShardsBodyShardTransportMethodJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateConduitShardsBodyShardTransportMethod>

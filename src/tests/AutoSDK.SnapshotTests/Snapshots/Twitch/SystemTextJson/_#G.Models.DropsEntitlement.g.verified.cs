@@ -51,7 +51,7 @@ namespace G
         /// * FULFILLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DropsEntitlementFulfillmentStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DropsEntitlementFulfillmentStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DropsEntitlementFulfillmentStatus FulfillmentStatus { get; set; }
 

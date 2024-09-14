@@ -20,7 +20,7 @@ namespace G
         /// The object type, which is always `organization.project`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectObjectJsonConverter))]
         public global::G.ProjectObject Object { get; set; }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -42,14 +42,14 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ProjectStatus Status { get; set; }
 

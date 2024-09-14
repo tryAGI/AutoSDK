@@ -13,7 +13,7 @@ namespace G
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
         public global::G.FineTuningIntegrationType Type { get; set; }
 
         /// <summary>

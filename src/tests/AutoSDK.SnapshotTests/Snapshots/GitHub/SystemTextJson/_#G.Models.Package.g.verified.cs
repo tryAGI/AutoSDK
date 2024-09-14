@@ -29,7 +29,7 @@ namespace G
         /// Example: docker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PackagePackageTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PackagePackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PackagePackageType PackageType { get; set; }
 
@@ -59,7 +59,7 @@ namespace G
         /// Example: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PackageVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PackageVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PackageVisibility Visibility { get; set; }
 

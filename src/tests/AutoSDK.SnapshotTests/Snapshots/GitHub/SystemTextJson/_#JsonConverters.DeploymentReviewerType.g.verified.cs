@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DeploymentReviewerType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DeploymentReviewerTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeploymentReviewerType>

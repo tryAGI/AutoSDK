@@ -77,10 +77,10 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::AutoSDK.JsonConverters.AsnResponseTypeJsonConverter(),
-                    new global::AutoSDK.JsonConverters.AsnResponseTypeNullableJsonConverter(),
-                    new global::AutoSDK.JsonConverters.CompanyTypeJsonConverter(),
-                    new global::AutoSDK.JsonConverters.CompanyTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.AsnResponseTypeJsonConverter(),
+                    new global::G.JsonConverters.AsnResponseTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CompanyTypeJsonConverter(),
+                    new global::G.JsonConverters.CompanyTypeNullableJsonConverter(),
                 }
             };
 

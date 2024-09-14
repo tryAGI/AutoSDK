@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ThreadObjectObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ThreadObjectObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ThreadObjectObject>

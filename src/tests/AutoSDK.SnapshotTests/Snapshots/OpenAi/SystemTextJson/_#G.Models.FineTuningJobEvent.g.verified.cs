@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuningJobEventLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.FineTuningJobEventLevel Level { get; set; }
 
@@ -42,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FineTuningJobEventObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventObjectJsonConverter))]
         public global::G.FineTuningJobEventObject Object { get; set; }
 
         /// <summary>

@@ -62,7 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2ParentPrivacyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2ParentPrivacyJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestUnlabeledPullRequestRequestedReviewerVariant2ParentPrivacy Privacy { get; set; }
 

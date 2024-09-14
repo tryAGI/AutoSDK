@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExtensionConfigurationLocation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExtensionConfigurationLocationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExtensionConfigurationLocation>

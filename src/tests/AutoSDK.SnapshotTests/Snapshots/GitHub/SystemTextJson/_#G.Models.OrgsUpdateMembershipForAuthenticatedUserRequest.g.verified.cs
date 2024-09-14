@@ -13,7 +13,7 @@ namespace G
         /// The state that the membership should be in. Only `"active"` will be accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsUpdateMembershipForAuthenticatedUserRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsUpdateMembershipForAuthenticatedUserRequestStateJsonConverter))]
         public global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState State { get; set; }
 
         /// <summary>

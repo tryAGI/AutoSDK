@@ -13,7 +13,7 @@ namespace G
         /// The package's language or package management ecosystem.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ecosystem")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecurityAdvisoryEcosystemsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryEcosystemsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.SecurityAdvisoryEcosystems Ecosystem { get; set; }
 

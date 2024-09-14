@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningVariantAnalysisFailureReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningVariantAnalysisFailureReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningVariantAnalysisFailureReason>

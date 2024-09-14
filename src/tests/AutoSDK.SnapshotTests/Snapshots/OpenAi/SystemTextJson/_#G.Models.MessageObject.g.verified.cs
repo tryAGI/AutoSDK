@@ -22,14 +22,14 @@ namespace G
         /// The object type, which is always `thread.message`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageObjectObjectJsonConverter))]
         public global::G.MessageObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -44,7 +44,7 @@ namespace G
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageObjectStatus Status { get; set; }
 
@@ -59,7 +59,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? CompletedAt { get; set; }
 
@@ -67,7 +67,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? IncompleteAt { get; set; }
 
@@ -75,7 +75,7 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageObjectRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageObjectRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageObjectRole Role { get; set; }
 

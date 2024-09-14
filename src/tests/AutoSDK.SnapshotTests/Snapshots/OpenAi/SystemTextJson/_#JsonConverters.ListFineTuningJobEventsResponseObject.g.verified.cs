@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListFineTuningJobEventsResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListFineTuningJobEventsResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListFineTuningJobEventsResponseObject>

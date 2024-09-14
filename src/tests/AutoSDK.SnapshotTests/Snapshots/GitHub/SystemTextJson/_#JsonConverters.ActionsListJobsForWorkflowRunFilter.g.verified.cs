@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActionsListJobsForWorkflowRunFilter.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActionsListJobsForWorkflowRunFilterJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActionsListJobsForWorkflowRunFilter>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposGetRepoRuleSuitesTimePeriodNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposGetRepoRuleSuitesTimePeriodNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposGetRepoRuleSuitesTimePeriod?>

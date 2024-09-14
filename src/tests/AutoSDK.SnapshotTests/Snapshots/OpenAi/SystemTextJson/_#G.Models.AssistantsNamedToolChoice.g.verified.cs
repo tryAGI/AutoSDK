@@ -13,7 +13,7 @@ namespace G
         /// The type of the tool. If type is `function`, the function name must be set
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AssistantsNamedToolChoiceType Type { get; set; }
 

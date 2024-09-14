@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EmbedByTypeResponseResponseType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EmbedByTypeResponseResponseTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EmbedByTypeResponseResponseType>

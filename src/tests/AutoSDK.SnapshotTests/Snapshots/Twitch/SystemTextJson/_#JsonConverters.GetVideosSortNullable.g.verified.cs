@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GetVideosSortNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GetVideosSortNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GetVideosSort?>

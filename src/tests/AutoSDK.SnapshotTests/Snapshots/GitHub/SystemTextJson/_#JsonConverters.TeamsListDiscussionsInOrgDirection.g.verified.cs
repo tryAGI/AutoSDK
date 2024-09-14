@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsListDiscussionsInOrgDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsListDiscussionsInOrgDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsListDiscussionsInOrgDirection>

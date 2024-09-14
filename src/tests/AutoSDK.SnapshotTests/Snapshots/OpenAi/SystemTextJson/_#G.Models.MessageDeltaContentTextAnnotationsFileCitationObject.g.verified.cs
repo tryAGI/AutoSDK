@@ -20,7 +20,7 @@ namespace G
         /// Always `file_citation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>

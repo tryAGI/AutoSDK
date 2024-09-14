@@ -27,7 +27,7 @@ namespace G
         /// Example: list
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ImageResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageResponseObjectJsonConverter))]
         public global::G.ImageResponseObject Object { get; set; }
 
         /// <summary>

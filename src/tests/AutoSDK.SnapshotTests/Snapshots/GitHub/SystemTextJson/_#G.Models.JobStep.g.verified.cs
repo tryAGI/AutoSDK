@@ -14,7 +14,7 @@ namespace G
         /// Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.JobStepStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobStepStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.JobStepStatus Status { get; set; }
 

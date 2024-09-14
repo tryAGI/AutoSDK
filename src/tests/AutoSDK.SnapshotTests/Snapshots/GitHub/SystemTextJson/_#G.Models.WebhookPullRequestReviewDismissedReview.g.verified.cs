@@ -20,7 +20,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewDismissedReviewAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewDismissedReviewAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; }
 
@@ -70,7 +70,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewDismissedReviewStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewDismissedReviewStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewDismissedReviewState State { get; set; }
 

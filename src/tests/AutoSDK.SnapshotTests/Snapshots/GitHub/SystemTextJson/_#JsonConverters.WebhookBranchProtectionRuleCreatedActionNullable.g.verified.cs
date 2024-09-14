@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookBranchProtectionRuleCreatedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookBranchProtectionRuleCreatedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookBranchProtectionRuleCreatedAction?>

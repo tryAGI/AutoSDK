@@ -30,7 +30,7 @@ namespace G
         /// * ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EndPollBodyStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EndPollBodyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EndPollBodyStatus Status { get; set; }
 

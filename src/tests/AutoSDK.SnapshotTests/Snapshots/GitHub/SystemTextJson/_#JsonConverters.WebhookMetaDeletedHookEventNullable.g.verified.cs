@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookMetaDeletedHookEventNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookMetaDeletedHookEventNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookMetaDeletedHookEvent?>

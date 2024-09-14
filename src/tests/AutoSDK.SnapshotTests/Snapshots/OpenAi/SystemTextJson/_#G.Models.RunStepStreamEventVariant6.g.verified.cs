@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepStreamEventVariant6EventJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepStreamEventVariant6EventJsonConverter))]
         public global::G.RunStepStreamEventVariant6Event Event { get; set; }
 
         /// <summary>

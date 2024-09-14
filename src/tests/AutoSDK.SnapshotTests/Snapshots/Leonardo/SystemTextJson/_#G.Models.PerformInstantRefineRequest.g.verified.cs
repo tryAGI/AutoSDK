@@ -45,7 +45,7 @@ namespace G
         /// The style to generate LCM images with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.LcmGenerationStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LcmGenerationStyleJsonConverter))]
         public global::G.LcmGenerationStyle? Style { get; set; }
 
         /// <summary>

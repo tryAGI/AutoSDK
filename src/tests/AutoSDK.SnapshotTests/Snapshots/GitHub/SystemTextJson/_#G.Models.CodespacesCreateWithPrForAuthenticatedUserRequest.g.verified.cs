@@ -19,7 +19,7 @@ namespace G
         /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("geo")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodespacesCreateWithPrForAuthenticatedUserRequestGeoJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespacesCreateWithPrForAuthenticatedUserRequestGeoJsonConverter))]
         public global::G.CodespacesCreateWithPrForAuthenticatedUserRequestGeo? Geo { get; set; }
 
         /// <summary>

@@ -89,7 +89,7 @@ namespace G
         /// Example: not_planned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssueStateReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssueStateReasonJsonConverter))]
         public global::G.IssueStateReason? StateReason { get; set; }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 

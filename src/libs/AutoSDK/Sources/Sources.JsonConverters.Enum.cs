@@ -16,7 +16,7 @@ public static partial class Sources
 
         return $@"#nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace {model.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public sealed class {model.ClassName}JsonConverter : global::System.Text.Json.Serialization.JsonConverter<{model.GlobalClassName}>
@@ -77,7 +77,7 @@ namespace AutoSDK.JsonConverters
 
         return $@"#nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace {model.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
     public sealed class {model.ClassName}NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<{model.GlobalClassName}?>

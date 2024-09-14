@@ -23,7 +23,7 @@ namespace G
         /// - **Subsequent messages** will have an object `{"content": __token__}` with the generated token.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta> Delta { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookIssueCommentDeletedIssueVariant1ActiveLockReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookIssueCommentDeletedIssueVariant1ActiveLockReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssueCommentDeletedIssueVariant1ActiveLockReason?>

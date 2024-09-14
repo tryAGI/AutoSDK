@@ -15,7 +15,7 @@ namespace G
         /// The assignee that has been granted access to GitHub Copilot.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::G.SimpleUser, global::G.Team, global::G.Organization> Assignee { get; set; }
 
@@ -23,7 +23,7 @@ namespace G
         /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigning_team")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory1))]
         public global::G.OneOf<global::G.Team>? AssigningTeam { get; set; }
 
         /// <summary>

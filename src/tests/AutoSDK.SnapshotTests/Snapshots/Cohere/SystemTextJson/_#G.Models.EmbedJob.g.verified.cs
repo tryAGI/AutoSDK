@@ -26,7 +26,7 @@ namespace G
         /// The status of the embed job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbedJobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EmbedJobStatus Status { get; set; }
 
@@ -61,7 +61,7 @@ namespace G
         /// The truncation option used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbedJobTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedJobTruncateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EmbedJobTruncate Truncate { get; set; }
 

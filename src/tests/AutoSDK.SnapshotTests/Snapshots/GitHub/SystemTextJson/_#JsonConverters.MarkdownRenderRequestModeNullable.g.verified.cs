@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MarkdownRenderRequestModeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MarkdownRenderRequestModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MarkdownRenderRequestMode?>

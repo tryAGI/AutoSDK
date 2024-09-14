@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MessageContentTextAnnotationsFilePathObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageContentTextAnnotationsFilePathObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MessageContentTextAnnotationsFilePathObjectType>

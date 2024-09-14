@@ -615,7 +615,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositorySquashMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositorySquashMergeCommitTitleJsonConverter))]
         public global::G.RepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -625,7 +625,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositorySquashMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositorySquashMergeCommitMessageJsonConverter))]
         public global::G.RepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -634,7 +634,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryMergeCommitTitleJsonConverter))]
         public global::G.RepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -644,7 +644,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryMergeCommitMessageJsonConverter))]
         public global::G.RepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

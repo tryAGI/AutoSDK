@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.VectorStoreFileBatchObjectStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class VectorStoreFileBatchObjectStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.VectorStoreFileBatchObjectStatus?>

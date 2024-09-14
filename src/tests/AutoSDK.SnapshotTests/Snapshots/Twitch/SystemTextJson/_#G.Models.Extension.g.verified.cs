@@ -40,7 +40,7 @@ namespace G
         /// * none — The extension doesn't require configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ExtensionConfigurationLocationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExtensionConfigurationLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ExtensionConfigurationLocation ConfigurationLocation { get; set; }
 
@@ -128,7 +128,7 @@ namespace G
         /// * Released
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ExtensionStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExtensionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ExtensionState State { get; set; }
 
@@ -139,7 +139,7 @@ namespace G
         /// * optional — The extension can view the user’s subscription level.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_support_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ExtensionSubscriptionsSupportLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExtensionSubscriptionsSupportLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; }
 

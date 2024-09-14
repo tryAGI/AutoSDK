@@ -14,7 +14,7 @@ namespace G
         /// Default Value: member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsAddOrUpdateMembershipForUserInOrgRequestRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsAddOrUpdateMembershipForUserInOrgRequestRoleJsonConverter))]
         public global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole? Role { get; set; } = global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole.Member;
 
         /// <summary>

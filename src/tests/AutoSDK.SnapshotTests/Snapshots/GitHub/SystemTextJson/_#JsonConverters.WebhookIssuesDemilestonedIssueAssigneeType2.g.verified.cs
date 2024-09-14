@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookIssuesDemilestonedIssueAssigneeType2.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookIssuesDemilestonedIssueAssigneeType2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssuesDemilestonedIssueAssigneeType2>

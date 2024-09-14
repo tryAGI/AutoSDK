@@ -25,7 +25,7 @@ namespace G
         /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ActionsUpdateOrgVariableRequestVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ActionsUpdateOrgVariableRequestVisibilityJsonConverter))]
         public global::G.ActionsUpdateOrgVariableRequestVisibility? Visibility { get; set; }
 
         /// <summary>

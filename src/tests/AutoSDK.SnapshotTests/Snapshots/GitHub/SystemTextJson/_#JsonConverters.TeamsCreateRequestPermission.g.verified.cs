@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsCreateRequestPermission.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsCreateRequestPermissionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsCreateRequestPermission>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExtensionTransactionProductDataCostType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExtensionTransactionProductDataCostTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExtensionTransactionProductDataCostType>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType>

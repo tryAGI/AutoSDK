@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RedactedAudioStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RedactedAudioStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RedactedAudioStatus>

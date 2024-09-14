@@ -21,7 +21,7 @@ namespace G
         /// Default Value: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssuesCreateMilestoneRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesCreateMilestoneRequestStateJsonConverter))]
         public global::G.IssuesCreateMilestoneRequestState? State { get; set; } = global::G.IssuesCreateMilestoneRequestState.Open;
 
         /// <summary>

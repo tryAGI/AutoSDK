@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FileResponseFileTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FileResponseFileTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FileResponseFileType?>

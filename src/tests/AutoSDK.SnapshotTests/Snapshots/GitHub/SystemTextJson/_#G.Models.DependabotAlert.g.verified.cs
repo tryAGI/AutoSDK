@@ -20,7 +20,7 @@ namespace G
         /// The state of the Dependabot alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotAlertStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependabotAlertState State { get; set; }
 
@@ -91,7 +91,7 @@ namespace G
         /// The reason that the alert was dismissed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotAlertDismissedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependabotAlertDismissedReason? DismissedReason { get; set; }
 

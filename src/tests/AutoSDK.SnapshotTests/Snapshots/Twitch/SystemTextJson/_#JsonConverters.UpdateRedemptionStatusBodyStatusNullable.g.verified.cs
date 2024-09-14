@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateRedemptionStatusBodyStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateRedemptionStatusBodyStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateRedemptionStatusBodyStatus?>

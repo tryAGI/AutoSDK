@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListAuditLogsResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListAuditLogsResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListAuditLogsResponseObject?>

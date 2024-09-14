@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AuthenticationTokenRepositorySelection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AuthenticationTokenRepositorySelectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AuthenticationTokenRepositorySelection>

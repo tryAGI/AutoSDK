@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookIssuesDemilestonedIssuePerformedViaGithubAppEventNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookIssuesDemilestonedIssuePerformedViaGithubAppEventNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent?>

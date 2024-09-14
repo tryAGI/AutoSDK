@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DiscussionAnswerChosenByType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DiscussionAnswerChosenByTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DiscussionAnswerChosenByType>

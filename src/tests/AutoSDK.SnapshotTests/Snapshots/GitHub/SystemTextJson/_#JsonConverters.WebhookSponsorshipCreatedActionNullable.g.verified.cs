@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookSponsorshipCreatedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookSponsorshipCreatedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookSponsorshipCreatedAction?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExtensionSubscriptionsSupportLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExtensionSubscriptionsSupportLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExtensionSubscriptionsSupportLevel?>

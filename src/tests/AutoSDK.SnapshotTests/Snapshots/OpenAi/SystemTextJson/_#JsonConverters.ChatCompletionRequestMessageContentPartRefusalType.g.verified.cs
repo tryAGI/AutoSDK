@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionRequestMessageContentPartRefusalType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionRequestMessageContentPartRefusalTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionRequestMessageContentPartRefusalType>

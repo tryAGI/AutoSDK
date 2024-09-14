@@ -13,7 +13,7 @@ namespace G
         /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("build_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReposCreatePagesSiteRequestBuildTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreatePagesSiteRequestBuildTypeJsonConverter))]
         public global::G.ReposCreatePagesSiteRequestBuildType? BuildType { get; set; }
 
         /// <summary>

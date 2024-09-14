@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FineTuningJobCheckpointObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FineTuningJobCheckpointObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FineTuningJobCheckpointObject>

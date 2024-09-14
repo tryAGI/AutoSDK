@@ -13,7 +13,7 @@ namespace G
         /// `owner` or `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectUserUpdateRequestRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectUserUpdateRequestRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ProjectUserUpdateRequestRole Role { get; set; }
 

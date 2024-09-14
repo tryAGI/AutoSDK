@@ -13,7 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReactionsCreateForTeamDiscussionCommentInOrgRequestContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReactionsCreateForTeamDiscussionCommentInOrgRequestContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequestContent Content { get; set; }
 

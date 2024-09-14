@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DurationUnit.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DurationUnitJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DurationUnit>

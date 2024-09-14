@@ -14,7 +14,7 @@ namespace G
         /// Default Value: object
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ToolParametersTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolParametersTypeJsonConverter))]
         public global::G.ToolParametersType? Type { get; set; } = global::G.ToolParametersType.Object;
 
         /// <summary>

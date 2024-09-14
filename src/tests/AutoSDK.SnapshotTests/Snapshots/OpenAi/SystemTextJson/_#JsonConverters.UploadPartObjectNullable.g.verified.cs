@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UploadPartObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UploadPartObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UploadPartObject?>

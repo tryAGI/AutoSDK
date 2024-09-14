@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SimpleClassroomAssignmentTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SimpleClassroomAssignmentTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SimpleClassroomAssignmentType?>

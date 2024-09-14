@@ -21,7 +21,7 @@ namespace G
         /// Default Value: /
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReposCreatePagesSiteRequestSourcePathJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreatePagesSiteRequestSourcePathJsonConverter))]
         public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; } = global::G.ReposCreatePagesSiteRequestSourcePath.x;
 
         /// <summary>

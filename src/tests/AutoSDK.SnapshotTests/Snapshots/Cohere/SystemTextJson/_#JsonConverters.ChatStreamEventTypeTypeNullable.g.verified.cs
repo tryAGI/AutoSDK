@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatStreamEventTypeTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatStreamEventTypeTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatStreamEventTypeType?>

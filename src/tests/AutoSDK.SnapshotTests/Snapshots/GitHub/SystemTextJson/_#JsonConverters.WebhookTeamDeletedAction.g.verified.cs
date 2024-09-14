@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookTeamDeletedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookTeamDeletedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookTeamDeletedAction>

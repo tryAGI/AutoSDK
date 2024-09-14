@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestDequeuedPullRequestUserTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestDequeuedPullRequestUserTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestDequeuedPullRequestUserType?>

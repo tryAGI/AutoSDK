@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ModifyChannelInformationBodyContentClassificationLabelIdNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ModifyChannelInformationBodyContentClassificationLabelIdNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ModifyChannelInformationBodyContentClassificationLabelId?>

@@ -96,8 +96,7 @@ public class SchemaContext
                         Type = Models.TypeData.Default with
                         {
                             CSharpType = PropertyData.Value.IsRequired ? "string" : "string?",
-                            JsonSerializerType = Settings.JsonSerializerType,
-                            GenerateJsonSerializerContextTypes = Settings.GenerateJsonSerializerContextTypes,
+                            Settings = Settings,
                         },
                         Settings = Settings,
                     }

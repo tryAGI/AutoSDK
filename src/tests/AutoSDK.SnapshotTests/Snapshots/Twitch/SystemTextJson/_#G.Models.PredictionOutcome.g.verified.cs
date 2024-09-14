@@ -53,7 +53,7 @@ namespace G
         /// If the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PredictionOutcomeColorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PredictionOutcomeColorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PredictionOutcomeColor Color { get; set; }
 

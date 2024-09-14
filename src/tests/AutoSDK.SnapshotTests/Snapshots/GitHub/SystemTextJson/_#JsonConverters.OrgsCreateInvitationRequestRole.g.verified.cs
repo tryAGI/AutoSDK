@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsCreateInvitationRequestRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsCreateInvitationRequestRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsCreateInvitationRequestRole>

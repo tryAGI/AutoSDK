@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateTranscriptionRequestModel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateTranscriptionRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateTranscriptionRequestModel>

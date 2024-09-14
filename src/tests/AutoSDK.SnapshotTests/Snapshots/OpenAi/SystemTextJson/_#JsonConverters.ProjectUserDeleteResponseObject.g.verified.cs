@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectUserDeleteResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectUserDeleteResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectUserDeleteResponseObject>

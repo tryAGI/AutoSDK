@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateUserChatColorColorNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateUserChatColorColorNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateUserChatColorColor?>

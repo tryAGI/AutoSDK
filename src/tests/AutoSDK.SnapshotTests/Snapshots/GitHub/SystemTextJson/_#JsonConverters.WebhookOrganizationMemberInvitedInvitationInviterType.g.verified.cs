@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookOrganizationMemberInvitedInvitationInviterType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookOrganizationMemberInvitedInvitationInviterTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookOrganizationMemberInvitedInvitationInviterType>

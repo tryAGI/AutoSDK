@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunObjectIncompleteDetailsReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunObjectIncompleteDetailsReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunObjectIncompleteDetailsReason>

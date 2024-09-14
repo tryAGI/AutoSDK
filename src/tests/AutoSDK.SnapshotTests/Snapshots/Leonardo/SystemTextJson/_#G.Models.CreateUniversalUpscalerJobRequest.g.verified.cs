@@ -32,7 +32,7 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upscalerStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UniversalUpscalerStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UniversalUpscalerStyleJsonConverter))]
         public global::G.UniversalUpscalerStyle? UpscalerStyle { get; set; } = global::G.UniversalUpscalerStyle.GENERAL;
 
         /// <summary>

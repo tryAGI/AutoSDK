@@ -31,7 +31,7 @@ namespace G
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.BaseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.BaseType BaseType { get; set; }
 
@@ -43,7 +43,7 @@ namespace G
         /// Default Value: STRATEGY_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StrategyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StrategyJsonConverter))]
         public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.STRATEGYUNSPECIFIED;
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateSpeechRequestModel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateSpeechRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateSpeechRequestModel>

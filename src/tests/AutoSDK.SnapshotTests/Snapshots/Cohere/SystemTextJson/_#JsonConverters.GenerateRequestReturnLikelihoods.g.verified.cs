@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GenerateRequestReturnLikelihoods.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GenerateRequestReturnLikelihoodsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GenerateRequestReturnLikelihoods>

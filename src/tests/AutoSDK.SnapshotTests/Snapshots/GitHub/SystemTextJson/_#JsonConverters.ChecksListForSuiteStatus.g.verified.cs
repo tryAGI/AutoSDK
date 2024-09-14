@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChecksListForSuiteStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChecksListForSuiteStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChecksListForSuiteStatus>

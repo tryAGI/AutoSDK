@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookCommitCommentCreatedCommentAuthorAssociation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookCommitCommentCreatedCommentAuthorAssociationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookCommitCommentCreatedCommentAuthorAssociation>

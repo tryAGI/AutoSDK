@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility?>

@@ -13,7 +13,7 @@ namespace G
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
         public global::G.VectorStoreExpirationAfterAnchor Anchor { get; set; }
 
         /// <summary>

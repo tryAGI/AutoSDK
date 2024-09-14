@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SearchCodeSort.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SearchCodeSortJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SearchCodeSort>

@@ -20,7 +20,7 @@ namespace G
         /// The result of the completed check run. This value will be `null` until the check run has completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookDeploymentStatusCreatedCheckRunConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentStatusCreatedCheckRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
 
@@ -84,7 +84,7 @@ namespace G
         /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookDeploymentStatusCreatedCheckRunStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentStatusCreatedCheckRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookDeploymentStatusCreatedCheckRunStatus Status { get; set; }
 

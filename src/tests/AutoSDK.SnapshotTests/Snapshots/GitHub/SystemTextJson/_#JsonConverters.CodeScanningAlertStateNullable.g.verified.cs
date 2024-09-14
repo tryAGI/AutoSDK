@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningAlertStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningAlertStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningAlertState?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksRulePullRequestReviewsEnforcementLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksRulePullRequestReviewsEnforcementLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksRulePullRequestReviewsEnforcementLevel?>

@@ -64,7 +64,7 @@ namespace G
         /// The type of Git ref object created in the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCreateRefTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCreateRefTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookCreateRefType RefType { get; set; }
 

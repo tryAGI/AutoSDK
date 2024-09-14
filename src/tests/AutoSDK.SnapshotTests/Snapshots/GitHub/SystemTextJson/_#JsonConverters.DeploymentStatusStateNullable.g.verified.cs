@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DeploymentStatusStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DeploymentStatusStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeploymentStatusState?>

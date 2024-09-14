@@ -23,7 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; }
 
@@ -31,7 +31,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InstallationRepositorySelectionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InstallationRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.InstallationRepositorySelection RepositorySelection { get; set; }
 

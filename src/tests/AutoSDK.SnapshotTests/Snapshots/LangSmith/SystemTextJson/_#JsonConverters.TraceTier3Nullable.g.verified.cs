@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TraceTier3Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TraceTier3NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TraceTier3?>

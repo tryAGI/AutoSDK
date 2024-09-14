@@ -2,7 +2,7 @@
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public class ResponseFormat2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ResponseFormat2>

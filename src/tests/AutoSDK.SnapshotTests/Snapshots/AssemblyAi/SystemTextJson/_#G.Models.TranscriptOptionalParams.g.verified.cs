@@ -17,7 +17,7 @@ namespace G
         /// Default Value: en_us
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; } = "en_us";
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
         /// Default Value: best
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; } = global::G.SpeechModel2.Best;
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace G
         /// How much to boost specified words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("boost_param")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TranscriptBoostParamJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TranscriptBoostParamJsonConverter))]
         public global::G.TranscriptBoostParam? BoostParam { get; set; }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
         /// Example: mp3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_audio_quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RedactPiiAudioQualityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RedactPiiAudioQualityJsonConverter))]
         public global::G.RedactPiiAudioQuality? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace G
         /// Default Value: hash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_sub")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; } = global::G.SubstitutionPolicy.Hash;
 
         /// <summary>
@@ -247,14 +247,14 @@ namespace G
         /// The model to summarize the transcript
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummaryModelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummaryModelJsonConverter))]
         public global::G.SummaryModel? SummaryModel { get; set; }
 
         /// <summary>
         /// The type of summary
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummaryTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummaryTypeJsonConverter))]
         public global::G.SummaryType? SummaryType { get; set; }
 
         /// <summary>

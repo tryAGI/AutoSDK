@@ -132,7 +132,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
@@ -166,7 +166,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReviewCommentSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentSideJsonConverter))]
         public global::G.ReviewCommentSide? Side { get; set; } = global::G.ReviewCommentSide.RIGHT;
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReviewCommentStartSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentStartSideJsonConverter))]
         public global::G.ReviewCommentStartSide? StartSide { get; set; } = global::G.ReviewCommentStartSide.RIGHT;
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DependabotCreateOrUpdateOrgSecretRequestVisibilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DependabotCreateOrUpdateOrgSecretRequestVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DependabotCreateOrUpdateOrgSecretRequestVisibility?>

@@ -585,7 +585,7 @@ namespace G
         /// Example: PR_TITLE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FullRepositorySquashMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FullRepositorySquashMergeCommitTitleJsonConverter))]
         public global::G.FullRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -596,7 +596,7 @@ namespace G
         /// Example: PR_BODY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FullRepositorySquashMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FullRepositorySquashMergeCommitMessageJsonConverter))]
         public global::G.FullRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -606,7 +606,7 @@ namespace G
         /// Example: PR_TITLE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FullRepositoryMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FullRepositoryMergeCommitTitleJsonConverter))]
         public global::G.FullRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -617,7 +617,7 @@ namespace G
         /// Example: PR_BODY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FullRepositoryMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FullRepositoryMergeCommitMessageJsonConverter))]
         public global::G.FullRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

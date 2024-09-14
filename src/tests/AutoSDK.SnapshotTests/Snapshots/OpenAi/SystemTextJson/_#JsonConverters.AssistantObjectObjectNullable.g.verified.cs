@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AssistantObjectObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AssistantObjectObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AssistantObjectObject?>

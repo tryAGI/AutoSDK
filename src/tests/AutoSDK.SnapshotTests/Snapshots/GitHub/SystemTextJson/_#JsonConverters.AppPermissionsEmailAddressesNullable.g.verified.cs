@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsEmailAddressesNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsEmailAddressesNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsEmailAddresses?>

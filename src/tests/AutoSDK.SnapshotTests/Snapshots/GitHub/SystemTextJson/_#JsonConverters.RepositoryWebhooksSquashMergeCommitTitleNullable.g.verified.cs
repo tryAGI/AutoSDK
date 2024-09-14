@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryWebhooksSquashMergeCommitTitleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryWebhooksSquashMergeCommitTitleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryWebhooksSquashMergeCommitTitle?>

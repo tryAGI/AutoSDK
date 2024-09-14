@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookStatusCommitAuthorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookStatusCommitAuthorTypeJsonConverter))]
         public global::G.WebhookStatusCommitAuthorType? Type { get; set; }
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace G
         /// The object type, which is always "embedding".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbeddingObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingObjectJsonConverter))]
         public global::G.EmbeddingObject Object { get; set; }
 
         /// <summary>

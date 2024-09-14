@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AssistantToolsFileSearchTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AssistantToolsFileSearchTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AssistantToolsFileSearchType?>

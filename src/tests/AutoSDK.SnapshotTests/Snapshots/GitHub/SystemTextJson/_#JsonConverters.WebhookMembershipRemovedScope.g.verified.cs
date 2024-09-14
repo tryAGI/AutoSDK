@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookMembershipRemovedScope.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookMembershipRemovedScopeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookMembershipRemovedScope>

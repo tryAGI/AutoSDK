@@ -35,7 +35,7 @@ namespace G
         /// Example: heart
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReactionContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReactionContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ReactionContent Content { get; set; }
 

@@ -36,7 +36,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestWebhookVariant2MergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestWebhookVariant2MergeCommitMessageJsonConverter))]
         public global::G.PullRequestWebhookVariant2MergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestWebhookVariant2MergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestWebhookVariant2MergeCommitTitleJsonConverter))]
         public global::G.PullRequestWebhookVariant2MergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestWebhookVariant2SquashMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestWebhookVariant2SquashMergeCommitMessageJsonConverter))]
         public global::G.PullRequestWebhookVariant2SquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestWebhookVariant2SquashMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestWebhookVariant2SquashMergeCommitTitleJsonConverter))]
         public global::G.PullRequestWebhookVariant2SquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>

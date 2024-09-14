@@ -22,7 +22,7 @@ namespace G
         /// * bits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ExtensionTransactionProductDataCostTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExtensionTransactionProductDataCostTypeJsonConverter))]
         public global::G.ExtensionTransactionProductDataCostType Type { get; set; }
 
         /// <summary>

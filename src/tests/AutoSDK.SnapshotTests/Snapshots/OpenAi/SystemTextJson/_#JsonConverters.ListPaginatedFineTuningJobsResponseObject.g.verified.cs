@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListPaginatedFineTuningJobsResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListPaginatedFineTuningJobsResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListPaginatedFineTuningJobsResponseObject>

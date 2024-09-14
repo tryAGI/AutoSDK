@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FineTuneEventLevel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FineTuneEventLevelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FineTuneEventLevel>

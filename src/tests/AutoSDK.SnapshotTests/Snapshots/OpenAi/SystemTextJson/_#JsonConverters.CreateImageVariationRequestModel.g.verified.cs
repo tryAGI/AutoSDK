@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateImageVariationRequestModel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateImageVariationRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateImageVariationRequestModel>

@@ -20,7 +20,7 @@ namespace G
         /// The object type, which is always `thread.run.step.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
         public global::G.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>

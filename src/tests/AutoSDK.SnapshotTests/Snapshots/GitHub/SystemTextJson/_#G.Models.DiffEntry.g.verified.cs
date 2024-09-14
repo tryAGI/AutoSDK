@@ -27,7 +27,7 @@ namespace G
         /// Example: added
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DiffEntryStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiffEntryStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DiffEntryStatus Status { get; set; }
 

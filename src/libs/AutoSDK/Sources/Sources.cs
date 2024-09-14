@@ -114,8 +114,8 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (types.IsEmpty ||
-            !types[0].GenerateJsonSerializerContextTypes ||
-            types[0].JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            !types[0].Settings.GenerateJsonSerializerContextTypes ||
+            types[0].Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }

@@ -15,7 +15,7 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
         public global::G.MessageDeltaObjectDeltaRole? Role { get; set; }
 
         /// <summary>

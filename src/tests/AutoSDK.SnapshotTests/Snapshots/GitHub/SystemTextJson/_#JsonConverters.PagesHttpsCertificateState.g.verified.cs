@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PagesHttpsCertificateState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PagesHttpsCertificateStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PagesHttpsCertificateState>

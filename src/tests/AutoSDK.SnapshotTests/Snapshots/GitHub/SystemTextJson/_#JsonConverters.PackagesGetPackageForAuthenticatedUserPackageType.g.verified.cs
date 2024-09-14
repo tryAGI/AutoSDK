@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PackagesGetPackageForAuthenticatedUserPackageType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PackagesGetPackageForAuthenticatedUserPackageTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PackagesGetPackageForAuthenticatedUserPackageType>

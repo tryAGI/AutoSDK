@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFromJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFromJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom From { get; set; }
 

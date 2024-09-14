@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SecretScanningListAlertsForEnterpriseSortNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SecretScanningListAlertsForEnterpriseSortNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SecretScanningListAlertsForEnterpriseSort?>

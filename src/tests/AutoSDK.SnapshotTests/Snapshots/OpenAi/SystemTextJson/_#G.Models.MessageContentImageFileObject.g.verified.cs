@@ -13,7 +13,7 @@ namespace G
         /// Always `image_file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
         public global::G.MessageContentImageFileObjectType Type { get; set; }
 
         /// <summary>

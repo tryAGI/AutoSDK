@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssueCommentDeletedIssueVariant1ActiveLockReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentDeletedIssueVariant1ActiveLockReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookIssueCommentDeletedIssueVariant1ActiveLockReason? ActiveLockReason { get; set; }
 
@@ -34,7 +34,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssueCommentDeletedIssueVariant1AuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentDeletedIssueVariant1AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookIssueCommentDeletedIssueVariant1AuthorAssociation AuthorAssociation { get; set; }
 
@@ -170,7 +170,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssueCommentDeletedIssueVariant1StateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentDeletedIssueVariant1StateJsonConverter))]
         public global::G.WebhookIssueCommentDeletedIssueVariant1State? State { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace G
         /// Type indicating whether the init image is uploaded or generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("initImageType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ControlnetInputInitImageTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ControlnetInputInitImageTypeJsonConverter))]
         public global::G.ControlnetInputInitImageType? InitImageType { get; set; }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace G
         /// Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strengthType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ControlnetInputStrengthTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ControlnetInputStrengthTypeJsonConverter))]
         public global::G.ControlnetInputStrengthType? StrengthType { get; set; }
 
         /// <summary>

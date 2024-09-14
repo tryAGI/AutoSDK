@@ -66,7 +66,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("make_latest")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReposCreateReleaseRequestMakeLatestJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreateReleaseRequestMakeLatestJsonConverter))]
         public global::G.ReposCreateReleaseRequestMakeLatest? MakeLatest { get; set; } = global::G.ReposCreateReleaseRequestMakeLatest.True;
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsCreateReviewRequestEvent.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsCreateReviewRequestEventJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsCreateReviewRequestEvent>

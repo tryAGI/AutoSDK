@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DropsEntitlementUpdatedStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DropsEntitlementUpdatedStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DropsEntitlementUpdatedStatus>

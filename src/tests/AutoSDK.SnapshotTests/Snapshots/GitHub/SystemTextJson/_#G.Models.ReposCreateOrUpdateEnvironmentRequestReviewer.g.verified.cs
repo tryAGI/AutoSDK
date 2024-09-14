@@ -14,7 +14,7 @@ namespace G
         /// Example: User
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DeploymentReviewerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentReviewerTypeJsonConverter))]
         public global::G.DeploymentReviewerType? Type { get; set; }
 
         /// <summary>

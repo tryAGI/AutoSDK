@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksIssueActiveLockReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksIssueActiveLockReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksIssueActiveLockReason?>

@@ -30,7 +30,7 @@ namespace G
         /// * DENY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ManageHeldAutoModMessagesBodyActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ManageHeldAutoModMessagesBodyActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ManageHeldAutoModMessagesBodyAction Action { get; set; }
 

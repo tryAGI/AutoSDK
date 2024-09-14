@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.IssuesLockRequestLockReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class IssuesLockRequestLockReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.IssuesLockRequestLockReason?>

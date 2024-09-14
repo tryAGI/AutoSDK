@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateDropsEntitlementsBodyFulfillmentStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateDropsEntitlementsBodyFulfillmentStatus?>

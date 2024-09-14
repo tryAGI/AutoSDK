@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PredictionStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PredictionStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PredictionStatus>

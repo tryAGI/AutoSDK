@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepDeltaObjectObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepDeltaObjectObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepDeltaObjectObject>

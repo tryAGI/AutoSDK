@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SessionSortableColumns.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SessionSortableColumnsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SessionSortableColumns>

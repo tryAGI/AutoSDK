@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookSecretScanningAlertReopenedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookSecretScanningAlertReopenedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookSecretScanningAlertReopenedAction?>

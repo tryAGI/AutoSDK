@@ -13,7 +13,7 @@ namespace G
         /// The type of tool being defined: `function`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
         public global::G.AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>

@@ -90,7 +90,7 @@ namespace G
         /// * INVALID — Something went wrong while determining the state.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PollStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PollStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PollStatus Status { get; set; }
 

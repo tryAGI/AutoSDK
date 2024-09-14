@@ -13,7 +13,7 @@ namespace G
         /// The action that was performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesUnassignedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesUnassignedActionJsonConverter))]
         public global::G.WebhookIssuesUnassignedAction Action { get; set; }
 
         /// <summary>

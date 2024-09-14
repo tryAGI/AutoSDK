@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.BlockUserReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class BlockUserReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.BlockUserReason?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodespaceWithFullRepositoryStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodespaceWithFullRepositoryStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodespaceWithFullRepositoryState?>

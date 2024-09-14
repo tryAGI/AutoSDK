@@ -16,7 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EventSubSubscriptionTransportMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionTransportMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EventSubSubscriptionTransportMethod Method { get; set; }
 

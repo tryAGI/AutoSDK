@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookForkForkeeVariant1Visibility.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookForkForkeeVariant1VisibilityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookForkForkeeVariant1Visibility>

@@ -13,7 +13,7 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
         public global::G.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>

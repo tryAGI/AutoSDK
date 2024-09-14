@@ -142,7 +142,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssueCommentCreatedIssueVariant2StateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentCreatedIssueVariant2StateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookIssueCommentCreatedIssueVariant2State State { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateImageRequestStyleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateImageRequestStyleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateImageRequestStyle?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.IssuesCreateMilestoneRequestStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class IssuesCreateMilestoneRequestStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.IssuesCreateMilestoneRequestState?>

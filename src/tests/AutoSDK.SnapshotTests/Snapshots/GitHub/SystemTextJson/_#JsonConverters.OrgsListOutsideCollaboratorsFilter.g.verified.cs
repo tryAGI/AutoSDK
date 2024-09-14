@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsListOutsideCollaboratorsFilter.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsListOutsideCollaboratorsFilterJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsListOutsideCollaboratorsFilter>

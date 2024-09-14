@@ -14,7 +14,7 @@ namespace G
         /// Either success, or unavailable in the rare case that the model failed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AudioIntelligenceModelStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AudioIntelligenceModelStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AudioIntelligenceModelStatus Status { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType?>

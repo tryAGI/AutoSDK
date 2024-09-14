@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EmbedJobTruncateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EmbedJobTruncateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EmbedJobTruncate?>

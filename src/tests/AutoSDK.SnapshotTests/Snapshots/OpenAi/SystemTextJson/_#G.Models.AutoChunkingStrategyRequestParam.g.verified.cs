@@ -13,7 +13,7 @@ namespace G
         /// Always `auto`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
         public global::G.AutoChunkingStrategyRequestParamType Type { get; set; }
 
         /// <summary>

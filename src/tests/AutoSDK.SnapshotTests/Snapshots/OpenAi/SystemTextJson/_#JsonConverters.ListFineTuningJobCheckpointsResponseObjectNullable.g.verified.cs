@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListFineTuningJobCheckpointsResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListFineTuningJobCheckpointsResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListFineTuningJobCheckpointsResponseObject?>

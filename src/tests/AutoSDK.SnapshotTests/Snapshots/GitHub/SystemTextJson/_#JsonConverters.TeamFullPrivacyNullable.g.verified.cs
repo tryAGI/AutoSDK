@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamFullPrivacyNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamFullPrivacyNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamFullPrivacy?>

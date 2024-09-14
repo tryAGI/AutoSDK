@@ -22,7 +22,7 @@ namespace G
         /// Example: approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ActionsReviewPendingDeploymentsForRunRequestState State { get; set; }
 

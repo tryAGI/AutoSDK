@@ -13,7 +13,7 @@ namespace G
         /// The type of the content part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter))]
         public global::G.MessageContentImageUrlObjectType Type { get; set; }
 
         /// <summary>

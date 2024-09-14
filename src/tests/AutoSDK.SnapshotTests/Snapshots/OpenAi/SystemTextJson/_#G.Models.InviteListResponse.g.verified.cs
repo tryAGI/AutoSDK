@@ -13,7 +13,7 @@ namespace G
         /// The object type, which is always `list`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InviteListResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteListResponseObjectJsonConverter))]
         public global::G.InviteListResponseObject Object { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposListForOrgType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposListForOrgTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposListForOrgType>

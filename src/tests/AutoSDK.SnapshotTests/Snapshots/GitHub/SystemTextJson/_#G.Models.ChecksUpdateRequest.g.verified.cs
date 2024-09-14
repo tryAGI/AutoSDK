@@ -37,7 +37,7 @@ namespace G
         /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChecksUpdateRequestStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChecksUpdateRequestStatusJsonConverter))]
         public global::G.ChecksUpdateRequestStatus? Status { get; set; }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace G
         /// **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChecksUpdateRequestConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChecksUpdateRequestConclusionJsonConverter))]
         public global::G.ChecksUpdateRequestConclusion? Conclusion { get; set; }
 
         /// <summary>

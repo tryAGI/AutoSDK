@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RuleLogActionOutcomeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RuleLogActionOutcomeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RuleLogActionOutcome?>

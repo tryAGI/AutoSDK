@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesClosedIssueVariant1UserTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesClosedIssueVariant1UserTypeJsonConverter))]
         public global::G.WebhookIssuesClosedIssueVariant1UserType? Type { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PackagesGetAllPackageVersionsForPackageOwnedByUserPackageTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType>

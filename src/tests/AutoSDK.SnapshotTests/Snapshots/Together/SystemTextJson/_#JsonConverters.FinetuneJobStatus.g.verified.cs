@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FinetuneJobStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FinetuneJobStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FinetuneJobStatus>

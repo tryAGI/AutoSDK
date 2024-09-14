@@ -56,7 +56,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReleaseAssetStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReleaseAssetStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ReleaseAssetState State { get; set; }
 

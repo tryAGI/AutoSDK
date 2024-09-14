@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposGetViewsPer.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposGetViewsPerJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposGetViewsPer>

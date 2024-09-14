@@ -13,7 +13,7 @@ namespace G
         /// Always `auto`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1TypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1TypeJsonConverter))]
         public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type Type { get; set; }
 
         /// <summary>

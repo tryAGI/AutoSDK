@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksPreviousMarketplacePurchasePlanPriceModelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksPreviousMarketplacePurchasePlanPriceModelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksPreviousMarketplacePurchasePlanPriceModel?>

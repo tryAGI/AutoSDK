@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
         public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
 
         /// <summary>

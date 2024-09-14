@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookDependabotAlertAutoDismissedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDependabotAlertAutoDismissedActionJsonConverter))]
         public global::G.WebhookDependabotAlertAutoDismissedAction Action { get; set; }
 
         /// <summary>

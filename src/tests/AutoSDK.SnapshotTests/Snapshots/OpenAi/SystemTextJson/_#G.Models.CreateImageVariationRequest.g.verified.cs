@@ -31,7 +31,7 @@ namespace G
         /// Example: dall-e-2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? Model { get; set; } = global::G.CreateImageVariationRequestModel.DallE2;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace G
         /// Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
         public global::G.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateImageVariationRequestResponseFormat.Url;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace G
         /// Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
         public global::G.CreateImageVariationRequestSize? Size { get; set; } = global::G.CreateImageVariationRequestSize.x1024x1024;
 
         /// <summary>

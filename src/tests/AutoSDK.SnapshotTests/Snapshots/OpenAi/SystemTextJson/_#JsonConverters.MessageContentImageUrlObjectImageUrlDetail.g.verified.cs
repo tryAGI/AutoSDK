@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MessageContentImageUrlObjectImageUrlDetail.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageContentImageUrlObjectImageUrlDetailJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MessageContentImageUrlObjectImageUrlDetail>

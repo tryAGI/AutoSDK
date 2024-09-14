@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatRequestCitationQuality.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatRequestCitationQualityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatRequestCitationQuality>

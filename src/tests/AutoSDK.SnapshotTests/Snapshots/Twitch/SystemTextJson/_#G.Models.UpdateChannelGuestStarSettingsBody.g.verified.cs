@@ -36,7 +36,7 @@ namespace G
         /// * `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_layout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateChannelGuestStarSettingsBodyGroupLayoutJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateChannelGuestStarSettingsBodyGroupLayoutJsonConverter))]
         public global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? GroupLayout { get; set; }
 
         /// <summary>

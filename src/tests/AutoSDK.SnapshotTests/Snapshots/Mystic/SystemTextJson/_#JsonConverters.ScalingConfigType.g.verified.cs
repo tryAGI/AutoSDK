@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ScalingConfigType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ScalingConfigTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ScalingConfigType>

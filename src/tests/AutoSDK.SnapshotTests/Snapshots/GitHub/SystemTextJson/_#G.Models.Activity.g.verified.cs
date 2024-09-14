@@ -59,7 +59,7 @@ namespace G
         /// Example: force_push
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ActivityActivityTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ActivityActivityTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ActivityActivityType ActivityType { get; set; }
 

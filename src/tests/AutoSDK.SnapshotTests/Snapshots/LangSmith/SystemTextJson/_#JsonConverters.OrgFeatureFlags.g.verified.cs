@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgFeatureFlags.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgFeatureFlagsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgFeatureFlags>

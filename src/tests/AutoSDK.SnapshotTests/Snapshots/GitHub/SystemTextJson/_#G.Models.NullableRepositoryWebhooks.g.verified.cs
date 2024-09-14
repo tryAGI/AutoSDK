@@ -634,7 +634,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitTitleJsonConverter))]
         public global::G.NullableRepositoryWebhooksSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -644,7 +644,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitMessageJsonConverter))]
         public global::G.NullableRepositoryWebhooksSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -653,7 +653,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.NullableRepositoryWebhooksMergeCommitTitleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksMergeCommitTitleJsonConverter))]
         public global::G.NullableRepositoryWebhooksMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -663,7 +663,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.NullableRepositoryWebhooksMergeCommitMessageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksMergeCommitMessageJsonConverter))]
         public global::G.NullableRepositoryWebhooksMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

@@ -97,7 +97,7 @@ namespace G
         /// The state of the milestone.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesTransferredChangesNewIssueMilestoneStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueMilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookIssuesTransferredChangesNewIssueMilestoneState State { get; set; }
 

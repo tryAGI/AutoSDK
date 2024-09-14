@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.StreamType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class StreamTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.StreamType>

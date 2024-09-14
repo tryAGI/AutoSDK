@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksAlertDismisserType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksAlertDismisserTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksAlertDismisserType>

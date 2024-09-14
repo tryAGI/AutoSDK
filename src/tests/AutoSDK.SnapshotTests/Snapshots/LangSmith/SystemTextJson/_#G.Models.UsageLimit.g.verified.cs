@@ -13,7 +13,7 @@ namespace G
         /// Type of usage limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UsageLimitType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UsageLimitType2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UsageLimitType2 LimitType { get; set; }
 

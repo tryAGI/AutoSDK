@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PackagesDeletePackageVersionForUserPackageTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PackagesDeletePackageVersionForUserPackageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PackagesDeletePackageVersionForUserPackageType?>

@@ -13,14 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookMergeGroupDestroyedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookMergeGroupDestroyedActionJsonConverter))]
         public global::G.WebhookMergeGroupDestroyedAction Action { get; set; }
 
         /// <summary>
         /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookMergeGroupDestroyedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookMergeGroupDestroyedReasonJsonConverter))]
         public global::G.WebhookMergeGroupDestroyedReason? Reason { get; set; }
 
         /// <summary>

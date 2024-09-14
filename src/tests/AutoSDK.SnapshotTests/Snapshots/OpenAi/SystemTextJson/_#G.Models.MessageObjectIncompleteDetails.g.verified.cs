@@ -13,7 +13,7 @@ namespace G
         /// The reason the message is incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageObjectIncompleteDetailsReason Reason { get; set; }
 

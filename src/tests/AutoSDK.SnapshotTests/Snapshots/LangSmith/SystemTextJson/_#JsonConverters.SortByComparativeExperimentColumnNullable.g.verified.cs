@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SortByComparativeExperimentColumnNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SortByComparativeExperimentColumnNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SortByComparativeExperimentColumn?>

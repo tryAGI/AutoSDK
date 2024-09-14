@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionNamedToolChoiceType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionNamedToolChoiceTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionNamedToolChoiceType>

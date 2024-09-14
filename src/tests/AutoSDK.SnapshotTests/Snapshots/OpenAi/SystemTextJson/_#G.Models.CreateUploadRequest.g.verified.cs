@@ -21,7 +21,7 @@ namespace G
         /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CreateUploadRequestPurpose Purpose { get; set; }
 

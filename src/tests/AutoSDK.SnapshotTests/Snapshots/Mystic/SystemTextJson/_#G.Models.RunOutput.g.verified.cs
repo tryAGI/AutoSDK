@@ -13,7 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunIOTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunIOTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RunIOType Type { get; set; }
 

@@ -30,7 +30,7 @@ namespace G
         /// Default Value: direct_member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsCreateInvitationRequestRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateInvitationRequestRoleJsonConverter))]
         public global::G.OrgsCreateInvitationRequestRole? Role { get; set; } = global::G.OrgsCreateInvitationRequestRole.DirectMember;
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace G
         /// The type of identifier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GlobalAdvisoryIdentifierTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryIdentifierTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.GlobalAdvisoryIdentifierType Type { get; set; }
 

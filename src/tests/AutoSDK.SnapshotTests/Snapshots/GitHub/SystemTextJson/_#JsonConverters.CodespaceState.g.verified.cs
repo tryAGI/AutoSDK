@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodespaceState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodespaceStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodespaceState>

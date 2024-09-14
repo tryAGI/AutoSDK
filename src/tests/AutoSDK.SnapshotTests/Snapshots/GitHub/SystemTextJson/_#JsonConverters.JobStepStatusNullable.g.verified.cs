@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.JobStepStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class JobStepStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.JobStepStatus?>

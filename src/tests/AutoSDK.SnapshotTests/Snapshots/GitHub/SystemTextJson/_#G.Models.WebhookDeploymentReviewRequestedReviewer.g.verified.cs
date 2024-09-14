@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookDeploymentReviewRequestedReviewerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentReviewRequestedReviewerTypeJsonConverter))]
         public global::G.WebhookDeploymentReviewRequestedReviewerType? Type { get; set; }
 
         /// <summary>

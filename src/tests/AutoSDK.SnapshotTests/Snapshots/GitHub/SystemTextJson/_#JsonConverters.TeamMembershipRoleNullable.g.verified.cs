@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamMembershipRoleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamMembershipRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamMembershipRole?>

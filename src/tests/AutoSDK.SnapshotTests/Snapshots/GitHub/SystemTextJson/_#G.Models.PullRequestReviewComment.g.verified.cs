@@ -144,7 +144,7 @@ namespace G
         /// Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuthorAssociation AuthorAssociation { get; set; }
 
@@ -174,7 +174,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestReviewCommentStartSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentStartSideJsonConverter))]
         public global::G.PullRequestReviewCommentStartSide? StartSide { get; set; } = global::G.PullRequestReviewCommentStartSide.RIGHT;
 
         /// <summary>
@@ -196,14 +196,14 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestReviewCommentSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentSideJsonConverter))]
         public global::G.PullRequestReviewCommentSide? Side { get; set; } = global::G.PullRequestReviewCommentSide.RIGHT;
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestReviewCommentSubjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentSubjectTypeJsonConverter))]
         public global::G.PullRequestReviewCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>

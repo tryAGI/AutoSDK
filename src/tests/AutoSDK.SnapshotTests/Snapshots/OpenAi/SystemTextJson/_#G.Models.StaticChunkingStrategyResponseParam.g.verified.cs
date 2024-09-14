@@ -13,7 +13,7 @@ namespace G
         /// Always `static`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter))]
         public global::G.StaticChunkingStrategyResponseParamType Type { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DependencyGraphDiffItemChangeType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DependencyGraphDiffItemChangeTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DependencyGraphDiffItemChangeType>

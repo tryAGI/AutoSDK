@@ -20,7 +20,7 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.SecurityAdvisoryCreditTypes Type { get; set; }
 
@@ -28,7 +28,7 @@ namespace G
         /// The state of the user's acceptance of the credit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryAdvisoryCreditStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryCreditStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryAdvisoryCreditState State { get; set; }
 

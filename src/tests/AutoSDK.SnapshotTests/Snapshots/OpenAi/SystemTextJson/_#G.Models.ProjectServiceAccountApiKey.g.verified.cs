@@ -13,7 +13,7 @@ namespace G
         /// The object type, which is always `organization.project.service_account.api_key`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
         public global::G.ProjectServiceAccountApiKeyObject Object { get; set; }
 
         /// <summary>

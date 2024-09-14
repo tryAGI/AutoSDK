@@ -15,7 +15,7 @@ namespace G
         /// Default Value: pagerduty
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.RunRulesAlertType?, object>? Type { get; set; } = global::G.RunRulesAlertType.Pagerduty;
 
         /// <summary>
@@ -29,14 +29,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<string, object>? Summary { get; set; }
 
         /// <summary>
         /// Default Value: warning
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.PagerdutySeverity?, object>? Severity { get; set; } = global::G.PagerdutySeverity.Warning;
 
         /// <summary>

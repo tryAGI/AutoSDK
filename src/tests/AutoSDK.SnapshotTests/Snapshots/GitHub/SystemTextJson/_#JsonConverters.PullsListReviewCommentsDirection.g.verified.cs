@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsListReviewCommentsDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsListReviewCommentsDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsListReviewCommentsDirection>

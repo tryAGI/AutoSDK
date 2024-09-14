@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CheckRunConclusion.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CheckRunConclusionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CheckRunConclusion>

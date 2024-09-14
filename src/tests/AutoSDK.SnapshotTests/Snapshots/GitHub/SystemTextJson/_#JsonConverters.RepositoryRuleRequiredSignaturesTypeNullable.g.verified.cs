@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleRequiredSignaturesTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleRequiredSignaturesTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleRequiredSignaturesType?>

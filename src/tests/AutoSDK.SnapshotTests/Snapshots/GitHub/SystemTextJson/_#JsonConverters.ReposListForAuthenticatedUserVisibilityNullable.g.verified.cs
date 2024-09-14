@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposListForAuthenticatedUserVisibilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposListForAuthenticatedUserVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposListForAuthenticatedUserVisibility?>

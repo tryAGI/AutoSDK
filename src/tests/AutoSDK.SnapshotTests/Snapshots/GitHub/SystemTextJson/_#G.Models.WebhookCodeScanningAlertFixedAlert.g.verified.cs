@@ -34,7 +34,7 @@ namespace G
         /// The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCodeScanningAlertFixedAlertDismissedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertFixedAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? DismissedReason { get; set; }
 
@@ -75,7 +75,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCodeScanningAlertFixedAlertStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertFixedAlertStateJsonConverter))]
         public global::G.WebhookCodeScanningAlertFixedAlertState State { get; set; }
 
         /// <summary>

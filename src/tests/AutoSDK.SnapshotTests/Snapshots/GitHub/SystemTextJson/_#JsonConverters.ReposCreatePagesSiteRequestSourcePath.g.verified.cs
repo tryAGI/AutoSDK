@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreatePagesSiteRequestSourcePath.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreatePagesSiteRequestSourcePathJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreatePagesSiteRequestSourcePath>

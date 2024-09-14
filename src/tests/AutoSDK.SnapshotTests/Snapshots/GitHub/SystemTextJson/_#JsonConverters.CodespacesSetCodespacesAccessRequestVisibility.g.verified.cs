@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodespacesSetCodespacesAccessRequestVisibility.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodespacesSetCodespacesAccessRequestVisibilityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodespacesSetCodespacesAccessRequestVisibility>

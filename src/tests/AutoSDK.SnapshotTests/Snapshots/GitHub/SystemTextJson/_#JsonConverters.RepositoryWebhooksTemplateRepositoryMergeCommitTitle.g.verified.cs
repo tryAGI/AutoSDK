@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryWebhooksTemplateRepositoryMergeCommitTitle.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryWebhooksTemplateRepositoryMergeCommitTitleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryWebhooksTemplateRepositoryMergeCommitTitle>

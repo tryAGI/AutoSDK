@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MissingMissing1Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MissingMissing1NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MissingMissing1?>

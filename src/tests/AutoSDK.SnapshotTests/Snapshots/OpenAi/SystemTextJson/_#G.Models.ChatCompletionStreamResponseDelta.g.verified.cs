@@ -32,7 +32,7 @@ namespace G
         /// The role of the author of this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter))]
         public global::G.ChatCompletionStreamResponseDeltaRole? Role { get; set; }
 
         /// <summary>

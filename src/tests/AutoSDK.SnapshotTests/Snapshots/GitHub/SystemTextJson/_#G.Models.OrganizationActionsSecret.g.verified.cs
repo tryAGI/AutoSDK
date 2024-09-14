@@ -35,7 +35,7 @@ namespace G
         /// Visibility of a secret
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrganizationActionsSecretVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrganizationActionsSecretVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrganizationActionsSecretVisibility Visibility { get; set; }
 

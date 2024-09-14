@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
 

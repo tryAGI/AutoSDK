@@ -19,7 +19,7 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         public global::G.SecurityAdvisoryCreditTypes? Type { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PredictionOutcomeColorNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PredictionOutcomeColorNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PredictionOutcomeColor?>

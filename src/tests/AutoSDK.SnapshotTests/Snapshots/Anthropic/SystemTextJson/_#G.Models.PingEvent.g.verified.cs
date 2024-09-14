@@ -13,7 +13,7 @@ namespace G
         /// The type of a streaming event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageStreamEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageStreamEventType Type { get; set; }
 

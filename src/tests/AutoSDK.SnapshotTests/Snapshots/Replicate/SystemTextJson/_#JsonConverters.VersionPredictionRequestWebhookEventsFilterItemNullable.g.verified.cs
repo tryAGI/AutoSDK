@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.VersionPredictionRequestWebhookEventsFilterItemNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class VersionPredictionRequestWebhookEventsFilterItemNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.VersionPredictionRequestWebhookEventsFilterItem?>

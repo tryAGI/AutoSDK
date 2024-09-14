@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AuthTokenType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AuthTokenTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AuthTokenType>

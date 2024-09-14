@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreateInOrgRequestVisibilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreateInOrgRequestVisibilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreateInOrgRequestVisibility?>

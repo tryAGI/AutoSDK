@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OpenAIFileObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OpenAIFileObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OpenAIFileObject?>

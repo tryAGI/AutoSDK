@@ -108,7 +108,7 @@ namespace G
         /// Example: Available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodespaceWithFullRepositoryStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespaceWithFullRepositoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodespaceWithFullRepositoryState State { get; set; }
 
@@ -131,7 +131,7 @@ namespace G
         /// Example: WestUs2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodespaceWithFullRepositoryLocationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespaceWithFullRepositoryLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodespaceWithFullRepositoryLocation Location { get; set; }
 

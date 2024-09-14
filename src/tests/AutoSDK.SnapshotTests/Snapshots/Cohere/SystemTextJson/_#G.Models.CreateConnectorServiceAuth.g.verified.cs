@@ -14,7 +14,7 @@ namespace G
         /// Default Value: noscheme
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthTokenTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthTokenTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuthTokenType Type { get; set; }
 

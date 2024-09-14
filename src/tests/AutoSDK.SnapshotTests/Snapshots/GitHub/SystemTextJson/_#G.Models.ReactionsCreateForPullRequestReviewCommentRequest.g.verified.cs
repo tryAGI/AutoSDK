@@ -13,7 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReactionsCreateForPullRequestReviewCommentRequestContentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReactionsCreateForPullRequestReviewCommentRequestContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ReactionsCreateForPullRequestReviewCommentRequestContent Content { get; set; }
 

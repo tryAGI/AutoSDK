@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2TypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type?>

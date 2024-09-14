@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionChunkChoiceDeltaRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionChunkChoiceDeltaRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionChunkChoiceDeltaRole>

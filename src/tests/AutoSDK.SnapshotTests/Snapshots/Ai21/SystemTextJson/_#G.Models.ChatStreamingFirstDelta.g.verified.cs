@@ -22,7 +22,7 @@ namespace G
         ///   charming French accent."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatStreamingFirstDeltaRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatStreamingFirstDeltaRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatStreamingFirstDeltaRole Role { get; set; }
 

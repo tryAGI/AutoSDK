@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GetExtensionConfigurationSegmentSegmentNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GetExtensionConfigurationSegmentSegmentNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GetExtensionConfigurationSegmentSegment?>

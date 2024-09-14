@@ -20,7 +20,7 @@ namespace G
         /// Always `logs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>

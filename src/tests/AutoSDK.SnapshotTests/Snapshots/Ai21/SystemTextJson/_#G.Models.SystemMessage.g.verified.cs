@@ -23,7 +23,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SystemMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SystemMessageRoleJsonConverter))]
         public global::G.SystemMessageRole? Role { get; set; } = global::G.SystemMessageRole.System;
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeItem.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MigrationsStartForAuthenticatedUserRequestExcludeItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>

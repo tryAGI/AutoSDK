@@ -14,7 +14,7 @@ namespace G
         /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuiteJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuiteJsonConverter))]
         public global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? QuerySuite { get; set; }
 
         /// <summary>

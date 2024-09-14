@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MessageContentRefusalObjectTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageContentRefusalObjectTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MessageContentRefusalObjectType?>

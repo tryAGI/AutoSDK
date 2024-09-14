@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningAlertRuleSummarySeverity.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningAlertRuleSummarySeverityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningAlertRuleSummarySeverity>

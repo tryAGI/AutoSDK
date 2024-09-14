@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsListSortNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsListSortNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsListSort?>

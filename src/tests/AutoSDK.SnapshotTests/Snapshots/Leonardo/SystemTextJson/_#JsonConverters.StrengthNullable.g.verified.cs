@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.StrengthNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class StrengthNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.Strength?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReactionsCreateForIssueCommentRequestContent.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReactionsCreateForIssueCommentRequestContentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReactionsCreateForIssueCommentRequestContent>

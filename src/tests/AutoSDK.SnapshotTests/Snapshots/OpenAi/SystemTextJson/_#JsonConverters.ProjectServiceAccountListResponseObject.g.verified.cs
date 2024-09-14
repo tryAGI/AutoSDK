@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectServiceAccountListResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectServiceAccountListResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectServiceAccountListResponseObject>

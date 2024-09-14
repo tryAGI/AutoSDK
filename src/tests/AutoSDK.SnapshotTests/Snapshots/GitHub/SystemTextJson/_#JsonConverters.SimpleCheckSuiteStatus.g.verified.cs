@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SimpleCheckSuiteStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SimpleCheckSuiteStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SimpleCheckSuiteStatus>

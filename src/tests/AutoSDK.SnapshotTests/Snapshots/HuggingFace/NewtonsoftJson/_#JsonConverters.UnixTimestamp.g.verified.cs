@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UnixTimestamp.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public class UnixTimestampJsonConverter : global::Newtonsoft.Json.JsonConverter<global::System.DateTimeOffset>

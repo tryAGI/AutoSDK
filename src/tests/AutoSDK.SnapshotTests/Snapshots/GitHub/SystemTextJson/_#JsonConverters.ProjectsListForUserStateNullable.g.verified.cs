@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectsListForUserStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectsListForUserStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectsListForUserState?>

@@ -15,7 +15,7 @@ namespace G
         /// The contents of the system message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; }
 
@@ -23,7 +23,7 @@ namespace G
         /// The role of the messages author, in this case `system`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestSystemMessageRole Role { get; set; }
 
         /// <summary>

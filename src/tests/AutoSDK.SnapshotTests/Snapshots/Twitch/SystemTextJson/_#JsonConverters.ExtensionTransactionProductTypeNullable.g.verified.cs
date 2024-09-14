@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExtensionTransactionProductTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExtensionTransactionProductTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExtensionTransactionProductType?>

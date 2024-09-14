@@ -20,7 +20,7 @@ namespace G
         /// The object type, which is always `thread.message.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
         public global::G.MessageDeltaObjectObject Object { get; set; }
 
         /// <summary>

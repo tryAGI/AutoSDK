@@ -20,7 +20,7 @@ namespace G
         /// Always `file_path`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace G
         /// The HTTP method to be used for the request. Currently only `POST` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.BatchRequestInputMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BatchRequestInputMethodJsonConverter))]
         public global::G.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>

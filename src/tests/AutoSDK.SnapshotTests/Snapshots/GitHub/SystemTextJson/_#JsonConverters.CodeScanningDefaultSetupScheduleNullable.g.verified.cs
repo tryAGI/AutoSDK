@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningDefaultSetupScheduleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningDefaultSetupScheduleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningDefaultSetupSchedule?>

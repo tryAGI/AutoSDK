@@ -13,7 +13,7 @@ namespace G
         /// The role of the messages author. Choice between: system, user, or assistant.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatCompletionRequestMessageRole Role { get; set; }
 

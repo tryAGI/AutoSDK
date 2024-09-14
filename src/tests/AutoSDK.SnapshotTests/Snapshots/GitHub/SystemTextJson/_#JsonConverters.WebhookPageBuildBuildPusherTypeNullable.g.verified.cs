@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPageBuildBuildPusherTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPageBuildBuildPusherTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPageBuildBuildPusherType?>

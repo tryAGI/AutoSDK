@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChecksCreateRequestVariant1Status.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChecksCreateRequestVariant1StatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChecksCreateRequestVariant1Status>

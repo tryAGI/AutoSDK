@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStreamEventVariant5EventNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStreamEventVariant5EventNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStreamEventVariant5Event?>

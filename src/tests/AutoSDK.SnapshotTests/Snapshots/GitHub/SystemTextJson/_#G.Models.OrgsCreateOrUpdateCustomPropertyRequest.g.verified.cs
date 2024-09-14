@@ -16,7 +16,7 @@ namespace G
         /// Example: single_select
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsCreateOrUpdateCustomPropertyRequestValueTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateOrUpdateCustomPropertyRequestValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType ValueType { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// Default value of the property
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? DefaultValue { get; set; }
 
         /// <summary>

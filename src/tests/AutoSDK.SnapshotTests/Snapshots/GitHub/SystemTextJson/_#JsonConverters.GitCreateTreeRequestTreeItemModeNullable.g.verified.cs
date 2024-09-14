@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GitCreateTreeRequestTreeItemModeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GitCreateTreeRequestTreeItemModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GitCreateTreeRequestTreeItemMode?>

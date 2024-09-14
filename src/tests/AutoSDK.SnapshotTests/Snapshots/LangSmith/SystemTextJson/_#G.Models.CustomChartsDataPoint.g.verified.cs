@@ -29,7 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<int?, double?, global::G.CustomChartsDataPointValue, object> Value { get; set; }
 

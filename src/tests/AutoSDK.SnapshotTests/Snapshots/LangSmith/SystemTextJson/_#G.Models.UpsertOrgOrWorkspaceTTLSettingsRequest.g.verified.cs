@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TraceTier3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TraceTier3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.TraceTier3 DefaultTraceTier { get; set; }
 

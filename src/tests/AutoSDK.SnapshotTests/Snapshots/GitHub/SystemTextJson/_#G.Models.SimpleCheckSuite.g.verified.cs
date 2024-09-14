@@ -31,7 +31,7 @@ namespace G
         /// Example: neutral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SimpleCheckSuiteConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SimpleCheckSuiteConclusionJsonConverter))]
         public global::G.SimpleCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace G
         /// Example: completed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SimpleCheckSuiteStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SimpleCheckSuiteStatusJsonConverter))]
         public global::G.SimpleCheckSuiteStatus? Status { get; set; }
 
         /// <summary>

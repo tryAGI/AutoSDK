@@ -28,7 +28,7 @@ namespace G
         /// * 100000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CheermoteTierIdJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheermoteTierIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CheermoteTierId Id { get; set; }
 

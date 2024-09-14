@@ -24,8 +24,7 @@ public readonly record struct TypeData(
     ImmutableArray<TypeData> SubTypes,
     string Namespace,
     bool IsDeprecated,
-    JsonSerializerType JsonSerializerType,
-    bool GenerateJsonSerializerContextTypes)
+    Settings Settings)
 {
     public static TypeData Default => new(
         CSharpType: string.Empty,
@@ -46,8 +45,7 @@ public readonly record struct TypeData(
         SubTypes: [],
         Namespace: string.Empty,
         IsDeprecated: false,
-        JsonSerializerType: JsonSerializerType.SystemTextJson,
-        GenerateJsonSerializerContextTypes: false);
+        Settings: Settings.Default);
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
@@ -66,15 +64,15 @@ public readonly record struct TypeData(
     
     public string ConverterType =>
         IsUnixTimestamp
-            ? "global::AutoSDK.JsonConverters.UnixTimestampJsonConverter"
+            ? $"global::{Settings.Namespace}.JsonConverters.UnixTimestampJsonConverter"
             : IsEnum || ((AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0) && IsComponent)
-                ? $"global::AutoSDK.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
+                ? $"global::{Settings.Namespace}.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
                 : AnyOfCount > 0
-                    ? $"global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
+                    ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
                     : OneOfCount > 0
-                        ? $"global::AutoSDK.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
+                        ? $"global::{Settings.Namespace}.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
                         : AllOfCount > 0
-                            ? $"global::AutoSDK.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
+                            ? $"global::{Settings.Namespace}.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
                             : string.Empty;
     
     public static TypeData FromSchemaContext(SchemaContext context)
@@ -175,8 +173,7 @@ public readonly record struct TypeData(
                 ? "System"
                 : context.Settings.Namespace,
             IsDeprecated: context.Schema.Deprecated,
-            JsonSerializerType: context.Settings.JsonSerializerType,
-            GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);
+            Settings: context.Settings);
     }
     
     public static bool ContextIsValueType(SchemaContext context)

@@ -39,7 +39,7 @@ namespace G
         /// * "" — Normal user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UserTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UserType Type { get; set; }
 
@@ -51,7 +51,7 @@ namespace G
         /// * "" — A normal broadcaster
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("broadcaster_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UserBroadcasterTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserBroadcasterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UserBroadcasterType BroadcasterType { get; set; }
 

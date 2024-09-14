@@ -31,14 +31,14 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertRuleSummarySeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertRuleSummarySeverityJsonConverter))]
         public global::G.CodeScanningAlertRuleSummarySeverity? Severity { get; set; }
 
         /// <summary>
         /// The security severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_severity_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertRuleSummarySecuritySeverityLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertRuleSummarySecuritySeverityLevelJsonConverter))]
         public global::G.CodeScanningAlertRuleSummarySecuritySeverityLevel? SecuritySeverityLevel { get; set; }
 
         /// <summary>

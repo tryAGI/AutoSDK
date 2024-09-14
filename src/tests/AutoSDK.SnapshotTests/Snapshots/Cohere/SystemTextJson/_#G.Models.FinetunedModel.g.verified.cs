@@ -55,7 +55,7 @@ namespace G
         /// Default Value: STATUS_UNSPECIFIED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StatusJsonConverter))]
         public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
 
         /// <summary>

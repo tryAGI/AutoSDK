@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleNonFastForwardTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleNonFastForwardTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleNonFastForwardType?>

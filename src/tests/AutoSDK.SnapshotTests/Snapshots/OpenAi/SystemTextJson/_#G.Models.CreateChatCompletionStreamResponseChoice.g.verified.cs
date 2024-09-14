@@ -29,7 +29,7 @@ namespace G
         /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateChatCompletionStreamResponseChoiceFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseChoiceFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
 

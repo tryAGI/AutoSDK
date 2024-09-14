@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookMembershipRemovedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookMembershipRemovedActionJsonConverter))]
         public global::G.WebhookMembershipRemovedAction Action { get; set; }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace G
         /// The scope of the membership. Currently, can only be `team`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookMembershipRemovedScopeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookMembershipRemovedScopeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookMembershipRemovedScope Scope { get; set; }
 

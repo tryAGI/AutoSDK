@@ -48,7 +48,7 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; }
 

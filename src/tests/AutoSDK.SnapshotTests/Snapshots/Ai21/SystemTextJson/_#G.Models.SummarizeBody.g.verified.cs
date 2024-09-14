@@ -20,7 +20,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sourceType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DocumentTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DocumentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DocumentType SourceType { get; set; }
 
@@ -34,7 +34,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summaryMethod")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummaryMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummaryMethodJsonConverter))]
         public global::G.SummaryMethod? SummaryMethod { get; set; }
 
         /// <summary>

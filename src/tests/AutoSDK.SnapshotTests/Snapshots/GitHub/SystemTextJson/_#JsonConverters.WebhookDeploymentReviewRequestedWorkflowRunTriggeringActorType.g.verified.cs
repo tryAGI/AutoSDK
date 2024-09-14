@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType>

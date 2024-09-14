@@ -13,7 +13,7 @@ namespace G
         /// The type of entity for the detected entity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entity_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EntityTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EntityTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EntityType EntityType { get; set; }
 

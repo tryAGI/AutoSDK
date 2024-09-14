@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GlobalAdvisoryType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GlobalAdvisoryTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GlobalAdvisoryType>

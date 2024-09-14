@@ -13,7 +13,7 @@ namespace G
         /// Enum for payment plans that the user can change to. Developer plans are permanent and enterprise plans will be changed manually.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChangePaymentPlanReqJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChangePaymentPlanReqJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChangePaymentPlanReq Tier { get; set; }
 

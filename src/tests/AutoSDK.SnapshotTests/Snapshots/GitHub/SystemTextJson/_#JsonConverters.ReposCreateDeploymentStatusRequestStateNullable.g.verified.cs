@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreateDeploymentStatusRequestStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreateDeploymentStatusRequestStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreateDeploymentStatusRequestState?>

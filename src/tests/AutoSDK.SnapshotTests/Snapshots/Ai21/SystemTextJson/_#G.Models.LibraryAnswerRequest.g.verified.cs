@@ -46,21 +46,21 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answerLength")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnswerLengthJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnswerLengthJsonConverter))]
         public global::G.AnswerLength? AnswerLength { get; set; }
 
         /// <summary>
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModeJsonConverter))]
         public global::G.Mode? Mode { get; set; }
 
         /// <summary>
         /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         public global::G.AllOf<global::G.RetrievalStrategy3?>? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy3.Default;
 
         /// <summary>

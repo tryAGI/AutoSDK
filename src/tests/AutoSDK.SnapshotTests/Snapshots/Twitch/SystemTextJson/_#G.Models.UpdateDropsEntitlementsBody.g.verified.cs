@@ -22,7 +22,7 @@ namespace G
         /// * FULFILLED — The developer granted the benefit that the user claimed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusJsonConverter))]
         public global::G.UpdateDropsEntitlementsBodyFulfillmentStatus? FulfillmentStatus { get; set; }
 
         /// <summary>

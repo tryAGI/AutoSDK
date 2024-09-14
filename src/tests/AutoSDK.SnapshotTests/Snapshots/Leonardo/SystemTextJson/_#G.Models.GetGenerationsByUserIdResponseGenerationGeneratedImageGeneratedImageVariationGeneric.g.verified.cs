@@ -19,14 +19,14 @@ namespace G
         /// The status of the current task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.JobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         public global::G.JobStatus? Status { get; set; }
 
         /// <summary>
         /// The type of variation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.VARIATIONTYPEJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VARIATIONTYPEJsonConverter))]
         public global::G.VARIATIONTYPE? TransformType { get; set; }
 
         /// <summary>

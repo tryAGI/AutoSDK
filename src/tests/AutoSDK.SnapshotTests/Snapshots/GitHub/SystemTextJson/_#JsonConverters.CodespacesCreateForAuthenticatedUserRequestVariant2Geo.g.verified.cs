@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodespacesCreateForAuthenticatedUserRequestVariant2Geo.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodespacesCreateForAuthenticatedUserRequestVariant2GeoJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodespacesCreateForAuthenticatedUserRequestVariant2Geo>

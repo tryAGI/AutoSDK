@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksReviewCommentStartSideNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksReviewCommentStartSideNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksReviewCommentStartSide?>

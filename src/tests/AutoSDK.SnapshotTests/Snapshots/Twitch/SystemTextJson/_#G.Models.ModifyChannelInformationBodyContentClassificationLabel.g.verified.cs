@@ -19,7 +19,7 @@ namespace G
         /// * ProfanityVulgarity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ModifyChannelInformationBodyContentClassificationLabelIdJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModifyChannelInformationBodyContentClassificationLabelIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ModifyChannelInformationBodyContentClassificationLabelId Id { get; set; }
 

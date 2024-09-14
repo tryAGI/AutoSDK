@@ -13,7 +13,7 @@ namespace G
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningVariantAnalysisLanguage Language { get; set; }
 

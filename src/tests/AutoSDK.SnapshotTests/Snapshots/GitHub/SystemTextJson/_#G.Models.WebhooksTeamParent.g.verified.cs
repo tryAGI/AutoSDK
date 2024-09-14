@@ -62,7 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhooksTeamParentPrivacyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeamParentPrivacyJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhooksTeamParentPrivacy Privacy { get; set; }
 
@@ -70,7 +70,7 @@ namespace G
         /// Whether team members will receive notifications when their team is @mentioned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhooksTeamParentNotificationSettingJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeamParentNotificationSettingJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhooksTeamParentNotificationSetting NotificationSetting { get; set; }
 

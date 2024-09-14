@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AuditLogEventType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AuditLogEventTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AuditLogEventType>

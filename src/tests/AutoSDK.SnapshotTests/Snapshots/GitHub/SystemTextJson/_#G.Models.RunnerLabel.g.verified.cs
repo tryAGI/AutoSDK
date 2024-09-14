@@ -26,7 +26,7 @@ namespace G
         /// The type of label. Read-only labels are applied automatically when the runner is configured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunnerLabelTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunnerLabelTypeJsonConverter))]
         public global::G.RunnerLabelType? Type { get; set; }
 
         /// <summary>

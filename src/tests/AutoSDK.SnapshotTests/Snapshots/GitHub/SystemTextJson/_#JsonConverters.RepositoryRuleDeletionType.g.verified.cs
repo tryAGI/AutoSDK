@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleDeletionType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleDeletionTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleDeletionType>

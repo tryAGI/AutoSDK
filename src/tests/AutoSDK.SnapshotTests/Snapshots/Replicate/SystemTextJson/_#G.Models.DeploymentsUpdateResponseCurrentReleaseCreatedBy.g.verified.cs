@@ -25,7 +25,7 @@ namespace G
         /// The account type of the creator. Can be a user or an organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter))]
         public global::G.DeploymentsUpdateResponseCurrentReleaseCreatedByType? Type { get; set; }
 
         /// <summary>

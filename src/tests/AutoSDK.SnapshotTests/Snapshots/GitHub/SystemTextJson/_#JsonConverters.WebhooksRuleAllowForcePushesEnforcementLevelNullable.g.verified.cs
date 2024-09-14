@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksRuleAllowForcePushesEnforcementLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksRuleAllowForcePushesEnforcementLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksRuleAllowForcePushesEnforcementLevel?>

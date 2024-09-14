@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UniversalUpscalerStyleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UniversalUpscalerStyleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UniversalUpscalerStyle?>

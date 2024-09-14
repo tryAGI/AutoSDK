@@ -19,7 +19,7 @@ namespace G
         /// null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.StopReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StopReasonJsonConverter))]
         public global::G.StopReason? StopReason { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleRequiredLinearHistoryType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleRequiredLinearHistoryTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleRequiredLinearHistoryType>

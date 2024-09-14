@@ -54,7 +54,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningAlertState State { get; set; }
 
@@ -82,7 +82,7 @@ namespace G
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertDismissedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
 

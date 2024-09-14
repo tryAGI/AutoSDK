@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposListCollaboratorsAffiliationNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposListCollaboratorsAffiliationNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposListCollaboratorsAffiliation?>

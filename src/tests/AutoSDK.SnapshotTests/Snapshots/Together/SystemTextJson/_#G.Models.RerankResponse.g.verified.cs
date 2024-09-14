@@ -14,7 +14,7 @@ namespace G
         /// Example: rerank
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RerankResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter))]
         public global::G.RerankResponseObject Object { get; set; }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace G
         /// Example: "git"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter))]
         public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
         /// <summary>

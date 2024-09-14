@@ -29,7 +29,7 @@ namespace G
         /// Context to provide the model. This can be a string or a free-form JSON value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("final_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
 
         /// <summary>

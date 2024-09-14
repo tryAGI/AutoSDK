@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepDetailsToolCallsFileSearchObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepDetailsToolCallsFileSearchObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepDetailsToolCallsFileSearchObjectType>

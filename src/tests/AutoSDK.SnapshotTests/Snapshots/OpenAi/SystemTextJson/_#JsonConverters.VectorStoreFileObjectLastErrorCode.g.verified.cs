@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.VectorStoreFileObjectLastErrorCode.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class VectorStoreFileObjectLastErrorCodeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.VectorStoreFileObjectLastErrorCode>

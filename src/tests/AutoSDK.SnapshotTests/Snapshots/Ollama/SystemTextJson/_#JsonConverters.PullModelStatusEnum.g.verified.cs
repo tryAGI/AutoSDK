@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullModelStatusEnum.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullModelStatusEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullModelStatusEnum>

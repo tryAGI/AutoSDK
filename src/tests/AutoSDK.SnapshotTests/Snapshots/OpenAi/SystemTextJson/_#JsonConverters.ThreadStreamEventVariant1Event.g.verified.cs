@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ThreadStreamEventVariant1Event.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ThreadStreamEventVariant1EventJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ThreadStreamEventVariant1Event>

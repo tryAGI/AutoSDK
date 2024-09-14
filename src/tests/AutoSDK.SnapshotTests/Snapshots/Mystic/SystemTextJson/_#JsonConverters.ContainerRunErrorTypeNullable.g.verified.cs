@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ContainerRunErrorTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ContainerRunErrorTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ContainerRunErrorType?>

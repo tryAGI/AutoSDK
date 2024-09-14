@@ -17,7 +17,7 @@ namespace G
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatStreamEndEventVariant2FinishReason FinishReason { get; set; }
 

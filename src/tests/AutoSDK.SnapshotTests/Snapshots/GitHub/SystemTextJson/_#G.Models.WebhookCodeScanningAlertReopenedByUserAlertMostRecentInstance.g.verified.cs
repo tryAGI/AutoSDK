@@ -64,7 +64,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState State { get; set; }
 

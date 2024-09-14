@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsUpdateRequestStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsUpdateRequestStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsUpdateRequestState?>

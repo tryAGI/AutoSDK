@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EndPredictionBodyStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EndPredictionBodyStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EndPredictionBodyStatus>

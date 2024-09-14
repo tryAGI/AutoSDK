@@ -20,7 +20,7 @@ namespace G
         /// Default Value: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.IssuesUpdateMilestoneRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateMilestoneRequestStateJsonConverter))]
         public global::G.IssuesUpdateMilestoneRequestState? State { get; set; } = global::G.IssuesUpdateMilestoneRequestState.Open;
 
         /// <summary>

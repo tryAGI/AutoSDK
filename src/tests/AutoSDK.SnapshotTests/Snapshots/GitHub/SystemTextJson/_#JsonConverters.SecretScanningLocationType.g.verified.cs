@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SecretScanningLocationType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SecretScanningLocationTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SecretScanningLocationType>

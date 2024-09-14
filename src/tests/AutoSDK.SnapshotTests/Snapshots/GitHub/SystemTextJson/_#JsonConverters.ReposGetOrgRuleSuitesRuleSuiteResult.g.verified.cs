@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposGetOrgRuleSuitesRuleSuiteResult.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposGetOrgRuleSuitesRuleSuiteResultJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposGetOrgRuleSuitesRuleSuiteResult>

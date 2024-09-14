@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposUpdateInformationAboutPagesSiteRequestSourceEnumNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposUpdateInformationAboutPagesSiteRequestSourceEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum?>

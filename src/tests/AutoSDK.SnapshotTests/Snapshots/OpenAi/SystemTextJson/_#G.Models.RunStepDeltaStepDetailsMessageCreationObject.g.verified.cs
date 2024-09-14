@@ -13,7 +13,7 @@ namespace G
         /// Always `message_creation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>

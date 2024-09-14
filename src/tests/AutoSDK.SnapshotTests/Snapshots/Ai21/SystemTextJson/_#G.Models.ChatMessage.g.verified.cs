@@ -13,7 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RoleTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RoleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RoleType Role { get; set; }
 

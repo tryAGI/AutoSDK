@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActionsListWorkflowRunsForRepoStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActionsListWorkflowRunsForRepoStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActionsListWorkflowRunsForRepoStatus?>

@@ -66,7 +66,7 @@ namespace G
         /// Example: closed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamFullPrivacyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamFullPrivacyJsonConverter))]
         public global::G.TeamFullPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace G
         /// Example: notifications_enabled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamFullNotificationSettingJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamFullNotificationSettingJsonConverter))]
         public global::G.TeamFullNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TextContentTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TextContentTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TextContentType?>

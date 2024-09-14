@@ -20,7 +20,7 @@ namespace G
         /// The event type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuditLogEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuditLogEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AuditLogEventType Type { get; set; }
 
@@ -28,7 +28,7 @@ namespace G
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset EffectiveAt { get; set; }
 

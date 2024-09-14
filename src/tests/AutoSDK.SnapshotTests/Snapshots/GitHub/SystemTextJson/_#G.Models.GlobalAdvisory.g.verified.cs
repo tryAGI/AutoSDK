@@ -62,7 +62,7 @@ namespace G
         /// The type of advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.GlobalAdvisoryType Type { get; set; }
 
@@ -70,7 +70,7 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GlobalAdvisorySeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.GlobalAdvisorySeverity Severity { get; set; }
 

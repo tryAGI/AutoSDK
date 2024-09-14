@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPullRequestDemilestonedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPullRequestDemilestonedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPullRequestDemilestonedAction>

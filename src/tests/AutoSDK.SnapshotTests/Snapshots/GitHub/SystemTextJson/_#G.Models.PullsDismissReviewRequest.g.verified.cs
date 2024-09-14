@@ -20,7 +20,7 @@ namespace G
         /// Example: "DISMISS"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullsDismissReviewRequestEventJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullsDismissReviewRequestEventJsonConverter))]
         public global::G.PullsDismissReviewRequestEvent? Event { get; set; }
 
         /// <summary>

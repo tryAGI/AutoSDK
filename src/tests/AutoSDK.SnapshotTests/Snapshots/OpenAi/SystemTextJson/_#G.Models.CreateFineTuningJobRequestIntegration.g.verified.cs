@@ -15,7 +15,7 @@ namespace G
         /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::G.CreateFineTuningJobRequestIntegrationType?> Type { get; set; }
 

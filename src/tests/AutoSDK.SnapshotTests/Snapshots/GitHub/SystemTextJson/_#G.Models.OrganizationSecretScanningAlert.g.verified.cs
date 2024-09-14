@@ -49,14 +49,14 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecretScanningAlertStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertStateJsonConverter))]
         public global::G.SecretScanningAlertState? State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecretScanningAlertResolutionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertResolutionJsonConverter))]
         public global::G.SecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrganizationSecretScanningAlertValidityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrganizationSecretScanningAlertValidityJsonConverter))]
         public global::G.OrganizationSecretScanningAlertValidity? Validity { get; set; }
 
         /// <summary>

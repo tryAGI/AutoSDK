@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookGollumPageActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookGollumPageActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookGollumPageAction?>

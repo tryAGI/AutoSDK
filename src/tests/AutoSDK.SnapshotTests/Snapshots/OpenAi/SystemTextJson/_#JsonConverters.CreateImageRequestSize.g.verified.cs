@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateImageRequestSize.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateImageRequestSizeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateImageRequestSize>

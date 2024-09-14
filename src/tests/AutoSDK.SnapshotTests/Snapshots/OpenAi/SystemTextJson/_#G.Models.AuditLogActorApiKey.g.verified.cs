@@ -19,7 +19,7 @@ namespace G
         /// The type of API key. Can be either `user` or `service_account`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuditLogActorApiKeyTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorApiKeyTypeJsonConverter))]
         public global::G.AuditLogActorApiKeyType? Type { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsDependabotSecretsNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsDependabotSecretsNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsDependabotSecrets?>

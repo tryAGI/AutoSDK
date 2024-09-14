@@ -15,7 +15,7 @@ namespace G
         /// Always `tool_calls`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepDeltaStepDetailsToolCallsObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsToolCallsObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsToolCallsObjectType Type { get; set; }
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace G
         /// Example: markdown
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MarkdownRenderRequestModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MarkdownRenderRequestModeJsonConverter))]
         public global::G.MarkdownRenderRequestMode? Mode { get; set; } = global::G.MarkdownRenderRequestMode.Markdown;
 
         /// <summary>

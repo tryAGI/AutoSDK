@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.BatchObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class BatchObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.BatchObject?>

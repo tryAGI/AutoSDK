@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ControlnetInputStrengthTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ControlnetInputStrengthTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ControlnetInputStrengthType?>

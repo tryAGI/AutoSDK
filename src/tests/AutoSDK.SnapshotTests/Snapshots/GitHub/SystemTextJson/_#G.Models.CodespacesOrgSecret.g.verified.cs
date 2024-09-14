@@ -35,7 +35,7 @@ namespace G
         /// The type of repositories in the organization that the secret is visible to
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodespacesOrgSecretVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespacesOrgSecretVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodespacesOrgSecretVisibility Visibility { get; set; }
 

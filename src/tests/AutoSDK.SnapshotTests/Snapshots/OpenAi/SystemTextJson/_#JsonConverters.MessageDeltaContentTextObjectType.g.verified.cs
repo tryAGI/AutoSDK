@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MessageDeltaContentTextObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageDeltaContentTextObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MessageDeltaContentTextObjectType>

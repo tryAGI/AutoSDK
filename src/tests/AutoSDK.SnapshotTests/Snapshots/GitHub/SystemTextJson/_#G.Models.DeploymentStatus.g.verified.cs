@@ -35,7 +35,7 @@ namespace G
         /// Example: success
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DeploymentStatusStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentStatusStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DeploymentStatusState State { get; set; }
 

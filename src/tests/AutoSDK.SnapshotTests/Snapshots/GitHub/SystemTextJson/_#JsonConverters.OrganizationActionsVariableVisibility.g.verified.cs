@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrganizationActionsVariableVisibility.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrganizationActionsVariableVisibilityJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrganizationActionsVariableVisibility>

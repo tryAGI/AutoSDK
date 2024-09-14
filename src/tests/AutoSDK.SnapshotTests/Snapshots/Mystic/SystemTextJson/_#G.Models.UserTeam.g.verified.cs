@@ -35,7 +35,7 @@ namespace G
         /// Defines various account tiers with different access levels and permissions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AccountTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccountTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AccountTier AccountTier { get; set; }
 

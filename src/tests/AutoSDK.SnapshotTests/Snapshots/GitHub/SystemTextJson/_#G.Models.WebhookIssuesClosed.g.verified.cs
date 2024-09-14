@@ -15,7 +15,7 @@ namespace G
         /// The action that was performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookIssuesClosedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesClosedActionJsonConverter))]
         public global::G.WebhookIssuesClosedAction Action { get; set; }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.WebhookIssuesClosedIssueVariant1, global::G.WebhookIssuesClosedIssueVariant2> Issue { get; set; }
 

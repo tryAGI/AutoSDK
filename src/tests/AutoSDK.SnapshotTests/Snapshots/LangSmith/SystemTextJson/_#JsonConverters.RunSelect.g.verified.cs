@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunSelect.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunSelectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunSelect>

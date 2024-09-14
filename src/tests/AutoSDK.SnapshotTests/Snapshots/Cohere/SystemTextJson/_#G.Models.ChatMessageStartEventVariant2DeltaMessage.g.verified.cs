@@ -13,7 +13,7 @@ namespace G
         /// The role of the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter))]
         public global::G.ChatMessageStartEventVariant2DeltaMessageRole? Role { get; set; }
 
         /// <summary>

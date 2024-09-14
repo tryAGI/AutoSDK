@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AssistantsApiResponseFormatOptionEnumNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AssistantsApiResponseFormatOptionEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AssistantsApiResponseFormatOptionEnum?>

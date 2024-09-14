@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreateRepoRulesetRequestTargetNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreateRepoRulesetRequestTargetNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreateRepoRulesetRequestTarget?>

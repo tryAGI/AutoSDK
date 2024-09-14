@@ -31,7 +31,7 @@ namespace G
         /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateConduitShardsResponseDataItemStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateConduitShardsResponseDataItemStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UpdateConduitShardsResponseDataItemStatus Status { get; set; }
 

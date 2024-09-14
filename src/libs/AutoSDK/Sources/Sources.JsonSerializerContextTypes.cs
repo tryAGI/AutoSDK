@@ -11,8 +11,8 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (types.IsEmpty ||
-            !types[0].GenerateJsonSerializerContextTypes ||
-            types[0].JsonSerializerType != JsonSerializerType.SystemTextJson)
+            !types[0].Settings.GenerateJsonSerializerContextTypes ||
+            types[0].Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
         }

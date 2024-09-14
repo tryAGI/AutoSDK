@@ -20,7 +20,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageDeltaContentImageUrlObjectImageUrlDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentImageUrlObjectImageUrlDetailJsonConverter))]
         public global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? Detail { get; set; } = global::G.MessageDeltaContentImageUrlObjectImageUrlDetail.Auto;
 
         /// <summary>

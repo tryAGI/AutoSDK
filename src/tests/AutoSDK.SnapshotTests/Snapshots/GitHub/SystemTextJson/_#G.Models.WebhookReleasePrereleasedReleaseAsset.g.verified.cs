@@ -76,7 +76,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookReleasePrereleasedReleaseAssetStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookReleasePrereleasedReleaseAssetStateJsonConverter))]
         public global::G.WebhookReleasePrereleasedReleaseAssetState State { get; set; }
 
         /// <summary>

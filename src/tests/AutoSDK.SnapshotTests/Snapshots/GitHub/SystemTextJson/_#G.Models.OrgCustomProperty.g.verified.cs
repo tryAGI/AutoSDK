@@ -23,7 +23,7 @@ namespace G
         /// Example: single_select
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgCustomPropertyValueTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgCustomPropertyValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgCustomPropertyValueType ValueType { get; set; }
 
@@ -37,7 +37,7 @@ namespace G
         /// Default value of the property
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? DefaultValue { get; set; }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace G
         /// Example: org_actors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values_editable_by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgCustomPropertyValuesEditableByJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgCustomPropertyValuesEditableByJsonConverter))]
         public global::G.OrgCustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
 
         /// <summary>

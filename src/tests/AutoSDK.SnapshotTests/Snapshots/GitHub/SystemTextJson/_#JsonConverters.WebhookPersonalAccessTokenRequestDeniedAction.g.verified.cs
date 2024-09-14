@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPersonalAccessTokenRequestDeniedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPersonalAccessTokenRequestDeniedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPersonalAccessTokenRequestDeniedAction>

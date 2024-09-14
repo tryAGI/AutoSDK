@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.InviteListResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class InviteListResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.InviteListResponseObject>

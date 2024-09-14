@@ -13,7 +13,7 @@ namespace G
         /// The action performed. Can be `created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookCommitCommentCreatedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCommitCommentCreatedActionJsonConverter))]
         public global::G.WebhookCommitCommentCreatedAction Action { get; set; }
 
         /// <summary>

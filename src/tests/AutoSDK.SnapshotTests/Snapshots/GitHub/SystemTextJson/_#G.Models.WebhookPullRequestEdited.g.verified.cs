@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestEditedActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestEditedActionJsonConverter))]
         public global::G.WebhookPullRequestEditedAction Action { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PullRequestWebhookJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestWebhookJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PullRequestWebhook PullRequest { get; set; }
 

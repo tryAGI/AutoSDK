@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsListMembershipsForAuthenticatedUserState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsListMembershipsForAuthenticatedUserStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsListMembershipsForAuthenticatedUserState>

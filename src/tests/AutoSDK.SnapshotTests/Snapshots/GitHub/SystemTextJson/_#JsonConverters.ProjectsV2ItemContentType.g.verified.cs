@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectsV2ItemContentType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectsV2ItemContentTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectsV2ItemContentType>

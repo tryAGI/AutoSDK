@@ -44,7 +44,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrieval_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ConversationalRagFlowPublicFieldsRetrievalStrategyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConversationalRagFlowPublicFieldsRetrievalStrategyJsonConverter))]
         public global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? RetrievalStrategy { get; set; } = global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy.Default;
 
         /// <summary>

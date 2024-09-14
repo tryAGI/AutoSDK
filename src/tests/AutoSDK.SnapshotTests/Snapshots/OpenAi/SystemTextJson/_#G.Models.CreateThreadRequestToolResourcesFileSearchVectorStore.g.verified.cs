@@ -21,7 +21,7 @@ namespace G
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
 
         /// <summary>

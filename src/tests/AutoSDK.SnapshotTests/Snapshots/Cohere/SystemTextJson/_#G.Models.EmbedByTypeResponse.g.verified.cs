@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedByTypeResponseResponseTypeJsonConverter))]
         public global::G.EmbedByTypeResponseResponseType? ResponseType { get; set; }
 
         /// <summary>

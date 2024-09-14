@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ControlnetInputInitImageTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ControlnetInputInitImageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ControlnetInputInitImageType?>

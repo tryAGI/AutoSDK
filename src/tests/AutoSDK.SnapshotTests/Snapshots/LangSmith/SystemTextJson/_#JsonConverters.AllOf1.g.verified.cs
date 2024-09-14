@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AllOf1.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public class AllOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::G.AllOf<T1>>

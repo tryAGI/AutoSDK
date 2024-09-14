@@ -30,14 +30,14 @@ namespace G
         /// **Note**: The `push` target is in beta and is subject to change.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRulesetTargetJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetTargetJsonConverter))]
         public global::G.RepositoryRulesetTarget? Target { get; set; }
 
         /// <summary>
         /// The type of the source of the ruleset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRulesetSourceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter))]
         public global::G.RepositoryRulesetSourceType? SourceType { get; set; }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace G
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryRuleEnforcement Enforcement { get; set; }
 
@@ -66,7 +66,7 @@ namespace G
         /// querying the repository-level endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_can_bypass")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRulesetCurrentUserCanBypassJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetCurrentUserCanBypassJsonConverter))]
         public global::G.RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.RepositoryRulesetConditions, global::G.OrgRulesetConditions?>? Conditions { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReactionsListForPullRequestReviewCommentContent.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReactionsListForPullRequestReviewCommentContentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReactionsListForPullRequestReviewCommentContent>

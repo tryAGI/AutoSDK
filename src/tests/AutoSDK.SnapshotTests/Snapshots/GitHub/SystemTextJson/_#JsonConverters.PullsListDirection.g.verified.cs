@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsListDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsListDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsListDirection>

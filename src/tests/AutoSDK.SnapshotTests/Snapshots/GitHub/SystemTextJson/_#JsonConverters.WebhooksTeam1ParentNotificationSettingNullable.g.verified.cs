@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksTeam1ParentNotificationSettingNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksTeam1ParentNotificationSettingNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksTeam1ParentNotificationSetting?>

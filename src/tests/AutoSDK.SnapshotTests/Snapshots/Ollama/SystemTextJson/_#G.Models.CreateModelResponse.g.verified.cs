@@ -13,7 +13,7 @@ namespace G
         /// Status creating the model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateModelStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateModelStatusJsonConverter))]
         public global::G.CreateModelStatus? Status { get; set; }
 
         /// <summary>

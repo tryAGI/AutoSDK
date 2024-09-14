@@ -13,7 +13,7 @@ namespace G
         /// The type of tool being defined: `file_search`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
         public global::G.AssistantToolsFileSearchType Type { get; set; }
 
         /// <summary>

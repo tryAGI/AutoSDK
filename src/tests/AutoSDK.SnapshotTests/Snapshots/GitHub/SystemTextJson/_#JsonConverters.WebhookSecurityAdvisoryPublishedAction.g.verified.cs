@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookSecurityAdvisoryPublishedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookSecurityAdvisoryPublishedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookSecurityAdvisoryPublishedAction>

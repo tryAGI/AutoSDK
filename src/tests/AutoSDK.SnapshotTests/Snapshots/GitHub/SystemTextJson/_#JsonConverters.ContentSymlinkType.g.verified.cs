@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ContentSymlinkType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ContentSymlinkTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ContentSymlinkType>

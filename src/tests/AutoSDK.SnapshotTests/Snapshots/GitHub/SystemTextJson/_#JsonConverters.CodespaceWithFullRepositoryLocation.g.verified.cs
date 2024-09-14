@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodespaceWithFullRepositoryLocation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodespaceWithFullRepositoryLocationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodespaceWithFullRepositoryLocation>

@@ -22,7 +22,7 @@ namespace G
         /// Example: built
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PageStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PageStatus? Status { get; set; }
 
@@ -39,7 +39,7 @@ namespace G
         /// Example: pending
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected_domain_state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PageProtectedDomainStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageProtectedDomainStateJsonConverter))]
         public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace G
         /// Example: legacy
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("build_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PageBuildTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageBuildTypeJsonConverter))]
         public global::G.PageBuildType? BuildType { get; set; }
 
         /// <summary>

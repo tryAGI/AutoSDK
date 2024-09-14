@@ -37,7 +37,7 @@ namespace G
         /// * `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_layout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GetChannelGuestStarSettingsResponseGroupLayoutJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetChannelGuestStarSettingsResponseGroupLayoutJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.GetChannelGuestStarSettingsResponseGroupLayout GroupLayout { get; set; }
 

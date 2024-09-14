@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.IssuesListForRepoDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class IssuesListForRepoDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.IssuesListForRepoDirection>

@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel PriceModel { get; set; }
 

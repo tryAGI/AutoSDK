@@ -71,7 +71,7 @@ namespace G
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ExtensionTransactionProductTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExtensionTransactionProductTypeJsonConverter))]
         public global::G.ExtensionTransactionProductType ProductType { get; set; }
 
         /// <summary>

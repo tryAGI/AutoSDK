@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EventSubSubscriptionStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EventSubSubscriptionStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EventSubSubscriptionStatus>

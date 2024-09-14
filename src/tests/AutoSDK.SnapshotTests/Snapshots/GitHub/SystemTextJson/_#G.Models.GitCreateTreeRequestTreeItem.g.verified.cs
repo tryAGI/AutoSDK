@@ -19,14 +19,14 @@ namespace G
         /// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GitCreateTreeRequestTreeItemModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GitCreateTreeRequestTreeItemModeJsonConverter))]
         public global::G.GitCreateTreeRequestTreeItemMode? Mode { get; set; }
 
         /// <summary>
         /// Either `blob`, `tree`, or `commit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GitCreateTreeRequestTreeItemTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GitCreateTreeRequestTreeItemTypeJsonConverter))]
         public global::G.GitCreateTreeRequestTreeItemType? Type { get; set; }
 
         /// <summary>

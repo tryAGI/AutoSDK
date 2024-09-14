@@ -23,7 +23,7 @@ namespace G
         /// Default Value: user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UserMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserMessageRoleJsonConverter))]
         public global::G.UserMessageRole? Role { get; set; } = global::G.UserMessageRole.User;
 
         /// <summary>

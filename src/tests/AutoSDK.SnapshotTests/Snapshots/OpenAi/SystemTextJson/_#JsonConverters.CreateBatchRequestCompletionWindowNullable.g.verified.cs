@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateBatchRequestCompletionWindowNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateBatchRequestCompletionWindowNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateBatchRequestCompletionWindow?>

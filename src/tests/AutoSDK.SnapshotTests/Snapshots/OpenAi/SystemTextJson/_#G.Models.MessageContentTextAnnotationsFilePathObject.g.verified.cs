@@ -13,7 +13,7 @@ namespace G
         /// Always `file_path`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>

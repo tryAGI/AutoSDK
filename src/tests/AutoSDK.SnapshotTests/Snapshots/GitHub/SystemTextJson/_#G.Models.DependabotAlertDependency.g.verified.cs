@@ -25,7 +25,7 @@ namespace G
         /// The execution scope of the vulnerable dependency.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotAlertDependencyScopeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertDependencyScopeJsonConverter))]
         public global::G.DependabotAlertDependencyScope? Scope { get; set; }
 
         /// <summary>

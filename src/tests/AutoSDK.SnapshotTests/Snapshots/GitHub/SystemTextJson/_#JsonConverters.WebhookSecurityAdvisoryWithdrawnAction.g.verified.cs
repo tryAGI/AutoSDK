@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookSecurityAdvisoryWithdrawnAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookSecurityAdvisoryWithdrawnActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookSecurityAdvisoryWithdrawnAction>

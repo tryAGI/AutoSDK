@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PiiPolicy.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PiiPolicyJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PiiPolicy>

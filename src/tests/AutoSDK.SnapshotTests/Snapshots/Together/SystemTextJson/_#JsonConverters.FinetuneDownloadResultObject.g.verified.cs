@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FinetuneDownloadResultObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FinetuneDownloadResultObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FinetuneDownloadResultObject>

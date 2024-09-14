@@ -20,7 +20,7 @@ namespace G
         /// The reason a chat request has finished.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatFinishReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChatFinishReason FinishReason { get; set; }
 

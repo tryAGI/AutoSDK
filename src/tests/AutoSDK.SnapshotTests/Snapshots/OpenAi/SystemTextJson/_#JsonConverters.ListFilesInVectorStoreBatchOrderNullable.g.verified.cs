@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListFilesInVectorStoreBatchOrderNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListFilesInVectorStoreBatchOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListFilesInVectorStoreBatchOrder?>

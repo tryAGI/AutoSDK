@@ -20,7 +20,7 @@ namespace G
         /// The type of tool call the output is required for. For now, this is always `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunToolCallObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunToolCallObjectTypeJsonConverter))]
         public global::G.RunToolCallObjectType Type { get; set; }
 
         /// <summary>

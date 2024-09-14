@@ -19,7 +19,7 @@ namespace G
         /// Action to apply to the requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsReviewPatGrantRequestsInBulkRequestActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsReviewPatGrantRequestsInBulkRequestActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgsReviewPatGrantRequestsInBulkRequestAction Action { get; set; }
 

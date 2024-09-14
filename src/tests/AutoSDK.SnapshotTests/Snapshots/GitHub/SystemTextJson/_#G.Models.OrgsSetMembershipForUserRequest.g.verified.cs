@@ -16,7 +16,7 @@ namespace G
         /// Default Value: member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsSetMembershipForUserRequestRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsSetMembershipForUserRequestRoleJsonConverter))]
         public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; } = global::G.OrgsSetMembershipForUserRequestRole.Member;
 
         /// <summary>

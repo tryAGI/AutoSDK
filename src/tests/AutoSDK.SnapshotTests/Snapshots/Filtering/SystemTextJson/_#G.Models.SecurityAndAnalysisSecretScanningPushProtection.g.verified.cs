@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecurityAndAnalysisSecretScanningPushProtectionStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecurityAndAnalysisSecretScanningPushProtectionStatusJsonConverter))]
         public global::G.SecurityAndAnalysisSecretScanningPushProtectionStatus? Status { get; set; }
 
         /// <summary>

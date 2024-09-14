@@ -47,7 +47,7 @@ namespace G
         /// * subscriptions — A custom subscriber emote.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("emote_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChannelEmoteEmoteTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChannelEmoteEmoteTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChannelEmoteEmoteType EmoteType { get; set; }
 

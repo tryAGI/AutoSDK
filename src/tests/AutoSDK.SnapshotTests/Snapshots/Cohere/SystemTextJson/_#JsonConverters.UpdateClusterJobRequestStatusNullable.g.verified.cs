@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.UpdateClusterJobRequestStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UpdateClusterJobRequestStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.UpdateClusterJobRequestStatus?>

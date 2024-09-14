@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreateReleaseRequestMakeLatest.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreateReleaseRequestMakeLatestJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreateReleaseRequestMakeLatest>

@@ -57,7 +57,7 @@ namespace G
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GenerateRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GenerateRequestTruncateJsonConverter))]
         public global::G.GenerateRequestTruncate? Truncate { get; set; } = global::G.GenerateRequestTruncate.END;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// Default Value: NONE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_likelihoods")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
         public global::G.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; } = global::G.GenerateRequestReturnLikelihoods.NONE;
 
         /// <summary>

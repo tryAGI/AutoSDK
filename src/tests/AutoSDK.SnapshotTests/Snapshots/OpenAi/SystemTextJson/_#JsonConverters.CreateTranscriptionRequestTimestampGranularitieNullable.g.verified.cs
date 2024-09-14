@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateTranscriptionRequestTimestampGranularitieNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateTranscriptionRequestTimestampGranularitieNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateTranscriptionRequestTimestampGranularitie?>

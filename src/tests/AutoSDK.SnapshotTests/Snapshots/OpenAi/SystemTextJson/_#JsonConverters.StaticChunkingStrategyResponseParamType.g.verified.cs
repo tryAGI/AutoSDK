@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.StaticChunkingStrategyResponseParamType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class StaticChunkingStrategyResponseParamTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.StaticChunkingStrategyResponseParamType>

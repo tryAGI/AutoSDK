@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksMilestone3State.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksMilestone3StateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksMilestone3State>

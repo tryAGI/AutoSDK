@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleCommitAuthorEmailPatternTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleCommitAuthorEmailPatternTypeJsonConverter))]
         public global::G.RepositoryRuleCommitAuthorEmailPatternType Type { get; set; }
 
         /// <summary>

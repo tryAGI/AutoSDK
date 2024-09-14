@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatStreamingFirstDeltaRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatStreamingFirstDeltaRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatStreamingFirstDeltaRole>

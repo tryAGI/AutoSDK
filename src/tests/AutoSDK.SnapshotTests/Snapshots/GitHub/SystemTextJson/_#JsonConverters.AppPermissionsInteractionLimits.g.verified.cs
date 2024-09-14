@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppPermissionsInteractionLimits.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppPermissionsInteractionLimitsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppPermissionsInteractionLimits>

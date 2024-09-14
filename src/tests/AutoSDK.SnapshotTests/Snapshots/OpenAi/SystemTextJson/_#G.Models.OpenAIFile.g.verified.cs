@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -42,14 +42,14 @@ namespace G
         /// The object type, which is always `file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OpenAIFileObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIFileObjectJsonConverter))]
         public global::G.OpenAIFileObject Object { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OpenAIFilePurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIFilePurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OpenAIFilePurpose Purpose { get; set; }
 
@@ -57,7 +57,7 @@ namespace G
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OpenAIFileStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OpenAIFileStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OpenAIFileStatus Status { get; set; }
 

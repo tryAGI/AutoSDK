@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter))]
         public global::G.DeleteVectorStoreFileResponseObject Object { get; set; }
 
         /// <summary>

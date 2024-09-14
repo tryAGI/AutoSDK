@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ExtensionState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ExtensionStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ExtensionState>

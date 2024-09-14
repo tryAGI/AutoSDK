@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookOrgBlockBlockedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookOrgBlockBlockedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookOrgBlockBlockedAction>

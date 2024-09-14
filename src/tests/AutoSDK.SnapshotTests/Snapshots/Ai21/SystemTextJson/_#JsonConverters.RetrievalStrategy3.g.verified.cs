@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RetrievalStrategy3.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RetrievalStrategy3JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RetrievalStrategy3>

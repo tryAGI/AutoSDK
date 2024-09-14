@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateFineTuningJobRequestHyperparametersBatchSizeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateFineTuningJobRequestHyperparametersBatchSizeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?>

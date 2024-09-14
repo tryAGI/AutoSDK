@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionToolChoiceOptionEnumNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionToolChoiceOptionEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionToolChoiceOptionEnum?>

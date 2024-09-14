@@ -291,14 +291,14 @@ public static class Data
                 x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
             .SelectMany(x => new[]
             {
-                $"global::AutoSDK.JsonConverters.{x.ClassName}JsonConverter",
-                $"global::AutoSDK.JsonConverters.{x.ClassName}NullableJsonConverter"
+                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
+                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
             })
             .Concat(anyOfDatas
                 .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
                 .Select(x => string.IsNullOrWhiteSpace(x.Name)
-                    ? $"global::AutoSDK.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
-                    : $"global::AutoSDK.JsonConverters.{x.Name}JsonConverter"))
+                    ? $"global::{settings.Namespace}.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
+                    : $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
             .ToImmutableArray();
         for (var i = 0; i < methods.Length; i++)
         {

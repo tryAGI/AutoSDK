@@ -41,7 +41,7 @@ namespace G
         /// The type of the dataset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DatasetTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DatasetTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DatasetType DatasetType { get; set; }
 
@@ -49,7 +49,7 @@ namespace G
         /// The validation status of the dataset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DatasetValidationStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DatasetValidationStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DatasetValidationStatus ValidationStatus { get; set; }
 

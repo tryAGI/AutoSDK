@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.HypeTrainEventEventDataTopContributionTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class HypeTrainEventEventDataTopContributionTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.HypeTrainEventEventDataTopContributionType?>

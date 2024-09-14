@@ -15,7 +15,7 @@ namespace G
         /// One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateSpeechRequestModel?> Model { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CreateSpeechRequestVoice Voice { get; set; }
 
@@ -39,7 +39,7 @@ namespace G
         /// Default Value: mp3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
         public global::G.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateSpeechRequestResponseFormat.Mp3;
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsListPatGrantRequestsSort.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsListPatGrantRequestsSortJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsListPatGrantRequestsSort>

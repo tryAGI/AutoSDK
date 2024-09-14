@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleBranchNamePatternParametersOperatorNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleBranchNamePatternParametersOperatorNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleBranchNamePatternParametersOperator?>

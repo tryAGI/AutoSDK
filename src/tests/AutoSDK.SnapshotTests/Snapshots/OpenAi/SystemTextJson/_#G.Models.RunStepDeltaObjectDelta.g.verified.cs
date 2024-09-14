@@ -15,7 +15,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject, global::G.RunStepDeltaStepDetailsToolCallsObject>? StepDetails { get; set; }
 
         /// <summary>

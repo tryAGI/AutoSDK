@@ -17,7 +17,7 @@ namespace G
         /// * conduit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateEventSubSubscriptionBodyTransportMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateEventSubSubscriptionBodyTransportMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CreateEventSubSubscriptionBodyTransportMethod Method { get; set; }
 

@@ -25,7 +25,7 @@ namespace G
         /// The operator to use for matching.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleBranchNamePatternParametersOperatorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleBranchNamePatternParametersOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryRuleBranchNamePatternParametersOperator Operator { get; set; }
 

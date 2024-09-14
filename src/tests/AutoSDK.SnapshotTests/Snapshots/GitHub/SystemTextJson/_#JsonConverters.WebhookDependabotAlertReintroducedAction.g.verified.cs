@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookDependabotAlertReintroducedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookDependabotAlertReintroducedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookDependabotAlertReintroducedAction>

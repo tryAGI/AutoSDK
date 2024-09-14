@@ -36,7 +36,7 @@ namespace G
         /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EmbedInputTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedInputTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EmbedInputType InputType { get; set; }
 
@@ -63,7 +63,7 @@ namespace G
         /// Default Value: END
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter))]
         public global::G.CreateEmbedJobRequestTruncate? Truncate { get; set; } = global::G.CreateEmbedJobRequestTruncate.END;
 
         /// <summary>

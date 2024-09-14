@@ -14,7 +14,7 @@ namespace G
         /// Example: collaborators_only
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InteractionGroupJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InteractionGroupJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.InteractionGroup Limit { get; set; }
 
@@ -23,7 +23,7 @@ namespace G
         /// Example: one_month
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expiry")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InteractionExpiryJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InteractionExpiryJsonConverter))]
         public global::G.InteractionExpiry? Expiry { get; set; }
 
         /// <summary>

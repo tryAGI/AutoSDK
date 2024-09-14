@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunnerLabelType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunnerLabelTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunnerLabelType>

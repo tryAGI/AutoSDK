@@ -52,7 +52,7 @@ namespace G
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryAdvisoryCreateSeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryCreateSeverityJsonConverter))]
         public global::G.RepositoryAdvisoryCreateSeverity? Severity { get; set; }
 
         /// <summary>

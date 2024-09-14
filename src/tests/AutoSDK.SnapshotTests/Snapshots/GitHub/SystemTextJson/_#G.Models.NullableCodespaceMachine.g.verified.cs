@@ -62,7 +62,7 @@ namespace G
         /// Example: ready
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuild_availability")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.NullableCodespaceMachinePrebuildAvailabilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableCodespaceMachinePrebuildAvailabilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.NullableCodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; }
 

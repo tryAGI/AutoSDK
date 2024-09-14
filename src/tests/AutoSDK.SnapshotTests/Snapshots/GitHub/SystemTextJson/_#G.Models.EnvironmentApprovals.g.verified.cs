@@ -21,7 +21,7 @@ namespace G
         /// Example: approved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.EnvironmentApprovalsStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EnvironmentApprovalsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.EnvironmentApprovalsState State { get; set; }
 

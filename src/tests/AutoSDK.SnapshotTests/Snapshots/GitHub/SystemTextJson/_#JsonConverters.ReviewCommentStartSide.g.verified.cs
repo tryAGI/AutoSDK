@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReviewCommentStartSide.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReviewCommentStartSideJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReviewCommentStartSide>

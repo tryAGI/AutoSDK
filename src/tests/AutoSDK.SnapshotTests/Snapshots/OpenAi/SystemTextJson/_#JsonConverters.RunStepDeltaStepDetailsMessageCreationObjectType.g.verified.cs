@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepDeltaStepDetailsMessageCreationObjectType>

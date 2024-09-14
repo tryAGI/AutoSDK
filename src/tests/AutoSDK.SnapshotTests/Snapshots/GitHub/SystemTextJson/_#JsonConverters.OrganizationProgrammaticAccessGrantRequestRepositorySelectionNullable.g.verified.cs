@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrganizationProgrammaticAccessGrantRequestRepositorySelectionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrganizationProgrammaticAccessGrantRequestRepositorySelectionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrganizationProgrammaticAccessGrantRequestRepositorySelection?>

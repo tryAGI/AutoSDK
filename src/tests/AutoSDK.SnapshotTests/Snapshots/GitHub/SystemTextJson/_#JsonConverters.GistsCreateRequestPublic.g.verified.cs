@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.GistsCreateRequestPublic.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class GistsCreateRequestPublicJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GistsCreateRequestPublic>

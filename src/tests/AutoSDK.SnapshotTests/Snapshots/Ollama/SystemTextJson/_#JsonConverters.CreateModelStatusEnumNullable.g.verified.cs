@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateModelStatusEnumNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateModelStatusEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateModelStatusEnum?>

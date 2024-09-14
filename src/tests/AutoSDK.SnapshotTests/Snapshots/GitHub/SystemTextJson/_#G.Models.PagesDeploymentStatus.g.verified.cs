@@ -13,7 +13,7 @@ namespace G
         /// The current status of the deployment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PagesDeploymentStatusStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PagesDeploymentStatusStatusJsonConverter))]
         public global::G.PagesDeploymentStatusStatus? Status { get; set; }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace G
         /// Example: neutral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CheckRunWithSimpleCheckSuiteConclusionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckRunWithSimpleCheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CheckRunWithSimpleCheckSuiteConclusion? Conclusion { get; set; }
 
@@ -122,7 +122,7 @@ namespace G
         /// Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CheckRunWithSimpleCheckSuiteStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckRunWithSimpleCheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CheckRunWithSimpleCheckSuiteStatus Status { get; set; }
 

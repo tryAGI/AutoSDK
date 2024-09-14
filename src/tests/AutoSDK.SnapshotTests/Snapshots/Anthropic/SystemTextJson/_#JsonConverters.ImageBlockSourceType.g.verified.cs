@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ImageBlockSourceType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ImageBlockSourceTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ImageBlockSourceType>

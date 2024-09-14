@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksRuleMergeQueueEnforcementLevel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksRuleMergeQueueEnforcementLevelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksRuleMergeQueueEnforcementLevel>

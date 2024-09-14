@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleVariant17TypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleVariant17TypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleVariant17Type?>

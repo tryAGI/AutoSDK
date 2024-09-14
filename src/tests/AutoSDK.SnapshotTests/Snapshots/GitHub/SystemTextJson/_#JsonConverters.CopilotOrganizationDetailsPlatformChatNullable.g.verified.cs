@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CopilotOrganizationDetailsPlatformChatNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CopilotOrganizationDetailsPlatformChatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CopilotOrganizationDetailsPlatformChat?>

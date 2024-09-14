@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksReviewAuthorAssociationNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksReviewAuthorAssociationNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksReviewAuthorAssociation?>

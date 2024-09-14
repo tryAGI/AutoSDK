@@ -23,7 +23,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ToolMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolMessageRoleJsonConverter))]
         public global::G.ToolMessageRole? Role { get; set; } = global::G.ToolMessageRole.Tool;
 
         /// <summary>

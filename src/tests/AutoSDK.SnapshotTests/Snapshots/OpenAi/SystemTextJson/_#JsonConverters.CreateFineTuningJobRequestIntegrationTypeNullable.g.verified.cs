@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateFineTuningJobRequestIntegrationTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateFineTuningJobRequestIntegrationTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateFineTuningJobRequestIntegrationType?>

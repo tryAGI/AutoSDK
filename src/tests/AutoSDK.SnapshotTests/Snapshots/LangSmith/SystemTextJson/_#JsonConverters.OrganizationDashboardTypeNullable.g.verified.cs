@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrganizationDashboardTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrganizationDashboardTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrganizationDashboardType?>

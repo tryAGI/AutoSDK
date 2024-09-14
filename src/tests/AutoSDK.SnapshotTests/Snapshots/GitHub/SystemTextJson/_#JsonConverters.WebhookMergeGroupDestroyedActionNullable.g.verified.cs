@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookMergeGroupDestroyedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookMergeGroupDestroyedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookMergeGroupDestroyedAction?>

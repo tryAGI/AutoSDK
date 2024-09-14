@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SummaryModel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SummaryModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SummaryModel>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SendChatAnnouncementBodyColorNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SendChatAnnouncementBodyColorNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SendChatAnnouncementBodyColor?>

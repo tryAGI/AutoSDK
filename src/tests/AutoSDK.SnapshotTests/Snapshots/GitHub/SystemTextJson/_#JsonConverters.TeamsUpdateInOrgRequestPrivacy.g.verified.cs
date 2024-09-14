@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsUpdateInOrgRequestPrivacy.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsUpdateInOrgRequestPrivacyJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsUpdateInOrgRequestPrivacy>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CopilotOrganizationDetailsSeatManagementSetting.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CopilotOrganizationDetailsSeatManagementSettingJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CopilotOrganizationDetailsSeatManagementSetting>

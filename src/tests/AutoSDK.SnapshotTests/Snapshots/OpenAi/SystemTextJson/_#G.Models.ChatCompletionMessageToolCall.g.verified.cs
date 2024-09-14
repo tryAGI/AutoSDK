@@ -20,7 +20,7 @@ namespace G
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
         public global::G.ChatCompletionMessageToolCallType Type { get; set; }
 
         /// <summary>

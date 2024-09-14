@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookProjectCardMovedProjectCardVariant1CreatorType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookProjectCardMovedProjectCardVariant1CreatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookProjectCardMovedProjectCardVariant1CreatorType>

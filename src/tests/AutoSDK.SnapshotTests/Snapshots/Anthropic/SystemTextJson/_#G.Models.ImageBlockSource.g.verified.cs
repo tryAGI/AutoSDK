@@ -20,7 +20,7 @@ namespace G
         /// The media type of the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ImageBlockSourceMediaTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageBlockSourceMediaTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ImageBlockSourceMediaType MediaType { get; set; }
 
@@ -28,7 +28,7 @@ namespace G
         /// The type of image source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ImageBlockSourceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageBlockSourceTypeJsonConverter))]
         public global::G.ImageBlockSourceType Type { get; set; }
 
         /// <summary>

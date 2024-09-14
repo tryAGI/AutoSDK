@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DependabotAlertWithRepositoryState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DependabotAlertWithRepositoryStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DependabotAlertWithRepositoryState>

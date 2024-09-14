@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ResponseFormatType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ResponseFormatTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ResponseFormatType>

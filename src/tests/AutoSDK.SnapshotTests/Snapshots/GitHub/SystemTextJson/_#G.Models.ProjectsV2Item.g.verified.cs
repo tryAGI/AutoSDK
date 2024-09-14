@@ -39,7 +39,7 @@ namespace G
         /// The type of content tracked in a project item
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectsV2ItemContentTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectsV2ItemContentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ProjectsV2ItemContentType ContentType { get; set; }
 

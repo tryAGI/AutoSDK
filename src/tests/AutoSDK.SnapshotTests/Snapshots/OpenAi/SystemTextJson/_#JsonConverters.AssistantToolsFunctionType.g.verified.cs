@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AssistantToolsFunctionType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AssistantToolsFunctionTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AssistantToolsFunctionType>

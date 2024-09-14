@@ -57,7 +57,7 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
@@ -65,7 +65,7 @@ namespace G
         /// The author of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.SimpleUser>? Author { get; set; }
 
@@ -73,7 +73,7 @@ namespace G
         /// The publisher of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.SimpleUser>? Publisher { get; set; }
 
@@ -88,7 +88,7 @@ namespace G
         /// The state of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryAdvisoryStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RepositoryAdvisoryState State { get; set; }
 
@@ -194,7 +194,7 @@ namespace G
         /// A temporary private fork of the advisory's repository for collaborating on a fix.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; }
 

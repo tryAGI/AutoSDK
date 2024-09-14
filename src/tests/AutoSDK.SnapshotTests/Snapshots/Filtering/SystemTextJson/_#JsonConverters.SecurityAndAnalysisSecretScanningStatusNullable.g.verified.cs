@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SecurityAndAnalysisSecretScanningStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SecurityAndAnalysisSecretScanningStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SecurityAndAnalysisSecretScanningStatus?>

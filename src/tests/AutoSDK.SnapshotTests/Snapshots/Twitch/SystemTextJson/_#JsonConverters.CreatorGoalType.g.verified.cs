@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreatorGoalType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreatorGoalTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreatorGoalType>

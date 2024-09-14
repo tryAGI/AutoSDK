@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryAdvisoryCreditStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryAdvisoryCreditStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryAdvisoryCreditState?>

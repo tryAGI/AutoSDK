@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookMergeGroupChecksRequestedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookMergeGroupChecksRequestedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookMergeGroupChecksRequestedAction>

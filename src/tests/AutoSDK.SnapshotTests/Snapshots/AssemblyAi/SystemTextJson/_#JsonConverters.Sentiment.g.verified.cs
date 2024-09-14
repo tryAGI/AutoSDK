@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.Sentiment.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SentimentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.Sentiment>

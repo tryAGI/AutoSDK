@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.VectorStoreObjectStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class VectorStoreObjectStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.VectorStoreObjectStatus>

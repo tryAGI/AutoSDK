@@ -67,14 +67,14 @@ namespace G
         /// The result of the rule evaluations for rules with the `active` enforcement status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RuleSuiteResultJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteResultJsonConverter))]
         public global::G.RuleSuiteResult? Result { get; set; }
 
         /// <summary>
         /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RuleSuiteEvaluationResultJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteEvaluationResultJsonConverter))]
         public global::G.RuleSuiteEvaluationResult? EvaluationResult { get; set; }
 
         /// <summary>

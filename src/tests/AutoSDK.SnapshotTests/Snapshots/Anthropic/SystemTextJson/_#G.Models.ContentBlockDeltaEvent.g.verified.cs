@@ -13,7 +13,7 @@ namespace G
         /// A delta in a streaming message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.BlockDeltaJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BlockDeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.BlockDelta Delta { get; set; }
 
@@ -28,7 +28,7 @@ namespace G
         /// The type of a streaming event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageStreamEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.MessageStreamEventType Type { get; set; }
 

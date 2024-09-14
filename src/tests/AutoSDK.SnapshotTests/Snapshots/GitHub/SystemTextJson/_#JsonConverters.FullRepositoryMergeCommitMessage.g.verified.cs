@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FullRepositoryMergeCommitMessage.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FullRepositoryMergeCommitMessageJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FullRepositoryMergeCommitMessage>

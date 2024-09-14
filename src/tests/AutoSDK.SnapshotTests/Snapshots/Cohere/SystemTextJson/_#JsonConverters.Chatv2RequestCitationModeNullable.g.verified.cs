@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.Chatv2RequestCitationModeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class Chatv2RequestCitationModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.Chatv2RequestCitationMode?>

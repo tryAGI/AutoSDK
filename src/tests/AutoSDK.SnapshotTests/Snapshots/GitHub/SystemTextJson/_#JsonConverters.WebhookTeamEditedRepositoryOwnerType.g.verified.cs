@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookTeamEditedRepositoryOwnerType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookTeamEditedRepositoryOwnerTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookTeamEditedRepositoryOwnerType>

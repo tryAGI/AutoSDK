@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AnyOfFactory6.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AnyOfJsonConverterFactory6 : global::System.Text.Json.Serialization.JsonConverterFactory

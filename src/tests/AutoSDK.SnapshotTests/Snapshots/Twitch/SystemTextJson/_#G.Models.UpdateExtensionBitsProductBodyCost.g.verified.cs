@@ -22,7 +22,7 @@ namespace G
         /// * bits — The minimum price is 1 and the maximum is 10000.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateExtensionBitsProductBodyCostTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateExtensionBitsProductBodyCostTypeJsonConverter))]
         public global::G.UpdateExtensionBitsProductBodyCostType Type { get; set; }
 
         /// <summary>

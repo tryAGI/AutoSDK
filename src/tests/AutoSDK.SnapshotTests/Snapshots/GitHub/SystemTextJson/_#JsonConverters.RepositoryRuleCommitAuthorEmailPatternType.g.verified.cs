@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleCommitAuthorEmailPatternType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleCommitAuthorEmailPatternTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleCommitAuthorEmailPatternType>

@@ -29,7 +29,7 @@ namespace G
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TranscriptStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TranscriptStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.TranscriptStatus Status { get; set; }
 
@@ -39,7 +39,7 @@ namespace G
         /// The default value is 'en_us'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace G
         /// The speech model used for the transcription. When `null`, the default model is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; }
 
@@ -173,7 +173,7 @@ namespace G
         /// See [Key Phrases](https://www.assemblyai.com/docs/models/key-phrases) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_highlights_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace G
         /// See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_audio_quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace G
         /// The replacement logic for detected PII, can be "entity_name" or "hash". See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_sub")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SubstitutionPolicyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SubstitutionPolicyJsonConverter))]
         public global::G.SubstitutionPolicy? RedactPiiSub { get; set; }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace G
         /// See [Content moderation](https://www.assemblyai.com/docs/models/content-moderation) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_safety_labels")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace G
         /// See [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iab_categories_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
 
         /// <summary>

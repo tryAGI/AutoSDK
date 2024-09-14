@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.PullsCreateReviewCommentRequestSideNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class PullsCreateReviewCommentRequestSideNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullsCreateReviewCommentRequestSide?>

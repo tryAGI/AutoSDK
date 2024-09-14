@@ -46,7 +46,7 @@ namespace G
         /// The level of the annotation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChecksCreateRequestOutputAnnotationAnnotationLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChecksCreateRequestOutputAnnotationAnnotationLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.ChecksCreateRequestOutputAnnotationAnnotationLevel AnnotationLevel { get; set; }
 

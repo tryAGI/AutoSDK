@@ -34,7 +34,7 @@ namespace G
         /// The merge method to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhooksPullRequest5AutoMergeMergeMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksPullRequest5AutoMergeMergeMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhooksPullRequest5AutoMergeMergeMethod MergeMethod { get; set; }
 

@@ -41,7 +41,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correctionType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CorrectionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CorrectionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CorrectionType CorrectionType { get; set; }
 

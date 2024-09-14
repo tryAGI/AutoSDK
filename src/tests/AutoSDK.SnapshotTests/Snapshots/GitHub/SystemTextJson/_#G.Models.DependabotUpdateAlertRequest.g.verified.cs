@@ -14,7 +14,7 @@ namespace G
         /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotUpdateAlertRequestStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotUpdateAlertRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependabotUpdateAlertRequestState State { get; set; }
 
@@ -22,7 +22,7 @@ namespace G
         /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependabotUpdateAlertRequestDismissedReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotUpdateAlertRequestDismissedReasonJsonConverter))]
         public global::G.DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace G
         /// The object type, which is always `organization.invite`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InviteObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteObjectJsonConverter))]
         public global::G.InviteObject Object { get; set; }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InviteRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.InviteRole Role { get; set; }
 
@@ -42,7 +42,7 @@ namespace G
         /// `accepted`,`expired`, or `pending`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InviteStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.InviteStatus Status { get; set; }
 
@@ -50,7 +50,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset InvitedAt { get; set; }
 
@@ -58,7 +58,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
@@ -66,7 +66,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset AcceptedAt { get; set; }
 
         /// <summary>

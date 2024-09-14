@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ImportStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ImportStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ImportStatus>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposCreateForAuthenticatedUserRequestMergeCommitTitleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposCreateForAuthenticatedUserRequestMergeCommitTitleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposCreateForAuthenticatedUserRequestMergeCommitTitle?>

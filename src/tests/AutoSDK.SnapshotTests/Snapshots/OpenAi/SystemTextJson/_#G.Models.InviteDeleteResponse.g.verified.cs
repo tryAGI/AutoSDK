@@ -13,7 +13,7 @@ namespace G
         /// The object type, which is always `organization.invite.deleted`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
         public global::G.InviteDeleteResponseObject Object { get; set; }
 
         /// <summary>

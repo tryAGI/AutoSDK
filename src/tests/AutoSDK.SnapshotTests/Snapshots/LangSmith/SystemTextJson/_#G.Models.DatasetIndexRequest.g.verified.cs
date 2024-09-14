@@ -15,7 +15,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<string, object>? Tag { get; set; } = "latest";
 
         /// <summary>

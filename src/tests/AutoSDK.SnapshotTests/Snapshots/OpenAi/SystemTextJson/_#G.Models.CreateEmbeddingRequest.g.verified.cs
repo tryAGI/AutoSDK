@@ -16,7 +16,7 @@ namespace G
         /// Example: The quick brown fox jumped over the lazy dog
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory4))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; }
 
@@ -25,7 +25,7 @@ namespace G
         /// Example: text-embedding-3-small
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateEmbeddingRequestModel?> Model { get; set; }
 
@@ -35,7 +35,7 @@ namespace G
         /// Example: float
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
         public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = global::G.CreateEmbeddingRequestEncodingFormat.Float;
 
         /// <summary>

@@ -19,14 +19,14 @@ namespace G
         /// The enforcement level of this rule source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RuleSuiteRuleEvaluationEnforcementJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteRuleEvaluationEnforcementJsonConverter))]
         public global::G.RuleSuiteRuleEvaluationEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// The result of the evaluation of the individual rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RuleSuiteRuleEvaluationResultJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteRuleEvaluationResultJsonConverter))]
         public global::G.RuleSuiteRuleEvaluationResult? Result { get; set; }
 
         /// <summary>

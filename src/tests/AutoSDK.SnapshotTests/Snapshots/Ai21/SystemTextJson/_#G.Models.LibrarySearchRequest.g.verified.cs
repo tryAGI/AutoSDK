@@ -46,7 +46,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         public global::G.AllOf<global::G.RetrievalStrategy3?>? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy3.Default;
 
         /// <summary>

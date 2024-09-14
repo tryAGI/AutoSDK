@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.InviteRoleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class InviteRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.InviteRole?>

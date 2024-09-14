@@ -13,7 +13,7 @@ namespace G
         /// The type of response format being defined: `json_schema`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
         public global::G.ResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>

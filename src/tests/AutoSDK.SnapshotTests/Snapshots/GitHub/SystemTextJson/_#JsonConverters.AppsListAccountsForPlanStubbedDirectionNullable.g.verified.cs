@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AppsListAccountsForPlanStubbedDirectionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AppsListAccountsForPlanStubbedDirectionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AppsListAccountsForPlanStubbedDirection?>

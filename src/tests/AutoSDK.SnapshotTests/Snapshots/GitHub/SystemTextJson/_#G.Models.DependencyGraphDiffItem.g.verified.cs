@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("change_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependencyGraphDiffItemChangeTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyGraphDiffItemChangeTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependencyGraphDiffItemChangeType ChangeType { get; set; }
 
@@ -77,7 +77,7 @@ namespace G
         /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DependencyGraphDiffItemScopeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyGraphDiffItemScopeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.DependencyGraphDiffItemScope Scope { get; set; }
 

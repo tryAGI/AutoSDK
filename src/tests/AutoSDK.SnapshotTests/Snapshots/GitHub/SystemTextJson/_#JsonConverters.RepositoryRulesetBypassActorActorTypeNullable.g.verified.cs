@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRulesetBypassActorActorTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRulesetBypassActorActorTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRulesetBypassActorActorType?>

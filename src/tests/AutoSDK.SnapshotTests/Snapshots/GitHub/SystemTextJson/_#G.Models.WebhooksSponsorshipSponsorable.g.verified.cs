@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhooksSponsorshipSponsorableTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksSponsorshipSponsorableTypeJsonConverter))]
         public global::G.WebhooksSponsorshipSponsorableType? Type { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatRole>

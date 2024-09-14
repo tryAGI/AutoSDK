@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProductNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProductNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct?>

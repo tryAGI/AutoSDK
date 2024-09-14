@@ -13,7 +13,7 @@ namespace G
         /// The services to be chosen for calculating the API credit cost.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PricingCalculatorServicesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PricingCalculatorServicesJsonConverter))]
         public global::G.PricingCalculatorServices? Service { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListReposApiV1ReposGetIsPublic2Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListReposApiV1ReposGetIsPublic2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListReposApiV1ReposGetIsPublic2?>

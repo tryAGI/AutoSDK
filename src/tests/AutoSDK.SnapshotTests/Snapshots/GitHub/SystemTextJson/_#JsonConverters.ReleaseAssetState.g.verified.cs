@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReleaseAssetState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReleaseAssetStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReleaseAssetState>

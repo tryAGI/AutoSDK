@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SearchCommitsOrder.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SearchCommitsOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SearchCommitsOrder>

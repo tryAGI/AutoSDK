@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DatasetType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DatasetTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DatasetType>

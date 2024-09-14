@@ -27,7 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the completion was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
 
@@ -49,7 +49,7 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
         public global::G.CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>

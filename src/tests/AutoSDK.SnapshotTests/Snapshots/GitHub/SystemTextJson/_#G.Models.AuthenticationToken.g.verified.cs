@@ -46,7 +46,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AuthenticationTokenRepositorySelectionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthenticationTokenRepositorySelectionJsonConverter))]
         public global::G.AuthenticationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>

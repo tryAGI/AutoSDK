@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CorrectionTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CorrectionTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CorrectionType?>

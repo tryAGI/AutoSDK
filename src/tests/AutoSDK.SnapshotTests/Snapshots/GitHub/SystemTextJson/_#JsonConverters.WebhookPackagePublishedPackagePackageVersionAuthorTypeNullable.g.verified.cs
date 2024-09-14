@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookPackagePublishedPackagePackageVersionAuthorTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookPackagePublishedPackagePackageVersionAuthorTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookPackagePublishedPackagePackageVersionAuthorType?>

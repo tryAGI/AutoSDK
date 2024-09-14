@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SearchLabelsOrder.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SearchLabelsOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SearchLabelsOrder>

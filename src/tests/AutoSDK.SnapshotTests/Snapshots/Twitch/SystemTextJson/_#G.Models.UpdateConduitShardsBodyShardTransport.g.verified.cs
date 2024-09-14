@@ -16,7 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateConduitShardsBodyShardTransportMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateConduitShardsBodyShardTransportMethodJsonConverter))]
         public global::G.UpdateConduitShardsBodyShardTransportMethod? Method { get; set; }
 
         /// <summary>

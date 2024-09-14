@@ -20,7 +20,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -49,7 +49,7 @@ namespace G
         /// The status of the Upload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UploadStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UploadStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UploadStatus Status { get; set; }
 
@@ -57,7 +57,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
@@ -65,7 +65,7 @@ namespace G
         /// The object type, which is always "upload".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UploadObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UploadObjectJsonConverter))]
         public global::G.UploadObject? Object { get; set; }
 
         /// <summary>

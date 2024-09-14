@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookCustomPropertyDeletedActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookCustomPropertyDeletedActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookCustomPropertyDeletedAction?>

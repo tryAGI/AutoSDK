@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DeleteVectorStoreFileResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DeleteVectorStoreFileResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeleteVectorStoreFileResponseObject?>

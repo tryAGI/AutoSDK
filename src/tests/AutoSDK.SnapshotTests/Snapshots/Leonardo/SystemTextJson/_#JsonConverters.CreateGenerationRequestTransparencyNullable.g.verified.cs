@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateGenerationRequestTransparencyNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateGenerationRequestTransparencyNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateGenerationRequestTransparency?>

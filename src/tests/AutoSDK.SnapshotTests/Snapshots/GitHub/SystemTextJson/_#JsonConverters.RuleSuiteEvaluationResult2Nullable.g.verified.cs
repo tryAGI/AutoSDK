@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RuleSuiteEvaluationResult2Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RuleSuiteEvaluationResult2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RuleSuiteEvaluationResult2?>

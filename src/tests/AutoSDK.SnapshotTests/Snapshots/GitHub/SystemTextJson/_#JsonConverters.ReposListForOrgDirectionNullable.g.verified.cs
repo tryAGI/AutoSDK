@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ReposListForOrgDirectionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ReposListForOrgDirectionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ReposListForOrgDirection?>

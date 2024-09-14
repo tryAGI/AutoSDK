@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatStreamEndEventVariant2FinishReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatStreamEndEventVariant2FinishReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatStreamEndEventVariant2FinishReason>

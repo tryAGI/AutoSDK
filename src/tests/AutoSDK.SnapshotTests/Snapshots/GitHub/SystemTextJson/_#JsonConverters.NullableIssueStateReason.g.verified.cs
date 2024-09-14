@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.NullableIssueStateReason.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class NullableIssueStateReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.NullableIssueStateReason>

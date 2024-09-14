@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MODELASSETTEXTURETYPESNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MODELASSETTEXTURETYPESNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MODELASSETTEXTURETYPES?>

@@ -21,7 +21,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("length")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummarizeRequestLengthJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestLengthJsonConverter))]
         public global::G.SummarizeRequestLength? Length { get; set; } = global::G.SummarizeRequestLength.Medium;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace G
         /// Default Value: paragraph
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummarizeRequestFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestFormatJsonConverter))]
         public global::G.SummarizeRequestFormat? Format { get; set; } = global::G.SummarizeRequestFormat.Paragraph;
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace G
         /// Default Value: low
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extractiveness")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
         public global::G.SummarizeRequestExtractiveness? Extractiveness { get; set; } = global::G.SummarizeRequestExtractiveness.Low;
 
         /// <summary>

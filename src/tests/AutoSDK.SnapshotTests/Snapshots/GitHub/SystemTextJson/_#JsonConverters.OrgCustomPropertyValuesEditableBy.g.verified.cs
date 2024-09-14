@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgCustomPropertyValuesEditableBy.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgCustomPropertyValuesEditableByJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgCustomPropertyValuesEditableBy>

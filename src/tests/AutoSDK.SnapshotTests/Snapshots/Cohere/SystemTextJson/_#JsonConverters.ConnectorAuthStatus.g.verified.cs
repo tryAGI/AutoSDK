@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ConnectorAuthStatus.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ConnectorAuthStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ConnectorAuthStatus>

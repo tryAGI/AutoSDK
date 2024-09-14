@@ -22,7 +22,7 @@ namespace G
         /// The object type, which is always `vector_store.file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         public global::G.VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store file was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -51,7 +51,7 @@ namespace G
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.VectorStoreFileObjectStatus Status { get; set; }
 
@@ -66,7 +66,7 @@ namespace G
         /// The strategy used to chunk the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksUserMannequinType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksUserMannequinTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksUserMannequinType>

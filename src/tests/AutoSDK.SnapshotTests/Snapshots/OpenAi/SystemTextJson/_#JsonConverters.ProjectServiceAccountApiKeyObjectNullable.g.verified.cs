@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectServiceAccountApiKeyObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectServiceAccountApiKeyObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectServiceAccountApiKeyObject?>

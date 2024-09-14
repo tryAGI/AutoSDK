@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatCompletionRequestFunctionMessageRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatCompletionRequestFunctionMessageRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionRequestFunctionMessageRole>

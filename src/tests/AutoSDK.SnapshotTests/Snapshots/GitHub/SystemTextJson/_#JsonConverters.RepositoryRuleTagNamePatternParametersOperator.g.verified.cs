@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleTagNamePatternParametersOperator.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleTagNamePatternParametersOperatorJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleTagNamePatternParametersOperator>

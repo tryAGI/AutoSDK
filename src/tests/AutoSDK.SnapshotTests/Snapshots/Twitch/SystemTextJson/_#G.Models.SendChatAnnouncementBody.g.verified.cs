@@ -28,7 +28,7 @@ namespace G
         /// If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SendChatAnnouncementBodyColorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SendChatAnnouncementBodyColorJsonConverter))]
         public global::G.SendChatAnnouncementBodyColor? Color { get; set; }
 
         /// <summary>

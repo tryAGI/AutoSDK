@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListFilesInVectorStoreBatchFilter.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListFilesInVectorStoreBatchFilterJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListFilesInVectorStoreBatchFilter>

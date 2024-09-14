@@ -22,7 +22,7 @@ namespace G
         /// Example: member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamMembershipRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.TeamMembershipRole Role { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// The state of the user's membership in the team.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamMembershipStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.TeamMembershipState State { get; set; }
 

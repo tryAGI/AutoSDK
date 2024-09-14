@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookWorkflowRunInProgressWorkflowRunActorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowRunInProgressWorkflowRunActorTypeJsonConverter))]
         public global::G.WebhookWorkflowRunInProgressWorkflowRunActorType? Type { get; set; }
 
         /// <summary>

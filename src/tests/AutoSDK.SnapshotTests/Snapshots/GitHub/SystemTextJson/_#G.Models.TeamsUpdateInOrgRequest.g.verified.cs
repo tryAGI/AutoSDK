@@ -30,7 +30,7 @@ namespace G
         ///  * `closed` - visible to all members of this organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsUpdateInOrgRequestPrivacyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestPrivacyJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
         ///  * `notifications_disabled` - no one receives notifications.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsUpdateInOrgRequestNotificationSettingJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestNotificationSettingJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace G
         /// Default Value: pull
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsUpdateInOrgRequestPermissionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestPermissionJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestPermission? Permission { get; set; } = global::G.TeamsUpdateInOrgRequestPermission.Pull;
 
         /// <summary>

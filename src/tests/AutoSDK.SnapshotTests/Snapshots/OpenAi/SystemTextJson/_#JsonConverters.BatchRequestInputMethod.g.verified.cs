@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.BatchRequestInputMethod.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class BatchRequestInputMethodJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.BatchRequestInputMethod>

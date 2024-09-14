@@ -21,7 +21,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter))]
         public global::G.MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = global::G.MessageContentImageFileObjectImageFileDetail.Auto;
 
         /// <summary>

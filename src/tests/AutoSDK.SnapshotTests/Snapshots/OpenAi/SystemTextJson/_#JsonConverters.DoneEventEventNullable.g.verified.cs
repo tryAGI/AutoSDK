@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DoneEventEventNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DoneEventEventNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DoneEventEvent?>

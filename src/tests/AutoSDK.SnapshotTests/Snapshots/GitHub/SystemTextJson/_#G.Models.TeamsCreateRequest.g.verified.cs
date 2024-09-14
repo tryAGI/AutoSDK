@@ -45,7 +45,7 @@ namespace G
         /// Default for child team: `closed`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsCreateRequestPrivacyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestPrivacyJsonConverter))]
         public global::G.TeamsCreateRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace G
         /// Default: `notifications_enabled`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsCreateRequestNotificationSettingJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestNotificationSettingJsonConverter))]
         public global::G.TeamsCreateRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace G
         /// Default Value: pull
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TeamsCreateRequestPermissionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestPermissionJsonConverter))]
         public global::G.TeamsCreateRequestPermission? Permission { get; set; } = global::G.TeamsCreateRequestPermission.Pull;
 
         /// <summary>

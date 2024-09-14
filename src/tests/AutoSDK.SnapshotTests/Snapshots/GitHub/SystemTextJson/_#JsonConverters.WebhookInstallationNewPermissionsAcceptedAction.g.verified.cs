@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookInstallationNewPermissionsAcceptedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookInstallationNewPermissionsAcceptedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookInstallationNewPermissionsAcceptedAction>

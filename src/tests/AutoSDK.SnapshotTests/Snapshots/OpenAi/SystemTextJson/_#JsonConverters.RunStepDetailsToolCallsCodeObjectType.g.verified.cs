@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepDetailsToolCallsCodeObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepDetailsToolCallsCodeObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepDetailsToolCallsCodeObjectType>

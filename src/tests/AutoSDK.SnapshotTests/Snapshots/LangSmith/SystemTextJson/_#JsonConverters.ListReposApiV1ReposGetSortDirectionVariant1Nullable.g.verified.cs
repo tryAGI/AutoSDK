@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListReposApiV1ReposGetSortDirectionVariant1Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListReposApiV1ReposGetSortDirectionVariant1NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListReposApiV1ReposGetSortDirectionVariant1?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EmbedRequestTruncateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EmbedRequestTruncateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EmbedRequestTruncate?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SourceType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SourceTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SourceType>

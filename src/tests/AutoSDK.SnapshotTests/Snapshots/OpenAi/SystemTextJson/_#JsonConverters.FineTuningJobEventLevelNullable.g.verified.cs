@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.FineTuningJobEventLevelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class FineTuningJobEventLevelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FineTuningJobEventLevel?>

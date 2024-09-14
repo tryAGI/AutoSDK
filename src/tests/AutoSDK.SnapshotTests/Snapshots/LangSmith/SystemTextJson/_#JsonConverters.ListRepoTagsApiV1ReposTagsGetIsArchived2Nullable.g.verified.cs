@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2Nullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2?>

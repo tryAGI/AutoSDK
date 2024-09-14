@@ -73,7 +73,7 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.BroadcasterSubscriptionTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BroadcasterSubscriptionTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.BroadcasterSubscriptionTier Tier { get; set; }
 

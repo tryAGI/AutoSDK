@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActivityListReposStarredByAuthenticatedUserDirection.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActivityListReposStarredByAuthenticatedUserDirectionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActivityListReposStarredByAuthenticatedUserDirection>

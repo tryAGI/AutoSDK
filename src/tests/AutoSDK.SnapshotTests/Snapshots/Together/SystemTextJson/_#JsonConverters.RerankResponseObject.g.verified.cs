@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RerankResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RerankResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RerankResponseObject>

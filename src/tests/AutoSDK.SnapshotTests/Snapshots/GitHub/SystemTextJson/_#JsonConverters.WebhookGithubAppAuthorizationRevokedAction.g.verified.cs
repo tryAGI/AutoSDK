@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhookGithubAppAuthorizationRevokedAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhookGithubAppAuthorizationRevokedActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhookGithubAppAuthorizationRevokedAction>

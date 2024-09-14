@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TenantUsageLimitType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TenantUsageLimitTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TenantUsageLimitType>

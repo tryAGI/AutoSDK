@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ActionsDefaultWorkflowPermissions.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ActionsDefaultWorkflowPermissionsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ActionsDefaultWorkflowPermissions>

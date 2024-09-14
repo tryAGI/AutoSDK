@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CompletionResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CompletionResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CompletionResponseObject?>

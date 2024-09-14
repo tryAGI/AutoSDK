@@ -22,7 +22,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         public global::G.AllOf<global::G.StyleType?>? Style { get; set; } = global::G.StyleType.General;
 
         /// <summary>

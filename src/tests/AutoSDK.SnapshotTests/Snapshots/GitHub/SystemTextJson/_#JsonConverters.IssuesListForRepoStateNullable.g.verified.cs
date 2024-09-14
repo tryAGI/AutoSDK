@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.IssuesListForRepoStateNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class IssuesListForRepoStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.IssuesListForRepoState?>

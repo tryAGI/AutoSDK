@@ -48,7 +48,7 @@ namespace G
         /// Example: fine-tune
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FileResponsePurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileResponsePurposeJsonConverter))]
         public global::G.FileResponsePurpose Purpose { get; set; }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace G
         /// Example: jsonl
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("FileType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FileResponseFileTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileResponseFileTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.FileResponseFileType FileType { get; set; }
 

@@ -34,7 +34,7 @@ namespace G
         /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GitCreateTagRequestTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GitCreateTagRequestTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.GitCreateTagRequestType Type { get; set; }
 

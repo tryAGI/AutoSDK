@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SendExtensionPubSubMessageBodyTargetItem.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SendExtensionPubSubMessageBodyTargetItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SendExtensionPubSubMessageBodyTargetItem>

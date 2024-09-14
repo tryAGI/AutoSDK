@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SummarizeRequestFormatNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SummarizeRequestFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SummarizeRequestFormat?>

@@ -56,7 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetClusterJobResponseStatusJsonConverter))]
         public global::G.GetClusterJobResponseStatus? Status { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DependabotListAlertsForOrgSort.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DependabotListAlertsForOrgSortJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DependabotListAlertsForOrgSort>

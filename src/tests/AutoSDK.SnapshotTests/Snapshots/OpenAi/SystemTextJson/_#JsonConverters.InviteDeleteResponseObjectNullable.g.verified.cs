@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.InviteDeleteResponseObjectNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class InviteDeleteResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.InviteDeleteResponseObject?>

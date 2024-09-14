@@ -48,7 +48,7 @@ namespace G
         /// Type of repository selection requested.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.PersonalAccessTokenRequestRepositorySelectionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PersonalAccessTokenRequestRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; }
 

@@ -20,7 +20,7 @@ namespace G
         /// Default Value: NORMAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
         public global::G.MODELASSETTEXTURETYPES? Type { get; set; } = global::G.MODELASSETTEXTURETYPES.NORMAL;
 
         /// <summary>

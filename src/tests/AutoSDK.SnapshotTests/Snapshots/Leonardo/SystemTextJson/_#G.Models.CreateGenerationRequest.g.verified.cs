@@ -150,7 +150,7 @@ namespace G
         /// Default Value: DYNAMIC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SdGenerationStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdGenerationStyleJsonConverter))]
         public global::G.SdGenerationStyle? PresetStyle { get; set; } = global::G.SdGenerationStyle.DYNAMIC;
 
         /// <summary>
@@ -189,14 +189,14 @@ namespace G
         /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduler")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SdGenerationSchedulersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdGenerationSchedulersJsonConverter))]
         public global::G.SdGenerationSchedulers? Scheduler { get; set; }
 
         /// <summary>
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdVersionsJsonConverter))]
         public global::G.SdVersions? SdVersion { get; set; }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace G
         /// Which type of transparency this image should use
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transparency")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CreateGenerationRequestTransparencyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateGenerationRequestTransparencyJsonConverter))]
         public global::G.CreateGenerationRequestTransparency? Transparency { get; set; }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace G
         /// This parameter will be deprecated in September 2024. Please use the controlnets array instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controlNetType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ControlnetTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ControlnetTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ControlnetType? ControlNetType { get; set; }
 
@@ -275,7 +275,7 @@ namespace G
         /// The type of request for the Canvas Editor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("canvasRequestType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CanvasRequestTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CanvasRequestTypeJsonConverter))]
         public global::G.CanvasRequestType? CanvasRequestType { get; set; }
 
         /// <summary>

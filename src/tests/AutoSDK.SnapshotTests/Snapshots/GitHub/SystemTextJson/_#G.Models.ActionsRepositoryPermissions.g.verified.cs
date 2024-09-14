@@ -20,7 +20,7 @@ namespace G
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_actions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AllowedActionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllowedActionsJsonConverter))]
         public global::G.AllowedActions? AllowedActions { get; set; }
 
         /// <summary>

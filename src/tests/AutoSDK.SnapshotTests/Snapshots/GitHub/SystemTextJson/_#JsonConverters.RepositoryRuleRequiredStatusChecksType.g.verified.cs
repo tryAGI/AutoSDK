@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryRuleRequiredStatusChecksType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryRuleRequiredStatusChecksTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryRuleRequiredStatusChecksType>

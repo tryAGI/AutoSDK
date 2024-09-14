@@ -13,7 +13,7 @@ namespace G
         /// One of `server_error` or `rate_limit_exceeded`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepObjectLastErrorCodeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RunStepObjectLastErrorCode Code { get; set; }
 

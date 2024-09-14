@@ -20,7 +20,7 @@ namespace G
         /// The status of the transcript. Either completed or error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.TranscriptReadyStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TranscriptReadyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.TranscriptReadyStatus Status { get; set; }
 

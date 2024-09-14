@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectUserCreateRequestRole.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectUserCreateRequestRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectUserCreateRequestRole>

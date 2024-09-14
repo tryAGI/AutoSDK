@@ -13,7 +13,7 @@ namespace G
         /// Always `file_citation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
         public global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>

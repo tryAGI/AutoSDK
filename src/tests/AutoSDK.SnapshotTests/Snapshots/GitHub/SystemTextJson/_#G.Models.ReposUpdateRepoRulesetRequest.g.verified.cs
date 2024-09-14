@@ -20,14 +20,14 @@ namespace G
         /// **Note**: The `push` target is in beta and is subject to change.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ReposUpdateRepoRulesetRequestTargetJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateRepoRulesetRequestTargetJsonConverter))]
         public global::G.ReposUpdateRepoRulesetRequestTarget? Target { get; set; }
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         public global::G.RepositoryRuleEnforcement? Enforcement { get; set; }
 
         /// <summary>

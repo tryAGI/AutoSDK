@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateChatCompletionStreamResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateChatCompletionStreamResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateChatCompletionStreamResponseObject>

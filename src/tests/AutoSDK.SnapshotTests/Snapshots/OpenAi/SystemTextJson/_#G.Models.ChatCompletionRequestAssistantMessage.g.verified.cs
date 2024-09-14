@@ -15,7 +15,7 @@ namespace G
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace G
         /// The role of the messages author, in this case `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestAssistantMessageRole Role { get; set; }
 
         /// <summary>

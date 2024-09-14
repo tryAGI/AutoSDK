@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.MigrationsGetStatusForOrgExcludeItemNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MigrationsGetStatusForOrgExcludeItemNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.MigrationsGetStatusForOrgExcludeItem?>

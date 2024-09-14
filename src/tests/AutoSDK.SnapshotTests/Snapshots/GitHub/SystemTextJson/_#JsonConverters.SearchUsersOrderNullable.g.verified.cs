@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SearchUsersOrderNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SearchUsersOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SearchUsersOrder?>

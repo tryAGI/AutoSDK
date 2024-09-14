@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsAddOrUpdateRepoPermissionsLegacyRequestPermissionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission>

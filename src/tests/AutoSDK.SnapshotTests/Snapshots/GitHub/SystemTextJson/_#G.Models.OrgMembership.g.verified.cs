@@ -21,7 +21,7 @@ namespace G
         /// Example: active
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgMembershipStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgMembershipState State { get; set; }
 
@@ -30,7 +30,7 @@ namespace G
         /// Example: admin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgMembershipRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgMembershipRole Role { get; set; }
 

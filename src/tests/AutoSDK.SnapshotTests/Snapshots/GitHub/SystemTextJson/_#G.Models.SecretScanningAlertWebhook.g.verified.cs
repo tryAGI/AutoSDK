@@ -49,7 +49,7 @@ namespace G
         /// The reason for resolving the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecretScanningAlertResolutionWebhookJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertResolutionWebhookJsonConverter))]
         public global::G.SecretScanningAlertResolutionWebhook? Resolution { get; set; }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.SecretScanningAlertWebhookValidityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertWebhookValidityJsonConverter))]
         public global::G.SecretScanningAlertWebhookValidity? Validity { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ManageHeldAutoModMessagesBodyActionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ManageHeldAutoModMessagesBodyActionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ManageHeldAutoModMessagesBodyAction?>

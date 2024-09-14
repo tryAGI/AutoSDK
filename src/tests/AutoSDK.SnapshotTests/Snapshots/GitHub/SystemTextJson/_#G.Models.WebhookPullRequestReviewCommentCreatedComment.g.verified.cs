@@ -20,7 +20,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentAuthorAssociationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
 
@@ -153,7 +153,7 @@ namespace G
         /// The side of the first line of the range for a multi-line comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewCommentCreatedCommentSide Side { get; set; }
 
@@ -169,7 +169,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentStartSideJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentStartSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.WebhookPullRequestReviewCommentCreatedCommentStartSide? StartSide { get; set; }
 
@@ -177,7 +177,7 @@ namespace G
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentSubjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedCommentSubjectTypeJsonConverter))]
         public global::G.WebhookPullRequestReviewCommentCreatedCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>

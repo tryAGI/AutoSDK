@@ -13,7 +13,7 @@ namespace G
         /// Always `image`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
         public global::G.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>

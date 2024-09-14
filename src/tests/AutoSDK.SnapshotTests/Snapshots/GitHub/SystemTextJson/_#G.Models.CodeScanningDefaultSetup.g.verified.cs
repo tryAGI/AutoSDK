@@ -13,7 +13,7 @@ namespace G
         /// Code scanning default setup has been configured or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningDefaultSetupStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupStateJsonConverter))]
         public global::G.CodeScanningDefaultSetupState? State { get; set; }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// CodeQL query suite to be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningDefaultSetupQuerySuiteJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupQuerySuiteJsonConverter))]
         public global::G.CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
         /// The frequency of the periodic analysis.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningDefaultSetupScheduleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupScheduleJsonConverter))]
         public global::G.CodeScanningDefaultSetupSchedule? Schedule { get; set; }
 
         /// <summary>

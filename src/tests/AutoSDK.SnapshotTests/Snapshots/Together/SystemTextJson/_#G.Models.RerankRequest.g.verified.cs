@@ -32,7 +32,7 @@ namespace G
         /// Example: [, , , ]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::System.Collections.Generic.IList<global::G.RerankRequestDocumentsVariant1Item>, global::System.Collections.Generic.IList<string>> Documents { get; set; }
 

@@ -18,7 +18,7 @@ namespace G
         /// Setting the status to CANCELED refunds the user’s channel points.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UpdateRedemptionStatusBodyStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateRedemptionStatusBodyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.UpdateRedemptionStatusBodyStatus Status { get; set; }
 

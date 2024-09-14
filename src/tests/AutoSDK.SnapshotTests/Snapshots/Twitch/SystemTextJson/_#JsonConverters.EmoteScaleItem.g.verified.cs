@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.EmoteScaleItem.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class EmoteScaleItemJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.EmoteScaleItem>

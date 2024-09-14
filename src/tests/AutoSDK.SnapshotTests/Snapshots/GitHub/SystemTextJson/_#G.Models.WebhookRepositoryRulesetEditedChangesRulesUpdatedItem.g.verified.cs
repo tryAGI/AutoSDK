@@ -13,7 +13,7 @@ namespace G
         /// A repository rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RepositoryRuleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleJsonConverter))]
         public global::G.RepositoryRule? Rule { get; set; }
 
         /// <summary>

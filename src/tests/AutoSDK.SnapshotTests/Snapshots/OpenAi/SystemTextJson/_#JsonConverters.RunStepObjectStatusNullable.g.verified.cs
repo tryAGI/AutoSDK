@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepObjectStatusNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepObjectStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepObjectStatus?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.AccountTier.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class AccountTierJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AccountTier>

@@ -22,14 +22,14 @@ namespace G
         /// The object type, which is always `thread.run.step`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepObjectObjectJsonConverter))]
         public global::G.RunStepObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -58,7 +58,7 @@ namespace G
         /// The type of run step, which can be either `message_creation` or `tool_calls`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RunStepObjectType Type { get; set; }
 
@@ -66,7 +66,7 @@ namespace G
         /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.RunStepObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.RunStepObjectStatus Status { get; set; }
 
@@ -74,7 +74,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject> StepDetails { get; set; }
 
@@ -89,7 +89,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? ExpiredAt { get; set; }
 
@@ -97,7 +97,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? CancelledAt { get; set; }
 
@@ -105,7 +105,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? FailedAt { get; set; }
 
@@ -113,7 +113,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run step completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset? CompletedAt { get; set; }
 

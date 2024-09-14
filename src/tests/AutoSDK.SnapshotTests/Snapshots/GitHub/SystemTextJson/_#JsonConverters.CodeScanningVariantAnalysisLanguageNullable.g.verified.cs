@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningVariantAnalysisLanguageNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningVariantAnalysisLanguageNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningVariantAnalysisLanguage?>

@@ -13,7 +13,7 @@ namespace G
         /// Action to apply to the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.OrgsReviewPatGrantRequestRequestActionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsReviewPatGrantRequestRequestActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OrgsReviewPatGrantRequestRequestAction Action { get; set; }
 

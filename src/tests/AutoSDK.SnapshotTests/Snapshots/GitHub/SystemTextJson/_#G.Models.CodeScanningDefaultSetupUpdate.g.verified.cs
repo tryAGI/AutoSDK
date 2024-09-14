@@ -13,14 +13,14 @@ namespace G
         /// The desired state of code scanning default setup.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningDefaultSetupUpdateStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupUpdateStateJsonConverter))]
         public global::G.CodeScanningDefaultSetupUpdateState? State { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningDefaultSetupUpdateQuerySuiteJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupUpdateQuerySuiteJsonConverter))]
         public global::G.CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
 
         /// <summary>

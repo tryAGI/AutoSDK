@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ProjectsListForUserState.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ProjectsListForUserStateJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ProjectsListForUserState>

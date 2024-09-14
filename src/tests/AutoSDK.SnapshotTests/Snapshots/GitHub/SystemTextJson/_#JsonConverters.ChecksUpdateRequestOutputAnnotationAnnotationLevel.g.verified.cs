@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChecksUpdateRequestOutputAnnotationAnnotationLevel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChecksUpdateRequestOutputAnnotationAnnotationLevelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChecksUpdateRequestOutputAnnotationAnnotationLevel>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunsFilterDataSourceTypeEnum.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunsFilterDataSourceTypeEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunsFilterDataSourceTypeEnum>

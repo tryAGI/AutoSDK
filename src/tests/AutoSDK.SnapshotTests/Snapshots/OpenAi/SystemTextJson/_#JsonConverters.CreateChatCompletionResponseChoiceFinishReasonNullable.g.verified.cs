@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateChatCompletionResponseChoiceFinishReasonNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateChatCompletionResponseChoiceFinishReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateChatCompletionResponseChoiceFinishReason?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunsGenerateQueryFeedbackKeys.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunsGenerateQueryFeedbackKeysJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunsGenerateQueryFeedbackKeys>

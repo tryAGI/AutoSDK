@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.NullableScopedInstallationRepositorySelectionNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class NullableScopedInstallationRepositorySelectionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.NullableScopedInstallationRepositorySelection?>

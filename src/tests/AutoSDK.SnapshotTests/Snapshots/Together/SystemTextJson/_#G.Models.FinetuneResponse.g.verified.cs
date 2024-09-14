@@ -128,7 +128,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.FinetuneJobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinetuneJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.FinetuneJobStatus Status { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.ChatRequestPromptTruncation.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ChatRequestPromptTruncationJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatRequestPromptTruncation>

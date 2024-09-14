@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RepositoryMergeCommitTitleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RepositoryMergeCommitTitleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RepositoryMergeCommitTitle?>

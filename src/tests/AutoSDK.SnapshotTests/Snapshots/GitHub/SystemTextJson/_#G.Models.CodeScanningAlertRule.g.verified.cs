@@ -25,14 +25,14 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertRuleSeverityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertRuleSeverityJsonConverter))]
         public global::G.CodeScanningAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// The security severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_severity_level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodeScanningAlertRuleSecuritySeverityLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertRuleSecuritySeverityLevelJsonConverter))]
         public global::G.CodeScanningAlertRuleSecuritySeverityLevel? SecuritySeverityLevel { get; set; }
 
         /// <summary>

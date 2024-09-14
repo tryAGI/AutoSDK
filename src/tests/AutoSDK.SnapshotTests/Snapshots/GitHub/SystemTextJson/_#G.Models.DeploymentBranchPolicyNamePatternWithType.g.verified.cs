@@ -24,7 +24,7 @@ namespace G
         /// Example: branch
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.DeploymentBranchPolicyNamePatternWithTypeTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentBranchPolicyNamePatternWithTypeTypeJsonConverter))]
         public global::G.DeploymentBranchPolicyNamePatternWithTypeType? Type { get; set; }
 
         /// <summary>

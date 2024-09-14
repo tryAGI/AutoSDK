@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.InstallationTokenRepositorySelectionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InstallationTokenRepositorySelectionJsonConverter))]
         public global::G.InstallationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>

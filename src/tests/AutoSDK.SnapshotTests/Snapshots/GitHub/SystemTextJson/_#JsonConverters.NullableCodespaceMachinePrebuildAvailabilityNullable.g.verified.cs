@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.NullableCodespaceMachinePrebuildAvailabilityNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class NullableCodespaceMachinePrebuildAvailabilityNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.NullableCodespaceMachinePrebuildAvailability?>

@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateFileRequestPurpose.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateFileRequestPurposeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateFileRequestPurpose>

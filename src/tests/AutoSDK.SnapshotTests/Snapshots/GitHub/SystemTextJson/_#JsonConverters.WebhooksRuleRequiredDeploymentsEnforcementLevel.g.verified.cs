@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksRuleRequiredDeploymentsEnforcementLevel.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksRuleRequiredDeploymentsEnforcementLevelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksRuleRequiredDeploymentsEnforcementLevel>

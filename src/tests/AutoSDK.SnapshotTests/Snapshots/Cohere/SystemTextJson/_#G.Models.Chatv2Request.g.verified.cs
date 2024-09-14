@@ -36,7 +36,7 @@ namespace G
         /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
         public global::G.Chatv2RequestCitationMode? CitationMode { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace G
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ResponseFormat2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFormat2JsonConverter))]
         public global::G.ResponseFormat2? ResponseFormat { get; set; }
 
         /// <summary>

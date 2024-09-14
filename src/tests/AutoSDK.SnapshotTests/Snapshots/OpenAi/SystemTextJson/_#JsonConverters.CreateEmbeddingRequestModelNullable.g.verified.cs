@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CreateEmbeddingRequestModelNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateEmbeddingRequestModelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateEmbeddingRequestModel?>

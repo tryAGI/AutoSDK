@@ -13,7 +13,7 @@ namespace G
         /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.CodespacesSetCodespacesAccessRequestVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespacesSetCodespacesAccessRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CodespacesSetCodespacesAccessRequestVisibility Visibility { get; set; }
 

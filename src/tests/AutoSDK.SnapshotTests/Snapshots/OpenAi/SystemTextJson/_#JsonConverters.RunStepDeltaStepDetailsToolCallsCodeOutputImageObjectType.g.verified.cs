@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType>

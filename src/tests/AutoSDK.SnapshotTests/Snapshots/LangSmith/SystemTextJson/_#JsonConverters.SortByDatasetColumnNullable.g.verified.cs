@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SortByDatasetColumnNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SortByDatasetColumnNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SortByDatasetColumn?>

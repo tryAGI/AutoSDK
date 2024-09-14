@@ -68,7 +68,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_truncation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
         public global::G.ChatRequestPromptTruncation? PromptTruncation { get; set; }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation_quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ChatRequestCitationQualityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatRequestCitationQualityJsonConverter))]
         public global::G.ChatRequestCitationQuality? CitationQuality { get; set; }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace G
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatJsonConverter))]
         public global::G.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

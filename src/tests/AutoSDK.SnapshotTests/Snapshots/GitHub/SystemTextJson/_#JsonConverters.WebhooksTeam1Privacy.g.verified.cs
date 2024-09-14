@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.WebhooksTeam1Privacy.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class WebhooksTeam1PrivacyJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.WebhooksTeam1Privacy>

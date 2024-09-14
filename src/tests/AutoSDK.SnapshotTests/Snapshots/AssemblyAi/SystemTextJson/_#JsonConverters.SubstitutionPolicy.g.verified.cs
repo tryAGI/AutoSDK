@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.SubstitutionPolicy.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class SubstitutionPolicyJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.SubstitutionPolicy>

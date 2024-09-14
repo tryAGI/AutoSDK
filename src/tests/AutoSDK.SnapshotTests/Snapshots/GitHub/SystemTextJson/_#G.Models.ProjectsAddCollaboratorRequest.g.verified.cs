@@ -15,7 +15,7 @@ namespace G
         /// Example: write
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.ProjectsAddCollaboratorRequestPermissionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectsAddCollaboratorRequestPermissionJsonConverter))]
         public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; } = global::G.ProjectsAddCollaboratorRequestPermission.Write;
 
         /// <summary>

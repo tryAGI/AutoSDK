@@ -13,7 +13,7 @@ namespace G
         /// The type of tool being defined: `code_interpreter`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::AutoSDK.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
         public global::G.AssistantToolsCodeType Type { get; set; }
 
         /// <summary>

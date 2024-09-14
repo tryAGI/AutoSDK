@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TenantShareRunTokenTypeNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TenantShareRunTokenTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TenantShareRunTokenType?>

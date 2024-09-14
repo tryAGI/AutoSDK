@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.DeleteAssistantResponseObject.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class DeleteAssistantResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeleteAssistantResponseObject>

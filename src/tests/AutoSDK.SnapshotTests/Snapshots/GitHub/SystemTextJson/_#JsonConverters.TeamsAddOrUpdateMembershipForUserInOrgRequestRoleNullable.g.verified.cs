@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.TeamsAddOrUpdateMembershipForUserInOrgRequestRoleNullable.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class TeamsAddOrUpdateMembershipForUserInOrgRequestRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole?>

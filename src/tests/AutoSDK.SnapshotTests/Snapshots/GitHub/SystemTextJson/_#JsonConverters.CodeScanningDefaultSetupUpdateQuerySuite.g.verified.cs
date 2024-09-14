@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.CodeScanningDefaultSetupUpdateQuerySuite.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CodeScanningDefaultSetupUpdateQuerySuiteJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CodeScanningDefaultSetupUpdateQuerySuite>

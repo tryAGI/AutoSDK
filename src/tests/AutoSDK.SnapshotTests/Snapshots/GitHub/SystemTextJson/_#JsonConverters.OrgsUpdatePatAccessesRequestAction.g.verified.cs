@@ -1,7 +1,7 @@
 ﻿//HintName: JsonConverters.OrgsUpdatePatAccessesRequestAction.g.cs
 #nullable enable
 
-namespace AutoSDK.JsonConverters
+namespace G.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OrgsUpdatePatAccessesRequestActionJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OrgsUpdatePatAccessesRequestAction>
