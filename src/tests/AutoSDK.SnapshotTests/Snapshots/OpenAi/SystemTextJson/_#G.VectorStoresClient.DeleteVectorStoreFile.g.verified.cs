@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteVectorStoreFileResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.DeleteVectorStoreFileResponse), JsonSerializerContext) as global::G.DeleteVectorStoreFileResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

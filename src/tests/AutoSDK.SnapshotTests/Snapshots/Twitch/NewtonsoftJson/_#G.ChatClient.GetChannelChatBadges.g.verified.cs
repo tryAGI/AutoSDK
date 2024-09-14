@@ -86,7 +86,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetChannelChatBadgesResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetChannelChatBadgesResponse?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

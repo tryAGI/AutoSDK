@@ -17,48 +17,76 @@ namespace G
         public const string BaseUrl = "https://api.together.xyz/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ChatClient Chat => new ChatClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public CompletionClient Completion => new CompletionClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public CompletionClient Completion => new CompletionClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ImagesClient Images => new ImagesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ImagesClient Images => new ImagesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FilesClient Files => new FilesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FineTuningClient FineTuning => new FineTuningClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public RerankClient Rerank => new RerankClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public RerankClient Rerank => new RerankClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -70,13 +98,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
 
             Initialized(_httpClient);
         }

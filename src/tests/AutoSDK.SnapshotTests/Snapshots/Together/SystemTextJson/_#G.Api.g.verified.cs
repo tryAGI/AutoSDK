@@ -17,66 +17,11 @@ namespace G
         public const string BaseUrl = "https://api.together.xyz/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
-
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CompletionClient Completion => new CompletionClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ImagesClient Images => new ImagesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RerankClient Rerank => new RerankClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
-
-        /// <summary>
-        /// Creates a new instance of the Api.
-        /// If no httpClient is provided, a new one will be created.
-        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
-        /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="jsonSerializerOptions"></param>
-        public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
-            )
-        {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions
+        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
@@ -154,6 +99,86 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverterFactory1(),
                 }
             };
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatClient Chat => new ChatClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CompletionClient Completion => new CompletionClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ImagesClient Images => new ImagesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FilesClient Files => new FilesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FineTuningClient FineTuning => new FineTuningClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RerankClient Rerank => new RerankClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="baseUri"></param>
+        /// <param name="jsonSerializerOptions"></param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null)
+        {
+            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
 
             Initialized(_httpClient);
         }

@@ -99,7 +99,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListFineTuningJobEventsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.ListFineTuningJobEventsResponse), JsonSerializerContext) as global::G.ListFineTuningJobEventsResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

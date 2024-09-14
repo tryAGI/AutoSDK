@@ -13,14 +13,17 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             var
             readerCopy = reader;
             global::G.TranscriptReadyNotification? ready = default;
             try
             {
-                ready = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptReadyNotification>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptReadyNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptReadyNotification> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptReadyNotification).Name}");
+                ready = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -30,7 +33,9 @@ namespace G.JsonConverters
             global::G.RedactedAudioNotification? redactedAudio = default;
             try
             {
-                redactedAudio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RedactedAudioNotification>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RedactedAudioNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RedactedAudioNotification> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RedactedAudioNotification).Name}");
+                redactedAudio = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,11 +48,15 @@ namespace G.JsonConverters
 
             if (ready != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptReadyNotification>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptReadyNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptReadyNotification> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptReadyNotification).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (redactedAudio != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RedactedAudioNotification>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RedactedAudioNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RedactedAudioNotification> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RedactedAudioNotification).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             return result;
@@ -59,15 +68,20 @@ namespace G.JsonConverters
             global::G.TranscriptWebhookNotification value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsReady)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ready, typeof(global::G.TranscriptReadyNotification), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptReadyNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptReadyNotification?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptReadyNotification).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ready, typeInfo);
             }
             else if (value.IsRedactedAudio)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedAudio, typeof(global::G.RedactedAudioNotification), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RedactedAudioNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RedactedAudioNotification?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RedactedAudioNotification).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedAudio, typeInfo);
             }
         }
     }

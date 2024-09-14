@@ -17,43 +17,68 @@ namespace G
         public const string BaseUrl = "https://ipinfo.io/";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
 
         /// <summary>
         /// General API.
         /// </summary>
-        public GeneralClient General => new GeneralClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public GeneralClient General => new GeneralClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Single info API.
         /// </summary>
-        public SingleClient Single => new SingleClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public SingleClient Single => new SingleClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Privacy Detection API.
         /// </summary>
-        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// ASN API.
         /// </summary>
-        public AsnClient Asn => new AsnClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AsnClient Asn => new AsnClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// IP Ranges API.
         /// </summary>
-        public RangesClient Ranges => new RangesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public RangesClient Ranges => new RangesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Hosted Domains API.
         /// </summary>
-        public DomainsClient Domains => new DomainsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public DomainsClient Domains => new DomainsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Abuse Contact API.
         /// </summary>
-        public AbuseClient Abuse => new AbuseClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AbuseClient Abuse => new AbuseClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -65,13 +90,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
 
             Initialized(_httpClient);
         }

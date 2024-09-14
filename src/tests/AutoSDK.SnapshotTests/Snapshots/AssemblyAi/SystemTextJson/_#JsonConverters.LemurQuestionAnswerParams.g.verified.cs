@@ -13,14 +13,17 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             var
             readerCopy = reader;
             global::G.LemurBaseParams? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LemurBaseParams>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurBaseParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurBaseParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurBaseParams).Name}");
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -30,7 +33,9 @@ namespace G.JsonConverters
             global::G.LemurQuestionAnswerParamsVariant2? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LemurQuestionAnswerParamsVariant2>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurQuestionAnswerParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurQuestionAnswerParamsVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurQuestionAnswerParamsVariant2).Name}");
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,11 +48,15 @@ namespace G.JsonConverters
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LemurBaseParams>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurBaseParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurBaseParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurBaseParams).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LemurQuestionAnswerParamsVariant2>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurQuestionAnswerParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurQuestionAnswerParamsVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurQuestionAnswerParamsVariant2).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             return result;
@@ -59,15 +68,20 @@ namespace G.JsonConverters
             global::G.LemurQuestionAnswerParams value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.LemurBaseParams), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurBaseParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurBaseParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurBaseParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
             else if (value.IsValue2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.LemurQuestionAnswerParamsVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurQuestionAnswerParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurQuestionAnswerParamsVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurQuestionAnswerParamsVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
         }
     }

@@ -12,7 +12,7 @@ public partial class Tests : VerifyBase
 {
     private async Task CheckSourceAsync<T>(
         JsonSerializerType jsonSerializerType,
-        AdditionalText[] additionalTexts,
+        IList<AdditionalText> additionalTexts,
         string callerName,
         Dictionary<string, string>? globalOptions = null,
         CancellationToken cancellationToken = default,
@@ -22,6 +22,7 @@ public partial class Tests : VerifyBase
         globalOptions ??= new Dictionary<string, string>();
         globalOptions.TryAdd("build_property.AutoSDK_Namespace", "G");
         globalOptions.TryAdd("build_property.AutoSDK_JsonSerializerType", $"{jsonSerializerType:G}");
+        globalOptions.TryAdd("build_property.AutoSDK_GenerateJsonSerializerContextTypes", "true");
         globalOptions.TryAdd("build_property.TargetFramework", jsonSerializerType switch
         {
             JsonSerializerType.SystemTextJson => "net8.0",
@@ -38,11 +39,44 @@ public partial class Tests : VerifyBase
             _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
         };
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
+        var trees = new List<SyntaxTree>
+        {
+            SyntaxFactory.ParseSyntaxTree("[assembly: System.CLSCompliantAttribute(true)]"),
+        };
+        if (additionalTexts.Count != 0 &&
+            jsonSerializerType is JsonSerializerType.SystemTextJson)
+        {
+            trees.Add(SyntaxFactory.ParseSyntaxTree(@"#nullable enable
+
+namespace G
+{
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.JsonSerializerContextTypes))]
+    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+        public static global::G.SourceGenerationContext Default { get; } = new global::G.SourceGenerationContext(new global::System.Text.Json.JsonSerializerOptions());
+        
+        /// <summary>
+        /// The source-generated options associated with this context.
+        /// </summary>
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions { get; }
+        
+        /// <inheritdoc/>
+        public SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options) : base(options)
+        {
+        }
+
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return null;
+        }
+    }
+}
+"));
+        }
+        
         var compilation = (Compilation)CSharpCompilation.Create(
             assemblyName: "Tests",
-            syntaxTrees: ImmutableArray.Create(SyntaxFactory.ParseSyntaxTree(@"
-[assembly: System.CLSCompliantAttribute(true)]
-")),
+            syntaxTrees: [..trees],
             references: references,
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
         var generator = new T();
@@ -51,7 +85,7 @@ public partial class Tests : VerifyBase
                 .Concat(additionalGenerators)
                 .Select(GeneratorExtensions.AsSourceGenerator)
                 .ToArray())
-            .AddAdditionalTexts(ImmutableArray.Create(additionalTexts))
+            .AddAdditionalTexts([..additionalTexts])
             .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)

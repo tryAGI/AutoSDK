@@ -17,28 +17,44 @@ namespace G
         public const string BaseUrl = "http://localhost:11434/api";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
 
         /// <summary>
         /// Given a prompt, the model will generate a completion.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public CompletionsClient Completions => new CompletionsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ChatClient Chat => new ChatClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Get a vector representation of a given input.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// List and describe the various models available.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -50,13 +66,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
 
             Initialized(_httpClient);
         }

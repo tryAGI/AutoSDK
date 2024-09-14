@@ -24,12 +24,23 @@ namespace {endPoint.Namespace}
         public const string BaseUrl = ""{endPoint.BaseUrl}"";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
-        private readonly {serializer.GetOptionsType()} _jsonSerializerOptions;" : " ")}
+        public {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}{(
+            endPoint.Id == "MainConstructor"
+                ? $" = {serializer.CreateDefaultSettings(endPoint.Converters)};"
+                : $" = new {serializer.GetOptionsType()}();")}" : $@" 
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{endPoint.Settings.JsonSerializerContext}.Default;")}
 
 {(endPoint.Properties.Length != 0 ? "\n" + endPoint.Properties.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient{(hasOptions ? ", jsonSerializerOptions: _jsonSerializerOptions" : "")});
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient)
+        {{
+            {(hasOptions
+                ? "JsonSerializerOptions = JsonSerializerOptions,"
+                : "JsonSerializerContext = JsonSerializerContext,")}
+        }};
 ").Inject() : " ")}
 
         /// <summary>
@@ -42,14 +53,10 @@ namespace {endPoint.Namespace}
         /// <param name=""jsonSerializerOptions""></param>" : " ")}
         public {endPoint.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null{(hasOptions ? $@",
-            {serializer.GetOptionsType()}? jsonSerializerOptions = null" : " ")}
-            )
+            global::System.Uri? baseUri = null)
         {{
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-{(hasOptions ? $@" 
-            _jsonSerializerOptions = _jsonSerializerOptions ?? {(endPoint.Id == "MainConstructor" ? serializer.CreateDefaultSettings(endPoint.Converters) : $"new {serializer.GetOptionsType()}()")};" : " ")}
 
             Initialized(_httpClient);
         }}

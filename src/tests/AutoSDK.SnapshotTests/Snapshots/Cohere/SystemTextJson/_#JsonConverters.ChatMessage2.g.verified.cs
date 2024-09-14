@@ -13,14 +13,17 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             var
             readerCopy = reader;
             global::G.UserMessage? userMessage = default;
             try
             {
-                userMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserMessage>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessage).Name}");
+                userMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -30,7 +33,9 @@ namespace G.JsonConverters
             global::G.AssistantMessage? assistantMessage = default;
             try
             {
-                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantMessage>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessage).Name}");
+                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -40,7 +45,9 @@ namespace G.JsonConverters
             global::G.SystemMessage? systemMessage = default;
             try
             {
-                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemMessage>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessage).Name}");
+                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -50,7 +57,9 @@ namespace G.JsonConverters
             global::G.ToolMessage2? tool = default;
             try
             {
-                tool = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolMessage2>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMessage2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMessage2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMessage2).Name}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -65,19 +74,27 @@ namespace G.JsonConverters
 
             if (userMessage != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessage).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (assistantMessage != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessage).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (systemMessage != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessage).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (tool != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolMessage2>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMessage2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMessage2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMessage2).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             return result;
@@ -89,23 +106,32 @@ namespace G.JsonConverters
             global::G.ChatMessage2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsUserMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage, typeof(global::G.UserMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage, typeInfo);
             }
             else if (value.IsAssistantMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage, typeof(global::G.AssistantMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage, typeInfo);
             }
             else if (value.IsSystemMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage, typeof(global::G.SystemMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage, typeInfo);
             }
             else if (value.IsTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeof(global::G.ToolMessage2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMessage2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMessage2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMessage2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
             }
         }
     }

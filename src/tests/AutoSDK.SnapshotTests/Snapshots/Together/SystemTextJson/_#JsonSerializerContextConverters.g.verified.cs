@@ -1,0 +1,86 @@
+﻿//HintName: JsonSerializerContextConverters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    internal sealed partial class JsonSerializerContextConverters
+    {
+        private readonly global::System.Type[] _types = new global::System.Type[]
+        {
+            typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter),
+            typeof(global::G.JsonConverters.RerankResponseObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinishReasonJsonConverter),
+            typeof(global::G.JsonConverters.FinishReasonNullableJsonConverter),
+            typeof(global::G.JsonConverters.CompletionResponseObjectJsonConverter),
+            typeof(global::G.JsonConverters.CompletionResponseObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.StreamSentinelDataJsonConverter),
+            typeof(global::G.JsonConverters.StreamSentinelDataNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolChoiceTypeJsonConverter),
+            typeof(global::G.JsonConverters.ToolChoiceTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionToolTypeJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionToolTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionSystemMessageParamRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionSystemMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionToolMessageParamRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionToolMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionResponseObjectJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionResponseObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChunkObjectJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChunkObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChoiceDeltaRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChoiceDeltaRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.EmbeddingsResponseObjectJsonConverter),
+            typeof(global::G.JsonConverters.EmbeddingsResponseObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter),
+            typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.ModelInfoTypeJsonConverter),
+            typeof(global::G.JsonConverters.ModelInfoTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ImageResponseObjectJsonConverter),
+            typeof(global::G.JsonConverters.ImageResponseObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.FileResponsePurposeJsonConverter),
+            typeof(global::G.JsonConverters.FileResponsePurposeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FileResponseFileTypeJsonConverter),
+            typeof(global::G.JsonConverters.FileResponseFileTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneJobStatusJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventObjectJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventLevelsJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventLevelsNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventTypeJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventObject2JsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventObject2NullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventLevelJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventLevelNullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventType2JsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventType2NullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneDownloadResultObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.CompletionStreamJsonConverter),
+            typeof(global::G.JsonConverters.AllOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.ChatCompletionMessageParamJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionStreamJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory1),
+        };
+    }
+}

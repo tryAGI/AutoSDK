@@ -1,5 +1,6 @@
 ﻿using AutoSDK.Serialization.Json;
 using AutoSDK.SourceGenerators;
+using Microsoft.CodeAnalysis;
 
 namespace AutoSDK.SnapshotTests;
 
@@ -77,6 +78,9 @@ public partial class Tests
             "OpenAi" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_ClassName"] = "OpenAiClient",
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
                 // ["build_property.AutoSDK_GenerateSdk"] = "false",
                 // ["build_property.AutoSDK_GenerateModels"] = "true",
                 // ["build_property.AutoSDK_GenerateMethods"] = "false",

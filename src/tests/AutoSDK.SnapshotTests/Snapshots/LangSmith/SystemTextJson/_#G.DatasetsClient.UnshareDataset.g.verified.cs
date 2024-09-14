@@ -84,7 +84,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UnshareDatasetApiV1DatasetsDatasetIdShareDeleteResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UnshareDatasetApiV1DatasetsDatasetIdShareDeleteResponse?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

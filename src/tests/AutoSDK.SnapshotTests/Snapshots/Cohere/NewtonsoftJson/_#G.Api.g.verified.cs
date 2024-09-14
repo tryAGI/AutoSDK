@@ -19,33 +19,52 @@ namespace G
         public const string BaseUrl = "https://api.cohere.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
 
         /// <summary>
         /// Datasets API
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Connectors API
         /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Embed Jobs API
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Finetuning API (Beta)
         /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FinetuningClient Finetuning => new FinetuningClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -57,13 +76,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
 
             Initialized(_httpClient);
         }

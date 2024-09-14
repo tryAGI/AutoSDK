@@ -16,143 +16,228 @@ namespace G
         public const string BaseUrl = "https://api.smith.langchain.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
 
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public OrgsClient Orgs => new OrgsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AuthClient Auth => new AuthClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ExamplesClient Examples => new ExamplesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public RunClient Run => new RunClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FeedbackClient Feedback => new FeedbackClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public PublicClient Public => new PublicClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public TenantClient Tenant => new TenantClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public InfoClient Info => new InfoClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public PromptsClient Prompts => new PromptsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ChartsClient Charts => new ChartsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ReposClient Repos => new ReposClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public LikesClient Likes => new LikesClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public CommitsClient Commits => new CommitsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public SettingsClient Settings => new SettingsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public EventsClient Events => new EventsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public EventsClient Events => new EventsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public CommentsClient Comments => new CommentsClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -164,13 +249,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
 
             Initialized(_httpClient);
         }

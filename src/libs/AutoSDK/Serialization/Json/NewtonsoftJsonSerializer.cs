@@ -39,11 +39,11 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
-        return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions)";
+        return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions)";
     }
     
     public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
-        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, _jsonSerializerOptions)";
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)";
     }
 }

@@ -18,7 +18,11 @@ namespace G
         public const string BaseUrl = "https://api.heygen.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions();
 
 
         /// <summary>
@@ -31,13 +35,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public AssetsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions();
 
             Initialized(_httpClient);
         }

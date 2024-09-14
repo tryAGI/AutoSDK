@@ -128,7 +128,7 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startexcerptsexport?projectId={projectId}&FileExtension={fileExtension}&ExCopyMode={exCopyMode}&SortMode={sortMode}&ExRange={exRange}&ExCreator={exCreator}&ExDate={exDate}&DesInfo={desInfo}&DocTitle={docTitle}&DocCreator={docCreator}&DocDate={docDate}&TagApplied={tagApplied}&TagWeight={tagWeight}&TagRange={tagRange}&Memos={memos}&symKeyEncrypted={symKeyEncrypted}", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,

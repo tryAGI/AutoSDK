@@ -16,108 +16,179 @@ namespace G
         public const string BaseUrl = "";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                Converters =
+                {
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public AccountClient Account => new AccountClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AccountClient Account => new AccountClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public AdminClient Admin => new AdminClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public AdminClient Admin => new AdminClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ChatClient Chat => new ChatClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public DataSetClient DataSet => new DataSetClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public DataSetClient DataSet => new DataSetClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public DescriptorClient Descriptor => new DescriptorClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public DescriptorClient Descriptor => new DescriptorClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ErrorClient Error => new ErrorClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ErrorClient Error => new ErrorClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ExcerptClient Excerpt => new ExcerptClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ExcerptClient Excerpt => new ExcerptClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ExportClient Export => new ExportClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ExportClient Export => new ExportClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FileClient File => new FileClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FileClient File => new FileClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public FileStorageClient FileStorage => new FileStorageClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public FileStorageClient FileStorage => new FileStorageClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public LoginClient Login => new LoginClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public LoginClient Login => new LoginClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public UsersClient Users => new UsersClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public MemoClient Memo => new MemoClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public MemoClient Memo => new MemoClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ProjectClient Project => new ProjectClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ProjectClient Project => new ProjectClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ResourceClient Resource => new ResourceClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public ResourceClient Resource => new ResourceClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public SecurityClient Security => new SecurityClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public SecurityClient Security => new SecurityClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public SurveyImportClient SurveyImport => new SurveyImportClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public SurveyImportClient SurveyImport => new SurveyImportClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TagClient Tag => new TagClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public TagClient Tag => new TagClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TrainingClient Training => new TrainingClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public TrainingClient Training => new TrainingClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
+        public UserClient User => new UserClient(_httpClient)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -129,20 +200,10 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                Converters =
-                {
-                }
-            };
 
             Initialized(_httpClient);
         }

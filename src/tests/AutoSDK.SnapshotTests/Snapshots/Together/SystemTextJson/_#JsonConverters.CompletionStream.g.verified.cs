@@ -13,14 +13,17 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             var
             readerCopy = reader;
             global::G.CompletionEvent? @event = default;
             try
             {
-                @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompletionEvent>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionEvent).Name}");
+                @event = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -30,7 +33,9 @@ namespace G.JsonConverters
             global::G.StreamSentinel? sentinel = default;
             try
             {
-                sentinel = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StreamSentinel>(ref readerCopy, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSentinel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSentinel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSentinel).Name}");
+                sentinel = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,11 +48,15 @@ namespace G.JsonConverters
 
             if (@event != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompletionEvent>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (sentinel != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StreamSentinel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSentinel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSentinel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSentinel).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             return result;
@@ -59,15 +68,20 @@ namespace G.JsonConverters
             global::G.CompletionStream value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event, typeof(global::G.CompletionEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event, typeInfo);
             }
             else if (value.IsSentinel)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentinel, typeof(global::G.StreamSentinel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSentinel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSentinel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSentinel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentinel, typeInfo);
             }
         }
     }
