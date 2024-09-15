@@ -11,11 +11,6 @@ namespace G
     public partial interface ITextureClient : global::System.IDisposable
     {
         /// <summary>
-        /// Leonardo.Ai API server
-        /// </summary>
-        public const string BaseUrl = "https://cloud.leonardo.ai/api/rest/v1";
-
-        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }

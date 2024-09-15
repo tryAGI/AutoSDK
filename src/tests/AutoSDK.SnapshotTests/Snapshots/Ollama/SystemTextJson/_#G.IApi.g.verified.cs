@@ -12,11 +12,6 @@ namespace G
     public partial interface IApi : global::System.IDisposable
     {
         /// <summary>
-        /// Ollama server URL
-        /// </summary>
-        public const string BaseUrl = "http://localhost:11434/api";
-
-        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }

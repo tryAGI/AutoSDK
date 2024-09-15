@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.openai.com/v1";
-
-        /// <summary>
-        /// 
-        /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 

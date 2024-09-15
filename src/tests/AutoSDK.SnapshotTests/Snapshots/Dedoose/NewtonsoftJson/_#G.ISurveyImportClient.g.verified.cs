@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "";
-
-        /// <summary>
-        /// 
-        /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 

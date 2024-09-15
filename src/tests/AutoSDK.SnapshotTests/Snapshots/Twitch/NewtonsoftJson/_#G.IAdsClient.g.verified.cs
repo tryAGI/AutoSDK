@@ -11,11 +11,6 @@ namespace G
     public partial interface IAdsClient : global::System.IDisposable
     {
         /// <summary>
-        /// Helix
-        /// </summary>
-        public const string BaseUrl = "https://api.twitch.tv/helix";
-
-        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }

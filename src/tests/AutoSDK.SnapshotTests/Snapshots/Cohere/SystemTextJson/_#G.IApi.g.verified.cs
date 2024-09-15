@@ -14,11 +14,6 @@ namespace G
     public partial interface IApi : global::System.IDisposable
     {
         /// <summary>
-        /// production
-        /// </summary>
-        public const string BaseUrl = "https://api.cohere.com";
-
-        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }

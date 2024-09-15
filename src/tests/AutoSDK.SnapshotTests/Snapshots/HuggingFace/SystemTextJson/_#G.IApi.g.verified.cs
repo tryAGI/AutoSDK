@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api-inference.huggingface.co/";
-
-        /// <summary>
-        /// 
-        /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }
 
 

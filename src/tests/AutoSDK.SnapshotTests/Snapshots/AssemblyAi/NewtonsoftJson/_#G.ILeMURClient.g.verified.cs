@@ -12,11 +12,6 @@ namespace G
     public partial interface ILeMURClient : global::System.IDisposable
     {
         /// <summary>
-        /// AssemblyAI API
-        /// </summary>
-        public const string BaseUrl = "https://api.assemblyai.com";
-
-        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }

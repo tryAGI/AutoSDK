@@ -21,11 +21,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.heygen.com";
-
-        /// <summary>
-        /// 
-        /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }
 
 

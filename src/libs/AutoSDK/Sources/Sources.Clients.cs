@@ -100,9 +100,6 @@ namespace {endPoint.Namespace}
     {(endPoint.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
     public partial interface I{endPoint.ClassName} : global::System.IDisposable
     {{
-        {endPoint.BaseUrlSummary.ToXmlDocumentationSummary(level: 8)}
-        public const string BaseUrl = ""{endPoint.BaseUrl}"";
-
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
         {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}" : $@" 

@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.anthropic.com/v1";
-
-        /// <summary>
-        /// 
-        /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 

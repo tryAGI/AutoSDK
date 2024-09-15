@@ -12,11 +12,6 @@ namespace G
     public partial interface IEmbeddingsClient : global::System.IDisposable
     {
         /// <summary>
-        /// Ollama server URL
-        /// </summary>
-        public const string BaseUrl = "http://localhost:11434/api";
-
-        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
