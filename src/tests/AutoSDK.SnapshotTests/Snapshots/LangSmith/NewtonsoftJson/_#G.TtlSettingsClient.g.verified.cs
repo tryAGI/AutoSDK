@@ -8,7 +8,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class TtlSettingsClient : global::System.IDisposable
+    public sealed partial class TtlSettingsClient : global::G.ITtlSettingsClient, global::System.IDisposable
     {
         /// <summary>
         /// 

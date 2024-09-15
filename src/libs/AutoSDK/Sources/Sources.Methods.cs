@@ -65,6 +65,27 @@ namespace {endPoint.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
+    public static string GenerateEndPointInterface(
+        EndPoint endPoint,
+        CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(endPoint.Path))
+        {
+            return GenerateInterfaces(endPoint);
+        }
+
+        return $@"#nullable enable
+
+namespace {endPoint.Namespace}
+{{
+    public partial interface I{endPoint.ClassName}
+    {{
+{GenerateMethod(endPoint, isInterface: true)}
+{GenerateExtensionMethod(endPoint, isInterface: true)}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
     public static string GetHttpMethod(string targetFramework, OperationType operationType)
     {
         targetFramework = targetFramework ?? throw new ArgumentNullException(nameof(targetFramework));
@@ -81,7 +102,7 @@ namespace {endPoint.Namespace}
     }
     
     public static string GenerateMethod(
-        EndPoint endPoint)
+        EndPoint endPoint, bool isInterface = false)
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         var taskType = endPoint.Stream
@@ -94,7 +115,7 @@ namespace {endPoint.Namespace}
         var httpCompletionOption = endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead);
-        var cancellationTokenAttribute = endPoint.Stream
+        var cancellationTokenAttribute = endPoint.Stream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
@@ -106,24 +127,9 @@ namespace {endPoint.Namespace}
             ContentType.Stream => "Stream",
             _ => "ByteArray",
         };
-        
-        return $@" 
-        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
-        /// <param name=""request""></param>")}
-        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
-        /// <exception cref=""global::System.InvalidOperationException""></exception>
-        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
-        public async {taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
-            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
+        var body = isInterface
+            ? ";"
+            : @$"
         {{
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOf ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -219,7 +225,25 @@ namespace {endPoint.Namespace}
 
                 yield return streamedResponse;
             }}" : " ")}
-        }}
+        }}";
+        
+        return $@" 
+        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
+{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
+        /// <param name=""request""></param>")}
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        /// <exception cref=""global::System.InvalidOperationException""></exception>
+        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
+        {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
+{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
@@ -311,7 +335,7 @@ namespace {endPoint.Namespace}
     }
     
     public static string GenerateExtensionMethod(
-        EndPoint endPoint)
+        EndPoint endPoint, bool isInterface = false)
     {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
             endPoint.RequestType.IsArray ||
@@ -329,7 +353,7 @@ namespace {endPoint.Namespace}
             : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpTypeWithoutNullability}>";
-        var cancellationTokenAttribute = endPoint.Stream
+        var cancellationTokenAttribute = endPoint.Stream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var response = endPoint.Stream
@@ -340,20 +364,9 @@ namespace {endPoint.Namespace}
         var configureAwaitResponse = !endPoint.Stream
             ? ".ConfigureAwait(false)"
             : string.Empty;
-        
-        return $@"
-        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Properties.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
-        /// <exception cref=""global::System.InvalidOperationException""></exception>
-        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
-        public async {taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{endPoint.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
+        var body = isInterface
+            ? ";"
+            : @$"
         {{
             var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
@@ -372,7 +385,21 @@ namespace {endPoint.Namespace}
             {
                 yield return response;
             }" : " ")}
-        }}
+        }}";
+        
+        return $@"
+        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
+{endPoint.Properties.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        /// <exception cref=""global::System.InvalidOperationException""></exception>
+        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
+        {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
+{endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{endPoint.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 }

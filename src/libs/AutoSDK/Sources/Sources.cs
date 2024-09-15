@@ -166,6 +166,15 @@ public static partial class Sources
             Text: GenerateEndPoint(endPoint, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName MethodInterface(
+        EndPoint endPoint,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{endPoint.InterfaceFileNameWithoutExtension}.g.cs",
+            Text: GenerateEndPointInterface(endPoint, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName Authorization(
         Authorization authorization,
         CancellationToken cancellationToken = default)

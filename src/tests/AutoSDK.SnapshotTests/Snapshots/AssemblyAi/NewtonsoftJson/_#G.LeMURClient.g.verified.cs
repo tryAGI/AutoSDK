@@ -9,7 +9,7 @@ namespace G
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class LeMURClient : global::System.IDisposable
+    public sealed partial class LeMURClient : global::G.ILeMURClient, global::System.IDisposable
     {
         /// <summary>
         /// AssemblyAI API

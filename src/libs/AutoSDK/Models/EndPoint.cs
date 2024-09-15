@@ -33,6 +33,10 @@ public readonly record struct EndPoint(
         ? $"{Namespace}.{ClassName}"
         : $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
     
+    public string InterfaceFileNameWithoutExtension => string.IsNullOrWhiteSpace(Path)
+        ? $"{Namespace}.I{ClassName}"
+        : $"{Namespace}.I{ClassName}.{Id.ToPropertyName()}";
+    
     public static EndPoint FromSchema(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
