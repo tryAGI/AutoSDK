@@ -1,0 +1,3297 @@
+openapi: 3.0.1
+info:
+  title: 🔮 Core
+  description: Core endpoints to manage user resources
+  contact:
+    name: Instill AI
+    url: https://github.com/instill-ai
+    email: hello@instill.tech
+  license:
+    name: Elastic License 2.0 (ELv2)
+    url: https://github.com/instill-ai/protobufs/blob/main/LICENSE
+  version: v0.40.1-beta
+servers:
+  - url: https://api.instill.tech
+  - url: http://api.instill.tech
+paths:
+  /v1beta/user:
+    get:
+      tags:
+        - User
+      summary: Get the authenticated user
+      description: Returns the details of the authenticated user.
+      operationId: GetAuthenticatedUser
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAuthenticatedUserResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    patch:
+      tags:
+        - User
+      summary: Update the authenticated user
+      description: "Updates the information of the authenticated user.\n\nIn REST requests, only the supplied user fields will be taken into account\nwhen updating the resource."
+      operationId: PatchAuthenticatedUser
+      requestBody:
+        description: The user fields that will replace the existing ones.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthenticatedUser'
+        required: true
+        x-bodyName: user
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchAuthenticatedUserResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/users:
+    get:
+      tags:
+        - User
+      summary: List users
+      description: Returns a paginated list of users.
+      operationId: ListUsers
+      parameters:
+        - name: pageSize
+          in: query
+          description: "The maximum number of users to return. If this parameter is unspecified,\nat most 10 pipelines will be returned. The cap value for this parameter is\n100 (i.e. any value above that will be coerced to 100)."
+          schema:
+            type: integer
+            format: int32
+        - name: pageToken
+          in: query
+          description: Page token.
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+        - name: filter
+          in: query
+          description: "Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter\nexpression.\n- Example: `create_time>timestamp(\"2000-06-19T23:31:08.657Z\")`."
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUsersResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/users/{userId}':
+    get:
+      tags:
+        - User
+      summary: Get a user
+      description: Returns the details of a user by their ID.
+      operationId: GetUser
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/organizations:
+    get:
+      tags:
+        - Organization
+      summary: List organizations
+      description: Returns a paginated list of organizations.
+      operationId: ListOrganizations
+      parameters:
+        - name: pageSize
+          in: query
+          description: "The maximum number of organizations to return. If this parameter is\nunspecified, at most 10 pipelines will be returned. The cap value for this\nparameter is 100 (i.e. any value above that will be coerced to 100)."
+          schema:
+            type: integer
+            format: int32
+        - name: pageToken
+          in: query
+          description: Page token.
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+        - name: filter
+          in: query
+          description: "Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter\nexpression.\n- Example: `create_time>timestamp(\"2000-06-19T23:31:08.657Z\")`."
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOrganizationsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    post:
+      tags:
+        - Organization
+      summary: Create an organization
+      description: Creates an organization.
+      operationId: CreateOrganization
+      requestBody:
+        description: The properties of the organization to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+        required: true
+        x-bodyName: organization
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateOrganizationResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/organizations/{organizationId}':
+    get:
+      tags:
+        - Organization
+      summary: Get an organization
+      description: Returns the organization details by its ID.
+      operationId: GetOrganization
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrganizationResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    delete:
+      tags:
+        - Organization
+      summary: Delete an organization
+      description: Accesses and deletes an organization by ID.
+      operationId: DeleteOrganization
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteOrganizationResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    patch:
+      tags:
+        - Organization
+      summary: Update an organization
+      description: "Accesses and updates an organization by ID.\n\nIn REST requests, only the supplied organization fields will be taken into\naccount when updating the resource."
+      operationId: UpdateOrganization
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The organization fields that will replace the existing ones.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+        required: true
+        x-bodyName: organization
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateOrganizationResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/users/{userId}/memberships':
+    get:
+      tags:
+        - Membership
+      summary: List user memberships
+      description: Returns the memberships of a user.
+      operationId: ListUserMemberships
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUserMembershipsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/users/{userId}/memberships/{organizationId}':
+    get:
+      tags:
+        - Membership
+      summary: Get a user membership
+      description: "Returns the details of the relationship between a user and an\norganization. The authenticated must match the membership parent."
+      operationId: GetUserMembership
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    put:
+      tags:
+        - Membership
+      summary: Update a user membership
+      description: Accesses and updates a user membership by parent and membership IDs.
+      operationId: UpdateUserMembership
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          description: "The update mask specifies the subset of fields that should be modified.\n\nFor more information about this field, see\nhttps://developers.google.com/protocol-buffers/docs/reference/google.protobuf#field-mask."
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The membership fields to update.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserMembership'
+        required: true
+        x-bodyName: membership
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateUserMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    delete:
+      tags:
+        - Membership
+      summary: Delete a user membership
+      description: Accesses and deletes a user membership by parent and membership IDs.
+      operationId: DeleteUserMembership
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteUserMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/organizations/{organizationId}/memberships':
+    get:
+      tags:
+        - Membership
+      summary: List organization memberships
+      description: Returns a paginated list of the user memberships in an organization.
+      operationId: ListOrganizationMemberships
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOrganizationMembershipsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/organizations/{organizationId}/memberships/{userId}':
+    get:
+      tags:
+        - Membership
+      summary: Get a an organization membership
+      description: Returns the details of a user membership within an organization.
+      operationId: GetOrganizationMembership
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: view
+          in: query
+          description: "View allows clients to specify the desired resource view in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+          schema:
+            enum:
+              - VIEW_BASIC
+              - VIEW_FULL
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrganizationMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    put:
+      tags:
+        - Membership
+      summary: Uppdate an organization membership
+      description: Updates a user membership within an organization.
+      operationId: UpdateOrganizationMembership
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          description: "The update mask specifies the subset of fields that should be modified.\n\nFor more information about this field, see\nhttps://developers.google.com/protocol-buffers/docs/reference/google.protobuf#field-mask."
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The membership fields to update.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationMembership'
+        required: true
+        x-bodyName: membership
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateOrganizationMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    delete:
+      tags:
+        - Membership
+      summary: Delete an organization membership
+      description: Deletes a user membership within an organization.
+      operationId: DeleteOrganizationMembership
+      parameters:
+        - name: organizationId
+          in: path
+          description: Organization ID
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteOrganizationMembershipResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/user/subscription:
+    get:
+      tags:
+        - Subscription
+      summary: Get the subscription of the authenticated user
+      description: Returns the subscription details of the authenticated user.
+      operationId: GetAuthenticatedUserSubscription
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAuthenticatedUserSubscriptionResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/organizations/{organizationId}/subscription':
+    get:
+      tags:
+        - Subscription
+      summary: Get the subscription of an organization
+      description: Returns the subscription details of an organization.
+      operationId: GetOrganizationSubscription
+      parameters:
+        - name: organizationId
+          in: path
+          description: Oragnization ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrganizationSubscriptionResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/tokens:
+    get:
+      tags:
+        - Token
+      summary: List API tokens
+      description: Returns a paginated list of the API tokens of the authenticated user.
+      operationId: ListTokens
+      parameters:
+        - name: pageSize
+          in: query
+          description: "The maximum number of tokens to return. If this parameter is unspecified,\nat most 10 pipelines will be returned. The cap value for this parameter is\n100 (i.e. any value above that will be coerced to 100)."
+          schema:
+            type: integer
+            format: int32
+        - name: pageToken
+          in: query
+          description: Page token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTokensResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    post:
+      tags:
+        - Token
+      summary: Create an API token
+      description: Creates an API token for the authenticated user.
+      operationId: CreateToken
+      requestBody:
+        description: The properties of the token to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiToken'
+        required: true
+        x-bodyName: token
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTokenResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/tokens/{tokenId}':
+    get:
+      tags:
+        - Token
+      summary: Get an API token
+      description: Returns the details of an API token.
+      operationId: GetToken
+      parameters:
+        - name: tokenId
+          in: path
+          description: Token ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTokenResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+    delete:
+      tags:
+        - Token
+      summary: Delete an API token
+      description: Deletes an API token.
+      operationId: DeleteToken
+      parameters:
+        - name: tokenId
+          in: path
+          description: Token ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteTokenResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/validate_token:
+    post:
+      tags:
+        - Token
+      summary: Validate an API token
+      description: Validates an API token.
+      operationId: ValidateToken
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateTokenResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1beta/namespaces/{namespaceId}/credit':
+    get:
+      tags:
+        - Credit
+      summary: Get the remaining Instill Credit
+      description: "This endpoint returns the remaining [Instill Credit](https://www.instill.tech/docs/vdp/credit) of a given user or\norganization. The requested credit owner must be either the authenticated\nuser or an organization they belong to.\n\nOn Instill Core, this endpoint will return a 404 Not Found status."
+      operationId: GetRemainingCredit
+      parameters:
+        - name: namespaceId
+          in: path
+          description: Namespace ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRemainingCreditResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/check-namespace:
+    post:
+      tags:
+        - Utils
+      summary: Check if a namespace is in use
+      description: "Returns the availability of a namespace or, alternatively, the type of\nresource that is using it."
+      operationId: CheckNamespace
+      requestBody:
+        description: "CheckNamespaceRequest represents a request to verify if a namespace is\navailable."
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckNamespaceRequest'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckNamespaceResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/metrics/vdp/pipeline/tables:
+    get:
+      tags:
+        - Metric
+      summary: List pipeline trigger metrics
+      description: "Returns a paginated list of pipeline executions aggregated by pipeline ID.\nNOTE: This method is deprecated and will be retired soon."
+      operationId: ListPipelineTriggerTableRecords
+      parameters:
+        - name: pageSize
+          in: query
+          description: "The maximum number of results to return. If this parameter is unspecified,\nat most 100 pipelines will be returned. The cap value for this parameter\nis 1000 (i.e. any value above that will be coerced to 1000)."
+          schema:
+            type: integer
+            format: int32
+        - name: pageToken
+          in: query
+          description: Page token.
+          schema:
+            type: string
+        - name: filter
+          in: query
+          description: "Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter\nexpression.\n- Example: `create_time>timestamp(\"2000-06-19T23:31:08.657Z\")`."
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPipelineTriggerTableRecordsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/metrics/vdp/pipeline/charts:
+    get:
+      tags:
+        - Metric
+      summary: List pipeline trigger time charts
+      description: "Returns a timeline of pipline trigger counts for the pipelines of a given\nowner.\nNOTE: This method will soon return the trigger counts of a given requester."
+      operationId: ListPipelineTriggerChartRecords
+      parameters:
+        - name: aggregationWindow
+          in: query
+          description: Aggregation window in nanoseconds.
+          schema:
+            type: integer
+            format: int32
+        - name: filter
+          in: query
+          description: "Filter can hold an [AIP-160](https://google.aip.dev/160)-compliant filter\nexpression.\n- Example: `create_time>timestamp(\"2000-06-19T23:31:08.657Z\")`."
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPipelineTriggerChartRecordsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  /v1beta/metrics/credit/charts:
+    get:
+      tags:
+        - Metric
+      summary: List Instill Credit consumption time charts
+      description: "Returns a timeline of Instill Credit consumption for a given owner. The\nresponse will contain one set of records (datapoints) per consumption\nsource (e.g. \"pipeline\", \"model\"). Each datapoint represents the amount\nconsumed in a time bucket."
+      operationId: ListCreditConsumptionChartRecords
+      parameters:
+        - name: namespaceId
+          in: query
+          description: The ID of the namespace that owns the credit.
+          required: true
+          schema:
+            type: string
+        - name: aggregationWindow
+          in: query
+          description: "Aggregation window. The value is a positive duration string, i.e. a\nsequence of decimal numbers, each with optional fraction and a unit\nsuffix, such as \"300ms\", \"1.5h\" or \"2h45m\".\nThe minimum (and default) window is 1h."
+          schema:
+            type: string
+        - name: start
+          in: query
+          description: "Beginning of the time range from which the records will be fetched.\nThe default value is the beginning of the current day, in UTC."
+          schema:
+            type: string
+            format: date-time
+        - name: stop
+          in: query
+          description: "End of the time range from which the records will be fetched.\nThe default value is the current timestamp."
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCreditConsumptionChartRecordsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/googlerpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs':
+    get:
+      tags:
+        - Catalog
+      summary: Get all catalogs info
+      operationId: ListCatalogs
+      parameters:
+        - name: namespaceId
+          in: path
+          description: User ID for which to list the catalogs
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogsResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+    post:
+      tags:
+        - Catalog
+      summary: Create a catalog
+      operationId: CreateCatalog
+      parameters:
+        - name: namespaceId
+          in: path
+          description: The catalog's owner(namespaces).
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCatalogBody'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCatalogResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}':
+    get:
+      tags:
+        - Catalog
+      summary: Get file catalog
+      operationId: GetFileCatalog
+      parameters:
+        - name: namespaceId
+          in: path
+          description: id of the namespace
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: id of the catalog
+          required: true
+          schema:
+            type: string
+        - name: fileId
+          in: query
+          description: id of the file(i.e. file name)
+          schema:
+            type: string
+        - name: fileUid
+          in: query
+          description: Uid of the file
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFileCatalogResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+    put:
+      tags:
+        - Catalog
+      summary: Update a catalog info
+      operationId: UpdateCatalog
+      parameters:
+        - name: namespaceId
+          in: path
+          description: The catalog owner(namespace).
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: The catalog id.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogBody'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateCatalogResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+    delete:
+      tags:
+        - Catalog
+      summary: Delete a catalog
+      operationId: DeleteCatalog
+      parameters:
+        - name: namespaceId
+          in: path
+          description: The owner's id. i.e. namespace.
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: The catalog id.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteCatalogResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/files':
+    get:
+      tags:
+        - Catalog
+      summary: List catalog files
+      operationId: ListCatalogFiles
+      parameters:
+        - name: namespaceId
+          in: path
+          description: The owner/namespace uid id.
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: The catalog id.
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          description: The page size (default:10; max 100).
+          schema:
+            type: integer
+            format: int32
+        - name: pageToken
+          in: query
+          description: The next page token(default from first file's token).
+          schema:
+            type: string
+        - name: filter.fileUids
+          in: query
+          description: The file uids.
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogFilesResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+    post:
+      tags:
+        - Catalog
+      summary: Create a file
+      operationId: UploadCatalogFile
+      parameters:
+        - name: namespaceId
+          in: path
+          description: owner/namespace uid
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: catalog id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: file
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File'
+        required: true
+        x-bodyName: file
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadCatalogFileResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  /v1alpha/catalogs/files:
+    delete:
+      tags:
+        - Catalog
+      summary: Delete a file
+      operationId: DeleteCatalogFile
+      parameters:
+        - name: fileUid
+          in: query
+          description: The file uid.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteCatalogFileResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  /v1alpha/catalogs/files/processAsync:
+    post:
+      tags:
+        - Catalog
+      summary: Process catalog files
+      operationId: ProcessCatalogFiles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessCatalogFilesRequest'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessCatalogFilesResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/chunks':
+    get:
+      tags:
+        - Catalog
+      summary: List catalog chunks
+      operationId: ListChunks
+      parameters:
+        - name: namespaceId
+          in: path
+          description: owner/namespace id (not uid)
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: catalog id (not uid)
+          required: true
+          schema:
+            type: string
+        - name: fileUid
+          in: query
+          description: unique identifier of the file
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListChunksResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/files/{fileUid}/source':
+    get:
+      tags:
+        - Catalog
+      summary: Get catalog single-source-of-truth file
+      operationId: GetSourceFile
+      parameters:
+        - name: namespaceId
+          in: path
+          description: owner/namespace id
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: catalog id
+          required: true
+          schema:
+            type: string
+        - name: fileUid
+          in: path
+          description: unique identifier of the original uploaded file
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSourceFileResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/chunks/{chunkUid}':
+    post:
+      tags:
+        - Catalog
+      summary: Update catalog chunk
+      operationId: UpdateChunk
+      parameters:
+        - name: chunkUid
+          in: path
+          description: chunk uid
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateChunkBody'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateChunkResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/chunks/retrieve':
+    post:
+      tags:
+        - Catalog
+      summary: Retrieve similar chunks
+      operationId: SimilarityChunksSearch
+      parameters:
+        - name: namespaceId
+          in: path
+          description: owner/namespace id
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: catalog id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimilarityChunksSearchBody'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimilarityChunksSearchResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+  '/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/ask':
+    post:
+      tags:
+        - Catalog
+      summary: Ask a question
+      operationId: QuestionAnswering
+      parameters:
+        - name: namespaceId
+          in: path
+          description: id of the namespace
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: id of the catalog
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionAnsweringBody'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionAnsweringResponse'
+        '401':
+          description: Returned when the client credentials are not valid.
+          content:
+            application/json:
+              schema: { }
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+components:
+  schemas:
+    ApiTokenState:
+      enum:
+        - STATE_INACTIVE
+        - STATE_ACTIVE
+        - STATE_EXPIRED
+      type: string
+      description: "State describes the state of an API token.\n\n - STATE_INACTIVE: Inactive.\n - STATE_ACTIVE: Active.\n - STATE_EXPIRED: Expired."
+    googlerpcStatus:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/protobufAny'
+    mgmtv1betaStatus:
+      enum:
+        - STATUS_COMPLETED
+        - STATUS_ERRORED
+      type: string
+      description: "Status describes the output of an execution.\n\n - STATUS_COMPLETED: Successfully completed.\n - STATUS_ERRORED: Finished with error."
+    protobufAny:
+      type: object
+      properties:
+        '@type':
+          type: string
+      additionalProperties: { }
+    ApiToken:
+      type: object
+      properties:
+        lastUseTime:
+          type: string
+          description: "When users trigger a pipeline which uses an API token, the token is\nupdated with the current time. This field is used to track the last time\nthe token was used."
+          format: date-time
+        name:
+          type: string
+          description: "The name of the token, define by its ID.\n- Format: `tokens/{token.id}`."
+          readOnly: true
+        uid:
+          type: string
+          description: API token UUID.
+          readOnly: true
+        id:
+          type: string
+          description: "API token resource ID (used in `name` as the last segment). This conforms\nto RFC-1034, which restricts to letters, numbers, and hyphen, with the\nfirst character a letter, the last a letter or a number, and a 63\ncharacter maximum.\n\nThis field can reflect the client(s) that will use the token."
+        createTime:
+          type: string
+          description: Creation time.
+          format: date-time
+          readOnly: true
+        updateTime:
+          type: string
+          description: Update time.
+          format: date-time
+          readOnly: true
+        accessToken:
+          type: string
+          description: "An opaque access token representing the API token string.\n\nTo validate the token, the recipient of the token needs to call the server\nthat issued the token."
+          readOnly: true
+        state:
+          allOf:
+            - $ref: '#/components/schemas/ApiTokenState'
+          description: State.
+          readOnly: true
+        tokenType:
+          type: string
+          description: Token type. Value is fixed to "Bearer".
+          readOnly: true
+        ttl:
+          type: integer
+          description: The time-to-live in seconds for this resource.
+          format: int32
+        expireTime:
+          type: string
+          description: Expiration time.
+          format: date-time
+      description: API tokens allow users to make requests to the Instill AI API.
+    AuthenticatedUser:
+      required:
+        - id
+        - email
+        - newsletterSubscription
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The name of the user, defined by its ID.\n- Format: `users/{user.id}`."
+          readOnly: true
+        uid:
+          type: string
+          description: "User UUID. This field is optionally set by users on creation (it will be\nserver-generated if unspecified)."
+        id:
+          type: string
+          description: "Resource ID (used in `name` as the last segment). This conforms to\nRFC-1034, which restricts to letters, numbers, and hyphen, with the first\ncharacter a letter, the last a letter or a number, and a 63 character\nmaximum.\n\nNote that the ID can be updated."
+        createTime:
+          type: string
+          description: Creation time.
+          format: date-time
+          readOnly: true
+        updateTime:
+          type: string
+          description: Update time.
+          format: date-time
+          readOnly: true
+        email:
+          type: string
+          description: Email.
+        customerId:
+          type: string
+          description: Stripe customer ID. This field is used in Instill Cloud.
+          readOnly: true
+        role:
+          type: string
+          description: "Role.\n\nIt must be one of the following allowed roles:\n- `manager`\n- `ai-researcher`\n- `ai-engineer`\n- `data-engineer`\n- `data-scientist`\n- `analytics-engineer`\n- `hobbyist`"
+        newsletterSubscription:
+          type: boolean
+          description: This defines whether the user is subscribed to Instill AI's newsletter.
+        cookieToken:
+          type: string
+          description: Console cookie token.
+        onboardingStatus:
+          allOf:
+            - $ref: '#/components/schemas/OnboardingStatus'
+          description: Onboarding Status.
+        profile:
+          allOf:
+            - $ref: '#/components/schemas/UserProfile'
+          description: Profile.
+          readOnly: true
+      description: "AuthenticatedUser contains the information of an authenticated user, i.e.,\nthe public user information plus some fields that should only be accessed by\nthe user themselves."
+    CheckNamespaceAdminResponse:
+      type: object
+      properties:
+        type:
+          allOf:
+            - $ref: '#/components/schemas/CheckNamespaceAdminResponseNamespace'
+          description: Namespace type.
+        uid:
+          type: string
+          description: Namespace UID.
+        user:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: User.
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: Organization.
+      description: "CheckNamespaceAdminResponse contains the availability of a namespace or the type\nof resource that's using it."
+    CheckNamespaceAdminResponseNamespace:
+      enum:
+        - NAMESPACE_AVAILABLE
+        - NAMESPACE_USER
+        - NAMESPACE_ORGANIZATION
+        - NAMESPACE_RESERVED
+      type: string
+      description: "Namespace contains information about the availability of a namespace.\n\n - NAMESPACE_AVAILABLE: Available.\n - NAMESPACE_USER: Namespace belongs to a user.\n - NAMESPACE_ORGANIZATION: Namespace belongs to an organization.\n - NAMESPACE_RESERVED: Reserved."
+    CheckNamespaceByUIDAdminResponse:
+      type: object
+      properties:
+        type:
+          allOf:
+            - $ref: '#/components/schemas/CheckNamespaceByUIDAdminResponseNamespace'
+          description: Namespace type.
+        id:
+          type: string
+          description: Namespace ID.
+        user:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: User.
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: Organization.
+      description: "CheckNamespaceByUIDAdminResponse contains the availability of a namespace or the type\nof resource that's using it."
+    CheckNamespaceByUIDAdminResponseNamespace:
+      enum:
+        - NAMESPACE_AVAILABLE
+        - NAMESPACE_USER
+        - NAMESPACE_ORGANIZATION
+        - NAMESPACE_RESERVED
+      type: string
+      description: "Namespace contains information about the availability of a namespace.\n\n - NAMESPACE_AVAILABLE: Available.\n - NAMESPACE_USER: Namespace belongs to a user.\n - NAMESPACE_ORGANIZATION: Namespace belongs to an organization.\n - NAMESPACE_RESERVED: Reserved."
+    CheckNamespaceRequest:
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          type: string
+          description: The namespace ID to be checked.
+      description: "CheckNamespaceRequest represents a request to verify if a namespace is\navailable."
+    CheckNamespaceResponse:
+      type: object
+      properties:
+        type:
+          allOf:
+            - $ref: '#/components/schemas/CheckNamespaceResponseNamespace'
+          description: Namespace type.
+      description: "CheckNamespaceResponse contains the availability of a namespace or the type\nof resource that's using it."
+    CheckNamespaceResponseNamespace:
+      enum:
+        - NAMESPACE_AVAILABLE
+        - NAMESPACE_USER
+        - NAMESPACE_ORGANIZATION
+        - NAMESPACE_RESERVED
+      type: string
+      description: "Namespace contains information about the availability of a namespace.\n\n - NAMESPACE_AVAILABLE: Available.\n - NAMESPACE_USER: Namespace belongs to a user.\n - NAMESPACE_ORGANIZATION: Namespace belongs to an organization.\n - NAMESPACE_RESERVED: Reserved."
+    CreateOrganizationResponse:
+      type: object
+      properties:
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: The organization resource.
+          readOnly: true
+      description: CreateOrganizationResponse contains the created organization.
+    CreateTokenResponse:
+      type: object
+      properties:
+        token:
+          allOf:
+            - $ref: '#/components/schemas/ApiToken'
+          description: The created API token resource.
+          readOnly: true
+      description: CreateTokenResponse contains the created token.
+    CreditConsumptionChartRecord:
+      required:
+        - namespaceId
+      type: object
+      properties:
+        namespaceId:
+          type: string
+          description: The ID of the namespace that owns the credit.
+        timeBuckets:
+          type: array
+          items:
+            type: string
+            format: date-time
+          description: Time buckets.
+          readOnly: true
+        amount:
+          type: array
+          items:
+            type: number
+            format: float
+          description: Total credit consumed in each time bucket.
+          readOnly: true
+        source:
+          type: string
+          description: 'Credit consumption source (e.g. "pipeline", "model").'
+          readOnly: true
+      description: "CreditConsumptionChartRecord represents a timeline of Instill Credit\nconsumption. It contains a collection of (timestamp, amount) pairs that\nrepresent the total credit consumption in a given time bucket."
+    DeleteOrganizationMembershipResponse:
+      type: object
+      description: DeleteOrganizationMembershipResponse is an empty response.
+    DeleteOrganizationResponse:
+      type: object
+      description: DeleteOrganizationResponse is an empty response.
+    DeleteTokenResponse:
+      type: object
+      description: DeleteTokenResponse is an empty response.
+    DeleteUserMembershipResponse:
+      type: object
+      description: DeleteUserMembershipResponse is an empty response.
+    GetAuthenticatedUserResponse:
+      type: object
+      properties:
+        user:
+          allOf:
+            - $ref: '#/components/schemas/AuthenticatedUser'
+          description: The authenticated user resource.
+          readOnly: true
+      description: GetAuthenticatedUserResponse contains the requested authenticated user.
+    GetAuthenticatedUserSubscriptionResponse:
+      type: object
+      properties:
+        subscription:
+          allOf:
+            - $ref: '#/components/schemas/UserSubscription'
+          description: The subscription resource.
+          readOnly: true
+      description: GetAuthenticatedUserSubscriptionResponse contains the requested subscription.
+    GetOrganizationAdminResponse:
+      title: GetOrganizationAdminResponse represents a response for a organization resource
+      type: object
+      properties:
+        organization:
+          title: A organization resource
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+    GetOrganizationMembershipResponse:
+      type: object
+      properties:
+        membership:
+          allOf:
+            - $ref: '#/components/schemas/OrganizationMembership'
+          description: The requested organization membership.
+          readOnly: true
+      description: GetOrganizationMembershipResponse contains the organization membership.
+    GetOrganizationResponse:
+      type: object
+      properties:
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: The organization resource.
+          readOnly: true
+      description: GetOrganizationResponse contains the requested organization.
+    GetOrganizationSubscriptionAdminResponse:
+      title: GetOrganizationSubscriptionAdminResponse
+      type: object
+      properties:
+        subscription:
+          title: Subscription
+          allOf:
+            - $ref: '#/components/schemas/OrganizationSubscription'
+    GetOrganizationSubscriptionResponse:
+      type: object
+      properties:
+        subscription:
+          allOf:
+            - $ref: '#/components/schemas/OrganizationSubscription'
+          description: The subscription resource.
+          readOnly: true
+      description: GetOrganizationSubscriptionResponse contains the requested subscription.
+    GetRemainingCreditAdminResponse:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: The requested credit.
+          format: float
+      description: "GetRemainingCreditAdminResponse contains the remaining credit of a user or\norganization."
+    GetRemainingCreditResponse:
+      type: object
+      properties:
+        perishable:
+          type: number
+          description: 'Amount of perishable credit, i.e. credit with an expiration date.'
+          format: float
+          readOnly: true
+        imperishable:
+          type: number
+          description: "Amount of imperishable credit, e.g. purchased credit, which doesn't\nexpire."
+          format: float
+          readOnly: true
+        total:
+          type: number
+          description: Total remaining credit.
+          format: float
+          readOnly: true
+      description: "GetRemainingCreditResponse contains the remaining credit of a user or\norganization."
+    GetTokenResponse:
+      type: object
+      properties:
+        token:
+          allOf:
+            - $ref: '#/components/schemas/ApiToken'
+          description: The API token resource.
+          readOnly: true
+      description: GetTokenResponse contains the requested token.
+    GetUserAdminResponse:
+      title: GetUserAdminResponse represents a response for a user resource
+      type: object
+      properties:
+        user:
+          title: A user resource
+          allOf:
+            - $ref: '#/components/schemas/User'
+    GetUserMembershipResponse:
+      type: object
+      properties:
+        membership:
+          allOf:
+            - $ref: '#/components/schemas/UserMembership'
+          description: The requested user membership.
+          readOnly: true
+      description: GetUserMembershipResponse contains the user membership.
+    GetUserResponse:
+      type: object
+      properties:
+        user:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: The user resource.
+          readOnly: true
+      description: GetUserResponse contains the requested user.
+    GetUserSubscriptionAdminResponse:
+      title: GetUserSubscriptionAdminResponse
+      type: object
+      properties:
+        subscription:
+          title: Subscription
+          allOf:
+            - $ref: '#/components/schemas/UserSubscription'
+    ListCreditConsumptionChartRecordsResponse:
+      type: object
+      properties:
+        creditConsumptionChartRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreditConsumptionChartRecord'
+          description: 'Credit consumption timelines, aggregated by source.'
+      description: "ListCreditConsumptionChartRecordsResponse contains a list of credit consumption\nchart records."
+    ListOrganizationMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationMembership'
+          description: "The organization memberships, i.e., the users that belong to the\norganization."
+          readOnly: true
+      description: ListOrganizationMembershipsResponse contains a list of memberships.
+    ListOrganizationsAdminResponse:
+      title: ListOrganizationsAdminResponse represents a response for a list of organizations
+      type: object
+      properties:
+        organizations:
+          title: A list of organizations
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+        nextPageToken:
+          type: string
+          description: Next page token.
+        totalSize:
+          type: integer
+          description: Total number of organizations.
+          format: int32
+    ListOrganizationsResponse:
+      title: ListOrganizationsResponse represents a response for a list of organizations
+      type: object
+      properties:
+        organizations:
+          title: A list of organizations
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+          readOnly: true
+        nextPageToken:
+          type: string
+          description: Next page token.
+          readOnly: true
+        totalSize:
+          type: integer
+          description: Total number of organizations.
+          format: int32
+          readOnly: true
+    ListPipelineTriggerChartRecordsResponse:
+      type: object
+      properties:
+        pipelineTriggerChartRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineTriggerChartRecord'
+          description: A list of pipeline trigger records.
+      description: "ListPipelineTriggerChartRecordsResponse contains a list of pipeline trigger\nchart records."
+    ListPipelineTriggerTableRecordsResponse:
+      type: object
+      properties:
+        pipelineTriggerTableRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineTriggerTableRecord'
+          description: A list of pipeline trigger tables.
+        nextPageToken:
+          type: string
+          description: Next page token.
+        totalSize:
+          title: Total number of pipeline trigger records
+          type: integer
+          format: int32
+      description: ListPipelineTriggerTableRecordsResponse contains the pipeline metrics.
+    ListTokensResponse:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiToken'
+          description: A list of API token resources.
+        nextPageToken:
+          type: string
+          description: Next page token.
+        totalSize:
+          type: integer
+          description: Total number of API token resources.
+          format: int32
+      description: ListTokensResponse contains a list of API tokens.
+    ListUserMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserMembership'
+          description: 'The user memberships, i.e., the organizations the user belongs to.'
+          readOnly: true
+      description: ListUserMembershipsResponse contains a list of memberships.
+    ListUsersAdminResponse:
+      title: ListUsersAdminResponse represents a response for a list of users
+      type: object
+      properties:
+        users:
+          title: A list of users
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        nextPageToken:
+          type: string
+          description: Next page token.
+        totalSize:
+          type: integer
+          description: Total number of users.
+          format: int32
+    ListUsersResponse:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          description: A list of user resources.
+          readOnly: true
+        nextPageToken:
+          type: string
+          description: Next page token.
+          readOnly: true
+        totalSize:
+          type: integer
+          description: Total number of users.
+          format: int32
+          readOnly: true
+      description: ListUsersResponse contains a list of users.
+    LookUpOrganizationAdminResponse:
+      title: LookUpOrganizationAdminResponse represents a response for a organization resource by admin
+      type: object
+      properties:
+        organization:
+          title: A organization resource
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+    LookUpUserAdminResponse:
+      title: LookUpUserAdminResponse represents a response for a user resource by admin
+      type: object
+      properties:
+        user:
+          title: A user resource
+          allOf:
+            - $ref: '#/components/schemas/User'
+    MembershipState:
+      enum:
+        - MEMBERSHIP_STATE_ACTIVE
+        - MEMBERSHIP_STATE_PENDING
+      type: string
+      description: "MembershipState describes the state of a user membership to an organization.\n\n - MEMBERSHIP_STATE_ACTIVE: Active.\n - MEMBERSHIP_STATE_PENDING: Pending, i.e., a request has been sent to the user to join an\norganization."
+    Mode:
+      enum:
+        - MODE_SYNC
+        - MODE_ASYNC
+      type: string
+      description: "Mode describes the execution mode of the pipeline (sync or async).\n\n - MODE_SYNC: Synchronous (result is returned in the response).\n - MODE_ASYNC: Asynchronous (response only contains acknowledgement)."
+    OnboardingStatus:
+      enum:
+        - ONBOARDING_STATUS_IN_PROGRESS
+        - ONBOARDING_STATUS_COMPLETED
+      type: string
+      description: "OnboardingStatus describes the status of the user onboarding process.\n\n - ONBOARDING_STATUS_IN_PROGRESS: In progress, i.e., the user has initiated the onboarding process\nbut has not yet completed it.\n - ONBOARDING_STATUS_COMPLETED: Completed."
+    Organization:
+      required:
+        - profile
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The name of the organization, defined by its ID.\n- Format: `organization/{organization.id}`."
+          readOnly: true
+        uid:
+          type: string
+          description: Organization UUID.
+          readOnly: true
+        id:
+          type: string
+          description: "Resource ID (used in `name` as the last segment). This conforms to\nRFC-1034, which restricts to letters, numbers, and hyphen, with the first\ncharacter a letter, the last a letter or a number, and a 63 character\nmaximum.\n\nNote that the ID can be updated."
+        createTime:
+          type: string
+          description: Creation time.
+          format: date-time
+          readOnly: true
+        updateTime:
+          type: string
+          description: Update time.
+          format: date-time
+          readOnly: true
+        owner:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: The user that owns the organization.
+          readOnly: true
+        profile:
+          allOf:
+            - $ref: '#/components/schemas/OrganizationProfile'
+          description: Profile.
+        permission:
+          title: Permission
+          allOf:
+            - $ref: '#/components/schemas/Permission'
+          readOnly: true
+      description: "Organizations group several users. As entities, they can own resources such\nas pipelines or releases."
+    OrganizationMembership:
+      required:
+        - role
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The resource name of the membership, which allows its access by\norganization and user ID.\n- Format: `organizations/{organization.id}/memberships/{user.id}`."
+          readOnly: true
+        role:
+          type: string
+          description: Role of the user in the organization.
+        state:
+          allOf:
+            - $ref: '#/components/schemas/MembershipState'
+          description: State of the membership.
+          readOnly: true
+        user:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: User information.
+          readOnly: true
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: Organization information.
+          readOnly: true
+      description: "An organization membership defines the relationship between an organization\nand a user that is attached to it."
+    OrganizationProfile:
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name.
+        bio:
+          type: string
+          description: Biography.
+        avatar:
+          type: string
+          description: Avatar in base64 format.
+        publicEmail:
+          type: string
+          description: Public email.
+        socialProfileLinks:
+          type: object
+          additionalProperties:
+            type: string
+          description: "Social profile links list the links to the organization's social profiles.\nThe key represents the provider, and the value is the corresponding URL."
+      description: OrganizationProfile describes the public data of an organization.
+    OrganizationSubscription:
+      type: object
+      properties:
+        plan:
+          allOf:
+            - $ref: '#/components/schemas/OrganizationSubscriptionPlan'
+          description: Plan identifier.
+          readOnly: true
+        detail:
+          allOf:
+            - $ref: '#/components/schemas/StripeSubscriptionDetail'
+          description: Details of the associated Stripe subscription.
+          readOnly: true
+        usedSeats:
+          type: integer
+          description: Number of used seats within the organization subscription.
+          format: int32
+          readOnly: true
+      description: 'OrganizationSubscription details describe the plan (i.e., features) an organization has access to.'
+    OrganizationSubscriptionPlan:
+      enum:
+        - PLAN_FREE
+        - PLAN_TEAM
+        - PLAN_ENTERPRISE
+      type: string
+      description: "Enumerates the plan types for the organization subscription.\n\n - PLAN_FREE: Free plan.\n - PLAN_TEAM: Team plan.\n - PLAN_ENTERPRISE: Enterprise plan."
+    PatchAuthenticatedUserResponse:
+      title: "PatchAuthenticatedUserResponse contains the updated user.\nthe authenticated user resource"
+      type: object
+      properties:
+        user:
+          allOf:
+            - $ref: '#/components/schemas/AuthenticatedUser'
+          description: The updated user resource.
+          readOnly: true
+    Permission:
+      type: object
+      properties:
+        canEdit:
+          type: boolean
+          description: Defines whether the resource can be modified.
+          readOnly: true
+      description: Permission defines how a resource can be used.
+    PipelineTriggerChartRecord:
+      type: object
+      properties:
+        pipelineId:
+          type: string
+          description: Pipeline ID.
+        pipelineUid:
+          type: string
+          description: Pipeline UUID.
+        triggerMode:
+          allOf:
+            - $ref: '#/components/schemas/Mode'
+          description: Trigger mode.
+        status:
+          allOf:
+            - $ref: '#/components/schemas/mgmtv1betaStatus'
+          description: Final status.
+          readOnly: true
+        timeBuckets:
+          type: array
+          items:
+            type: string
+            format: date-time
+          description: Time buckets.
+          readOnly: true
+        triggerCounts:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Aggregated trigger count in each time bucket.
+          readOnly: true
+        computeTimeDuration:
+          type: array
+          items:
+            type: number
+            format: float
+          description: Total computation time duration in each time bucket.
+          readOnly: true
+        pipelineReleaseId:
+          type: string
+          description: Version for the triggered pipeline if it is a release pipeline.
+          readOnly: true
+        pipelineReleaseUid:
+          type: string
+          description: Release UUID for the triggered pipeline if it is a release pipeline.
+          readOnly: true
+      description: "PipelineTriggerChartRecord contains pipeline trigger metrics, aggregated by\npipeline ID and time frame."
+    PipelineTriggerTableRecord:
+      type: object
+      properties:
+        pipelineId:
+          type: string
+          description: Pipeline ID.
+        pipelineUid:
+          type: string
+          description: Pipeline UUID.
+        triggerCountCompleted:
+          type: integer
+          description: Number of triggers with `STATUS_COMPLETED`.
+          format: int32
+          readOnly: true
+        triggerCountErrored:
+          type: integer
+          description: Number of triggers with `STATUS_ERRORED`.
+          format: int32
+          readOnly: true
+        pipelineReleaseId:
+          type: string
+          description: Version for the triggered pipeline if it is a release pipeline.
+          readOnly: true
+        pipelineReleaseUid:
+          type: string
+          description: Release UUID for the triggered pipeline if it is a release pipeline.
+          readOnly: true
+      description: "PipelineTriggerTableRecord contains pipeline trigger metrics, aggregated by\npipeline ID."
+    StripeSubscriptionDetail:
+      type: object
+      properties:
+        productName:
+          type: string
+          description: Product name associated with the subscription in Stripe.
+          readOnly: true
+        id:
+          type: string
+          description: Unique identifier for the subscription.
+          readOnly: true
+        itemId:
+          type: string
+          description: Identifier for the specific item within the subscription.
+          readOnly: true
+        price:
+          type: number
+          description: Price of the subscription.
+          format: float
+          readOnly: true
+        canceledAt:
+          type: integer
+          description: 'Optional timestamp indicating when the subscription was canceled, if applicable.'
+          format: int32
+          readOnly: true
+        trialEnd:
+          type: integer
+          description: 'Optional timestamp indicating when the trial ended, if applicable.'
+          format: int32
+          readOnly: true
+        status:
+          allOf:
+            - $ref: '#/components/schemas/StripeSubscriptionDetailStatus'
+          description: Status of the subscription.
+          readOnly: true
+        description:
+          type: string
+          description: Description of the subscription.
+          readOnly: true
+      description: StripeSubscriptionDetail describes the details of a subscription in Stripe.
+    StripeSubscriptionDetailStatus:
+      enum:
+        - STATUS_INCOMPLETE
+        - STATUS_INCOMPLETE_EXPIRED
+        - STATUS_TRIALING
+        - STATUS_ACTIVE
+        - STATUS_PAST_DUE
+        - STATUS_CANCELED
+        - STATUS_UNPAID
+        - STATUS_PAUSED
+      type: string
+      description: "Enumerates the status types for the user's subscription.\n\n - STATUS_INCOMPLETE: Incomplete.\n - STATUS_INCOMPLETE_EXPIRED: Incomplete Expired.\n - STATUS_TRIALING: Trialing.\n - STATUS_ACTIVE: Active.\n - STATUS_PAST_DUE: Past due.\n - STATUS_CANCELED: Canceled.\n - STATUS_UNPAID: Unpaid.\n - STATUS_PAUSED: Paused."
+    SubtractCreditAdminResponse:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: The remaining credit.
+          format: float
+      description: "SubtractCreditResponse contains the remaining credit of an account after the\nsubtraction."
+    UpdateOrganizationMembershipResponse:
+      type: object
+      properties:
+        membership:
+          allOf:
+            - $ref: '#/components/schemas/OrganizationMembership'
+          description: The updated membership resource.
+          readOnly: true
+      description: UpdateOrganizationMembershipResponse contains the updated membership.
+    UpdateOrganizationResponse:
+      type: object
+      properties:
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: The organization resource.
+          readOnly: true
+      description: UpdateOrganizationResponse contains the updated organization.
+    UpdateUserMembershipResponse:
+      type: object
+      properties:
+        membership:
+          allOf:
+            - $ref: '#/components/schemas/UserMembership'
+          description: The updated membership resource.
+          readOnly: true
+      description: UpdateUserMembershipResponse contains the updated membership.
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The name of the user, defined by its ID.\n- Format: `users/{user.id}`."
+          readOnly: true
+        uid:
+          type: string
+          description: "User UUID. This field is optionally set by users on creation (it will be\nserver-generated if unspecified)."
+          readOnly: true
+        id:
+          type: string
+          description: "Resource ID (used in `name` as the last segment). This conforms to\nRFC-1034, which restricts to letters, numbers, and hyphen, with the first\ncharacter a letter, the last a letter or a number, and a 63 character\nmaximum.\n\nNote that the ID can be updated."
+        createTime:
+          type: string
+          description: Creation time.
+          format: date-time
+          readOnly: true
+        updateTime:
+          type: string
+          description: Update time.
+          format: date-time
+          readOnly: true
+        profile:
+          allOf:
+            - $ref: '#/components/schemas/UserProfile'
+          description: Profile.
+      description: "User describes an individual that interacts with Instill AI. It doesn't\ncontain any private information about the user."
+    UserMembership:
+      required:
+        - state
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The resource name of the membership, which allows its access by user and\norganization ID.\n- Format: `users/{user.id}/memberships/{organization.id}`."
+          readOnly: true
+        role:
+          type: string
+          description: Role of the user in the organization.
+          readOnly: true
+        state:
+          allOf:
+            - $ref: '#/components/schemas/MembershipState'
+          description: State of the membership.
+        user:
+          allOf:
+            - $ref: '#/components/schemas/User'
+          description: User information.
+          readOnly: true
+        organization:
+          allOf:
+            - $ref: '#/components/schemas/Organization'
+          description: Organization information.
+          readOnly: true
+      description: "A user membership defines the relationship between a user and an\norganization they belong to."
+    UserProfile:
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name.
+        bio:
+          type: string
+          description: Biography.
+        avatar:
+          type: string
+          description: Avatar in base64 format.
+        publicEmail:
+          type: string
+          description: Public email.
+        companyName:
+          type: string
+          description: Company name.
+        socialProfileLinks:
+          type: object
+          additionalProperties:
+            type: string
+          description: "Social profile links list the links to the user's social profiles.\nThe key represents the provider, and the value is the corresponding URL."
+      description: UserProfile describes the public data of a user.
+    UserSubscription:
+      type: object
+      properties:
+        plan:
+          allOf:
+            - $ref: '#/components/schemas/UserSubscriptionPlan'
+          description: Plan identifier.
+          readOnly: true
+        detail:
+          allOf:
+            - $ref: '#/components/schemas/StripeSubscriptionDetail'
+          description: Details of the associated Stripe subscription.
+          readOnly: true
+      description: 'UserSubscription details describe the plan (i.e., features) a user has access to.'
+    UserSubscriptionPlan:
+      enum:
+        - PLAN_FREE
+        - PLAN_PRO
+      type: string
+      description: "Enumerates the plan types for the user subscription.\n\n - PLAN_FREE: Free plan.\n - PLAN_PRO: Pro plan."
+    ValidateTokenResponse:
+      type: object
+      properties:
+        userUid:
+          type: string
+          description: 'If token is valid, UUID of the user that owns it.'
+          readOnly: true
+      description: ValidateTokenResponse contains the validation of a token.
+    View:
+      enum:
+        - VIEW_BASIC
+        - VIEW_FULL
+      type: string
+      description: "View defines how a resource is presented. It can be used as a parameter in a\nmethod request to allow clients to select the amount of information they\nwant in the response.\n\n - VIEW_BASIC: Default view, only includes basic information.\n - VIEW_FULL: Full representation."
+    CreateCatalogBody:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The catalog name.
+        description:
+          type: string
+          description: The catalog description.
+        tags:
+          type: array
+          items:
+            type: string
+          description: The catalog tags.
+      description: CreateCatalogRequest represents a request to create a catalog.
+    QuestionAnsweringBody:
+      title: QuestionAnsweringRequest
+      type: object
+      properties:
+        question:
+          title: question to be answered
+          type: string
+        topK:
+          title: top k default to 5
+          type: integer
+          format: int32
+    SimilarityChunksSearchBody:
+      title: Similar chunk search request
+      type: object
+      properties:
+        textPrompt:
+          title: text prompt
+          type: string
+        topK:
+          title: top k
+          type: integer
+          format: int64
+    UpdateCatalogBody:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The catalog description.
+        tags:
+          type: array
+          items:
+            type: string
+          description: The catalog tags.
+      description: UpdateCatalogRequest represents a request to update a catalog.
+    UpdateChunkBody:
+      title: Create chunk response
+      type: object
+      properties:
+        retrievable:
+          title: whether the chunk is retrievable
+          type: boolean
+    GetFileCatalogResponseChunkType:
+      title: chunk type
+      enum:
+        - CHUNK_TYPE_TEXT
+        - CHUNK_TYPE_IMAGE
+        - CHUNK_TYPE_AUDIO
+        - CHUNK_TYPE_VIDEO
+      type: string
+      description: "- CHUNK_TYPE_TEXT: text\n - CHUNK_TYPE_IMAGE: image\n - CHUNK_TYPE_AUDIO: audio\n - CHUNK_TYPE_VIDEO: video"
+    GetFileCatalogResponseMetadata:
+      title: metadata
+      type: object
+      properties:
+        fileUid:
+          title: file uid
+          type: string
+        fileId:
+          title: file id
+          type: string
+        fileType:
+          title: file type
+          allOf:
+            - $ref: '#/components/schemas/FileType'
+        fileSize:
+          title: file size in bytes
+          type: string
+          format: int64
+        fileUploadTime:
+          title: upload time
+          type: string
+          format: date-time
+        fileProcessStatus:
+          title: file process status
+          allOf:
+            - $ref: '#/components/schemas/FileProcessStatus'
+    GetFileCatalogResponseText:
+      title: text message
+      type: object
+      properties:
+        pipelineIds:
+          title: pipelines
+          type: array
+          items:
+            type: string
+        transformedContent:
+          title: transformed content
+          type: string
+        transformedContentChunkNum:
+          title: transformed content chunk number
+          type: integer
+          format: int32
+        transformedContentTokenNum:
+          title: transformed content token number
+          type: integer
+          format: int32
+        transformedContentUpdateTime:
+          title: transformed content update time
+          type: string
+          format: date-time
+    artifactv1alphaChunk:
+      type: object
+      properties:
+        chunkUid:
+          title: unique identifier of the chunk
+          type: string
+        retrievable:
+          title: whether the chunk is retrievable
+          type: boolean
+        startPos:
+          title: start position of the chunk in the source file
+          type: integer
+          format: int64
+        endPos:
+          title: end position of the chunk in the source file
+          type: integer
+          format: int64
+        tokens:
+          title: tokens of the chunk
+          type: integer
+          format: int64
+        createTime:
+          title: creation time of the chunk
+          type: string
+          format: date-time
+        originalFileUid:
+          title: original file unique identifier
+          type: string
+      description: The Chunk message represents a chunk of data in the artifact system.
+    rpcStatus:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/protobufAny'
+    Catalog:
+      type: object
+      properties:
+        catalogId:
+          type: string
+          description: The catalog id.
+        name:
+          type: string
+          description: The catalog name.
+        description:
+          type: string
+          description: The catalog description.
+        createTime:
+          type: string
+          description: The creation time of the catalog.
+        updateTime:
+          type: string
+          description: The last update time of the catalog.
+        ownerName:
+          type: string
+          description: The owner/namespace of the catalog.
+        tags:
+          type: array
+          items:
+            type: string
+          description: The catalog tags.
+        convertingPipelines:
+          type: array
+          items:
+            type: string
+          description: The catalog converting pipelines.
+        splittingPipelines:
+          type: array
+          items:
+            type: string
+          description: The catalog splitting pipelines.
+        embeddingPipelines:
+          type: array
+          items:
+            type: string
+          description: The catalog embedding pipelines.
+        downstreamApps:
+          title: The downstream apps
+          type: array
+          items:
+            type: string
+        totalFiles:
+          type: integer
+          description: The total files in catalog.
+          format: int64
+        totalTokens:
+          type: integer
+          description: The total tokens in catalog.
+          format: int64
+        usedStorage:
+          type: string
+          description: The current used storage in catalog.
+          format: uint64
+      description: Catalog represents a catalog.
+    CreateCatalogResponse:
+      type: object
+      properties:
+        catalog:
+          allOf:
+            - $ref: '#/components/schemas/Catalog'
+          description: The created catalog.
+      description: CreateCatalogResponse represents a response for creating a catalog.
+    CreateRepositoryTagResponse:
+      type: object
+      properties:
+        tag:
+          allOf:
+            - $ref: '#/components/schemas/RepositoryTag'
+          description: The created tag.
+      description: CreateRepositoryTagResponse contains the created tag.
+    DeleteCatalogFileResponse:
+      title: delete file response
+      type: object
+      properties:
+        fileUid:
+          type: string
+          description: The file uid.
+    DeleteCatalogResponse:
+      type: object
+      properties:
+        catalog:
+          allOf:
+            - $ref: '#/components/schemas/Catalog'
+          description: The catalog identifier.
+      description: DeleteCatalogResponse represents a response for deleting a catalog.
+    DeleteRepositoryTagResponse:
+      type: object
+      description: DeleteRepositoryTagResponse represent an empty response.
+    File:
+      title: file
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        fileUid:
+          title: file uid
+          type: string
+          readOnly: true
+        name:
+          title: file name
+          type: string
+        type:
+          title: file type
+          allOf:
+            - $ref: '#/components/schemas/FileType'
+        processStatus:
+          title: file process status
+          allOf:
+            - $ref: '#/components/schemas/FileProcessStatus'
+          readOnly: true
+        processOutcome:
+          title: file process message
+          type: string
+          readOnly: true
+        retrievable:
+          title: retrievable(this is reserved for future use)
+          type: boolean
+          readOnly: true
+        content:
+          title: content(this is reserved for future use)
+          type: string
+        ownerUid:
+          title: owner/namespace uid
+          type: string
+          readOnly: true
+        creatorUid:
+          title: creator uid from authn token
+          type: string
+          readOnly: true
+        catalogUid:
+          title: catalog uid
+          type: string
+          readOnly: true
+        createTime:
+          title: create time
+          type: string
+          format: date-time
+          readOnly: true
+        updateTime:
+          title: update time
+          type: string
+          format: date-time
+          readOnly: true
+        deleteTime:
+          title: delete time
+          type: string
+          format: date-time
+          readOnly: true
+        size:
+          title: file size in bytes
+          type: string
+          format: int64
+          readOnly: true
+        totalChunks:
+          title: total chunks
+          type: integer
+          format: int32
+          readOnly: true
+        totalTokens:
+          title: total tokens
+          type: integer
+          format: int32
+          readOnly: true
+    FileProcessStatus:
+      title: file embedding process status
+      enum:
+        - FILE_PROCESS_STATUS_NOTSTARTED
+        - FILE_PROCESS_STATUS_WAITING
+        - FILE_PROCESS_STATUS_CONVERTING
+        - FILE_PROCESS_STATUS_CHUNKING
+        - FILE_PROCESS_STATUS_EMBEDDING
+        - FILE_PROCESS_STATUS_COMPLETED
+        - FILE_PROCESS_STATUS_FAILED
+      type: string
+      description: "- FILE_PROCESS_STATUS_NOTSTARTED: NOTSTARTED\n - FILE_PROCESS_STATUS_WAITING: file is waiting for embedding process\n - FILE_PROCESS_STATUS_CONVERTING: file is converting\n - FILE_PROCESS_STATUS_CHUNKING: file is chunking\n - FILE_PROCESS_STATUS_EMBEDDING: file is embedding\n - FILE_PROCESS_STATUS_COMPLETED: completed\n - FILE_PROCESS_STATUS_FAILED: failed"
+    FileType:
+      title: file type
+      enum:
+        - FILE_TYPE_TEXT
+        - FILE_TYPE_PDF
+        - FILE_TYPE_MARKDOWN
+        - FILE_TYPE_PNG
+        - FILE_TYPE_JPEG
+        - FILE_TYPE_JPG
+        - FILE_TYPE_HTML
+        - FILE_TYPE_DOCX
+        - FILE_TYPE_DOC
+        - FILE_TYPE_PPT
+        - FILE_TYPE_PPTX
+        - FILE_TYPE_XLS
+        - FILE_TYPE_XLSX
+      type: string
+      description: "- FILE_TYPE_TEXT: text\n - FILE_TYPE_PDF: PDF\n - FILE_TYPE_MARKDOWN: MARKDOWN\n - FILE_TYPE_PNG: PNG(not supported yet)\n - FILE_TYPE_JPEG: JPEG(not supported yet)\n - FILE_TYPE_JPG: JPG(not supported yet)\n - FILE_TYPE_HTML: HTML\n - FILE_TYPE_DOCX: DOCX\n - FILE_TYPE_DOC: DOC\n - FILE_TYPE_PPT: PPT\n - FILE_TYPE_PPTX: PPTX\n - FILE_TYPE_XLS: XLS(not supported yet)\n - FILE_TYPE_XLSX: XLSX"
+    GetFileCatalogResponse:
+      title: GetFileCatalogResponse
+      type: object
+      properties:
+        originalData:
+          title: original data is encoded in base64
+          type: string
+        metadata:
+          title: file catalog
+          allOf:
+            - $ref: '#/components/schemas/GetFileCatalogResponseMetadata'
+        text:
+          title: text
+          allOf:
+            - $ref: '#/components/schemas/GetFileCatalogResponseText'
+        chunks:
+          title: chunks
+          type: array
+          items:
+            $ref: '#/components/schemas/GetFileCatalogResponseChunk'
+    GetFileCatalogResponseChunk:
+      title: chunk message
+      type: object
+      properties:
+        uid:
+          title: chunk uid
+          type: string
+        type:
+          title: 'chunk type. i.e. text, image, audio, and video'
+          allOf:
+            - $ref: '#/components/schemas/GetFileCatalogResponseChunkType'
+        startPos:
+          title: chunk start position
+          type: integer
+          format: int32
+        endPos:
+          title: chunk end position
+          type: integer
+          format: int32
+        content:
+          title: chunk content
+          type: string
+        tokensNum:
+          title: chunk tokens num
+          type: integer
+          format: int32
+        embedding:
+          title: embedding. float32 array
+          type: array
+          items:
+            type: number
+            format: float
+        createTime:
+          title: chunk create time
+          type: string
+          format: date-time
+        retrievable:
+          title: chunk retrievable
+          type: boolean
+    GetRepositoryTagResponse:
+      type: object
+      properties:
+        tag:
+          allOf:
+            - $ref: '#/components/schemas/RepositoryTag'
+          description: The created tag.
+      description: GetRepositoryTagResponse contains the created tag.
+    GetSourceFileResponse:
+      title: get source file response
+      type: object
+      properties:
+        sourceFile:
+          title: source file(either original file or converted file)
+          allOf:
+            - $ref: '#/components/schemas/SourceFile'
+    ListCatalogFilesFilter:
+      title: "list file filter\ntodo: support more parameters"
+      type: object
+      properties:
+        fileUids:
+          type: array
+          items:
+            type: string
+          description: The file uids.
+    ListCatalogFilesResponse:
+      title: list files response
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/File'
+          description: The list of files.
+        totalSize:
+          type: integer
+          description: The total number of files.
+          format: int32
+        pageSize:
+          type: integer
+          description: The requested page size.
+          format: int32
+        nextPageToken:
+          title: next page token
+          type: string
+        filter:
+          allOf:
+            - $ref: '#/components/schemas/ListCatalogFilesFilter'
+          description: The filter.
+    ListCatalogsResponse:
+      type: object
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Catalog'
+          description: The catalogs container.
+      description: GetCatalogsResponse represents a response for getting all catalogs from users.
+    ListChunksResponse:
+      type: object
+      properties:
+        chunks:
+          title: repeated chunks
+          type: array
+          items:
+            $ref: '#/components/schemas/artifactv1alphaChunk'
+      description: The ListChunksResponse message represents a response containing a list of chunks in the artifact system.
+    ListRepositoryTagsResponse:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepositoryTag'
+          description: A list of repository tags.
+        totalSize:
+          type: integer
+          description: Total number of tags.
+          format: int32
+        pageSize:
+          type: integer
+          description: The requested page size.
+          format: int32
+        page:
+          type: integer
+          description: The requested page offset.
+          format: int32
+      description: ListRepositoryTagsResponse contains a list of container image tags.
+    ProcessCatalogFilesRequest:
+      title: Process Catalog File Request
+      required:
+        - fileUids
+      type: object
+      properties:
+        fileUids:
+          type: array
+          items:
+            type: string
+          description: The file uid.
+    ProcessCatalogFilesResponse:
+      title: Process Catalog File Response
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/File'
+          description: The file uid.
+    QuestionAnsweringResponse:
+      title: QuestionAnsweringResponse
+      type: object
+      properties:
+        answer:
+          title: answer to the question
+          type: string
+        similarChunks:
+          title: chunks
+          type: array
+          items:
+            $ref: '#/components/schemas/SimilarityChunk'
+    RepositoryTag:
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The name of the tag, defined by its parent repository and ID.\n- Format: `repositories/{repository.id}/tags/{tag.id}`."
+        id:
+          type: string
+          description: The tag identifier.
+        digest:
+          type: string
+          description: 'Unique identifier, computed from the manifest the tag refers to.'
+        updateTime:
+          type: string
+          description: 'Tag update time, i.e. timestamp of the last push.'
+          format: date-time
+          readOnly: true
+      description: "RepositoryTag contains information about the version of some content in a\nrepository."
+    SimilarityChunk:
+      title: similarity chunks
+      type: object
+      properties:
+        chunkUid:
+          title: chunk uid
+          type: string
+        similarityScore:
+          title: similarity score
+          type: number
+          format: float
+        textContent:
+          title: content
+          type: string
+        sourceFile:
+          title: source file
+          type: string
+    SimilarityChunksSearchResponse:
+      title: Similar chunk search response
+      type: object
+      properties:
+        similarChunks:
+          title: chunks
+          type: array
+          items:
+            $ref: '#/components/schemas/SimilarityChunk'
+    SourceFile:
+      type: object
+      properties:
+        originalFileUid:
+          title: original file unique identifier
+          type: string
+        content:
+          title: content
+          type: string
+        createTime:
+          title: creation time of the source file
+          type: string
+          format: date-time
+        updateTime:
+          title: update time of the source file
+          type: string
+          format: date-time
+      description: The SourceFile message represents a source file in the artifact system.
+    UpdateCatalogResponse:
+      type: object
+      properties:
+        catalog:
+          allOf:
+            - $ref: '#/components/schemas/Catalog'
+          description: The updated catalog.
+      description: UpdateCatalogResponse represents a response for updating a catalog.
+    UpdateChunkResponse:
+      title: update chunk response
+      type: object
+      properties:
+        chunk:
+          title: chunk
+          allOf:
+            - $ref: '#/components/schemas/artifactv1alphaChunk'
+    UploadCatalogFileResponse:
+      title: upload file response
+      type: object
+      properties:
+        file:
+          title: file
+          allOf:
+            - $ref: '#/components/schemas/File'
+  securitySchemes:
+    Bearer:
+      type: http
+      description: 'Enter the token with the `Bearer ` prefix, e.g. `Bearer abcde12345`'
+      scheme: bearer
+      x-default: Bearer instill_sk_***
+security:
+  - Bearer: [ ]
+tags:
+  - name: User
+    description: User endpoints
+  - name: Organization
+    description: Organization endpoints
+  - name: Membership
+    description: Membership endpoints
+  - name: Token
+    description: Token endpoints
+  - name: Subscription
+    description: Subscription endpoints
+  - name: Credit
+    description: Credit endpoints
+  - name: Metric
+    description: Metric endpoints
+  - name: Utils
+    description: Util endpoints
+externalDocs:
+  description: More about Instill AI
+  url: https://www.instill.tech/docs
