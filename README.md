@@ -37,9 +37,9 @@ It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks
 ## Source generator
 - Install the package
 ```bash
-dotnet add package AutoSDK
+dotnet add package AutoSDK.SourceGenerators
 ```
-- Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/HavenDV/AutoSDK/blob/76c06e6e2265bc875d0619cfe96e28002fba1d3d/src/libs/AutoSDK/AutoSDK.props):
+- Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/tryAGI/AutoSDK/blob/main/src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props):
 ```xml
 <!-- This generator automatically detects all .yaml files in the project directory and adds them to the generation -->
 <!-- If your yaml file is not in the project directory, you can specify it manually -->
