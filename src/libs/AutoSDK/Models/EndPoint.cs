@@ -12,8 +12,9 @@ public readonly record struct EndPoint(
     string BaseUrl,
     bool Stream,
     string Path,
+    ImmutableArray<KeyValuePair<string, string>> QueryParameters,
     string RequestMediaType,
-    ImmutableArray<PropertyData> Properties,
+    ImmutableArray<MethodParameter> Parameters,
     OperationType HttpMethod,
     ContentType ContentType,
     string Summary,
@@ -21,30 +22,25 @@ public readonly record struct EndPoint(
     Settings Settings,
     bool IsDeprecated,
     TypeData RequestType,
-    TypeData ResponseType,
-    ImmutableArray<string> Converters
+    TypeData ResponseType
 )
 {
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
     
-    public string FileNameWithoutExtension => string.IsNullOrWhiteSpace(Path)
-        ? $"{Namespace}.{ClassName}"
-        : $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
+    public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
     
-    public string InterfaceFileNameWithoutExtension => string.IsNullOrWhiteSpace(Path)
-        ? $"{Namespace}.I{ClassName}"
-        : $"{Namespace}.I{ClassName}.{Id.ToPropertyName()}";
+    public string InterfaceFileNameWithoutExtension => $"{Namespace}.I{ClassName}.{Id.ToPropertyName()}";
     
     public static EndPoint FromSchema(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
         var parameters = operation.Schemas
-            .Where(x => x is { Hint: Hint.Parameter, PropertyData: not null })
-            .Select(x => x.PropertyData!.Value)
-            .ToArray();
+            .Where(x => x is { Hint: Hint.Parameter, ParameterData: not null })
+            .Select(x => x.ParameterData!.Value)
+            .ToList();
         
         // Ensure that parameters with the same name are unique
         var duplicateParameters = parameters
@@ -55,7 +51,7 @@ public readonly record struct EndPoint(
         foreach (var duplicateParameter in duplicateParameters)
         {
             var index = 1;
-            for (var i = 0; i < parameters.Length; i++)
+            for (var i = 0; i < parameters.Count; i++)
             {
                 if (parameters[i].Name == duplicateParameter)
                 {
@@ -68,6 +64,7 @@ public readonly record struct EndPoint(
         }
         
         var preparedPath = operation.OperationPath.PreparePath(parameters);
+        //var (preparedPath, queryParameters) = operation.OperationPath.PreparePath2(parameters);
  
         var requestMediaTypes =
             operation.Operation.RequestBody?.ResolveIfRequired().Content ??
@@ -89,22 +86,25 @@ public readonly record struct EndPoint(
         var responseContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Response);
         TypeData? responseType = responseContext?.TypeData;
 
-        var properties = parameters.ToList();
         foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
                                         requestContext?.ClassData?.Properties ??
                                         [])
         {
-            if (properties.All(x => x.Name != requestProperty.Name))
+            parameters.Add(MethodParameter.Default with
             {
-                properties.Add(requestProperty);
-            }
-            else
-            {
-                properties.Add(requestProperty with
-                {
-                    Name = $"request{requestProperty.Name.ToPropertyName()}",
-                });
-            }
+                Id = requestProperty.Id,
+                Name = parameters.All(x => x.Name != requestProperty.Name)
+                    ? requestProperty.Name
+                    : $"request{requestProperty.Name.ToPropertyName()}",
+                Type = requestProperty.Type,
+                IsRequired = requestProperty.IsRequired,
+                IsMultiPartFormDataFilename = requestProperty.IsMultiPartFormDataFilename,
+                DefaultValue = requestProperty.DefaultValue,
+                IsDeprecated = requestProperty.IsDeprecated,
+                Settings = requestProperty.Settings,
+                Summary = requestProperty.Summary,
+                ConverterType = requestProperty.ConverterType,
+            });
         }
         
         var firstTag = (operation.Operation.Tags ?? []).FirstOrDefault();
@@ -118,8 +118,9 @@ public readonly record struct EndPoint(
             Stream: responses
                 .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
             Path: preparedPath,
+            QueryParameters: [],// queryParameters.ToImmutableArray(),
             RequestMediaType: requestMediaType,
-            Properties: properties.ToImmutableArray(),
+            Parameters: parameters.ToImmutableArray(),
             HttpMethod: operation.OperationType,
             ContentType: responses
                 .Any(x => x.MediaType.Key.Contains("application/octet-stream"))
@@ -130,8 +131,7 @@ public readonly record struct EndPoint(
             Settings: operation.Settings,
             IsDeprecated: operation.Operation.Deprecated,
             RequestType: requestType ?? TypeData.Default,
-            ResponseType: responseType ?? TypeData.Default,
-            Converters: []);
+            ResponseType: responseType ?? TypeData.Default);
         
         return endPoint;
     }

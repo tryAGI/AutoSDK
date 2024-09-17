@@ -29,6 +29,10 @@ public class SchemaContext
     public bool IsProperty => PropertyName != null;
     public PropertyData? PropertyData { get; set; }
     
+    public string? ParameterName => Parameter?.Name;
+    public bool IsParameter => ParameterName != null;
+    public MethodParameter? ParameterData { get; set; }
+    
     public string? ComponentId { get; init; }
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
     
@@ -38,7 +42,6 @@ public class SchemaContext
     public string? ContentType { get; init; }
     public OpenApiMediaType? MediaType { get; init; }
     public OpenApiParameter? Parameter { get; init; }
-    public string? ParameterName => Parameter?.Name;
     public string? ResponseStatusCode { get; init; }
     public OpenApiResponse? Response { get; init; }
     public bool IsOperation => OperationPath != null;
@@ -334,9 +337,13 @@ public class SchemaContext
                 CSharpType = global::AutoSDK.Models.TypeData.GetCSharpType(ResolvedReference, this),
             };
         }
-        if (IsProperty || Hint is Models.Hint.Parameter)
+        if (IsProperty)
         {
             PropertyData = Models.PropertyData.FromSchemaContext(this);
+        }
+        if (Hint is Models.Hint.Parameter)
+        {
+            ParameterData = MethodParameter.FromSchemaContext(this);
         }
         if (IsAnyOfLikeStructure)
         {

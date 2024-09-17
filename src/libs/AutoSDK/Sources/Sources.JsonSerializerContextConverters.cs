@@ -7,10 +7,10 @@ namespace AutoSDK.Generation;
 public static partial class Sources
 {
     public static string GenerateJsonSerializerContextConverters(
-        EndPoint endPoint)
+        Client client)
     {
-        if (!endPoint.Settings.GenerateJsonSerializerContextTypes ||
-            endPoint.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
+        if (!client.Settings.GenerateJsonSerializerContextTypes ||
+            client.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
         }
@@ -18,14 +18,14 @@ public static partial class Sources
         return $@"
 #nullable enable
 
-namespace {endPoint.Namespace}
+namespace {client.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     internal sealed partial class JsonSerializerContextConverters
     {{
         private readonly global::System.Type[] _types = new global::System.Type[]
         {{
-{endPoint.Converters.Select(x => $@" 
+{client.Converters.Select(x => $@" 
             typeof({x}),
 ").Inject()}
         }};

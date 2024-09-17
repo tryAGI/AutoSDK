@@ -147,7 +147,7 @@ public static class OpenApiExtensions
     /// <exception cref="ArgumentNullException"></exception>
     public static string PreparePath(
         this string path,
-        IReadOnlyList<PropertyData> parameters)
+        IReadOnlyList<MethodParameter> parameters)
     {
         path = path ?? throw new ArgumentNullException(nameof(path));
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
@@ -162,6 +162,33 @@ public static class OpenApiExtensions
         }
         
         return path;
+    }
+    
+    /// <summary>
+    /// https://swagger.io/docs/specification/describing-parameters/
+    /// https://swagger.io/docs/specification/serialization/
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="parameters"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static (string Path, IReadOnlyDictionary<string, string> Parameters) PreparePath2(
+        this string path,
+        IReadOnlyList<MethodParameter> parameters)
+    {
+        path = path ?? throw new ArgumentNullException(nameof(path));
+        parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+        
+        path = ParameterSerializer.SerializePathParameters(parameters, path);
+        var dictionary = ParameterSerializer.SerializeQueryParameters2(parameters);
+        
+        path = $"\"{path}\"";
+        if (parameters.Any(x => x.ParameterLocation is ParameterLocation.Path))
+        {
+            path = $"${path}";
+        }
+        
+        return (path, dictionary);
     }
 
     public static string? GetDefaultValue(this SchemaContext context)

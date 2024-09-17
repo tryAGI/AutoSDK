@@ -126,35 +126,53 @@ public static partial class Sources
     }
     
     public static FileWithName JsonSerializerContext(
-        EndPoint endPoint,
+        Client client,
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (!endPoint.Settings.FromCli ||
-            !endPoint.Settings.GenerateJsonSerializerContextTypes ||
-            endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (!client.Settings.FromCli ||
+            !client.Settings.GenerateJsonSerializerContextTypes ||
+            client.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
         
         return new FileWithName(
             Name: "JsonSerializerContext.g.cs",
-            Text: GenerateJsonSerializerContext(endPoint, types, cancellationToken: cancellationToken));
+            Text: GenerateJsonSerializerContext(client, types, cancellationToken: cancellationToken));
     }
     
     public static FileWithName JsonSerializerContextConverters(
-        EndPoint endPoint,
+        Client client,
         CancellationToken cancellationToken = default)
     {
-        if (!endPoint.Settings.GenerateJsonSerializerContextTypes ||
-            endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (!client.Settings.GenerateJsonSerializerContextTypes ||
+            client.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
         
         return new FileWithName(
             Name: "JsonSerializerContextConverters.g.cs",
-            Text: GenerateJsonSerializerContextConverters(endPoint));
+            Text: GenerateJsonSerializerContextConverters(client));
+    }
+    
+    public static FileWithName Client(
+        Client client,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{client.FileNameWithoutExtension}.g.cs",
+            Text: GenerateClient(client));
+    }
+    
+    public static FileWithName ClientInterface(
+        Client client,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{client.InterfaceFileNameWithoutExtension}.g.cs",
+            Text: GenerateClientInterface(client));
     }
     
     public static FileWithName Method(

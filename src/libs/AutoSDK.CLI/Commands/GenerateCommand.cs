@@ -113,6 +113,10 @@ public class GenerateCommand : Command
                 .Select(x => Sources.Method(x)))
             .Concat(data.Methods
                 .Select(x => Sources.MethodInterface(x)))
+            .Concat(data.Clients
+                .Select(x => Sources.Client(x)))
+            .Concat(data.Clients
+                .Select(x => Sources.ClientInterface(x)))
             .Concat(data.Authorizations
                 .Select(x => Sources.Authorization(x)))
             .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])

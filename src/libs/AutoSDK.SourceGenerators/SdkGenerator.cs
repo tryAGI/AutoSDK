@@ -45,6 +45,16 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
+            .SelectMany(static (x, _) => x.Clients)
+            .SelectAndReportExceptions((x, c) => Sources.Client(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.Clients)
+            .SelectAndReportExceptions((x, c) => Sources.ClientInterface(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
             .SelectMany(static (x, _) => x.Authorizations)
             .SelectAndReportExceptions((x, c) => Sources.Authorization(x, c)
                 .AsFileWithName(), context, Id)

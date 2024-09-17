@@ -7,13 +7,13 @@ namespace AutoSDK.Generation;
 public static partial class Sources
 {
     public static string GenerateJsonSerializerContext(
-        EndPoint endPoint,
+        Client client,
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (!endPoint.Settings.FromCli ||
-            !endPoint.Settings.GenerateJsonSerializerContextTypes ||
-            endPoint.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
+        if (!client.Settings.FromCli ||
+            !client.Settings.GenerateJsonSerializerContextTypes ||
+            client.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
         }
@@ -24,19 +24,19 @@ public static partial class Sources
 #pragma warning disable CS0618 // Type or member is obsolete
 #pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
-namespace {endPoint.Namespace}
+namespace {client.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[] 
         {{ 
-{endPoint.Converters.Select(x => $@" 
+{client.Converters.Select(x => $@" 
             typeof({x}),
 ").Inject()}
         }})]
 {(types.IsEmpty ? " " : $@"
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{endPoint.Namespace}.JsonSerializerContextTypes))]")}
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{client.Namespace}.JsonSerializerContextTypes))]")}
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}

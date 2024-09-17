@@ -186,13 +186,29 @@ public static class Data
                     .ToArray()
                 : [];
         
-        var operationsAsMethods = filteredOperations
+        var methods = filteredOperations
             .Select(EndPoint.FromSchema)
-            .ToArray();
+            .ToImmutableArray();
         var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings))
             .ToArray();
+
+        var converters = enums
+            .Where(x =>
+                x.Style == ModelStyle.Enumeration &&
+                x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+            .SelectMany(x => new[]
+            {
+                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
+                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
+            })
+            .Concat(anyOfDatas
+                .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
+                .Select(x => string.IsNullOrWhiteSpace(x.Name)
+                    ? $"global::{settings.Namespace}.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
+                    : $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
+            .ToImmutableArray();
         
         var includedTags = allTags
             .Where(x =>
@@ -200,15 +216,12 @@ public static class Data
                  settings.IncludeTags.Contains(x.Name)) &&
                 !settings.ExcludeTags.Contains(x.Name))
             .ToArray();
-        EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
+        Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",
                 Namespace: settings.Namespace,
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
-                Stream: false,
-                Path: string.Empty,
-                RequestMediaType: string.Empty,
-                Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
+                Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. includedTags.Select(tag => PropertyData.Default with
                         {
@@ -221,45 +234,27 @@ public static class Data
                         })
                     ]
                     : [],
-                HttpMethod: OperationType.Get,
-                ContentType: ContentType.String,
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
-                IsDeprecated: false,
-                RequestType: TypeData.Default,
-                ResponseType: TypeData.Default,
-                Converters: [])] : [];
+                Converters: converters)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
-            constructors = constructors.Concat(
+            clients = clients.Concat(
                 includedTags
-                    .Select(tag => new EndPoint(
+                    .Select(tag => new Client(
                         Id: "Constructors",
                         Namespace: settings.Namespace,
                         ClassName: ClientNameGenerator.Generate(settings, tag),
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
-                        Stream: false,
-                        Path: string.Empty,
-                        RequestMediaType: string.Empty,
-                        Properties: ImmutableArray<PropertyData>.Empty,
-                        HttpMethod: OperationType.Get,
-                        ContentType: ContentType.String,
+                        Clients: [],
                         Summary: tag.Description?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
-                        IsDeprecated: false,
-                        RequestType: TypeData.Default,
-                        ResponseType: TypeData.Default,
                         Converters: [])))
                 .ToArray();
         }
-            
-        EndPoint[] methods = [
-            ..operationsAsMethods,
-            ..constructors,
-        ];
-
+        
         var types =
             settings.GenerateJsonSerializerContextTypes
                 ? filteredSchemas
@@ -284,61 +279,26 @@ public static class Data
                 SchemaContext = default!,
             })
             .ToImmutableArray();
-
-        var converters = enums
-            .Where(x =>
-                x.Style == ModelStyle.Enumeration &&
-                x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
-            .SelectMany(x => new[]
-            {
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
-            })
-            .Concat(anyOfDatas
-                .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
-                .Select(x => string.IsNullOrWhiteSpace(x.Name)
-                    ? $"global::{settings.Namespace}.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
-                    : $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
-            .ToImmutableArray();
-        for (var i = 0; i < methods.Length; i++)
-        {
-            if (methods[i].Id != "MainConstructor")
-            {
-                continue;
-            }
-            
-            methods[i] = methods[i] with
-            {
-                Converters = converters,
-            };
-        }
         
         return new Models.Data(
             Classes: classes,
             Enums: enums,
-            Methods: methods.ToImmutableArray(),
+            Methods: methods,
+            Clients: clients.ToImmutableArray(),
             AnyOfs: anyOfDatas,
             Types: types,
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()
                 : [],
-            Converters: new EndPoint(
+            Converters: new Client(
                 Id: "Converters",
                 Namespace: settings.Namespace,
                 ClassName: string.Empty,
                 BaseUrl: string.Empty,
-                Stream: false,
-                Path: string.Empty,
-                RequestMediaType: string.Empty,
-                Properties: [],
-                HttpMethod: OperationType.Get,
-                ContentType: ContentType.String,
                 Summary: string.Empty,
+                Clients: [],
                 BaseUrlSummary: string.Empty,
                 Settings: settings,
-                IsDeprecated: false,
-                RequestType: TypeData.Default,
-                ResponseType: TypeData.Default,
                 Converters: converters),
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,

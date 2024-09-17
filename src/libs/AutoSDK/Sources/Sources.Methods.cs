@@ -13,12 +13,12 @@ public static partial class Sources
     {
         if (string.IsNullOrWhiteSpace(endPoint.Path))
         {
-            return GenerateConstructors(endPoint);
+            return string.Empty;
         }
 
         var usings =
-            endPoint.Properties.Any(x => x.Type.IsArray && x.ParameterExplode == true) ||
-            endPoint.IsMultipartFormData && endPoint.Properties.Any(x => x.Type.IsArray)
+            endPoint.Parameters.Any(x => x.Type.IsArray && x.ParameterExplode == true) ||
+            endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.Type.IsArray)
             ? "using System.Linq;\n"
             : "";
         var contentType = endPoint.ContentType switch
@@ -36,7 +36,7 @@ namespace {endPoint.Namespace}
     public partial class {endPoint.ClassName}
     {{
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
-            global::System.Net.Http.HttpClient httpClient{endPoint.Properties
+            global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
                 .Where(x => x.ParameterLocation != null)
                 .Select(x => $@",
             {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
@@ -44,7 +44,7 @@ namespace {endPoint.Namespace}
             {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
         partial void Prepare{endPoint.NotAsyncMethodName}Request(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Properties
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Parameters
                 .Where(x => x.ParameterLocation != null)
                 .Select(x => $@",
             {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
@@ -71,7 +71,7 @@ namespace {endPoint.Namespace}
     {
         if (string.IsNullOrWhiteSpace(endPoint.Path))
         {
-            return GenerateInterfaces(endPoint);
+            return string.Empty;
         }
 
         return $@"#nullable enable
@@ -137,14 +137,14 @@ namespace {endPoint.Namespace}
             PrepareArguments(
                 client: _httpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
-                httpClient: _httpClient{endPoint.Properties
+                httpClient: _httpClient{endPoint.Parameters
                     .Where(x => x.ParameterLocation != null)
                     .Select(x => $@",
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
-{(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
+{(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
     .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch
@@ -164,7 +164,7 @@ namespace {endPoint.Namespace}
                 request: httpRequest);
             Prepare{endPoint.NotAsyncMethodName}Request(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest{endPoint.Properties
+                httpRequestMessage: httpRequest{endPoint.Parameters
                     .Where(x => x.ParameterLocation != null)
                     .Select(x => $@",
                 {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{
@@ -229,7 +229,7 @@ namespace {endPoint.Namespace}
         
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
+{endPoint.Parameters.Where(x => x.ParameterLocation != null).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
@@ -237,18 +237,18 @@ namespace {endPoint.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Properties.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
     public static string SerializePropertyAsString(
-        PropertyData property)
+        MethodParameter property)
     {
         var name = property.ParameterLocation != null
             ? property.ParameterName
@@ -273,6 +273,51 @@ namespace {endPoint.Namespace}
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
     
+    public static string GeneratePathAndQuery(
+        EndPoint endPoint)
+    {
+        var code = @" 
+            var __path =
+                _httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $""/v1alpha/namespaces/{{namespaceId}}/catalogs/{{catalogId}}/files"";";
+
+        if (endPoint.QueryParameters.Length == 0)
+        {
+            return code.RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        code += $@" 
+            var parameters = new global::System.Collections.Generic.Dictionary<string, string?>();";
+        foreach (var pair in endPoint.QueryParameters)
+        {
+            code += $@" 
+            if ({pair.Key} != null)
+            {{
+                parameters.Add(""{pair.Key}"", global::System.Uri.EscapeDataString($""{{{pair.Value}}}""));
+            }}";
+        }
+        
+        code += $@" 
+            if (parameters.Count > 0)
+            {{
+                __path += ""?"" + string.Join(""&"", parameters.Select(kvp => $""{{kvp.Key}}={{kvp.Value}}""));
+            }}";
+        
+        return code.RemoveBlankLinesWhereOnlyWhitespaces();
+ //        code += $@"
+ //            if (filterFileUids != null)
+ //            {{
+ //                for (var i = 0; i < filterFileUids.Count; i++)
+ //                {{
+ //                    parameters.Add($""filterFileUids"", filterFileUids[i].ToString());
+ //                }}
+ //            }}
+ //            if (parameters.Count > 0)
+ //            {{
+ //                __path += ""?"" + string.Join(""&"", parameters.Select(kvp => $""{{kvp.Key}}={{kvp.Value}}""));
+ //            }}
+ // ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
     public static string GenerateRequestData(
         EndPoint endPoint)
     {
@@ -286,7 +331,7 @@ namespace {endPoint.Namespace}
         {
             return $@" 
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-{endPoint.Properties.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
+{endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
     var add = x.Type.IsBinary ? @$" 
             __httpRequestContent.Add(
@@ -370,12 +415,12 @@ namespace {endPoint.Namespace}
         {{
             var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
-{endPoint.Properties.Where(x => x.ParameterLocation == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
+{endPoint.Parameters.Where(x => x.ParameterLocation == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
                 {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},").Inject()}
             }};
 
             {response}{endPoint.MethodName}(
-{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
+{endPoint.Parameters.Where(x => x.ParameterLocation != null).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: request,
                 cancellationToken: cancellationToken){configureAwaitResponse};
@@ -389,15 +434,15 @@ namespace {endPoint.Namespace}
         
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Properties.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
+{endPoint.Parameters.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
+{endPoint.Parameters.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{endPoint.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
+{endPoint.Parameters.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();

@@ -4,37 +4,43 @@ using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
-public readonly record struct PropertyData(
+public readonly record struct MethodParameter(
     string Id,
     string Name,
     TypeData Type,
     bool IsRequired,
     bool IsMultiPartFormDataFilename,
+    ParameterLocation? ParameterLocation,
+    ParameterStyle? ParameterStyle,
+    bool? ParameterExplode,
     Settings Settings,
     string? DefaultValue,
     bool IsDeprecated,
     string Summary,
     string ConverterType)
 {
-    public static PropertyData Default => new(
+    public static MethodParameter Default => new(
         Id: string.Empty,
         Name: string.Empty,
         Type: TypeData.Default,
         IsRequired: false,
         IsMultiPartFormDataFilename: false,
+        ParameterLocation: null,
+        ParameterStyle: null,
+        ParameterExplode: null,
         DefaultValue: null,
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
         ConverterType: string.Empty);
 
-    public static PropertyData FromSchemaContext(SchemaContext context)
+    public static MethodParameter FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
+        var parameterName = context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var type = context.TypeData ?? throw new InvalidOperationException("TypeData is required.");
 
-        var name = propertyName.ToPropertyName();
+        var name = parameterName.ToPropertyName();
         
         name = HandleWordSeparators(name);
 
@@ -45,23 +51,24 @@ public readonly record struct PropertyData(
 
         name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
         
-        var requiredProperties = context.Parent != null
-            ? new HashSet<string>(context.Parent.Schema.Required)
-            : [];
-        
-        var isRequired = requiredProperties.Contains(propertyName);
+        var isRequired =
+            context.Parameter?.Required == true ||
+            context.Parameter?.In == Microsoft.OpenApi.Models.ParameterLocation.Path;
         // Special case for enums with a single value.
         if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
         {
             isRequired = false;
         }
         
-        return new PropertyData(
-            Id: propertyName,
+        return new MethodParameter(
+            Id: parameterName,
             Name: name,
             Type: type,
             IsRequired: isRequired,
             IsMultiPartFormDataFilename: false,
+            ParameterLocation: context.Parameter?.In,
+            ParameterStyle: context.Parameter?.Style,
+            ParameterExplode: context.Parameter?.Explode,
             Settings: context.Settings,
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),

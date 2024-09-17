@@ -6,34 +6,34 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    public static string GenerateConstructors(
-        EndPoint endPoint)
+    public static string GenerateClient(
+        Client client)
     {
-        var serializer = endPoint.Settings.JsonSerializerType.GetSerializer();
-        var hasOptions = string.IsNullOrWhiteSpace(endPoint.Settings.JsonSerializerContext);
+        var serializer = client.Settings.JsonSerializerType.GetSerializer();
+        var hasOptions = string.IsNullOrWhiteSpace(client.Settings.JsonSerializerContext);
         
         return $@"
 #nullable enable
 
-namespace {endPoint.Namespace}
+namespace {client.Namespace}
 {{
-    {(endPoint.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
-    public sealed partial class {endPoint.ClassName} : global::{endPoint.Namespace}.I{endPoint.ClassName}, global::System.IDisposable
+    {(client.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
+    public sealed partial class {client.ClassName} : global::{client.Namespace}.I{client.ClassName}, global::System.IDisposable
     {{
-        {endPoint.BaseUrlSummary.ToXmlDocumentationSummary(level: 8)}
-        public const string BaseUrl = ""{endPoint.BaseUrl}"";
+        {client.BaseUrlSummary.ToXmlDocumentationSummary(level: 8)}
+        public const string BaseUrl = ""{client.BaseUrl}"";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
         public {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}{(
-            endPoint.Id == "MainConstructor"
-                ? $" = {serializer.CreateDefaultSettings(endPoint.Converters)};"
+            client.Id == "MainConstructor"
+                ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}" : $@" 
-        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{endPoint.Settings.JsonSerializerContext}.Default;")}
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{client.Settings.JsonSerializerContext}.Default;")}
 
-{(endPoint.Properties.Length != 0 ? "\n" + endPoint.Properties.Select(x => $@"
+{(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient)
         {{
@@ -44,14 +44,14 @@ namespace {endPoint.Namespace}
 ").Inject() : " ")}
 
         /// <summary>
-        /// Creates a new instance of the {endPoint.ClassName}.
+        /// Creates a new instance of the {client.ClassName}.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name=""httpClient""></param>
         /// <param name=""baseUri""></param>{(hasOptions ? @"
         /// <param name=""jsonSerializerOptions""></param>" : " ")}
-        public {endPoint.ClassName}(
+        public {client.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null)
         {{
@@ -86,26 +86,26 @@ namespace {endPoint.Namespace}
     }
     
     
-    public static string GenerateInterfaces(
-        EndPoint endPoint)
+    public static string GenerateClientInterface(
+        Client client)
     {
-        var serializer = endPoint.Settings.JsonSerializerType.GetSerializer();
-        var hasOptions = string.IsNullOrWhiteSpace(endPoint.Settings.JsonSerializerContext);
+        var serializer = client.Settings.JsonSerializerType.GetSerializer();
+        var hasOptions = string.IsNullOrWhiteSpace(client.Settings.JsonSerializerContext);
         
         return $@"
 #nullable enable
 
-namespace {endPoint.Namespace}
+namespace {client.Namespace}
 {{
-    {(endPoint.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
-    public partial interface I{endPoint.ClassName} : global::System.IDisposable
+    {(client.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
+    public partial interface I{client.ClassName} : global::System.IDisposable
     {{
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
         {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}" : $@" 
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }}")}
 
-{(endPoint.Properties.Length != 0 ? "\n" + endPoint.Properties.Select(x => $@"
+{(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} {{ get; }}
 ").Inject() : " ")}
