@@ -13,7 +13,7 @@ namespace G
         /// Unique identifier of the label.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Name of the label.

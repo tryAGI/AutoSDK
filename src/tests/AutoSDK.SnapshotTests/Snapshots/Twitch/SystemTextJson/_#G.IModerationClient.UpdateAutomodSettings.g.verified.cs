@@ -76,15 +76,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
             string broadcasterId,
             string moderatorId,
-            int aggression = default,
-            int bullying = default,
-            int disability = default,
-            int misogyny = default,
-            int overallLevel = default,
-            int raceEthnicityOrReligion = default,
-            int sexBasedTerms = default,
-            int sexualitySexOrGender = default,
-            int swearing = default,
+            int? aggression = default,
+            int? bullying = default,
+            int? disability = default,
+            int? misogyny = default,
+            int? overallLevel = default,
+            int? raceEthnicityOrReligion = default,
+            int? sexBasedTerms = default,
+            int? sexualitySexOrGender = default,
+            int? swearing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -12,8 +12,8 @@ namespace G
             ref string repo,
             ref global::G.ReposListCollaboratorsAffiliation? affiliation,
             ref global::G.ReposListCollaboratorsPermission? permission,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReposListCollaboratorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,8 +21,8 @@ namespace G
             string repo,
             global::G.ReposListCollaboratorsAffiliation? affiliation,
             global::G.ReposListCollaboratorsPermission? permission,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReposListCollaboratorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,8 +59,8 @@ namespace G
             string repo,
             global::G.ReposListCollaboratorsAffiliation? affiliation = global::G.ReposListCollaboratorsAffiliation.All,
             global::G.ReposListCollaboratorsPermission? permission = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

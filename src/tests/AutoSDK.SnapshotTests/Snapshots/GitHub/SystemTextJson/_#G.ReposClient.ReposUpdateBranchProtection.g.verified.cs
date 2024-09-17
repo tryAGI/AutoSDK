@@ -172,13 +172,13 @@ namespace G
             bool? enforceAdmins,
             global::G.ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? requiredPullRequestReviews,
             global::G.ReposUpdateBranchProtectionRequestRestrictions? restrictions,
-            bool requiredLinearHistory = default,
+            bool? requiredLinearHistory = default,
             bool? allowForcePushes = default,
-            bool allowDeletions = default,
-            bool blockCreations = default,
-            bool requiredConversationResolution = default,
-            bool lockBranch = false,
-            bool allowForkSyncing = false,
+            bool? allowDeletions = default,
+            bool? blockCreations = default,
+            bool? requiredConversationResolution = default,
+            bool? lockBranch = false,
+            bool? allowForkSyncing = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposUpdateBranchProtectionRequest

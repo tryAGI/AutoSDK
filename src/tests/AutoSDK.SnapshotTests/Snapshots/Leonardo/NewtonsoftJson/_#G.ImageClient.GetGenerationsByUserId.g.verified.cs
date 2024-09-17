@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareGetGenerationsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string userId);
         partial void PrepareGetGenerationsByUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string userId);
         partial void ProcessGetGenerationsByUserIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGenerationsByUserIdResponse> GetGenerationsByUserIdAsync(
             string userId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

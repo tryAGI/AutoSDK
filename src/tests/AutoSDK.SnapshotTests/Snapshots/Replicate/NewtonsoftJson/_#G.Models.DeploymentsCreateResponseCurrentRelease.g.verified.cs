@@ -19,7 +19,7 @@ namespace G
         /// The time the release was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// The release number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number")]
-        public int Number { get; set; }
+        public int? Number { get; set; }
 
         /// <summary>
         /// The ID of the model version used in the release.

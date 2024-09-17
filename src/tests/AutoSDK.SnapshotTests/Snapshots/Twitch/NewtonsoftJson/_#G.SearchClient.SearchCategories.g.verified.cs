@@ -9,13 +9,13 @@ namespace G
         partial void PrepareSearchCategoriesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string query,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareSearchCategoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string query,
-            int first,
+            int? first,
             string? after);
         partial void ProcessSearchCategoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchCategoriesResponse> SearchCategoriesAsync(
             string query,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -18,9 +18,9 @@ namespace G
             ref global::G.DependabotListAlertsForEnterpriseDirection? direction,
             ref string? before,
             ref string? after,
-            ref int first,
-            ref int last,
-            ref int perPage);
+            ref int? first,
+            ref int? last,
+            ref int? perPage);
         partial void PrepareDependabotListAlertsForEnterpriseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -34,9 +34,9 @@ namespace G
             global::G.DependabotListAlertsForEnterpriseDirection? direction,
             string? before,
             string? after,
-            int first,
-            int last,
-            int perPage);
+            int? first,
+            int? last,
+            int? perPage);
         partial void ProcessDependabotListAlertsForEnterpriseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -87,9 +87,9 @@ namespace G
             global::G.DependabotListAlertsForEnterpriseDirection? direction = global::G.DependabotListAlertsForEnterpriseDirection.Desc,
             string? before = default,
             string? after = default,
-            int first = 30,
-            int last = default,
-            int perPage = 30,
+            int? first = 30,
+            int? last = default,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

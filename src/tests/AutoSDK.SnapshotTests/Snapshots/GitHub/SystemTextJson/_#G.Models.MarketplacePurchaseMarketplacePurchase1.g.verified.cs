@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_installed")]
-        public bool IsInstalled { get; set; }
+        public bool? IsInstalled { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_free_trial")]
-        public bool OnFreeTrial { get; set; }
+        public bool? OnFreeTrial { get; set; }
 
         /// <summary>
         /// 

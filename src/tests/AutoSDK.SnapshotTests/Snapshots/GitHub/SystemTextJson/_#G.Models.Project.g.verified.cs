@@ -114,7 +114,7 @@ namespace G
         /// Whether or not this project can be seen by everyone. Only present if owner is an organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

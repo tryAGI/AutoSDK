@@ -118,13 +118,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AnnotationQueueSchema> CreateAnnotationQueueAsync(
             string name,
             global::G.AnyOf<string, object>? description = default,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime updatedAt = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? updatedAt = default,
             global::G.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::G.AnyOf<int?, object>? numReviewersPerItem = default,
             global::G.AnyOf<bool?, object>? enableReservations = default,
             global::G.AnyOf<int?, object>? reservationMinutes = default,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.AnnotationQueueCreateSchema

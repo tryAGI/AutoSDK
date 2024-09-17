@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public int Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -48,13 +48,13 @@ namespace G
         /// **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        public int StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
@@ -68,7 +68,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reply_to")]
-        public int InReplyTo { get; set; }
+        public int? InReplyTo { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted.

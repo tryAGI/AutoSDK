@@ -107,9 +107,9 @@ namespace G
             string @ref,
             string sarif,
             string? checkoutUri = default,
-            global::System.DateTime startedAt = default,
+            global::System.DateTime? startedAt = default,
             string? toolName = default,
-            bool validate = default,
+            bool? validate = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

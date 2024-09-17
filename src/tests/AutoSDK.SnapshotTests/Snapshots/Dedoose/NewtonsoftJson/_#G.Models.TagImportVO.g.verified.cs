@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isWeighted")]
-        public bool IsWeighted { get; set; }
+        public bool? IsWeighted { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rowIndex")]
-        public int RowIndex { get; set; }
+        public int? RowIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

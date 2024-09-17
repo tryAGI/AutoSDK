@@ -137,7 +137,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mentions_count")]
-        public int MentionsCount { get; set; }
+        public int? MentionsCount { get; set; }
 
         /// <summary>
         /// The URL of the release discussion.

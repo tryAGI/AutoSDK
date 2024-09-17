@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareCodespacesListForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int perPage,
-            ref int page,
-            ref int repositoryId);
+            ref int? perPage,
+            ref int? page,
+            ref int? repositoryId);
         partial void PrepareCodespacesListForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int perPage,
-            int page,
-            int repositoryId);
+            int? perPage,
+            int? page,
+            int? repositoryId);
         partial void ProcessCodespacesListForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,9 +41,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodespacesListForAuthenticatedUserResponse> CodespacesListForAuthenticatedUserAsync(
-            int perPage = 30,
-            int page = 1,
-            int repositoryId = default,
+            int? perPage = 30,
+            int? page = 1,
+            int? repositoryId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -164,9 +164,9 @@ namespace G
             string? title = default,
             string? headRepo = default,
             string? body = default,
-            bool maintainerCanModify = default,
-            bool draft = default,
-            long issue = default,
+            bool? maintainerCanModify = default,
+            bool? draft = default,
+            long? issue = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PullsCreateRequest

@@ -125,7 +125,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodespaceWithFullRepository> CodespacesPublishForAuthenticatedUserAsync(
             string codespaceName,
             string? name = default,
-            bool @private = false,
+            bool? @private = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CodespacesPublishForAuthenticatedUserRequest

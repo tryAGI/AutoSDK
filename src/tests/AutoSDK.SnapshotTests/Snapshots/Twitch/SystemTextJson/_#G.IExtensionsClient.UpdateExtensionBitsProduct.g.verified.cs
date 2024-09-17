@@ -48,9 +48,9 @@ namespace G
             string sku,
             global::G.UpdateExtensionBitsProductBodyCost cost,
             string displayName,
-            bool inDevelopment = default,
-            global::System.DateTime expiration = default,
-            bool isBroadcast = default,
+            bool? inDevelopment = default,
+            global::System.DateTime? expiration = default,
+            bool? isBroadcast = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

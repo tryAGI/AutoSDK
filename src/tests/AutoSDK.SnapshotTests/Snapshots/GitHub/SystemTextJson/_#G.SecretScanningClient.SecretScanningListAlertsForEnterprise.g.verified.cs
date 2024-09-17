@@ -14,7 +14,7 @@ namespace G
             ref string? resolution,
             ref global::G.SecretScanningListAlertsForEnterpriseSort? sort,
             ref global::G.SecretScanningListAlertsForEnterpriseDirection? direction,
-            ref int perPage,
+            ref int? perPage,
             ref string? before,
             ref string? after,
             ref string? validity);
@@ -27,7 +27,7 @@ namespace G
             string? resolution,
             global::G.SecretScanningListAlertsForEnterpriseSort? sort,
             global::G.SecretScanningListAlertsForEnterpriseDirection? direction,
-            int perPage,
+            int? perPage,
             string? before,
             string? after,
             string? validity);
@@ -72,7 +72,7 @@ namespace G
             string? resolution = default,
             global::G.SecretScanningListAlertsForEnterpriseSort? sort = global::G.SecretScanningListAlertsForEnterpriseSort.Created,
             global::G.SecretScanningListAlertsForEnterpriseDirection? direction = global::G.SecretScanningListAlertsForEnterpriseDirection.Desc,
-            int perPage = 30,
+            int? perPage = 30,
             string? before = default,
             string? after = default,
             string? validity = default,

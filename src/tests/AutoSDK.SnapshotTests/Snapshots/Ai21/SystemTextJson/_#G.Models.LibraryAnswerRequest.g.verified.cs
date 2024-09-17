@@ -22,7 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maxSegments")]
-        public int MaxSegments { get; set; }
+        public int? MaxSegments { get; set; }
 
         /// <summary>
         /// 
@@ -67,13 +67,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalSimilarityThreshold")]
-        public double RetrievalSimilarityThreshold { get; set; }
+        public double? RetrievalSimilarityThreshold { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hybridSearchAlpha")]
-        public double HybridSearchAlpha { get; set; }
+        public double? HybridSearchAlpha { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

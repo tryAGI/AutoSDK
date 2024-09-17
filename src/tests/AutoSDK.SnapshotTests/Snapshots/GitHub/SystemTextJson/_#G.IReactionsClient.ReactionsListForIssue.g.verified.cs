@@ -26,8 +26,8 @@ namespace G
             string repo,
             int issueNumber,
             global::G.ReactionsListForIssueContent? content = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

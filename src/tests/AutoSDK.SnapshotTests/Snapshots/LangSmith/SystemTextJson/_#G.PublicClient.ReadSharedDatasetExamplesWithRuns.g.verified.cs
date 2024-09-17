@@ -123,8 +123,8 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::G.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? filters = default,
-            int offset = 0,
-            int limit = 20,
+            int? offset = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.QueryExampleSchemaWithRuns

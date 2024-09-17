@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_lfs")]
-        public bool UseLfs { get; set; }
+        public bool? UseLfs { get; set; }
 
         /// <summary>
         /// The URL of the originating repository.
@@ -89,19 +89,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_large_files")]
-        public bool HasLargeFiles { get; set; }
+        public bool? HasLargeFiles { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("large_files_size")]
-        public int LargeFilesSize { get; set; }
+        public int? LargeFilesSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("large_files_count")]
-        public int LargeFilesCount { get; set; }
+        public int? LargeFilesCount { get; set; }
 
         /// <summary>
         /// 

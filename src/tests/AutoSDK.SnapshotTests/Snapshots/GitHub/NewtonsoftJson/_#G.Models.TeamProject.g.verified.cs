@@ -97,7 +97,7 @@ namespace G
         /// Whether the project is private or not. Only present when owner is an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// 

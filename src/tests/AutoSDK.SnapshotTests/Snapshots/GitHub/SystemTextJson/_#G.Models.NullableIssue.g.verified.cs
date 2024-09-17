@@ -193,7 +193,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// A GitHub user.

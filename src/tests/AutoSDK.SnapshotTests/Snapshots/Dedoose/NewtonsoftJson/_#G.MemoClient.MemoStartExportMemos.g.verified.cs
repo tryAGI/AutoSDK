@@ -10,27 +10,27 @@ namespace G
         partial void PrepareMemoStartExportMemosArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds,
             ref string? description,
             ref string? extension,
-            ref bool includeCodes,
-            ref bool includeMedia,
-            ref bool includeExcerpts,
-            ref bool includeDescriptors,
+            ref bool? includeCodes,
+            ref bool? includeMedia,
+            ref bool? includeExcerpts,
+            ref bool? includeDescriptors,
             ref string? symKey);
         partial void PrepareMemoStartExportMemosRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds,
             string? description,
             string? extension,
-            bool includeCodes,
-            bool includeMedia,
-            bool includeExcerpts,
-            bool includeDescriptors,
+            bool? includeCodes,
+            bool? includeMedia,
+            bool? includeExcerpts,
+            bool? includeDescriptors,
             string? symKey);
         partial void ProcessMemoStartExportMemosResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,14 +58,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> MemoStartExportMemosAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds = default,
             string? description = default,
             string? extension = default,
-            bool includeCodes = default,
-            bool includeMedia = default,
-            bool includeExcerpts = default,
-            bool includeDescriptors = default,
+            bool? includeCodes = default,
+            bool? includeMedia = default,
+            bool? includeExcerpts = default,
+            bool? includeDescriptors = default,
             string? symKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

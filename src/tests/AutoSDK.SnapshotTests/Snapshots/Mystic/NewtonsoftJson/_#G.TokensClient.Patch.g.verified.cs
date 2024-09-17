@@ -114,7 +114,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TokenGet> PatchAsync(
             string tokenId,
             string? name = default,
-            bool isEnabled = default,
+            bool? isEnabled = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TokenPatch

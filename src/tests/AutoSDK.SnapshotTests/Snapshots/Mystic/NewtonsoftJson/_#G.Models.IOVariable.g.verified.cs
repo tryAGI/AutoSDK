@@ -37,61 +37,61 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gt")]
-        public int Gt { get; set; }
+        public int? Gt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ge")]
-        public int Ge { get; set; }
+        public int? Ge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lt")]
-        public int Lt { get; set; }
+        public int? Lt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("le")]
-        public int Le { get; set; }
+        public int? Le { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("multiple_of")]
-        public int MultipleOf { get; set; }
+        public int? MultipleOf { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_inf_nan")]
-        public bool AllowInfNan { get; set; }
+        public bool? AllowInfNan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_digits")]
-        public int MaxDigits { get; set; }
+        public int? MaxDigits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("decimal_places")]
-        public int DecimalPlaces { get; set; }
+        public int? DecimalPlaces { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_length")]
-        public int MinLength { get; set; }
+        public int? MinLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_length")]
-        public int MaxLength { get; set; }
+        public int? MaxLength { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("optional")]
-        public bool Optional { get; set; }
+        public bool? Optional { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

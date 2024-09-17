@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareGetBitsLeaderboardArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int count,
+            ref int? count,
             ref global::G.GetBitsLeaderboardPeriod? period,
-            ref global::System.DateTime startedAt,
+            ref global::System.DateTime? startedAt,
             ref string? userId);
         partial void PrepareGetBitsLeaderboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int count,
+            int? count,
             global::G.GetBitsLeaderboardPeriod? period,
-            global::System.DateTime startedAt,
+            global::System.DateTime? startedAt,
             string? userId);
         partial void ProcessGetBitsLeaderboardResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,9 +41,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
-            int count = default,
+            int? count = default,
             global::G.GetBitsLeaderboardPeriod? period = default,
-            global::System.DateTime startedAt = default,
+            global::System.DateTime? startedAt = default,
             string? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

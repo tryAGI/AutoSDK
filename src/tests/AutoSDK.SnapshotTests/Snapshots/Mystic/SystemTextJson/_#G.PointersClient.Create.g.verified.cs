@@ -108,7 +108,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PointerGet> CreateAsync(
             string pointerOrPipelineId,
             string pointer,
-            bool locked = default,
+            bool? locked = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PointerCreate

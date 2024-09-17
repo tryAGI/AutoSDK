@@ -56,14 +56,14 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position")]
-        public int Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.<br/>
         /// Example: 4
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_position")]
-        public int OriginalPosition { get; set; }
+        public int? OriginalPosition { get; set; }
 
         /// <summary>
         /// The SHA of the commit to which the comment applies.<br/>
@@ -84,7 +84,7 @@ namespace G
         /// Example: 8
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in_reply_to_id")]
-        public int InReplyToId { get; set; }
+        public int? InReplyToId { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -164,14 +164,14 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_line")]
-        public int OriginalLine { get; set; }
+        public int? OriginalLine { get; set; }
 
         /// <summary>
         /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment<br/>

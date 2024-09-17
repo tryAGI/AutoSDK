@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetFollowedStreamsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string userId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetFollowedStreamsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string userId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetFollowedStreamsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetFollowedStreamsResponse> GetFollowedStreamsAsync(
             string userId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

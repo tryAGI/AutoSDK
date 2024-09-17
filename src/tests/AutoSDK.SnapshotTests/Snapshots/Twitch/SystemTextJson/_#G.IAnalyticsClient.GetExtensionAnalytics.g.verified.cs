@@ -22,9 +22,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetExtensionAnalyticsResponse> GetExtensionAnalyticsAsync(
             string? extensionId = default,
             global::G.GetExtensionAnalyticsType? type = default,
-            global::System.DateTime startedAt = default,
-            global::System.DateTime endedAt = default,
-            int first = default,
+            global::System.DateTime? startedAt = default,
+            global::System.DateTime? endedAt = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

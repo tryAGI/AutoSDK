@@ -11,16 +11,16 @@ namespace G
             ref global::G.PackagesListPackagesForUserPackageType packageType,
             ref global::G.PackagesListPackagesForUserVisibility? visibility,
             ref string username,
-            ref int page,
-            ref int perPage);
+            ref int? page,
+            ref int? perPage);
         partial void PreparePackagesListPackagesForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesListPackagesForUserPackageType packageType,
             global::G.PackagesListPackagesForUserVisibility? visibility,
             string username,
-            int page,
-            int perPage);
+            int? page,
+            int? perPage);
         partial void ProcessPackagesListPackagesForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,8 +50,8 @@ namespace G
             global::G.PackagesListPackagesForUserPackageType packageType,
             string username,
             global::G.PackagesListPackagesForUserVisibility? visibility = default,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

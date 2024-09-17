@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_shrinkwrap")]
-        public bool HasShrinkwrap { get; set; }
+        public bool? HasShrinkwrap { get; set; }
 
         /// <summary>
         /// 
@@ -218,7 +218,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("release_id")]
-        public int ReleaseId { get; set; }
+        public int? ReleaseId { get; set; }
 
         /// <summary>
         /// 
@@ -230,13 +230,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_via_actions")]
-        public bool PublishedViaActions { get; set; }
+        public bool? PublishedViaActions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_by_id")]
-        public int DeletedById { get; set; }
+        public int? DeletedById { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

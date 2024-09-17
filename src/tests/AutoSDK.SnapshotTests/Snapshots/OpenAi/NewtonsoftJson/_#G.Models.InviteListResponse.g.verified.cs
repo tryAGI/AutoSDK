@@ -37,7 +37,7 @@ namespace G
         /// The `has_more` property is used for pagination to indicate there are additional results.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_more")]
-        public bool HasMore { get; set; }
+        public bool? HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

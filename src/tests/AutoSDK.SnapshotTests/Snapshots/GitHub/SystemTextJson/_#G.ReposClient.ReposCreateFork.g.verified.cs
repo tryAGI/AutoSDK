@@ -134,7 +134,7 @@ namespace G
             string repo,
             string? organization = default,
             string? name = default,
-            bool defaultBranchOnly = default,
+            bool? defaultBranchOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposCreateForkRequest

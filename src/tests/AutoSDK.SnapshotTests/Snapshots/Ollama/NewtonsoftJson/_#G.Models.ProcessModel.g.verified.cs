@@ -22,7 +22,7 @@ namespace G
         /// Example: 7323310500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// The model's digest.<br/>
@@ -41,14 +41,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public global::System.DateTime ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Size of the model on disk.<br/>
         /// Example: 7323310500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_vram")]
-        public long SizeVram { get; set; }
+        public long? SizeVram { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

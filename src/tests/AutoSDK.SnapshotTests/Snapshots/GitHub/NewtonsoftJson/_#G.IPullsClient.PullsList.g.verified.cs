@@ -46,8 +46,8 @@ namespace G
             string? @base = default,
             global::G.PullsListSort? sort = global::G.PullsListSort.Created,
             global::G.PullsListDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

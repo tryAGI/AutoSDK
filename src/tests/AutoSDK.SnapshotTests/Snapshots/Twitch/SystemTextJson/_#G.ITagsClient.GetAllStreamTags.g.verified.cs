@@ -20,7 +20,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.GetAllStreamTagsResponse> GetAllStreamTagsAsync(
             global::System.Collections.Generic.IList<string>? tagId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

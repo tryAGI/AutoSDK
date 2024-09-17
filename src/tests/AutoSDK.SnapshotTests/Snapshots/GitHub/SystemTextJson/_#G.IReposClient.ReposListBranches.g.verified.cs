@@ -22,9 +22,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ShortBranch>> ReposListBranchesAsync(
             string owner,
             string repo,
-            bool @protected = default,
-            int perPage = 30,
-            int page = 1,
+            bool? @protected = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

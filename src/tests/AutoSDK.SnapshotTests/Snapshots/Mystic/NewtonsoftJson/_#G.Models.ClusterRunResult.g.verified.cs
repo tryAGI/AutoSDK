@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queue_position")]
-        public int QueuePosition { get; set; }
+        public int? QueuePosition { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

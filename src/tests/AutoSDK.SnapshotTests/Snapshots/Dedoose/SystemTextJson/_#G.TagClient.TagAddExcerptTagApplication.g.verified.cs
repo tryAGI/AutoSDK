@@ -9,22 +9,22 @@ namespace G
         partial void PrepareTagAddExcerptTagApplicationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref global::System.Guid excerptId,
-            ref global::System.Guid tagId,
-            ref double weight);
+            ref global::System.Guid? userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref global::System.Guid? excerptId,
+            ref global::System.Guid? tagId,
+            ref double? weight);
         partial void PrepareTagAddExcerptTagApplicationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            global::System.Guid excerptId,
-            global::System.Guid tagId,
-            double weight);
+            global::System.Guid? userId,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            global::System.Guid? excerptId,
+            global::System.Guid? tagId,
+            double? weight);
         partial void ProcessTagAddExcerptTagApplicationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,12 +48,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagAppDTO> TagAddExcerptTagApplicationAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid excerptId = default,
-            global::System.Guid tagId = default,
-            double weight = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? excerptId = default,
+            global::System.Guid? tagId = default,
+            double? weight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

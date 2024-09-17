@@ -144,12 +144,12 @@ namespace G
             global::G.AllOf<global::G.Penalty>? frequencyPenalty = default,
             global::G.AllOf<global::G.Penalty>? presencePenalty = default,
             global::G.AllOf<global::G.Penalty>? countPenalty = default,
-            int numResults = 1,
-            double temperature = 0.7,
-            int maxTokens = 300,
-            int minTokens = 0,
-            double topP = 1,
-            int topKReturn = 0,
+            int? numResults = 1,
+            double? temperature = 0.7,
+            int? maxTokens = 300,
+            int? minTokens = 0,
+            double? topP = 1,
+            int? topKReturn = 0,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

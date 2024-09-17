@@ -10,23 +10,23 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref global::System.Guid id,
-            ref global::System.Guid creator,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
+            ref global::System.Guid? id,
+            ref global::System.Guid? creator,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
             ref string? dataPath,
-            ref global::System.DateTime created);
+            ref global::System.DateTime? created);
         partial void PrepareResourceDeleteTranscriptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            global::System.Guid id,
-            global::System.Guid creator,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
+            global::System.Guid? id,
+            global::System.Guid? creator,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
             string? dataPath,
-            global::System.DateTime created);
+            global::System.DateTime? created);
         partial void ProcessResourceDeleteTranscriptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,12 +52,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ResourceDeleteTranscriptResponse> ResourceDeleteTranscriptAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            global::System.Guid creator = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? creator = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
             string? dataPath = default,
-            global::System.DateTime created = default,
+            global::System.DateTime? created = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

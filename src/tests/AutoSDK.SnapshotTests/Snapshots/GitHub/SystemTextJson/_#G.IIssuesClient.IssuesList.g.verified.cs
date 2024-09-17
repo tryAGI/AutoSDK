@@ -52,13 +52,13 @@ namespace G
             string? labels = default,
             global::G.IssuesListSort? sort = global::G.IssuesListSort.Created,
             global::G.IssuesListDirection? direction = global::G.IssuesListDirection.Desc,
-            global::System.DateTime since = default,
-            bool collab = default,
-            bool orgs = default,
-            bool owned = default,
-            bool pulls = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            bool? collab = default,
+            bool? orgs = default,
+            bool? owned = default,
+            bool? pulls = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

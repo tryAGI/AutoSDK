@@ -23,12 +23,12 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Descriptor> DescriptorDeleteDescriptorAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
-            global::System.DateTime createStamp = default,
-            global::System.Guid createByIDL = default,
-            global::System.Guid descriptorSetIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
+            global::System.DateTime? createStamp = default,
+            global::System.Guid? createByIDL = default,
+            global::System.Guid? descriptorSetIDL = default,
             byte[]? valuesData = default,
             byte[]? dynamicValuesData = default,
             global::System.Threading.CancellationToken cancellationToken = default);

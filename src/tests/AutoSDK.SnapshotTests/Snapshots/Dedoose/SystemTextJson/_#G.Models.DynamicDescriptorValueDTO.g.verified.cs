@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -31,25 +31,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("setId")]
-        public global::System.Guid SetId { get; set; }
+        public global::System.Guid? SetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("descriptorId")]
-        public global::System.Guid DescriptorId { get; set; }
+        public global::System.Guid? DescriptorId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fieldId")]
-        public global::System.Guid FieldId { get; set; }
+        public global::System.Guid? FieldId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceId")]
-        public global::System.Guid ResourceId { get; set; }
+        public global::System.Guid? ResourceId { get; set; }
 
         /// <summary>
         /// 

@@ -32,8 +32,8 @@ namespace G
             string q,
             global::G.SearchIssuesAndPullRequestsSort? sort = default,
             global::G.SearchIssuesAndPullRequestsOrder? order = global::G.SearchIssuesAndPullRequestsOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

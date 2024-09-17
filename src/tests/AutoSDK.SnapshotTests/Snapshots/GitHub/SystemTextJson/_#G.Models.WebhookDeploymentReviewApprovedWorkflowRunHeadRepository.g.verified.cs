@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fork")]
-        public bool Fork { get; set; }
+        public bool? Fork { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
@@ -223,7 +223,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// 

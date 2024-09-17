@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isSuccessfull")]
-        public bool IsSuccessfull { get; set; }
+        public bool? IsSuccessfull { get; set; }
 
         /// <summary>
         /// 

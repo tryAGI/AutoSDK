@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start")]
-        public global::System.DateTime Start { get; set; }
+        public global::System.DateTime? Start { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end")]
-        public global::System.DateTime End { get; set; }
+        public global::System.DateTime? End { get; set; }
 
         /// <summary>
         /// 

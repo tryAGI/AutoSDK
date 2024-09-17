@@ -54,7 +54,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prerelease")]
-        public bool Prerelease { get; set; }
+        public bool? Prerelease { get; set; }
 
         /// <summary>
         /// 

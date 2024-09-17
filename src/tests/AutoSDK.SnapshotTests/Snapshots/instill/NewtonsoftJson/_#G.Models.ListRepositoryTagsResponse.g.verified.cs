@@ -19,19 +19,19 @@ namespace G
         /// Total number of tags.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalSize")]
-        public int TotalSize { get; set; }
+        public int? TotalSize { get; set; }
 
         /// <summary>
         /// The requested page size.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pageSize")]
-        public int PageSize { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// The requested page offset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("page")]
-        public int Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

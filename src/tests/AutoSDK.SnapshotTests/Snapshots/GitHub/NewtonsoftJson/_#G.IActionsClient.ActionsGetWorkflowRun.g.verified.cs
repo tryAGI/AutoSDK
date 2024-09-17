@@ -23,7 +23,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            bool excludePullRequests = false,
+            bool? excludePullRequests = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

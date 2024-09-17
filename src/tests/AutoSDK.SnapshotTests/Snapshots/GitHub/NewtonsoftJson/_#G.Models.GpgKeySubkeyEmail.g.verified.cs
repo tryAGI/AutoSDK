@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verified")]
-        public bool Verified { get; set; }
+        public bool? Verified { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

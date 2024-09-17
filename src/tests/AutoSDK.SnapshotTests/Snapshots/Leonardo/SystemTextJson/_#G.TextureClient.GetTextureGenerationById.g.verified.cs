@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareGetTextureGenerationByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string id,
             global::G.GetTextureGenerationByIdRequest request);
         partial void PrepareGetTextureGenerationByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string id,
             global::G.GetTextureGenerationByIdRequest request);
         partial void ProcessGetTextureGenerationByIdResponse(
@@ -45,8 +45,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetTextureGenerationByIdResponse> GetTextureGenerationByIdAsync(
             string id,
             global::G.GetTextureGenerationByIdRequest request,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -134,8 +134,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTextureGenerationByIdResponse> GetTextureGenerationByIdAsync(
             string id,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             string? requestId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

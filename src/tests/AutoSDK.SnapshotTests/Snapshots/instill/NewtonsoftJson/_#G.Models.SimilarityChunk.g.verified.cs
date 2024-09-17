@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("similarityScore")]
-        public float SimilarityScore { get; set; }
+        public float? SimilarityScore { get; set; }
 
         /// <summary>
         /// 

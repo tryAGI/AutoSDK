@@ -9,18 +9,18 @@ namespace G
         partial void PrepareChatGetChatMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
-            ref global::System.Guid projectId,
-            ref global::System.Guid lastRevievedProjectMessageId,
-            ref global::System.Guid lastRecievedGlobalMessageId);
+            ref global::System.Guid? userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? lastRevievedProjectMessageId,
+            ref global::System.Guid? lastRecievedGlobalMessageId);
         partial void PrepareChatGetChatMessagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
-            global::System.Guid projectId,
-            global::System.Guid lastRevievedProjectMessageId,
-            global::System.Guid lastRecievedGlobalMessageId);
+            global::System.Guid? userId,
+            global::System.Guid? projectId,
+            global::System.Guid? lastRevievedProjectMessageId,
+            global::System.Guid? lastRecievedGlobalMessageId);
         partial void ProcessChatGetChatMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,10 +42,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ChatMessageVO>> ChatGetChatMessagesAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
-            global::System.Guid lastRevievedProjectMessageId = default,
-            global::System.Guid lastRecievedGlobalMessageId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? lastRevievedProjectMessageId = default,
+            global::System.Guid? lastRecievedGlobalMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminAddUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
-            ref global::System.Guid accountId);
+            ref global::System.Guid? userId,
+            ref global::System.Guid? accountId);
         partial void PrepareAdminAddUserToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
-            global::System.Guid accountId);
+            global::System.Guid? userId,
+            global::System.Guid? accountId);
         partial void ProcessAdminAddUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddUserToAccountResponse> AdminAddUserToAccountAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid accountId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? accountId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

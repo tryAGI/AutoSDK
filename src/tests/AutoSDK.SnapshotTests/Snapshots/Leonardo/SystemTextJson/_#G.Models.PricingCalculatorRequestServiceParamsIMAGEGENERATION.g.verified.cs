@@ -13,25 +13,25 @@ namespace G
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageHeight")]
-        public int ImageHeight { get; set; }
+        public int? ImageHeight { get; set; }
 
         /// <summary>
         /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageWidth")]
-        public int ImageWidth { get; set; }
+        public int? ImageWidth { get; set; }
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("numImages")]
-        public int NumImages { get; set; }
+        public int? NumImages { get; set; }
 
         /// <summary>
         /// The Step Count to use for the generation. Must be between 10 and 60.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inferenceSteps")]
-        public int InferenceSteps { get; set; }
+        public int? InferenceSteps { get; set; }
 
         /// <summary>
         /// Enable to use Prompt Magic.
@@ -55,13 +55,13 @@ namespace G
         /// Enable to use Alchemy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alchemyMode")]
-        public bool AlchemyMode { get; set; }
+        public bool? AlchemyMode { get; set; }
 
         /// <summary>
         /// Enable to use high resolution.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("highResolution")]
-        public bool HighResolution { get; set; }
+        public bool? HighResolution { get; set; }
 
         /// <summary>
         /// The number of elements used for the generation.

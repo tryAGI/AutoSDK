@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
             ref string? aggregationWindow,
-            ref global::System.DateTime start,
-            ref global::System.DateTime stop);
+            ref global::System.DateTime? start,
+            ref global::System.DateTime? stop);
         partial void PrepareListCreditConsumptionChartRecordsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string namespaceId,
             string? aggregationWindow,
-            global::System.DateTime start,
-            global::System.DateTime stop);
+            global::System.DateTime? start,
+            global::System.DateTime? stop);
         partial void ProcessListCreditConsumptionChartRecordsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,8 +44,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListCreditConsumptionChartRecordsResponse> ListCreditConsumptionChartRecordsAsync(
             string namespaceId,
             string? aggregationWindow = default,
-            global::System.DateTime start = default,
-            global::System.DateTime stop = default,
+            global::System.DateTime? start = default,
+            global::System.DateTime? stop = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

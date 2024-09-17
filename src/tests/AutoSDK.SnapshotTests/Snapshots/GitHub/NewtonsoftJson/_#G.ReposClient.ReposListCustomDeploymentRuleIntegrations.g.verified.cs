@@ -11,16 +11,16 @@ namespace G
             ref string environmentName,
             ref string repo,
             ref string owner,
-            ref int page,
-            ref int perPage);
+            ref int? page,
+            ref int? perPage);
         partial void PrepareReposListCustomDeploymentRuleIntegrationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string environmentName,
             string repo,
             string owner,
-            int page,
-            int perPage);
+            int? page,
+            int? perPage);
         partial void ProcessReposListCustomDeploymentRuleIntegrationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,8 +52,8 @@ namespace G
             string environmentName,
             string repo,
             string owner,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -130,7 +130,7 @@ namespace G
             int minimumNodes,
             string? pipelineId = default,
             string? pointer = default,
-            int duration = 300,
+            int? duration = 300,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PipelineWarmup

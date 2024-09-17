@@ -31,8 +31,8 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             string? @ref = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

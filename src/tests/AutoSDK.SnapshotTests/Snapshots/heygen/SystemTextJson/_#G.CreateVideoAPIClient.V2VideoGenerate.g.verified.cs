@@ -92,7 +92,7 @@ namespace G
             global::G.V2VideoGenerateRequestAspectRatio? aspectRatio = default,
             global::G.V2VideoGenerateRequestCallbackId? callbackId = default,
             global::G.V2VideoGenerateRequestDimension? dimension = default,
-            bool test = default,
+            bool? test = default,
             string? title = default,
             global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>? videoInputs = default,
             global::System.Threading.CancellationToken cancellationToken = default)

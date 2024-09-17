@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verified")]
-        public bool Verified { get; set; }
+        public bool? Verified { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

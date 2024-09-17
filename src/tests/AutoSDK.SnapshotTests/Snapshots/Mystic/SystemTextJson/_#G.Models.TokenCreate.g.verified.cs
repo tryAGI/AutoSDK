@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::System.DateTime ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

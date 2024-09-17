@@ -11,16 +11,16 @@ namespace G
             ref global::System.Guid datasetId,
             ref global::G.AnyOf<string, object>? search,
             ref global::G.AnyOf<global::System.Guid?, object>? example,
-            ref int limit,
-            ref int offset);
+            ref int? limit,
+            ref int? offset);
         partial void PrepareGetDatasetVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
             global::G.AnyOf<string, object>? search,
             global::G.AnyOf<global::System.Guid?, object>? example,
-            int limit,
-            int offset);
+            int? limit,
+            int? offset);
         partial void ProcessGetDatasetVersionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,8 +49,8 @@ namespace G
             global::System.Guid datasetId,
             global::G.AnyOf<string, object>? search = default,
             global::G.AnyOf<global::System.Guid?, object>? example = default,
-            int limit = 100,
-            int offset = 0,
+            int? limit = 100,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

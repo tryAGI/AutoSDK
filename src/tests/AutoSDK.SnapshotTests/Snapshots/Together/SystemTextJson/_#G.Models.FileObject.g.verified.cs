@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

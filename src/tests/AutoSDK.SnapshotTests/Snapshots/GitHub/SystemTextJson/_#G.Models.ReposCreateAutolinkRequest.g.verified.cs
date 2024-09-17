@@ -28,7 +28,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_alphanumeric")]
-        public bool IsAlphanumeric { get; set; } = true;
+        public bool? IsAlphanumeric { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

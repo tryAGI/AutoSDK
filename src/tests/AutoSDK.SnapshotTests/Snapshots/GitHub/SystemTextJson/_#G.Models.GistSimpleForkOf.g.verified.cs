@@ -131,7 +131,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncated")]
-        public bool Truncated { get; set; }
+        public bool? Truncated { get; set; }
 
         /// <summary>
         /// 

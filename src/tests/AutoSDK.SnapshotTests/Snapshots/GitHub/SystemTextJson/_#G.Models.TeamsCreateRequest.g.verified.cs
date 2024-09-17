@@ -70,7 +70,7 @@ namespace G
         /// The ID of a team to set as the parent team.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_team_id")]
-        public int ParentTeamId { get; set; }
+        public int? ParentTeamId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -27,7 +27,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
-        public bool Active { get; set; } = true;
+        public bool? Active { get; set; } = true;
 
         /// <summary>
         /// Example: "web"

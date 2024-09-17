@@ -23,16 +23,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagWithParentAsync(
             string? token = default,
-            global::System.Guid proejctId = default,
-            global::System.Guid parentTagId = default,
+            global::System.Guid? proejctId = default,
+            global::System.Guid? parentTagId = default,
             string? title = default,
             string? description = default,
-            bool isWeighted = default,
-            double weightMin = default,
-            double weightMax = default,
-            double weightDefault = default,
-            bool allowDecimalWeights = default,
-            double color = default,
+            bool? isWeighted = default,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            bool? allowDecimalWeights = default,
+            double? color = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

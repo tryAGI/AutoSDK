@@ -25,13 +25,13 @@ namespace G
         /// Line index in the diff to comment on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position")]
-        public int Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

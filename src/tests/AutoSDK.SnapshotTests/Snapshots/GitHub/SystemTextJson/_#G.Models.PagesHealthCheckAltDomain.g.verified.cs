@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dns_resolves")]
-        public bool DnsResolves { get; set; }
+        public bool? DnsResolves { get; set; }
 
         /// <summary>
         /// 
@@ -79,13 +79,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_valid_domain")]
-        public bool IsValidDomain { get; set; }
+        public bool? IsValidDomain { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_apex_domain")]
-        public bool IsApexDomain { get; set; }
+        public bool? IsApexDomain { get; set; }
 
         /// <summary>
         /// 
@@ -127,7 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_pages_domain")]
-        public bool IsPagesDomain { get; set; }
+        public bool? IsPagesDomain { get; set; }
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_valid")]
-        public bool IsValid { get; set; }
+        public bool? IsValid { get; set; }
 
         /// <summary>
         /// 
@@ -151,13 +151,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("responds_to_https")]
-        public bool RespondsToHttps { get; set; }
+        public bool? RespondsToHttps { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforces_https")]
-        public bool EnforcesHttps { get; set; }
+        public bool? EnforcesHttps { get; set; }
 
         /// <summary>
         /// 

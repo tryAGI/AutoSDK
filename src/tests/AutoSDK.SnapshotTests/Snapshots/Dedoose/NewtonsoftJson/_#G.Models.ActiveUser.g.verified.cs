@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("userId")]
-        public global::System.Guid UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sessionStart")]
-        public global::System.DateTime SessionStart { get; set; }
+        public global::System.DateTime? SessionStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lastCheckin")]
-        public global::System.DateTime LastCheckin { get; set; }
+        public global::System.DateTime? LastCheckin { get; set; }
 
         /// <summary>
         /// 

@@ -19,12 +19,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminMergeProjectsResponse> AdminMergeProjectsAsync(
             string? token = default,
-            global::System.Guid project1Id = default,
-            global::System.Guid project2Id = default,
+            global::System.Guid? project1Id = default,
+            global::System.Guid? project2Id = default,
             string? newTitle = default,
             string? newDescription = default,
-            global::System.Guid creatorId = default,
-            bool mergeCodes = default,
+            global::System.Guid? creatorId = default,
+            bool? mergeCodes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

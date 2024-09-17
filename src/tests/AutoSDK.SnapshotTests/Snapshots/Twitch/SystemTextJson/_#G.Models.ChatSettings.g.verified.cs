@@ -53,7 +53,7 @@ namespace G
         /// The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope and the user in the _moderator\_id_ query parameter is one of the broadcaster’s moderators.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_moderator_chat_delay")]
-        public bool NonModeratorChatDelay { get; set; }
+        public bool? NonModeratorChatDelay { get; set; }
 
         /// <summary>
         /// The amount of time, in seconds, that messages are delayed before appearing in chat. Is **null** if `non_moderator_chat_delay` is **false**.  <br/>

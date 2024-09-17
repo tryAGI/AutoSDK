@@ -20,7 +20,7 @@ namespace G
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public int Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// 

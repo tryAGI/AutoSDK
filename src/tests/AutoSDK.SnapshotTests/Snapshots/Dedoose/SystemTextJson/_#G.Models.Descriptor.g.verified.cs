@@ -19,37 +19,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectIDL")]
-        public global::System.Guid ProjectIDL { get; set; }
+        public global::System.Guid? ProjectIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createStamp")]
-        public global::System.DateTime CreateStamp { get; set; }
+        public global::System.DateTime? CreateStamp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createByIDL")]
-        public global::System.Guid CreateByIDL { get; set; }
+        public global::System.Guid? CreateByIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("descriptorSetIDL")]
-        public global::System.Guid DescriptorSetIDL { get; set; }
+        public global::System.Guid? DescriptorSetIDL { get; set; }
 
         /// <summary>
         /// 

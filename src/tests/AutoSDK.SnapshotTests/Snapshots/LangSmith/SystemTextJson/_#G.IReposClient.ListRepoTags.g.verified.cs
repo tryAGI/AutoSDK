@@ -31,8 +31,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListTagsResponse> ListRepoTagsAsync(
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::G.AnyOf<string, object>? tenantHandle = default,
             global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::G.AnyOf<string, object>? query = default,

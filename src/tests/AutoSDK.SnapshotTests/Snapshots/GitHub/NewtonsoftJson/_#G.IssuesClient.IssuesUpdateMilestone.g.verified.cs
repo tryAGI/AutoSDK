@@ -141,7 +141,7 @@ namespace G
             string? title = default,
             global::G.IssuesUpdateMilestoneRequestState? state = global::G.IssuesUpdateMilestoneRequestState.Open,
             string? description = default,
-            global::System.DateTime dueOn = default,
+            global::System.DateTime? dueOn = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.IssuesUpdateMilestoneRequest

@@ -21,7 +21,7 @@ namespace G
         /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
-        public int ApiCreditCost { get; set; } = 4;
+        public int? ApiCreditCost { get; set; } = 4;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

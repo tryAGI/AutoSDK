@@ -14,14 +14,14 @@ namespace G
         /// Example: 30
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wait_timer")]
-        public int WaitTimer { get; set; }
+        public int? WaitTimer { get; set; }
 
         /// <summary>
         /// Whether or not a user who created the job is prevented from approving their own job.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prevent_self_review")]
-        public bool PreventSelfReview { get; set; }
+        public bool? PreventSelfReview { get; set; }
 
         /// <summary>
         /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.

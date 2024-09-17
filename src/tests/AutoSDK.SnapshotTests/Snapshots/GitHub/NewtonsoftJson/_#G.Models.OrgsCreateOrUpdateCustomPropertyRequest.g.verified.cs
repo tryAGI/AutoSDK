@@ -22,7 +22,7 @@ namespace G
         /// Whether the property is required.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required")]
-        public bool Required { get; set; }
+        public bool? Required { get; set; }
 
         /// <summary>
         /// Default value of the property

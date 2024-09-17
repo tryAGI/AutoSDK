@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string transcriptId,
             ref global::G.SubtitleFormat subtitleFormat,
-            ref int charsPerCaption);
+            ref int? charsPerCaption);
         partial void PrepareGetSubtitlesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string transcriptId,
             global::G.SubtitleFormat subtitleFormat,
-            int charsPerCaption);
+            int? charsPerCaption);
         partial void ProcessGetSubtitlesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> GetSubtitlesAsync(
             string transcriptId,
             global::G.SubtitleFormat subtitleFormat,
-            int charsPerCaption = default,
+            int? charsPerCaption = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

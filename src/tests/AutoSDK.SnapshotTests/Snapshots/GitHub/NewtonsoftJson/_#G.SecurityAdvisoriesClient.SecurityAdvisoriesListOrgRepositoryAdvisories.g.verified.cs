@@ -13,7 +13,7 @@ namespace G
             ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort,
             ref string? before,
             ref string? after,
-            ref int perPage,
+            ref int? perPage,
             ref global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state);
         partial void PrepareSecurityAdvisoriesListOrgRepositoryAdvisoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -23,7 +23,7 @@ namespace G
             global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort,
             string? before,
             string? after,
-            int perPage,
+            int? perPage,
             global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state);
         partial void ProcessSecurityAdvisoriesListOrgRepositoryAdvisoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,7 +61,7 @@ namespace G
             global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort = global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created,
             string? before = default,
             string? after = default,
-            int perPage = 30,
+            int? perPage = 30,
             global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

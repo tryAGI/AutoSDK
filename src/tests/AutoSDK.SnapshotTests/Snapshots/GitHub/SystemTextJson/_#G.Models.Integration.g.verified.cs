@@ -101,7 +101,7 @@ namespace G
         /// Example: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installations_count")]
-        public int InstallationsCount { get; set; }
+        public int? InstallationsCount { get; set; }
 
         /// <summary>
         /// Example: "Iv1.25b5d1e65ffc4022"

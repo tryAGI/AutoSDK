@@ -94,15 +94,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
             string broadcasterId,
             string moderatorId,
-            bool emoteMode = default,
-            bool followerMode = default,
-            int followerModeDuration = default,
-            bool nonModeratorChatDelay = default,
-            int nonModeratorChatDelayDuration = default,
-            bool slowMode = default,
-            int slowModeWaitTime = default,
-            bool subscriberMode = default,
-            bool uniqueChatMode = default,
+            bool? emoteMode = default,
+            bool? followerMode = default,
+            int? followerModeDuration = default,
+            bool? nonModeratorChatDelay = default,
+            int? nonModeratorChatDelayDuration = default,
+            bool? slowMode = default,
+            int? slowModeWaitTime = default,
+            bool? subscriberMode = default,
+            bool? uniqueChatMode = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

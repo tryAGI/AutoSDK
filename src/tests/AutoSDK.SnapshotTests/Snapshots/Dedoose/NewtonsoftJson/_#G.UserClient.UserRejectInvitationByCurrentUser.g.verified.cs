@@ -9,12 +9,12 @@ namespace G
         partial void PrepareUserRejectInvitationByCurrentUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid invitationId);
+            ref global::System.Guid? invitationId);
         partial void PrepareUserRejectInvitationByCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid invitationId);
+            global::System.Guid? invitationId);
         partial void ProcessUserRejectInvitationByCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserRejectInvitationByCurrentUserResponse> UserRejectInvitationByCurrentUserAsync(
             string? token = default,
-            global::System.Guid invitationId = default,
+            global::System.Guid? invitationId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -27,8 +27,8 @@ namespace G
             int planId,
             global::G.AppsListAccountsForPlanStubbedSort? sort = global::G.AppsListAccountsForPlanStubbedSort.Created,
             global::G.AppsListAccountsForPlanStubbedDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

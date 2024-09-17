@@ -9,7 +9,7 @@ namespace G
         partial void PrepareUserUpdateUserInfoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
+            ref global::System.Guid? userId,
             ref string? firstName,
             ref string? lastName,
             ref string? email,
@@ -23,7 +23,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
+            global::System.Guid? userId,
             string? firstName,
             string? lastName,
             string? email,
@@ -60,7 +60,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserUpdateUserInfoResponse> UserUpdateUserInfoAsync(
             string? token = default,
-            global::System.Guid userId = default,
+            global::System.Guid? userId = default,
             string? firstName = default,
             string? lastName = default,
             string? email = default,

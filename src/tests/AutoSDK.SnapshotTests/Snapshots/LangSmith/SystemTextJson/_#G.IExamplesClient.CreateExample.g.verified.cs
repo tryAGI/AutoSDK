@@ -43,8 +43,8 @@ namespace G
             global::G.AnyOf<global::G.ExampleCreateInputs, object>? inputs = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::G.AnyOf<global::System.Guid?, object>? id = default,
-            bool useSourceRunIo = false,
-            global::System.DateTime createdAt = default,
+            bool? useSourceRunIo = false,
+            global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

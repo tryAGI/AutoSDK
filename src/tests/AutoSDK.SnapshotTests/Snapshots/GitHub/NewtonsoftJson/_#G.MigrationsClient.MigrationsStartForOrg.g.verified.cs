@@ -151,13 +151,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
             string org,
             global::System.Collections.Generic.IList<string> repositories,
-            bool lockRepositories = false,
-            bool excludeMetadata = false,
-            bool excludeGitData = false,
-            bool excludeAttachments = false,
-            bool excludeReleases = false,
-            bool excludeOwnerProjects = false,
-            bool orgMetadataOnly = false,
+            bool? lockRepositories = false,
+            bool? excludeMetadata = false,
+            bool? excludeGitData = false,
+            bool? excludeAttachments = false,
+            bool? excludeReleases = false,
+            bool? excludeOwnerProjects = false,
+            bool? orgMetadataOnly = false,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

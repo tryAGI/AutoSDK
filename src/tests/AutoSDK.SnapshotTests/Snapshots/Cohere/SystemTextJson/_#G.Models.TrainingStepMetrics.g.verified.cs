@@ -13,13 +13,13 @@ namespace G
         /// Creation timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Step number.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_number")]
-        public int StepNumber { get; set; }
+        public int? StepNumber { get; set; }
 
         /// <summary>
         /// Map of names and values for each evaluation metrics.

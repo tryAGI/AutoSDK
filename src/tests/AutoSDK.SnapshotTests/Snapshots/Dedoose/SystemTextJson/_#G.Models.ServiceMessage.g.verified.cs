@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
-        public global::System.DateTime Start { get; set; }
+        public global::System.DateTime? Start { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
-        public global::System.DateTime End { get; set; }
+        public global::System.DateTime? End { get; set; }
 
         /// <summary>
         /// 

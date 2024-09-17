@@ -28,8 +28,8 @@ namespace G
             string org,
             global::G.OrgsListMembersFilter? filter = global::G.OrgsListMembersFilter.All,
             global::G.OrgsListMembersRole? role = global::G.OrgsListMembersRole.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
-        public bool Disabled { get; set; }
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// 
@@ -133,19 +133,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fork")]
-        public bool Fork { get; set; }
+        public bool? Fork { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks")]
-        public int Forks { get; set; }
+        public int? Forks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks_count")]
-        public int ForksCount { get; set; }
+        public int? ForksCount { get; set; }
 
         /// <summary>
         /// 
@@ -187,31 +187,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
-        public bool HasDownloads { get; set; }
+        public bool? HasDownloads { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
-        public bool HasIssues { get; set; }
+        public bool? HasIssues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_pages")]
-        public bool HasPages { get; set; }
+        public bool? HasPages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
-        public bool HasProjects { get; set; }
+        public bool? HasProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
-        public bool HasWiki { get; set; }
+        public bool? HasWiki { get; set; }
 
         /// <summary>
         /// 
@@ -235,13 +235,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -331,13 +331,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("open_issues")]
-        public int OpenIssues { get; set; }
+        public int? OpenIssues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("open_issues_count")]
-        public int OpenIssuesCount { get; set; }
+        public int? OpenIssuesCount { get; set; }
 
         /// <summary>
         /// 
@@ -349,13 +349,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// 
@@ -379,7 +379,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 
@@ -391,7 +391,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers_count")]
-        public int StargazersCount { get; set; }
+        public int? StargazersCount { get; set; }
 
         /// <summary>
         /// 
@@ -469,13 +469,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("watchers")]
-        public int Watchers { get; set; }
+        public int? Watchers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("watchers_count")]
-        public int WatchersCount { get; set; }
+        public int? WatchersCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

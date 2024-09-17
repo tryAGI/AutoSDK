@@ -9,14 +9,14 @@ namespace G
         partial void PrepareClassroomListAcceptedAssigmentsForAnAssignmentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int assignmentId,
-            ref int page,
-            ref int perPage);
+            ref int? page,
+            ref int? perPage);
         partial void PrepareClassroomListAcceptedAssigmentsForAnAssignmentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int assignmentId,
-            int page,
-            int perPage);
+            int? page,
+            int? perPage);
         partial void ProcessClassroomListAcceptedAssigmentsForAnAssignmentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ClassroomAcceptedAssignment>> ClassroomListAcceptedAssigmentsForAnAssignmentAsync(
             int assignmentId,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

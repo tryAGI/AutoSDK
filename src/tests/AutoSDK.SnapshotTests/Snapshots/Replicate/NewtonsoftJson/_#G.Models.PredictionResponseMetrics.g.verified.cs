@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_count")]
-        public double ImageCount { get; set; }
+        public double? ImageCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("predict_time")]
-        public double PredictTime { get; set; }
+        public double? PredictTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_time")]
-        public double TotalTime { get; set; }
+        public double? TotalTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -123,7 +123,7 @@ namespace G
             global::G.AnyOf<string, object>? description = default,
             global::G.AnyOf<global::System.Guid?, object>? defaultDataset = default,
             global::G.AnyOf<int?, object>? numReviewersPerItem = default,
-            bool enableReservations = true,
+            bool? enableReservations = true,
             global::G.AnyOf<int?, object>? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

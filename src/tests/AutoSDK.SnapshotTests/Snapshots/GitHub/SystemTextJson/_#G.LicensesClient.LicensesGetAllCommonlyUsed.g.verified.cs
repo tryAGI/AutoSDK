@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareLicensesGetAllCommonlyUsedArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool featured,
-            ref int perPage,
-            ref int page);
+            ref bool? featured,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareLicensesGetAllCommonlyUsedRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool featured,
-            int perPage,
-            int page);
+            bool? featured,
+            int? perPage,
+            int? page);
         partial void ProcessLicensesGetAllCommonlyUsedResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,9 +40,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.LicenseSimple>> LicensesGetAllCommonlyUsedAsync(
-            bool featured = default,
-            int perPage = 30,
-            int page = 1,
+            bool? featured = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

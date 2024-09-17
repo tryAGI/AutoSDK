@@ -11,18 +11,18 @@ namespace G
             ref string owner,
             ref string repo,
             ref int issueNumber,
-            ref global::System.DateTime since,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareIssuesListCommentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int issueNumber,
-            global::System.DateTime since,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            int? perPage,
+            int? page);
         partial void ProcessIssuesListCommentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,9 +58,9 @@ namespace G
             string owner,
             string repo,
             int issueNumber,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

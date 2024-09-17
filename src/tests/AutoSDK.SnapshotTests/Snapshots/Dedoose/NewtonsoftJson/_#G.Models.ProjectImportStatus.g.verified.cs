@@ -13,37 +13,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourcesToProcess")]
-        public int ResourcesToProcess { get; set; }
+        public int? ResourcesToProcess { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourcesProcessed")]
-        public int ResourcesProcessed { get; set; }
+        public int? ResourcesProcessed { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourcesErrored")]
-        public int ResourcesErrored { get; set; }
+        public int? ResourcesErrored { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excerptsToProcess")]
-        public int ExcerptsToProcess { get; set; }
+        public int? ExcerptsToProcess { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excerptsProcessed")]
-        public int ExcerptsProcessed { get; set; }
+        public int? ExcerptsProcessed { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excerptsErrored")]
-        public int ExcerptsErrored { get; set; }
+        public int? ExcerptsErrored { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finished")]
-        public bool Finished { get; set; }
+        public bool? Finished { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

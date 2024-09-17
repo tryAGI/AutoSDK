@@ -138,13 +138,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForAuthenticatedUserAsync(
             global::System.Collections.Generic.IList<string> repositories,
-            bool lockRepositories = default,
-            bool excludeMetadata = default,
-            bool excludeGitData = default,
-            bool excludeAttachments = default,
-            bool excludeReleases = default,
-            bool excludeOwnerProjects = default,
-            bool orgMetadataOnly = false,
+            bool? lockRepositories = default,
+            bool? excludeMetadata = default,
+            bool? excludeGitData = default,
+            bool? excludeAttachments = default,
+            bool? excludeReleases = default,
+            bool? excludeOwnerProjects = default,
+            bool? orgMetadataOnly = false,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

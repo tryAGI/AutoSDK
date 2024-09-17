@@ -8,21 +8,21 @@ namespace G
     {
         partial void PrepareActivityListNotificationsForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool all,
-            ref bool participating,
-            ref global::System.DateTime since,
-            ref global::System.DateTime before,
-            ref int page,
-            ref int perPage);
+            ref bool? all,
+            ref bool? participating,
+            ref global::System.DateTime? since,
+            ref global::System.DateTime? before,
+            ref int? page,
+            ref int? perPage);
         partial void PrepareActivityListNotificationsForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool all,
-            bool participating,
-            global::System.DateTime since,
-            global::System.DateTime before,
-            int page,
-            int perPage);
+            bool? all,
+            bool? participating,
+            global::System.DateTime? since,
+            global::System.DateTime? before,
+            int? page,
+            int? perPage);
         partial void ProcessActivityListNotificationsForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,12 +53,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Thread>> ActivityListNotificationsForAuthenticatedUserAsync(
-            bool all = false,
-            bool participating = false,
-            global::System.DateTime since = default,
-            global::System.DateTime before = default,
-            int page = 1,
-            int perPage = 50,
+            bool? all = false,
+            bool? participating = false,
+            global::System.DateTime? since = default,
+            global::System.DateTime? before = default,
+            int? page = 1,
+            int? perPage = 50,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

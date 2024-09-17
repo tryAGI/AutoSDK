@@ -12,9 +12,9 @@ namespace G
             ref string? teamId,
             ref global::G.AllOf<global::G.OrderBy?>? orderBy,
             ref string? search,
-            ref bool includeAllRun,
-            ref int skip,
-            ref int limit);
+            ref bool? includeAllRun,
+            ref int? skip,
+            ref int? limit);
         partial void PrepareIndexRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,9 +22,9 @@ namespace G
             string? teamId,
             global::G.AllOf<global::G.OrderBy?>? orderBy,
             string? search,
-            bool includeAllRun,
-            int skip,
-            int limit);
+            bool? includeAllRun,
+            int? skip,
+            int? limit);
         partial void ProcessIndexResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,9 +63,9 @@ namespace G
             string? teamId = default,
             global::G.AllOf<global::G.OrderBy?>? orderBy = default,
             string? search = default,
-            bool includeAllRun = false,
-            int skip = 0,
-            int limit = 20,
+            bool? includeAllRun = false,
+            int? skip = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -155,7 +155,7 @@ namespace G
             global::G.TeamsCreateRequestPrivacy? privacy = default,
             global::G.TeamsCreateRequestNotificationSetting? notificationSetting = default,
             global::G.TeamsCreateRequestPermission? permission = global::G.TeamsCreateRequestPermission.Pull,
-            int parentTeamId = default,
+            int? parentTeamId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TeamsCreateRequest

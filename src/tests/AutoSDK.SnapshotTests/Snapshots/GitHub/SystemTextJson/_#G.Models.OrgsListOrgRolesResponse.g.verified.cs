@@ -13,7 +13,7 @@ namespace G
         /// The total number of organization roles available to the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// The list of organization roles available to the organization.

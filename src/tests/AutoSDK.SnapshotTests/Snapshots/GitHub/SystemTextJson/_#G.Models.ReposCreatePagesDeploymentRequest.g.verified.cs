@@ -13,7 +13,7 @@ namespace G
         /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact_id")]
-        public double ArtifactId { get; set; }
+        public double? ArtifactId { get; set; }
 
         /// <summary>
         /// The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.

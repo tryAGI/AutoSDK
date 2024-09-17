@@ -25,9 +25,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetRepoRulesetsAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
-            bool includesParents = true,
+            int? perPage = 30,
+            int? page = 1,
+            bool? includesParents = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

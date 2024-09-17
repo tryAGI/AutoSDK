@@ -95,8 +95,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ActionsSetAllowedActionsOrganizationAsync(
             string org,
-            bool githubOwnedAllowed = default,
-            bool verifiedAllowed = default,
+            bool? githubOwnedAllowed = default,
+            bool? verifiedAllowed = default,
             global::System.Collections.Generic.IList<string>? patternsAllowed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

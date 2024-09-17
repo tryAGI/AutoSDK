@@ -19,19 +19,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trainingTestIDL")]
-        public global::System.Guid TrainingTestIDL { get; set; }
+        public global::System.Guid? TrainingTestIDL { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dateCreated")]
-        public global::System.DateTime DateCreated { get; set; }
+        public global::System.DateTime? DateCreated { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isWeighted")]
-        public bool IsWeighted { get; set; }
+        public bool? IsWeighted { get; set; }
 
         /// <summary>
         /// 
@@ -85,13 +85,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sortOrder")]
-        public int SortOrder { get; set; }
+        public int? SortOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectIDL")]
-        public global::System.Guid ProjectIDL { get; set; }
+        public global::System.Guid? ProjectIDL { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

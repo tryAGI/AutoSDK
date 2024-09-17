@@ -24,15 +24,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TrainingTest> TrainingDeleteTestAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            int testType = default,
+            global::System.Guid? id = default,
+            int? testType = default,
             string? title = default,
             string? description = default,
-            global::System.DateTime createdOn = default,
-            global::System.Guid projectId = default,
-            int excerptCount = default,
-            int tagCount = default,
-            global::System.Guid creator = default,
+            global::System.DateTime? createdOn = default,
+            global::System.Guid? projectId = default,
+            int? excerptCount = default,
+            int? tagCount = default,
+            global::System.Guid? creator = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

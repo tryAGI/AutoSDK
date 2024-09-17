@@ -55,7 +55,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
-        public int RequiredApprovingReviewCount { get; set; }
+        public int? RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

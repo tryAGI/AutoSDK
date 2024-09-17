@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: master
@@ -56,7 +56,7 @@ namespace G
         /// Example: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDEwOkNoZWNrU3VpdGU1
@@ -86,7 +86,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/5

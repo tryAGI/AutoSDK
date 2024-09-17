@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetSharedRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref bool excludeS3StoredAttributes);
+            ref bool? excludeS3StoredAttributes);
         partial void PrepareGetSharedRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes);
+            bool? excludeS3StoredAttributes);
         partial void ProcessGetSharedRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.RunPublicSchema> GetSharedRunAsync(
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

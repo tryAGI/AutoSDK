@@ -20,7 +20,7 @@ namespace G
         /// The optional integration ID that this status check must originate from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integration_id")]
-        public int IntegrationId { get; set; }
+        public int? IntegrationId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

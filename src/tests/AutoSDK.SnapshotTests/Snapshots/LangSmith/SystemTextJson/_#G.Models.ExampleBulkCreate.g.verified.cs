@@ -64,7 +64,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_source_run_io")]
-        public bool UseSourceRunIo { get; set; } = false;
+        public bool? UseSourceRunIo { get; set; } = false;
 
         /// <summary>
         /// 

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAdminSetAccountUserAdminStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid accountId,
-            ref global::System.Guid userId,
-            ref bool isAdmin);
+            ref global::System.Guid? accountId,
+            ref global::System.Guid? userId,
+            ref bool? isAdmin);
         partial void PrepareAdminSetAccountUserAdminStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid accountId,
-            global::System.Guid userId,
-            bool isAdmin);
+            global::System.Guid? accountId,
+            global::System.Guid? userId,
+            bool? isAdmin);
         partial void ProcessAdminSetAccountUserAdminStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSetAccountUserAdminStatusResponse> AdminSetAccountUserAdminStatusAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            global::System.Guid userId = default,
-            bool isAdmin = default,
+            global::System.Guid? accountId = default,
+            global::System.Guid? userId = default,
+            bool? isAdmin = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

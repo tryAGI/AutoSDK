@@ -25,7 +25,7 @@ namespace G
             string repo,
             int runId,
             int attemptNumber,
-            bool excludePullRequests = false,
+            bool? excludePullRequests = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

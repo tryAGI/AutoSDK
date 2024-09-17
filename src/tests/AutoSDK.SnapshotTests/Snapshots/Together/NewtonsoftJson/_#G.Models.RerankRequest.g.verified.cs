@@ -37,14 +37,14 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_n")]
-        public int TopN { get; set; }
+        public int? TopN { get; set; }
 
         /// <summary>
         /// Whether to return supplied documents with the response.<br/>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_documents")]
-        public bool ReturnDocuments { get; set; }
+        public bool? ReturnDocuments { get; set; }
 
         /// <summary>
         /// List of keys in the JSON Object document to rank by. Defaults to use all supplied keys for ranking.<br/>

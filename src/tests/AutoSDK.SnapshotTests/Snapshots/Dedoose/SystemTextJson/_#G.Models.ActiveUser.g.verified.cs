@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userId")]
-        public global::System.Guid UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessionStart")]
-        public global::System.DateTime SessionStart { get; set; }
+        public global::System.DateTime? SessionStart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastCheckin")]
-        public global::System.DateTime LastCheckin { get; set; }
+        public global::System.DateTime? LastCheckin { get; set; }
 
         /// <summary>
         /// 

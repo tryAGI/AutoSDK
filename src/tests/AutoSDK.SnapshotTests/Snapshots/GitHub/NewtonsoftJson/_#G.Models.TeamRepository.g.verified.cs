@@ -397,7 +397,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool IsTemplate { get; set; } = false;
+        public bool? IsTemplate { get; set; } = false;
 
         /// <summary>
         /// 
@@ -487,7 +487,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
         /// 
@@ -501,7 +501,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; } = true;
 
         /// <summary>
         /// Whether to allow Auto-merge to be used on pull requests.<br/>
@@ -509,7 +509,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to delete head branches when pull requests are merged<br/>
@@ -517,7 +517,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.<br/>
@@ -525,7 +525,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; } = true;
 
         /// <summary>
         /// Whether to allow forking this repo<br/>
@@ -533,7 +533,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
-        public bool AllowForking { get; set; } = false;
+        public bool? AllowForking { get; set; } = false;
 
         /// <summary>
         /// Whether to require contributors to sign off on web-based commits<br/>
@@ -541,19 +541,19 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; } = false;
+        public bool? WebCommitSignoffRequired { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribers_count")]
-        public int SubscribersCount { get; set; }
+        public int? SubscribersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("network_count")]
-        public int NetworkCount { get; set; }
+        public int? NetworkCount { get; set; }
 
         /// <summary>
         /// 

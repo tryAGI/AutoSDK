@@ -34,8 +34,8 @@ namespace G
             string? checkName = default,
             global::G.ChecksListForSuiteStatus? status = default,
             global::G.ChecksListForSuiteFilter? filter = global::G.ChecksListForSuiteFilter.Latest,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

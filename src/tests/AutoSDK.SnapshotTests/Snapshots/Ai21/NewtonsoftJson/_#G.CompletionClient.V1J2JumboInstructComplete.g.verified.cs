@@ -142,19 +142,19 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.V1J2JumboInstructCompleteResponse> V1J2JumboInstructCompleteAsync(
             string prompt,
             string? model = "j2-jumbo-instruct",
-            int numResults = 1,
-            int maxTokens = 16,
-            int minTokens = 0,
-            double temperature = 1,
-            double topP = 1,
-            double minP = 0,
+            int? numResults = 1,
+            int? maxTokens = 16,
+            int? minTokens = 0,
+            double? temperature = 1,
+            double? topP = 1,
+            double? minP = 0,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            int topKReturn = 0,
+            int? topKReturn = 0,
             global::G.CompletionBodyLogitBias? logitBias = default,
             global::G.AllOf<global::G.Penalty>? frequencyPenalty = default,
             global::G.AllOf<global::G.Penalty>? presencePenalty = default,
             global::G.AllOf<global::G.Penalty>? countPenalty = default,
-            int epoch = default,
+            int? epoch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CompletionBody

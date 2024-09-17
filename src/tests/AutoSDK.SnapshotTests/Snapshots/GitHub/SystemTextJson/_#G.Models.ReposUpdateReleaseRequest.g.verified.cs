@@ -37,13 +37,13 @@ namespace G
         /// `true` makes the release a draft, and `false` publishes the release.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// `true` to identify the release as a prerelease, `false` to identify the release as a full release.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prerelease")]
-        public bool Prerelease { get; set; }
+        public bool? Prerelease { get; set; }
 
         /// <summary>
         /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.<br/>

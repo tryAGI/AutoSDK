@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triage")]
-        public bool Triage { get; set; }
+        public bool? Triage { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintain")]
-        public bool Maintain { get; set; }
+        public bool? Maintain { get; set; }
 
         /// <summary>
         /// 

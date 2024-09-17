@@ -14,8 +14,8 @@ namespace G
             ref string? @ref,
             ref string? task,
             ref string? environment,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReposListDeploymentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,8 +25,8 @@ namespace G
             string? @ref,
             string? task,
             string? environment,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReposListDeploymentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,8 +69,8 @@ namespace G
             string? @ref = "none",
             string? task = "none",
             string? environment = "none",
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

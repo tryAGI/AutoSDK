@@ -10,13 +10,13 @@ namespace G
         partial void PrepareDescriptorAddLinksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links);
         partial void PrepareDescriptorAddLinksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links);
         partial void ProcessDescriptorAddLinksResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorAddLinksResponse> DescriptorAddLinksAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

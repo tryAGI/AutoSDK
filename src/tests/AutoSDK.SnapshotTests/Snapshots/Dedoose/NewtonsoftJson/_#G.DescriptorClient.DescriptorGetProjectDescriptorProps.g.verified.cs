@@ -9,12 +9,12 @@ namespace G
         partial void PrepareDescriptorGetProjectDescriptorPropsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId);
+            ref global::System.Guid? projectId);
         partial void PrepareDescriptorGetProjectDescriptorPropsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId);
+            global::System.Guid? projectId);
         partial void ProcessDescriptorGetProjectDescriptorPropsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectDescriptorProps> DescriptorGetProjectDescriptorPropsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

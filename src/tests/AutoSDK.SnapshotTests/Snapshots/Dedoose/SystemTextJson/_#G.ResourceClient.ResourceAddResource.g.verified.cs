@@ -9,24 +9,24 @@ namespace G
         partial void PrepareResourceAddResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
             ref string? title,
             ref string? description,
-            ref int resourceType,
+            ref int? resourceType,
             ref string? fileURL,
-            ref int length);
+            ref int? length);
         partial void PrepareResourceAddResourceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
             string? title,
             string? description,
-            int resourceType,
+            int? resourceType,
             string? fileURL,
-            int length);
+            int? length);
         partial void ProcessResourceAddResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,13 +51,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceAddResourceAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             string? title = default,
             string? description = default,
-            int resourceType = default,
+            int? resourceType = default,
             string? fileURL = default,
-            int length = default,
+            int? length = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

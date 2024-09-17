@@ -10,18 +10,18 @@ namespace G
         partial void PrepareResourceStartExportResourcesJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
-            ref bool includeDescriptorInfo,
-            ref bool includeCodeCounts);
+            ref bool? includeDescriptorInfo,
+            ref bool? includeCodeCounts);
         partial void PrepareResourceStartExportResourcesJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? resourceIds,
-            bool includeDescriptorInfo,
-            bool includeCodeCounts);
+            bool? includeDescriptorInfo,
+            bool? includeCodeCounts);
         partial void ProcessResourceStartExportResourcesJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,10 +43,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartExportResourcesJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? resourceIds = default,
-            bool includeDescriptorInfo = default,
-            bool includeCodeCounts = default,
+            bool? includeDescriptorInfo = default,
+            bool? includeCodeCounts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -126,8 +126,8 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
             string feedbackKey,
             global::G.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

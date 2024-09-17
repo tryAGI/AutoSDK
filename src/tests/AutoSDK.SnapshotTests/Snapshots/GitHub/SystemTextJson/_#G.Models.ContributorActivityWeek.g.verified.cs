@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("w")]
-        public int W { get; set; }
+        public int? W { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("a")]
-        public int A { get; set; }
+        public int? A { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("d")]
-        public int D { get; set; }
+        public int? D { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("c")]
-        public int C { get; set; }
+        public int? C { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareTeamsListPendingInvitationsLegacyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int teamId,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareTeamsListPendingInvitationsLegacyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int teamId,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessTeamsListPendingInvitationsLegacyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,8 +43,8 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>> TeamsListPendingInvitationsLegacyAsync(
             int teamId,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

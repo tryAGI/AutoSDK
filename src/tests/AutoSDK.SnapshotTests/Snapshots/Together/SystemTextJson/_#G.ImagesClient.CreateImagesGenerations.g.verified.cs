@@ -135,11 +135,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ImageResponse> CreateImagesGenerationsAsync(
             string prompt,
             string model,
-            int steps = 20,
-            int seed = default,
-            int n = 1,
-            int height = 1024,
-            int width = 1024,
+            int? steps = 20,
+            int? seed = default,
+            int? n = 1,
+            int? height = 1024,
+            int? width = 1024,
             string? negativePrompt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

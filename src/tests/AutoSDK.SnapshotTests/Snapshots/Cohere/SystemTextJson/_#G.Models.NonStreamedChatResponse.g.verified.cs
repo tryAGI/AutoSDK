@@ -20,7 +20,7 @@ namespace G
         /// Unique identifier for the generated reply. Useful for submitting feedback.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation_id")]
-        public global::System.Guid GenerationId { get; set; }
+        public global::System.Guid? GenerationId { get; set; }
 
         /// <summary>
         /// Inline citations for the generated reply.
@@ -38,7 +38,7 @@ namespace G
         /// Denotes that a search for documents is required during the RAG flow.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_search_required")]
-        public bool IsSearchRequired { get; set; }
+        public bool? IsSearchRequired { get; set; }
 
         /// <summary>
         /// Generated search queries, meant to be used as part of the RAG flow.

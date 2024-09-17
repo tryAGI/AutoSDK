@@ -48,13 +48,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("param_count")]
-        public int ParamCount { get; set; }
+        public int? ParamCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_count")]
-        public int TokenCount { get; set; }
+        public int? TokenCount { get; set; }
 
         /// <summary>
         /// 

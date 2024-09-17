@@ -22,10 +22,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListDatasetsResponse> ListDatasetsAsync(
             string? datasetType = default,
-            global::System.DateTime before = default,
-            global::System.DateTime after = default,
-            double limit = default,
-            double offset = default,
+            global::System.DateTime? before = default,
+            global::System.DateTime? after = default,
+            double? limit = default,
+            double? offset = default,
             global::G.DatasetValidationStatus? validationStatus = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);

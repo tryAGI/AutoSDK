@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleLogSchema>> ListRuleLogsAsync(
             global::System.Guid ruleId,
-            int limit = 720,
-            int offset = 0,
+            int? limit = 720,
+            int? offset = 0,
             global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -18,8 +18,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokensAsync(
-            int limit = 50,
-            int offset = 0,
+            int? limit = 50,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

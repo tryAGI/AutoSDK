@@ -41,7 +41,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
-        public double Speed { get; set; } = 1;
+        public double? Speed { get; set; } = 1;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

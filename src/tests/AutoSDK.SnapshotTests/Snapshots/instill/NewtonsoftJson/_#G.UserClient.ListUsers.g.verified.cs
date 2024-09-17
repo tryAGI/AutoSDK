@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareListUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             ref global::G.ListUsersView? view,
             ref string? filter);
         partial void PrepareListUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             global::G.ListUsersView? view,
             string? filter);
@@ -39,7 +39,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListUsersResponse> ListUsersAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             global::G.ListUsersView? view = default,
             string? filter = default,

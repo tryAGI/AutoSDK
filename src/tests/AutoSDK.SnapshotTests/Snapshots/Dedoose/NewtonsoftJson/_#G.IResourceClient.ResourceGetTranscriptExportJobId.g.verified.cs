@@ -15,8 +15,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ResourceGetTranscriptExportJobIdAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid transcriptId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? transcriptId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

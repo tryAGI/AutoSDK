@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> AccountSendPaymentReceiptAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            global::System.Guid transactionId = default,
+            global::System.Guid? accountId = default,
+            global::System.Guid? transactionId = default,
             string? email = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

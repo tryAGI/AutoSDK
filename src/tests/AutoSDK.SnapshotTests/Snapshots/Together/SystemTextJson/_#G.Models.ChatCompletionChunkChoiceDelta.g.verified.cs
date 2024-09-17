@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_id")]
-        public int TokenId { get; set; }
+        public int? TokenId { get; set; }
 
         /// <summary>
         /// 

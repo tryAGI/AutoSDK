@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// 
@@ -123,7 +123,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prerelease")]
-        public bool Prerelease { get; set; }
+        public bool? Prerelease { get; set; }
 
         /// <summary>
         /// 

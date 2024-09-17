@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("similarityScore")]
-        public float SimilarityScore { get; set; }
+        public float? SimilarityScore { get; set; }
 
         /// <summary>
         /// 

@@ -28,7 +28,7 @@ namespace G
         /// The maximum number of generations that will be returned. Defaults to `1`, min value of `1`, max value of `5`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_generations")]
-        public int NumGenerations { get; set; }
+        public int? NumGenerations { get; set; }
 
         /// <summary>
         /// When `true`, the response will be a JSON stream of events. Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
@@ -39,7 +39,7 @@ namespace G
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; }
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.<br/>
@@ -47,7 +47,7 @@ namespace G
         /// Can only be set to `0` if `return_likelihoods` is set to `ALL` to get the likelihood of the prompt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_tokens")]
-        public int MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
@@ -63,7 +63,7 @@ namespace G
         /// Defaults to `0.75`, min value of `0.0`, max value of `5.0`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double Temperature { get; set; }
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// If specified, the backend will make a best effort to sample tokens<br/>
@@ -73,7 +73,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seed")]
-        public int Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         /// Identifier of a custom preset. A preset is a combination of parameters, such as prompt, temperature etc. You can create presets in the [playground](https://dashboard.cohere.com/playground/generate).<br/>
@@ -100,21 +100,21 @@ namespace G
         /// Defaults to `0`, min value of `0`, max value of `500`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("k")]
-        public int K { get; set; }
+        public int? K { get; set; }
 
         /// <summary>
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("p")]
-        public double P { get; set; }
+        public double? P { get; set; }
 
         /// <summary>
         /// Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.<br/>
         /// Using `frequency_penalty` in combination with `presence_penalty` is not supported on newer models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency_penalty")]
-        public double FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
@@ -122,7 +122,7 @@ namespace G
         /// Using `frequency_penalty` in combination with `presence_penalty` is not supported on newer models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presence_penalty")]
-        public double PresencePenalty { get; set; }
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// One of `GENERATION|ALL|NONE` to specify how and if the token likelihoods are returned with the response. Defaults to `NONE`.<br/>
@@ -137,7 +137,7 @@ namespace G
         /// When enabled, the user's prompt will be sent to the model without any pre-processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("raw_prompting")]
-        public bool RawPrompting { get; set; }
+        public bool? RawPrompting { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

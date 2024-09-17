@@ -17,10 +17,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResourceServiceCloneDocumentControllerOutput> ResourceCloneDocumentAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            bool cloneExcerpts = default,
-            bool cloneTagApps = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            bool? cloneExcerpts = default,
+            bool? cloneTagApps = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

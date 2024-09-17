@@ -10,25 +10,25 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref global::System.Guid projectId,
-            ref global::System.Guid id,
-            ref global::System.Guid projectIDL,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? id,
+            ref global::System.Guid? projectIDL,
             ref string? title,
             ref string? description,
-            ref global::System.DateTime createStamp,
-            ref global::System.Guid createdByUserId);
+            ref global::System.DateTime? createStamp,
+            ref global::System.Guid? createdByUserId);
         partial void PrepareDescriptorUpdateDescriptorSetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            global::System.Guid projectId,
-            global::System.Guid id,
-            global::System.Guid projectIDL,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
             string? title,
             string? description,
-            global::System.DateTime createStamp,
-            global::System.Guid createdByUserId);
+            global::System.DateTime? createStamp,
+            global::System.Guid? createdByUserId);
         partial void ProcessDescriptorUpdateDescriptorSetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,13 +55,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorSet> DescriptorUpdateDescriptorSetAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
             string? title = default,
             string? description = default,
-            global::System.DateTime createStamp = default,
-            global::System.Guid createdByUserId = default,
+            global::System.DateTime? createStamp = default,
+            global::System.Guid? createdByUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

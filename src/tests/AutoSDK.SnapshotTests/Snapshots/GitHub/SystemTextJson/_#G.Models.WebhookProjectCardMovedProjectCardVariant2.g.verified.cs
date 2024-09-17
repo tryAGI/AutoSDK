@@ -20,13 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
-        public int ColumnId { get; set; }
+        public int? ColumnId { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 

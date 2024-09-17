@@ -21,12 +21,12 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorAddDescriptorFieldAsync(
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? description = default,
-            double type = default,
-            bool isDynamic = default,
-            global::System.Guid setId = default,
+            double? type = default,
+            bool? isDynamic = default,
+            global::System.Guid? setId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

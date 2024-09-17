@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SearchChannelsResponse> SearchChannelsAsync(
             string query,
-            bool liveOnly = default,
-            int first = default,
+            bool? liveOnly = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

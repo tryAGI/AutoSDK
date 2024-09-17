@@ -49,19 +49,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compute_time_ms")]
-        public int ComputeTimeMs { get; set; }
+        public int? ComputeTimeMs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at")]
-        public global::System.DateTime StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ended_at")]
-        public global::System.DateTime EndedAt { get; set; }
+        public global::System.DateTime? EndedAt { get; set; }
 
         /// <summary>
         /// 

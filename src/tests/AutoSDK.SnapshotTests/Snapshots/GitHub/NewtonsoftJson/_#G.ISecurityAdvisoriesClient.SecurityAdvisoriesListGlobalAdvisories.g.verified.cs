@@ -45,7 +45,7 @@ namespace G
             global::G.SecurityAdvisoryEcosystems? ecosystem = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes = default,
-            bool isWithdrawn = default,
+            bool? isWithdrawn = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? affects = default,
             string? published = default,
             string? updated = default,
@@ -53,7 +53,7 @@ namespace G
             string? before = default,
             string? after = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,
-            int perPage = 30,
+            int? perPage = 30,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

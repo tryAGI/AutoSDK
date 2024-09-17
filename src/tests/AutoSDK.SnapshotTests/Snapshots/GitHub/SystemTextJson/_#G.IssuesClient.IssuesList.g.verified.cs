@@ -13,13 +13,13 @@ namespace G
             ref string? labels,
             ref global::G.IssuesListSort? sort,
             ref global::G.IssuesListDirection? direction,
-            ref global::System.DateTime since,
-            ref bool collab,
-            ref bool orgs,
-            ref bool owned,
-            ref bool pulls,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref bool? collab,
+            ref bool? orgs,
+            ref bool? owned,
+            ref bool? pulls,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareIssuesListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -28,13 +28,13 @@ namespace G
             string? labels,
             global::G.IssuesListSort? sort,
             global::G.IssuesListDirection? direction,
-            global::System.DateTime since,
-            bool collab,
-            bool orgs,
-            bool owned,
-            bool pulls,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            bool? collab,
+            bool? orgs,
+            bool? owned,
+            bool? pulls,
+            int? perPage,
+            int? page);
         partial void ProcessIssuesListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -91,13 +91,13 @@ namespace G
             string? labels = default,
             global::G.IssuesListSort? sort = global::G.IssuesListSort.Created,
             global::G.IssuesListDirection? direction = global::G.IssuesListDirection.Desc,
-            global::System.DateTime since = default,
-            bool collab = default,
-            bool orgs = default,
-            bool owned = default,
-            bool pulls = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            bool? collab = default,
+            bool? orgs = default,
+            bool? owned = default,
+            bool? pulls = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

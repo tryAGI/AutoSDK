@@ -114,7 +114,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateNodePoolV4ClustersClusterIdNodePoolsPostResponse> CreateNodePoolAsync(
             string clusterId,
             global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
-            bool spot = true,
+            bool? spot = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.NodePoolCreate

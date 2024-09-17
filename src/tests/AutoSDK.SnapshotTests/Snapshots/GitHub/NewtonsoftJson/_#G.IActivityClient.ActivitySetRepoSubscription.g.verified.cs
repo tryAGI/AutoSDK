@@ -37,8 +37,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RepositorySubscription> ActivitySetRepoSubscriptionAsync(
             string owner,
             string repo,
-            bool subscribed = default,
-            bool ignored = default,
+            bool? subscribed = default,
+            bool? ignored = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

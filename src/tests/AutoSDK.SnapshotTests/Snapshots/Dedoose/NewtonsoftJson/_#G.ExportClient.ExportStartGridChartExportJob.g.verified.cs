@@ -10,25 +10,25 @@ namespace G
         partial void PrepareExportStartGridChartExportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             global::System.Collections.Generic.IList<string>? columnLabels,
             global::System.Collections.Generic.IList<string>? rowLabels,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
-            ref float maxCount,
-            ref bool colorByTotal,
+            ref float? maxCount,
+            ref bool? colorByTotal,
             ref string? extension);
         partial void PrepareExportStartGridChartExportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             global::System.Collections.Generic.IList<string>? columnLabels,
             global::System.Collections.Generic.IList<string>? rowLabels,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows,
-            float maxCount,
-            bool colorByTotal,
+            float? maxCount,
+            bool? colorByTotal,
             string? extension);
         partial void ProcessExportStartGridChartExportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -55,13 +55,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExportStartGridChartExportJobResponse> ExportStartGridChartExportJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             global::System.Collections.Generic.IList<string>? columnLabels = default,
             global::System.Collections.Generic.IList<string>? rowLabels = default,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows = default,
-            float maxCount = default,
-            bool colorByTotal = default,
+            float? maxCount = default,
+            bool? colorByTotal = default,
             string? extension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

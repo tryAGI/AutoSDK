@@ -23,7 +23,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserUpdateUserInfoResponse> UserUpdateUserInfoAsync(
             string? token = default,
-            global::System.Guid userId = default,
+            global::System.Guid? userId = default,
             string? firstName = default,
             string? lastName = default,
             string? email = default,

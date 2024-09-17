@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool @public,
-            ref int skip,
-            ref int limit,
+            ref bool? @public,
+            ref int? skip,
+            ref int? limit,
             ref string? orderBy);
         partial void PrepareIndexRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool @public,
-            int skip,
-            int limit,
+            bool? @public,
+            int? skip,
+            int? limit,
             string? orderBy);
         partial void ProcessIndexResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,9 +45,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PaginatedScalingConfigGetWithPipelineCount> IndexAsync(
-            bool @public = false,
-            int skip = 0,
-            int limit = 20,
+            bool? @public = false,
+            int? skip = 0,
+            int? limit = 20,
             string? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

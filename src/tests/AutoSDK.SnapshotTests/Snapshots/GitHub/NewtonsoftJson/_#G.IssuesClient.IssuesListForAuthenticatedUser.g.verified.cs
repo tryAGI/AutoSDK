@@ -13,9 +13,9 @@ namespace G
             ref string? labels,
             ref global::G.IssuesListForAuthenticatedUserSort? sort,
             ref global::G.IssuesListForAuthenticatedUserDirection? direction,
-            ref global::System.DateTime since,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareIssuesListForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -24,9 +24,9 @@ namespace G
             string? labels,
             global::G.IssuesListForAuthenticatedUserSort? sort,
             global::G.IssuesListForAuthenticatedUserDirection? direction,
-            global::System.DateTime since,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            int? perPage,
+            int? page);
         partial void ProcessIssuesListForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -77,9 +77,9 @@ namespace G
             string? labels = default,
             global::G.IssuesListForAuthenticatedUserSort? sort = global::G.IssuesListForAuthenticatedUserSort.Created,
             global::G.IssuesListForAuthenticatedUserDirection? direction = global::G.IssuesListForAuthenticatedUserDirection.Desc,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

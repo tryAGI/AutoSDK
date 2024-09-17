@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareListPipelineTriggerChartRecordsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int aggregationWindow,
+            ref int? aggregationWindow,
             ref string? filter);
         partial void PrepareListPipelineTriggerChartRecordsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int aggregationWindow,
+            int? aggregationWindow,
             string? filter);
         partial void ProcessListPipelineTriggerChartRecordsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPipelineTriggerChartRecordsResponse> ListPipelineTriggerChartRecordsAsync(
-            int aggregationWindow = default,
+            int? aggregationWindow = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

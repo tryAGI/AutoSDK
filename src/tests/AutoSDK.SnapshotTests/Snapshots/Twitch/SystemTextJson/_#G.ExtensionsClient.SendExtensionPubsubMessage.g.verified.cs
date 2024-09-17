@@ -158,7 +158,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTargetItem> target,
             string broadcasterId,
             string message,
-            bool isGlobalBroadcast = default,
+            bool? isGlobalBroadcast = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.SendExtensionPubSubMessageBody

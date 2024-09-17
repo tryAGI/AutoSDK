@@ -33,9 +33,9 @@ namespace G
             string repo,
             global::G.PullsListReviewCommentsForRepoSort? sort = default,
             global::G.PullsListReviewCommentsForRepoDirection? direction = default,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

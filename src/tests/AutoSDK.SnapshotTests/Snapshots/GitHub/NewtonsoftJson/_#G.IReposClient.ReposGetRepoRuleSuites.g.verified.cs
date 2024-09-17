@@ -35,8 +35,8 @@ namespace G
             global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod = global::G.ReposGetRepoRuleSuitesTimePeriod.Day,
             string? actorName = default,
             global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetRepoRuleSuitesRuleSuiteResult.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

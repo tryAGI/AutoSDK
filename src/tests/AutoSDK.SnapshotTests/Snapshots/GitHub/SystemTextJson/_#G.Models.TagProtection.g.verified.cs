@@ -13,7 +13,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
@@ -31,7 +31,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
-        public bool Enabled { get; set; }
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// Example: v1.*

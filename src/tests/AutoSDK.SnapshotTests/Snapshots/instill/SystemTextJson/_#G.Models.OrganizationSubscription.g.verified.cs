@@ -29,7 +29,7 @@ namespace G
         /// Number of used seats within the organization subscription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usedSeats")]
-        public int UsedSeats { get; set; }
+        public int? UsedSeats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

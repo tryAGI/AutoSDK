@@ -52,7 +52,7 @@ namespace G
             string repo,
             string pagesBuildVersion,
             string oidcToken,
-            double artifactId = default,
+            double? artifactId = default,
             string? artifactUrl = default,
             string? environment = "github-pages",
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -56,7 +56,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? events = default,
             global::System.Collections.Generic.IList<string>? addEvents = default,
             global::System.Collections.Generic.IList<string>? removeEvents = default,
-            bool active = true,
+            bool? active = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

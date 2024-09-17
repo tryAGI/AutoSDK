@@ -24,7 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListFilesInVectorStoreBatchOrder? order = global::G.ListFilesInVectorStoreBatchOrder.Desc,
             string? after = default,
             string? before = default,

@@ -39,61 +39,61 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gt")]
-        public int Gt { get; set; }
+        public int? Gt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ge")]
-        public int Ge { get; set; }
+        public int? Ge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lt")]
-        public int Lt { get; set; }
+        public int? Lt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("le")]
-        public int Le { get; set; }
+        public int? Le { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multiple_of")]
-        public int MultipleOf { get; set; }
+        public int? MultipleOf { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_inf_nan")]
-        public bool AllowInfNan { get; set; }
+        public bool? AllowInfNan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_digits")]
-        public int MaxDigits { get; set; }
+        public int? MaxDigits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
-        public int DecimalPlaces { get; set; }
+        public int? DecimalPlaces { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_length")]
-        public int MinLength { get; set; }
+        public int? MinLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_length")]
-        public int MaxLength { get; set; }
+        public int? MaxLength { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optional")]
-        public bool Optional { get; set; }
+        public bool? Optional { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

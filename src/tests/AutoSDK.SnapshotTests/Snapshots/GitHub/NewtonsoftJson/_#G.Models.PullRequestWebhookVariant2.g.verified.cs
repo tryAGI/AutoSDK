@@ -14,20 +14,20 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to allow updating the pull request's branch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; }
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// Whether to delete head branches when pull requests are merged.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; } = false;
 
         /// <summary>
         /// The default value for a merge commit message.<br/>
@@ -68,7 +68,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
-        public bool UseSquashPrTitleAsDefault { get; set; } = false;
+        public bool? UseSquashPrTitleAsDefault { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

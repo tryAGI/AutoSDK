@@ -55,8 +55,8 @@ namespace G
             string owner,
             string repo,
             string environmentName,
-            int waitTimer = default,
-            bool preventSelfReview = default,
+            int? waitTimer = default,
+            bool? preventSelfReview = default,
             global::System.Collections.Generic.IList<global::G.ReposCreateOrUpdateEnvironmentRequestReviewer>? reviewers = default,
             global::G.DeploymentBranchPolicySettings? deploymentBranchPolicy = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareCopilotListCopilotSeatsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int page,
-            ref int perPage);
+            ref int? page,
+            ref int? perPage);
         partial void PrepareCopilotListCopilotSeatsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int page,
-            int perPage);
+            int? page,
+            int? perPage);
         partial void ProcessCopilotListCopilotSeatsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,8 +44,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CopilotListCopilotSeatsResponse> CopilotListCopilotSeatsAsync(
             string org,
-            int page = 1,
-            int perPage = 50,
+            int? page = 1,
+            int? perPage = 50,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

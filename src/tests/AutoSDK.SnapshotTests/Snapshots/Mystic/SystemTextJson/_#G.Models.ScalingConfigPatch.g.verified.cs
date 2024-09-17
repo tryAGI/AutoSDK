@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minimum_nodes")]
-        public int MinimumNodes { get; set; }
+        public int? MinimumNodes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maximum_nodes")]
-        public int MaximumNodes { get; set; }
+        public int? MaximumNodes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

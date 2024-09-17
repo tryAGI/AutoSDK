@@ -27,7 +27,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_enabled")]
-        public bool IsEnabled { get; set; } = true;
+        public bool? IsEnabled { get; set; } = true;
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset_prefer_correction")]
-        public bool AddToDatasetPreferCorrection { get; set; } = false;
+        public bool? AddToDatasetPreferCorrection { get; set; } = false;
 
         /// <summary>
         /// 
@@ -123,7 +123,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_corrections_dataset")]
-        public bool UseCorrectionsDataset { get; set; } = false;
+        public bool? UseCorrectionsDataset { get; set; } = false;
 
         /// <summary>
         /// 
@@ -153,7 +153,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extend_only")]
-        public bool ExtendOnly { get; set; } = false;
+        public bool? ExtendOnly { get; set; } = false;
 
         /// <summary>
         /// 

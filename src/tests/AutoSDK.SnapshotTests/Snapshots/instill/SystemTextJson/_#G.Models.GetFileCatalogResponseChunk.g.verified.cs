@@ -28,13 +28,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startPos")]
-        public int StartPos { get; set; }
+        public int? StartPos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endPos")]
-        public int EndPos { get; set; }
+        public int? EndPos { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokensNum")]
-        public int TokensNum { get; set; }
+        public int? TokensNum { get; set; }
 
         /// <summary>
         /// 
@@ -58,13 +58,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createTime")]
-        public global::System.DateTime CreateTime { get; set; }
+        public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievable")]
-        public bool Retrievable { get; set; }
+        public bool? Retrievable { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

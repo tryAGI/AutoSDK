@@ -104,7 +104,7 @@ namespace G
             string owner,
             string repo,
             global::G.ActionsDefaultWorkflowPermissions? defaultWorkflowPermissions = default,
-            bool canApprovePullRequestReviews = default,
+            bool? canApprovePullRequestReviews = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ActionsSetDefaultWorkflowPermissions

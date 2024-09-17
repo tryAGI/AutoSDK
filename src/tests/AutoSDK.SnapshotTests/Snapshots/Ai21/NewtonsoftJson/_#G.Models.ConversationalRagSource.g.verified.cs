@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("order")]
-        public int Order { get; set; }
+        public int? Order { get; set; }
 
         /// <summary>
         /// 

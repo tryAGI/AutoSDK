@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        public bool Deleted { get; set; }
+        public bool? Deleted { get; set; }
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
 
         /// <summary>
         /// 

@@ -25,7 +25,7 @@ namespace G
         /// Whether renaming of target repositories is prevented.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected")]
-        public bool Protected { get; set; }
+        public bool? Protected { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,13 +21,13 @@ namespace G
         /// The total number of files.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalSize")]
-        public int TotalSize { get; set; }
+        public int? TotalSize { get; set; }
 
         /// <summary>
         /// The requested page size.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pageSize")]
-        public int PageSize { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// 

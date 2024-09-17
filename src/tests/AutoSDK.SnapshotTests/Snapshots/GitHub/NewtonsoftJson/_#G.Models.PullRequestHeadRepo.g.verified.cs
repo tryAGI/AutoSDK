@@ -421,19 +421,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; }
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; }
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; }
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// 
@@ -505,19 +505,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

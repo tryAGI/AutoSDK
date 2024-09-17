@@ -136,7 +136,7 @@ namespace G
             global::System.DateTime startTime,
             string timezone,
             string duration,
-            bool isRecurring = default,
+            bool? isRecurring = default,
             string? categoryId = default,
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default)

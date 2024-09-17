@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("date")]
-        public global::System.DateTime Date { get; set; }
+        public global::System.DateTime? Date { get; set; }
 
         /// <summary>
         /// 

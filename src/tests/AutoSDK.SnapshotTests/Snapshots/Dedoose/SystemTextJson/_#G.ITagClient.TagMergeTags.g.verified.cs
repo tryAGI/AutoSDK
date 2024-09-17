@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TagMergeTagsResponse> TagMergeTagsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid tag1Id = default,
-            global::System.Guid tag2Id = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? tag1Id = default,
+            global::System.Guid? tag2Id = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

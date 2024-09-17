@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

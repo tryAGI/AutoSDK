@@ -30,7 +30,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_merge")]
-        public bool AutoMerge { get; set; } = true;
+        public bool? AutoMerge { get; set; } = true;
 
         /// <summary>
         /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
@@ -63,13 +63,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient_environment")]
-        public bool TransientEnvironment { get; set; } = false;
+        public bool? TransientEnvironment { get; set; } = false;
 
         /// <summary>
         /// Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("production_environment")]
-        public bool ProductionEnvironment { get; set; }
+        public bool? ProductionEnvironment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

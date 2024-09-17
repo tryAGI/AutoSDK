@@ -38,8 +38,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackSchema> CreateFeedbackAsync(
             string key,
-            global::System.DateTime createdAt = default,
-            global::System.DateTime modifiedAt = default,
+            global::System.DateTime? createdAt = default,
+            global::System.DateTime? modifiedAt = default,
             global::G.AnyOf<double?, int?, bool?, object>? score = default,
             global::G.AnyOf<double?, int?, bool?, string, global::G.FeedbackCreateSchemaValue, object>? value = default,
             global::G.AnyOf<string, object>? comment = default,
@@ -48,7 +48,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
             global::G.AnyOf<global::System.Guid?, object>? runId = default,
             global::G.AnyOf<global::System.Guid?, object>? sessionId = default,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource, object>? feedbackSource = default,
             global::G.AnyOf<global::G.FeedbackConfig, object>? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default);

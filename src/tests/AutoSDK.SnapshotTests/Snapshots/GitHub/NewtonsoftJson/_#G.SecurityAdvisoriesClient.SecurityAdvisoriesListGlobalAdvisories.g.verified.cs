@@ -14,7 +14,7 @@ namespace G
             ref global::G.SecurityAdvisoryEcosystems? ecosystem,
             ref global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity,
             ref global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes,
-            ref bool isWithdrawn,
+            ref bool? isWithdrawn,
             ref global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? affects,
             ref string? published,
             ref string? updated,
@@ -22,7 +22,7 @@ namespace G
             ref string? before,
             ref string? after,
             ref global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
-            ref int perPage,
+            ref int? perPage,
             ref global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort);
         partial void PrepareSecurityAdvisoriesListGlobalAdvisoriesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
             global::G.SecurityAdvisoryEcosystems? ecosystem,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes,
-            bool isWithdrawn,
+            bool? isWithdrawn,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? affects,
             string? published,
             string? updated,
@@ -41,7 +41,7 @@ namespace G
             string? before,
             string? after,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
-            int perPage,
+            int? perPage,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort);
         partial void ProcessSecurityAdvisoriesListGlobalAdvisoriesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -92,7 +92,7 @@ namespace G
             global::G.SecurityAdvisoryEcosystems? ecosystem = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes = default,
-            bool isWithdrawn = default,
+            bool? isWithdrawn = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? affects = default,
             string? published = default,
             string? updated = default,
@@ -100,7 +100,7 @@ namespace G
             string? before = default,
             string? after = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,
-            int perPage = 30,
+            int? perPage = 30,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

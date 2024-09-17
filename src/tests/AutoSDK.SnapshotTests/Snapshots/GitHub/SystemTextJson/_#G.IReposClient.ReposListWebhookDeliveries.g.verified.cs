@@ -23,9 +23,9 @@ namespace G
             string owner,
             string repo,
             int hookId,
-            int perPage = 30,
+            int? perPage = 30,
             string? cursor = default,
-            bool redelivery = default,
+            bool? redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

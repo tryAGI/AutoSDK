@@ -30,34 +30,34 @@ namespace G
         /// Default Value: 20
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
-        public int Steps { get; set; } = 20;
+        public int? Steps { get; set; } = 20;
 
         /// <summary>
         /// Seed used for generation. Can be used to reproduce image generations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         /// Number of image results to generate.<br/>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int N { get; set; } = 1;
+        public int? N { get; set; } = 1;
 
         /// <summary>
         /// Height of the image to generate in number of pixels.<br/>
         /// Default Value: 1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
-        public int Height { get; set; } = 1024;
+        public int? Height { get; set; } = 1024;
 
         /// <summary>
         /// Width of the image to generate in number of pixels.<br/>
         /// Default Value: 1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
-        public int Width { get; set; } = 1024;
+        public int? Width { get; set; } = 1024;
 
         /// <summary>
         /// The prompt or prompts not to guide the image generation.

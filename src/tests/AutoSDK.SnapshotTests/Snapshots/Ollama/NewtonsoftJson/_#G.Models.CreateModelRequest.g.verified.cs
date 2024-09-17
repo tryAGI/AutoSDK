@@ -41,7 +41,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; } = true;
+        public bool? Stream { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

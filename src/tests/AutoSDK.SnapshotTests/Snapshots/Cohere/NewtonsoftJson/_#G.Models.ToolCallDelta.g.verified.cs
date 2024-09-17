@@ -19,7 +19,7 @@ namespace G
         /// Index of the tool call generated
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
-        public double Index { get; set; }
+        public double? Index { get; set; }
 
         /// <summary>
         /// Chunk of the tool parameters

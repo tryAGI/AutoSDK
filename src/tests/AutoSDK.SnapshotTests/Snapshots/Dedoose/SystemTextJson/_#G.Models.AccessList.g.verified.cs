@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
@@ -31,43 +31,43 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessTags")]
-        public int AccessTags { get; set; }
+        public int? AccessTags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessResources")]
-        public int AccessResources { get; set; }
+        public int? AccessResources { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessExcerpts")]
-        public int AccessExcerpts { get; set; }
+        public int? AccessExcerpts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessDescriptors")]
-        public int AccessDescriptors { get; set; }
+        public int? AccessDescriptors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessDesFields")]
-        public int AccessDesFields { get; set; }
+        public int? AccessDesFields { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessSecurity")]
-        public int AccessSecurity { get; set; }
+        public int? AccessSecurity { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accessUsers")]
-        public int AccessUsers { get; set; }
+        public int? AccessUsers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

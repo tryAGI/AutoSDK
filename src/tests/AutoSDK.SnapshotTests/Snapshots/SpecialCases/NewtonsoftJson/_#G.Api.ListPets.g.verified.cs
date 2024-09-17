@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareListPetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit);
+            ref int? limit);
         partial void PrepareListPetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit);
+            int? limit);
         partial void ProcessListPetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Pet>> ListPetsAsync(
-            int limit = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

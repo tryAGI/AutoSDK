@@ -18,9 +18,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DescriptorWithValues> DescriptorAddDescriptorAsync(
             global::System.Collections.Generic.IList<global::G.FieldValueDTO> request,
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
-            global::System.Guid setId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? setId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

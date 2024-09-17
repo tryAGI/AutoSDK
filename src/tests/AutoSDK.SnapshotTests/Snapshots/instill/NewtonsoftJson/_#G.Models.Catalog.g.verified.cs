@@ -79,13 +79,13 @@ namespace G
         /// The total files in catalog.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalFiles")]
-        public long TotalFiles { get; set; }
+        public long? TotalFiles { get; set; }
 
         /// <summary>
         /// The total tokens in catalog.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalTokens")]
-        public long TotalTokens { get; set; }
+        public long? TotalTokens { get; set; }
 
         /// <summary>
         /// The current used storage in catalog.

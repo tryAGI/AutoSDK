@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("admin")]
-        public bool Admin { get; set; }
+        public bool? Admin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintain")]
-        public bool Maintain { get; set; }
+        public bool? Maintain { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("push")]
-        public bool Push { get; set; }
+        public bool? Push { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triage")]
-        public bool Triage { get; set; }
+        public bool? Triage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull")]
-        public bool Pull { get; set; }
+        public bool? Pull { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

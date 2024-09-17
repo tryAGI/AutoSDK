@@ -31,7 +31,7 @@ namespace G
         /// A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_global_broadcast")]
-        public bool IsGlobalBroadcast { get; set; }
+        public bool? IsGlobalBroadcast { get; set; }
 
         /// <summary>
         /// The message to send. The message can be a plain-text string or a string-encoded JSON object. The message is limited to a maximum of 5 KB.

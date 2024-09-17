@@ -9,26 +9,26 @@ namespace G
         partial void PrepareUserAddNewUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? username,
             ref string? firstName,
             ref string? lastName,
             ref string? email,
             ref string? phone,
             ref string? encryptedPass,
-            ref global::System.Guid groupId);
+            ref global::System.Guid? groupId);
         partial void PrepareUserAddNewUserToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? username,
             string? firstName,
             string? lastName,
             string? email,
             string? phone,
             string? encryptedPass,
-            global::System.Guid groupId);
+            global::System.Guid? groupId);
         partial void ProcessUserAddNewUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,14 +54,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserServiceAddNewUserToAccountControllerOutput> UserAddNewUserToAccountAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? username = default,
             string? firstName = default,
             string? lastName = default,
             string? email = default,
             string? phone = default,
             string? encryptedPass = default,
-            global::System.Guid groupId = default,
+            global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

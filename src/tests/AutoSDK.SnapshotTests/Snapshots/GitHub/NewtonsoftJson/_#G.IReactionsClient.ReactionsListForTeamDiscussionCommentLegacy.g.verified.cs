@@ -29,8 +29,8 @@ namespace G
             int discussionNumber,
             int commentNumber,
             global::G.ReactionsListForTeamDiscussionCommentLegacyContent? content = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

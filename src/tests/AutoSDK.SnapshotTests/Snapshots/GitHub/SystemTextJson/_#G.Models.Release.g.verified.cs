@@ -154,7 +154,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mentions_count")]
-        public int MentionsCount { get; set; }
+        public int? MentionsCount { get; set; }
 
         /// <summary>
         /// The URL of the release discussion.

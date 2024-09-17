@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fixed_at")]
-        public global::System.DateTime FixedAt { get; set; }
+        public global::System.DateTime? FixedAt { get; set; }
 
         /// <summary>
         /// 

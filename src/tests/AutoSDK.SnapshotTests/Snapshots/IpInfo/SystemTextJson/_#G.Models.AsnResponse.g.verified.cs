@@ -52,7 +52,7 @@ namespace G
         /// Example: 71224576
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ips")]
-        public int NumIps { get; set; }
+        public int? NumIps { get; set; }
 
         /// <summary>
         /// Example: 66.87.125.0/24

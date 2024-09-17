@@ -8,8 +8,8 @@ namespace G
     {
         partial void PrepareListReposArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::G.AnyOf<string, object>? tenantHandle,
             ref global::G.AnyOf<global::System.Guid?, object>? tenantId,
             ref global::G.AnyOf<string, object>? query,
@@ -26,8 +26,8 @@ namespace G
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::G.AnyOf<string, object>? tenantHandle,
             global::G.AnyOf<global::System.Guid?, object>? tenantId,
             global::G.AnyOf<string, object>? query,
@@ -78,8 +78,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListReposResponse> ListReposAsync(
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::G.AnyOf<string, object>? tenantHandle = default,
             global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
             global::G.AnyOf<string, object>? query = default,

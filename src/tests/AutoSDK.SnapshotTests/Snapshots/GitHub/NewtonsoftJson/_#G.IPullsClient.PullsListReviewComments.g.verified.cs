@@ -37,9 +37,9 @@ namespace G
             int pullNumber,
             global::G.PullsListReviewCommentsSort? sort = global::G.PullsListReviewCommentsSort.Created,
             global::G.PullsListReviewCommentsDirection? direction = default,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

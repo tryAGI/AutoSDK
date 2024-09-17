@@ -13,7 +13,7 @@ namespace G
         /// The total number of bytes used by the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_usage")]
-        public double OrganizationUsage { get; set; }
+        public double? OrganizationUsage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

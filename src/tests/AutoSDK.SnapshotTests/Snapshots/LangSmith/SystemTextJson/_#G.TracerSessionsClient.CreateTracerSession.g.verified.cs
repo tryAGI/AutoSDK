@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareCreateTracerSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool upsert,
+            ref bool? upsert,
             global::G.TracerSessionCreate request);
         partial void PrepareCreateTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool upsert,
+            bool? upsert,
             global::G.TracerSessionCreate request);
         partial void ProcessCreateTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             global::G.TracerSessionCreate request,
-            bool upsert = false,
+            bool? upsert = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -123,8 +123,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
-            bool upsert = false,
-            global::System.DateTime startTime = default,
+            bool? upsert = false,
+            global::System.DateTime? startTime = default,
             global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::G.AnyOf<global::G.TracerSessionCreateExtra, object>? extra = default,
             string? name = default,

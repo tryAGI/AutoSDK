@@ -55,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_time_ms")]
-        public int ComputeTimeMs { get; set; }
+        public int? ComputeTimeMs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        public global::System.DateTime StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ended_at")]
-        public global::System.DateTime EndedAt { get; set; }
+        public global::System.DateTime? EndedAt { get; set; }
 
         /// <summary>
         /// 

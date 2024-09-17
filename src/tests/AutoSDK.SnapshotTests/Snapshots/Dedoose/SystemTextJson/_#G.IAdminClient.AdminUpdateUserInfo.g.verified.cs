@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminUpdateUserInfoResponse> AdminUpdateUserInfoAsync(
             string? token = default,
-            global::System.Guid userId = default,
+            global::System.Guid? userId = default,
             string? username = default,
             string? email = default,
             string? phone = default,

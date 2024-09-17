@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> MemoStartImportMemosXMLAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? fileURI = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

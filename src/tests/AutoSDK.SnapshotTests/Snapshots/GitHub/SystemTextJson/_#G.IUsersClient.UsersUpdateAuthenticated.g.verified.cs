@@ -59,7 +59,7 @@ namespace G
             string? twitterUsername = default,
             string? company = default,
             string? location = default,
-            bool hireable = default,
+            bool? hireable = default,
             string? bio = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetFinetuneDownloadArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string ftId,
-            ref int checkpointStep,
+            ref int? checkpointStep,
             ref string? output);
         partial void PrepareGetFinetuneDownloadRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string ftId,
-            int checkpointStep,
+            int? checkpointStep,
             string? output);
         partial void ProcessGetFinetuneDownloadResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,7 +37,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FinetuneDownloadResult> GetFinetuneDownloadAsync(
             string ftId,
-            int checkpointStep = default,
+            int? checkpointStep = default,
             string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -133,7 +133,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool? IsVerified { get; set; }
 
         /// <summary>
         /// Example: true
@@ -195,13 +195,13 @@ namespace G
         /// Example: 100
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_private_repos")]
-        public int TotalPrivateRepos { get; set; }
+        public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 100
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_private_repos")]
-        public int OwnedPrivateRepos { get; set; }
+        public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 81
@@ -261,37 +261,37 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_public_repositories")]
-        public bool MembersCanCreatePublicRepositories { get; set; }
+        public bool? MembersCanCreatePublicRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_private_repositories")]
-        public bool MembersCanCreatePrivateRepositories { get; set; }
+        public bool? MembersCanCreatePrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_internal_repositories")]
-        public bool MembersCanCreateInternalRepositories { get; set; }
+        public bool? MembersCanCreateInternalRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_pages")]
-        public bool MembersCanCreatePages { get; set; }
+        public bool? MembersCanCreatePages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_public_pages")]
-        public bool MembersCanCreatePublicPages { get; set; }
+        public bool? MembersCanCreatePublicPages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_private_pages")]
-        public bool MembersCanCreatePrivatePages { get; set; }
+        public bool? MembersCanCreatePrivatePages { get; set; }
 
         /// <summary>
         /// Example: false
@@ -303,7 +303,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.<br/>
@@ -311,7 +311,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("advanced_security_enabled_for_new_repositories")]
-        public bool AdvancedSecurityEnabledForNewRepositories { get; set; }
+        public bool? AdvancedSecurityEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to<br/>
@@ -320,7 +320,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependabot_alerts_enabled_for_new_repositories")]
-        public bool DependabotAlertsEnabledForNewRepositories { get; set; }
+        public bool? DependabotAlertsEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether dependabot security updates are automatically enabled for new repositories and repositories transferred<br/>
@@ -329,7 +329,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependabot_security_updates_enabled_for_new_repositories")]
-        public bool DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
+        public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether dependency graph is automatically enabled for new repositories and repositories transferred to this<br/>
@@ -338,7 +338,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependency_graph_enabled_for_new_repositories")]
-        public bool DependencyGraphEnabledForNewRepositories { get; set; }
+        public bool? DependencyGraphEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether secret scanning is automatically enabled for new repositories and repositories transferred to this<br/>
@@ -347,7 +347,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_enabled_for_new_repositories")]
-        public bool SecretScanningEnabledForNewRepositories { get; set; }
+        public bool? SecretScanningEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether secret scanning push protection is automatically enabled for new repositories and repositories<br/>
@@ -356,14 +356,14 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_push_protection_enabled_for_new_repositories")]
-        public bool SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
+        public bool? SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
 
         /// <summary>
         /// Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.<br/>
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_push_protection_custom_link_enabled")]
-        public bool SecretScanningPushProtectionCustomLinkEnabled { get; set; }
+        public bool? SecretScanningPushProtectionCustomLinkEnabled { get; set; }
 
         /// <summary>
         /// An optional URL string to display to contributors who are blocked from pushing a secret.<br/>

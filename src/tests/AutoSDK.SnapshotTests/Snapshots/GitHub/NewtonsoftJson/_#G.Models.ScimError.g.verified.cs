@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public int Status { get; set; }
+        public int? Status { get; set; }
 
         /// <summary>
         /// 

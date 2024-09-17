@@ -160,11 +160,11 @@ namespace G
             string? clientIp = default,
             string? machine = default,
             string? devcontainerPath = default,
-            bool multiRepoPermissionsOptOut = default,
+            bool? multiRepoPermissionsOptOut = default,
             string? workingDirectory = default,
-            int idleTimeoutMinutes = default,
+            int? idleTimeoutMinutes = default,
             string? displayName = default,
-            int retentionPeriodMinutes = default,
+            int? retentionPeriodMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CodespacesCreateWithRepoForAuthenticatedUserRequest

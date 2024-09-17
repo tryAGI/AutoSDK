@@ -10,22 +10,22 @@ namespace G
         partial void PrepareTrainingSaveTestResultArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid traineeUserId,
-            ref global::System.Guid testId,
-            ref double overallRating,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? traineeUserId,
+            ref global::System.Guid? testId,
+            ref double? overallRating,
             global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps,
-            ref bool completed);
+            ref bool? completed);
         partial void PrepareTrainingSaveTestResultRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid traineeUserId,
-            global::System.Guid testId,
-            double overallRating,
+            global::System.Guid? projectId,
+            global::System.Guid? traineeUserId,
+            global::System.Guid? testId,
+            double? overallRating,
             global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps,
-            bool completed);
+            bool? completed);
         partial void ProcessTrainingSaveTestResultResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,12 +49,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TrainingTestResult> TrainingSaveTestResultAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid traineeUserId = default,
-            global::System.Guid testId = default,
-            double overallRating = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? traineeUserId = default,
+            global::System.Guid? testId = default,
+            double? overallRating = default,
             global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps = default,
-            bool completed = default,
+            bool? completed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetBlockedTermsResponse> GetBlockedTermsAsync(
             string broadcasterId,
             string moderatorId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

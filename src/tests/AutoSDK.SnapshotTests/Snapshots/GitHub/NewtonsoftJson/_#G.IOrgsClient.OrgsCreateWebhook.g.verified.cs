@@ -50,7 +50,7 @@ namespace G
             string name,
             global::G.OrgsCreateWebhookRequestConfig config,
             global::System.Collections.Generic.IList<string>? events = default,
-            bool active = true,
+            bool? active = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

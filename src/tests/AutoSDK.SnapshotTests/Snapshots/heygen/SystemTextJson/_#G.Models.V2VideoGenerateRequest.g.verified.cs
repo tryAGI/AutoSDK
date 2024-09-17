@@ -31,7 +31,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("test")]
-        public bool Test { get; set; }
+        public bool? Test { get; set; }
 
         /// <summary>
         /// Example: My Title

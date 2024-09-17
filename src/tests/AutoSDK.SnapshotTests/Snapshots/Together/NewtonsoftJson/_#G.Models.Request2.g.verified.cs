@@ -26,28 +26,28 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs")]
-        public int NEpochs { get; set; } = 1;
+        public int? NEpochs { get; set; } = 1;
 
         /// <summary>
         /// Number of checkpoints to save during fine-tuning<br/>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
-        public int NCheckpoints { get; set; } = 1;
+        public int? NCheckpoints { get; set; } = 1;
 
         /// <summary>
         /// Batch size for fine-tuning<br/>
         /// Default Value: 32
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public int BatchSize { get; set; } = 32;
+        public int? BatchSize { get; set; } = 32;
 
         /// <summary>
         /// Learning rate multiplier to use for training<br/>
         /// Default Value: 1E-05F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public float LearningRate { get; set; } = 1E-05F;
+        public float? LearningRate { get; set; } = 1E-05F;
 
         /// <summary>
         /// Suffix that will be added to your fine-tuned model name

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetExtensionLiveChannelsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string extensionId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetExtensionLiveChannelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string extensionId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetExtensionLiveChannelsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionLiveChannelsResponse> GetExtensionLiveChannelsAsync(
             string extensionId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -38,7 +38,7 @@ namespace G
         /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainer_can_modify")]
-        public bool MaintainerCanModify { get; set; }
+        public bool? MaintainerCanModify { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

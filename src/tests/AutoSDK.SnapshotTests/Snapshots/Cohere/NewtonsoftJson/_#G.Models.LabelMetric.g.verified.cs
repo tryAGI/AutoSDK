@@ -13,7 +13,7 @@ namespace G
         /// Total number of examples for this label
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_examples")]
-        public double TotalExamples { get; set; }
+        public double? TotalExamples { get; set; }
 
         /// <summary>
         /// value of the label

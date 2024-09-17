@@ -9,12 +9,12 @@ namespace G
         partial void PrepareAdminGetMergeStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid mergedProjectId);
+            ref global::System.Guid? mergedProjectId);
         partial void PrepareAdminGetMergeStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid mergedProjectId);
+            global::System.Guid? mergedProjectId);
         partial void ProcessAdminGetMergeStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminGetMergeStatusResponse> AdminGetMergeStatusAsync(
             string? token = default,
-            global::System.Guid mergedProjectId = default,
+            global::System.Guid? mergedProjectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

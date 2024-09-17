@@ -20,7 +20,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bogon")]
-        public bool Bogon { get; set; }
+        public bool? Bogon { get; set; }
 
         /// <summary>
         /// Example: ip-66-87-125-72.spfdma.spcsdns.net

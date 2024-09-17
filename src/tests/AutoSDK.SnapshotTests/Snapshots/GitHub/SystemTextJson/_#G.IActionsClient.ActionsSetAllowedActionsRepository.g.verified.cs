@@ -43,8 +43,8 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetAllowedActionsRepositoryAsync(
             string owner,
             string repo,
-            bool githubOwnedAllowed = default,
-            bool verifiedAllowed = default,
+            bool? githubOwnedAllowed = default,
+            bool? verifiedAllowed = default,
             global::System.Collections.Generic.IList<string>? patternsAllowed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -10,16 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int page,
-            ref int perPage,
+            ref int? page,
+            ref int? perPage,
             ref string basehead);
         partial void PrepareReposCompareCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int page,
-            int perPage,
+            int? page,
+            int? perPage,
             string basehead);
         partial void ProcessReposCompareCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -84,8 +84,8 @@ namespace G
             string owner,
             string repo,
             string basehead,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

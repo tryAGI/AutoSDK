@@ -30,7 +30,7 @@ namespace G
             global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? companyInfo = default,
             global::G.AnyOf<global::G.StripeTaxId, object>? taxId = default,
             global::G.AnyOf<string, object>? invoiceEmail = default,
-            bool isBusiness = false,
+            bool? isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

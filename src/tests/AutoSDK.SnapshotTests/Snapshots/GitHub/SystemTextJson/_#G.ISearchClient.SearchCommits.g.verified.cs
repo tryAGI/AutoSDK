@@ -30,8 +30,8 @@ namespace G
             string q,
             global::G.SearchCommitsSort? sort = default,
             global::G.SearchCommitsOrder? order = global::G.SearchCommitsOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

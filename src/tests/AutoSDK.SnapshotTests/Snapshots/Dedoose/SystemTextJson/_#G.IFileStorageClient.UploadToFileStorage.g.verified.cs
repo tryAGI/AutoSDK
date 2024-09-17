@@ -19,8 +19,8 @@ namespace G
             byte[] request,
             string? token = default,
             string? name = default,
-            global::System.Guid projectId = default,
-            int uploadType = default,
+            global::System.Guid? projectId = default,
+            int? uploadType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

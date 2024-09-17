@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

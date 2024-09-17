@@ -32,7 +32,7 @@ namespace G
             string namespaceId,
             string catalogId,
             string? question = default,
-            int topK = default,
+            int? topK = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

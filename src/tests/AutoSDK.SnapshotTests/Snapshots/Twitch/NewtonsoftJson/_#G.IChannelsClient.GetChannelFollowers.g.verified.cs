@@ -22,7 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetChannelFollowersResponse> GetChannelFollowersAsync(
             string broadcasterId,
             string? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

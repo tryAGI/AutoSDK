@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strict")]
-        public bool Strict { get; set; }
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

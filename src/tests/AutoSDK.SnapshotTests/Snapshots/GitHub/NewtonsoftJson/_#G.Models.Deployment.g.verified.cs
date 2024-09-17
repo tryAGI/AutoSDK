@@ -110,14 +110,14 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transient_environment")]
-        public bool TransientEnvironment { get; set; }
+        public bool? TransientEnvironment { get; set; }
 
         /// <summary>
         /// Specifies if the given environment is one that end-users directly interact with. Default: false.<br/>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("production_environment")]
-        public bool ProductionEnvironment { get; set; }
+        public bool? ProductionEnvironment { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.

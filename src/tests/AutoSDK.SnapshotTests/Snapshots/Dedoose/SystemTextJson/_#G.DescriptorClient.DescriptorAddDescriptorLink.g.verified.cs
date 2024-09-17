@@ -10,17 +10,17 @@ namespace G
         partial void PrepareDescriptorAddDescriptorLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref global::System.Guid descriptorId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref global::System.Guid? descriptorId,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues);
         partial void PrepareDescriptorAddDescriptorLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            global::System.Guid descriptorId,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            global::System.Guid? descriptorId,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues);
         partial void ProcessDescriptorAddDescriptorLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,9 +43,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorAddDescriptorLinkResponse> DescriptorAddDescriptorLinkAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid descriptorId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? descriptorId = default,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO>? dynamicValues = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

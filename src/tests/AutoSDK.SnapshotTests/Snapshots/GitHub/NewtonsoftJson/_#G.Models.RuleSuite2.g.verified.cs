@@ -13,7 +13,7 @@ namespace G
         /// The unique identifier of the rule insight.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// The number that identifies the user.
@@ -49,7 +49,7 @@ namespace G
         /// The ID of the repository associated with the rule evaluation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_id")]
-        public int RepositoryId { get; set; }
+        public int? RepositoryId { get; set; }
 
         /// <summary>
         /// The name of the repository without the `.git` extension.
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pushed_at")]
-        public global::System.DateTime PushedAt { get; set; }
+        public global::System.DateTime? PushedAt { get; set; }
 
         /// <summary>
         /// The result of the rule evaluations for rules with the `active` enforcement status.

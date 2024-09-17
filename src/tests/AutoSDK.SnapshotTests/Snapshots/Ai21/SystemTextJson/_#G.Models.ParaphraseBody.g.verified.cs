@@ -29,13 +29,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startIndex")]
-        public int StartIndex { get; set; } = 0;
+        public int? StartIndex { get; set; } = 0;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endIndex")]
-        public int EndIndex { get; set; }
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

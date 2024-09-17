@@ -9,30 +9,30 @@ namespace G
         partial void PrepareTagAddTagWithParentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid proejctId,
-            ref global::System.Guid parentTagId,
+            ref global::System.Guid? proejctId,
+            ref global::System.Guid? parentTagId,
             ref string? title,
             ref string? description,
-            ref bool isWeighted,
-            ref double weightMin,
-            ref double weightMax,
-            ref double weightDefault,
-            ref bool allowDecimalWeights,
-            ref double color);
+            ref bool? isWeighted,
+            ref double? weightMin,
+            ref double? weightMax,
+            ref double? weightDefault,
+            ref bool? allowDecimalWeights,
+            ref double? color);
         partial void PrepareTagAddTagWithParentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid proejctId,
-            global::System.Guid parentTagId,
+            global::System.Guid? proejctId,
+            global::System.Guid? parentTagId,
             string? title,
             string? description,
-            bool isWeighted,
-            double weightMin,
-            double weightMax,
-            double weightDefault,
-            bool allowDecimalWeights,
-            double color);
+            bool? isWeighted,
+            double? weightMin,
+            double? weightMax,
+            double? weightDefault,
+            bool? allowDecimalWeights,
+            double? color);
         partial void ProcessTagAddTagWithParentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,16 +60,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagWithParentAsync(
             string? token = default,
-            global::System.Guid proejctId = default,
-            global::System.Guid parentTagId = default,
+            global::System.Guid? proejctId = default,
+            global::System.Guid? parentTagId = default,
             string? title = default,
             string? description = default,
-            bool isWeighted = default,
-            double weightMin = default,
-            double weightMax = default,
-            double weightDefault = default,
-            bool allowDecimalWeights = default,
-            double color = default,
+            bool? isWeighted = default,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            bool? allowDecimalWeights = default,
+            double? color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

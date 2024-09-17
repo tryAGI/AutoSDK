@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievable")]
-        public bool Retrievable { get; set; }
+        public bool? Retrievable { get; set; }
 
         /// <summary>
         /// 
@@ -75,19 +75,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createTime")]
-        public global::System.DateTime CreateTime { get; set; }
+        public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updateTime")]
-        public global::System.DateTime UpdateTime { get; set; }
+        public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleteTime")]
-        public global::System.DateTime DeleteTime { get; set; }
+        public global::System.DateTime? DeleteTime { get; set; }
 
         /// <summary>
         /// 
@@ -99,13 +99,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalChunks")]
-        public int TotalChunks { get; set; }
+        public int? TotalChunks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalTokens")]
-        public int TotalTokens { get; set; }
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

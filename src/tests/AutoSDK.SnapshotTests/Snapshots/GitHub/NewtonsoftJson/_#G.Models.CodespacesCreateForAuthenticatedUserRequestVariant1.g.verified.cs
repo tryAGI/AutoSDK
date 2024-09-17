@@ -55,7 +55,7 @@ namespace G
         /// Whether to authorize requested permissions from devcontainer.json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("multi_repo_permissions_opt_out")]
-        public bool MultiRepoPermissionsOptOut { get; set; }
+        public bool? MultiRepoPermissionsOptOut { get; set; }
 
         /// <summary>
         /// Working directory for this codespace
@@ -67,7 +67,7 @@ namespace G
         /// Time in minutes before codespace stops from inactivity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("idle_timeout_minutes")]
-        public int IdleTimeoutMinutes { get; set; }
+        public int? IdleTimeoutMinutes { get; set; }
 
         /// <summary>
         /// Display name for this codespace
@@ -79,7 +79,7 @@ namespace G
         /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retention_period_minutes")]
-        public int RetentionPeriodMinutes { get; set; }
+        public int? RetentionPeriodMinutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareGetTextureGenerationsByModelIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string modelId,
             global::G.GetTextureGenerationsByModelIdRequest request);
         partial void PrepareGetTextureGenerationsByModelIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string modelId,
             global::G.GetTextureGenerationsByModelIdRequest request);
         partial void ProcessGetTextureGenerationsByModelIdResponse(
@@ -45,8 +45,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
             global::G.GetTextureGenerationsByModelIdRequest request,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -136,8 +136,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             int? requestLimit = default,
             string? requestModelId = default,
             int? requestOffset = default,

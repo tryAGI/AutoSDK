@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("groupId")]
-        public global::System.Guid GroupId { get; set; }
+        public global::System.Guid? GroupId { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessGroupId")]
-        public global::System.Guid AccessGroupId { get; set; }
+        public global::System.Guid? AccessGroupId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

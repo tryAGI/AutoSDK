@@ -12,8 +12,8 @@ namespace G
             ref string repo,
             ref int releaseId,
             ref global::G.ReactionsListForReleaseContent? content,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReactionsListForReleaseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,8 +21,8 @@ namespace G
             string repo,
             int releaseId,
             global::G.ReactionsListForReleaseContent? content,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReactionsListForReleaseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,8 +53,8 @@ namespace G
             string repo,
             int releaseId,
             global::G.ReactionsListForReleaseContent? content = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

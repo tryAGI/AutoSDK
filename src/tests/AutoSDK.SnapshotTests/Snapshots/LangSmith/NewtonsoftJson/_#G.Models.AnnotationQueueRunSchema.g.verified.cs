@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("added_at")]
-        public global::System.DateTime AddedAt { get; set; }
+        public global::System.DateTime? AddedAt { get; set; }
 
         /// <summary>
         /// 

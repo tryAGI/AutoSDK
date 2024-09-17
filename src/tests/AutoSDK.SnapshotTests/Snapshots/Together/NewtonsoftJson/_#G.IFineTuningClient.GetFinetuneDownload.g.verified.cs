@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FinetuneDownloadResult> GetFinetuneDownloadAsync(
             string ftId,
-            int checkpointStep = default,
+            int? checkpointStep = default,
             string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

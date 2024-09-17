@@ -53,10 +53,10 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.FinetuneResponse> CreateFineTunesAsync(
             string trainingFile,
             string model,
-            int nEpochs = 1,
-            int nCheckpoints = 1,
-            int batchSize = 32,
-            float learningRate = 1E-05F,
+            int? nEpochs = 1,
+            int? nCheckpoints = 1,
+            int? batchSize = 32,
+            float? learningRate = 1E-05F,
             string? suffix = default,
             string? wandbApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

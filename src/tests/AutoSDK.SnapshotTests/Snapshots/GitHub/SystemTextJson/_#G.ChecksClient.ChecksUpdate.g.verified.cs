@@ -162,10 +162,10 @@ namespace G
             string? name = default,
             string? detailsUrl = default,
             string? externalId = default,
-            global::System.DateTime startedAt = default,
+            global::System.DateTime? startedAt = default,
             global::G.ChecksUpdateRequestStatus? status = default,
             global::G.ChecksUpdateRequestConclusion? conclusion = default,
-            global::System.DateTime completedAt = default,
+            global::System.DateTime? completedAt = default,
             global::G.ChecksUpdateRequestOutput? output = default,
             global::System.Collections.Generic.IList<global::G.ChecksUpdateRequestAction>? actions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

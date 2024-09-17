@@ -66,7 +66,7 @@ namespace G
         /// Example: 2048
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        public int ContextLength { get; set; }
+        public int? ContextLength { get; set; }
 
         /// <summary>
         /// 

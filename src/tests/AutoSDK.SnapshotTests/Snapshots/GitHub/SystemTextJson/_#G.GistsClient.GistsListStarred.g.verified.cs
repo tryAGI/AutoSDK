@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareGistsListStarredArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.DateTime since,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareGistsListStarredRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.DateTime since,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            int? perPage,
+            int? page);
         partial void ProcessGistsListStarredResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,9 +40,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.BaseGist>> GistsListStarredAsync(
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

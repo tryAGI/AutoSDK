@@ -13,9 +13,9 @@ namespace G
             ref int pullNumber,
             ref global::G.PullsListReviewCommentsSort? sort,
             ref global::G.PullsListReviewCommentsDirection? direction,
-            ref global::System.DateTime since,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref int? perPage,
+            ref int? page);
         partial void PreparePullsListReviewCommentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -24,9 +24,9 @@ namespace G
             int pullNumber,
             global::G.PullsListReviewCommentsSort? sort,
             global::G.PullsListReviewCommentsDirection? direction,
-            global::System.DateTime since,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            int? perPage,
+            int? page);
         partial void ProcessPullsListReviewCommentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,9 +68,9 @@ namespace G
             int pullNumber,
             global::G.PullsListReviewCommentsSort? sort = global::G.PullsListReviewCommentsSort.Created,
             global::G.PullsListReviewCommentsDirection? direction = default,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

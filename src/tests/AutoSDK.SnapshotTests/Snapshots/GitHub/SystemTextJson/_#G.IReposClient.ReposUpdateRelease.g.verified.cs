@@ -64,8 +64,8 @@ namespace G
             string? targetCommitish = default,
             string? name = default,
             string? body = default,
-            bool draft = default,
-            bool prerelease = default,
+            bool? draft = default,
+            bool? prerelease = default,
             global::G.ReposUpdateReleaseRequestMakeLatest? makeLatest = global::G.ReposUpdateReleaseRequestMakeLatest.True,
             string? discussionCategoryName = default,
             global::System.Threading.CancellationToken cancellationToken = default);

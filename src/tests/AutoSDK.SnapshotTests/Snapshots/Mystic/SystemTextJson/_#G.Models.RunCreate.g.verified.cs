@@ -27,13 +27,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("async_run")]
-        public bool AsyncRun { get; set; } = false;
+        public bool? AsyncRun { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_for_resources")]
-        public bool WaitForResources { get; set; }
+        public bool? WaitForResources { get; set; }
 
         /// <summary>
         /// 

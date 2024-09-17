@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListTrainingStepMetricsResponse> ListTrainingStepMetricsAsync(
             string finetunedModelId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateExtensionSecretResponse> CreateExtensionSecretAsync(
             string extensionId,
-            int delay = default,
+            int? delay = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateClipArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref bool hasDelay);
+            ref bool? hasDelay);
         partial void PrepareCreateClipRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            bool hasDelay);
+            bool? hasDelay);
         partial void ProcessCreateClipResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
             string broadcasterId,
-            bool hasDelay = default,
+            bool? hasDelay = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

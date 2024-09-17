@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_enabled")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

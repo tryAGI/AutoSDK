@@ -27,8 +27,8 @@ namespace G
             string org,
             string teamSlug,
             global::G.TeamsListMembersInOrgRole? role = global::G.TeamsListMembersInOrgRole.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

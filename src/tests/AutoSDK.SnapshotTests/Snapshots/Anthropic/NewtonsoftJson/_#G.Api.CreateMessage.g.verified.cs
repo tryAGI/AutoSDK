@@ -314,12 +314,12 @@ namespace G
             global::G.CreateMessageRequestMetadata? metadata = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             string? system = default,
-            double temperature = default,
+            double? temperature = default,
             global::G.ToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
-            int topK = default,
-            double topP = default,
-            bool stream = false,
+            int? topK = default,
+            double? topP = default,
+            bool? stream = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateMessageRequest

@@ -20,7 +20,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
             string broadcasterId,
-            bool hasDelay = default,
+            bool? hasDelay = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

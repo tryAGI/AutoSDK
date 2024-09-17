@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareListUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
+            ref int? limit,
             ref string? after);
         partial void PrepareListUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
+            int? limit,
             string? after);
         partial void ProcessListUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,7 +34,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserListResponse> ListUsersAsync(
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

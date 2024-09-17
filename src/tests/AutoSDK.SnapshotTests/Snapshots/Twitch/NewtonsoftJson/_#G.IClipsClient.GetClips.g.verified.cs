@@ -28,12 +28,12 @@ namespace G
             string? broadcasterId = default,
             string? gameId = default,
             global::System.Collections.Generic.IList<string>? id = default,
-            global::System.DateTime startedAt = default,
-            global::System.DateTime endedAt = default,
-            int first = default,
+            global::System.DateTime? startedAt = default,
+            global::System.DateTime? endedAt = default,
+            int? first = default,
             string? before = default,
             string? after = default,
-            bool isFeatured = default,
+            bool? isFeatured = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -15,8 +15,8 @@ namespace G
             ref string? @base,
             ref global::G.PullsListSort? sort,
             ref global::G.PullsListDirection? direction,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PreparePullsListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -27,8 +27,8 @@ namespace G
             string? @base,
             global::G.PullsListSort? sort,
             global::G.PullsListDirection? direction,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessPullsListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -79,8 +79,8 @@ namespace G
             string? @base = default,
             global::G.PullsListSort? sort = global::G.PullsListSort.Created,
             global::G.PullsListDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

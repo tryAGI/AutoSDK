@@ -19,26 +19,26 @@ namespace G
         /// Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismiss_stale_reviews")]
-        public bool DismissStaleReviews { get; set; }
+        public bool? DismissStaleReviews { get; set; }
 
         /// <summary>
         /// Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) review them.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_code_owner_reviews")]
-        public bool RequireCodeOwnerReviews { get; set; }
+        public bool? RequireCodeOwnerReviews { get; set; }
 
         /// <summary>
         /// Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
-        public int RequiredApprovingReviewCount { get; set; }
+        public int? RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
         /// Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
-        public bool RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; } = false;
 
         /// <summary>
         /// Allow specific users, teams, or apps to bypass pull request requirements.

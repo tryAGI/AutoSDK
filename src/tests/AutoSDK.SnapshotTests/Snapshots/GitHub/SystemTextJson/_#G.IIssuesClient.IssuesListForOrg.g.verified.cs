@@ -48,9 +48,9 @@ namespace G
             string? labels = default,
             global::G.IssuesListForOrgSort? sort = global::G.IssuesListForOrgSort.Created,
             global::G.IssuesListForOrgDirection? direction = global::G.IssuesListForOrgDirection.Desc,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

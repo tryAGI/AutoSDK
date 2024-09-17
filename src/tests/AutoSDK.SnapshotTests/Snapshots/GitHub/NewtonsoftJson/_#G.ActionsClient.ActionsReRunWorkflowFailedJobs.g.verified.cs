@@ -133,7 +133,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            bool enableDebugLogging = false,
+            bool? enableDebugLogging = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ActionsReRunWorkflowFailedJobsRequest

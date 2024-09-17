@@ -37,19 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approve_whitespace_correction")]
-        public bool ApproveWhitespaceCorrection { get; set; }
+        public bool? ApproveWhitespaceCorrection { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_long_rows")]
-        public bool DeleteLongRows { get; set; }
+        public bool? DeleteLongRows { get; set; }
 
         /// <summary>
         /// Default Value: 0.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split_ratio")]
-        public double SplitRatio { get; set; } = 0.1;
+        public double? SplitRatio { get; set; } = 0.1;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

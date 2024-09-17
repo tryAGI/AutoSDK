@@ -20,13 +20,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Resource> ResourceAddResourceAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             string? title = default,
             string? description = default,
-            int resourceType = default,
+            int? resourceType = default,
             string? fileURL = default,
-            int length = default,
+            int? length = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

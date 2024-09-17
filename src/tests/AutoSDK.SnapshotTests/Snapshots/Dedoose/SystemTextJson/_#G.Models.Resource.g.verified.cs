@@ -19,19 +19,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectIDL")]
-        public global::System.Guid ProjectIDL { get; set; }
+        public global::System.Guid? ProjectIDL { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public int Type { get; set; }
+        public int? Type { get; set; }
 
         /// <summary>
         /// 
@@ -67,19 +67,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createStamp")]
-        public global::System.DateTime CreateStamp { get; set; }
+        public global::System.DateTime? CreateStamp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createByUserIDL")]
-        public global::System.Guid CreateByUserIDL { get; set; }
+        public global::System.Guid? CreateByUserIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isDataLocked")]
-        public bool IsDataLocked { get; set; }
+        public bool? IsDataLocked { get; set; }
 
         /// <summary>
         /// 

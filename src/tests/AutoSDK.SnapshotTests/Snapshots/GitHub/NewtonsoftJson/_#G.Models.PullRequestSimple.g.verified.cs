@@ -225,7 +225,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

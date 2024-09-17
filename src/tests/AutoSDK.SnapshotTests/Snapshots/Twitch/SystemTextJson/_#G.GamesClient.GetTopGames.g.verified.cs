@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareGetTopGamesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int first,
+            ref int? first,
             ref string? after,
             ref string? before);
         partial void PrepareGetTopGamesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int first,
+            int? first,
             string? after,
             string? before);
         partial void ProcessGetTopGamesResponse(
@@ -38,7 +38,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTopGamesResponse> GetTopGamesAsync(
-            int first = default,
+            int? first = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

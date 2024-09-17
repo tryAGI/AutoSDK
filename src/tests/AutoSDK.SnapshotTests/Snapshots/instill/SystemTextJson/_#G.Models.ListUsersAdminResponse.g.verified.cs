@@ -25,7 +25,7 @@ namespace G
         /// Total number of users.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalSize")]
-        public int TotalSize { get; set; }
+        public int? TotalSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

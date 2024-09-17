@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isComplete")]
-        public bool IsComplete { get; set; }
+        public bool? IsComplete { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exceptionCount")]
-        public int ExceptionCount { get; set; }
+        public int? ExceptionCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

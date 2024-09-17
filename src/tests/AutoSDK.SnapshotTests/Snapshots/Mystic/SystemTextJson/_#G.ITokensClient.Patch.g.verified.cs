@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TokenGet> PatchAsync(
             string tokenId,
             string? name = default,
-            bool isEnabled = default,
+            bool? isEnabled = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

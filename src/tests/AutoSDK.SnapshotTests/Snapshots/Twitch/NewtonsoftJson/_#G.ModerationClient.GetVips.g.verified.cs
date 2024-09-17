@@ -11,14 +11,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? userId,
             ref string broadcasterId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetVipsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<string>? userId,
             string broadcasterId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetVipsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetVIPsResponse> GetVipsAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -9,16 +9,16 @@ namespace G
         partial void PrepareTagGetTagApplicationsByProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref int page,
-            ref int pageSize);
+            ref global::System.Guid? projectId,
+            ref int? page,
+            ref int? pageSize);
         partial void PrepareTagGetTagApplicationsByProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            int page,
-            int pageSize);
+            global::System.Guid? projectId,
+            int? page,
+            int? pageSize);
         partial void ProcessTagGetTagApplicationsByProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TagAppDTO>> TagGetTagApplicationsByProjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int page = default,
-            int pageSize = default,
+            global::System.Guid? projectId = default,
+            int? page = default,
+            int? pageSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

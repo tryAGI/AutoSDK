@@ -11,8 +11,8 @@ namespace G
             ref string owner,
             ref string repo,
             ref string commit,
-            ref bool getExamples,
-            ref bool isView,
+            ref bool? getExamples,
+            ref bool? isView,
             ref global::G.AnyOf<bool?, object>? includeModel);
         partial void PrepareGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             string owner,
             string repo,
             string commit,
-            bool getExamples,
-            bool isView,
+            bool? getExamples,
+            bool? isView,
             global::G.AnyOf<bool?, object>? includeModel);
         partial void ProcessGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,8 +54,8 @@ namespace G
             string owner,
             string repo,
             string commit,
-            bool getExamples = false,
-            bool isView = false,
+            bool? getExamples = false,
+            bool? isView = false,
             global::G.AnyOf<bool?, object>? includeModel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

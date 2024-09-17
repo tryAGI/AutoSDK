@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triage")]
-        public bool Triage { get; set; }
+        public bool? Triage { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintain")]
-        public bool Maintain { get; set; }
+        public bool? Maintain { get; set; }
 
         /// <summary>
         /// 

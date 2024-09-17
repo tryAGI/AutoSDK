@@ -37,7 +37,7 @@ namespace G
             string? resolution = default,
             global::G.SecretScanningListAlertsForEnterpriseSort? sort = global::G.SecretScanningListAlertsForEnterpriseSort.Created,
             global::G.SecretScanningListAlertsForEnterpriseDirection? direction = global::G.SecretScanningListAlertsForEnterpriseDirection.Desc,
-            int perPage = 30,
+            int? perPage = 30,
             string? before = default,
             string? after = default,
             string? validity = default,

@@ -27,7 +27,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/user/keys/2

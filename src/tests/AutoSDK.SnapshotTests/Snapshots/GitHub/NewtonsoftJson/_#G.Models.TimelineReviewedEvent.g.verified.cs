@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("submitted_at")]
-        public global::System.DateTime SubmittedAt { get; set; }
+        public global::System.DateTime? SubmittedAt { get; set; }
 
         /// <summary>
         /// A commit SHA for the review.<br/>

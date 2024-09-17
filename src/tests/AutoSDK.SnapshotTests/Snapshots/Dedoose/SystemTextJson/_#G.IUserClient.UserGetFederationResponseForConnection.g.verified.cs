@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserGetFederationResponseForConnectionResponse> UserGetFederationResponseForConnectionAsync(
             string? token = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

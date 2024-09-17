@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAdminAddUserToGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
-            ref global::System.Guid groupId);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
+            ref global::System.Guid? groupId);
         partial void PrepareAdminAddUserToGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
-            global::System.Guid groupId);
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
+            global::System.Guid? groupId);
         partial void ProcessAdminAddUserToGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddUserToGroupResponse> AdminAddUserToGroupAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
-            global::System.Guid groupId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

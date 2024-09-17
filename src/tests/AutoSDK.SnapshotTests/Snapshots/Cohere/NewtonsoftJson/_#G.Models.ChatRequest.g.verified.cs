@@ -31,7 +31,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; }
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style, and use the `SYSTEM` role.<br/>
@@ -83,7 +83,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_queries_only")]
-        public bool SearchQueriesOnly { get; set; }
+        public bool? SearchQueriesOnly { get; set; }
 
         /// <summary>
         /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.<br/>
@@ -119,14 +119,14 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public float Temperature { get; set; }
+        public float? Temperature { get; set; }
 
         /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_tokens")]
-        public int MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// The maximum number of input tokens to send to the model. If not specified, `max_input_tokens` is the model's context length limit minus a small buffer.<br/>
@@ -134,7 +134,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_input_tokens")]
-        public int MaxInputTokens { get; set; }
+        public int? MaxInputTokens { get; set; }
 
         /// <summary>
         /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
@@ -143,7 +143,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("k")]
-        public int K { get; set; } = 0;
+        public int? K { get; set; } = 0;
 
         /// <summary>
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
@@ -152,7 +152,7 @@ namespace G
         /// Default Value: 0.75
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("p")]
-        public double P { get; set; } = 0.75;
+        public double? P { get; set; } = 0.75;
 
         /// <summary>
         /// If specified, the backend will make a best effort to sample tokens<br/>
@@ -162,7 +162,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seed")]
-        public int Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         /// A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.<br/>
@@ -177,7 +177,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency_penalty")]
-        public double FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
@@ -185,7 +185,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presence_penalty")]
-        public double PresencePenalty { get; set; }
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
@@ -225,7 +225,7 @@ namespace G
         /// Forces the chat to be single step. Defaults to `false`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("force_single_step")]
-        public bool ForceSingleStep { get; set; }
+        public bool? ForceSingleStep { get; set; }
 
         /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>

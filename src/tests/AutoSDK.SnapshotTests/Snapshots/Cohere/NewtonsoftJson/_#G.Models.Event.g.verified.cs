@@ -35,7 +35,7 @@ namespace G
         /// Timestamp when the event happened.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

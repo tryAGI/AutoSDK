@@ -13,7 +13,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: refs/heads/main
@@ -37,19 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_accessed_at")]
-        public global::System.DateTime LastAccessedAt { get; set; }
+        public global::System.DateTime? LastAccessedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: 1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_in_bytes")]
-        public int SizeInBytes { get; set; }
+        public int? SizeInBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

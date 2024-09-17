@@ -9,16 +9,16 @@ namespace G
         partial void PrepareUserInviteUserToProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? email,
-            ref global::System.Guid groupId);
+            ref global::System.Guid? groupId);
         partial void PrepareUserInviteUserToProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? email,
-            global::System.Guid groupId);
+            global::System.Guid? groupId);
         partial void ProcessUserInviteUserToProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserInviteUserToProjectResponse> UserInviteUserToProjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? email = default,
-            global::System.Guid groupId = default,
+            global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

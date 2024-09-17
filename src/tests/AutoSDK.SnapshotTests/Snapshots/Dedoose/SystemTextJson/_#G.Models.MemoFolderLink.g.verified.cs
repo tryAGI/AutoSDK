@@ -19,31 +19,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectIDL")]
-        public global::System.Guid ProjectIDL { get; set; }
+        public global::System.Guid? ProjectIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memoId")]
-        public global::System.Guid MemoId { get; set; }
+        public global::System.Guid? MemoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memoFolderId")]
-        public global::System.Guid MemoFolderId { get; set; }
+        public global::System.Guid? MemoFolderId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

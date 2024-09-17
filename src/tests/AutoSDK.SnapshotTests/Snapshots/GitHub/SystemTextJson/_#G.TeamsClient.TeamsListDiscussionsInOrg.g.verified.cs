@@ -11,8 +11,8 @@ namespace G
             ref string org,
             ref string teamSlug,
             ref global::G.TeamsListDiscussionsInOrgDirection? direction,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref string? pinned);
         partial void PrepareTeamsListDiscussionsInOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             string org,
             string teamSlug,
             global::G.TeamsListDiscussionsInOrgDirection? direction,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             string? pinned);
         partial void ProcessTeamsListDiscussionsInOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -56,8 +56,8 @@ namespace G
             string org,
             string teamSlug,
             global::G.TeamsListDiscussionsInOrgDirection? direction = global::G.TeamsListDiscussionsInOrgDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? pinned = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

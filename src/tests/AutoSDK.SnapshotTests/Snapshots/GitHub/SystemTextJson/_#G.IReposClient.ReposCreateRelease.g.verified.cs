@@ -68,10 +68,10 @@ namespace G
             string? targetCommitish = default,
             string? name = default,
             string? body = default,
-            bool draft = false,
-            bool prerelease = false,
+            bool? draft = false,
+            bool? prerelease = false,
             string? discussionCategoryName = default,
-            bool generateReleaseNotes = false,
+            bool? generateReleaseNotes = false,
             global::G.ReposCreateReleaseRequestMakeLatest? makeLatest = global::G.ReposCreateReleaseRequestMakeLatest.True,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

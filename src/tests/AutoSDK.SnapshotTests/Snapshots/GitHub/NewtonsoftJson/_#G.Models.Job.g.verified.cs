@@ -34,7 +34,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_attempt")]
-        public int RunAttempt { get; set; }
+        public int? RunAttempt { get; set; }
 
         /// <summary>
         /// Example: MDg6Q2hlY2tSdW40

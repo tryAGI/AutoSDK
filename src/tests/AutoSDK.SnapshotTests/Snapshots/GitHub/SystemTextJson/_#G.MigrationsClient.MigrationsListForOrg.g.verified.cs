@@ -10,15 +10,15 @@ namespace G
         partial void PrepareMigrationsListForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? exclude);
         partial void PrepareMigrationsListForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? exclude);
         partial void ProcessMigrationsListForOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,8 +46,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Migration>> MigrationsListForOrgAsync(
             string org,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

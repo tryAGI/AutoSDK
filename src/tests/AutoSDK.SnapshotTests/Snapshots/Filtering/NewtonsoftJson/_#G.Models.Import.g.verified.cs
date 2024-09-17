@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_lfs")]
-        public bool UseLfs { get; set; }
+        public bool? UseLfs { get; set; }
 
         /// <summary>
         /// The URL of the originating repository.
@@ -85,19 +85,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_large_files")]
-        public bool HasLargeFiles { get; set; }
+        public bool? HasLargeFiles { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("large_files_size")]
-        public int LargeFilesSize { get; set; }
+        public int? LargeFilesSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("large_files_count")]
-        public int LargeFilesCount { get; set; }
+        public int? LargeFilesCount { get; set; }
 
         /// <summary>
         /// 

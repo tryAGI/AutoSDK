@@ -39,13 +39,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
-        public int StartIndex { get; set; }
+        public int? StartIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
-        public int EndIndex { get; set; }
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

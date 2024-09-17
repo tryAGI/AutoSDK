@@ -20,8 +20,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorUpdateFieldAndOptionsAsync(
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid fieldId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? fieldId = default,
             string? title = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::System.Guid>? deletedOptionIds = default,

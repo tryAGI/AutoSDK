@@ -19,13 +19,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minimum_nodes")]
-        public int MinimumNodes { get; set; } = 0;
+        public int? MinimumNodes { get; set; } = 0;
 
         /// <summary>
         /// Default Value: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maximum_nodes")]
-        public int MaximumNodes { get; set; } = 100;
+        public int? MaximumNodes { get; set; } = 100;
 
         /// <summary>
         /// An enumeration.

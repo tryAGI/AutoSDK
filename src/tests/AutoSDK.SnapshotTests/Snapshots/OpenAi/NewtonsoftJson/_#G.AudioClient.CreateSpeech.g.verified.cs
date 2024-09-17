@@ -110,7 +110,7 @@ namespace G
             string input,
             global::G.CreateSpeechRequestVoice voice,
             global::G.CreateSpeechRequestResponseFormat? responseFormat = global::G.CreateSpeechRequestResponseFormat.Mp3,
-            double speed = 1,
+            double? speed = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateSpeechRequest

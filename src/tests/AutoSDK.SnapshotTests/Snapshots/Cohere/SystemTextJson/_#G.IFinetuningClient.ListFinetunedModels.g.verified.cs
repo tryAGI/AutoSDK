@@ -15,7 +15,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListFinetunedModelsResponse> ListFinetunedModelsAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
             string? xClientName = default,

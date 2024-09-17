@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_removed")]
-        public bool DataRemoved { get; set; }
+        public bool? DataRemoved { get; set; }
 
         /// <summary>
         /// 

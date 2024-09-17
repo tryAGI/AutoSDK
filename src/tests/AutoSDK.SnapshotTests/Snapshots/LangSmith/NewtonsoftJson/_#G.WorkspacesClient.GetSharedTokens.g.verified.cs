@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareGetSharedTokensArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset);
+            ref int? limit,
+            ref int? offset);
         partial void PrepareGetSharedTokensRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset);
+            int? limit,
+            int? offset);
         partial void ProcessGetSharedTokensResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,8 +37,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TenantShareTokensResponse> GetSharedTokensAsync(
-            int limit = 50,
-            int offset = 0,
+            int? limit = 50,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

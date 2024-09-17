@@ -24,7 +24,7 @@ namespace G
         /// To end a user’s timeout early, set this field to 1, or use the [Unban user](https://dev.twitch.tv/docs/api/reference#unban-user) endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
-        public int Duration { get; set; }
+        public int? Duration { get; set; }
 
         /// <summary>
         /// The reason the you’re banning the user or putting them in a timeout. The text is user defined and is limited to a maximum of 500 characters.

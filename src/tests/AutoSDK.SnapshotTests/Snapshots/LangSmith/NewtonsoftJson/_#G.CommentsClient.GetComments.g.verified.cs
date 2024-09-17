@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int limit,
-            ref int offset);
+            ref int? limit,
+            ref int? offset);
         partial void PrepareGetCommentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int limit,
-            int offset);
+            int? limit,
+            int? offset);
         partial void ProcessGetCommentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,8 +44,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListCommentsResponse> GetCommentsAsync(
             string owner,
             string repo,
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -19,25 +19,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        public int StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_line")]
-        public int EndLine { get; set; }
+        public int? EndLine { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_column")]
-        public int StartColumn { get; set; }
+        public int? StartColumn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_column")]
-        public int EndColumn { get; set; }
+        public int? EndColumn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

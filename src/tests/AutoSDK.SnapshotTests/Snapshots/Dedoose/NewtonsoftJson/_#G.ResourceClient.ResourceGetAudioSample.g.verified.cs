@@ -9,14 +9,14 @@ namespace G
         partial void PrepareResourceGetAudioSampleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId);
         partial void PrepareResourceGetAudioSampleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid resourceId);
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId);
         partial void ProcessResourceGetAudioSampleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceGetAudioSampleResponse> ResourceGetAudioSampleAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

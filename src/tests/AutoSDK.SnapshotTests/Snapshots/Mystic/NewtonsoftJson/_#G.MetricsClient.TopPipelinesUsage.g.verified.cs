@@ -8,7 +8,7 @@ namespace G
     {
         partial void PrepareTopPipelinesUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int numPipelines,
+            ref int? numPipelines,
             ref string? clusterId,
             ref global::System.DateTime start,
             ref global::System.DateTime end,
@@ -17,7 +17,7 @@ namespace G
         partial void PrepareTopPipelinesUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int numPipelines,
+            int? numPipelines,
             string? clusterId,
             global::System.DateTime start,
             global::System.DateTime end,
@@ -54,7 +54,7 @@ namespace G
             global::System.DateTime end,
             global::G.DurationUnit intervalUnit,
             int intervalValue,
-            int numPipelines = 20,
+            int? numPipelines = 20,
             string? clusterId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

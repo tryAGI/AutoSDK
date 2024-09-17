@@ -20,13 +20,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minimum_nodes")]
-        public int MinimumNodes { get; set; } = 0;
+        public int? MinimumNodes { get; set; } = 0;
 
         /// <summary>
         /// Default Value: 100
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maximum_nodes")]
-        public int MaximumNodes { get; set; } = 100;
+        public int? MaximumNodes { get; set; } = 100;
 
         /// <summary>
         /// An enumeration.

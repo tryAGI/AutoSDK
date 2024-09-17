@@ -55,10 +55,10 @@ namespace G
             string? path = default,
             string? author = default,
             string? committer = default,
-            global::System.DateTime since = default,
-            global::System.DateTime until = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            global::System.DateTime? until = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetCharityCampaignDonationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetCharityCampaignDonationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetCharityCampaignDonationsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetCharityCampaignDonationsResponse> GetCharityCampaignDonationsAsync(
             string broadcasterId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

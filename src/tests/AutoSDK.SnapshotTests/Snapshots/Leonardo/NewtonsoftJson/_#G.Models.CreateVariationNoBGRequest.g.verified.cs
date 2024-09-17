@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isVariation")]
-        public bool IsVariation { get; set; }
+        public bool? IsVariation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

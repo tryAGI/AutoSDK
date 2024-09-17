@@ -19,7 +19,7 @@ namespace G
         /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("can_approve_pull_request_reviews")]
-        public bool CanApprovePullRequestReviews { get; set; }
+        public bool? CanApprovePullRequestReviews { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

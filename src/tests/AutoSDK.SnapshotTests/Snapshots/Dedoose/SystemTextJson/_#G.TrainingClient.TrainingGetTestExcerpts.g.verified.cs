@@ -9,14 +9,14 @@ namespace G
         partial void PrepareTrainingGetTestExcerptsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid testId);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? testId);
         partial void PrepareTrainingGetTestExcerptsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid testId);
+            global::System.Guid? projectId,
+            global::System.Guid? testId);
         partial void ProcessTrainingGetTestExcerptsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTestExcerpt>> TrainingGetTestExcerptsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid testId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? testId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

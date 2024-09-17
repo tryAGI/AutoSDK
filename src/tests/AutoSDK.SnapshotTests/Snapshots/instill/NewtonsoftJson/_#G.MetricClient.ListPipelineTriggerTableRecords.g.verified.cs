@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareListPipelineTriggerTableRecordsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             ref string? filter);
         partial void PrepareListPipelineTriggerTableRecordsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             string? filter);
         partial void ProcessListPipelineTriggerTableRecordsResponse(
@@ -37,7 +37,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListPipelineTriggerTableRecordsResponse> ListPipelineTriggerTableRecordsAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)

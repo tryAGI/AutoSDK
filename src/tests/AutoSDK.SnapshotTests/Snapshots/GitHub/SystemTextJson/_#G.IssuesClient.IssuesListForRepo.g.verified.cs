@@ -18,9 +18,9 @@ namespace G
             ref string? labels,
             ref global::G.IssuesListForRepoSort? sort,
             ref global::G.IssuesListForRepoDirection? direction,
-            ref global::System.DateTime since,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareIssuesListForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -34,9 +34,9 @@ namespace G
             string? labels,
             global::G.IssuesListForRepoSort? sort,
             global::G.IssuesListForRepoDirection? direction,
-            global::System.DateTime since,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            int? perPage,
+            int? page);
         partial void ProcessIssuesListForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -95,9 +95,9 @@ namespace G
             string? labels = default,
             global::G.IssuesListForRepoSort? sort = global::G.IssuesListForRepoSort.Created,
             global::G.IssuesListForRepoDirection? direction = global::G.IssuesListForRepoDirection.Desc,
-            global::System.DateTime since = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

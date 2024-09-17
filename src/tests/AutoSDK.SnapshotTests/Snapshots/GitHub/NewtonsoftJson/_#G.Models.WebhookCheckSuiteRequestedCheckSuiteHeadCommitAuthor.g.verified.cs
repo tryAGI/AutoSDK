@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date")]
-        public global::System.DateTime Date { get; set; }
+        public global::System.DateTime? Date { get; set; }
 
         /// <summary>
         /// 

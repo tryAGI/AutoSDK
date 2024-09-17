@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_installed")]
-        public bool IsInstalled { get; set; }
+        public bool? IsInstalled { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on_free_trial")]
-        public bool OnFreeTrial { get; set; }
+        public bool? OnFreeTrial { get; set; }
 
         /// <summary>
         /// 

@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int perPage,
-            ref int page,
-            ref bool includesParents);
+            ref int? perPage,
+            ref int? page,
+            ref bool? includesParents);
         partial void PrepareReposGetRepoRulesetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int perPage,
-            int page,
-            bool includesParents);
+            int? perPage,
+            int? page,
+            bool? includesParents);
         partial void ProcessReposGetRepoRulesetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,9 +50,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetRepoRulesetsAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
-            bool includesParents = true,
+            int? perPage = 30,
+            int? page = 1,
+            bool? includesParents = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

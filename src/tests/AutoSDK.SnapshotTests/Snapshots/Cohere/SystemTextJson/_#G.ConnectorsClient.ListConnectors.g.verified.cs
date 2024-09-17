@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareListConnectorsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref double limit,
-            ref double offset,
+            ref double? limit,
+            ref double? offset,
             ref string? xClientName);
         partial void PrepareListConnectorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            double limit,
-            double offset,
+            double? limit,
+            double? offset,
             string? xClientName);
         partial void ProcessListConnectorsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,8 +40,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListConnectorsResponse> ListConnectorsAsync(
-            double limit = 30,
-            double offset = 0,
+            double? limit = 30,
+            double? offset = 0,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

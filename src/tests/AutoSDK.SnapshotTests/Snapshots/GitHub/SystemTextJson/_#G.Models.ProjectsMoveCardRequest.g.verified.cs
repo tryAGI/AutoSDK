@@ -22,7 +22,7 @@ namespace G
         /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
-        public int ColumnId { get; set; }
+        public int? ColumnId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

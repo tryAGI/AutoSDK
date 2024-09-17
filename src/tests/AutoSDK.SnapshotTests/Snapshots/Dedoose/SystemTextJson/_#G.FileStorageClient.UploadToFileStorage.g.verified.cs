@@ -10,16 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? name,
-            ref global::System.Guid projectId,
-            ref int uploadType,
+            ref global::System.Guid? projectId,
+            ref int? uploadType,
             byte[] request);
         partial void PrepareUploadToFileStorageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? name,
-            global::System.Guid projectId,
-            int uploadType,
+            global::System.Guid? projectId,
+            int? uploadType,
             byte[] request);
         partial void ProcessUploadToFileStorageResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,8 +44,8 @@ namespace G
             byte[] request,
             string? token = default,
             string? name = default,
-            global::System.Guid projectId = default,
-            int uploadType = default,
+            global::System.Guid? projectId = default,
+            int? uploadType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

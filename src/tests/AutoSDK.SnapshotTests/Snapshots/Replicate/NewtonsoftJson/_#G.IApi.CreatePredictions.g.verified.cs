@@ -147,7 +147,7 @@ namespace G
         global::System.Threading.Tasks.Task CreatePredictionsAsync(
             global::G.VersionPredictionRequestInput input,
             string version,
-            bool stream = default,
+            bool? stream = default,
             string? webhook = default,
             global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default);

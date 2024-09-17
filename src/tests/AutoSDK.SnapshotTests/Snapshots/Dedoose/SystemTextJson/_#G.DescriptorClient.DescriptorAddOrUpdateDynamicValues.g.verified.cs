@@ -10,19 +10,19 @@ namespace G
         partial void PrepareDescriptorAddOrUpdateDynamicValuesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref global::System.Guid setId,
-            ref global::System.Guid descriptorId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref global::System.Guid? setId,
+            ref global::System.Guid? descriptorId,
             global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values);
         partial void PrepareDescriptorAddOrUpdateDynamicValuesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            global::System.Guid setId,
-            global::System.Guid descriptorId,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            global::System.Guid? setId,
+            global::System.Guid? descriptorId,
             global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values);
         partial void ProcessDescriptorAddOrUpdateDynamicValuesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,10 +46,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorAddOrUpdateDynamicValuesResponse> DescriptorAddOrUpdateDynamicValuesAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid setId = default,
-            global::System.Guid descriptorId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? setId = default,
+            global::System.Guid? descriptorId = default,
             global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO>? values = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

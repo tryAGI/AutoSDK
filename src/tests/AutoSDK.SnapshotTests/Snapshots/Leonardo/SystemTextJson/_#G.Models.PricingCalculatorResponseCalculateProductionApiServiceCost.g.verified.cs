@@ -13,7 +13,7 @@ namespace G
         /// API service cost to generate the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
-        public int Cost { get; set; }
+        public int? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

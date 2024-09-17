@@ -19,31 +19,31 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("applyToWhitespaces")]
-        public bool ApplyToWhitespaces { get; set; } = true;
+        public bool? ApplyToWhitespaces { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("applyToPunctuations")]
-        public bool ApplyToPunctuations { get; set; } = true;
+        public bool? ApplyToPunctuations { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("applyToNumbers")]
-        public bool ApplyToNumbers { get; set; } = true;
+        public bool? ApplyToNumbers { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("applyToStopwords")]
-        public bool ApplyToStopwords { get; set; } = true;
+        public bool? ApplyToStopwords { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("applyToEmojis")]
-        public bool ApplyToEmojis { get; set; } = true;
+        public bool? ApplyToEmojis { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

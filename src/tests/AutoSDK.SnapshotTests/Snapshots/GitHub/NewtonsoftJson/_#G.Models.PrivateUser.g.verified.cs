@@ -259,7 +259,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("business_plus")]
-        public bool BusinessPlus { get; set; }
+        public bool? BusinessPlus { get; set; }
 
         /// <summary>
         /// 

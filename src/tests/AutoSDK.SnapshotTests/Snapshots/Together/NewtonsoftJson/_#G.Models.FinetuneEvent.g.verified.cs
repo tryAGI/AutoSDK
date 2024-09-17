@@ -45,13 +45,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("param_count")]
-        public int ParamCount { get; set; }
+        public int? ParamCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token_count")]
-        public int TokenCount { get; set; }
+        public int? TokenCount { get; set; }
 
         /// <summary>
         /// 

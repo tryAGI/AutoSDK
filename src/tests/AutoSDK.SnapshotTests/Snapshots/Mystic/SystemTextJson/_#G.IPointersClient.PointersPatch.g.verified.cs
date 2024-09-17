@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PointerGet> PointersPatchAsync(
             string pointer,
             string? pointerOrPipelineId = default,
-            bool locked = default,
+            bool? locked = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

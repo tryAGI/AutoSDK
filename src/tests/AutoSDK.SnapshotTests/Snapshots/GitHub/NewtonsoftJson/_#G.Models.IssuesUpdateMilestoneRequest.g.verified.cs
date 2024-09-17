@@ -32,7 +32,7 @@ namespace G
         /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("due_on")]
-        public global::System.DateTime DueOn { get; set; }
+        public global::System.DateTime? DueOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

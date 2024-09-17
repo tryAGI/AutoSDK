@@ -9,16 +9,16 @@ namespace G
         partial void PrepareDescriptorDeleteLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref global::System.Guid descriptorId);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref global::System.Guid? descriptorId);
         partial void PrepareDescriptorDeleteLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            global::System.Guid descriptorId);
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            global::System.Guid? descriptorId);
         partial void ProcessDescriptorDeleteLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorDeleteLinkResponse> DescriptorDeleteLinkAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid descriptorId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? descriptorId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

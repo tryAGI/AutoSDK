@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fork")]
-        public bool Fork { get; set; }
+        public bool? Fork { get; set; }
 
         /// <summary>
         /// 
@@ -331,25 +331,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks_count")]
-        public int ForksCount { get; set; }
+        public int? ForksCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers_count")]
-        public int StargazersCount { get; set; }
+        public int? StargazersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watchers_count")]
-        public int WatchersCount { get; set; }
+        public int? WatchersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 
@@ -361,13 +361,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("open_issues_count")]
-        public int OpenIssuesCount { get; set; }
+        public int? OpenIssuesCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -379,43 +379,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues")]
-        public bool HasIssues { get; set; }
+        public bool? HasIssues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects")]
-        public bool HasProjects { get; set; }
+        public bool? HasProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki")]
-        public bool HasWiki { get; set; }
+        public bool? HasWiki { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_pages")]
-        public bool HasPages { get; set; }
+        public bool? HasPages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_downloads")]
-        public bool HasDownloads { get; set; }
+        public bool? HasDownloads { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disabled")]
-        public bool Disabled { get; set; }
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// 
@@ -451,7 +451,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; }
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// 
@@ -463,31 +463,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; }
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; }
+        public bool? AllowAutoMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; }
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; }
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
-        public bool UseSquashPrTitleAsDefault { get; set; }
+        public bool? UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit title:<br/>
@@ -527,19 +527,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; }
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribers_count")]
-        public int SubscribersCount { get; set; }
+        public int? SubscribersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("network_count")]
-        public int NetworkCount { get; set; }
+        public int? NetworkCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

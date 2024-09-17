@@ -13,43 +13,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step")]
-        public double Step { get; set; }
+        public double? Step { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("train_loss")]
-        public double TrainLoss { get; set; }
+        public double? TrainLoss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("train_mean_token_accuracy")]
-        public double TrainMeanTokenAccuracy { get; set; }
+        public double? TrainMeanTokenAccuracy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("valid_loss")]
-        public double ValidLoss { get; set; }
+        public double? ValidLoss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("valid_mean_token_accuracy")]
-        public double ValidMeanTokenAccuracy { get; set; }
+        public double? ValidMeanTokenAccuracy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_valid_loss")]
-        public double FullValidLoss { get; set; }
+        public double? FullValidLoss { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_valid_mean_token_accuracy")]
-        public double FullValidMeanTokenAccuracy { get; set; }
+        public double? FullValidMeanTokenAccuracy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

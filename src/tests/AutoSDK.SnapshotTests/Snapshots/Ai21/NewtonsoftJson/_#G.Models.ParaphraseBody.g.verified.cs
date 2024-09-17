@@ -27,13 +27,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("startIndex")]
-        public int StartIndex { get; set; } = 0;
+        public int? StartIndex { get; set; } = 0;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endIndex")]
-        public int EndIndex { get; set; }
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

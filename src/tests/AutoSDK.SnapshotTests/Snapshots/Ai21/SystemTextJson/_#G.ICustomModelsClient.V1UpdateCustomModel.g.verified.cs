@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V1UpdateCustomModelResponse> V1UpdateCustomModelAsync(
             string customModelPid,
-            int defaultEpoch = default,
+            int? defaultEpoch = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

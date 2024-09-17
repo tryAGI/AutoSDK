@@ -40,11 +40,11 @@ namespace G
             string? branch = default,
             string? @event = default,
             global::G.ActionsListWorkflowRunsStatus? status = default,
-            int perPage = 30,
-            int page = 1,
-            global::System.DateTime created = default,
-            bool excludePullRequests = false,
-            int checkSuiteId = default,
+            int? perPage = 30,
+            int? page = 1,
+            global::System.DateTime? created = default,
+            bool? excludePullRequests = false,
+            int? checkSuiteId = default,
             string? headSha = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

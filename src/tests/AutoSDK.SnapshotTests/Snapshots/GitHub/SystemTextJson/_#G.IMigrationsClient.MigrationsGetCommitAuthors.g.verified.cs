@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PorterAuthor>> MigrationsGetCommitAuthorsAsync(
             string owner,
             string repo,
-            int since = default,
+            int? since = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

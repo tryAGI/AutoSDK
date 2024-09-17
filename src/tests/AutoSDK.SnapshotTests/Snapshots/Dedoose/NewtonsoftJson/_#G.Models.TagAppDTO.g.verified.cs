@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tagId")]
-        public global::System.Guid TagId { get; set; }
+        public global::System.Guid? TagId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourceId")]
-        public global::System.Guid ResourceId { get; set; }
+        public global::System.Guid? ResourceId { get; set; }
 
         /// <summary>
         /// 
@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("userId")]
-        public global::System.Guid UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createStamp")]
-        public global::System.DateTime CreateStamp { get; set; }
+        public global::System.DateTime? CreateStamp { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

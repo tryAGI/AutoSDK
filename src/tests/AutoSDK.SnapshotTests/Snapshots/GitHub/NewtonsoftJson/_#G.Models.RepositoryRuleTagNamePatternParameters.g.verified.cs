@@ -19,7 +19,7 @@ namespace G
         /// If true, the rule will fail if the pattern matches.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("negate")]
-        public bool Negate { get; set; }
+        public bool? Negate { get; set; }
 
         /// <summary>
         /// The operator to use for matching.

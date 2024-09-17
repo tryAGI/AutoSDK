@@ -34,7 +34,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ProjectCard> ProjectsUpdateCardAsync(
             int cardId,
             string? note = default,
-            bool archived = default,
+            bool? archived = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

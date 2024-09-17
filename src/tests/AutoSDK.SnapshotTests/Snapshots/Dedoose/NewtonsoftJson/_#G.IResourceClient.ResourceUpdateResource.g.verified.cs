@@ -17,8 +17,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Resource> ResourceUpdateResourceAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
             string? title = default,
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);

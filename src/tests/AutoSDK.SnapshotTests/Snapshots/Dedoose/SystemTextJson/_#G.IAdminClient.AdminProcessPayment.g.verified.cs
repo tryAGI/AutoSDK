@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminProcessPaymentResponse> AdminProcessPaymentAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            double amount = default,
+            global::System.Guid? accountId = default,
+            double? amount = default,
             string? memo = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

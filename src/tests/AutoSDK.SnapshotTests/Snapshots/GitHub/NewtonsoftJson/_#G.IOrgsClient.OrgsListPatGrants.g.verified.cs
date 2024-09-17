@@ -38,15 +38,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantsAsync(
             string org,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::G.OrgsListPatGrantsSort? sort = global::G.OrgsListPatGrantsSort.CreatedAt,
             global::G.OrgsListPatGrantsDirection? direction = global::G.OrgsListPatGrantsDirection.Desc,
             global::System.Collections.Generic.IList<string>? owner = default,
             string? repository = default,
             string? permission = default,
-            global::System.DateTime lastUsedBefore = default,
-            global::System.DateTime lastUsedAfter = default,
+            global::System.DateTime? lastUsedBefore = default,
+            global::System.DateTime? lastUsedAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

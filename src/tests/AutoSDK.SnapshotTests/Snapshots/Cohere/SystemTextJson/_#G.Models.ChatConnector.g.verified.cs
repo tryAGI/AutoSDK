@@ -27,7 +27,7 @@ namespace G
         /// When `true`, the request will continue if this connector returned an error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("continue_on_failure")]
-        public bool ContinueOnFailure { get; set; }
+        public bool? ContinueOnFailure { get; set; }
 
         /// <summary>
         /// Provides the connector with different settings at request time. The key/value pairs of this object are specific to each connector.<br/>

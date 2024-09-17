@@ -11,16 +11,16 @@ namespace G
             ref string q,
             ref global::G.SearchUsersSort? sort,
             ref global::G.SearchUsersOrder? order,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareSearchUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
             global::G.SearchUsersSort? sort,
             global::G.SearchUsersOrder? order,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessSearchUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,8 +56,8 @@ namespace G
             string q,
             global::G.SearchUsersSort? sort = default,
             global::G.SearchUsersOrder? order = global::G.SearchUsersOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

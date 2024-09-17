@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public double Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

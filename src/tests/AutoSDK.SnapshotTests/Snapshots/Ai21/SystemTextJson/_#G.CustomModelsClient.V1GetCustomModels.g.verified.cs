@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareV1GetCustomModelsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool includeMetadata);
+            ref bool? includeMetadata);
         partial void PrepareV1GetCustomModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool includeMetadata);
+            bool? includeMetadata);
         partial void ProcessV1GetCustomModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +31,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1GetCustomModelsResponse> V1GetCustomModelsAsync(
-            bool includeMetadata = false,
+            bool? includeMetadata = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

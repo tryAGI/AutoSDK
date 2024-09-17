@@ -17,8 +17,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> FileStoreProjectFileStringAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int fileStorageType = default,
+            global::System.Guid? projectId = default,
+            int? fileStorageType = default,
             string? extension = default,
             string? text = default,
             global::System.Threading.CancellationToken cancellationToken = default);

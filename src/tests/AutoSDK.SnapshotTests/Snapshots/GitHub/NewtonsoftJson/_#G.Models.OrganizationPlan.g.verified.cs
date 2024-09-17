@@ -19,25 +19,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("space")]
-        public int Space { get; set; }
+        public int? Space { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_repos")]
-        public int PrivateRepos { get; set; }
+        public int? PrivateRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filled_seats")]
-        public int FilledSeats { get; set; }
+        public int? FilledSeats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seats")]
-        public int Seats { get; set; }
+        public int? Seats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

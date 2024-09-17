@@ -19,11 +19,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResourceUpdateDocumentDataAndExcerptsResponse> ResourceUpdateDocumentDataAndExcerptsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? resourceId = default,
             string? updatedTextDataURI = default,
-            int updatedLength = default,
+            int? updatedLength = default,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

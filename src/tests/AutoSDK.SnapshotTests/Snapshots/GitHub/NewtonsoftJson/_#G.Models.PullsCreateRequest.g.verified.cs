@@ -44,20 +44,20 @@ namespace G
         /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintainer_can_modify")]
-        public bool MaintainerCanModify { get; set; }
+        public bool? MaintainerCanModify { get; set; }
 
         /// <summary>
         /// Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
         /// Example: 1L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issue")]
-        public long Issue { get; set; }
+        public long? Issue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

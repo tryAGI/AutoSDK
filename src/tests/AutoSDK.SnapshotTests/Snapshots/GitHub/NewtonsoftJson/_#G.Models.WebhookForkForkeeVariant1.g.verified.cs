@@ -16,40 +16,40 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to allow private forks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; } = true;
 
         /// <summary>
         /// Whether to allow rebase merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
         /// Whether to allow squash merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; } = true;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; }
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// 
@@ -147,7 +147,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; } = false;
 
         /// <summary>
         /// 
@@ -165,7 +165,7 @@ namespace G
         /// Returns whether or not this repository is disabled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disabled")]
-        public bool Disabled { get; set; }
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// 
@@ -295,7 +295,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -427,7 +427,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// 
@@ -469,7 +469,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers")]
-        public int Stargazers { get; set; }
+        public int? Stargazers { get; set; }
 
         /// <summary>
         /// 
@@ -565,7 +565,7 @@ namespace G
         /// Whether to require contributors to sign off on web-based commits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

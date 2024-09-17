@@ -27,8 +27,8 @@ namespace G
             string owner,
             string repo,
             string commit,
-            bool getExamples = false,
-            bool isView = false,
+            bool? getExamples = false,
+            bool? isView = false,
             global::G.AnyOf<bool?, object>? includeModel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

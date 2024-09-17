@@ -38,7 +38,7 @@ namespace G
         /// Default Value: 15
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segments")]
-        public int MaxSegments { get; set; } = 15;
+        public int? MaxSegments { get; set; } = 15;
 
         /// <summary>
         /// Default Value: default
@@ -51,19 +51,19 @@ namespace G
         /// Default Value: 0.8
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrieval_similarity_threshold")]
-        public double RetrievalSimilarityThreshold { get; set; } = 0.8;
+        public double? RetrievalSimilarityThreshold { get; set; } = 0.8;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_neighbors")]
-        public int MaxNeighbors { get; set; }
+        public int? MaxNeighbors { get; set; }
 
         /// <summary>
         /// Default Value: 0.98
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hybrid_search_alpha")]
-        public double HybridSearchAlpha { get; set; } = 0.98;
+        public double? HybridSearchAlpha { get; set; } = 0.98;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

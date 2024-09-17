@@ -228,7 +228,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// 

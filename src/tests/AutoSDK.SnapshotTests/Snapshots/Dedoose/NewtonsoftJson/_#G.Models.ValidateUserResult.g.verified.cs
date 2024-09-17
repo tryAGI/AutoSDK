@@ -19,31 +19,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isFederated")]
-        public bool IsFederated { get; set; }
+        public bool? IsFederated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountIdleTimeout")]
-        public int AccountIdleTimeout { get; set; }
+        public int? AccountIdleTimeout { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountRequire2Factor")]
-        public bool AccountRequire2Factor { get; set; }
+        public bool? AccountRequire2Factor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountRequire2FactorOnRelog")]
-        public bool AccountRequire2FactorOnRelog { get; set; }
+        public bool? AccountRequire2FactorOnRelog { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isValidated")]
-        public bool IsValidated { get; set; }
+        public bool? IsValidated { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

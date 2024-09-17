@@ -34,13 +34,13 @@ namespace G
         /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_column")]
-        public int StartColumn { get; set; }
+        public int? StartColumn { get; set; }
 
         /// <summary>
         /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_column")]
-        public int EndColumn { get; set; }
+        public int? EndColumn { get; set; }
 
         /// <summary>
         /// The level of the annotation.

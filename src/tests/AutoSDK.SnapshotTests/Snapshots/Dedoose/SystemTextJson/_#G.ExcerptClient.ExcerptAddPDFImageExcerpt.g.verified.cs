@@ -10,21 +10,21 @@ namespace G
         partial void PrepareExcerptAddPDFImageExcerptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
-            ref global::System.Guid resourceId,
-            ref int start,
-            ref int end,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
+            ref global::System.Guid? resourceId,
+            ref int? start,
+            ref int? end,
             global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply);
         partial void PrepareExcerptAddPDFImageExcerptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
-            global::System.Guid resourceId,
-            int start,
-            int end,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
+            global::System.Guid? resourceId,
+            int? start,
+            int? end,
             global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply);
         partial void ProcessExcerptAddPDFImageExcerptResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,11 +49,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> ExcerptAddPDFImageExcerptAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
-            global::System.Guid resourceId = default,
-            int start = default,
-            int end = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? resourceId = default,
+            int? start = default,
+            int? end = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagIdsToApply = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

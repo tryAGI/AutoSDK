@@ -21,7 +21,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListRunsResponse> ListRunsAsync(
             string threadId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListRunsOrder? order = global::G.ListRunsOrder.Desc,
             string? after = default,
             string? before = default,

@@ -50,17 +50,17 @@ namespace G
             string? fileUid = default,
             global::G.AllOf<global::G.FileProcessStatus2?>? processStatus = default,
             string? processOutcome = default,
-            bool retrievable = default,
+            bool? retrievable = default,
             string? content = default,
             string? ownerUid = default,
             string? creatorUid = default,
             string? catalogUid = default,
-            global::System.DateTime createTime = default,
-            global::System.DateTime updateTime = default,
-            global::System.DateTime deleteTime = default,
+            global::System.DateTime? createTime = default,
+            global::System.DateTime? updateTime = default,
+            global::System.DateTime? deleteTime = default,
             string? size = default,
-            int totalChunks = default,
-            int totalTokens = default,
+            int? totalChunks = default,
+            int? totalTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,13 +13,13 @@ namespace G
         /// The security alert number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number")]
-        public int Number { get; set; }
+        public int? Number { get; set; }
 
         /// <summary>
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.

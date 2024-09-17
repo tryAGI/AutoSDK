@@ -153,8 +153,8 @@ namespace G
             string commitSha,
             string body,
             string? path = default,
-            int position = default,
-            int line = default,
+            int? position = default,
+            int? line = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposCreateCommitCommentRequest

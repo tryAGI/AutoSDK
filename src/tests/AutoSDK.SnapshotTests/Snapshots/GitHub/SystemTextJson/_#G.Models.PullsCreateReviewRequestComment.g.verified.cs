@@ -20,7 +20,7 @@ namespace G
         /// The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// Text of the review comment.
@@ -33,7 +33,7 @@ namespace G
         /// Example: 28
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// Example: RIGHT
@@ -45,7 +45,7 @@ namespace G
         /// Example: 26
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        public int StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// Example: LEFT

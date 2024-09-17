@@ -14,26 +14,26 @@ namespace G
         /// Example: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ahead")]
-        public int Ahead { get; set; }
+        public int? Ahead { get; set; }
 
         /// <summary>
         /// The number of commits the local repository is behind the remote.<br/>
         /// Example: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("behind")]
-        public int Behind { get; set; }
+        public int? Behind { get; set; }
 
         /// <summary>
         /// Whether the local repository has unpushed changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_unpushed_changes")]
-        public bool HasUnpushedChanges { get; set; }
+        public bool? HasUnpushedChanges { get; set; }
 
         /// <summary>
         /// Whether the local repository has uncommitted changes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_uncommitted_changes")]
-        public bool HasUncommittedChanges { get; set; }
+        public bool? HasUncommittedChanges { get; set; }
 
         /// <summary>
         /// The current branch (or SHA if in detached HEAD state) of the local repository.<br/>

@@ -44,7 +44,7 @@ namespace G
             string repo,
             string key,
             string? title = default,
-            bool readOnly = default,
+            bool? readOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

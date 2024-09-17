@@ -9,15 +9,15 @@ namespace G
         partial void PrepareAccountSendPaymentReceiptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid accountId,
-            ref global::System.Guid transactionId,
+            ref global::System.Guid? accountId,
+            ref global::System.Guid? transactionId,
             ref string? email);
         partial void PrepareAccountSendPaymentReceiptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid accountId,
-            global::System.Guid transactionId,
+            global::System.Guid? accountId,
+            global::System.Guid? transactionId,
             string? email);
         partial void ProcessAccountSendPaymentReceiptResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> AccountSendPaymentReceiptAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            global::System.Guid transactionId = default,
+            global::System.Guid? accountId = default,
+            global::System.Guid? transactionId = default,
             string? email = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

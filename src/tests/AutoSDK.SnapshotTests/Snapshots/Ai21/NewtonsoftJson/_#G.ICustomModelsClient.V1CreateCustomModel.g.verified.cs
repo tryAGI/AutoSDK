@@ -31,8 +31,8 @@ namespace G
             global::G.CustomModelType modelType,
             string datasetId,
             string modelName,
-            double learningRate = default,
-            int numEpochs = default,
+            double? learningRate = default,
+            int? numEpochs = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

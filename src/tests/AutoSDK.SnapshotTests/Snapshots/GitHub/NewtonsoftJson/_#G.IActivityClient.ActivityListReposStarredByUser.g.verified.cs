@@ -30,8 +30,8 @@ namespace G
             string username,
             global::G.ActivityListReposStarredByUserSort? sort = global::G.ActivityListReposStarredByUserSort.Created,
             global::G.ActivityListReposStarredByUserDirection? direction = global::G.ActivityListReposStarredByUserDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

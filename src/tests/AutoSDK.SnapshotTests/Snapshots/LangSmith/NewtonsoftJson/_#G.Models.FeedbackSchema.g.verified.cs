@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::System.DateTime ModifiedAt { get; set; }
+        public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
         /// 

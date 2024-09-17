@@ -13,8 +13,8 @@ namespace G
             ref string? path,
             ref global::G.FileStatus? status,
             global::System.Collections.Generic.IList<string>? label,
-            ref int limit,
-            ref int offset);
+            ref int? limit,
+            ref int? offset);
         partial void PrepareV1LibraryManagementRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,8 +22,8 @@ namespace G
             string? path,
             global::G.FileStatus? status,
             global::System.Collections.Generic.IList<string>? label,
-            int limit,
-            int offset);
+            int? limit,
+            int? offset);
         partial void ProcessV1LibraryManagementResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,8 +55,8 @@ namespace G
             string? path = default,
             global::G.FileStatus? status = default,
             global::System.Collections.Generic.IList<string>? label = default,
-            int limit = 1000,
-            int offset = default,
+            int? limit = 1000,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

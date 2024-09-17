@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid runId,
             ref global::System.Guid shareToken,
-            ref bool excludeS3StoredAttributes);
+            ref bool? excludeS3StoredAttributes);
         partial void PrepareReadSharedDatasetRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid runId,
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes);
+            bool? excludeS3StoredAttributes);
         partial void ProcessReadSharedDatasetRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunPublicDatasetSchema> ReadSharedDatasetRunAsync(
             global::System.Guid runId,
             global::System.Guid shareToken,
-            bool excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

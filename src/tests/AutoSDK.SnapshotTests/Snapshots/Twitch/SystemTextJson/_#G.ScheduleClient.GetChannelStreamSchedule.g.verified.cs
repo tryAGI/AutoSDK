@@ -11,18 +11,18 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             global::System.Collections.Generic.IList<string>? id,
-            ref global::System.DateTime startTime,
+            ref global::System.DateTime? startTime,
             ref string? utcOffset,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetChannelStreamScheduleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id,
-            global::System.DateTime startTime,
+            global::System.DateTime? startTime,
             string? utcOffset,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetChannelStreamScheduleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,9 +50,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetChannelStreamScheduleResponse> GetChannelStreamScheduleAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id = default,
-            global::System.DateTime startTime = default,
+            global::System.DateTime? startTime = default,
             string? utcOffset = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

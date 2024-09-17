@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seed")]
-        public double Seed { get; set; }
+        public double? Seed { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps")]
-        public double Steps { get; set; }
+        public double? Steps { get; set; }
 
         /// <summary>
         /// 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("guidance")]
-        public double Guidance { get; set; }
+        public double? Guidance { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval")]
-        public double Interval { get; set; }
+        public double? Interval { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safety_tolerance")]
-        public double SafetyTolerance { get; set; }
+        public double? SafetyTolerance { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

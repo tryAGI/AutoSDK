@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_duration_ms")]
-        public int RunDurationMs { get; set; }
+        public int? RunDurationMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

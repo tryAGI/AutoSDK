@@ -20,7 +20,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminAddNewUserToAccountResponse> AdminAddNewUserToAccountAsync(
             string? token = default,
-            global::System.Guid accountId = default,
+            global::System.Guid? accountId = default,
             string? username = default,
             string? firstName = default,
             string? lastName = default,

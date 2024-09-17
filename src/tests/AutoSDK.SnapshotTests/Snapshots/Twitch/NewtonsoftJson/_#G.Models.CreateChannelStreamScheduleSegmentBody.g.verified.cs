@@ -31,7 +31,7 @@ namespace G
         /// A Boolean value that determines whether the broadcast recurs weekly. Is **true** if the broadcast recurs weekly. Only partners and affiliates may add non-recurring broadcasts.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_recurring")]
-        public bool IsRecurring { get; set; }
+        public bool? IsRecurring { get; set; }
 
         /// <summary>
         /// The ID of the category that best represents the broadcast’s content. To get the category ID, use the [Search Categories](https://dev.twitch.tv/docs/api/reference#search-categories) endpoint.

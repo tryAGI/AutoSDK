@@ -48,7 +48,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double Temperature { get; set; } = 0;
+        public double? Temperature { get; set; } = 0;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

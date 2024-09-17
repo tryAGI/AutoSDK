@@ -9,7 +9,7 @@ namespace G
         partial void PrepareProjectStartProjectExportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? password,
             ref string? email,
             ref string? extension,
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? password,
             string? email,
             string? extension,
@@ -45,7 +45,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartProjectExportJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? password = default,
             string? email = default,
             string? extension = default,

@@ -33,19 +33,19 @@ namespace G
         /// Price of the subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price")]
-        public float Price { get; set; }
+        public float? Price { get; set; }
 
         /// <summary>
         /// Optional timestamp indicating when the subscription was canceled, if applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("canceledAt")]
-        public int CanceledAt { get; set; }
+        public int? CanceledAt { get; set; }
 
         /// <summary>
         /// Optional timestamp indicating when the trial ended, if applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trialEnd")]
-        public int TrialEnd { get; set; }
+        public int? TrialEnd { get; set; }
 
         /// <summary>
         /// Status of the subscription.

@@ -18,10 +18,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListModelsResponse> ListModelsAsync(
-            double pageSize = default,
+            double? pageSize = default,
             string? pageToken = default,
             global::G.CompatibleEndpoint? endpoint = default,
-            bool defaultOnly = default,
+            bool? defaultOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

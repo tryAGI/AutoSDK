@@ -28,7 +28,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_id")]
-        public int TargetId { get; set; }
+        public int? TargetId { get; set; }
 
         /// <summary>
         /// The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.

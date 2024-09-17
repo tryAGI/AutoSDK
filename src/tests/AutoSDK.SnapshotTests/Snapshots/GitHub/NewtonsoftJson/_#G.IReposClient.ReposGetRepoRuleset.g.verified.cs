@@ -21,7 +21,7 @@ namespace G
             string owner,
             string repo,
             int rulesetId,
-            bool includesParents = true,
+            bool? includesParents = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

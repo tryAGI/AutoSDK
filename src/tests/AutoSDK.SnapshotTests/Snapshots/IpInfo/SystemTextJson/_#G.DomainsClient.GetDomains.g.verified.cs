@@ -9,14 +9,14 @@ namespace G
         partial void PrepareGetDomainsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string ip,
-            ref int page,
-            ref int limit);
+            ref int? page,
+            ref int? limit);
         partial void PrepareGetDomainsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string ip,
-            int page,
-            int limit);
+            int? page,
+            int? limit);
         partial void ProcessGetDomainsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DomainsResponse> GetDomainsAsync(
             string ip,
-            int page = default,
-            int limit = 100,
+            int? page = default,
+            int? limit = 100,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

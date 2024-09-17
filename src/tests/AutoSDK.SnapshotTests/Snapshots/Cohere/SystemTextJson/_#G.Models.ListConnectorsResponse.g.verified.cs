@@ -20,7 +20,7 @@ namespace G
         /// Total number of connectors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public double TotalCount { get; set; }
+        public double? TotalCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,13 +25,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("async_run")]
-        public bool AsyncRun { get; set; } = false;
+        public bool? AsyncRun { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wait_for_resources")]
-        public bool WaitForResources { get; set; }
+        public bool? WaitForResources { get; set; }
 
         /// <summary>
         /// 

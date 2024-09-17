@@ -44,7 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        public global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_order")]
-        public int ExecutionOrder { get; set; } = 1;
+        public int? ExecutionOrder { get; set; } = 1;
 
         /// <summary>
         /// 

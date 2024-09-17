@@ -11,16 +11,16 @@ namespace G
             ref string org,
             ref string teamSlug,
             ref global::G.TeamsListMembersInOrgRole? role,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareTeamsListMembersInOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             string teamSlug,
             global::G.TeamsListMembersInOrgRole? role,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessTeamsListMembersInOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,8 +52,8 @@ namespace G
             string org,
             string teamSlug,
             global::G.TeamsListMembersInOrgRole? role = global::G.TeamsListMembersInOrgRole.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

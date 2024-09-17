@@ -14,7 +14,7 @@ namespace G
         /// Example: 56780428
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=

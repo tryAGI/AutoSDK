@@ -10,16 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref string? name);
         partial void PrepareActionsListArtifactsForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             string? name);
         partial void ProcessActionsListArtifactsForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,8 +50,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListArtifactsForRepoResponse> ActionsListArtifactsForRepoAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

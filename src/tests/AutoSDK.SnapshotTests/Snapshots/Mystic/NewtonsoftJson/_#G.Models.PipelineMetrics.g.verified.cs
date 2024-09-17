@@ -43,13 +43,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_run_at")]
-        public global::System.DateTime LastRunAt { get; set; }
+        public global::System.DateTime? LastRunAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_failed_at")]
-        public global::System.DateTime LastFailedAt { get; set; }
+        public global::System.DateTime? LastFailedAt { get; set; }
 
         /// <summary>
         /// 

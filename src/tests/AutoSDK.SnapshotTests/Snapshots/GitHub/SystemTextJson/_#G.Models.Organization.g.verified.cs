@@ -155,7 +155,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool? IsVerified { get; set; }
 
         /// <summary>
         /// 

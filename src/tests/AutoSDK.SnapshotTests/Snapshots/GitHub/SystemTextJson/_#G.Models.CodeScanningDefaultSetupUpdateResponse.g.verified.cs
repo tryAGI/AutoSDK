@@ -14,7 +14,7 @@ namespace G
         /// ID of the corresponding run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        public int RunId { get; set; }
+        public int? RunId { get; set; }
 
         /// <summary>
         /// URL of the corresponding run.

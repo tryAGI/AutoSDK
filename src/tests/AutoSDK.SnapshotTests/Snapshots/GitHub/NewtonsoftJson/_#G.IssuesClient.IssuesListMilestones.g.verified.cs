@@ -13,8 +13,8 @@ namespace G
             ref global::G.IssuesListMilestonesState? state,
             ref global::G.IssuesListMilestonesSort? sort,
             ref global::G.IssuesListMilestonesDirection? direction,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareIssuesListMilestonesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,8 +23,8 @@ namespace G
             global::G.IssuesListMilestonesState? state,
             global::G.IssuesListMilestonesSort? sort,
             global::G.IssuesListMilestonesDirection? direction,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessIssuesListMilestonesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,8 +63,8 @@ namespace G
             global::G.IssuesListMilestonesState? state = global::G.IssuesListMilestonesState.Open,
             global::G.IssuesListMilestonesSort? sort = global::G.IssuesListMilestonesSort.DueOn,
             global::G.IssuesListMilestonesDirection? direction = global::G.IssuesListMilestonesDirection.Asc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

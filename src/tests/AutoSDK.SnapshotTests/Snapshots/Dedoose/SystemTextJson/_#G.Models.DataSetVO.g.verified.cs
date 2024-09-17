@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdById")]
-        public global::System.Guid CreatedById { get; set; }
+        public global::System.Guid? CreatedById { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createStamp")]
-        public global::System.DateTime CreateStamp { get; set; }
+        public global::System.DateTime? CreateStamp { get; set; }
 
         /// <summary>
         /// 
@@ -61,31 +61,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("areExcerptsFiltered")]
-        public bool AreExcerptsFiltered { get; set; }
+        public bool? AreExcerptsFiltered { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("areResourcesFiltered")]
-        public bool AreResourcesFiltered { get; set; }
+        public bool? AreResourcesFiltered { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("areTagsFiltered")]
-        public bool AreTagsFiltered { get; set; }
+        public bool? AreTagsFiltered { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("areUsersFiltered")]
-        public bool AreUsersFiltered { get; set; }
+        public bool? AreUsersFiltered { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("areDescriptorsFiltered")]
-        public bool AreDescriptorsFiltered { get; set; }
+        public bool? AreDescriptorsFiltered { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

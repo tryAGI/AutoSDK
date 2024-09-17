@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verified")]
-        public bool Verified { get; set; }
+        public bool? Verified { get; set; }
 
         /// <summary>
         /// 

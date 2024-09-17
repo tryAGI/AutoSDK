@@ -262,7 +262,7 @@ public readonly record struct TypeData(
         };
 
         return context.Schema.Nullable ||
-               reference && !context.IsRequired && additionalContext?.IsRequired != true
+               !context.IsRequired && additionalContext?.IsRequired != true
             ? type + "?"
             : type;
     }

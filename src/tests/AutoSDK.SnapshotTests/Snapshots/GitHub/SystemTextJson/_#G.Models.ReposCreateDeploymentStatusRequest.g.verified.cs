@@ -51,7 +51,7 @@ namespace G
         /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_inactive")]
-        public bool AutoInactive { get; set; }
+        public bool? AutoInactive { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
             string owner,
             string repo,
             global::G.ReposListActivitiesDirection? direction = global::G.ReposListActivitiesDirection.Desc,
-            int perPage = 30,
+            int? perPage = 30,
             string? before = default,
             string? after = default,
             string? @ref = default,

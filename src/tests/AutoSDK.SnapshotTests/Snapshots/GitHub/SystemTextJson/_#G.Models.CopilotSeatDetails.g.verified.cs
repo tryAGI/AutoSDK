@@ -55,7 +55,7 @@ namespace G
         /// Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

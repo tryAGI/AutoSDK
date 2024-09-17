@@ -43,7 +43,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
-        public int RequiredApprovingReviewCount { get; set; }
+        public int? RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
         /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
@@ -51,7 +51,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
-        public bool RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

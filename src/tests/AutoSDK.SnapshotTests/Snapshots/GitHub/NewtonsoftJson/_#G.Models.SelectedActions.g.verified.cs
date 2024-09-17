@@ -13,13 +13,13 @@ namespace G
         /// Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("github_owned_allowed")]
-        public bool GithubOwnedAllowed { get; set; }
+        public bool? GithubOwnedAllowed { get; set; }
 
         /// <summary>
         /// Whether actions from GitHub Marketplace verified creators are allowed. Set to `true` to allow all actions by GitHub Marketplace verified creators.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verified_allowed")]
-        public bool VerifiedAllowed { get; set; }
+        public bool? VerifiedAllowed { get; set; }
 
         /// <summary>
         /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.<br/>

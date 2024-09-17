@@ -13,7 +13,7 @@ namespace G
         /// **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invitee_id")]
-        public int InviteeId { get; set; }
+        public int? InviteeId { get; set; }
 
         /// <summary>
         /// **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.

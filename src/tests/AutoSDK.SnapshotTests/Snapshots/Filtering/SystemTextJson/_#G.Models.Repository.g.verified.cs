@@ -453,7 +453,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool IsTemplate { get; set; } = false;
+        public bool? IsTemplate { get; set; } = false;
 
         /// <summary>
         /// 
@@ -510,7 +510,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
-        public bool HasDiscussions { get; set; } = false;
+        public bool? HasDiscussions { get; set; } = false;
 
         /// <summary>
         /// Whether the repository is archived.<br/>
@@ -561,7 +561,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
         /// 
@@ -575,7 +575,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; } = true;
 
         /// <summary>
         /// Whether to allow Auto-merge to be used on pull requests.<br/>
@@ -583,7 +583,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to delete head branches when pull requests are merged<br/>
@@ -591,7 +591,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; } = false;
 
         /// <summary>
         /// Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.<br/>
@@ -599,7 +599,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; } = false;
+        public bool? AllowUpdateBranch { get; set; } = false;
 
         /// <summary>
         /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.<br/>
@@ -607,7 +607,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_squash_pr_title_as_default")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public bool UseSquashPrTitleAsDefault { get; set; } = false;
+        public bool? UseSquashPrTitleAsDefault { get; set; } = false;
 
         /// <summary>
         /// The default value for a squash merge commit title:<br/>
@@ -653,20 +653,20 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; } = true;
 
         /// <summary>
         /// Whether to allow forking this repo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Whether to require contributors to sign off on web-based commits<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; } = false;
+        public bool? WebCommitSignoffRequired { get; set; } = false;
 
         /// <summary>
         /// 
@@ -698,7 +698,7 @@ namespace G
         /// Whether anonymous git access is enabled for this repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anonymous_access_enabled")]
-        public bool AnonymousAccessEnabled { get; set; }
+        public bool? AnonymousAccessEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

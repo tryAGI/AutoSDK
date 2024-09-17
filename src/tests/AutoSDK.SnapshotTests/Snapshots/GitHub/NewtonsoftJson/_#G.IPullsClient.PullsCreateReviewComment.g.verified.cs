@@ -85,10 +85,10 @@ namespace G
             string commitId,
             string path,
             global::G.PullsCreateReviewCommentRequestSide? side = default,
-            int line = default,
-            int startLine = default,
+            int? line = default,
+            int? startLine = default,
             global::G.PullsCreateReviewCommentRequestStartSide? startSide = default,
-            int inReplyTo = default,
+            int? inReplyTo = default,
             global::G.PullsCreateReviewCommentRequestSubjectType? subjectType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

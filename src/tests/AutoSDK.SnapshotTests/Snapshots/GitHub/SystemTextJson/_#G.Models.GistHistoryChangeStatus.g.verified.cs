@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public int? Total { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additions")]
-        public int Additions { get; set; }
+        public int? Additions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deletions")]
-        public int Deletions { get; set; }
+        public int? Deletions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

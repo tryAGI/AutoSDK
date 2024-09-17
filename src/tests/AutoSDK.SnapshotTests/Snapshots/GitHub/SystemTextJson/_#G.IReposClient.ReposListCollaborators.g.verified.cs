@@ -32,8 +32,8 @@ namespace G
             string repo,
             global::G.ReposListCollaboratorsAffiliation? affiliation = global::G.ReposListCollaboratorsAffiliation.All,
             global::G.ReposListCollaboratorsPermission? permission = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

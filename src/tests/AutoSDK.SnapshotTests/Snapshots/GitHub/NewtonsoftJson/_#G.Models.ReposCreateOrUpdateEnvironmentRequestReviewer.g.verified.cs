@@ -21,7 +21,7 @@ namespace G
         /// Example: 4532992
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

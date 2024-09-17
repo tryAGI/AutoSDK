@@ -17,7 +17,7 @@ namespace G
         /// the token was used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastUseTime")]
-        public global::System.DateTime LastUseTime { get; set; }
+        public global::System.DateTime? LastUseTime { get; set; }
 
         /// <summary>
         /// The name of the token, define by its ID.<br/>
@@ -46,13 +46,13 @@ namespace G
         /// Creation time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createTime")]
-        public global::System.DateTime CreateTime { get; set; }
+        public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// Update time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updateTime")]
-        public global::System.DateTime UpdateTime { get; set; }
+        public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// An opaque access token representing the API token string.<br/>
@@ -79,13 +79,13 @@ namespace G
         /// The time-to-live in seconds for this resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
-        public int Ttl { get; set; }
+        public int? Ttl { get; set; }
 
         /// <summary>
         /// Expiration time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expireTime")]
-        public global::System.DateTime ExpireTime { get; set; }
+        public global::System.DateTime? ExpireTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

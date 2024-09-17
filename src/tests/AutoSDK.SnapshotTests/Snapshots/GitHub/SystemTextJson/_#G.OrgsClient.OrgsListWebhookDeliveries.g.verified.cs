@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
             ref int hookId,
-            ref int perPage,
+            ref int? perPage,
             ref string? cursor,
-            ref bool redelivery);
+            ref bool? redelivery);
         partial void PrepareOrgsListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             int hookId,
-            int perPage,
+            int? perPage,
             string? cursor,
-            bool redelivery);
+            bool? redelivery);
         partial void ProcessOrgsListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,9 +49,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>> OrgsListWebhookDeliveriesAsync(
             string org,
             int hookId,
-            int perPage = 30,
+            int? perPage = 30,
             string? cursor = default,
-            bool redelivery = default,
+            bool? redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

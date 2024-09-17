@@ -34,7 +34,7 @@ namespace G
             global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort? sort = global::G.SecurityAdvisoriesListRepositoryAdvisoriesSort.Created,
             string? before = default,
             string? after = default,
-            int perPage = 30,
+            int? perPage = 30,
             global::G.SecurityAdvisoriesListRepositoryAdvisoriesState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -49,7 +49,7 @@ namespace G
             string teamSlug,
             string title,
             string body,
-            bool @private = false,
+            bool? @private = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

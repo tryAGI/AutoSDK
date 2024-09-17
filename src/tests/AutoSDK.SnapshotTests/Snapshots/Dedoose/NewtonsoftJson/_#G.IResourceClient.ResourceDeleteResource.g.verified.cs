@@ -27,19 +27,19 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Resource> ResourceDeleteResourceAsync(
             string? token = default,
-            global::System.Guid currentProjectId = default,
+            global::System.Guid? currentProjectId = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
             string? title = default,
             string? description = default,
-            int type = default,
+            int? type = default,
             string? dataPath = default,
-            int length = default,
-            global::System.DateTime createStamp = default,
-            global::System.Guid createByUserIDL = default,
-            bool isDataLocked = default,
+            int? length = default,
+            global::System.DateTime? createStamp = default,
+            global::System.Guid? createByUserIDL = default,
+            bool? isDataLocked = default,
             string? metaData = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

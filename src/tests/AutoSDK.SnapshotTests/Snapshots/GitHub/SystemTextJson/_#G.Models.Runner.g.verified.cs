@@ -22,7 +22,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_id")]
-        public int RunnerGroupId { get; set; }
+        public int? RunnerGroupId { get; set; }
 
         /// <summary>
         /// The name of the runner.<br/>

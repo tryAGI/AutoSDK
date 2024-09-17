@@ -12,24 +12,24 @@ namespace G
             ref string? broadcasterId,
             ref string? gameId,
             global::System.Collections.Generic.IList<string>? id,
-            ref global::System.DateTime startedAt,
-            ref global::System.DateTime endedAt,
-            ref int first,
+            ref global::System.DateTime? startedAt,
+            ref global::System.DateTime? endedAt,
+            ref int? first,
             ref string? before,
             ref string? after,
-            ref bool isFeatured);
+            ref bool? isFeatured);
         partial void PrepareGetClipsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? broadcasterId,
             string? gameId,
             global::System.Collections.Generic.IList<string>? id,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
-            int first,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? endedAt,
+            int? first,
             string? before,
             string? after,
-            bool isFeatured);
+            bool? isFeatured);
         partial void ProcessGetClipsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,12 +62,12 @@ namespace G
             string? broadcasterId = default,
             string? gameId = default,
             global::System.Collections.Generic.IList<string>? id = default,
-            global::System.DateTime startedAt = default,
-            global::System.DateTime endedAt = default,
-            int first = default,
+            global::System.DateTime? startedAt = default,
+            global::System.DateTime? endedAt = default,
+            int? first = default,
             string? before = default,
             string? after = default,
-            bool isFeatured = default,
+            bool? isFeatured = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

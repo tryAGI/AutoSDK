@@ -13,7 +13,7 @@ namespace G
             ref string status,
             ref string? userId,
             ref string? after,
-            ref int first);
+            ref int? first);
         partial void PrepareGetUnbanRequestsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             string status,
             string? userId,
             string? after,
-            int first);
+            int? first);
         partial void ProcessGetUnbanRequestsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,7 +53,7 @@ namespace G
             string status,
             string? userId = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

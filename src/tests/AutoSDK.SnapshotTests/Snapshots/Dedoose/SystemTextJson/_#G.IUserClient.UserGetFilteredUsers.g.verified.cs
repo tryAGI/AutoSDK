@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserGetFilteredUsersResponse> UserGetFilteredUsersAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? filter = default,
-            int maxResults = default,
+            int? maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

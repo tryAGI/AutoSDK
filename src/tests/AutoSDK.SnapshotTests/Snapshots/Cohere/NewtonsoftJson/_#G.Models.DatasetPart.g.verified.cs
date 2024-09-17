@@ -31,19 +31,19 @@ namespace G
         /// The index of the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
-        public int Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// The size of the file in bytes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_bytes")]
-        public int SizeBytes { get; set; }
+        public int? SizeBytes { get; set; }
 
         /// <summary>
         /// The number of rows in the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_rows")]
-        public int NumRows { get; set; }
+        public int? NumRows { get; set; }
 
         /// <summary>
         /// The download url of the original file

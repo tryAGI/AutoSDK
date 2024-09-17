@@ -9,13 +9,13 @@ namespace G
         partial void PrepareListProjectApiKeysArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
-            ref int limit,
+            ref int? limit,
             ref string? after);
         partial void PrepareListProjectApiKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
-            int limit,
+            int? limit,
             string? after);
         partial void ProcessListProjectApiKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,7 +38,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectApiKeyListResponse> ListProjectApiKeysAsync(
             string projectId,
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

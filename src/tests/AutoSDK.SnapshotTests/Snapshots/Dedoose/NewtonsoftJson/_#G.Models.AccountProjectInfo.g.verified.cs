@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -25,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audioHours")]
-        public double AudioHours { get; set; }
+        public double? AudioHours { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("videoHours")]
-        public double VideoHours { get; set; }
+        public double? VideoHours { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("monthlyDataCost")]
-        public double MonthlyDataCost { get; set; }
+        public double? MonthlyDataCost { get; set; }
 
         /// <summary>
         /// 

@@ -11,8 +11,8 @@ namespace G
             ref string owner,
             ref string repo,
             ref int alertNumber,
-            ref int page,
-            ref int perPage,
+            ref int? page,
+            ref int? perPage,
             ref string? @ref);
         partial void PrepareCodeScanningListAlertInstancesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
-            int page,
-            int perPage,
+            int? page,
+            int? perPage,
             string? @ref);
         partial void ProcessCodeScanningListAlertInstancesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,8 +58,8 @@ namespace G
             string owner,
             string repo,
             int alertNumber,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             string? @ref = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

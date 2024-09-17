@@ -18,8 +18,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ResourceAddVideoResourceAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             string? title = default,
             string? description = default,
             string? videoUploadURL = default,

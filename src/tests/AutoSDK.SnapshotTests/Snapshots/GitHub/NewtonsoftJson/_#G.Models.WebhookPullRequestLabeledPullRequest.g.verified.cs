@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("additions")]
-        public int Additions { get; set; }
+        public int? Additions { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changed_files")]
-        public int ChangedFiles { get; set; }
+        public int? ChangedFiles { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
-        public int Comments { get; set; }
+        public int? Comments { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commits")]
-        public int Commits { get; set; }
+        public int? Commits { get; set; }
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deletions")]
-        public int Deletions { get; set; }
+        public int? Deletions { get; set; }
 
         /// <summary>
         /// 
@@ -165,7 +165,7 @@ namespace G
         /// Indicates whether maintainers can modify the pull request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maintainer_can_modify")]
-        public bool MaintainerCanModify { get; set; }
+        public bool? MaintainerCanModify { get; set; }
 
         /// <summary>
         /// 
@@ -255,7 +255,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_comments")]
-        public int ReviewComments { get; set; }
+        public int? ReviewComments { get; set; }
 
         /// <summary>
         /// 

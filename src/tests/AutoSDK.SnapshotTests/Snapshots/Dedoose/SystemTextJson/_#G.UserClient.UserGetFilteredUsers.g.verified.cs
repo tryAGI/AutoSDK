@@ -9,16 +9,16 @@ namespace G
         partial void PrepareUserGetFilteredUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? filter,
-            ref int maxResults);
+            ref int? maxResults);
         partial void PrepareUserGetFilteredUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? filter,
-            int maxResults);
+            int? maxResults);
         partial void ProcessUserGetFilteredUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserGetFilteredUsersResponse> UserGetFilteredUsersAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? filter = default,
-            int maxResults = default,
+            int? maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

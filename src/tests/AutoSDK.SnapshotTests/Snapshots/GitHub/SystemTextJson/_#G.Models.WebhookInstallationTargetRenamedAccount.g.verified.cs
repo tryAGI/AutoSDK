@@ -44,7 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("followers")]
-        public int Followers { get; set; }
+        public int? Followers { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("following")]
-        public int Following { get; set; }
+        public int? Following { get; set; }
 
         /// <summary>
         /// 
@@ -80,13 +80,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_organization_projects")]
-        public bool HasOrganizationProjects { get; set; }
+        public bool? HasOrganizationProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_repository_projects")]
-        public bool HasRepositoryProjects { get; set; }
+        public bool? HasRepositoryProjects { get; set; }
 
         /// <summary>
         /// 
@@ -112,7 +112,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool? IsVerified { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_gists")]
-        public int PublicGists { get; set; }
+        public int? PublicGists { get; set; }
 
         /// <summary>
         /// 
@@ -167,7 +167,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_repos")]
-        public int PublicRepos { get; set; }
+        public int? PublicRepos { get; set; }
 
         /// <summary>
         /// 
@@ -185,7 +185,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
 
         /// <summary>
         /// 

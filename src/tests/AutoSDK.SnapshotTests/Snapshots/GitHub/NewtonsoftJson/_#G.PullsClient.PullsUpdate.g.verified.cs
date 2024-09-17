@@ -158,7 +158,7 @@ namespace G
             string? body = default,
             global::G.PullsUpdateRequestState? state = default,
             string? @base = default,
-            bool maintainerCanModify = default,
+            bool? maintainerCanModify = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PullsUpdateRequest

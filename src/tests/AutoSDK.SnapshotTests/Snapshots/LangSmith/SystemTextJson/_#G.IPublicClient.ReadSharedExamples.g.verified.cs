@@ -33,8 +33,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::G.AnyOf<string, object>? metadata = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
             global::G.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);

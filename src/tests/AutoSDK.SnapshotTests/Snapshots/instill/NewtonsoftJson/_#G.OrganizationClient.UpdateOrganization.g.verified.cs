@@ -146,8 +146,8 @@ namespace G
             string? name = default,
             string? uid = default,
             string? id = default,
-            global::System.DateTime createTime = default,
-            global::System.DateTime updateTime = default,
+            global::System.DateTime? createTime = default,
+            global::System.DateTime? updateTime = default,
             global::G.AllOf<global::G.User9>? owner = default,
             global::G.AllOf<global::G.Permission2>? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default)

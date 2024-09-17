@@ -48,13 +48,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::System.DateTime ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
-        public global::System.DateTime LastUsed { get; set; }
+        public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// 

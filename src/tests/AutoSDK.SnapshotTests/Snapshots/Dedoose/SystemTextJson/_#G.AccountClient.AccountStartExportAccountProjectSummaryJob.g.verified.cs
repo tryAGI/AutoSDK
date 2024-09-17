@@ -9,12 +9,12 @@ namespace G
         partial void PrepareAccountStartExportAccountProjectSummaryJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid accountId);
+            ref global::System.Guid? accountId);
         partial void PrepareAccountStartExportAccountProjectSummaryJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid accountId);
+            global::System.Guid? accountId);
         partial void ProcessAccountStartExportAccountProjectSummaryJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> AccountStartExportAccountProjectSummaryJobAsync(
             string? token = default,
-            global::System.Guid accountId = default,
+            global::System.Guid? accountId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

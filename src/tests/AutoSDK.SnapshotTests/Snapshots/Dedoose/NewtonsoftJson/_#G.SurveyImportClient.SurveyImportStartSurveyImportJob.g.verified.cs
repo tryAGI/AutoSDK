@@ -9,14 +9,14 @@ namespace G
         partial void PrepareSurveyImportStartSurveyImportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? surveyUploadedFileURL,
             ref string? encryptedSymKey);
         partial void PrepareSurveyImportStartSurveyImportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? surveyUploadedFileURL,
             string? encryptedSymKey);
         partial void ProcessSurveyImportStartSurveyImportJobResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> SurveyImportStartSurveyImportJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? surveyUploadedFileURL = default,
             string? encryptedSymKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

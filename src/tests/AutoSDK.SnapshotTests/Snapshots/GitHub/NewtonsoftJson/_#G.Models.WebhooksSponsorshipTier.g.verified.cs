@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_custom_ammount")]
-        public bool IsCustomAmmount { get; set; }
+        public bool? IsCustomAmmount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_custom_amount")]
-        public bool IsCustomAmount { get; set; }
+        public bool? IsCustomAmount { get; set; }
 
         /// <summary>
         /// 

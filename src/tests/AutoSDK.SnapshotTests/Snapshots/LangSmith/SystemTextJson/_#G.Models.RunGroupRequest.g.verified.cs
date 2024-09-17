@@ -50,13 +50,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int Offset { get; set; } = 0;
+        public int? Offset { get; set; } = 0;
 
         /// <summary>
         /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int Limit { get; set; } = 10;
+        public int? Limit { get; set; } = 10;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

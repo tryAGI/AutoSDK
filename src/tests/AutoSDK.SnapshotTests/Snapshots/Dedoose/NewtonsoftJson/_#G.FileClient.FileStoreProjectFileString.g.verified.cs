@@ -9,16 +9,16 @@ namespace G
         partial void PrepareFileStoreProjectFileStringArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref int fileStorageType,
+            ref global::System.Guid? projectId,
+            ref int? fileStorageType,
             ref string? extension,
             ref string? text);
         partial void PrepareFileStoreProjectFileStringRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            int fileStorageType,
+            global::System.Guid? projectId,
+            int? fileStorageType,
             string? extension,
             string? text);
         partial void ProcessFileStoreProjectFileStringResponse(
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> FileStoreProjectFileStringAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int fileStorageType = default,
+            global::System.Guid? projectId = default,
+            int? fileStorageType = default,
             string? extension = default,
             string? text = default,
             global::System.Threading.CancellationToken cancellationToken = default)

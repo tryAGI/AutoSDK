@@ -9,30 +9,30 @@ namespace G
         partial void PrepareMemoLinkObjectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid memoId,
-            ref global::System.Guid id1,
-            ref int position1,
-            ref global::System.Guid id2,
-            ref int position2,
-            ref global::System.Guid id3,
-            ref int position3,
-            ref global::System.Guid id4,
-            ref int position4);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? memoId,
+            ref global::System.Guid? id1,
+            ref int? position1,
+            ref global::System.Guid? id2,
+            ref int? position2,
+            ref global::System.Guid? id3,
+            ref int? position3,
+            ref global::System.Guid? id4,
+            ref int? position4);
         partial void PrepareMemoLinkObjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid memoId,
-            global::System.Guid id1,
-            int position1,
-            global::System.Guid id2,
-            int position2,
-            global::System.Guid id3,
-            int position3,
-            global::System.Guid id4,
-            int position4);
+            global::System.Guid? projectId,
+            global::System.Guid? memoId,
+            global::System.Guid? id1,
+            int? position1,
+            global::System.Guid? id2,
+            int? position2,
+            global::System.Guid? id3,
+            int? position3,
+            global::System.Guid? id4,
+            int? position4);
         partial void ProcessMemoLinkObjectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,16 +60,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoLinkObjectResponse> MemoLinkObjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid memoId = default,
-            global::System.Guid id1 = default,
-            int position1 = default,
-            global::System.Guid id2 = default,
-            int position2 = default,
-            global::System.Guid id3 = default,
-            int position3 = default,
-            global::System.Guid id4 = default,
-            int position4 = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? memoId = default,
+            global::System.Guid? id1 = default,
+            int? position1 = default,
+            global::System.Guid? id2 = default,
+            int? position2 = default,
+            global::System.Guid? id3 = default,
+            int? position3 = default,
+            global::System.Guid? id4 = default,
+            int? position4 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

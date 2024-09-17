@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareActionsListRepoOrganizationVariablesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessActionsListRepoOrganizationVariablesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,8 +47,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListRepoOrganizationVariablesResponse> ActionsListRepoOrganizationVariablesAsync(
             string owner,
             string repo,
-            int perPage = 10,
-            int page = 1,
+            int? perPage = 10,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

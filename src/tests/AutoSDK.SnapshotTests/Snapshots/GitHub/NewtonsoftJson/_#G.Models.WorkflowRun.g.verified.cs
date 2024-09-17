@@ -34,7 +34,7 @@ namespace G
         /// Example: 42
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("check_suite_id")]
-        public int CheckSuiteId { get; set; }
+        public int? CheckSuiteId { get; set; }
 
         /// <summary>
         /// The node ID of the associated check suite.<br/>
@@ -75,7 +75,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_attempt")]
-        public int RunAttempt { get; set; }
+        public int? RunAttempt { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace G
         /// The start time of the latest run. Resets on re-run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_started_at")]
-        public global::System.DateTime RunStartedAt { get; set; }
+        public global::System.DateTime? RunStartedAt { get; set; }
 
         /// <summary>
         /// The URL to the jobs for the workflow run.<br/>
@@ -235,7 +235,7 @@ namespace G
         /// Example: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository_id")]
-        public int HeadRepositoryId { get; set; }
+        public int? HeadRepositoryId { get; set; }
 
         /// <summary>
         /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.<br/>

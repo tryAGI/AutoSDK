@@ -11,7 +11,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
             ref string catalogId,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             global::System.Collections.Generic.IList<string>? filterFileUids);
         partial void PrepareListCatalogFilesRequest(
@@ -19,7 +19,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string namespaceId,
             string catalogId,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             global::System.Collections.Generic.IList<string>? filterFileUids);
         partial void ProcessListCatalogFilesResponse(
@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListCatalogFilesResponse> ListCatalogFilesAsync(
             string namespaceId,
             string catalogId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? filterFileUids = default,
             global::System.Threading.CancellationToken cancellationToken = default)

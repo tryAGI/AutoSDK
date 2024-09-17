@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isComplete")]
-        public bool IsComplete { get; set; }
+        public bool? IsComplete { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exceptionCount")]
-        public int ExceptionCount { get; set; }
+        public int? ExceptionCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

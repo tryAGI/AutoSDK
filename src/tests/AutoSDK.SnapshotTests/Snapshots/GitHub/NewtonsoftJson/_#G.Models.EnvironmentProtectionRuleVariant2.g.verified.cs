@@ -26,7 +26,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prevent_self_review")]
-        public bool PreventSelfReview { get; set; }
+        public bool? PreventSelfReview { get; set; }
 
         /// <summary>
         /// Example: required_reviewers

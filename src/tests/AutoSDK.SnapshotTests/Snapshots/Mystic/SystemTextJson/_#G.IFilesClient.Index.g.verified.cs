@@ -18,8 +18,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaginatedAny> IndexAsync(
-            int skip = 0,
-            int limit = 20,
+            int? skip = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

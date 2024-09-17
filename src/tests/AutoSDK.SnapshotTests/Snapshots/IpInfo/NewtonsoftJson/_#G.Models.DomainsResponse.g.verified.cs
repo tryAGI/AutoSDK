@@ -19,7 +19,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("page")]
-        public int Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// Example: 17939

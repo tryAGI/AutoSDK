@@ -41,7 +41,7 @@ namespace G
         /// The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at")]
-        public global::System.DateTime StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.
@@ -54,7 +54,7 @@ namespace G
         /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validate")]
-        public bool Validate { get; set; }
+        public bool? Validate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

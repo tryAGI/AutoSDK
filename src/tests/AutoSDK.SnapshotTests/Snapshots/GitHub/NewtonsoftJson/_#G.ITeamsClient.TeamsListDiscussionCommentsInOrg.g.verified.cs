@@ -30,8 +30,8 @@ namespace G
             string teamSlug,
             int discussionNumber,
             global::G.TeamsListDiscussionCommentsInOrgDirection? direction = global::G.TeamsListDiscussionCommentsInOrgDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("submitted_at")]
-        public global::System.DateTime SubmittedAt { get; set; }
+        public global::System.DateTime? SubmittedAt { get; set; }
 
         /// <summary>
         /// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.<br/>

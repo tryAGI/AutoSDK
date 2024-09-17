@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("defaultEpoch")]
-        public int DefaultEpoch { get; set; }
+        public int? DefaultEpoch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

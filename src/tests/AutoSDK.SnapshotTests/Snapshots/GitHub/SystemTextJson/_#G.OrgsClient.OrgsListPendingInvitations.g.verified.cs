@@ -9,16 +9,16 @@ namespace G
         partial void PrepareOrgsListPendingInvitationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref global::G.OrgsListPendingInvitationsRole? role,
             ref global::G.OrgsListPendingInvitationsInvitationSource? invitationSource);
         partial void PrepareOrgsListPendingInvitationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             global::G.OrgsListPendingInvitationsRole? role,
             global::G.OrgsListPendingInvitationsInvitationSource? invitationSource);
         partial void ProcessOrgsListPendingInvitationsResponse(
@@ -51,8 +51,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>> OrgsListPendingInvitationsAsync(
             string org,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::G.OrgsListPendingInvitationsRole? role = global::G.OrgsListPendingInvitationsRole.All,
             global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = global::G.OrgsListPendingInvitationsInvitationSource.All,
             global::System.Threading.CancellationToken cancellationToken = default)

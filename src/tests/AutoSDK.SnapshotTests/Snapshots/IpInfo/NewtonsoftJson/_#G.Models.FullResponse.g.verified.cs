@@ -19,7 +19,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bogon")]
-        public bool Bogon { get; set; }
+        public bool? Bogon { get; set; }
 
         /// <summary>
         /// Example: ip-66-87-125-72.spfdma.spcsdns.net

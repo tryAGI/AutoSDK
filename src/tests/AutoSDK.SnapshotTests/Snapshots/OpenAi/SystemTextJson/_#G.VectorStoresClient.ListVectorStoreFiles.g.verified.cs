@@ -9,7 +9,7 @@ namespace G
         partial void PrepareListVectorStoreFilesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string vectorStoreId,
-            ref int limit,
+            ref int? limit,
             ref global::G.ListVectorStoreFilesOrder? order,
             ref string? after,
             ref string? before,
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vectorStoreId,
-            int limit,
+            int? limit,
             global::G.ListVectorStoreFilesOrder? order,
             string? after,
             string? before,
@@ -49,7 +49,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListVectorStoreFilesOrder? order = global::G.ListVectorStoreFilesOrder.Desc,
             string? after = default,
             string? before = default,

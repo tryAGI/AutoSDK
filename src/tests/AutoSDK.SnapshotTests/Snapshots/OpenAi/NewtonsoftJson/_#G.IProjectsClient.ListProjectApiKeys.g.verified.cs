@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectApiKeyListResponse> ListProjectApiKeysAsync(
             string projectId,
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

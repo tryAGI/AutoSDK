@@ -17,8 +17,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DescriptorStartGetDesDataFromFileJobResponse> DescriptorStartGetDesDataFromFileJobAsync(
             string? token = default,
             string? localFileURL = default,
-            global::System.Guid setId = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? setId = default,
+            global::System.Guid? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

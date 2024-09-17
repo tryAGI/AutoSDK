@@ -21,13 +21,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
-        public double LearningRate { get; set; }
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_epochs")]
-        public int NumEpochs { get; set; }
+        public int? NumEpochs { get; set; }
 
         /// <summary>
         /// 

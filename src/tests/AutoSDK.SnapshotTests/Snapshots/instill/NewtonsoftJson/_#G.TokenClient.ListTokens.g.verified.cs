@@ -8,12 +8,12 @@ namespace G
     {
         partial void PrepareListTokensArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken);
         partial void PrepareListTokensRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int pageSize,
+            int? pageSize,
             string? pageToken);
         partial void ProcessListTokensResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListTokensResponse> ListTokensAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

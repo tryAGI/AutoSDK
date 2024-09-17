@@ -59,11 +59,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateChannelStreamScheduleSegmentResponse> UpdateChannelStreamScheduleSegmentAsync(
             string broadcasterId,
             string id,
-            global::System.DateTime startTime = default,
+            global::System.DateTime? startTime = default,
             string? duration = default,
             string? categoryId = default,
             string? title = default,
-            bool isCanceled = default,
+            bool? isCanceled = default,
             string? timezone = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

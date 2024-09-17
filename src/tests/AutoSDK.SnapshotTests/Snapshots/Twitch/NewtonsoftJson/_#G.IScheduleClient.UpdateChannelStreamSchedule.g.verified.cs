@@ -20,9 +20,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task UpdateChannelStreamScheduleAsync(
             string broadcasterId,
-            bool isVacationEnabled = default,
-            global::System.DateTime vacationStartTime = default,
-            global::System.DateTime vacationEndTime = default,
+            bool? isVacationEnabled = default,
+            global::System.DateTime? vacationStartTime = default,
+            global::System.DateTime? vacationEndTime = default,
             string? timezone = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

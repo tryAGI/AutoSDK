@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
             ref global::G.OrgsListOutsideCollaboratorsFilter? filter,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareOrgsListOutsideCollaboratorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             global::G.OrgsListOutsideCollaboratorsFilter? filter,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessOrgsListOutsideCollaboratorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,8 +47,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> OrgsListOutsideCollaboratorsAsync(
             string org,
             global::G.OrgsListOutsideCollaboratorsFilter? filter = global::G.OrgsListOutsideCollaboratorsFilter.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

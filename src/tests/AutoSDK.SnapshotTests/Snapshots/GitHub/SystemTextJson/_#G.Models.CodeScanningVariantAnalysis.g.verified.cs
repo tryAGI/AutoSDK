@@ -49,13 +49,13 @@ namespace G
         /// The date and time at which the variant analysis was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The date and time at which the variant analysis was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
@@ -75,7 +75,7 @@ namespace G
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions_workflow_run_id")]
-        public int ActionsWorkflowRunId { get; set; }
+        public int? ActionsWorkflowRunId { get; set; }
 
         /// <summary>
         /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.

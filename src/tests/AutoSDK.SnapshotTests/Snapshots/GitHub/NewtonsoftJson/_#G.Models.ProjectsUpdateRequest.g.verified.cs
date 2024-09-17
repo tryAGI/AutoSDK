@@ -40,7 +40,7 @@ namespace G
         /// Whether or not this project can be seen by everyone.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

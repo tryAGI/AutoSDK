@@ -254,31 +254,31 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_gists")]
-        public int PrivateGists { get; set; }
+        public int? PrivateGists { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_private_repos")]
-        public int TotalPrivateRepos { get; set; }
+        public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_private_repos")]
-        public int OwnedPrivateRepos { get; set; }
+        public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage")]
-        public int DiskUsage { get; set; }
+        public int? DiskUsage { get; set; }
 
         /// <summary>
         /// Example: 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborators")]
-        public int Collaborators { get; set; }
+        public int? Collaborators { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

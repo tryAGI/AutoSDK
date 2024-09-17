@@ -10,16 +10,16 @@ namespace G
         partial void PrepareDescriptorStartExportDescriptorsJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid setId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? setId,
             global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
             ref string? fileExtension);
         partial void PrepareDescriptorStartExportDescriptorsJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid setId,
+            global::System.Guid? projectId,
+            global::System.Guid? setId,
             global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds,
             string? fileExtension);
         partial void ProcessDescriptorStartExportDescriptorsJobResponse(
@@ -43,8 +43,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> DescriptorStartExportDescriptorsJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid setId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? setId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? descriptorIds = default,
             string? fileExtension = default,
             global::System.Threading.CancellationToken cancellationToken = default)

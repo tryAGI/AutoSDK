@@ -9,13 +9,13 @@ namespace G
         partial void PrepareReadTracerSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref bool includeStats,
+            ref bool? includeStats,
             ref global::G.AnyOf<string, object>? accept);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            bool includeStats,
+            bool? includeStats,
             global::G.AnyOf<string, object>? accept);
         partial void ProcessReadTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
-            bool includeStats = false,
+            bool? includeStats = false,
             global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

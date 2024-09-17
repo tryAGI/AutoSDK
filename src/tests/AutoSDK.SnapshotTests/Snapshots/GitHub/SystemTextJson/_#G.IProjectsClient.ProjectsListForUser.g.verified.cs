@@ -24,8 +24,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForUserAsync(
             string username,
             global::G.ProjectsListForUserState? state = global::G.ProjectsListForUserState.Open,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

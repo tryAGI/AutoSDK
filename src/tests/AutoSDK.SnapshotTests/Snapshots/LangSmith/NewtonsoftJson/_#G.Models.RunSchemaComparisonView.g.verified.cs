@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_order")]
-        public int ExecutionOrder { get; set; } = 1;
+        public int? ExecutionOrder { get; set; } = 1;
 
         /// <summary>
         /// 

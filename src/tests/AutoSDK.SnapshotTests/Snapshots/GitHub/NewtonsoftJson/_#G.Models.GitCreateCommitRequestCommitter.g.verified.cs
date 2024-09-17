@@ -25,7 +25,7 @@ namespace G
         /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date")]
-        public global::System.DateTime Date { get; set; }
+        public global::System.DateTime? Date { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

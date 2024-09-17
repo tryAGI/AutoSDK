@@ -23,8 +23,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForAuthenticatedUserAsync(
             global::G.PackagesListPackagesForAuthenticatedUserPackageType packageType,
             global::G.PackagesListPackagesForAuthenticatedUserVisibility? visibility = default,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

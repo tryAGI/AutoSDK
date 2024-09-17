@@ -55,7 +55,7 @@ namespace G
         /// The new hiring availability of the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hireable")]
-        public bool Hireable { get; set; }
+        public bool? Hireable { get; set; }
 
         /// <summary>
         /// The new short biography of the user.

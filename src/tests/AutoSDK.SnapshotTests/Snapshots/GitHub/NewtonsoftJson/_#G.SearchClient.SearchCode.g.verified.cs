@@ -11,16 +11,16 @@ namespace G
             ref string q,
             ref global::G.SearchCodeSort? sort,
             ref global::G.SearchCodeOrder? order,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareSearchCodeRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
             global::G.SearchCodeSort? sort,
             global::G.SearchCodeOrder? order,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessSearchCodeResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,8 +62,8 @@ namespace G
             string q,
             global::G.SearchCodeSort? sort = default,
             global::G.SearchCodeOrder? order = global::G.SearchCodeOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

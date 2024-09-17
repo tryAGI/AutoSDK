@@ -33,8 +33,8 @@ namespace G
             string org,
             string? since = default,
             string? until = default,
-            int page = 1,
-            int perPage = 28,
+            int? page = 1,
+            int? perPage = 28,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -44,7 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        public global::System.DateTime StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_order")]
-        public int ExecutionOrder { get; set; } = 1;
+        public int? ExecutionOrder { get; set; } = 1;
 
         /// <summary>
         /// 
@@ -217,19 +217,19 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        public int TotalTokens { get; set; } = 0;
+        public int? TotalTokens { get; set; } = 0;
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
-        public int PromptTokens { get; set; } = 0;
+        public int? PromptTokens { get; set; } = 0;
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
-        public int CompletionTokens { get; set; } = 0;
+        public int? CompletionTokens { get; set; } = 0;
 
         /// <summary>
         /// 

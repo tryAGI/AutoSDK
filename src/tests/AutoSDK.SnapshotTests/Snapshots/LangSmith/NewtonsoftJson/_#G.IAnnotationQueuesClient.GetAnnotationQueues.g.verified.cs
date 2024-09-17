@@ -24,8 +24,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

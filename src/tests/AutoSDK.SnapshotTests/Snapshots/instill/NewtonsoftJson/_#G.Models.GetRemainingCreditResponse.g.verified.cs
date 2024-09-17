@@ -14,20 +14,20 @@ namespace G
         /// Amount of perishable credit, i.e. credit with an expiration date.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("perishable")]
-        public float Perishable { get; set; }
+        public float? Perishable { get; set; }
 
         /// <summary>
         /// Amount of imperishable credit, e.g. purchased credit, which doesn't<br/>
         /// expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("imperishable")]
-        public float Imperishable { get; set; }
+        public float? Imperishable { get; set; }
 
         /// <summary>
         /// Total remaining credit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
-        public float Total { get; set; }
+        public float? Total { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

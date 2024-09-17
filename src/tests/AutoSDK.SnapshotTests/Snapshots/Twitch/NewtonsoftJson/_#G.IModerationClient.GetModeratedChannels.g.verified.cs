@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetModeratedChannelsResponse> GetModeratedChannelsAsync(
             string userId,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

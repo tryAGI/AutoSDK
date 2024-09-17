@@ -15,8 +15,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminUnlinkUserFromProjectResponse> AdminUnlinkUserFromProjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

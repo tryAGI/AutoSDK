@@ -31,13 +31,13 @@ namespace G
         /// The x-coordinate where the extension is placed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("x")]
-        public int X { get; set; }
+        public int? X { get; set; }
 
         /// <summary>
         /// The y-coordinate where the extension is placed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("y")]
-        public int Y { get; set; }
+        public int? Y { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

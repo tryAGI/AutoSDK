@@ -18,7 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListCatalogFilesResponse> ListCatalogFilesAsync(
             string namespaceId,
             string catalogId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             global::System.Collections.Generic.IList<string>? filterFileUids = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -13,43 +13,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isPastDue")]
-        public bool IsPastDue { get; set; }
+        public bool? IsPastDue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isDisabled")]
-        public bool IsDisabled { get; set; }
+        public bool? IsDisabled { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountId")]
-        public global::System.Guid AccountId { get; set; }
+        public global::System.Guid? AccountId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountUserCount")]
-        public int AccountUserCount { get; set; }
+        public int? AccountUserCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountCPUPM")]
-        public double AccountCPUPM { get; set; }
+        public double? AccountCPUPM { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currentBalance")]
-        public double CurrentBalance { get; set; }
+        public double? CurrentBalance { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lastPaymentDate")]
-        public global::System.DateTime LastPaymentDate { get; set; }
+        public global::System.DateTime? LastPaymentDate { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lastPaymentAmmount")]
-        public double LastPaymentAmmount { get; set; }
+        public double? LastPaymentAmmount { get; set; }
 
         /// <summary>
         /// 

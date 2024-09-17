@@ -25,7 +25,7 @@ namespace G
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// The REST API URL of the alert resource.

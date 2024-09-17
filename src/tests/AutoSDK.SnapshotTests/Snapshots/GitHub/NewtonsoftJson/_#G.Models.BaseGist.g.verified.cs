@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncated")]
-        public bool Truncated { get; set; }
+        public bool? Truncated { get; set; }
 
         /// <summary>
         /// 

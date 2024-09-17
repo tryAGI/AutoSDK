@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileUploadTime")]
-        public global::System.DateTime FileUploadTime { get; set; }
+        public global::System.DateTime? FileUploadTime { get; set; }
 
         /// <summary>
         /// 

@@ -25,8 +25,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ActionsListArtifactsForRepoResponse> ActionsListArtifactsForRepoAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

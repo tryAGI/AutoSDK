@@ -13,7 +13,7 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: refs/heads/main
@@ -37,19 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_accessed_at")]
-        public global::System.DateTime LastAccessedAt { get; set; }
+        public global::System.DateTime? LastAccessedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: 1024
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_in_bytes")]
-        public int SizeInBytes { get; set; }
+        public int? SizeInBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

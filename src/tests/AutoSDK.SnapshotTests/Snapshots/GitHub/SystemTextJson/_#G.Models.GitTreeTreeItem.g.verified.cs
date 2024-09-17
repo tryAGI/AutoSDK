@@ -37,7 +37,7 @@ namespace G
         /// Example: 12
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/owner-482f3203ecf01f67e9deb18e/BBB_Private_Repo/git/blobs/23f6827669e43831def8a7ad935069c8bd418261

@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateExtensionSecretArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string extensionId,
-            ref int delay);
+            ref int? delay);
         partial void PrepareCreateExtensionSecretRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string extensionId,
-            int delay);
+            int? delay);
         partial void ProcessCreateExtensionSecretResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateExtensionSecretResponse> CreateExtensionSecretAsync(
             string extensionId,
-            int delay = default,
+            int? delay = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

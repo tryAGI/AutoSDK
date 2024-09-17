@@ -9,14 +9,14 @@ namespace G
         partial void PrepareProjectStartProjectImportJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? fileURI,
             ref string? password);
         partial void PrepareProjectStartProjectImportJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? fileURI,
             string? password);
         partial void ProcessProjectStartProjectImportJobResponse(
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ProjectStartProjectImportJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? fileURI = default,
             string? password = default,
             global::System.Threading.CancellationToken cancellationToken = default)

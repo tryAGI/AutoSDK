@@ -23,16 +23,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoLinkObjectResponse> MemoLinkObjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid memoId = default,
-            global::System.Guid id1 = default,
-            int position1 = default,
-            global::System.Guid id2 = default,
-            int position2 = default,
-            global::System.Guid id3 = default,
-            int position3 = default,
-            global::System.Guid id4 = default,
-            int position4 = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? memoId = default,
+            global::System.Guid? id1 = default,
+            int? position1 = default,
+            global::System.Guid? id2 = default,
+            int? position2 = default,
+            global::System.Guid? id3 = default,
+            int? position3 = default,
+            global::System.Guid? id4 = default,
+            int? position4 = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

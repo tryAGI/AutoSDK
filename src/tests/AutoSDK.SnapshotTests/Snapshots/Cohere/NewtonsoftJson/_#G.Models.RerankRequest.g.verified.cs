@@ -36,7 +36,7 @@ namespace G
         /// The number of most relevant documents or indices to return, defaults to the length of the documents
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_n")]
-        public int TopN { get; set; }
+        public int? TopN { get; set; }
 
         /// <summary>
         /// If a JSON object is provided, you can specify which keys you would like to have considered for reranking. The model will rerank based on order of the fields passed in (i.e. rank_fields=['title','author','text'] will rerank using the values in title, author, text  sequentially. If the length of title, author, and text exceeds the context length of the model, the chunking will not re-consider earlier fields). If not provided, the model will use the default text field for ranking.
@@ -50,14 +50,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_documents")]
-        public bool ReturnDocuments { get; set; } = false;
+        public bool? ReturnDocuments { get; set; } = false;
 
         /// <summary>
         /// The maximum number of chunks to produce internally from a document<br/>
         /// Default Value: 10
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_chunks_per_doc")]
-        public int MaxChunksPerDoc { get; set; } = 10;
+        public int? MaxChunksPerDoc { get; set; } = 10;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

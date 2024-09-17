@@ -28,13 +28,13 @@ namespace G
         /// The number of results in the case of a successful analysis. This is only available for successful analyses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result_count")]
-        public int ResultCount { get; set; }
+        public int? ResultCount { get; set; }
 
         /// <summary>
         /// The size of the artifact. This is only available for successful analyses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact_size_in_bytes")]
-        public int ArtifactSizeInBytes { get; set; }
+        public int? ArtifactSizeInBytes { get; set; }
 
         /// <summary>
         /// The reason of the failure of this repo task. This is only available if the repository task has failed.

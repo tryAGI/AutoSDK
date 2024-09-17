@@ -19,7 +19,7 @@ namespace G
         /// Time of job creation in RFC3339 format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The input file URL used for the job
@@ -37,19 +37,19 @@ namespace G
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_cluster_size")]
-        public int MinClusterSize { get; set; }
+        public int? MinClusterSize { get; set; }
 
         /// <summary>
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_neighbors")]
-        public int NNeighbors { get; set; }
+        public int? NNeighbors { get; set; }
 
         /// <summary>
         /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_deterministic")]
-        public bool IsDeterministic { get; set; }
+        public bool? IsDeterministic { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// A boolean indicating whether the job is in a final state, whether completed or failed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_final_state")]
-        public bool IsFinalState { get; set; }
+        public bool? IsFinalState { get; set; }
 
         /// <summary>
         /// The output file URL for the clusters (signed url that expires)

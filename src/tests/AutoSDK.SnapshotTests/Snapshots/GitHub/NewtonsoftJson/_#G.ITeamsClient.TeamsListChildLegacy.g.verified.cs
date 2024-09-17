@@ -21,8 +21,8 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Team>> TeamsListChildLegacyAsync(
             int teamId,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

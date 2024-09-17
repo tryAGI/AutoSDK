@@ -19,31 +19,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTestIDL")]
-        public global::System.Guid TrainingTestIDL { get; set; }
+        public global::System.Guid? TrainingTestIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createdOn")]
-        public global::System.DateTime CreatedOn { get; set; }
+        public global::System.DateTime? CreatedOn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTagIDL")]
-        public global::System.Guid TrainingTagIDL { get; set; }
+        public global::System.Guid? TrainingTagIDL { get; set; }
 
         /// <summary>
         /// 
@@ -55,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTestExcerptId")]
-        public global::System.Guid TrainingTestExcerptId { get; set; }
+        public global::System.Guid? TrainingTestExcerptId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIDL")]
-        public global::System.Guid ProjectIDL { get; set; }
+        public global::System.Guid? ProjectIDL { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trainingTestResultIDL")]
-        public global::System.Guid TrainingTestResultIDL { get; set; }
+        public global::System.Guid? TrainingTestResultIDL { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

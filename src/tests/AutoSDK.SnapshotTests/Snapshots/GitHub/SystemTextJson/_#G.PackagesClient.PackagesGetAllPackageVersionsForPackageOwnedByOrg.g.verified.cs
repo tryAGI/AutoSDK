@@ -11,8 +11,8 @@ namespace G
             ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType,
             ref string packageName,
             ref string org,
-            ref int page,
-            ref int perPage,
+            ref int? page,
+            ref int? perPage,
             ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state);
         partial void PreparePackagesGetAllPackageVersionsForPackageOwnedByOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType,
             string packageName,
             string org,
-            int page,
-            int perPage,
+            int? page,
+            int? perPage,
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state);
         partial void ProcessPackagesGetAllPackageVersionsForPackageOwnedByOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -55,8 +55,8 @@ namespace G
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType,
             string packageName,
             string org,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state = global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState.Active,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

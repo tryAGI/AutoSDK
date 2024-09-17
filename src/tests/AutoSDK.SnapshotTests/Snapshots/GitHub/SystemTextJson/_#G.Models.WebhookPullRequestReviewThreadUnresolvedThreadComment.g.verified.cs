@@ -70,7 +70,7 @@ namespace G
         /// The comment ID to reply to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reply_to_id")]
-        public int InReplyToId { get; set; }
+        public int? InReplyToId { get; set; }
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment

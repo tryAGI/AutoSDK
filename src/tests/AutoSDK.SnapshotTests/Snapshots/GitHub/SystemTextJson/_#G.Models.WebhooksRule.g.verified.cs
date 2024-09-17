@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("create_protected")]
-        public bool CreateProtected { get; set; }
+        public bool? CreateProtected { get; set; }
 
         /// <summary>
         /// 
@@ -136,7 +136,7 @@ namespace G
         /// Whether the most recent push must be approved by someone other than the person who pushed it
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
-        public bool RequireLastPushApproval { get; set; }
+        public bool? RequireLastPushApproval { get; set; }
 
         /// <summary>
         /// 

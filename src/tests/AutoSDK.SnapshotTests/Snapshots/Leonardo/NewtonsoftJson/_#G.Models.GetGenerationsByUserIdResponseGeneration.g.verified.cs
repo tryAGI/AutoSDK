@@ -43,13 +43,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("imageHeight")]
-        public int ImageHeight { get; set; }
+        public int? ImageHeight { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("imageWidth")]
-        public int ImageWidth { get; set; }
+        public int? ImageWidth { get; set; }
 
         /// <summary>
         /// 
@@ -122,7 +122,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.

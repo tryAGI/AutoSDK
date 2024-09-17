@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +145,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

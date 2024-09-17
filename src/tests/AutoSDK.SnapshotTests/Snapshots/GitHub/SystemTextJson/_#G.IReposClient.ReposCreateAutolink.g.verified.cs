@@ -43,7 +43,7 @@ namespace G
             string repo,
             string keyPrefix,
             string urlTemplate,
-            bool isAlphanumeric = true,
+            bool? isAlphanumeric = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

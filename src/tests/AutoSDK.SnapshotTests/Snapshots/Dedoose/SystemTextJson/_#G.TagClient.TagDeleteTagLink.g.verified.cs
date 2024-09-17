@@ -9,26 +9,26 @@ namespace G
         partial void PrepareTagDeleteTagLinkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid currentProjectId,
+            ref global::System.Guid? currentProjectId,
             ref string? projectIdKey,
-            ref global::System.Guid projectId,
-            ref global::System.Guid id,
-            ref global::System.Guid projectIDL,
-            ref global::System.Guid tag1IDL,
-            ref global::System.Guid tag2IDL,
-            ref bool isParentChildLink);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? id,
+            ref global::System.Guid? projectIDL,
+            ref global::System.Guid? tag1IDL,
+            ref global::System.Guid? tag2IDL,
+            ref bool? isParentChildLink);
         partial void PrepareTagDeleteTagLinkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid currentProjectId,
+            global::System.Guid? currentProjectId,
             string? projectIdKey,
-            global::System.Guid projectId,
-            global::System.Guid id,
-            global::System.Guid projectIDL,
-            global::System.Guid tag1IDL,
-            global::System.Guid tag2IDL,
-            bool isParentChildLink);
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? tag1IDL,
+            global::System.Guid? tag2IDL,
+            bool? isParentChildLink);
         partial void ProcessTagDeleteTagLinkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,14 +54,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagLink> TagDeleteTagLinkAsync(
             string? token = default,
-            global::System.Guid currentProjectId = default,
+            global::System.Guid? currentProjectId = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
-            global::System.Guid tag1IDL = default,
-            global::System.Guid tag2IDL = default,
-            bool isParentChildLink = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
+            global::System.Guid? tag1IDL = default,
+            global::System.Guid? tag2IDL = default,
+            bool? isParentChildLink = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

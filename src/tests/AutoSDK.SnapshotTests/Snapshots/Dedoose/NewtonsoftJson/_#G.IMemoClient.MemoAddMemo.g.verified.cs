@@ -21,7 +21,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoAndLinks> MemoAddMemoAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? dataPath = default,
             global::System.Collections.Generic.IList<global::System.Guid>? folderIds = default,

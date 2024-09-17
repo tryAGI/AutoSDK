@@ -30,7 +30,7 @@ namespace G
         /// This field is no longer needed as the returned prediction will always have a `stream` entry in its `url` property if the model supports streaming.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; }
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// The ID of the model version that you want to run.

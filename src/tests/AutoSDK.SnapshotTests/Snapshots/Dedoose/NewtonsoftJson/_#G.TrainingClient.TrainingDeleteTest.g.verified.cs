@@ -10,29 +10,29 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref global::System.Guid id,
-            ref int testType,
+            ref global::System.Guid? id,
+            ref int? testType,
             ref string? title,
             ref string? description,
-            ref global::System.DateTime createdOn,
-            ref global::System.Guid projectId,
-            ref int excerptCount,
-            ref int tagCount,
-            ref global::System.Guid creator);
+            ref global::System.DateTime? createdOn,
+            ref global::System.Guid? projectId,
+            ref int? excerptCount,
+            ref int? tagCount,
+            ref global::System.Guid? creator);
         partial void PrepareTrainingDeleteTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            global::System.Guid id,
-            int testType,
+            global::System.Guid? id,
+            int? testType,
             string? title,
             string? description,
-            global::System.DateTime createdOn,
-            global::System.Guid projectId,
-            int excerptCount,
-            int tagCount,
-            global::System.Guid creator);
+            global::System.DateTime? createdOn,
+            global::System.Guid? projectId,
+            int? excerptCount,
+            int? tagCount,
+            global::System.Guid? creator);
         partial void ProcessTrainingDeleteTestResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,15 +61,15 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TrainingTest> TrainingDeleteTestAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            int testType = default,
+            global::System.Guid? id = default,
+            int? testType = default,
             string? title = default,
             string? description = default,
-            global::System.DateTime createdOn = default,
-            global::System.Guid projectId = default,
-            int excerptCount = default,
-            int tagCount = default,
-            global::System.Guid creator = default,
+            global::System.DateTime? createdOn = default,
+            global::System.Guid? projectId = default,
+            int? excerptCount = default,
+            int? tagCount = default,
+            global::System.Guid? creator = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

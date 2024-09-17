@@ -108,10 +108,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.PullModelResponse> PullModelAsync(
             string model,
-            bool insecure = false,
+            bool? insecure = false,
             string? username = default,
             string? password = default,
-            bool stream = true,
+            bool? stream = true,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PullModelRequest

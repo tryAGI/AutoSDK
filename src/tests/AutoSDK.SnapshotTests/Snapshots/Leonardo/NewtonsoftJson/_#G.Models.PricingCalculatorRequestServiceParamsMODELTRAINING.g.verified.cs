@@ -13,7 +13,7 @@ namespace G
         /// The resolution for training. Must be 512 or 768.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
-        public int Resolution { get; set; }
+        public int? Resolution { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

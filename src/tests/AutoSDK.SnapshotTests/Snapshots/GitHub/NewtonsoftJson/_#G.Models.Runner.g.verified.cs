@@ -21,7 +21,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runner_group_id")]
-        public int RunnerGroupId { get; set; }
+        public int? RunnerGroupId { get; set; }
 
         /// <summary>
         /// The name of the runner.<br/>

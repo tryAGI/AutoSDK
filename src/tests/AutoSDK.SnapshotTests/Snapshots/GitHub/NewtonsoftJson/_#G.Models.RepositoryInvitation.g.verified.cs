@@ -51,7 +51,7 @@ namespace G
         /// Whether or not the invitation has expired
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expired")]
-        public bool Expired { get; set; }
+        public bool? Expired { get; set; }
 
         /// <summary>
         /// URL for the repository invitation<br/>

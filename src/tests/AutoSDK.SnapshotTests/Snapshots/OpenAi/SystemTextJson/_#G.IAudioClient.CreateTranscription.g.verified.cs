@@ -55,7 +55,7 @@ namespace G
             string? language = default,
             string? prompt = default,
             global::G.CreateTranscriptionRequestResponseFormat? responseFormat = global::G.CreateTranscriptionRequestResponseFormat.Json,
-            double temperature = 0,
+            double? temperature = 0,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

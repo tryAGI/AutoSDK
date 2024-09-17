@@ -33,19 +33,19 @@ namespace G
         /// The index of the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public int Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// The size of the file in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
-        public int SizeBytes { get; set; }
+        public int? SizeBytes { get; set; }
 
         /// <summary>
         /// The number of rows in the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_rows")]
-        public int NumRows { get; set; }
+        public int? NumRows { get; set; }
 
         /// <summary>
         /// The download url of the original file

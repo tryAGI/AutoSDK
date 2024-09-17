@@ -47,7 +47,7 @@ namespace G
         /// The time that the check run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        public global::System.DateTime StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. <br/>
@@ -61,7 +61,7 @@ namespace G
         /// The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public global::System.DateTime CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.

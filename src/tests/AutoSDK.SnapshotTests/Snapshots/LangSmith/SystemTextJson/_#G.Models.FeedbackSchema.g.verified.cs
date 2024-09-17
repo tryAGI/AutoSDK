@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
-        public global::System.DateTime ModifiedAt { get; set; }
+        public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
         /// 

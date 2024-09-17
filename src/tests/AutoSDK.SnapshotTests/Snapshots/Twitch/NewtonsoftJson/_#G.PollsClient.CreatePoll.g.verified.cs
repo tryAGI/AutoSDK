@@ -131,8 +131,8 @@ namespace G
             string title,
             global::System.Collections.Generic.IList<global::G.CreatePollBodyChoice> choices,
             int duration,
-            bool channelPointsVotingEnabled = default,
-            int channelPointsPerVote = default,
+            bool? channelPointsVotingEnabled = default,
+            int? channelPointsPerVote = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreatePollBody

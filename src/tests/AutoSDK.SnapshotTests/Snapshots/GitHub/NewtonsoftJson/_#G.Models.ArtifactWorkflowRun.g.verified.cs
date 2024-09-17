@@ -13,19 +13,19 @@ namespace G
         /// Example: 10
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_id")]
-        public int RepositoryId { get; set; }
+        public int? RepositoryId { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_repository_id")]
-        public int HeadRepositoryId { get; set; }
+        public int? HeadRepositoryId { get; set; }
 
         /// <summary>
         /// Example: main

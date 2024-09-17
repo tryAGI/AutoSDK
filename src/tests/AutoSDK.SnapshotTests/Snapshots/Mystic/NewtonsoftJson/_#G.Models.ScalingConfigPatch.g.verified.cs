@@ -26,13 +26,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minimum_nodes")]
-        public int MinimumNodes { get; set; }
+        public int? MinimumNodes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maximum_nodes")]
-        public int MaximumNodes { get; set; }
+        public int? MaximumNodes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

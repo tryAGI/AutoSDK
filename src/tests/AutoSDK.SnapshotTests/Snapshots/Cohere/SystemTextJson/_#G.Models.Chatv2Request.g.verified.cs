@@ -54,7 +54,7 @@ namespace G
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
-        public int MaxTokens { get; set; }
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.
@@ -68,7 +68,7 @@ namespace G
         /// Randomness can be further maximized by increasing the  value of the `p` parameter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public float Temperature { get; set; }
+        public float? Temperature { get; set; }
 
         /// <summary>
         /// If specified, the backend will make a best effort to sample tokens<br/>
@@ -77,21 +77,21 @@ namespace G
         /// determinism cannot be totally guaranteed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
-        public float FrequencyPenalty { get; set; }
+        public float? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        public float PresencePenalty { get; set; }
+        public float? PresencePenalty { get; set; }
 
         /// <summary>
         /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
@@ -99,7 +99,7 @@ namespace G
         /// Default Value: 0F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k")]
-        public float K { get; set; } = 0F;
+        public float? K { get; set; } = 0F;
 
         /// <summary>
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
@@ -107,7 +107,7 @@ namespace G
         /// Default Value: 0.75F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p")]
-        public float P { get; set; } = 0.75F;
+        public float? P { get; set; } = 0.75F;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

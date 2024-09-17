@@ -13,7 +13,7 @@ namespace G
         /// Total number of Copilot seats for the organization currently being billed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_seats")]
-        public int TotalSeats { get; set; }
+        public int? TotalSeats { get; set; }
 
         /// <summary>
         /// 

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetHypeTrainEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetHypeTrainEventsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetHypeTrainEventsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetHypeTrainEventsResponse> GetHypeTrainEventsAsync(
             string broadcasterId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

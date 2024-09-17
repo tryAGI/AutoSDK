@@ -19,13 +19,13 @@ namespace G
         /// The maximum number of instances for scaling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_instances")]
-        public int MaxInstances { get; set; }
+        public int? MaxInstances { get; set; }
 
         /// <summary>
         /// The minimum number of instances for scaling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_instances")]
-        public int MinInstances { get; set; }
+        public int? MinInstances { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

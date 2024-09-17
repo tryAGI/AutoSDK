@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public int Comments { get; set; }
+        public int? Comments { get; set; }
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncated")]
-        public bool Truncated { get; set; }
+        public bool? Truncated { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

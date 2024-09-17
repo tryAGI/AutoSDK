@@ -53,11 +53,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task UpdateChannelGuestStarSettingsAsync(
             string broadcasterId,
-            bool isModeratorSendLiveEnabled = default,
-            int slotCount = default,
-            bool isBrowserSourceAudioEnabled = default,
+            bool? isModeratorSendLiveEnabled = default,
+            int? slotCount = default,
+            bool? isBrowserSourceAudioEnabled = default,
             global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? groupLayout = default,
-            bool regenerateBrowserSources = default,
+            bool? regenerateBrowserSources = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

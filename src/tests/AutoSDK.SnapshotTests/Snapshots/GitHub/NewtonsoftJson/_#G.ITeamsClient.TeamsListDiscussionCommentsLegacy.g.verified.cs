@@ -29,8 +29,8 @@ namespace G
             int teamId,
             int discussionNumber,
             global::G.TeamsListDiscussionCommentsLegacyDirection? direction = global::G.TeamsListDiscussionCommentsLegacyDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

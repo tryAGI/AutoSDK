@@ -13,13 +13,13 @@ namespace G
         /// Determines if notifications should be received from this repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribed")]
-        public bool Subscribed { get; set; }
+        public bool? Subscribed { get; set; }
 
         /// <summary>
         /// Determines if all notifications should be blocked from this repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ignored")]
-        public bool Ignored { get; set; }
+        public bool? Ignored { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

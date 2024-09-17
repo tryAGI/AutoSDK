@@ -123,7 +123,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.OrgsConvertMemberToOutsideCollaboratorResponse> OrgsConvertMemberToOutsideCollaboratorAsync(
             string org,
             string username,
-            bool async = false,
+            bool? async = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrgsConvertMemberToOutsideCollaboratorRequest

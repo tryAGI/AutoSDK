@@ -17,9 +17,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResourceAddTranscriptResponse> ResourceAddTranscriptAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid currentUserId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? currentUserId = default,
+            global::System.Guid? resourceId = default,
             string? transcriptData = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

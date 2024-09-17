@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("admin")]
-        public bool Admin { get; set; }
+        public bool? Admin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintain")]
-        public bool Maintain { get; set; }
+        public bool? Maintain { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("push")]
-        public bool Push { get; set; }
+        public bool? Push { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triage")]
-        public bool Triage { get; set; }
+        public bool? Triage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull")]
-        public bool Pull { get; set; }
+        public bool? Pull { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

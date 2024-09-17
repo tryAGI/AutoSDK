@@ -21,8 +21,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListCreditConsumptionChartRecordsResponse> ListCreditConsumptionChartRecordsAsync(
             string namespaceId,
             string? aggregationWindow = default,
-            global::System.DateTime start = default,
-            global::System.DateTime stop = default,
+            global::System.DateTime? start = default,
+            global::System.DateTime? stop = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

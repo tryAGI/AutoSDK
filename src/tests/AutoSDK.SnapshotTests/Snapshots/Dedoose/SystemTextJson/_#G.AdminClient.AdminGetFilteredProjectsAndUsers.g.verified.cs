@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? filter,
-            ref int maxResults);
+            ref int? maxResults);
         partial void PrepareAdminGetFilteredProjectsAndUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? filter,
-            int maxResults);
+            int? maxResults);
         partial void ProcessAdminGetFilteredProjectsAndUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AdminGetFilteredProjectsAndUsersResponse> AdminGetFilteredProjectsAndUsersAsync(
             string? token = default,
             string? filter = default,
-            int maxResults = default,
+            int? maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

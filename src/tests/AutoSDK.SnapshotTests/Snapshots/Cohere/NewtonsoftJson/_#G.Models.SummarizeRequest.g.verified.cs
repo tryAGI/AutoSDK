@@ -47,7 +47,7 @@ namespace G
         /// Default Value: 0.3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double Temperature { get; set; } = 0.3;
+        public double? Temperature { get; set; } = 0.3;
 
         /// <summary>
         /// A free-form instruction for modifying how the summaries get generated. Should complete the sentence "Generate a summary _". Eg. "focusing on the next steps" or "written by Yoda"

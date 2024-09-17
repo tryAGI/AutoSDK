@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submitted_at")]
-        public global::System.DateTime SubmittedAt { get; set; }
+        public global::System.DateTime? SubmittedAt { get; set; }
 
         /// <summary>
         /// A commit SHA for the review.<br/>

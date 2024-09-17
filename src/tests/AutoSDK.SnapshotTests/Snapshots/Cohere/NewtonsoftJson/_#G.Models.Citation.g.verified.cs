@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start")]
-        public int Start { get; set; }
+        public int? Start { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end")]
-        public int End { get; set; }
+        public int? End { get; set; }
 
         /// <summary>
         /// 

@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareListAssistantsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
+            ref int? limit,
             ref global::G.ListAssistantsOrder? order,
             ref string? after,
             ref string? before);
         partial void PrepareListAssistantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
+            int? limit,
             global::G.ListAssistantsOrder? order,
             string? after,
             string? before);
@@ -42,7 +42,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListAssistantsResponse> ListAssistantsAsync(
-            int limit = 20,
+            int? limit = 20,
             global::G.ListAssistantsOrder? order = global::G.ListAssistantsOrder.Desc,
             string? after = default,
             string? before = default,

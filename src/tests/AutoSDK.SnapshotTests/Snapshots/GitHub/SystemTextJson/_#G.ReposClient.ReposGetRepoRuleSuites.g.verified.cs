@@ -14,8 +14,8 @@ namespace G
             ref global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod,
             ref string? actorName,
             ref global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReposGetRepoRuleSuitesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,8 +25,8 @@ namespace G
             global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod,
             string? actorName,
             global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReposGetRepoRuleSuitesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -66,8 +66,8 @@ namespace G
             global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod = global::G.ReposGetRepoRuleSuitesTimePeriod.Day,
             string? actorName = default,
             global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetRepoRuleSuitesRuleSuiteResult.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

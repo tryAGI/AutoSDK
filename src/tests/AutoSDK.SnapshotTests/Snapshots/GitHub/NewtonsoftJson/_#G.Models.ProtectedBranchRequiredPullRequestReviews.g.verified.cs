@@ -19,26 +19,26 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismiss_stale_reviews")]
-        public bool DismissStaleReviews { get; set; }
+        public bool? DismissStaleReviews { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_code_owner_reviews")]
-        public bool RequireCodeOwnerReviews { get; set; }
+        public bool? RequireCodeOwnerReviews { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
-        public int RequiredApprovingReviewCount { get; set; }
+        public int? RequiredApprovingReviewCount { get; set; }
 
         /// <summary>
         /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
-        public bool RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; } = false;
 
         /// <summary>
         /// 

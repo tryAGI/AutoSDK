@@ -9,14 +9,14 @@ namespace G
         partial void PrepareSearchTopicsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string q,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareSearchTopicsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessSearchTopicsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,8 +45,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchTopicsResponse> SearchTopicsAsync(
             string q,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

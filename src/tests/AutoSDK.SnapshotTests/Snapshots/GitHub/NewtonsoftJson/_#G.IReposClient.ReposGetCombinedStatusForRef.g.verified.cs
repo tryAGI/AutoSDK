@@ -28,8 +28,8 @@ namespace G
             string owner,
             string repo,
             string @ref,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

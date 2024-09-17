@@ -18,12 +18,12 @@ namespace G
             ref global::G.DependabotListAlertsForRepoScope? scope,
             ref global::G.DependabotListAlertsForRepoSort? sort,
             ref global::G.DependabotListAlertsForRepoDirection? direction,
-            ref int page,
-            ref int perPage,
+            ref int? page,
+            ref int? perPage,
             ref string? before,
             ref string? after,
-            ref int first,
-            ref int last);
+            ref int? first,
+            ref int? last);
         partial void PrepareDependabotListAlertsForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -37,12 +37,12 @@ namespace G
             global::G.DependabotListAlertsForRepoScope? scope,
             global::G.DependabotListAlertsForRepoSort? sort,
             global::G.DependabotListAlertsForRepoDirection? direction,
-            int page,
-            int perPage,
+            int? page,
+            int? perPage,
             string? before,
             string? after,
-            int first,
-            int last);
+            int? first,
+            int? last);
         partial void ProcessDependabotListAlertsForRepoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -95,12 +95,12 @@ namespace G
             global::G.DependabotListAlertsForRepoScope? scope = default,
             global::G.DependabotListAlertsForRepoSort? sort = global::G.DependabotListAlertsForRepoSort.Created,
             global::G.DependabotListAlertsForRepoDirection? direction = global::G.DependabotListAlertsForRepoDirection.Desc,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             string? before = default,
             string? after = default,
-            int first = 30,
-            int last = default,
+            int? first = 30,
+            int? last = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

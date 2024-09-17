@@ -30,14 +30,14 @@ namespace G
         /// Example: 2142590208L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
-        public long Total { get; set; }
+        public long? Total { get; set; }
 
         /// <summary>
         /// Total bytes transferred.<br/>
         /// Example: 2142590208L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed")]
-        public long Completed { get; set; }
+        public long? Completed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

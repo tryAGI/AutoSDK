@@ -46,9 +46,9 @@ namespace G
             global::G.DependabotListAlertsForEnterpriseDirection? direction = global::G.DependabotListAlertsForEnterpriseDirection.Desc,
             string? before = default,
             string? after = default,
-            int first = 30,
-            int last = default,
-            int perPage = 30,
+            int? first = 30,
+            int? last = default,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -39,10 +39,10 @@ namespace G
             global::G.ReposListForAuthenticatedUserType? type = global::G.ReposListForAuthenticatedUserType.All,
             global::G.ReposListForAuthenticatedUserSort? sort = global::G.ReposListForAuthenticatedUserSort.FullName,
             global::G.ReposListForAuthenticatedUserDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
-            global::System.DateTime since = default,
-            global::System.DateTime before = default,
+            int? perPage = 30,
+            int? page = 1,
+            global::System.DateTime? since = default,
+            global::System.DateTime? before = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

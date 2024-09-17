@@ -24,8 +24,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CodespacesListRepoSecretsResponse> CodespacesListRepoSecretsAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

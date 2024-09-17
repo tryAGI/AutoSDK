@@ -47,7 +47,7 @@ namespace G
             string title,
             global::G.IssuesCreateMilestoneRequestState? state = global::G.IssuesCreateMilestoneRequestState.Open,
             string? description = default,
-            global::System.DateTime dueOn = default,
+            global::System.DateTime? dueOn = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

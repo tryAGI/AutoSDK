@@ -46,7 +46,7 @@ namespace G
             string owner,
             string repo,
             string? cname = default,
-            bool httpsEnforced = default,
+            bool? httpsEnforced = default,
             global::G.ReposUpdateInformationAboutPagesSiteRequestBuildType? buildType = default,
             global::G.AnyOf<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum2>? source = default,
             global::System.Threading.CancellationToken cancellationToken = default);

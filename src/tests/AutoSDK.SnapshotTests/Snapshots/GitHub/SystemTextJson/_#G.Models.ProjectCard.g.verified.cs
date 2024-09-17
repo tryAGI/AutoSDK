@@ -64,7 +64,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 

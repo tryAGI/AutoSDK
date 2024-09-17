@@ -19,7 +19,7 @@ namespace G
         /// Total number of connectors.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
-        public double TotalCount { get; set; }
+        public double? TotalCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

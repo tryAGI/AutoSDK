@@ -9,28 +9,28 @@ namespace G
         partial void PrepareTagAddTagArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             ref string? description,
-            ref bool isWeighted,
-            ref double weightMin,
-            ref double weightMax,
-            ref double weightDefault,
-            ref bool allowDecimalWeights,
-            ref int color);
+            ref bool? isWeighted,
+            ref double? weightMin,
+            ref double? weightMax,
+            ref double? weightDefault,
+            ref bool? allowDecimalWeights,
+            ref int? color);
         partial void PrepareTagAddTagRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             string? description,
-            bool isWeighted,
-            double weightMin,
-            double weightMax,
-            double weightDefault,
-            bool allowDecimalWeights,
-            int color);
+            bool? isWeighted,
+            double? weightMin,
+            double? weightMax,
+            double? weightDefault,
+            bool? allowDecimalWeights,
+            int? color);
         partial void ProcessTagAddTagResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,15 +57,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? description = default,
-            bool isWeighted = default,
-            double weightMin = default,
-            double weightMax = default,
-            double weightDefault = default,
-            bool allowDecimalWeights = default,
-            int color = default,
+            bool? isWeighted = default,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            bool? allowDecimalWeights = default,
+            int? color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

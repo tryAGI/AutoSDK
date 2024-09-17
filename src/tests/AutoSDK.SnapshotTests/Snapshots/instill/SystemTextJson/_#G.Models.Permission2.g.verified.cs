@@ -13,7 +13,7 @@ namespace G
         /// Defines whether the resource can be modified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("canEdit")]
-        public bool CanEdit { get; set; }
+        public bool? CanEdit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,7 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetBannedUsersResponse> GetBannedUsersAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default);

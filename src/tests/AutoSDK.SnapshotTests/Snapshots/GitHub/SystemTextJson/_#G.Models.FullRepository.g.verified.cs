@@ -427,7 +427,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// Example: [octocat, atom, electron, API]
@@ -467,7 +467,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
-        public bool HasDownloads { get; set; }
+        public bool? HasDownloads { get; set; }
 
         /// <summary>
         /// Example: true
@@ -528,7 +528,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; }
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// A repository on GitHub.
@@ -546,37 +546,37 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; }
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; }
+        public bool? AllowAutoMerge { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; }
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; }
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; }
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_squash_pr_title_as_default")]
-        public bool UseSquashPrTitleAsDefault { get; set; }
+        public bool? UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit title:<br/>
@@ -624,13 +624,13 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Example: 42
@@ -703,7 +703,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anonymous_access_enabled")]
-        public bool AnonymousAccessEnabled { get; set; } = true;
+        public bool? AnonymousAccessEnabled { get; set; } = true;
 
         /// <summary>
         /// Code of Conduct Simple

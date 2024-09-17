@@ -21,8 +21,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListCommentsResponse> GetCommentsAsync(
             string owner,
             string repo,
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

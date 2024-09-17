@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievable")]
-        public bool Retrievable { get; set; }
+        public bool? Retrievable { get; set; }
 
         /// <summary>
         /// 
@@ -79,19 +79,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createTime")]
-        public global::System.DateTime CreateTime { get; set; }
+        public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updateTime")]
-        public global::System.DateTime UpdateTime { get; set; }
+        public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleteTime")]
-        public global::System.DateTime DeleteTime { get; set; }
+        public global::System.DateTime? DeleteTime { get; set; }
 
         /// <summary>
         /// 
@@ -103,13 +103,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalChunks")]
-        public int TotalChunks { get; set; }
+        public int? TotalChunks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalTokens")]
-        public int TotalTokens { get; set; }
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

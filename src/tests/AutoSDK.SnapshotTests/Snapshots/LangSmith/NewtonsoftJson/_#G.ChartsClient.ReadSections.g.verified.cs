@@ -8,14 +8,14 @@ namespace G
     {
         partial void PrepareReadSectionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::G.AnyOf<string, object>? titleContains);
         partial void PrepareReadSectionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::G.AnyOf<string, object>? titleContains);
         partial void ProcessReadSectionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,8 +40,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomChartsSectionResponse>> ReadSectionsAsync(
-            int limit = 100,
-            int offset = 0,
+            int? limit = 100,
+            int? offset = 0,
             global::G.AnyOf<string, object>? titleContains = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

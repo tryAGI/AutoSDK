@@ -29,8 +29,8 @@ namespace G
             string repo,
             int runId,
             int attemptNumber,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

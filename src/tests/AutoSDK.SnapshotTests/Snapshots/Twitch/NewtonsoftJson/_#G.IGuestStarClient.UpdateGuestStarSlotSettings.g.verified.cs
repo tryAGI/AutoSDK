@@ -27,10 +27,10 @@ namespace G
             string moderatorId,
             string sessionId,
             string slotId,
-            bool isAudioEnabled = default,
-            bool isVideoEnabled = default,
-            bool isLive = default,
-            int volume = default,
+            bool? isAudioEnabled = default,
+            bool? isVideoEnabled = default,
+            bool? isLive = default,
+            int? volume = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -11,7 +11,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId,
-            ref int first,
+            ref int? first,
             ref string? after,
             ref string? before);
         partial void PrepareGetBannedUsersRequest(
@@ -19,7 +19,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId,
-            int first,
+            int? first,
             string? after,
             string? before);
         partial void ProcessGetBannedUsersResponse(
@@ -47,7 +47,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetBannedUsersResponse> GetBannedUsersAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

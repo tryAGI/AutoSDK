@@ -12,8 +12,8 @@ namespace G
             ref string repo,
             ref int commentId,
             ref global::G.ReactionsListForIssueCommentContent? content,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReactionsListForIssueCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,8 +21,8 @@ namespace G
             string repo,
             int commentId,
             global::G.ReactionsListForIssueCommentContent? content,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReactionsListForIssueCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,8 +53,8 @@ namespace G
             string repo,
             int commentId,
             global::G.ReactionsListForIssueCommentContent? content = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

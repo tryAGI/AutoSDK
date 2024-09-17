@@ -32,10 +32,10 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

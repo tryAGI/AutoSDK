@@ -17,8 +17,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ProjectStartCopyProjectJobAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? decription = default,
             global::System.Threading.CancellationToken cancellationToken = default);

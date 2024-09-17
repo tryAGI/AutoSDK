@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminCreateAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid adminId,
-            ref double credits);
+            ref global::System.Guid? adminId,
+            ref double? credits);
         partial void PrepareAdminCreateAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid adminId,
-            double credits);
+            global::System.Guid? adminId,
+            double? credits);
         partial void ProcessAdminCreateAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminCreateAccountResponse> AdminCreateAccountAsync(
             string? token = default,
-            global::System.Guid adminId = default,
-            double credits = default,
+            global::System.Guid? adminId = default,
+            double? credits = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

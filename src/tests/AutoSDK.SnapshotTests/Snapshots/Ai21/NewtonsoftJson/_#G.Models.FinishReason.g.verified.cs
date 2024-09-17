@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("length")]
-        public int Length { get; set; }
+        public int? Length { get; set; }
 
         /// <summary>
         /// 

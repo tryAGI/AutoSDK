@@ -10,23 +10,23 @@ namespace G
         partial void PrepareMemoStartExportMemosXMLArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds,
-            ref int codeSelection,
-            ref int mediaSelection,
-            ref int excerptsSelection,
-            ref int descriptorsSelection,
+            ref int? codeSelection,
+            ref int? mediaSelection,
+            ref int? excerptsSelection,
+            ref int? descriptorsSelection,
             ref string? symKey);
         partial void PrepareMemoStartExportMemosXMLRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds,
-            int codeSelection,
-            int mediaSelection,
-            int excerptsSelection,
-            int descriptorsSelection,
+            int? codeSelection,
+            int? mediaSelection,
+            int? excerptsSelection,
+            int? descriptorsSelection,
             string? symKey);
         partial void ProcessMemoStartExportMemosXMLResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,12 +52,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> MemoStartExportMemosXMLAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds = default,
-            int codeSelection = default,
-            int mediaSelection = default,
-            int excerptsSelection = default,
-            int descriptorsSelection = default,
+            int? codeSelection = default,
+            int? mediaSelection = default,
+            int? excerptsSelection = default,
+            int? descriptorsSelection = default,
             string? symKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

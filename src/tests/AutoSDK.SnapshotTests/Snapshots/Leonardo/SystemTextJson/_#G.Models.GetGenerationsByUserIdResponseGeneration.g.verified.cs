@@ -43,13 +43,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageHeight")]
-        public int ImageHeight { get; set; }
+        public int? ImageHeight { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageWidth")]
-        public int ImageWidth { get; set; }
+        public int? ImageWidth { get; set; }
 
         /// <summary>
         /// 
@@ -123,7 +123,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.

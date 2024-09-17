@@ -10,13 +10,13 @@ namespace G
         partial void PrepareGetAllStreamTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? tagId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetAllStreamTagsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<string>? tagId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetAllStreamTagsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,7 +42,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.GetAllStreamTagsResponse> GetAllStreamTagsAsync(
             global::System.Collections.Generic.IList<string>? tagId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

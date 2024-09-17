@@ -10,19 +10,19 @@ namespace G
         partial void PrepareTagAddExcerptTagApplicationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref global::System.Guid excerptId,
+            ref global::System.Guid? userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref global::System.Guid? excerptId,
             global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void PrepareTagAddExcerptTagApplicationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            global::System.Guid excerptId,
+            global::System.Guid? userId,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            global::System.Guid? excerptId,
             global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps);
         partial void ProcessTagAddExcerptTagApplicationsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,10 +46,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TagAddExcerptTagApplicationsResponse> TagAddExcerptTagApplicationsAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid excerptId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? excerptId = default,
             global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -73,7 +73,7 @@ namespace G
         /// Example: 8
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in_reply_to_id")]
-        public int InReplyToId { get; set; }
+        public int? InReplyToId { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -161,14 +161,14 @@ namespace G
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_line")]
-        public int OriginalLine { get; set; }
+        public int? OriginalLine { get; set; }
 
         /// <summary>
         /// The first line of the range for a multi-line comment.<br/>

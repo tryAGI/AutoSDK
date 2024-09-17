@@ -13,13 +13,13 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_delay_seconds")]
-        public double ResponseDelaySeconds { get; set; } = 1;
+        public double? ResponseDelaySeconds { get; set; } = 1;
 
         /// <summary>
         /// Default Value: 0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_response_delay_between_deltas_seconds")]
-        public double StreamResponseDelayBetweenDeltasSeconds { get; set; } = 0.1;
+        public double? StreamResponseDelayBetweenDeltasSeconds { get; set; } = 0.1;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

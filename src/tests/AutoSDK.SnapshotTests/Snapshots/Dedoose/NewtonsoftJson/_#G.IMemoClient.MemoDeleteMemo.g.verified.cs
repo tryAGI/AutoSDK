@@ -24,14 +24,14 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Memo> MemoDeleteMemoAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectId = default,
             string? title = default,
-            global::System.Guid createdUserId = default,
-            global::System.Guid lastEditUserId = default,
-            global::System.DateTime createStamp = default,
-            global::System.DateTime lastEditStamp = default,
-            global::System.Guid folderId = default,
+            global::System.Guid? createdUserId = default,
+            global::System.Guid? lastEditUserId = default,
+            global::System.DateTime? createStamp = default,
+            global::System.DateTime? lastEditStamp = default,
+            global::System.Guid? folderId = default,
             string? dataURI = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

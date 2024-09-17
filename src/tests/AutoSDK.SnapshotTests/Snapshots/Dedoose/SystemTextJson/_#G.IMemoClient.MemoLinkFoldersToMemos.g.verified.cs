@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoLinkFoldersToMemosResponse> MemoLinkFoldersToMemosAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<string>? folderIds = default,
             global::System.Collections.Generic.IList<string>? memoIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);

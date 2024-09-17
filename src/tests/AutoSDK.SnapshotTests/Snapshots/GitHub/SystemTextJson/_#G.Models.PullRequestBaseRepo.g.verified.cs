@@ -174,7 +174,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -491,19 +491,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; }
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; }
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; }
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// License Simple
@@ -585,13 +585,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

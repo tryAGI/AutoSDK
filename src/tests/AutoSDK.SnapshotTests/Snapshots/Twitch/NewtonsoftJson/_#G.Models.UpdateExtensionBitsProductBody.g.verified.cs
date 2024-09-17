@@ -31,19 +31,19 @@ namespace G
         /// A Boolean value that indicates whether the product is in development. Set to **true** if the product is in development and not available for public use. The default is **false**.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in_development")]
-        public bool InDevelopment { get; set; }
+        public bool? InDevelopment { get; set; }
 
         /// <summary>
         /// The date and time, in RFC3339 format, when the product expires. If not set, the product does not expire. To disable the product, set the expiration date to a date in the past.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expiration")]
-        public global::System.DateTime Expiration { get; set; }
+        public global::System.DateTime? Expiration { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether Bits product purchase events are broadcast to all instances of the extension on a channel. The events are broadcast via the `onTransactionComplete` helper callback. The default is **false**.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_broadcast")]
-        public bool IsBroadcast { get; set; }
+        public bool? IsBroadcast { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

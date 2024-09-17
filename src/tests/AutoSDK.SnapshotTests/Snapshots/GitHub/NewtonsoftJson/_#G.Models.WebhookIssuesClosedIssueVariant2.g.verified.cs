@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
-        public int Comments { get; set; }
+        public int? Comments { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number")]
-        public int Number { get; set; }
+        public int? Number { get; set; }
 
         /// <summary>
         /// 

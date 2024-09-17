@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserRejectInvitationByCurrentUserResponse> UserRejectInvitationByCurrentUserAsync(
             string? token = default,
-            global::System.Guid invitationId = default,
+            global::System.Guid? invitationId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

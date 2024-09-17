@@ -331,25 +331,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks_count")]
-        public int ForksCount { get; set; }
+        public int? ForksCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stargazers_count")]
-        public int StargazersCount { get; set; }
+        public int? StargazersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watchers_count")]
-        public int WatchersCount { get; set; }
+        public int? WatchersCount { get; set; }
 
         /// <summary>
         /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public int Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 
@@ -361,13 +361,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("open_issues_count")]
-        public int OpenIssuesCount { get; set; }
+        public int? OpenIssuesCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -379,49 +379,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues")]
-        public bool HasIssues { get; set; }
+        public bool? HasIssues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects")]
-        public bool HasProjects { get; set; }
+        public bool? HasProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki")]
-        public bool HasWiki { get; set; }
+        public bool? HasWiki { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_pages")]
-        public bool HasPages { get; set; }
+        public bool? HasPages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_downloads")]
-        public bool HasDownloads { get; set; }
+        public bool? HasDownloads { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_discussions")]
-        public bool HasDiscussions { get; set; }
+        public bool? HasDiscussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disabled")]
-        public bool Disabled { get; set; }
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// 
@@ -469,19 +469,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; }
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscribers_count")]
-        public int SubscribersCount { get; set; }
+        public int? SubscribersCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("network_count")]
-        public int NetworkCount { get; set; }
+        public int? NetworkCount { get; set; }
 
         /// <summary>
         /// Code Of Conduct
@@ -499,31 +499,31 @@ namespace G
         /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks")]
-        public int Forks { get; set; }
+        public int? Forks { get; set; }
 
         /// <summary>
         /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("open_issues")]
-        public int OpenIssues { get; set; }
+        public int? OpenIssues { get; set; }
 
         /// <summary>
         /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watchers")]
-        public int Watchers { get; set; }
+        public int? Watchers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// 

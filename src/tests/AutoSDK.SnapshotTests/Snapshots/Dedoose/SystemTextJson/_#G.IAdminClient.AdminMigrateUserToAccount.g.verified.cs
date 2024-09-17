@@ -15,8 +15,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminMigrateUserToAccountResponse> AdminMigrateUserToAccountAsync(
             string? token = default,
-            global::System.Guid userToBeMovedId = default,
-            global::System.Guid accountIdToMoveTo = default,
+            global::System.Guid? userToBeMovedId = default,
+            global::System.Guid? accountIdToMoveTo = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

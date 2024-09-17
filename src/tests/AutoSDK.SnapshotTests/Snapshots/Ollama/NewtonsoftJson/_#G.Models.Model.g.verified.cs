@@ -21,14 +21,14 @@ namespace G
         /// Model modification date.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::System.DateTime ModifiedAt { get; set; }
+        public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
         /// Size of the model on disk.<br/>
         /// Example: 7323310500L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// The model's digest.<br/>

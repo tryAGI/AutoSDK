@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
@@ -25,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audioHours")]
-        public double AudioHours { get; set; }
+        public double? AudioHours { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("videoHours")]
-        public double VideoHours { get; set; }
+        public double? VideoHours { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("monthlyDataCost")]
-        public double MonthlyDataCost { get; set; }
+        public double? MonthlyDataCost { get; set; }
 
         /// <summary>
         /// 

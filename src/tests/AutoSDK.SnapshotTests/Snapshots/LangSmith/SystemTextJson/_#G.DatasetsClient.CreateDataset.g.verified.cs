@@ -118,7 +118,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
             string name,
             global::G.AnyOf<string, object>? description = default,
-            global::System.DateTime createdAt = default,
+            global::System.DateTime? createdAt = default,
             global::G.AnyOf<global::G.DataType2?, object>? dataType = default,
             global::G.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::G.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,

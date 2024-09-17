@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetVIPsResponse> GetVipsAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

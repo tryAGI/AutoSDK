@@ -19,7 +19,7 @@ namespace G
         /// Unique identifier of the repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// The name of the repository.
@@ -37,7 +37,7 @@ namespace G
         /// Whether the repository is private or public.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareAdminSetUserPasswordArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
+            ref global::System.Guid? userId,
             ref string? rsaEncrptedPass);
         partial void PrepareAdminSetUserPasswordRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
+            global::System.Guid? userId,
             string? rsaEncrptedPass);
         partial void ProcessAdminSetUserPasswordResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSetUserPasswordResponse> AdminSetUserPasswordAsync(
             string? token = default,
-            global::System.Guid userId = default,
+            global::System.Guid? userId = default,
             string? rsaEncrptedPass = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

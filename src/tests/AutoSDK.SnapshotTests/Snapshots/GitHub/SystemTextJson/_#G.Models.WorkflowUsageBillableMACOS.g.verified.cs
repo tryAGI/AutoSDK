@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_ms")]
-        public int TotalMs { get; set; }
+        public int? TotalMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -55,7 +55,7 @@ namespace G
             string org,
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType valueType,
-            bool required = default,
+            bool? required = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? defaultValue = default,
             string? description = default,
             global::System.Collections.Generic.IList<string>? allowedValues = default,

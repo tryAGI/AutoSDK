@@ -10,16 +10,16 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType,
             ref string packageName,
-            ref int page,
-            ref int perPage,
+            ref int? page,
+            ref int? perPage,
             ref global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state);
         partial void PreparePackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType,
             string packageName,
-            int page,
-            int perPage,
+            int? page,
+            int? perPage,
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state);
         partial void ProcessPackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,8 +51,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PackageVersion>> PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserAsync(
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType,
             string packageName,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state = global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState.Active,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

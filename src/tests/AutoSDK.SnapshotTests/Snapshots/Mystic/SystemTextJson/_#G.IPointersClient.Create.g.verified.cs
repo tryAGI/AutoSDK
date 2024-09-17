@@ -28,7 +28,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PointerGet> CreateAsync(
             string pointerOrPipelineId,
             string pointer,
-            bool locked = default,
+            bool? locked = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetCustomRewardResponse> GetCustomRewardAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id = default,
-            bool onlyManageableRewards = default,
+            bool? onlyManageableRewards = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,14 +9,14 @@ namespace G
         partial void PrepareUserRegisterConnectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
-            ref global::System.Guid connectionKey);
+            ref global::System.Guid? userId,
+            ref global::System.Guid? connectionKey);
         partial void PrepareUserRegisterConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
-            global::System.Guid connectionKey);
+            global::System.Guid? userId,
+            global::System.Guid? connectionKey);
         partial void ProcessUserRegisterConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UserRegisterConnectionAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

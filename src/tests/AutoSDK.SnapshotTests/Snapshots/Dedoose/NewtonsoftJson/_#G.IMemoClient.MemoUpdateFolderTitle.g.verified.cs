@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoUpdateFolderTitleAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid folderId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? folderId = default,
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -31,8 +31,8 @@ namespace G
             string repo,
             int runId,
             global::G.ActionsListJobsForWorkflowRunFilter? filter = global::G.ActionsListJobsForWorkflowRunFilter.Latest,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

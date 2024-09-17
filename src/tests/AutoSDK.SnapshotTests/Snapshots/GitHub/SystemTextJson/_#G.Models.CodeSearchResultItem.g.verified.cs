@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_size")]
-        public int FileSize { get; set; }
+        public int? FileSize { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_modified_at")]
-        public global::System.DateTime LastModifiedAt { get; set; }
+        public global::System.DateTime? LastModifiedAt { get; set; }
 
         /// <summary>
         /// Example: [73..77, 77..78]

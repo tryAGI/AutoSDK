@@ -22,14 +22,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> MemoStartExportMemosAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? memoIds = default,
             string? description = default,
             string? extension = default,
-            bool includeCodes = default,
-            bool includeMedia = default,
-            bool includeExcerpts = default,
-            bool includeDescriptors = default,
+            bool? includeCodes = default,
+            bool? includeMedia = default,
+            bool? includeExcerpts = default,
+            bool? includeDescriptors = default,
             string? symKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

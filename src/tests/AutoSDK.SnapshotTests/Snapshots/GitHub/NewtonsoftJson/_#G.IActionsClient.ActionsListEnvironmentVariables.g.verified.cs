@@ -26,8 +26,8 @@ namespace G
             string owner,
             string repo,
             string environmentName,
-            int perPage = 10,
-            int page = 1,
+            int? perPage = 10,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

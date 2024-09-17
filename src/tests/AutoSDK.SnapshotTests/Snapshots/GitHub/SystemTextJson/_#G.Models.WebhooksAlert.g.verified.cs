@@ -72,7 +72,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fixed_at")]
-        public global::System.DateTime FixedAt { get; set; }
+        public global::System.DateTime? FixedAt { get; set; }
 
         /// <summary>
         /// 

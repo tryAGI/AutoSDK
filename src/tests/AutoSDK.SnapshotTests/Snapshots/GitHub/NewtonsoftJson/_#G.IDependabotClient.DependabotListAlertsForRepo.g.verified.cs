@@ -48,12 +48,12 @@ namespace G
             global::G.DependabotListAlertsForRepoScope? scope = default,
             global::G.DependabotListAlertsForRepoSort? sort = global::G.DependabotListAlertsForRepoSort.Created,
             global::G.DependabotListAlertsForRepoDirection? direction = global::G.DependabotListAlertsForRepoDirection.Desc,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             string? before = default,
             string? after = default,
-            int first = 30,
-            int last = default,
+            int? first = 30,
+            int? last = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

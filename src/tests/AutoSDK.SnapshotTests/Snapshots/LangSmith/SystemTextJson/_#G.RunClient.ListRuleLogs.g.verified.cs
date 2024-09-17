@@ -9,16 +9,16 @@ namespace G
         partial void PrepareListRuleLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid ruleId,
-            ref int limit,
-            ref int offset,
+            ref int? limit,
+            ref int? offset,
             ref global::G.AnyOf<global::System.DateTime?, object>? startTime,
             ref global::G.AnyOf<global::System.DateTime?, object>? endTime);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid ruleId,
-            int limit,
-            int offset,
+            int? limit,
+            int? offset,
             global::G.AnyOf<global::System.DateTime?, object>? startTime,
             global::G.AnyOf<global::System.DateTime?, object>? endTime);
         partial void ProcessListRuleLogsResponse(
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleLogSchema>> ListRuleLogsAsync(
             global::System.Guid ruleId,
-            int limit = 720,
-            int offset = 0,
+            int? limit = 720,
+            int? offset = 0,
             global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
             global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)

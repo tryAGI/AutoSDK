@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserInviteUserToProjectResponse> UserInviteUserToProjectAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? email = default,
-            global::System.Guid groupId = default,
+            global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

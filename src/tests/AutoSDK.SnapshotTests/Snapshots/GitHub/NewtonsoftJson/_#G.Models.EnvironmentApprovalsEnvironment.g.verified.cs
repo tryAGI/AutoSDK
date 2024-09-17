@@ -14,7 +14,7 @@ namespace G
         /// Example: 56780428
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
@@ -45,13 +45,13 @@ namespace G
         /// The time that the environment was created, in ISO 8601 format.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The time that the environment was last updated, in ISO 8601 format.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

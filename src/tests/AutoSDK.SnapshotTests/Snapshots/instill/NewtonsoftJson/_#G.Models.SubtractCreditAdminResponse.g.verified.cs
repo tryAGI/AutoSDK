@@ -14,7 +14,7 @@ namespace G
         /// The remaining credit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("amount")]
-        public float Amount { get; set; }
+        public float? Amount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,8 +13,8 @@ namespace G
             ref int discussionNumber,
             ref int commentNumber,
             ref global::G.ReactionsListForTeamDiscussionCommentInOrgContent? content,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReactionsListForTeamDiscussionCommentInOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,8 +23,8 @@ namespace G
             int discussionNumber,
             int commentNumber,
             global::G.ReactionsListForTeamDiscussionCommentInOrgContent? content,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReactionsListForTeamDiscussionCommentInOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,8 +59,8 @@ namespace G
             int discussionNumber,
             int commentNumber,
             global::G.ReactionsListForTeamDiscussionCommentInOrgContent? content = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

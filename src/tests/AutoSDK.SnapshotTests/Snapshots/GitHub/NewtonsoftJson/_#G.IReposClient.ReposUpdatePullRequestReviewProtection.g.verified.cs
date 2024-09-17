@@ -59,10 +59,10 @@ namespace G
             string repo,
             string branch,
             global::G.ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions? dismissalRestrictions = default,
-            bool dismissStaleReviews = default,
-            bool requireCodeOwnerReviews = default,
-            int requiredApprovingReviewCount = default,
-            bool requireLastPushApproval = false,
+            bool? dismissStaleReviews = default,
+            bool? requireCodeOwnerReviews = default,
+            int? requiredApprovingReviewCount = default,
+            bool? requireLastPushApproval = false,
             global::G.ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? bypassPullRequestAllowances = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

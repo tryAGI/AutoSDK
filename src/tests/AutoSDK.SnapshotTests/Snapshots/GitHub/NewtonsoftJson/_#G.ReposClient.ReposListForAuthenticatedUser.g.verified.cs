@@ -13,10 +13,10 @@ namespace G
             ref global::G.ReposListForAuthenticatedUserType? type,
             ref global::G.ReposListForAuthenticatedUserSort? sort,
             ref global::G.ReposListForAuthenticatedUserDirection? direction,
-            ref int perPage,
-            ref int page,
-            ref global::System.DateTime since,
-            ref global::System.DateTime before);
+            ref int? perPage,
+            ref int? page,
+            ref global::System.DateTime? since,
+            ref global::System.DateTime? before);
         partial void PrepareReposListForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,10 +25,10 @@ namespace G
             global::G.ReposListForAuthenticatedUserType? type,
             global::G.ReposListForAuthenticatedUserSort? sort,
             global::G.ReposListForAuthenticatedUserDirection? direction,
-            int perPage,
-            int page,
-            global::System.DateTime since,
-            global::System.DateTime before);
+            int? perPage,
+            int? page,
+            global::System.DateTime? since,
+            global::System.DateTime? before);
         partial void ProcessReposListForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,10 +72,10 @@ namespace G
             global::G.ReposListForAuthenticatedUserType? type = global::G.ReposListForAuthenticatedUserType.All,
             global::G.ReposListForAuthenticatedUserSort? sort = global::G.ReposListForAuthenticatedUserSort.FullName,
             global::G.ReposListForAuthenticatedUserDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
-            global::System.DateTime since = default,
-            global::System.DateTime before = default,
+            int? perPage = 30,
+            int? page = 1,
+            global::System.DateTime? since = default,
+            global::System.DateTime? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

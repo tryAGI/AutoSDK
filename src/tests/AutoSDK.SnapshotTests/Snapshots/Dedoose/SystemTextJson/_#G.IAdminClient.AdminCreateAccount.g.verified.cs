@@ -15,8 +15,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminCreateAccountResponse> AdminCreateAccountAsync(
             string? token = default,
-            global::System.Guid adminId = default,
-            double credits = default,
+            global::System.Guid? adminId = default,
+            double? credits = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

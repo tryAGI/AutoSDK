@@ -147,7 +147,7 @@ namespace G
             global::G.SummarizeRequestFormat? format = global::G.SummarizeRequestFormat.Paragraph,
             string? model = default,
             global::G.SummarizeRequestExtractiveness? extractiveness = global::G.SummarizeRequestExtractiveness.Low,
-            double temperature = 0.3,
+            double? temperature = 0.3,
             string? additionalCommand = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

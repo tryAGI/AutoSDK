@@ -9,14 +9,14 @@ namespace G
         partial void PrepareOrgsListMembershipsForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.OrgsListMembershipsForAuthenticatedUserState? state,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareOrgsListMembershipsForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.OrgsListMembershipsForAuthenticatedUserState? state,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessOrgsListMembershipsForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgMembership>> OrgsListMembershipsForAuthenticatedUserAsync(
             global::G.OrgsListMembershipsForAuthenticatedUserState? state = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

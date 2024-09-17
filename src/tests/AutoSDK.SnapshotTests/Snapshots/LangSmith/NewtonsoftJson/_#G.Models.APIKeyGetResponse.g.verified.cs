@@ -39,7 +39,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_only")]
-        public bool ReadOnly { get; set; } = false;
+        public bool? ReadOnly { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

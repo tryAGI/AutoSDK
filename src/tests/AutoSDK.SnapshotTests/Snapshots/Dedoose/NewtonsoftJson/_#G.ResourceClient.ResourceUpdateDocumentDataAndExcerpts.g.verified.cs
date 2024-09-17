@@ -10,21 +10,21 @@ namespace G
         partial void PrepareResourceUpdateDocumentDataAndExcerptsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
-            ref global::System.Guid resourceId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
+            ref global::System.Guid? resourceId,
             ref string? updatedTextDataURI,
-            ref int updatedLength,
+            ref int? updatedLength,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
         partial void PrepareResourceUpdateDocumentDataAndExcerptsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
-            global::System.Guid resourceId,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
+            global::System.Guid? resourceId,
             string? updatedTextDataURI,
-            int updatedLength,
+            int? updatedLength,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts);
         partial void ProcessResourceUpdateDocumentDataAndExcerptsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,11 +49,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateDocumentDataAndExcerptsResponse> ResourceUpdateDocumentDataAndExcerptsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? resourceId = default,
             string? updatedTextDataURI = default,
-            int updatedLength = default,
+            int? updatedLength = default,
             global::System.Collections.Generic.IList<global::G.Excerpt>? excerpts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

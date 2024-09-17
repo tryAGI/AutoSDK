@@ -25,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformedContentChunkNum")]
-        public int TransformedContentChunkNum { get; set; }
+        public int? TransformedContentChunkNum { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformedContentTokenNum")]
-        public int TransformedContentTokenNum { get; set; }
+        public int? TransformedContentTokenNum { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformedContentUpdateTime")]
-        public global::System.DateTime TransformedContentUpdateTime { get; set; }
+        public global::System.DateTime? TransformedContentUpdateTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

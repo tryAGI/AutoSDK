@@ -12,10 +12,10 @@ namespace G
             ref string moderatorId,
             ref string sessionId,
             ref string slotId,
-            ref bool isAudioEnabled,
-            ref bool isVideoEnabled,
-            ref bool isLive,
-            ref int volume);
+            ref bool? isAudioEnabled,
+            ref bool? isVideoEnabled,
+            ref bool? isLive,
+            ref int? volume);
         partial void PrepareUpdateGuestStarSlotSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,10 +23,10 @@ namespace G
             string moderatorId,
             string sessionId,
             string slotId,
-            bool isAudioEnabled,
-            bool isVideoEnabled,
-            bool isLive,
-            int volume);
+            bool? isAudioEnabled,
+            bool? isVideoEnabled,
+            bool? isLive,
+            int? volume);
         partial void ProcessUpdateGuestStarSlotSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,10 +53,10 @@ namespace G
             string moderatorId,
             string sessionId,
             string slotId,
-            bool isAudioEnabled = default,
-            bool isVideoEnabled = default,
-            bool isLive = default,
-            int volume = default,
+            bool? isAudioEnabled = default,
+            bool? isVideoEnabled = default,
+            bool? isLive = default,
+            int? volume = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

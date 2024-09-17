@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("isSuccessfull")]
-        public bool IsSuccessfull { get; set; }
+        public bool? IsSuccessfull { get; set; }
 
         /// <summary>
         /// 

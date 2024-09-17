@@ -9,16 +9,16 @@ namespace G
         partial void PrepareResourceStartAddPDFImageResourceJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
             ref string? fileName,
             ref string? fileURI);
         partial void PrepareResourceStartAddPDFImageResourceJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
             string? fileName,
             string? fileURI);
         partial void ProcessResourceStartAddPDFImageResourceJobResponse(
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ResourceStartAddPDFImageResourceJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             string? fileName = default,
             string? fileURI = default,
             global::System.Threading.CancellationToken cancellationToken = default)

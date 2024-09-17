@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AdminGetMergeStatusResponse> AdminGetMergeStatusAsync(
             string? token = default,
-            global::System.Guid mergedProjectId = default,
+            global::System.Guid? mergedProjectId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

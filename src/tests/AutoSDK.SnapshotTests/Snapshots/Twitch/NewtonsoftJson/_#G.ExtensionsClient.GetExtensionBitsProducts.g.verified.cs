@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGetExtensionBitsProductsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool shouldIncludeAll);
+            ref bool? shouldIncludeAll);
         partial void PrepareGetExtensionBitsProductsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool shouldIncludeAll);
+            bool? shouldIncludeAll);
         partial void ProcessGetExtensionBitsProductsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,7 +32,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionBitsProductsResponse> GetExtensionBitsProductsAsync(
-            bool shouldIncludeAll = default,
+            bool? shouldIncludeAll = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

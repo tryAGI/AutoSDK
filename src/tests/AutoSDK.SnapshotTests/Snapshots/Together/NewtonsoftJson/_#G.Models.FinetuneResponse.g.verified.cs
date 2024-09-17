@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("TrainingFileNumLines")]
-        public int TrainingFileNumLines { get; set; }
+        public int? TrainingFileNumLines { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("TrainingFileSize")]
-        public int TrainingFileSize { get; set; }
+        public int? TrainingFileSize { get; set; }
 
         /// <summary>
         /// 
@@ -73,55 +73,55 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs")]
-        public int NEpochs { get; set; }
+        public int? NEpochs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
-        public int NCheckpoints { get; set; }
+        public int? NCheckpoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public int BatchSize { get; set; }
+        public int? BatchSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public double LearningRate { get; set; }
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eval_steps")]
-        public int EvalSteps { get; set; }
+        public int? EvalSteps { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora")]
-        public bool Lora { get; set; }
+        public bool? Lora { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_r")]
-        public int LoraR { get; set; }
+        public int? LoraR { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_alpha")]
-        public int LoraAlpha { get; set; }
+        public int? LoraAlpha { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_dropout")]
-        public int LoraDropout { get; set; }
+        public int? LoraDropout { get; set; }
 
         /// <summary>
         /// 
@@ -145,31 +145,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token_count")]
-        public int TokenCount { get; set; }
+        public int? TokenCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("param_count")]
-        public int ParamCount { get; set; }
+        public int? ParamCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_price")]
-        public int TotalPrice { get; set; }
+        public int? TotalPrice { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("epochs_completed")]
-        public int EpochsCompleted { get; set; }
+        public int? EpochsCompleted { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queue_depth")]
-        public int QueueDepth { get; set; }
+        public int? QueueDepth { get; set; }
 
         /// <summary>
         /// 

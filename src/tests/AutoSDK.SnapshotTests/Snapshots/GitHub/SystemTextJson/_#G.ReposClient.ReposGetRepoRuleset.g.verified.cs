@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref int rulesetId,
-            ref bool includesParents);
+            ref bool? includesParents);
         partial void PrepareReposGetRepoRulesetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int rulesetId,
-            bool includesParents);
+            bool? includesParents);
         partial void ProcessReposGetRepoRulesetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace G
             string owner,
             string repo,
             int rulesetId,
-            bool includesParents = true,
+            bool? includesParents = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

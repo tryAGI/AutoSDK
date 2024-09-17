@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExportStartExportHierarchicalChartJobResponse> ExportStartExportHierarchicalChartJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems = default,
             global::System.Threading.CancellationToken cancellationToken = default);

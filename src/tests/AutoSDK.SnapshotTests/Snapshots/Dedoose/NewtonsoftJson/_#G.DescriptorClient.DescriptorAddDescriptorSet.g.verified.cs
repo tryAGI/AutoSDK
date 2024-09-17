@@ -9,18 +9,18 @@ namespace G
         partial void PrepareDescriptorAddDescriptorSetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             ref string? description,
-            ref global::System.Guid createByUserId);
+            ref global::System.Guid? createByUserId);
         partial void PrepareDescriptorAddDescriptorSetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             string? description,
-            global::System.Guid createByUserId);
+            global::System.Guid? createByUserId);
         partial void ProcessDescriptorAddDescriptorSetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,10 +42,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorSet> DescriptorAddDescriptorSetAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? description = default,
-            global::System.Guid createByUserId = default,
+            global::System.Guid? createByUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

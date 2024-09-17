@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref bool allTeam,
-            ref int skip,
-            ref int limit);
+            ref bool? allTeam,
+            ref int? skip,
+            ref int? limit);
         partial void PrepareIndexRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            bool allTeam,
-            int skip,
-            int limit);
+            bool? allTeam,
+            int? skip,
+            int? limit);
         partial void ProcessIndexResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,9 +42,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PaginatedTokenGet> IndexAsync(
-            bool allTeam = false,
-            int skip = 0,
-            int limit = 20,
+            bool? allTeam = false,
+            int? skip = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

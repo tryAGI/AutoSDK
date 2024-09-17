@@ -20,7 +20,7 @@ namespace G
         /// Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping event to the webhook URL you specified during registration. The GitHub App ID sent in this field is required for authenticating an app.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
-        public int AppId { get; set; }
+        public int? AppId { get; set; }
 
         /// <summary>
         /// 

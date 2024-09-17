@@ -116,7 +116,7 @@ namespace G
             global::System.Guid datasetId,
             string splitName,
             global::System.Collections.Generic.IList<global::System.Guid> examples,
-            bool remove = false,
+            bool? remove = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut

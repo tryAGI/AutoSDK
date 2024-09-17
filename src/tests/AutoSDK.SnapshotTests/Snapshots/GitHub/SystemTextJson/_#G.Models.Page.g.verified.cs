@@ -97,7 +97,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("https_enforced")]
-        public bool HttpsEnforced { get; set; }
+        public bool? HttpsEnforced { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

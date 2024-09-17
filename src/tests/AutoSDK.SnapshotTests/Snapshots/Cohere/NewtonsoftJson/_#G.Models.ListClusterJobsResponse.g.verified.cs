@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
-        public int TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 

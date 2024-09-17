@@ -24,17 +24,17 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AccountVO> AccountUpdateAccountPWPolicyAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            bool enforcePolicy = default,
-            int minLength = default,
-            bool requireChar = default,
-            bool requireUpper = default,
-            bool requireNumber = default,
-            bool requireSymbol = default,
-            double maxAgeInDays = default,
-            bool require2Auth = default,
-            bool relogin2Auth = default,
-            int idleTimeoutInMinutes = default,
+            global::System.Guid? accountId = default,
+            bool? enforcePolicy = default,
+            int? minLength = default,
+            bool? requireChar = default,
+            bool? requireUpper = default,
+            bool? requireNumber = default,
+            bool? requireSymbol = default,
+            double? maxAgeInDays = default,
+            bool? require2Auth = default,
+            bool? relogin2Auth = default,
+            int? idleTimeoutInMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

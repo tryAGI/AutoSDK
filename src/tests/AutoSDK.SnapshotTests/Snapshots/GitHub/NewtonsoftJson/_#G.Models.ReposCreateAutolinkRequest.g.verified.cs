@@ -26,7 +26,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_alphanumeric")]
-        public bool IsAlphanumeric { get; set; } = true;
+        public bool? IsAlphanumeric { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

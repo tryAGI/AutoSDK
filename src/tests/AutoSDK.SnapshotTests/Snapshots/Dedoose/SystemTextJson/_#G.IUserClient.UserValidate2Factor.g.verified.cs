@@ -17,7 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.User> UserValidate2FactorAsync(
             string? token = default,
             string? username = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? connectionKey = default,
             string? encryptedAuthToken = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

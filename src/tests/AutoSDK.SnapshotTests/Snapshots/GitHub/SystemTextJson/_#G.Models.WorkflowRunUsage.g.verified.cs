@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_duration_ms")]
-        public int RunDurationMs { get; set; }
+        public int? RunDurationMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

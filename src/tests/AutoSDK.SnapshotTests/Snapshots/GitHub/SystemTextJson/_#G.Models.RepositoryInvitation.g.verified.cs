@@ -58,7 +58,7 @@ namespace G
         /// Whether or not the invitation has expired
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
-        public bool Expired { get; set; }
+        public bool? Expired { get; set; }
 
         /// <summary>
         /// URL for the repository invitation<br/>

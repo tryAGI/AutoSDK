@@ -27,7 +27,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? id = default,
             global::G.GetCustomRewardRedemptionSort? sort = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

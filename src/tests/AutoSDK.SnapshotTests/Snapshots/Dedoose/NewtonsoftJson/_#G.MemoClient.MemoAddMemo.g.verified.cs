@@ -10,7 +10,7 @@ namespace G
         partial void PrepareMemoAddMemoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             ref string? dataPath,
             global::System.Collections.Generic.IList<global::System.Guid>? folderIds,
@@ -22,7 +22,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             string? dataPath,
             global::System.Collections.Generic.IList<global::System.Guid>? folderIds,
@@ -55,7 +55,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoAndLinks> MemoAddMemoAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? dataPath = default,
             global::System.Collections.Generic.IList<global::System.Guid>? folderIds = default,

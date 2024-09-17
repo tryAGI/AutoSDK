@@ -51,7 +51,7 @@ namespace G
         /// Time in minutes before codespace stops from inactivity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_minutes")]
-        public int IdleTimeoutMinutes { get; set; }
+        public int? IdleTimeoutMinutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

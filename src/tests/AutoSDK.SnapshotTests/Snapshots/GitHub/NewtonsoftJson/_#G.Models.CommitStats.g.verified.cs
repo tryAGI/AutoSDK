@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("additions")]
-        public int Additions { get; set; }
+        public int? Additions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deletions")]
-        public int Deletions { get; set; }
+        public int? Deletions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
-        public int Total { get; set; }
+        public int? Total { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

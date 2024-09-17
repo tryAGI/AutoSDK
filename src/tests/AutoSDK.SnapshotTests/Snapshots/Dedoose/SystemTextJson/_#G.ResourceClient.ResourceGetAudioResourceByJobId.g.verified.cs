@@ -9,13 +9,13 @@ namespace G
         partial void PrepareResourceGetAudioResourceByJobIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? jobId);
         partial void PrepareResourceGetAudioResourceByJobIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? jobId);
         partial void ProcessResourceGetAudioResourceByJobIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Resource> ResourceGetAudioResourceByJobIdAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? jobId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -19,7 +19,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speaker_num")]
-        public double SpeakerNum { get; set; }
+        public double? SpeakerNum { get; set; }
 
         /// <summary>
         /// Example: My Title
@@ -31,7 +31,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("translate_audio_only")]
-        public bool TranslateAudioOnly { get; set; }
+        public bool? TranslateAudioOnly { get; set; }
 
         /// <summary>
         /// Example: https://static.heygen.ai/heygen/asset/originalnew.mp4

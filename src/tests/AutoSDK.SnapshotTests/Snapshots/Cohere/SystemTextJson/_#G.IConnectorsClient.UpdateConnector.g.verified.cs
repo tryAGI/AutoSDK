@@ -52,8 +52,8 @@ namespace G
             string? url = default,
             global::System.Collections.Generic.IList<string>? excludes = default,
             global::G.CreateConnectorOAuth? oauth = default,
-            bool active = true,
-            bool continueOnFailure = false,
+            bool? active = true,
+            bool? continueOnFailure = false,
             global::G.CreateConnectorServiceAuth? serviceAuth = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

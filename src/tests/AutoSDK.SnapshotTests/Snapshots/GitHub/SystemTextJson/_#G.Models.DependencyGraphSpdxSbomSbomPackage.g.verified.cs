@@ -45,7 +45,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filesAnalyzed")]
-        public bool FilesAnalyzed { get; set; }
+        public bool? FilesAnalyzed { get; set; }
 
         /// <summary>
         /// The license of the package as determined while creating the SPDX document.<br/>

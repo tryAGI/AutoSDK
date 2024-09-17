@@ -9,14 +9,14 @@ namespace G
         partial void PrepareUsersListSshSigningKeysForUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string username,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareUsersListSshSigningKeysForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string username,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessUsersListSshSigningKeysForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SshSigningKey>> UsersListSshSigningKeysForUserAsync(
             string username,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

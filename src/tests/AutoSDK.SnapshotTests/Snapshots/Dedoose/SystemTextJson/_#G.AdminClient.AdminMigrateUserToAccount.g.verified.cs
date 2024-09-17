@@ -9,14 +9,14 @@ namespace G
         partial void PrepareAdminMigrateUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userToBeMovedId,
-            ref global::System.Guid accountIdToMoveTo);
+            ref global::System.Guid? userToBeMovedId,
+            ref global::System.Guid? accountIdToMoveTo);
         partial void PrepareAdminMigrateUserToAccountRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userToBeMovedId,
-            global::System.Guid accountIdToMoveTo);
+            global::System.Guid? userToBeMovedId,
+            global::System.Guid? accountIdToMoveTo);
         partial void ProcessAdminMigrateUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminMigrateUserToAccountResponse> AdminMigrateUserToAccountAsync(
             string? token = default,
-            global::System.Guid userToBeMovedId = default,
-            global::System.Guid accountIdToMoveTo = default,
+            global::System.Guid? userToBeMovedId = default,
+            global::System.Guid? accountIdToMoveTo = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

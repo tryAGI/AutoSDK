@@ -11,16 +11,16 @@ namespace G
             ref string org,
             ref string? since,
             ref string? until,
-            ref int page,
-            ref int perPage);
+            ref int? page,
+            ref int? perPage);
         partial void PrepareCopilotUsageMetricsForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             string? since,
             string? until,
-            int page,
-            int perPage);
+            int? page,
+            int? perPage);
         partial void ProcessCopilotUsageMetricsForOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,8 +58,8 @@ namespace G
             string org,
             string? since = default,
             string? until = default,
-            int page = 1,
-            int perPage = 28,
+            int? page = 1,
+            int? perPage = 28,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

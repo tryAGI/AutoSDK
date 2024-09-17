@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("typeInt")]
-        public int TypeInt { get; set; }
+        public int? TypeInt { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isDynamic")]
-        public bool IsDynamic { get; set; }
+        public bool? IsDynamic { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

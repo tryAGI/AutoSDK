@@ -36,13 +36,13 @@ namespace G
         /// The UTC date and time that the WebSocket connection was established. Included only if `method` is set to **websocket**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connected_at")]
-        public global::System.DateTime ConnectedAt { get; set; }
+        public global::System.DateTime? ConnectedAt { get; set; }
 
         /// <summary>
         /// The UTC date and time that the WebSocket connection was lost. Included only if `method` is set to **websocket**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disconnected_at")]
-        public global::System.DateTime DisconnectedAt { get; set; }
+        public global::System.DateTime? DisconnectedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -30,7 +30,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additions")]
-        public int Additions { get; set; }
+        public int? Additions { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changed_files")]
-        public int ChangedFiles { get; set; }
+        public int? ChangedFiles { get; set; }
 
         /// <summary>
         /// 
@@ -92,7 +92,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public int Comments { get; set; }
+        public int? Comments { get; set; }
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits")]
-        public int Commits { get; set; }
+        public int? Commits { get; set; }
 
         /// <summary>
         /// 
@@ -125,7 +125,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deletions")]
-        public int Deletions { get; set; }
+        public int? Deletions { get; set; }
 
         /// <summary>
         /// 
@@ -187,7 +187,7 @@ namespace G
         /// Indicates whether maintainers can modify the pull request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainer_can_modify")]
-        public bool MaintainerCanModify { get; set; }
+        public bool? MaintainerCanModify { get; set; }
 
         /// <summary>
         /// 
@@ -286,7 +286,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comments")]
-        public int ReviewComments { get; set; }
+        public int? ReviewComments { get; set; }
 
         /// <summary>
         /// 

@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DescriptorValueDTO>> DescriptorGetProjectDescriptorFieldValuesAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int page = default,
-            int pageSize = default,
+            global::System.Guid? projectId = default,
+            int? page = default,
+            int? pageSize = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

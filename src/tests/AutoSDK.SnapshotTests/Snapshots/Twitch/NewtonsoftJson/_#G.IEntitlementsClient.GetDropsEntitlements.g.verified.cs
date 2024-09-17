@@ -37,7 +37,7 @@ namespace G
             string? gameId = default,
             global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

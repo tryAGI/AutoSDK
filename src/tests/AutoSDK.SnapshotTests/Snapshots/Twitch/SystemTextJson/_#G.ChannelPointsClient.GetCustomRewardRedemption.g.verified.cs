@@ -15,7 +15,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? id,
             ref global::G.GetCustomRewardRedemptionSort? sort,
             ref string? after,
-            ref int first);
+            ref int? first);
         partial void PrepareGetCustomRewardRedemptionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,7 +25,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? id,
             global::G.GetCustomRewardRedemptionSort? sort,
             string? after,
-            int first);
+            int? first);
         partial void ProcessGetCustomRewardRedemptionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,7 +57,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? id = default,
             global::G.GetCustomRewardRedemptionSort? sort = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

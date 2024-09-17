@@ -10,18 +10,18 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? extensionId,
             ref global::G.GetExtensionAnalyticsType? type,
-            ref global::System.DateTime startedAt,
-            ref global::System.DateTime endedAt,
-            ref int first,
+            ref global::System.DateTime? startedAt,
+            ref global::System.DateTime? endedAt,
+            ref int? first,
             ref string? after);
         partial void PrepareGetExtensionAnalyticsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? extensionId,
             global::G.GetExtensionAnalyticsType? type,
-            global::System.DateTime startedAt,
-            global::System.DateTime endedAt,
-            int first,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? endedAt,
+            int? first,
             string? after);
         partial void ProcessGetExtensionAnalyticsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,9 +49,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionAnalyticsResponse> GetExtensionAnalyticsAsync(
             string? extensionId = default,
             global::G.GetExtensionAnalyticsType? type = default,
-            global::System.DateTime startedAt = default,
-            global::System.DateTime endedAt = default,
-            int first = default,
+            global::System.DateTime? startedAt = default,
+            global::System.DateTime? endedAt = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

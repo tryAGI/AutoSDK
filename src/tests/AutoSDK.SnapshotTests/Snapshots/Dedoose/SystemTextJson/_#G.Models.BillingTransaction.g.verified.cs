@@ -13,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accountId")]
-        public global::System.Guid AccountId { get; set; }
+        public global::System.Guid? AccountId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billingDate")]
-        public global::System.DateTime BillingDate { get; set; }
+        public global::System.DateTime? BillingDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("amountPaid")]
-        public double AmountPaid { get; set; }
+        public double? AmountPaid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creditsAdded")]
-        public double CreditsAdded { get; set; }
+        public double? CreditsAdded { get; set; }
 
         /// <summary>
         /// 

@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string fineTuningJobId,
             ref string? after,
-            ref int limit);
+            ref int? limit);
         partial void PrepareListFineTuningJobCheckpointsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string fineTuningJobId,
             string? after,
-            int limit);
+            int? limit);
         partial void ProcessListFineTuningJobCheckpointsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListFineTuningJobCheckpointsResponse> ListFineTuningJobCheckpointsAsync(
             string fineTuningJobId,
             string? after = default,
-            int limit = 10,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

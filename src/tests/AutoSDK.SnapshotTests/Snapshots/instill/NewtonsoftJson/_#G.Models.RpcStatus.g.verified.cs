@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code")]
-        public int Code { get; set; }
+        public int? Code { get; set; }
 
         /// <summary>
         /// 

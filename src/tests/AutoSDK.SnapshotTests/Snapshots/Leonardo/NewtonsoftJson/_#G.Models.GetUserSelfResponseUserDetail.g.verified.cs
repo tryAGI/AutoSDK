@@ -31,25 +31,25 @@ namespace G
         /// Current balance of user plan subscription tokens the user has.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptionTokens")]
-        public int SubscriptionTokens { get; set; }
+        public int? SubscriptionTokens { get; set; }
 
         /// <summary>
         /// Current balance of user plan GPT tokens the user has.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptionGptTokens")]
-        public int SubscriptionGptTokens { get; set; }
+        public int? SubscriptionGptTokens { get; set; }
 
         /// <summary>
         /// Current balance of model training tokens the user has.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptionModelTokens")]
-        public int SubscriptionModelTokens { get; set; }
+        public int? SubscriptionModelTokens { get; set; }
 
         /// <summary>
         /// API Concurrency Slots.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apiConcurrencySlots")]
-        public int ApiConcurrencySlots { get; set; }
+        public int? ApiConcurrencySlots { get; set; }
 
         /// <summary>
         /// Current balance of API paid tokens the user has.
@@ -61,7 +61,7 @@ namespace G
         /// Current balance of Enterprise API subscriptions tokens the user has.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apiSubscriptionTokens")]
-        public int ApiSubscriptionTokens { get; set; }
+        public int? ApiSubscriptionTokens { get; set; }
 
         /// <summary>
         /// API Plan Token Renewal Date.

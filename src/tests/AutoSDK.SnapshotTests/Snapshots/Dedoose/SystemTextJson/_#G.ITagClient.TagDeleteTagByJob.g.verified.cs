@@ -27,20 +27,20 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> TagDeleteTagByJobAsync(
             string? token = default,
-            global::System.Guid currentProjectId = default,
+            global::System.Guid? currentProjectId = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
             string? title = default,
             string? description = default,
-            bool isWeighted = default,
-            double weightMin = default,
-            double weightMax = default,
-            double weightDefault = default,
-            int sortOrder = default,
-            int color = default,
-            bool allowDecimalWeight = default,
+            bool? isWeighted = default,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            int? sortOrder = default,
+            int? color = default,
+            bool? allowDecimalWeight = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

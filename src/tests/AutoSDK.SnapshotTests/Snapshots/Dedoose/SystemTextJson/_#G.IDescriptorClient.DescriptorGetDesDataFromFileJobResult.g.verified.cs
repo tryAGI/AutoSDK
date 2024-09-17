@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DescriptorGetDesDataFromFileJobResultResponse> DescriptorGetDesDataFromFileJobResultAsync(
             string? token = default,
-            global::System.Guid jobId = default,
+            global::System.Guid? jobId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

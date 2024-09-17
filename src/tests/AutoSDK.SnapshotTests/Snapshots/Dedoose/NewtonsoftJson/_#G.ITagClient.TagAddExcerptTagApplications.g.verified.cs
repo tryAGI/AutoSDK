@@ -18,10 +18,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TagAddExcerptTagApplicationsResponse> TagAddExcerptTagApplicationsAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            global::System.Guid excerptId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            global::System.Guid? excerptId = default,
             global::System.Collections.Generic.IList<global::G.TagAppSimple>? tagApps = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

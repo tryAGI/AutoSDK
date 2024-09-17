@@ -26,7 +26,7 @@ namespace G
         /// The ID of the ruleset that includes this rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ruleset_id")]
-        public int RulesetId { get; set; }
+        public int? RulesetId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

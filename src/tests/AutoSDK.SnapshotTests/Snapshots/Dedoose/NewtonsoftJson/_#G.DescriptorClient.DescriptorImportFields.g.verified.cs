@@ -10,19 +10,19 @@ namespace G
         partial void PrepareDescriptorImportFieldsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid userId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? userId,
             global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
-            ref global::System.Guid existingSetId,
+            ref global::System.Guid? existingSetId,
             ref string? newSetTitle);
         partial void PrepareDescriptorImportFieldsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid userId,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
             global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos,
-            global::System.Guid existingSetId,
+            global::System.Guid? existingSetId,
             string? newSetTitle);
         partial void ProcessDescriptorImportFieldsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,10 +46,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorImportFieldsResponse> DescriptorImportFieldsAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? userId = default,
             global::System.Collections.Generic.IList<global::G.FieldInfo>? fieldInfos = default,
-            global::System.Guid existingSetId = default,
+            global::System.Guid? existingSetId = default,
             string? newSetTitle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

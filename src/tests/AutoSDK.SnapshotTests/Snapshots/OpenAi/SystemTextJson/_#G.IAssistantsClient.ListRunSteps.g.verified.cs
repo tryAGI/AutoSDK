@@ -23,7 +23,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListRunStepsOrder? order = global::G.ListRunStepsOrder.Desc,
             string? after = default,
             string? before = default,

@@ -26,7 +26,7 @@ namespace G
         /// ID of the controlnet. A list of compatible IDs can be found in our guides.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preprocessorId")]
-        public double PreprocessorId { get; set; }
+        public double? PreprocessorId { get; set; }
 
         /// <summary>
         /// Weight for the controlnet

@@ -21,9 +21,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Installation>> AppsListInstallationsAsync(
-            int perPage = 30,
-            int page = 1,
-            global::System.DateTime since = default,
+            int? perPage = 30,
+            int? page = 1,
+            global::System.DateTime? since = default,
             string? outdated = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

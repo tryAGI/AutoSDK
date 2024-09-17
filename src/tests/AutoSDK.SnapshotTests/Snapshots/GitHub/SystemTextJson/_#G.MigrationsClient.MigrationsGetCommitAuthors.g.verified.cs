@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int since);
+            ref int? since);
         partial void PrepareMigrationsGetCommitAuthorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int since);
+            int? since);
         partial void ProcessMigrationsGetCommitAuthorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PorterAuthor>> MigrationsGetCommitAuthorsAsync(
             string owner,
             string repo,
-            int since = default,
+            int? since = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

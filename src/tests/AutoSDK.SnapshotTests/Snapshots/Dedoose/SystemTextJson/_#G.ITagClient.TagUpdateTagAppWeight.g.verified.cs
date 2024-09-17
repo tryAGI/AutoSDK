@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TagUpdateTagAppWeightResponse> TagUpdateTagAppWeightAsync(
             string? token = default,
-            global::System.Guid currentProjectId = default,
-            global::System.Guid tagAppId = default,
-            double newWeight = default,
+            global::System.Guid? currentProjectId = default,
+            global::System.Guid? tagAppId = default,
+            double? newWeight = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -15,7 +15,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<string>? actorEmails,
             global::System.Collections.Generic.IList<string>? resourceIds,
-            ref int limit,
+            ref int? limit,
             ref string? after,
             ref string? before);
         partial void PrepareListAuditLogsRequest(
@@ -27,7 +27,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<string>? actorEmails,
             global::System.Collections.Generic.IList<string>? resourceIds,
-            int limit,
+            int? limit,
             string? after,
             string? before);
         partial void ProcessListAuditLogsResponse(
@@ -62,7 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

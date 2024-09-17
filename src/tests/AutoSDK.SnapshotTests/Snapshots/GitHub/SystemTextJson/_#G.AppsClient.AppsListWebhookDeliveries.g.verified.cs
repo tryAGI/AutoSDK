@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareAppsListWebhookDeliveriesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int perPage,
+            ref int? perPage,
             ref string? cursor,
-            ref bool redelivery);
+            ref bool? redelivery);
         partial void PrepareAppsListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int perPage,
+            int? perPage,
             string? cursor,
-            bool redelivery);
+            bool? redelivery);
         partial void ProcessAppsListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>> AppsListWebhookDeliveriesAsync(
-            int perPage = 30,
+            int? perPage = 30,
             string? cursor = default,
-            bool redelivery = default,
+            bool? redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

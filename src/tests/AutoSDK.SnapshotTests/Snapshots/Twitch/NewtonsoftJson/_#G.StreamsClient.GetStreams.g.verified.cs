@@ -14,7 +14,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? gameId,
             ref global::G.GetStreamsType? type,
             global::System.Collections.Generic.IList<string>? language,
-            ref int first,
+            ref int? first,
             ref string? before,
             ref string? after);
         partial void PrepareGetStreamsRequest(
@@ -25,7 +25,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? gameId,
             global::G.GetStreamsType? type,
             global::System.Collections.Generic.IList<string>? language,
-            int first,
+            int? first,
             string? before,
             string? after);
         partial void ProcessGetStreamsResponse(
@@ -59,7 +59,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? gameId = default,
             global::G.GetStreamsType? type = default,
             global::System.Collections.Generic.IList<string>? language = default,
-            int first = default,
+            int? first = default,
             string? before = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)

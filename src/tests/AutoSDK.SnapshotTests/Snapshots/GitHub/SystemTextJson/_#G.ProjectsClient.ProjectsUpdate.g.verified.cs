@@ -133,7 +133,7 @@ namespace G
             string? body = default,
             string? state = default,
             global::G.ProjectsUpdateRequestOrganizationPermission? organizationPermission = default,
-            bool @private = default,
+            bool? @private = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ProjectsUpdateRequest

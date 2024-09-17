@@ -63,7 +63,7 @@ namespace G
             string clientId,
             string accessToken,
             string? target = default,
-            int targetId = default,
+            int? targetId = default,
             global::System.Collections.Generic.IList<string>? repositories = default,
             global::System.Collections.Generic.IList<int>? repositoryIds = default,
             global::G.AppPermissions? permissions = default,

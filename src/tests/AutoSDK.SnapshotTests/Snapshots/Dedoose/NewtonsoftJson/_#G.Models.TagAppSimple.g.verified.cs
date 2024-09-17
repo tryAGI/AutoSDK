@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tagId")]
-        public global::System.Guid TagId { get; set; }
+        public global::System.Guid? TagId { get; set; }
 
         /// <summary>
         /// 

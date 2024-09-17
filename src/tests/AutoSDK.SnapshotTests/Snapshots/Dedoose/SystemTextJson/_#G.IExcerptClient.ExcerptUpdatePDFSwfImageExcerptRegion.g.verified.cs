@@ -18,11 +18,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdatePDFSwfImageExcerptRegionAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid currentUserId = default,
-            global::System.Guid excerptId = default,
-            int newStart = default,
-            int newEnd = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? currentUserId = default,
+            global::System.Guid? excerptId = default,
+            int? newStart = default,
+            int? newEnd = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

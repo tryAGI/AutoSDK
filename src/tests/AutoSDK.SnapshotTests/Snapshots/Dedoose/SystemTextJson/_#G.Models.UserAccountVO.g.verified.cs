@@ -13,43 +13,43 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isPastDue")]
-        public bool IsPastDue { get; set; }
+        public bool? IsPastDue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isDisabled")]
-        public bool IsDisabled { get; set; }
+        public bool? IsDisabled { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accountId")]
-        public global::System.Guid AccountId { get; set; }
+        public global::System.Guid? AccountId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accountUserCount")]
-        public int AccountUserCount { get; set; }
+        public int? AccountUserCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accountCPUPM")]
-        public double AccountCPUPM { get; set; }
+        public double? AccountCPUPM { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("currentBalance")]
-        public double CurrentBalance { get; set; }
+        public double? CurrentBalance { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastPaymentDate")]
-        public global::System.DateTime LastPaymentDate { get; set; }
+        public global::System.DateTime? LastPaymentDate { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastPaymentAmmount")]
-        public double LastPaymentAmmount { get; set; }
+        public double? LastPaymentAmmount { get; set; }
 
         /// <summary>
         /// 

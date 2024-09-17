@@ -20,7 +20,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("force")]
-        public bool Force { get; set; } = false;
+        public bool? Force { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -32,7 +32,7 @@ namespace G
         /// Example: 30
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wait_timer")]
-        public int WaitTimer { get; set; }
+        public int? WaitTimer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

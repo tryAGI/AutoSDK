@@ -26,7 +26,7 @@ namespace G
             string status,
             string? userId = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

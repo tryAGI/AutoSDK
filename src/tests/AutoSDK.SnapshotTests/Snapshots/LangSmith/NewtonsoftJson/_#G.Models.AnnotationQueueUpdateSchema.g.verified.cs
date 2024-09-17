@@ -39,7 +39,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_reservations")]
-        public bool EnableReservations { get; set; } = true;
+        public bool? EnableReservations { get; set; } = true;
 
         /// <summary>
         /// 

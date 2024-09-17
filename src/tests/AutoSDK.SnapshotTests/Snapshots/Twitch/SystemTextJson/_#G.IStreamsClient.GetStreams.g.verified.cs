@@ -27,7 +27,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? gameId = default,
             global::G.GetStreamsType? type = default,
             global::System.Collections.Generic.IList<string>? language = default,
-            int first = default,
+            int? first = default,
             string? before = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);

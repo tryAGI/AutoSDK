@@ -37,7 +37,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_attempt")]
-        public int RunAttempt { get; set; }
+        public int? RunAttempt { get; set; }
 
         /// <summary>
         /// Example: MDg6Q2hlY2tSdW40

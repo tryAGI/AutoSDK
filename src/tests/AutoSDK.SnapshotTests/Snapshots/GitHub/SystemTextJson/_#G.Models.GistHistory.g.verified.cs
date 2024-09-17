@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committed_at")]
-        public global::System.DateTime CommittedAt { get; set; }
+        public global::System.DateTime? CommittedAt { get; set; }
 
         /// <summary>
         /// 

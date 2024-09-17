@@ -9,20 +9,20 @@ namespace G
         partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid currentUserId,
-            ref global::System.Guid excerptId,
-            ref int newStart,
-            ref int newEnd);
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? currentUserId,
+            ref global::System.Guid? excerptId,
+            ref int? newStart,
+            ref int? newEnd);
         partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid currentUserId,
-            global::System.Guid excerptId,
-            int newStart,
-            int newEnd);
+            global::System.Guid? projectId,
+            global::System.Guid? currentUserId,
+            global::System.Guid? excerptId,
+            int? newStart,
+            int? newEnd);
         partial void ProcessExcerptUpdatePDFSwfImageExcerptRegionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,11 +45,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdatePDFSwfImageExcerptRegionAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid currentUserId = default,
-            global::System.Guid excerptId = default,
-            int newStart = default,
-            int newEnd = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? currentUserId = default,
+            global::System.Guid? excerptId = default,
+            int? newStart = default,
+            int? newEnd = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

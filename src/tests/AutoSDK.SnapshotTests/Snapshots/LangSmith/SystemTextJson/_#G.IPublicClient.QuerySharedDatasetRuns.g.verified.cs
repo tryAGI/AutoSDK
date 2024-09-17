@@ -70,7 +70,7 @@ namespace G
             global::G.AnyOf<bool?, object>? isRoot = default,
             global::G.AnyOf<global::G.RunsFilterDataSourceTypeEnum?, object>? dataSourceType = default,
             global::G.AnyOf<string, object>? cursor = default,
-            int limit = 100,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
             global::G.AllOf<global::G.RunDateOrder?>? order = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preview")]
-        public bool Preview { get; set; }
+        public bool? Preview { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

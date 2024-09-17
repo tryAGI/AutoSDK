@@ -9,22 +9,22 @@ namespace G
         partial void PrepareAdminMergeProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid project1Id,
-            ref global::System.Guid project2Id,
+            ref global::System.Guid? project1Id,
+            ref global::System.Guid? project2Id,
             ref string? newTitle,
             ref string? newDescription,
-            ref global::System.Guid creatorId,
-            ref bool mergeCodes);
+            ref global::System.Guid? creatorId,
+            ref bool? mergeCodes);
         partial void PrepareAdminMergeProjectsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid project1Id,
-            global::System.Guid project2Id,
+            global::System.Guid? project1Id,
+            global::System.Guid? project2Id,
             string? newTitle,
             string? newDescription,
-            global::System.Guid creatorId,
-            bool mergeCodes);
+            global::System.Guid? creatorId,
+            bool? mergeCodes);
         partial void ProcessAdminMergeProjectsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,12 +48,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminMergeProjectsResponse> AdminMergeProjectsAsync(
             string? token = default,
-            global::System.Guid project1Id = default,
-            global::System.Guid project2Id = default,
+            global::System.Guid? project1Id = default,
+            global::System.Guid? project2Id = default,
             string? newTitle = default,
             string? newDescription = default,
-            global::System.Guid creatorId = default,
-            bool mergeCodes = default,
+            global::System.Guid? creatorId = default,
+            bool? mergeCodes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

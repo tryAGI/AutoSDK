@@ -13,13 +13,13 @@ namespace G
         /// The sum of all turns of valid train examples.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_train_turns")]
-        public double NumTrainTurns { get; set; }
+        public double? NumTrainTurns { get; set; }
 
         /// <summary>
         /// The sum of all turns of valid eval examples.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_eval_turns")]
-        public double NumEvalTurns { get; set; }
+        public double? NumEvalTurns { get; set; }
 
         /// <summary>
         /// The preamble of this dataset.

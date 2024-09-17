@@ -44,7 +44,7 @@ namespace G
             string environmentName,
             string repo,
             string owner,
-            int integrationId = default,
+            int? integrationId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

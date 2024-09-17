@@ -11,16 +11,16 @@ namespace G
             ref string username,
             ref global::G.ActivityListReposStarredByUserSort? sort,
             ref global::G.ActivityListReposStarredByUserDirection? direction,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareActivityListReposStarredByUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string username,
             global::G.ActivityListReposStarredByUserSort? sort,
             global::G.ActivityListReposStarredByUserDirection? direction,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessActivityListReposStarredByUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,8 +55,8 @@ namespace G
             string username,
             global::G.ActivityListReposStarredByUserSort? sort = global::G.ActivityListReposStarredByUserSort.Created,
             global::G.ActivityListReposStarredByUserDirection? direction = global::G.ActivityListReposStarredByUserDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

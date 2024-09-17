@@ -30,8 +30,8 @@ namespace G
             string q,
             global::G.SearchReposSort? sort = default,
             global::G.SearchReposOrder? order = global::G.SearchReposOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

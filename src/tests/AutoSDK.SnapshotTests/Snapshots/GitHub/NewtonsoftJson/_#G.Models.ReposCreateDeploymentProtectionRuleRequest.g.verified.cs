@@ -13,7 +13,7 @@ namespace G
         /// The ID of the custom app that will be enabled on the environment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integration_id")]
-        public int IntegrationId { get; set; }
+        public int? IntegrationId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

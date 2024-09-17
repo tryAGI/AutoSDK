@@ -77,7 +77,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.

@@ -20,7 +20,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool Private { get; set; } = false;
+        public bool? Private { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,12 +9,12 @@ namespace G
         partial void PrepareFileGetConvertPDF2SwfResultArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid jobId);
+            ref global::System.Guid? jobId);
         partial void PrepareFileGetConvertPDF2SwfResultRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid jobId);
+            global::System.Guid? jobId);
         partial void ProcessFileGetConvertPDF2SwfResultResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FileGetConvertPDF2SwfResultResponse> FileGetConvertPDF2SwfResultAsync(
             string? token = default,
-            global::System.Guid jobId = default,
+            global::System.Guid? jobId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

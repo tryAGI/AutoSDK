@@ -55,7 +55,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accepted_at")]
-        public global::System.DateTimeOffset AcceptedAt { get; set; }
+        public global::System.DateTimeOffset? AcceptedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
-        public bool From { get; set; }
+        public bool? From { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
-        public bool To { get; set; }
+        public bool? To { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

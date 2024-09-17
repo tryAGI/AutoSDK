@@ -26,13 +26,13 @@ namespace G
         /// Number of triggers with `STATUS_COMPLETED`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerCountCompleted")]
-        public int TriggerCountCompleted { get; set; }
+        public int? TriggerCountCompleted { get; set; }
 
         /// <summary>
         /// Number of triggers with `STATUS_ERRORED`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerCountErrored")]
-        public int TriggerCountErrored { get; set; }
+        public int? TriggerCountErrored { get; set; }
 
         /// <summary>
         /// Version for the triggered pipeline if it is a release pipeline.

@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("primary_key_id")]
-        public int PrimaryKeyId { get; set; }
+        public int? PrimaryKeyId { get; set; }
 
         /// <summary>
         /// 
@@ -49,25 +49,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_sign")]
-        public bool CanSign { get; set; }
+        public bool? CanSign { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_encrypt_comms")]
-        public bool CanEncryptComms { get; set; }
+        public bool? CanEncryptComms { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_encrypt_storage")]
-        public bool CanEncryptStorage { get; set; }
+        public bool? CanEncryptStorage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_certify")]
-        public bool CanCertify { get; set; }
+        public bool? CanCertify { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revoked")]
-        public bool Revoked { get; set; }
+        public bool? Revoked { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

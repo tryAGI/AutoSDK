@@ -9,7 +9,7 @@ namespace G
         partial void PrepareListEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string finetunedModelId,
-            ref int pageSize,
+            ref int? pageSize,
             ref string? pageToken,
             ref string? orderBy,
             ref string? xClientName);
@@ -17,7 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string finetunedModelId,
-            int pageSize,
+            int? pageSize,
             string? pageToken,
             string? orderBy,
             string? xClientName);
@@ -42,7 +42,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListEventsResponse> ListEventsAsync(
             string finetunedModelId,
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
             string? xClientName = default,

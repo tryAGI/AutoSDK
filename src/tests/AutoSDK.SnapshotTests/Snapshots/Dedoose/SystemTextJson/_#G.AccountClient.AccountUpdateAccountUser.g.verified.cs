@@ -9,22 +9,22 @@ namespace G
         partial void PrepareAccountUpdateAccountUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid userId,
+            ref global::System.Guid? userId,
             ref string? firstName,
             ref string? lastName,
             ref string? phone,
             ref string? email,
-            ref bool active);
+            ref bool? active);
         partial void PrepareAccountUpdateAccountUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid userId,
+            global::System.Guid? userId,
             string? firstName,
             string? lastName,
             string? phone,
             string? email,
-            bool active);
+            bool? active);
         partial void ProcessAccountUpdateAccountUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,12 +48,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.User> AccountUpdateAccountUserAsync(
             string? token = default,
-            global::System.Guid userId = default,
+            global::System.Guid? userId = default,
             string? firstName = default,
             string? lastName = default,
             string? phone = default,
             string? email = default,
-            bool active = default,
+            bool? active = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filled_seats")]
-        public int FilledSeats { get; set; }
+        public int? FilledSeats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seats")]
-        public int Seats { get; set; }
+        public int? Seats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -17,10 +17,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ChatMessageVO>> ChatGetChatMessagesAsync(
             string? token = default,
-            global::System.Guid userId = default,
-            global::System.Guid projectId = default,
-            global::System.Guid lastRevievedProjectMessageId = default,
-            global::System.Guid lastRecievedGlobalMessageId = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? lastRevievedProjectMessageId = default,
+            global::System.Guid? lastRecievedGlobalMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

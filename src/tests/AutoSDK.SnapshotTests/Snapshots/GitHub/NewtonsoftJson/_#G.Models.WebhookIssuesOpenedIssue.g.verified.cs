@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.

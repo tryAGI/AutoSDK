@@ -27,7 +27,7 @@ namespace G
             global::System.DateTime end,
             global::G.DurationUnit intervalUnit,
             int intervalValue,
-            int numPipelines = 20,
+            int? numPipelines = 20,
             string? clusterId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

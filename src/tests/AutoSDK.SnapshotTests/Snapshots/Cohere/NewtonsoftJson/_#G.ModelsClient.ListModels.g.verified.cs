@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareListModelsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref double pageSize,
+            ref double? pageSize,
             ref string? pageToken,
             ref global::G.CompatibleEndpoint? endpoint,
-            ref bool defaultOnly);
+            ref bool? defaultOnly);
         partial void PrepareListModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            double pageSize,
+            double? pageSize,
             string? pageToken,
             global::G.CompatibleEndpoint? endpoint,
-            bool defaultOnly);
+            bool? defaultOnly);
         partial void ProcessListModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,10 +41,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListModelsResponse> ListModelsAsync(
-            double pageSize = default,
+            double? pageSize = default,
             string? pageToken = default,
             global::G.CompatibleEndpoint? endpoint = default,
-            bool defaultOnly = default,
+            bool? defaultOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

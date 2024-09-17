@@ -128,7 +128,7 @@ namespace G
             string pipelineIdOrPointer,
             string? pipelineId = default,
             string? pointer = default,
-            int duration = 1800,
+            int? duration = 1800,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PipelineCooldown

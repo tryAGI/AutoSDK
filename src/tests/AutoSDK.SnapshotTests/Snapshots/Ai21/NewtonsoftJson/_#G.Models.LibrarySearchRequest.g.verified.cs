@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maxSegments")]
-        public int MaxSegments { get; set; }
+        public int? MaxSegments { get; set; }
 
         /// <summary>
         /// 
@@ -51,19 +51,19 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maxNeighbors")]
-        public int MaxNeighbors { get; set; } = 1;
+        public int? MaxNeighbors { get; set; } = 1;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievalSimilarityThreshold")]
-        public double RetrievalSimilarityThreshold { get; set; }
+        public double? RetrievalSimilarityThreshold { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hybridSearchAlpha")]
-        public double HybridSearchAlpha { get; set; }
+        public double? HybridSearchAlpha { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

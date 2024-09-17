@@ -13,55 +13,55 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("+1")]
-        public int Plus1 { get; set; }
+        public int? Plus1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("-1")]
-        public int Minus1 { get; set; }
+        public int? Minus1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confused")]
-        public int Confused { get; set; }
+        public int? Confused { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eyes")]
-        public int Eyes { get; set; }
+        public int? Eyes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("heart")]
-        public int Heart { get; set; }
+        public int? Heart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hooray")]
-        public int Hooray { get; set; }
+        public int? Hooray { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("laugh")]
-        public int Laugh { get; set; }
+        public int? Laugh { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rocket")]
-        public int Rocket { get; set; }
+        public int? Rocket { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
-        public int TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 

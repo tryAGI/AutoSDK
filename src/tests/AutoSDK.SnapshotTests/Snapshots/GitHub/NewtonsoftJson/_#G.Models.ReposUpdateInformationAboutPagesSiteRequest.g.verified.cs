@@ -21,7 +21,7 @@ namespace G
         /// Specify whether HTTPS should be enforced for the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("https_enforced")]
-        public bool HttpsEnforced { get; set; }
+        public bool? HttpsEnforced { get; set; }
 
         /// <summary>
         /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.

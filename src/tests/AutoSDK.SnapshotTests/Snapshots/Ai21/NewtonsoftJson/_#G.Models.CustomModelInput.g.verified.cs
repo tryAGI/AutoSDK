@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public double LearningRate { get; set; }
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_epochs")]
-        public int NumEpochs { get; set; }
+        public int? NumEpochs { get; set; }
 
         /// <summary>
         /// 

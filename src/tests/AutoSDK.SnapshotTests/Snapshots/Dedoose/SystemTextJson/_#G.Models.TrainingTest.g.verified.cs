@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testType")]
-        public int TestType { get; set; }
+        public int? TestType { get; set; }
 
         /// <summary>
         /// 
@@ -43,19 +43,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdOn")]
-        public global::System.DateTime CreatedOn { get; set; }
+        public global::System.DateTime? CreatedOn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        public global::System.Guid ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("excerptCount")]
-        public int ExcerptCount { get; set; }
+        public int? ExcerptCount { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        public global::System.Guid Creator { get; set; }
+        public global::System.Guid? Creator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

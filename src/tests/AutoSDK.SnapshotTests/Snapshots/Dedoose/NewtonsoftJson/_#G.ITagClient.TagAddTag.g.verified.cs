@@ -22,15 +22,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? description = default,
-            bool isWeighted = default,
-            double weightMin = default,
-            double weightMax = default,
-            double weightDefault = default,
-            bool allowDecimalWeights = default,
-            int color = default,
+            bool? isWeighted = default,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            bool? allowDecimalWeights = default,
+            int? color = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

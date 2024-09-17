@@ -11,16 +11,16 @@ namespace G
             ref string owner,
             ref string repo,
             ref global::System.Guid parentCommentId,
-            ref int limit,
-            ref int offset);
+            ref int? limit,
+            ref int? offset);
         partial void PrepareGetSubCommentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             global::System.Guid parentCommentId,
-            int limit,
-            int offset);
+            int? limit,
+            int? offset);
         partial void ProcessGetSubCommentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,8 +48,8 @@ namespace G
             string owner,
             string repo,
             global::System.Guid parentCommentId,
-            int limit = 20,
-            int offset = 0,
+            int? limit = 20,
+            int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

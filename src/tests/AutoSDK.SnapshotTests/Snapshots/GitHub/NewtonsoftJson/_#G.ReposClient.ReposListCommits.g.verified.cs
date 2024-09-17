@@ -14,10 +14,10 @@ namespace G
             ref string? path,
             ref string? author,
             ref string? committer,
-            ref global::System.DateTime since,
-            ref global::System.DateTime until,
-            ref int perPage,
-            ref int page);
+            ref global::System.DateTime? since,
+            ref global::System.DateTime? until,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReposListCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -27,10 +27,10 @@ namespace G
             string? path,
             string? author,
             string? committer,
-            global::System.DateTime since,
-            global::System.DateTime until,
-            int perPage,
-            int page);
+            global::System.DateTime? since,
+            global::System.DateTime? until,
+            int? perPage,
+            int? page);
         partial void ProcessReposListCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -90,10 +90,10 @@ namespace G
             string? path = default,
             string? author = default,
             string? committer = default,
-            global::System.DateTime since = default,
-            global::System.DateTime until = default,
-            int perPage = 30,
-            int page = 1,
+            global::System.DateTime? since = default,
+            global::System.DateTime? until = default,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

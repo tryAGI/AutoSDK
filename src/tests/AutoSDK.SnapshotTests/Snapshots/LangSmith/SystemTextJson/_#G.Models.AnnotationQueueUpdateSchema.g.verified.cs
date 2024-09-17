@@ -43,7 +43,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_reservations")]
-        public bool EnableReservations { get; set; } = true;
+        public bool? EnableReservations { get; set; } = true;
 
         /// <summary>
         /// 

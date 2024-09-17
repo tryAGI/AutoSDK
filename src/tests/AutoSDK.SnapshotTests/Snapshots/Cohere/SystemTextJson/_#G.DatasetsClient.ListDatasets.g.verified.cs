@@ -9,20 +9,20 @@ namespace G
         partial void PrepareListDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? datasetType,
-            ref global::System.DateTime before,
-            ref global::System.DateTime after,
-            ref double limit,
-            ref double offset,
+            ref global::System.DateTime? before,
+            ref global::System.DateTime? after,
+            ref double? limit,
+            ref double? offset,
             ref global::G.DatasetValidationStatus? validationStatus,
             ref string? xClientName);
         partial void PrepareListDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? datasetType,
-            global::System.DateTime before,
-            global::System.DateTime after,
-            double limit,
-            double offset,
+            global::System.DateTime? before,
+            global::System.DateTime? after,
+            double? limit,
+            double? offset,
             global::G.DatasetValidationStatus? validationStatus,
             string? xClientName);
         partial void ProcessListDatasetsResponse(
@@ -51,10 +51,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListDatasetsResponse> ListDatasetsAsync(
             string? datasetType = default,
-            global::System.DateTime before = default,
-            global::System.DateTime after = default,
-            double limit = default,
-            double offset = default,
+            global::System.DateTime? before = default,
+            global::System.DateTime? after = default,
+            double? limit = default,
+            double? offset = default,
             global::G.DatasetValidationStatus? validationStatus = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)

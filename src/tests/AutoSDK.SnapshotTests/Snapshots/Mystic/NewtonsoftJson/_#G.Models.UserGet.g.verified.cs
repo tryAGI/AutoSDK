@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("show_tutorial")]
-        public bool ShowTutorial { get; set; }
+        public bool? ShowTutorial { get; set; }
 
         /// <summary>
         /// 

@@ -15,25 +15,25 @@ namespace G
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_identities")]
-        public int MaxIdentities { get; set; } = 5;
+        public int? MaxIdentities { get; set; } = 5;
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_workspaces")]
-        public int MaxWorkspaces { get; set; } = 1;
+        public int? MaxWorkspaces { get; set; } = 1;
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_rbac")]
-        public bool CanUseRbac { get; set; } = false;
+        public bool? CanUseRbac { get; set; } = false;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_add_seats")]
-        public bool CanAddSeats { get; set; } = true;
+        public bool? CanAddSeats { get; set; } = true;
 
         /// <summary>
         /// 
@@ -60,19 +60,19 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_serve_datasets")]
-        public bool CanServeDatasets { get; set; } = false;
+        public bool? CanServeDatasets { get; set; } = false;
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_use_langgraph_cloud")]
-        public bool CanUseLanggraphCloud { get; set; } = false;
+        public bool? CanUseLanggraphCloud { get; set; } = false;
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_langgraph_cloud_deployments")]
-        public int MaxLanggraphCloudDeployments { get; set; } = 1;
+        public int? MaxLanggraphCloudDeployments { get; set; } = 1;
 
         /// <summary>
         /// 

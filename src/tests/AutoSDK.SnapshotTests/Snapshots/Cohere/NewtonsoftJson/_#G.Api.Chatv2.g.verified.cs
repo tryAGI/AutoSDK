@@ -165,14 +165,14 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Tool2>? tools = default,
             global::G.Chatv2RequestCitationMode? citationMode = default,
             global::G.ResponseFormat2? responseFormat = default,
-            int maxTokens = default,
+            int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            float temperature = default,
-            int seed = default,
-            float frequencyPenalty = default,
-            float presencePenalty = default,
-            float k = 0F,
-            float p = 0.75F,
+            float? temperature = default,
+            int? seed = default,
+            float? frequencyPenalty = default,
+            float? presencePenalty = default,
+            float? k = 0F,
+            float? p = 0.75F,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.Chatv2Request

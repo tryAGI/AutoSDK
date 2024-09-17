@@ -18,9 +18,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectListResponse> ListProjectsAsync(
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
-            bool includeArchived = false,
+            bool? includeArchived = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

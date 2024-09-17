@@ -10,22 +10,22 @@ namespace G
         partial void PrepareTrainingAddTestArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref int trainingTestType,
+            ref global::System.Guid? projectId,
+            ref int? trainingTestType,
             ref string? title,
             ref string? description,
-            ref global::System.Guid createdUserId,
+            ref global::System.Guid? createdUserId,
             global::System.Collections.Generic.IList<string>? exIds,
             global::System.Collections.Generic.IList<string>? tagIds);
         partial void PrepareTrainingAddTestRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            int trainingTestType,
+            global::System.Guid? projectId,
+            int? trainingTestType,
             string? title,
             string? description,
-            global::System.Guid createdUserId,
+            global::System.Guid? createdUserId,
             global::System.Collections.Generic.IList<string>? exIds,
             global::System.Collections.Generic.IList<string>? tagIds);
         partial void ProcessTrainingAddTestResponse(
@@ -52,11 +52,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> TrainingAddTestAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int trainingTestType = default,
+            global::System.Guid? projectId = default,
+            int? trainingTestType = default,
             string? title = default,
             string? description = default,
-            global::System.Guid createdUserId = default,
+            global::System.Guid? createdUserId = default,
             global::System.Collections.Generic.IList<string>? exIds = default,
             global::System.Collections.Generic.IList<string>? tagIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)

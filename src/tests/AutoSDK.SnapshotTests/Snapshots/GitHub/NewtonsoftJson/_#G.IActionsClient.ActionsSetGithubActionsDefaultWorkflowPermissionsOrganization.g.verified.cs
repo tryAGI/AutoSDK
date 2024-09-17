@@ -40,7 +40,7 @@ namespace G
         global::System.Threading.Tasks.Task ActionsSetGithubActionsDefaultWorkflowPermissionsOrganizationAsync(
             string org,
             global::G.ActionsDefaultWorkflowPermissions? defaultWorkflowPermissions = default,
-            bool canApprovePullRequestReviews = default,
+            bool? canApprovePullRequestReviews = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,7 +13,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("caption")]
-        public bool Caption { get; set; }
+        public bool? Caption { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("test")]
-        public bool Test { get; set; }
+        public bool? Test { get; set; }
 
         /// <summary>
         /// Example: New Video

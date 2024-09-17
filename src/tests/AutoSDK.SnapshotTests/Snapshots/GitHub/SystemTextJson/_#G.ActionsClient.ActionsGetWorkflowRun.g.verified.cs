@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref int runId,
-            ref bool excludePullRequests);
+            ref bool? excludePullRequests);
         partial void PrepareActionsGetWorkflowRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int runId,
-            bool excludePullRequests);
+            bool? excludePullRequests);
         partial void ProcessActionsGetWorkflowRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,7 +46,7 @@ namespace G
             string owner,
             string repo,
             int runId,
-            bool excludePullRequests = false,
+            bool? excludePullRequests = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

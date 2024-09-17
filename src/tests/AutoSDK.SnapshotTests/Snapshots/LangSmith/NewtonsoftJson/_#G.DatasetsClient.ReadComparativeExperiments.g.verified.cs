@@ -12,10 +12,10 @@ namespace G
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
-            ref bool sortByDesc);
+            ref bool? sortByDesc);
         partial void PrepareReadComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,10 +23,10 @@ namespace G
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
-            bool sortByDesc);
+            bool? sortByDesc);
         partial void ProcessReadComparativeExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -63,10 +63,10 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

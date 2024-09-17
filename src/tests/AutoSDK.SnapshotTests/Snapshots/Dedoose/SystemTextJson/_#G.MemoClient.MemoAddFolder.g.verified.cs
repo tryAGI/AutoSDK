@@ -9,16 +9,16 @@ namespace G
         partial void PrepareMemoAddFolderArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
-            ref global::System.Guid parentFolderId);
+            ref global::System.Guid? parentFolderId);
         partial void PrepareMemoAddFolderRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
-            global::System.Guid parentFolderId);
+            global::System.Guid? parentFolderId);
         partial void ProcessMemoAddFolderResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoAddFolderAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
-            global::System.Guid parentFolderId = default,
+            global::System.Guid? parentFolderId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

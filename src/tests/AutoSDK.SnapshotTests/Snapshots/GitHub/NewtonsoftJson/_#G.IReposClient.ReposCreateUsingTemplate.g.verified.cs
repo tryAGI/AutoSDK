@@ -53,8 +53,8 @@ namespace G
             string name,
             string? owner = default,
             string? description = default,
-            bool includeAllBranches = false,
-            bool @private = false,
+            bool? includeAllBranches = false,
+            bool? @private = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

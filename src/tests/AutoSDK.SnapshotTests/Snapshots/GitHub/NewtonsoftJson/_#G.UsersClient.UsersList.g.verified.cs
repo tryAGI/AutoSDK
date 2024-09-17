@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareUsersListArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int since,
-            ref int perPage);
+            ref int? since,
+            ref int? perPage);
         partial void PrepareUsersListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int since,
-            int perPage);
+            int? since,
+            int? perPage);
         partial void ProcessUsersListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,8 +36,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> UsersListAsync(
-            int since = default,
-            int perPage = 30,
+            int? since = default,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

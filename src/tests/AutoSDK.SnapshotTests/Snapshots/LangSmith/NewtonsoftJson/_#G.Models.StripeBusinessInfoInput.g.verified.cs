@@ -33,7 +33,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_business")]
-        public bool IsBusiness { get; set; } = false;
+        public bool? IsBusiness { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

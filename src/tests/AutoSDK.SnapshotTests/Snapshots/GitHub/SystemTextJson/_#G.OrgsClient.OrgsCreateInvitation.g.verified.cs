@@ -132,7 +132,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrganizationInvitation> OrgsCreateInvitationAsync(
             string org,
-            int inviteeId = default,
+            int? inviteeId = default,
             string? email = default,
             global::G.OrgsCreateInvitationRequestRole? role = global::G.OrgsCreateInvitationRequestRole.DirectMember,
             global::System.Collections.Generic.IList<int>? teamIds = default,

@@ -14,7 +14,7 @@ namespace G
         /// Example: 361471
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=

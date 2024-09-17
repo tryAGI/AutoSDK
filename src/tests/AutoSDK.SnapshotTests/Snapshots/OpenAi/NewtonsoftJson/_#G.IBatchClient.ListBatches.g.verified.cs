@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListBatchesResponse> ListBatchesAsync(
             string? after = default,
-            int limit = 20,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

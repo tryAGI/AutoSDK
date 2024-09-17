@@ -20,11 +20,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UserGroup> SecurityDeleteGroupAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
             string? title = default,
-            global::System.Guid accessListIDL = default,
+            global::System.Guid? accessListIDL = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

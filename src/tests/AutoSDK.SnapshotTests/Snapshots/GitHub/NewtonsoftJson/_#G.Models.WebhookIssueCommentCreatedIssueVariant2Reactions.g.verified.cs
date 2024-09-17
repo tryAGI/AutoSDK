@@ -13,55 +13,55 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("+1")]
-        public int Plus1 { get; set; }
+        public int? Plus1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("-1")]
-        public int Minus1 { get; set; }
+        public int? Minus1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("confused")]
-        public int Confused { get; set; }
+        public int? Confused { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eyes")]
-        public int Eyes { get; set; }
+        public int? Eyes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("heart")]
-        public int Heart { get; set; }
+        public int? Heart { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hooray")]
-        public int Hooray { get; set; }
+        public int? Hooray { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("laugh")]
-        public int Laugh { get; set; }
+        public int? Laugh { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rocket")]
-        public int Rocket { get; set; }
+        public int? Rocket { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
-        public int TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 

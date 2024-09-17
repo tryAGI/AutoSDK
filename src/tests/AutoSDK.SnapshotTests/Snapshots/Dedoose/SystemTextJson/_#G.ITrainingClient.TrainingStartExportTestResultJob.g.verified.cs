@@ -17,8 +17,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> TrainingStartExportTestResultJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid testResultId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? testResultId = default,
             string? fileExtension = default,
             string? cryptoKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

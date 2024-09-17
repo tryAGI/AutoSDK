@@ -35,8 +35,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
             global::G.SearchDatasetRequestInputs inputs,
-            int limit = 5,
-            bool debug = false,
+            int? limit = 5,
+            bool? debug = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -40,13 +40,13 @@ namespace G
         /// Creation time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createTime")]
-        public global::System.DateTime CreateTime { get; set; }
+        public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// Update time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updateTime")]
-        public global::System.DateTime UpdateTime { get; set; }
+        public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// Profile.

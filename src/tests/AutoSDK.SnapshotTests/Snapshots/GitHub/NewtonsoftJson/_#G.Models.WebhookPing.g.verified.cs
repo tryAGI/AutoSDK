@@ -19,7 +19,7 @@ namespace G
         /// The ID of the webhook that triggered the ping.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hook_id")]
-        public int HookId { get; set; }
+        public int? HookId { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>

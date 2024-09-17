@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isWeighted")]
-        public bool IsWeighted { get; set; }
+        public bool? IsWeighted { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rowIndex")]
-        public int RowIndex { get; set; }
+        public int? RowIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

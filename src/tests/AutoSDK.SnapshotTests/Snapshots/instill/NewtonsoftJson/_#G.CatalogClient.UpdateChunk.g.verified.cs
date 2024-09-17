@@ -110,7 +110,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateChunkResponse> UpdateChunkAsync(
             string chunkUid,
-            bool retrievable = default,
+            bool? retrievable = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateChunkBody

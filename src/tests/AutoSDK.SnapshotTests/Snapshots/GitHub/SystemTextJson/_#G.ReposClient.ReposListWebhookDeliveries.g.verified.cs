@@ -11,18 +11,18 @@ namespace G
             ref string owner,
             ref string repo,
             ref int hookId,
-            ref int perPage,
+            ref int? perPage,
             ref string? cursor,
-            ref bool redelivery);
+            ref bool? redelivery);
         partial void PrepareReposListWebhookDeliveriesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             int hookId,
-            int perPage,
+            int? perPage,
             string? cursor,
-            bool redelivery);
+            bool? redelivery);
         partial void ProcessReposListWebhookDeliveriesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,9 +50,9 @@ namespace G
             string owner,
             string repo,
             int hookId,
-            int perPage = 30,
+            int? perPage = 30,
             string? cursor = default,
-            bool redelivery = default,
+            bool? redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

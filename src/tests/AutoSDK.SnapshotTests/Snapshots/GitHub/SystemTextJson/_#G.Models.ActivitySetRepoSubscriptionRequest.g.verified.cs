@@ -13,13 +13,13 @@ namespace G
         /// Determines if notifications should be received from this repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscribed")]
-        public bool Subscribed { get; set; }
+        public bool? Subscribed { get; set; }
 
         /// <summary>
         /// Determines if all notifications should be blocked from this repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ignored")]
-        public bool Ignored { get; set; }
+        public bool? Ignored { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -53,25 +53,25 @@ namespace G
         /// Creation timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Latest update timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Timestamp for the completed fine-tuning.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
-        public global::System.DateTime CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// Timestamp for the latest request to this fine-tuned model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_used")]
-        public global::System.DateTime LastUsed { get; set; }
+        public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,7 +9,7 @@ namespace G
         partial void PrepareAdminAddNewUserToAccountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid accountId,
+            ref global::System.Guid? accountId,
             ref string? username,
             ref string? firstName,
             ref string? lastName,
@@ -20,7 +20,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid accountId,
+            global::System.Guid? accountId,
             string? username,
             string? firstName,
             string? lastName,
@@ -51,7 +51,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminAddNewUserToAccountResponse> AdminAddNewUserToAccountAsync(
             string? token = default,
-            global::System.Guid accountId = default,
+            global::System.Guid? accountId = default,
             string? username = default,
             string? firstName = default,
             string? lastName = default,

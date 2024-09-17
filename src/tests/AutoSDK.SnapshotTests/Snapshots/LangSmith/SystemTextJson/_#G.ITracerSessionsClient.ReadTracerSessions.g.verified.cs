@@ -44,13 +44,13 @@ namespace G
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? datasetVersion = default,
             global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::G.AnyOf<string, object>? metadata = default,
             global::G.AnyOf<string, object>? sortByFeedbackKey = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
-            bool facets = false,
+            bool? facets = false,
             global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

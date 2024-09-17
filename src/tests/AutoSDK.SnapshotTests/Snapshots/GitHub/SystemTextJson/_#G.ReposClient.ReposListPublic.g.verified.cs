@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareReposListPublicArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int since);
+            ref int? since);
         partial void PrepareReposListPublicRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int since);
+            int? since);
         partial void ProcessReposListPublicResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListPublicAsync(
-            int since = default,
+            int? since = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

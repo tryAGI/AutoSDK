@@ -11,13 +11,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             global::System.Collections.Generic.IList<string>? id,
-            ref bool onlyManageableRewards);
+            ref bool? onlyManageableRewards);
         partial void PrepareGetCustomRewardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id,
-            bool onlyManageableRewards);
+            bool? onlyManageableRewards);
         partial void ProcessGetCustomRewardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,7 +42,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardResponse> GetCustomRewardAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id = default,
-            bool onlyManageableRewards = default,
+            bool? onlyManageableRewards = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

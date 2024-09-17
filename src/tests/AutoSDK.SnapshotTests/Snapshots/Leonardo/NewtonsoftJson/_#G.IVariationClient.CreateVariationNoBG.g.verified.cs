@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateVariationNoBGResponse> CreateVariationNoBGAsync(
             string id,
-            bool isVariation = default,
+            bool? isVariation = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

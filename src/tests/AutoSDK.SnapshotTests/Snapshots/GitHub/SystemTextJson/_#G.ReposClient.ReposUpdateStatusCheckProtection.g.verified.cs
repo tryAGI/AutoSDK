@@ -135,7 +135,7 @@ namespace G
             string owner,
             string repo,
             string branch,
-            bool strict = default,
+            bool? strict = default,
             global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestCheck>? checks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

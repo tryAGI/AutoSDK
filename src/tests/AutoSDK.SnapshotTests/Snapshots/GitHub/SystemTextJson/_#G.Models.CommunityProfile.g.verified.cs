@@ -48,7 +48,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_reports_enabled")]
-        public bool ContentReportsEnabled { get; set; }
+        public bool? ContentReportsEnabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

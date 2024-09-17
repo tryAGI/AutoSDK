@@ -105,13 +105,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rerequestable")]
-        public bool Rerequestable { get; set; }
+        public bool? Rerequestable { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runs_rerequestable")]
-        public bool RunsRerequestable { get; set; }
+        public bool? RunsRerequestable { get; set; }
 
         /// <summary>
         /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.

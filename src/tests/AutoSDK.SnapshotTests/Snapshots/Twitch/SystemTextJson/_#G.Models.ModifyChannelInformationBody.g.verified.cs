@@ -31,7 +31,7 @@ namespace G
         /// The number of seconds you want your broadcast buffered before streaming it live. The delay helps ensure fairness during competitive play. Only users with Partner status may set this field. The maximum delay is 900 seconds (15 minutes).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delay")]
-        public int Delay { get; set; }
+        public int? Delay { get; set; }
 
         /// <summary>
         /// A list of channel-defined tags to apply to the channel. To remove all tags from the channel, set tags to an empty array. Tags help identify the content that the channel streams. [Learn More](https://help.twitch.tv/s/article/guide-to-tags)  <br/>
@@ -51,7 +51,7 @@ namespace G
         /// Boolean flag indicating if the channel has branded content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_branded_content")]
-        public bool IsBrandedContent { get; set; }
+        public bool? IsBrandedContent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

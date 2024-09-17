@@ -13,19 +13,19 @@ namespace G
         /// Example: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
-        public int RepositoryId { get; set; }
+        public int? RepositoryId { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_repository_id")]
-        public int HeadRepositoryId { get; set; }
+        public int? HeadRepositoryId { get; set; }
 
         /// <summary>
         /// Example: main

@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectCheckEncryptedDataResponse> ProjectCheckEncryptedDataAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? encryptedSymKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

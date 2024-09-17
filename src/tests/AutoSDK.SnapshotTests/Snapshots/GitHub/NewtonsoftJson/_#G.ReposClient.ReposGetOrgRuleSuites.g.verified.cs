@@ -9,22 +9,22 @@ namespace G
         partial void PrepareReposGetOrgRuleSuitesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int repositoryName,
+            ref int? repositoryName,
             ref global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
             ref string? actorName,
             ref global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareReposGetOrgRuleSuitesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int repositoryName,
+            int? repositoryName,
             global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
             string? actorName,
             global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessReposGetOrgRuleSuitesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,12 +58,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite>> ReposGetOrgRuleSuitesAsync(
             string org,
-            int repositoryName = default,
+            int? repositoryName = default,
             global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod = global::G.ReposGetOrgRuleSuitesTimePeriod.Day,
             string? actorName = default,
             global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetOrgRuleSuitesRuleSuiteResult.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

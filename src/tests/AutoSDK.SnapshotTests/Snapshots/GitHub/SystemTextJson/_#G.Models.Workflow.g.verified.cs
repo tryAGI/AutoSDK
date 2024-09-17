@@ -84,7 +84,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
-        public global::System.DateTime DeletedAt { get; set; }
+        public global::System.DateTime? DeletedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

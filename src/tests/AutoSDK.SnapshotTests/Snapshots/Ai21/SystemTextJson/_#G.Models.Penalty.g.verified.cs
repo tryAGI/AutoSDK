@@ -20,31 +20,31 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyToWhitespaces")]
-        public bool ApplyToWhitespaces { get; set; } = true;
+        public bool? ApplyToWhitespaces { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyToPunctuations")]
-        public bool ApplyToPunctuations { get; set; } = true;
+        public bool? ApplyToPunctuations { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyToNumbers")]
-        public bool ApplyToNumbers { get; set; } = true;
+        public bool? ApplyToNumbers { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyToStopwords")]
-        public bool ApplyToStopwords { get; set; } = true;
+        public bool? ApplyToStopwords { get; set; } = true;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyToEmojis")]
-        public bool ApplyToEmojis { get; set; } = true;
+        public bool? ApplyToEmojis { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

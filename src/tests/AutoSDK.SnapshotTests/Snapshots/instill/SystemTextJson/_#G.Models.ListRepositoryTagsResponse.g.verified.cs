@@ -19,19 +19,19 @@ namespace G
         /// Total number of tags.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalSize")]
-        public int TotalSize { get; set; }
+        public int? TotalSize { get; set; }
 
         /// <summary>
         /// The requested page size.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageSize")]
-        public int PageSize { get; set; }
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// The requested page offset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page")]
-        public int Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -11,14 +11,14 @@ namespace G
             ref string? token,
             ref string? username,
             ref string? passSalt,
-            ref global::System.Guid connectionKey);
+            ref global::System.Guid? connectionKey);
         partial void PrepareUserValidateUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? username,
             string? passSalt,
-            global::System.Guid connectionKey);
+            global::System.Guid? connectionKey);
         partial void ProcessUserValidateUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
             string? token = default,
             string? username = default,
             string? passSalt = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

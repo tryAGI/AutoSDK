@@ -9,15 +9,15 @@ namespace G
         partial void PrepareSearchChannelsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string query,
-            ref bool liveOnly,
-            ref int first,
+            ref bool? liveOnly,
+            ref int? first,
             ref string? after);
         partial void PrepareSearchChannelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string query,
-            bool liveOnly,
-            int first,
+            bool? liveOnly,
+            int? first,
             string? after);
         partial void ProcessSearchChannelsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,8 +45,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchChannelsResponse> SearchChannelsAsync(
             string query,
-            bool liveOnly = default,
-            int first = default,
+            bool? liveOnly = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

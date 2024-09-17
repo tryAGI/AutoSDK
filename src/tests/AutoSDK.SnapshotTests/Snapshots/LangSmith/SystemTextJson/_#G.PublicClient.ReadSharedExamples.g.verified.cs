@@ -13,8 +13,8 @@ namespace G
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::G.AnyOf<global::System.DateTime?, string>? asOf,
             ref global::G.AnyOf<string, object>? metadata,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
             ref global::G.AnyOf<string, object>? filter);
         partial void PrepareReadSharedExamplesRequest(
@@ -24,8 +24,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::G.AnyOf<global::System.DateTime?, string>? asOf,
             global::G.AnyOf<string, object>? metadata,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
             global::G.AnyOf<string, object>? filter);
         partial void ProcessReadSharedExamplesResponse(
@@ -65,8 +65,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
             global::G.AnyOf<string, object>? metadata = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
             global::G.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)

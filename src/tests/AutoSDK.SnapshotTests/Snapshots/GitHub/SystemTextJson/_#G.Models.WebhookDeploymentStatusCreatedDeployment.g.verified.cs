@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("production_environment")]
-        public bool ProductionEnvironment { get; set; }
+        public bool? ProductionEnvironment { get; set; }
 
         /// <summary>
         /// 
@@ -119,7 +119,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient_environment")]
-        public bool TransientEnvironment { get; set; }
+        public bool? TransientEnvironment { get; set; }
 
         /// <summary>
         /// 

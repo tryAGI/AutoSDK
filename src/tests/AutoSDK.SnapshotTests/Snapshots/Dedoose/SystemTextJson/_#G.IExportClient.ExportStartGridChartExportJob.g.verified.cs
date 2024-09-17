@@ -21,13 +21,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExportStartGridChartExportJobResponse> ExportStartGridChartExportJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             global::System.Collections.Generic.IList<string>? columnLabels = default,
             global::System.Collections.Generic.IList<string>? rowLabels = default,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? rows = default,
-            float maxCount = default,
-            bool colorByTotal = default,
+            float? maxCount = default,
+            bool? colorByTotal = default,
             string? extension = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

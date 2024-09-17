@@ -31,8 +31,8 @@ namespace G
             string q,
             global::G.SearchUsersSort? sort = default,
             global::G.SearchUsersOrder? order = global::G.SearchUsersOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

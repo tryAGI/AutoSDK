@@ -13,7 +13,7 @@ namespace G
         /// The total duration of the motion generation in seconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("durationSeconds")]
-        public int DurationSeconds { get; set; }
+        public int? DurationSeconds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

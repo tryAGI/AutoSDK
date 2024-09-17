@@ -9,23 +9,23 @@ namespace G
         partial void PrepareDescriptorAddDescriptorFieldArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             ref string? description,
-            ref double type,
-            ref bool isDynamic,
-            ref global::System.Guid setId,
+            ref double? type,
+            ref bool? isDynamic,
+            ref global::System.Guid? setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void PrepareDescriptorAddDescriptorFieldRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             string? description,
-            double type,
-            bool isDynamic,
-            global::System.Guid setId,
+            double? type,
+            bool? isDynamic,
+            global::System.Guid? setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
         partial void ProcessDescriptorAddDescriptorFieldResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -52,12 +52,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> DescriptorAddDescriptorFieldAsync(
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> request,
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             string? description = default,
-            double type = default,
-            bool isDynamic = default,
-            global::System.Guid setId = default,
+            double? type = default,
+            bool? isDynamic = default,
+            global::System.Guid? setId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

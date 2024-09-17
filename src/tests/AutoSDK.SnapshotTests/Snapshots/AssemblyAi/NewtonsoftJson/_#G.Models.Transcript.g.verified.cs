@@ -86,7 +86,7 @@ namespace G
         /// The confidence score for the transcript, between 0.0 (low confidence) and 1.0 (high confidence)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("confidence")]
-        public double Confidence { get; set; }
+        public double? Confidence { get; set; }
 
         /// <summary>
         /// The duration of this transcript object's media file, in seconds
@@ -351,7 +351,7 @@ namespace G
         /// Valid values are in the range [0, 1] inclusive.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_threshold")]
-        public float SpeechThreshold { get; set; }
+        public float? SpeechThreshold { get; set; }
 
         /// <summary>
         /// True while a request is throttled and false when a request is no longer throttled

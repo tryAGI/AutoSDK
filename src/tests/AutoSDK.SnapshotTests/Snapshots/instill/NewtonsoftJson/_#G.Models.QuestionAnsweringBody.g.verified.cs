@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topK")]
-        public int TopK { get; set; }
+        public int? TopK { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

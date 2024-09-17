@@ -14,9 +14,9 @@ namespace G
             ref string? checkName,
             ref global::G.ChecksListForRefStatus? status,
             ref global::G.ChecksListForRefFilter? filter,
-            ref int perPage,
-            ref int page,
-            ref int appId);
+            ref int? perPage,
+            ref int? page,
+            ref int? appId);
         partial void PrepareChecksListForRefRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -26,9 +26,9 @@ namespace G
             string? checkName,
             global::G.ChecksListForRefStatus? status,
             global::G.ChecksListForRefFilter? filter,
-            int perPage,
-            int page,
-            int appId);
+            int? perPage,
+            int? page,
+            int? appId);
         partial void ProcessChecksListForRefResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,9 +69,9 @@ namespace G
             string? checkName = default,
             global::G.ChecksListForRefStatus? status = default,
             global::G.ChecksListForRefFilter? filter = global::G.ChecksListForRefFilter.Latest,
-            int perPage = 30,
-            int page = 1,
-            int appId = default,
+            int? perPage = 30,
+            int? page = 1,
+            int? appId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

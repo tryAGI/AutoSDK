@@ -14,7 +14,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ignored")]
-        public bool Ignored { get; set; } = false;
+        public bool? Ignored { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

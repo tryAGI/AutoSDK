@@ -25,8 +25,8 @@ namespace G
             global::G.PackagesListPackagesForUserPackageType packageType,
             string username,
             global::G.PackagesListPackagesForUserVisibility? visibility = default,
-            int page = 1,
-            int perPage = 30,
+            int? page = 1,
+            int? perPage = 30,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

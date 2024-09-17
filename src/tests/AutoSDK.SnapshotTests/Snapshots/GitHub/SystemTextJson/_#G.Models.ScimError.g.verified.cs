@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public int Status { get; set; }
+        public int? Status { get; set; }
 
         /// <summary>
         /// 

@@ -74,9 +74,9 @@ namespace G
             string? detailsUrl = default,
             string? externalId = default,
             global::G.ChecksCreateRequestStatus? status = global::G.ChecksCreateRequestStatus.Queued,
-            global::System.DateTime startedAt = default,
+            global::System.DateTime? startedAt = default,
             global::G.ChecksCreateRequestConclusion? conclusion = default,
-            global::System.DateTime completedAt = default,
+            global::System.DateTime? completedAt = default,
             global::G.ChecksCreateRequestOutput? output = default,
             global::System.Collections.Generic.IList<global::G.ChecksCreateRequestAction>? actions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

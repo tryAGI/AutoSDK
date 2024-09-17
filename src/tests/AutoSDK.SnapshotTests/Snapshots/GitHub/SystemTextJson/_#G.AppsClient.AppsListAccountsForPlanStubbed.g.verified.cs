@@ -11,16 +11,16 @@ namespace G
             ref int planId,
             ref global::G.AppsListAccountsForPlanStubbedSort? sort,
             ref global::G.AppsListAccountsForPlanStubbedDirection? direction,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareAppsListAccountsForPlanStubbedRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int planId,
             global::G.AppsListAccountsForPlanStubbedSort? sort,
             global::G.AppsListAccountsForPlanStubbedDirection? direction,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessAppsListAccountsForPlanStubbedResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,8 +52,8 @@ namespace G
             int planId,
             global::G.AppsListAccountsForPlanStubbedSort? sort = global::G.AppsListAccountsForPlanStubbedSort.Created,
             global::G.AppsListAccountsForPlanStubbedDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

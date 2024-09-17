@@ -43,7 +43,7 @@ namespace G
             string repo,
             string @ref,
             string sha,
-            bool force = false,
+            bool? force = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

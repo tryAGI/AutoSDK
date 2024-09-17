@@ -28,7 +28,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaymentResponse> UserSubmitCurrentAccountPaymentAsync(
             string? token = default,
-            double amount = default,
+            double? amount = default,
             string? firstName = default,
             string? lastName = default,
             string? address1 = default,
@@ -37,12 +37,12 @@ namespace G
             string? state = default,
             string? country = default,
             string? zip = default,
-            int cardType = default,
+            int? cardType = default,
             string? cardNum = default,
             string? cardCCV = default,
-            int expMonth = default,
-            int expYear = default,
-            bool saveAsReoccuring = default,
+            int? expMonth = default,
+            int? expYear = default,
+            bool? saveAsReoccuring = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -147,9 +147,9 @@ namespace G
             string datasetFilename,
             string datasetName,
             string? selectedColumns = default,
-            bool approveWhitespaceCorrection = default,
-            bool deleteLongRows = default,
-            double splitRatio = 0.1,
+            bool? approveWhitespaceCorrection = default,
+            bool? deleteLongRows = default,
+            double? splitRatio = 0.1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyV1UploadDataset

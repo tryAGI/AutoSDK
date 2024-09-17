@@ -10,15 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref int teamId,
             ref global::G.TeamsListMembersLegacyRole? role,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareTeamsListMembersLegacyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int teamId,
             global::G.TeamsListMembersLegacyRole? role,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessTeamsListMembersLegacyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,8 +49,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> TeamsListMembersLegacyAsync(
             int teamId,
             global::G.TeamsListMembersLegacyRole? role = global::G.TeamsListMembersLegacyRole.All,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

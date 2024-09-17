@@ -38,15 +38,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.LibraryAnswerResponse> V1LibraryAnswerAsync(
             string question,
-            int maxSegments = default,
+            int? maxSegments = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AnswerLength? answerLength = default,
             global::G.Mode? mode = default,
             global::G.AllOf<global::G.RetrievalStrategy3?>? retrievalStrategy = default,
-            double retrievalSimilarityThreshold = default,
-            double hybridSearchAlpha = default,
+            double? retrievalSimilarityThreshold = default,
+            double? hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

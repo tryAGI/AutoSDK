@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UsageLimit> UpsertUsageLimitAsync(
             global::G.UsageLimitType2 limitType,
             int limitValue,
-            global::System.Guid id = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

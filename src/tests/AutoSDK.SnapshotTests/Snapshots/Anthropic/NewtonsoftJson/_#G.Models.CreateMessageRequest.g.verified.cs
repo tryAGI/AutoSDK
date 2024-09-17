@@ -141,7 +141,7 @@ namespace G
         /// deterministic.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double Temperature { get; set; }
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// How the model should use the provided tools. The model can use a specific tool, <br/>
@@ -223,7 +223,7 @@ namespace G
         /// `temperature`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_k")]
-        public int TopK { get; set; }
+        public int? TopK { get; set; }
 
         /// <summary>
         /// Use nucleus sampling.<br/>
@@ -235,7 +235,7 @@ namespace G
         /// `temperature`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
-        public double TopP { get; set; }
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Whether to incrementally stream the response using server-sent events.<br/>
@@ -244,7 +244,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; } = false;
+        public bool? Stream { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

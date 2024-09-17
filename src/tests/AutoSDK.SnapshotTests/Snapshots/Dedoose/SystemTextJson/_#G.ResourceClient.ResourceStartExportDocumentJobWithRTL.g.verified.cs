@@ -9,20 +9,20 @@ namespace G
         partial void PrepareResourceStartExportDocumentJobWithRTLArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid resourceId,
-            ref bool includeExRegions,
-            ref bool rtl,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? resourceId,
+            ref bool? includeExRegions,
+            ref bool? rtl,
             ref string? exportExtension,
             ref string? encryptedSymKey);
         partial void PrepareResourceStartExportDocumentJobWithRTLRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid resourceId,
-            bool includeExRegions,
-            bool rtl,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            bool? includeExRegions,
+            bool? rtl,
             string? exportExtension,
             string? encryptedSymKey);
         partial void ProcessResourceStartExportDocumentJobWithRTLResponse(
@@ -48,10 +48,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResourceStartExportDocumentJobWithRTLResponse> ResourceStartExportDocumentJobWithRTLAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
-            bool includeExRegions = default,
-            bool rtl = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
+            bool? includeExRegions = default,
+            bool? rtl = default,
             string? exportExtension = default,
             string? encryptedSymKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)

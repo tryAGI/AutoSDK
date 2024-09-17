@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetTopGamesResponse> GetTopGamesAsync(
-            int first = default,
+            int? first = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default);

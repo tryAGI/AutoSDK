@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("create_protected")]
-        public bool CreateProtected { get; set; }
+        public bool? CreateProtected { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// Whether the most recent push must be approved by someone other than the person who pushed it
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
-        public bool RequireLastPushApproval { get; set; }
+        public bool? RequireLastPushApproval { get; set; }
 
         /// <summary>
         /// 

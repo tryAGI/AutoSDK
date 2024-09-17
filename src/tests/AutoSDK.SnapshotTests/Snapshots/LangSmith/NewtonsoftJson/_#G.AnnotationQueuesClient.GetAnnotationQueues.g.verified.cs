@@ -11,8 +11,8 @@ namespace G
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void PrepareGetAnnotationQueuesRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids,
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void ProcessGetAnnotationQueuesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,8 +51,8 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

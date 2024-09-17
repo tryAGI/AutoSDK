@@ -22,7 +22,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListMessagesOrder? order = global::G.ListMessagesOrder.Desc,
             string? after = default,
             string? before = default,

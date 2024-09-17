@@ -109,8 +109,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ActivityMarkNotificationsAsReadResponse> ActivityMarkNotificationsAsReadAsync(
-            global::System.DateTime lastReadAt = default,
-            bool read = default,
+            global::System.DateTime? lastReadAt = default,
+            bool? read = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ActivityMarkNotificationsAsReadRequest

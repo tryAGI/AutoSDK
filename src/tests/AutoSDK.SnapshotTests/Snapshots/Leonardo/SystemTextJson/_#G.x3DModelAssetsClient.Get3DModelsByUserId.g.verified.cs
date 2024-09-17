@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareGet3DModelsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string userId,
             global::G.Get3DModelsByUserIdRequest request);
         partial void PrepareGet3DModelsByUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string userId,
             global::G.Get3DModelsByUserIdRequest request);
         partial void ProcessGet3DModelsByUserIdResponse(
@@ -45,8 +45,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
             string userId,
             global::G.Get3DModelsByUserIdRequest request,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -134,8 +134,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
             string userId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             string? requestUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

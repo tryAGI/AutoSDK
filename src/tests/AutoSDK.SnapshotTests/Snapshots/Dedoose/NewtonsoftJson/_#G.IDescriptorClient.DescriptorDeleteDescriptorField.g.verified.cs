@@ -24,15 +24,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.DescriptorField> DescriptorDeleteDescriptorFieldAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
-            global::System.Guid descriptorSetIDL = default,
-            int type = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
+            global::System.Guid? descriptorSetIDL = default,
+            int? type = default,
             string? title = default,
             string? description = default,
-            bool isDynamicField = default,
-            int sortOrder = default,
+            bool? isDynamicField = default,
+            int? sortOrder = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

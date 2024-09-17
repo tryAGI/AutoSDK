@@ -11,16 +11,16 @@ namespace G
             ref string q,
             ref global::G.SearchCommitsSort? sort,
             ref global::G.SearchCommitsOrder? order,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareSearchCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string q,
             global::G.SearchCommitsSort? sort,
             global::G.SearchCommitsOrder? order,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessSearchCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,8 +55,8 @@ namespace G
             string q,
             global::G.SearchCommitsSort? sort = default,
             global::G.SearchCommitsOrder? order = global::G.SearchCommitsOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

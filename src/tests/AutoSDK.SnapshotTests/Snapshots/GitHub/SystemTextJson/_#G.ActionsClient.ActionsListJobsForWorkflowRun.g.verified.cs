@@ -12,8 +12,8 @@ namespace G
             ref string repo,
             ref int runId,
             ref global::G.ActionsListJobsForWorkflowRunFilter? filter,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareActionsListJobsForWorkflowRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,8 +21,8 @@ namespace G
             string repo,
             int runId,
             global::G.ActionsListJobsForWorkflowRunFilter? filter,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessActionsListJobsForWorkflowRunResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -58,8 +58,8 @@ namespace G
             string repo,
             int runId,
             global::G.ActionsListJobsForWorkflowRunFilter? filter = global::G.ActionsListJobsForWorkflowRunFilter.Latest,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

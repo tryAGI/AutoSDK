@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from")]
-        public bool From { get; set; }
+        public bool? From { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to")]
-        public bool To { get; set; }
+        public bool? To { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -23,12 +23,12 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ResourceUpdateTranscriptDataResponse> ResourceUpdateTranscriptDataAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            global::System.Guid creator = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? creator = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
             string? dataPath = default,
-            global::System.DateTime created = default,
+            global::System.DateTime? created = default,
             string? transcriptData = default,
             global::System.Collections.Generic.IList<global::G.TranscriptSyncItem>? syncItems = default,
             global::System.Threading.CancellationToken cancellationToken = default);

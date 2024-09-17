@@ -14,7 +14,7 @@ namespace G
             ref string? gameId,
             ref global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
             ref string? after,
-            ref int first);
+            ref int? first);
         partial void PrepareGetDropsEntitlementsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,7 +23,7 @@ namespace G
             string? gameId,
             global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus,
             string? after,
-            int first);
+            int? first);
         partial void ProcessGetDropsEntitlementsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,7 +65,7 @@ namespace G
             string? gameId = default,
             global::G.GetDropsEntitlementsFulfillmentStatus? fulfillmentStatus = default,
             string? after = default,
-            int first = default,
+            int? first = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

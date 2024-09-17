@@ -34,7 +34,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ActivityMarkRepoNotificationsAsReadResponse> ActivityMarkRepoNotificationsAsReadAsync(
             string owner,
             string repo,
-            global::System.DateTime lastReadAt = default,
+            global::System.DateTime? lastReadAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

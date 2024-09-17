@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createStamp")]
-        public global::System.DateTime CreateStamp { get; set; }
+        public global::System.DateTime? CreateStamp { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        public double Credits { get; set; }
+        public double? Credits { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpupm")]
-        public double Cpupm { get; set; }
+        public double? Cpupm { get; set; }
 
         /// <summary>
         /// 
@@ -43,13 +43,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isActive")]
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isPastDue")]
-        public bool IsPastDue { get; set; }
+        public bool? IsPastDue { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("autoBillActive")]
-        public bool AutoBillActive { get; set; }
+        public bool? AutoBillActive { get; set; }
 
         /// <summary>
         /// 
@@ -103,13 +103,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcePasswordPolicy")]
-        public bool EnforcePasswordPolicy { get; set; }
+        public bool? EnforcePasswordPolicy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pwPolicy_MinLength")]
-        public int PwPolicyMinLength { get; set; }
+        public int? PwPolicyMinLength { get; set; }
 
         /// <summary>
         /// 
@@ -139,25 +139,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pwPolicy_MaxAge")]
-        public int PwPolicyMaxAge { get; set; }
+        public int? PwPolicyMaxAge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pwPolicy_Require2Auth")]
-        public bool PwPolicyRequire2Auth { get; set; }
+        public bool? PwPolicyRequire2Auth { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pwPolicy_2AuthOnRelog")]
-        public bool PwPolicy2AuthOnRelog { get; set; }
+        public bool? PwPolicy2AuthOnRelog { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pwPolicy_IdleTimeout")]
-        public int PwPolicyIdleTimeout { get; set; }
+        public int? PwPolicyIdleTimeout { get; set; }
 
         /// <summary>
         /// 

@@ -61,10 +61,10 @@ namespace G
             string? gameId = default,
             string? broadcasterLanguage = default,
             string? title = default,
-            int delay = default,
+            int? delay = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabel>? contentClassificationLabels = default,
-            bool isBrandedContent = default,
+            bool? isBrandedContent = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

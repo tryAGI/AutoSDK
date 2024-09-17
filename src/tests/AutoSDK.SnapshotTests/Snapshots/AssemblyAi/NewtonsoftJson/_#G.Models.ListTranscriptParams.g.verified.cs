@@ -14,7 +14,7 @@ namespace G
         /// Default Value: 10L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public long Limit { get; set; } = 10L;
+        public long? Limit { get; set; } = 10L;
 
         /// <summary>
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
@@ -26,26 +26,26 @@ namespace G
         /// Only get transcripts created on this date
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_on")]
-        public global::System.DateTime CreatedOn { get; set; }
+        public global::System.DateTime? CreatedOn { get; set; }
 
         /// <summary>
         /// Get transcripts that were created before this transcript ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("before_id")]
-        public global::System.Guid BeforeId { get; set; }
+        public global::System.Guid? BeforeId { get; set; }
 
         /// <summary>
         /// Get transcripts that were created after this transcript ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("after_id")]
-        public global::System.Guid AfterId { get; set; }
+        public global::System.Guid? AfterId { get; set; }
 
         /// <summary>
         /// Only get throttled transcripts, overrides the status filter<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("throttled_only")]
-        public bool ThrottledOnly { get; set; } = false;
+        public bool? ThrottledOnly { get; set; } = false;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

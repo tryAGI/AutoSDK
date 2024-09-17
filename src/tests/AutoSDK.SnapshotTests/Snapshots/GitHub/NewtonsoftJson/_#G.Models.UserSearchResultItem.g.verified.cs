@@ -121,37 +121,37 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_repos")]
-        public int PublicRepos { get; set; }
+        public int? PublicRepos { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_gists")]
-        public int PublicGists { get; set; }
+        public int? PublicGists { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("followers")]
-        public int Followers { get; set; }
+        public int? Followers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("following")]
-        public int Following { get; set; }
+        public int? Following { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 

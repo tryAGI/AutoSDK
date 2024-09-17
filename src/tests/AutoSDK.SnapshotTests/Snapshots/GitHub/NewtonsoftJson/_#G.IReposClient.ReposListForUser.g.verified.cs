@@ -30,8 +30,8 @@ namespace G
             global::G.ReposListForUserType? type = global::G.ReposListForUserType.Owner,
             global::G.ReposListForUserSort? sort = global::G.ReposListForUserSort.FullName,
             global::G.ReposListForUserDirection? direction = default,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

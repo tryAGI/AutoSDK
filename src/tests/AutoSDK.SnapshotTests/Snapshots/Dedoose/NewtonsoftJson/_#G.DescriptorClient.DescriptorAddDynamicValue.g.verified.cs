@@ -9,24 +9,24 @@ namespace G
         partial void PrepareDescriptorAddDynamicValueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
-            ref global::System.Guid setId,
-            ref global::System.Guid descriptorId,
-            ref global::System.Guid fieldId,
-            ref global::System.Guid resourceId,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? setId,
+            ref global::System.Guid? descriptorId,
+            ref global::System.Guid? fieldId,
+            ref global::System.Guid? resourceId,
             ref string? data,
-            ref global::System.Guid optionId);
+            ref global::System.Guid? optionId);
         partial void PrepareDescriptorAddDynamicValueRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
-            global::System.Guid setId,
-            global::System.Guid descriptorId,
-            global::System.Guid fieldId,
-            global::System.Guid resourceId,
+            global::System.Guid? projectId,
+            global::System.Guid? setId,
+            global::System.Guid? descriptorId,
+            global::System.Guid? fieldId,
+            global::System.Guid? resourceId,
             string? data,
-            global::System.Guid optionId);
+            global::System.Guid? optionId);
         partial void ProcessDescriptorAddDynamicValueResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,13 +51,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DescriptorAddDynamicValueResponse> DescriptorAddDynamicValueAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid setId = default,
-            global::System.Guid descriptorId = default,
-            global::System.Guid fieldId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? setId = default,
+            global::System.Guid? descriptorId = default,
+            global::System.Guid? fieldId = default,
+            global::System.Guid? resourceId = default,
             string? data = default,
-            global::System.Guid optionId = default,
+            global::System.Guid? optionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

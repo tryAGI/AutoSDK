@@ -18,8 +18,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoDeleteFolderAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid id = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

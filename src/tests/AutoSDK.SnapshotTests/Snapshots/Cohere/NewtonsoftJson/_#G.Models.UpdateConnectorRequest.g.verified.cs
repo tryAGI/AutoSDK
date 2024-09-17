@@ -37,13 +37,13 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active")]
-        public bool Active { get; set; } = true;
+        public bool? Active { get; set; } = true;
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("continue_on_failure")]
-        public bool ContinueOnFailure { get; set; } = false;
+        public bool? ContinueOnFailure { get; set; } = false;
 
         /// <summary>
         /// 

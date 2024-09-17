@@ -20,11 +20,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> TrainingAddTestAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            int trainingTestType = default,
+            global::System.Guid? projectId = default,
+            int? trainingTestType = default,
             string? title = default,
             string? description = default,
-            global::System.Guid createdUserId = default,
+            global::System.Guid? createdUserId = default,
             global::System.Collections.Generic.IList<string>? exIds = default,
             global::System.Collections.Generic.IList<string>? tagIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);

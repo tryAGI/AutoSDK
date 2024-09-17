@@ -9,15 +9,15 @@ namespace G
         partial void PrepareOrgsListCustomPropertiesValuesForReposArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref string? repositoryQuery);
         partial void PrepareOrgsListCustomPropertiesValuesForReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             string? repositoryQuery);
         partial void ProcessOrgsListCustomPropertiesValuesForReposResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,8 +45,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgRepoCustomPropertyValues>> OrgsListCustomPropertiesValuesForReposAsync(
             string org,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? repositoryQuery = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

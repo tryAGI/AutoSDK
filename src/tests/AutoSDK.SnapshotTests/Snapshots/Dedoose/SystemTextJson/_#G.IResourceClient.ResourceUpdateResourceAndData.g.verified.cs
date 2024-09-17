@@ -20,13 +20,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResourceUpdateResourceAndDataResponse> ResourceUpdateResourceAndDataAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid resourceId = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? resourceId = default,
             string? title = default,
             string? description = default,
             string? fileURL = default,
-            int length = default,
-            bool isLocked = default,
+            int? length = default,
+            bool? isLocked = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

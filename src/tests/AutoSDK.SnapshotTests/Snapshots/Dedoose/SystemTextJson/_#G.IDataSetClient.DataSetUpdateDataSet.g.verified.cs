@@ -31,11 +31,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSetVO> DataSetUpdateDataSetAsync(
             string? token = default,
-            global::System.Guid id = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectId = default,
             string? projectIdKey = default,
-            global::System.Guid createdById = default,
-            global::System.DateTime createStamp = default,
+            global::System.Guid? createdById = default,
+            global::System.DateTime? createStamp = default,
             string? title = default,
             string? desciption = default,
             global::System.Collections.Generic.IList<global::System.Guid>? objectIdListsIncludedTagIds = default,
@@ -44,11 +44,11 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? objectIdListsIncludedExcerptIds = default,
             global::System.Collections.Generic.IList<global::System.Guid>? objectIdListsIncludedUserIds = default,
             global::System.Collections.Generic.IList<global::System.Guid>? objectIdListsExcludedExcerptIds = default,
-            bool areExcerptsFiltered = default,
-            bool areResourcesFiltered = default,
-            bool areTagsFiltered = default,
-            bool areUsersFiltered = default,
-            bool areDescriptorsFiltered = default,
+            bool? areExcerptsFiltered = default,
+            bool? areResourcesFiltered = default,
+            bool? areTagsFiltered = default,
+            bool? areUsersFiltered = default,
+            bool? areDescriptorsFiltered = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

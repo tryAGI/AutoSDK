@@ -37,8 +37,8 @@ namespace G
             string q,
             global::G.SearchCodeSort? sort = default,
             global::G.SearchCodeOrder? order = global::G.SearchCodeOrder.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

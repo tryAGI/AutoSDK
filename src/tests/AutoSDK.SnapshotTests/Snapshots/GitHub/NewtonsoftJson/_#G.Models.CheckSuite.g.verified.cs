@@ -117,13 +117,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rerequestable")]
-        public bool Rerequestable { get; set; }
+        public bool? Rerequestable { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runs_rerequestable")]
-        public bool RunsRerequestable { get; set; }
+        public bool? RunsRerequestable { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

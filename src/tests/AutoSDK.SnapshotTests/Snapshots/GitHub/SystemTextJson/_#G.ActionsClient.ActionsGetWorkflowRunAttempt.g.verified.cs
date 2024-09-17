@@ -12,7 +12,7 @@ namespace G
             ref string repo,
             ref int runId,
             ref int attemptNumber,
-            ref bool excludePullRequests);
+            ref bool? excludePullRequests);
         partial void PrepareActionsGetWorkflowRunAttemptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +20,7 @@ namespace G
             string repo,
             int runId,
             int attemptNumber,
-            bool excludePullRequests);
+            bool? excludePullRequests);
         partial void ProcessActionsGetWorkflowRunAttemptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace G
             string repo,
             int runId,
             int attemptNumber,
-            bool excludePullRequests = false,
+            bool? excludePullRequests = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

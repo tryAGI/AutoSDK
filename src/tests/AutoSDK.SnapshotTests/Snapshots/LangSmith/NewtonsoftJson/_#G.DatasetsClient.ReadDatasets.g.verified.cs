@@ -13,10 +13,10 @@ namespace G
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<string, object>? metadata,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy,
-            ref bool sortByDesc,
+            ref bool? sortByDesc,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void PrepareReadDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -26,10 +26,10 @@ namespace G
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<string, object>? metadata,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy,
-            bool sortByDesc,
+            bool? sortByDesc,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId);
         partial void ProcessReadDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -70,10 +70,10 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? metadata = default,
-            int offset = 0,
-            int limit = 100,
+            int? offset = 0,
+            int? limit = 100,
             global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

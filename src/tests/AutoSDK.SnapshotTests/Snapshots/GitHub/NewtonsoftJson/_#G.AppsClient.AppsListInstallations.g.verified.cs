@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareAppsListInstallationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int perPage,
-            ref int page,
-            ref global::System.DateTime since,
+            ref int? perPage,
+            ref int? page,
+            ref global::System.DateTime? since,
             ref string? outdated);
         partial void PrepareAppsListInstallationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int perPage,
-            int page,
-            global::System.DateTime since,
+            int? perPage,
+            int? page,
+            global::System.DateTime? since,
             string? outdated);
         partial void ProcessAppsListInstallationsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,9 +44,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Installation>> AppsListInstallationsAsync(
-            int perPage = 30,
-            int page = 1,
-            global::System.DateTime since = default,
+            int? perPage = 30,
+            int? page = 1,
+            global::System.DateTime? since = default,
             string? outdated = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

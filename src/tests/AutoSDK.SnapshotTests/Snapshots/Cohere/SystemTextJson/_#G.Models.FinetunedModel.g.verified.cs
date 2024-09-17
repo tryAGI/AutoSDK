@@ -62,25 +62,25 @@ namespace G
         /// read-only. Creation timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// read-only. Latest update timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// read-only. Timestamp for the completed fine-tuning.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public global::System.DateTime CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// read-only. Timestamp for the latest request to this fine-tuned model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
-        public global::System.DateTime LastUsed { get; set; }
+        public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

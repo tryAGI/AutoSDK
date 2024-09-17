@@ -156,7 +156,7 @@ namespace G
             string? description = default,
             string? environment = default,
             string? environmentUrl = default,
-            bool autoInactive = default,
+            bool? autoInactive = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposCreateDeploymentStatusRequest

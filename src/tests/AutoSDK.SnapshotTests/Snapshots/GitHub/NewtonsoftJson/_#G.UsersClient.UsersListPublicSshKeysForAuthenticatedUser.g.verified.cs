@@ -8,13 +8,13 @@ namespace G
     {
         partial void PrepareUsersListPublicSshKeysForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int perPage,
-            ref int page);
+            ref int? perPage,
+            ref int? page);
         partial void PrepareUsersListPublicSshKeysForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int perPage,
-            int page);
+            int? perPage,
+            int? page);
         partial void ProcessUsersListPublicSshKeysForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,8 +38,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Key>> UsersListPublicSshKeysForAuthenticatedUserAsync(
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

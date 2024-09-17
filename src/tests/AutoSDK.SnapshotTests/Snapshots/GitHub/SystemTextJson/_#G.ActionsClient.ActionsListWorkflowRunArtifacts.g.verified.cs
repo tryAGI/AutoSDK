@@ -11,8 +11,8 @@ namespace G
             ref string owner,
             ref string repo,
             ref int runId,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref string? name);
         partial void PrepareActionsListWorkflowRunArtifactsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,8 +20,8 @@ namespace G
             string owner,
             string repo,
             int runId,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             string? name);
         partial void ProcessActionsListWorkflowRunArtifactsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,8 +54,8 @@ namespace G
             string owner,
             string repo,
             int runId,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

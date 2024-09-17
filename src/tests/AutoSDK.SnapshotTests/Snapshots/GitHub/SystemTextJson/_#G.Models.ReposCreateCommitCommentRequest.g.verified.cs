@@ -26,13 +26,13 @@ namespace G
         /// Line index in the diff to comment on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        public int Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

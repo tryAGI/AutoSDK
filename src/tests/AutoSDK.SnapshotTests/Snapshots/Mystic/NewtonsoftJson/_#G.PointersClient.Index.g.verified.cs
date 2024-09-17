@@ -9,15 +9,15 @@ namespace G
         partial void PrepareIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? pipelineName,
-            ref int skip,
-            ref int limit,
+            ref int? skip,
+            ref int? limit,
             ref string? orderBy);
         partial void PrepareIndexRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? pipelineName,
-            int skip,
-            int limit,
+            int? skip,
+            int? limit,
             string? orderBy);
         partial void ProcessIndexResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PaginatedPointerGet> IndexAsync(
             string? pipelineName = default,
-            int skip = 0,
-            int limit = 20,
+            int? skip = 0,
+            int? limit = 20,
             string? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

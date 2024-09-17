@@ -22,9 +22,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetChannelStreamScheduleResponse> GetChannelStreamScheduleAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string>? id = default,
-            global::System.DateTime startTime = default,
+            global::System.DateTime? startTime = default,
             string? utcOffset = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

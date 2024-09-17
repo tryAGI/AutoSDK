@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::System.Guid Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
@@ -31,43 +31,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessTags")]
-        public int AccessTags { get; set; }
+        public int? AccessTags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessResources")]
-        public int AccessResources { get; set; }
+        public int? AccessResources { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessExcerpts")]
-        public int AccessExcerpts { get; set; }
+        public int? AccessExcerpts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessDescriptors")]
-        public int AccessDescriptors { get; set; }
+        public int? AccessDescriptors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessDesFields")]
-        public int AccessDesFields { get; set; }
+        public int? AccessDesFields { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessSecurity")]
-        public int AccessSecurity { get; set; }
+        public int? AccessSecurity { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accessUsers")]
-        public int AccessUsers { get; set; }
+        public int? AccessUsers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,12 +21,12 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TagLink> TagUpdateTagLinkAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
-            global::System.Guid tag1IDL = default,
-            global::System.Guid tag2IDL = default,
-            bool isParentChildLink = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
+            global::System.Guid? tag1IDL = default,
+            global::System.Guid? tag2IDL = default,
+            bool? isParentChildLink = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

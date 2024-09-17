@@ -25,7 +25,7 @@ namespace G
         /// When forking from an existing repository, fork with only the default branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch_only")]
-        public bool DefaultBranchOnly { get; set; }
+        public bool? DefaultBranchOnly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

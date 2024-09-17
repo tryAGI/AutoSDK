@@ -47,13 +47,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_spot_instances")]
-        public bool UseSpotInstances { get; set; } = false;
+        public bool? UseSpotInstances { get; set; } = false;
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_pipelines")]
-        public int NumPipelines { get; set; } = 0;
+        public int? NumPipelines { get; set; } = 0;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

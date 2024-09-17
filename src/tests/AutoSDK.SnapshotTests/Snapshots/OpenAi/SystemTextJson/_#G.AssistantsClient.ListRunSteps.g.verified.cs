@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
             ref string runId,
-            ref int limit,
+            ref int? limit,
             ref global::G.ListRunStepsOrder? order,
             ref string? after,
             ref string? before);
@@ -19,7 +19,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
             string runId,
-            int limit,
+            int? limit,
             global::G.ListRunStepsOrder? order,
             string? after,
             string? before);
@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListRunStepsOrder? order = global::G.ListRunStepsOrder.Desc,
             string? after = default,
             string? before = default,

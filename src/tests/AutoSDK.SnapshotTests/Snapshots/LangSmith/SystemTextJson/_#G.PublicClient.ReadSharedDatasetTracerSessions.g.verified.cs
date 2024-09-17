@@ -14,11 +14,11 @@ namespace G
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<string, object>? datasetVersion,
             ref global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
-            ref bool sortByDesc,
+            ref bool? sortByDesc,
             ref global::G.AnyOf<string, object>? sortByFeedbackKey,
-            ref int offset,
-            ref int limit,
-            ref bool facets,
+            ref int? offset,
+            ref int? limit,
+            ref bool? facets,
             ref global::G.AnyOf<string, object>? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,11 +29,11 @@ namespace G
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<string, object>? datasetVersion,
             global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
-            bool sortByDesc,
+            bool? sortByDesc,
             global::G.AnyOf<string, object>? sortByFeedbackKey,
-            int offset,
-            int limit,
-            bool facets,
+            int? offset,
+            int? limit,
+            bool? facets,
             global::G.AnyOf<string, object>? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -79,11 +79,11 @@ namespace G
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? datasetVersion = default,
             global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
-            bool sortByDesc = true,
+            bool? sortByDesc = true,
             global::G.AnyOf<string, object>? sortByFeedbackKey = default,
-            int offset = 0,
-            int limit = 100,
-            bool facets = false,
+            int? offset = 0,
+            int? limit = 100,
+            bool? facets = false,
             global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

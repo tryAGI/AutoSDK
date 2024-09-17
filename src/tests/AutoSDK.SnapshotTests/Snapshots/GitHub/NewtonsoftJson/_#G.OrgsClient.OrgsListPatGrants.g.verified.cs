@@ -10,28 +10,28 @@ namespace G
         partial void PrepareOrgsListPatGrantsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref global::G.OrgsListPatGrantsSort? sort,
             ref global::G.OrgsListPatGrantsDirection? direction,
             global::System.Collections.Generic.IList<string>? owner,
             ref string? repository,
             ref string? permission,
-            ref global::System.DateTime lastUsedBefore,
-            ref global::System.DateTime lastUsedAfter);
+            ref global::System.DateTime? lastUsedBefore,
+            ref global::System.DateTime? lastUsedAfter);
         partial void PrepareOrgsListPatGrantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             global::G.OrgsListPatGrantsSort? sort,
             global::G.OrgsListPatGrantsDirection? direction,
             global::System.Collections.Generic.IList<string>? owner,
             string? repository,
             string? permission,
-            global::System.DateTime lastUsedBefore,
-            global::System.DateTime lastUsedAfter);
+            global::System.DateTime? lastUsedBefore,
+            global::System.DateTime? lastUsedAfter);
         partial void ProcessOrgsListPatGrantsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -74,15 +74,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantsAsync(
             string org,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::G.OrgsListPatGrantsSort? sort = global::G.OrgsListPatGrantsSort.CreatedAt,
             global::G.OrgsListPatGrantsDirection? direction = global::G.OrgsListPatGrantsDirection.Desc,
             global::System.Collections.Generic.IList<string>? owner = default,
             string? repository = default,
             string? permission = default,
-            global::System.DateTime lastUsedBefore = default,
-            global::System.DateTime lastUsedAfter = default,
+            global::System.DateTime? lastUsedBefore = default,
+            global::System.DateTime? lastUsedAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

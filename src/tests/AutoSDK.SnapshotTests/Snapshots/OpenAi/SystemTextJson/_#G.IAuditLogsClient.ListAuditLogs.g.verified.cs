@@ -28,7 +28,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default);

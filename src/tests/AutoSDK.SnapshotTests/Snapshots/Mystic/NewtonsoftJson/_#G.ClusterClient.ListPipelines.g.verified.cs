@@ -9,14 +9,14 @@ namespace G
         partial void PrepareListPipelinesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string clusterId,
-            ref int skip,
-            ref int limit);
+            ref int? skip,
+            ref int? limit);
         partial void PrepareListPipelinesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string clusterId,
-            int skip,
-            int limit);
+            int? skip,
+            int? limit);
         partial void ProcessListPipelinesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,8 +41,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PaginatedClusterDeployedPipelineGet> ListPipelinesAsync(
             string clusterId,
-            int skip = 0,
-            int limit = 20,
+            int? skip = 0,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

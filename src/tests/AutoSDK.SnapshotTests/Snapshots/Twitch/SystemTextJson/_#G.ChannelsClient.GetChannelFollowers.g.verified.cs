@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? userId,
             ref string broadcasterId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetChannelFollowersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? userId,
             string broadcasterId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetChannelFollowersResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,7 +45,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetChannelFollowersResponse> GetChannelFollowersAsync(
             string broadcasterId,
             string? userId = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

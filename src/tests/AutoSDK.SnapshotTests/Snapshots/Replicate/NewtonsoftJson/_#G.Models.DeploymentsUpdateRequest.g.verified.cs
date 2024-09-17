@@ -19,13 +19,13 @@ namespace G
         /// The maximum number of instances for scaling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_instances")]
-        public int MaxInstances { get; set; }
+        public int? MaxInstances { get; set; }
 
         /// <summary>
         /// The minimum number of instances for scaling.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_instances")]
-        public int MinInstances { get; set; }
+        public int? MinInstances { get; set; }
 
         /// <summary>
         /// The ID of the model version that you want to deploy

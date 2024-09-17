@@ -9,7 +9,7 @@ namespace G
         partial void PrepareListMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
-            ref int limit,
+            ref int? limit,
             ref global::G.ListMessagesOrder? order,
             ref string? after,
             ref string? before,
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
-            int limit,
+            int? limit,
             global::G.ListMessagesOrder? order,
             string? after,
             string? before,
@@ -49,7 +49,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int limit = 20,
+            int? limit = 20,
             global::G.ListMessagesOrder? order = global::G.ListMessagesOrder.Desc,
             string? after = default,
             string? before = default,

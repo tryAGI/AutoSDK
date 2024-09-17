@@ -40,7 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileUploadTime")]
-        public global::System.DateTime FileUploadTime { get; set; }
+        public global::System.DateTime? FileUploadTime { get; set; }
 
         /// <summary>
         /// 

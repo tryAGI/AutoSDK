@@ -13,25 +13,25 @@ namespace G
         /// Return only events whose `effective_at` (Unix seconds) is greater than this value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gt")]
-        public int Gt { get; set; }
+        public int? Gt { get; set; }
 
         /// <summary>
         /// Return only events whose `effective_at` (Unix seconds) is greater than or equal to this value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gte")]
-        public int Gte { get; set; }
+        public int? Gte { get; set; }
 
         /// <summary>
         /// Return only events whose `effective_at` (Unix seconds) is less than this value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lt")]
-        public int Lt { get; set; }
+        public int? Lt { get; set; }
 
         /// <summary>
         /// Return only events whose `effective_at` (Unix seconds) is less than or equal to this value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lte")]
-        public int Lte { get; set; }
+        public int? Lte { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

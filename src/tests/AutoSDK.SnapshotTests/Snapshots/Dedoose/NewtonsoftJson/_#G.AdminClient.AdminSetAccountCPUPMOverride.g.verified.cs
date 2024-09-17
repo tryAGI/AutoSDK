@@ -9,16 +9,16 @@ namespace G
         partial void PrepareAdminSetAccountCPUPMOverrideArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid accountId,
-            ref double cpupmOverride,
-            ref global::System.DateTime endDate);
+            ref global::System.Guid? accountId,
+            ref double? cpupmOverride,
+            ref global::System.DateTime? endDate);
         partial void PrepareAdminSetAccountCPUPMOverrideRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid accountId,
-            double cpupmOverride,
-            global::System.DateTime endDate);
+            global::System.Guid? accountId,
+            double? cpupmOverride,
+            global::System.DateTime? endDate);
         partial void ProcessAdminSetAccountCPUPMOverrideResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,9 +39,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AdminSetAccountCPUPMOverrideResponse> AdminSetAccountCPUPMOverrideAsync(
             string? token = default,
-            global::System.Guid accountId = default,
-            double cpupmOverride = default,
-            global::System.DateTime endDate = default,
+            global::System.Guid? accountId = default,
+            double? cpupmOverride = default,
+            global::System.DateTime? endDate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -16,9 +16,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UserGroup> SecurityAddGroupAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
-            global::System.Guid accessListId = default,
+            global::System.Guid? accessListId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -11,14 +11,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string extensionId,
             global::System.Collections.Generic.IList<string>? id,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetExtensionTransactionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string extensionId,
             global::System.Collections.Generic.IList<string>? id,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetExtensionTransactionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetExtensionTransactionsResponse> GetExtensionTransactionsAsync(
             string extensionId,
             global::System.Collections.Generic.IList<string>? id = default,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

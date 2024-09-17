@@ -29,7 +29,7 @@ namespace G
         /// Set to `true` if the tool execution resulted in an error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_error")]
-        public bool IsError { get; set; }
+        public bool? IsError { get; set; }
 
         /// <summary>
         /// The type of content block.<br/>

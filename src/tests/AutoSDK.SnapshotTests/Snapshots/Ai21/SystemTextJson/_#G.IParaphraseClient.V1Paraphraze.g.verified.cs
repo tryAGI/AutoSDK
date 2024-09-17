@@ -31,8 +31,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.V1ParaphrazeResponse> V1ParaphrazeAsync(
             string text,
             global::G.AllOf<global::G.StyleType?>? style = default,
-            int startIndex = 0,
-            int endIndex = default,
+            int? startIndex = 0,
+            int? endIndex = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

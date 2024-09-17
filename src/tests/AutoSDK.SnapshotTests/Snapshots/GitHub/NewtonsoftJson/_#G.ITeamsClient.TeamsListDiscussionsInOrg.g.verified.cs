@@ -29,8 +29,8 @@ namespace G
             string org,
             string teamSlug,
             global::G.TeamsListDiscussionsInOrgDirection? direction = global::G.TeamsListDiscussionsInOrgDirection.Desc,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             string? pinned = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

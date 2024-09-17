@@ -33,25 +33,25 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n")]
-        public int N { get; set; } = 1;
+        public int? N { get; set; } = 1;
 
         /// <summary>
         /// Default Value: 4096
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_tokens")]
-        public int MaxTokens { get; set; } = 4096;
+        public int? MaxTokens { get; set; } = 4096;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double Temperature { get; set; }
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
-        public double TopP { get; set; } = 1;
+        public double? TopP { get; set; } = 1;
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool Stream { get; set; } = false;
+        public bool? Stream { get; set; } = false;
 
         /// <summary>
         /// 

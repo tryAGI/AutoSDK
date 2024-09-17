@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareCodespacesListInRepositoryForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int perPage,
-            ref int page,
+            ref int? perPage,
+            ref int? page,
             ref string owner,
             ref string repo);
         partial void PrepareCodespacesListInRepositoryForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int perPage,
-            int page,
+            int? perPage,
+            int? page,
             string owner,
             string repo);
         partial void ProcessCodespacesListInRepositoryForAuthenticatedUserResponse(
@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodespacesListInRepositoryForAuthenticatedUserResponse> CodespacesListInRepositoryForAuthenticatedUserAsync(
             string owner,
             string repo,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -10,14 +10,14 @@ namespace G
         partial void PrepareExportStartExportHierarchicalChartJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid projectId,
+            ref global::System.Guid? projectId,
             ref string? title,
             global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems);
         partial void PrepareExportStartExportHierarchicalChartJobRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid projectId,
+            global::System.Guid? projectId,
             string? title,
             global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems);
         partial void ProcessExportStartExportHierarchicalChartJobResponse(
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ExportStartExportHierarchicalChartJobResponse> ExportStartExportHierarchicalChartJobAsync(
             string? token = default,
-            global::System.Guid projectId = default,
+            global::System.Guid? projectId = default,
             string? title = default,
             global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems = default,
             global::System.Threading.CancellationToken cancellationToken = default)

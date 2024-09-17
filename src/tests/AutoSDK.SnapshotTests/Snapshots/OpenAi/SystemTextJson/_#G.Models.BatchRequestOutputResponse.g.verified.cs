@@ -13,7 +13,7 @@ namespace G
         /// The HTTP status code of the response
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_code")]
-        public int StatusCode { get; set; }
+        public int? StatusCode { get; set; }
 
         /// <summary>
         /// An unique identifier for the OpenAI API request. Please include this request ID when contacting support.

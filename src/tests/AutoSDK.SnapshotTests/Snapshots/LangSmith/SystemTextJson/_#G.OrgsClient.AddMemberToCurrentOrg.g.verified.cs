@@ -111,7 +111,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
-            bool readOnly = false,
+            bool? readOnly = false,
             global::G.AnyOf<global::System.Guid?, object>? roleId = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
             global::G.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,

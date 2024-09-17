@@ -27,8 +27,8 @@ namespace G
             string? path = default,
             global::G.FileStatus? status = default,
             global::System.Collections.Generic.IList<string>? label = default,
-            int limit = 1000,
-            int offset = default,
+            int? limit = 1000,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

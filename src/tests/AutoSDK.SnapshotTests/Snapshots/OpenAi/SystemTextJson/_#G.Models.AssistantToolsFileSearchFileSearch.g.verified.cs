@@ -14,7 +14,7 @@ namespace G
         /// Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_results")]
-        public int MaxNumResults { get; set; }
+        public int? MaxNumResults { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

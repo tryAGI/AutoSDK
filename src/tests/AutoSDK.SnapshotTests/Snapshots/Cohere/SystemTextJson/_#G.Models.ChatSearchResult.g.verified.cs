@@ -39,7 +39,7 @@ namespace G
         /// Whether a chat request should continue or not if the request to this connector fails.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("continue_on_failure")]
-        public bool ContinueOnFailure { get; set; }
+        public bool? ContinueOnFailure { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

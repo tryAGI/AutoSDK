@@ -16,40 +16,40 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
-        public bool AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; } = false;
 
         /// <summary>
         /// Whether to allow private forks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_forking")]
-        public bool AllowForking { get; set; }
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
-        public bool AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; } = true;
 
         /// <summary>
         /// Whether to allow rebase merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
-        public bool AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; } = true;
 
         /// <summary>
         /// Whether to allow squash merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
-        public bool AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; } = true;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_update_branch")]
-        public bool AllowUpdateBranch { get; set; }
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// 
@@ -156,7 +156,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
-        public bool DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; } = false;
 
         /// <summary>
         /// 
@@ -176,7 +176,7 @@ namespace G
         /// Returns whether or not this repository is disabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
-        public bool Disabled { get; set; }
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// 
@@ -334,7 +334,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool IsTemplate { get; set; }
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -503,7 +503,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// 
@@ -565,7 +565,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers")]
-        public int Stargazers { get; set; }
+        public int? Stargazers { get; set; }
 
         /// <summary>
         /// 
@@ -656,7 +656,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_squash_pr_title_as_default")]
-        public bool UseSquashPrTitleAsDefault { get; set; } = false;
+        public bool? UseSquashPrTitleAsDefault { get; set; } = false;
 
         /// <summary>
         /// 
@@ -684,7 +684,7 @@ namespace G
         /// Whether to require contributors to sign off on web-based commits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

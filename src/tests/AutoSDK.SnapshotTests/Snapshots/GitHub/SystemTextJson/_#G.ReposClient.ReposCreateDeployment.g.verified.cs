@@ -216,13 +216,13 @@ namespace G
             string repo,
             string @ref,
             string? task = "deploy",
-            bool autoMerge = true,
+            bool? autoMerge = true,
             global::System.Collections.Generic.IList<string>? requiredContexts = default,
             global::G.OneOf<global::G.ReposCreateDeploymentRequestPayload, string>? payload = default,
             string? environment = "production",
             string? description = default,
-            bool transientEnvironment = false,
-            bool productionEnvironment = default,
+            bool? transientEnvironment = false,
+            bool? productionEnvironment = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ReposCreateDeploymentRequest

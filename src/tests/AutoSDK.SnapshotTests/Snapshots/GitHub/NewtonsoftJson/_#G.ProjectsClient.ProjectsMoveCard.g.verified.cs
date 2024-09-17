@@ -118,7 +118,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ProjectsMoveCardResponse> ProjectsMoveCardAsync(
             int cardId,
             string position,
-            int columnId = default,
+            int? columnId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ProjectsMoveCardRequest

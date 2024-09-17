@@ -19,12 +19,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TrainingTestResult> TrainingSaveTestResultAsync(
             string? token = default,
-            global::System.Guid projectId = default,
-            global::System.Guid traineeUserId = default,
-            global::System.Guid testId = default,
-            double overallRating = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? traineeUserId = default,
+            global::System.Guid? testId = default,
+            double? overallRating = default,
             global::System.Collections.Generic.IList<global::G.TrainingTestTagApp>? traineeTagApps = default,
-            bool completed = default,
+            bool? completed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,17 +9,17 @@ namespace G
         partial void PrepareUpdateChannelStreamScheduleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref bool isVacationEnabled,
-            ref global::System.DateTime vacationStartTime,
-            ref global::System.DateTime vacationEndTime,
+            ref bool? isVacationEnabled,
+            ref global::System.DateTime? vacationStartTime,
+            ref global::System.DateTime? vacationEndTime,
             ref string? timezone);
         partial void PrepareUpdateChannelStreamScheduleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            bool isVacationEnabled,
-            global::System.DateTime vacationStartTime,
-            global::System.DateTime vacationEndTime,
+            bool? isVacationEnabled,
+            global::System.DateTime? vacationStartTime,
+            global::System.DateTime? vacationEndTime,
             string? timezone);
         partial void ProcessUpdateChannelStreamScheduleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,9 +40,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task UpdateChannelStreamScheduleAsync(
             string broadcasterId,
-            bool isVacationEnabled = default,
-            global::System.DateTime vacationStartTime = default,
-            global::System.DateTime vacationEndTime = default,
+            bool? isVacationEnabled = default,
+            global::System.DateTime? vacationStartTime = default,
+            global::System.DateTime? vacationEndTime = default,
             string? timezone = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

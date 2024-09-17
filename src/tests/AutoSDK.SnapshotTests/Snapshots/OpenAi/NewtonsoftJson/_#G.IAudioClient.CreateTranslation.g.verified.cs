@@ -47,7 +47,7 @@ namespace G
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
             string? responseFormat = "json",
-            double temperature = 0,
+            double? temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

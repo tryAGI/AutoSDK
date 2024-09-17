@@ -96,7 +96,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsSetGithubActionsDefaultWorkflowPermissionsOrganizationAsync(
             string org,
             global::G.ActionsDefaultWorkflowPermissions? defaultWorkflowPermissions = default,
-            bool canApprovePullRequestReviews = default,
+            bool? canApprovePullRequestReviews = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ActionsSetDefaultWorkflowPermissions

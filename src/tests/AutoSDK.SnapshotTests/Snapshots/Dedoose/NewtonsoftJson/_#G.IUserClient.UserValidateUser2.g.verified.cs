@@ -18,7 +18,7 @@ namespace G
             string? token = default,
             string? username = default,
             string? rsaEncryptedPass = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -26,8 +26,8 @@ namespace G
             string owner,
             string repo,
             global::G.ProjectsListForRepoState? state = global::G.ProjectsListForRepoState.Open,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,7 +13,7 @@ namespace G
         /// The maximum upscaled image size is 20 megapixels.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("megapixel")]
-        public int Megapixel { get; set; }
+        public int? Megapixel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGetUserBlockListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetUserBlockListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetUserBlockListResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetUserBlockListResponse> GetUserBlockListAsync(
             string broadcasterId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -296,7 +296,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("business_plus")]
-        public bool BusinessPlus { get; set; }
+        public bool? BusinessPlus { get; set; }
 
         /// <summary>
         /// 

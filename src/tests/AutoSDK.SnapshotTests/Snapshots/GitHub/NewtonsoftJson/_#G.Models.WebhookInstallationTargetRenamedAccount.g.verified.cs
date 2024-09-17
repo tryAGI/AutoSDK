@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("followers")]
-        public int Followers { get; set; }
+        public int? Followers { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("following")]
-        public int Following { get; set; }
+        public int? Following { get; set; }
 
         /// <summary>
         /// 
@@ -79,13 +79,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_organization_projects")]
-        public bool HasOrganizationProjects { get; set; }
+        public bool? HasOrganizationProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_repository_projects")]
-        public bool HasRepositoryProjects { get; set; }
+        public bool? HasRepositoryProjects { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool? IsVerified { get; set; }
 
         /// <summary>
         /// 
@@ -151,7 +151,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_gists")]
-        public int PublicGists { get; set; }
+        public int? PublicGists { get; set; }
 
         /// <summary>
         /// 
@@ -163,7 +163,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_repos")]
-        public int PublicRepos { get; set; }
+        public int? PublicRepos { get; set; }
 
         /// <summary>
         /// 
@@ -181,7 +181,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
 
         /// <summary>
         /// 

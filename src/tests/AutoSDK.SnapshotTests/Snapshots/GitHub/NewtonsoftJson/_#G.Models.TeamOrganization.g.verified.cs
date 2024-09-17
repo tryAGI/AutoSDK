@@ -121,7 +121,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool? IsVerified { get; set; }
 
         /// <summary>
         /// Example: true
@@ -181,13 +181,13 @@ namespace G
         /// Example: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_private_repos")]
-        public int TotalPrivateRepos { get; set; }
+        public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owned_private_repos")]
-        public int OwnedPrivateRepos { get; set; }
+        public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 81
@@ -247,37 +247,37 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_public_repositories")]
-        public bool MembersCanCreatePublicRepositories { get; set; }
+        public bool? MembersCanCreatePublicRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_private_repositories")]
-        public bool MembersCanCreatePrivateRepositories { get; set; }
+        public bool? MembersCanCreatePrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_internal_repositories")]
-        public bool MembersCanCreateInternalRepositories { get; set; }
+        public bool? MembersCanCreateInternalRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_pages")]
-        public bool MembersCanCreatePages { get; set; }
+        public bool? MembersCanCreatePages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_public_pages")]
-        public bool MembersCanCreatePublicPages { get; set; }
+        public bool? MembersCanCreatePublicPages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_private_pages")]
-        public bool MembersCanCreatePrivatePages { get; set; }
+        public bool? MembersCanCreatePrivatePages { get; set; }
 
         /// <summary>
         /// Example: false
@@ -289,7 +289,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool WebCommitSignoffRequired { get; set; }
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// 

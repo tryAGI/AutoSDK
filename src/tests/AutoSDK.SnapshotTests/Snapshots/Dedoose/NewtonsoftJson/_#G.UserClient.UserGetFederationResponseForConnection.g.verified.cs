@@ -9,12 +9,12 @@ namespace G
         partial void PrepareUserGetFederationResponseForConnectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
-            ref global::System.Guid connectionKey);
+            ref global::System.Guid? connectionKey);
         partial void PrepareUserGetFederationResponseForConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
-            global::System.Guid connectionKey);
+            global::System.Guid? connectionKey);
         partial void ProcessUserGetFederationResponseForConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserGetFederationResponseForConnectionResponse> UserGetFederationResponseForConnectionAsync(
             string? token = default,
-            global::System.Guid connectionKey = default,
+            global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

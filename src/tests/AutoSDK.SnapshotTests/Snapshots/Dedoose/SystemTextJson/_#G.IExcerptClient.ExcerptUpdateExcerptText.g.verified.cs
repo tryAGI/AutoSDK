@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Excerpt> ExcerptUpdateExcerptTextAsync(
             string? token = default,
-            global::System.Guid projectIDL = default,
-            global::System.Guid excerptId = default,
+            global::System.Guid? projectIDL = default,
+            global::System.Guid? excerptId = default,
             string? text = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListOrganizationsResponse> ListOrganizationsAsync(
-            int pageSize = default,
+            int? pageSize = default,
             string? pageToken = default,
             global::G.ListOrganizationsView? view = default,
             string? filter = default,

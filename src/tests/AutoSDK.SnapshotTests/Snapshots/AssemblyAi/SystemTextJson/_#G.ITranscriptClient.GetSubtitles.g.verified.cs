@@ -19,7 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<string> GetSubtitlesAsync(
             string transcriptId,
             global::G.SubtitleFormat subtitleFormat,
-            int charsPerCaption = default,
+            int? charsPerCaption = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

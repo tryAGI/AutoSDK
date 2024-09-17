@@ -25,13 +25,13 @@ namespace G
         /// Whether the model has been fine-tuned or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetuned")]
-        public bool Finetuned { get; set; }
+        public bool? Finetuned { get; set; }
 
         /// <summary>
         /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_length")]
-        public double ContextLength { get; set; }
+        public double? ContextLength { get; set; }
 
         /// <summary>
         /// Public URL to the tokenizer's configuration file.

@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
             ref string moderatorId,
-            ref int first,
+            ref int? first,
             ref string? after);
         partial void PrepareGetBlockedTermsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string broadcasterId,
             string moderatorId,
-            int first,
+            int? first,
             string? after);
         partial void ProcessGetBlockedTermsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetBlockedTermsResponse> GetBlockedTermsAsync(
             string broadcasterId,
             string moderatorId,
-            int first = default,
+            int? first = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

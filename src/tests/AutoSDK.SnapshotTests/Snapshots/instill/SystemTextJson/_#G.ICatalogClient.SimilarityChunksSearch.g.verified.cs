@@ -32,7 +32,7 @@ namespace G
             string namespaceId,
             string catalogId,
             string? textPrompt = default,
-            long topK = default,
+            long? topK = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

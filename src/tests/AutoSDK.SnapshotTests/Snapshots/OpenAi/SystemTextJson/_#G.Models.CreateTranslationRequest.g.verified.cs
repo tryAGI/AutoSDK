@@ -52,7 +52,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double Temperature { get; set; } = 0;
+        public double? Temperature { get; set; } = 0;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

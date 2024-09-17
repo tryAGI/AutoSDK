@@ -31,7 +31,7 @@ namespace G
         /// This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at")]
-        public global::System.DateTime StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
@@ -50,7 +50,7 @@ namespace G
         /// The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
-        public global::System.DateTime CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.

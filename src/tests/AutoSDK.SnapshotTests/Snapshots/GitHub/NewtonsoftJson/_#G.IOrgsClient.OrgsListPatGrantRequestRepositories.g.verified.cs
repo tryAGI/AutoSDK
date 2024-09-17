@@ -23,8 +23,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantRequestRepositoriesAsync(
             string org,
             int patRequestId,
-            int perPage = 30,
-            int page = 1,
+            int? perPage = 30,
+            int? page = 1,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

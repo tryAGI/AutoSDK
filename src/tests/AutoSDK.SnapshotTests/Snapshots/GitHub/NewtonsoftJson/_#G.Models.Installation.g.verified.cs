@@ -100,7 +100,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_multiple_single_files")]
-        public bool HasMultipleSingleFiles { get; set; }
+        public bool? HasMultipleSingleFiles { get; set; }
 
         /// <summary>
         /// Example: [config.yml, .github/issue_TEMPLATE.md]

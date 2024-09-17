@@ -16,7 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AdminGetFilteredProjectsResponse> AdminGetFilteredProjectsAsync(
             string? token = default,
             string? filter = default,
-            int maxResults = default,
+            int? maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

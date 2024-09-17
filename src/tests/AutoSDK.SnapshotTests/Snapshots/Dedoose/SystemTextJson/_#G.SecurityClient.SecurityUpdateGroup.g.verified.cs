@@ -10,21 +10,21 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? token,
             ref string? projectIdKey,
-            ref global::System.Guid projectId,
-            ref global::System.Guid id,
-            ref global::System.Guid projectIDL,
+            ref global::System.Guid? projectId,
+            ref global::System.Guid? id,
+            ref global::System.Guid? projectIDL,
             ref string? title,
-            ref global::System.Guid accessListIDL);
+            ref global::System.Guid? accessListIDL);
         partial void PrepareSecurityUpdateGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? token,
             string? projectIdKey,
-            global::System.Guid projectId,
-            global::System.Guid id,
-            global::System.Guid projectIDL,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
             string? title,
-            global::System.Guid accessListIDL);
+            global::System.Guid? accessListIDL);
         partial void ProcessSecurityUpdateGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,11 +49,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UserGroup> SecurityUpdateGroupAsync(
             string? token = default,
             string? projectIdKey = default,
-            global::System.Guid projectId = default,
-            global::System.Guid id = default,
-            global::System.Guid projectIDL = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? id = default,
+            global::System.Guid? projectIDL = default,
             string? title = default,
-            global::System.Guid accessListIDL = default,
+            global::System.Guid? accessListIDL = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

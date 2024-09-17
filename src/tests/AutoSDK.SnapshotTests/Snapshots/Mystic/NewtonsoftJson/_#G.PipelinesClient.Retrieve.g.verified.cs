@@ -9,16 +9,16 @@ namespace G
         partial void PrepareRetrieveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pipelineId,
-            ref bool includePointers,
-            ref bool includeExtras,
+            ref bool? includePointers,
+            ref bool? includeExtras,
             ref string? pointer,
             ref string? pipelineIdOrPointer);
         partial void PrepareRetrieveRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pipelineId,
-            bool includePointers,
-            bool includeExtras,
+            bool? includePointers,
+            bool? includeExtras,
             string? pointer,
             string? pipelineIdOrPointer);
         partial void ProcessRetrieveResponse(
@@ -51,8 +51,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasPipelineGetDetailed> RetrieveAsync(
             string pipelineId,
-            bool includePointers = false,
-            bool includeExtras = false,
+            bool? includePointers = false,
+            bool? includeExtras = false,
             string? pointer = default,
             string? pipelineIdOrPointer = default,
             global::System.Threading.CancellationToken cancellationToken = default)

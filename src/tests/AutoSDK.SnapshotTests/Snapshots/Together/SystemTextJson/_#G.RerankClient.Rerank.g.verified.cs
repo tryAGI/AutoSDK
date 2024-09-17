@@ -130,8 +130,8 @@ namespace G
             string model,
             string query,
             global::G.OneOf<global::System.Collections.Generic.IList<global::G.RerankRequestDocumentsVariant1Item>, global::System.Collections.Generic.IList<string>> documents,
-            int topN = default,
-            bool returnDocuments = default,
+            int? topN = default,
+            bool? returnDocuments = default,
             global::System.Collections.Generic.IList<string>? rankFields = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
