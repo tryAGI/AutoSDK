@@ -1,3 +1,4 @@
+using AutoSDK.Extensions;
 using Microsoft.OpenApi.Models;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
@@ -143,42 +144,36 @@ public static class ParameterSerializer
 
         if (!parameter.Type.IsEnum && parameter.Type.Properties.Length != 0)
         {
-            return [];
-            // var pairs = parameter.Type.Properties
-            //     .Select(x => (Name: x.ToParameterName(), Value: parameter.ArgumentName))
-            //     .ToArray();
-            // switch (parameter.Style, parameter.Explode)
-            // {
-            //     case (ParameterStyle.Form, true):
-            //         return pairs.Select(x => parameter with
-            //         {
-            //             Id = x.Name,
-            //             Name = x.Name,
-            //             Value = x.Value,
-            //             Explode = parameter.Explode,
-            //         }).ToArray();
-            //     case (ParameterStyle.Form, false):
-            //         return [parameter with
-            //         {
-            //             Value = $"{parameter.Name.ToParameterName()}={string.Join(",", pairs.Select(x => $"{x.Name},{x.Value}"))}",
-            //             Explode = parameter.Explode,
-            //         }];
-            //     case (ParameterStyle.DeepObject, true):
-            //         return pairs.Select(x => parameter with
-            //         {
-            //             Id = parameter.Id,
-            //             Name = parameter.Name.ToParameterName(),
-            //             Value = x.Value,
-            //             Explode = parameter.Explode,
-            //         }).ToArray();
-            //         // return [parameter with
-            //         // {
-            //         //     Value = $"{string.Join("&", pairs.Select(x => $"{parameter.Name.ToParameterName()}[{x.Name}]={{{x.Value}}}"))}",
-            //         // Explode = parameter.ParameterExplode ?? true,
-            //         // }];
-            //     default:
-            //         throw new NotSupportedException($"Parameter style '{parameter.Style}' and explode '{parameter.Explode}' is not supported.");
-            // }
+            var pairs = parameter.Type.Properties
+                .Select(x => (Name: x.ToParameterName(), Value: $"{parameter.ArgumentName}.{x.ToPropertyName()}"))
+                .ToArray();
+            switch (parameter.Style, parameter.Explode)
+            {
+                case (ParameterStyle.Form, true):
+                    return pairs.Select(x => parameter with
+                    {
+                        Id = x.Name,
+                        Name = x.Name,
+                        Value = x.Value,
+                        Explode = parameter.Explode,
+                    }).ToArray();
+                case (ParameterStyle.Form, false):
+                    return [parameter with
+                    {
+                        Value = $"{parameter.Name.ToParameterName()}={string.Join(",", pairs.Select(x => $"{x.Name},{x.Value}"))}",
+                        Explode = parameter.Explode,
+                    }];
+                case (ParameterStyle.DeepObject, true):
+                    return pairs.Select(x => parameter with
+                    {
+                        Id = $"{parameter.Name.ToParameterName()}[{x.Name}]",
+                        Name = parameter.Name.ToParameterName(),
+                        Value = x.Value,
+                        Explode = parameter.Explode,
+                    }).ToArray();
+                default:
+                    return [];
+            }
         }
         
         if (parameter.Type.IsDate)

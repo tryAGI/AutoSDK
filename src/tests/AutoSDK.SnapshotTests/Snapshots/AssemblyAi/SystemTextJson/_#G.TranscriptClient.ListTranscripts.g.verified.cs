@@ -8,11 +8,21 @@ namespace G
     {
         partial void PrepareListTranscriptsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.TranscriptStatus? status);
+            ref long? limit,
+            ref global::G.TranscriptStatus? status,
+            ref global::System.DateTime? createdOn,
+            ref global::System.Guid? beforeId,
+            ref global::System.Guid? afterId,
+            ref bool? throttledOnly);
         partial void PrepareListTranscriptsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.TranscriptStatus? status);
+            long? limit,
+            global::G.TranscriptStatus? status,
+            global::System.DateTime? createdOn,
+            global::System.Guid? beforeId,
+            global::System.Guid? afterId,
+            bool? throttledOnly);
         partial void ProcessListTranscriptsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -27,26 +37,46 @@ namespace G
         /// Retrieve a list of transcripts you created.<br/>
         /// Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
         /// </summary>
+        /// <param name="limit"></param>
         /// <param name="status">
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </param>
+        /// <param name="createdOn"></param>
+        /// <param name="beforeId"></param>
+        /// <param name="afterId"></param>
+        /// <param name="throttledOnly"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TranscriptList> ListTranscriptsAsync(
+            long? limit = default,
             global::G.TranscriptStatus? status = default,
+            global::System.DateTime? createdOn = default,
+            global::System.Guid? beforeId = default,
+            global::System.Guid? afterId = default,
+            bool? throttledOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListTranscriptsArguments(
                 httpClient: _httpClient,
-                status: ref status);
+                limit: ref limit,
+                status: ref status,
+                createdOn: ref createdOn,
+                beforeId: ref beforeId,
+                afterId: ref afterId,
+                throttledOnly: ref throttledOnly);
 
             var __pathBuilder = new PathBuilder(
                 path: "/v2/transcript",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("created_on", createdOn?.ToString("yyyy-MM-dd")) 
+                .AddOptionalParameter("before_id", beforeId?.ToString()) 
+                .AddOptionalParameter("after_id", afterId?.ToString()) 
+                .AddOptionalParameter("throttled_only", throttledOnly?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -59,7 +89,12 @@ namespace G
             PrepareListTranscriptsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                status: status);
+                limit: limit,
+                status: status,
+                createdOn: createdOn,
+                beforeId: beforeId,
+                afterId: afterId,
+                throttledOnly: throttledOnly);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
