@@ -59,9 +59,19 @@ namespace G
                 since: ref since,
                 outdated: ref outdated);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/app/installations",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("outdated", outdated) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/app/installations?per_page={perPage}&page={page}&since={since:yyyy-MM-ddTHH:mm:ssZ}&outdated={outdated}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -49,9 +49,17 @@ namespace G
                 fromVersion: ref fromVersion,
                 toVersion: ref toVersion);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/datasets/{datasetId}/versions/diff",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("from_version", fromVersion.ToString() ?? string.Empty) 
+                .AddRequiredParameter("to_version", toVersion.ToString() ?? string.Empty) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets/{datasetId}/versions/diff?from_version={fromVersion}&to_version={toVersion}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
+            ref string basehead,
             ref int? page,
-            ref int? perPage,
-            ref string basehead);
+            ref int? perPage);
         partial void PrepareReposCompareCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
+            string basehead,
             int? page,
-            int? perPage,
-            string basehead);
+            int? perPage);
         partial void ProcessReposCompareCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,13 +71,13 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="basehead"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
-        /// <param name="basehead"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CommitComparison> ReposCompareCommitsAsync(
@@ -94,13 +94,21 @@ namespace G
                 httpClient: _httpClient,
                 owner: ref owner,
                 repo: ref repo,
+                basehead: ref basehead,
                 page: ref page,
-                perPage: ref perPage,
-                basehead: ref basehead);
+                perPage: ref perPage);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/compare/{basehead}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/compare/{basehead}?page={page}&per_page={perPage}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -110,9 +118,9 @@ namespace G
                 httpRequestMessage: httpRequest,
                 owner: owner,
                 repo: repo,
+                basehead: basehead,
                 page: page,
-                perPage: perPage,
-                basehead: basehead);
+                perPage: perPage);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

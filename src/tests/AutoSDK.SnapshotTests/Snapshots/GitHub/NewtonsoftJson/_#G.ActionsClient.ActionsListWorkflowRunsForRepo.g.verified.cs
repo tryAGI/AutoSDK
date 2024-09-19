@@ -121,9 +121,25 @@ namespace G
                 global::G.ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/actions/runs",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("actor", actor) 
+                .AddOptionalParameter("branch", branch) 
+                .AddOptionalParameter("event", @event) 
+                .AddOptionalParameter("status", statusValue?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString()) 
+                .AddOptionalParameter("check_suite_id", checkSuiteId?.ToString()) 
+                .AddOptionalParameter("head_sha", headSha) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/runs?actor={actor}&branch={branch}&event={@event}&status={(global::System.Uri.EscapeDataString(statusValue?.ToString() ?? string.Empty))}&per_page={perPage}&page={page}&created={created:yyyy-MM-ddTHH:mm:ssZ}&exclude_pull_requests={excludePullRequests}&check_suite_id={checkSuiteId}&head_sha={headSha}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

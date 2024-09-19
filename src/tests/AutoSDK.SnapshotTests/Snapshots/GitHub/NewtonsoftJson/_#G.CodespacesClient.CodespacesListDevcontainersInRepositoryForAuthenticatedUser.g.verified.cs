@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareCodespacesListDevcontainersInRepositoryForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? perPage,
-            ref int? page,
             ref string owner,
-            ref string repo);
+            ref string repo,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareCodespacesListDevcontainersInRepositoryForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? perPage,
-            int? page,
             string owner,
-            string repo);
+            string repo,
+            int? perPage,
+            int? page);
         partial void ProcessCodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,14 +34,14 @@ namespace G
         /// specify launchpoint configurations for codespaces created within the repository.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse> CodespacesListDevcontainersInRepositoryForAuthenticatedUserAsync(
@@ -55,14 +55,22 @@ namespace G
                 client: _httpClient);
             PrepareCodespacesListDevcontainersInRepositoryForAuthenticatedUserArguments(
                 httpClient: _httpClient,
-                perPage: ref perPage,
-                page: ref page,
                 owner: ref owner,
-                repo: ref repo);
+                repo: ref repo,
+                perPage: ref perPage,
+                page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/codespaces/devcontainers",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/codespaces/devcontainers?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -70,10 +78,10 @@ namespace G
             PrepareCodespacesListDevcontainersInRepositoryForAuthenticatedUserRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                perPage: perPage,
-                page: page,
                 owner: owner,
-                repo: repo);
+                repo: repo,
+                perPage: perPage,
+                page: page);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

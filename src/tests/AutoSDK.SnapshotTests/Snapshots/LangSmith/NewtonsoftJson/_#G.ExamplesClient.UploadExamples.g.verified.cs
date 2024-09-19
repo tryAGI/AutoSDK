@@ -1,5 +1,4 @@
 ﻿//HintName: G.ExamplesClient.UploadExamples.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -47,9 +46,13 @@ namespace G
                 datasetId: ref datasetId,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/examples/upload/{datasetId}",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/examples/upload/{datasetId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{datasetId}"),
@@ -65,12 +68,12 @@ namespace G
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.InputKeys.Select(x => x))}]"),
+                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.InputKeys, x => x))}]"),
                 name: "input_keys");
             if (request.OutputKeys != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.OutputKeys.Select(x => x))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
                     name: "output_keys");
             }
             httpRequest.Content = __httpRequestContent;

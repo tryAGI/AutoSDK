@@ -1,5 +1,4 @@
 ﻿//HintName: G.ChannelPointsClient.UpdateRedemptionStatus.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -59,9 +58,18 @@ namespace G
                 rewardId: ref rewardId,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/channel_points/custom_rewards/redemptions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("id", id, delimiter: ",", explode: true) 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("reward_id", rewardId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards/redemptions?{string.Join("&", id.Select(static x => $"id={x}"))}&broadcaster_id={broadcasterId}&reward_id={rewardId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

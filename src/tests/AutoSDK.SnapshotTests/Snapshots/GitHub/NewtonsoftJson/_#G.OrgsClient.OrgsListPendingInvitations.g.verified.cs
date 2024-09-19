@@ -83,9 +83,19 @@ namespace G
                 global::G.OrgsListPendingInvitationsInvitationSource.Scim => "scim",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/invitations",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("role", roleValue?.ToString()) 
+                .AddOptionalParameter("invitation_source", invitationSourceValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/invitations?per_page={perPage}&page={page}&role={(global::System.Uri.EscapeDataString(roleValue?.ToString() ?? string.Empty))}&invitation_source={(global::System.Uri.EscapeDataString(invitationSourceValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

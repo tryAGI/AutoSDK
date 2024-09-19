@@ -57,9 +57,20 @@ namespace G
                 sourceSlotId: ref sourceSlotId,
                 destinationSlotId: ref destinationSlotId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/guest_star/slot",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("moderator_id", moderatorId) 
+                .AddRequiredParameter("session_id", sessionId) 
+                .AddRequiredParameter("source_slot_id", sourceSlotId) 
+                .AddOptionalParameter("destination_slot_id", destinationSlotId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/slot?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&source_slot_id={sourceSlotId}&destination_slot_id={destinationSlotId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

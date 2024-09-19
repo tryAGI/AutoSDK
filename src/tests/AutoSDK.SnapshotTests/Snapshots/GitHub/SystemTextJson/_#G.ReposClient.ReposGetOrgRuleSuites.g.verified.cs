@@ -78,9 +78,21 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/rulesets/rule-suites",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("repository_name", repositoryName?.ToString()) 
+                .AddOptionalParameter("time_period", timePeriod?.ToValueString()) 
+                .AddOptionalParameter("actor_name", actorName) 
+                .AddOptionalParameter("rule_suite_result", ruleSuiteResult?.ToValueString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/rulesets/rule-suites?repository_name={repositoryName}&time_period={(global::System.Uri.EscapeDataString(timePeriod?.ToValueString() ?? string.Empty))}&actor_name={actorName}&rule_suite_result={(global::System.Uri.EscapeDataString(ruleSuiteResult?.ToValueString() ?? string.Empty))}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

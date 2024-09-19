@@ -73,9 +73,22 @@ namespace G
                 phone: ref phone,
                 encryptedPass: ref encryptedPass);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/admin/addnewusertoaccount",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("accountId", accountId?.ToString()) 
+                .AddOptionalParameter("username", username) 
+                .AddOptionalParameter("firstName", firstName) 
+                .AddOptionalParameter("lastName", lastName) 
+                .AddOptionalParameter("email", email) 
+                .AddOptionalParameter("phone", phone) 
+                .AddOptionalParameter("encryptedPass", encryptedPass) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/admin/addnewusertoaccount?accountId={accountId}&username={username}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&encryptedPass={encryptedPass}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

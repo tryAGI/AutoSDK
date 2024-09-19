@@ -1,5 +1,4 @@
 ﻿//HintName: G.DescriptorClient.DescriptorUpdateFieldAndOptions.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -71,9 +70,20 @@ namespace G
                 deletedOptionIds: deletedOptionIds,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/updatefieldandoptions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("fieldId", fieldId?.ToString()) 
+                .AddOptionalParameter("title", title) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("deletedOptionIds", deletedOptionIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/updatefieldandoptions?projectId={projectId}&fieldId={fieldId}&title={title}&description={description}&{string.Join("&", deletedOptionIds?.Select(static x => $"deletedOptionIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

@@ -138,9 +138,25 @@ namespace G
                 global::G.CodeScanningAlertSeverity.Error => "error",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/code-scanning/alerts",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("tool_name", toolName) 
+                .AddOptionalParameter("tool_guid", toolGuid) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("severity", severityValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&before={before}&after={after}&page={page}&per_page={perPage}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&state={(global::System.Uri.EscapeDataString(stateValue?.ToString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&severity={(global::System.Uri.EscapeDataString(severityValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

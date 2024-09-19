@@ -88,9 +88,25 @@ namespace G
                 folderId: ref folderId,
                 dataURI: ref dataURI);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/deletememo",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("CreatedUserId", createdUserId?.ToString()) 
+                .AddOptionalParameter("LastEditUserId", lastEditUserId?.ToString()) 
+                .AddOptionalParameter("CreateStamp", createStamp?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("LastEditStamp", lastEditStamp?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("FolderId", folderId?.ToString()) 
+                .AddOptionalParameter("DataURI", dataURI) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/deletememo?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}&CreatedUserId={createdUserId}&LastEditUserId={lastEditUserId}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&LastEditStamp={lastEditStamp:yyyy-MM-ddTHH:mm:ssZ}&FolderId={folderId}&DataURI={dataURI}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

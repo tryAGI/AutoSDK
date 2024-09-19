@@ -1,5 +1,4 @@
 ﻿//HintName: G.TagClient.TagAddExcerptTagApplications.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -64,9 +63,19 @@ namespace G
                 excerptId: ref excerptId,
                 tagApps: tagApps);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/tag/addexcerpttagapplications",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("resourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("excerptId", excerptId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/addexcerpttagapplications?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&{string.Join("&", tagApps?.Select(static x => $"tagApps={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

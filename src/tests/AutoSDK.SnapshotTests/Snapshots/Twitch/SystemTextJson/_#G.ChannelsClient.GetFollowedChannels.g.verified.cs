@@ -56,9 +56,19 @@ namespace G
                 first: ref first,
                 after: ref after);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/channels/followed",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("user_id", userId) 
+                .AddOptionalParameter("broadcaster_id", broadcasterId) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                .AddOptionalParameter("after", after) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels/followed?user_id={userId}&broadcaster_id={broadcasterId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

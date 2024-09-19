@@ -93,9 +93,25 @@ namespace G
                 hasScore: ref hasScore,
                 level: ref level);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/public/{shareToken}/datasets/feedback",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("run", run?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("key", key?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("session", session?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("source", source?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("user", user?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("has_comment", hasComment?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("has_score", hasScore?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("level", level?.ToString() ?? string.Empty) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/datasets/feedback?run={run}&key={key}&session={session}&source={source}&limit={limit}&offset={offset}&user={user}&has_comment={hasComment}&has_score={hasScore}&level={level}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

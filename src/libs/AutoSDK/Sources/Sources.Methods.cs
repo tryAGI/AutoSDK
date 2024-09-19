@@ -16,11 +16,6 @@ public static partial class Sources
             return string.Empty;
         }
 
-        var usings =
-            endPoint.Parameters.Any(x => x.Type.IsArray && x.ParameterExplode == true) ||
-            endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.Type.IsArray)
-            ? "using System.Linq;\n"
-            : "";
         var contentType = endPoint.ContentType switch
         {
             ContentType.String => "string",
@@ -28,7 +23,7 @@ public static partial class Sources
             _ => "byte[]",
         };
         
-        return $@"{usings}
+        return $@"
 #nullable enable
 
 namespace {endPoint.Namespace}
@@ -37,7 +32,7 @@ namespace {endPoint.Namespace}
     {{
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
             global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
-                .Where(x => x.ParameterLocation != null)
+                .Where(x => x.Location != null)
                 .Select(x => $@",
             {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
@@ -45,7 +40,7 @@ namespace {endPoint.Namespace}
         partial void Prepare{endPoint.NotAsyncMethodName}Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Parameters
-                .Where(x => x.ParameterLocation != null)
+                .Where(x => x.Location != null)
                 .Select(x => $@",
             {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
@@ -138,14 +133,14 @@ namespace {endPoint.Namespace}
                 client: _httpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
                 httpClient: _httpClient{endPoint.Parameters
-                    .Where(x => x.ParameterLocation != null)
+                    .Where(x => x.Location != null)
                     .Select(x => $@",
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
-    .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
+    .Where(x => x is { Location: not null, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch
             {{
@@ -154,9 +149,10 @@ namespace {endPoint.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
+{GeneratePathAndQuery(endPoint)}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 {GenerateRequestData(endPoint)}
 
             PrepareRequest(
@@ -165,7 +161,7 @@ namespace {endPoint.Namespace}
             Prepare{endPoint.NotAsyncMethodName}Request(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest{endPoint.Parameters
-                    .Where(x => x.ParameterLocation != null)
+                    .Where(x => x.Location != null)
                     .Select(x => $@",
                 {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
@@ -229,7 +225,7 @@ namespace {endPoint.Namespace}
         
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Parameters.Where(x => x.ParameterLocation != null).Select(x => $@"
+{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
@@ -237,11 +233,11 @@ namespace {endPoint.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{endPoint.Parameters.Where(x => x is { ParameterLocation: not null, IsRequired: true }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Parameters.Where(x => x is { ParameterLocation: not null, IsRequired: false }).Select(x => $@"
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: false }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -250,7 +246,7 @@ namespace {endPoint.Namespace}
     public static string SerializePropertyAsString(
         MethodParameter property)
     {
-        var name = property.ParameterLocation != null
+        var name = property.Location != null
             ? property.ParameterName
             : "request." + property.Name;
         if (property.Type.IsArray)
@@ -259,7 +255,7 @@ namespace {endPoint.Namespace}
             var additionalConvertSubtype = subType.IsEnum
                 ? ".ToValueString()"
                 : string.Empty;
-            return $"$\"[{{string.Join(\",\", {name}.Select(x => x{additionalConvertSubtype}))}}]\"";
+            return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({name}, x => x{additionalConvertSubtype}))}}]\"";
         }
         
         var additionalConvert = property.Type.IsEnum
@@ -276,46 +272,56 @@ namespace {endPoint.Namespace}
     public static string GeneratePathAndQuery(
         EndPoint endPoint)
     {
-        var code = @" 
-            var __path =
-                _httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $""/v1alpha/namespaces/{{namespaceId}}/catalogs/{{catalogId}}/files"";";
+        var code = @$" 
+            var __pathBuilder = new PathBuilder(
+                path: {endPoint.Path},
+                baseUri: _httpClient.BaseAddress);";
 
-        if (endPoint.QueryParameters.Length == 0)
-        {
-            return code.RemoveBlankLinesWhereOnlyWhitespaces();
-        }
+        var queryParameters = endPoint.Parameters
+            .Where(x => x.Location == ParameterLocation.Query)
+            .Where(x =>
+                x.Type.IsEnum ||
+                (x.Type.Properties.Length == 0 &&
+                (!x.Type.IsArray || (x.Type.SubTypes[0].Properties.Length == 0 && !x.Type.SubTypes[0].IsArray))))
+            .ToArray();
 
-        code += $@" 
-            var parameters = new global::System.Collections.Generic.Dictionary<string, string?>();";
-        foreach (var pair in endPoint.QueryParameters)
+        if (queryParameters.Length > 0)
         {
             code += $@" 
-            if ({pair.Key} != null)
-            {{
-                parameters.Add(""{pair.Key}"", global::System.Uri.EscapeDataString($""{{{pair.Value}}}""));
-            }}";
+            __pathBuilder";
+        }
+
+        foreach (var parameter in queryParameters)
+        {
+            var additionalArguments = parameter.Type.IsArray
+                ? $", delimiter: \"{parameter.Delimiter}\", explode: {(parameter.Explode ? "true" : "false")}"
+                : string.Empty;
+            if (parameter.Type.IsArray && parameter.Type.SubTypes[0].CSharpTypeWithoutNullability is not "string")
+            {
+                additionalArguments = $", selector: static x => {parameter.Selector}" + additionalArguments;
+            }
+            if (parameter.IsRequired)
+            {
+                code += $@" 
+                .AddRequiredParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
+            }
+            else
+            {
+                code += $@" 
+                .AddOptionalParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
+            }
         }
         
-        code += $@" 
-            if (parameters.Count > 0)
-            {{
-                __path += ""?"" + string.Join(""&"", parameters.Select(kvp => $""{{kvp.Key}}={{kvp.Value}}""));
-            }}";
+        if (queryParameters.Length > 0)
+        {
+            code += @" 
+                ;";
+        }
+        
+        code += @" 
+            var __path = __pathBuilder.ToString();";
         
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
- //        code += $@"
- //            if (filterFileUids != null)
- //            {{
- //                for (var i = 0; i < filterFileUids.Count; i++)
- //                {{
- //                    parameters.Add($""filterFileUids"", filterFileUids[i].ToString());
- //                }}
- //            }}
- //            if (parameters.Count > 0)
- //            {{
- //                __path += ""?"" + string.Join(""&"", parameters.Select(kvp => $""{{kvp.Key}}={{kvp.Value}}""));
- //            }}
- // ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
     public static string GenerateRequestData(
@@ -355,7 +361,7 @@ namespace {endPoint.Namespace}
     }
 
     return $@" 
-            if ({(x.ParameterLocation != null ? x.ParameterName : "request." + x.Name)} != {x.ParameterDefaultValue})
+            if ({(x.Location != null ? x.ParameterName : "request." + x.Name)} != {x.ParameterDefaultValue})
             {{
 {add.AddIndent(1)}
             }}";
@@ -415,12 +421,12 @@ namespace {endPoint.Namespace}
         {{
             var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
-{endPoint.Parameters.Where(x => x.ParameterLocation == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
+{endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
                 {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},").Inject()}
             }};
 
             {response}{endPoint.MethodName}(
-{endPoint.Parameters.Where(x => x.ParameterLocation != null).Select(x => $@"
+{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: request,
                 cancellationToken: cancellationToken){configureAwaitResponse};

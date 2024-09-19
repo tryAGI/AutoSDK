@@ -1,5 +1,4 @@
 ﻿//HintName: G.VideosClient.GetVideos.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -88,9 +87,25 @@ namespace G
                 after: ref after,
                 before: ref before);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/videos",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+                .AddOptionalParameter("user_id", userId) 
+                .AddOptionalParameter("game_id", gameId) 
+                .AddOptionalParameter("language", language) 
+                .AddOptionalParameter("period", period?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("first", first) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/videos?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&user_id={userId}&game_id={gameId}&language={language}&period={(global::System.Uri.EscapeDataString(period?.ToValueString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}&type={(global::System.Uri.EscapeDataString(type?.ToValueString() ?? string.Empty))}&first={first}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

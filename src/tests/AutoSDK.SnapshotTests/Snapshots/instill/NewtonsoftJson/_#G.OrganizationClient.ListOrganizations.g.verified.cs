@@ -60,9 +60,19 @@ namespace G
                 global::G.ListOrganizationsView.VIEWFULL => "VIEW_FULL",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: "/v1beta/organizations",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
+                .AddOptionalParameter("pageToken", pageToken) 
+                .AddOptionalParameter("view", viewValue?.ToString()) 
+                .AddOptionalParameter("filter", filter) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1beta/organizations?pageSize={pageSize}&pageToken={pageToken}&view={(global::System.Uri.EscapeDataString(viewValue?.ToString() ?? string.Empty))}&filter={filter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

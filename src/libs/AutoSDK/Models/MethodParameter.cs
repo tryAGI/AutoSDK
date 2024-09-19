@@ -7,12 +7,15 @@ namespace AutoSDK.Models;
 public readonly record struct MethodParameter(
     string Id,
     string Name,
+    string Value,
+    string Delimiter,
+    string Selector,
     TypeData Type,
     bool IsRequired,
     bool IsMultiPartFormDataFilename,
-    ParameterLocation? ParameterLocation,
-    ParameterStyle? ParameterStyle,
-    bool? ParameterExplode,
+    ParameterLocation? Location,
+    ParameterStyle? Style,
+    bool Explode,
     Settings Settings,
     string? DefaultValue,
     bool IsDeprecated,
@@ -22,12 +25,15 @@ public readonly record struct MethodParameter(
     public static MethodParameter Default => new(
         Id: string.Empty,
         Name: string.Empty,
+        Value: string.Empty,
+        Delimiter: string.Empty,
+        Selector: string.Empty,
         Type: TypeData.Default,
         IsRequired: false,
         IsMultiPartFormDataFilename: false,
-        ParameterLocation: null,
-        ParameterStyle: null,
-        ParameterExplode: null,
+        Location: null,
+        Style: null,
+        Explode: false,
         DefaultValue: null,
         IsDeprecated: false,
         Settings: Settings.Default,
@@ -37,6 +43,7 @@ public readonly record struct MethodParameter(
     public static MethodParameter FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        var parameter = context.Parameter ?? throw new InvalidOperationException("Parameter or parameter data is required.");
         var parameterName = context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var type = context.TypeData ?? throw new InvalidOperationException("TypeData is required.");
 
@@ -52,8 +59,8 @@ public readonly record struct MethodParameter(
         name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
         
         var isRequired =
-            context.Parameter?.Required == true ||
-            context.Parameter?.In == Microsoft.OpenApi.Models.ParameterLocation.Path;
+            parameter.Required ||
+            parameter.In == ParameterLocation.Path;
         // Special case for enums with a single value.
         if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
         {
@@ -63,12 +70,15 @@ public readonly record struct MethodParameter(
         return new MethodParameter(
             Id: parameterName,
             Name: name,
+            Value: string.Empty,
+            Delimiter: string.Empty,
+            Selector: string.Empty,
             Type: type,
             IsRequired: isRequired,
             IsMultiPartFormDataFilename: false,
-            ParameterLocation: context.Parameter?.In,
-            ParameterStyle: context.Parameter?.Style,
-            ParameterExplode: context.Parameter?.Explode,
+            Location: parameter.In,
+            Style: parameter.Style,
+            Explode: parameter.Explode,
             Settings: context.Settings,
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),

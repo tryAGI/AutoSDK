@@ -1,5 +1,4 @@
 ﻿//HintName: G.ResourceClient.ResourceUpdateTranscriptData.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -84,9 +83,23 @@ namespace G
                 transcriptData: ref transcriptData,
                 syncItems: syncItems);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/resource/updatetranscriptdata",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("Creator", creator?.ToString()) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("ResourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("DataPath", dataPath) 
+                .AddOptionalParameter("Created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("transcriptData", transcriptData) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/updatetranscriptdata?ProjectIdKey={projectIdKey}&Id={id}&Creator={creator}&ProjectId={projectId}&ResourceId={resourceId}&DataPath={dataPath}&Created={created:yyyy-MM-ddTHH:mm:ssZ}&transcriptData={transcriptData}&{string.Join("&", syncItems?.Select(static x => $"syncItems={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

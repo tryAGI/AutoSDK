@@ -12,7 +12,6 @@ public readonly record struct EndPoint(
     string BaseUrl,
     bool Stream,
     string Path,
-    ImmutableArray<KeyValuePair<string, string>> QueryParameters,
     string RequestMediaType,
     ImmutableArray<MethodParameter> Parameters,
     OperationType HttpMethod,
@@ -64,7 +63,7 @@ public readonly record struct EndPoint(
         }
         
         var preparedPath = operation.OperationPath.PreparePath(parameters);
-        //var (preparedPath, queryParameters) = operation.OperationPath.PreparePath2(parameters);
+        parameters = operation.OperationPath.PrepareParameters(parameters).ToList();
  
         var requestMediaTypes =
             operation.Operation.RequestBody?.ResolveIfRequired().Content ??
@@ -116,9 +115,8 @@ public readonly record struct EndPoint(
                 : operation.Settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: responses
-                .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
+                .Any(x => x.MediaType.Key.Contains("application/x-ndjson")), // text/event-stream
             Path: preparedPath,
-            QueryParameters: [],// queryParameters.ToImmutableArray(),
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
             HttpMethod: operation.OperationType,

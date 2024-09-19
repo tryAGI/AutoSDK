@@ -86,9 +86,21 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/deployments",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("sha", sha) 
+                .AddOptionalParameter("ref", @ref) 
+                .AddOptionalParameter("task", task) 
+                .AddOptionalParameter("environment", environment) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/deployments?sha={sha}&ref={@ref}&task={task}&environment={environment}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

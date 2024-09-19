@@ -8,6 +8,7 @@ namespace G
     {
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::G.AnyOf<string, object>? accept,
             ref global::G.AnyOf<bool?, object>? referenceFree,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
@@ -21,11 +22,11 @@ namespace G
             ref int? offset,
             ref int? limit,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
-            ref bool? facets,
-            ref global::G.AnyOf<string, object>? accept);
+            ref bool? facets);
         partial void PrepareReadTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.AnyOf<string, object>? accept,
             global::G.AnyOf<bool?, object>? referenceFree,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
@@ -39,8 +40,7 @@ namespace G
             int? offset,
             int? limit,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId,
-            bool? facets,
-            global::G.AnyOf<string, object>? accept);
+            bool? facets);
         partial void ProcessReadTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -54,6 +54,7 @@ namespace G
         /// Read Tracer Sessions<br/>
         /// Get all sessions.
         /// </summary>
+        /// <param name="accept"></param>
         /// <param name="referenceFree"></param>
         /// <param name="referenceDataset"></param>
         /// <param name="id"></param>
@@ -78,10 +79,10 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
-        /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
+            global::G.AnyOf<string, object>? accept = default,
             global::G.AnyOf<bool?, object>? referenceFree = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
@@ -96,13 +97,13 @@ namespace G
             int? limit = 100,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             bool? facets = false,
-            global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareReadTracerSessionsArguments(
                 httpClient: _httpClient,
+                accept: ref accept,
                 referenceFree: ref referenceFree,
                 referenceDataset: ref referenceDataset,
                 id: ref id,
@@ -116,12 +117,31 @@ namespace G
                 offset: ref offset,
                 limit: ref limit,
                 tagValueId: ref tagValueId,
-                facets: ref facets,
-                accept: ref accept);
+                facets: ref facets);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/sessions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("reference_free", referenceFree?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("reference_dataset", referenceDataset?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("facets", facets?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/sessions?reference_free={referenceFree}&reference_dataset={referenceDataset}&id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&metadata={metadata}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&tag_value_id={tagValueId}&facets={facets}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -129,6 +149,7 @@ namespace G
             PrepareReadTracerSessionsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                accept: accept,
                 referenceFree: referenceFree,
                 referenceDataset: referenceDataset,
                 id: id,
@@ -142,8 +163,7 @@ namespace G
                 offset: offset,
                 limit: limit,
                 tagValueId: tagValueId,
-                facets: facets,
-                accept: accept);
+                facets: facets);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

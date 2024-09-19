@@ -1,5 +1,4 @@
 ﻿//HintName: G.ExportClient.ExportStartExportBubbleChartJob.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -79,9 +78,22 @@ namespace G
                 colorByTotal: ref colorByTotal,
                 extension: ref extension);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/export/startexportbubblechartjob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("ColumnLabels", columnLabels, delimiter: ",", explode: true) 
+                .AddOptionalParameter("RowLabels", rowLabels, delimiter: ",", explode: true) 
+                .AddOptionalParameter("MaxCount", maxCount?.ToString()) 
+                .AddOptionalParameter("ColorByTotal", colorByTotal?.ToString()) 
+                .AddOptionalParameter("extension", extension) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startexportbubblechartjob?projectId={projectId}&Title={title}&{string.Join("&", columnLabels?.Select(static x => $"columnLabels={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", rowLabels?.Select(static x => $"rowLabels={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", rows?.Select(static x => $"rows={x}") ?? global::System.Array.Empty<string>())}&MaxCount={maxCount}&ColorByTotal={colorByTotal}&extension={extension}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -68,9 +68,21 @@ namespace G
                 creatorId: ref creatorId,
                 mergeCodes: ref mergeCodes);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/admin/mergeprojects",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("project1Id", project1Id?.ToString()) 
+                .AddOptionalParameter("project2Id", project2Id?.ToString()) 
+                .AddOptionalParameter("newTitle", newTitle) 
+                .AddOptionalParameter("newDescription", newDescription) 
+                .AddOptionalParameter("creatorId", creatorId?.ToString()) 
+                .AddOptionalParameter("mergeCodes", mergeCodes?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/admin/mergeprojects?project1Id={project1Id}&project2Id={project2Id}&newTitle={newTitle}&newDescription={newDescription}&creatorId={creatorId}&mergeCodes={mergeCodes}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

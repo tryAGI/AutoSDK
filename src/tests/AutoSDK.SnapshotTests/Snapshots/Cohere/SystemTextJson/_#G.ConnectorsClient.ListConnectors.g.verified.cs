@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareListConnectorsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xClientName,
             ref double? limit,
-            ref double? offset,
-            ref string? xClientName);
+            ref double? offset);
         partial void PrepareListConnectorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xClientName,
             double? limit,
-            double? offset,
-            string? xClientName);
+            double? offset);
         partial void ProcessListConnectorsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,32 +30,40 @@ namespace G
         /// List Connectors<br/>
         /// Returns a list of connectors ordered by descending creation date (newer first). See ['Managing your Connector'](https://docs.cohere.com/docs/managing-your-connector) for more information.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="limit">
         /// Default Value: 30
         /// </param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
-        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListConnectorsResponse> ListConnectorsAsync(
+            string? xClientName = default,
             double? limit = 30,
             double? offset = 0,
-            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListConnectorsArguments(
                 httpClient: _httpClient,
+                xClientName: ref xClientName,
                 limit: ref limit,
-                offset: ref offset,
-                xClientName: ref xClientName);
+                offset: ref offset);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/connectors",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/connectors?limit={limit}&offset={offset}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -63,9 +71,9 @@ namespace G
             PrepareListConnectorsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                xClientName: xClientName,
                 limit: limit,
-                offset: offset,
-                xClientName: xClientName);
+                offset: offset);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

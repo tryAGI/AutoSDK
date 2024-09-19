@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareCodespacesGetCodespacesForUserInOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? perPage,
-            ref int? page,
             ref string org,
-            ref string username);
+            ref string username,
+            ref int? perPage,
+            ref int? page);
         partial void PrepareCodespacesGetCodespacesForUserInOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? perPage,
-            int? page,
             string org,
-            string username);
+            string username,
+            int? perPage,
+            int? page);
         partial void ProcessCodespacesGetCodespacesForUserInOrgResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,14 +33,14 @@ namespace G
         /// Lists the codespaces that a member of an organization has for repositories in that organization.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <param name="org"></param>
+        /// <param name="username"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
-        /// <param name="org"></param>
-        /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodespacesGetCodespacesForUserInOrgResponse> CodespacesGetCodespacesForUserInOrgAsync(
@@ -54,14 +54,22 @@ namespace G
                 client: _httpClient);
             PrepareCodespacesGetCodespacesForUserInOrgArguments(
                 httpClient: _httpClient,
-                perPage: ref perPage,
-                page: ref page,
                 org: ref org,
-                username: ref username);
+                username: ref username,
+                perPage: ref perPage,
+                page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/members/{username}/codespaces",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/members/{username}/codespaces?per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -69,10 +77,10 @@ namespace G
             PrepareCodespacesGetCodespacesForUserInOrgRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                perPage: perPage,
-                page: page,
                 org: org,
-                username: username);
+                username: username,
+                perPage: perPage,
+                page: page);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

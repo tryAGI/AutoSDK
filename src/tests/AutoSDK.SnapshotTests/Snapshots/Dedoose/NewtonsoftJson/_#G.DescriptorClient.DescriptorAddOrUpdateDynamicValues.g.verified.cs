@@ -1,5 +1,4 @@
 ﻿//HintName: G.DescriptorClient.DescriptorAddOrUpdateDynamicValues.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -64,9 +63,19 @@ namespace G
                 descriptorId: ref descriptorId,
                 values: values);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/addorupdatedynamicvalues",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("resourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("setId", setId?.ToString()) 
+                .AddOptionalParameter("descriptorId", descriptorId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/addorupdatedynamicvalues?projectId={projectId}&resourceId={resourceId}&setId={setId}&descriptorId={descriptorId}&{string.Join("&", values?.Select(static x => $"values={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

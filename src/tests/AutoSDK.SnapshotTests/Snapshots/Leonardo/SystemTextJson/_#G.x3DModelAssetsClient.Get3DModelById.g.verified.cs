@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareGet3DModelByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string id,
             ref int? offset,
             ref int? limit,
-            ref string id,
             global::G.Get3DModelByIdRequest request);
         partial void PrepareGet3DModelByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id,
             int? offset,
             int? limit,
-            string id,
             global::G.Get3DModelByIdRequest request);
         partial void ProcessGet3DModelByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,13 +32,13 @@ namespace G
         /// Get 3D Model by ID<br/>
         /// This endpoint gets the specific 3D model
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
-        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -55,14 +55,22 @@ namespace G
                 client: _httpClient);
             PrepareGet3DModelByIdArguments(
                 httpClient: _httpClient,
+                id: ref id,
                 offset: ref offset,
                 limit: ref limit,
-                id: ref id,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/models-3d/{id}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/models-3d/{id}?offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -76,9 +84,9 @@ namespace G
             PrepareGet3DModelByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                id: id,
                 offset: offset,
                 limit: limit,
-                id: id,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -122,13 +130,13 @@ namespace G
         /// Get 3D Model by ID<br/>
         /// This endpoint gets the specific 3D model
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
-        /// <param name="id"></param>
         /// <param name="requestId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -145,9 +153,9 @@ namespace G
             };
 
             return await Get3DModelByIdAsync(
+                id: id,
                 offset: offset,
                 limit: limit,
-                id: id,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

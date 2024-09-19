@@ -92,9 +92,24 @@ namespace G
                 since: ref since,
                 before: ref before);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/user/repos",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("visibility", visibility?.ToValueString()) 
+                .AddOptionalParameter("affiliation", affiliation) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/user/repos?visibility={(global::System.Uri.EscapeDataString(visibility?.ToValueString() ?? string.Empty))}&affiliation={affiliation}&type={(global::System.Uri.EscapeDataString(type?.ToValueString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}&direction={(global::System.Uri.EscapeDataString(direction?.ToValueString() ?? string.Empty))}&per_page={perPage}&page={page}&since={since:yyyy-MM-ddTHH:mm:ssZ}&before={before:yyyy-MM-ddTHH:mm:ssZ}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

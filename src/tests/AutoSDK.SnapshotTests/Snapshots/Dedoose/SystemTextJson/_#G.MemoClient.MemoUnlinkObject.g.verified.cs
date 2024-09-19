@@ -68,9 +68,21 @@ namespace G
                 descriptorId: ref descriptorId,
                 tagId: ref tagId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/unlinkobject",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("memoId", memoId?.ToString()) 
+                .AddOptionalParameter("resourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("excerptId", excerptId?.ToString()) 
+                .AddOptionalParameter("descriptorId", descriptorId?.ToString()) 
+                .AddOptionalParameter("tagId", tagId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/unlinkobject?projectId={projectId}&memoId={memoId}&resourceId={resourceId}&excerptId={excerptId}&descriptorId={descriptorId}&tagId={tagId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

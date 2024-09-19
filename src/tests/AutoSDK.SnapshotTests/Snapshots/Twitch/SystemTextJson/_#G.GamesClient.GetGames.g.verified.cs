@@ -1,5 +1,4 @@
 ﻿//HintName: G.GamesClient.GetGames.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -53,9 +52,18 @@ namespace G
                 name: name,
                 igdbId: igdbId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/games",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+                .AddOptionalParameter("name", name, delimiter: ",", explode: true) 
+                .AddOptionalParameter("igdb_id", igdbId, delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/games?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", name?.Select(static x => $"name={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", igdbId?.Select(static x => $"igdbId={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

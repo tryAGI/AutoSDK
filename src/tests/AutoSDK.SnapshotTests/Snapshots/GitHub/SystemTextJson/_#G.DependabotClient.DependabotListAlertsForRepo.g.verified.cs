@@ -124,9 +124,29 @@ namespace G
                 first: ref first,
                 last: ref last);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/dependabot/alerts",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("state", state) 
+                .AddOptionalParameter("severity", severity) 
+                .AddOptionalParameter("ecosystem", ecosystem) 
+                .AddOptionalParameter("package", package) 
+                .AddOptionalParameter("manifest", manifest) 
+                .AddOptionalParameter("scope", scope?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                .AddOptionalParameter("last", last?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/dependabot/alerts?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&manifest={manifest}&scope={(global::System.Uri.EscapeDataString(scope?.ToValueString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}&direction={(global::System.Uri.EscapeDataString(direction?.ToValueString() ?? string.Empty))}&page={page}&per_page={perPage}&before={before}&after={after}&first={first}&last={last}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

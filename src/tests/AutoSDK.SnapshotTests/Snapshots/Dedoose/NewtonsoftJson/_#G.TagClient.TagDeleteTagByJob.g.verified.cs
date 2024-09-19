@@ -108,9 +108,29 @@ namespace G
                 color: ref color,
                 allowDecimalWeight: ref allowDecimalWeight);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/tag/deletetagbyjob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("currentProjectId", currentProjectId?.ToString()) 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectIDL", projectIDL?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("Description", description) 
+                .AddOptionalParameter("IsWeighted", isWeighted?.ToString()) 
+                .AddOptionalParameter("WeightMin", weightMin?.ToString()) 
+                .AddOptionalParameter("WeightMax", weightMax?.ToString()) 
+                .AddOptionalParameter("WeightDefault", weightDefault?.ToString()) 
+                .AddOptionalParameter("SortOrder", sortOrder?.ToString()) 
+                .AddOptionalParameter("Color", color?.ToString()) 
+                .AddOptionalParameter("AllowDecimalWeight", allowDecimalWeight?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/deletetagbyjob?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&IsWeighted={isWeighted}&WeightMin={weightMin}&WeightMax={weightMax}&WeightDefault={weightDefault}&SortOrder={sortOrder}&Color={color}&AllowDecimalWeight={allowDecimalWeight}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

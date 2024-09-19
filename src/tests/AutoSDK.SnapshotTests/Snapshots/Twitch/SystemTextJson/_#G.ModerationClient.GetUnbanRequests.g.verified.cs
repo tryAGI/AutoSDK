@@ -67,9 +67,21 @@ namespace G
                 after: ref after,
                 first: ref first);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/moderation/unban_requests",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("moderator_id", moderatorId) 
+                .AddRequiredParameter("status", status) 
+                .AddOptionalParameter("user_id", userId) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/unban_requests?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&status={status}&user_id={userId}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

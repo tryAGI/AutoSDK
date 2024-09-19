@@ -60,9 +60,13 @@ namespace G
                 global::G.PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Container => "container",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/users/{username}/packages/{packageTypeValue}/{packageName}/versions",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/{username}/packages/{packageTypeValue}/{packageName}/versions", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

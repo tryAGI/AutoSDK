@@ -1,5 +1,4 @@
 ﻿//HintName: G.ExcerptClient.ExcerptStartDeleteExcerptsJob.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -49,9 +48,17 @@ namespace G
                 currentProjectId: ref currentProjectId,
                 excerptIds: excerptIds);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/excerpt/startdeleteexcerptsjob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("currentProjectId", currentProjectId?.ToString()) 
+                .AddOptionalParameter("excerptIds", excerptIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/startdeleteexcerptsjob?currentProjectId={currentProjectId}&{string.Join("&", excerptIds?.Select(static x => $"excerptIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

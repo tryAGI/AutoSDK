@@ -1,5 +1,4 @@
 ﻿//HintName: G.ChatClient.GetEmoteSets.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -44,9 +43,16 @@ namespace G
                 httpClient: _httpClient,
                 emoteSetId: emoteSetId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/chat/emotes/set",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("emote_set_id", emoteSetId, delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/chat/emotes/set?{string.Join("&", emoteSetId.Select(static x => $"emoteSetId={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

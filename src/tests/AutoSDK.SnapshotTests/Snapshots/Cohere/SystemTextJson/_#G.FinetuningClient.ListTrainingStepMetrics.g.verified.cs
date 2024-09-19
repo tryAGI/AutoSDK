@@ -9,16 +9,16 @@ namespace G
         partial void PrepareListTrainingStepMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string finetunedModelId,
+            ref string? xClientName,
             ref int? pageSize,
-            ref string? pageToken,
-            ref string? xClientName);
+            ref string? pageToken);
         partial void PrepareListTrainingStepMetricsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string finetunedModelId,
+            string? xClientName,
             int? pageSize,
-            string? pageToken,
-            string? xClientName);
+            string? pageToken);
         partial void ProcessListTrainingStepMetricsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,16 +32,16 @@ namespace G
         /// Retrieves metrics measured during the training of a fine-tuned model.
         /// </summary>
         /// <param name="finetunedModelId"></param>
+        /// <param name="xClientName"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
-        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListTrainingStepMetricsResponse> ListTrainingStepMetricsAsync(
             string finetunedModelId,
+            string? xClientName = default,
             int? pageSize = default,
             string? pageToken = default,
-            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -49,13 +49,21 @@ namespace G
             PrepareListTrainingStepMetricsArguments(
                 httpClient: _httpClient,
                 finetunedModelId: ref finetunedModelId,
+                xClientName: ref xClientName,
                 pageSize: ref pageSize,
-                pageToken: ref pageToken,
-                xClientName: ref xClientName);
+                pageToken: ref pageToken);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v1/finetuning/finetuned-models/{finetunedModelId}/training-step-metrics",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("page_token", pageToken) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/finetuning/finetuned-models/{finetunedModelId}/training-step-metrics?page_size={pageSize}&page_token={pageToken}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -64,9 +72,9 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 finetunedModelId: finetunedModelId,
+                xClientName: xClientName,
                 pageSize: pageSize,
-                pageToken: pageToken,
-                xClientName: xClientName);
+                pageToken: pageToken);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

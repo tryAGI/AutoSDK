@@ -113,9 +113,23 @@ namespace G
                 direction: ref direction,
                 sort: ref sort);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/code-scanning/analyses",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("tool_name", toolName) 
+                .AddOptionalParameter("tool_guid", toolGuid) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("ref", @ref) 
+                .AddOptionalParameter("sarif_id", sarifId) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/code-scanning/analyses?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&sarif_id={sarifId}&direction={(global::System.Uri.EscapeDataString(direction?.ToValueString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

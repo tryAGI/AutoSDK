@@ -41,9 +41,17 @@ namespace G
                 userId: ref userId,
                 color: ref color);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/chat/color",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("user_id", userId) 
+                .AddRequiredParameter("color", color.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/chat/color?user_id={userId}&color={(global::System.Uri.EscapeDataString(color.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -73,9 +73,22 @@ namespace G
                 data: ref data,
                 optionId: ref optionId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/adddynamicvalue",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("setId", setId?.ToString()) 
+                .AddOptionalParameter("descriptorId", descriptorId?.ToString()) 
+                .AddOptionalParameter("fieldId", fieldId?.ToString()) 
+                .AddOptionalParameter("resourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("data", data) 
+                .AddOptionalParameter("optionId", optionId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/adddynamicvalue?projectId={projectId}&setId={setId}&descriptorId={descriptorId}&fieldId={fieldId}&resourceId={resourceId}&data={data}&optionId={optionId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

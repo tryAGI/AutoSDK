@@ -61,9 +61,20 @@ namespace G
                 before: ref before,
                 after: ref after);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/streams/markers",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("user_id", userId) 
+                .AddOptionalParameter("video_id", videoId) 
+                .AddOptionalParameter("first", first) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams/markers?user_id={userId}&video_id={videoId}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

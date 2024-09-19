@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareGetGenerationsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
             ref int? offset,
-            ref int? limit,
-            ref string userId);
+            ref int? limit);
         partial void PrepareGetGenerationsByUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
             int? offset,
-            int? limit,
-            string userId);
+            int? limit);
         partial void ProcessGetGenerationsByUserIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,13 +30,13 @@ namespace G
         /// Get generations by user ID<br/>
         /// This endpoint returns all generations by a specific user
         /// </summary>
+        /// <param name="userId"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
-        /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetGenerationsByUserIdResponse> GetGenerationsByUserIdAsync(
@@ -49,13 +49,21 @@ namespace G
                 client: _httpClient);
             PrepareGetGenerationsByUserIdArguments(
                 httpClient: _httpClient,
+                userId: ref userId,
                 offset: ref offset,
-                limit: ref limit,
-                userId: ref userId);
+                limit: ref limit);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/generations/user/{userId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/generations/user/{userId}?offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -63,9 +71,9 @@ namespace G
             PrepareGetGenerationsByUserIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                userId: userId,
                 offset: offset,
-                limit: limit,
-                userId: userId);
+                limit: limit);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

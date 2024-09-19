@@ -68,9 +68,21 @@ namespace G
                 newEnd: ref newEnd,
                 updatedTextURI: ref updatedTextURI);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/excerpt/updateexcerptrange",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("excerptId", excerptId?.ToString()) 
+                .AddOptionalParameter("newStart", newStart?.ToString()) 
+                .AddOptionalParameter("newEnd", newEnd?.ToString()) 
+                .AddOptionalParameter("updatedTextURI", updatedTextURI) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/updateexcerptrange?projectId={projectId}&userId={userId}&excerptId={excerptId}&newStart={newStart}&newEnd={newEnd}&updatedTextURI={updatedTextURI}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

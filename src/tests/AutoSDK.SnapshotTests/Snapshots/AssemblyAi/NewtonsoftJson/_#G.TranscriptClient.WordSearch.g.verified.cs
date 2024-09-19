@@ -44,9 +44,16 @@ namespace G
                 transcriptId: ref transcriptId,
                 words: words);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v2/transcript/{transcriptId}/word-search",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("words", words, delimiter: ",", explode: false) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v2/transcript/{transcriptId}/word-search?words={string.Join(",", words)}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

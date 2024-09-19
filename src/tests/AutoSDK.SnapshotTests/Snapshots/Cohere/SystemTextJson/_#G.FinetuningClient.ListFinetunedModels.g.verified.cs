@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareListFinetunedModelsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xClientName,
             ref int? pageSize,
             ref string? pageToken,
-            ref string? orderBy,
-            ref string? xClientName);
+            ref string? orderBy);
         partial void PrepareListFinetunedModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xClientName,
             int? pageSize,
             string? pageToken,
-            string? orderBy,
-            string? xClientName);
+            string? orderBy);
         partial void ProcessListFinetunedModelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,31 +31,40 @@ namespace G
         /// <summary>
         /// Lists fine-tuned models.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="orderBy"></param>
-        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListFinetunedModelsResponse> ListFinetunedModelsAsync(
+            string? xClientName = default,
             int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
-            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListFinetunedModelsArguments(
                 httpClient: _httpClient,
+                xClientName: ref xClientName,
                 pageSize: ref pageSize,
                 pageToken: ref pageToken,
-                orderBy: ref orderBy,
-                xClientName: ref xClientName);
+                orderBy: ref orderBy);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/finetuning/finetuned-models",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("page_token", pageToken) 
+                .AddOptionalParameter("order_by", orderBy) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/finetuning/finetuned-models?page_size={pageSize}&page_token={pageToken}&order_by={orderBy}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -63,10 +72,10 @@ namespace G
             PrepareListFinetunedModelsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                xClientName: xClientName,
                 pageSize: pageSize,
                 pageToken: pageToken,
-                orderBy: orderBy,
-                xClientName: xClientName);
+                orderBy: orderBy);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

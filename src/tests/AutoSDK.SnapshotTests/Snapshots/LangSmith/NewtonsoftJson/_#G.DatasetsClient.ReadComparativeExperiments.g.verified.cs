@@ -82,9 +82,22 @@ namespace G
                 sortBy: ref sortBy,
                 sortByDesc: ref sortByDesc);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/datasets/{datasetId}/comparative",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets/{datasetId}/comparative?name={name}&name_contains={nameContains}&id={id}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

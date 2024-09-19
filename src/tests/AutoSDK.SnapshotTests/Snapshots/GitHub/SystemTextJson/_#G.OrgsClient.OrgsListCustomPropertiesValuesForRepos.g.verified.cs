@@ -59,9 +59,18 @@ namespace G
                 page: ref page,
                 repositoryQuery: ref repositoryQuery);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/properties/values",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("repository_query", repositoryQuery) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/properties/values?per_page={perPage}&page={page}&repository_query={repositoryQuery}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

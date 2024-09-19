@@ -103,9 +103,21 @@ namespace G
                 global::G.SecurityAdvisoriesListRepositoryAdvisoriesState.Closed => "closed",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/security-advisories",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("state", stateValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/security-advisories?direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&before={before}&after={after}&per_page={perPage}&state={(global::System.Uri.EscapeDataString(stateValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

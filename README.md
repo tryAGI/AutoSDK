@@ -16,6 +16,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Tested on GitHub 220k lines OpenAPI specification
 - Supports OneOf/AnyOf/AllOf/Not schemas
 - Supports Enums for System.Text.Json
+- Supports SSE (Server-Sent Events) through the `application/x-ndjson` content type
 - Efficient O(n) implementation, fully suitable for large/super large OpenAPI specifications
 - Used in 10+ real SDKs and adapted to solve various problems
 

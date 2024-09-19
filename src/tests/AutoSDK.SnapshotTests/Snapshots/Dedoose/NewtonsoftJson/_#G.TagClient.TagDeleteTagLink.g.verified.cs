@@ -78,9 +78,23 @@ namespace G
                 tag2IDL: ref tag2IDL,
                 isParentChildLink: ref isParentChildLink);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/tag/deletetaglink",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("currentProjectId", currentProjectId?.ToString()) 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectIDL", projectIDL?.ToString()) 
+                .AddOptionalParameter("Tag1IDL", tag1IDL?.ToString()) 
+                .AddOptionalParameter("Tag2IDL", tag2IDL?.ToString()) 
+                .AddOptionalParameter("IsParentChildLink", isParentChildLink?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/deletetaglink?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Tag1IDL={tag1IDL}&Tag2IDL={tag2IDL}&IsParentChildLink={isParentChildLink}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

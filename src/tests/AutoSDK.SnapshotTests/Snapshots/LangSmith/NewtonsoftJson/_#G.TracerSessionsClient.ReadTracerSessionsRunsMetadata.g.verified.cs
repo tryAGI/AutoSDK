@@ -63,9 +63,19 @@ namespace G
                 k: ref k,
                 rootRunsOnly: ref rootRunsOnly);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/sessions/{sessionId}/metadata",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("metadata_keys", metadataKeys?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("start_time", startTime?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("k", k?.ToString()) 
+                .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/sessions/{sessionId}/metadata?metadata_keys={metadataKeys}&start_time={startTime}&k={k}&root_runs_only={rootRunsOnly}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

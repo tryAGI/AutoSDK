@@ -1,5 +1,4 @@
 ﻿//HintName: G.StreamsClient.GetStreams.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -77,9 +76,23 @@ namespace G
                 before: ref before,
                 after: ref after);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/streams",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true) 
+                .AddOptionalParameter("user_login", userLogin, delimiter: ",", explode: true) 
+                .AddOptionalParameter("game_id", gameId, delimiter: ",", explode: true) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("language", language, delimiter: ",", explode: true) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userLogin?.Select(static x => $"userLogin={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", gameId?.Select(static x => $"gameId={x}") ?? global::System.Array.Empty<string>())}&type={(global::System.Uri.EscapeDataString(type?.ToValueString() ?? string.Empty))}&{string.Join("&", language?.Select(static x => $"language={x}") ?? global::System.Array.Empty<string>())}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

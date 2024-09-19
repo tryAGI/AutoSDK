@@ -58,9 +58,19 @@ namespace G
                 fileExtension: ref fileExtension,
                 cryptoKey: ref cryptoKey);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/training/startexporttestresultjob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("testResultId", testResultId?.ToString()) 
+                .AddOptionalParameter("fileExtension", fileExtension) 
+                .AddOptionalParameter("cryptoKey", cryptoKey) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/startexporttestresultjob?projectId={projectId}&testResultId={testResultId}&fileExtension={fileExtension}&cryptoKey={cryptoKey}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

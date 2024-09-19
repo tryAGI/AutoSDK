@@ -88,9 +88,25 @@ namespace G
                 tagCount: ref tagCount,
                 creator: ref creator);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/training/deletetest",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("TestType", testType?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("Description", description) 
+                .AddOptionalParameter("CreatedOn", createdOn?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("ExcerptCount", excerptCount?.ToString()) 
+                .AddOptionalParameter("TagCount", tagCount?.ToString()) 
+                .AddOptionalParameter("Creator", creator?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/deletetest?ProjectIdKey={projectIdKey}&Id={id}&TestType={testType}&Title={title}&Description={description}&CreatedOn={createdOn:yyyy-MM-ddTHH:mm:ssZ}&ProjectId={projectId}&ExcerptCount={excerptCount}&TagCount={tagCount}&Creator={creator}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -226,4 +226,13 @@ public static partial class Sources
             Name: $"{settings.Namespace}.Polyfills.g.cs",
             Text: GeneratePolyfills(settings));
     }
+    
+    public static FileWithName PathBuilder(
+        Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.PathBuilder.g.cs",
+            Text: GeneratePathBuilder(settings, cancellationToken: cancellationToken));
+    }
 }

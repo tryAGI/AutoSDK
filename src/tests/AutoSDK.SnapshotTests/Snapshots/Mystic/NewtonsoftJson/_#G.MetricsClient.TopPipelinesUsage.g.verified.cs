@@ -78,9 +78,21 @@ namespace G
                 global::G.DurationUnit.Weeks => "weeks",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: "/v4/metrics/top-pipelines-usage",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("num_pipelines", numPipelines?.ToString()) 
+                .AddOptionalParameter("cluster_id", clusterId) 
+                .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddRequiredParameter("interval_unit", intervalUnitValue.ToString()) 
+                .AddRequiredParameter("interval_value", intervalValue.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v4/metrics/top-pipelines-usage?num_pipelines={numPipelines}&cluster_id={clusterId}&start={start:yyyy-MM-ddTHH:mm:ssZ}&end={end:yyyy-MM-ddTHH:mm:ssZ}&interval_unit={(global::System.Uri.EscapeDataString(intervalUnitValue.ToString() ?? string.Empty))}&interval_value={intervalValue}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

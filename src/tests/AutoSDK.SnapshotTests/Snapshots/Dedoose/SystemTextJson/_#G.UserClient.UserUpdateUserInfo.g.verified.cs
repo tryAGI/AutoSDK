@@ -88,9 +88,25 @@ namespace G
                 country: ref country,
                 zip: ref zip);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/user/updateuserinfo",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("firstName", firstName) 
+                .AddOptionalParameter("lastName", lastName) 
+                .AddOptionalParameter("email", email) 
+                .AddOptionalParameter("phone", phone) 
+                .AddOptionalParameter("address", address) 
+                .AddOptionalParameter("city", city) 
+                .AddOptionalParameter("state", state) 
+                .AddOptionalParameter("country", country) 
+                .AddOptionalParameter("zip", zip) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/updateuserinfo?userId={userId}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&address={address}&city={city}&state={state}&country={country}&zip={zip}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

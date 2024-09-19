@@ -72,9 +72,23 @@ namespace G
                 isLive: ref isLive,
                 volume: ref volume);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/guest_star/slot_settings",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("moderator_id", moderatorId) 
+                .AddRequiredParameter("session_id", sessionId) 
+                .AddRequiredParameter("slot_id", slotId) 
+                .AddOptionalParameter("is_audio_enabled", isAudioEnabled?.ToString()) 
+                .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString()) 
+                .AddOptionalParameter("is_live", isLive?.ToString()) 
+                .AddOptionalParameter("volume", volume?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/slot_settings?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&slot_id={slotId}&is_audio_enabled={isAudioEnabled}&is_video_enabled={isVideoEnabled}&is_live={isLive}&volume={volume}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

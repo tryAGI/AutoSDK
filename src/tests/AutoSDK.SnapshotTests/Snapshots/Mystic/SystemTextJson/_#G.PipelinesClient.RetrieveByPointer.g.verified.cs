@@ -67,9 +67,19 @@ namespace G
                 pipelineId: ref pipelineId,
                 pipelineIdOrPointer: ref pipelineIdOrPointer);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v4/pipelines/by-pointer/{pointer}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("include_pointers", includePointers?.ToString()) 
+                .AddOptionalParameter("include_extras", includeExtras?.ToString()) 
+                .AddOptionalParameter("pipeline_id", pipelineId) 
+                .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v4/pipelines/by-pointer/{pointer}?include_pointers={includePointers}&include_extras={includeExtras}&pipeline_id={pipelineId}&pipeline_id_or_pointer={pipelineIdOrPointer}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

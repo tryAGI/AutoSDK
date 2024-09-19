@@ -74,9 +74,19 @@ namespace G
                 perPage: ref perPage,
                 page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/collaborators",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("affiliation", affiliation?.ToValueString()) 
+                .AddOptionalParameter("permission", permission?.ToValueString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/collaborators?affiliation={(global::System.Uri.EscapeDataString(affiliation?.ToValueString() ?? string.Empty))}&permission={(global::System.Uri.EscapeDataString(permission?.ToValueString() ?? string.Empty))}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

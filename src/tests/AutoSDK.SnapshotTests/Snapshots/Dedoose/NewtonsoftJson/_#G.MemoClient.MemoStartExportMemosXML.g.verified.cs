@@ -1,5 +1,4 @@
 ﻿//HintName: G.MemoClient.MemoStartExportMemosXML.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -74,9 +73,22 @@ namespace G
                 descriptorsSelection: ref descriptorsSelection,
                 symKey: ref symKey);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/startexportmemosxml",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("memoIds", memoIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("codeSelection", codeSelection?.ToString()) 
+                .AddOptionalParameter("mediaSelection", mediaSelection?.ToString()) 
+                .AddOptionalParameter("excerptsSelection", excerptsSelection?.ToString()) 
+                .AddOptionalParameter("descriptorsSelection", descriptorsSelection?.ToString()) 
+                .AddOptionalParameter("symKey", symKey) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startexportmemosxml?projectId={projectId}&{string.Join("&", memoIds?.Select(static x => $"memoIds={x}") ?? global::System.Array.Empty<string>())}&codeSelection={codeSelection}&mediaSelection={mediaSelection}&excerptsSelection={excerptsSelection}&descriptorsSelection={descriptorsSelection}&symKey={symKey}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

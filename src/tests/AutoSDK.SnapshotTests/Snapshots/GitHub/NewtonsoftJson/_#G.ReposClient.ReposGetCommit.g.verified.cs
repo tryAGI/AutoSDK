@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
+            ref string @ref,
             ref int? page,
-            ref int? perPage,
-            ref string @ref);
+            ref int? perPage);
         partial void PrepareReposGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
+            string @ref,
             int? page,
-            int? perPage,
-            string @ref);
+            int? perPage);
         partial void ProcessReposGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,13 +65,13 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="ref"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
-        /// <param name="ref"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Commit> ReposGetCommitAsync(
@@ -88,13 +88,21 @@ namespace G
                 httpClient: _httpClient,
                 owner: ref owner,
                 repo: ref repo,
+                @ref: ref @ref,
                 page: ref page,
-                perPage: ref perPage,
-                @ref: ref @ref);
+                perPage: ref perPage);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/commits/{@ref}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/commits/{@ref}?page={page}&per_page={perPage}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -104,9 +112,9 @@ namespace G
                 httpRequestMessage: httpRequest,
                 owner: owner,
                 repo: repo,
+                @ref: @ref,
                 page: page,
-                perPage: perPage,
-                @ref: @ref);
+                perPage: perPage);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

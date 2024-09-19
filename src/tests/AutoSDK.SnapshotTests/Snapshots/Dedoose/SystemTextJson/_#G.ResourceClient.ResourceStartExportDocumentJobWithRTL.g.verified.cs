@@ -68,9 +68,21 @@ namespace G
                 exportExtension: ref exportExtension,
                 encryptedSymKey: ref encryptedSymKey);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/resource/startexportdocumentjobwithrtl",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("resourceId", resourceId?.ToString()) 
+                .AddOptionalParameter("includeExRegions", includeExRegions?.ToString()) 
+                .AddOptionalParameter("rtl", rtl?.ToString()) 
+                .AddOptionalParameter("exportExtension", exportExtension) 
+                .AddOptionalParameter("encryptedSymKey", encryptedSymKey) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startexportdocumentjobwithrtl?projectId={projectId}&resourceId={resourceId}&includeExRegions={includeExRegions}&rtl={rtl}&exportExtension={exportExtension}&encryptedSymKey={encryptedSymKey}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -1,5 +1,4 @@
 ﻿//HintName: G.ModerationClient.GetVips.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -57,9 +56,19 @@ namespace G
                 first: ref first,
                 after: ref after);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/channels/vips",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true) 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                .AddOptionalParameter("after", after) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels/vips?{string.Join("&", userId?.Select(static x => $"userId={x}") ?? global::System.Array.Empty<string>())}&broadcaster_id={broadcasterId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

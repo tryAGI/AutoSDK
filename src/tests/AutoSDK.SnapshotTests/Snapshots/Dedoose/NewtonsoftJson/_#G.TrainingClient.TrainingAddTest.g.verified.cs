@@ -1,5 +1,4 @@
 ﻿//HintName: G.TrainingClient.TrainingAddTest.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -74,9 +73,22 @@ namespace G
                 exIds: exIds,
                 tagIds: tagIds);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/training/addtest",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("trainingTestType", trainingTestType?.ToString()) 
+                .AddOptionalParameter("title", title) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("createdUserId", createdUserId?.ToString()) 
+                .AddOptionalParameter("exIds", exIds, delimiter: ",", explode: true) 
+                .AddOptionalParameter("tagIds", tagIds, delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/addtest?projectId={projectId}&trainingTestType={trainingTestType}&title={title}&description={description}&createdUserId={createdUserId}&{string.Join("&", exIds?.Select(static x => $"exIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tagIds?.Select(static x => $"tagIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

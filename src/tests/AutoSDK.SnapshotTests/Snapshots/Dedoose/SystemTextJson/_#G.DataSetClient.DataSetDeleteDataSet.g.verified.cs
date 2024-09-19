@@ -1,5 +1,4 @@
 ﻿//HintName: G.DataSetClient.DataSetDeleteDataSet.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -129,9 +128,33 @@ namespace G
                 areUsersFiltered: ref areUsersFiltered,
                 areDescriptorsFiltered: ref areDescriptorsFiltered);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/dataset/deletedataset",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("CreatedById", createdById?.ToString()) 
+                .AddOptionalParameter("CreateStamp", createStamp?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("Desciption", desciption) 
+                .AddOptionalParameter("ObjectIdLists.IncludedTagIds", objectIdListsIncludedTagIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ObjectIdLists.IncludedDescriptorIds", objectIdListsIncludedDescriptorIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ObjectIdLists.IncludedResourceIds", objectIdListsIncludedResourceIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ObjectIdLists.IncludedExcerptIds", objectIdListsIncludedExcerptIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ObjectIdLists.IncludedUserIds", objectIdListsIncludedUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ObjectIdLists.ExcludedExcerptIds", objectIdListsExcludedExcerptIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("AreExcerptsFiltered", areExcerptsFiltered?.ToString()) 
+                .AddOptionalParameter("AreResourcesFiltered", areResourcesFiltered?.ToString()) 
+                .AddOptionalParameter("AreTagsFiltered", areTagsFiltered?.ToString()) 
+                .AddOptionalParameter("AreUsersFiltered", areUsersFiltered?.ToString()) 
+                .AddOptionalParameter("AreDescriptorsFiltered", areDescriptorsFiltered?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/deletedataset?Id={id}&ProjectId={projectId}&ProjectIdKey={projectIdKey}&CreatedById={createdById}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&Title={title}&Desciption={desciption}&{string.Join("&", objectIdListsIncludedTagIds?.Select(static x => $"objectIdListsIncludedTagIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", objectIdListsIncludedDescriptorIds?.Select(static x => $"objectIdListsIncludedDescriptorIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", objectIdListsIncludedResourceIds?.Select(static x => $"objectIdListsIncludedResourceIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", objectIdListsIncludedExcerptIds?.Select(static x => $"objectIdListsIncludedExcerptIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", objectIdListsIncludedUserIds?.Select(static x => $"objectIdListsIncludedUserIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", objectIdListsExcludedExcerptIds?.Select(static x => $"objectIdListsExcludedExcerptIds={x}") ?? global::System.Array.Empty<string>())}&AreExcerptsFiltered={areExcerptsFiltered}&AreResourcesFiltered={areResourcesFiltered}&AreTagsFiltered={areTagsFiltered}&AreUsersFiltered={areUsersFiltered}&AreDescriptorsFiltered={areDescriptorsFiltered}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

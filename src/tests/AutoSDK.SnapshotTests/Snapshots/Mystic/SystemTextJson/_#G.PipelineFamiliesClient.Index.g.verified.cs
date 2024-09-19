@@ -80,9 +80,22 @@ namespace G
                 skip: ref skip,
                 limit: ref limit);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v4/pipeline-families",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("user_id", userId) 
+                .AddOptionalParameter("team_id", teamId) 
+                .AddOptionalParameter("order_by", orderBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("search", search) 
+                .AddOptionalParameter("include_all_run", includeAllRun?.ToString()) 
+                .AddOptionalParameter("skip", skip?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v4/pipeline-families?user_id={userId}&team_id={teamId}&order_by={orderBy}&search={search}&include_all_run={includeAllRun}&skip={skip}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

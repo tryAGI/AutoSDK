@@ -1,5 +1,4 @@
 ﻿//HintName: G.UsersClient.GetUsers.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -53,9 +52,17 @@ namespace G
                 id: id,
                 login: login);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/users",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+                .AddOptionalParameter("login", login, delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users?{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", login?.Select(static x => $"login={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

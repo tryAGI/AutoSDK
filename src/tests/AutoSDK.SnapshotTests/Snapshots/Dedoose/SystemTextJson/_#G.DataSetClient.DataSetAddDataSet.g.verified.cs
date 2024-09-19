@@ -1,5 +1,4 @@
 ﻿//HintName: G.DataSetClient.DataSetAddDataSet.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -114,9 +113,30 @@ namespace G
                 tagIds: tagIds,
                 excludedExcerptIds: excludedExcerptIds);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/dataset/adddataset",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("title", title) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("areExcerptsFiltered", areExcerptsFiltered?.ToString()) 
+                .AddOptionalParameter("areResourcesFiltered", areResourcesFiltered?.ToString()) 
+                .AddOptionalParameter("areDescriptorsFiltered", areDescriptorsFiltered?.ToString()) 
+                .AddOptionalParameter("areTagsFiltered", areTagsFiltered?.ToString()) 
+                .AddOptionalParameter("areUsersFiltered", areUsersFiltered?.ToString()) 
+                .AddOptionalParameter("excerptIds", excerptIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("descriptorIds", descriptorIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("userIds", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("resourceIds", resourceIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("tagIds", tagIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("excludedExcerptIds", excludedExcerptIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/adddataset?projectId={projectId}&userId={userId}&title={title}&description={description}&areExcerptsFiltered={areExcerptsFiltered}&areResourcesFiltered={areResourcesFiltered}&areDescriptorsFiltered={areDescriptorsFiltered}&areTagsFiltered={areTagsFiltered}&areUsersFiltered={areUsersFiltered}&{string.Join("&", excerptIds?.Select(static x => $"excerptIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", descriptorIds?.Select(static x => $"descriptorIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", userIds?.Select(static x => $"userIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tagIds?.Select(static x => $"tagIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", excludedExcerptIds?.Select(static x => $"excludedExcerptIds={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

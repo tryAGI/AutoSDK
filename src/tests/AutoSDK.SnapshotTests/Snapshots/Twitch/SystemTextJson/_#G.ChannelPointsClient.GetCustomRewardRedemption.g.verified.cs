@@ -1,5 +1,4 @@
 ﻿//HintName: G.ChannelPointsClient.GetCustomRewardRedemption.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -72,9 +71,22 @@ namespace G
                 after: ref after,
                 first: ref first);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/channel_points/custom_rewards/redemptions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("reward_id", rewardId) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards/redemptions?broadcaster_id={broadcasterId}&reward_id={rewardId}&status={(global::System.Uri.EscapeDataString(status?.ToValueString() ?? string.Empty))}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

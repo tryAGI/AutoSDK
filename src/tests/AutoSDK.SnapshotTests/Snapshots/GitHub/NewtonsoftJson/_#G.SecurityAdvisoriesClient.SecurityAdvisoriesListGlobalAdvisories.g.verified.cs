@@ -170,9 +170,31 @@ namespace G
                 global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: "/advisories",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ghsa_id", ghsaId) 
+                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("cve_id", cveId) 
+                .AddOptionalParameter("ecosystem", ecosystemValue?.ToString()) 
+                .AddOptionalParameter("severity", severityValue?.ToString()) 
+                .AddOptionalParameter("cwes", cwes?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString()) 
+                .AddOptionalParameter("affects", affects?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("published", published) 
+                .AddOptionalParameter("updated", updated) 
+                .AddOptionalParameter("modified", modified) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/advisories?ghsa_id={ghsaId}&type={(global::System.Uri.EscapeDataString(typeValue?.ToString() ?? string.Empty))}&cve_id={cveId}&ecosystem={(global::System.Uri.EscapeDataString(ecosystemValue?.ToString() ?? string.Empty))}&severity={(global::System.Uri.EscapeDataString(severityValue?.ToString() ?? string.Empty))}&cwes={cwes}&is_withdrawn={isWithdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&per_page={perPage}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

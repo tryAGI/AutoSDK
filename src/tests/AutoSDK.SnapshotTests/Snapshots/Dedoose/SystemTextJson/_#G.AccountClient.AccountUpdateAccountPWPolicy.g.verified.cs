@@ -93,9 +93,26 @@ namespace G
                 relogin2Auth: ref relogin2Auth,
                 idleTimeoutInMinutes: ref idleTimeoutInMinutes);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/account/updateaccountpwpolicy",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("accountId", accountId?.ToString()) 
+                .AddOptionalParameter("enforcePolicy", enforcePolicy?.ToString()) 
+                .AddOptionalParameter("minLength", minLength?.ToString()) 
+                .AddOptionalParameter("requireChar", requireChar?.ToString()) 
+                .AddOptionalParameter("requireUpper", requireUpper?.ToString()) 
+                .AddOptionalParameter("requireNumber", requireNumber?.ToString()) 
+                .AddOptionalParameter("requireSymbol", requireSymbol?.ToString()) 
+                .AddOptionalParameter("maxAgeInDays", maxAgeInDays?.ToString()) 
+                .AddOptionalParameter("require2Auth", require2Auth?.ToString()) 
+                .AddOptionalParameter("relogin2Auth", relogin2Auth?.ToString()) 
+                .AddOptionalParameter("idleTimeoutInMinutes", idleTimeoutInMinutes?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/account/updateaccountpwpolicy?accountId={accountId}&enforcePolicy={enforcePolicy}&minLength={minLength}&requireChar={requireChar}&requireUpper={requireUpper}&requireNumber={requireNumber}&requireSymbol={requireSymbol}&maxAgeInDays={maxAgeInDays}&require2Auth={require2Auth}&relogin2Auth={relogin2Auth}&idleTimeoutInMinutes={idleTimeoutInMinutes}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

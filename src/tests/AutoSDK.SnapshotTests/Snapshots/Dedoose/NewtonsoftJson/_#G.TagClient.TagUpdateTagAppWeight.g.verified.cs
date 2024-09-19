@@ -53,9 +53,18 @@ namespace G
                 tagAppId: ref tagAppId,
                 newWeight: ref newWeight);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/tag/updatetagappweight",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("currentProjectId", currentProjectId?.ToString()) 
+                .AddOptionalParameter("tagAppId", tagAppId?.ToString()) 
+                .AddOptionalParameter("newWeight", newWeight?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/updatetagappweight?currentProjectId={currentProjectId}&tagAppId={tagAppId}&newWeight={newWeight}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -117,9 +117,25 @@ namespace G
                 global::G.SecretScanningListAlertsForOrgDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/secret-scanning/alerts",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("state", stateValue?.ToString()) 
+                .AddOptionalParameter("secret_type", secretType) 
+                .AddOptionalParameter("resolution", resolution) 
+                .AddOptionalParameter("sort", sortValue?.ToString()) 
+                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("validity", validity) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/secret-scanning/alerts?state={(global::System.Uri.EscapeDataString(stateValue?.ToString() ?? string.Empty))}&secret_type={secretType}&resolution={resolution}&sort={(global::System.Uri.EscapeDataString(sortValue?.ToString() ?? string.Empty))}&direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&page={page}&per_page={perPage}&before={before}&after={after}&validity={validity}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

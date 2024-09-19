@@ -67,9 +67,20 @@ namespace G
                 before: ref before,
                 runId: ref runId);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/threads/{threadId}/messages",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("run_id", runId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/messages?limit={limit}&order={(global::System.Uri.EscapeDataString(order?.ToValueString() ?? string.Empty))}&after={after}&before={before}&run_id={runId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

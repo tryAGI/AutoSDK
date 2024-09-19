@@ -43,9 +43,17 @@ namespace G
                 resourceType: ref resourceType,
                 resourceId: ref resourceId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/workspaces/current/tags/resource",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("resource_type", resourceType.ToValueString()) 
+                .AddRequiredParameter("resource_id", resourceId.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/workspaces/current/tags/resource?resource_type={(global::System.Uri.EscapeDataString(resourceType.ToValueString() ?? string.Empty))}&resource_id={resourceId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

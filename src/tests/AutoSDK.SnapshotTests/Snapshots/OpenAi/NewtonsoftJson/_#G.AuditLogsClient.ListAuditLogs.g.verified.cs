@@ -1,5 +1,4 @@
 ﻿//HintName: G.AuditLogsClient.ListAuditLogs.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -81,9 +80,23 @@ namespace G
                 after: ref after,
                 before: ref before);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/organization/audit_logs",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("effective_at", effectiveAt?.ToString()) 
+                .AddOptionalParameter("project_ids[]", projectIds, delimiter: ",", explode: true) 
+                .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true) 
+                .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true) 
+                .AddOptionalParameter("resource_ids[]", resourceIds, delimiter: ",", explode: true) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/organization/audit_logs?effective_at={effectiveAt}&{string.Join("&", projectIds?.Select(static x => $"projectIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", eventTypes?.Select(static x => $"eventTypes={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", actorIds?.Select(static x => $"actorIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", actorEmails?.Select(static x => $"actorEmails={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resourceIds?.Select(static x => $"resourceIds={x}") ?? global::System.Array.Empty<string>())}&limit={limit}&after={after}&before={before}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -88,9 +88,25 @@ namespace G
                 isDynamicField: ref isDynamicField,
                 sortOrder: ref sortOrder);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/deletedescriptorfield",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectIDL", projectIDL?.ToString()) 
+                .AddOptionalParameter("DescriptorSetIDL", descriptorSetIDL?.ToString()) 
+                .AddOptionalParameter("Type", type?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("Description", description) 
+                .AddOptionalParameter("IsDynamicField", isDynamicField?.ToString()) 
+                .AddOptionalParameter("SortOrder", sortOrder?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/deletedescriptorfield?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&DescriptorSetIDL={descriptorSetIDL}&Type={type}&Title={title}&Description={description}&IsDynamicField={isDynamicField}&SortOrder={sortOrder}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

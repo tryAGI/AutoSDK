@@ -75,9 +75,21 @@ namespace G
                 setId: ref setId,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/adddescriptorfield",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("title", title) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("type", type?.ToString()) 
+                .AddOptionalParameter("isDynamic", isDynamic?.ToString()) 
+                .AddOptionalParameter("setId", setId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/adddescriptorfield?projectId={projectId}&title={title}&description={description}&type={type}&isDynamic={isDynamic}&setId={setId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

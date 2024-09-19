@@ -92,9 +92,25 @@ namespace G
                 sortByDesc: ref sortByDesc,
                 tagValueId: ref tagValueId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/datasets",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/datasets?id={id}&data_type={dataType}&name={name}&name_contains={nameContains}&metadata={metadata}&offset={offset}&limit={limit}&sort_by={sortBy}&sort_by_desc={sortByDesc}&tag_value_id={tagValueId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

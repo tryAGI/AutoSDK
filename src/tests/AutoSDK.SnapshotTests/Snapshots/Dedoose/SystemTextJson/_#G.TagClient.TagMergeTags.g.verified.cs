@@ -53,9 +53,18 @@ namespace G
                 tag1Id: ref tag1Id,
                 tag2Id: ref tag2Id);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/tag/mergetags",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("tag1Id", tag1Id?.ToString()) 
+                .AddOptionalParameter("tag2Id", tag2Id?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/mergetags?projectId={projectId}&tag1Id={tag1Id}&tag2Id={tag2Id}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

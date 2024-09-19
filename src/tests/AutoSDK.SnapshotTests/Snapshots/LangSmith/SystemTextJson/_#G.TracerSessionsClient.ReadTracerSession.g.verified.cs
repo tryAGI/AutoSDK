@@ -9,14 +9,14 @@ namespace G
         partial void PrepareReadTracerSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref bool? includeStats,
-            ref global::G.AnyOf<string, object>? accept);
+            ref global::G.AnyOf<string, object>? accept,
+            ref bool? includeStats);
         partial void PrepareReadTracerSessionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            bool? includeStats,
-            global::G.AnyOf<string, object>? accept);
+            global::G.AnyOf<string, object>? accept,
+            bool? includeStats);
         partial void ProcessReadTracerSessionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,16 +31,16 @@ namespace G
         /// Get a specific session.
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="accept"></param>
         /// <param name="includeStats">
         /// Default Value: false
         /// </param>
-        /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
-            bool? includeStats = false,
             global::G.AnyOf<string, object>? accept = default,
+            bool? includeStats = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -48,12 +48,19 @@ namespace G
             PrepareReadTracerSessionArguments(
                 httpClient: _httpClient,
                 sessionId: ref sessionId,
-                includeStats: ref includeStats,
-                accept: ref accept);
+                accept: ref accept,
+                includeStats: ref includeStats);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/sessions/{sessionId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/sessions/{sessionId}?include_stats={includeStats}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -62,8 +69,8 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 sessionId: sessionId,
-                includeStats: includeStats,
-                accept: accept);
+                accept: accept,
+                includeStats: includeStats);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

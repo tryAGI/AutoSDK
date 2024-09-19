@@ -1,5 +1,4 @@
 ﻿//HintName: G.PublicClient.ReadSharedExamples.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -84,9 +83,21 @@ namespace G
                 select: select,
                 filter: ref filter);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/public/{shareToken}/examples",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("filter", filter?.ToString() ?? string.Empty) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/examples?id={id}&as_of={asOf}&metadata={metadata}&offset={offset}&limit={limit}&{string.Join("&", select?.Select(static x => $"select={x}") ?? global::System.Array.Empty<string>())}&filter={filter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

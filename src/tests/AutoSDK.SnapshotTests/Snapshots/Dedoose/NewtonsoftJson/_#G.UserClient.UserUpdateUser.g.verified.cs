@@ -68,9 +68,21 @@ namespace G
                 email: ref email,
                 password: ref password);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/user/updateuser",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("firstName", firstName) 
+                .AddOptionalParameter("lastName", lastName) 
+                .AddOptionalParameter("phone", phone) 
+                .AddOptionalParameter("email", email) 
+                .AddOptionalParameter("password", password) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/updateuser?userId={userId}&firstName={firstName}&lastName={lastName}&phone={phone}&email={email}&password={password}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

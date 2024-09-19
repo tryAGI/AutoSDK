@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareActionsListSelfHostedRunnersForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? name,
             ref string org,
+            ref string? name,
             ref int? perPage,
             ref int? page);
         partial void PrepareActionsListSelfHostedRunnersForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? name,
             string org,
+            string? name,
             int? perPage,
             int? page);
         partial void ProcessActionsListSelfHostedRunnersForOrgResponse(
@@ -34,8 +34,8 @@ namespace G
         /// Authenticated users must have admin access to the organization to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="org"></param>
+        /// <param name="name"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
@@ -55,14 +55,23 @@ namespace G
                 client: _httpClient);
             PrepareActionsListSelfHostedRunnersForOrgArguments(
                 httpClient: _httpClient,
-                name: ref name,
                 org: ref org,
+                name: ref name,
                 perPage: ref perPage,
                 page: ref page);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/actions/runners",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/actions/runners?name={name}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -70,8 +79,8 @@ namespace G
             PrepareActionsListSelfHostedRunnersForOrgRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                name: name,
                 org: org,
+                name: name,
                 perPage: perPage,
                 page: page);
 

@@ -68,9 +68,21 @@ namespace G
                 institution: ref institution,
                 comments: ref comments);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/user/sendcontactrequestemail",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("firstname", firstname) 
+                .AddOptionalParameter("lastname", lastname) 
+                .AddOptionalParameter("email", email) 
+                .AddOptionalParameter("phone", phone) 
+                .AddOptionalParameter("institution", institution) 
+                .AddOptionalParameter("comments", comments) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/sendcontactrequestemail?firstname={firstname}&lastname={lastname}&email={email}&phone={phone}&institution={institution}&comments={comments}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

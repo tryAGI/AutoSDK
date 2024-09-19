@@ -1,5 +1,4 @@
 ﻿//HintName: G.ExportClient.ExportStartExportSingleSeriesChartJob.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -49,9 +48,16 @@ namespace G
                 projectId: ref projectId,
                 exportInfo: exportInfo);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/export/startexportsingleserieschartjob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startexportsingleserieschartjob?projectId={projectId}&{string.Join("&", exportInfo?.Select(static x => $"exportInfo={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

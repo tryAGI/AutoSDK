@@ -49,9 +49,18 @@ namespace G
                 toBroadcasterId: ref toBroadcasterId,
                 moderatorId: ref moderatorId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/chat/shoutouts",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("from_broadcaster_id", fromBroadcasterId) 
+                .AddRequiredParameter("to_broadcaster_id", toBroadcasterId) 
+                .AddRequiredParameter("moderator_id", moderatorId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/chat/shoutouts?from_broadcaster_id={fromBroadcasterId}&to_broadcaster_id={toBroadcasterId}&moderator_id={moderatorId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

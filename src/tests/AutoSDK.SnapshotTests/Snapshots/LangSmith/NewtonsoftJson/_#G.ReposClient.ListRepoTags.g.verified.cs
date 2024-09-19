@@ -105,9 +105,28 @@ namespace G
                 matchPrefix: ref matchPrefix,
                 tagValueId: ref tagValueId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/repos/tags",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("tenant_handle", tenantHandle?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tenant_id", tenantId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("query", query?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("has_commits", hasCommits?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tags", tags?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("is_archived", isArchived?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("is_public", isPublic?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("match_prefix", matchPrefix?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("tag_value_id", tagValueId?.ToString() ?? string.Empty) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/repos/tags?limit={limit}&offset={offset}&tenant_handle={tenantHandle}&tenant_id={tenantId}&query={query}&has_commits={hasCommits}&tags={tags}&is_archived={isArchived}&is_public={isPublic}&upstream_repo_owner={upstreamRepoOwner}&upstream_repo_handle={upstreamRepoHandle}&match_prefix={matchPrefix}&tag_value_id={tagValueId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

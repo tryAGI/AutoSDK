@@ -88,9 +88,25 @@ namespace G
                 id4: ref id4,
                 position4: ref position4);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/linkobject",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("memoId", memoId?.ToString()) 
+                .AddOptionalParameter("Id", id1?.ToString()) 
+                .AddOptionalParameter("Position", position1?.ToString()) 
+                .AddOptionalParameter("Id", id2?.ToString()) 
+                .AddOptionalParameter("Position", position2?.ToString()) 
+                .AddOptionalParameter("Id", id3?.ToString()) 
+                .AddOptionalParameter("Position", position3?.ToString()) 
+                .AddOptionalParameter("Id", id4?.ToString()) 
+                .AddOptionalParameter("Position", position4?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/linkobject?projectId={projectId}&memoId={memoId}&Id={id1}&Position={position1}&Id={id2}&Position={position2}&Id={id3}&Position={position3}&Id={id4}&Position={position4}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

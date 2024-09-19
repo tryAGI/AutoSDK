@@ -47,9 +47,18 @@ namespace G
                 sourceContext: ref sourceContext,
                 reason: ref reason);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/users/blocks",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("target_user_id", targetUserId) 
+                .AddOptionalParameter("source_context", sourceContext?.ToValueString()) 
+                .AddOptionalParameter("reason", reason?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/blocks?target_user_id={targetUserId}&source_context={(global::System.Uri.EscapeDataString(sourceContext?.ToValueString() ?? string.Empty))}&reason={(global::System.Uri.EscapeDataString(reason?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

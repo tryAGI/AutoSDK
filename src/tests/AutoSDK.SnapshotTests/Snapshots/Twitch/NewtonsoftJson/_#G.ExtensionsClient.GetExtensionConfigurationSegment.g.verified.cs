@@ -59,9 +59,18 @@ namespace G
                 global::G.GetExtensionConfigurationSegmentSegment.Global => "global",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: "/extensions/configurations",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("extension_id", extensionId) 
+                .AddRequiredParameter("segment", segmentValue.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/extensions/configurations?broadcaster_id={broadcasterId}&extension_id={extensionId}&segment={(global::System.Uri.EscapeDataString(segmentValue.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

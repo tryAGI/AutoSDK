@@ -62,9 +62,20 @@ namespace G
                 status: ref status,
                 resolutionText: ref resolutionText);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/moderation/unban_requests",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddRequiredParameter("moderator_id", moderatorId) 
+                .AddRequiredParameter("unban_request_id", unbanRequestId) 
+                .AddRequiredParameter("status", status) 
+                .AddOptionalParameter("resolution_text", resolutionText) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/unban_requests?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&unban_request_id={unbanRequestId}&status={status}&resolution_text={resolutionText}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

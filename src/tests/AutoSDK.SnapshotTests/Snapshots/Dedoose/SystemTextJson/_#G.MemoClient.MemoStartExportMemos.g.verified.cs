@@ -1,5 +1,4 @@
 ﻿//HintName: G.MemoClient.MemoStartExportMemos.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -84,9 +83,24 @@ namespace G
                 includeDescriptors: ref includeDescriptors,
                 symKey: ref symKey);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/startexportmemos",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("memoIds", memoIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("extension", extension) 
+                .AddOptionalParameter("includeCodes", includeCodes?.ToString()) 
+                .AddOptionalParameter("includeMedia", includeMedia?.ToString()) 
+                .AddOptionalParameter("includeExcerpts", includeExcerpts?.ToString()) 
+                .AddOptionalParameter("includeDescriptors", includeDescriptors?.ToString()) 
+                .AddOptionalParameter("symKey", symKey) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startexportmemos?projectId={projectId}&{string.Join("&", memoIds?.Select(static x => $"memoIds={x}") ?? global::System.Array.Empty<string>())}&description={description}&extension={extension}&includeCodes={includeCodes}&includeMedia={includeMedia}&includeExcerpts={includeExcerpts}&includeDescriptors={includeDescriptors}&symKey={symKey}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

@@ -53,9 +53,18 @@ namespace G
                 testId: ref testId,
                 testResultId: ref testResultId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/training/gettestresulttagapps",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("testId", testId?.ToString()) 
+                .AddOptionalParameter("testResultId", testResultId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/gettestresulttagapps?projectId={projectId}&testId={testId}&testResultId={testResultId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

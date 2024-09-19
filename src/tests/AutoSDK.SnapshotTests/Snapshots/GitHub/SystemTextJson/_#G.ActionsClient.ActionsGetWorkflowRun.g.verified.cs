@@ -58,9 +58,16 @@ namespace G
                 runId: ref runId,
                 excludePullRequests: ref excludePullRequests);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/actions/runs/{runId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/actions/runs/{runId}?exclude_pull_requests={excludePullRequests}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

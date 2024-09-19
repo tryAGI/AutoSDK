@@ -49,9 +49,17 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 hasDelay: ref hasDelay);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/clips",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddOptionalParameter("has_delay", hasDelay?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/clips?broadcaster_id={broadcasterId}&has_delay={hasDelay}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

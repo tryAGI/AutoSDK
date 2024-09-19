@@ -67,9 +67,19 @@ namespace G
                 role: ref role,
                 invitationSource: ref invitationSource);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/invitations",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("role", role?.ToValueString()) 
+                .AddOptionalParameter("invitation_source", invitationSource?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/invitations?per_page={perPage}&page={page}&role={(global::System.Uri.EscapeDataString(role?.ToValueString() ?? string.Empty))}&invitation_source={(global::System.Uri.EscapeDataString(invitationSource?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

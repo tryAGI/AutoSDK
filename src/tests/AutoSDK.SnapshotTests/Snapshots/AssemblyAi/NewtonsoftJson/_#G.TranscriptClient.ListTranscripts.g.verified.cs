@@ -8,21 +8,11 @@ namespace G
     {
         partial void PrepareListTranscriptsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.ListTranscriptParams? limit,
-            ref global::G.TranscriptStatus? status,
-            global::G.ListTranscriptParams? createdOn,
-            global::G.ListTranscriptParams? beforeId,
-            global::G.ListTranscriptParams? afterId,
-            global::G.ListTranscriptParams? throttledOnly);
+            ref global::G.TranscriptStatus? status);
         partial void PrepareListTranscriptsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.ListTranscriptParams? limit,
-            global::G.TranscriptStatus? status,
-            global::G.ListTranscriptParams? createdOn,
-            global::G.ListTranscriptParams? beforeId,
-            global::G.ListTranscriptParams? afterId,
-            global::G.ListTranscriptParams? throttledOnly);
+            global::G.TranscriptStatus? status);
         partial void ProcessListTranscriptsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,35 +27,20 @@ namespace G
         /// Retrieve a list of transcripts you created.<br/>
         /// Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
         /// </summary>
-        /// <param name="limit"></param>
         /// <param name="status">
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </param>
-        /// <param name="createdOn"></param>
-        /// <param name="beforeId"></param>
-        /// <param name="afterId"></param>
-        /// <param name="throttledOnly"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TranscriptList> ListTranscriptsAsync(
-            global::G.ListTranscriptParams? limit = default,
             global::G.TranscriptStatus? status = default,
-            global::G.ListTranscriptParams? createdOn = default,
-            global::G.ListTranscriptParams? beforeId = default,
-            global::G.ListTranscriptParams? afterId = default,
-            global::G.ListTranscriptParams? throttledOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListTranscriptsArguments(
                 httpClient: _httpClient,
-                limit: limit,
-                status: ref status,
-                createdOn: createdOn,
-                beforeId: beforeId,
-                afterId: afterId,
-                throttledOnly: throttledOnly);
+                status: ref status);
 
             var statusValue = status switch
             {
@@ -75,9 +50,16 @@ namespace G
                 global::G.TranscriptStatus.Error => "error",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: "/v2/transcript",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("status", statusValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v2/transcript?limit={limit}&status={limit}&created_on={limit}&before_id={limit}&after_id={limit}&throttled_only={limit}&status={(global::System.Uri.EscapeDataString(statusValue?.ToString() ?? string.Empty))}&limit={createdOn}&status={createdOn}&created_on={createdOn}&before_id={createdOn}&after_id={createdOn}&throttled_only={createdOn}&limit={beforeId}&status={beforeId}&created_on={beforeId}&before_id={beforeId}&after_id={beforeId}&throttled_only={beforeId}&limit={afterId}&status={afterId}&created_on={afterId}&before_id={afterId}&after_id={afterId}&throttled_only={afterId}&limit={throttledOnly}&status={throttledOnly}&created_on={throttledOnly}&before_id={throttledOnly}&after_id={throttledOnly}&throttled_only={throttledOnly}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -85,12 +67,7 @@ namespace G
             PrepareListTranscriptsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                limit: limit,
-                status: status,
-                createdOn: createdOn,
-                beforeId: beforeId,
-                afterId: afterId,
-                throttledOnly: throttledOnly);
+                status: status);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

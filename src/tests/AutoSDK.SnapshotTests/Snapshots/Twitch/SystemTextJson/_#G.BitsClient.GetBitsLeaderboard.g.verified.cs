@@ -56,9 +56,19 @@ namespace G
                 startedAt: ref startedAt,
                 userId: ref userId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/bits/leaderboard",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("count", count?.ToString()) 
+                .AddOptionalParameter("period", period?.ToValueString()) 
+                .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("user_id", userId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/bits/leaderboard?count={count}&period={(global::System.Uri.EscapeDataString(period?.ToValueString() ?? string.Empty))}&started_at={startedAt:yyyy-MM-ddTHH:mm:ssZ}&user_id={userId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

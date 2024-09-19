@@ -1,5 +1,4 @@
 ﻿//HintName: G.ChannelPointsClient.GetCustomReward.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -53,9 +52,18 @@ namespace G
                 id: id,
                 onlyManageableRewards: ref onlyManageableRewards);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/channel_points/custom_rewards",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddOptionalParameter("id", id, delimiter: ",", explode: true) 
+                .AddOptionalParameter("only_manageable_rewards", onlyManageableRewards?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channel_points/custom_rewards?broadcaster_id={broadcasterId}&{string.Join("&", id?.Select(static x => $"id={x}") ?? global::System.Array.Empty<string>())}&only_manageable_rewards={onlyManageableRewards}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

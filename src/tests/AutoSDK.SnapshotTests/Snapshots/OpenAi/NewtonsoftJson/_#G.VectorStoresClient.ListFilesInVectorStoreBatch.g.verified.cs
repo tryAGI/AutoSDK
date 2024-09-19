@@ -86,9 +86,20 @@ namespace G
                 global::G.ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("filter", filterValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={(global::System.Uri.EscapeDataString(orderValue?.ToString() ?? string.Empty))}&after={after}&before={before}&filter={(global::System.Uri.EscapeDataString(filterValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

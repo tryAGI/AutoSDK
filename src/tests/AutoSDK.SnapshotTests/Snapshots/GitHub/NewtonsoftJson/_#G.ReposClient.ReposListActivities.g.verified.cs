@@ -115,9 +115,23 @@ namespace G
                 global::G.ReposListActivitiesActivityType.MergeQueueMerge => "merge_queue_merge",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/activity",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("direction", directionValue?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("ref", @ref) 
+                .AddOptionalParameter("actor", actor) 
+                .AddOptionalParameter("time_period", timePeriodValue?.ToString()) 
+                .AddOptionalParameter("activity_type", activityTypeValue?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/activity?direction={(global::System.Uri.EscapeDataString(directionValue?.ToString() ?? string.Empty))}&per_page={perPage}&before={before}&after={after}&ref={@ref}&actor={actor}&time_period={(global::System.Uri.EscapeDataString(timePeriodValue?.ToString() ?? string.Empty))}&activity_type={(global::System.Uri.EscapeDataString(activityTypeValue?.ToString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

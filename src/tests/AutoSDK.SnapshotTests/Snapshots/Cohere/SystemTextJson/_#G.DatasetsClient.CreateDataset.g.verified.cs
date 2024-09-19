@@ -1,5 +1,4 @@
 ﻿//HintName: G.DatasetsClient.CreateDataset.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -9,6 +8,7 @@ namespace G
     {
         partial void PrepareCreateDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? xClientName,
             ref string name,
             ref global::G.DatasetType type,
             ref bool? keepOriginalFile,
@@ -17,11 +17,11 @@ namespace G
             global::System.Collections.Generic.IList<string>? optionalFields,
             ref string? textSeparator,
             ref string? csvDelimiter,
-            ref string? xClientName,
             global::G.CreateDatasetRequest request);
         partial void PrepareCreateDatasetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xClientName,
             string name,
             global::G.DatasetType type,
             bool? keepOriginalFile,
@@ -30,7 +30,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? optionalFields,
             string? textSeparator,
             string? csvDelimiter,
-            string? xClientName,
             global::G.CreateDatasetRequest request);
         partial void ProcessCreateDatasetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -45,6 +44,7 @@ namespace G
         /// Create a Dataset<br/>
         /// Create a dataset by uploading a file. See ['Dataset Creation'](https://docs.cohere.com/docs/datasets#dataset-creation) for more information.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="name"></param>
         /// <param name="type">
         /// The type of the dataset
@@ -55,7 +55,6 @@ namespace G
         /// <param name="optionalFields"></param>
         /// <param name="textSeparator"></param>
         /// <param name="csvDelimiter"></param>
-        /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -63,13 +62,13 @@ namespace G
             string name,
             global::G.DatasetType type,
             global::G.CreateDatasetRequest request,
+            string? xClientName = default,
             bool? keepOriginalFile = default,
             bool? skipMalformedInput = default,
             global::System.Collections.Generic.IList<string>? keepFields = default,
             global::System.Collections.Generic.IList<string>? optionalFields = default,
             string? textSeparator = default,
             string? csvDelimiter = default,
-            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -78,6 +77,7 @@ namespace G
                 client: _httpClient);
             PrepareCreateDatasetArguments(
                 httpClient: _httpClient,
+                xClientName: ref xClientName,
                 name: ref name,
                 type: ref type,
                 keepOriginalFile: ref keepOriginalFile,
@@ -86,13 +86,32 @@ namespace G
                 optionalFields: optionalFields,
                 textSeparator: ref textSeparator,
                 csvDelimiter: ref csvDelimiter,
-                xClientName: ref xClientName,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/datasets",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("name", name) 
+                .AddRequiredParameter("type", type.ToValueString()) 
+                .AddOptionalParameter("keep_original_file", keepOriginalFile?.ToString()) 
+                .AddOptionalParameter("skip_malformed_input", skipMalformedInput?.ToString()) 
+                .AddOptionalParameter("keep_fields", keepFields, delimiter: ",", explode: true) 
+                .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true) 
+                .AddOptionalParameter("text_separator", textSeparator) 
+                .AddOptionalParameter("csv_delimiter", csvDelimiter) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/datasets?name={name}&type={(global::System.Uri.EscapeDataString(type.ToValueString() ?? string.Empty))}&keep_original_file={keepOriginalFile}&skip_malformed_input={skipMalformedInput}&{string.Join("&", keepFields?.Select(static x => $"keepFields={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", optionalFields?.Select(static x => $"optionalFields={x}") ?? global::System.Array.Empty<string>())}&text_separator={textSeparator}&csv_delimiter={csvDelimiter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (xClientName != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{xClientName}"),
+                    name: "X-Client-Name");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),
                 name: "name");
@@ -114,13 +133,13 @@ namespace G
             if (keepFields != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", keepFields.Select(x => x))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
                     name: "keep_fields");
             } 
             if (optionalFields != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", optionalFields.Select(x => x))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
                     name: "optional_fields");
             } 
             if (textSeparator != default)
@@ -134,12 +153,6 @@ namespace G
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{csvDelimiter}"),
                     name: "csv_delimiter");
-            } 
-            if (xClientName != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{xClientName}"),
-                    name: "X-Client-Name");
             } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>())
@@ -172,6 +185,7 @@ namespace G
             PrepareCreateDatasetRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                xClientName: xClientName,
                 name: name,
                 type: type,
                 keepOriginalFile: keepOriginalFile,
@@ -180,7 +194,6 @@ namespace G
                 optionalFields: optionalFields,
                 textSeparator: textSeparator,
                 csvDelimiter: csvDelimiter,
-                xClientName: xClientName,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -224,6 +237,7 @@ namespace G
         /// Create a Dataset<br/>
         /// Create a dataset by uploading a file. See ['Dataset Creation'](https://docs.cohere.com/docs/datasets#dataset-creation) for more information.
         /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="name"></param>
         /// <param name="type">
         /// The type of the dataset
@@ -234,7 +248,6 @@ namespace G
         /// <param name="optionalFields"></param>
         /// <param name="textSeparator"></param>
         /// <param name="csvDelimiter"></param>
-        /// <param name="xClientName"></param>
         /// <param name="data">
         /// The file to upload
         /// </param>
@@ -254,13 +267,13 @@ namespace G
             global::G.DatasetType type,
             byte[] data,
             string dataname,
+            string? xClientName = default,
             bool? keepOriginalFile = default,
             bool? skipMalformedInput = default,
             global::System.Collections.Generic.IList<string>? keepFields = default,
             global::System.Collections.Generic.IList<string>? optionalFields = default,
             string? textSeparator = default,
             string? csvDelimiter = default,
-            string? xClientName = default,
             byte[]? evalData = default,
             string? evalDataname = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -274,6 +287,7 @@ namespace G
             };
 
             return await CreateDatasetAsync(
+                xClientName: xClientName,
                 name: name,
                 type: type,
                 keepOriginalFile: keepOriginalFile,
@@ -282,7 +296,6 @@ namespace G
                 optionalFields: optionalFields,
                 textSeparator: textSeparator,
                 csvDelimiter: csvDelimiter,
-                xClientName: xClientName,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

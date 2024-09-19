@@ -52,9 +52,18 @@ namespace G
                 after: ref after,
                 first: ref first);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/moderation/channels",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("user_id", userId) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("first", first?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/moderation/channels?user_id={userId}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

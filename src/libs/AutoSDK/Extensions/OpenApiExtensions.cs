@@ -145,25 +145,17 @@ public static class OpenApiExtensions
     /// <param name="parameters"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public static string PreparePath(
+    public static IList<MethodParameter> PrepareParameters(
         this string path,
-        IReadOnlyList<MethodParameter> parameters)
+        IList<MethodParameter> parameters)
     {
-        path = path ?? throw new ArgumentNullException(nameof(path));
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
         
-        path = ParameterSerializer.SerializePathParameters(parameters, path);
-        path += ParameterSerializer.SerializeQueryParameters(parameters);
+        parameters = ParameterSerializer.SerializeQueryParameters(parameters);
         
-        path = $"\"{path}\"";
-        if (parameters.Any(x => x.ParameterLocation is ParameterLocation.Path or ParameterLocation.Query))
-        {
-            path = $"${path}";
-        }
-        
-        return path;
+        return parameters;
     }
-    
+
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/
     /// https://swagger.io/docs/specification/serialization/
@@ -172,25 +164,24 @@ public static class OpenApiExtensions
     /// <param name="parameters"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public static (string Path, IReadOnlyDictionary<string, string> Parameters) PreparePath2(
+    public static string PreparePath(
         this string path,
-        IReadOnlyList<MethodParameter> parameters)
+        IList<MethodParameter> parameters)
     {
         path = path ?? throw new ArgumentNullException(nameof(path));
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
         
         path = ParameterSerializer.SerializePathParameters(parameters, path);
-        var dictionary = ParameterSerializer.SerializeQueryParameters2(parameters);
         
         path = $"\"{path}\"";
-        if (parameters.Any(x => x.ParameterLocation is ParameterLocation.Path))
+        if (parameters.Any(x => x.Location is ParameterLocation.Path))
         {
             path = $"${path}";
         }
         
-        return (path, dictionary);
+        return path;
     }
-
+    
     public static string? GetDefaultValue(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));

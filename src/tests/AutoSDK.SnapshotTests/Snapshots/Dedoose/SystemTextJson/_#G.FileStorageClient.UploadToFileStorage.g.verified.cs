@@ -60,9 +60,18 @@ namespace G
                 uploadType: ref uploadType,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/uploadtofilestorage",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("uploadType", uploadType?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/uploadtofilestorage?name={name}&projectId={projectId}&uploadType={uploadType}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::System.Convert.ToBase64String(request);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

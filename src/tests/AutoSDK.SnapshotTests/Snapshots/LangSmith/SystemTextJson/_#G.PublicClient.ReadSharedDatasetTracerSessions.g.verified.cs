@@ -9,6 +9,7 @@ namespace G
         partial void PrepareReadSharedDatasetTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
+            ref global::G.AnyOf<string, object>? accept,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
@@ -18,12 +19,12 @@ namespace G
             ref global::G.AnyOf<string, object>? sortByFeedbackKey,
             ref int? offset,
             ref int? limit,
-            ref bool? facets,
-            ref global::G.AnyOf<string, object>? accept);
+            ref bool? facets);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
+            global::G.AnyOf<string, object>? accept,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
@@ -33,8 +34,7 @@ namespace G
             global::G.AnyOf<string, object>? sortByFeedbackKey,
             int? offset,
             int? limit,
-            bool? facets,
-            global::G.AnyOf<string, object>? accept);
+            bool? facets);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,6 +49,7 @@ namespace G
         /// Get projects run on a dataset that has been shared.
         /// </summary>
         /// <param name="shareToken"></param>
+        /// <param name="accept"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
@@ -69,11 +70,11 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
-        /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
+            global::G.AnyOf<string, object>? accept = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
@@ -84,7 +85,6 @@ namespace G
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
-            global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -92,6 +92,7 @@ namespace G
             PrepareReadSharedDatasetTracerSessionsArguments(
                 httpClient: _httpClient,
                 shareToken: ref shareToken,
+                accept: ref accept,
                 id: ref id,
                 name: ref name,
                 nameContains: ref nameContains,
@@ -101,12 +102,27 @@ namespace G
                 sortByFeedbackKey: ref sortByFeedbackKey,
                 offset: ref offset,
                 limit: ref limit,
-                facets: ref facets,
-                accept: ref accept);
+                facets: ref facets);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/api/v1/public/{shareToken}/datasets/sessions",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("facets", facets?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/public/{shareToken}/datasets/sessions?id={id}&name={name}&name_contains={nameContains}&dataset_version={datasetVersion}&sort_by={sortBy}&sort_by_desc={sortByDesc}&sort_by_feedback_key={sortByFeedbackKey}&offset={offset}&limit={limit}&facets={facets}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -115,6 +131,7 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 shareToken: shareToken,
+                accept: accept,
                 id: id,
                 name: name,
                 nameContains: nameContains,
@@ -124,8 +141,7 @@ namespace G
                 sortByFeedbackKey: sortByFeedbackKey,
                 offset: offset,
                 limit: limit,
-                facets: facets,
-                accept: accept);
+                facets: facets);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -1,5 +1,4 @@
 ﻿//HintName: G.MemoClient.MemoUpdateMemo.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -114,9 +113,26 @@ namespace G
                 descriptors: descriptors,
                 tags: tags);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/memo/updatememo",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ProjectIdKey", projectIdKey) 
+                .AddOptionalParameter("Id", id?.ToString()) 
+                .AddOptionalParameter("ProjectId", projectId?.ToString()) 
+                .AddOptionalParameter("Title", title) 
+                .AddOptionalParameter("CreatedUserId", createdUserId?.ToString()) 
+                .AddOptionalParameter("LastEditUserId", lastEditUserId?.ToString()) 
+                .AddOptionalParameter("CreateStamp", createStamp?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("LastEditStamp", lastEditStamp?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("FolderId", folderId?.ToString()) 
+                .AddOptionalParameter("DataURI", dataURI) 
+                .AddOptionalParameter("folderIds", folderIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/updatememo?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}&CreatedUserId={createdUserId}&LastEditUserId={lastEditUserId}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&LastEditStamp={lastEditStamp:yyyy-MM-ddTHH:mm:ssZ}&FolderId={folderId}&DataURI={dataURI}&{string.Join("&", folderIds?.Select(static x => $"folderIds={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", resources?.Select(static x => $"resources={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", excerpts?.Select(static x => $"excerpts={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", descriptors?.Select(static x => $"descriptors={x}") ?? global::System.Array.Empty<string>())}&{string.Join("&", tags?.Select(static x => $"tags={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

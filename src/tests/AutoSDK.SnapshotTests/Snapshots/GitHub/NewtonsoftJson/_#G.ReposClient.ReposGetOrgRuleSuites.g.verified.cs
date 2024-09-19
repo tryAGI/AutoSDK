@@ -94,9 +94,21 @@ namespace G
                 global::G.ReposGetOrgRuleSuitesRuleSuiteResult.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/orgs/{org}/rulesets/rule-suites",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("repository_name", repositoryName?.ToString()) 
+                .AddOptionalParameter("time_period", timePeriodValue?.ToString()) 
+                .AddOptionalParameter("actor_name", actorName) 
+                .AddOptionalParameter("rule_suite_result", ruleSuiteResultValue?.ToString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/orgs/{org}/rulesets/rule-suites?repository_name={repositoryName}&time_period={(global::System.Uri.EscapeDataString(timePeriodValue?.ToString() ?? string.Empty))}&actor_name={actorName}&rule_suite_result={(global::System.Uri.EscapeDataString(ruleSuiteResultValue?.ToString() ?? string.Empty))}&per_page={perPage}&page={page}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

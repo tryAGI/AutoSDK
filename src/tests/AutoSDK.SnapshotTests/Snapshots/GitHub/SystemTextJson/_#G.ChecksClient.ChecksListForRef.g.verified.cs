@@ -88,9 +88,21 @@ namespace G
                 page: ref page,
                 appId: ref appId);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/repos/{owner}/{repo}/commits/{@ref}/check-runs",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("check_name", checkName) 
+                .AddOptionalParameter("status", status?.ToValueString()) 
+                .AddOptionalParameter("filter", filter?.ToValueString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("app_id", appId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/repos/{owner}/{repo}/commits/{@ref}/check-runs?check_name={checkName}&status={(global::System.Uri.EscapeDataString(status?.ToValueString() ?? string.Empty))}&filter={(global::System.Uri.EscapeDataString(filter?.ToValueString() ?? string.Empty))}&per_page={perPage}&page={page}&app_id={appId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

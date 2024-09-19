@@ -1,5 +1,4 @@
 ﻿//HintName: G.AudioClient.CreateTranscription.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -41,9 +40,13 @@ namespace G
                 httpClient: _httpClient,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/audio/transcriptions",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/audio/transcriptions", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
@@ -85,7 +88,7 @@ namespace G
             if (request.TimestampGranularities != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities.Select(x => x.ToValueString()))}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
                     name: "timestamp_granularities[]");
             }
             httpRequest.Content = __httpRequestContent;

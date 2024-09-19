@@ -73,9 +73,22 @@ namespace G
                 fileURL: ref fileURL,
                 length: ref length);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/resource/addresource",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                .AddOptionalParameter("userId", userId?.ToString()) 
+                .AddOptionalParameter("title", title) 
+                .AddOptionalParameter("description", description) 
+                .AddOptionalParameter("resourceType", resourceType?.ToString()) 
+                .AddOptionalParameter("fileURL", fileURL) 
+                .AddOptionalParameter("length", length?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/addresource?projectId={projectId}&userId={userId}&title={title}&description={description}&resourceType={resourceType}&fileURL={fileURL}&length={length}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

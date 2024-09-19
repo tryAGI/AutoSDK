@@ -59,9 +59,17 @@ namespace G
                 global::G.UsersGetContextForUserSubjectType.PullRequest => "pull_request",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var __pathBuilder = new PathBuilder(
+                path: $"/users/{username}/hovercard",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("subject_type", subjectTypeValue?.ToString()) 
+                .AddOptionalParameter("subject_id", subjectId) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/users/{username}/hovercard?subject_type={(global::System.Uri.EscapeDataString(subjectTypeValue?.ToString() ?? string.Empty))}&subject_id={subjectId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

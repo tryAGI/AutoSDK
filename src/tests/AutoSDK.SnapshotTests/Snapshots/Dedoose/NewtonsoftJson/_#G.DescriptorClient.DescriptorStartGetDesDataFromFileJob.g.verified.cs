@@ -53,9 +53,18 @@ namespace G
                 setId: ref setId,
                 projectId: ref projectId);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/api/v1/descriptor/startgetdesdatafromfilejob",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("localFileURL", localFileURL) 
+                .AddOptionalParameter("setId", setId?.ToString()) 
+                .AddOptionalParameter("projectId", projectId?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/startgetdesdatafromfilejob?localFileURL={localFileURL}&setId={setId}&projectId={projectId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

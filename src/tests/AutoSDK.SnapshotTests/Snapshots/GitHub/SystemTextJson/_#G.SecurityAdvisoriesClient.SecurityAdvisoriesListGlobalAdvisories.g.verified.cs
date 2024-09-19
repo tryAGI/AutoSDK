@@ -125,9 +125,31 @@ namespace G
                 perPage: ref perPage,
                 sort: ref sort);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/advisories",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("ghsa_id", ghsaId) 
+                .AddOptionalParameter("type", type?.ToValueString()) 
+                .AddOptionalParameter("cve_id", cveId) 
+                .AddOptionalParameter("ecosystem", ecosystem?.ToValueString()) 
+                .AddOptionalParameter("severity", severity?.ToValueString()) 
+                .AddOptionalParameter("cwes", cwes?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString()) 
+                .AddOptionalParameter("affects", affects?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("published", published) 
+                .AddOptionalParameter("updated", updated) 
+                .AddOptionalParameter("modified", modified) 
+                .AddOptionalParameter("before", before) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("direction", direction?.ToValueString()) 
+                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/advisories?ghsa_id={ghsaId}&type={(global::System.Uri.EscapeDataString(type?.ToValueString() ?? string.Empty))}&cve_id={cveId}&ecosystem={(global::System.Uri.EscapeDataString(ecosystem?.ToValueString() ?? string.Empty))}&severity={(global::System.Uri.EscapeDataString(severity?.ToValueString() ?? string.Empty))}&cwes={cwes}&is_withdrawn={isWithdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&direction={(global::System.Uri.EscapeDataString(direction?.ToValueString() ?? string.Empty))}&per_page={perPage}&sort={(global::System.Uri.EscapeDataString(sort?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

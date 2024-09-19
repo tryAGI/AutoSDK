@@ -56,9 +56,19 @@ namespace G
                 endpoint: ref endpoint,
                 defaultOnly: ref defaultOnly);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/v1/models",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                .AddOptionalParameter("page_token", pageToken) 
+                .AddOptionalParameter("endpoint", endpoint?.ToValueString()) 
+                .AddOptionalParameter("default_only", defaultOnly?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v1/models?page_size={pageSize}&page_token={pageToken}&endpoint={(global::System.Uri.EscapeDataString(endpoint?.ToValueString() ?? string.Empty))}&default_only={defaultOnly}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

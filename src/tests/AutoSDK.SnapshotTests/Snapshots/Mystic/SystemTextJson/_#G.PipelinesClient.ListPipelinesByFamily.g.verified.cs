@@ -94,9 +94,23 @@ namespace G
                 nodePool: ref nodePool,
                 createdAt: ref createdAt);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/v4/pipelines/by-family/{pipelineFamilyName}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("skip", skip?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("order_by", orderBy) 
+                .AddOptionalParameter("public", @public?.ToString()) 
+                .AddOptionalParameter("hardware", hardware?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("cluster_id", clusterId) 
+                .AddOptionalParameter("node_pool", nodePool) 
+                .AddOptionalParameter("created_at", createdAt) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/v4/pipelines/by-family/{pipelineFamilyName}?skip={skip}&limit={limit}&order_by={orderBy}&public={@public}&hardware={hardware}&cluster_id={clusterId}&node_pool={nodePool}&created_at={createdAt}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

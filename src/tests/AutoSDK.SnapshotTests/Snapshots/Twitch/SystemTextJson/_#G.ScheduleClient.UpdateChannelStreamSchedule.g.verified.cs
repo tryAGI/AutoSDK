@@ -56,9 +56,20 @@ namespace G
                 vacationEndTime: ref vacationEndTime,
                 timezone: ref timezone);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/schedule/settings",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddRequiredParameter("broadcaster_id", broadcasterId) 
+                .AddOptionalParameter("is_vacation_enabled", isVacationEnabled?.ToString()) 
+                .AddOptionalParameter("vacation_start_time", vacationStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("vacation_end_time", vacationEndTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("timezone", timezone) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/schedule/settings?broadcaster_id={broadcasterId}&is_vacation_enabled={isVacationEnabled}&vacation_start_time={vacationStartTime:yyyy-MM-ddTHH:mm:ssZ}&vacation_end_time={vacationEndTime:yyyy-MM-ddTHH:mm:ssZ}&timezone={timezone}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

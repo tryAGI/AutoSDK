@@ -11,9 +11,9 @@ namespace G
         /// Authenticated users must have admin access to the repository to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="name"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
