@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RepositoryAdvisory.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -54,16 +52,16 @@ namespace G
         public global::G.RepositoryAdvisorySeverity? Severity { get; set; } = default!;
 
         /// <summary>
-        /// The author of the advisory.
+        /// A GitHub repository.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.SimpleUser>? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("private_fork", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.SimpleRepository PrivateFork { get; set; } = default!;
 
         /// <summary>
-        /// The publisher of the advisory.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("publisher", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.SimpleUser>? Publisher { get; set; } = default!;
+        public global::G.SimpleUser Publisher { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -162,10 +160,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; } = default!;
 
         /// <summary>
-        /// A temporary private fork of the advisory's repository for collaborating on a fix.
+        /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("private_fork", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.SimpleUser Author { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

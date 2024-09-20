@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrganizationSubscription.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,16 +10,19 @@ namespace G
     public sealed partial class OrganizationSubscription
     {
         /// <summary>
-        /// Plan identifier.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("plan")]
-        public global::G.AllOf<global::G.OrganizationSubscriptionPlan?>? Plan { get; set; }
-
-        /// <summary>
-        /// Details of the associated Stripe subscription.
+        /// StripeSubscriptionDetail describes the details of a subscription in Stripe.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public global::G.AllOf<global::G.StripeSubscriptionDetail>? Detail { get; set; }
+        public global::G.StripeSubscriptionDetail? Detail { get; set; }
+
+        /// <summary>
+        /// Enumerates the plan types for the organization subscription.<br/>
+        ///  - PLAN_FREE: Free plan.<br/>
+        ///  - PLAN_TEAM: Team plan.<br/>
+        ///  - PLAN_ENTERPRISE: Enterprise plan.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("plan")]
+        public global::G.OrganizationSubscriptionPlan? Plan { get; set; }
 
         /// <summary>
         /// Number of used seats within the organization subscription.

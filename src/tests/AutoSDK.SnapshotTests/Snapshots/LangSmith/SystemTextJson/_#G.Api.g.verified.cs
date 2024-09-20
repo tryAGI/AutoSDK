@@ -36,8 +36,8 @@ namespace G
                     new global::G.JsonConverters.RunSelectNullableJsonConverter(),
                     new global::G.JsonConverters.RunDateOrderJsonConverter(),
                     new global::G.JsonConverters.RunDateOrderNullableJsonConverter(),
-                    new global::G.JsonConverters.DataType2JsonConverter(),
-                    new global::G.JsonConverters.DataType2NullableJsonConverter(),
+                    new global::G.JsonConverters.DataTypeJsonConverter(),
+                    new global::G.JsonConverters.DataTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ChangePaymentPlanReqJsonConverter(),
                     new global::G.JsonConverters.ChangePaymentPlanReqNullableJsonConverter(),
                     new global::G.JsonConverters.ConfiguredByJsonConverter(),
@@ -113,13 +113,13 @@ namespace G
                     new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2JsonConverter(),
                     new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2NullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory3(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory4(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory6(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory5(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory3(),
+                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
                 }
             };
 

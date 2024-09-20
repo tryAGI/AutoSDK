@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UserSubscription.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,16 +10,18 @@ namespace G
     public sealed partial class UserSubscription
     {
         /// <summary>
-        /// Plan identifier.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("plan")]
-        public global::G.AllOf<global::G.UserSubscriptionPlan?>? Plan { get; set; }
-
-        /// <summary>
-        /// Details of the associated Stripe subscription.
+        /// StripeSubscriptionDetail describes the details of a subscription in Stripe.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public global::G.AllOf<global::G.StripeSubscriptionDetail>? Detail { get; set; }
+        public global::G.StripeSubscriptionDetail? Detail { get; set; }
+
+        /// <summary>
+        /// Enumerates the plan types for the user subscription.<br/>
+        ///  - PLAN_FREE: Free plan.<br/>
+        ///  - PLAN_PRO: Pro plan.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("plan")]
+        public global::G.UserSubscriptionPlan? Plan { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

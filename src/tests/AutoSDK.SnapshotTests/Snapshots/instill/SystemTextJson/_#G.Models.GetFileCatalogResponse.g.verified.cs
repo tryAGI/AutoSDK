@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetFileCatalogResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -20,16 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.GetFileCatalogResponseMetadata>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::G.GetFileCatalogResponseText? Text { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.GetFileCatalogResponseText>? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::G.GetFileCatalogResponseMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 

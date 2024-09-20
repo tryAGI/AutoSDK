@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.LanguageStudioApiServerDataTypesJ2ChatChatRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -26,20 +24,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
-        public global::G.AllOf<global::G.Penalty>? FrequencyPenalty { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("countPenalty")]
+        public global::G.Penalty? CountPenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presencePenalty")]
-        public global::G.AllOf<global::G.Penalty>? PresencePenalty { get; set; }
+        public global::G.Penalty? PresencePenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("countPenalty")]
-        public global::G.AllOf<global::G.Penalty>? CountPenalty { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
+        public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Default Value: 1

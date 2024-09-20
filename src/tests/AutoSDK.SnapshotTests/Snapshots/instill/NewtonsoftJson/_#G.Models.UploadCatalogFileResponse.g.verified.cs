@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UploadCatalogFileResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file")]
-        public global::G.AllOf<global::G.File>? File { get; set; }
+        public global::G.File? File { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

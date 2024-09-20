@@ -36,10 +36,10 @@ namespace G
         public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.AllOf<global::G.DataType2?>? DataType { get; set; } = global::G.DataType2.Kv;
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
         /// 

@@ -9,7 +9,7 @@ namespace G
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<string, object>? metadata,
@@ -22,7 +22,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<string, object>? metadata,
@@ -66,7 +66,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? metadata = default,

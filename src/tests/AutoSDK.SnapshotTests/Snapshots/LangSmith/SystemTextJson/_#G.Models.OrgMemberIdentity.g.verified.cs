@@ -75,11 +75,11 @@ namespace G
         public global::G.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
-        /// Default Value: workspace
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.AccessScope?>? AccessScope { get; set; } = global::G.AccessScope.Workspace;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
+        public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// 

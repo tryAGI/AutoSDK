@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CompletionBody.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -75,23 +73,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("frequencyPenalty")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Penalty>? FrequencyPenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("countPenalty")]
+        public global::G.Penalty? CountPenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presencePenalty")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Penalty>? PresencePenalty { get; set; }
+        public global::G.Penalty? PresencePenalty { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("countPenalty")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Penalty>? CountPenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("frequencyPenalty")]
+        public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 

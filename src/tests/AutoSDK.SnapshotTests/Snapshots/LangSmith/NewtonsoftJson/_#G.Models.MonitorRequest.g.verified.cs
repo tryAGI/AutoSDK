@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MonitorRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -24,16 +22,16 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> Groups { get; set; } = default!;
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("interval")]
-        public global::G.AllOf<global::G.TimedeltaInput>? Interval { get; set; }
-
-        /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
-        public global::G.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
+        public global::G.TimedeltaInput? Stride { get; set; }
+
+        /// <summary>
+        /// Timedelta input.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("interval")]
+        public global::G.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

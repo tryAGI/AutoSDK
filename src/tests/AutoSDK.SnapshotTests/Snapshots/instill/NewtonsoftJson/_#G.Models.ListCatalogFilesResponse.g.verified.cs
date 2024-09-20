@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ListCatalogFilesResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -36,10 +34,10 @@ namespace G
         public string? NextPageToken { get; set; }
 
         /// <summary>
-        /// The filter.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::G.AllOf<global::G.ListCatalogFilesFilter>? Filter { get; set; }
+        public global::G.ListCatalogFilesFilter? Filter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

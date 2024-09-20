@@ -30,10 +30,10 @@ namespace G
         public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
-        public global::G.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
+        public global::G.TimedeltaInput? Stride { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

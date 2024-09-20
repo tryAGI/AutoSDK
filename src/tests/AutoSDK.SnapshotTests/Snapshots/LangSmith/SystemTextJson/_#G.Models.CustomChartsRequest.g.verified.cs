@@ -32,11 +32,10 @@ namespace G
         public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.TimedeltaInput>? Stride { get; set; }
+        public global::G.TimedeltaInput? Stride { get; set; }
 
         /// <summary>
         /// 

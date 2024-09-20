@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UserMembership.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,22 +25,27 @@ namespace G
         public string? Role { get; set; }
 
         /// <summary>
-        /// State of the membership.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.MembershipState?> State { get; set; } = default!;
-
-        /// <summary>
-        /// User information.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user")]
-        public global::G.AllOf<global::G.User9>? User { get; set; }
-
-        /// <summary>
-        /// Organization information.
+        /// Organizations group several users. As entities, they can own resources such<br/>
+        /// as pipelines or releases.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
-        public global::G.AllOf<global::G.Organization7>? Organization { get; set; }
+        public global::G.Organization? Organization { get; set; }
+
+        /// <summary>
+        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
+        /// contain any private information about the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.User? User { get; set; }
+
+        /// <summary>
+        /// MembershipState describes the state of a user membership to an organization.<br/>
+        ///  - MEMBERSHIP_STATE_ACTIVE: Active.<br/>
+        ///  - MEMBERSHIP_STATE_PENDING: Pending, i.e., a request has been sent to the user to join an<br/>
+        /// organization.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.MembershipState State { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

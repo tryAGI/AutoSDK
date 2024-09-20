@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrganizationMembership.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -28,25 +26,28 @@ namespace G
         public required string Role { get; set; }
 
         /// <summary>
-        /// State of the membership.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.MembershipState?>? State { get; set; }
-
-        /// <summary>
-        /// User information.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.User9>? User { get; set; }
-
-        /// <summary>
-        /// Organization information.
+        /// Organizations group several users. As entities, they can own resources such<br/>
+        /// as pipelines or releases.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Organization7>? Organization { get; set; }
+        public global::G.Organization? Organization { get; set; }
+
+        /// <summary>
+        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
+        /// contain any private information about the user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public global::G.User? User { get; set; }
+
+        /// <summary>
+        /// MembershipState describes the state of a user membership to an organization.<br/>
+        ///  - MEMBERSHIP_STATE_ACTIVE: Active.<br/>
+        ///  - MEMBERSHIP_STATE_PENDING: Pending, i.e., a request has been sent to the user to join an<br/>
+        /// organization.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
+        public global::G.MembershipState? State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

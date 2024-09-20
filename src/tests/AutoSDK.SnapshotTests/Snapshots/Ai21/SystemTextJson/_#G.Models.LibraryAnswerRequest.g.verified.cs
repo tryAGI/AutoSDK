@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.LibraryAnswerRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -57,11 +55,11 @@ namespace G
         public global::G.Mode? Mode { get; set; }
 
         /// <summary>
-        /// Default Value: default
+        /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.RetrievalStrategy3?>? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy3.Default;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter))]
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
         /// 

@@ -55,8 +55,8 @@ namespace G
                     new global::G.JsonConverters.FileStatusNullableJsonConverter(),
                     new global::G.JsonConverters.ToolParametersTypeJsonConverter(),
                     new global::G.JsonConverters.ToolParametersTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.RetrievalStrategy3JsonConverter(),
-                    new global::G.JsonConverters.RetrievalStrategy3NullableJsonConverter(),
+                    new global::G.JsonConverters.RetrievalStrategyJsonConverter(),
+                    new global::G.JsonConverters.RetrievalStrategyNullableJsonConverter(),
                     new global::G.JsonConverters.ModelNameJsonConverter(),
                     new global::G.JsonConverters.ModelNameNullableJsonConverter(),
                     new global::G.JsonConverters.StyleTypeJsonConverter(),
@@ -74,7 +74,6 @@ namespace G
                     new global::G.JsonConverters.UserMessageRoleJsonConverter(),
                     new global::G.JsonConverters.UserMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory4(),
                 }
             };

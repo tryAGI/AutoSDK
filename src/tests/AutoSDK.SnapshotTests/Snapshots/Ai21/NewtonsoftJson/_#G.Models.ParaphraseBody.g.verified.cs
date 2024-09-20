@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ParaphraseBody.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -18,10 +16,10 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// Default Value: general
+        /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
-        public global::G.AllOf<global::G.StyleType?>? Style { get; set; } = global::G.StyleType.General;
+        public global::G.StyleType? Style { get; set; }
 
         /// <summary>
         /// Default Value: 0

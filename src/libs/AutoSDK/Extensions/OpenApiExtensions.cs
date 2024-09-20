@@ -136,7 +136,39 @@ public static class OpenApiExtensions
         
         return openApiDocument;
     }
-
+    
+    public static OpenApiDocument SimplifyAllOf(
+        this OpenApiDocument openApiDocument)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        foreach (var schema in openApiDocument.Components.Schemas)
+        {
+            var propertiesToAdd = new List<KeyValuePair<string, OpenApiSchema>>();
+            var propertiesToRemove = new List<KeyValuePair<string, OpenApiSchema>>();
+            foreach (var property in schema.Value.Properties)
+            {
+                if (property.Value.AllOf.Count == 1)
+                {
+                    var firstAllOfSchema = property.Value.AllOf.First();
+                    propertiesToAdd.Add(new KeyValuePair<string, OpenApiSchema>(property.Key, firstAllOfSchema));
+                    propertiesToRemove.Add(property);
+                }
+            }
+            
+            foreach (var property in propertiesToRemove)
+            {
+                schema.Value.Properties.Remove(property);
+            }
+            foreach (var property in propertiesToAdd)
+            {
+                schema.Value.Properties.Add(property);
+            }
+        }
+        
+        return openApiDocument;
+    }
+    
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/
     /// https://swagger.io/docs/specification/serialization/

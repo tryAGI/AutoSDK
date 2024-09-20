@@ -143,11 +143,11 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RunSelect>? Select { get; set; }
 
         /// <summary>
-        /// Default Value: desc
+        /// Enum for run start date order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.RunDateOrder?>? Order { get; set; } = global::G.RunDateOrder.Desc;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunDateOrderJsonConverter))]
+        public global::G.RunDateOrder? Order { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("users")]
-        public global::System.Collections.Generic.IList<global::G.User9>? Users { get; set; }
+        public global::System.Collections.Generic.IList<global::G.User>? Users { get; set; }
 
         /// <summary>
         /// Next page token.

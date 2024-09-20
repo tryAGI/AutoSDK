@@ -40,11 +40,11 @@ namespace G
         public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.DataType2?>? DataType { get; set; } = global::G.DataType2.Kv;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DataTypeJsonConverter))]
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
         /// 

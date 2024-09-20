@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         /// <param name="text"></param>
         /// <param name="style">
-        /// Default Value: general
+        /// An enumeration.
         /// </param>
         /// <param name="startIndex">
         /// Default Value: 0
@@ -30,7 +30,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V1ParaphrazeResponse> V1ParaphrazeAsync(
             string text,
-            global::G.AllOf<global::G.StyleType?>? style = default,
+            global::G.StyleType? style = default,
             int? startIndex = 0,
             int? endIndex = default,
             global::System.Threading.CancellationToken cancellationToken = default);

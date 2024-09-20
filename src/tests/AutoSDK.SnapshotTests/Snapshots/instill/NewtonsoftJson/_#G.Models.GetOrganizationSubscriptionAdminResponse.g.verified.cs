@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetOrganizationSubscriptionAdminResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,10 @@ namespace G
     public sealed partial class GetOrganizationSubscriptionAdminResponse
     {
         /// <summary>
-        /// 
+        /// OrganizationSubscription details describe the plan (i.e., features) an organization has access to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription")]
-        public global::G.AllOf<global::G.OrganizationSubscription>? Subscription { get; set; }
+        public global::G.OrganizationSubscription? Subscription { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

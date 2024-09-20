@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ParaphraseBody.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -19,11 +17,11 @@ namespace G
         public required string Text { get; set; }
 
         /// <summary>
-        /// Default Value: general
+        /// An enumeration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.StyleType?>? Style { get; set; } = global::G.StyleType.General;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StyleTypeJsonConverter))]
+        public global::G.StyleType? Style { get; set; }
 
         /// <summary>
         /// Default Value: 0

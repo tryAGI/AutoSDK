@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PipelineTriggerChartRecord.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -25,18 +23,22 @@ namespace G
         public string? PipelineUid { get; set; }
 
         /// <summary>
-        /// Trigger mode.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("triggerMode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Mode?>? TriggerMode { get; set; }
-
-        /// <summary>
-        /// Final status.
+        /// Status describes the output of an execution.<br/>
+        ///  - STATUS_COMPLETED: Successfully completed.<br/>
+        ///  - STATUS_ERRORED: Finished with error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Mgmtv1betaStatus?>? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Mgmtv1betaStatusJsonConverter))]
+        public global::G.Mgmtv1betaStatus? Status { get; set; }
+
+        /// <summary>
+        /// Mode describes the execution mode of the pipeline (sync or async).<br/>
+        ///  - MODE_SYNC: Synchronous (result is returned in the response).<br/>
+        ///  - MODE_ASYNC: Asynchronous (response only contains acknowledgement).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("triggerMode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModeJsonConverter))]
+        public global::G.Mode? TriggerMode { get; set; }
 
         /// <summary>
         /// Time buckets.

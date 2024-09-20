@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ApiToken.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -63,11 +61,14 @@ namespace G
         public string? AccessToken { get; set; }
 
         /// <summary>
-        /// State.
+        /// State describes the state of an API token.<br/>
+        ///  - STATE_INACTIVE: Inactive.<br/>
+        ///  - STATE_ACTIVE: Active.<br/>
+        ///  - STATE_EXPIRED: Expired.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.ApiTokenState?>? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ApiTokenStateJsonConverter))]
+        public global::G.ApiTokenState? State { get; set; }
 
         /// <summary>
         /// Token type. Value is fixed to "Bearer".

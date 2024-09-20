@@ -35,7 +35,7 @@ namespace G
         /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.AnyOf<global::G.DataType2?, object>? DataType { get; set; } = global::G.DataType2.Kv;
+        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
 
         /// <summary>
         /// 

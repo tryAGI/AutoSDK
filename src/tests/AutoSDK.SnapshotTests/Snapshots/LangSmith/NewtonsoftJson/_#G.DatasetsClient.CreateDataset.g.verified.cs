@@ -123,7 +123,7 @@ namespace G
             string name,
             global::G.AnyOf<string, object>? description = default,
             global::System.DateTime? createdAt = default,
-            global::G.AnyOf<global::G.DataType2?, object>? dataType = default,
+            global::G.AnyOf<global::G.DataType?, object>? dataType = default,
             global::G.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
             global::G.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
             global::G.AnyOf<bool?, object>? externallyManaged = default,

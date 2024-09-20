@@ -22,6 +22,9 @@ public static class Data
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
+
+        openApiDocument = openApiDocument.SimplifyAllOf();
+        
         var schemas = openApiDocument.GetSchemas(settings);
         
         traversalTreeTime.Stop();

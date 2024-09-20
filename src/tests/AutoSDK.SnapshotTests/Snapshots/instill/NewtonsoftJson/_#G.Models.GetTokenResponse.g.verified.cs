@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetTokenResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,10 @@ namespace G
     public sealed partial class GetTokenResponse
     {
         /// <summary>
-        /// The API token resource.
+        /// API tokens allow users to make requests to the Instill AI API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token")]
-        public global::G.AllOf<global::G.ApiToken>? Token { get; set; }
+        public global::G.ApiToken? Token { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

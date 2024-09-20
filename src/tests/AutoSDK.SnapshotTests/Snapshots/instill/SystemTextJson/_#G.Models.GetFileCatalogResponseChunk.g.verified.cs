@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetFileCatalogResponseChunk.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -18,11 +16,14 @@ namespace G
         public string? Uid { get; set; }
 
         /// <summary>
-        /// 
+        /// - CHUNK_TYPE_TEXT: text<br/>
+        ///  - CHUNK_TYPE_IMAGE: image<br/>
+        ///  - CHUNK_TYPE_AUDIO: audio<br/>
+        ///  - CHUNK_TYPE_VIDEO: video
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.GetFileCatalogResponseChunkType?>? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetFileCatalogResponseChunkTypeJsonConverter))]
+        public global::G.GetFileCatalogResponseChunkType? Type { get; set; }
 
         /// <summary>
         /// 

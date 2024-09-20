@@ -86,7 +86,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.AllOf<global::G.ResponseFormat>? ResponseFormat { get; set; }
+        public global::G.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

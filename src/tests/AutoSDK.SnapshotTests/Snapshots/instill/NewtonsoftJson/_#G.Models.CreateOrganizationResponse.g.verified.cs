@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CreateOrganizationResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,11 @@ namespace G
     public sealed partial class CreateOrganizationResponse
     {
         /// <summary>
-        /// The organization resource.
+        /// Organizations group several users. As entities, they can own resources such<br/>
+        /// as pipelines or releases.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
-        public global::G.AllOf<global::G.Organization7>? Organization { get; set; }
+        public global::G.Organization? Organization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

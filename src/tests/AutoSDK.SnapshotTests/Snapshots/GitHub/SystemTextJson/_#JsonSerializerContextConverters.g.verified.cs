@@ -5441,7 +5441,6 @@ namespace G
             typeof(global::G.JsonConverters.OrgRulesetConditionsJsonConverter),
             typeof(global::G.JsonConverters.AllOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.RepositoryRuleJsonConverter),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3),
             typeof(global::G.JsonConverters.IssueEventForIssueJsonConverter),
             typeof(global::G.JsonConverters.TimelineIssueEventsJsonConverter),

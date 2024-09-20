@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetSourceFileResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,11 +10,10 @@ namespace G
     public sealed partial class GetSourceFileResponse
     {
         /// <summary>
-        /// 
+        /// The SourceFile message represents a source file in the artifact system.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sourceFile")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.SourceFile2>? SourceFile { get; set; }
+        public global::G.SourceFile? SourceFile { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

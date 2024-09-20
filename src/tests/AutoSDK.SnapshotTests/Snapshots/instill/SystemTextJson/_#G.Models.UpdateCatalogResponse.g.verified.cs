@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UpdateCatalogResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,11 +10,10 @@ namespace G
     public sealed partial class UpdateCatalogResponse
     {
         /// <summary>
-        /// The updated catalog.
+        /// Catalog represents a catalog.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("catalog")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.Catalog>? Catalog { get; set; }
+        public global::G.Catalog? Catalog { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

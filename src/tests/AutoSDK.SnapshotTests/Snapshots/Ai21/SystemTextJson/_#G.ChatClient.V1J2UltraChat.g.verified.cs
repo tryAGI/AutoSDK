@@ -120,9 +120,9 @@ namespace G
         /// messages
         /// </param>
         /// <param name="system"></param>
-        /// <param name="frequencyPenalty"></param>
-        /// <param name="presencePenalty"></param>
         /// <param name="countPenalty"></param>
+        /// <param name="presencePenalty"></param>
+        /// <param name="frequencyPenalty"></param>
         /// <param name="numResults">
         /// Default Value: 1
         /// </param>
@@ -148,9 +148,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
             string system,
             string? model = "j2-ultra",
-            global::G.AllOf<global::G.Penalty>? frequencyPenalty = default,
-            global::G.AllOf<global::G.Penalty>? presencePenalty = default,
-            global::G.AllOf<global::G.Penalty>? countPenalty = default,
+            global::G.Penalty? countPenalty = default,
+            global::G.Penalty? presencePenalty = default,
+            global::G.Penalty? frequencyPenalty = default,
             int? numResults = 1,
             double? temperature = 0.7,
             int? maxTokens = 300,
@@ -164,9 +164,9 @@ namespace G
             {
                 Messages = messages,
                 System = system,
-                FrequencyPenalty = frequencyPenalty,
-                PresencePenalty = presencePenalty,
                 CountPenalty = countPenalty,
+                PresencePenalty = presencePenalty,
+                FrequencyPenalty = frequencyPenalty,
                 NumResults = numResults,
                 Temperature = temperature,
                 MaxTokens = maxTokens,

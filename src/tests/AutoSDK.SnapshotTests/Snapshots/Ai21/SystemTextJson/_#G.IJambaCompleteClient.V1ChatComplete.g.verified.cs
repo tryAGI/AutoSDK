@@ -75,7 +75,7 @@ namespace G
             bool? stream = false,
             global::G.MockResponseConfig? mockResponse = default,
             global::System.Collections.Generic.IList<global::G.DocumentSchema>? documents = default,
-            global::G.AllOf<global::G.ResponseFormat>? responseFormat = default,
+            global::G.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

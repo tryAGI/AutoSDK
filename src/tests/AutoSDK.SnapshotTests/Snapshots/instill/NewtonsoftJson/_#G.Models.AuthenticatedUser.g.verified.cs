@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AuthenticatedUser.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -88,16 +86,19 @@ namespace G
         public string? CookieToken { get; set; }
 
         /// <summary>
-        /// Onboarding Status.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("onboardingStatus")]
-        public global::G.AllOf<global::G.OnboardingStatus2?>? OnboardingStatus { get; set; }
-
-        /// <summary>
-        /// Profile.
+        /// UserProfile describes the public data of a user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("profile")]
-        public global::G.AllOf<global::G.UserProfile>? Profile { get; set; }
+        public global::G.UserProfile? Profile { get; set; }
+
+        /// <summary>
+        /// OnboardingStatus describes the status of the user onboarding process.<br/>
+        ///  - ONBOARDING_STATUS_IN_PROGRESS: In progress, i.e., the user has initiated the onboarding process<br/>
+        /// but has not yet completed it.<br/>
+        ///  - ONBOARDING_STATUS_COMPLETED: Completed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("onboardingStatus")]
+        public global::G.OnboardingStatus? OnboardingStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

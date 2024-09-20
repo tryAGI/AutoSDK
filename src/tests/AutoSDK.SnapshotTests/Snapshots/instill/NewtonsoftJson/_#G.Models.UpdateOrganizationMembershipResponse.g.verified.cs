@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UpdateOrganizationMembershipResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,11 @@ namespace G
     public sealed partial class UpdateOrganizationMembershipResponse
     {
         /// <summary>
-        /// The updated membership resource.
+        /// An organization membership defines the relationship between an organization<br/>
+        /// and a user that is attached to it.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("membership")]
-        public global::G.AllOf<global::G.OrganizationMembership>? Membership { get; set; }
+        public global::G.OrganizationMembership? Membership { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

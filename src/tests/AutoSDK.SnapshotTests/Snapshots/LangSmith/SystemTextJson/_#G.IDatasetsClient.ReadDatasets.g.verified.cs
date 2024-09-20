@@ -31,7 +31,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType2>, global::G.DataType2?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? metadata = default,

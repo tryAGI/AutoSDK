@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.EmbeddingsBody.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -18,10 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<string> Texts { get; set; } = default!;
 
         /// <summary>
-        /// Default Value: segment
+        /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.AllOf<global::G.EmbedType?>? Type { get; set; } = global::G.EmbedType.Segment;
+        public global::G.EmbedType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

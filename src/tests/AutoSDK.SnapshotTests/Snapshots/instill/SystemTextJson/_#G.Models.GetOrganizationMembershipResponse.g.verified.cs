@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetOrganizationMembershipResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,11 +10,11 @@ namespace G
     public sealed partial class GetOrganizationMembershipResponse
     {
         /// <summary>
-        /// The requested organization membership.
+        /// An organization membership defines the relationship between an organization<br/>
+        /// and a user that is attached to it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("membership")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
-        public global::G.AllOf<global::G.OrganizationMembership>? Membership { get; set; }
+        public global::G.OrganizationMembership? Membership { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

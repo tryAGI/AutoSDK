@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RepositoryAdvisory.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -62,20 +60,18 @@ namespace G
         public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
-        /// The author of the advisory.
+        /// A GitHub repository.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.SimpleUser>? Author { get; set; }
+        public required global::G.SimpleRepository PrivateFork { get; set; }
 
         /// <summary>
-        /// The publisher of the advisory.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.SimpleUser>? Publisher { get; set; }
+        public required global::G.SimpleUser Publisher { get; set; }
 
         /// <summary>
         /// 
@@ -191,12 +187,11 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
 
         /// <summary>
-        /// A temporary private fork of the advisory's repository for collaborating on a fix.
+        /// A GitHub user.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory1))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.SimpleRepository>? PrivateFork { get; set; }
+        public required global::G.SimpleUser Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

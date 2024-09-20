@@ -39,8 +39,8 @@ namespace G
             typeof(global::G.JsonConverters.FileStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.ToolParametersTypeJsonConverter),
             typeof(global::G.JsonConverters.ToolParametersTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.RetrievalStrategy3JsonConverter),
-            typeof(global::G.JsonConverters.RetrievalStrategy3NullableJsonConverter),
+            typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter),
+            typeof(global::G.JsonConverters.RetrievalStrategyNullableJsonConverter),
             typeof(global::G.JsonConverters.ModelNameJsonConverter),
             typeof(global::G.JsonConverters.ModelNameNullableJsonConverter),
             typeof(global::G.JsonConverters.StyleTypeJsonConverter),
@@ -58,7 +58,6 @@ namespace G
             typeof(global::G.JsonConverters.UserMessageRoleJsonConverter),
             typeof(global::G.JsonConverters.UserMessageRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory4),
         };
     }

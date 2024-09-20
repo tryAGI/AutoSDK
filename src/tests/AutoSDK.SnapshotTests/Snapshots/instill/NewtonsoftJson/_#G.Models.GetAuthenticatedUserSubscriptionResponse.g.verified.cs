@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GetAuthenticatedUserSubscriptionResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,10 @@ namespace G
     public sealed partial class GetAuthenticatedUserSubscriptionResponse
     {
         /// <summary>
-        /// The subscription resource.
+        /// UserSubscription details describe the plan (i.e., features) a user has access to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription")]
-        public global::G.AllOf<global::G.UserSubscription>? Subscription { get; set; }
+        public global::G.UserSubscription? Subscription { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateOrganizationResponse> UpdateOrganizationAsync(
             string organizationId,
-            global::G.Organization7 request,
+            global::G.Organization request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -47,25 +47,28 @@ namespace G
         /// <param name="updateTime">
         /// Update time.
         /// </param>
-        /// <param name="owner">
-        /// The user that owns the organization.
+        /// <param name="permission">
+        /// Permission defines how a resource can be used.
         /// </param>
         /// <param name="profile">
-        /// Profile.
+        /// OrganizationProfile describes the public data of an organization.
         /// </param>
-        /// <param name="permission"></param>
+        /// <param name="owner">
+        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
+        /// contain any private information about the user.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateOrganizationResponse> UpdateOrganizationAsync(
             string organizationId,
-            global::G.AllOf<global::G.OrganizationProfile> profile,
+            global::G.OrganizationProfile profile,
             string? name = default,
             string? uid = default,
             string? id = default,
             global::System.DateTime? createTime = default,
             global::System.DateTime? updateTime = default,
-            global::G.AllOf<global::G.User9>? owner = default,
-            global::G.AllOf<global::G.Permission2>? permission = default,
+            global::G.Permission? permission = default,
+            global::G.User? owner = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

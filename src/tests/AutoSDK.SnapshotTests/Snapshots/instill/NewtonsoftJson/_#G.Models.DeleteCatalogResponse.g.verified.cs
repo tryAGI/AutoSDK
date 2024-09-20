@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.DeleteCatalogResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,10 +10,10 @@ namespace G
     public sealed partial class DeleteCatalogResponse
     {
         /// <summary>
-        /// The catalog identifier.
+        /// Catalog represents a catalog.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("catalog")]
-        public global::G.AllOf<global::G.Catalog>? Catalog { get; set; }
+        public global::G.Catalog? Catalog { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

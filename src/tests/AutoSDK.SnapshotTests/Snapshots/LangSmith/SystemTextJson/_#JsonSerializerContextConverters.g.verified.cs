@@ -21,8 +21,8 @@ namespace G
             typeof(global::G.JsonConverters.RunSelectNullableJsonConverter),
             typeof(global::G.JsonConverters.RunDateOrderJsonConverter),
             typeof(global::G.JsonConverters.RunDateOrderNullableJsonConverter),
-            typeof(global::G.JsonConverters.DataType2JsonConverter),
-            typeof(global::G.JsonConverters.DataType2NullableJsonConverter),
+            typeof(global::G.JsonConverters.DataTypeJsonConverter),
+            typeof(global::G.JsonConverters.DataTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ChangePaymentPlanReqJsonConverter),
             typeof(global::G.JsonConverters.ChangePaymentPlanReqNullableJsonConverter),
             typeof(global::G.JsonConverters.ConfiguredByJsonConverter),
@@ -98,13 +98,13 @@ namespace G
             typeof(global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2JsonConverter),
             typeof(global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2NullableJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory6),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory5),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory3),
+            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
         };
     }
 }
