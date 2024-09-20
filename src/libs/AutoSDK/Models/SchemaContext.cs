@@ -18,6 +18,8 @@ public class SchemaContext
     public bool IsReference => ReferenceId != null;
     public SchemaContext? ResolvedReference { get; set; }
     
+    public IList<SchemaContext> Links { get; set; } = [];
+    
     public Hint? Hint { get; init; }
     public int? Index { get; init; }
     /// <summary>

@@ -48,6 +48,8 @@ public static class Data
             context.ResolvedReference = componentSchemas[context.ReferenceId!];
             context.Id = context.ResolvedReference.Id;
             context.TypeData = context.ResolvedReference.TypeData;
+            
+            context.ResolvedReference.Links.Add(context);
         }
         
         resolveReferencesTime.Stop();
