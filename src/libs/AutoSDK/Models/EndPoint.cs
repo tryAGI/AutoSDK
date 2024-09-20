@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Clients;
+using AutoSDK.Serialization.Form;
 
 namespace AutoSDK.Models;
 
@@ -14,6 +15,7 @@ public readonly record struct EndPoint(
     string Path,
     string RequestMediaType,
     ImmutableArray<MethodParameter> Parameters,
+    ImmutableArray<MethodParameter> QueryParameters,
     OperationType HttpMethod,
     ContentType ContentType,
     string Summary,
@@ -63,7 +65,7 @@ public readonly record struct EndPoint(
         }
         
         var preparedPath = operation.OperationPath.PreparePath(parameters);
-        parameters = operation.OperationPath.PrepareParameters(parameters).ToList();
+        var queryParameters = ParameterSerializer.SerializeQueryParameters(parameters);
  
         var requestMediaTypes =
             operation.Operation.RequestBody?.ResolveIfRequired().Content ??
@@ -119,6 +121,7 @@ public readonly record struct EndPoint(
             Path: preparedPath,
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
+            QueryParameters: queryParameters.ToImmutableArray(),
             HttpMethod: operation.OperationType,
             ContentType: responses
                 .Any(x => x.MediaType.Key.Contains("application/octet-stream"))

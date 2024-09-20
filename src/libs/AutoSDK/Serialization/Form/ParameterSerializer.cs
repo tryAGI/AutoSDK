@@ -28,11 +28,9 @@ public static class ParameterSerializer
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
         
         return parameters
-                .Where(x => x.Location != ParameterLocation.Query).Concat(
-            parameters
-                .Where(x => x.Location == ParameterLocation.Query)
-                .SelectMany(SerializeQueryParameter))
-            .ToArray();
+            .Where(x => x.Location == ParameterLocation.Query)
+            .SelectMany(SerializeQueryParameter)
+            .ToList();
     }
     //
     // public static string SerializeQueryParameterOld(MethodParameter parameter)
@@ -144,8 +142,14 @@ public static class ParameterSerializer
 
         if (!parameter.Type.IsEnum && parameter.Type.Properties.Length != 0)
         {
-            var pairs = parameter.Type.Properties
-                .Select(x => (Name: x.ToParameterName(), Value: $"{parameter.ArgumentName}.{x.ToPropertyName()}"))
+            var pairs = parameter.Properties
+                .Select(x => (
+                    Name: x.Id.ToParameterName(),
+                    Value: $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}." + SerializeQueryParameter(parameter with {
+                        Name = x.Id,
+                        Type = x.Type,
+                        IsRequired = x.IsRequired,
+                    }).FirstOrDefault().Value.ToPropertyName()))
                 .ToArray();
             switch (parameter.Style, parameter.Explode)
             {

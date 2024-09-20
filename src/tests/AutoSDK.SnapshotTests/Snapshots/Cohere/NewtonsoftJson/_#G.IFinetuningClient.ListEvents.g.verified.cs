@@ -9,18 +9,18 @@ namespace G
         /// Retrieves the chronology of statuses the fine-tuned model has been through.
         /// </summary>
         /// <param name="finetunedModelId"></param>
-        /// <param name="xClientName"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageToken"></param>
         /// <param name="orderBy"></param>
+        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListEventsResponse> ListEventsAsync(
             string finetunedModelId,
-            string? xClientName = default,
             int? pageSize = default,
             string? pageToken = default,
             string? orderBy = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

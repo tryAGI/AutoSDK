@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareActionsListSelfHostedRunnersForRepoArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string? name,
             ref string owner,
             ref string repo,
-            ref string? name,
             ref int? perPage,
             ref int? page);
         partial void PrepareActionsListSelfHostedRunnersForRepoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? name,
             string owner,
             string repo,
-            string? name,
             int? perPage,
             int? page);
         partial void ProcessActionsListSelfHostedRunnersForRepoResponse(
@@ -36,9 +36,9 @@ namespace G
         /// Authenticated users must have admin access to the repository to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="name"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
@@ -59,9 +59,9 @@ namespace G
                 client: _httpClient);
             PrepareActionsListSelfHostedRunnersForRepoArguments(
                 httpClient: _httpClient,
+                name: ref name,
                 owner: ref owner,
                 repo: ref repo,
-                name: ref name,
                 perPage: ref perPage,
                 page: ref page);
 
@@ -84,9 +84,9 @@ namespace G
             PrepareActionsListSelfHostedRunnersForRepoRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                name: name,
                 owner: owner,
                 repo: repo,
-                name: name,
                 perPage: perPage,
                 page: page);
 

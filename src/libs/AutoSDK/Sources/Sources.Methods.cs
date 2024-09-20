@@ -277,12 +277,10 @@ namespace {endPoint.Namespace}
                 path: {endPoint.Path},
                 baseUri: _httpClient.BaseAddress);";
 
-        var queryParameters = endPoint.Parameters
-            .Where(x => x.Location == ParameterLocation.Query)
+        var queryParameters = endPoint.QueryParameters
             .Where(x =>
                 x.Type.IsEnum ||
-                (x.Type.Properties.Length == 0 &&
-                (!x.Type.IsArray || (x.Type.SubTypes[0].Properties.Length == 0 && !x.Type.SubTypes[0].IsArray))))
+                (!x.Type.IsArray || (x.Type.SubTypes[0].Properties.Length == 0 && !x.Type.SubTypes[0].IsArray)))
             .ToArray();
 
         if (queryParameters.Length > 0)

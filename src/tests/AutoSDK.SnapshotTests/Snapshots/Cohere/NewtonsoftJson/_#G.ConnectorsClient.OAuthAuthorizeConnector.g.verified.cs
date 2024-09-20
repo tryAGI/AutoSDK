@@ -9,14 +9,14 @@ namespace G
         partial void PrepareOAuthAuthorizeConnectorArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
-            ref string? xClientName,
-            ref string? afterTokenRedirect);
+            ref string? afterTokenRedirect,
+            ref string? xClientName);
         partial void PrepareOAuthAuthorizeConnectorRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
-            string? xClientName,
-            string? afterTokenRedirect);
+            string? afterTokenRedirect,
+            string? xClientName);
         partial void ProcessOAuthAuthorizeConnectorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,14 +31,14 @@ namespace G
         /// Authorize the connector with the given ID for the connector oauth app.  See ['Connector Authentication'](https://docs.cohere.com/docs/connector-authentication) for more information.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="xClientName"></param>
         /// <param name="afterTokenRedirect"></param>
+        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OAuthAuthorizeResponse> OAuthAuthorizeConnectorAsync(
             string id,
-            string? xClientName = default,
             string? afterTokenRedirect = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -46,8 +46,8 @@ namespace G
             PrepareOAuthAuthorizeConnectorArguments(
                 httpClient: _httpClient,
                 id: ref id,
-                xClientName: ref xClientName,
-                afterTokenRedirect: ref afterTokenRedirect);
+                afterTokenRedirect: ref afterTokenRedirect,
+                xClientName: ref xClientName);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/v1/connectors/{id}/oauth/authorize",
@@ -67,8 +67,8 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 id: id,
-                xClientName: xClientName,
-                afterTokenRedirect: afterTokenRedirect);
+                afterTokenRedirect: afterTokenRedirect,
+                xClientName: xClientName);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -84,7 +84,10 @@ namespace G
                 path: "/organization/audit_logs",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("effective_at", effectiveAt?.ToString()) 
+                .AddOptionalParameter("gt", effectiveAt?.Gt?.ToString()) 
+                .AddOptionalParameter("gte", effectiveAt?.Gte?.ToString()) 
+                .AddOptionalParameter("lt", effectiveAt?.Lt?.ToString()) 
+                .AddOptionalParameter("lte", effectiveAt?.Lte?.ToString()) 
                 .AddOptionalParameter("project_ids[]", projectIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true) 
                 .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true) 

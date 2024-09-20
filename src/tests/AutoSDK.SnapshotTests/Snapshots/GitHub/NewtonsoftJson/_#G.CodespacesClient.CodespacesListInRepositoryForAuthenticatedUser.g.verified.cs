@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareCodespacesListInRepositoryForAuthenticatedUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string owner,
-            ref string repo,
             ref int? perPage,
-            ref int? page);
+            ref int? page,
+            ref string owner,
+            ref string repo);
         partial void PrepareCodespacesListInRepositoryForAuthenticatedUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string owner,
-            string repo,
             int? perPage,
-            int? page);
+            int? page,
+            string owner,
+            string repo);
         partial void ProcessCodespacesListInRepositoryForAuthenticatedUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -33,14 +33,14 @@ namespace G
         /// Lists the codespaces associated to a specified repository and the authenticated user.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        /// <param name="owner"></param>
-        /// <param name="repo"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodespacesListInRepositoryForAuthenticatedUserResponse> CodespacesListInRepositoryForAuthenticatedUserAsync(
@@ -54,10 +54,10 @@ namespace G
                 client: _httpClient);
             PrepareCodespacesListInRepositoryForAuthenticatedUserArguments(
                 httpClient: _httpClient,
-                owner: ref owner,
-                repo: ref repo,
                 perPage: ref perPage,
-                page: ref page);
+                page: ref page,
+                owner: ref owner,
+                repo: ref repo);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/codespaces",
@@ -77,10 +77,10 @@ namespace G
             PrepareCodespacesListInRepositoryForAuthenticatedUserRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                owner: owner,
-                repo: repo,
                 perPage: perPage,
-                page: page);
+                page: page,
+                owner: owner,
+                repo: repo);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -136,25 +136,6 @@ public static class OpenApiExtensions
         
         return openApiDocument;
     }
-    
-    /// <summary>
-    /// https://swagger.io/docs/specification/describing-parameters/
-    /// https://swagger.io/docs/specification/serialization/
-    /// </summary>
-    /// <param name="path"></param>
-    /// <param name="parameters"></param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentNullException"></exception>
-    public static IList<MethodParameter> PrepareParameters(
-        this string path,
-        IList<MethodParameter> parameters)
-    {
-        parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
-        
-        parameters = ParameterSerializer.SerializeQueryParameters(parameters);
-        
-        return parameters;
-    }
 
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/

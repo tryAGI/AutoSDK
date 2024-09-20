@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Serialization.Json;
@@ -20,7 +21,8 @@ public readonly record struct MethodParameter(
     string? DefaultValue,
     bool IsDeprecated,
     string Summary,
-    string ConverterType)
+    string ConverterType,
+    ImmutableArray<PropertyData> Properties)
 {
     public static MethodParameter Default => new(
         Id: string.Empty,
@@ -38,7 +40,8 @@ public readonly record struct MethodParameter(
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
-        ConverterType: string.Empty);
+        ConverterType: string.Empty,
+        Properties: []);
 
     public static MethodParameter FromSchemaContext(SchemaContext context)
     {
@@ -53,7 +56,7 @@ public readonly record struct MethodParameter(
         {
             type = property.Type;
         }
-
+        
         var name = parameterName.ToPropertyName();
         
         name = HandleWordSeparators(name);
@@ -90,7 +93,8 @@ public readonly record struct MethodParameter(
             IsDeprecated: context.Schema.Deprecated,
             DefaultValue: context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
-            ConverterType: type.ConverterType);
+            ConverterType: type.ConverterType,
+            Properties: context.ClassData?.Properties ?? []);
     }
     
     internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)

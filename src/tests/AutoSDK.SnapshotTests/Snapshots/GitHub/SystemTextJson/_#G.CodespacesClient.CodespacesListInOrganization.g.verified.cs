@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareCodespacesListInOrganizationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string org,
             ref int? perPage,
-            ref int? page);
+            ref int? page,
+            ref string org);
         partial void PrepareCodespacesListInOrganizationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string org,
             int? perPage,
-            int? page);
+            int? page,
+            string org);
         partial void ProcessCodespacesListInOrganizationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,13 +31,13 @@ namespace G
         /// Lists the codespaces associated to a specified organization.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
-        /// <param name="org"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CodespacesListInOrganizationResponse> CodespacesListInOrganizationAsync(
@@ -50,9 +50,9 @@ namespace G
                 client: _httpClient);
             PrepareCodespacesListInOrganizationArguments(
                 httpClient: _httpClient,
-                org: ref org,
                 perPage: ref perPage,
-                page: ref page);
+                page: ref page,
+                org: ref org);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/orgs/{org}/codespaces",
@@ -72,9 +72,9 @@ namespace G
             PrepareCodespacesListInOrganizationRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                org: org,
                 perPage: perPage,
-                page: page);
+                page: page,
+                org: org);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

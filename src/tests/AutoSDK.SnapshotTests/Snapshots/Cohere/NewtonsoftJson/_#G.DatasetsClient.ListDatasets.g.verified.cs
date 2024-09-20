@@ -8,23 +8,23 @@ namespace G
     {
         partial void PrepareListDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xClientName,
             ref string? datasetType,
             ref global::System.DateTime? before,
             ref global::System.DateTime? after,
             ref double? limit,
             ref double? offset,
-            ref global::G.DatasetValidationStatus? validationStatus);
+            ref global::G.DatasetValidationStatus? validationStatus,
+            ref string? xClientName);
         partial void PrepareListDatasetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xClientName,
             string? datasetType,
             global::System.DateTime? before,
             global::System.DateTime? after,
             double? limit,
             double? offset,
-            global::G.DatasetValidationStatus? validationStatus);
+            global::G.DatasetValidationStatus? validationStatus,
+            string? xClientName);
         partial void ProcessListDatasetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,7 +38,6 @@ namespace G
         /// List Datasets<br/>
         /// List datasets that have been created.
         /// </summary>
-        /// <param name="xClientName"></param>
         /// <param name="datasetType"></param>
         /// <param name="before"></param>
         /// <param name="after"></param>
@@ -47,29 +46,30 @@ namespace G
         /// <param name="validationStatus">
         /// The validation status of the dataset
         /// </param>
+        /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListDatasetsResponse> ListDatasetsAsync(
-            string? xClientName = default,
             string? datasetType = default,
             global::System.DateTime? before = default,
             global::System.DateTime? after = default,
             double? limit = default,
             double? offset = default,
             global::G.DatasetValidationStatus? validationStatus = default,
+            string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListDatasetsArguments(
                 httpClient: _httpClient,
-                xClientName: ref xClientName,
                 datasetType: ref datasetType,
                 before: ref before,
                 after: ref after,
                 limit: ref limit,
                 offset: ref offset,
-                validationStatus: ref validationStatus);
+                validationStatus: ref validationStatus,
+                xClientName: ref xClientName);
 
             var validationStatusValue = validationStatus switch
             {
@@ -103,13 +103,13 @@ namespace G
             PrepareListDatasetsRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                xClientName: xClientName,
                 datasetType: datasetType,
                 before: before,
                 after: after,
                 limit: limit,
                 offset: offset,
-                validationStatus: validationStatus);
+                validationStatus: validationStatus,
+                xClientName: xClientName);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -10,7 +10,6 @@ namespace G
         /// Get projects run on a dataset that has been shared.
         /// </summary>
         /// <param name="shareToken"></param>
-        /// <param name="accept"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
@@ -31,11 +30,11 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::G.AnyOf<string, object>? accept = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
@@ -46,6 +45,7 @@ namespace G
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
+            global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

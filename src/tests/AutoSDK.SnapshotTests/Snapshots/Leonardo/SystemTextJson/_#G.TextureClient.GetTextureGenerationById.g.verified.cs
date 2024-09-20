@@ -8,16 +8,16 @@ namespace G
     {
         partial void PrepareGetTextureGenerationByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id,
             ref int? offset,
             ref int? limit,
+            ref string id,
             global::G.GetTextureGenerationByIdRequest request);
         partial void PrepareGetTextureGenerationByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id,
             int? offset,
             int? limit,
+            string id,
             global::G.GetTextureGenerationByIdRequest request);
         partial void ProcessGetTextureGenerationByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -32,13 +32,13 @@ namespace G
         /// Get Texture Generation by ID<br/>
         /// This endpoint gets the specific texture generation.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -55,9 +55,9 @@ namespace G
                 client: _httpClient);
             PrepareGetTextureGenerationByIdArguments(
                 httpClient: _httpClient,
-                id: ref id,
                 offset: ref offset,
                 limit: ref limit,
+                id: ref id,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -84,9 +84,9 @@ namespace G
             PrepareGetTextureGenerationByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                id: id,
                 offset: offset,
                 limit: limit,
+                id: id,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -130,13 +130,13 @@ namespace G
         /// Get Texture Generation by ID<br/>
         /// This endpoint gets the specific texture generation.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
+        /// <param name="id"></param>
         /// <param name="requestId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -153,9 +153,9 @@ namespace G
             };
 
             return await GetTextureGenerationByIdAsync(
-                id: id,
                 offset: offset,
                 limit: limit,
+                id: id,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -80,7 +80,7 @@ public readonly record struct TypeData(
         context = context ?? throw new ArgumentNullException(nameof(context));
         
         var properties = ImmutableArray<string>.Empty;
-        if (context.Schema.Reference?.HostDocument?.ResolveReference(context.Schema.Reference) is OpenApiSchema referenceSchema)
+        if (context.Schema.ResolveIfRequired() is { } referenceSchema)
         {
             properties = referenceSchema.Properties
                 .Select(x => x.Key)

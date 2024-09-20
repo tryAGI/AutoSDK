@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string @ref,
             ref int? page,
-            ref int? perPage);
+            ref int? perPage,
+            ref string @ref);
         partial void PrepareReposGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string @ref,
             int? page,
-            int? perPage);
+            int? perPage,
+            string @ref);
         partial void ProcessReposGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -65,13 +65,13 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="ref"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
+        /// <param name="ref"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Commit> ReposGetCommitAsync(
@@ -88,9 +88,9 @@ namespace G
                 httpClient: _httpClient,
                 owner: ref owner,
                 repo: ref repo,
-                @ref: ref @ref,
                 page: ref page,
-                perPage: ref perPage);
+                perPage: ref perPage,
+                @ref: ref @ref);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/commits/{@ref}",
@@ -112,9 +112,9 @@ namespace G
                 httpRequestMessage: httpRequest,
                 owner: owner,
                 repo: repo,
-                @ref: @ref,
                 page: page,
-                perPage: perPage);
+                perPage: perPage,
+                @ref: @ref);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

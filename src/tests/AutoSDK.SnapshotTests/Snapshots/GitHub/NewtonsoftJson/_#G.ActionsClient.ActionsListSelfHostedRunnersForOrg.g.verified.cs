@@ -8,15 +8,15 @@ namespace G
     {
         partial void PrepareActionsListSelfHostedRunnersForOrgArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string org,
             ref string? name,
+            ref string org,
             ref int? perPage,
             ref int? page);
         partial void PrepareActionsListSelfHostedRunnersForOrgRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string org,
             string? name,
+            string org,
             int? perPage,
             int? page);
         partial void ProcessActionsListSelfHostedRunnersForOrgResponse(
@@ -34,8 +34,8 @@ namespace G
         /// Authenticated users must have admin access to the organization to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
-        /// <param name="org"></param>
         /// <param name="name"></param>
+        /// <param name="org"></param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
@@ -55,8 +55,8 @@ namespace G
                 client: _httpClient);
             PrepareActionsListSelfHostedRunnersForOrgArguments(
                 httpClient: _httpClient,
-                org: ref org,
                 name: ref name,
+                org: ref org,
                 perPage: ref perPage,
                 page: ref page);
 
@@ -79,8 +79,8 @@ namespace G
             PrepareActionsListSelfHostedRunnersForOrgRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                org: org,
                 name: name,
+                org: org,
                 perPage: perPage,
                 page: page);
 

@@ -9,7 +9,6 @@ namespace G
         /// Read Tracer Sessions<br/>
         /// Get all sessions.
         /// </summary>
-        /// <param name="accept"></param>
         /// <param name="referenceFree"></param>
         /// <param name="referenceDataset"></param>
         /// <param name="id"></param>
@@ -34,10 +33,10 @@ namespace G
         /// <param name="facets">
         /// Default Value: false
         /// </param>
+        /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
-            global::G.AnyOf<string, object>? accept = default,
             global::G.AnyOf<bool?, object>? referenceFree = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceDataset = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
@@ -52,6 +51,7 @@ namespace G
             int? limit = 100,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             bool? facets = false,
+            global::G.AnyOf<string, object>? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

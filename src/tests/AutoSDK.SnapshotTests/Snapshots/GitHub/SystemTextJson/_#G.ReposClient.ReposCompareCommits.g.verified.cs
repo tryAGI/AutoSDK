@@ -10,17 +10,17 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref string basehead,
             ref int? page,
-            ref int? perPage);
+            ref int? perPage,
+            ref string basehead);
         partial void PrepareReposCompareCommitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            string basehead,
             int? page,
-            int? perPage);
+            int? perPage,
+            string basehead);
         partial void ProcessReposCompareCommitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,13 +71,13 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="basehead"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
+        /// <param name="basehead"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CommitComparison> ReposCompareCommitsAsync(
@@ -94,9 +94,9 @@ namespace G
                 httpClient: _httpClient,
                 owner: ref owner,
                 repo: ref repo,
-                basehead: ref basehead,
                 page: ref page,
-                perPage: ref perPage);
+                perPage: ref perPage,
+                basehead: ref basehead);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/compare/{basehead}",
@@ -118,9 +118,9 @@ namespace G
                 httpRequestMessage: httpRequest,
                 owner: owner,
                 repo: repo,
-                basehead: basehead,
                 page: page,
-                perPage: perPage);
+                perPage: perPage,
+                basehead: basehead);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
