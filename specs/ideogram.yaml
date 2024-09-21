@@ -1,0 +1,1167 @@
+openapi: 3.0.1
+info:
+  title: Ideogram - OpenAPI 3.0
+  description: This is the API definition for Ideogram AI.
+  version: 1.0.0
+servers:
+  - url: ''
+paths:
+  /describe:
+    post:
+      tags:
+        - vision
+      summary: Describe an image
+      operationId: post_describe
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DescribeRequest'
+        required: true
+      responses:
+        '200':
+          description: Description(s) created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeResponse'
+        '400':
+          description: Invalid input provided.
+        '422':
+          description: Image failed the safety check.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageSafetyError'
+        '429':
+          description: Too many requests.
+      x-openapi-router-controller: external_api.generated.openapi.controllers.vision_controller
+  /generate:
+    post:
+      tags:
+        - generate
+      summary: Generates images synchronously based on a given prompt and optional parameters.
+      description: "A request to generate an image with Ideogram.\n"
+      operationId: post_generate_image
+      requestBody:
+        description: A request to generate an image with Ideogram.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageRequest'
+        required: true
+        x-body-name: generate_image_request
+      responses:
+        '200':
+          description: Image(s) generated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+        '400':
+          description: Invalid input provided.
+        '401':
+          description: Not authorized to generate an image.
+        '422':
+          description: Prompt failed the safety check.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageSafetyError'
+        '429':
+          description: Too many requests.
+      x-openapi-router-controller: external_api.generated.openapi.controllers.generate_controller
+  /manage/api/api_keys:
+    get:
+      tags:
+        - manage
+      summary: Retrieve current API keys and their respective data.
+      operationId: get_api_keys
+      responses:
+        '200':
+          description: API keys the user currently manages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiKeysResponse'
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+    post:
+      tags:
+        - manage
+      summary: Creates an API key.
+      operationId: create_api_key
+      responses:
+        '200':
+          description: The newly created API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiKeyResponse'
+        '401':
+          description: Not authorized
+        '402':
+          description: Payment is required; did you create a subscription?
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  '/manage/api/api_keys/{api_key_id}':
+    delete:
+      tags:
+        - manage
+      summary: Delete an API key.
+      operationId: delete_single_api_key
+      parameters:
+        - name: api_key_id
+          in: path
+          description: The ID of API key to operate on. Expected to be a URL safe Base64 encoded UUID.
+          required: true
+          schema:
+            type: string
+          example: d7abd0cd4ae94db78676e986a4ebd8dc
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Something went wrong
+        '401':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  /manage/api/reactivate:
+    post:
+      tags:
+        - manage
+      summary: Reactivates a subscription by attempting to re-enable Metronome billing.
+      operationId: reactivate_subscription
+      responses:
+        '200':
+          description: API subscription content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiReactivateResponse'
+        '401':
+          description: Not authorized
+        '402':
+          description: Payment is required; is your payment method setup?
+        '404':
+          description: User does not have a subscription to reactivate.
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  /manage/api/stripe_subscription:
+    get:
+      tags:
+        - manage
+      summary: Retrieve data relevant to connecting to Stripe.
+      operationId: get_api_stripe_subscription
+      parameters:
+        - name: isBusiness
+          in: query
+          description: Whether the subscription is intended to be used for business or personal use.
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: API subscription content related to connecting to Stripe
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManageApiStripeSubscriptionResponse'
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  /manage/api/subscription:
+    get:
+      tags:
+        - manage
+      summary: Retrieve data relevant to creating an API subscription.
+      operationId: get_api_subscription
+      responses:
+        '200':
+          description: API subscription content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManageApiSubscriptionResponse'
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+    post:
+      tags:
+        - manage
+      summary: Update API subscription settings
+      operationId: post_api_subscription
+      requestBody:
+        description: A request to update the API subscription properties. This should only be called after terms have been accepted.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiSubscriptionRequest'
+        required: true
+        x-body-name: post_api_subscription_request
+      responses:
+        '200':
+          description: API subscription content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiSubscriptionResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiSubscriptionError'
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  /manage/api/terms:
+    get:
+      tags:
+        - manage
+      summary: Retrieve the latest terms of service for API usage.
+      operationId: get_api_terms
+      responses:
+        '200':
+          description: Retrieves the latest API terms
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiTermsResponse'
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+    post:
+      tags:
+        - manage
+      summary: Accept terms
+      operationId: post_api_terms
+      requestBody:
+        description: A request to accept the API terms.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiTermsRequest'
+        required: true
+        x-body-name: post_api_terms_request
+      responses:
+        '204':
+          description: Success; no content.
+        '400':
+          description: Bad Request
+        '401':
+          description: Not authorized
+        '403':
+          description: Not authorized
+      security:
+        - BearerAuth: [ ]
+      x-openapi-router-controller: external_api.generated.openapi.controllers.manage_controller
+  /remix:
+    post:
+      tags:
+        - generate
+      summary: Remix provided images synchronously based on a given prompt and optional parameters
+      description: "A request to remix a provided image with Ideogram. Input images\nare cropped to the chosen aspect ratio before being remixed.\n\nSupported image formats include JPEG, PNG, and WEBP\n"
+      operationId: post_remix_image
+      requestBody:
+        description: A request to remix a provided image with Ideogram. Input images are cropped to the chosen aspect ratio before being remixed.
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RemixImageRequest'
+            encoding:
+              image_request:
+                contentType: application/json
+                style: form
+        required: true
+        x-body-name: image_request
+      responses:
+        '200':
+          description: Image(s) generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+        '400':
+          description: Invalid input provided
+        '403':
+          description: Not authorized to generate an image.
+        '422':
+          description: Prompt or provided image failed safety check.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageSafetyError'
+        '429':
+          description: Too many requests.
+      x-openapi-router-controller: external_api.generated.openapi.controllers.generate_controller
+  /upscale:
+    post:
+      tags:
+        - generate
+      summary: Upscale provided images synchronously with an optional prompt.
+      description: "A request to upscale a provided image with Ideogram.\n\nSupported image formats include JPEG, PNG, and WEBP\n"
+      operationId: post_upscale_image
+      requestBody:
+        description: A request to upscale a provided image with Ideogram.
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UpscaleImageRequest'
+            encoding:
+              image_request:
+                contentType: application/json
+                style: form
+        required: true
+        x-body-name: image_request
+      responses:
+        '200':
+          description: Image(s) generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+        '400':
+          description: Invalid input provided
+        '403':
+          description: Not authorized to generate an image.
+        '422':
+          description: Prompt or provided image failed safety check.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageSafetyError'
+        '429':
+          description: Too many requests.
+      x-openapi-router-controller: external_api.generated.openapi.controllers.generate_controller
+components:
+  schemas:
+    DescribeResponse:
+      title: DescribeResponse
+      type: object
+      properties:
+        descriptions:
+          title: descriptions
+          type: array
+          items:
+            $ref: '#/components/schemas/Description'
+          description: A collection of descriptions for given content
+      description: The response for a describe request encapsulates a list of descriptions
+      example:
+        descriptions:
+          - text: 'A meticulously illustrated cat with striped patterns, sitting upright. The cat''s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image.'
+          - text: 'A meticulously illustrated cat with striped patterns, sitting upright. The cat''s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image.'
+    DescribeRequest:
+      required:
+        - image_file
+      type: object
+      properties:
+        image_file:
+          type: string
+          format: binary
+      description: 'An image binary; only JPEG, WEBPs and PNGs are supported at this time'
+    GenerateImageRequest:
+      title: GenerateImageRequest
+      required:
+        - image_request
+      type: object
+      properties:
+        image_request:
+          $ref: '#/components/schemas/ImageRequest'
+      example:
+        image_request:
+          aspect_ratio: ASPECT_10_16
+          magic_prompt_option: AUTO
+          model: V_2
+          prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+    RemixImageRequest:
+      required:
+        - image_file
+        - image_request
+      type: object
+      properties:
+        image_request:
+          $ref: '#/components/schemas/InitialImageRequest'
+        image_file:
+          type: string
+          description: 'An image binary; only JPEG, WEBPs and PNGs are supported at this time'
+          format: binary
+      description: 'A request to generate an image from a source image and a provided caption, provided images are cropped to match the chosen output aspect ratio'
+    UpscaleImageRequest:
+      required:
+        - image_file
+        - image_request
+      type: object
+      properties:
+        image_request:
+          $ref: '#/components/schemas/UpscaleInitialImageRequest'
+        image_file:
+          type: string
+          description: 'An image binary; only JPEG, WEBPs and PNGs are supported at this time'
+          format: binary
+    ImageRequest:
+      title: ImageRequest
+      required:
+        - prompt
+      type: object
+      properties:
+        prompt:
+          type: string
+          description: The prompt to use to generate the image.
+          example: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+        aspect_ratio:
+          $ref: '#/components/schemas/AspectRatio'
+        model:
+          $ref: '#/components/schemas/ModelEnum'
+        magic_prompt_option:
+          $ref: '#/components/schemas/MagicPromptOption'
+        seed:
+          title: Seed
+          maximum: 2147483647
+          minimum: 0
+          type: integer
+          example: 12345
+        style_type:
+          $ref: '#/components/schemas/StyleType'
+        negative_prompt:
+          type: string
+          description: Description of what to exclude from an image. Descriptions in the prompt take precedence to descriptions in the negative prompt.
+          example: 'brush strokes, painting'
+        resolution:
+          $ref: '#/components/schemas/Resolution'
+        color_palette:
+          $ref: '#/components/schemas/ColorPaletteWithPresetNameOrMembers'
+      example:
+        aspect_ratio: ASPECT_10_16
+        magic_prompt_option: AUTO
+        model: V_2
+        prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+    InitialImageRequest:
+      title: InitialImageRequest
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/ImageRequest'
+      properties:
+        image_weight:
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 50
+          example: 50
+      description: A request to generate a new image using a provided image and a prompt.
+      example:
+        aspect_ratio: ASPECT_10_16
+        magic_prompt_option: ON
+        model: V_2
+        prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+        image_weight: 50
+    UpscaleInitialImageRequest:
+      title: UpscaleInitialImageRequest
+      type: object
+      properties:
+        prompt:
+          title: prompt
+          type: string
+          description: An optional prompt to guide the upscale
+          example: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+        resemblance:
+          title: resemblance
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 50
+          example: 50
+        detail:
+          title: detail
+          maximum: 100
+          minimum: 1
+          type: integer
+          default: 50
+          example: 50
+        magic_prompt_option:
+          $ref: '#/components/schemas/MagicPromptOption'
+        seed:
+          title: Seed
+          maximum: 2147483647
+          minimum: 0
+          type: integer
+          example: 12345
+      description: A request to upscale a provided image with the help of an optional prompt.
+    GenerateImageResponse:
+      title: GenerateImageResponse
+      required:
+        - created
+        - data
+      type: object
+      properties:
+        created:
+          title: created
+          type: string
+          description: The time the request was created.
+          format: date-time
+        data:
+          title: data
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageObject'
+          description: A list of ImageObjects that contain the generated image(s).
+      example:
+        data:
+          - seed: 12345
+            prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there''s an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+            resolution: 1024x1024
+            url: https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g
+            is_image_safe: true
+          - seed: 12345
+            prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there''s an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+            resolution: 1024x1024
+            url: https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g
+            is_image_safe: true
+        created: '2000-01-23T04:56:07.0000000+00:00'
+    ImageObject:
+      title: ImageObject
+      required:
+        - is_image_safe
+        - prompt
+        - resolution
+        - seed
+      type: object
+      properties:
+        url:
+          title: url
+          type: string
+          description: The direct link to the image generated.
+          format: uri
+          nullable: true
+          example: https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g
+        prompt:
+          title: prompt
+          type: string
+          description: The prompt used for the generation. This may be different from the original prompt.
+          example: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there''s an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+        resolution:
+          title: resolution
+          type: string
+          description: The resolution of the final image.
+          example: 1024x1024
+        is_image_safe:
+          title: is_image_safe
+          type: boolean
+          description: 'Whether this request passes safety checks. If false, the url field will be empty.'
+        seed:
+          title: Seed
+          maximum: 2147483647
+          minimum: 0
+          type: integer
+          example: 12345
+      example:
+        seed: 12345
+        prompt: 'A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there''s an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.'
+        resolution: 1024x1024
+        url: https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g
+        is_image_safe: true
+    ModelEnum:
+      title: ModelEnum
+      enum:
+        - V_1
+        - V_1_TURBO
+        - V_2
+        - V_2_TURBO
+      type: string
+      description: The model used to generate. Defaults to V_2.
+      default: V_2
+      example: V_2_TURBO
+    GenerateImageSafetyError:
+      title: GenerateImageSafetyError
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          title: error
+          type: string
+          example: Prompt provided failed safety check due to the inclusion of prohibited content.
+      example:
+        error: Prompt provided failed safety check due to the inclusion of prohibited content.
+    ImageSafetyError:
+      title: ImageSafetyError
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          title: error
+          type: string
+          example: Image provided failed safety check due to the inclusion of prohibited content.
+      example:
+        error: Image provided failed safety check due to the inclusion of prohibited content.
+    ManageApiSubscriptionResponse:
+      title: ManageApiSubscriptionResponse
+      required:
+        - has_accepted_terms
+        - has_stripe_setup
+      type: object
+      properties:
+        has_accepted_terms:
+          title: has_accepted_terms
+          type: boolean
+          description: Whether or not the latest required terms have been accepted.
+        has_stripe_setup:
+          title: has_stripe_setup
+          type: boolean
+          description: Whether or not Stripe is setup for API usage.
+        metronome_dashboard_url:
+          title: metronome_dashboard_url
+          type: string
+          description: The URL to display the customer usage dashboard.
+          deprecated: true
+        metronome_dashboard_dark_mode_url:
+          title: metronome_dashboard_dark_mode_url
+          type: string
+          description: 'The URL to display the customer usage dashboard, in dark mode.'
+          deprecated: true
+        metronome_links:
+          $ref: '#/components/schemas/MetronomeLinks'
+        recharge_settings:
+          $ref: '#/components/schemas/RechargeSettingsResponse'
+        stripe_billing_url:
+          title: stripe_billing_url
+          type: string
+          description: The URL for the user to manage the existing Stripe subscription plan.
+      example:
+        recharge_settings:
+          is_active: true
+        has_stripe_setup: true
+        metronome_dashboard_dark_mode_url: metronome_dashboard_dark_mode_url
+        stripe_billing_url: stripe_billing_url
+        has_accepted_terms: true
+        metronome_dashboard_url: metronome_dashboard_url
+        metronome_links:
+          credits_iframe_dark_mode_url: credits_iframe_dark_mode_url
+          invoices_iframe_dark_mode_url: invoices_iframe_dark_mode_url
+          invoices_iframe_url: invoices_iframe_url
+          credits_iframe_url: credits_iframe_url
+    MetronomeLinks:
+      title: MetronomeLinks
+      type: object
+      properties:
+        invoices_iframe_url:
+          title: invoices_iframe_url
+          type: string
+          description: The URL to display the customer invoice and API usage.
+        invoices_iframe_dark_mode_url:
+          title: invoices_iframe_dark_mode_url
+          type: string
+          description: The URL to display the customer invoice and API usage.
+        credits_iframe_url:
+          title: credits_iframe_url
+          type: string
+          description: The URL to display the customer invoice and API usage.
+        credits_iframe_dark_mode_url:
+          title: credits_iframe_dark_mode_url
+          type: string
+          description: The URL to display the customer invoice and API usage.
+      example:
+        credits_iframe_dark_mode_url: credits_iframe_dark_mode_url
+        invoices_iframe_dark_mode_url: invoices_iframe_dark_mode_url
+        invoices_iframe_url: invoices_iframe_url
+        credits_iframe_url: credits_iframe_url
+    RechargeSettingsResponse:
+      title: RechargeSettingsResponse
+      required:
+        - is_active
+      allOf:
+        - $ref: '#/components/schemas/RechargeSettings'
+      properties:
+        is_active:
+          title: is_active
+          type: boolean
+          description: Whether or not the recharge setting is currently active.
+      example:
+        is_active: true
+    RechargeSettings:
+      title: RechargeSettings
+      required:
+        - minimum_balance_threshold
+        - top_up_balance
+      type: object
+      properties:
+        top_up_balance:
+          $ref: '#/components/schemas/Price'
+        minimum_balance_threshold:
+          $ref: '#/components/schemas/Price'
+      description: The current recharge settings for the API subscription.
+      example:
+        minimum_balance_threshold:
+          amount: 1050
+          currency_code: USD
+        top_up_balance:
+          amount: 1050
+          currency_code: USD
+    PostApiSubscriptionResponse:
+      title: PostApiSubscriptionResponse
+      type: object
+      properties:
+        recharge_settings:
+          $ref: '#/components/schemas/RechargeSettingsResponse'
+      description: The updated API subscription.
+      example:
+        recharge_settings:
+          is_active: true
+    PostApiSubscriptionError:
+      title: PostApiSubscriptionError
+      type: object
+      properties:
+        messages:
+          title: messages
+          type: array
+          items:
+            type: string
+            description: 'An error message, indicating what went wrong.'
+          description: Error messages about what the error could be.
+      description: Represents an error when attempting to update the API subscription.
+      example:
+        messages:
+          - messages
+          - messages
+    PostApiSubscriptionRequest:
+      title: PostApiSubscriptionRequest
+      type: object
+      properties:
+        recharge_settings:
+          $ref: '#/components/schemas/RechargeSettings'
+      description: Request to update API settings. Fields which are omitted will be ignored.
+      example:
+        recharge_settings:
+          minimum_balance_threshold:
+            amount: 1050
+            currency_code: USD
+          top_up_balance:
+            amount: 1050
+            currency_code: USD
+    PostApiReactivateResponse:
+      title: PostApiReactivateResponse
+      type: object
+      properties:
+        recharge_settings:
+          $ref: '#/components/schemas/RechargeSettingsResponse'
+      description: Response to re-activating API settings.
+      example:
+        recharge_settings:
+          is_active: true
+    GetApiKeysResponse:
+      title: GetApiKeysResponse
+      type: object
+      properties:
+        current_api_keys:
+          title: current_api_keys
+          type: array
+          items:
+            $ref: '#/components/schemas/RedactedApiKey'
+          description: The current API keys that are active. Only returns redacted keys.
+      example:
+        current_api_keys:
+          - creation_time: '2000-01-23T04:56:07.0000000+00:00'
+            redacted_api_key: vkpDja
+            api_key_id: JRPVD7jWR1aTBYiJ0UFVOg==
+          - creation_time: '2000-01-23T04:56:07.0000000+00:00'
+            redacted_api_key: vkpDja
+            api_key_id: JRPVD7jWR1aTBYiJ0UFVOg==
+    RedactedApiKey:
+      title: RedactedApiKey
+      required:
+        - api_key_id
+        - creation_time
+        - redacted_api_key
+      type: object
+      properties:
+        redacted_api_key:
+          title: redacted_api_key
+          type: string
+          description: A redacted text snippet of the API key. Contains the first 4 characters of the API key
+          example: vkpDja
+        creation_time:
+          title: creation_time
+          type: string
+          description: The time at which the key was created
+          format: date-time
+        api_key_id:
+          title: api_key_id
+          type: string
+          description: A URL safe base64 encoded UUID
+          example: JRPVD7jWR1aTBYiJ0UFVOg==
+      description: A representation of an API key that does not contain the full key.
+      example:
+        creation_time: '2000-01-23T04:56:07.0000000+00:00'
+        redacted_api_key: vkpDja
+        api_key_id: JRPVD7jWR1aTBYiJ0UFVOg==
+    PostApiKeyResponse:
+      title: PostApiKeyResponse
+      required:
+        - api_key
+        - api_key_id
+      type: object
+      properties:
+        api_key:
+          title: api_key
+          type: string
+          description: The API key to use when making authenticated requests with the API. This key will only be shown once.
+          example: vkpDjaKdMNR8QJ83GjfNvFZJbnoi65XUp70MgZNtA2H9XE8yfDnmr_6BaRyQkF9hnJzu6mUPRLBmqlnZMwetJA
+        api_key_id:
+          title: api_key_id
+          type: string
+          description: The ID of the API key. A URL safe base64 encoded UUID
+          example: JRPVD7jWR1aTBYiJ0UFVOg==
+      example:
+        api_key: vkpDjaKdMNR8QJ83GjfNvFZJbnoi65XUp70MgZNtA2H9XE8yfDnmr_6BaRyQkF9hnJzu6mUPRLBmqlnZMwetJA
+        api_key_id: JRPVD7jWR1aTBYiJ0UFVOg==
+    ManageApiStripeSubscriptionResponse:
+      title: ManageApiStripeSubscriptionResponse
+      type: object
+      properties:
+        stripe_subscription_url:
+          title: stripe_subscription_url
+          type: string
+          description: The URL for the user to checkout the Stripe subscription plan.
+        stripe_billing_url:
+          title: stripe_billing_url
+          type: string
+          description: DEPRECATED. The URL for the user to manage the existing Stripe subscription plan. Get this from ManageApiSubscriptionResponse instead.
+          deprecated: true
+      example:
+        stripe_subscription_url: stripe_subscription_url
+        stripe_billing_url: stripe_billing_url
+    GetApiTermsResponse:
+      title: GetApiTermsResponse
+      required:
+        - api_terms
+      type: object
+      properties:
+        api_terms:
+          $ref: '#/components/schemas/ApiTerms'
+      example:
+        api_terms:
+          terms_url: terms_url
+          terms_id: terms_id
+    ApiTerms:
+      title: ApiTerms
+      required:
+        - terms_id
+        - terms_url
+      type: object
+      properties:
+        terms_id:
+          title: terms_id
+          type: string
+          description: The ID of the terms.
+        terms_url:
+          title: terms_url
+          type: string
+          description: The URL where the terms are hosted.
+      example:
+        terms_url: terms_url
+        terms_id: terms_id
+    PostApiTermsRequest:
+      title: PostApiTermsRequest
+      required:
+        - terms_id
+      type: object
+      properties:
+        terms_id:
+          title: terms_id
+          type: string
+          description: The ID of the terms which are being accepted.
+          example: TOS_2024_04_20
+      example:
+        terms_id: TOS_2024_04_20
+    Description:
+      title: Description
+      type: object
+      properties:
+        text:
+          title: text
+          type: string
+          description: The generated description for the provided image.
+          example: 'A meticulously illustrated cat with striped patterns, sitting upright. The cat''s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image.'
+      example:
+        text: 'A meticulously illustrated cat with striped patterns, sitting upright. The cat''s eyes are a captivating shade of yellow, and it appears to be gazing intently at something. The background consists of abstract, swirling patterns in shades of black, white, and beige, creating an almost fluid or wavy appearance. The cat is positioned in the foreground, with the background elements fading into the distance, giving a sense of depth to the image.'
+    AspectRatio:
+      title: AspectRatio
+      enum:
+        - ASPECT_10_16
+        - ASPECT_16_10
+        - ASPECT_9_16
+        - ASPECT_16_9
+        - ASPECT_3_2
+        - ASPECT_2_3
+        - ASPECT_4_3
+        - ASPECT_3_4
+        - ASPECT_1_1
+        - ASPECT_1_3
+        - ASPECT_3_1
+      type: string
+      description: '(Cannot be used in conjunction with resolution) The aspect ratio to use for image generation, which determines the image''s resolution. Defaults to ASPECT_1_1.'
+      externalDocs:
+        url: https://docs.ideogram.ai/usage/advanced-prompting/aspect-ratios
+      example: ASPECT_10_16
+    MagicPromptOption:
+      title: MagicPromptOption
+      enum:
+        - AUTO
+        - ON
+        - OFF
+      type: string
+      description: Determine if MagicPrompt should be used in generating the request or not
+      default: AUTO
+      externalDocs:
+        url: https://docs.ideogram.ai/using-ideogram/ideogram-features/magic-prompt
+      example: ON
+    Seed:
+      title: Seed
+      maximum: 2147483647
+      minimum: 0
+      type: integer
+      example: 12345
+    StyleType:
+      title: StyleType
+      enum:
+        - AUTO
+        - GENERAL
+        - REALISTIC
+        - DESIGN
+        - RENDER_3D
+        - ANIME
+      type: string
+      description: The style type to generate with; this is only applicable for models V_2 and above and should not be specified for model versions V_1.
+      example: REALISTIC
+    Resolution:
+      title: Resolution
+      enum:
+        - RESOLUTION_512_1536
+        - RESOLUTION_576_1408
+        - RESOLUTION_576_1472
+        - RESOLUTION_576_1536
+        - RESOLUTION_640_1024
+        - RESOLUTION_640_1344
+        - RESOLUTION_640_1408
+        - RESOLUTION_640_1472
+        - RESOLUTION_640_1536
+        - RESOLUTION_704_1152
+        - RESOLUTION_704_1216
+        - RESOLUTION_704_1280
+        - RESOLUTION_704_1344
+        - RESOLUTION_704_1408
+        - RESOLUTION_704_1472
+        - RESOLUTION_720_1280
+        - RESOLUTION_736_1312
+        - RESOLUTION_768_1024
+        - RESOLUTION_768_1088
+        - RESOLUTION_768_1152
+        - RESOLUTION_768_1216
+        - RESOLUTION_768_1232
+        - RESOLUTION_768_1280
+        - RESOLUTION_768_1344
+        - RESOLUTION_832_960
+        - RESOLUTION_832_1024
+        - RESOLUTION_832_1088
+        - RESOLUTION_832_1152
+        - RESOLUTION_832_1216
+        - RESOLUTION_832_1248
+        - RESOLUTION_864_1152
+        - RESOLUTION_896_960
+        - RESOLUTION_896_1024
+        - RESOLUTION_896_1088
+        - RESOLUTION_896_1120
+        - RESOLUTION_896_1152
+        - RESOLUTION_960_832
+        - RESOLUTION_960_896
+        - RESOLUTION_960_1024
+        - RESOLUTION_960_1088
+        - RESOLUTION_1024_640
+        - RESOLUTION_1024_768
+        - RESOLUTION_1024_832
+        - RESOLUTION_1024_896
+        - RESOLUTION_1024_960
+        - RESOLUTION_1024_1024
+        - RESOLUTION_1088_768
+        - RESOLUTION_1088_832
+        - RESOLUTION_1088_896
+        - RESOLUTION_1088_960
+        - RESOLUTION_1120_896
+        - RESOLUTION_1152_704
+        - RESOLUTION_1152_768
+        - RESOLUTION_1152_832
+        - RESOLUTION_1152_864
+        - RESOLUTION_1152_896
+        - RESOLUTION_1216_704
+        - RESOLUTION_1216_768
+        - RESOLUTION_1216_832
+        - RESOLUTION_1232_768
+        - RESOLUTION_1248_832
+        - RESOLUTION_1280_704
+        - RESOLUTION_1280_720
+        - RESOLUTION_1280_768
+        - RESOLUTION_1280_800
+        - RESOLUTION_1312_736
+        - RESOLUTION_1344_640
+        - RESOLUTION_1344_704
+        - RESOLUTION_1344_768
+        - RESOLUTION_1408_576
+        - RESOLUTION_1408_640
+        - RESOLUTION_1408_704
+        - RESOLUTION_1472_576
+        - RESOLUTION_1472_640
+        - RESOLUTION_1472_704
+        - RESOLUTION_1536_512
+        - RESOLUTION_1536_576
+        - RESOLUTION_1536_640
+      type: string
+      description: '(For model_version for 2.0 only, cannot be used in conjunction with aspect_ratio) The resolution to use for image generation, represented in width x height. If not specified, defaults to using aspect_ratio.'
+      example: RESOLUTION_1024_1024
+    ColorPaletteWithPresetNameOrMembers:
+      title: ColorPaletteWithPresetNameOrMembers
+      oneOf:
+        - $ref: '#/components/schemas/ColorPaletteWithPresetName'
+        - $ref: '#/components/schemas/ColorPaletteWithMembers'
+      description: 'A color palette for generation, must EITHER be specified via one of the presets (name) or explicitly via hexadecimal representations of the color with optional weights (members).'
+    ColorPaletteWithPresetName:
+      title: ColorPaletteWithPresetName
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/ColorPalettePresetName'
+    ColorPalettePresetName:
+      title: ColorPalettePresetName
+      enum:
+        - EMBER
+        - FRESH
+        - JUNGLE
+        - MAGIC
+        - MELON
+        - MOSAIC
+        - PASTEL
+        - ULTRAMARINE
+      type: string
+      description: A color palette preset value
+      example: PASTEL
+    ColorPaletteWithMembers:
+      title: ColorPaletteWithMembers
+      required:
+        - members
+      type: object
+      properties:
+        members:
+          title: ColorPaletteMembers
+          maxItems: 10
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/ColorPaletteMember'
+          description: A list of ColorPaletteMembers that define the color palette.
+      description: A color palette represented only via its members
+    ColorPaletteMembers:
+      title: ColorPaletteMembers
+      maxItems: 10
+      minItems: 1
+      type: array
+      items:
+        $ref: '#/components/schemas/ColorPaletteMember'
+      description: A list of ColorPaletteMembers that define the color palette.
+    ColorPaletteMember:
+      title: ColorPaletteMember
+      required:
+        - color_hex
+        - color_weight
+      type: object
+      properties:
+        color_hex:
+          title: color_hex
+          pattern: '^#(?:[0-9a-fA-F]{3}){1,2}$'
+          type: string
+          description: The hexadecimal representation of the color with an optional chosen weight
+          example: '#FFFFFF'
+        color_weight:
+          title: color_weight
+          maximum: 1.0
+          minimum: 0.05
+          type: number
+          description: The weight of the color in the color palette.
+          example: 0.25
+      description: A member of a color palette.
+    Price:
+      title: Price
+      required:
+        - amount
+        - currency_code
+      type: object
+      properties:
+        currency_code:
+          title: currency_code
+          type: string
+          description: The ISO 4217 currency code for the price object.
+          example: USD
+        amount:
+          title: amount
+          type: number
+          description: 'The amount of the currency in the common denomination. For example, in USD this is cents.'
+          example: 1050
+      description: Represents a price.
+      example:
+        amount: 1050
+        currency_code: USD
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      description: API key for access control. Use in the header with the name \"Api-Key\"
+      name: Api-Key
+      in: header
+      x-apikeyInfoFunc: external_api.generated.openapi.controllers.security_controller.info_from_ApiKeyAuth
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-bearerInfoFunc: external_api.generated.openapi.controllers.security_controller.info_from_BearerAuth
+security:
+  - ApiKeyAuth: [ ]
+tags:
+  - name: generate
+    description: All things related to generating content.
+    externalDocs:
+      description: Find out more
+      url: https://docs.ideogram.ai
+  - name: manage
+    description: Content related to managing API account and API access
+    externalDocs:
+      description: Find out more
+      url: https://docs.ideogram.ai
+  - name: vision
+    description: Operations related to understanding visual content
+    externalDocs:
+      description: Find out more
+      url: https://docs.ideogram.ai
