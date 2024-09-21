@@ -28,8 +28,12 @@ public readonly record struct AnyOfData(
                     ? Hint.OneOf
                     : Hint.AllOf))
             .ToList();
-        var useSmartNames = children.All(x => x.Schema.Reference != null);
         var className = context.Id.ToClassName();
+        var useSmartNames = children.All(x =>
+            x.Schema.Reference != null &&
+            !string.IsNullOrWhiteSpace(SmartNamedAnyOfNames.ComputeSmartName(
+                (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
+                className)));
         
         return new AnyOfData(
             SubType: context.IsAnyOf
