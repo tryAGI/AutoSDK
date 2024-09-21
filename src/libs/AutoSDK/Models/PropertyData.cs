@@ -1,4 +1,3 @@
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Serialization.Json;
 
@@ -9,6 +8,8 @@ public readonly record struct PropertyData(
     string Name,
     TypeData Type,
     bool IsRequired,
+    bool IsReadOnly,
+    bool IsWriteOnly,
     bool IsMultiPartFormDataFilename,
     Settings Settings,
     string? DefaultValue,
@@ -21,6 +22,8 @@ public readonly record struct PropertyData(
         Name: string.Empty,
         Type: TypeData.Default,
         IsRequired: false,
+        IsReadOnly: false,
+        IsWriteOnly: false,
         IsMultiPartFormDataFilename: false,
         DefaultValue: null,
         IsDeprecated: false,
@@ -49,7 +52,9 @@ public readonly record struct PropertyData(
             ? new HashSet<string>(context.Parent.Schema.Required)
             : [];
         
-        var isRequired = requiredProperties.Contains(propertyName);
+        var isRequired =
+            requiredProperties.Contains(propertyName);// &&
+            //context.Schema is { WriteOnly: false };
         // Special case for enums with a single value.
         if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
         {
@@ -61,6 +66,8 @@ public readonly record struct PropertyData(
             Name: name,
             Type: type,
             IsRequired: isRequired,
+            IsReadOnly: context.Schema.ReadOnly,
+            IsWriteOnly: context.Schema.WriteOnly,
             IsMultiPartFormDataFilename: false,
             Settings: context.Settings,
             IsDeprecated: context.Schema.Deprecated,

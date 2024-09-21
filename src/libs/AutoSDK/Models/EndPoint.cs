@@ -98,7 +98,7 @@ public readonly record struct EndPoint(
                     ? requestProperty.Name
                     : $"request{requestProperty.Name.ToPropertyName()}",
                 Type = requestProperty.Type,
-                IsRequired = requestProperty.IsRequired,
+                IsRequired = requestProperty.IsRequired,//  is { IsRequired: true, IsReadOnly: false },
                 IsMultiPartFormDataFilename = requestProperty.IsMultiPartFormDataFilename,
                 DefaultValue = requestProperty.DefaultValue,
                 IsDeprecated = requestProperty.IsDeprecated,

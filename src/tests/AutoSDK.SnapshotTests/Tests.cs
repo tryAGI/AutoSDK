@@ -51,6 +51,8 @@ public partial class Tests
     [DataRow("", "heygen.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("", "instill.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "instill.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "ideogram.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "ideogram.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")

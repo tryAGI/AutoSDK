@@ -26,6 +26,7 @@ public partial class DataTests
     [DataRow("twitch.json")]
     [DataRow("heygen.yaml")]
     [DataRow("instill.yaml")]
+    [DataRow("ideogram.yaml")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
