@@ -40,10 +40,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievalStrategy")]
-        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy.Default;
 
         /// <summary>
         /// Default Value: 1

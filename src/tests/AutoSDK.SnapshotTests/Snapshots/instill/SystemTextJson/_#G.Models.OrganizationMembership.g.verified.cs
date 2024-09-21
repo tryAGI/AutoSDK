@@ -26,28 +26,23 @@ namespace G
         public required string Role { get; set; }
 
         /// <summary>
-        /// Organizations group several users. As entities, they can own resources such<br/>
-        /// as pipelines or releases.
+        /// State of the membership.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        public global::G.Organization? Organization { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
+        public global::G.MembershipState? State { get; set; }
 
         /// <summary>
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
+        /// User information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         public global::G.User? User { get; set; }
 
         /// <summary>
-        /// MembershipState describes the state of a user membership to an organization.<br/>
-        ///  - MEMBERSHIP_STATE_ACTIVE: Active.<br/>
-        ///  - MEMBERSHIP_STATE_PENDING: Pending, i.e., a request has been sent to the user to join an<br/>
-        /// organization.
+        /// Organization information.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
-        public global::G.MembershipState? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
+        public global::G.Organization? Organization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

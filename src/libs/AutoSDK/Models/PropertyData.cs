@@ -36,6 +36,17 @@ public readonly record struct PropertyData(
         context = context ?? throw new ArgumentNullException(nameof(context));
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var type = context.TypeData ?? throw new InvalidOperationException("TypeData is required.");
+        
+        // OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
+        if (context.HasAllOfTypeForMetadata())
+        {
+            type = type.SubTypes[0] with
+            {
+                CSharpType = type.CSharpType.Contains("?")
+                    ? type.SubTypes[0].CSharpTypeWithNullability
+                    : type.SubTypes[0].CSharpTypeWithoutNullability,
+            };
+        }
 
         var name = propertyName.ToPropertyName();
         
@@ -237,7 +248,7 @@ public readonly record struct PropertyData(
     }
     
     public string ParameterDefaultValue =>
-        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOf
+        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOfLike
         ? "default"
         : DefaultValue;
 }

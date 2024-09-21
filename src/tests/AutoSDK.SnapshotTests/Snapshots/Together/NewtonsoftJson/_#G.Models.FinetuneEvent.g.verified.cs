@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FinetuneEvent.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
-        public global::G.AnyOf<global::G.FinetuneEventLevels?>? Level { get; set; }
+        public global::G.FinetuneEventLevels? Level { get; set; }
 
         /// <summary>
         /// 

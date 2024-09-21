@@ -135,16 +135,13 @@ namespace G
         /// <param name="updateTime">
         /// Update time.
         /// </param>
-        /// <param name="permission">
-        /// Permission defines how a resource can be used.
+        /// <param name="owner">
+        /// The user that owns the organization.
         /// </param>
         /// <param name="profile">
-        /// OrganizationProfile describes the public data of an organization.
+        /// Profile.
         /// </param>
-        /// <param name="owner">
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
-        /// </param>
+        /// <param name="permission"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateOrganizationResponse> UpdateOrganizationAsync(
@@ -155,8 +152,8 @@ namespace G
             string? id = default,
             global::System.DateTime? createTime = default,
             global::System.DateTime? updateTime = default,
-            global::G.Permission? permission = default,
             global::G.User? owner = default,
+            global::G.Permission? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.Organization
@@ -166,9 +163,9 @@ namespace G
                 Id = id,
                 CreateTime = createTime,
                 UpdateTime = updateTime,
-                Permission = permission,
-                Profile = profile,
                 Owner = owner,
+                Profile = profile,
+                Permission = permission,
             };
 
             return await UpdateOrganizationAsync(

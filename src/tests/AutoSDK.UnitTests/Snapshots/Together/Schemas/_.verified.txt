@@ -354,7 +354,7 @@
   FinetuneEvent(class),
     FinetuneEventObject(enum),
     CreatedAt(string),
-    Level(anyOf),
+    Level_AllOf1Wrapped(anyOf),
       FinetuneEventLevels(ref),
     Message(string),
     FinetuneEventType(ref),

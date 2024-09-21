@@ -47,7 +47,7 @@ namespace G
         public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
-        /// UserProfile describes the public data of a user.
+        /// Profile.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("profile")]
         public global::G.UserProfile? Profile { get; set; }

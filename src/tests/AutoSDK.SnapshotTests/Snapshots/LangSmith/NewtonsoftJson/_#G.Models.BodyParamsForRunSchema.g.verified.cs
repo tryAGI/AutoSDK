@@ -126,10 +126,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RunSelect>? Select { get; set; }
 
         /// <summary>
-        /// Enum for run start date order.
+        /// Default Value: desc
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("order")]
-        public global::G.RunDateOrder? Order { get; set; }
+        public global::G.RunDateOrder? Order { get; set; } = global::G.RunDateOrder.Desc;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

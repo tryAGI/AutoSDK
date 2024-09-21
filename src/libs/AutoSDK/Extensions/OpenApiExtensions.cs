@@ -195,6 +195,40 @@ public static class OpenApiExtensions
         return path;
     }
     
+    /// <summary>
+    /// OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
+    /// </summary>
+    /// <param name="context"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static bool HasAllOfTypeForMetadata(
+        this SchemaContext context)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        
+        return context.Schema.HasAllOfTypeForMetadata(propertyName: context.PropertyName);
+    }
+
+    /// <summary>
+    /// OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
+    /// </summary>
+    /// <param name="schema"></param>
+    /// <param name="propertyName"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static bool HasAllOfTypeForMetadata(
+        this OpenApiSchema schema,
+        string? propertyName)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+        
+        return propertyName is not null &&
+               (schema.AnyOf?.Count == 1 ||
+               schema.AllOf?.Count == 1 ||
+               schema.OneOf?.Count == 1) &&
+               schema.Properties.Count == 0;
+    }
+    
     public static string? GetDefaultValue(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));

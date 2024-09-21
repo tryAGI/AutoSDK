@@ -87,7 +87,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
-        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOf: false } && !property.IsRequired) ? "[global::System.Obsolete(\"This property marked as deprecated.\")]" : " ")}
+        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? "[global::System.Obsolete(\"This property marked as deprecated.\")]" : " ")}
         public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 

@@ -152,14 +152,11 @@ namespace G
         /// <param name="cookieToken">
         /// Console cookie token.
         /// </param>
-        /// <param name="profile">
-        /// UserProfile describes the public data of a user.
-        /// </param>
         /// <param name="onboardingStatus">
-        /// OnboardingStatus describes the status of the user onboarding process.<br/>
-        ///  - ONBOARDING_STATUS_IN_PROGRESS: In progress, i.e., the user has initiated the onboarding process<br/>
-        /// but has not yet completed it.<br/>
-        ///  - ONBOARDING_STATUS_COMPLETED: Completed.
+        /// Onboarding Status.
+        /// </param>
+        /// <param name="profile">
+        /// Profile.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -174,8 +171,8 @@ namespace G
             string? customerId = default,
             string? role = default,
             string? cookieToken = default,
-            global::G.UserProfile? profile = default,
             global::G.OnboardingStatus? onboardingStatus = default,
+            global::G.UserProfile? profile = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.AuthenticatedUser
@@ -190,8 +187,8 @@ namespace G
                 Role = role,
                 NewsletterSubscription = newsletterSubscription,
                 CookieToken = cookieToken,
-                Profile = profile,
                 OnboardingStatus = onboardingStatus,
+                Profile = profile,
             };
 
             return await PatchAuthenticatedUserAsync(

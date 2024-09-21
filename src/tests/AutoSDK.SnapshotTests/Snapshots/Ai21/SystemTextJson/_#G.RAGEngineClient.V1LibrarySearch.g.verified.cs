@@ -108,7 +108,7 @@ namespace G
         /// <param name="labels"></param>
         /// <param name="fileIds"></param>
         /// <param name="retrievalStrategy">
-        /// An enumeration.
+        /// Default Value: default
         /// </param>
         /// <param name="maxNeighbors">
         /// Default Value: 1
@@ -123,7 +123,7 @@ namespace G
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
-            global::G.RetrievalStrategy? retrievalStrategy = default,
+            global::G.RetrievalStrategy? retrievalStrategy = global::G.RetrievalStrategy.Default,
             int? maxNeighbors = 1,
             double? retrievalSimilarityThreshold = default,
             double? hybridSearchAlpha = default,

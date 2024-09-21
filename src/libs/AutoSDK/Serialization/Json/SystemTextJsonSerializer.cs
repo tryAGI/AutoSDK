@@ -83,7 +83,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
             { ShortCSharpTypeWithoutNullability: "byte" } => "Byte",
             { ShortCSharpTypeWithoutNullability: "object" } => "Object",
             _ => shortTypeWithoutSubTypes,
-        } + (typeData is { IsComponent: true, IsAnyOf: true }
+        } + (typeData is { IsComponent: true, IsAnyOfLike: true }
                    ? string.Empty
                    : string.Concat(typeData.SubTypes.Select(x => GetContextType(x, makeNullableRootIfValueType: false)))) 
             + (typeData.IsBase64 || typeData.IsBinary

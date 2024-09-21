@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetAuthenticatedUserSubscriptionResponse
     {
         /// <summary>
-        /// UserSubscription details describe the plan (i.e., features) a user has access to.
+        /// The subscription resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription")]
         public global::G.UserSubscription? Subscription { get; set; }

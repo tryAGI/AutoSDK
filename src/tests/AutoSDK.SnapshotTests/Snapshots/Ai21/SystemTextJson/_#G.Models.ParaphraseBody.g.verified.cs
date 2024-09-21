@@ -17,11 +17,11 @@ namespace G
         public required string Text { get; set; }
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: general
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StyleTypeJsonConverter))]
-        public global::G.StyleType? Style { get; set; }
+        public global::G.StyleType? Style { get; set; } = global::G.StyleType.General;
 
         /// <summary>
         /// Default Value: 0

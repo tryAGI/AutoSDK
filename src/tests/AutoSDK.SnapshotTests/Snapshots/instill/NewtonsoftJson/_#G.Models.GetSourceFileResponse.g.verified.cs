@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetSourceFileResponse
     {
         /// <summary>
-        /// The SourceFile message represents a source file in the artifact system.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sourceFile")]
         public global::G.SourceFile? SourceFile { get; set; }

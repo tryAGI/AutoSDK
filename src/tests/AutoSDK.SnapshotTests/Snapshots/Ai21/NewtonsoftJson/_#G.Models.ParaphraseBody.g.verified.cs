@@ -16,10 +16,10 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
-        public global::G.StyleType? Style { get; set; }
+        public global::G.StyleType? Style { get; set; } = global::G.StyleType.General;
 
         /// <summary>
         /// Default Value: 0

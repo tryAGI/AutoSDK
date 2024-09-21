@@ -5453,7 +5453,6 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverterFactory3(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory1(),
                     new global::G.JsonConverters.OrgRulesetConditionsJsonConverter(),
                     new global::G.JsonConverters.AllOfJsonConverterFactory2(),
                     new global::G.JsonConverters.RepositoryRuleJsonConverter(),

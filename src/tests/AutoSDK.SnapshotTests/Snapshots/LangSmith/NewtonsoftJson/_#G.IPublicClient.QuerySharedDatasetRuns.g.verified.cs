@@ -47,7 +47,7 @@ namespace G
         /// Default Value: [id, name, run_type, start_time, end_time, status, error, extra, events, inputs, outputs, parent_run_id, manifest_id, manifest_s3_id, session_id, serialized, reference_example_id, total_tokens, prompt_tokens, completion_tokens, total_cost, prompt_cost, completion_cost, price_model_id, first_token_time, trace_id, dotted_order, last_queued_at, feedback_stats, child_run_ids, parent_run_ids, tags, in_dataset, app_path, share_token, trace_tier, trace_first_received_at, ttl_seconds, trace_upgrade]
         /// </param>
         /// <param name="order">
-        /// Enum for run start date order.
+        /// Default Value: desc
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -72,7 +72,7 @@ namespace G
             global::G.AnyOf<string, object>? cursor = default,
             int? limit = 100,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
-            global::G.RunDateOrder? order = default,
+            global::G.RunDateOrder? order = global::G.RunDateOrder.Desc,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

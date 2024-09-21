@@ -32,7 +32,7 @@ namespace G
         public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
 
         /// <summary>
-        /// Timedelta input.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }

@@ -10,8 +10,7 @@ namespace G
     public sealed partial class GetRepositoryTagResponse
     {
         /// <summary>
-        /// RepositoryTag contains information about the version of some content in a<br/>
-        /// repository.
+        /// The created tag.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         public global::G.RepositoryTag? Tag { get; set; }

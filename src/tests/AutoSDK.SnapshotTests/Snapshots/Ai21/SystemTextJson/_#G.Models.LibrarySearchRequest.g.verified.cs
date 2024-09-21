@@ -41,11 +41,11 @@ namespace G
         public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter))]
-        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy.Default;
 
         /// <summary>
         /// Default Value: 1

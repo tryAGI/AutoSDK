@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetOrganizationSubscriptionAdminResponse
     {
         /// <summary>
-        /// OrganizationSubscription details describe the plan (i.e., features) an organization has access to.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription")]
         public global::G.OrganizationSubscription? Subscription { get; set; }

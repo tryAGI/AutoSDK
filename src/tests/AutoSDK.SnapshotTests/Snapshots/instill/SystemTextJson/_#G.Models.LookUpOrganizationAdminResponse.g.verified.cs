@@ -10,8 +10,7 @@ namespace G
     public sealed partial class LookUpOrganizationAdminResponse
     {
         /// <summary>
-        /// Organizations group several users. As entities, they can own resources such<br/>
-        /// as pipelines or releases.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         public global::G.Organization? Organization { get; set; }

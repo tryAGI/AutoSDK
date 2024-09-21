@@ -72,8 +72,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("countPenalty")]
-        public global::G.Penalty? CountPenalty { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
+        public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("frequencyPenalty")]
-        public global::G.Penalty? FrequencyPenalty { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("countPenalty")]
+        public global::G.Penalty? CountPenalty { get; set; }
 
         /// <summary>
         /// 

@@ -60,11 +60,11 @@ namespace G
         public global::G.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
-        public global::G.AccessScope? AccessScope { get; set; }
+        public global::G.AccessScope? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 

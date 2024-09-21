@@ -55,11 +55,11 @@ namespace G
         public global::G.Mode? Mode { get; set; }
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter))]
-        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy.Default;
 
         /// <summary>
         /// 

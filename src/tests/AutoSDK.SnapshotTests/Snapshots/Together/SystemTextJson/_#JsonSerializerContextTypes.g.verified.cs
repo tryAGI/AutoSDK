@@ -530,62 +530,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.FinetuneEventLevels?>? Type129 { get; set; }
+        public global::G.FinetuneEventLevels? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneEventLevels? Type130 { get; set; }
+        public global::G.FinetuneEventType? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneEventType? Type131 { get; set; }
+        public global::G.FinetuneList? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneList? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FinetuneResponse>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FinetuneResponse>? Type133 { get; set; }
+        public global::G.FinetuneListEvents? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneListEvents? Type134 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FineTuneEvent2>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FineTuneEvent2>? Type135 { get; set; }
+        public global::G.FineTuneEvent2? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEvent2? Type136 { get; set; }
+        public global::G.FineTuneEventObject2? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEventObject2? Type137 { get; set; }
+        public global::G.FineTuneEventLevel? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEventLevel? Type138 { get; set; }
+        public global::G.FineTuneEventType2? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEventType2? Type139 { get; set; }
+        public global::G.FinetuneDownloadResult? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneDownloadResult? Type140 { get; set; }
+        public global::G.FinetuneDownloadResultObject? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneDownloadResultObject? Type141 { get; set; }
+        public global::G.Request? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request? Type142 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.Request2? Type143 { get; set; }
+        public global::G.Request2? Type142 { get; set; }
     }
 }

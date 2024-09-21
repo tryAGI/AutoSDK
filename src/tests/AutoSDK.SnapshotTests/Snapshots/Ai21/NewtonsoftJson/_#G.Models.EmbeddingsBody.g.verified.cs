@@ -16,10 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<string> Texts { get; set; } = default!;
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: segment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.EmbedType? Type { get; set; }
+        public global::G.EmbedType? Type { get; set; } = global::G.EmbedType.Segment;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

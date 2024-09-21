@@ -10,10 +10,10 @@ namespace G
     public sealed partial class PostApiSubscriptionResponse
     {
         /// <summary>
-        /// The current recharge settings for the API subscription.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("recharge_settings")]
-        public global::G.RechargeSettings? RechargeSettings { get; set; }
+        public global::G.RechargeSettingsResponse? RechargeSettings { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

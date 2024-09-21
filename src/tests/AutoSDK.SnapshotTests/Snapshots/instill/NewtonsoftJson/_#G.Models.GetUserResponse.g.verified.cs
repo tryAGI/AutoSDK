@@ -10,8 +10,7 @@ namespace G
     public sealed partial class GetUserResponse
     {
         /// <summary>
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
+        /// The user resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.User? User { get; set; }

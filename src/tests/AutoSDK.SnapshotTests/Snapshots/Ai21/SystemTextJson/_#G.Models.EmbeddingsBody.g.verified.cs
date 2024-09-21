@@ -17,11 +17,11 @@ namespace G
         public required global::System.Collections.Generic.IList<string> Texts { get; set; }
 
         /// <summary>
-        /// An enumeration.
+        /// Default Value: segment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedTypeJsonConverter))]
-        public global::G.EmbedType? Type { get; set; }
+        public global::G.EmbedType? Type { get; set; } = global::G.EmbedType.Segment;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

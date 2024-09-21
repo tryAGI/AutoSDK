@@ -5437,7 +5437,6 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory3),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.OrgRulesetConditionsJsonConverter),
             typeof(global::G.JsonConverters.AllOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.RepositoryRuleJsonConverter),

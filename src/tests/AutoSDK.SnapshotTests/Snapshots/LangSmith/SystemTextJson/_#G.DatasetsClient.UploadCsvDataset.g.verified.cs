@@ -68,7 +68,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent(request.Name?.Value1?.ToString() ?? request.Name?.Value2?.ToString() ?? string.Empty),
                     name: "name");
             } 
-            if (request.DataType != default)
+            if (request.DataType != global::G.DataType.Kv)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.DataType?.ToValueString()}"),
@@ -142,7 +142,7 @@ namespace G
         /// <param name="inputKeys"></param>
         /// <param name="name"></param>
         /// <param name="dataType">
-        /// Enum for dataset data types.
+        /// Default Value: kv
         /// </param>
         /// <param name="outputKeys"></param>
         /// <param name="description"></param>
@@ -153,7 +153,7 @@ namespace G
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
             global::G.AnyOf<string, object>? name = default,
-            global::G.DataType? dataType = default,
+            global::G.DataType? dataType = global::G.DataType.Kv,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
             global::G.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -16,10 +16,7 @@ namespace G
         public string? Uid { get; set; }
 
         /// <summary>
-        /// - CHUNK_TYPE_TEXT: text<br/>
-        ///  - CHUNK_TYPE_IMAGE: image<br/>
-        ///  - CHUNK_TYPE_AUDIO: audio<br/>
-        ///  - CHUNK_TYPE_VIDEO: video
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.GetFileCatalogResponseChunkType? Type { get; set; }

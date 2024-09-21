@@ -150,7 +150,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AssistantObject> ModifyAssistantAsync(
             string assistantId,
-            global::G.AnyOf<string>? model = default,
+            string? model = default,
             string? name = default,
             string? description = default,
             string? instructions = default,

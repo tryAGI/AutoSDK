@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CreateFineTuningJobRequestIntegration.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -14,8 +12,8 @@ namespace G
         /// <summary>
         /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.CreateFineTuningJobRequestIntegrationType?> Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.CreateFineTuningJobRequestIntegrationType? Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>

@@ -850,2214 +850,2206 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.CreateFineTuningJobRequestIntegrationType?>? Type209 { get; set; }
+        public global::G.CreateFineTuningJobRequestIntegrationType? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateFineTuningJobRequestIntegrationType? Type210 { get; set; }
+        public global::G.CreateFineTuningJobRequestIntegrationWandb? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateFineTuningJobRequestIntegrationWandb? Type211 { get; set; }
+        public global::G.ListFineTuningJobEventsResponse? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFineTuningJobEventsResponse? Type212 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FineTuningJobEvent>? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FineTuningJobEvent>? Type213 { get; set; }
+        public global::G.FineTuningJobEvent? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobEvent? Type214 { get; set; }
+        public global::G.FineTuningJobEventLevel? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobEventLevel? Type215 { get; set; }
+        public global::G.FineTuningJobEventObject? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobEventObject? Type216 { get; set; }
+        public global::G.ListFineTuningJobEventsResponseObject? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFineTuningJobEventsResponseObject? Type217 { get; set; }
+        public global::G.ListFineTuningJobCheckpointsResponse? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFineTuningJobCheckpointsResponse? Type218 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FineTuningJobCheckpoint>? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FineTuningJobCheckpoint>? Type219 { get; set; }
+        public global::G.FineTuningJobCheckpoint? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobCheckpoint? Type220 { get; set; }
+        public global::G.FineTuningJobCheckpointMetrics? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobCheckpointMetrics? Type221 { get; set; }
+        public global::G.FineTuningJobCheckpointObject? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuningJobCheckpointObject? Type222 { get; set; }
+        public global::G.ListFineTuningJobCheckpointsResponseObject? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFineTuningJobCheckpointsResponseObject? Type223 { get; set; }
+        public global::G.CreateEmbeddingRequest? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingRequest? Type224 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateEmbeddingRequestModel?>? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateEmbeddingRequestModel?>? Type225 { get; set; }
+        public global::G.CreateEmbeddingRequestModel? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingRequestModel? Type226 { get; set; }
+        public global::G.CreateEmbeddingRequestEncodingFormat? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingRequestEncodingFormat? Type227 { get; set; }
+        public global::G.CreateEmbeddingResponse? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingResponse? Type228 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Embedding>? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Embedding>? Type229 { get; set; }
+        public global::G.Embedding? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Embedding? Type230 { get; set; }
+        public global::G.EmbeddingObject? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingObject? Type231 { get; set; }
+        public global::G.CreateEmbeddingResponseObject? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingResponseObject? Type232 { get; set; }
+        public global::G.CreateEmbeddingResponseUsage? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmbeddingResponseUsage? Type233 { get; set; }
+        public global::G.CreateTranscriptionRequest? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionRequest? Type234 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateTranscriptionRequestModel?>? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateTranscriptionRequestModel?>? Type235 { get; set; }
+        public global::G.CreateTranscriptionRequestModel? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionRequestModel? Type236 { get; set; }
+        public global::G.CreateTranscriptionRequestResponseFormat? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionRequestResponseFormat? Type237 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? Type238 { get; set; }
+        public global::G.CreateTranscriptionRequestTimestampGranularitie? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionRequestTimestampGranularitie? Type239 { get; set; }
+        public global::G.CreateTranscriptionResponseJson? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionResponseJson? Type240 { get; set; }
+        public global::G.TranscriptionSegment? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptionSegment? Type241 { get; set; }
+        public float? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type242 { get; set; }
+        public global::G.TranscriptionWord? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptionWord? Type243 { get; set; }
+        public global::G.CreateTranscriptionResponseVerboseJson? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranscriptionResponseVerboseJson? Type244 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptionWord>? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptionWord>? Type245 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? Type246 { get; set; }
+        public global::G.CreateTranslationRequest? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranslationRequest? Type247 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateTranslationRequestModel?>? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateTranslationRequestModel?>? Type248 { get; set; }
+        public global::G.CreateTranslationRequestModel? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranslationRequestModel? Type249 { get; set; }
+        public global::G.CreateTranslationResponseJson? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranslationResponseJson? Type250 { get; set; }
+        public global::G.CreateTranslationResponseVerboseJson? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTranslationResponseVerboseJson? Type251 { get; set; }
+        public global::G.CreateSpeechRequest? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechRequest? Type252 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateSpeechRequestModel?>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateSpeechRequestModel?>? Type253 { get; set; }
+        public global::G.CreateSpeechRequestModel? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechRequestModel? Type254 { get; set; }
+        public global::G.CreateSpeechRequestVoice? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechRequestVoice? Type255 { get; set; }
+        public global::G.CreateSpeechRequestResponseFormat? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechRequestResponseFormat? Type256 { get; set; }
+        public global::G.Upload? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Upload? Type257 { get; set; }
+        public global::G.UploadStatus? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadStatus? Type258 { get; set; }
+        public global::G.UploadObject? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadObject? Type259 { get; set; }
+        public global::G.UploadPart? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadPart? Type260 { get; set; }
+        public global::G.UploadPartObject? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadPartObject? Type261 { get; set; }
+        public global::G.FinetuneChatRequestInput? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneChatRequestInput? Type262 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestSystemMessage, global::G.ChatCompletionRequestUserMessage, global::G.FineTuneChatCompletionRequestAssistantMessage?, global::G.ChatCompletionRequestToolMessage, global::G.ChatCompletionRequestFunctionMessage>>? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestSystemMessage, global::G.ChatCompletionRequestUserMessage, global::G.FineTuneChatCompletionRequestAssistantMessage?, global::G.ChatCompletionRequestToolMessage, global::G.ChatCompletionRequestFunctionMessage>>? Type263 { get; set; }
+        public global::G.OneOf<global::G.ChatCompletionRequestSystemMessage, global::G.ChatCompletionRequestUserMessage, global::G.FineTuneChatCompletionRequestAssistantMessage?, global::G.ChatCompletionRequestToolMessage, global::G.ChatCompletionRequestFunctionMessage>? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.ChatCompletionRequestSystemMessage, global::G.ChatCompletionRequestUserMessage, global::G.FineTuneChatCompletionRequestAssistantMessage?, global::G.ChatCompletionRequestToolMessage, global::G.ChatCompletionRequestFunctionMessage>? Type264 { get; set; }
+        public global::G.FinetuneCompletionRequestInput? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneCompletionRequestInput? Type265 { get; set; }
+        public global::G.RunCompletionUsage? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunCompletionUsage? Type266 { get; set; }
+        public global::G.RunStepCompletionUsage? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepCompletionUsage? Type267 { get; set; }
+        public global::G.AssistantsApiResponseFormatOption? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiResponseFormatOption? Type268 { get; set; }
+        public global::G.AssistantsApiResponseFormatOptionEnum? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiResponseFormatOptionEnum? Type269 { get; set; }
+        public global::G.AssistantObject? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObject? Type270 { get; set; }
+        public global::G.AssistantObjectObject? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObjectObject? Type271 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? Type272 { get; set; }
+        public global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>? Type273 { get; set; }
+        public global::G.AssistantToolsCode? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsCode? Type274 { get; set; }
+        public global::G.AssistantToolsCodeType? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsCodeType? Type275 { get; set; }
+        public global::G.AssistantToolsFileSearch? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFileSearch? Type276 { get; set; }
+        public global::G.AssistantToolsFileSearchType? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFileSearchType? Type277 { get; set; }
+        public global::G.AssistantToolsFileSearchFileSearch? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFileSearchFileSearch? Type278 { get; set; }
+        public global::G.AssistantToolsFunction? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFunction? Type279 { get; set; }
+        public global::G.AssistantToolsFunctionType? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFunctionType? Type280 { get; set; }
+        public global::G.AssistantObjectToolResources? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObjectToolResources? Type281 { get; set; }
+        public global::G.AssistantObjectToolResourcesCodeInterpreter? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObjectToolResourcesCodeInterpreter? Type282 { get; set; }
+        public global::G.AssistantObjectToolResourcesFileSearch? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObjectToolResourcesFileSearch? Type283 { get; set; }
+        public global::G.AssistantObjectMetadata? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantObjectMetadata? Type284 { get; set; }
+        public global::G.CreateAssistantRequest? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequest? Type285 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateAssistantRequestModel?>? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateAssistantRequestModel?>? Type286 { get; set; }
+        public global::G.CreateAssistantRequestModel? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestModel? Type287 { get; set; }
+        public global::G.CreateAssistantRequestToolResources? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResources? Type288 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesCodeInterpreter? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesCodeInterpreter? Type289 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearch? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearch? Type290 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore>? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore>? Type291 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore? Type292 { get; set; }
+        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? Type293 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Type294 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type? Type295 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Type296 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type? Type297 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static? Type298 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreMetadata? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreMetadata? Type299 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVariant1? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVariant1? Type300 { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVariant2? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVariant2? Type301 { get; set; }
+        public global::G.CreateAssistantRequestMetadata? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantRequestMetadata? Type302 { get; set; }
+        public global::G.ModifyAssistantRequest? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyAssistantRequest? Type303 { get; set; }
+        public global::G.ModifyAssistantRequestToolResources? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string>? Type304 { get; set; }
+        public global::G.ModifyAssistantRequestToolResourcesCodeInterpreter? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyAssistantRequestToolResources? Type305 { get; set; }
+        public global::G.ModifyAssistantRequestToolResourcesFileSearch? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyAssistantRequestToolResourcesCodeInterpreter? Type306 { get; set; }
+        public global::G.ModifyAssistantRequestMetadata? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyAssistantRequestToolResourcesFileSearch? Type307 { get; set; }
+        public global::G.DeleteAssistantResponse? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyAssistantRequestMetadata? Type308 { get; set; }
+        public global::G.DeleteAssistantResponseObject? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAssistantResponse? Type309 { get; set; }
+        public global::G.ListAssistantsResponse? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAssistantResponseObject? Type310 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AssistantObject>? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAssistantsResponse? Type311 { get; set; }
+        public global::G.AssistantToolsFileSearchTypeOnly? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AssistantObject>? Type312 { get; set; }
+        public global::G.AssistantToolsFileSearchTypeOnlyType? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFileSearchTypeOnly? Type313 { get; set; }
+        public global::G.TruncationObject? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantToolsFileSearchTypeOnlyType? Type314 { get; set; }
+        public global::G.TruncationObjectType? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TruncationObject? Type315 { get; set; }
+        public global::G.AssistantsApiToolChoiceOption? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TruncationObjectType? Type316 { get; set; }
+        public global::G.AssistantsApiToolChoiceOptionEnum? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiToolChoiceOption? Type317 { get; set; }
+        public global::G.AssistantsNamedToolChoice? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiToolChoiceOptionEnum? Type318 { get; set; }
+        public global::G.AssistantsNamedToolChoiceType? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsNamedToolChoice? Type319 { get; set; }
+        public global::G.AssistantsNamedToolChoiceFunction? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsNamedToolChoiceType? Type320 { get; set; }
+        public global::G.RunObject? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsNamedToolChoiceFunction? Type321 { get; set; }
+        public global::G.RunObjectObject? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObject? Type322 { get; set; }
+        public global::G.RunObjectStatus? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectObject? Type323 { get; set; }
+        public global::G.RunObjectRequiredAction? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectStatus? Type324 { get; set; }
+        public global::G.RunObjectRequiredActionType? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectRequiredAction? Type325 { get; set; }
+        public global::G.RunObjectRequiredActionSubmitToolOutputs? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectRequiredActionType? Type326 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunToolCallObject>? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectRequiredActionSubmitToolOutputs? Type327 { get; set; }
+        public global::G.RunToolCallObject? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RunToolCallObject>? Type328 { get; set; }
+        public global::G.RunToolCallObjectType? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunToolCallObject? Type329 { get; set; }
+        public global::G.RunToolCallObjectFunction? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunToolCallObjectType? Type330 { get; set; }
+        public global::G.RunObjectLastError? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunToolCallObjectFunction? Type331 { get; set; }
+        public global::G.RunObjectLastErrorCode? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectLastError? Type332 { get; set; }
+        public global::G.RunObjectIncompleteDetails? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectLastErrorCode? Type333 { get; set; }
+        public global::G.RunObjectIncompleteDetailsReason? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectIncompleteDetails? Type334 { get; set; }
+        public global::G.RunObjectMetadata? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectIncompleteDetailsReason? Type335 { get; set; }
+        public global::G.CreateRunRequest? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunObjectMetadata? Type336 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateRunRequestModel?>? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRunRequest? Type337 { get; set; }
+        public global::G.CreateRunRequestModel? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateRunRequestModel?>? Type338 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRunRequestModel? Type339 { get; set; }
+        public global::G.CreateMessageRequest? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? Type340 { get; set; }
+        public global::G.CreateMessageRequestRole? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageRequest? Type341 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageRequestRole? Type342 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>? Type343 { get; set; }
+        public global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>? Type344 { get; set; }
+        public global::G.MessageContentImageFileObject? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>? Type345 { get; set; }
+        public global::G.MessageContentImageFileObjectType? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageFileObject? Type346 { get; set; }
+        public global::G.MessageContentImageFileObjectImageFile? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageFileObjectType? Type347 { get; set; }
+        public global::G.MessageContentImageFileObjectImageFileDetail? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageFileObjectImageFile? Type348 { get; set; }
+        public global::G.MessageContentImageUrlObject? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageFileObjectImageFileDetail? Type349 { get; set; }
+        public global::G.MessageContentImageUrlObjectType? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageUrlObject? Type350 { get; set; }
+        public global::G.MessageContentImageUrlObjectImageUrl? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageUrlObjectType? Type351 { get; set; }
+        public global::G.MessageContentImageUrlObjectImageUrlDetail? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageUrlObjectImageUrl? Type352 { get; set; }
+        public global::G.MessageRequestContentTextObject? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentImageUrlObjectImageUrlDetail? Type353 { get; set; }
+        public global::G.MessageRequestContentTextObjectType? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageRequestContentTextObject? Type354 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageRequestContentTextObjectType? Type355 { get; set; }
+        public global::G.CreateMessageRequestAttachment? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? Type356 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>>? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageRequestAttachment? Type357 { get; set; }
+        public global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>>? Type358 { get; set; }
+        public global::G.CreateMessageRequestMetadata? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>? Type359 { get; set; }
+        public global::G.CreateRunRequestMetadata? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageRequestMetadata? Type360 { get; set; }
+        public global::G.ListRunsResponse? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRunRequestMetadata? Type361 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunObject>? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRunsResponse? Type362 { get; set; }
+        public global::G.ModifyRunRequest? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RunObject>? Type363 { get; set; }
+        public global::G.ModifyRunRequestMetadata? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyRunRequest? Type364 { get; set; }
+        public global::G.SubmitToolOutputsRunRequest? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyRunRequestMetadata? Type365 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutput>? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SubmitToolOutputsRunRequest? Type366 { get; set; }
+        public global::G.SubmitToolOutputsRunRequestToolOutput? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutput>? Type367 { get; set; }
+        public global::G.CreateThreadAndRunRequest? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SubmitToolOutputsRunRequestToolOutput? Type368 { get; set; }
+        public global::G.CreateThreadRequest? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequest? Type369 { get; set; }
+        public global::G.CreateThreadRequestToolResources? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequest? Type370 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesCodeInterpreter? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResources? Type371 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearch? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesCodeInterpreter? Type372 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateThreadRequestToolResourcesFileSearchVectorStore>? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearch? Type373 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStore? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateThreadRequestToolResourcesFileSearchVectorStore>? Type374 { get; set; }
+        public global::G.OneOf<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStore? Type375 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? Type376 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Type377 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type? Type378 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Type379 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type? Type380 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreMetadata? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static? Type381 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVariant1? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreMetadata? Type382 { get; set; }
+        public global::G.CreateThreadRequestToolResourcesFileSearchVariant2? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVariant1? Type383 { get; set; }
+        public global::G.CreateThreadRequestMetadata? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestToolResourcesFileSearchVariant2? Type384 { get; set; }
+        public global::G.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadRequestMetadata? Type385 { get; set; }
+        public global::G.CreateThreadAndRunRequestModel? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? Type386 { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResources? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestModel? Type387 { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestToolResources? Type388 { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResourcesFileSearch? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type389 { get; set; }
+        public global::G.CreateThreadAndRunRequestMetadata? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestToolResourcesFileSearch? Type390 { get; set; }
+        public global::G.ThreadObject? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestMetadata? Type391 { get; set; }
+        public global::G.ThreadObjectObject? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObject? Type392 { get; set; }
+        public global::G.ThreadObjectToolResources? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObjectObject? Type393 { get; set; }
+        public global::G.ThreadObjectToolResourcesCodeInterpreter? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObjectToolResources? Type394 { get; set; }
+        public global::G.ThreadObjectToolResourcesFileSearch? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObjectToolResourcesCodeInterpreter? Type395 { get; set; }
+        public global::G.ThreadObjectMetadata? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObjectToolResourcesFileSearch? Type396 { get; set; }
+        public global::G.ModifyThreadRequest? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadObjectMetadata? Type397 { get; set; }
+        public global::G.ModifyThreadRequestToolResources? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyThreadRequest? Type398 { get; set; }
+        public global::G.ModifyThreadRequestToolResourcesCodeInterpreter? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyThreadRequestToolResources? Type399 { get; set; }
+        public global::G.ModifyThreadRequestToolResourcesFileSearch? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyThreadRequestToolResourcesCodeInterpreter? Type400 { get; set; }
+        public global::G.ModifyThreadRequestMetadata? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyThreadRequestToolResourcesFileSearch? Type401 { get; set; }
+        public global::G.DeleteThreadResponse? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyThreadRequestMetadata? Type402 { get; set; }
+        public global::G.DeleteThreadResponseObject? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteThreadResponse? Type403 { get; set; }
+        public global::G.ListThreadsResponse? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteThreadResponseObject? Type404 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ThreadObject>? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListThreadsResponse? Type405 { get; set; }
+        public global::G.MessageObject? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ThreadObject>? Type406 { get; set; }
+        public global::G.MessageObjectObject? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObject? Type407 { get; set; }
+        public global::G.MessageObjectStatus? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectObject? Type408 { get; set; }
+        public global::G.MessageObjectIncompleteDetails? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectStatus? Type409 { get; set; }
+        public global::G.MessageObjectIncompleteDetailsReason? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectIncompleteDetails? Type410 { get; set; }
+        public global::G.MessageObjectRole? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectIncompleteDetailsReason? Type411 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>>? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectRole? Type412 { get; set; }
+        public global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>>? Type413 { get; set; }
+        public global::G.MessageContentTextObject? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>? Type414 { get; set; }
+        public global::G.MessageContentTextObjectType? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextObject? Type415 { get; set; }
+        public global::G.MessageContentTextObjectText? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextObjectType? Type416 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>>? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextObjectText? Type417 { get; set; }
+        public global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>>? Type418 { get; set; }
+        public global::G.MessageContentTextAnnotationsFileCitationObject? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>? Type419 { get; set; }
+        public global::G.MessageContentTextAnnotationsFileCitationObjectType? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFileCitationObject? Type420 { get; set; }
+        public global::G.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFileCitationObjectType? Type421 { get; set; }
+        public global::G.MessageContentTextAnnotationsFilePathObject? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type422 { get; set; }
+        public global::G.MessageContentTextAnnotationsFilePathObjectType? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFilePathObject? Type423 { get; set; }
+        public global::G.MessageContentTextAnnotationsFilePathObjectFilePath? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFilePathObjectType? Type424 { get; set; }
+        public global::G.MessageContentRefusalObject? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentTextAnnotationsFilePathObjectFilePath? Type425 { get; set; }
+        public global::G.MessageContentRefusalObjectType? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentRefusalObject? Type426 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageContentRefusalObjectType? Type427 { get; set; }
+        public global::G.MessageObjectAttachment? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? Type428 { get; set; }
+        public global::G.MessageObjectMetadata? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectAttachment? Type429 { get; set; }
+        public global::G.MessageDeltaObject? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageObjectMetadata? Type430 { get; set; }
+        public global::G.MessageDeltaObjectObject? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaObject? Type431 { get; set; }
+        public global::G.MessageDeltaObjectDelta? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaObjectObject? Type432 { get; set; }
+        public global::G.MessageDeltaObjectDeltaRole? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaObjectDelta? Type433 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaObjectDeltaRole? Type434 { get; set; }
+        public global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? Type435 { get; set; }
+        public global::G.MessageDeltaContentImageFileObject? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>? Type436 { get; set; }
+        public global::G.MessageDeltaContentImageFileObjectType? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageFileObject? Type437 { get; set; }
+        public global::G.MessageDeltaContentImageFileObjectImageFile? Type437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageFileObjectType? Type438 { get; set; }
+        public global::G.MessageDeltaContentImageFileObjectImageFileDetail? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageFileObjectImageFile? Type439 { get; set; }
+        public global::G.MessageDeltaContentTextObject? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageFileObjectImageFileDetail? Type440 { get; set; }
+        public global::G.MessageDeltaContentTextObjectType? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextObject? Type441 { get; set; }
+        public global::G.MessageDeltaContentTextObjectText? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextObjectType? Type442 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextObjectText? Type443 { get; set; }
+        public global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>? Type443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>>? Type444 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.MessageDeltaContentTextAnnotationsFileCitationObject, global::G.MessageDeltaContentTextAnnotationsFilePathObject>? Type445 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? Type446 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type447 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? Type447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type448 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType? Type448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? Type449 { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType? Type450 { get; set; }
+        public global::G.MessageDeltaContentRefusalObject? Type450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type451 { get; set; }
+        public global::G.MessageDeltaContentRefusalObjectType? Type451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentRefusalObject? Type452 { get; set; }
+        public global::G.MessageDeltaContentImageUrlObject? Type452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentRefusalObjectType? Type453 { get; set; }
+        public global::G.MessageDeltaContentImageUrlObjectType? Type453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageUrlObject? Type454 { get; set; }
+        public global::G.MessageDeltaContentImageUrlObjectImageUrl? Type454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageUrlObjectType? Type455 { get; set; }
+        public global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? Type455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageUrlObjectImageUrl? Type456 { get; set; }
+        public global::G.ModifyMessageRequest? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? Type457 { get; set; }
+        public global::G.ModifyMessageRequestMetadata? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyMessageRequest? Type458 { get; set; }
+        public global::G.DeleteMessageResponse? Type458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyMessageRequestMetadata? Type459 { get; set; }
+        public global::G.DeleteMessageResponseObject? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMessageResponse? Type460 { get; set; }
+        public global::G.ListMessagesResponse? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMessageResponseObject? Type461 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessageObject>? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListMessagesResponse? Type462 { get; set; }
+        public global::G.RunStepObject? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessageObject>? Type463 { get; set; }
+        public global::G.RunStepObjectObject? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObject? Type464 { get; set; }
+        public global::G.RunStepObjectType? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectObject? Type465 { get; set; }
+        public global::G.RunStepObjectStatus? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectType? Type466 { get; set; }
+        public global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject>? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectStatus? Type467 { get; set; }
+        public global::G.RunStepDetailsMessageCreationObject? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject>? Type468 { get; set; }
+        public global::G.RunStepDetailsMessageCreationObjectType? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsMessageCreationObject? Type469 { get; set; }
+        public global::G.RunStepDetailsMessageCreationObjectMessageCreation? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsMessageCreationObjectType? Type470 { get; set; }
+        public global::G.RunStepDetailsToolCallsObject? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsMessageCreationObjectMessageCreation? Type471 { get; set; }
+        public global::G.RunStepDetailsToolCallsObjectType? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsObject? Type472 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>>? Type472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsObjectType? Type473 { get; set; }
+        public global::G.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>>? Type474 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeObject? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>? Type475 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeObjectType? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeObject? Type476 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeObjectType? Type477 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>>? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type478 { get; set; }
+        public global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>>? Type479 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeOutputLogsObject? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>? Type480 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeOutputLogsObject? Type481 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeOutputImageObject? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type482 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeOutputImageObjectType? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeOutputImageObject? Type483 { get; set; }
+        public global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeOutputImageObjectType? Type484 { get; set; }
+        public global::G.RunStepDetailsToolCallsFileSearchObject? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type485 { get; set; }
+        public global::G.RunStepDetailsToolCallsFileSearchObjectType? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFileSearchObject? Type486 { get; set; }
+        public global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFileSearchObjectType? Type487 { get; set; }
+        public global::G.RunStepDetailsToolCallsFunctionObject? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch? Type488 { get; set; }
+        public global::G.RunStepDetailsToolCallsFunctionObjectType? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFunctionObject? Type489 { get; set; }
+        public global::G.RunStepDetailsToolCallsFunctionObjectFunction? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFunctionObjectType? Type490 { get; set; }
+        public global::G.RunStepObjectLastError? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsFunctionObjectFunction? Type491 { get; set; }
+        public global::G.RunStepObjectLastErrorCode? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectLastError? Type492 { get; set; }
+        public global::G.RunStepObjectMetadata? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectLastErrorCode? Type493 { get; set; }
+        public global::G.RunStepDeltaObject? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepObjectMetadata? Type494 { get; set; }
+        public global::G.RunStepDeltaObjectObject? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaObject? Type495 { get; set; }
+        public global::G.RunStepDeltaObjectDelta? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaObjectObject? Type496 { get; set; }
+        public global::G.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject, global::G.RunStepDeltaStepDetailsToolCallsObject>? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaObjectDelta? Type497 { get; set; }
+        public global::G.RunStepDeltaStepDetailsMessageCreationObject? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject, global::G.RunStepDeltaStepDetailsToolCallsObject>? Type498 { get; set; }
+        public global::G.RunStepDeltaStepDetailsMessageCreationObjectType? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsMessageCreationObject? Type499 { get; set; }
+        public global::G.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsMessageCreationObjectType? Type500 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsObject? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type501 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsObjectType? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsObject? Type502 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeObject, global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::G.RunStepDeltaStepDetailsToolCallsFunctionObject>>? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsObjectType? Type503 { get; set; }
+        public global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeObject, global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::G.RunStepDeltaStepDetailsToolCallsFunctionObject>? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeObject, global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::G.RunStepDeltaStepDetailsToolCallsFunctionObject>>? Type504 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeObject, global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::G.RunStepDeltaStepDetailsToolCallsFunctionObject>? Type505 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? Type506 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type507 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>>? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type508 { get; set; }
+        public global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>>? Type509 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>? Type510 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject? Type511 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type512 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject? Type513 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type514 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? Type514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type515 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? Type516 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectFileSearch? Type516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type517 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Type517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectFileSearch? Type518 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Type519 { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type520 { get; set; }
+        public global::G.ListRunStepsResponse? Type520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type521 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunStepObject>? Type521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRunStepsResponse? Type522 { get; set; }
+        public global::G.VectorStoreExpirationAfter? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RunStepObject>? Type523 { get; set; }
+        public global::G.VectorStoreExpirationAfterAnchor? Type523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreExpirationAfter? Type524 { get; set; }
+        public global::G.VectorStoreObject? Type524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreExpirationAfterAnchor? Type525 { get; set; }
+        public global::G.VectorStoreObjectObject? Type525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreObject? Type526 { get; set; }
+        public global::G.VectorStoreObjectFileCounts? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreObjectObject? Type527 { get; set; }
+        public global::G.VectorStoreObjectStatus? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreObjectFileCounts? Type528 { get; set; }
+        public global::G.VectorStoreObjectMetadata? Type528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreObjectStatus? Type529 { get; set; }
+        public global::G.CreateVectorStoreRequest? Type529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreObjectMetadata? Type530 { get; set; }
+        public global::G.OneOf<global::G.AutoChunkingStrategyRequestParam, global::G.StaticChunkingStrategyRequestParam>? Type530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVectorStoreRequest? Type531 { get; set; }
+        public global::G.AutoChunkingStrategyRequestParam? Type531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.AutoChunkingStrategyRequestParam, global::G.StaticChunkingStrategyRequestParam>? Type532 { get; set; }
+        public global::G.AutoChunkingStrategyRequestParamType? Type532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoChunkingStrategyRequestParam? Type533 { get; set; }
+        public global::G.StaticChunkingStrategyRequestParam? Type533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoChunkingStrategyRequestParamType? Type534 { get; set; }
+        public global::G.StaticChunkingStrategyRequestParamType? Type534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategyRequestParam? Type535 { get; set; }
+        public global::G.StaticChunkingStrategy? Type535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategyRequestParamType? Type536 { get; set; }
+        public global::G.CreateVectorStoreRequestMetadata? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategy? Type537 { get; set; }
+        public global::G.UpdateVectorStoreRequest? Type537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVectorStoreRequestMetadata? Type538 { get; set; }
+        public global::G.UpdateVectorStoreRequestMetadata? Type538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateVectorStoreRequest? Type539 { get; set; }
+        public global::G.ListVectorStoresResponse? Type539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateVectorStoreRequestMetadata? Type540 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VectorStoreObject>? Type540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVectorStoresResponse? Type541 { get; set; }
+        public global::G.DeleteVectorStoreResponse? Type541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VectorStoreObject>? Type542 { get; set; }
+        public global::G.DeleteVectorStoreResponseObject? Type542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteVectorStoreResponse? Type543 { get; set; }
+        public global::G.VectorStoreFileObject? Type543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteVectorStoreResponseObject? Type544 { get; set; }
+        public global::G.VectorStoreFileObjectObject? Type544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileObject? Type545 { get; set; }
+        public global::G.VectorStoreFileObjectStatus? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileObjectObject? Type546 { get; set; }
+        public global::G.VectorStoreFileObjectLastError? Type546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileObjectStatus? Type547 { get; set; }
+        public global::G.VectorStoreFileObjectLastErrorCode? Type547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileObjectLastError? Type548 { get; set; }
+        public global::G.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? Type548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileObjectLastErrorCode? Type549 { get; set; }
+        public global::G.StaticChunkingStrategyResponseParam? Type549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? Type550 { get; set; }
+        public global::G.StaticChunkingStrategyResponseParamType? Type550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategyResponseParam? Type551 { get; set; }
+        public global::G.OtherChunkingStrategyResponseParam? Type551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategyResponseParamType? Type552 { get; set; }
+        public global::G.OtherChunkingStrategyResponseParamType? Type552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OtherChunkingStrategyResponseParam? Type553 { get; set; }
+        public global::G.ChunkingStrategyRequestParam? Type553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OtherChunkingStrategyResponseParamType? Type554 { get; set; }
+        public global::G.CreateVectorStoreFileRequest? Type554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunkingStrategyRequestParam? Type555 { get; set; }
+        public global::G.ListVectorStoreFilesResponse? Type555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVectorStoreFileRequest? Type556 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VectorStoreFileObject>? Type556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVectorStoreFilesResponse? Type557 { get; set; }
+        public global::G.DeleteVectorStoreFileResponse? Type557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VectorStoreFileObject>? Type558 { get; set; }
+        public global::G.DeleteVectorStoreFileResponseObject? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteVectorStoreFileResponse? Type559 { get; set; }
+        public global::G.VectorStoreFileBatchObject? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteVectorStoreFileResponseObject? Type560 { get; set; }
+        public global::G.VectorStoreFileBatchObjectObject? Type560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileBatchObject? Type561 { get; set; }
+        public global::G.VectorStoreFileBatchObjectStatus? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileBatchObjectObject? Type562 { get; set; }
+        public global::G.VectorStoreFileBatchObjectFileCounts? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileBatchObjectStatus? Type563 { get; set; }
+        public global::G.CreateVectorStoreFileBatchRequest? Type563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileBatchObjectFileCounts? Type564 { get; set; }
+        public global::G.AssistantStreamEvent? Type564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVectorStoreFileBatchRequest? Type565 { get; set; }
+        public global::G.ThreadStreamEvent? Type565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantStreamEvent? Type566 { get; set; }
+        public global::G.ThreadStreamEventVariant1? Type566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadStreamEvent? Type567 { get; set; }
+        public global::G.ThreadStreamEventVariant1Event? Type567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadStreamEventVariant1? Type568 { get; set; }
+        public global::G.RunStreamEvent? Type568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadStreamEventVariant1Event? Type569 { get; set; }
+        public global::G.RunStreamEventVariant1? Type569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEvent? Type570 { get; set; }
+        public global::G.RunStreamEventVariant1Event? Type570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant1? Type571 { get; set; }
+        public global::G.RunStreamEventVariant2? Type571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant1Event? Type572 { get; set; }
+        public global::G.RunStreamEventVariant2Event? Type572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant2? Type573 { get; set; }
+        public global::G.RunStreamEventVariant3? Type573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant2Event? Type574 { get; set; }
+        public global::G.RunStreamEventVariant3Event? Type574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant3? Type575 { get; set; }
+        public global::G.RunStreamEventVariant4? Type575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant3Event? Type576 { get; set; }
+        public global::G.RunStreamEventVariant4Event? Type576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant4? Type577 { get; set; }
+        public global::G.RunStreamEventVariant5? Type577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant4Event? Type578 { get; set; }
+        public global::G.RunStreamEventVariant5Event? Type578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant5? Type579 { get; set; }
+        public global::G.RunStreamEventVariant6? Type579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant5Event? Type580 { get; set; }
+        public global::G.RunStreamEventVariant6Event? Type580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant6? Type581 { get; set; }
+        public global::G.RunStreamEventVariant7? Type581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant6Event? Type582 { get; set; }
+        public global::G.RunStreamEventVariant7Event? Type582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant7? Type583 { get; set; }
+        public global::G.RunStreamEventVariant8? Type583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant7Event? Type584 { get; set; }
+        public global::G.RunStreamEventVariant8Event? Type584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant8? Type585 { get; set; }
+        public global::G.RunStreamEventVariant9? Type585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant8Event? Type586 { get; set; }
+        public global::G.RunStreamEventVariant9Event? Type586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant9? Type587 { get; set; }
+        public global::G.RunStreamEventVariant10? Type587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant9Event? Type588 { get; set; }
+        public global::G.RunStreamEventVariant10Event? Type588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant10? Type589 { get; set; }
+        public global::G.RunStepStreamEvent? Type589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEventVariant10Event? Type590 { get; set; }
+        public global::G.RunStepStreamEventVariant1? Type590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEvent? Type591 { get; set; }
+        public global::G.RunStepStreamEventVariant1Event? Type591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant1? Type592 { get; set; }
+        public global::G.RunStepStreamEventVariant2? Type592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant1Event? Type593 { get; set; }
+        public global::G.RunStepStreamEventVariant2Event? Type593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant2? Type594 { get; set; }
+        public global::G.RunStepStreamEventVariant3? Type594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant2Event? Type595 { get; set; }
+        public global::G.RunStepStreamEventVariant3Event? Type595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant3? Type596 { get; set; }
+        public global::G.RunStepStreamEventVariant4? Type596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant3Event? Type597 { get; set; }
+        public global::G.RunStepStreamEventVariant4Event? Type597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant4? Type598 { get; set; }
+        public global::G.RunStepStreamEventVariant5? Type598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant4Event? Type599 { get; set; }
+        public global::G.RunStepStreamEventVariant5Event? Type599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant5? Type600 { get; set; }
+        public global::G.RunStepStreamEventVariant6? Type600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant5Event? Type601 { get; set; }
+        public global::G.RunStepStreamEventVariant6Event? Type601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant6? Type602 { get; set; }
+        public global::G.RunStepStreamEventVariant7? Type602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant6Event? Type603 { get; set; }
+        public global::G.RunStepStreamEventVariant7Event? Type603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant7? Type604 { get; set; }
+        public global::G.MessageStreamEvent? Type604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant7Event? Type605 { get; set; }
+        public global::G.MessageStreamEventVariant1? Type605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEvent? Type606 { get; set; }
+        public global::G.MessageStreamEventVariant1Event? Type606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant1? Type607 { get; set; }
+        public global::G.MessageStreamEventVariant2? Type607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant1Event? Type608 { get; set; }
+        public global::G.MessageStreamEventVariant2Event? Type608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant2? Type609 { get; set; }
+        public global::G.MessageStreamEventVariant3? Type609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant2Event? Type610 { get; set; }
+        public global::G.MessageStreamEventVariant3Event? Type610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant3? Type611 { get; set; }
+        public global::G.MessageStreamEventVariant4? Type611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant3Event? Type612 { get; set; }
+        public global::G.MessageStreamEventVariant4Event? Type612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant4? Type613 { get; set; }
+        public global::G.MessageStreamEventVariant5? Type613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant4Event? Type614 { get; set; }
+        public global::G.MessageStreamEventVariant5Event? Type614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant5? Type615 { get; set; }
+        public global::G.ErrorEvent? Type615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventVariant5Event? Type616 { get; set; }
+        public global::G.ErrorEventEvent? Type616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorEvent? Type617 { get; set; }
+        public global::G.DoneEvent? Type617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorEventEvent? Type618 { get; set; }
+        public global::G.DoneEventEvent? Type618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneEvent? Type619 { get; set; }
+        public global::G.DoneEventData? Type619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneEventEvent? Type620 { get; set; }
+        public global::G.Batch? Type620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneEventData? Type621 { get; set; }
+        public global::G.BatchObject? Type621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Batch? Type622 { get; set; }
+        public global::G.BatchErrors? Type622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchObject? Type623 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? Type623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchErrors? Type624 { get; set; }
+        public global::G.BatchErrorsDataItem? Type624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? Type625 { get; set; }
+        public global::G.BatchStatus? Type625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchErrorsDataItem? Type626 { get; set; }
+        public global::G.BatchRequestCounts? Type626 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchStatus? Type627 { get; set; }
+        public global::G.BatchMetadata? Type627 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestCounts? Type628 { get; set; }
+        public global::G.BatchRequestInput? Type628 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchMetadata? Type629 { get; set; }
+        public global::G.BatchRequestInputMethod? Type629 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestInput? Type630 { get; set; }
+        public global::G.BatchRequestOutput? Type630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestInputMethod? Type631 { get; set; }
+        public global::G.BatchRequestOutputResponse? Type631 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestOutput? Type632 { get; set; }
+        public global::G.BatchRequestOutputResponseBody? Type632 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestOutputResponse? Type633 { get; set; }
+        public global::G.BatchRequestOutputError? Type633 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestOutputResponseBody? Type634 { get; set; }
+        public global::G.ListBatchesResponse? Type634 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchRequestOutputError? Type635 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Batch>? Type635 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListBatchesResponse? Type636 { get; set; }
+        public global::G.ListBatchesResponseObject? Type636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Batch>? Type637 { get; set; }
+        public global::G.AuditLogActorServiceAccount? Type637 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListBatchesResponseObject? Type638 { get; set; }
+        public global::G.AuditLogActorUser? Type638 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorServiceAccount? Type639 { get; set; }
+        public global::G.AuditLogActorApiKey? Type639 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorUser? Type640 { get; set; }
+        public global::G.AuditLogActorApiKeyType? Type640 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorApiKey? Type641 { get; set; }
+        public global::G.AuditLogActorSession? Type641 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorApiKeyType? Type642 { get; set; }
+        public global::G.AuditLogActor? Type642 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorSession? Type643 { get; set; }
+        public global::G.AuditLogActorType? Type643 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActor? Type644 { get; set; }
+        public global::G.AuditLogEventType? Type644 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogActorType? Type645 { get; set; }
+        public global::G.AuditLog? Type645 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogEventType? Type646 { get; set; }
+        public global::G.AuditLogProject? Type646 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLog? Type647 { get; set; }
+        public global::G.AuditLogApiKeyCreated? Type647 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProject? Type648 { get; set; }
+        public global::G.AuditLogApiKeyCreatedData? Type648 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogApiKeyCreated? Type649 { get; set; }
+        public global::G.AuditLogApiKeyUpdated? Type649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogApiKeyCreatedData? Type650 { get; set; }
+        public global::G.AuditLogApiKeyUpdatedChangesRequested? Type650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogApiKeyUpdated? Type651 { get; set; }
+        public global::G.AuditLogApiKeyDeleted? Type651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogApiKeyUpdatedChangesRequested? Type652 { get; set; }
+        public global::G.AuditLogInviteSent? Type652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogApiKeyDeleted? Type653 { get; set; }
+        public global::G.AuditLogInviteSentData? Type653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogInviteSent? Type654 { get; set; }
+        public global::G.AuditLogInviteAccepted? Type654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogInviteSentData? Type655 { get; set; }
+        public global::G.AuditLogInviteDeleted? Type655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogInviteAccepted? Type656 { get; set; }
+        public global::G.AuditLogLoginFailed? Type656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogInviteDeleted? Type657 { get; set; }
+        public global::G.AuditLogLogoutFailed? Type657 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogLoginFailed? Type658 { get; set; }
+        public global::G.AuditLogOrganizationUpdated? Type658 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogLogoutFailed? Type659 { get; set; }
+        public global::G.AuditLogOrganizationUpdatedChangesRequested? Type659 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogOrganizationUpdated? Type660 { get; set; }
+        public global::G.AuditLogOrganizationUpdatedChangesRequestedSettings? Type660 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogOrganizationUpdatedChangesRequested? Type661 { get; set; }
+        public global::G.AuditLogProjectCreated? Type661 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogOrganizationUpdatedChangesRequestedSettings? Type662 { get; set; }
+        public global::G.AuditLogProjectCreatedData? Type662 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProjectCreated? Type663 { get; set; }
+        public global::G.AuditLogProjectUpdated? Type663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProjectCreatedData? Type664 { get; set; }
+        public global::G.AuditLogProjectUpdatedChangesRequested? Type664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProjectUpdated? Type665 { get; set; }
+        public global::G.AuditLogProjectArchived? Type665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProjectUpdatedChangesRequested? Type666 { get; set; }
+        public global::G.AuditLogServiceAccountCreated? Type666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogProjectArchived? Type667 { get; set; }
+        public global::G.AuditLogServiceAccountCreatedData? Type667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogServiceAccountCreated? Type668 { get; set; }
+        public global::G.AuditLogServiceAccountUpdated? Type668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogServiceAccountCreatedData? Type669 { get; set; }
+        public global::G.AuditLogServiceAccountUpdatedChangesRequested? Type669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogServiceAccountUpdated? Type670 { get; set; }
+        public global::G.AuditLogServiceAccountDeleted? Type670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogServiceAccountUpdatedChangesRequested? Type671 { get; set; }
+        public global::G.AuditLogUserAdded? Type671 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogServiceAccountDeleted? Type672 { get; set; }
+        public global::G.AuditLogUserAddedData? Type672 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogUserAdded? Type673 { get; set; }
+        public global::G.AuditLogUserUpdated? Type673 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogUserAddedData? Type674 { get; set; }
+        public global::G.AuditLogUserUpdatedChangesRequested? Type674 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogUserUpdated? Type675 { get; set; }
+        public global::G.AuditLogUserDeleted? Type675 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogUserUpdatedChangesRequested? Type676 { get; set; }
+        public global::G.ListAuditLogsResponse? Type676 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AuditLogUserDeleted? Type677 { get; set; }
+        public global::G.ListAuditLogsResponseObject? Type677 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAuditLogsResponse? Type678 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AuditLog>? Type678 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAuditLogsResponseObject? Type679 { get; set; }
+        public global::G.Invite? Type679 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AuditLog>? Type680 { get; set; }
+        public global::G.InviteObject? Type680 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Invite? Type681 { get; set; }
+        public global::G.InviteRole? Type681 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteObject? Type682 { get; set; }
+        public global::G.InviteStatus? Type682 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteRole? Type683 { get; set; }
+        public global::G.InviteListResponse? Type683 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteStatus? Type684 { get; set; }
+        public global::G.InviteListResponseObject? Type684 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteListResponse? Type685 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Invite>? Type685 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteListResponseObject? Type686 { get; set; }
+        public global::G.InviteRequest? Type686 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Invite>? Type687 { get; set; }
+        public global::G.InviteRequestRole? Type687 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteRequest? Type688 { get; set; }
+        public global::G.InviteDeleteResponse? Type688 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteRequestRole? Type689 { get; set; }
+        public global::G.InviteDeleteResponseObject? Type689 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteDeleteResponse? Type690 { get; set; }
+        public global::G.User? Type690 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InviteDeleteResponseObject? Type691 { get; set; }
+        public global::G.UserObject? Type691 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.User? Type692 { get; set; }
+        public global::G.UserRole? Type692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserObject? Type693 { get; set; }
+        public global::G.UserListResponse? Type693 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserRole? Type694 { get; set; }
+        public global::G.UserListResponseObject? Type694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserListResponse? Type695 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.User>? Type695 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserListResponseObject? Type696 { get; set; }
+        public global::G.UserRoleUpdateRequest? Type696 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.User>? Type697 { get; set; }
+        public global::G.UserRoleUpdateRequestRole? Type697 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserRoleUpdateRequest? Type698 { get; set; }
+        public global::G.UserDeleteResponse? Type698 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserRoleUpdateRequestRole? Type699 { get; set; }
+        public global::G.UserDeleteResponseObject? Type699 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserDeleteResponse? Type700 { get; set; }
+        public global::G.Project? Type700 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserDeleteResponseObject? Type701 { get; set; }
+        public global::G.ProjectObject? Type701 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Project? Type702 { get; set; }
+        public global::G.ProjectStatus? Type702 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectObject? Type703 { get; set; }
+        public global::G.ProjectListResponse? Type703 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectStatus? Type704 { get; set; }
+        public global::G.ProjectListResponseObject? Type704 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectListResponse? Type705 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Project>? Type705 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectListResponseObject? Type706 { get; set; }
+        public global::G.ProjectCreateRequest? Type706 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Project>? Type707 { get; set; }
+        public global::G.ProjectUpdateRequest? Type707 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectCreateRequest? Type708 { get; set; }
+        public global::G.DefaultProjectErrorResponse? Type708 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUpdateRequest? Type709 { get; set; }
+        public global::G.ProjectUser? Type709 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DefaultProjectErrorResponse? Type710 { get; set; }
+        public global::G.ProjectUserObject? Type710 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUser? Type711 { get; set; }
+        public global::G.ProjectUserRole? Type711 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserObject? Type712 { get; set; }
+        public global::G.ProjectUserListResponse? Type712 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserRole? Type713 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProjectUser>? Type713 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserListResponse? Type714 { get; set; }
+        public global::G.ProjectUserCreateRequest? Type714 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProjectUser>? Type715 { get; set; }
+        public global::G.ProjectUserCreateRequestRole? Type715 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserCreateRequest? Type716 { get; set; }
+        public global::G.ProjectUserUpdateRequest? Type716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserCreateRequestRole? Type717 { get; set; }
+        public global::G.ProjectUserUpdateRequestRole? Type717 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserUpdateRequest? Type718 { get; set; }
+        public global::G.ProjectUserDeleteResponse? Type718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserUpdateRequestRole? Type719 { get; set; }
+        public global::G.ProjectUserDeleteResponseObject? Type719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserDeleteResponse? Type720 { get; set; }
+        public global::G.ProjectServiceAccount? Type720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectUserDeleteResponseObject? Type721 { get; set; }
+        public global::G.ProjectServiceAccountObject? Type721 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccount? Type722 { get; set; }
+        public global::G.ProjectServiceAccountRole? Type722 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountObject? Type723 { get; set; }
+        public global::G.ProjectServiceAccountListResponse? Type723 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountRole? Type724 { get; set; }
+        public global::G.ProjectServiceAccountListResponseObject? Type724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountListResponse? Type725 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProjectServiceAccount>? Type725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountListResponseObject? Type726 { get; set; }
+        public global::G.ProjectServiceAccountCreateRequest? Type726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProjectServiceAccount>? Type727 { get; set; }
+        public global::G.ProjectServiceAccountCreateResponse? Type727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountCreateRequest? Type728 { get; set; }
+        public global::G.ProjectServiceAccountCreateResponseObject? Type728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountCreateResponse? Type729 { get; set; }
+        public global::G.ProjectServiceAccountCreateResponseRole? Type729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountCreateResponseObject? Type730 { get; set; }
+        public global::G.ProjectServiceAccountApiKey? Type730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountCreateResponseRole? Type731 { get; set; }
+        public global::G.ProjectServiceAccountApiKeyObject? Type731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountApiKey? Type732 { get; set; }
+        public global::G.ProjectServiceAccountDeleteResponse? Type732 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountApiKeyObject? Type733 { get; set; }
+        public global::G.ProjectServiceAccountDeleteResponseObject? Type733 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountDeleteResponse? Type734 { get; set; }
+        public global::G.ProjectApiKey? Type734 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectServiceAccountDeleteResponseObject? Type735 { get; set; }
+        public global::G.ProjectApiKeyObject? Type735 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKey? Type736 { get; set; }
+        public global::G.ProjectApiKeyOwner? Type736 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyObject? Type737 { get; set; }
+        public global::G.ProjectApiKeyOwnerType? Type737 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyOwner? Type738 { get; set; }
+        public global::G.ProjectApiKeyListResponse? Type738 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyOwnerType? Type739 { get; set; }
+        public global::G.ProjectApiKeyListResponseObject? Type739 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyListResponse? Type740 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProjectApiKey>? Type740 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyListResponseObject? Type741 { get; set; }
+        public global::G.ProjectApiKeyDeleteResponse? Type741 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProjectApiKey>? Type742 { get; set; }
+        public global::G.ProjectApiKeyDeleteResponseObject? Type742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyDeleteResponse? Type743 { get; set; }
+        public global::G.CreateBatchRequest? Type743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectApiKeyDeleteResponseObject? Type744 { get; set; }
+        public global::G.CreateBatchRequestEndpoint? Type744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateBatchRequest? Type745 { get; set; }
+        public global::G.CreateBatchRequestCompletionWindow? Type745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateBatchRequestEndpoint? Type746 { get; set; }
+        public global::G.CreateBatchRequestMetadata? Type746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateBatchRequestCompletionWindow? Type747 { get; set; }
+        public global::G.ListAssistantsOrder? Type747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateBatchRequestMetadata? Type748 { get; set; }
+        public global::G.ListMessagesOrder? Type748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAssistantsOrder? Type749 { get; set; }
+        public global::G.ListRunsOrder? Type749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListMessagesOrder? Type750 { get; set; }
+        public global::G.ListRunStepsOrder? Type750 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRunsOrder? Type751 { get; set; }
+        public global::G.ListVectorStoresOrder? Type751 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRunStepsOrder? Type752 { get; set; }
+        public global::G.ListVectorStoreFilesOrder? Type752 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVectorStoresOrder? Type753 { get; set; }
+        public global::G.ListVectorStoreFilesFilter? Type753 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVectorStoreFilesOrder? Type754 { get; set; }
+        public global::G.ListFilesInVectorStoreBatchOrder? Type754 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVectorStoreFilesFilter? Type755 { get; set; }
+        public global::G.ListFilesInVectorStoreBatchFilter? Type755 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFilesInVectorStoreBatchOrder? Type756 { get; set; }
+        public global::G.ListAuditLogsEffectiveAt? Type756 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFilesInVectorStoreBatchFilter? Type757 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AuditLogEventType>? Type757 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAuditLogsEffectiveAt? Type758 { get; set; }
+        public global::G.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>? Type758 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AuditLogEventType>? Type759 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>? Type760 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>? Type761 { get; set; }
+        public global::G.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>? Type759 { get; set; }
     }
 }

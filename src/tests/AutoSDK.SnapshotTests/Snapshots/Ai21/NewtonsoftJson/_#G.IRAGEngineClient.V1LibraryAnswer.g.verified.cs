@@ -30,7 +30,7 @@ namespace G
         /// An enumeration.
         /// </param>
         /// <param name="retrievalStrategy">
-        /// An enumeration.
+        /// Default Value: default
         /// </param>
         /// <param name="retrievalSimilarityThreshold"></param>
         /// <param name="hybridSearchAlpha"></param>
@@ -44,7 +44,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AnswerLength? answerLength = default,
             global::G.Mode? mode = default,
-            global::G.RetrievalStrategy? retrievalStrategy = default,
+            global::G.RetrievalStrategy? retrievalStrategy = global::G.RetrievalStrategy.Default,
             double? retrievalSimilarityThreshold = default,
             double? hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default);

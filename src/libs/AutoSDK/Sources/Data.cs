@@ -23,8 +23,6 @@ public static class Data
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
 
-        openApiDocument = openApiDocument.SimplifyAllOf();
-        
         var schemas = openApiDocument.GetSchemas(settings);
         
         traversalTreeTime.Stop();
@@ -131,6 +129,9 @@ public static class Data
                 .Distinct()
                 .ToArray()
             : schemas;
+        filteredSchemas = filteredSchemas
+            .Where(x => !x.HasAllOfTypeForMetadata())
+            .ToArray();
         
         filteringTime.Stop();
         

@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public global::G.GetFileCatalogResponseText? Text { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public global::G.GetFileCatalogResponseMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.GetFileCatalogResponseMetadata? Metadata { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public global::G.GetFileCatalogResponseText? Text { get; set; }
 
         /// <summary>
         /// 

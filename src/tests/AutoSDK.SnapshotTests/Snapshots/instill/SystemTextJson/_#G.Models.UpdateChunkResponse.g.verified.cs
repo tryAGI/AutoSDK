@@ -10,7 +10,7 @@ namespace G
     public sealed partial class UpdateChunkResponse
     {
         /// <summary>
-        /// The Chunk message represents a chunk of data in the artifact system.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunk")]
         public global::G.Artifactv1alphaChunk? Chunk { get; set; }

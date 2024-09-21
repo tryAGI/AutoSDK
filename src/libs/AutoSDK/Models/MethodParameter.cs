@@ -258,7 +258,7 @@ public readonly record struct MethodParameter(
     }
     
     public string ParameterDefaultValue =>
-        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOf
+        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOfLike
         ? "default"
         : DefaultValue;
 }

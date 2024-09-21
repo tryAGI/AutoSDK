@@ -10,8 +10,7 @@ namespace G
     public sealed partial class UpdateUserMembershipResponse
     {
         /// <summary>
-        /// A user membership defines the relationship between a user and an<br/>
-        /// organization they belong to.
+        /// The updated membership resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("membership")]
         public global::G.UserMembership? Membership { get; set; }

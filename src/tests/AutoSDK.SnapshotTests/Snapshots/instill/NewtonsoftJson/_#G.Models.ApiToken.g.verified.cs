@@ -61,10 +61,7 @@ namespace G
         public string? AccessToken { get; set; }
 
         /// <summary>
-        /// State describes the state of an API token.<br/>
-        ///  - STATE_INACTIVE: Inactive.<br/>
-        ///  - STATE_ACTIVE: Active.<br/>
-        ///  - STATE_EXPIRED: Expired.
+        /// State.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
         public global::G.ApiTokenState? State { get; set; }

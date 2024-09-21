@@ -44,10 +44,10 @@ namespace G
         public global::G.MetronomeLinks? MetronomeLinks { get; set; }
 
         /// <summary>
-        /// The current recharge settings for the API subscription.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recharge_settings")]
-        public global::G.RechargeSettings? RechargeSettings { get; set; }
+        public global::G.RechargeSettingsResponse? RechargeSettings { get; set; }
 
         /// <summary>
         /// The URL for the user to manage the existing Stripe subscription plan.

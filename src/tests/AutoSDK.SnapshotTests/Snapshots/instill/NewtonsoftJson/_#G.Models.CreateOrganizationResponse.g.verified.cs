@@ -10,8 +10,7 @@ namespace G
     public sealed partial class CreateOrganizationResponse
     {
         /// <summary>
-        /// Organizations group several users. As entities, they can own resources such<br/>
-        /// as pipelines or releases.
+        /// The organization resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
         public global::G.Organization? Organization { get; set; }

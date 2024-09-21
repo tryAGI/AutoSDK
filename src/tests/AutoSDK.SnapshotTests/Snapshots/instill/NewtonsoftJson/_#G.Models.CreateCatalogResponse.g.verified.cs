@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CreateCatalogResponse
     {
         /// <summary>
-        /// Catalog represents a catalog.
+        /// The created catalog.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("catalog")]
         public global::G.Catalog? Catalog { get; set; }

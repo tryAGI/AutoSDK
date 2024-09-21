@@ -509,7 +509,6 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory5),
             typeof(global::G.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter),
             typeof(global::G.JsonConverters.ChunkingStrategyRequestParamJsonConverter),
             typeof(global::G.JsonConverters.AssistantStreamEventJsonConverter),

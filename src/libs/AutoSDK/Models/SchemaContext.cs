@@ -312,6 +312,12 @@ public class SchemaContext
             .Where(x => x.Depth == depth + 1)
             .ToList();
         
+        // We need to fix name, so it doesn't conflict with real used name() and not to be handled as name conflict.
+        if (schema.HasAllOfTypeForMetadata(propertyName: propertyName))
+        {
+            context.Id += "_AllOf1Wrapped";
+        }
+        
         return [context, ..children];
     }
     

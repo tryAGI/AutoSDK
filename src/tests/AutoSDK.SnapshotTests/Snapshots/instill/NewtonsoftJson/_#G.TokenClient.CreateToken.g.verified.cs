@@ -135,10 +135,7 @@ namespace G
         /// that issued the token.
         /// </param>
         /// <param name="state">
-        /// State describes the state of an API token.<br/>
-        ///  - STATE_INACTIVE: Inactive.<br/>
-        ///  - STATE_ACTIVE: Active.<br/>
-        ///  - STATE_EXPIRED: Expired.
+        /// State.
         /// </param>
         /// <param name="tokenType">
         /// Token type. Value is fixed to "Bearer".

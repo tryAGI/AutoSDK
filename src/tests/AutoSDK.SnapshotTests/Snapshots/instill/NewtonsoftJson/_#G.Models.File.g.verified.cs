@@ -22,34 +22,16 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// - FILE_PROCESS_STATUS_NOTSTARTED: NOTSTARTED<br/>
-        ///  - FILE_PROCESS_STATUS_WAITING: file is waiting for embedding process<br/>
-        ///  - FILE_PROCESS_STATUS_CONVERTING: file is converting<br/>
-        ///  - FILE_PROCESS_STATUS_CHUNKING: file is chunking<br/>
-        ///  - FILE_PROCESS_STATUS_EMBEDDING: file is embedding<br/>
-        ///  - FILE_PROCESS_STATUS_COMPLETED: completed<br/>
-        ///  - FILE_PROCESS_STATUS_FAILED: failed
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FileType? Type { get; set; } = default!;
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processStatus")]
         public global::G.FileProcessStatus? ProcessStatus { get; set; }
-
-        /// <summary>
-        /// - FILE_TYPE_TEXT: text<br/>
-        ///  - FILE_TYPE_PDF: PDF<br/>
-        ///  - FILE_TYPE_MARKDOWN: MARKDOWN<br/>
-        ///  - FILE_TYPE_PNG: PNG(not supported yet)<br/>
-        ///  - FILE_TYPE_JPEG: JPEG(not supported yet)<br/>
-        ///  - FILE_TYPE_JPG: JPG(not supported yet)<br/>
-        ///  - FILE_TYPE_HTML: HTML<br/>
-        ///  - FILE_TYPE_DOCX: DOCX<br/>
-        ///  - FILE_TYPE_DOC: DOC<br/>
-        ///  - FILE_TYPE_PPT: PPT<br/>
-        ///  - FILE_TYPE_PPTX: PPTX<br/>
-        ///  - FILE_TYPE_XLS: XLS(not supported yet)<br/>
-        ///  - FILE_TYPE_XLSX: XLSX
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FileType Type { get; set; } = default!;
 
         /// <summary>
         /// 

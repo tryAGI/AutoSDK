@@ -54,10 +54,10 @@ namespace G
         public global::G.AnyOf<string, object>? FullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::G.AccessScope? AccessScope { get; set; }
+        public global::G.AccessScope? AccessScope { get; set; } = global::G.AccessScope.Workspace;
 
         /// <summary>
         /// 

@@ -16,10 +16,7 @@ namespace G
         public string? Uid { get; set; }
 
         /// <summary>
-        /// - CHUNK_TYPE_TEXT: text<br/>
-        ///  - CHUNK_TYPE_IMAGE: image<br/>
-        ///  - CHUNK_TYPE_AUDIO: audio<br/>
-        ///  - CHUNK_TYPE_VIDEO: video
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetFileCatalogResponseChunkTypeJsonConverter))]

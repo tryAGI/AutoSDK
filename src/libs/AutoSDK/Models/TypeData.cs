@@ -51,7 +51,7 @@ public readonly record struct TypeData(
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
     public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
-    public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
+    public bool IsAnyOfLike => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
     public string CSharpTypeWithNullabilityForValueTypes => IsValueType
         ? CSharpTypeWithNullability
         : CSharpTypeWithoutNullability;
@@ -59,13 +59,13 @@ public readonly record struct TypeData(
     public bool IsReferenceable =>
         IsValueType ||
         CSharpTypeWithoutNullability is "string" ||
-        IsAnyOf ||
+        IsAnyOfLike ||
         IsEnum;
     
     public string ConverterType =>
         IsUnixTimestamp
             ? $"global::{Settings.Namespace}.JsonConverters.UnixTimestampJsonConverter"
-            : IsEnum || ((AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0) && IsComponent)
+            : IsEnum || (IsAnyOfLike && IsComponent)
                 ? $"global::{Settings.Namespace}.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
                 : AnyOfCount > 0
                     ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
@@ -201,63 +201,63 @@ public readonly record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
-        var (type, reference) = (context.Schema.Type, context.Schema.Format) switch
+        var type = (context.Schema.Type, context.Schema.Format) switch
         {
-            (_, _) when context.Schema.IsUnixTimestamp() => ("global::System.DateTimeOffset", false),
+            (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
             
-            (_, _) when context.Schema.IsAnyOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (_, _) when context.Schema.IsOneOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (_, _) when context.Schema.IsAllOf() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (_, _) when context.Schema.IsAnyOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
+            (_, _) when context.Schema.IsOneOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
+            (_, _) when context.Schema.IsAllOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
             
-            (_, _) when context.Schema.IsAnyOf() => ($"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
-            (_, _) when context.Schema.IsOneOf() => ($"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
-            (_, _) when context.Schema.IsAllOf() => ($"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>", true),
+            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
-                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+                $"global::{context.Settings.Namespace}.{context.Id}",
             // ("object", _) when context.Schema.Reference == null &&
             //                    context.Children.Count == 1 =>
-            //     ("object", true),
+            //     "object",
             ("object", _) when context.Schema.Reference == null =>
-                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+                $"global::{context.Settings.Namespace}.{context.Id}",
 
             ("string", _) when context.Schema.Enum.Any() =>
-                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+                $"global::{context.Settings.Namespace}.{context.Id}",
 
-            ("boolean", _) => ("bool", false),
-            ("integer", "int32") => ("int", false),
-            ("integer", "int64") => ("long", false),
-            ("number", "float") => ("float", false),
-            (null, "float") => ("float", false),
-            ("number", "double") => ("double", false),
-            (null, "double") => ("double", false),
-            ("string", "byte") => ("byte[]", true),
-            ("string", "binary") => ("byte[]", true),
-            ("string", "date") => ("global::System.DateTime", false),
-            ("string", "date-time") => ("global::System.DateTime", false),
-            ("string", "password") => ("string", true),
+            ("boolean", _) => "bool",
+            ("integer", "int32") => "int",
+            ("integer", "int64") => "long",
+            ("number", "float") => "float",
+            (null, "float") => "float",
+            ("number", "double") => "double",
+            (null, "double") => "double",
+            ("string", "byte") => "byte[]",
+            ("string", "binary") => "byte[]",
+            ("string", "date") => "global::System.DateTime",
+            ("string", "date-time") => "global::System.DateTime",
+            ("string", "password") => "string",
             
             // Possible future types - not supported yet
-            // ("string", "time") => ("global::System.TimeOnly", false),
-            // ("string", "date") => ("global::System.DateOnly", false),
-            // ("string", "period") => ("global::System.TimeSpan", false),
-            // ("string", "duration") => ("global::System.TimeSpan", false),
-            // ("string", "uri") => ("global::System.Uri", true),
-            ("string", "uuid") => ("global::System.Guid", false),
+            // ("string", "time") => "global::System.TimeOnly",
+            // ("string", "date") => "global::System.DateOnly",
+            // ("string", "period") => "global::System.TimeSpan",
+            // ("string", "duration") => "global::System.TimeSpan",
+            // ("string", "uri") => "global::System.Uri",
+            ("string", "uuid") => "global::System.Guid",
             
-            (null, "url") => ("string", true),
+            (null, "url") => "string",
 
-            ("integer", _) => ("int", false),
-            ("number", _) => ("double", false),
-            ("string", _) => ("string", true),
-            ("object", _) => ("object", true),
+            ("integer", _) => "int",
+            ("number", _) => "double",
+            ("string", _) => "string",
+            ("object", _) => "object",
             ("array", _) =>
-                ($"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(), true),
+                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(),
             
             (null, null) when context.IsClass || context.IsEnum =>
-                ($"global::{context.Settings.Namespace}.{context.Id}", true),
-            (null, null)  => ("object", true),
-            ("null", _)  => ("object", true),
+                $"global::{context.Settings.Namespace}.{context.Id}",
+            (null, null)  => "object",
+            ("null", _)  => "object",
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
         };
 

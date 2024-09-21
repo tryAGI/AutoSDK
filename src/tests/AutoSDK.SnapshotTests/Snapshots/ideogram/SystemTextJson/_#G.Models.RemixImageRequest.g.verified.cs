@@ -10,11 +10,11 @@ namespace G
     public sealed partial class RemixImageRequest
     {
         /// <summary>
-        /// 
+        /// A request to generate a new image using a provided image and a prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_request")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ImageRequest ImageRequest { get; set; }
+        public required global::G.InitialImageRequest ImageRequest { get; set; }
 
         /// <summary>
         /// An image binary; only JPEG, WEBPs and PNGs are supported at this time

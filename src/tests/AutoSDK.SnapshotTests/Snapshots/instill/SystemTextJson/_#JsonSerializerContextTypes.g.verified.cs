@@ -58,15 +58,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserProfile? Type11 { get; set; }
+        public global::G.OnboardingStatus? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserProfileSocialProfileLinks? Type12 { get; set; }
+        public global::G.UserProfile? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OnboardingStatus? Type13 { get; set; }
+        public global::G.UserProfileSocialProfileLinks? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -74,27 +74,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Organization? Type15 { get; set; }
+        public global::G.CheckNamespaceAdminResponseNamespace? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Permission? Type16 { get; set; }
+        public global::G.User? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OrganizationProfile? Type17 { get; set; }
+        public global::G.Organization? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OrganizationProfileSocialProfileLinks? Type18 { get; set; }
+        public global::G.OrganizationProfile? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.User? Type19 { get; set; }
+        public global::G.OrganizationProfileSocialProfileLinks? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckNamespaceAdminResponseNamespace? Type20 { get; set; }
+        public global::G.Permission? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -170,15 +170,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StripeSubscriptionDetail? Type39 { get; set; }
+        public global::G.UserSubscriptionPlan? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StripeSubscriptionDetailStatus? Type40 { get; set; }
+        public global::G.StripeSubscriptionDetail? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserSubscriptionPlan? Type41 { get; set; }
+        public global::G.StripeSubscriptionDetailStatus? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -410,11 +410,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileProcessStatus? Type99 { get; set; }
+        public global::G.FileType? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileType? Type100 { get; set; }
+        public global::G.FileProcessStatus? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>

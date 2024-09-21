@@ -126,7 +126,7 @@ namespace {endPoint.Namespace}
             ? ";"
             : @$"
         {{
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOf ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
             PrepareArguments(
@@ -262,7 +262,7 @@ namespace {endPoint.Namespace}
             ? $"{(property.IsRequired ? "" : "?")}.ToValueString()"
             : string.Empty;
         
-        return property.Type.IsAnyOf
+        return property.Type.IsAnyOfLike
             ? string.Join(" ?? ", property.Type.SubTypes.Select((y, i) => y.IsEnum
                 ? $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToValueString()"
                 : $"{name}{(property.IsRequired ? "" : "?")}.Value{i + 1}?.ToString()").Concat(["string.Empty"]))

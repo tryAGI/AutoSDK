@@ -10,7 +10,7 @@ namespace G
     public sealed partial class DeleteCatalogResponse
     {
         /// <summary>
-        /// Catalog represents a catalog.
+        /// The catalog identifier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("catalog")]
         public global::G.Catalog? Catalog { get; set; }

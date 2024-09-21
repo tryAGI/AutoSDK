@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetUserSubscriptionAdminResponse
     {
         /// <summary>
-        /// UserSubscription details describe the plan (i.e., features) a user has access to.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription")]
         public global::G.UserSubscription? Subscription { get; set; }

@@ -89,20 +89,17 @@ namespace G
         public string? CookieToken { get; set; }
 
         /// <summary>
-        /// UserProfile describes the public data of a user.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("profile")]
-        public global::G.UserProfile? Profile { get; set; }
-
-        /// <summary>
-        /// OnboardingStatus describes the status of the user onboarding process.<br/>
-        ///  - ONBOARDING_STATUS_IN_PROGRESS: In progress, i.e., the user has initiated the onboarding process<br/>
-        /// but has not yet completed it.<br/>
-        ///  - ONBOARDING_STATUS_COMPLETED: Completed.
+        /// Onboarding Status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("onboardingStatus")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OnboardingStatusJsonConverter))]
         public global::G.OnboardingStatus? OnboardingStatus { get; set; }
+
+        /// <summary>
+        /// Profile.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("profile")]
+        public global::G.UserProfile? Profile { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

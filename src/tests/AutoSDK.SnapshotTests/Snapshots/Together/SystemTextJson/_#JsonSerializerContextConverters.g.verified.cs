@@ -80,7 +80,6 @@ namespace G
             typeof(global::G.JsonConverters.AllOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.ChatCompletionMessageParamJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionStreamJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory1),
         };
     }
 }

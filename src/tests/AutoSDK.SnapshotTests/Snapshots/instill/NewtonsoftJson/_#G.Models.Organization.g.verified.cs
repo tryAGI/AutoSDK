@@ -46,23 +46,22 @@ namespace G
         public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
-        /// Permission defines how a resource can be used.
+        /// The user that owns the organization.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("permission")]
-        public global::G.Permission? Permission { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.User? Owner { get; set; }
 
         /// <summary>
-        /// OrganizationProfile describes the public data of an organization.
+        /// Profile.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("profile", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OrganizationProfile Profile { get; set; } = default!;
 
         /// <summary>
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner")]
-        public global::G.User? Owner { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("permission")]
+        public global::G.Permission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

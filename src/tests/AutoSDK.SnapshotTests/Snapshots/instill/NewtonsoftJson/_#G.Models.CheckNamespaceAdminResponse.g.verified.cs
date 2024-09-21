@@ -11,11 +11,10 @@ namespace G
     public sealed partial class CheckNamespaceAdminResponse
     {
         /// <summary>
-        /// Organizations group several users. As entities, they can own resources such<br/>
-        /// as pipelines or releases.
+        /// Namespace type.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("organization")]
-        public global::G.Organization? Organization { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.CheckNamespaceAdminResponseNamespace? Type { get; set; }
 
         /// <summary>
         /// Namespace UID.
@@ -24,21 +23,16 @@ namespace G
         public string? Uid { get; set; }
 
         /// <summary>
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
+        /// User.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.User? User { get; set; }
 
         /// <summary>
-        /// Namespace contains information about the availability of a namespace.<br/>
-        ///  - NAMESPACE_AVAILABLE: Available.<br/>
-        ///  - NAMESPACE_USER: Namespace belongs to a user.<br/>
-        ///  - NAMESPACE_ORGANIZATION: Namespace belongs to an organization.<br/>
-        ///  - NAMESPACE_RESERVED: Reserved.
+        /// Organization.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CheckNamespaceAdminResponseNamespace? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("organization")]
+        public global::G.Organization? Organization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

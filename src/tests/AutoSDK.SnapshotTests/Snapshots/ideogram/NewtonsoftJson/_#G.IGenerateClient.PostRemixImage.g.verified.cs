@@ -24,7 +24,9 @@ namespace G
         /// are cropped to the chosen aspect ratio before being remixed.<br/>
         /// Supported image formats include JPEG, PNG, and WEBP
         /// </summary>
-        /// <param name="imageRequest"></param>
+        /// <param name="imageRequest">
+        /// A request to generate a new image using a provided image and a prompt.
+        /// </param>
         /// <param name="imageFile">
         /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
         /// </param>
@@ -34,7 +36,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GenerateImageResponse> PostRemixImageAsync(
-            global::G.ImageRequest imageRequest,
+            global::G.InitialImageRequest imageRequest,
             byte[] imageFile,
             string imageFilename,
             global::System.Threading.CancellationToken cancellationToken = default);

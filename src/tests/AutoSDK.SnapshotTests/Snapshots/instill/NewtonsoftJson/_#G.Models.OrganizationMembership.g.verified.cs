@@ -25,27 +25,22 @@ namespace G
         public string Role { get; set; } = default!;
 
         /// <summary>
-        /// Organizations group several users. As entities, they can own resources such<br/>
-        /// as pipelines or releases.
+        /// State of the membership.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("organization")]
-        public global::G.Organization? Organization { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("state")]
+        public global::G.MembershipState? State { get; set; }
 
         /// <summary>
-        /// User describes an individual that interacts with Instill AI. It doesn't<br/>
-        /// contain any private information about the user.
+        /// User information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.User? User { get; set; }
 
         /// <summary>
-        /// MembershipState describes the state of a user membership to an organization.<br/>
-        ///  - MEMBERSHIP_STATE_ACTIVE: Active.<br/>
-        ///  - MEMBERSHIP_STATE_PENDING: Pending, i.e., a request has been sent to the user to join an<br/>
-        /// organization.
+        /// Organization information.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("state")]
-        public global::G.MembershipState? State { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("organization")]
+        public global::G.Organization? Organization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

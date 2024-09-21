@@ -104,13 +104,13 @@ namespace G
         /// </summary>
         /// <param name="texts"></param>
         /// <param name="type">
-        /// An enumeration.
+        /// Default Value: segment
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.V1EmbedResponse> V1EmbedAsync(
             global::System.Collections.Generic.IList<string> texts,
-            global::G.EmbedType? type = default,
+            global::G.EmbedType? type = global::G.EmbedType.Segment,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.EmbeddingsBody

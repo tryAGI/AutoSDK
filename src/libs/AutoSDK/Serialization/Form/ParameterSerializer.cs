@@ -194,7 +194,7 @@ public static class ParameterSerializer
                 Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
             }];
         }
-        if (parameter.Type.IsAnyOf)
+        if (parameter.Type.IsAnyOfLike)
         {
             return [parameter with
             {

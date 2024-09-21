@@ -102,15 +102,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpscaleImageRequest? Type22 { get; set; }
+        public global::G.InitialImageRequest? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpscaleInitialImageRequest? Type23 { get; set; }
+        public global::G.UpscaleImageRequest? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InitialImageRequest? Type24 { get; set; }
+        public global::G.UpscaleInitialImageRequest? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -150,15 +150,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RechargeSettings? Type34 { get; set; }
+        public global::G.RechargeSettingsResponse? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Price? Type35 { get; set; }
+        public global::G.RechargeSettings? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RechargeSettingsResponse? Type36 { get; set; }
+        public global::G.Price? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>

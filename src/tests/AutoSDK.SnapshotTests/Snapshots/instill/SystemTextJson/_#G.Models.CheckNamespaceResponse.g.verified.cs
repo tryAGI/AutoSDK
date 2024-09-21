@@ -11,11 +11,7 @@ namespace G
     public sealed partial class CheckNamespaceResponse
     {
         /// <summary>
-        /// Namespace contains information about the availability of a namespace.<br/>
-        ///  - NAMESPACE_AVAILABLE: Available.<br/>
-        ///  - NAMESPACE_USER: Namespace belongs to a user.<br/>
-        ///  - NAMESPACE_ORGANIZATION: Namespace belongs to an organization.<br/>
-        ///  - NAMESPACE_RESERVED: Reserved.
+        /// Namespace type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckNamespaceResponseNamespaceJsonConverter))]

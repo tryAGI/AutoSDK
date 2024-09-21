@@ -354,7 +354,7 @@
   FinetuneEvent(class)[Fine-tuning],
     FinetuneEventObject(enum)[Fine-tuning],
     CreatedAt(string)[Fine-tuning],
-    Level(anyOf)[Fine-tuning],
+    Level_AllOf1Wrapped(anyOf)[Fine-tuning],
       FinetuneEventLevels(ref)[Fine-tuning],
     Message(string)[Fine-tuning],
     FinetuneEventType(ref)[Fine-tuning],

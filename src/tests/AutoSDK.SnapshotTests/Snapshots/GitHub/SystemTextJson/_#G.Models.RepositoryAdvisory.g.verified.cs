@@ -60,18 +60,18 @@ namespace G
         public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
-        /// A GitHub repository.
+        /// The author of the advisory.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleRepository PrivateFork { get; set; }
+        public required global::G.SimpleUser? Author { get; set; }
 
         /// <summary>
-        /// A GitHub user.
+        /// The publisher of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Publisher { get; set; }
+        public required global::G.SimpleUser? Publisher { get; set; }
 
         /// <summary>
         /// 
@@ -187,11 +187,11 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
 
         /// <summary>
-        /// A GitHub user.
+        /// A temporary private fork of the advisory's repository for collaborating on a fix.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("author")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser Author { get; set; }
+        public required global::G.SimpleRepository? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

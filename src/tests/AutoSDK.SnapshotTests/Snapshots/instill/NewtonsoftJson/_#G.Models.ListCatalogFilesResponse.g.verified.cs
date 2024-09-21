@@ -34,7 +34,7 @@ namespace G
         public string? NextPageToken { get; set; }
 
         /// <summary>
-        /// 
+        /// The filter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
         public global::G.ListCatalogFilesFilter? Filter { get; set; }

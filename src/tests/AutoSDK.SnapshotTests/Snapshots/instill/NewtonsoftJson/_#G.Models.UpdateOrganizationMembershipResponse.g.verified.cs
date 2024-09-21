@@ -10,8 +10,7 @@ namespace G
     public sealed partial class UpdateOrganizationMembershipResponse
     {
         /// <summary>
-        /// An organization membership defines the relationship between an organization<br/>
-        /// and a user that is attached to it.
+        /// The updated membership resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("membership")]
         public global::G.OrganizationMembership? Membership { get; set; }

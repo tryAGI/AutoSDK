@@ -61,10 +61,7 @@ namespace G
         public string? AccessToken { get; set; }
 
         /// <summary>
-        /// State describes the state of an API token.<br/>
-        ///  - STATE_INACTIVE: Inactive.<br/>
-        ///  - STATE_ACTIVE: Active.<br/>
-        ///  - STATE_EXPIRED: Expired.
+        /// State.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ApiTokenStateJsonConverter))]

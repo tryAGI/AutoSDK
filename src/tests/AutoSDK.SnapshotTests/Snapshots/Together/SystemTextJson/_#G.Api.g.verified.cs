@@ -96,7 +96,6 @@ namespace G
                     new global::G.JsonConverters.AllOfJsonConverterFactory2(),
                     new global::G.JsonConverters.ChatCompletionMessageParamJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionStreamJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory1(),
                 }
             };
 

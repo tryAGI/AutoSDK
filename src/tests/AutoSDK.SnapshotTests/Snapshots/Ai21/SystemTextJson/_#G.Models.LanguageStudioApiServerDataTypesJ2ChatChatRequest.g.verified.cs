@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("countPenalty")]
-        public global::G.Penalty? CountPenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("frequencyPenalty")]
+        public global::G.Penalty? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// 
@@ -38,8 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("frequencyPenalty")]
-        public global::G.Penalty? FrequencyPenalty { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("countPenalty")]
+        public global::G.Penalty? CountPenalty { get; set; }
 
         /// <summary>
         /// Default Value: 1

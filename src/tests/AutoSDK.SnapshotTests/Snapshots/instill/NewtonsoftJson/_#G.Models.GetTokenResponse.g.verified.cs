@@ -10,7 +10,7 @@ namespace G
     public sealed partial class GetTokenResponse
     {
         /// <summary>
-        /// API tokens allow users to make requests to the Instill AI API.
+        /// The API token resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token")]
         public global::G.ApiToken? Token { get; set; }
