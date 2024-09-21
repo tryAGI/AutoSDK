@@ -66,7 +66,7 @@ public readonly record struct MethodParameter(
             name = name.FixPropertyName(context.Parent.Id);
         }
 
-        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+        name = PropertyData.SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
         
         var isRequired =
             parameter.Required ||
@@ -95,63 +95,6 @@ public readonly record struct MethodParameter(
             Summary: context.Schema.GetSummary(),
             ConverterType: type.ConverterType,
             Properties: context.ClassData?.Properties ?? []);
-    }
-    
-    internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
-    {
-        static bool InvalidFirstChar(char ch)
-            => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
-
-        static bool InvalidSubsequentChar(char ch)
-            => ch is not (
-                    '_'
-                    or >= 'A' and <= 'Z'
-                    or >= 'a' and <= 'z'
-                    or >= '0' and <= '9'
-                );
-        
-        if (name is null || name.Length == 0)
-        {
-            return "";
-        }
-
-        if (!skipHandlingWordSeparators)
-        {
-            name = HandleWordSeparators(name);
-        }
-
-        if (name.Length == 0)
-        {
-            return string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
-                ? "_"
-                : clsCompliantEnumPrefix;
-        }
-        
-        if (InvalidFirstChar(name[0]))
-        {
-            name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
-                ? "_"
-                : clsCompliantEnumPrefix) + name;
-        }
-
-        if (!name.Skip(1).Any(InvalidSubsequentChar))
-        {
-            return name;
-        }
-
-        Span<char> buf = stackalloc char[name.Length];
-        name.AsSpan().CopyTo(buf);
-        
-        for (var i = 1; i < buf.Length; i++)
-        {
-            if (InvalidSubsequentChar(buf[i]))
-            {
-                buf[i] = '_';
-            }
-        }
-
-        // Span<char>.ToString implementation checks for char type, new string(&buf[0], buf.length)
-        return buf.ToString();
     }
 
     internal static string HandleWordSeparators(string name)

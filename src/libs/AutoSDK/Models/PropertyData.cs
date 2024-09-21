@@ -246,9 +246,4 @@ public readonly record struct PropertyData(
             return ParameterName;
         }
     }
-    
-    public string ParameterDefaultValue =>
-        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOfLike
-        ? "default"
-        : DefaultValue;
 }
