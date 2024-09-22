@@ -60,6 +60,11 @@ namespace G
                 uploadType: ref uploadType,
                 request: request);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/uploadtofilestorage",
                 baseUri: _httpClient.BaseAddress); 

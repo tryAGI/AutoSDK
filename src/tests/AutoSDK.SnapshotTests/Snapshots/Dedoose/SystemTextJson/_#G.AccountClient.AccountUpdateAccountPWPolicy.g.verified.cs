@@ -93,6 +93,11 @@ namespace G
                 relogin2Auth: ref relogin2Auth,
                 idleTimeoutInMinutes: ref idleTimeoutInMinutes);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/account/updateaccountpwpolicy",
                 baseUri: _httpClient.BaseAddress); 

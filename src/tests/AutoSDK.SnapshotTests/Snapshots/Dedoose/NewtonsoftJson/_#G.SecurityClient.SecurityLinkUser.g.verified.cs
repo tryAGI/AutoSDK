@@ -53,6 +53,11 @@ namespace G
                 projectId: ref projectId,
                 groupId: ref groupId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/security/linkuser",
                 baseUri: _httpClient.BaseAddress); 

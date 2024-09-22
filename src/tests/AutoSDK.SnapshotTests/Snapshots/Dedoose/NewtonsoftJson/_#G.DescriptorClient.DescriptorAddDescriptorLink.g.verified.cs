@@ -58,6 +58,11 @@ namespace G
                 descriptorId: ref descriptorId,
                 dynamicValues: dynamicValues);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/adddescriptorlink",
                 baseUri: _httpClient.BaseAddress); 

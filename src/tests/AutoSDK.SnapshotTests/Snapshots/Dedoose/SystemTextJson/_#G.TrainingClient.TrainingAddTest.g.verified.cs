@@ -73,6 +73,11 @@ namespace G
                 exIds: exIds,
                 tagIds: tagIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/training/addtest",
                 baseUri: _httpClient.BaseAddress); 

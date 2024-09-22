@@ -108,6 +108,11 @@ namespace G
                 isDataLocked: ref isDataLocked,
                 metaData: ref metaData);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/deleteresource",
                 baseUri: _httpClient.BaseAddress); 

@@ -53,6 +53,11 @@ namespace G
                 title: ref title,
                 adminId: ref adminId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/updateproject",
                 baseUri: _httpClient.BaseAddress); 

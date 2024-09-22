@@ -78,6 +78,11 @@ namespace G
                 tag2IDL: ref tag2IDL,
                 isParentChildLink: ref isParentChildLink);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/deletetaglink",
                 baseUri: _httpClient.BaseAddress); 

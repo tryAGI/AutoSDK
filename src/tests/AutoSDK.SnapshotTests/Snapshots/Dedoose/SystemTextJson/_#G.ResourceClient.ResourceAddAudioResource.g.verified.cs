@@ -63,6 +63,11 @@ namespace G
                 description: ref description,
                 videoUploadURL: ref videoUploadURL);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/addaudioresource",
                 baseUri: _httpClient.BaseAddress); 

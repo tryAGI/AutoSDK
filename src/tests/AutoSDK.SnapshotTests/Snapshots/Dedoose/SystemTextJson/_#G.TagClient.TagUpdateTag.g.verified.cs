@@ -103,6 +103,11 @@ namespace G
                 color: ref color,
                 allowDecimalWeight: ref allowDecimalWeight);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/updatetag",
                 baseUri: _httpClient.BaseAddress); 

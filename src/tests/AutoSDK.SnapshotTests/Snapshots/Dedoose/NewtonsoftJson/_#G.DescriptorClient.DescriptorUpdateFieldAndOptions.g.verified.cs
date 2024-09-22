@@ -70,6 +70,11 @@ namespace G
                 deletedOptionIds: deletedOptionIds,
                 request: request);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/updatefieldandoptions",
                 baseUri: _httpClient.BaseAddress); 

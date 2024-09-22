@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 exportInfo: exportInfo);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/export/startexportsingleserieschartjob",
                 baseUri: _httpClient.BaseAddress); 

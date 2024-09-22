@@ -58,6 +58,11 @@ namespace G
                 resourceId: ref resourceId,
                 transcriptData: ref transcriptData);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/addtranscript",
                 baseUri: _httpClient.BaseAddress); 

@@ -53,6 +53,11 @@ namespace G
                 connectionKey: ref connectionKey,
                 encryptedAuthToken: ref encryptedAuthToken);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/validate2factor",
                 baseUri: _httpClient.BaseAddress); 

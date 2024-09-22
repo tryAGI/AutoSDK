@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 tagVOs: tagVOs);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/startimporttagsjob",
                 baseUri: _httpClient.BaseAddress); 

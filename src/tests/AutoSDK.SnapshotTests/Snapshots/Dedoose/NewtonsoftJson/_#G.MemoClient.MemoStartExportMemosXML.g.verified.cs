@@ -73,6 +73,11 @@ namespace G
                 descriptorsSelection: ref descriptorsSelection,
                 symKey: ref symKey);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/startexportmemosxml",
                 baseUri: _httpClient.BaseAddress); 

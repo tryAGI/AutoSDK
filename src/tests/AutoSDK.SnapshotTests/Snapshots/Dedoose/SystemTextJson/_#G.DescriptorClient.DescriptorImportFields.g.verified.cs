@@ -63,6 +63,11 @@ namespace G
                 existingSetId: ref existingSetId,
                 newSetTitle: ref newSetTitle);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/importfields",
                 baseUri: _httpClient.BaseAddress); 

@@ -68,6 +68,11 @@ namespace G
                 descriptorId: ref descriptorId,
                 tagId: ref tagId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/unlinkobject",
                 baseUri: _httpClient.BaseAddress); 

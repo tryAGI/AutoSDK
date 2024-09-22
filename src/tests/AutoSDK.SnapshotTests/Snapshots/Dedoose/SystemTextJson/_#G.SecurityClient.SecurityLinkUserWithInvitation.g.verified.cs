@@ -58,6 +58,11 @@ namespace G
                 groupId: ref groupId,
                 invitationId: ref invitationId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/security/linkuserwithinvitation",
                 baseUri: _httpClient.BaseAddress); 

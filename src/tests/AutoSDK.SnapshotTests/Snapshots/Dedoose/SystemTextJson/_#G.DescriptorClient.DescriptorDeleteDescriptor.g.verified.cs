@@ -83,6 +83,11 @@ namespace G
                 valuesData: valuesData,
                 dynamicValuesData: dynamicValuesData);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/deletedescriptor",
                 baseUri: _httpClient.BaseAddress); 

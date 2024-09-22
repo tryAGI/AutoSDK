@@ -58,6 +58,11 @@ namespace G
                 cloneExcerpts: ref cloneExcerpts,
                 cloneTagApps: ref cloneTagApps);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/clonedocument",
                 baseUri: _httpClient.BaseAddress); 

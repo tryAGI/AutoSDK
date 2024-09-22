@@ -113,6 +113,11 @@ namespace G
                 tagIds: tagIds,
                 excludedExcerptIds: excludedExcerptIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/dataset/adddataset",
                 baseUri: _httpClient.BaseAddress); 

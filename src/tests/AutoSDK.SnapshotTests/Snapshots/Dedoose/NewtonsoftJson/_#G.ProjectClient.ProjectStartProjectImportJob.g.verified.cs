@@ -53,6 +53,11 @@ namespace G
                 fileURI: ref fileURI,
                 password: ref password);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/project/startprojectimportjob",
                 baseUri: _httpClient.BaseAddress); 

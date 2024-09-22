@@ -88,6 +88,11 @@ namespace G
                 xClientName: ref xClientName,
                 request: request);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var typeValue = type switch
             {
                 global::G.DatasetType.EmbedInput => "embed-input",

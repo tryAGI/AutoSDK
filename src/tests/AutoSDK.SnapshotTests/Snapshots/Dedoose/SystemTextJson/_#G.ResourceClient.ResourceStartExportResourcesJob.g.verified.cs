@@ -58,6 +58,11 @@ namespace G
                 includeDescriptorInfo: ref includeDescriptorInfo,
                 includeCodeCounts: ref includeCodeCounts);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/startexportresourcesjob",
                 baseUri: _httpClient.BaseAddress); 

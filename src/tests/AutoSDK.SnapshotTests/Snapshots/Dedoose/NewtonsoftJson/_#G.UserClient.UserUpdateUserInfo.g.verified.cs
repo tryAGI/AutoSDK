@@ -88,6 +88,11 @@ namespace G
                 country: ref country,
                 zip: ref zip);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/updateuserinfo",
                 baseUri: _httpClient.BaseAddress); 

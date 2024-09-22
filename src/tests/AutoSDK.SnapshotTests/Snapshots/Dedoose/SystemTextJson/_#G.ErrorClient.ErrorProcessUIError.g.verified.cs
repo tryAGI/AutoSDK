@@ -73,6 +73,11 @@ namespace G
                 currentTarget: ref currentTarget,
                 stacktrace: ref stacktrace);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/error/processuierror",
                 baseUri: _httpClient.BaseAddress); 

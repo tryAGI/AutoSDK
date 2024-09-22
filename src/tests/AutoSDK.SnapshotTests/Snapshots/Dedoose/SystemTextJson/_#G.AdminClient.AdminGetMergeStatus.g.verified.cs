@@ -43,6 +43,11 @@ namespace G
                 token: ref token,
                 mergedProjectId: ref mergedProjectId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/getmergestatus",
                 baseUri: _httpClient.BaseAddress); 

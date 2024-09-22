@@ -48,6 +48,11 @@ namespace G
                 accountId: ref accountId,
                 userId: ref userId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/account/revokeadmin",
                 baseUri: _httpClient.BaseAddress); 

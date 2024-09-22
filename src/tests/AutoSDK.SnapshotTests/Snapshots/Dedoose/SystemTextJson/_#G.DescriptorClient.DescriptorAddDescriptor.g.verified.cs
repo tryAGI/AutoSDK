@@ -60,6 +60,11 @@ namespace G
                 setId: ref setId,
                 request: request);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/adddescriptor",
                 baseUri: _httpClient.BaseAddress); 

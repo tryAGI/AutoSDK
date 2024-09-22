@@ -53,6 +53,11 @@ namespace G
                 rsaEncryptedPass: ref rsaEncryptedPass,
                 connectionKey: ref connectionKey);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/validateuser2",
                 baseUri: _httpClient.BaseAddress); 

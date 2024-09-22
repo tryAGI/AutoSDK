@@ -43,6 +43,11 @@ namespace G
                 token: ref token,
                 fileURL: ref fileURL);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/startgettagsfromimportjob",
                 baseUri: _httpClient.BaseAddress); 

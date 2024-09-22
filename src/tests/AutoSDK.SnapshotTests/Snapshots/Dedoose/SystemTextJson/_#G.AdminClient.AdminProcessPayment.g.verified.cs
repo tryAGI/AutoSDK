@@ -53,6 +53,11 @@ namespace G
                 amount: ref amount,
                 memo: ref memo);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/processpayment",
                 baseUri: _httpClient.BaseAddress); 

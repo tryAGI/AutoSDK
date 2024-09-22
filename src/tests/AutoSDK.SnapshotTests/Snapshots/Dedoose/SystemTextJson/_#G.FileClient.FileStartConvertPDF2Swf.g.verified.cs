@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 pdfURI: ref pdfURI);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/file/startconvertpdf2swf",
                 baseUri: _httpClient.BaseAddress); 

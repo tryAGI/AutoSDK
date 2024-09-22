@@ -38,6 +38,11 @@ namespace G
                 httpClient: _httpClient,
                 token: ref token);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/getactiveuserinfos",
                 baseUri: _httpClient.BaseAddress); 

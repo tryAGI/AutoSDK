@@ -39,6 +39,11 @@ namespace G
                 httpClient: _httpClient,
                 xClientName: ref xClientName);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/v1/check-api-key",
                 baseUri: _httpClient.BaseAddress); 

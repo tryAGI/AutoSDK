@@ -88,6 +88,11 @@ namespace G
                 tagCount: ref tagCount,
                 creator: ref creator);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/training/deletetest",
                 baseUri: _httpClient.BaseAddress); 

@@ -58,6 +58,11 @@ namespace G
                 fileName: ref fileName,
                 fileURI: ref fileURI);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/startaddimageresource",
                 baseUri: _httpClient.BaseAddress); 

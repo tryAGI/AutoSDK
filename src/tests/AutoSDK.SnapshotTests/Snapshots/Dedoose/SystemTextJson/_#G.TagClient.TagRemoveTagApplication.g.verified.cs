@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 tagAppId: ref tagAppId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/removetagapplication",
                 baseUri: _httpClient.BaseAddress); 

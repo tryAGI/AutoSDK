@@ -53,6 +53,11 @@ namespace G
                 tag1Id: ref tag1Id,
                 tag2Id: ref tag2Id);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/mergetags",
                 baseUri: _httpClient.BaseAddress); 

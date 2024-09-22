@@ -78,6 +78,11 @@ namespace G
                 colorByTotal: ref colorByTotal,
                 extension: ref extension);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/export/startexportbubblechartjob",
                 baseUri: _httpClient.BaseAddress); 

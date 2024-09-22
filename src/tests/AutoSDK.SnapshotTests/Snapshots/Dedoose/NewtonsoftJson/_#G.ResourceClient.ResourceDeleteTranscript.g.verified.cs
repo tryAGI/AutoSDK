@@ -73,6 +73,11 @@ namespace G
                 dataPath: ref dataPath,
                 created: ref created);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/deletetranscript",
                 baseUri: _httpClient.BaseAddress); 

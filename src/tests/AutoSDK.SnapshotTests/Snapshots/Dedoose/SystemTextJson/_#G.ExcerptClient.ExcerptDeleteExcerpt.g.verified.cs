@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 excerptId: ref excerptId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/deleteexcerpt",
                 baseUri: _httpClient.BaseAddress); 

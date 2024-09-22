@@ -53,6 +53,11 @@ namespace G
                 connectionKey: ref connectionKey,
                 projectId: ref projectId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/updateconnection",
                 baseUri: _httpClient.BaseAddress); 

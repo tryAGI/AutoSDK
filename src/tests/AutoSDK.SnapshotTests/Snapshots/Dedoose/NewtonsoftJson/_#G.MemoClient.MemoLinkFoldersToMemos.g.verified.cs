@@ -53,6 +53,11 @@ namespace G
                 folderIds: folderIds,
                 memoIds: memoIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/linkfolderstomemos",
                 baseUri: _httpClient.BaseAddress); 

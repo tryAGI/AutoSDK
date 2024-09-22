@@ -73,6 +73,11 @@ namespace G
                 length: ref length,
                 isLocked: ref isLocked);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/updateresourceanddata",
                 baseUri: _httpClient.BaseAddress); 

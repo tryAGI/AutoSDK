@@ -48,6 +48,11 @@ namespace G
                 username: ref username,
                 authToken: ref authToken);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/validate2factor",
                 baseUri: _httpClient.BaseAddress); 

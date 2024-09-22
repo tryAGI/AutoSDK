@@ -43,6 +43,11 @@ namespace G
                 token: ref token,
                 userId: ref userId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/submiteula",
                 baseUri: _httpClient.BaseAddress); 

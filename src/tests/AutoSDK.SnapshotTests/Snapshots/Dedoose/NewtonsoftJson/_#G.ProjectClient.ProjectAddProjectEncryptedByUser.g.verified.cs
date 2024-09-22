@@ -58,6 +58,11 @@ namespace G
                 decription: ref decription,
                 symKeyHash: ref symKeyHash);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/project/addprojectencryptedbyuser",
                 baseUri: _httpClient.BaseAddress); 

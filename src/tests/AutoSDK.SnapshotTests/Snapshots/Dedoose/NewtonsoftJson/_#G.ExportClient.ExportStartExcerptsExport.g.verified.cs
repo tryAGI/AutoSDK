@@ -125,6 +125,11 @@ namespace G
                 symKeyEncrypted: ref symKeyEncrypted,
                 request: request);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/export/startexcerptsexport",
                 baseUri: _httpClient.BaseAddress); 

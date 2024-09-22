@@ -88,6 +88,11 @@ namespace G
                 isDynamicField: ref isDynamicField,
                 sortOrder: ref sortOrder);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/deletedescriptorfield",
                 baseUri: _httpClient.BaseAddress); 

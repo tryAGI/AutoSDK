@@ -50,6 +50,8 @@ namespace G
                 authorization: ref authorization,
                 request: request);
 
+            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", authorization);
+
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/chat/completions",
                 baseUri: _httpClient.BaseAddress); 

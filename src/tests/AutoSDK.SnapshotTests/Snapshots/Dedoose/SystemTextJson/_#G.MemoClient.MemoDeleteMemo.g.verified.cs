@@ -88,6 +88,11 @@ namespace G
                 folderId: ref folderId,
                 dataURI: ref dataURI);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/deletememo",
                 baseUri: _httpClient.BaseAddress); 

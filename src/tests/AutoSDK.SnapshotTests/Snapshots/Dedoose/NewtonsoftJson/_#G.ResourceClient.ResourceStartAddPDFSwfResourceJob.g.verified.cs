@@ -53,6 +53,11 @@ namespace G
                 title: ref title,
                 fileUri: ref fileUri);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/startaddpdfswfresourcejob",
                 baseUri: _httpClient.BaseAddress); 

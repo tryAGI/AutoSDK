@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 newTitle: ref newTitle);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/project/renameproject",
                 baseUri: _httpClient.BaseAddress); 

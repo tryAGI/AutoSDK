@@ -83,6 +83,11 @@ namespace G
                 transcriptData: ref transcriptData,
                 syncItems: syncItems);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/updatetranscriptdata",
                 baseUri: _httpClient.BaseAddress); 

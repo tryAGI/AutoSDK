@@ -53,6 +53,11 @@ namespace G
                 credits: ref credits,
                 reason: ref reason);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/addcreditstoaccount",
                 baseUri: _httpClient.BaseAddress); 

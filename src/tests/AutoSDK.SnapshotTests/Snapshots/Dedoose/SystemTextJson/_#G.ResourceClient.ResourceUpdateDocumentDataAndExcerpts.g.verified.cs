@@ -68,6 +68,11 @@ namespace G
                 updatedLength: ref updatedLength,
                 excerpts: excerpts);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/updatedocumentdataandexcerpts",
                 baseUri: _httpClient.BaseAddress); 

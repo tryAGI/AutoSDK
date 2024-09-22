@@ -53,6 +53,11 @@ namespace G
                 testId: ref testId,
                 testResultId: ref testResultId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/training/gettestresulttagapps",
                 baseUri: _httpClient.BaseAddress); 

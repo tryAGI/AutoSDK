@@ -63,6 +63,11 @@ namespace G
                 newStart: ref newStart,
                 newEnd: ref newEnd);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/updatepdfswfimageexcerptregion",
                 baseUri: _httpClient.BaseAddress); 

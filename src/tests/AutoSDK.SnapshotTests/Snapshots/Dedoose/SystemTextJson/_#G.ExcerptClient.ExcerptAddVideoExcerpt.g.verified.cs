@@ -68,6 +68,11 @@ namespace G
                 end: ref end,
                 tagIdsToApply: tagIdsToApply);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/addvideoexcerpt",
                 baseUri: _httpClient.BaseAddress); 

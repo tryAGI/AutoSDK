@@ -53,6 +53,11 @@ namespace G
                 excerptId: ref excerptId,
                 text: ref text);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/updateexcerpttext",
                 baseUri: _httpClient.BaseAddress); 

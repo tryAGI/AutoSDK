@@ -53,6 +53,11 @@ namespace G
                 surveyUploadedFileURL: ref surveyUploadedFileURL,
                 encryptedSymKey: ref encryptedSymKey);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/surveyimport/startsurveyimportjob",
                 baseUri: _httpClient.BaseAddress); 

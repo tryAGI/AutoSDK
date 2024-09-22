@@ -58,6 +58,11 @@ namespace G
                 emailAddress: ref emailAddress,
                 subject: ref subject);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/file/emailfile",
                 baseUri: _httpClient.BaseAddress); 

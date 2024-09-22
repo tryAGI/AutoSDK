@@ -73,6 +73,11 @@ namespace G
                 fileURL: ref fileURL,
                 length: ref length);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/addresource",
                 baseUri: _httpClient.BaseAddress); 

@@ -53,6 +53,11 @@ namespace G
                 resourceId: ref resourceId,
                 descriptorId: ref descriptorId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/deletelink",
                 baseUri: _httpClient.BaseAddress); 

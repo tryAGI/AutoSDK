@@ -73,6 +73,11 @@ namespace G
                 data: ref data,
                 optionId: ref optionId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/adddynamicvalue",
                 baseUri: _httpClient.BaseAddress); 

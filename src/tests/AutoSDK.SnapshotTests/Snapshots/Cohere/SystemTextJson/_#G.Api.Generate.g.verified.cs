@@ -49,6 +49,11 @@ namespace G
                 xClientName: ref xClientName,
                 request: request);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/v1/generate",
                 baseUri: _httpClient.BaseAddress); 

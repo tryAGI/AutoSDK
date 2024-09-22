@@ -58,6 +58,11 @@ namespace G
                 tag2Id: ref tag2Id,
                 isParentChildLink: ref isParentChildLink);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/addtaglink",
                 baseUri: _httpClient.BaseAddress); 

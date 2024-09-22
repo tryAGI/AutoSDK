@@ -83,6 +83,11 @@ namespace G
                 excerptText: ref excerptText,
                 tagApps: tagApps);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/adddocumentexcerptwithtags",
                 baseUri: _httpClient.BaseAddress); 

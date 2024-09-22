@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 resourceIds: resourceIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/startdeleteresourcesjob",
                 baseUri: _httpClient.BaseAddress); 

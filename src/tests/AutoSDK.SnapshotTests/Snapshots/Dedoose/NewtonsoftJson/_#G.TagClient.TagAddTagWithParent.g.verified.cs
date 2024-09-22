@@ -88,6 +88,11 @@ namespace G
                 allowDecimalWeights: ref allowDecimalWeights,
                 color: ref color);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/addtagwithparent",
                 baseUri: _httpClient.BaseAddress); 

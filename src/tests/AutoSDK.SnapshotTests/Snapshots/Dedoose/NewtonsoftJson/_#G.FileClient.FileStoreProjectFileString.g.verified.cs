@@ -58,6 +58,11 @@ namespace G
                 extension: ref extension,
                 text: ref text);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/file/storeprojectfilestring",
                 baseUri: _httpClient.BaseAddress); 

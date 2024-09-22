@@ -43,6 +43,11 @@ namespace G
                 id: ref id,
                 xClientName: ref xClientName);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: $"/v1/finetuning/finetuned-models/{id}",
                 baseUri: _httpClient.BaseAddress); 

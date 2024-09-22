@@ -46,6 +46,11 @@ namespace G
                 accept: ref accept,
                 request: request);
 
+            if (accept != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/runs/group",
                 baseUri: _httpClient.BaseAddress); 

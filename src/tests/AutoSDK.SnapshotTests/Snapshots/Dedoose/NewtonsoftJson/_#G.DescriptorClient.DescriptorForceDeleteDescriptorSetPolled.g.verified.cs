@@ -48,6 +48,11 @@ namespace G
                 projectIDL: ref projectIDL,
                 descriptorSetId: ref descriptorSetId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/forcedeletedescriptorsetpolled",
                 baseUri: _httpClient.BaseAddress); 

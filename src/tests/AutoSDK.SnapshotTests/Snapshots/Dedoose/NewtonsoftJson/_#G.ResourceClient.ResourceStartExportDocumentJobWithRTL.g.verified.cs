@@ -68,6 +68,11 @@ namespace G
                 exportExtension: ref exportExtension,
                 encryptedSymKey: ref encryptedSymKey);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/resource/startexportdocumentjobwithrtl",
                 baseUri: _httpClient.BaseAddress); 

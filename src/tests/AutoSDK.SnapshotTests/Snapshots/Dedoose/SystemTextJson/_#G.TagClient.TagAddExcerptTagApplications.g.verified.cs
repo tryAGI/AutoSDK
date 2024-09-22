@@ -63,6 +63,11 @@ namespace G
                 excerptId: ref excerptId,
                 tagApps: tagApps);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/addexcerpttagapplications",
                 baseUri: _httpClient.BaseAddress); 

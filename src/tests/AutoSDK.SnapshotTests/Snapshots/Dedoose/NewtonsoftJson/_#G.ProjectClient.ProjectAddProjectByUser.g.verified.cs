@@ -53,6 +53,11 @@ namespace G
                 title: ref title,
                 decription: ref decription);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/project/addprojectbyuser",
                 baseUri: _httpClient.BaseAddress); 

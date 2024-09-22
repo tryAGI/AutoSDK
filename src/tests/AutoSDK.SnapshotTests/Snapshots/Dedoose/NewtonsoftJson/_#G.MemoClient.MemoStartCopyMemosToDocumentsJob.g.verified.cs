@@ -53,6 +53,11 @@ namespace G
                 userId: ref userId,
                 memoIds: memoIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/startcopymemostodocumentsjob",
                 baseUri: _httpClient.BaseAddress); 

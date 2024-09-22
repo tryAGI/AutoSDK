@@ -48,6 +48,11 @@ namespace G
                 userToBeMovedId: ref userToBeMovedId,
                 accountIdToMoveTo: ref accountIdToMoveTo);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/migrateusertoaccount",
                 baseUri: _httpClient.BaseAddress); 

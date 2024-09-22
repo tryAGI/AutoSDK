@@ -53,6 +53,11 @@ namespace G
                 userId: ref userId,
                 groupId: ref groupId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/addusertogroup",
                 baseUri: _httpClient.BaseAddress); 

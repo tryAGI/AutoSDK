@@ -48,6 +48,11 @@ namespace G
                 title: ref title,
                 message: ref message);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/sendallclientsmessage",
                 baseUri: _httpClient.BaseAddress); 

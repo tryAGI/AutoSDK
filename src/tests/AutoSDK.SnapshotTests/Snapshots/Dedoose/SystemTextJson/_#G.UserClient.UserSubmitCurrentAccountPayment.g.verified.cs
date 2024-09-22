@@ -113,6 +113,11 @@ namespace G
                 expYear: ref expYear,
                 saveAsReoccuring: ref saveAsReoccuring);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/submitcurrentaccountpayment",
                 baseUri: _httpClient.BaseAddress); 

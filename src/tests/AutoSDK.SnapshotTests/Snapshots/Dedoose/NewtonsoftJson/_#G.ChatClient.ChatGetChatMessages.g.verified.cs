@@ -58,6 +58,11 @@ namespace G
                 lastRevievedProjectMessageId: ref lastRevievedProjectMessageId,
                 lastRecievedGlobalMessageId: ref lastRecievedGlobalMessageId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/chat/getchatmessages",
                 baseUri: _httpClient.BaseAddress); 

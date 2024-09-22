@@ -58,6 +58,11 @@ namespace G
                 fileExtension: ref fileExtension,
                 cryptoKey: ref cryptoKey);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/training/startexporttestresultjob",
                 baseUri: _httpClient.BaseAddress); 

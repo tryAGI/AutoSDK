@@ -58,6 +58,11 @@ namespace G
                 email: ref email,
                 phone: ref phone);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/updateuserinfo",
                 baseUri: _httpClient.BaseAddress); 

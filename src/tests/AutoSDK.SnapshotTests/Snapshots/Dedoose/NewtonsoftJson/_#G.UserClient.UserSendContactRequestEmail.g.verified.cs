@@ -68,6 +68,11 @@ namespace G
                 institution: ref institution,
                 comments: ref comments);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/sendcontactrequestemail",
                 baseUri: _httpClient.BaseAddress); 

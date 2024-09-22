@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 resourceId: ref resourceId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/getresourcelinks",
                 baseUri: _httpClient.BaseAddress); 

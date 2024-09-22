@@ -53,6 +53,11 @@ namespace G
                 email: ref email,
                 groupId: ref groupId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/inviteusertoproject",
                 baseUri: _httpClient.BaseAddress); 

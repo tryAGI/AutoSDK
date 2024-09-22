@@ -53,6 +53,11 @@ namespace G
                 setId: ref setId,
                 fileExtension: ref fileExtension);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/startexportfieldsjob",
                 baseUri: _httpClient.BaseAddress); 

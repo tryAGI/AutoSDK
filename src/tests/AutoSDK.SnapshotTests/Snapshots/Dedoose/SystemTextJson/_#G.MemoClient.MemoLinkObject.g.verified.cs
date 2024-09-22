@@ -88,6 +88,11 @@ namespace G
                 id4: ref id4,
                 position4: ref position4);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/linkobject",
                 baseUri: _httpClient.BaseAddress); 

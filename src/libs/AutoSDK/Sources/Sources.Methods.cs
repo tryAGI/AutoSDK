@@ -138,6 +138,18 @@ namespace {endPoint.Namespace}
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
+{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
+{endPoint.Parameters
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
+    .Select(x => $@"
+            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName});").Inject()}
+{endPoint.Parameters
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
+    .Select(x => $@"
+            if ({x.ParameterName} != default)
+            {{
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName});
+            }}").Inject()}
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
     .Where(x => x is { Location: not null, Type.EnumValues.Length: > 0 })

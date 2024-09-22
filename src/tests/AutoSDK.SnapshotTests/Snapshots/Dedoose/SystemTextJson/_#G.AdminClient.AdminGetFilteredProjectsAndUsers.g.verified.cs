@@ -48,6 +48,11 @@ namespace G
                 filter: ref filter,
                 maxResults: ref maxResults);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/getfilteredprojectsandusers",
                 baseUri: _httpClient.BaseAddress); 

@@ -53,6 +53,11 @@ namespace G
                 groupTitle: ref groupTitle,
                 groupACLId: ref groupACLId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/addgrouptoproject",
                 baseUri: _httpClient.BaseAddress); 

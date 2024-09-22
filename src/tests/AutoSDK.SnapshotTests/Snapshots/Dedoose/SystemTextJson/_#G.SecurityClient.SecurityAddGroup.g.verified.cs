@@ -53,6 +53,11 @@ namespace G
                 title: ref title,
                 accessListId: ref accessListId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/security/addgroup",
                 baseUri: _httpClient.BaseAddress); 

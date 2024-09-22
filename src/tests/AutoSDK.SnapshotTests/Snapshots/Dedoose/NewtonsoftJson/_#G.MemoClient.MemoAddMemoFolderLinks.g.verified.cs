@@ -53,6 +53,11 @@ namespace G
                 memoId: ref memoId,
                 folderIds: folderIds);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/memo/addmemofolderlinks",
                 baseUri: _httpClient.BaseAddress); 

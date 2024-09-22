@@ -48,6 +48,11 @@ namespace G
                 userId: ref userId,
                 encryptedPass: ref encryptedPass);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/user/updatecurrentuserpassword",
                 baseUri: _httpClient.BaseAddress); 

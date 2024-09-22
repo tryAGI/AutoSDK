@@ -48,6 +48,11 @@ namespace G
                 adminId: ref adminId,
                 credits: ref credits);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/createaccount",
                 baseUri: _httpClient.BaseAddress); 

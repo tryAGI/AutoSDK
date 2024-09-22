@@ -48,6 +48,11 @@ namespace G
                 projectId: ref projectId,
                 fields: fields);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/updatefieldorders",
                 baseUri: _httpClient.BaseAddress); 

@@ -53,6 +53,11 @@ namespace G
                 transactionId: ref transactionId,
                 email: ref email);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/account/sendpaymentreceipt",
                 baseUri: _httpClient.BaseAddress); 

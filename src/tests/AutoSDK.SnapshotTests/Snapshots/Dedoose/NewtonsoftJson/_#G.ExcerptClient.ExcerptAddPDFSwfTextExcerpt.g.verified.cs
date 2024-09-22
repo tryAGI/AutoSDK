@@ -78,6 +78,11 @@ namespace G
                 text: ref text,
                 tagApps: tagApps);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/excerpt/addpdfswftextexcerpt",
                 baseUri: _httpClient.BaseAddress); 

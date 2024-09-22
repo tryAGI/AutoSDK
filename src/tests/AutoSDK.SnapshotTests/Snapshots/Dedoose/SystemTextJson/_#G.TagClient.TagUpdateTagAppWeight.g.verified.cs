@@ -53,6 +53,11 @@ namespace G
                 tagAppId: ref tagAppId,
                 newWeight: ref newWeight);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tag/updatetagappweight",
                 baseUri: _httpClient.BaseAddress); 

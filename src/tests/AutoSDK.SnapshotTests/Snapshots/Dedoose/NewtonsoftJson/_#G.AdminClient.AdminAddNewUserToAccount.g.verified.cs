@@ -73,6 +73,11 @@ namespace G
                 phone: ref phone,
                 encryptedPass: ref encryptedPass);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/addnewusertoaccount",
                 baseUri: _httpClient.BaseAddress); 

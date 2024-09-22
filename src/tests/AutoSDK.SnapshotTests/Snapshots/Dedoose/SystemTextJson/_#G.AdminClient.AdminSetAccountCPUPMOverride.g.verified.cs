@@ -53,6 +53,11 @@ namespace G
                 cpupmOverride: ref cpupmOverride,
                 endDate: ref endDate);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/setaccountcpupmoverride",
                 baseUri: _httpClient.BaseAddress); 

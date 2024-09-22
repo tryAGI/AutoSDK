@@ -73,6 +73,11 @@ namespace G
                 traineeTagApps: traineeTagApps,
                 completed: ref completed);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/training/updatetestresult",
                 baseUri: _httpClient.BaseAddress); 

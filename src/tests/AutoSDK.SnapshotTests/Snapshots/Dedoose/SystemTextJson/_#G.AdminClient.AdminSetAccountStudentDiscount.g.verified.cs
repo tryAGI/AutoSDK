@@ -43,6 +43,11 @@ namespace G
                 token: ref token,
                 accountId: ref accountId);
 
+            if (token != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+            }
+
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/admin/setaccountstudentdiscount",
                 baseUri: _httpClient.BaseAddress); 

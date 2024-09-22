@@ -71,6 +71,11 @@ namespace G
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
+            if (xClientName != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+
             var validationStatusValue = validationStatus switch
             {
                 global::G.DatasetValidationStatus.Unknown => "unknown",
