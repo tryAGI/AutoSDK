@@ -11,17 +11,17 @@ namespace G
     public enum SearchUsersSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="followers")]
         Followers,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="repositories")]
         Repositories,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="joined")]
         Joined,

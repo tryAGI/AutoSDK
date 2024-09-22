@@ -14,17 +14,17 @@ namespace G
     public enum OrganizationSubscriptionPlan
     {
         /// <summary>
-        /// 
+        /// Free plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_FREE")]
         PLANFREE,
         /// <summary>
-        /// 
+        /// Team plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_TEAM")]
         PLANTEAM,
         /// <summary>
-        /// 
+        /// Enterprise plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_ENTERPRISE")]
         PLANENTERPRISE,

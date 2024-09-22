@@ -14,15 +14,15 @@ namespace G
     public enum ToolChoiceType
     {
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         Any,
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         Tool,
     }

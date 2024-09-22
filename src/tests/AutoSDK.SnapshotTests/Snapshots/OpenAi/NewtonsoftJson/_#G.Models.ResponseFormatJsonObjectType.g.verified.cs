@@ -11,7 +11,7 @@ namespace G
     public enum ResponseFormatJsonObjectType
     {
         /// <summary>
-        /// 
+        /// `json_object`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
         JsonObject,

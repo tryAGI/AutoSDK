@@ -20,12 +20,12 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="archive")]
         Archive,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/creating-highlights-and-stream-markers).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="highlight")]
         Highlight,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/video-on-demand?language=en%5FUS#videoproducer).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="upload")]
         Upload,

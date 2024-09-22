@@ -10,11 +10,11 @@ namespace G
     public enum SubstitutionPolicy
     {
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         EntityName,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         Hash,
     }

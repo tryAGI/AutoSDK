@@ -19,42 +19,42 @@ namespace G
     public enum StripeSubscriptionDetailStatus
     {
         /// <summary>
-        /// 
+        /// Incomplete.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_INCOMPLETE")]
         STATUSINCOMPLETE,
         /// <summary>
-        /// 
+        /// Incomplete Expired.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_INCOMPLETE_EXPIRED")]
         STATUSINCOMPLETEEXPIRED,
         /// <summary>
-        /// 
+        /// Trialing.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_TRIALING")]
         STATUSTRIALING,
         /// <summary>
-        /// 
+        /// Active.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_ACTIVE")]
         STATUSACTIVE,
         /// <summary>
-        /// 
+        /// Past due.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAST_DUE")]
         STATUSPASTDUE,
         /// <summary>
-        /// 
+        /// Canceled.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_CANCELED")]
         STATUSCANCELED,
         /// <summary>
-        /// 
+        /// Unpaid.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_UNPAID")]
         STATUSUNPAID,
         /// <summary>
-        /// 
+        /// Paused.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAUSED")]
         STATUSPAUSED,

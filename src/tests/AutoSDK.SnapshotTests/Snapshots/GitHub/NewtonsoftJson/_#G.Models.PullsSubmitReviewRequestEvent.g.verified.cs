@@ -11,17 +11,17 @@ namespace G
     public enum PullsSubmitReviewRequestEvent
     {
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="APPROVE")]
         APPROVE,
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
         REQUESTCHANGES,
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
         COMMENT,

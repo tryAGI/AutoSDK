@@ -21,47 +21,47 @@ namespace G
     public enum Status
     {
         /// <summary>
-        /// 
+        /// Unspecified status.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_UNSPECIFIED")]
         STATUSUNSPECIFIED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being fine-tuned.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_FINETUNING")]
         STATUSFINETUNING,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being deployed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_DEPLOYING_API")]
         STATUSDEPLOYINGAPI,
         /// <summary>
-        /// 
+        /// The fine-tuned model is ready to receive requests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_READY")]
         STATUSREADY,
         /// <summary>
-        /// 
+        /// The fine-tuned model failed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_FAILED")]
         STATUSFAILED,
         /// <summary>
-        /// 
+        /// The fine-tuned model was deleted.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_DELETED")]
         STATUSDELETED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is temporarily unavailable.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_TEMPORARILY_OFFLINE")]
         STATUSTEMPORARILYOFFLINE,
         /// <summary>
-        /// 
+        /// The fine-tuned model is paused (Vanilla only).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAUSED")]
         STATUSPAUSED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is queued for training.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_QUEUED")]
         STATUSQUEUED,

@@ -14,22 +14,22 @@ namespace G
     public enum GetFileCatalogResponseChunkType
     {
         /// <summary>
-        /// 
+        /// text
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_TEXT")]
         CHUNKTYPETEXT,
         /// <summary>
-        /// 
+        /// image
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_IMAGE")]
         CHUNKTYPEIMAGE,
         /// <summary>
-        /// 
+        /// audio
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_AUDIO")]
         CHUNKTYPEAUDIO,
         /// <summary>
-        /// 
+        /// video
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_VIDEO")]
         CHUNKTYPEVIDEO,

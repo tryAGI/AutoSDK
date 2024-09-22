@@ -10,7 +10,7 @@ namespace G
     public enum ResponseFormatTextType
     {
         /// <summary>
-        /// 
+        /// `text`
         /// </summary>
         Text,
     }

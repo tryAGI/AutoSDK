@@ -11,12 +11,12 @@ namespace G
     public enum SubstitutionPolicy
     {
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="entity_name")]
         EntityName,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="hash")]
         Hash,

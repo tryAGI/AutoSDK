@@ -15,17 +15,17 @@ namespace G
     public enum Strategy
     {
         /// <summary>
-        /// 
+        /// Unspecified strategy.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_UNSPECIFIED")]
         STRATEGYUNSPECIFIED,
         /// <summary>
-        /// 
+        /// Serve the fine-tuned model on a dedicated GPU.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_VANILLA")]
         STRATEGYVANILLA,
         /// <summary>
-        /// 
+        /// Serve the fine-tuned model on a shared GPU.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STRATEGY_TFEW")]
         STRATEGYTFEW,

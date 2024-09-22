@@ -11,7 +11,7 @@ namespace G
     public enum VectorStoreExpirationAfterAnchor
     {
         /// <summary>
-        /// 
+        /// `last_active_at`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="last_active_at")]
         LastActiveAt,

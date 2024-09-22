@@ -15,12 +15,12 @@ namespace G
     public enum View
     {
         /// <summary>
-        /// 
+        /// Default view, only includes basic information.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
         VIEWBASIC,
         /// <summary>
-        /// 
+        /// Full representation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_FULL")]
         VIEWFULL,

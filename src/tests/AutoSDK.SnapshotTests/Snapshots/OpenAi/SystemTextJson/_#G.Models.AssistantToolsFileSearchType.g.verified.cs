@@ -10,7 +10,7 @@ namespace G
     public enum AssistantToolsFileSearchType
     {
         /// <summary>
-        /// 
+        /// `file_search`
         /// </summary>
         FileSearch,
     }

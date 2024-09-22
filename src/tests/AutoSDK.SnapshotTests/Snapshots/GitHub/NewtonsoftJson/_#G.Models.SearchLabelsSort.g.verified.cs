@@ -11,12 +11,12 @@ namespace G
     public enum SearchLabelsSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created")]
         Created,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="updated")]
         Updated,

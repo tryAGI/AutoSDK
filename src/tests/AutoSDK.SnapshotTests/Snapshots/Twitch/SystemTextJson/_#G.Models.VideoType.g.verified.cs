@@ -18,11 +18,11 @@ namespace G
         /// </summary>
         Archive,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/creating-highlights-and-stream-markers).
         /// </summary>
         Highlight,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/video-on-demand?language=en%5FUS#videoproducer).
         /// </summary>
         Upload,
     }

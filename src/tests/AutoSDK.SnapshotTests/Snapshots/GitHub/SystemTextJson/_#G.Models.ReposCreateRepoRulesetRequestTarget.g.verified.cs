@@ -19,7 +19,7 @@ namespace G
         /// </summary>
         Tag,
         /// <summary>
-        /// 
+        /// The `push` target is in beta and is subject to change.
         /// </summary>
         Push,
     }

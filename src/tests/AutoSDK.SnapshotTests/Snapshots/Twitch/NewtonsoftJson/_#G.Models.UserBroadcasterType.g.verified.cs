@@ -15,12 +15,12 @@ namespace G
     public enum UserBroadcasterType
     {
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/joining-the-affiliate-program)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="affiliate")]
         Affiliate,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/partner-program-overview)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="partner")]
         Partner,

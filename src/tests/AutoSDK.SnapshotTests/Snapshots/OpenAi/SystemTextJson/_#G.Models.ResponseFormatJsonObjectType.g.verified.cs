@@ -10,7 +10,7 @@ namespace G
     public enum ResponseFormatJsonObjectType
     {
         /// <summary>
-        /// 
+        /// `json_object`
         /// </summary>
         JsonObject,
     }

@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         EnUs,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Es,
         /// <summary>
@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         It,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Pt,
         /// <summary>
@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         Am,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Ar,
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
         /// </summary>
         Hy,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         As,
         /// <summary>
@@ -123,7 +123,7 @@ namespace G
         /// </summary>
         Hr,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Cs,
         /// <summary>
@@ -135,11 +135,11 @@ namespace G
         /// </summary>
         Et,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Fo,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Fi,
         /// <summary>
@@ -155,11 +155,11 @@ namespace G
         /// </summary>
         El,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Gu,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Ht,
         /// <summary>
@@ -171,7 +171,7 @@ namespace G
         /// </summary>
         Haw,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         He,
         /// <summary>
@@ -219,7 +219,7 @@ namespace G
         /// </summary>
         Lo,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         La,
         /// <summary>
@@ -283,7 +283,7 @@ namespace G
         /// </summary>
         Nn,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Oc,
         /// <summary>
@@ -291,7 +291,7 @@ namespace G
         /// </summary>
         Pa,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Ps,
         /// <summary>
@@ -327,7 +327,7 @@ namespace G
         /// </summary>
         Sd,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Si,
         /// <summary>
@@ -343,7 +343,7 @@ namespace G
         /// </summary>
         So,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Su,
         /// <summary>
@@ -367,11 +367,11 @@ namespace G
         /// </summary>
         Ta,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Tt,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Te,
         /// <summary>
@@ -395,7 +395,7 @@ namespace G
         /// </summary>
         Uk,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Ur,
         /// <summary>
@@ -415,7 +415,7 @@ namespace G
         /// </summary>
         Yi,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         Yo,
     }

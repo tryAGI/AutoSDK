@@ -10,7 +10,7 @@ namespace G
     public enum OrgsListMembersFilter
     {
         /// <summary>
-        /// 
+        /// //github.com/blog/1614-two-factor-authentication) enabled will be returned. This options is only available for organization owners.
         /// </summary>
         x2faDisabled,
         /// <summary>

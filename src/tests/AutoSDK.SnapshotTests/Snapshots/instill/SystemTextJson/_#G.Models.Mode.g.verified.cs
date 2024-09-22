@@ -12,11 +12,11 @@ namespace G
     public enum Mode
     {
         /// <summary>
-        /// 
+        /// Synchronous (result is returned in the response).
         /// </summary>
         MODESYNC,
         /// <summary>
-        /// 
+        /// Asynchronous (response only contains acknowledgement).
         /// </summary>
         MODEASYNC,
     }

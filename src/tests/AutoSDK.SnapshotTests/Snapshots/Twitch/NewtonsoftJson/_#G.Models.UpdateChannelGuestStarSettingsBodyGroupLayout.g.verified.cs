@@ -16,22 +16,22 @@ namespace G
     public enum UpdateChannelGuestStarSettingsBodyGroupLayout
     {
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TILED_LAYOUT")]
         TILEDLAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SCREENSHARE_LAYOUT")]
         SCREENSHARELAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are arranged in a horizontal bar within the browser source
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HORIZONTAL_LAYOUT")]
         HORIZONTALLAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are arranged in a vertical bar within the browser source
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VERTICAL_LAYOUT")]
         VERTICALLAYOUT,

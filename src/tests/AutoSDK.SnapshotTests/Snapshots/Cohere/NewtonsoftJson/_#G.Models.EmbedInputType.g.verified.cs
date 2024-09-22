@@ -15,22 +15,22 @@ namespace G
     public enum EmbedInputType
     {
         /// <summary>
-        /// 
+        /// Used for embeddings stored in a vector database for search use-cases.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="search_document")]
         SearchDocument,
         /// <summary>
-        /// 
+        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="search_query")]
         SearchQuery,
         /// <summary>
-        /// 
+        /// Used for embeddings passed through a text classifier.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="classification")]
         Classification,
         /// <summary>
-        /// 
+        /// Used for the embeddings run through a clustering algorithm.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="clustering")]
         Clustering,

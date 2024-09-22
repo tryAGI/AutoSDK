@@ -11,22 +11,22 @@ namespace G
     public enum GetBitsLeaderboardPeriod
     {
         /// <summary>
-        /// 
+        /// 00:00 on the day specified in _started\_at_ and runs through 00:00:00 of the next day.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="day")]
         Day,
         /// <summary>
-        /// 
+        /// 00:00 on the Monday of the week specified in _started\_at_ and runs through 00:00:00 of the next Monday.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="week")]
         Week,
         /// <summary>
-        /// 
+        /// 00:00 on the first day of the month specified in _started\_at_ and runs through 00:00:00 of the first day of the next month.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="month")]
         Month,
         /// <summary>
-        /// 
+        /// 00:00 on the first day of the year specified in _started\_at_ and runs through 00:00:00 of the first day of the next year.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="year")]
         Year,

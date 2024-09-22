@@ -11,17 +11,17 @@ namespace G
     public enum PullsCreateReviewCommentRequestStartSide
     {
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LEFT")]
         LEFT,
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RIGHT")]
         RIGHT,
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="side")]
         Side,

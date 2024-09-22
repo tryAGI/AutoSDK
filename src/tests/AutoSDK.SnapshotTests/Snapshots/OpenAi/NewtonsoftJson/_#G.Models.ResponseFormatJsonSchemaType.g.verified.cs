@@ -11,7 +11,7 @@ namespace G
     public enum ResponseFormatJsonSchemaType
     {
         /// <summary>
-        /// 
+        /// `json_schema`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
         JsonSchema,

@@ -11,7 +11,7 @@ namespace G
     public enum AssistantToolsFileSearchType
     {
         /// <summary>
-        /// 
+        /// `file_search`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
         FileSearch,

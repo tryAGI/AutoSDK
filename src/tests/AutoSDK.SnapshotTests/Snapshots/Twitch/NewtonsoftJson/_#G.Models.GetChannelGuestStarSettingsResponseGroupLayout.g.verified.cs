@@ -14,12 +14,12 @@ namespace G
     public enum GetChannelGuestStarSettingsResponseGroupLayout
     {
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TILED_LAYOUT")]
         TILEDLAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SCREENSHARE_LAYOUT")]
         SCREENSHARELAYOUT,

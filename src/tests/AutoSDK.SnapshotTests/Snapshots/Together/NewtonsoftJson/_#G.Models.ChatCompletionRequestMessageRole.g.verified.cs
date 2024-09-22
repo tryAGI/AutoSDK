@@ -11,17 +11,17 @@ namespace G
     public enum ChatCompletionRequestMessageRole
     {
         /// <summary>
-        /// 
+        /// system, user, or assistant.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
         /// <summary>
-        /// 
+        /// system, user, or assistant.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user")]
         User,
         /// <summary>
-        /// 
+        /// system, user, or assistant.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
         Assistant,

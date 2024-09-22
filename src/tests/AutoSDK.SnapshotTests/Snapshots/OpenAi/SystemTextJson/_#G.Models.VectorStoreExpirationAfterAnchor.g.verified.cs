@@ -10,7 +10,7 @@ namespace G
     public enum VectorStoreExpirationAfterAnchor
     {
         /// <summary>
-        /// 
+        /// `last_active_at`.
         /// </summary>
         LastActiveAt,
     }

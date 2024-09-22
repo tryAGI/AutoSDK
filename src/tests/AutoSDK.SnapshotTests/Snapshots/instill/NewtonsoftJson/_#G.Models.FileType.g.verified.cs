@@ -24,72 +24,72 @@ namespace G
     public enum FileType
     {
         /// <summary>
-        /// 
+        /// text
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_TEXT")]
         FILETYPETEXT,
         /// <summary>
-        /// 
+        /// PDF
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PDF")]
         FILETYPEPDF,
         /// <summary>
-        /// 
+        /// MARKDOWN
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_MARKDOWN")]
         FILETYPEMARKDOWN,
         /// <summary>
-        /// 
+        /// PNG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PNG")]
         FILETYPEPNG,
         /// <summary>
-        /// 
+        /// JPEG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_JPEG")]
         FILETYPEJPEG,
         /// <summary>
-        /// 
+        /// JPG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_JPG")]
         FILETYPEJPG,
         /// <summary>
-        /// 
+        /// HTML
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_HTML")]
         FILETYPEHTML,
         /// <summary>
-        /// 
+        /// DOCX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_DOCX")]
         FILETYPEDOCX,
         /// <summary>
-        /// 
+        /// DOCX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_DOC")]
         FILETYPEDOC,
         /// <summary>
-        /// 
+        /// PPT
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PPT")]
         FILETYPEPPT,
         /// <summary>
-        /// 
+        /// PPTX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PPTX")]
         FILETYPEPPTX,
         /// <summary>
-        /// 
+        /// XLS
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_XLS")]
         FILETYPEXLS,
         /// <summary>
-        /// 
+        /// XLSX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_XLSX")]
         FILETYPEXLSX,
         /// <summary>
-        /// 
+        /// CSV
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_CSV")]
         FILETYPECSV,

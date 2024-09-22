@@ -10,19 +10,19 @@ namespace G
     public enum GetBitsLeaderboardPeriod
     {
         /// <summary>
-        /// 
+        /// 00:00 on the day specified in _started\_at_ and runs through 00:00:00 of the next day.
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        /// 00:00 on the Monday of the week specified in _started\_at_ and runs through 00:00:00 of the next Monday.
         /// </summary>
         Week,
         /// <summary>
-        /// 
+        /// 00:00 on the first day of the month specified in _started\_at_ and runs through 00:00:00 of the first day of the next month.
         /// </summary>
         Month,
         /// <summary>
-        /// 
+        /// 00:00 on the first day of the year specified in _started\_at_ and runs through 00:00:00 of the first day of the next year.
         /// </summary>
         Year,
         /// <summary>

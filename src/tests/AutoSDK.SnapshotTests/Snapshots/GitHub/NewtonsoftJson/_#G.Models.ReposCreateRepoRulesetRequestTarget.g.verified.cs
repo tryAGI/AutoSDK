@@ -22,7 +22,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="tag")]
         Tag,
         /// <summary>
-        /// 
+        /// The `push` target is in beta and is subject to change.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="push")]
         Push,

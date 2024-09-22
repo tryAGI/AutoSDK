@@ -15,22 +15,22 @@ namespace G
     public enum CheckNamespaceAdminResponseNamespace
     {
         /// <summary>
-        /// 
+        /// Available.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_AVAILABLE")]
         NAMESPACEAVAILABLE,
         /// <summary>
-        /// 
+        /// Namespace belongs to a user.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_USER")]
         NAMESPACEUSER,
         /// <summary>
-        /// 
+        /// Namespace belongs to an organization.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_ORGANIZATION")]
         NAMESPACEORGANIZATION,
         /// <summary>
-        /// 
+        /// Reserved.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_RESERVED")]
         NAMESPACERESERVED,

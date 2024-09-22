@@ -10,7 +10,7 @@ namespace G
     public enum AssistantToolsFunctionType
     {
         /// <summary>
-        /// 
+        /// `function`
         /// </summary>
         Function,
     }

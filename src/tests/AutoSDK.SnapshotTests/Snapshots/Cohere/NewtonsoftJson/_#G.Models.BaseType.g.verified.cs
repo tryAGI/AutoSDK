@@ -17,27 +17,27 @@ namespace G
     public enum BaseType
     {
         /// <summary>
-        /// 
+        /// Unspecified model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_UNSPECIFIED")]
         BASETYPEUNSPECIFIED,
         /// <summary>
-        /// 
+        /// Generative model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_GENERATIVE")]
         BASETYPEGENERATIVE,
         /// <summary>
-        /// 
+        /// Classification model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CLASSIFICATION")]
         BASETYPECLASSIFICATION,
         /// <summary>
-        /// 
+        /// Rerank model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_RERANK")]
         BASETYPERERANK,
         /// <summary>
-        /// 
+        /// Chat model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CHAT")]
         BASETYPECHAT,

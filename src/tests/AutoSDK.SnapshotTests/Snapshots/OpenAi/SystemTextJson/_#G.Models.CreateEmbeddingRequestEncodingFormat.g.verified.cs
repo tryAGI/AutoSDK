@@ -12,11 +12,11 @@ namespace G
     public enum CreateEmbeddingRequestEncodingFormat
     {
         /// <summary>
-        /// 
+        /// //pypi.org/project/pybase64/).
         /// </summary>
         Float,
         /// <summary>
-        /// 
+        /// //pypi.org/project/pybase64/).
         /// </summary>
         Base64,
     }

@@ -12,27 +12,27 @@ namespace G
     public enum CreateTranscriptionRequestResponseFormat
     {
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json")]
         Json,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="srt")]
         Srt,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="verbose_json")]
         VerboseJson,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vtt")]
         Vtt,

@@ -11,12 +11,12 @@ namespace G
     public enum PullsCreateReviewCommentRequestSide
     {
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LEFT")]
         LEFT,
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RIGHT")]
         RIGHT,

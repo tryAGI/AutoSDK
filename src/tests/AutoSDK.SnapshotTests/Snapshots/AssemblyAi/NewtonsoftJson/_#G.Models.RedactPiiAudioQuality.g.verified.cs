@@ -12,12 +12,12 @@ namespace G
     public enum RedactPiiAudioQuality
     {
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
         Mp3,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="wav")]
         Wav,

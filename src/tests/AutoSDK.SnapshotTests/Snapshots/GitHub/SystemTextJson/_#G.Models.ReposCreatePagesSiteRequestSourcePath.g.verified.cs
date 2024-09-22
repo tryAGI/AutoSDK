@@ -11,11 +11,11 @@ namespace G
     public enum ReposCreatePagesSiteRequestSourcePath
     {
         /// <summary>
-        /// 
+        /// `/`
         /// </summary>
         x,
         /// <summary>
-        /// 
+        /// `/`
         /// </summary>
         Docs,
     }

@@ -11,12 +11,12 @@ namespace G
     public enum PullsListDirection
     {
         /// <summary>
-        /// 
+        /// `desc` when sort is `created` or sort is not specified, otherwise `asc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="asc")]
         Asc,
         /// <summary>
-        /// 
+        /// `desc` when sort is `created` or sort is not specified, otherwise `asc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="desc")]
         Desc,

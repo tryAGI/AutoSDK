@@ -13,12 +13,12 @@ namespace G
     public enum CreateEmbeddingRequestEncodingFormat
     {
         /// <summary>
-        /// 
+        /// //pypi.org/project/pybase64/).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="float")]
         Float,
         /// <summary>
-        /// 
+        /// //pypi.org/project/pybase64/).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="base64")]
         Base64,

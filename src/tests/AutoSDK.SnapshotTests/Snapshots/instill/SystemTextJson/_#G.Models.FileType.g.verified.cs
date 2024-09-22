@@ -23,59 +23,59 @@ namespace G
     public enum FileType
     {
         /// <summary>
-        /// 
+        /// text
         /// </summary>
         FILETYPETEXT,
         /// <summary>
-        /// 
+        /// PDF
         /// </summary>
         FILETYPEPDF,
         /// <summary>
-        /// 
+        /// MARKDOWN
         /// </summary>
         FILETYPEMARKDOWN,
         /// <summary>
-        /// 
+        /// PNG(not supported yet)
         /// </summary>
         FILETYPEPNG,
         /// <summary>
-        /// 
+        /// JPEG(not supported yet)
         /// </summary>
         FILETYPEJPEG,
         /// <summary>
-        /// 
+        /// JPG(not supported yet)
         /// </summary>
         FILETYPEJPG,
         /// <summary>
-        /// 
+        /// HTML
         /// </summary>
         FILETYPEHTML,
         /// <summary>
-        /// 
+        /// DOCX
         /// </summary>
         FILETYPEDOCX,
         /// <summary>
-        /// 
+        /// DOCX
         /// </summary>
         FILETYPEDOC,
         /// <summary>
-        /// 
+        /// PPT
         /// </summary>
         FILETYPEPPT,
         /// <summary>
-        /// 
+        /// PPTX
         /// </summary>
         FILETYPEPPTX,
         /// <summary>
-        /// 
+        /// XLS
         /// </summary>
         FILETYPEXLS,
         /// <summary>
-        /// 
+        /// XLSX
         /// </summary>
         FILETYPEXLSX,
         /// <summary>
-        /// 
+        /// CSV
         /// </summary>
         FILETYPECSV,
     }

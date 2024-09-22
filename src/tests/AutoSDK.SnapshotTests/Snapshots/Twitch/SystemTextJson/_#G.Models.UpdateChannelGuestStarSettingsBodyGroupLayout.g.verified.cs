@@ -15,19 +15,19 @@ namespace G
     public enum UpdateChannelGuestStarSettingsBodyGroupLayout
     {
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size.
         /// </summary>
         TILEDLAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         SCREENSHARELAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are arranged in a horizontal bar within the browser source
         /// </summary>
         HORIZONTALLAYOUT,
         /// <summary>
-        /// 
+        /// All live guests are arranged in a vertical bar within the browser source
         /// </summary>
         VERTICALLAYOUT,
     }

@@ -14,12 +14,12 @@ namespace G
     public enum OnboardingStatus
     {
         /// <summary>
-        /// 
+        /// In progress, i.e., the user has initiated the onboarding process
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ONBOARDING_STATUS_IN_PROGRESS")]
         ONBOARDINGSTATUSINPROGRESS,
         /// <summary>
-        /// 
+        /// Completed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ONBOARDING_STATUS_COMPLETED")]
         ONBOARDINGSTATUSCOMPLETED,

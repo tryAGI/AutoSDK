@@ -10,7 +10,7 @@ namespace G
     public enum ResponseFormatJsonSchemaType
     {
         /// <summary>
-        /// 
+        /// `json_schema`
         /// </summary>
         JsonSchema,
     }

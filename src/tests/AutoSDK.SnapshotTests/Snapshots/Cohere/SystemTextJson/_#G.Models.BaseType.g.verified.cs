@@ -16,23 +16,23 @@ namespace G
     public enum BaseType
     {
         /// <summary>
-        /// 
+        /// Unspecified model.
         /// </summary>
         BASETYPEUNSPECIFIED,
         /// <summary>
-        /// 
+        /// Generative model.
         /// </summary>
         BASETYPEGENERATIVE,
         /// <summary>
-        /// 
+        /// Classification model.
         /// </summary>
         BASETYPECLASSIFICATION,
         /// <summary>
-        /// 
+        /// Rerank model.
         /// </summary>
         BASETYPERERANK,
         /// <summary>
-        /// 
+        /// Chat model.
         /// </summary>
         BASETYPECHAT,
     }

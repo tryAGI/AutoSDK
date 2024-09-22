@@ -13,12 +13,12 @@ namespace G
     public enum UserSubscriptionPlan
     {
         /// <summary>
-        /// 
+        /// Free plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_FREE")]
         PLANFREE,
         /// <summary>
-        /// 
+        /// Pro plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_PRO")]
         PLANPRO,

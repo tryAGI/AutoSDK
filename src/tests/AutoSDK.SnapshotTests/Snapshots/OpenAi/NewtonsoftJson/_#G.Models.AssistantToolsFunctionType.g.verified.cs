@@ -11,7 +11,7 @@ namespace G
     public enum AssistantToolsFunctionType
     {
         /// <summary>
-        /// 
+        /// `function`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="function")]
         Function,

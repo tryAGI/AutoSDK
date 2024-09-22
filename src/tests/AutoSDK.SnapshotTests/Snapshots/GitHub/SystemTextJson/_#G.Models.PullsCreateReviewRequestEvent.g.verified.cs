@@ -10,15 +10,15 @@ namespace G
     public enum PullsCreateReviewRequestEvent
     {
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         APPROVE,
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         REQUESTCHANGES,
         /// <summary>
-        /// 
+        /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
         COMMENT,
     }

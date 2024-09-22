@@ -17,37 +17,37 @@ namespace G
     public enum FileProcessStatus
     {
         /// <summary>
-        /// 
+        /// NOTSTARTED
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_NOTSTARTED")]
         FILEPROCESSSTATUSNOTSTARTED,
         /// <summary>
-        /// 
+        /// file is waiting for embedding process
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_WAITING")]
         FILEPROCESSSTATUSWAITING,
         /// <summary>
-        /// 
+        /// file is converting
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CONVERTING")]
         FILEPROCESSSTATUSCONVERTING,
         /// <summary>
-        /// 
+        /// file is chunking
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CHUNKING")]
         FILEPROCESSSTATUSCHUNKING,
         /// <summary>
-        /// 
+        /// file is embedding
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_EMBEDDING")]
         FILEPROCESSSTATUSEMBEDDING,
         /// <summary>
-        /// 
+        /// completed
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_COMPLETED")]
         FILEPROCESSSTATUSCOMPLETED,
         /// <summary>
-        /// 
+        /// failed
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_FAILED")]
         FILEPROCESSSTATUSFAILED,

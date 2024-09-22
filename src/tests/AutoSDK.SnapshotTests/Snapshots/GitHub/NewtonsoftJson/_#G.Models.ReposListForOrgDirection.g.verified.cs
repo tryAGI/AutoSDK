@@ -11,12 +11,12 @@ namespace G
     public enum ReposListForOrgDirection
     {
         /// <summary>
-        /// 
+        /// `asc` when using `full_name`, otherwise `desc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="asc")]
         Asc,
         /// <summary>
-        /// 
+        /// `asc` when using `full_name`, otherwise `desc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="desc")]
         Desc,

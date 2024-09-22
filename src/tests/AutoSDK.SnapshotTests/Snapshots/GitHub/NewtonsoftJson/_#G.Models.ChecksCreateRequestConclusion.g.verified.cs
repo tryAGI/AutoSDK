@@ -42,7 +42,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
         Skipped,
         /// <summary>
-        /// 
+        /// ** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stale")]
         Stale,

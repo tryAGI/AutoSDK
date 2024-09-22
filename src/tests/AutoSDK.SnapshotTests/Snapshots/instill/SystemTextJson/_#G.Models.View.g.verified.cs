@@ -14,11 +14,11 @@ namespace G
     public enum View
     {
         /// <summary>
-        /// 
+        /// Default view, only includes basic information.
         /// </summary>
         VIEWBASIC,
         /// <summary>
-        /// 
+        /// Full representation.
         /// </summary>
         VIEWFULL,
     }

@@ -10,15 +10,15 @@ namespace G
     public enum PullsCreateReviewCommentRequestStartSide
     {
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         LEFT,
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         RIGHT,
         /// <summary>
-        /// 
+        /// //docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
         /// </summary>
         Side,
     }

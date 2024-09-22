@@ -19,11 +19,11 @@ namespace G
         /// </summary>
         OFF,
         /// <summary>
-        /// 
+        /// Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         AUTO,
         /// <summary>
-        /// 
+        /// Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         AUTOPRESERVEORDER,
     }

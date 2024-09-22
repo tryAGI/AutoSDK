@@ -12,12 +12,12 @@ namespace G
     public enum ReposCreatePagesSiteRequestSourcePath
     {
         /// <summary>
-        /// 
+        /// `/`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/")]
         x,
         /// <summary>
-        /// 
+        /// `/`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/docs")]
         Docs,

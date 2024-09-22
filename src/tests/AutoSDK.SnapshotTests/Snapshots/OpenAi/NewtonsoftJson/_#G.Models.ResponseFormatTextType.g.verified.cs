@@ -11,7 +11,7 @@ namespace G
     public enum ResponseFormatTextType
     {
         /// <summary>
-        /// 
+        /// `text`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,

@@ -13,12 +13,12 @@ namespace G
     public enum Mgmtv1betaStatus
     {
         /// <summary>
-        /// 
+        /// Successfully completed.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_COMPLETED")]
         STATUSCOMPLETED,
         /// <summary>
-        /// 
+        /// Finished with error.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_ERRORED")]
         STATUSERRORED,

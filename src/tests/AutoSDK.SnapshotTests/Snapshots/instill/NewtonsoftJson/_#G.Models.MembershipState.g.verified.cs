@@ -14,12 +14,12 @@ namespace G
     public enum MembershipState
     {
         /// <summary>
-        /// 
+        /// Active.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBERSHIP_STATE_ACTIVE")]
         MEMBERSHIPSTATEACTIVE,
         /// <summary>
-        /// 
+        /// Pending, i.e., a request has been sent to the user to join an
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MEMBERSHIP_STATE_PENDING")]
         MEMBERSHIPSTATEPENDING,

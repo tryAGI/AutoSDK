@@ -32,7 +32,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="en_us")]
         EnUs,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="es")]
         Es,
@@ -52,7 +52,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="it")]
         It,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pt")]
         Pt,
@@ -77,7 +77,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="am")]
         Am,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ar")]
         Ar,
@@ -87,7 +87,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="hy")]
         Hy,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="as")]
         As,
@@ -152,7 +152,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="hr")]
         Hr,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cs")]
         Cs,
@@ -167,12 +167,12 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="et")]
         Et,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fo")]
         Fo,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fi")]
         Fi,
@@ -192,12 +192,12 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="el")]
         El,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gu")]
         Gu,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ht")]
         Ht,
@@ -212,7 +212,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="haw")]
         Haw,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="he")]
         He,
@@ -272,7 +272,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="lo")]
         Lo,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="la")]
         La,
@@ -352,7 +352,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="nn")]
         Nn,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="oc")]
         Oc,
@@ -362,7 +362,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="pa")]
         Pa,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ps")]
         Ps,
@@ -407,7 +407,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="sd")]
         Sd,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="si")]
         Si,
@@ -427,7 +427,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="so")]
         So,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="su")]
         Su,
@@ -457,12 +457,12 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="ta")]
         Ta,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tt")]
         Tt,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="te")]
         Te,
@@ -492,7 +492,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="uk")]
         Uk,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ur")]
         Ur,
@@ -517,7 +517,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="yi")]
         Yi,
         /// <summary>
-        /// 
+        /// //www.assemblyai.com/docs/concepts/supported-languages).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="yo")]
         Yo,

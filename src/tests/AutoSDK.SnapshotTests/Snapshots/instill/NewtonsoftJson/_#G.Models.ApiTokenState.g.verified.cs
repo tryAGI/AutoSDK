@@ -14,17 +14,17 @@ namespace G
     public enum ApiTokenState
     {
         /// <summary>
-        /// 
+        /// Inactive.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_INACTIVE")]
         STATEINACTIVE,
         /// <summary>
-        /// 
+        /// Active.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_ACTIVE")]
         STATEACTIVE,
         /// <summary>
-        /// 
+        /// Expired.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATE_EXPIRED")]
         STATEEXPIRED,

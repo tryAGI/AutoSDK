@@ -20,7 +20,7 @@ namespace G
     public enum UserMessageRole
     {
         /// <summary>
-        /// 
+        /// Input provided by the user. Any instructions given here that conflict
         /// </summary>
         User,
     }

@@ -21,7 +21,7 @@ namespace G
     public enum UserMessageRole
     {
         /// <summary>
-        /// 
+        /// Input provided by the user. Any instructions given here that conflict
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user")]
         User,

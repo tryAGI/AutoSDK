@@ -12,7 +12,7 @@ namespace G
     public enum InteractionExpiry
     {
         /// <summary>
-        /// 
+        /// `one_day`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="one_day")]
         OneDay,

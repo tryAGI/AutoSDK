@@ -10,15 +10,15 @@ namespace G
     public enum SearchUsersSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Followers,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Repositories,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Joined,
     }

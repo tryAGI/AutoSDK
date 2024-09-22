@@ -11,7 +11,7 @@ namespace G
     public enum AssistantToolsCodeType
     {
         /// <summary>
-        /// 
+        /// `code_interpreter`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter")]
         CodeInterpreter,

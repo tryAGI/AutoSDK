@@ -14,15 +14,15 @@ namespace G
     public enum Strategy
     {
         /// <summary>
-        /// 
+        /// Unspecified strategy.
         /// </summary>
         STRATEGYUNSPECIFIED,
         /// <summary>
-        /// 
+        /// Serve the fine-tuned model on a dedicated GPU.
         /// </summary>
         STRATEGYVANILLA,
         /// <summary>
-        /// 
+        /// Serve the fine-tuned model on a shared GPU.
         /// </summary>
         STRATEGYTFEW,
     }

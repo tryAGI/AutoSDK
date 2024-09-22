@@ -10,11 +10,11 @@ namespace G
     public enum PullsListDirection
     {
         /// <summary>
-        /// 
+        /// `desc` when sort is `created` or sort is not specified, otherwise `asc`.
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        /// `desc` when sort is `created` or sort is not specified, otherwise `asc`.
         /// </summary>
         Desc,
     }

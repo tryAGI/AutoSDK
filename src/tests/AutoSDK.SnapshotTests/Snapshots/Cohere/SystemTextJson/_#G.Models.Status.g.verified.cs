@@ -20,39 +20,39 @@ namespace G
     public enum Status
     {
         /// <summary>
-        /// 
+        /// Unspecified status.
         /// </summary>
         STATUSUNSPECIFIED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being fine-tuned.
         /// </summary>
         STATUSFINETUNING,
         /// <summary>
-        /// 
+        /// The fine-tuned model is being deployed.
         /// </summary>
         STATUSDEPLOYINGAPI,
         /// <summary>
-        /// 
+        /// The fine-tuned model is ready to receive requests.
         /// </summary>
         STATUSREADY,
         /// <summary>
-        /// 
+        /// The fine-tuned model failed.
         /// </summary>
         STATUSFAILED,
         /// <summary>
-        /// 
+        /// The fine-tuned model was deleted.
         /// </summary>
         STATUSDELETED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is temporarily unavailable.
         /// </summary>
         STATUSTEMPORARILYOFFLINE,
         /// <summary>
-        /// 
+        /// The fine-tuned model is paused (Vanilla only).
         /// </summary>
         STATUSPAUSED,
         /// <summary>
-        /// 
+        /// The fine-tuned model is queued for training.
         /// </summary>
         STATUSQUEUED,
     }

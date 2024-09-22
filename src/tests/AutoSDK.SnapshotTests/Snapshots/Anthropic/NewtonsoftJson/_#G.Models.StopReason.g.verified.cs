@@ -17,17 +17,17 @@ namespace G
     public enum StopReason
     {
         /// <summary>
-        /// 
+        /// the model reached a natural stopping point
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="end_turn")]
         EndTurn,
         /// <summary>
-        /// 
+        /// we exceeded the requested `max_tokens` or the model's maximum
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="max_tokens")]
         MaxTokens,
         /// <summary>
-        /// 
+        /// one of your provided custom `stop_sequences` was generated
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stop_sequence")]
         StopSequence,

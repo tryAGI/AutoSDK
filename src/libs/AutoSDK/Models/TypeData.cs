@@ -140,7 +140,9 @@ public readonly record struct TypeData(
         if (context.Schema.IsEnum())
         {
             var values = context.Schema.Enum
-                .Select(value => value.ToEnumValue(context.Settings)).ToArray();
+                .Select(value => value.ToEnumValue(
+                    description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
+                    context.Settings)).ToArray();
             properties = values
                 .Select(x => x.Name)
                 .ToImmutableArray();

@@ -16,31 +16,31 @@ namespace G
     public enum FileProcessStatus
     {
         /// <summary>
-        /// 
+        /// NOTSTARTED
         /// </summary>
         FILEPROCESSSTATUSNOTSTARTED,
         /// <summary>
-        /// 
+        /// file is waiting for embedding process
         /// </summary>
         FILEPROCESSSTATUSWAITING,
         /// <summary>
-        /// 
+        /// file is converting
         /// </summary>
         FILEPROCESSSTATUSCONVERTING,
         /// <summary>
-        /// 
+        /// file is chunking
         /// </summary>
         FILEPROCESSSTATUSCHUNKING,
         /// <summary>
-        /// 
+        /// file is embedding
         /// </summary>
         FILEPROCESSSTATUSEMBEDDING,
         /// <summary>
-        /// 
+        /// completed
         /// </summary>
         FILEPROCESSSTATUSCOMPLETED,
         /// <summary>
-        /// 
+        /// failed
         /// </summary>
         FILEPROCESSSTATUSFAILED,
     }

@@ -14,11 +14,11 @@ namespace G
     public enum UserBroadcasterType
     {
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/joining-the-affiliate-program)
         /// </summary>
         Affiliate,
         /// <summary>
-        /// 
+        /// //help.twitch.tv/s/article/partner-program-overview)
         /// </summary>
         Partner,
     }

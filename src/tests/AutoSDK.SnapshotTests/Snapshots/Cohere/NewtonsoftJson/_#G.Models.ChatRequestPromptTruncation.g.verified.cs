@@ -21,12 +21,12 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="OFF")]
         OFF,
         /// <summary>
-        /// 
+        /// Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AUTO")]
         AUTO,
         /// <summary>
-        /// 
+        /// Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AUTO_PRESERVE_ORDER")]
         AUTOPRESERVEORDER,

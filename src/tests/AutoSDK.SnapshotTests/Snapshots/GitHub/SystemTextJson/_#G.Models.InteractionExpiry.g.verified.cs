@@ -11,7 +11,7 @@ namespace G
     public enum InteractionExpiry
     {
         /// <summary>
-        /// 
+        /// `one_day`.
         /// </summary>
         OneDay,
         /// <summary>

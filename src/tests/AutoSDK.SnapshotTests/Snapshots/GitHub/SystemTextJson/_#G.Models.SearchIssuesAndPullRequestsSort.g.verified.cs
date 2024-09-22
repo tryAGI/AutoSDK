@@ -10,47 +10,47 @@ namespace G
     public enum SearchIssuesAndPullRequestsSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Comments,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Reactions,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         ReactionsPlus1,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Reactions1,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         ReactionsSmile,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         ReactionsThinkingFace,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         ReactionsHeart,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         ReactionsTada,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Interactions,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         Updated,
     }

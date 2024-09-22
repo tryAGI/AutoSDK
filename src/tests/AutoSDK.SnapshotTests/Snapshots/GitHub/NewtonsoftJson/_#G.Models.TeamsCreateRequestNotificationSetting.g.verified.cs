@@ -14,7 +14,7 @@ namespace G
     public enum TeamsCreateRequestNotificationSetting
     {
         /// <summary>
-        /// 
+        /// `notifications_enabled`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="notifications_enabled")]
         NotificationsEnabled,

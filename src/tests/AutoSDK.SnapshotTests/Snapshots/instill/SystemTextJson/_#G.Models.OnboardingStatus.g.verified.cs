@@ -13,11 +13,11 @@ namespace G
     public enum OnboardingStatus
     {
         /// <summary>
-        /// 
+        /// In progress, i.e., the user has initiated the onboarding process
         /// </summary>
         ONBOARDINGSTATUSINPROGRESS,
         /// <summary>
-        /// 
+        /// Completed.
         /// </summary>
         ONBOARDINGSTATUSCOMPLETED,
     }

@@ -13,12 +13,12 @@ namespace G
     public enum Mode
     {
         /// <summary>
-        /// 
+        /// Synchronous (result is returned in the response).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODE_SYNC")]
         MODESYNC,
         /// <summary>
-        /// 
+        /// Asynchronous (response only contains acknowledgement).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODE_ASYNC")]
         MODEASYNC,

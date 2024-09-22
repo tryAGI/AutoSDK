@@ -15,17 +15,17 @@ namespace G
     public enum ToolChoiceType
     {
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto")]
         Auto,
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="any")]
         Any,
         /// <summary>
-        /// 
+        /// allows Claude to decide whether to call any provided tools or not. This is the default value.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool")]
         Tool,

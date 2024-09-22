@@ -246,7 +246,7 @@ public static class OpenApiExtensions
         // }
         if (context.Schema.Enum.Any() && context.Schema.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
-            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
+            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
         }
         if (context.Schema.AnyOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
@@ -254,7 +254,7 @@ public static class OpenApiExtensions
                 .Where(x => x.Hint is Hint.AnyOf)
                 .First(x => x.Schema.Enum.Any());
 
-            var value = context.Schema.Default.ToEnumValue(context.Settings).Name;
+            var value = context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
             if (string.IsNullOrWhiteSpace(value))
             {
                 if (context.Children
@@ -279,7 +279,7 @@ public static class OpenApiExtensions
                 .Where(x => x.Hint is Hint.OneOf)
                 .First(x => x.Schema.Enum.Any());
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
         }
         if (context.Schema.AllOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
@@ -287,7 +287,7 @@ public static class OpenApiExtensions
                 .Where(x => x.Hint is Hint.AllOf)
                 .First(x => x.Schema.Enum.Any());
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(context.Settings).Name;
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
         }
         if (context.Schema.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
@@ -441,15 +441,17 @@ public static class OpenApiExtensions
     
     public static PropertyData ToEnumValue(
         this IOpenApiAny any,
+        string description,
         Settings settings)
     {
         var id = any.GetString() ?? string.Empty;
         
-        return id.ToEnumValue(settings);
+        return id.ToEnumValue(description, settings);
     }
     
     public static PropertyData ToEnumValue(
         this string id,
+        string description,
         Settings settings)
     {
         var name = id
@@ -474,7 +476,23 @@ public static class OpenApiExtensions
         {
             Id = id,
             Name = PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix),
+            Summary = ExtractEnumSummaryFromDescription(id, description),
         };
+    }
+
+    public static string ExtractEnumSummaryFromDescription(string id, string description)
+    {
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            return string.Empty;
+        }
+        
+        var lines = description.Split(["\n"], StringSplitOptions.RemoveEmptyEntries);
+        var line = lines.FirstOrDefault(line => line.Contains(id) && line.Contains(":"));
+        
+        return line == null
+            ? string.Empty
+            : line[(line.IndexOf(':') + 1)..].Trim();
     }
     
     public static string[] FindAllOperationIdsForTag(

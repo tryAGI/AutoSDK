@@ -13,11 +13,11 @@ namespace G
     public enum MembershipState
     {
         /// <summary>
-        /// 
+        /// Active.
         /// </summary>
         MEMBERSHIPSTATEACTIVE,
         /// <summary>
-        /// 
+        /// Pending, i.e., a request has been sent to the user to join an
         /// </summary>
         MEMBERSHIPSTATEPENDING,
     }

@@ -11,12 +11,12 @@ namespace G
     public enum SearchCommitsSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="author-date")]
         AuthorDate,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="committer-date")]
         CommitterDate,

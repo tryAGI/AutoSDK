@@ -11,57 +11,57 @@ namespace G
     public enum SearchIssuesAndPullRequestsSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="comments")]
         Comments,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions")]
         Reactions,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-+1")]
         ReactionsPlus1,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions--1")]
         Reactions1,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-smile")]
         ReactionsSmile,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-thinking_face")]
         ReactionsThinkingFace,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-heart")]
         ReactionsHeart,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-tada")]
         ReactionsTada,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="interactions")]
         Interactions,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created")]
         Created,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="updated")]
         Updated,

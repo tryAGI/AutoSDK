@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         Skipped,
         /// <summary>
-        /// 
+        /// ** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         Stale,
         /// <summary>

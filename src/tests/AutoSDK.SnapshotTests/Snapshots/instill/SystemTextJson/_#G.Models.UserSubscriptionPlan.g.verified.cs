@@ -12,11 +12,11 @@ namespace G
     public enum UserSubscriptionPlan
     {
         /// <summary>
-        /// 
+        /// Free plan.
         /// </summary>
         PLANFREE,
         /// <summary>
-        /// 
+        /// Pro plan.
         /// </summary>
         PLANPRO,
     }

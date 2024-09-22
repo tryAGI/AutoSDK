@@ -11,22 +11,22 @@ namespace G
     public enum SearchReposSort
     {
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stars")]
         Stars,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="forks")]
         Forks,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="help-wanted-issues")]
         HelpWantedIssues,
         /// <summary>
-        /// 
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="updated")]
         Updated,

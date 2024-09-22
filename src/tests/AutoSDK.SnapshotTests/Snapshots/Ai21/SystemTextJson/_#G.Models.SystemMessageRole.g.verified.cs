@@ -20,7 +20,7 @@ namespace G
     public enum SystemMessageRole
     {
         /// <summary>
-        /// 
+        /// Initial instructions provided to the system to provide general guidance
         /// </summary>
         System,
     }

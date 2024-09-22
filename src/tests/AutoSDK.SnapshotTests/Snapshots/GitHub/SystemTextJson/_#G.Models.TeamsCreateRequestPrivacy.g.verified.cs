@@ -17,11 +17,11 @@ namespace G
     public enum TeamsCreateRequestPrivacy
     {
         /// <summary>
-        /// 
+        /// `secret`
         /// </summary>
         Secret,
         /// <summary>
-        /// 
+        /// `closed`
         /// </summary>
         Closed,
     }
