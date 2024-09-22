@@ -22,9 +22,10 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.
+        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("embeddings", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("embeddings")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Embeddings { get; set; } = default!;
 
         /// <summary>

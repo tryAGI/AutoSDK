@@ -16,10 +16,11 @@ namespace G
         public string? VectorString { get; set; } = default!;
 
         /// <summary>
-        /// The CVSS score.
+        /// The CVSS score.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("score", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? Score { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("score")]
+        public double? Score { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

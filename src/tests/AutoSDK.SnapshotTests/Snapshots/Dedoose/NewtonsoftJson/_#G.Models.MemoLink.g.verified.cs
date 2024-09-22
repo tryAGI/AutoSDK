@@ -10,7 +10,7 @@ namespace G
     public sealed partial class MemoLink
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIdKey")]
         public string? ProjectIdKey { get; set; }

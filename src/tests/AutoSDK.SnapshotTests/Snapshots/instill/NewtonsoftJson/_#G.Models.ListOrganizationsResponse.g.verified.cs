@@ -10,19 +10,21 @@ namespace G
     public sealed partial class ListOrganizationsResponse
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organizations")]
         public global::System.Collections.Generic.IList<global::G.Organization>? Organizations { get; set; }
 
         /// <summary>
-        /// Next page token.
+        /// Next page token.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nextPageToken")]
         public string? NextPageToken { get; set; }
 
         /// <summary>
-        /// Total number of organizations.
+        /// Total number of organizations.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalSize")]
         public int? TotalSize { get; set; }

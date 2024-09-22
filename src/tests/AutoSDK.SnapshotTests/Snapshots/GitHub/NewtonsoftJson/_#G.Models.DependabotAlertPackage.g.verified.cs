@@ -5,20 +5,23 @@
 namespace G
 {
     /// <summary>
-    /// Details for the vulnerable package.
+    /// Details for the vulnerable package.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertPackage
     {
         /// <summary>
-        /// The package's language or package management ecosystem.
+        /// The package's language or package management ecosystem.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ecosystem", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("ecosystem")]
         public string Ecosystem { get; set; } = default!;
 
         /// <summary>
-        /// The unique package name within its ecosystem.
+        /// The unique package name within its ecosystem.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>

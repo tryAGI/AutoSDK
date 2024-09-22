@@ -10,11 +10,11 @@ namespace G
     public sealed partial class DetokenizeRequest
     {
         /// <summary>
-        /// The list of tokens to be detokenized.
+        /// The list of tokens to be detokenized.<br/>
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> Tokens { get; set; }
+        public global::System.Collections.Generic.IList<int>? Tokens { get; set; }
 
         /// <summary>
         /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.

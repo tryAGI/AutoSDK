@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of classification performed
+    /// The type of classification performed<br/>
+    /// Included only in responses
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ClassifyResponseClassificationClassificationType

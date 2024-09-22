@@ -10,15 +10,15 @@ namespace G
     public sealed partial class ClassifyResponse
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("id")]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("classifications", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("classifications")]
         public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
 
         /// <summary>

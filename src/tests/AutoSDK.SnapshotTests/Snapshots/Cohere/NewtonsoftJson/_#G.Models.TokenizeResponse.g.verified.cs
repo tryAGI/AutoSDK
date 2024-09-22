@@ -10,9 +10,10 @@ namespace G
     public sealed partial class TokenizeResponse
     {
         /// <summary>
-        /// An array of tokens, where each token is an integer.
+        /// An array of tokens, where each token is an integer.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("tokens")]
         public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 
         /// <summary>

@@ -5,101 +5,102 @@
 namespace G
 {
     /// <summary>
-    /// Details for the GitHub Security Advisory.
+    /// Details for the GitHub Security Advisory.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertSecurityAdvisory
     {
         /// <summary>
-        /// The unique GitHub Security Advisory ID assigned to the advisory.
+        /// The unique GitHub Security Advisory ID assigned to the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ghsa_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GhsaId { get; set; }
+        public string GhsaId { get; set; } = default!;
 
         /// <summary>
-        /// The unique CVE ID assigned to the advisory.
+        /// The unique CVE ID assigned to the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cve_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CveId { get; set; }
+        public string? CveId { get; set; }
 
         /// <summary>
-        /// A short, plain text summary of the advisory.
+        /// A short, plain text summary of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Summary { get; set; }
+        public string Summary { get; set; } = default!;
 
         /// <summary>
-        /// A long-form Markdown-supported description of the advisory.
+        /// A long-form Markdown-supported description of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public string Description { get; set; } = default!;
 
         /// <summary>
-        /// Vulnerable version range information for the advisory.
+        /// Vulnerable version range information for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityVulnerability> Vulnerabilities { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityVulnerability> Vulnerabilities { get; set; } = default!;
 
         /// <summary>
-        /// The severity of the advisory.
+        /// The severity of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; }
+        public global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; } = default!;
 
         /// <summary>
-        /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
+        /// Details for the advisory pertaining to the Common Vulnerability Scoring System.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityAdvisoryCvss Cvss { get; set; }
+        public global::G.DependabotAlertSecurityAdvisoryCvss Cvss { get; set; } = default!;
 
         /// <summary>
-        /// Details for the advisory pertaining to Common Weakness Enumeration.
+        /// Details for the advisory pertaining to Common Weakness Enumeration.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwe> Cwes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwe> Cwes { get; set; } = default!;
 
         /// <summary>
-        /// Values that identify this advisory among security information sources.
+        /// Values that identify this advisory among security information sources.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifier> Identifiers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
         /// <summary>
-        /// Links to additional advisory information.
+        /// Links to additional advisory information.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReference> References { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReference> References { get; set; } = default!;
 
         /// <summary>
-        /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime PublishedAt { get; set; }
+        public global::System.DateTime PublishedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("withdrawn_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? WithdrawnAt { get; set; }
+        public global::System.DateTime? WithdrawnAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

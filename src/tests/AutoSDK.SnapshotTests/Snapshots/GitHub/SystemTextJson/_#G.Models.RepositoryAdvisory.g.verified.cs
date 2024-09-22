@@ -10,11 +10,11 @@ namespace G
     public sealed partial class RepositoryAdvisory
     {
         /// <summary>
-        /// The GitHub Security Advisory ID.
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ghsa_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GhsaId { get; set; }
+        public string GhsaId { get; set; } = default!;
 
         /// <summary>
         /// The Common Vulnerabilities and Exposures (CVE) ID.
@@ -24,18 +24,18 @@ namespace G
         public required string? CveId { get; set; }
 
         /// <summary>
-        /// The API URL for the advisory.
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The URL for the advisory.
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HtmlUrl { get; set; }
+        public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// A short summary of the advisory.
@@ -60,25 +60,24 @@ namespace G
         public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
-        /// The author of the advisory.
+        /// The author of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Author { get; set; }
+        public global::G.SimpleUser? Author { get; set; }
 
         /// <summary>
-        /// The publisher of the advisory.
+        /// The publisher of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUser? Publisher { get; set; }
+        public global::G.SimpleUser? Publisher { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
         /// <summary>
         /// The state of the advisory.
@@ -89,46 +88,45 @@ namespace G
         public required global::G.RepositoryAdvisoryState State { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was created, in ISO 8601 format.
+        /// The date and time of when the advisory was created, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was last updated, in ISO 8601 format.
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was published, in ISO 8601 format.
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? PublishedAt { get; set; }
+        public global::System.DateTime? PublishedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was closed, in ISO 8601 format.
+        /// The date and time of when the advisory was closed, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
+        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("withdrawn_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? WithdrawnAt { get; set; }
+        public global::System.DateTime? WithdrawnAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submission")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryAdvisorySubmission? Submission { get; set; }
+        public global::G.RepositoryAdvisorySubmission? Submission { get; set; }
 
         /// <summary>
         /// 
@@ -145,11 +143,10 @@ namespace G
         public required global::G.RepositoryAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -166,11 +163,10 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits_detailed")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; }
 
         /// <summary>
         /// A list of users that collaborate on the advisory.
@@ -187,11 +183,11 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
 
         /// <summary>
-        /// A temporary private fork of the advisory's repository for collaborating on a fix.
+        /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleRepository? PrivateFork { get; set; }
+        public global::G.SimpleRepository? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

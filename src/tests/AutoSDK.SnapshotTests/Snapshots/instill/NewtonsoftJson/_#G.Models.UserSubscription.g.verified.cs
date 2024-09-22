@@ -10,13 +10,15 @@ namespace G
     public sealed partial class UserSubscription
     {
         /// <summary>
-        /// Plan identifier.
+        /// Plan identifier.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
         public global::G.UserSubscriptionPlan? Plan { get; set; }
 
         /// <summary>
-        /// Details of the associated Stripe subscription.
+        /// Details of the associated Stripe subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
         public global::G.StripeSubscriptionDetail? Detail { get; set; }

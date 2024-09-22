@@ -23,11 +23,11 @@ namespace G
         public required int Index { get; set; }
 
         /// <summary>
-        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45
+        /// Relevance scores are normalized to be in the range `[0, 1]`. Scores close to `1` indicate a high relevance to the query, and scores closer to `0` indicate low relevance. It is not accurate to assume a score of 0.9 means the document is 2x more relevant than a document with a score of 0.45<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("relevance_score")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required float RelevanceScore { get; set; }
+        public float RelevanceScore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

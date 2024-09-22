@@ -47,9 +47,10 @@ namespace G
         public string Error { get; set; } = default!;
 
         /// <summary>
-        /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -71,9 +72,10 @@ namespace G
         public int Id { get; set; } = default!;
 
         /// <summary>
-        /// The REST API URL of the analysis resource.
+        /// The REST API URL of the analysis resource.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
         /// <summary>

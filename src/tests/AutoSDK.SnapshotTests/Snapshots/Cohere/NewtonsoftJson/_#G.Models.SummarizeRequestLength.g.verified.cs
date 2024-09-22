@@ -6,7 +6,8 @@ namespace G
 {
     /// <summary>
     /// One of `short`, `medium`, `long`, or `auto` defaults to `auto`. Indicates the approximate length of the summary. If `auto` is selected, the best option will be picked based on the input text.<br/>
-    /// Default Value: medium
+    /// Default Value: medium<br/>
+    /// Included only in requests
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum SummarizeRequestLength

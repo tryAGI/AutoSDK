@@ -5,24 +5,25 @@
 namespace G
 {
     /// <summary>
-    /// An advisory identifier.
+    /// An advisory identifier.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertSecurityAdvisoryIdentifier
     {
         /// <summary>
-        /// The type of advisory identifier.
+        /// The type of advisory identifier.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisoryIdentifierTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityAdvisoryIdentifierType Type { get; set; }
+        public global::G.DependabotAlertSecurityAdvisoryIdentifierType Type { get; set; } = default!;
 
         /// <summary>
-        /// The value of the advisory identifer.
+        /// The value of the advisory identifer.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Value { get; set; }
+        public string Value { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

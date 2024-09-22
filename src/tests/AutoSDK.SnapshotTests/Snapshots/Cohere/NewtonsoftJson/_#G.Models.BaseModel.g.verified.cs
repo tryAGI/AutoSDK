@@ -16,7 +16,8 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// read-only. The version of the base model.
+        /// read-only. The version of the base model.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version")]
         public string? Version { get; set; }

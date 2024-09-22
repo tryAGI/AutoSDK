@@ -5,14 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// A link to additional advisory information.
+    /// A link to additional advisory information.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertSecurityAdvisoryReference
     {
         /// <summary>
-        /// The URL of the reference.
+        /// The URL of the reference.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
         /// <summary>

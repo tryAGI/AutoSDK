@@ -16,7 +16,8 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Connector> Connectors { get; set; } = default!;
 
         /// <summary>
-        /// Total number of connectors.
+        /// Total number of connectors.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
         public double? TotalCount { get; set; }

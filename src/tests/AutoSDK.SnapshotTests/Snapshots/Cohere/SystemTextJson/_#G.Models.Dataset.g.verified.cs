@@ -90,7 +90,7 @@ namespace G
         public global::System.Collections.Generic.IList<string>? ValidationWarnings { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parse_info")]
         public global::G.ParseInfo? ParseInfo { get; set; }

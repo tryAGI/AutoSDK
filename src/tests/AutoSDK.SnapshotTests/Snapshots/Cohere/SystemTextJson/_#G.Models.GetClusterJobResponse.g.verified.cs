@@ -17,37 +17,43 @@ namespace G
         public required string JobId { get; set; }
 
         /// <summary>
-        /// Time of job creation in RFC3339 format
+        /// Time of job creation in RFC3339 format<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The input file URL used for the job
+        /// The input file URL used for the job<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings_url")]
         public string? EmbeddingsUrl { get; set; }
 
         /// <summary>
-        /// The input dataset ID used for the job
+        /// The input dataset ID used for the job<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dataset_id")]
         public string? InputDatasetId { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_cluster_size")]
         public int? MinClusterSize { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_neighbors")]
         public int? NNeighbors { get; set; }
 
         /// <summary>
-        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
         public bool? IsDeterministic { get; set; }
@@ -60,25 +66,29 @@ namespace G
         public global::G.GetClusterJobResponseStatus? Status { get; set; }
 
         /// <summary>
-        /// A boolean indicating whether the job is in a final state, whether completed or failed
+        /// A boolean indicating whether the job is in a final state, whether completed or failed<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_final_state")]
         public bool? IsFinalState { get; set; }
 
         /// <summary>
-        /// The output file URL for the clusters (signed url that expires)
+        /// The output file URL for the clusters (signed url that expires)<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_clusters_url")]
         public string? OutputClustersUrl { get; set; }
 
         /// <summary>
-        /// The output file URL for the outliers (signed url that expires)
+        /// The output file URL for the outliers (signed url that expires)<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_outliers_url")]
         public string? OutputOutliersUrl { get; set; }
 
         /// <summary>
-        /// The list of cluster summaries for the job
+        /// The list of cluster summaries for the job<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clusters")]
         public global::System.Collections.Generic.IList<global::G.Cluster>? Clusters { get; set; }

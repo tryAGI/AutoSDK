@@ -10,7 +10,8 @@ namespace G
     public sealed partial class PatchAuthenticatedUserResponse
     {
         /// <summary>
-        /// The updated user resource.
+        /// The updated user resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.AuthenticatedUser? User { get; set; }

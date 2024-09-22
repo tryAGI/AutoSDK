@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The severity of the advisory.
+    /// The severity of the advisory.<br/>
+    /// Included only in responses
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum DependabotAlertSecurityAdvisorySeverity

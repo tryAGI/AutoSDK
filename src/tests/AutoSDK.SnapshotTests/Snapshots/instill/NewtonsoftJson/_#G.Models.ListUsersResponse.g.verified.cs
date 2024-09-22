@@ -10,19 +10,22 @@ namespace G
     public sealed partial class ListUsersResponse
     {
         /// <summary>
-        /// A list of user resources.
+        /// A list of user resources.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("users")]
         public global::System.Collections.Generic.IList<global::G.User>? Users { get; set; }
 
         /// <summary>
-        /// Next page token.
+        /// Next page token.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nextPageToken")]
         public string? NextPageToken { get; set; }
 
         /// <summary>
-        /// Total number of users.
+        /// Total number of users.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalSize")]
         public int? TotalSize { get; set; }

@@ -10,45 +10,46 @@ namespace G
     public sealed partial class CodeScanningOrganizationAlertItems
     {
         /// <summary>
-        /// The security alert number.
+        /// The security alert number.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Number { get; set; }
+        public int Number { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// The REST API URL of the alert resource.
+        /// The REST API URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub URL of the alert resource.
+        /// The GitHub URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HtmlUrl { get; set; }
+        public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// The REST API URL for fetching the list of instances for an alert.
+        /// The REST API URL for fetching the list of instances for an alert.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instances_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string InstancesUrl { get; set; }
+        public string InstancesUrl { get; set; } = default!;
 
         /// <summary>
         /// State of a code scanning alert.
@@ -59,7 +60,8 @@ namespace G
         public required global::G.CodeScanningAlertState State { get; set; }
 
         /// <summary>
-        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fixed_at")]
         public global::System.DateTime? FixedAt { get; set; }
@@ -72,11 +74,11 @@ namespace G
         public required global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DismissedAt { get; set; }
+        public global::System.DateTime? DismissedAt { get; set; }
 
         /// <summary>
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.

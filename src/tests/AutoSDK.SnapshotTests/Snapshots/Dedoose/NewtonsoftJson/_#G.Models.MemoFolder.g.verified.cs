@@ -10,7 +10,7 @@ namespace G
     public sealed partial class MemoFolder
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIdKey")]
         public string? ProjectIdKey { get; set; }

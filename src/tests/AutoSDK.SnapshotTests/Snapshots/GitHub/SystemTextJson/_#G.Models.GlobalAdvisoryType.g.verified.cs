@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of advisory.
+    /// The type of advisory.<br/>
+    /// Included only in responses
     /// </summary>
     public enum GlobalAdvisoryType
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum EmbeddingType

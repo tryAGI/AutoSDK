@@ -17,11 +17,11 @@ namespace G
         public required string? VectorString { get; set; }
 
         /// <summary>
-        /// The CVSS score.
+        /// The CVSS score.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? Score { get; set; }
+        public double? Score { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

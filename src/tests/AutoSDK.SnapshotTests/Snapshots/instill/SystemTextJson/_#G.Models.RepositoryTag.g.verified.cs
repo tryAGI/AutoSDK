@@ -30,7 +30,8 @@ namespace G
         public string? Digest { get; set; }
 
         /// <summary>
-        /// Tag update time, i.e. timestamp of the last push.
+        /// Tag update time, i.e. timestamp of the last push.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updateTime")]
         public global::System.DateTime? UpdateTime { get; set; }

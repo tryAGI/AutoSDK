@@ -5,30 +5,35 @@
 namespace G
 {
     /// <summary>
-    /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
+    /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class EmbedByTypeResponseEmbeddings
     {
         /// <summary>
-        /// An array of float embeddings.
+        /// An array of float embeddings.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("float")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Float { get; set; }
 
         /// <summary>
-        /// An array of signed int8 embeddings. Each value is between -128 and 127.
+        /// An array of signed int8 embeddings. Each value is between -128 and 127.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("int8")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Int8 { get; set; }
 
         /// <summary>
-        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.
+        /// An array of unsigned int8 embeddings. Each value is between 0 and 255.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uint8")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Uint8 { get; set; }
 
         /// <summary>
-        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.
+        /// An array of packed signed binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between -128 and 127.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("binary")]
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Binary { get; set; }

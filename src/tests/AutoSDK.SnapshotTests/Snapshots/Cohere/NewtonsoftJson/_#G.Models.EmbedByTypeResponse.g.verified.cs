@@ -22,9 +22,10 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("embeddings", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("embeddings")]
         public global::G.EmbedByTypeResponseEmbeddings Embeddings { get; set; } = default!;
 
         /// <summary>

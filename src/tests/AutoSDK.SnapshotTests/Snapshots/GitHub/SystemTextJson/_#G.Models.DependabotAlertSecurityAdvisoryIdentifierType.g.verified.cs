@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of advisory identifier.
+    /// The type of advisory identifier.<br/>
+    /// Included only in responses
     /// </summary>
     public enum DependabotAlertSecurityAdvisoryIdentifierType
     {

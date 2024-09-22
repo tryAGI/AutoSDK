@@ -10,7 +10,8 @@ namespace G
     public sealed partial class ValidateTokenResponse
     {
         /// <summary>
-        /// If token is valid, UUID of the user that owns it.
+        /// If token is valid, UUID of the user that owns it.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userUid")]
         public string? UserUid { get; set; }

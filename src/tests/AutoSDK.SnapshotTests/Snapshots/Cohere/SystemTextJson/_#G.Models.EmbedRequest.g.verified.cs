@@ -10,11 +10,11 @@ namespace G
     public sealed partial class EmbedRequest
     {
         /// <summary>
-        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.
+        /// An array of strings for the model to embed. Maximum number of texts per call is `96`. We recommend reducing the length of each text to be under `512` tokens for optimal quality.<br/>
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Texts { get; set; }
+        public global::System.Collections.Generic.IList<string>? Texts { get; set; }
 
         /// <summary>
         /// Defaults to embed-english-v2.0<br/>
@@ -26,7 +26,8 @@ namespace G
         /// * `embed-multilingual-light-v3.0`  384<br/>
         /// * `embed-english-v2.0`  4096<br/>
         /// * `embed-english-light-v2.0`  1024<br/>
-        /// * `embed-multilingual-v2.0`  768
+        /// * `embed-multilingual-v2.0`  768<br/>
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -48,7 +49,8 @@ namespace G
         /// * `"int8"`: Use this when you want to get back signed int8 embeddings. Valid for only v3 models.<br/>
         /// * `"uint8"`: Use this when you want to get back unsigned int8 embeddings. Valid for only v3 models.<br/>
         /// * `"binary"`: Use this when you want to get back signed binary embeddings. Valid for only v3 models.<br/>
-        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.
+        /// * `"ubinary"`: Use this when you want to get back unsigned binary embeddings. Valid for only v3 models.<br/>
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_types")]
         public global::System.Collections.Generic.IList<global::G.EmbeddingType>? EmbeddingTypes { get; set; }
@@ -57,7 +59,8 @@ namespace G
         /// One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
         /// Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.<br/>
         /// If `NONE` is selected, when the input exceeds the maximum input token length an error will be returned.<br/>
-        /// Default Value: END
+        /// Default Value: END<br/>
+        /// Included only in requests
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedRequestTruncateJsonConverter))]

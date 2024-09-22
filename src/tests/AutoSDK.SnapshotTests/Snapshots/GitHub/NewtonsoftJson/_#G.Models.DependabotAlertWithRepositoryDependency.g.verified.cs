@@ -5,24 +5,28 @@
 namespace G
 {
     /// <summary>
-    /// Details for the vulnerable dependency.
+    /// Details for the vulnerable dependency.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertWithRepositoryDependency
     {
         /// <summary>
-        /// Details for the vulnerable package.
+        /// Details for the vulnerable package.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("package")]
         public global::G.DependabotAlertPackage? Package { get; set; }
 
         /// <summary>
-        /// The full path to the dependency manifest file, relative to the root of the repository.
+        /// The full path to the dependency manifest file, relative to the root of the repository.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest_path")]
         public string? ManifestPath { get; set; }
 
         /// <summary>
-        /// The execution scope of the vulnerable dependency.
+        /// The execution scope of the vulnerable dependency.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
         public global::G.DependabotAlertWithRepositoryDependencyScope? Scope { get; set; }

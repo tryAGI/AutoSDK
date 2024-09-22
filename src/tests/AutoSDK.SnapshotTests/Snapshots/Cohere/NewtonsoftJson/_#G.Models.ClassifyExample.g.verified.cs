@@ -5,18 +5,18 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     public sealed partial class ClassifyExample
     {
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label")]
         public string? Label { get; set; }

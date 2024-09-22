@@ -14,7 +14,8 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="alertNumber">
-        /// The security alert number.
+        /// The security alert number.<br/>
+        /// Included only in responses
         /// </param>
         /// <param name="page">
         /// Default Value: 1

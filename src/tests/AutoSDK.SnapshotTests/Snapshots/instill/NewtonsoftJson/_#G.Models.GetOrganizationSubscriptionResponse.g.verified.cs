@@ -10,7 +10,8 @@ namespace G
     public sealed partial class GetOrganizationSubscriptionResponse
     {
         /// <summary>
-        /// The subscription resource.
+        /// The subscription resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscription")]
         public global::G.OrganizationSubscription? Subscription { get; set; }

@@ -16,13 +16,15 @@ namespace G
         public global::G.CodeScanningSarifsStatusProcessingStatus? ProcessingStatus { get; set; }
 
         /// <summary>
-        /// The REST API URL for getting the analyses associated with the upload.
+        /// The REST API URL for getting the analyses associated with the upload.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analyses_url")]
         public string? AnalysesUrl { get; set; }
 
         /// <summary>
-        /// Any errors that ocurred during processing of the delivery.
+        /// Any errors that ocurred during processing of the delivery.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errors")]
         public global::System.Collections.Generic.IList<string>? Errors { get; set; }

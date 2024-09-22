@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The state of the Dependabot alert.
+    /// The state of the Dependabot alert.<br/>
+    /// Included only in responses
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum DependabotAlertState

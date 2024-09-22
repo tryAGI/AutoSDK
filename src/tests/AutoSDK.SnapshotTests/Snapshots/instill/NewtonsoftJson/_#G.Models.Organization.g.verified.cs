@@ -12,13 +12,15 @@ namespace G
     {
         /// <summary>
         /// The name of the organization, defined by its ID.<br/>
-        /// - Format: `organization/{organization.id}`.
+        /// - Format: `organization/{organization.id}`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Organization UUID.
+        /// Organization UUID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uid")]
         public string? Uid { get; set; }
@@ -34,19 +36,22 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// Creation time.
+        /// Creation time.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createTime")]
         public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// Update time.
+        /// Update time.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updateTime")]
         public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
-        /// The user that owns the organization.
+        /// The user that owns the organization.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner")]
         public global::G.User? Owner { get; set; }
@@ -58,7 +63,7 @@ namespace G
         public global::G.OrganizationProfile Profile { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
         public global::G.Permission? Permission { get; set; }

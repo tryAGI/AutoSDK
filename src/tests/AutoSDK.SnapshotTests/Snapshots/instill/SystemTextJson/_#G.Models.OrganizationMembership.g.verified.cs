@@ -13,7 +13,8 @@ namespace G
         /// <summary>
         /// The resource name of the membership, which allows its access by<br/>
         /// organization and user ID.<br/>
-        /// - Format: `organizations/{organization.id}/memberships/{user.id}`.
+        /// - Format: `organizations/{organization.id}/memberships/{user.id}`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
@@ -26,20 +27,23 @@ namespace G
         public required string Role { get; set; }
 
         /// <summary>
-        /// State of the membership.
+        /// State of the membership.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
         public global::G.MembershipState? State { get; set; }
 
         /// <summary>
-        /// User information.
+        /// User information.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         public global::G.User? User { get; set; }
 
         /// <summary>
-        /// Organization information.
+        /// Organization information.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         public global::G.Organization? Organization { get; set; }

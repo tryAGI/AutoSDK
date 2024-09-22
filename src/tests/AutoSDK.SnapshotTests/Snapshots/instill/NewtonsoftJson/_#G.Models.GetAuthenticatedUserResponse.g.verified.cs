@@ -10,7 +10,8 @@ namespace G
     public sealed partial class GetAuthenticatedUserResponse
     {
         /// <summary>
-        /// The authenticated user resource.
+        /// The authenticated user resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public global::G.AuthenticatedUser? User { get; set; }

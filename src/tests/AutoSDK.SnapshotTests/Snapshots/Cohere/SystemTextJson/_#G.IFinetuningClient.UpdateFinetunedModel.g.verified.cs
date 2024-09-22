@@ -27,12 +27,6 @@ namespace G
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
         /// </param>
-        /// <param name="creatorId">
-        /// User ID of the creator.
-        /// </param>
-        /// <param name="organizationId">
-        /// Organization ID.
-        /// </param>
         /// <param name="settings">
         /// The configuration used for fine-tuning.
         /// </param>
@@ -49,18 +43,6 @@ namespace G
         ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
         /// Default Value: STATUS_UNSPECIFIED
         /// </param>
-        /// <param name="createdAt">
-        /// Creation timestamp.
-        /// </param>
-        /// <param name="updatedAt">
-        /// Latest update timestamp.
-        /// </param>
-        /// <param name="completedAt">
-        /// Timestamp for the completed fine-tuning.
-        /// </param>
-        /// <param name="lastUsed">
-        /// Timestamp for the latest request to this fine-tuned model.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateFinetunedModelResponse> UpdateFinetunedModelAsync(
@@ -68,13 +50,7 @@ namespace G
             string name,
             global::G.Settings settings,
             string? xClientName = default,
-            string? creatorId = default,
-            string? organizationId = default,
             global::G.Status? status = global::G.Status.STATUSUNSPECIFIED,
-            global::System.DateTime? createdAt = default,
-            global::System.DateTime? updatedAt = default,
-            global::System.DateTime? completedAt = default,
-            global::System.DateTime? lastUsed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -5,16 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in responses
     /// </summary>
     public sealed partial class RepositoryAdvisorySubmission
     {
         /// <summary>
-        /// Whether a private vulnerability report was accepted by the repository's administrators.
+        /// Whether a private vulnerability report was accepted by the repository's administrators.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Accepted { get; set; }
+        public bool Accepted { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

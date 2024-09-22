@@ -10,10 +10,11 @@ namespace G
     public sealed partial class DetokenizeRequest
     {
         /// <summary>
-        /// The list of tokens to be detokenized.
+        /// The list of tokens to be detokenized.<br/>
+        /// Included only in requests
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("tokens")]
+        public global::System.Collections.Generic.IList<int>? Tokens { get; set; }
 
         /// <summary>
         /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.

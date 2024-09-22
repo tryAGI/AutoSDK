@@ -103,24 +103,28 @@ namespace G
         /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="maxInputTokens">
         /// The maximum number of input tokens to send to the model. If not specified, `max_input_tokens` is the model's context length limit minus a small buffer.<br/>
         /// Input will be truncated according to the `prompt_truncation` parameter.<br/>
-        /// Compatible Deployments: Cohere Platform
+        /// Compatible Deployments: Cohere Platform<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="k">
         /// Ensures only the top `k` most likely tokens are considered for generation at each step.<br/>
         /// Defaults to `0`, min value of `0`, max value of `500`.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
-        /// Default Value: 0
+        /// Default Value: 0<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="p">
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
-        /// Default Value: 0.75
+        /// Default Value: 0.75<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="seed">
         /// If specified, the backend will make a best effort to sample tokens<br/>
@@ -131,17 +135,20 @@ namespace G
         /// </param>
         /// <param name="stopSequences">
         /// A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="frequencyPenalty">
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="presencePenalty">
         /// Defaults to `0.0`, min value of `0.0`, max value of `1.0`.<br/>
         /// Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments<br/>
+        /// Included only in requests
         /// </param>
         /// <param name="tools">
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
@@ -185,6 +192,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
             string message,
+            int maxTokens,
+            int maxInputTokens,
+            int k,
+            double p,
+            global::System.Collections.Generic.IList<string> stopSequences,
+            double frequencyPenalty,
+            double presencePenalty,
             string? xClientName = default,
             string? model = default,
             bool? stream = default,
@@ -197,14 +211,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatDocument>? documents = default,
             global::G.ChatRequestCitationQuality? citationQuality = default,
             float? temperature = default,
-            int? maxTokens = default,
-            int? maxInputTokens = default,
-            int? k = 0,
-            double? p = 0.75,
             int? seed = default,
-            global::System.Collections.Generic.IList<string>? stopSequences = default,
-            double? frequencyPenalty = default,
-            double? presencePenalty = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults = default,
             bool? forceSingleStep = default,

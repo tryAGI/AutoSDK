@@ -11,20 +11,23 @@ namespace G
     public sealed partial class GetRemainingCreditResponse
     {
         /// <summary>
-        /// Amount of perishable credit, i.e. credit with an expiration date.
+        /// Amount of perishable credit, i.e. credit with an expiration date.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("perishable")]
         public float? Perishable { get; set; }
 
         /// <summary>
         /// Amount of imperishable credit, e.g. purchased credit, which doesn't<br/>
-        /// expire.
+        /// expire.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("imperishable")]
         public float? Imperishable { get; set; }
 
         /// <summary>
-        /// Total remaining credit.
+        /// Total remaining credit.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
         public float? Total { get; set; }

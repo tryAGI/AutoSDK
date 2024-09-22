@@ -10,11 +10,11 @@ namespace G
     public sealed partial class DetokenizeResponse
     {
         /// <summary>
-        /// A string representing the list of tokens.
+        /// A string representing the list of tokens.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// 

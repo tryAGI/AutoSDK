@@ -5,16 +5,17 @@
 namespace G
 {
     /// <summary>
-    /// A link to additional advisory information.
+    /// A link to additional advisory information.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertSecurityAdvisoryReference
     {
         /// <summary>
-        /// The URL of the reference.
+        /// The URL of the reference.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string Url { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -28,7 +28,8 @@ namespace G
         public global::G.Hyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
-        /// read-only. Whether the model is single-label or multi-label (only for classification).
+        /// read-only. Whether the model is single-label or multi-label (only for classification).<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("multi_label")]
         public bool? MultiLabel { get; set; }

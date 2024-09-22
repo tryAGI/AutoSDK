@@ -5,65 +5,67 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in responses
     /// </summary>
     public sealed partial class ClassifyResponseClassification
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The input text that was classified
+        /// The input text that was classified<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public string? Input { get; set; }
 
         /// <summary>
-        /// The predicted label for the associated query (only filled for single-label models)
+        /// The predicted label for the associated query (only filled for single-label models)<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? Prediction { get; set; }
 
         /// <summary>
-        /// An array containing the predicted labels for the associated query (only filled for single-label classification)
+        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Predictions { get; set; }
+        public global::System.Collections.Generic.IList<string> Predictions { get; set; } = default!;
 
         /// <summary>
-        /// The confidence score for the top predicted class (only filled for single-label classification)
+        /// The confidence score for the top predicted class (only filled for single-label classification)<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public float? Confidence { get; set; }
 
         /// <summary>
-        /// An array containing the confidence scores of all the predictions in the same order
+        /// An array containing the confidence scores of all the predictions in the same order<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidences")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<float> Confidences { get; set; }
+        public global::System.Collections.Generic.IList<float> Confidences { get; set; } = default!;
 
         /// <summary>
-        /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.
+        /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ClassifyResponseClassificationLabels Labels { get; set; }
+        public global::G.ClassifyResponseClassificationLabels Labels { get; set; } = default!;
 
         /// <summary>
-        /// The type of classification performed
+        /// The type of classification performed<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ClassifyResponseClassificationClassificationType ClassificationType { get; set; }
+        public global::G.ClassifyResponseClassificationClassificationType ClassificationType { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

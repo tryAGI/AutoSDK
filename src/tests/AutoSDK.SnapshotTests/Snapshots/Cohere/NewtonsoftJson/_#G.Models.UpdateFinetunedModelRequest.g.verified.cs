@@ -16,13 +16,15 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// User ID of the creator.
+        /// User ID of the creator.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator_id")]
         public string? CreatorId { get; set; }
 
         /// <summary>
-        /// Organization ID.
+        /// Organization ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
@@ -50,25 +52,29 @@ namespace G
         public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
 
         /// <summary>
-        /// Creation timestamp.
+        /// Creation timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Latest update timestamp.
+        /// Latest update timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// Timestamp for the completed fine-tuning.
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// Timestamp for the latest request to this fine-tuned model.
+        /// Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_used")]
         public global::System.DateTime? LastUsed { get; set; }

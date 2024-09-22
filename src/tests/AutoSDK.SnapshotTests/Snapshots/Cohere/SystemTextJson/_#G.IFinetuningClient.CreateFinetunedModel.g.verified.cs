@@ -21,17 +21,8 @@ namespace G
         /// Trains and deploys a fine-tuned model.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="id">
-        /// read-only. FinetunedModel ID.
-        /// </param>
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
-        /// </param>
-        /// <param name="creatorId">
-        /// read-only. User ID of the creator.
-        /// </param>
-        /// <param name="organizationId">
-        /// read-only. Organization ID.
         /// </param>
         /// <param name="settings">
         /// The configuration used for fine-tuning.
@@ -49,32 +40,13 @@ namespace G
         ///  - STATUS_QUEUED: The fine-tuned model is queued for training.<br/>
         /// Default Value: STATUS_UNSPECIFIED
         /// </param>
-        /// <param name="createdAt">
-        /// read-only. Creation timestamp.
-        /// </param>
-        /// <param name="updatedAt">
-        /// read-only. Latest update timestamp.
-        /// </param>
-        /// <param name="completedAt">
-        /// read-only. Timestamp for the completed fine-tuning.
-        /// </param>
-        /// <param name="lastUsed">
-        /// read-only. Timestamp for the latest request to this fine-tuned model.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateFinetunedModelResponse> CreateFinetunedModelAsync(
             string name,
             global::G.Settings settings,
             string? xClientName = default,
-            string? id = default,
-            string? creatorId = default,
-            string? organizationId = default,
             global::G.Status? status = global::G.Status.STATUSUNSPECIFIED,
-            global::System.DateTime? createdAt = default,
-            global::System.DateTime? updatedAt = default,
-            global::System.DateTime? completedAt = default,
-            global::System.DateTime? lastUsed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

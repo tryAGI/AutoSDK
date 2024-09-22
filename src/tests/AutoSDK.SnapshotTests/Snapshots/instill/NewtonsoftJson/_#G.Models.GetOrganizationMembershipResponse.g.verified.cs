@@ -10,7 +10,8 @@ namespace G
     public sealed partial class GetOrganizationMembershipResponse
     {
         /// <summary>
-        /// The requested organization membership.
+        /// The requested organization membership.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("membership")]
         public global::G.OrganizationMembership? Membership { get; set; }

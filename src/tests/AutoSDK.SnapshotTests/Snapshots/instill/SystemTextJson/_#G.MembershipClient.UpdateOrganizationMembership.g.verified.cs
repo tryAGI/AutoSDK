@@ -128,22 +128,8 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="userId"></param>
         /// <param name="updateMask"></param>
-        /// <param name="name">
-        /// The resource name of the membership, which allows its access by<br/>
-        /// organization and user ID.<br/>
-        /// - Format: `organizations/{organization.id}/memberships/{user.id}`.
-        /// </param>
         /// <param name="role">
         /// Role of the user in the organization.
-        /// </param>
-        /// <param name="state">
-        /// State of the membership.
-        /// </param>
-        /// <param name="user">
-        /// User information.
-        /// </param>
-        /// <param name="organization">
-        /// Organization information.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -152,19 +138,11 @@ namespace G
             string userId,
             string updateMask,
             string role,
-            string? name = default,
-            global::G.MembershipState? state = default,
-            global::G.User? user = default,
-            global::G.Organization? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.OrganizationMembership
             {
-                Name = name,
                 Role = role,
-                State = state,
-                User = user,
-                Organization = organization,
             };
 
             return await UpdateOrganizationMembershipAsync(

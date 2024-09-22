@@ -10,9 +10,10 @@ namespace G
     public sealed partial class RepositoryAdvisory
     {
         /// <summary>
-        /// The GitHub Security Advisory ID.
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ghsa_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("ghsa_id")]
         public string GhsaId { get; set; } = default!;
 
         /// <summary>
@@ -22,15 +23,17 @@ namespace G
         public string? CveId { get; set; } = default!;
 
         /// <summary>
-        /// The API URL for the advisory.
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The URL for the advisory.
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
@@ -52,21 +55,23 @@ namespace G
         public global::G.RepositoryAdvisorySeverity? Severity { get; set; } = default!;
 
         /// <summary>
-        /// The author of the advisory.
+        /// The author of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.SimpleUser? Author { get; set; }
 
         /// <summary>
-        /// The publisher of the advisory.
+        /// The publisher of the advisory.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("publisher", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUser? Publisher { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("publisher")]
+        public global::G.SimpleUser? Publisher { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("identifiers", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("identifiers")]
         public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
         /// <summary>
@@ -76,40 +81,45 @@ namespace G
         public global::G.RepositoryAdvisoryState State { get; set; } = default!;
 
         /// <summary>
-        /// The date and time of when the advisory was created, in ISO 8601 format.
+        /// The date and time of when the advisory was created, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was last updated, in ISO 8601 format.
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was published, in ISO 8601 format.
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("published_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? PublishedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("published_at")]
+        public global::System.DateTime? PublishedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was closed, in ISO 8601 format.
+        /// The date and time of when the advisory was closed, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
+        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("withdrawn_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? WithdrawnAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("withdrawn_at")]
+        public global::System.DateTime? WithdrawnAt { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("submission", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RepositoryAdvisorySubmission? Submission { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("submission")]
+        public global::G.RepositoryAdvisorySubmission? Submission { get; set; }
 
         /// <summary>
         /// 
@@ -124,10 +134,10 @@ namespace G
         public global::G.RepositoryAdvisoryCvss? Cvss { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cwes")]
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
         /// A list of only the CWE IDs.
@@ -142,10 +152,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("credits_detailed", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("credits_detailed")]
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? CreditsDetailed { get; set; }
 
         /// <summary>
         /// A list of users that collaborate on the advisory.
@@ -160,10 +170,11 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; } = default!;
 
         /// <summary>
-        /// A temporary private fork of the advisory's repository for collaborating on a fix.
+        /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("private_fork", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleRepository? PrivateFork { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("private_fork")]
+        public global::G.SimpleRepository? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -63,8 +63,8 @@ public readonly record struct PropertyData(
             : [];
         
         var isRequired =
-            requiredProperties.Contains(propertyName);// &&
-            //context.Schema is { WriteOnly: false };
+            requiredProperties.Contains(propertyName) &&
+            context.Schema is { WriteOnly: false };
         // Special case for enums with a single value.
         if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
         {
@@ -74,14 +74,19 @@ public readonly record struct PropertyData(
         return new PropertyData(
             Id: propertyName,
             Name: name,
-            Type: type,
-            IsRequired: isRequired,
+            Type: type with
+            {
+                CSharpTypeNullability = type.CSharpTypeNullability || context.Schema is { WriteOnly: true },
+            },
+            IsRequired: isRequired && context.Schema is { ReadOnly: false },
             IsReadOnly: context.Schema.ReadOnly,
             IsWriteOnly: context.Schema.WriteOnly,
             IsMultiPartFormDataFilename: false,
             Settings: context.Settings,
             IsDeprecated: context.Schema.Deprecated,
-            DefaultValue: context.GetDefaultValue(),
+            DefaultValue: context.Schema is { ReadOnly: true } && !type.CSharpTypeNullability
+                ? "default!"
+                : context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
             ConverterType: type.ConverterType);
     }

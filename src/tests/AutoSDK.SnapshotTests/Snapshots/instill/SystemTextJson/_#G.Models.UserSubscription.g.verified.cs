@@ -10,14 +10,16 @@ namespace G
     public sealed partial class UserSubscription
     {
         /// <summary>
-        /// Plan identifier.
+        /// Plan identifier.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UserSubscriptionPlanJsonConverter))]
         public global::G.UserSubscriptionPlan? Plan { get; set; }
 
         /// <summary>
-        /// Details of the associated Stripe subscription.
+        /// Details of the associated Stripe subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         public global::G.StripeSubscriptionDetail? Detail { get; set; }

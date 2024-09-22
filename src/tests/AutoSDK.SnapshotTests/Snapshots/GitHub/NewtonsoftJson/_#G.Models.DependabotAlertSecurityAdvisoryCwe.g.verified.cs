@@ -5,20 +5,23 @@
 namespace G
 {
     /// <summary>
-    /// A CWE weakness assigned to the advisory.
+    /// A CWE weakness assigned to the advisory.<br/>
+    /// Included only in responses
     /// </summary>
     public sealed partial class DependabotAlertSecurityAdvisoryCwe
     {
         /// <summary>
-        /// The unique CWE ID.
+        /// The unique CWE ID.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cwe_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("cwe_id")]
         public string CweId { get; set; } = default!;
 
         /// <summary>
-        /// The short, plain text name of the CWE.
+        /// The short, plain text name of the CWE.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>

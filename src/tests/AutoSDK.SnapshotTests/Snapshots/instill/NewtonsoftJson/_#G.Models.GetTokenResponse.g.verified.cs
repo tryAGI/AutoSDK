@@ -10,7 +10,8 @@ namespace G
     public sealed partial class GetTokenResponse
     {
         /// <summary>
-        /// The API token resource.
+        /// The API token resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("token")]
         public global::G.ApiToken? Token { get; set; }

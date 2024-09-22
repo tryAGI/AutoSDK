@@ -313,6 +313,25 @@ public static class OpenApiExtensions
 
             summary += $"Default Value: {@default}";
         }
+        
+        if (schema.ReadOnly)
+        {
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                summary += "\n";
+            }
+
+            summary += "Included only in responses";
+        }
+        if (schema.WriteOnly)
+        {
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                summary += "\n";
+            }
+
+            summary += "Included only in requests";
+        }
 
         var example = schema.Example.GetString()?.ClearForXml();
         if (!string.IsNullOrWhiteSpace(example))

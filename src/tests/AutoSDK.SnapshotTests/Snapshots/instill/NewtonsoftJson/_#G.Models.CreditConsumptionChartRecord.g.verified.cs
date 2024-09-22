@@ -18,19 +18,22 @@ namespace G
         public string NamespaceId { get; set; } = default!;
 
         /// <summary>
-        /// Time buckets.
+        /// Time buckets.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timeBuckets")]
         public global::System.Collections.Generic.IList<global::System.DateTime>? TimeBuckets { get; set; }
 
         /// <summary>
-        /// Total credit consumed in each time bucket.
+        /// Total credit consumed in each time bucket.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("amount")]
         public global::System.Collections.Generic.IList<float>? Amount { get; set; }
 
         /// <summary>
-        /// Credit consumption source (e.g. "pipeline", "model").
+        /// Credit consumption source (e.g. "pipeline", "model").<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
         public string? Source { get; set; }

@@ -5,14 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in responses
     /// </summary>
     public sealed partial class RepositoryAdvisorySubmission
     {
         /// <summary>
-        /// Whether a private vulnerability report was accepted by the repository's administrators.
+        /// Whether a private vulnerability report was accepted by the repository's administrators.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("accepted", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("accepted")]
         public bool Accepted { get; set; } = default!;
 
         /// <summary>

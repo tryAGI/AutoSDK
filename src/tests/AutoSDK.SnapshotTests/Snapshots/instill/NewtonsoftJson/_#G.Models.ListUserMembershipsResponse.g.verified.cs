@@ -10,7 +10,8 @@ namespace G
     public sealed partial class ListUserMembershipsResponse
     {
         /// <summary>
-        /// The user memberships, i.e., the organizations the user belongs to.
+        /// The user memberships, i.e., the organizations the user belongs to.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("memberships")]
         public global::System.Collections.Generic.IList<global::G.UserMembership>? Memberships { get; set; }

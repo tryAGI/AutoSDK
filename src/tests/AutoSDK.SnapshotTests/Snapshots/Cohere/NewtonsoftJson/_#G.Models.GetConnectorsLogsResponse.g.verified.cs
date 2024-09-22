@@ -16,9 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ConnectorLog> ConnectorLogs { get; set; } = default!;
 
         /// <summary>
-        /// Total number of connector logs
+        /// Total number of connector logs<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("total")]
         public double Total { get; set; } = default!;
 
         /// <summary>

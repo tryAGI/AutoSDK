@@ -35,7 +35,8 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="alertNumber">
-        /// The security alert number.
+        /// The security alert number.<br/>
+        /// Included only in responses
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

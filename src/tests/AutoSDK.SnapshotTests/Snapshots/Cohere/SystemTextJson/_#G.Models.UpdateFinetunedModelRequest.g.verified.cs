@@ -17,13 +17,15 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// User ID of the creator.
+        /// User ID of the creator.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_id")]
         public string? CreatorId { get; set; }
 
         /// <summary>
-        /// Organization ID.
+        /// Organization ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         public string? OrganizationId { get; set; }
@@ -53,25 +55,29 @@ namespace G
         public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
 
         /// <summary>
-        /// Creation timestamp.
+        /// Creation timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Latest update timestamp.
+        /// Latest update timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// Timestamp for the completed fine-tuning.
+        /// Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// Timestamp for the latest request to this fine-tuned model.
+        /// Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
         public global::System.DateTime? LastUsed { get; set; }

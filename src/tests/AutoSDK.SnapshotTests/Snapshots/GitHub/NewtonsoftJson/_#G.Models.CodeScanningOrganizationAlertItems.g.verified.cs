@@ -10,39 +10,45 @@ namespace G
     public sealed partial class CodeScanningOrganizationAlertItems
     {
         /// <summary>
-        /// The security alert number.
+        /// The security alert number.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("number")]
         public int Number { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// The REST API URL of the alert resource.
+        /// The REST API URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub URL of the alert resource.
+        /// The GitHub URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// The REST API URL for fetching the list of instances for an alert.
+        /// The REST API URL for fetching the list of instances for an alert.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("instances_url", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("instances_url")]
         public string InstancesUrl { get; set; } = default!;
 
         /// <summary>
@@ -52,7 +58,8 @@ namespace G
         public global::G.CodeScanningAlertState State { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fixed_at")]
         public global::System.DateTime? FixedAt { get; set; }
@@ -64,10 +71,11 @@ namespace G
         public global::G.NullableSimpleUser? DismissedBy { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? DismissedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_at")]
+        public global::System.DateTime? DismissedAt { get; set; }
 
         /// <summary>
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.

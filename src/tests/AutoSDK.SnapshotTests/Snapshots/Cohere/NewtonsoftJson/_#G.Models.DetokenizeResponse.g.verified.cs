@@ -10,9 +10,10 @@ namespace G
     public sealed partial class DetokenizeResponse
     {
         /// <summary>
-        /// A string representing the list of tokens.
+        /// A string representing the list of tokens.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("text")]
         public string Text { get; set; } = default!;
 
         /// <summary>

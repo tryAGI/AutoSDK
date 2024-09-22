@@ -11,7 +11,8 @@ namespace G
     {
         /// <summary>
         /// The organization memberships, i.e., the users that belong to the<br/>
-        /// organization.
+        /// organization.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("memberships")]
         public global::System.Collections.Generic.IList<global::G.OrganizationMembership>? Memberships { get; set; }

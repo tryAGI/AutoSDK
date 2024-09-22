@@ -10,16 +10,18 @@ namespace G
     public sealed partial class CodeScanningAnalysisDeletion
     {
         /// <summary>
-        /// Next deletable analysis in chain, without last analysis deletion confirmation
+        /// Next deletable analysis in chain, without last analysis deletion confirmation<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("next_analysis_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? NextAnalysisUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("next_analysis_url")]
+        public string? NextAnalysisUrl { get; set; }
 
         /// <summary>
-        /// Next deletable analysis in chain, with last analysis deletion confirmation
+        /// Next deletable analysis in chain, with last analysis deletion confirmation<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("confirm_delete_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ConfirmDeleteUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("confirm_delete_url")]
+        public string? ConfirmDeleteUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

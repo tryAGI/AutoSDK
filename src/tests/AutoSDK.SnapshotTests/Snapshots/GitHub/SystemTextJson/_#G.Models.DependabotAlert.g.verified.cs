@@ -10,75 +10,75 @@ namespace G
     public sealed partial class DependabotAlert
     {
         /// <summary>
-        /// The security alert number.
+        /// The security alert number.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Number { get; set; }
+        public int Number { get; set; } = default!;
 
         /// <summary>
-        /// The state of the Dependabot alert.
+        /// The state of the Dependabot alert.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertStateJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertState State { get; set; }
+        public global::G.DependabotAlertState State { get; set; } = default!;
 
         /// <summary>
-        /// Details for the vulnerable dependency.
+        /// Details for the vulnerable dependency.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependency")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertDependency Dependency { get; set; }
+        public global::G.DependabotAlertDependency Dependency { get; set; } = default!;
 
         /// <summary>
-        /// Details for the GitHub Security Advisory.
+        /// Details for the GitHub Security Advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_advisory")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; }
+        public global::G.DependabotAlertSecurityAdvisory SecurityAdvisory { get; set; } = default!;
 
         /// <summary>
-        /// Details pertaining to one vulnerable version range for the advisory.
+        /// Details pertaining to one vulnerable version range for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_vulnerability")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; }
+        public global::G.DependabotAlertSecurityVulnerability SecurityVulnerability { get; set; } = default!;
 
         /// <summary>
-        /// The REST API URL of the alert resource.
+        /// The REST API URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub URL of the alert resource.
+        /// The GitHub URL of the alert resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HtmlUrl { get; set; }
+        public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DismissedAt { get; set; }
+        public global::System.DateTime? DismissedAt { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -103,14 +103,15 @@ namespace G
         public required string? DismissedComment { get; set; }
 
         /// <summary>
-        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fixed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FixedAt { get; set; }
+        public global::System.DateTime? FixedAt { get; set; }
 
         /// <summary>
-        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_dismissed_at")]
         public global::System.DateTime? AutoDismissedAt { get; set; }

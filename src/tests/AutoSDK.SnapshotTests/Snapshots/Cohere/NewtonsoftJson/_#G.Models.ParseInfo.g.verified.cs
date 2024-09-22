@@ -5,18 +5,18 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Included only in requests
     /// </summary>
     public sealed partial class ParseInfo
     {
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("separator")]
         public string? Separator { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delimiter")]
         public string? Delimiter { get; set; }

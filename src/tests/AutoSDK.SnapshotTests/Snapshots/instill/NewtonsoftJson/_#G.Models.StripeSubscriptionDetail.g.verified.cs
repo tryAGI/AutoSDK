@@ -10,49 +10,57 @@ namespace G
     public sealed partial class StripeSubscriptionDetail
     {
         /// <summary>
-        /// Product name associated with the subscription in Stripe.
+        /// Product name associated with the subscription in Stripe.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("productName")]
         public string? ProductName { get; set; }
 
         /// <summary>
-        /// Unique identifier for the subscription.
+        /// Unique identifier for the subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// Identifier for the specific item within the subscription.
+        /// Identifier for the specific item within the subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("itemId")]
         public string? ItemId { get; set; }
 
         /// <summary>
-        /// Price of the subscription.
+        /// Price of the subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("price")]
         public float? Price { get; set; }
 
         /// <summary>
-        /// Optional timestamp indicating when the subscription was canceled, if applicable.
+        /// Optional timestamp indicating when the subscription was canceled, if applicable.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("canceledAt")]
         public int? CanceledAt { get; set; }
 
         /// <summary>
-        /// Optional timestamp indicating when the trial ended, if applicable.
+        /// Optional timestamp indicating when the trial ended, if applicable.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trialEnd")]
         public int? TrialEnd { get; set; }
 
         /// <summary>
-        /// Status of the subscription.
+        /// Status of the subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public global::G.StripeSubscriptionDetailStatus? Status { get; set; }
 
         /// <summary>
-        /// Description of the subscription.
+        /// Description of the subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }

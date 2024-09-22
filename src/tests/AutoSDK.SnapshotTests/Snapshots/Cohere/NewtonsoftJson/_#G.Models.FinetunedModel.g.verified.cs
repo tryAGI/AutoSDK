@@ -10,7 +10,8 @@ namespace G
     public sealed partial class FinetunedModel
     {
         /// <summary>
-        /// read-only. FinetunedModel ID.
+        /// read-only. FinetunedModel ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
@@ -22,13 +23,15 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// read-only. User ID of the creator.
+        /// read-only. User ID of the creator.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creator_id")]
         public string? CreatorId { get; set; }
 
         /// <summary>
-        /// read-only. Organization ID.
+        /// read-only. Organization ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
@@ -56,25 +59,29 @@ namespace G
         public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
 
         /// <summary>
-        /// read-only. Creation timestamp.
+        /// read-only. Creation timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// read-only. Latest update timestamp.
+        /// read-only. Latest update timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// read-only. Timestamp for the completed fine-tuning.
+        /// read-only. Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// read-only. Timestamp for the latest request to this fine-tuned model.
+        /// read-only. Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_used")]
         public global::System.DateTime? LastUsed { get; set; }

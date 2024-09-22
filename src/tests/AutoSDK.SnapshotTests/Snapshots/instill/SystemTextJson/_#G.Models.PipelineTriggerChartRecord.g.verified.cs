@@ -30,38 +30,44 @@ namespace G
         public global::G.Mode? TriggerMode { get; set; }
 
         /// <summary>
-        /// Final status.
+        /// Final status.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Mgmtv1betaStatusJsonConverter))]
         public global::G.Mgmtv1betaStatus? Status { get; set; }
 
         /// <summary>
-        /// Time buckets.
+        /// Time buckets.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeBuckets")]
         public global::System.Collections.Generic.IList<global::System.DateTime>? TimeBuckets { get; set; }
 
         /// <summary>
-        /// Aggregated trigger count in each time bucket.
+        /// Aggregated trigger count in each time bucket.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerCounts")]
         public global::System.Collections.Generic.IList<int>? TriggerCounts { get; set; }
 
         /// <summary>
-        /// Total computation time duration in each time bucket.
+        /// Total computation time duration in each time bucket.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("computeTimeDuration")]
         public global::System.Collections.Generic.IList<float>? ComputeTimeDuration { get; set; }
 
         /// <summary>
-        /// Version for the triggered pipeline if it is a release pipeline.
+        /// Version for the triggered pipeline if it is a release pipeline.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipelineReleaseId")]
         public string? PipelineReleaseId { get; set; }
 
         /// <summary>
-        /// Release UUID for the triggered pipeline if it is a release pipeline.
+        /// Release UUID for the triggered pipeline if it is a release pipeline.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipelineReleaseUid")]
         public string? PipelineReleaseUid { get; set; }

@@ -10,7 +10,8 @@ namespace G
     public sealed partial class GetOrganizationResponse
     {
         /// <summary>
-        /// The organization resource.
+        /// The organization resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
         public global::G.Organization? Organization { get; set; }

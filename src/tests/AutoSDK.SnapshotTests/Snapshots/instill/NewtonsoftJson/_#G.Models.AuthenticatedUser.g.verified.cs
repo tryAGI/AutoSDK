@@ -13,7 +13,8 @@ namespace G
     {
         /// <summary>
         /// The name of the user, defined by its ID.<br/>
-        /// - Format: `users/{user.id}`.
+        /// - Format: `users/{user.id}`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
@@ -36,13 +37,15 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// Creation time.
+        /// Creation time.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createTime")]
         public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// Update time.
+        /// Update time.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updateTime")]
         public global::System.DateTime? UpdateTime { get; set; }
@@ -54,7 +57,8 @@ namespace G
         public string Email { get; set; } = default!;
 
         /// <summary>
-        /// Stripe customer ID. This field is used in Instill Cloud.
+        /// Stripe customer ID. This field is used in Instill Cloud.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("customerId")]
         public string? CustomerId { get; set; }
@@ -92,7 +96,8 @@ namespace G
         public global::G.OnboardingStatus? OnboardingStatus { get; set; }
 
         /// <summary>
-        /// Profile.
+        /// Profile.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("profile")]
         public global::G.UserProfile? Profile { get; set; }

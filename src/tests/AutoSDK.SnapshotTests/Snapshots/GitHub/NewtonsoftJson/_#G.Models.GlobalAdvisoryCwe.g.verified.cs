@@ -16,9 +16,10 @@ namespace G
         public string CweId { get; set; } = default!;
 
         /// <summary>
-        /// The name of the CWE.
+        /// The name of the CWE.<br/>
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>

@@ -23,25 +23,29 @@ namespace G
         public string? PipelineUid { get; set; }
 
         /// <summary>
-        /// Number of triggers with `STATUS_COMPLETED`.
+        /// Number of triggers with `STATUS_COMPLETED`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerCountCompleted")]
         public int? TriggerCountCompleted { get; set; }
 
         /// <summary>
-        /// Number of triggers with `STATUS_ERRORED`.
+        /// Number of triggers with `STATUS_ERRORED`.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerCountErrored")]
         public int? TriggerCountErrored { get; set; }
 
         /// <summary>
-        /// Version for the triggered pipeline if it is a release pipeline.
+        /// Version for the triggered pipeline if it is a release pipeline.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipelineReleaseId")]
         public string? PipelineReleaseId { get; set; }
 
         /// <summary>
-        /// Release UUID for the triggered pipeline if it is a release pipeline.
+        /// Release UUID for the triggered pipeline if it is a release pipeline.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipelineReleaseUid")]
         public string? PipelineReleaseUid { get; set; }

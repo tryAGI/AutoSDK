@@ -17,7 +17,8 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Connector> Connectors { get; set; }
 
         /// <summary>
-        /// Total number of connectors.
+        /// Total number of connectors.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         public double? TotalCount { get; set; }

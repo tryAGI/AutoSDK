@@ -10,19 +10,22 @@ namespace G
     public sealed partial class OrganizationSubscription
     {
         /// <summary>
-        /// Plan identifier.
+        /// Plan identifier.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
         public global::G.OrganizationSubscriptionPlan? Plan { get; set; }
 
         /// <summary>
-        /// Details of the associated Stripe subscription.
+        /// Details of the associated Stripe subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
         public global::G.StripeSubscriptionDetail? Detail { get; set; }
 
         /// <summary>
-        /// Number of used seats within the organization subscription.
+        /// Number of used seats within the organization subscription.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usedSeats")]
         public int? UsedSeats { get; set; }

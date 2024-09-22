@@ -17,7 +17,8 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
-        /// The REST API URL for checking the status of the upload.
+        /// The REST API URL for checking the status of the upload.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }

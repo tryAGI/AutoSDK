@@ -10,9 +10,9 @@ namespace G
     public sealed partial class File
     {
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("fileUid", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("fileUid")]
         public string FileUid { get; set; } = default!;
 
         /// <summary>
@@ -28,19 +28,19 @@ namespace G
         public global::G.FileType Type { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processStatus")]
         public global::G.FileProcessStatus? ProcessStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processOutcome")]
         public string? ProcessOutcome { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievable")]
         public bool? Retrievable { get; set; }
@@ -52,55 +52,55 @@ namespace G
         public string? Content { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ownerUid")]
         public string? OwnerUid { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creatorUid")]
         public string? CreatorUid { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("catalogUid")]
         public string? CatalogUid { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createTime")]
         public global::System.DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updateTime")]
         public global::System.DateTime? UpdateTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleteTime")]
         public global::System.DateTime? DeleteTime { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public string? Size { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalChunks")]
         public int? TotalChunks { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalTokens")]
         public int? TotalTokens { get; set; }

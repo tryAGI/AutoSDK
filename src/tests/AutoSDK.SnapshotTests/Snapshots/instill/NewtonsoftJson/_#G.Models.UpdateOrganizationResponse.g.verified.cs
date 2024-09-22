@@ -10,7 +10,8 @@ namespace G
     public sealed partial class UpdateOrganizationResponse
     {
         /// <summary>
-        /// The organization resource.
+        /// The organization resource.<br/>
+        /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization")]
         public global::G.Organization? Organization { get; set; }

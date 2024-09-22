@@ -10,7 +10,8 @@ namespace G
     public sealed partial class FinetunedModel
     {
         /// <summary>
-        /// read-only. FinetunedModel ID.
+        /// read-only. FinetunedModel ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -23,13 +24,15 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// read-only. User ID of the creator.
+        /// read-only. User ID of the creator.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_id")]
         public string? CreatorId { get; set; }
 
         /// <summary>
-        /// read-only. Organization ID.
+        /// read-only. Organization ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         public string? OrganizationId { get; set; }
@@ -59,25 +62,29 @@ namespace G
         public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
 
         /// <summary>
-        /// read-only. Creation timestamp.
+        /// read-only. Creation timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// read-only. Latest update timestamp.
+        /// read-only. Latest update timestamp.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// read-only. Timestamp for the completed fine-tuning.
+        /// read-only. Timestamp for the completed fine-tuning.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// read-only. Timestamp for the latest request to this fine-tuned model.
+        /// read-only. Timestamp for the latest request to this fine-tuned model.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
         public global::System.DateTime? LastUsed { get; set; }

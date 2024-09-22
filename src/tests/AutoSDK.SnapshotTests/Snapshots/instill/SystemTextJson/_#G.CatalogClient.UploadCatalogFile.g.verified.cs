@@ -116,63 +116,24 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
-        /// <param name="fileUid"></param>
         /// <param name="name"></param>
         /// <param name="type"></param>
-        /// <param name="processStatus"></param>
-        /// <param name="processOutcome"></param>
-        /// <param name="retrievable"></param>
         /// <param name="content"></param>
-        /// <param name="ownerUid"></param>
-        /// <param name="creatorUid"></param>
-        /// <param name="catalogUid"></param>
-        /// <param name="createTime"></param>
-        /// <param name="updateTime"></param>
-        /// <param name="deleteTime"></param>
-        /// <param name="size"></param>
-        /// <param name="totalChunks"></param>
-        /// <param name="totalTokens"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UploadCatalogFileResponse> UploadCatalogFileAsync(
             string namespaceId,
             string catalogId,
-            string fileUid,
             string name,
             global::G.FileType type,
-            global::G.FileProcessStatus? processStatus = default,
-            string? processOutcome = default,
-            bool? retrievable = default,
             string? content = default,
-            string? ownerUid = default,
-            string? creatorUid = default,
-            string? catalogUid = default,
-            global::System.DateTime? createTime = default,
-            global::System.DateTime? updateTime = default,
-            global::System.DateTime? deleteTime = default,
-            string? size = default,
-            int? totalChunks = default,
-            int? totalTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.File
             {
-                FileUid = fileUid,
                 Name = name,
                 Type = type,
-                ProcessStatus = processStatus,
-                ProcessOutcome = processOutcome,
-                Retrievable = retrievable,
                 Content = content,
-                OwnerUid = ownerUid,
-                CreatorUid = creatorUid,
-                CatalogUid = catalogUid,
-                CreateTime = createTime,
-                UpdateTime = updateTime,
-                DeleteTime = deleteTime,
-                Size = size,
-                TotalChunks = totalChunks,
-                TotalTokens = totalTokens,
             };
 
             return await UploadCatalogFileAsync(

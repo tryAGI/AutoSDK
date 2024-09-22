@@ -91,14 +91,24 @@ public readonly record struct EndPoint(
                                         requestContext?.ClassData?.Properties ??
                                         [])
         {
+            if (requestProperty.IsReadOnly)
+            {
+                continue;
+            }
+            
             parameters.Add(MethodParameter.Default with
             {
                 Id = requestProperty.Id,
                 Name = parameters.All(x => x.Name != requestProperty.Name)
                     ? requestProperty.Name
                     : $"request{requestProperty.Name.ToPropertyName()}",
-                Type = requestProperty.Type,
-                IsRequired = requestProperty.IsRequired,//  is { IsRequired: true, IsReadOnly: false },
+                Type = requestProperty.Type with
+                {
+                    CSharpTypeNullability =
+                        requestProperty.Type.IsNullable ||
+                        (requestProperty.Type.CSharpTypeNullability && !requestProperty.IsRequired && !requestProperty.IsWriteOnly),
+                },
+                IsRequired = requestProperty.IsRequired || requestProperty.IsWriteOnly,
                 IsMultiPartFormDataFilename = requestProperty.IsMultiPartFormDataFilename,
                 DefaultValue = requestProperty.DefaultValue,
                 IsDeprecated = requestProperty.IsDeprecated,

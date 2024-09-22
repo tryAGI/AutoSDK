@@ -10,39 +10,39 @@ namespace G
     public sealed partial class GlobalAdvisory
     {
         /// <summary>
-        /// The GitHub Security Advisory ID.
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ghsa_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GhsaId { get; set; }
+        public string GhsaId { get; set; } = default!;
 
         /// <summary>
-        /// The Common Vulnerabilities and Exposures (CVE) ID.
+        /// The Common Vulnerabilities and Exposures (CVE) ID.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cve_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CveId { get; set; }
+        public string? CveId { get; set; }
 
         /// <summary>
-        /// The API URL for the advisory.
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The URL for the advisory.
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string HtmlUrl { get; set; }
+        public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
-        /// The API URL for the repository advisory.
+        /// The API URL for the repository advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_advisory_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RepositoryAdvisoryUrl { get; set; }
+        public string? RepositoryAdvisoryUrl { get; set; }
 
         /// <summary>
         /// A short summary of the advisory.
@@ -59,12 +59,12 @@ namespace G
         public required string? Description { get; set; }
 
         /// <summary>
-        /// The type of advisory.
+        /// The type of advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GlobalAdvisoryType Type { get; set; }
+        public global::G.GlobalAdvisoryType Type { get; set; } = default!;
 
         /// <summary>
         /// The severity of the advisory.
@@ -82,11 +82,10 @@ namespace G
         public required string? SourceCodeLocation { get; set; }
 
         /// <summary>
-        /// 
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? Identifiers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? Identifiers { get; set; }
 
         /// <summary>
         /// 
@@ -96,40 +95,40 @@ namespace G
         public required global::System.Collections.Generic.IList<string>? References { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was published, in ISO 8601 format.
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime PublishedAt { get; set; }
+        public global::System.DateTime PublishedAt { get; set; } = default!;
 
         /// <summary>
-        /// The date and time of when the advisory was last updated, in ISO 8601 format.
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime UpdatedAt { get; set; }
+        public global::System.DateTime UpdatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.
+        /// The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("github_reviewed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? GithubReviewedAt { get; set; }
+        public global::System.DateTime? GithubReviewedAt { get; set; }
 
         /// <summary>
         /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.<br/>
-        /// This field is only populated when the advisory is imported from the National Vulnerability Database.
+        /// This field is only populated when the advisory is imported from the National Vulnerability Database.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nvd_published_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? NvdPublishedAt { get; set; }
+        public global::System.DateTime? NvdPublishedAt { get; set; }
 
         /// <summary>
-        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
+        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("withdrawn_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? WithdrawnAt { get; set; }
+        public global::System.DateTime? WithdrawnAt { get; set; }
 
         /// <summary>
         /// The products and respective version ranges affected by the advisory.
@@ -153,11 +152,11 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
-        /// The users who contributed to the advisory.
+        /// The users who contributed to the advisory.<br/>
+        /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? Credits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
