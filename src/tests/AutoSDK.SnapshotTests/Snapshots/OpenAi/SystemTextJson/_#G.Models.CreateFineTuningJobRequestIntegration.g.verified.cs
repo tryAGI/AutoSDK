@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateFineTuningJobRequestIntegrationTypeJsonConverter))]
-        public global::G.CreateFineTuningJobRequestIntegrationType? Type { get; set; }
+        public global::G.CreateFineTuningJobRequestIntegrationType Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>

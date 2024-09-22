@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MembershipState? State { get; set; }
+        public required global::G.MembershipState State { get; set; }
 
         /// <summary>
         /// User information.

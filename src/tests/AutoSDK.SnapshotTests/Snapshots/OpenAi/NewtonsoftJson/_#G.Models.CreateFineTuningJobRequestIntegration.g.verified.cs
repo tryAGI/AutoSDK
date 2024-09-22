@@ -13,7 +13,7 @@ namespace G
         /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CreateFineTuningJobRequestIntegrationType? Type { get; set; }
+        public global::G.CreateFineTuningJobRequestIntegrationType Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>

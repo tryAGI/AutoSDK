@@ -100,7 +100,8 @@ public class SchemaContext
                         IsMultiPartFormDataFilename = true,
                         Type = Models.TypeData.Default with
                         {
-                            CSharpType = PropertyData.Value.IsRequired ? "string" : "string?",
+                            CSharpTypeRaw = "string",
+                            CSharpTypeNullability = !PropertyData.Value.IsRequired,
                             Settings = Settings,
                         },
                         Settings = Settings,
@@ -342,7 +343,8 @@ public class SchemaContext
         {
             TypeData = TypeData.Value with
             {
-                CSharpType = global::AutoSDK.Models.TypeData.GetCSharpType(ResolvedReference, this),
+                CSharpTypeRaw = global::AutoSDK.Models.TypeData.GetCSharpType(ResolvedReference),
+                CSharpTypeNullability = global::AutoSDK.Models.TypeData.GetCSharpNullability(ResolvedReference, this),
             };
         }
         if (IsProperty)

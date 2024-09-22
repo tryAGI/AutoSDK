@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FileType? Type { get; set; } = default!;
+        public global::G.FileType Type { get; set; } = default!;
 
         /// <summary>
         /// 

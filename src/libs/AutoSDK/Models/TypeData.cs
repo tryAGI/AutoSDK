@@ -1,12 +1,11 @@
 using System.Collections.Immutable;
-using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
-using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
 public readonly record struct TypeData(
-    string CSharpType,
+    string CSharpTypeRaw,
+    bool CSharpTypeNullability,
     bool IsArray,
     bool IsEnum,
     bool IsBase64,
@@ -27,7 +26,8 @@ public readonly record struct TypeData(
     Settings Settings)
 {
     public static TypeData Default => new(
-        CSharpType: string.Empty,
+        CSharpTypeRaw: string.Empty,
+        CSharpTypeNullability: false,
         IsArray: false,
         IsEnum: false,
         IsBase64: false,
@@ -47,12 +47,15 @@ public readonly record struct TypeData(
         IsDeprecated: false,
         Settings: Settings.Default);
     
-    public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
+    public string CSharpTypeWithoutNullability => CSharpTypeRaw.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
     public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
     public bool IsAnyOfLike => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
     public string CSharpTypeWithNullabilityForValueTypes => IsValueType
+        ? CSharpTypeWithNullability
+        : CSharpTypeWithoutNullability;
+    public string CSharpType => CSharpTypeNullability
         ? CSharpTypeWithNullability
         : CSharpTypeWithoutNullability;
 
@@ -126,7 +129,7 @@ public readonly record struct TypeData(
             subTypes = [
                 Default with
                 {
-                    CSharpType = "byte",
+                    CSharpTypeRaw = "byte",
                 },
             ];
         }
@@ -147,7 +150,8 @@ public readonly record struct TypeData(
         var type = GetCSharpType(context);
         
         return new TypeData(
-            CSharpType: type,
+            CSharpTypeRaw: type,
+            CSharpTypeNullability: GetCSharpNullability(context),
             IsValueType: ContextIsValueType(context),
             IsArray: context.Schema.IsArray(),
             IsEnum: context.Schema.IsEnum(),
@@ -197,7 +201,7 @@ public readonly record struct TypeData(
         };
     }
     
-    public static string GetCSharpType(SchemaContext context, SchemaContext? additionalContext = null)
+    public static string GetCSharpType(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
@@ -261,9 +265,16 @@ public readonly record struct TypeData(
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
         };
 
+        return type;
+    }
+
+    public static bool GetCSharpNullability(
+        SchemaContext context,
+        SchemaContext? additionalContext = null)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        
         return context.Schema.Nullable ||
-               !context.IsRequired && additionalContext?.IsRequired != true
-            ? type + "?"
-            : type;
+               !context.IsRequired && additionalContext?.IsRequired != true;
     }
 }

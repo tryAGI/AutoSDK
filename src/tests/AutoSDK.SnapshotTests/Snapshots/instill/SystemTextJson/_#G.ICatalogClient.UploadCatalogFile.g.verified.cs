@@ -46,7 +46,7 @@ namespace G
             string namespaceId,
             string catalogId,
             string name,
-            global::G.FileType? type,
+            global::G.FileType type,
             string? fileUid = default,
             global::G.FileProcessStatus? processStatus = default,
             string? processOutcome = default,

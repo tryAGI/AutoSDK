@@ -42,9 +42,8 @@ public readonly record struct PropertyData(
         {
             type = type.SubTypes[0] with
             {
-                CSharpType = type.CSharpType.Contains("?")
-                    ? type.SubTypes[0].CSharpTypeWithNullability
-                    : type.SubTypes[0].CSharpTypeWithoutNullability,
+                CSharpTypeRaw = type.SubTypes[0].CSharpTypeRaw,
+                CSharpTypeNullability = type.CSharpTypeNullability,
             };
         }
 

@@ -52,7 +52,7 @@ namespace G
             string userId,
             string organizationId,
             string updateMask,
-            global::G.MembershipState? state,
+            global::G.MembershipState state,
             string? name = default,
             string? role = default,
             global::G.User? user = default,

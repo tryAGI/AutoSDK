@@ -234,7 +234,7 @@ public static class Data
                             Name = ClientNameGenerator.GeneratePropertyName(settings, tag),
                             Type = TypeData.Default with
                             {
-                                CSharpType = ClientNameGenerator.Generate(settings, tag),
+                                CSharpTypeRaw = ClientNameGenerator.Generate(settings, tag),
                             },
                             Summary = tag.Description?.ClearForXml() ?? string.Empty,
                         })

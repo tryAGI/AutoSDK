@@ -11,35 +11,35 @@ public partial class JsonTests
         GetContextType(TypeData.Default with
         {
             Namespace = "System.Collections.Generic",
-            CSharpType = "global::System.Collections.Generic.IList<string>",
+            CSharpTypeRaw = "global::System.Collections.Generic.IList<string>",
             IsArray = true,
             SubTypes = [
-                TypeData.Default with { CSharpType = "string" }
+                TypeData.Default with { CSharpTypeRaw = "string" }
             ],
         }, makeNullableRootIfValueType: true).Should().Be("IListString");
         
         GetContextType(TypeData.Default with
         {
             Namespace = "System.Collections.Generic",
-            CSharpType = "global::System.Collections.Generic.Dictionary<string, int>",
+            CSharpTypeRaw = "global::System.Collections.Generic.Dictionary<string, int>",
             SubTypes = [
-                TypeData.Default with { CSharpType = "string" },
-                TypeData.Default with { CSharpType = "int" }
+                TypeData.Default with { CSharpTypeRaw = "string" },
+                TypeData.Default with { CSharpTypeRaw = "int" }
             ],
         }, makeNullableRootIfValueType: true).Should().Be("DictionaryStringInt32");
         
         GetContextType(TypeData.Default with
         {
             Namespace = "System.Collections.Generic",
-            CSharpType = "global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>",
+            CSharpTypeRaw = "global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>",
             IsArray = true,
             SubTypes = [
                 TypeData.Default with
                 {
-                    CSharpType = "global::System.Collections.Generic.IList<string>",
+                    CSharpTypeRaw = "global::System.Collections.Generic.IList<string>",
                     IsArray = true,
                     SubTypes = [
-                        TypeData.Default with { CSharpType = "string" }
+                        TypeData.Default with { CSharpTypeRaw = "string" }
                     ],
                 }
             ],
@@ -48,35 +48,35 @@ public partial class JsonTests
         GetContextType(TypeData.Default with
         {
             Namespace = "System.Collections.Generic",
-            CSharpType = "global::System.Collections.Generic.IList<global::System.Guid>",
+            CSharpTypeRaw = "global::System.Collections.Generic.IList<global::System.Guid>",
             IsArray = true,
             SubTypes = [
                 TypeData.Default with { 
                     Namespace = "System",
-                    CSharpType = "global::System.Guid" }
+                    CSharpTypeRaw = "global::System.Guid" }
             ],
         }, makeNullableRootIfValueType: true).Should().Be("IListGuid");
 
         GetContextType(TypeData.Default with
         {
-            CSharpType = "byte[]",
+            CSharpTypeRaw = "byte[]",
             IsBinary = true,
             SubTypes = [
-                TypeData.Default with { CSharpType = "byte" }
+                TypeData.Default with { CSharpTypeRaw = "byte" }
             ],
         }, makeNullableRootIfValueType: true).Should().Be("ByteArray");
         
         GetContextType(TypeData.Default with
         {
-            CSharpType = "byte[][]",
+            CSharpTypeRaw = "byte[][]",
             IsBinary = true,
             SubTypes = [
                 TypeData.Default with
                 {
-                    CSharpType = "byte[]",
+                    CSharpTypeRaw = "byte[]",
                     IsBinary = true,
                     SubTypes = [
-                        TypeData.Default with { CSharpType = "byte" }
+                        TypeData.Default with { CSharpTypeRaw = "byte" }
                     ],
                 }
             ],
@@ -84,15 +84,15 @@ public partial class JsonTests
         
         GetContextType(TypeData.Default with
         {
-            CSharpType = "global::System.Collections.Generic.IList<byte[]>",
+            CSharpTypeRaw = "global::System.Collections.Generic.IList<byte[]>",
             IsArray = true,
             SubTypes = [
                 TypeData.Default with
                 {
-                    CSharpType = "byte[]",
+                    CSharpTypeRaw = "byte[]",
                     IsBinary = true,
                     SubTypes = [
-                        TypeData.Default with { CSharpType = "byte" }
+                        TypeData.Default with { CSharpTypeRaw = "byte" }
                     ],
                 }
             ],
@@ -102,15 +102,16 @@ public partial class JsonTests
         {
             Namespace = "G",
             IsValueType = true,
-            CSharpType = "global::G.AllOf<Integration?, AppsCreateFromManifestResponse>",
+            CSharpTypeRaw = "global::G.AllOf<Integration?, AppsCreateFromManifestResponse>",
             SubTypes = [
                 TypeData.Default with
                 {
-                    CSharpType = "Integration?",
+                    CSharpTypeRaw = "Integration",
+                    CSharpTypeNullability = true,
                 },
                 TypeData.Default with
                 {
-                    CSharpType = "AppsCreateFromManifestResponse"
+                    CSharpTypeRaw = "AppsCreateFromManifestResponse"
                 },
             ],
         }, makeNullableRootIfValueType: true).Should().Be("NullableAllOfIntegrationAppsCreateFromManifestResponse");
@@ -119,17 +120,18 @@ public partial class JsonTests
         {
             Namespace = "Cohere",
             IsValueType = true,
-            CSharpType = "global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>",
+            CSharpTypeRaw = "global::Cohere.OneOf<global::Cohere.NonStreamedChatResponse, global::Cohere.StreamedChatResponse?>",
             SubTypes = [
                 TypeData.Default with
                 {
                     Namespace = "Cohere",
-                    CSharpType = "global::Cohere.NonStreamedChatResponse"
+                    CSharpTypeRaw = "global::Cohere.NonStreamedChatResponse"
                 },
                 TypeData.Default with
                 {
                     Namespace = "Cohere",
-                    CSharpType = "global::Cohere.StreamedChatResponse?",
+                    CSharpTypeRaw = "global::Cohere.StreamedChatResponse",
+                    CSharpTypeNullability = true,
                     IsValueType = true,
                 }
             ],
@@ -137,26 +139,26 @@ public partial class JsonTests
         
         GetContextType(TypeData.Default with
         {
-            CSharpType = "bool",
+            CSharpTypeRaw = "bool",
             IsValueType = true,
         }, makeNullableRootIfValueType: true).Should().Be("NullableBoolean");
         
         GetContextType(TypeData.Default with
         {
-            CSharpType = "global::System.Collections.Generic.IList<byte[][]>",
+            CSharpTypeRaw = "global::System.Collections.Generic.IList<byte[][]>",
             IsArray = true,
             SubTypes = [
                 TypeData.Default with
                 {
-                    CSharpType = "byte[][]",
+                    CSharpTypeRaw = "byte[][]",
                     IsBinary = true,
                     SubTypes = [
                         TypeData.Default with
                         {
-                            CSharpType = "byte[]",
+                            CSharpTypeRaw = "byte[]",
                             IsBinary = true,
                             SubTypes = [
-                                TypeData.Default with { CSharpType = "byte" }
+                                TypeData.Default with { CSharpTypeRaw = "byte" }
                             ],
                         }
                     ],

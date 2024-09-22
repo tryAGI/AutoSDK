@@ -26,7 +26,7 @@ public static partial class Sources
                     Name = $"Value{i}",
                     Type = TypeData.Default with
                     {
-                        CSharpType = $"T{i}",
+                        CSharpTypeRaw = $"T{i}",
                     },
                 })
                 .ToImmutableArray()

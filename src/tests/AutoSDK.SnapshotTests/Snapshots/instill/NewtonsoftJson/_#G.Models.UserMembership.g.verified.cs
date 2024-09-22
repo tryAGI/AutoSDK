@@ -28,7 +28,7 @@ namespace G
         /// State of the membership.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MembershipState? State { get; set; } = default!;
+        public global::G.MembershipState State { get; set; } = default!;
 
         /// <summary>
         /// User information.
