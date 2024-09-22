@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// Synchronous (result is returned in the response).
         /// </summary>
-        MODESYNC,
+        SYNC,
         /// <summary>
         /// Asynchronous (response only contains acknowledgement).
         /// </summary>
-        MODEASYNC,
+        ASYNC,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                Mode.MODESYNC => "MODE_SYNC",
-                Mode.MODEASYNC => "MODE_ASYNC",
+                Mode.SYNC => "MODE_SYNC",
+                Mode.ASYNC => "MODE_ASYNC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "MODE_SYNC" => Mode.MODESYNC,
-                "MODE_ASYNC" => Mode.MODEASYNC,
+                "MODE_SYNC" => Mode.SYNC,
+                "MODE_ASYNC" => Mode.ASYNC,
                 _ => null,
             };
         }

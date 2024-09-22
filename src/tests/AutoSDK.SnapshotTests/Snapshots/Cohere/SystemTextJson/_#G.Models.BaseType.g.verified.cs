@@ -18,23 +18,23 @@ namespace G
         /// <summary>
         /// Unspecified model.
         /// </summary>
-        BASETYPEUNSPECIFIED,
+        UNSPECIFIED,
         /// <summary>
         /// Generative model.
         /// </summary>
-        BASETYPEGENERATIVE,
+        GENERATIVE,
         /// <summary>
         /// Classification model.
         /// </summary>
-        BASETYPECLASSIFICATION,
+        CLASSIFICATION,
         /// <summary>
         /// Rerank model.
         /// </summary>
-        BASETYPERERANK,
+        RERANK,
         /// <summary>
         /// Chat model.
         /// </summary>
-        BASETYPECHAT,
+        CHAT,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                BaseType.BASETYPEUNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
-                BaseType.BASETYPEGENERATIVE => "BASE_TYPE_GENERATIVE",
-                BaseType.BASETYPECLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
-                BaseType.BASETYPERERANK => "BASE_TYPE_RERANK",
-                BaseType.BASETYPECHAT => "BASE_TYPE_CHAT",
+                BaseType.UNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
+                BaseType.GENERATIVE => "BASE_TYPE_GENERATIVE",
+                BaseType.CLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
+                BaseType.RERANK => "BASE_TYPE_RERANK",
+                BaseType.CHAT => "BASE_TYPE_CHAT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.BASETYPEUNSPECIFIED,
-                "BASE_TYPE_GENERATIVE" => BaseType.BASETYPEGENERATIVE,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.BASETYPECLASSIFICATION,
-                "BASE_TYPE_RERANK" => BaseType.BASETYPERERANK,
-                "BASE_TYPE_CHAT" => BaseType.BASETYPECHAT,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.UNSPECIFIED,
+                "BASE_TYPE_GENERATIVE" => BaseType.GENERATIVE,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.CLASSIFICATION,
+                "BASE_TYPE_RERANK" => BaseType.RERANK,
+                "BASE_TYPE_CHAT" => BaseType.CHAT,
                 _ => null,
             };
         }

@@ -16,12 +16,12 @@ namespace G
         /// Synchronous (result is returned in the response).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODE_SYNC")]
-        MODESYNC,
+        SYNC,
         /// <summary>
         /// Asynchronous (response only contains acknowledgement).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODE_ASYNC")]
-        MODEASYNC,
+        ASYNC,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                Mode.MODESYNC => "MODE_SYNC",
-                Mode.MODEASYNC => "MODE_ASYNC",
+                Mode.SYNC => "MODE_SYNC",
+                Mode.ASYNC => "MODE_ASYNC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "MODE_SYNC" => Mode.MODESYNC,
-                "MODE_ASYNC" => Mode.MODEASYNC,
+                "MODE_SYNC" => Mode.SYNC,
+                "MODE_ASYNC" => Mode.ASYNC,
                 _ => null,
             };
         }

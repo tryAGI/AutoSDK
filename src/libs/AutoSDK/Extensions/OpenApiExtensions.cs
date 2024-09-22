@@ -246,15 +246,19 @@ public static class OpenApiExtensions
         // }
         if (context.Schema.Enum.Any() && context.Schema.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
-            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
+            var @enum = context.ComputeEnum();
+            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "Unknown";
+
+            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + value;
         }
         if (context.Schema.AnyOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AnyOf)
                 .First(x => x.Schema.Enum.Any());
+            var @enum = enumChildContext.ComputeEnum();
+            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "";
 
-            var value = context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
             if (string.IsNullOrWhiteSpace(value))
             {
                 if (context.Children
@@ -278,16 +282,20 @@ public static class OpenApiExtensions
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.OneOf)
                 .First(x => x.Schema.Enum.Any());
+            var @enum = enumChildContext.ComputeEnum();
+            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "Unknown";
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + value;
         }
         if (context.Schema.AllOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AllOf)
                 .First(x => x.Schema.Enum.Any());
+            var @enum = enumChildContext.ComputeEnum();
+            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "Unknown";
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + context.Schema.Default.ToEnumValue(string.Empty, context.Settings).Name;
+            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + value;
         }
         if (context.Schema.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
@@ -437,6 +445,47 @@ public static class OpenApiExtensions
             : text;
 
         return text;
+    }
+    
+    public static Dictionary<string, PropertyData> ComputeEnum(
+        this SchemaContext context)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        
+        return context.Schema.Enum.ComputeEnum(
+            enumName: context.Id,
+            description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
+            context.Settings);
+    }
+    
+    public static Dictionary<string, PropertyData> ComputeEnum(
+        this IList<IOpenApiAny> @enum,
+        string enumName,
+        string description,
+        Settings settings)
+    {
+        var values = @enum
+            .Select(value => value.ToEnumValue(
+                description: description,
+                settings))
+            .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+            .ToDictionary(x => x.Id, x => x);
+
+        if (values.All(x => x.Value.Name.ToUpperInvariant().Contains(enumName.ToUpperInvariant())))
+        {
+            values = values.ToDictionary(
+                x => x.Key,
+                x => x.Value with
+                {
+                    Name = x.Value.Name.Remove(
+                        x.Value.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase),
+                        enumName.Length).ToEnumValue(
+                        description: description,
+                        settings).Name,
+                });
+        }
+
+        return values;
     }
     
     public static PropertyData ToEnumValue(

@@ -56,7 +56,7 @@ namespace G
         /// Default Value: STATUS_UNSPECIFIED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.Status? Status { get; set; } = global::G.Status.STATUSUNSPECIFIED;
+        public global::G.Status? Status { get; set; } = global::G.Status.UNSPECIFIED;
 
         /// <summary>
         /// read-only. Creation timestamp.<br/>

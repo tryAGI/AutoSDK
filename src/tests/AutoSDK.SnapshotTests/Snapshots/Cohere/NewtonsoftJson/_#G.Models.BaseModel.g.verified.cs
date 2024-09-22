@@ -42,7 +42,7 @@ namespace G
         /// Default Value: STRATEGY_UNSPECIFIED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strategy")]
-        public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.STRATEGYUNSPECIFIED;
+        public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.UNSPECIFIED;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

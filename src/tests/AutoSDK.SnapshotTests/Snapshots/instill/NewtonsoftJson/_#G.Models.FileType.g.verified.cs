@@ -27,72 +27,72 @@ namespace G
         /// text
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_TEXT")]
-        FILETYPETEXT,
+        TEXT,
         /// <summary>
         /// PDF
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PDF")]
-        FILETYPEPDF,
+        PDF,
         /// <summary>
         /// MARKDOWN
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_MARKDOWN")]
-        FILETYPEMARKDOWN,
+        MARKDOWN,
         /// <summary>
         /// PNG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PNG")]
-        FILETYPEPNG,
+        PNG,
         /// <summary>
         /// JPEG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_JPEG")]
-        FILETYPEJPEG,
+        JPEG,
         /// <summary>
         /// JPG(not supported yet)
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_JPG")]
-        FILETYPEJPG,
+        JPG,
         /// <summary>
         /// HTML
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_HTML")]
-        FILETYPEHTML,
+        HTML,
         /// <summary>
         /// DOCX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_DOCX")]
-        FILETYPEDOCX,
+        DOCX,
         /// <summary>
         /// DOCX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_DOC")]
-        FILETYPEDOC,
+        DOC,
         /// <summary>
         /// PPT
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PPT")]
-        FILETYPEPPT,
+        PPT,
         /// <summary>
         /// PPTX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_PPTX")]
-        FILETYPEPPTX,
+        PPTX,
         /// <summary>
         /// XLS
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_XLS")]
-        FILETYPEXLS,
+        XLS,
         /// <summary>
         /// XLSX
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_XLSX")]
-        FILETYPEXLSX,
+        XLSX,
         /// <summary>
         /// CSV
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_TYPE_CSV")]
-        FILETYPECSV,
+        CSV,
     }
 
     /// <summary>
@@ -107,20 +107,20 @@ namespace G
         {
             return value switch
             {
-                FileType.FILETYPETEXT => "FILE_TYPE_TEXT",
-                FileType.FILETYPEPDF => "FILE_TYPE_PDF",
-                FileType.FILETYPEMARKDOWN => "FILE_TYPE_MARKDOWN",
-                FileType.FILETYPEPNG => "FILE_TYPE_PNG",
-                FileType.FILETYPEJPEG => "FILE_TYPE_JPEG",
-                FileType.FILETYPEJPG => "FILE_TYPE_JPG",
-                FileType.FILETYPEHTML => "FILE_TYPE_HTML",
-                FileType.FILETYPEDOCX => "FILE_TYPE_DOCX",
-                FileType.FILETYPEDOC => "FILE_TYPE_DOC",
-                FileType.FILETYPEPPT => "FILE_TYPE_PPT",
-                FileType.FILETYPEPPTX => "FILE_TYPE_PPTX",
-                FileType.FILETYPEXLS => "FILE_TYPE_XLS",
-                FileType.FILETYPEXLSX => "FILE_TYPE_XLSX",
-                FileType.FILETYPECSV => "FILE_TYPE_CSV",
+                FileType.TEXT => "FILE_TYPE_TEXT",
+                FileType.PDF => "FILE_TYPE_PDF",
+                FileType.MARKDOWN => "FILE_TYPE_MARKDOWN",
+                FileType.PNG => "FILE_TYPE_PNG",
+                FileType.JPEG => "FILE_TYPE_JPEG",
+                FileType.JPG => "FILE_TYPE_JPG",
+                FileType.HTML => "FILE_TYPE_HTML",
+                FileType.DOCX => "FILE_TYPE_DOCX",
+                FileType.DOC => "FILE_TYPE_DOC",
+                FileType.PPT => "FILE_TYPE_PPT",
+                FileType.PPTX => "FILE_TYPE_PPTX",
+                FileType.XLS => "FILE_TYPE_XLS",
+                FileType.XLSX => "FILE_TYPE_XLSX",
+                FileType.CSV => "FILE_TYPE_CSV",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -131,20 +131,20 @@ namespace G
         {
             return value switch
             {
-                "FILE_TYPE_TEXT" => FileType.FILETYPETEXT,
-                "FILE_TYPE_PDF" => FileType.FILETYPEPDF,
-                "FILE_TYPE_MARKDOWN" => FileType.FILETYPEMARKDOWN,
-                "FILE_TYPE_PNG" => FileType.FILETYPEPNG,
-                "FILE_TYPE_JPEG" => FileType.FILETYPEJPEG,
-                "FILE_TYPE_JPG" => FileType.FILETYPEJPG,
-                "FILE_TYPE_HTML" => FileType.FILETYPEHTML,
-                "FILE_TYPE_DOCX" => FileType.FILETYPEDOCX,
-                "FILE_TYPE_DOC" => FileType.FILETYPEDOC,
-                "FILE_TYPE_PPT" => FileType.FILETYPEPPT,
-                "FILE_TYPE_PPTX" => FileType.FILETYPEPPTX,
-                "FILE_TYPE_XLS" => FileType.FILETYPEXLS,
-                "FILE_TYPE_XLSX" => FileType.FILETYPEXLSX,
-                "FILE_TYPE_CSV" => FileType.FILETYPECSV,
+                "FILE_TYPE_TEXT" => FileType.TEXT,
+                "FILE_TYPE_PDF" => FileType.PDF,
+                "FILE_TYPE_MARKDOWN" => FileType.MARKDOWN,
+                "FILE_TYPE_PNG" => FileType.PNG,
+                "FILE_TYPE_JPEG" => FileType.JPEG,
+                "FILE_TYPE_JPG" => FileType.JPG,
+                "FILE_TYPE_HTML" => FileType.HTML,
+                "FILE_TYPE_DOCX" => FileType.DOCX,
+                "FILE_TYPE_DOC" => FileType.DOC,
+                "FILE_TYPE_PPT" => FileType.PPT,
+                "FILE_TYPE_PPTX" => FileType.PPTX,
+                "FILE_TYPE_XLS" => FileType.XLS,
+                "FILE_TYPE_XLSX" => FileType.XLSX,
+                "FILE_TYPE_CSV" => FileType.CSV,
                 _ => null,
             };
         }

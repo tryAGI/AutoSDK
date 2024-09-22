@@ -45,7 +45,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StrategyJsonConverter))]
-        public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.STRATEGYUNSPECIFIED;
+        public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.UNSPECIFIED;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

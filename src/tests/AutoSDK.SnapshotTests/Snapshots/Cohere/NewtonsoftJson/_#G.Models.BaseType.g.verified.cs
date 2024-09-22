@@ -20,27 +20,27 @@ namespace G
         /// Unspecified model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_UNSPECIFIED")]
-        BASETYPEUNSPECIFIED,
+        UNSPECIFIED,
         /// <summary>
         /// Generative model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_GENERATIVE")]
-        BASETYPEGENERATIVE,
+        GENERATIVE,
         /// <summary>
         /// Classification model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CLASSIFICATION")]
-        BASETYPECLASSIFICATION,
+        CLASSIFICATION,
         /// <summary>
         /// Rerank model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_RERANK")]
-        BASETYPERERANK,
+        RERANK,
         /// <summary>
         /// Chat model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CHAT")]
-        BASETYPECHAT,
+        CHAT,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
         {
             return value switch
             {
-                BaseType.BASETYPEUNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
-                BaseType.BASETYPEGENERATIVE => "BASE_TYPE_GENERATIVE",
-                BaseType.BASETYPECLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
-                BaseType.BASETYPERERANK => "BASE_TYPE_RERANK",
-                BaseType.BASETYPECHAT => "BASE_TYPE_CHAT",
+                BaseType.UNSPECIFIED => "BASE_TYPE_UNSPECIFIED",
+                BaseType.GENERATIVE => "BASE_TYPE_GENERATIVE",
+                BaseType.CLASSIFICATION => "BASE_TYPE_CLASSIFICATION",
+                BaseType.RERANK => "BASE_TYPE_RERANK",
+                BaseType.CHAT => "BASE_TYPE_CHAT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +70,11 @@ namespace G
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.BASETYPEUNSPECIFIED,
-                "BASE_TYPE_GENERATIVE" => BaseType.BASETYPEGENERATIVE,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.BASETYPECLASSIFICATION,
-                "BASE_TYPE_RERANK" => BaseType.BASETYPERERANK,
-                "BASE_TYPE_CHAT" => BaseType.BASETYPECHAT,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.UNSPECIFIED,
+                "BASE_TYPE_GENERATIVE" => BaseType.GENERATIVE,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.CLASSIFICATION,
+                "BASE_TYPE_RERANK" => BaseType.RERANK,
+                "BASE_TYPE_CHAT" => BaseType.CHAT,
                 _ => null,
             };
         }

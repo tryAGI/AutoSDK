@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// Default view, only includes basic information.
         /// </summary>
-        VIEWBASIC,
+        BASIC,
         /// <summary>
         /// Full representation.
         /// </summary>
-        VIEWFULL,
+        FULL,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                View.VIEWBASIC => "VIEW_BASIC",
-                View.VIEWFULL => "VIEW_FULL",
+                View.BASIC => "VIEW_BASIC",
+                View.FULL => "VIEW_FULL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "VIEW_BASIC" => View.VIEWBASIC,
-                "VIEW_FULL" => View.VIEWFULL,
+                "VIEW_BASIC" => View.BASIC,
+                "VIEW_FULL" => View.FULL,
                 _ => null,
             };
         }

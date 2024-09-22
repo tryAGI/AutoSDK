@@ -139,7 +139,7 @@ namespace G
             string name,
             global::G.Settings settings,
             string? xClientName = default,
-            global::G.Status? status = global::G.Status.STATUSUNSPECIFIED,
+            global::G.Status? status = global::G.Status.UNSPECIFIED,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FinetunedModel

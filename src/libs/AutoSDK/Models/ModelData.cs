@@ -47,12 +47,8 @@ public readonly record struct ModelData(
                     .SelectMany(x => x.ComputedProperties)
                     .ToImmutableArray() : [],
             EnumValues: context.Schema.IsEnum()
-                ? context.Schema.Enum
-                    .Select(value => value.ToEnumValue(
-                        description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
-                        context.Settings))
-                    .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-                    .ToImmutableArray() : [],
+                ? context.ComputeEnum().Values.ToImmutableArray()
+                : [],
             Summary: context.Schema.GetSummary(),
             IsDeprecated: context.Schema.Deprecated
             );
