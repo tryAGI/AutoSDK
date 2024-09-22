@@ -9,11 +9,13 @@ namespace G
         partial void PrepareChatArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xClientName,
+            ref global::G.ChatAccepts? accepts,
             global::G.ChatRequest request);
         partial void PrepareChatRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xClientName,
+            global::G.ChatAccepts? accepts,
             global::G.ChatRequest request);
         partial void ProcessChatResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,15 +29,17 @@ namespace G
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="accepts"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
             global::G.ChatRequest request,
             string? xClientName = default,
+            global::G.ChatAccepts? accepts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -45,11 +49,16 @@ namespace G
             PrepareChatArguments(
                 httpClient: _httpClient,
                 xClientName: ref xClientName,
+                accepts: ref accepts,
                 request: request);
 
             if (xClientName != default)
             {
                 _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+            }
+            if (accepts != default)
+            {
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
             }
 
             var __pathBuilder = new PathBuilder(
@@ -73,6 +82,7 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 xClientName: xClientName,
+                accepts: accepts,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -115,15 +125,16 @@ namespace G
         /// <summary>
         /// Chat<br/>
         /// Generates a text response to a user message.<br/>
-        /// To learn how to use the Chat API with Streaming and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
+        /// To learn how to use the Chat API and RAG follow our [Text Generation guides](https://docs.cohere.com/docs/chat-api).
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="accepts"></param>
         /// <param name="message">
         /// Text input for the model to respond to.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="model">
-        /// Defaults to `command-r-plus`.<br/>
+        /// Defaults to `command-r-plus-08-2024`.<br/>
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
         /// </param>
@@ -155,7 +166,9 @@ namespace G
         /// With `prompt_truncation` set to "AUTO", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be changed and ranked by relevance.<br/>
         /// With `prompt_truncation` set to "AUTO_PRESERVE_ORDER", some elements from `chat_history` and `documents` will be dropped in an attempt to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved as they are inputted into the API.<br/>
         /// With `prompt_truncation` set to "OFF", no elements will be dropped. If the sum of the inputs exceeds the model's context length limit, a `TooManyTokens` error will be returned.<br/>
-        /// Compatible Deployments: Cohere Platform Only AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// Compatible Deployments: <br/>
+        ///  - AUTO: Cohere Platform Only<br/>
+        ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="connectors">
         /// Accepts `{"id": "web-search"}`, and/or the `"id"` for a custom [connector](https://docs.cohere.com/docs/connectors), if you've [created](https://docs.cohere.com/docs/creating-and-deploying-a-connector) one.<br/>
@@ -275,11 +288,18 @@ namespace G
         /// Forces the chat to be single step. Defaults to `false`.
         /// </param>
         /// <param name="responseFormat">
-        /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
+        /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R 03-2024](https://docs.cohere.com/docs/command-r), [Command R+ 04-2024](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
         /// The model can be forced into outputting JSON objects (with up to 5 levels of nesting) by setting `{ "type": "json_object" }`.<br/>
         /// A [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.<br/>
         /// **Note**: When using  `{ "type": "json_object" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _"Generate a JSON ..."_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.<br/>
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
+        /// </param>
+        /// <param name="safetyMode">
+        /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
+        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -293,6 +313,7 @@ namespace G
             double frequencyPenalty,
             double presencePenalty,
             string? xClientName = default,
+            global::G.ChatAccepts? accepts = default,
             string? model = default,
             bool? stream = default,
             string? preamble = default,
@@ -309,6 +330,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults = default,
             bool? forceSingleStep = default,
             global::G.ResponseFormat? responseFormat = default,
+            global::G.ChatRequestSafetyMode? safetyMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ChatRequest
@@ -337,10 +359,12 @@ namespace G
                 ToolResults = toolResults,
                 ForceSingleStep = forceSingleStep,
                 ResponseFormat = responseFormat,
+                SafetyMode = safetyMode,
             };
 
             return await ChatAsync(
                 xClientName: xClientName,
+                accepts: accepts,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

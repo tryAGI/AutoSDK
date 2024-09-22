@@ -9,7 +9,8 @@ namespace G
     /// - `"search_document"`: Used for embeddings stored in a vector database for search use-cases.<br/>
     /// - `"search_query"`: Used for embeddings of search queries run against a vector DB to find relevant documents.<br/>
     /// - `"classification"`: Used for embeddings passed through a text classifier.<br/>
-    /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.
+    /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
+    /// - `"image"`: Used for embeddings with image input.
     /// </summary>
     public enum EmbedInputType
     {
@@ -29,6 +30,10 @@ namespace G
         /// Used for the embeddings run through a clustering algorithm.
         /// </summary>
         Clustering,
+        /// <summary>
+        /// Used for embeddings with image input.
+        /// </summary>
+        Image,
     }
 
     /// <summary>
@@ -47,6 +52,7 @@ namespace G
                 EmbedInputType.SearchQuery => "search_query",
                 EmbedInputType.Classification => "classification",
                 EmbedInputType.Clustering => "clustering",
+                EmbedInputType.Image => "image",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -61,6 +67,7 @@ namespace G
                 "search_query" => EmbedInputType.SearchQuery,
                 "classification" => EmbedInputType.Classification,
                 "clustering" => EmbedInputType.Clustering,
+                "image" => EmbedInputType.Image,
                 _ => null,
             };
         }

@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolCall2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCallV2>? ToolCalls { get; set; }
 
         /// <summary>
         /// 

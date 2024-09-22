@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Chatv2Request.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -22,22 +24,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChatMessage2> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChatMessageV2> Messages { get; set; }
 
         /// <summary>
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
         /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::G.Tool2>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolV2>? Tools { get; set; }
 
         /// <summary>
-        /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citation_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Chatv2RequestCitationModeJsonConverter))]
-        public global::G.Chatv2RequestCitationMode? CitationMode { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
+        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? Documents { get; set; }
+
+        /// <summary>
+        /// Options for controlling citation generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("citation_options")]
+        public global::G.CitationOptions? CitationOptions { get; set; }
 
         /// <summary>
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
@@ -47,8 +53,19 @@ namespace G
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFormat2JsonConverter))]
-        public global::G.ResponseFormat2? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatV2JsonConverter))]
+        public global::G.ResponseFormatV2? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
+        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Chatv2RequestSafetyModeJsonConverter))]
+        public global::G.Chatv2RequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.

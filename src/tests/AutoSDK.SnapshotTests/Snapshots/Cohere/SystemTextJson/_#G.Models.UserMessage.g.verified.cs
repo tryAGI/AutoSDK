@@ -28,12 +28,6 @@ namespace G
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> Content { get; set; }
 
         /// <summary>
-        /// Documents seen by the model when generating the reply.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public global::System.Collections.Generic.IList<global::G.ChatDocument>? Documents { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

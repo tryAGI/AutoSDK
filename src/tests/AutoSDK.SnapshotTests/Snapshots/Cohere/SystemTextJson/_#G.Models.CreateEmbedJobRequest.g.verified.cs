@@ -33,7 +33,8 @@ namespace G
         /// - `"search_document"`: Used for embeddings stored in a vector database for search use-cases.<br/>
         /// - `"search_query"`: Used for embeddings of search queries run against a vector DB to find relevant documents.<br/>
         /// - `"classification"`: Used for embeddings passed through a text classifier.<br/>
-        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.
+        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
+        /// - `"image"`: Used for embeddings with image input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedInputTypeJsonConverter))]

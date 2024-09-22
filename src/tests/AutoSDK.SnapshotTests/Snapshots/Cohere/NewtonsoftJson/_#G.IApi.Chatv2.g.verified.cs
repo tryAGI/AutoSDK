@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse2, global::G.StreamedChatResponse2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chatv2Async(
             global::G.Chatv2Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -31,9 +31,11 @@ namespace G
         /// A list of available tools (functions) that the model may suggest invoking before producing a text response.<br/>
         /// When `tools` is passed (without `tool_results`), the `text` content in the response will be empty and the `tool_calls` field in the response will be populated with a list of tool calls that need to be made. If no calls need to be made, the `tool_calls` array will be empty.
         /// </param>
-        /// <param name="citationMode">
-        /// Defaults to `"accurate"`.<br/>
-        /// Dictates the approach taken to generating citations as part of the RAG flow by allowing the user to specify whether they want `"accurate"` results, `"fast"` results or no results.
+        /// <param name="documents">
+        /// A list of relevant documents that the model can cite to generate a more accurate reply. Each document is either a string or document object with content and metadata.
+        /// </param>
+        /// <param name="citationOptions">
+        /// Options for controlling citation generation.
         /// </param>
         /// <param name="responseFormat">
         /// Configuration for forcing the model output to adhere to the specified format. Supported on [Command R](https://docs.cohere.com/docs/command-r), [Command R+](https://docs.cohere.com/docs/command-r-plus) and newer models.<br/>
@@ -41,6 +43,13 @@ namespace G
         /// A [JSON Schema](https://json-schema.org/) can optionally be provided, to ensure a specific structure.<br/>
         /// **Note**: When using  `{ "type": "json_object" }` your `message` should always explicitly instruct the model to generate a JSON (eg: _"Generate a JSON ..."_) . Otherwise the model may end up getting stuck generating an infinite stream of characters and eventually run out of context length.<br/>
         /// **Limitation**: The parameter is not supported in RAG mode (when any of `connectors`, `documents`, `tools`, `tool_results` are provided).
+        /// </param>
+        /// <param name="safetyMode">
+        /// Used to select the [safety instruction](/docs/safety-modes) inserted into the prompt. Defaults to `CONTEXTUAL`.<br/>
+        /// When `NONE` is specified, the safety instruction will be omitted.<br/>
+        /// Safety modes are not yet configurable in combination with `tools`, `tool_results` and `documents` parameters.<br/>
+        /// **Note**: This parameter is only compatible with models [Command R 08-2024](/docs/command-r#august-2024-release), [Command R+ 08-2024](/docs/command-r-plus#august-2024-release) and newer.<br/>
+        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.
@@ -79,12 +88,14 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse2, global::G.StreamedChatResponse2?>> Chatv2Async(
+        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chatv2Async(
             string model,
-            global::System.Collections.Generic.IList<global::G.ChatMessage2> messages,
-            global::System.Collections.Generic.IList<global::G.Tool2>? tools = default,
-            global::G.Chatv2RequestCitationMode? citationMode = default,
-            global::G.ResponseFormat2? responseFormat = default,
+            global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
+            global::System.Collections.Generic.IList<global::G.ToolV2>? tools = default,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.Document>>? documents = default,
+            global::G.CitationOptions? citationOptions = default,
+            global::G.ResponseFormatV2? responseFormat = default,
+            global::G.Chatv2RequestSafetyMode? safetyMode = default,
             int? maxTokens = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             float? temperature = default,

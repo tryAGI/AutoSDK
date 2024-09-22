@@ -49,7 +49,8 @@ namespace G
         /// - `"search_document"`: Used for embeddings stored in a vector database for search use-cases.<br/>
         /// - `"search_query"`: Used for embeddings of search queries run against a vector DB to find relevant documents.<br/>
         /// - `"classification"`: Used for embeddings passed through a text classifier.<br/>
-        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.
+        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
+        /// - `"image"`: Used for embeddings with image input.
         /// </param>
         /// <param name="embeddingTypes">
         /// Specifies the types of embeddings you want to get back. Not required and default is None, which returns the Embed Floats response type. Can be one or more of the following types.<br/>

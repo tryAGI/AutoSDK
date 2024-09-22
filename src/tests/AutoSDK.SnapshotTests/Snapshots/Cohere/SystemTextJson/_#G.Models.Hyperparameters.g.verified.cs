@@ -42,6 +42,32 @@ namespace G
         public double? LearningRate { get; set; }
 
         /// <summary>
+        /// Controls the scaling factor for LoRA updates. Higher values make the<br/>
+        /// updates more impactful.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lora_alpha")]
+        public int? LoraAlpha { get; set; }
+
+        /// <summary>
+        /// Specifies the rank for low-rank matrices. Lower ranks reduce parameters<br/>
+        /// but may limit model flexibility.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lora_rank")]
+        public int? LoraRank { get; set; }
+
+        /// <summary>
+        /// The possible combinations of LoRA modules to target.<br/>
+        ///  - LORA_TARGET_MODULES_UNSPECIFIED: Unspecified LoRA target modules.<br/>
+        ///  - LORA_TARGET_MODULES_QV: LoRA adapts the query and value matrices in transformer attention layers.<br/>
+        ///  - LORA_TARGET_MODULES_QKVO: LoRA adapts query, key, value, and output matrices in attention layers.<br/>
+        ///  - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN).<br/>
+        /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lora_target_modules")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LoraTargetModulesJsonConverter))]
+        public global::G.LoraTargetModules? LoraTargetModules { get; set; } = global::G.LoraTargetModules.UNSPECIFIED;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
