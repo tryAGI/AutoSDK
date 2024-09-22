@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileUid")]
-        public string? FileUid { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string FileUid { get; set; }
 
         /// <summary>
         /// 

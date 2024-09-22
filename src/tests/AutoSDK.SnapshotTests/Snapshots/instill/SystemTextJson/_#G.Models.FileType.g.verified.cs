@@ -16,8 +16,9 @@ namespace G
     ///  - FILE_TYPE_DOC: DOC<br/>
     ///  - FILE_TYPE_PPT: PPT<br/>
     ///  - FILE_TYPE_PPTX: PPTX<br/>
-    ///  - FILE_TYPE_XLS: XLS(not supported yet)<br/>
-    ///  - FILE_TYPE_XLSX: XLSX
+    ///  - FILE_TYPE_XLS: XLS<br/>
+    ///  - FILE_TYPE_XLSX: XLSX<br/>
+    ///  - FILE_TYPE_CSV: CSV
     /// </summary>
     public enum FileType
     {
@@ -73,6 +74,10 @@ namespace G
         /// 
         /// </summary>
         FILETYPEXLSX,
+        /// <summary>
+        /// 
+        /// </summary>
+        FILETYPECSV,
     }
 
     /// <summary>
@@ -100,6 +105,7 @@ namespace G
                 FileType.FILETYPEPPTX => "FILE_TYPE_PPTX",
                 FileType.FILETYPEXLS => "FILE_TYPE_XLS",
                 FileType.FILETYPEXLSX => "FILE_TYPE_XLSX",
+                FileType.FILETYPECSV => "FILE_TYPE_CSV",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -123,6 +129,7 @@ namespace G
                 "FILE_TYPE_PPTX" => FileType.FILETYPEPPTX,
                 "FILE_TYPE_XLS" => FileType.FILETYPEXLS,
                 "FILE_TYPE_XLSX" => FileType.FILETYPEXLSX,
+                "FILE_TYPE_CSV" => FileType.FILETYPECSV,
                 _ => null,
             };
         }

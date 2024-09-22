@@ -13,7 +13,8 @@ namespace G
         /// The created catalog.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("catalog")]
-        public global::G.Catalog? Catalog { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.Catalog Catalog { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

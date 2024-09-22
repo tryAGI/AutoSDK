@@ -10,12 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
             ref string catalogId,
+            ref string? instillRequesterUid,
             global::G.QuestionAnsweringBody request);
         partial void PrepareQuestionAnsweringRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string namespaceId,
             string catalogId,
+            string? instillRequesterUid,
             global::G.QuestionAnsweringBody request);
         partial void ProcessQuestionAnsweringResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,6 +33,7 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
+        /// <param name="instillRequesterUid"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -38,6 +41,7 @@ namespace G
             string namespaceId,
             string catalogId,
             global::G.QuestionAnsweringBody request,
+            string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -48,6 +52,7 @@ namespace G
                 httpClient: _httpClient,
                 namespaceId: ref namespaceId,
                 catalogId: ref catalogId,
+                instillRequesterUid: ref instillRequesterUid,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -72,6 +77,7 @@ namespace G
                 httpRequestMessage: httpRequest,
                 namespaceId: namespaceId,
                 catalogId: catalogId,
+                instillRequesterUid: instillRequesterUid,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -116,6 +122,7 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
+        /// <param name="instillRequesterUid"></param>
         /// <param name="question"></param>
         /// <param name="topK"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -123,6 +130,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.QuestionAnsweringResponse> QuestionAnsweringAsync(
             string namespaceId,
             string catalogId,
+            string? instillRequesterUid = default,
             string? question = default,
             int? topK = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -136,6 +144,7 @@ namespace G
             return await QuestionAnsweringAsync(
                 namespaceId: namespaceId,
                 catalogId: catalogId,
+                instillRequesterUid: instillRequesterUid,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

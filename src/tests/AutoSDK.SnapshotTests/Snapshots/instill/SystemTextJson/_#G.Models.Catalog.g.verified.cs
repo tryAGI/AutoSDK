@@ -13,7 +13,8 @@ namespace G
         /// The catalog id.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("catalogId")]
-        public string? CatalogId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CatalogId { get; set; }
 
         /// <summary>
         /// The catalog name.

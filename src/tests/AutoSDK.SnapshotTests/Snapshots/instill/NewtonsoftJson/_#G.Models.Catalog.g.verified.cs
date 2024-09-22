@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The catalog id.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("catalogId")]
-        public string? CatalogId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("catalogId", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CatalogId { get; set; } = default!;
 
         /// <summary>
         /// The catalog name.

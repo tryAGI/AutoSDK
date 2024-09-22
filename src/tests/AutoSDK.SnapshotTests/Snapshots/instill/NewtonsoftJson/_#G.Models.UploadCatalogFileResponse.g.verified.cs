@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file")]
-        public global::G.File? File { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("file", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.File File { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

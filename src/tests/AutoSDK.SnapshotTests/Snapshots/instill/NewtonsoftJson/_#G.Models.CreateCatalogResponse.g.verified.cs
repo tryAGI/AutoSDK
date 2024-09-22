@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The created catalog.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("catalog")]
-        public global::G.Catalog? Catalog { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("catalog", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Catalog Catalog { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

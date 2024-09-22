@@ -1590,6 +1590,11 @@ paths:
           required: true
           schema:
             type: string
+        - name: Instill-Requester-Uid
+          in: header
+          description: 'Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to'
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -1632,6 +1637,11 @@ paths:
           in: path
           description: id of the catalog
           required: true
+          schema:
+            type: string
+        - name: Instill-Requester-Uid
+          in: header
+          description: 'Indicates the authenticated namespace is making the request on behalf of another entity, typically an organization they belong to'
           schema:
             type: string
       requestBody:
@@ -2804,6 +2814,8 @@ components:
           items:
             $ref: '#/components/schemas/protobufAny'
     Catalog:
+      required:
+        - catalogId
       type: object
       properties:
         catalogId:
@@ -2863,6 +2875,8 @@ components:
           format: uint64
       description: Catalog represents a catalog.
     CreateCatalogResponse:
+      required:
+        - catalog
       type: object
       properties:
         catalog:
@@ -2901,6 +2915,7 @@ components:
       required:
         - name
         - type
+        - fileUid
       type: object
       properties:
         fileUid:
@@ -3000,8 +3015,9 @@ components:
         - FILE_TYPE_PPTX
         - FILE_TYPE_XLS
         - FILE_TYPE_XLSX
+        - FILE_TYPE_CSV
       type: string
-      description: "- FILE_TYPE_TEXT: text\n - FILE_TYPE_PDF: PDF\n - FILE_TYPE_MARKDOWN: MARKDOWN\n - FILE_TYPE_PNG: PNG(not supported yet)\n - FILE_TYPE_JPEG: JPEG(not supported yet)\n - FILE_TYPE_JPG: JPG(not supported yet)\n - FILE_TYPE_HTML: HTML\n - FILE_TYPE_DOCX: DOCX\n - FILE_TYPE_DOC: DOC\n - FILE_TYPE_PPT: PPT\n - FILE_TYPE_PPTX: PPTX\n - FILE_TYPE_XLS: XLS(not supported yet)\n - FILE_TYPE_XLSX: XLSX"
+      description: "- FILE_TYPE_TEXT: text\n - FILE_TYPE_PDF: PDF\n - FILE_TYPE_MARKDOWN: MARKDOWN\n - FILE_TYPE_PNG: PNG(not supported yet)\n - FILE_TYPE_JPEG: JPEG(not supported yet)\n - FILE_TYPE_JPG: JPG(not supported yet)\n - FILE_TYPE_HTML: HTML\n - FILE_TYPE_DOCX: DOCX\n - FILE_TYPE_DOC: DOC\n - FILE_TYPE_PPT: PPT\n - FILE_TYPE_PPTX: PPTX\n - FILE_TYPE_XLS: XLS\n - FILE_TYPE_XLSX: XLSX\n - FILE_TYPE_CSV: CSV"
     GetFileCatalogResponse:
       title: GetFileCatalogResponse
       type: object
@@ -3261,6 +3277,8 @@ components:
             - $ref: '#/components/schemas/artifactv1alphaChunk'
     UploadCatalogFileResponse:
       title: upload file response
+      required:
+        - file
       type: object
       properties:
         file:

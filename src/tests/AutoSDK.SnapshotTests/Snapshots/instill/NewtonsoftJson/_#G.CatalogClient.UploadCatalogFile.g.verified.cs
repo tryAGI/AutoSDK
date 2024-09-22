@@ -137,9 +137,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UploadCatalogFileResponse> UploadCatalogFileAsync(
             string namespaceId,
             string catalogId,
+            string fileUid,
             string name,
             global::G.FileType type,
-            string? fileUid = default,
             global::G.FileProcessStatus? processStatus = default,
             string? processOutcome = default,
             bool? retrievable = default,
