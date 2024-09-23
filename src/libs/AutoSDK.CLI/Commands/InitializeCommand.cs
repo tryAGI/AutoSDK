@@ -11,8 +11,8 @@ public class InitializeCommand : Command
             name: "solution-name",
             getDefaultValue: () => string.Empty,
             description: "Solution name");
-        var apiName = new Argument<string>(
-            name: "api-name",
+        var clientName = new Argument<string>(
+            name: "client-name",
             getDefaultValue: () => string.Empty,
             description: "API client name");
         var openApiSpec = new Argument<string>(
@@ -36,7 +36,7 @@ public class InitializeCommand : Command
             getDefaultValue: () => true,
             description: "Adds integration tests to the solution");
         AddArgument(solutionName);
-        AddArgument(apiName);
+        AddArgument(clientName);
         AddArgument(openApiSpec);
         AddArgument(company);
         AddOption(output);
@@ -46,7 +46,7 @@ public class InitializeCommand : Command
         this.SetHandler(
             HandleAsync,
             solutionName,
-            apiName,
+            clientName,
             openApiSpec,
             company,
             output,
@@ -56,7 +56,7 @@ public class InitializeCommand : Command
 
     private static async Task HandleAsync(
         string solutionName,
-        string apiName,
+        string clientName,
         string openApiSpec,
         string company,
         string outputPath,
@@ -172,7 +172,7 @@ EndProject", string.Empty);
             
             newContent = newContent
                 .Replace("$SolutionName$", solutionName, StringComparison.OrdinalIgnoreCase)
-                .Replace("$ApiName$", apiName, StringComparison.OrdinalIgnoreCase)
+                .Replace("$ClientName$", clientName, StringComparison.OrdinalIgnoreCase)
                 .Replace("$OpenApiSpec$", openApiSpec, StringComparison.OrdinalIgnoreCase)
                 .Replace("$CurrentYear$", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture), StringComparison.OrdinalIgnoreCase)
                 .Replace("$CompanyName$", company, StringComparison.OrdinalIgnoreCase)

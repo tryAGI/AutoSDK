@@ -9,6 +9,7 @@ var text = await File.ReadAllTextAsync(path);
 
 text = text
         .Replace("openapi: 3.1.0", "openapi: 3.0.1")
+        .Replace("\"openapi\":\"3.1.0\"", "\"openapi\":\"3.0.1\"")
     ;
 
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);

@@ -3,15 +3,14 @@ namespace $SolutionName$.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
-    [TestMethod]
-    public $ApiName$ GetAuthenticatedApi()
+    private static $ClientName$ GetAuthenticatedClient()
     {
         var apiKey =
             Environment.GetEnvironmentVariable("$SolutionNameUppercase$_API_KEY") ??
             throw new AssertInconclusiveException("$SolutionNameUppercase$_API_KEY environment variable is not found.");
 
-        var api = new $ApiName$(apiKey);
+        var client = new $ClientName$(apiKey);
         
-        return api;
+        return client;
     }
 }

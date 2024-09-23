@@ -5,7 +5,7 @@
   </PropertyGroup>
   
   <PropertyGroup Label="Nuget">
-    <Description>Generated C# SDK based on $SolutionName$ OpenAPI specification.</Description>
+    <Description>C# SDK based on $SolutionName$ OpenAPI specification.</Description>
     <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;generated;nswag</PackageTags>
   </PropertyGroup>
   

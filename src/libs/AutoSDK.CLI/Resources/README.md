@@ -16,7 +16,7 @@
 ```csharp
 using $SolutionName$;
 
-using var api = new $ApiName$(apiKey);
+using var client = new $ClientName$(apiKey);
 ```
 
 ## Support
