@@ -13,7 +13,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="3.6.0" />
     <PackageReference Include="MSTest.TestFramework" Version="3.6.0" />
     <PackageReference Include="FluentAssertions" Version="6.12.1" />
-    <PackageReference Include="Verify.MSTest" Version="26.4.5" />
+    <PackageReference Include="Verify.MSTest" Version="26.6.0" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
