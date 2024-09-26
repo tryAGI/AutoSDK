@@ -278,6 +278,94 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ThreadStreamEvent?, TResult>? thread = null,
+            global::System.Func<global::G.RunStreamEvent?, TResult>? run = null,
+            global::System.Func<global::G.RunStepStreamEvent?, TResult>? runStep = null,
+            global::System.Func<global::G.MessageStreamEvent?, TResult>? message = null,
+            global::System.Func<global::G.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::G.DoneEvent?, TResult>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread && thread != null)
+            {
+                return thread(Thread!);
+            }
+            else if (IsRun && run != null)
+            {
+                return run(Run!);
+            }
+            else if (IsRunStep && runStep != null)
+            {
+                return runStep(RunStep!);
+            }
+            else if (IsMessage && message != null)
+            {
+                return message(Message!);
+            }
+            else if (IsError && error != null)
+            {
+                return error(Error!);
+            }
+            else if (IsDone && done != null)
+            {
+                return done(Done!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ThreadStreamEvent?>? thread = null,
+            global::System.Action<global::G.RunStreamEvent?>? run = null,
+            global::System.Action<global::G.RunStepStreamEvent?>? runStep = null,
+            global::System.Action<global::G.MessageStreamEvent?>? message = null,
+            global::System.Action<global::G.ErrorEvent?>? error = null,
+            global::System.Action<global::G.DoneEvent?>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread)
+            {
+                thread?.Invoke(Thread!);
+            }
+            else if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsRunStep)
+            {
+                runStep?.Invoke(RunStep!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

@@ -340,6 +340,114 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ChatStreamStartEvent?, TResult>? streamStartEvent = null,
+            global::System.Func<global::G.ChatSearchQueriesGenerationEvent?, TResult>? searchQueriesGenerationEvent = null,
+            global::System.Func<global::G.ChatSearchResultsEvent?, TResult>? searchResultsEvent = null,
+            global::System.Func<global::G.ChatTextGenerationEvent?, TResult>? textGenerationEvent = null,
+            global::System.Func<global::G.ChatCitationGenerationEvent?, TResult>? citationGenerationEvent = null,
+            global::System.Func<global::G.ChatToolCallsGenerationEvent?, TResult>? toolCallsGenerationEvent = null,
+            global::System.Func<global::G.ChatStreamEndEvent?, TResult>? streamEndEvent = null,
+            global::System.Func<global::G.ChatToolCallsChunkEvent?, TResult>? toolCallsChunkEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamStartEvent && streamStartEvent != null)
+            {
+                return streamStartEvent(StreamStartEvent!);
+            }
+            else if (IsSearchQueriesGenerationEvent && searchQueriesGenerationEvent != null)
+            {
+                return searchQueriesGenerationEvent(SearchQueriesGenerationEvent!);
+            }
+            else if (IsSearchResultsEvent && searchResultsEvent != null)
+            {
+                return searchResultsEvent(SearchResultsEvent!);
+            }
+            else if (IsTextGenerationEvent && textGenerationEvent != null)
+            {
+                return textGenerationEvent(TextGenerationEvent!);
+            }
+            else if (IsCitationGenerationEvent && citationGenerationEvent != null)
+            {
+                return citationGenerationEvent(CitationGenerationEvent!);
+            }
+            else if (IsToolCallsGenerationEvent && toolCallsGenerationEvent != null)
+            {
+                return toolCallsGenerationEvent(ToolCallsGenerationEvent!);
+            }
+            else if (IsStreamEndEvent && streamEndEvent != null)
+            {
+                return streamEndEvent(StreamEndEvent!);
+            }
+            else if (IsToolCallsChunkEvent && toolCallsChunkEvent != null)
+            {
+                return toolCallsChunkEvent(ToolCallsChunkEvent!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ChatStreamStartEvent?>? streamStartEvent = null,
+            global::System.Action<global::G.ChatSearchQueriesGenerationEvent?>? searchQueriesGenerationEvent = null,
+            global::System.Action<global::G.ChatSearchResultsEvent?>? searchResultsEvent = null,
+            global::System.Action<global::G.ChatTextGenerationEvent?>? textGenerationEvent = null,
+            global::System.Action<global::G.ChatCitationGenerationEvent?>? citationGenerationEvent = null,
+            global::System.Action<global::G.ChatToolCallsGenerationEvent?>? toolCallsGenerationEvent = null,
+            global::System.Action<global::G.ChatStreamEndEvent?>? streamEndEvent = null,
+            global::System.Action<global::G.ChatToolCallsChunkEvent?>? toolCallsChunkEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamStartEvent)
+            {
+                streamStartEvent?.Invoke(StreamStartEvent!);
+            }
+            else if (IsSearchQueriesGenerationEvent)
+            {
+                searchQueriesGenerationEvent?.Invoke(SearchQueriesGenerationEvent!);
+            }
+            else if (IsSearchResultsEvent)
+            {
+                searchResultsEvent?.Invoke(SearchResultsEvent!);
+            }
+            else if (IsTextGenerationEvent)
+            {
+                textGenerationEvent?.Invoke(TextGenerationEvent!);
+            }
+            else if (IsCitationGenerationEvent)
+            {
+                citationGenerationEvent?.Invoke(CitationGenerationEvent!);
+            }
+            else if (IsToolCallsGenerationEvent)
+            {
+                toolCallsGenerationEvent?.Invoke(ToolCallsGenerationEvent!);
+            }
+            else if (IsStreamEndEvent)
+            {
+                streamEndEvent?.Invoke(StreamEndEvent!);
+            }
+            else if (IsToolCallsChunkEvent)
+            {
+                toolCallsChunkEvent?.Invoke(ToolCallsChunkEvent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

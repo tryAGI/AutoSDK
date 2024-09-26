@@ -800,6 +800,234 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.RepositoryRuleCreation?, TResult>? value1 = null,
+            global::System.Func<global::G.RepositoryRuleUpdate?, TResult>? value2 = null,
+            global::System.Func<global::G.RepositoryRuleDeletion?, TResult>? value3 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredLinearHistory?, TResult>? value4 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredDeployments?, TResult>? value5 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredSignatures?, TResult>? value6 = null,
+            global::System.Func<global::G.RepositoryRulePullRequest?, TResult>? value7 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredStatusChecks?, TResult>? value8 = null,
+            global::System.Func<global::G.RepositoryRuleNonFastForward?, TResult>? value9 = null,
+            global::System.Func<global::G.RepositoryRuleCommitMessagePattern?, TResult>? value10 = null,
+            global::System.Func<global::G.RepositoryRuleCommitAuthorEmailPattern?, TResult>? value11 = null,
+            global::System.Func<global::G.RepositoryRuleCommitterEmailPattern?, TResult>? value12 = null,
+            global::System.Func<global::G.RepositoryRuleBranchNamePattern?, TResult>? value13 = null,
+            global::System.Func<global::G.RepositoryRuleTagNamePattern?, TResult>? value14 = null,
+            global::System.Func<global::G.RepositoryRuleVariant15?, TResult>? value15 = null,
+            global::System.Func<global::G.RepositoryRuleVariant16?, TResult>? value16 = null,
+            global::System.Func<global::G.RepositoryRuleVariant17?, TResult>? value17 = null,
+            global::System.Func<global::G.RepositoryRuleVariant18?, TResult>? value18 = null,
+            global::System.Func<global::G.RepositoryRuleWorkflows?, TResult>? value19 = null,
+            global::System.Func<global::G.RepositoryRuleCodeScanning?, TResult>? value20 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+            else if (IsValue3 && value3 != null)
+            {
+                return value3(Value3!);
+            }
+            else if (IsValue4 && value4 != null)
+            {
+                return value4(Value4!);
+            }
+            else if (IsValue5 && value5 != null)
+            {
+                return value5(Value5!);
+            }
+            else if (IsValue6 && value6 != null)
+            {
+                return value6(Value6!);
+            }
+            else if (IsValue7 && value7 != null)
+            {
+                return value7(Value7!);
+            }
+            else if (IsValue8 && value8 != null)
+            {
+                return value8(Value8!);
+            }
+            else if (IsValue9 && value9 != null)
+            {
+                return value9(Value9!);
+            }
+            else if (IsValue10 && value10 != null)
+            {
+                return value10(Value10!);
+            }
+            else if (IsValue11 && value11 != null)
+            {
+                return value11(Value11!);
+            }
+            else if (IsValue12 && value12 != null)
+            {
+                return value12(Value12!);
+            }
+            else if (IsValue13 && value13 != null)
+            {
+                return value13(Value13!);
+            }
+            else if (IsValue14 && value14 != null)
+            {
+                return value14(Value14!);
+            }
+            else if (IsValue15 && value15 != null)
+            {
+                return value15(Value15!);
+            }
+            else if (IsValue16 && value16 != null)
+            {
+                return value16(Value16!);
+            }
+            else if (IsValue17 && value17 != null)
+            {
+                return value17(Value17!);
+            }
+            else if (IsValue18 && value18 != null)
+            {
+                return value18(Value18!);
+            }
+            else if (IsValue19 && value19 != null)
+            {
+                return value19(Value19!);
+            }
+            else if (IsValue20 && value20 != null)
+            {
+                return value20(Value20!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.RepositoryRuleCreation?>? value1 = null,
+            global::System.Action<global::G.RepositoryRuleUpdate?>? value2 = null,
+            global::System.Action<global::G.RepositoryRuleDeletion?>? value3 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredLinearHistory?>? value4 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredDeployments?>? value5 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredSignatures?>? value6 = null,
+            global::System.Action<global::G.RepositoryRulePullRequest?>? value7 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks?>? value8 = null,
+            global::System.Action<global::G.RepositoryRuleNonFastForward?>? value9 = null,
+            global::System.Action<global::G.RepositoryRuleCommitMessagePattern?>? value10 = null,
+            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern?>? value11 = null,
+            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern?>? value12 = null,
+            global::System.Action<global::G.RepositoryRuleBranchNamePattern?>? value13 = null,
+            global::System.Action<global::G.RepositoryRuleTagNamePattern?>? value14 = null,
+            global::System.Action<global::G.RepositoryRuleVariant15?>? value15 = null,
+            global::System.Action<global::G.RepositoryRuleVariant16?>? value16 = null,
+            global::System.Action<global::G.RepositoryRuleVariant17?>? value17 = null,
+            global::System.Action<global::G.RepositoryRuleVariant18?>? value18 = null,
+            global::System.Action<global::G.RepositoryRuleWorkflows?>? value19 = null,
+            global::System.Action<global::G.RepositoryRuleCodeScanning?>? value20 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+            else if (IsValue6)
+            {
+                value6?.Invoke(Value6!);
+            }
+            else if (IsValue7)
+            {
+                value7?.Invoke(Value7!);
+            }
+            else if (IsValue8)
+            {
+                value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
+            }
+            else if (IsValue10)
+            {
+                value10?.Invoke(Value10!);
+            }
+            else if (IsValue11)
+            {
+                value11?.Invoke(Value11!);
+            }
+            else if (IsValue12)
+            {
+                value12?.Invoke(Value12!);
+            }
+            else if (IsValue13)
+            {
+                value13?.Invoke(Value13!);
+            }
+            else if (IsValue14)
+            {
+                value14?.Invoke(Value14!);
+            }
+            else if (IsValue15)
+            {
+                value15?.Invoke(Value15!);
+            }
+            else if (IsValue16)
+            {
+                value16?.Invoke(Value16!);
+            }
+            else if (IsValue17)
+            {
+                value17?.Invoke(Value17!);
+            }
+            else if (IsValue18)
+            {
+                value18?.Invoke(Value18!);
+            }
+            else if (IsValue19)
+            {
+                value19?.Invoke(Value19!);
+            }
+            else if (IsValue20)
+            {
+                value20?.Invoke(Value20!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

@@ -112,6 +112,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.LemurStringResponse?, TResult>? @string = null,
+            global::System.Func<global::G.LemurQuestionAnswerResponse?, TResult>? questionAnswer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString && @string != null)
+            {
+                return @string(String!);
+            }
+            else if (IsQuestionAnswer && questionAnswer != null)
+            {
+                return questionAnswer(QuestionAnswer!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.LemurStringResponse?>? @string = null,
+            global::System.Action<global::G.LemurQuestionAnswerResponse?>? questionAnswer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsQuestionAnswer)
+            {
+                questionAnswer?.Invoke(QuestionAnswer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

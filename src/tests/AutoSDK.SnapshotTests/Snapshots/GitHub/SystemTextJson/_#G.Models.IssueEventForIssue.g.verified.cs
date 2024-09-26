@@ -606,6 +606,184 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.LabeledIssueEvent?, TResult>? labeled = null,
+            global::System.Func<global::G.UnlabeledIssueEvent?, TResult>? unlabeled = null,
+            global::System.Func<global::G.AssignedIssueEvent?, TResult>? assigned = null,
+            global::System.Func<global::G.UnassignedIssueEvent?, TResult>? unassigned = null,
+            global::System.Func<global::G.MilestonedIssueEvent?, TResult>? milestoned = null,
+            global::System.Func<global::G.DemilestonedIssueEvent?, TResult>? demilestoned = null,
+            global::System.Func<global::G.RenamedIssueEvent?, TResult>? renamed = null,
+            global::System.Func<global::G.ReviewRequestedIssueEvent?, TResult>? reviewRequested = null,
+            global::System.Func<global::G.ReviewRequestRemovedIssueEvent?, TResult>? reviewRequestRemoved = null,
+            global::System.Func<global::G.ReviewDismissedIssueEvent?, TResult>? reviewDismissed = null,
+            global::System.Func<global::G.LockedIssueEvent?, TResult>? locked = null,
+            global::System.Func<global::G.AddedToProjectIssueEvent?, TResult>? addedToProject = null,
+            global::System.Func<global::G.MovedColumnInProjectIssueEvent?, TResult>? movedColumnInProject = null,
+            global::System.Func<global::G.RemovedFromProjectIssueEvent?, TResult>? removedFromProject = null,
+            global::System.Func<global::G.ConvertedNoteToIssueIssueEvent?, TResult>? convertedNoteTo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabeled && labeled != null)
+            {
+                return labeled(Labeled!);
+            }
+            else if (IsUnlabeled && unlabeled != null)
+            {
+                return unlabeled(Unlabeled!);
+            }
+            else if (IsAssigned && assigned != null)
+            {
+                return assigned(Assigned!);
+            }
+            else if (IsUnassigned && unassigned != null)
+            {
+                return unassigned(Unassigned!);
+            }
+            else if (IsMilestoned && milestoned != null)
+            {
+                return milestoned(Milestoned!);
+            }
+            else if (IsDemilestoned && demilestoned != null)
+            {
+                return demilestoned(Demilestoned!);
+            }
+            else if (IsRenamed && renamed != null)
+            {
+                return renamed(Renamed!);
+            }
+            else if (IsReviewRequested && reviewRequested != null)
+            {
+                return reviewRequested(ReviewRequested!);
+            }
+            else if (IsReviewRequestRemoved && reviewRequestRemoved != null)
+            {
+                return reviewRequestRemoved(ReviewRequestRemoved!);
+            }
+            else if (IsReviewDismissed && reviewDismissed != null)
+            {
+                return reviewDismissed(ReviewDismissed!);
+            }
+            else if (IsLocked && locked != null)
+            {
+                return locked(Locked!);
+            }
+            else if (IsAddedToProject && addedToProject != null)
+            {
+                return addedToProject(AddedToProject!);
+            }
+            else if (IsMovedColumnInProject && movedColumnInProject != null)
+            {
+                return movedColumnInProject(MovedColumnInProject!);
+            }
+            else if (IsRemovedFromProject && removedFromProject != null)
+            {
+                return removedFromProject(RemovedFromProject!);
+            }
+            else if (IsConvertedNoteTo && convertedNoteTo != null)
+            {
+                return convertedNoteTo(ConvertedNoteTo!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.LabeledIssueEvent?>? labeled = null,
+            global::System.Action<global::G.UnlabeledIssueEvent?>? unlabeled = null,
+            global::System.Action<global::G.AssignedIssueEvent?>? assigned = null,
+            global::System.Action<global::G.UnassignedIssueEvent?>? unassigned = null,
+            global::System.Action<global::G.MilestonedIssueEvent?>? milestoned = null,
+            global::System.Action<global::G.DemilestonedIssueEvent?>? demilestoned = null,
+            global::System.Action<global::G.RenamedIssueEvent?>? renamed = null,
+            global::System.Action<global::G.ReviewRequestedIssueEvent?>? reviewRequested = null,
+            global::System.Action<global::G.ReviewRequestRemovedIssueEvent?>? reviewRequestRemoved = null,
+            global::System.Action<global::G.ReviewDismissedIssueEvent?>? reviewDismissed = null,
+            global::System.Action<global::G.LockedIssueEvent?>? locked = null,
+            global::System.Action<global::G.AddedToProjectIssueEvent?>? addedToProject = null,
+            global::System.Action<global::G.MovedColumnInProjectIssueEvent?>? movedColumnInProject = null,
+            global::System.Action<global::G.RemovedFromProjectIssueEvent?>? removedFromProject = null,
+            global::System.Action<global::G.ConvertedNoteToIssueIssueEvent?>? convertedNoteTo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabeled)
+            {
+                labeled?.Invoke(Labeled!);
+            }
+            else if (IsUnlabeled)
+            {
+                unlabeled?.Invoke(Unlabeled!);
+            }
+            else if (IsAssigned)
+            {
+                assigned?.Invoke(Assigned!);
+            }
+            else if (IsUnassigned)
+            {
+                unassigned?.Invoke(Unassigned!);
+            }
+            else if (IsMilestoned)
+            {
+                milestoned?.Invoke(Milestoned!);
+            }
+            else if (IsDemilestoned)
+            {
+                demilestoned?.Invoke(Demilestoned!);
+            }
+            else if (IsRenamed)
+            {
+                renamed?.Invoke(Renamed!);
+            }
+            else if (IsReviewRequested)
+            {
+                reviewRequested?.Invoke(ReviewRequested!);
+            }
+            else if (IsReviewRequestRemoved)
+            {
+                reviewRequestRemoved?.Invoke(ReviewRequestRemoved!);
+            }
+            else if (IsReviewDismissed)
+            {
+                reviewDismissed?.Invoke(ReviewDismissed!);
+            }
+            else if (IsLocked)
+            {
+                locked?.Invoke(Locked!);
+            }
+            else if (IsAddedToProject)
+            {
+                addedToProject?.Invoke(AddedToProject!);
+            }
+            else if (IsMovedColumnInProject)
+            {
+                movedColumnInProject?.Invoke(MovedColumnInProject!);
+            }
+            else if (IsRemovedFromProject)
+            {
+                removedFromProject?.Invoke(RemovedFromProject!);
+            }
+            else if (IsConvertedNoteTo)
+            {
+                convertedNoteTo?.Invoke(ConvertedNoteTo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

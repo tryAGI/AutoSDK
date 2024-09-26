@@ -302,6 +302,104 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.MessageStartEvent?, TResult>? start = null,
+            global::System.Func<global::G.MessageDeltaEvent?, TResult>? delta = null,
+            global::System.Func<global::G.MessageStopEvent?, TResult>? stop = null,
+            global::System.Func<global::G.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
+            global::System.Func<global::G.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
+            global::System.Func<global::G.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
+            global::System.Func<global::G.PingEvent?, TResult>? ping = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStart && start != null)
+            {
+                return start(Start!);
+            }
+            else if (IsDelta && delta != null)
+            {
+                return delta(Delta!);
+            }
+            else if (IsStop && stop != null)
+            {
+                return stop(Stop!);
+            }
+            else if (IsContentBlockStart && contentBlockStart != null)
+            {
+                return contentBlockStart(ContentBlockStart!);
+            }
+            else if (IsContentBlockDelta && contentBlockDelta != null)
+            {
+                return contentBlockDelta(ContentBlockDelta!);
+            }
+            else if (IsContentBlockStop && contentBlockStop != null)
+            {
+                return contentBlockStop(ContentBlockStop!);
+            }
+            else if (IsPing && ping != null)
+            {
+                return ping(Ping!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.MessageStartEvent?>? start = null,
+            global::System.Action<global::G.MessageDeltaEvent?>? delta = null,
+            global::System.Action<global::G.MessageStopEvent?>? stop = null,
+            global::System.Action<global::G.ContentBlockStartEvent?>? contentBlockStart = null,
+            global::System.Action<global::G.ContentBlockDeltaEvent?>? contentBlockDelta = null,
+            global::System.Action<global::G.ContentBlockStopEvent?>? contentBlockStop = null,
+            global::System.Action<global::G.PingEvent?>? ping = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStart)
+            {
+                start?.Invoke(Start!);
+            }
+            else if (IsDelta)
+            {
+                delta?.Invoke(Delta!);
+            }
+            else if (IsStop)
+            {
+                stop?.Invoke(Stop!);
+            }
+            else if (IsContentBlockStart)
+            {
+                contentBlockStart?.Invoke(ContentBlockStart!);
+            }
+            else if (IsContentBlockDelta)
+            {
+                contentBlockDelta?.Invoke(ContentBlockDelta!);
+            }
+            else if (IsContentBlockStop)
+            {
+                contentBlockStop?.Invoke(ContentBlockStop!);
+            }
+            else if (IsPing)
+            {
+                ping?.Invoke(Ping!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
