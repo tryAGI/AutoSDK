@@ -226,6 +226,84 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.MessageStreamEventVariant1?, TResult>? value1 = null,
+            global::System.Func<global::G.MessageStreamEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.MessageStreamEventVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.MessageStreamEventVariant4?, TResult>? value4 = null,
+            global::System.Func<global::G.MessageStreamEventVariant5?, TResult>? value5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+            else if (IsValue3 && value3 != null)
+            {
+                return value3(Value3!);
+            }
+            else if (IsValue4 && value4 != null)
+            {
+                return value4(Value4!);
+            }
+            else if (IsValue5 && value5 != null)
+            {
+                return value5(Value5!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.MessageStreamEventVariant1?>? value1 = null,
+            global::System.Action<global::G.MessageStreamEventVariant2?>? value2 = null,
+            global::System.Action<global::G.MessageStreamEventVariant3?>? value3 = null,
+            global::System.Action<global::G.MessageStreamEventVariant4?>? value4 = null,
+            global::System.Action<global::G.MessageStreamEventVariant5?>? value5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

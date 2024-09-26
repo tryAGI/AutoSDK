@@ -872,6 +872,254 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.LabeledIssueEvent?, TResult>? labeledEvent = null,
+            global::System.Func<global::G.UnlabeledIssueEvent?, TResult>? unlabeledEvent = null,
+            global::System.Func<global::G.MilestonedIssueEvent?, TResult>? milestonedEvent = null,
+            global::System.Func<global::G.DemilestonedIssueEvent?, TResult>? demilestonedEvent = null,
+            global::System.Func<global::G.RenamedIssueEvent?, TResult>? renamedEvent = null,
+            global::System.Func<global::G.ReviewRequestedIssueEvent?, TResult>? reviewRequestedEvent = null,
+            global::System.Func<global::G.ReviewRequestRemovedIssueEvent?, TResult>? reviewRequestRemovedEvent = null,
+            global::System.Func<global::G.ReviewDismissedIssueEvent?, TResult>? reviewDismissedEvent = null,
+            global::System.Func<global::G.LockedIssueEvent?, TResult>? lockedEvent = null,
+            global::System.Func<global::G.AddedToProjectIssueEvent?, TResult>? addedToProjectEvent = null,
+            global::System.Func<global::G.MovedColumnInProjectIssueEvent?, TResult>? movedColumnInProjectEvent = null,
+            global::System.Func<global::G.RemovedFromProjectIssueEvent?, TResult>? removedFromProjectEvent = null,
+            global::System.Func<global::G.ConvertedNoteToIssueIssueEvent?, TResult>? convertedNoteToEvent = null,
+            global::System.Func<global::G.TimelineCommentEvent?, TResult>? commentEvent = null,
+            global::System.Func<global::G.TimelineCrossReferencedEvent?, TResult>? crossReferencedEvent = null,
+            global::System.Func<global::G.TimelineCommittedEvent?, TResult>? committedEvent = null,
+            global::System.Func<global::G.TimelineReviewedEvent?, TResult>? reviewedEvent = null,
+            global::System.Func<global::G.TimelineLineCommentedEvent?, TResult>? lineCommentedEvent = null,
+            global::System.Func<global::G.TimelineCommitCommentedEvent?, TResult>? commitCommentedEvent = null,
+            global::System.Func<global::G.TimelineAssignedIssueEvent?, TResult>? assignedEvent = null,
+            global::System.Func<global::G.TimelineUnassignedIssueEvent?, TResult>? unassignedEvent = null,
+            global::System.Func<global::G.StateChangeIssueEvent?, TResult>? stateChangeEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabeledEvent && labeledEvent != null)
+            {
+                return labeledEvent(LabeledEvent!);
+            }
+            else if (IsUnlabeledEvent && unlabeledEvent != null)
+            {
+                return unlabeledEvent(UnlabeledEvent!);
+            }
+            else if (IsMilestonedEvent && milestonedEvent != null)
+            {
+                return milestonedEvent(MilestonedEvent!);
+            }
+            else if (IsDemilestonedEvent && demilestonedEvent != null)
+            {
+                return demilestonedEvent(DemilestonedEvent!);
+            }
+            else if (IsRenamedEvent && renamedEvent != null)
+            {
+                return renamedEvent(RenamedEvent!);
+            }
+            else if (IsReviewRequestedEvent && reviewRequestedEvent != null)
+            {
+                return reviewRequestedEvent(ReviewRequestedEvent!);
+            }
+            else if (IsReviewRequestRemovedEvent && reviewRequestRemovedEvent != null)
+            {
+                return reviewRequestRemovedEvent(ReviewRequestRemovedEvent!);
+            }
+            else if (IsReviewDismissedEvent && reviewDismissedEvent != null)
+            {
+                return reviewDismissedEvent(ReviewDismissedEvent!);
+            }
+            else if (IsLockedEvent && lockedEvent != null)
+            {
+                return lockedEvent(LockedEvent!);
+            }
+            else if (IsAddedToProjectEvent && addedToProjectEvent != null)
+            {
+                return addedToProjectEvent(AddedToProjectEvent!);
+            }
+            else if (IsMovedColumnInProjectEvent && movedColumnInProjectEvent != null)
+            {
+                return movedColumnInProjectEvent(MovedColumnInProjectEvent!);
+            }
+            else if (IsRemovedFromProjectEvent && removedFromProjectEvent != null)
+            {
+                return removedFromProjectEvent(RemovedFromProjectEvent!);
+            }
+            else if (IsConvertedNoteToEvent && convertedNoteToEvent != null)
+            {
+                return convertedNoteToEvent(ConvertedNoteToEvent!);
+            }
+            else if (IsCommentEvent && commentEvent != null)
+            {
+                return commentEvent(CommentEvent!);
+            }
+            else if (IsCrossReferencedEvent && crossReferencedEvent != null)
+            {
+                return crossReferencedEvent(CrossReferencedEvent!);
+            }
+            else if (IsCommittedEvent && committedEvent != null)
+            {
+                return committedEvent(CommittedEvent!);
+            }
+            else if (IsReviewedEvent && reviewedEvent != null)
+            {
+                return reviewedEvent(ReviewedEvent!);
+            }
+            else if (IsLineCommentedEvent && lineCommentedEvent != null)
+            {
+                return lineCommentedEvent(LineCommentedEvent!);
+            }
+            else if (IsCommitCommentedEvent && commitCommentedEvent != null)
+            {
+                return commitCommentedEvent(CommitCommentedEvent!);
+            }
+            else if (IsAssignedEvent && assignedEvent != null)
+            {
+                return assignedEvent(AssignedEvent!);
+            }
+            else if (IsUnassignedEvent && unassignedEvent != null)
+            {
+                return unassignedEvent(UnassignedEvent!);
+            }
+            else if (IsStateChangeEvent && stateChangeEvent != null)
+            {
+                return stateChangeEvent(StateChangeEvent!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.LabeledIssueEvent?>? labeledEvent = null,
+            global::System.Action<global::G.UnlabeledIssueEvent?>? unlabeledEvent = null,
+            global::System.Action<global::G.MilestonedIssueEvent?>? milestonedEvent = null,
+            global::System.Action<global::G.DemilestonedIssueEvent?>? demilestonedEvent = null,
+            global::System.Action<global::G.RenamedIssueEvent?>? renamedEvent = null,
+            global::System.Action<global::G.ReviewRequestedIssueEvent?>? reviewRequestedEvent = null,
+            global::System.Action<global::G.ReviewRequestRemovedIssueEvent?>? reviewRequestRemovedEvent = null,
+            global::System.Action<global::G.ReviewDismissedIssueEvent?>? reviewDismissedEvent = null,
+            global::System.Action<global::G.LockedIssueEvent?>? lockedEvent = null,
+            global::System.Action<global::G.AddedToProjectIssueEvent?>? addedToProjectEvent = null,
+            global::System.Action<global::G.MovedColumnInProjectIssueEvent?>? movedColumnInProjectEvent = null,
+            global::System.Action<global::G.RemovedFromProjectIssueEvent?>? removedFromProjectEvent = null,
+            global::System.Action<global::G.ConvertedNoteToIssueIssueEvent?>? convertedNoteToEvent = null,
+            global::System.Action<global::G.TimelineCommentEvent?>? commentEvent = null,
+            global::System.Action<global::G.TimelineCrossReferencedEvent?>? crossReferencedEvent = null,
+            global::System.Action<global::G.TimelineCommittedEvent?>? committedEvent = null,
+            global::System.Action<global::G.TimelineReviewedEvent?>? reviewedEvent = null,
+            global::System.Action<global::G.TimelineLineCommentedEvent?>? lineCommentedEvent = null,
+            global::System.Action<global::G.TimelineCommitCommentedEvent?>? commitCommentedEvent = null,
+            global::System.Action<global::G.TimelineAssignedIssueEvent?>? assignedEvent = null,
+            global::System.Action<global::G.TimelineUnassignedIssueEvent?>? unassignedEvent = null,
+            global::System.Action<global::G.StateChangeIssueEvent?>? stateChangeEvent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabeledEvent)
+            {
+                labeledEvent?.Invoke(LabeledEvent!);
+            }
+            else if (IsUnlabeledEvent)
+            {
+                unlabeledEvent?.Invoke(UnlabeledEvent!);
+            }
+            else if (IsMilestonedEvent)
+            {
+                milestonedEvent?.Invoke(MilestonedEvent!);
+            }
+            else if (IsDemilestonedEvent)
+            {
+                demilestonedEvent?.Invoke(DemilestonedEvent!);
+            }
+            else if (IsRenamedEvent)
+            {
+                renamedEvent?.Invoke(RenamedEvent!);
+            }
+            else if (IsReviewRequestedEvent)
+            {
+                reviewRequestedEvent?.Invoke(ReviewRequestedEvent!);
+            }
+            else if (IsReviewRequestRemovedEvent)
+            {
+                reviewRequestRemovedEvent?.Invoke(ReviewRequestRemovedEvent!);
+            }
+            else if (IsReviewDismissedEvent)
+            {
+                reviewDismissedEvent?.Invoke(ReviewDismissedEvent!);
+            }
+            else if (IsLockedEvent)
+            {
+                lockedEvent?.Invoke(LockedEvent!);
+            }
+            else if (IsAddedToProjectEvent)
+            {
+                addedToProjectEvent?.Invoke(AddedToProjectEvent!);
+            }
+            else if (IsMovedColumnInProjectEvent)
+            {
+                movedColumnInProjectEvent?.Invoke(MovedColumnInProjectEvent!);
+            }
+            else if (IsRemovedFromProjectEvent)
+            {
+                removedFromProjectEvent?.Invoke(RemovedFromProjectEvent!);
+            }
+            else if (IsConvertedNoteToEvent)
+            {
+                convertedNoteToEvent?.Invoke(ConvertedNoteToEvent!);
+            }
+            else if (IsCommentEvent)
+            {
+                commentEvent?.Invoke(CommentEvent!);
+            }
+            else if (IsCrossReferencedEvent)
+            {
+                crossReferencedEvent?.Invoke(CrossReferencedEvent!);
+            }
+            else if (IsCommittedEvent)
+            {
+                committedEvent?.Invoke(CommittedEvent!);
+            }
+            else if (IsReviewedEvent)
+            {
+                reviewedEvent?.Invoke(ReviewedEvent!);
+            }
+            else if (IsLineCommentedEvent)
+            {
+                lineCommentedEvent?.Invoke(LineCommentedEvent!);
+            }
+            else if (IsCommitCommentedEvent)
+            {
+                commitCommentedEvent?.Invoke(CommitCommentedEvent!);
+            }
+            else if (IsAssignedEvent)
+            {
+                assignedEvent?.Invoke(AssignedEvent!);
+            }
+            else if (IsUnassignedEvent)
+            {
+                unassignedEvent?.Invoke(UnassignedEvent!);
+            }
+            else if (IsStateChangeEvent)
+            {
+                stateChangeEvent?.Invoke(StateChangeEvent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

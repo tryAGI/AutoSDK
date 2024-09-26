@@ -112,6 +112,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartRefusal?, TResult>? refusal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsRefusal && refusal != null)
+            {
+                return refusal(Refusal!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartRefusal?>? refusal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsRefusal)
+            {
+                refusal?.Invoke(Refusal!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

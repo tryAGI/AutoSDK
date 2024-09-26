@@ -105,6 +105,46 @@ namespace {@namespace}
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public TResult? Match<TResult>(
+{allTypes.Select(x => $@" 
+            global::System.Func<{x.Type.CSharpType}, TResult>? {x.ParameterName} = null,
+").Inject()}
+            bool validate = true)
+        {{
+            if (validate)
+            {{
+                Validate();
+            }}
+
+{allTypes.Select((x, i) => $@"
+            {(i > 0 ? "else " : "")}if (Is{x.Name} && {x.ParameterName} != null)
+            {{
+                return {x.ParameterName}({x.Name}!);
+            }}").Inject()}
+
+            return default(TResult);
+        }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public void Match(
+{allTypes.Select(x => $@" 
+            global::System.Action<{x.Type.CSharpType}>? {x.ParameterName} = null,
+").Inject()}
+            bool validate = true)
+        {{
+            if (validate)
+            {{
+                Validate();
+            }}
+
+{allTypes.Select((x, i) => $@"
+            {(i > 0 ? "else " : "")}if (Is{x.Name})
+            {{
+                {x.ParameterName}?.Invoke({x.Name}!);
+            }}").Inject()}
+        }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public override int GetHashCode()
         {{
             var fields = new object?[]

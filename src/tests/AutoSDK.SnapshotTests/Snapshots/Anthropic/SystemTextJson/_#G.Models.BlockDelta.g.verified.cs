@@ -112,6 +112,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.TextBlockDelta?, TResult>? text = null,
+            global::System.Func<global::G.InputJsonBlockDelta?, TResult>? inputJson = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsInputJson && inputJson != null)
+            {
+                return inputJson(InputJson!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.TextBlockDelta?>? text = null,
+            global::System.Action<global::G.InputJsonBlockDelta?>? inputJson = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsInputJson)
+            {
+                inputJson?.Invoke(InputJson!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

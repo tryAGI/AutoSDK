@@ -116,6 +116,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.TextResponseFormatV2?, TResult>? text = null,
+            global::System.Func<global::G.JsonResponseFormatV2?, TResult>? json = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsJson && json != null)
+            {
+                return json(Json!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.TextResponseFormatV2?>? text = null,
+            global::System.Action<global::G.JsonResponseFormatV2?>? json = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJson)
+            {
+                json?.Invoke(Json!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

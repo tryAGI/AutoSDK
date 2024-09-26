@@ -150,6 +150,64 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.GenerateStreamText?, TResult>? streamText = null,
+            global::System.Func<global::G.GenerateStreamEnd?, TResult>? streamEnd = null,
+            global::System.Func<global::G.GenerateStreamError?, TResult>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamText && streamText != null)
+            {
+                return streamText(StreamText!);
+            }
+            else if (IsStreamEnd && streamEnd != null)
+            {
+                return streamEnd(StreamEnd!);
+            }
+            else if (IsStreamError && streamError != null)
+            {
+                return streamError(StreamError!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.GenerateStreamText?>? streamText = null,
+            global::System.Action<global::G.GenerateStreamEnd?>? streamEnd = null,
+            global::System.Action<global::G.GenerateStreamError?>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamText)
+            {
+                streamText?.Invoke(StreamText!);
+            }
+            else if (IsStreamEnd)
+            {
+                streamEnd?.Invoke(StreamEnd!);
+            }
+            else if (IsStreamError)
+            {
+                streamError?.Invoke(StreamError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

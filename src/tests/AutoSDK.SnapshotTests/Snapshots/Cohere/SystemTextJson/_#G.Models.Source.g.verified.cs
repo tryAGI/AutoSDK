@@ -112,6 +112,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ToolSource?, TResult>? tool = null,
+            global::System.Func<global::G.DocumentSource?, TResult>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
+            else if (IsDocument && document != null)
+            {
+                return document(Document!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ToolSource?>? tool = null,
+            global::System.Action<global::G.DocumentSource?>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

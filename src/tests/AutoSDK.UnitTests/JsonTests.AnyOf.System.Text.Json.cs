@@ -39,6 +39,11 @@ public partial class JsonTests
         response.Value1.Should().NotBeNull();
         response.Value1!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
         
+        response.Match(
+            value1: v => v.Status.Should().Be(PullModelResponseStatus2.PullingManifest),
+            value2: _ => Assert.Fail("Should not be here"),
+            validate: true);
+        
         response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerOptions
         {
             TypeInfoResolver = TestSourceGenerationContext.Default,
@@ -47,6 +52,11 @@ public partial class JsonTests
         response.Should().NotBeNull();
         response.Value1.Should().NotBeNull();
         response.Value1!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
+        
+        response.Match(
+            value1: v => v.Status.Should().Be(PullModelResponseStatus2.PullingManifest),
+            value2: _ => Assert.Fail("Should not be here"),
+            validate: true);
     }
     
     [TestMethod]

@@ -112,6 +112,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.TranscriptReadyNotification?, TResult>? ready = null,
+            global::System.Func<global::G.RedactedAudioNotification?, TResult>? redactedAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReady && ready != null)
+            {
+                return ready(Ready!);
+            }
+            else if (IsRedactedAudio && redactedAudio != null)
+            {
+                return redactedAudio(RedactedAudio!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.TranscriptReadyNotification?>? ready = null,
+            global::System.Action<global::G.RedactedAudioNotification?>? redactedAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReady)
+            {
+                ready?.Invoke(Ready!);
+            }
+            else if (IsRedactedAudio)
+            {
+                redactedAudio?.Invoke(RedactedAudio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

@@ -42,6 +42,48 @@ namespace AutoSDK.JsonConverters
         
         public bool IsAllOf =>
             IsValue1 && IsValue2;
+
+        public TResult? Match<TResult>(
+            global::System.Func<T1, TResult>? value1 = null,
+            global::System.Func<T2, TResult>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+            
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+
+            return default(TResult);
+        }
+
+        public void Match(
+            Action<T1>? value1 = null,
+            Action<T2>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+            
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+        }
         
         public AnyOf(
             T1? value1,

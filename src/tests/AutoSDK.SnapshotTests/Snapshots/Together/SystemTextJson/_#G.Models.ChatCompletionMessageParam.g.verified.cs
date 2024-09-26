@@ -226,6 +226,84 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ChatCompletionSystemMessageParam?, TResult>? system = null,
+            global::System.Func<global::G.ChatCompletionUserMessageParam?, TResult>? user = null,
+            global::System.Func<global::G.ChatCompletionAssistantMessageParam?, TResult>? assistant = null,
+            global::System.Func<global::G.ChatCompletionToolMessageParam?, TResult>? tool = null,
+            global::System.Func<global::G.ChatCompletionFunctionMessageParam?, TResult>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem && system != null)
+            {
+                return system(System!);
+            }
+            else if (IsUser && user != null)
+            {
+                return user(User!);
+            }
+            else if (IsAssistant && assistant != null)
+            {
+                return assistant(Assistant!);
+            }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
+            else if (IsFunction && function != null)
+            {
+                return function(Function!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ChatCompletionSystemMessageParam?>? system = null,
+            global::System.Action<global::G.ChatCompletionUserMessageParam?>? user = null,
+            global::System.Action<global::G.ChatCompletionAssistantMessageParam?>? assistant = null,
+            global::System.Action<global::G.ChatCompletionToolMessageParam?>? tool = null,
+            global::System.Action<global::G.ChatCompletionFunctionMessageParam?>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
