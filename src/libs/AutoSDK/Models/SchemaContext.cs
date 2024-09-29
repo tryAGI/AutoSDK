@@ -115,13 +115,16 @@ public class SchemaContext
 
     public HashSet<string> Tags { get; set; } = [];
     
-    private static string ComputeType(OpenApiSchema schema)
+    private static string ComputeType(OpenApiSchema schema, bool isComponent)
     {
         if (schema.IsEnum())
         {
             return "enum";
         }
-        if (schema.Type == "object")
+        if (schema.Type == "object")// &&
+            // (isComponent ||
+            //  schema.Properties.Count > 0 ||
+            //  !schema.AdditionalPropertiesAllowed))
         {
             return "class";
         }
@@ -236,7 +239,7 @@ public class SchemaContext
             Settings = settings,
             Schema = schema,
             Id = ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index),
-            Type = ComputeType(schema),
+            Type = ComputeType(schema, isComponent: componentId != null),
             ComponentId = componentId,
             PropertyName = propertyName,
             Hint = hint,
@@ -262,15 +265,15 @@ public class SchemaContext
                 hint: Models.Hint.ArrayItem,
                 depth: depth + 1));
         }
-        if (schema.AdditionalProperties != null)
-        {
-            children.AddRange(FromSchema(
-                schema: schema.AdditionalProperties,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.AdditionalProperties,
-                depth: depth + 1));
-        }
+        // if (schema.AdditionalProperties != null)
+        // {
+        //     children.AddRange(FromSchema(
+        //         schema: schema.AdditionalProperties,
+        //         settings: settings,
+        //         parent: context,
+        //         hint: Models.Hint.AdditionalProperties,
+        //         depth: depth + 1));
+        // }
         
         var i = 0;
         foreach (var property in schema.Properties)

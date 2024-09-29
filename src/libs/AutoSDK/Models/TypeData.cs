@@ -224,12 +224,27 @@ public readonly record struct TypeData(
 
             ("object", _) or (null, _) when context.Schema.Reference != null =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-            // ("object", _) when context.Schema.Reference == null &&
-            //                    context.Children.Count == 1 =>
-            //     "object",
+                
+            // ("object", _) or (null, _) when
+            //     context.Schema.Reference != null &&
+            //     (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
+            //      !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
+            //     $"global::{context.Settings.Namespace}.{context.Id}",
+            
             ("object", _) when context.Schema.Reference == null =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-
+            
+            // ("object", _) when
+            //     context.Schema.Reference == null &&
+            //     (context.Schema.Properties.Count > 0 ||
+            //     !context.Schema.AdditionalPropertiesAllowed) =>
+            //     $"global::{context.Settings.Namespace}.{context.Id}",
+            
+            // ("object", _) when
+            //     context.Schema.Reference == null &&
+            //     context.Schema.AdditionalProperties?.Type is not (null or "object") =>
+            //     $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData?.CSharpType}>",
+            
             ("string", _) when context.Schema.Enum.Any() =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
