@@ -180,7 +180,8 @@ public class SchemaContext
         IsProperty && Parent?.Schema.Required.Contains(PropertyName) == true ||
         Hint == Models.Hint.Parameter && Parameter?.Required == true ||
         Hint == Models.Hint.Request && Operation?.RequestBody?.Required == true ||
-        Hint == Models.Hint.Response;
+        Hint == Models.Hint.Response ||
+        Hint == Models.Hint.AdditionalProperties;
 
     public static IReadOnlyList<SchemaContext> FromSchema(
         OpenApiSchema schema,
@@ -259,6 +260,15 @@ public class SchemaContext
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.ArrayItem,
+                depth: depth + 1));
+        }
+        if (schema.AdditionalProperties != null)
+        {
+            children.AddRange(FromSchema(
+                schema: schema.AdditionalProperties,
+                settings: settings,
+                parent: context,
+                hint: Models.Hint.AdditionalProperties,
                 depth: depth + 1));
         }
         

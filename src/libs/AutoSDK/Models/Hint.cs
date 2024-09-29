@@ -12,4 +12,5 @@ public enum Hint
     Parameter,
     Property,
     Component,
+    AdditionalProperties,
 }
