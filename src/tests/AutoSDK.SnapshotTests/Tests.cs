@@ -53,6 +53,10 @@ public partial class Tests
     [DataRow("", "instill.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("", "ideogram.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "ideogram.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "google-gemini.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "google-gemini.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "vectara.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "vectara.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")

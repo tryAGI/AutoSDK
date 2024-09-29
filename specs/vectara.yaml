@@ -1,0 +1,3521 @@
+openapi: 3.0.1
+info:
+  title: Vectara REST API v2
+  description: "Vectara provides an end-to-end platform for creating GenAI products using \na simple to use API.\n\nYou can [sign up for an account](https://console.vectara.com/signup) and \nthen view several [API Recipes](https://docs.vectara.com/docs/api-recipes) with example queries \nand parameter values.\n\nThe Vectara API Playground lets you experiment with REST endpoints from \nyour browser. Select an endpoint to view its definition, including the \nrequired or optional headers, body, responses, and sample commands. On the \nright side of each endpoint page, like [Get Corpus](/docs/rest-api/get-corpus), you manually \nenter your API Key or OAuth Bearer Token, `customer_id`, and then any \nrequired body parameters like the `corpusID` before sending the API \nrequest.\n\n:::note\n\nVectara supports two primary methods of authentication: API keys and OAuth \n2.0, which are applicable to all endpoints. Query API Keys are used for \nread-only querying operations, while Index API Keys provide read and write \naccess. The OAuth 2.0 operations authenticate with a Bearer Token via the \nOAuth 2.0 client credentials grant. Review the [**OAuth 2.0 section**](https://docs.vectara.com/docs/learn/authentication/oauth-2) about \nhow to generate the token.\n"
+  termsOfService: https://vectara.com/legal/terms-of-service/
+  contact:
+    email: feedback@vectara.com
+  version: 2.0.0
+  x-logo:
+    url: https://docs.vectara.com/img/vectara_wordmark.png
+    altText: Vectara
+  x-dark-logo:
+    url: https://docs.vectara.com/img/vectara_wordmark_light.png
+    altText: Vectara
+servers:
+  - url: https://api.vectara.io
+paths:
+  /v2/corpora:
+    post:
+      tags:
+        - Corpora
+      summary: Create a corpus
+      description: 'Create a corpus, which is a container to store documents and associated metadata.'
+      operationId: createCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCorpusRequest'
+      responses:
+        '201':
+          description: The corpus has been created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Corpus'
+        '400':
+          description: Invalid request body in the create corpus request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating a corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - Corpora
+      summary: List corpora
+      description: "List corpora in the account. The corpus objects that are returned are less\ndetailed than the direct corpus retrieval operation.\n"
+      operationId: listCorpora
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: limit
+          in: query
+          description: The maximum number of corpora to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: filter
+          in: query
+          description: A regular expression to filter the corpora by their name or summary.
+          schema:
+            type: string
+        - name: page_key
+          in: query
+          description: Used to retrieve the next page of corpora after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of corpora.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCorporaResponse'
+        '403':
+          description: Permissions do not allow listing corpora.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/corpora/{corpus_key}':
+    get:
+      tags:
+        - Corpora
+      summary: Retrieve metadata about a corpus
+      description: Get metadata about a corpus. This operation is not a method of searching a corpus.
+      operationId: getCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to retrieve.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      responses:
+        '200':
+          description: A corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Corpus'
+        '403':
+          description: Permissions do not allow retrieving the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      tags:
+        - Corpora
+      summary: Delete a corpus and all its data
+      description: Delete a corpus and all the data that it contains.
+      operationId: deleteCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to delete
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      responses:
+        '204':
+          description: Successfully deleted a corpus.
+        '403':
+          description: Permissions do not allow deleting the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    patch:
+      tags:
+        - Corpora
+      summary: Update a corpus
+      description: "Enable, disable, or update the name and description of a corpus. This lets you\nmanage data availability without deleting the corpus, which is useful for \nmaintenance and security purposes. Update the name and description of a corpus \ndynamically to help keep your data aligned with changing business needs.\n"
+      operationId: updateCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to update.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCorpusRequest'
+      responses:
+        '200':
+          description: Successfully modified the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Corpus'
+        '403':
+          description: Permissions do not allow updating the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/corpora/{corpus_key}/reset':
+    post:
+      tags:
+        - Corpora
+      summary: Remove all documents and data in a corpus
+      description: 'Resets a corpus, which removes all documents and data from the specified corpus, while keeping the corpus itself.'
+      operationId: resetCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to reset.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      responses:
+        '204':
+          description: Successfully reset a corpus.
+        '403':
+          description: Permissions do not allow resetting the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/corpora/{corpus_key}/replace_filter_attributes':
+    post:
+      tags:
+        - Corpora
+      summary: Replace the filter attributes of a corpus
+      description: "Replace the filter attributes of a corpus. This does not happen immediately, but\ninstead creates a job and will complete when that job completes. Until that\njob completes, using new filter attributes will not work.\n\nYou can monitor the status of the filter change using the returned job id.\n"
+      operationId: replaceFilterAttributes
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: Key of the corpus to have filters replaced.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReplaceFilterAttributesRequest'
+      responses:
+        '200':
+          description: Successfully created a job that will replace the filter attributes.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReplaceFilterAttributesResponse'
+        '403':
+          description: Permissions don't allow replacing filter attributes.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/corpora/{corpus_key}/query':
+    get:
+      tags:
+        - Queries
+      summary: Simple Single Corpus Query
+      description: "Search a single corpus with a straightforward query request, specifying the corpus key and query parameters.\n* Specify the unique `corpus_key` identifying the corpus to query.\n* Enter the search `query` string for the corpus, which is the question you want to ask.\n* Set the maximum number of results (`limit`) to return. **Default**: 10, **minimum**: 1\n* Define the `offset` position from which to start in the result set.\n\nFor more detailed information, see this [Query API guide](https://docs.vectara.com/docs/api-reference/search-apis/search).\n"
+      operationId: searchCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to query.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+        - name: query
+          in: query
+          description: 'The search query string for the corpus, which is the question the user is asking.'
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Maximum number of results to return.
+          schema:
+            minimum: 1
+            type: integer
+            default: 10
+        - name: offset
+          in: query
+          description: Position from which to start in the result set.
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: A response to a query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryFullResponse'
+        '400':
+          description: Query request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow querying the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    post:
+      tags:
+        - Queries
+      summary: Advanced Single Corpus Query
+      description: "Query a specific corpus and find relevant results, highlight relevant snippets, and use Retrieval Augmented Generation:\n\n* Customize your search by specifying the query text (`query`), pagination details (`offset` and `limit`), and metadata filters (`metadata_filter`) to tailor your search results. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#query-definition)\n* Leverage advanced search capabilities like reranking (`reranker`) and Retrieval Augmented Generation (RAG) (`generation`) for enhanced query performance. Generation is opt in by setting the `generation` property. By excluding the property or by setting it to null, the response\nwill not include generation. [Learn more](https://docs.vectara.com/docs/learn/grounded-generation/configure-query-summarization).\n* Use hybrid search to achieve optimal results by setting different values for `lexical_interpolation` (e.g., `0.025`). [Learn more](https://docs.vectara.com/docs/learn/hybrid-search)\n* Specify a RAG-specific LLM like Mockingbird (`mockingbird-1.0-2024-07-16`) for the `generation_preset_name`. [Learn more](https://docs.vectara.com/docs/learn/mockingbird-llm)\n* Use advanced summarization options that utilize detailed summarization parameters such as `max_response_characters`, `temperature`, and `frequency_penalty` for generating precise and relevant summaries. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#advanced-summarization-options)\n\nFor more detailed information, see [Query API guide](https://docs.vectara.com/docs/api-reference/search-apis/search).\n"
+      operationId: queryCorpus
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus to query.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryCorpusRequest'
+      responses:
+        '200':
+          description: A response to a query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryFullResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/QueryStreamedResponse'
+        '400':
+          description: Query request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow querying the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+      x-stream-based-on-body: streamResponse()
+  /v2/query:
+    post:
+      tags:
+        - Queries
+      summary: Multiple Corpora Query
+      description: "Perform a multi-purpose query to retrieve relevant information from one or more corpora and generate a response using Retrieval Augmented Generation (RAG).\n\n* Customize your search by specifying the query text (`query`), pagination details (`offset` and `limit`), and metadata filters (`metadata_filter`) to tailor your search results. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#query-definition)\n* Leverage advanced search capabilities like reranking (`reranker`) and opt-in Retrieval Augmented Generation (RAG) (`generation`) for enhanced query performance. Generation is opt in by setting the `generation` property. By excluding the property or by setting it to null, the response\nwill not include generation. [Learn more](https://docs.vectara.com/docs/learn/grounded-generation/configure-query-summarization)\n* Specify a RAG-specific LLM like Mockingbird (`mockingbird-1.0-2024-07-16`) for the `generation_preset_name`. [Learn more](https://docs.vectara.com/docs/learn/mockingbird-llm)\n* Use advanced summarization options that utilize detailed summarization parameters such as `max_response_characters`, `temperature`, and `frequency_penalty` for generating precise and relevant summaries. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#advanced-summarization-customization-options)\n* Customize citation formats in summaries using the `citations` object to include numeric, HTML, or Markdown links. [Learn more](https://docs.vectara.com/docs/api-reference/search-apis/search#citation-format-in-summary)\n\nFor more detailed information, see this [Query API guide](https://docs.vectara.com/docs/api-reference/search-apis/search).\n"
+      operationId: query
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+      responses:
+        '200':
+          description: A response to a query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryFullResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/QueryStreamedResponse'
+        '400':
+          description: Query request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow querying one or more corpora in the request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: One or more of the corpora was not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+      x-stream-based-on-body: streamResponse()
+  '/v2/corpora/{corpus_key}/upload_file':
+    post:
+      tags:
+        - Upload
+      summary: Upload a file to the corpus
+      description: "Upload files such as PDFs and Word Documents. Vectara will attempt to automatically extract text and any metadata.\nThe File Upload endpoint request expects a `multipart/form-data` request containing the following parts:\n* `metadata` - (Optional) Specifies a JSON object representing any additional metadata to be associated with the extracted document. For example, `'metadata={\"key\": \"value\"};type=application/json'`\n* `file` - Specifies the file that you want to upload.\n* `filename` - Specified as part of the file field with the file name that you want to associate with the uploaded file. For a curl example, use the following syntax: `'file=@/path/to/file/file.pdf;filename=desired_filename.pdf'`\n\nFor more detailed information see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)\n"
+      operationId: uploadFile
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus of which to upload the file.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      requestBody:
+        description: "Upload a file for the Vectara platform to attempt to parse and turn into a document within the corpus.\nThe first part of the multipart request can contain any document metadata to attach to the parsed\ndocument. Only one document may be uploaded at a time.\n"
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadFileRequest'
+            encoding:
+              metadata:
+                contentType: application/json
+              file:
+                contentType: 'application/octet-stream, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.oasis.opendocument.text, application/epub+zip, application/rtf, text/html, text/plain, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.presentation, text/markdown'
+      responses:
+        '201':
+          description: The extracted document has been parsed and added to the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '400':
+          description: Upload files request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow uploading a file to the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/corpora/{corpus_key}/documents':
+    post:
+      tags:
+        - Index
+      summary: Add a document to a corpus
+      description: "Add a document to a corpus. You can add documents that are either in a typical structured format,\nor in a format that explicitly specifies each document part that becomes a search result.\n"
+      operationId: createCorpusDocument
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the queried corpus.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentRequest'
+      responses:
+        '201':
+          description: Document added to the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '400':
+          description: Document creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating a file in the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    get:
+      tags:
+        - Documents
+      summary: List the documents in the corpus
+      operationId: listCorpusDocuments
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the queried corpus.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+        - name: limit
+          in: query
+          description: The maximum number of documents to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: metadata_filter
+          in: query
+          description: "Filter documents by metadata. Uses the same expression as a query metadata filter, but only\nallows filtering on document metadata.\n"
+          schema:
+            type: string
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of documents after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of documents.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDocumentsResponse'
+        '403':
+          description: Permissions do not allow listing documents in the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/corpora/{corpus_key}/documents/{document_id}':
+    delete:
+      tags:
+        - Documents
+      summary: Delete a document
+      operationId: deleteCorpusDocument
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus with the document to delete.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+        - name: document_id
+          in: path
+          description: "The Document ID of the document to delete.\nThe `document_id` must be percent encoded.\n"
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successfully deleted the document.
+        '403':
+          description: Permissions do not allow deleting a document in the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or document not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    get:
+      tags:
+        - Documents
+      summary: Retrieve a document
+      operationId: getCorpusDocument
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: path
+          description: The unique key identifying the corpus containing the document to retrieve.
+          required: true
+          schema:
+            $ref: '#/components/schemas/CorpusKey'
+        - name: document_id
+          in: path
+          description: "The Document ID of the document to retrieve.\nThe `document_id` must be percent encoded.\n"
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the document.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '403':
+          description: Permissions do not allow retrieving a document from the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or document not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /v2/chats:
+    post:
+      tags:
+        - Chats
+      summary: Start a chat
+      description: Create a chat while specifying the default retrieval parameters used by the prompt.
+      operationId: createChat
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: A response to a chat request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatFullResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/ChatStreamedResponse'
+        '400':
+          description: Chat creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating a chat in the corpus.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+      x-stream-based-on-body: streamResponse()
+    get:
+      tags:
+        - Chats
+      summary: List chats
+      description: Retrieve a list of previous chats in the Vectara account.
+      operationId: listChats
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: limit
+          in: query
+          description: The maximum number of results to return in the list.
+          schema:
+            maximum: 10000
+            minimum: 1
+            type: integer
+            format: int32
+            default: 1000
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of chats after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of chats.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListChatsResponse'
+        '403':
+          description: Permissions do not allow listing chats.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /v2/llms:
+    get:
+      tags:
+        - Large Language Models
+      summary: List LLMs
+      description: "List LLMs that can be used with query and chat endpoints. The LLM is not directly specified in a query,\nbut instead a `generation_preset_name` is used. The `generation_preset_name` property in generation parameters\ncan be found as the `name` property on the Generations Presets retrieved from `/v2/generation_presets`.\n"
+      operationId: listLLMs
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: filter
+          in: query
+          description: A regular expression to match names and descriptions of the LLMs.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: The maximum number of results to return in the list.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: "Used to the retrieve the next page of LLMs after the limit has been reached.\nThis parameter is not needed for the first page of results.\n"
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of LLMs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListLLMsResponse'
+        '403':
+          description: Permissions do not allow listing summarizers.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/generation_presets:
+    get:
+      tags:
+        - Generation Presets
+      summary: List generation presets
+      description: "List generation presets used for query or chat requests. Generation presets are\nthe build of properties used to configure generation for a request. This includes\nthe template that renders the prompt, and various generation settings like\n`temperature`.\n"
+      operationId: listGenerationPresets
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: llm_name
+          in: query
+          description: Filter presets by the LLM name.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: The maximum number of results to return in the list.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: "Used to the retrieve the next page of generation presets after the limit has been reached.\nThis parameter is not needed for the first page of results.\n"
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of Generation Presets.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGenerationPresetsResponse'
+        '403':
+          description: Permissions do not allow listing generation presets.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/chats/{chat_id}':
+    get:
+      tags:
+        - Chats
+      summary: Get a chat
+      description: 'Get a chat summary to view what started the chat, but not subsequent turns.'
+      operationId: getChat
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+      responses:
+        '200':
+          description: A chat.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chat'
+        '403':
+          description: Permissions do not allow retrieving the chat.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or chat not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      tags:
+        - Chats
+      summary: Delete a chat
+      description: Delete a chat and any turns it contains permanently.
+      operationId: deleteChat
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+      responses:
+        '204':
+          description: Successfully deleted the chat.
+        '403':
+          description: Permissions do not allow deleting the chat.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or chat not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/chats/{chat_id}/turns':
+    post:
+      tags:
+        - Chats
+      summary: Create a new turn in the chat
+      description: 'Create a new turn in the chat. Each conversation has a series of `turn` objects, which are the sequence of message and response pairs tha make up the dialog.'
+      operationId: createChatTurn
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: A response to a chat request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatFullResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/ChatStreamedResponse'
+        '400':
+          description: Turn creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating a turn in the chat.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or chat not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+      x-stream-based-on-body: streamResponse()
+    get:
+      tags:
+        - Chats
+      summary: List turns in a chat
+      description: List all turns in a chat to see all message and response pairs that make up the dialog.
+      operationId: listChatTurns
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+      responses:
+        '200':
+          description: List of turns.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListChatTurnsResponse'
+        '403':
+          description: Permissions do not allow listing turns in the chat.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus or chat not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/chats/{chat_id}/turns/{turn_id}':
+    get:
+      tags:
+        - Chats
+      summary: Get a turn
+      description: 'Get a specific turn from a chat, which is a message and response pair from the conversation.'
+      operationId: getChatTurn
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+        - name: turn_id
+          in: path
+          description: The ID of the turn.
+          required: true
+          schema:
+            pattern: trn_.+$
+            type: string
+      responses:
+        '200':
+          description: The turn.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Turn'
+        '403':
+          description: Permissions do not allow getting the turn.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: 'Corpus, chat, or turn not found.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      tags:
+        - Chats
+      summary: Delete a turn
+      description: Delete a turn from a chat. This will delete all subsequent turns in the chat.
+      operationId: deleteChatTurn
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+        - name: turn_id
+          in: path
+          description: The ID of the turn.
+          required: true
+          schema:
+            pattern: trn_.+$
+            type: string
+      responses:
+        '204':
+          description: Successfully deleted a turn.
+        '403':
+          description: Permissions do not allow deleting the turn.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: 'Corpus, chat, or turn not found.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    patch:
+      tags:
+        - Chats
+      summary: Update a turn
+      description: Update a turn; used to disable or enable a chat.
+      operationId: updateChatTurn
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: chat_id
+          in: path
+          description: The ID of the chat.
+          required: true
+          schema:
+            pattern: cht_.+$
+            type: string
+        - name: turn_id
+          in: path
+          description: The ID of the turn.
+          required: true
+          schema:
+            pattern: trn_.+$
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTurnRequest'
+      responses:
+        '200':
+          description: Successfully modified the turn.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Turn'
+        '403':
+          description: Permissions do not allow updating the turn.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: 'Corpus, chat, or turn not found.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /v2/encoders:
+    get:
+      tags:
+        - Encoders
+      summary: List encoders
+      description: Encoders are used to store and retrieve from a corpus.
+      operationId: listEncoders
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: filter
+          in: query
+          description: A regular expression against encoder names and descriptions.
+          schema:
+            type: string
+            example: vectara.*
+        - name: limit
+          in: query
+          description: The maximum number of results to return in the list.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of encoders after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of encoders.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListEncodersResponse'
+        '403':
+          description: Permissions do not allow listing encoders.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/rerankers:
+    get:
+      tags:
+        - Rerankers
+      summary: List rerankers
+      description: Rerankers are used to improve the ranking (ordering) of search results.
+      operationId: listRerankers
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: filter
+          in: query
+          description: A regular expression against reranker names and descriptions.
+          schema:
+            type: string
+            example: vectara.*
+        - name: limit
+          in: query
+          description: The maximum number of rerankers to return in the list.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of rerankers after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of rerankers.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRerankersResponse'
+        '403':
+          description: Permissions do not allow listing rerankers.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/jobs:
+    get:
+      tags:
+        - Jobs
+      summary: List jobs
+      description: List jobs for the account. Jobs are background processes like replacing the filterable metadata attributes.
+      operationId: listJobs
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: corpus_key
+          in: query
+          description: The unique key identifying the corpus with the job.
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/CorpusKey'
+        - name: after
+          in: query
+          description: Get jobs after a date time.
+          schema:
+            type: string
+            format: date-time
+        - name: state
+          in: query
+          description: Indicates the states the jobs can be in.
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/JobState'
+        - name: limit
+          in: query
+          description: The maximum number of documents to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of documents after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of jobs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListJobsResponse'
+        '403':
+          description: Permissions do not allow listing jobs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/jobs/{job_id}':
+    get:
+      tags:
+        - Jobs
+      summary: Get a job by ID
+      description: Get a job by a specific ID. Jobs are background processes like replacing the filterable metadata attributes.
+      operationId: getJob
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: job_id
+          in: path
+          description: The ID of job to get.
+          required: true
+          schema:
+            pattern: job_.+$
+            type: string
+      responses:
+        '200':
+          description: A job.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '403':
+          description: Permissions do not allow retrieving a job.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Job not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /v2/users:
+    post:
+      tags:
+        - Users
+      summary: Create a user in the current customer account
+      description: Create a user for the current customer account.
+      operationId: createUser
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: The created user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: User creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow retrieving a user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - Users
+      summary: List users in the account
+      description: Lists all users in the account.
+      operationId: listUsers
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: limit
+          in: query
+          description: The maximum number of users to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of users after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of users.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUsersResponse'
+        '403':
+          description: Permissions do not allow listing users.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/users/{username}':
+    get:
+      tags:
+        - Users
+      summary: Get a user
+      description: "Get a user and view details like the email, username, and roles associated with a user.\n"
+      operationId: getUser
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: username
+          in: path
+          description: "Specifies the User ID that to retrieve.\nNote the username must be percent encoded.\n"
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '403':
+          description: Permissions do not allow retrieving the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Corpus not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    patch:
+      tags:
+        - Users
+      summary: Update a user
+      description: Update details about a user such as role names.
+      operationId: updateUser
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: username
+          in: path
+          description: "Specifies the User ID to update.\nNote the username must be percent encoded.\n"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        '200':
+          description: New user after modification.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '403':
+          description: Permissions do not allow updating the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      tags:
+        - Users
+      summary: Delete a user
+      description: Delete a user from the account.
+      operationId: deleteUser
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: username
+          in: path
+          description: "Specifies the username to delete.\nNote the username must be percent encoded.\n"
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User was successfully deleted.
+        '403':
+          description: Permissions do not allow deleting the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  '/v2/users/{username}/reset_password':
+    post:
+      tags:
+        - Users
+      summary: Reset the password for a user
+      description: Reset the password for a user.
+      operationId: resetUserPassword
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: username
+          in: path
+          description: "Specifies the username to update.\nNote the username must be percent encoded and URI safe.\n"
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User was sent the password reset email.
+        '403':
+          description: Permissions do not allow resting the user password.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /v2/api_keys:
+    post:
+      tags:
+        - API Keys
+      summary: Create an API key
+      description: An API key is to authenticate when calling Vectara APIs.
+      operationId: createApiKey
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateApiKeyRequest'
+      responses:
+        '201':
+          description: 'An API Key object, used to query the Vectara API with the assigned roles.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKey'
+        '400':
+          description: API key creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating the API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - API Keys
+      summary: List API keys
+      operationId: listApiKeys
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: limit
+          in: query
+          description: Max number of API keys to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: page_key
+          in: query
+          description: Used to the retrieve the next page of API keys after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListApiKeysResponse'
+        '400':
+          description: API key list request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow listing API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/api_keys/{api_key_id}':
+    get:
+      tags:
+        - API Keys
+      summary: Get an API key
+      operationId: getApiKey
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: api_key_id
+          in: path
+          description: The name of the API key.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKey'
+        '403':
+          description: Permissions do not allow getting this API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - API Keys
+      summary: Update an API key
+      description: Update an API key such as the roles attached to the key.
+      operationId: updateApiKey
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: api_key_id
+          in: path
+          description: The name of the API key.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApiKeyRequest'
+      responses:
+        '200':
+          description: The API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKey'
+        '403':
+          description: Permissions do not allow getting this API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - API Keys
+      summary: Delete an API key
+      description: Delete API keys to help you manage the security and lifecycle of API keys in your application.
+      operationId: deleteApiKey
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: api_key_id
+          in: path
+          description: The name of the API key.
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: The API key was deleted.
+        '403':
+          description: Permissions do not allow deleting this API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/app_clients:
+    post:
+      tags:
+        - Application Clients
+      summary: Create an App Client
+      description: An App Client is used for OAuth 2.0 authentication when calling Vectara APIs.
+      operationId: createAppClient
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAppClientRequest'
+      responses:
+        '201':
+          description: 'An App Client object, used to query the Vectara API with the assigned roles.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppClient'
+        '400':
+          description: App Client creation request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow creating the App Client.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - Application Clients
+      summary: List App Clients
+      operationId: listAppClient
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: limit
+          in: query
+          description: The maximum number of App Clients to return at one time.
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int32
+            default: 10
+        - name: filter
+          in: query
+          description: Regular expression to filter the names of the App Clients.
+          schema:
+            type: string
+        - name: page_key
+          in: query
+          description: Used to retrieve the next page of App Clients after the limit has been reached.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of App Clients.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAppClientsResponse'
+        '400':
+          description: API key list request was malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '403':
+          description: Permissions do not allow listing API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v2/app_clients/{app_client_id}':
+    get:
+      tags:
+        - Application Clients
+      summary: Get an App Client
+      operationId: getAppClient
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: app_client_id
+          in: path
+          description: The name of the App Client.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The App Client.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppClient'
+        '403':
+          description: Permissions do not allow getting this App Clients.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Application Clients
+      summary: Update an App Client
+      operationId: updateAppClient
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: app_client_id
+          in: path
+          description: The name of App Client.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAppClientRequest'
+      responses:
+        '200':
+          description: The App Client.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppClient'
+        '403':
+          description: Permissions do not allow getting this App Clients.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Application Clients
+      summary: Delete an App Client
+      operationId: deleteAppClient
+      parameters:
+        - $ref: '#/components/parameters/RequestTimeout'
+        - $ref: '#/components/parameters/RequestTimeoutMillis'
+        - name: app_client_id
+          in: path
+          description: The name of App Client.
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: The App Client was deleted.
+        '403':
+          description: Permissions do not allow deleting this App Clients.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    CreateCorpusRequest:
+      required:
+        - key
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/CorpusKey'
+        name:
+          type: string
+          description: The name for the corpus. This value defaults to the key.
+          example: My corpus
+        description:
+          type: string
+          description: Description for the corpus.
+          example: Documents with important information for my prompt.
+        queries_are_answers:
+          type: boolean
+          description: 'Queries made to this corpus are considered answers, and not questions.'
+          default: false
+        documents_are_questions:
+          type: boolean
+          description: 'Documents inside this corpus are considered questions, and not answers.'
+          default: false
+        encoder_id:
+          pattern: 'enc_[0-9]+$'
+          type: string
+          description: "*Deprecated*: Use `encoder_name` instead.\n"
+          example: enc_1
+          deprecated: true
+        encoder_name:
+          type: string
+          description: The encoder used by the corpus.
+          example: boomerang
+        filter_attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterAttribute'
+          description: "The new filter attributes of the corpus. \nIf unset then the corpus will not have filter attributes.\n"
+        custom_dimensions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CorpusCustomDimension'
+          description: "A custom dimension is an additional numerical field attached to a document part. You\ncan then multiply this numerical field with a query time custom dimension of the same\nname. This allows boosting (or deboosting) document parts for arbitrary reasons.\nThis feature is only enabled for Scale customers.\n"
+    UpdateCorpusRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Set whether or not the corpus is enabled. If unset then the corpus will remain in the same state.
+          example: false
+        name:
+          type: string
+          description: The name for the corpus. If unset or null then the corpus will remain in the same state.
+          example: new-name
+        description:
+          type: string
+          description: Description of the corpus. If unset or null then the corpus will remain in the same state.
+          example: New description for the corpus.
+      description: Corpus properties that are modifiable after creation.
+    ReplaceFilterAttributesRequest:
+      required:
+        - filter_attributes
+      type: object
+      properties:
+        filter_attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterAttribute'
+          description: The new filter attributes.
+    ReplaceFilterAttributesResponse:
+      required:
+        - job_id
+      type: object
+      properties:
+        job_id:
+          pattern: job_.+$
+          type: string
+          description: Job that was created in order to replace filter attributes.
+    CorpusKey:
+      maxLength: 50
+      pattern: '[a-zA-Z0-9_\=\-]+$'
+      type: string
+      description: A user-provided key for a corpus.
+      example: my-corpus
+    Corpus:
+      type: object
+      properties:
+        id:
+          pattern: 'crp_[0-9]+$'
+          type: string
+          description: Vectara ID of the corpus.
+        key:
+          $ref: '#/components/schemas/CorpusKey'
+        name:
+          type: string
+          description: Name for the corpus. This value defaults to the key.
+        description:
+          type: string
+          description: Corpus description.
+        enabled:
+          type: boolean
+          description: Specifies whether the corpus is enabled or not.
+        chat_history_corpus:
+          type: boolean
+          description: Indicates that this corpus does not store documents amd stores chats instead.
+        queries_are_answers:
+          type: boolean
+          description: "Queries made to this corpus are considered answers, and not questions.\nThis swaps the semantics of the encoder used at query time.\n"
+          default: false
+        documents_are_questions:
+          type: boolean
+          description: "Documents inside this corpus are considered questions, and not answers.\nThis swaps the semantics of the encoder used at indexing.\n"
+          default: false
+        encoder_id:
+          pattern: 'enc_[0-9]+$'
+          type: string
+          description: "The encoder used by the corpus.\n*Deprecated*: use `encoder_name` instead\n"
+          deprecated: true
+        encoder_name:
+          type: string
+          description: The encoder used by the corpus.
+          example: boomerang
+        filter_attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterAttribute'
+          description: The new filter attributes of the corpus.
+        custom_dimensions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CorpusCustomDimension'
+          description: The custom dimensions of all document parts inside the corpus.
+        limits:
+          title: CorpusLimits
+          type: object
+          properties:
+            used_bytes:
+              type: integer
+              description: "The number of bytes contained in the corpus. This includes the document metadata,\ndocument part metadata, and document contents.\n"
+              format: int64
+            used_characters:
+              type: integer
+              description: "The number of characters contained in the corpus. This includes the document metadata,\ndocument part metadata, and document contents.\n"
+              format: int64
+            max_bytes:
+              type: integer
+              description: The maximum number of bytes the corpus can be.
+              format: int64
+            max_metadata_bytes:
+              type: integer
+              description: The maximum size that metadata can be on documents.
+              format: int64
+            index_rate:
+              type: integer
+              description: The maximum per-second addition of new documents to corpus.
+              format: int64
+        created_at:
+          type: string
+          description: Indicates when the corpus was created.
+          format: date-time
+    CorpusCustomDimension:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the custom dimension.
+          example: importance
+        indexing_default:
+          type: number
+          description: "Default value of a custom dimension on a document part if the custom\ndimension value is not specified when the document part is indexed.\n\nA value of 0 means that custom dimension is not considered.\n"
+          format: double
+          default: 0
+          example: 0
+        querying_default:
+          type: number
+          description: "Default value of a custom dimension for a query if the value\nof the custom dimension is not specified when querying the corpus.\n\nA value of 0 means that custom dimension is not considered.\n"
+          format: double
+          default: 0
+          example: 0
+      description: "Custom dimensions attached to all document parts in a corpus. Allows arbitrary\nmodification of the score for many purposes.\n"
+    FilterAttribute:
+      required:
+        - name
+        - level
+        - type
+      type: object
+      properties:
+        name:
+          type: string
+          description: The JSON path of the filter attribute in a document or document part metadata.
+          example: Title
+        level:
+          enum:
+            - document
+            - part
+          type: string
+          description: Indicates whether this a document or document part metadata filter.
+          example: document
+        description:
+          type: string
+          description: Description of the filter. May be omitted.
+          example: The title of the document.
+        indexed:
+          type: boolean
+          description: Indicates whether an index should be created for the filter. Creating an index will improve query latency when using the filter.
+          default: true
+        type:
+          enum:
+            - integer
+            - real_number
+            - text
+            - boolean
+            - 'list[integer]'
+            - 'list[real_number]'
+            - 'list[text]'
+          type: string
+          description: The value type of the filter.
+          example: text
+    ListCorporaResponse:
+      type: object
+      properties:
+        corpora:
+          type: array
+          items:
+            $ref: '#/components/schemas/Corpus'
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    SearchParameters:
+      type: object
+      properties:
+        offset:
+          minimum: 0
+          type: integer
+          description: Specifies how many results into the result to skip. This is useful for pagination.
+          format: int32
+          default: 0
+        limit:
+          minimum: 1
+          type: integer
+          description: The maximum number of results returned.
+          format: int32
+          default: 10
+        context_configuration:
+          $ref: '#/components/schemas/ContextConfiguration'
+        reranker:
+          $ref: '#/components/schemas/SearchReranker'
+      description: Search parameters to retrieve knowledge for the query.
+    ContextConfiguration:
+      type: object
+      properties:
+        characters_before:
+          minimum: 0
+          type: integer
+          description: "The number of characters before the matching document part that are shown.\nThis is useful to show the context of the document part in the wider document.\nIgnored if `sentences_before` is set.\nVectara will capture the full sentence that contains the captured characters,\nso as to not lose the meaning caused by a truncated word or sentence.\n"
+          format: int32
+          default: 0
+          example: 30
+        characters_after:
+          minimum: 0
+          type: integer
+          description: "The number of characters after the matching document part that are shown. \nThis is useful to show the context of the document part in the wider document.\nIgnored if `sentences_after` is set.\nVectara will capture the full sentence that contains the captured characters,\nso as to not lose the meaning caused by a truncated word or sentence.\n"
+          format: int32
+          default: 0
+          example: 30
+        sentences_before:
+          minimum: 0
+          type: integer
+          description: "The number of sentences before the matching document part that are shown.\nThis is useful to show the context of the document part in the wider document.\n"
+          format: int32
+          default: 0
+          example: 3
+        sentences_after:
+          minimum: 0
+          type: integer
+          description: "The number of sentences after the matching document part that are shown. \nThis is useful to show the context of the document part in the wider document.\n"
+          format: int32
+          default: 0
+          example: 3
+        start_tag:
+          type: string
+          description: "The tag that wraps the document part at the start. This is often used to \nprovide a start HTML/XML tag or some other delimiter you can use in an \napplication to understand where to provide highlighting in your UI and \nunderstand where the context before ends and the document part begins.\n"
+          example: <em>
+        end_tag:
+          type: string
+          description: "The tag that wraps the document part at the end. This is often used to \nprovide a start HTML/XML tag or some other delimiter you can use in an \napplication to understand where to provide highlighting in your UI and \nunderstand where the context before ends and the document part begins.\n"
+          example: </em>
+      description: Configuration on the presentation of each document part in the result set.
+    GenerationParameters:
+      type: object
+      properties:
+        generation_preset_name:
+          minLength: 1
+          type: string
+          description: "The preset values to use to feed the query results and other context to the model.\n\nA `generation_preset` is an object with a bundle of properties that specifies:\n  * The `prompt_template` that is rendered then sent to the LLM.\n  * The LLM used.\n  * `model_parameter`s such as temperature.\n \nAll of these properties except the model can be overriden by setting them in this\nobject. Even when a `prompt_template` is set, the `generation_preset_name` is used to set \nthe model used.\n\nIf `generation_preset_name` is not set the Vectara platform will use the default model and\nprompt.\n"
+          example: vectara-summary-ext-v1.2.0
+        prompt_name:
+          minLength: 1
+          type: string
+          description: "Use `generation_preset_name` instead of `prompt_name`.\n"
+          example: vectara-summary-ext-v1.2.0
+          deprecated: true
+        max_used_search_results:
+          minimum: 0
+          type: integer
+          description: The maximum number of search results to be available to the prompt.
+          format: int32
+          default: 5
+        prompt_template:
+          type: string
+          description: "Vectara manages both system and user roles and prompts for the generative\nLLM out of the box by default. However, Scale customers can override the\n`prompt_template` via this variable. The `prompt_template` is in the form of an\nApache Velocity template. For more details on how to configure the\n`prompt_template`, see the [long-form documentation](https://docs.vectara.com/docs/prompts/vectara-prompt-engine).\nSee [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.\n"
+          example: "[\n  {\"role\": \"system\", \"content\": \"You are a helpful search assistant.\"},\n  #foreach ($qResult in $vectaraQueryResults)\n     {\"role\": \"user\", \"content\": \"Given the $vectaraIdxWord[$foreach.index] search result.\"},\n     {\"role\": \"assistant\", \"content\": \"${qResult.getText()}\" },\n  #end\n  {\"role\": \"user\", \"content\": \"Generate a summary for the query '${vectaraQuery}' based on the above results.\"}\n]\n"
+        prompt_text:
+          type: string
+          description: "This is property is deprecated in favor clearer naming. Use `prompt_template`. This property will be\nignored if `prompt_template` is set.\n"
+          example: "[\n  {\"role\": \"system\", \"content\": \"You are a helpful search assistant.\"},\n  #foreach ($qResult in $vectaraQueryResults)\n     {\"role\": \"user\", \"content\": \"Given the $vectaraIdxWord[$foreach.index] search result.\"},\n     {\"role\": \"assistant\", \"content\": \"${qResult.getText()}\" },\n  #end\n  {\"role\": \"user\", \"content\": \"Generate a summary for the query '${vectaraQuery}' based on the above results.\"}\n]\n"
+          deprecated: true
+        max_response_characters:
+          minimum: 0
+          type: integer
+          description: "Controls the length of the generated output.\nThis is a rough estimate and not a hard limit: the end output can be longer or shorter\nthan this value. This is generally implemented by including the `max_response_characters` in the\nprompt, and the LLM's instruction following capability dictates how closely the generated output\nis limited.\n\nSo, this value This is currently a Scale-only feature.\nSee [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.\n"
+          format: int32
+          example: 300
+        response_language:
+          $ref: '#/components/schemas/Language'
+        model_parameters:
+          title: ModelParameters
+          type: object
+          properties:
+            max_tokens:
+              minimum: 1
+              type: integer
+              description: The maximum number of tokens to be returned by the model.
+              format: int32
+            temperature:
+              type: number
+              description: "The sampling temperature to use. Higher values make the output more random, while lower\nvalues make it more focused and deterministic.\n"
+              format: float
+            frequency_penalty:
+              type: number
+              description: "Higher values penalize new tokens based on their existing frequency in the text so far,\ndecreasing the model's likelihood to repeat the same line verbatim.\n"
+              format: float
+            presence_penalty:
+              type: number
+              description: "Higher values penalize new tokens based on whether they appear in the text so far,\nincreasing the model's likelihood to talk about new topics.\n"
+              format: float
+          description: "The parameters for the model.  These are currently a Scale-only feature.\nSee [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.\nWARNING: This is an experimental feature, and breakable at any point with virtually no\nnotice. It is meant for experimentation to converge on optimal parameters that can then\nbe set in the prompt definitions.\n"
+        citations:
+          $ref: '#/components/schemas/CitationParameters'
+        enable_factual_consistency_score:
+          type: boolean
+          description: Enable returning the factual consistency score with query results.
+          default: true
+      description: The parameters to control generation.
+    CitationParameters:
+      type: object
+      properties:
+        style:
+          enum:
+            - none
+            - numeric
+            - html
+            - markdown
+          type: string
+          description: "The citation style to be used in summary.\nCan be one of:\n* `numeric` - Citations formatted as simple numerals: \\[1\\], \\[2\\] ...\n* `none` - Citations removed from text.\n* `html` - Citation formatted as url like `<a href=\"url_pattern\">text_pattern</a>`.\n* `markdown` - Formatted as `[text_pattern](url_pattern)`.\n"
+        url_pattern:
+          type: string
+          description: "The url pattern if the citation_style is set to `html` or `markdown`.\nThe pattern can access metadata attributes in the document or part.\ne.g. `https://my.doc/foo/{doc.id}/{part.id}`\n\nThe default `url_pattern` is an empty string.\n"
+          example: 'https://vectara.com/documents/{doc.id}'
+        text_pattern:
+          type: string
+          description: "The text pattern if the citation_style is set to `html` or `markdown`.\nThis pattern sets the href for html or the text within `[]` in markdown,\nand defaults to N being the index of result if it is not set.\n\nThe default citation style looks like `[N](<url_pattern>)` for markdown.\n\nYou can use metadata attributes in the `text_pattern`. For example,\nthe pattern `{doc.title}` with citation style `markdown` would result\nin final citation output like `[Title](<url_pattern>)` when\nthe document's metadata includes `{\"title\":\"Title\"}`.\n"
+          example: '{doc.title}'
+      description: Style the generator should use when making citations.
+    QueryRequest:
+      required:
+        - query
+        - search
+      type: object
+      properties:
+        query:
+          type: string
+          description: 'The search query string, which is the question the user is asking.'
+          example: Am I allowed to bring pets to work?
+        search:
+          $ref: '#/components/schemas/SearchCorporaParameters'
+        generation:
+          $ref: '#/components/schemas/GenerationParameters'
+        stream_response:
+          type: boolean
+          description: Indicates whether the response should be streamed or not.
+          default: false
+      description: Query one or more corpora.
+    SearchCorporaParameters:
+      required:
+        - corpora
+      allOf:
+        - type: object
+          properties:
+            corpora:
+              minItems: 1
+              type: array
+              items:
+                $ref: '#/components/schemas/KeyedSearchCorpus'
+              description: The corpora that you want to search.
+        - $ref: '#/components/schemas/SearchParameters'
+      description: The parameters to search one or more corpora.
+    QueryCorpusRequest:
+      required:
+        - query
+      type: object
+      properties:
+        query:
+          type: string
+          description: 'The search query string, which is the question the user is asking.'
+        search:
+          title: SearchCorpusParameters
+          allOf:
+            - $ref: '#/components/schemas/SearchCorpus'
+            - $ref: '#/components/schemas/SearchParameters'
+          description: The parameters to search one corpus.
+        generation:
+          $ref: '#/components/schemas/GenerationParameters'
+        stream_response:
+          type: boolean
+          description: Indicates whether the response should be streamed or not.
+          default: false
+    SearchCorpus:
+      type: object
+      properties:
+        custom_dimensions:
+          $ref: '#/components/schemas/CustomDimensions'
+        metadata_filter:
+          type: string
+          description: "The filter string to narrow the search to according to metadata attributes. The query against this\ncorpus will be confined to document parts that match the `metadata_filter`. Only metadata\nset as `filter_attributes` on the corpus can be filtered. Filter syntax is similiar to\na SQL where clause. See [metadata filters documentation](https://docs.vectara.com/docs/learn/metadata-search-filtering/filter-overview)\nfor more information.\n"
+          example: doc.title = 'Charlotte''s Web'
+        lexical_interpolation:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: 'How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.'
+          format: float
+          example: 0.025
+        semantics:
+          $ref: '#/components/schemas/SearchSemantics'
+    SearchSemantics:
+      enum:
+        - default
+        - query
+        - response
+      type: string
+      description: Indicates whether to consider a query against this corpus as a query or a response.
+      default: default
+    KeyedSearchCorpus:
+      required:
+        - corpus_key
+      allOf:
+        - $ref: '#/components/schemas/SearchCorpus'
+        - type: object
+          properties:
+            corpus_key:
+              $ref: '#/components/schemas/CorpusKey'
+    SearchReranker:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/CustomerSpecificReranker'
+        - $ref: '#/components/schemas/UserFunctionReranker'
+        - $ref: '#/components/schemas/MMRReranker'
+        - $ref: '#/components/schemas/ChainReranker'
+        - $ref: '#/components/schemas/NoneReranker'
+      description: "Rerank results of the search. Rerankers are very powerful tools to better order search results.\nBy default the search will use the most powerful reranker available to the customer's plan.\nTo disable reranking set the reranker `type` to `\"none\"`.\n"
+      discriminator:
+        propertyName: type
+        mapping:
+          customer_reranker: '#/components/schemas/CustomerSpecificReranker'
+          userfn: '#/components/schemas/UserFunctionReranker'
+          mmr: '#/components/schemas/MMRReranker'
+          chain: '#/components/schemas/ChainReranker'
+          none: '#/components/schemas/NoneReranker'
+    CustomerSpecificReranker:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When type is is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.\nThe retrieval engine will then rerank results using that reranker.\n"
+          default: customer_reranker
+        reranker_id:
+          pattern: rnk_(?!272725718)\d+
+          type: string
+          description: "The ID of the reranker. Current reranker that may be used by Scale customers is rnk_272725719.\nDo not specify the MMR reranker ID here, and instead use the MMR reranker object type.\n**Deprecated**: Use `reranker_name` instead.\n"
+          example: rnk_272725719
+          deprecated: true
+        reranker_name:
+          type: string
+          description: "The name of the reranker. Do not specify the MMR reranker name here. Instead use the MMR reranker object type.\n"
+          example: Rerank_Multilingual_v1
+      description: Reranker that is specific to the customer.
+      x-vectaraParents:
+        - SearchReranker
+    UserFunctionReranker:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the type is `userfn`, you can define custom reranking functions using document-level metadata,\npart-level metadata, or scores generated from the request-level metadata.\n"
+          default: userfn
+        user_function:
+          type: string
+          description: The user defined function.
+          example: get('$.score') * get('$.document_metadata.boost')
+      x-vectaraParents:
+        - SearchReranker
+    MMRReranker:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the type is `mmr`, you can specify the `diversity_bias`, and the\nthe retrieval engine will use the MMR reranker.\n"
+          default: mmr
+        diversity_bias:
+          type: number
+          description: The diversity bias. Higher values indicate more diversity.
+          format: float
+          example: 0.3
+      x-vectaraParents:
+        - SearchReranker
+    ChainReranker:
+      required:
+        - rerankers
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the type is `chain`, you can then chain re-rankers together.\n"
+          default: chain
+        rerankers:
+          minItems: 2
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchReranker'
+          description: "Specify an array of rerankers to search results consecutively after each other.\n"
+      x-vectaraParents:
+        - SearchReranker
+    NoneReranker:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the type is `none`, no reranking will be done.\n"
+          default: none
+      x-vectaraParents:
+        - SearchReranker
+    QueryFullResponse:
+      type: object
+      properties:
+        summary:
+          type: string
+          description: The summary of the search results.
+        response_language:
+          $ref: '#/components/schemas/Language'
+        search_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualSearchResult'
+          description: The ranked search results.
+        factual_consistency_score:
+          type: number
+          description: "The probability that the summary is factually consistent with the results.\n"
+          format: float
+        rendered_prompt:
+          type: string
+          description: "The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available\nto Scale customers.\n"
+      description: The full response to a RAG query when the result is not streamed.
+    IndividualSearchResult:
+      type: object
+      properties:
+        text:
+          type: string
+          description: The document part altered by the context configuration that matches the query.
+        score:
+          type: number
+          description: The score of the individual result.
+          format: double
+        part_metadata:
+          type: object
+          description: The metadata for the document part.
+        document_metadata:
+          type: object
+          description: The metadata for the document that contains the document part.
+        document_id:
+          type: string
+          description: The ID of the document that contains the document part.
+        request_corpora_index:
+          minimum: 0
+          type: integer
+          description: "A query request can search over multiple corpora at a time. This property \nis set to the index in the list of corpora in the original search request that this\nsearch result originated from.\n\nIf the query request is only over one corpus, this property is 0.\n"
+          format: int32
+          example: 0
+      description: An individual ranked search result from a query.
+    QueryStreamedResponse:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/StreamSearchResponse'
+        - $ref: '#/components/schemas/StreamGenerationChunk'
+        - $ref: '#/components/schemas/StreamGenerationEnd'
+        - $ref: '#/components/schemas/StreamResponseEnd'
+        - $ref: '#/components/schemas/FactualConsistencyScore'
+        - $ref: '#/components/schemas/GenerationInfo'
+        - $ref: '#/components/schemas/StreamError'
+      description: An individual event sent with SSE when the query request is streamed.
+      discriminator:
+        propertyName: type
+        mapping:
+          search_results: '#/components/schemas/StreamSearchResponse'
+          generation_chunk: '#/components/schemas/StreamGenerationChunk'
+          generation_end: '#/components/schemas/StreamGenerationEnd'
+          factual_consistency_score: '#/components/schemas/FactualConsistencyScore'
+          generation_info: '#/components/schemas/GenerationInfo'
+          error: '#/components/schemas/StreamError'
+          end: '#/components/schemas/StreamResponseEnd'
+    StreamSearchResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the streaming event has the search results, the\ntype will be `search_results`.\n"
+          default: search_results
+        search_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualSearchResult'
+          description: The ranked search results.
+      description: The search response results.
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    StreamGenerationChunk:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the streaming event contains the next chunk of generator output, the\ntype will be `generation_chunk`.\n"
+          default: generation_chunk
+        generation_chunk:
+          type: string
+          description: "Part of the message from the generator. All summary chunks must be appended together in order\nto get the full summary.\n"
+      description: 'The chunk response from the generation, possibly a partial generation.'
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    FactualConsistencyScore:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the streaming event contains the factual consistency score, the\ntype will be `factual_consistency_score`.\n"
+          default: factual_consistency_score
+        factual_consistency_score:
+          type: number
+          description: The probability that the summary is factually consistent with the results.
+          format: float
+      description: Event containing the factual consistency score.
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    GenerationInfo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "When the streaming event contains the generation information\ntype will be `generation_info`.\n"
+          default: generation_info
+        rendered_prompt:
+          type: string
+          description: "The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available\nto Scale customers.\n"
+        rephrased_query:
+          type: string
+          description: "If you are on the Scale plan, you can view the actual query made to backend that was rephrased \nby the LLM from the input query.\n"
+      description: Event containing information on how the generation was accomplished.
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    StreamError:
+      properties:
+        type:
+          type: string
+          description: "If the stream errors, an event with type `error` will\nbe sent.\n"
+          default: error
+        messages:
+          type: array
+          items:
+            type: string
+          description: The error messages.
+      description: "Event signaling there was an error with the request.\n"
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    StreamGenerationEnd:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "Then end of generation will be denoted with an object\nwith the type `generation_end`.\n"
+          default: generation_end
+      description: "The end of generation. There may still be more information such as the\nfactual consistency score, but generation has stopped.\n"
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    StreamResponseEnd:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "Then end of stream will be denoted with an object\nwith the type `end`.\n"
+          default: end
+      description: The end of a query response stream.
+      x-vectaraParents:
+        - QueryStreamedResponse
+        - ChatStreamedResponse
+    UploadFileRequest:
+      required:
+        - file
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Arbitrary object that will be attached as document metadata to the extracted document.
+        file:
+          type: string
+          description: Binary file contents. The file name of the file will be used as the document ID.
+          format: binary
+    CreateDocumentRequest:
+      required:
+        - type
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/CoreDocument'
+        - $ref: '#/components/schemas/StructuredDocument'
+      description: "Creating a document using this endpoint can take multiple forms depending on how much\ncontrol of the resulting document parts you desire. You can create a document\nwith natural structure, and Vectara will use it's proprietary strategy to create document parts.\n\nOtherwise, you can create a document with all the document parts explicitly specified.\n\nA document part is the a search result item in search and retrieval augmented generation endpoints.\n"
+      discriminator:
+        propertyName: type
+        mapping:
+          core: '#/components/schemas/CoreDocument'
+          structured: '#/components/schemas/StructuredDocument'
+    StructuredDocument:
+      required:
+        - id
+        - type
+        - sections
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The Document ID, must be unique within the corpus.'
+        type:
+          type: string
+          description: "When the type of the indexed document is `structured` the rest of\nthe object is expected to follow this schema. It allows you to create a document\nthat follows normal document conventions. The Vectara platform will then\ncreate document parts using its internal algorithm.\n"
+          default: structured
+        title:
+          type: string
+          description: The title of the document.
+        description:
+          type: string
+          description: The description of the document.
+        metadata:
+          type: object
+          description: "The metadata for a document and is an arbitrary JSON object. Properties of this object\ncan be used by document level filter attributes.\n"
+        custom_dimensions:
+          $ref: '#/components/schemas/CustomDimensions'
+        sections:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/StructuredDocumentSection'
+          description: The subsection of the document.
+      description: A document with layout features.
+      x-vectaraParents:
+        - CreateDocumentRequest
+    StructuredDocumentSection:
+      required:
+        - text
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The section ID. Gets converted to a metadata field.
+          format: int32
+        title:
+          type: string
+          description: The section title.
+        text:
+          type: string
+          description: The text of the section.
+        metadata:
+          type: object
+          description: "Arbitrary object that becomes document part level metadata on any document part created \nby this section. Properties of this object can be used by document part level \nfilters if defined as a corpus filter attribute.\n"
+        sections:
+          type: array
+          items:
+            $ref: '#/components/schemas/StructuredDocumentSection'
+          description: The sections that this section contains.
+      description: A logical section within a structured document.
+    CoreDocument:
+      required:
+        - id
+        - type
+        - document_parts
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The Document ID, must be unique within the corpus.'
+          example: my-doc-id
+        type:
+          type: string
+          description: "When the type of the indexed document is `core` the rest of\nthe object is expected to follow this schema. This schema allows\nprecise specification of document chunks that get directly translated\nto retrieval search results.\n"
+          default: core
+        metadata:
+          type: object
+          description: "Arbitrary object of document level metadata. Properties of this object\ncan be used by document filter if defined as a corpus filter attribute.\n"
+          example:
+            title: A Nice Document
+            lang: eng
+        document_parts:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/CoreDocumentPart'
+          description: Parts of the document that make up the document.
+      description: The document structure that most closely corresponds to Vectara's internal document data model.
+      x-vectaraParents:
+        - CreateDocumentRequest
+    DocumentPart:
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text of the document part.
+          example: I'm a nice document part.
+        metadata:
+          type: object
+          description: The metadata for a document part. Attributes matching corpus document part filter attributes are used as document part filter attributes.
+          example:
+            nice_rank: 9000
+        context:
+          type: string
+          description: The context text for the document part.
+        custom_dimensions:
+          $ref: '#/components/schemas/CustomDimensions'
+      description: A part of a document. This section gets converted into an embedding and directly maps to a search result. Usually a sentence.
+    CoreDocumentPart:
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text of the document part.
+          example: I'm a nice document part.
+        metadata:
+          type: object
+          description: The metadata for a document part. Attributes matching corpus document part filter attributes are used as document part filter attributes.
+          example:
+            nice_rank: 9000
+        context:
+          type: string
+          description: The context text for the document part.
+        custom_dimensions:
+          $ref: '#/components/schemas/CustomDimensions'
+      description: A part of a document. This section gets converted into an embedding and directly maps to a search result. Usually a sentence.
+    CustomDimensions:
+      type: object
+      additionalProperties:
+        type: number
+        format: double
+      description: The custom dimensions as additional weights.
+    Document:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The Document ID.
+          example: my-doc-id
+        metadata:
+          type: object
+          description: The document metadata.
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentPart'
+          description: "Parts of the document that make up the document. However, parts are not available when\nretrieving a list of documents or when creating a document. This property is only available\nwhen retrieving a document by id.\n"
+        storage_usage:
+          $ref: '#/components/schemas/DocumentStorageUsage'
+    DocumentStorageUsage:
+      type: object
+      properties:
+        bytes_used:
+          minimum: 0
+          type: integer
+          description: "Number of bytes used by document counting towards maximum corpus size, and\ntowards any billing plans.\n"
+          format: int64
+        metadata_bytes_used:
+          minimum: 0
+          type: integer
+          description: "Number of metadata bytes used by document metadata.\n"
+          format: int64
+      description: "How much storage the document used. This information is currently not returned when\nretrieving the document, and only returned when indexing document.\n"
+    ListDocumentsResponse:
+      type: object
+      properties:
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+          description: List of documents.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    LLM:
+      type: object
+      properties:
+        id:
+          pattern: llm_.*
+          type: string
+          description: The ID of the LLM.
+        name:
+          type: string
+          description: Name of the LLM.
+        description:
+          type: string
+          description: The description of the LLM.
+        enabled:
+          type: boolean
+          description: Indicates whether the LLM is enabled.
+        default:
+          type: boolean
+          description: "If this is the default LLM, it is used in queries when the generator\nis not specified.\n"
+        prompts:
+          items:
+            $ref: '#/components/schemas/Prompt'
+          description: List of prompts that the model can use. This is deprecated; see `/v2/generation_presets` instead.
+          deprecated: true
+      description: "A LLM can be used to enhance query results with a response, and be used as\nthe responder during a chat.\n"
+    Prompt:
+      type: object
+      properties:
+        id:
+          pattern: pmt_.*
+          type: string
+          description: The ID of the prompt.
+        name:
+          type: string
+          description: Name of the prompt. This is used as the `prompt_name` in a query.
+        description:
+          type: string
+          description: The description of the prompt.
+        enabled:
+          type: boolean
+          description: Indicates whether the prompt is enabled.
+        default:
+          type: boolean
+          description: Indicates if this prompt is the default prompt used with the LLM.
+      description: "A prompt that can be used with a LLM. A prompt is the template that is used to render\nthe text sent to the LLM. It also contains various default model settings such as\ntemperature.\n"
+    ListLLMsResponse:
+      type: object
+      properties:
+        llms:
+          type: array
+          items:
+            $ref: '#/components/schemas/LLM'
+          description: List of LLMs.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    GenerationPreset:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the generation preset to be used with configuring generation.
+        description:
+          type: string
+          description: Description of the generation preset.
+        llm_name:
+          type: string
+          description: Name of the model that these presets are used with.
+        prompt_template:
+          type: string
+          description: Preset template used to render the prompt sent to generation.
+        max_used_search_results:
+          minimum: 1
+          type: integer
+          description: Preset maximum number of search results to be available to the prompt.
+          format: int32
+        max_tokens:
+          minimum: 1
+          type: integer
+          description: Preset maximum number of tokens to be returned by the generation.
+          format: int32
+        temperature:
+          type: number
+          description: "The sampling temperature to use. Higher values make the output more random, while lower\nvalues make it more focused and deterministic.\n"
+          format: float
+        frequency_penalty:
+          type: number
+          description: "Higher values penalize new tokens based on their existing frequency in the text so far,\ndecreasing the model's likelihood to repeat the same line verbatim.\n"
+          format: float
+        presence_penalty:
+          type: number
+          description: "Higher values penalize new tokens based on whether they appear in the text so far,\nincreasing the model's likelihood to talk about new topics.\n"
+          format: float
+        enabled:
+          type: boolean
+          description: Indicates whether the prompt is enabled.
+        default:
+          type: boolean
+          description: Indicates if this prompt is the default prompt used with the LLM.
+      description: "Bundle of default values used when calling generation. All values except\nmodel name can be overriden at generation time.\n"
+    ListGenerationPresetsResponse:
+      type: object
+      properties:
+        generation_presets:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenerationPreset'
+          description: List of generation presets.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    ChatRequest:
+      required:
+        - query
+        - search
+      type: object
+      properties:
+        query:
+          type: string
+          description: The chat message or question.
+          example: How can I use the Vectara platform?
+        search:
+          $ref: '#/components/schemas/SearchCorporaParameters'
+        generation:
+          $ref: '#/components/schemas/GenerationParameters'
+        chat:
+          $ref: '#/components/schemas/ChatParameters'
+        stream_response:
+          type: boolean
+          description: Indicates whether the response should be streamed or not.
+          default: false
+    ChatParameters:
+      type: object
+      properties:
+        store:
+          type: boolean
+          description: Indicates whether to store chat message and response message.
+          default: true
+      description: Parameters to control chat behavior.
+    ChatFullResponse:
+      type: object
+      properties:
+        chat_id:
+          type: string
+          description: 'If the chat response was stored, the ID of the chat.'
+        turn_id:
+          type: string
+          description: 'If the chat response was stored, the ID of the turn.'
+        answer:
+          type: string
+          description: The message from the chat model for the chat message.
+        response_language:
+          $ref: '#/components/schemas/Language'
+        search_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualSearchResult'
+          description: The ranked search results that the chat model used.
+        factual_consistency_score:
+          type: number
+          description: "The probability that the summary is factually consistent with the results.\n"
+          format: float
+        rendered_prompt:
+          type: string
+          description: "The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available\nto Scale customers.\n"
+        rephrased_query:
+          type: string
+          description: "If you are on the Scale plan, you can view the actual query made to backend that was rephrased \nby the LLM from the input query.\n"
+      description: Full response to a chat question when the result is not streamed.
+    ChatStreamedResponse:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/StreamSearchResponse'
+        - $ref: '#/components/schemas/ChatInfoResponse'
+        - $ref: '#/components/schemas/StreamGenerationChunk'
+        - $ref: '#/components/schemas/StreamGenerationEnd'
+        - $ref: '#/components/schemas/FactualConsistencyScore'
+        - $ref: '#/components/schemas/StreamResponseEnd'
+        - $ref: '#/components/schemas/GenerationInfo'
+        - $ref: '#/components/schemas/StreamError'
+      description: An individual event when the response is streamed.
+      discriminator:
+        propertyName: type
+        mapping:
+          search_results: '#/components/schemas/StreamSearchResponse'
+          chat_info: '#/components/schemas/ChatInfoResponse'
+          generation_chunk: '#/components/schemas/StreamGenerationChunk'
+          generation_end: '#/components/schemas/StreamGenerationEnd'
+          generation_info: '#/components/schemas/GenerationInfo'
+          factual_consistency_score: '#/components/schemas/FactualConsistencyScore'
+          end: '#/components/schemas/StreamResponseEnd'
+          error: '#/components/schemas/StreamError'
+    ChatInfoResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "This will be `chat_info` when the stream event contains information\nabout how the chat is stored.\n"
+          default: chat_info
+        chat_id:
+          pattern: cht_.+$
+          type: string
+          description: ID of the chat.
+        turn_id:
+          pattern: trn_.+$
+          type: string
+          description: ID of the turn.
+      description: Information about the chat.
+      x-vectaraParents:
+        - ChatStreamedResponse
+    Chat:
+      type: object
+      properties:
+        id:
+          pattern: cht_.+$
+          type: string
+          description: ID of the chat.
+        first_query:
+          type: string
+          description: The first query of the chat.
+        first_answer:
+          type: string
+          description: The first answer of the chat.
+        enabled:
+          type: boolean
+          description: Indicates whether this chat is enabled and can have further turns.
+          example: true
+        created_at:
+          type: string
+          description: Specifies when this chat was created.
+          format: date-time
+    ListChatsResponse:
+      type: object
+      properties:
+        chats:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chat'
+          description: List of chats.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    Turn:
+      type: object
+      properties:
+        id:
+          pattern: trn_.+$
+          type: string
+          description: The ID of the turn.
+        chat_id:
+          pattern: cht_.+$
+          type: string
+          description: The ID of the chat the turn resides in.
+        query:
+          type: string
+          description: The query made to produce this turn.
+          example: How do a turn this widget?
+        answer:
+          type: string
+          description: The response to the query.
+          example: The widget turns counter clockwise.
+        enabled:
+          type: boolean
+          description: Indicates whether the turn is enabled and shown in futures turns of the chat.
+          example: true
+        created_at:
+          type: string
+          description: Specifies when the turn was created.
+          format: date-time
+    ListChatTurnsResponse:
+      type: object
+      properties:
+        turns:
+          type: array
+          items:
+            $ref: '#/components/schemas/Turn'
+          description: List of turns.
+    UpdateTurnRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: "Indicates whether to disable a turn. It will disable this turn and all subsequent turns.\nEnabling a turn is not implemented.\n"
+          example: false
+    ListEncodersResponse:
+      type: object
+      properties:
+        encoders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Encoder'
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    CreateApiKeyRequest:
+      required:
+        - name
+        - api_key_role
+      type: object
+      properties:
+        name:
+          type: string
+          description: The human-readable name of the API key.
+        api_key_role:
+          $ref: '#/components/schemas/ApiKeyRole'
+        corpus_keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/CorpusKey'
+          description: "Corpora this API key has roles on if it is not a Personal API key.\nThis property should be null or missing if this `api_key_role` is\n`personal`.\n"
+    ApiKey:
+      type: object
+      properties:
+        id:
+          pattern: aky_.*
+          type: string
+          description: The ID of the API key.
+        name:
+          type: string
+          description: The human-readable name of the API key.
+        secret_key:
+          type: string
+          description: The key used in API requests. Should be kept secure.
+        enabled:
+          type: boolean
+          description: If this API key is enabled.
+        api_key_role:
+          $ref: '#/components/schemas/ApiKeyRole'
+        api_policy:
+          $ref: '#/components/schemas/ApiPolicy'
+    ApiKeyRole:
+      enum:
+        - serving
+        - serving_and_indexing
+        - personal
+      type: string
+      description: "Role of the API key. \nA serving API key can only perform query type requests on its corpora. A serving and\nindexing key can perform both indexing and query type requests on its corpora.\nA personal API key has all the same permissions as the creator of the API key.\n"
+    UpdateApiKeyRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Indicates whether to disable or enable an API key.
+    ListApiKeysResponse:
+      type: object
+      properties:
+        api_keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiKey'
+          description: List of API keys.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    CreateAppClientRequest:
+      required:
+        - type
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/CreateClientCredentialsRequest'
+      discriminator:
+        propertyName: type
+        mapping:
+          client_credentials: '#/components/schemas/CreateClientCredentialsRequest'
+    CreateClientCredentialsRequest:
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the client credentials.
+        description:
+          type: string
+          description: Description of the client credentials.
+        type:
+          type: string
+          description: This will always be the value `client_credentials`.
+          default: client_credentials
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: API roles that the client credentials will have.
+      description: Create an App Client which allows you to call Vectara APIs using OAuth 2.0 client credentials.
+      x-vectaraParents:
+        - CreateAppClientRequest
+    AppClient:
+      type: object
+      properties:
+        id:
+          pattern: app_.+$
+          type: string
+          description: "The Vectara App Client ID. This ID is not used during an OAuth\nflow but the ID used within the Vectara API.\n"
+        name:
+          type: string
+          description: The human-readable name of the App Client.
+        description:
+          type: string
+          description: Description of the App Client.
+        client_id:
+          type: string
+          description: The client ID used with the OAuth flow.
+        client_secret:
+          type: string
+          description: The key used in API requests. Should be kept secure.
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: The API roles attached to the App Client.
+        api_policy:
+          $ref: '#/components/schemas/ApiPolicy'
+    UpdateAppClientRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The new App Client description.
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: The new roles attached to the App Client. These roles will replace the current roles.
+    ListAppClientsResponse:
+      type: object
+      properties:
+        app_clients:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppClient'
+          description: List of App Clients.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    Encoder:
+      type: object
+      properties:
+        id:
+          pattern: 'enc_[0-9]+$'
+          type: string
+          description: The Encoder ID.
+          example: enc_1
+        name:
+          type: string
+          description: The encoder name.
+          example: boomerang
+        output_dimensions:
+          type: integer
+          description: "When this encoder is used to create an embedding, it shows the count of dimensions for the output embedding.\nA high dimensionality will consume more storage space, but it allows for an increase the quality of\nthe embedding.\n"
+          format: int32
+          example: 768
+        description:
+          type: string
+          description: The encoder description.
+        default:
+          type: boolean
+          description: Indicates whether the encoder is default used when creating a corpus.
+          example: true
+        enabled:
+          type: boolean
+          description: Indicates whether the encoder is enabled.
+          example: true
+    Reranker:
+      type: object
+      properties:
+        id:
+          pattern: 'rnk_[0-9]+$'
+          type: string
+          description: The ID of the reranker.
+        name:
+          type: string
+          description: The name of the reranker.
+        description:
+          type: string
+          description: The description of the reranker.
+        enabled:
+          type: boolean
+          description: Whether the reranker is enabled.
+      description: "A reranker can be used in query or chat endpoints to reorder the search results.\n"
+    ListRerankersResponse:
+      type: object
+      properties:
+        rerankers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reranker'
+          description: An array of rerankers.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    Job:
+      type: object
+      properties:
+        id:
+          pattern: job_.+$
+          type: string
+          description: The ID of the job.
+        type:
+          enum:
+            - rebuild_vector_index
+            - replace_filter_attributes
+            - unknown
+          type: string
+          description: The type of job.
+        corpus_keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/CorpusKey'
+          description: The corpora that this job belongs to. It may not belong to any corpora.
+        state:
+          $ref: '#/components/schemas/JobState'
+        created_at:
+          type: string
+          description: Specifies when the job was created.
+          format: date-time
+        started_at:
+          type: string
+          description: Specifies when the job was started.
+          format: date-time
+        completed_at:
+          type: string
+          description: Specifies when the job was completed.
+          format: date-time
+    JobState:
+      enum:
+        - unknown
+        - queued
+        - started
+        - completed
+        - failed
+        - failed_will_retry
+        - aborted
+      type: string
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+          description: An array of jobs.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    CreateUserRequest:
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          type: string
+          description: The email address for the user.
+          format: email
+        username:
+          type: string
+          description: The username for the user. The value defaults to the email.
+        description:
+          type: string
+          description: The description for the user.
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: The role names assigned to the user.
+    UpdateUserRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Indicates whether to disable or disable the user.
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: The new role names of the user.
+    User:
+      type: object
+      properties:
+        id:
+          pattern: usr_.+
+          type: string
+          description: The Vectara ID for the user.
+        email:
+          type: string
+          description: The email address for the user.
+          format: email
+        username:
+          type: string
+          description: The username for the user.
+        enabled:
+          type: boolean
+          description: Indicates whether the user is enabled or disabled.
+        description:
+          type: string
+          description: The description for the user.
+        created_at:
+          type: string
+          description: When the user was created.
+          format: date-time
+        updated_at:
+          type: string
+          description: When a user property was last updated.
+          format: date-time
+        api_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiRole'
+          description: The role names of the user.
+        api_policy:
+          $ref: '#/components/schemas/ApiPolicy'
+    ListUsersResponse:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          description: List of users.
+        metadata:
+          $ref: '#/components/schemas/ListMetadata'
+    ApiRole:
+      enum:
+        - owner
+        - administrator
+        - billing_administrator
+        - corpus_administrator
+      type: string
+      description: Roles that a user or an app client can take on.
+    ApiPolicy:
+      required:
+        - name
+        - allowed_operations
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the API role.
+        allowed_operations:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ApiOperationPolicy'
+          description: "Operations that are allowed by the API role. Each operation may only allow\ncertain resources that are described by a resource path to resource value\nmap. If the value is null, then the operation is allowed on any resource.\n"
+      description: What actions a principal can take on the Vectara platform.
+    ApiOperationPolicy:
+      required:
+        - allow_any_resource
+      type: object
+      properties:
+        allow_any_resource:
+          type: boolean
+          description: If any resource is allowed for the operation.
+          default: true
+        allowed_resources:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          description: "Object with keys of resource paths to a list of allowed resources.\nA resource path starts with either body, path, or implicit.\nA body or path resource is within the operation body, and an implicit\nresource is a resource implied by the request.\n"
+      description: "Policy to allow operations if only using the specified resource.\n"
+    Language:
+      enum:
+        - auto
+        - eng
+        - deu
+        - fra
+        - zho
+        - kor
+        - ara
+        - rus
+        - tha
+        - nld
+        - ita
+        - por
+        - spa
+        - jpn
+        - pol
+        - tur
+        - vie
+        - ind
+        - ces
+        - ukr
+        - ell
+        - heb
+        - fas
+        - hin
+        - urd
+        - swe
+        - ben
+        - msa
+        - ron
+      type: string
+      description: Languages that the Vectara platform supports.
+      default: auto
+    ListMetadata:
+      type: object
+      properties:
+        page_key:
+          type: string
+          description: 'When requesting the next page of this list, this is needed as a query parameter.'
+      description: The standard metadata in the response of a list operation.
+    NotFoundError:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID cannot found.
+        messages:
+          type: array
+          items:
+            title: message
+            type: string
+        request_id:
+          type: string
+          description: ID of the request that can be used to help Vectara support debug what went wrong.
+    BadRequestError:
+      type: object
+      properties:
+        field_errors:
+          type: object
+          additionalProperties:
+            type: string
+          description: The errors that relate to specific fields in the request.
+        messages:
+          type: array
+          items:
+            title: message
+            type: string
+        request_id:
+          type: string
+          description: The ID of the request that can be used to help Vectara support debug what went wrong.
+    Error:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            title: message
+            type: string
+            example: Internal server error.
+          description: The messages describing why the error occurred.
+        request_id:
+          type: string
+          description: The ID of the request that can be used to help Vectara support debug what went wrong .
+  parameters:
+    RequestTimeout:
+      name: Request-Timeout
+      in: header
+      description: The API will make a best effort to complete the request in the specified seconds or time out.
+      schema:
+        minimum: 1
+        type: integer
+    RequestTimeoutMillis:
+      name: Request-Timeout-Millis
+      in: header
+      description: The API will make a best effort to complete the request in the specified milliseconds or time out.
+      schema:
+        minimum: 1
+        type: integer
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: OAuth2 access to Vectara
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.vectara.io/oauth2/token
+          scopes: { }
+    ApiKeyAuth:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - ApiKeyAuth: [ ]
+  - OAuth2: [ ]
+tags:
+  - name: Queries
+    description: Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
+  - name: Upload
+    description: Upload files to a corpus for automatic parsing and document extraction
+  - name: Index
+    description: Index and manage core and structured documents for efficient search and retrieval
+  - name: Corpora
+    description: 'Create, manage, and update corpora and their associated settings for administration purposes'
+  - name: Documents
+    description: Retrieve and manage documents stored in a corpus for administrative tasks
+  - name: Chats
+    description: 'Create, manage, and interact with chat sessions for conversational AI and administrative monitoring'
+  - name: Large Language Models
+    description: 'List LLMs for text summarization, chat, and other generation tasks'
+  - name: Encoders
+    description: List encoders that turn text into vectors such as Boomerang
+  - name: Rerankers
+    description: List rerankers for reranking search results
+  - name: Jobs
+    description: Monitor background jobs such as rebuilding indexes or updating corpus settings
+  - name: Users
+    description: 'Create, manage, and authenticate users within the platform for user administration'
+  - name: Application Clients
+    description: 'Manage app clients, and perform authentication operations for admin-level access control'
+  - name: API Keys
+    description: Manage API keys for the account
