@@ -127,7 +127,7 @@ namespace G
 
             if (token != default)
             {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token);
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token.ToString());
             }
 
             var __pathBuilder = new PathBuilder(

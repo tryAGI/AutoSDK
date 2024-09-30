@@ -142,13 +142,13 @@ namespace {endPoint.Namespace}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
-            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : "")});").Inject()}
+            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
     .Select(x => $@"
             if ({x.ParameterName} != default)
             {{
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : "")});
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters

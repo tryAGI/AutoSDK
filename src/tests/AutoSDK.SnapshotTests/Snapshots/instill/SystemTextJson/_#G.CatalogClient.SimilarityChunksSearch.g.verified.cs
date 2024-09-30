@@ -57,7 +57,7 @@ namespace G
 
             if (instillRequesterUid != default)
             {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Instill-Requester-Uid", instillRequesterUid);
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Instill-Requester-Uid", instillRequesterUid.ToString());
             }
 
             var __pathBuilder = new PathBuilder(

@@ -121,7 +121,7 @@ namespace G
 
             if (accept != default)
             {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept);
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept.ToString());
             }
 
             var __pathBuilder = new PathBuilder(

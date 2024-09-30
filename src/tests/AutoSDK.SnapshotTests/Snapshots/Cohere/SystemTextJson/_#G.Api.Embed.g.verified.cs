@@ -50,7 +50,7 @@ namespace G
 
             if (xClientName != default)
             {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName);
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
             }
 
             var __pathBuilder = new PathBuilder(

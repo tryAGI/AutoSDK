@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.SearchParameters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Search parameters to retrieve knowledge for the query.
+    /// </summary>
+    public sealed partial class SearchParameters
+    {
+        /// <summary>
+        /// Specifies how many results into the result to skip. This is useful for pagination.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("offset")]
+        public int? Offset { get; set; } = 0;
+
+        /// <summary>
+        /// The maximum number of results returned.<br/>
+        /// Default Value: 10
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("limit")]
+        public int? Limit { get; set; } = 10;
+
+        /// <summary>
+        /// Configuration on the presentation of each document part in the result set.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("context_configuration")]
+        public global::G.ContextConfiguration? ContextConfiguration { get; set; }
+
+        /// <summary>
+        /// Rerank results of the search. Rerankers are very powerful tools to better order search results.<br/>
+        /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
+        /// To disable reranking set the reranker `type` to `"none"`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("reranker")]
+        public global::G.SearchReranker? Reranker { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

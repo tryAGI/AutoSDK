@@ -1,0 +1,21 @@
+﻿//HintName: G.IQueriesClient.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
+    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+    /// </summary>
+    public partial interface IQueriesClient : global::System.IDisposable
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }
+
+
+    }
+}
