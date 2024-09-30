@@ -24,6 +24,7 @@ namespace {client.Namespace}
         public const string BaseUrl = ""{client.BaseUrl}"";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::{client.Namespace}.EndPointAuthorization? _authorization;
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
@@ -35,7 +36,7 @@ namespace {client.Namespace}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient)
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient, authorization: _authorization)
         {{
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
@@ -53,10 +54,12 @@ namespace {client.Namespace}
         /// <param name=""jsonSerializerOptions""></param>" : " ")}
         public {client.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::{client.Namespace}.EndPointAuthorization? authorization = null)
         {{
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }}

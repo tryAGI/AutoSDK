@@ -38,6 +38,7 @@ namespace G
         public const string BaseUrl = "https://api.heygen.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -48,7 +49,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ListsClient Lists => new ListsClient(_httpClient)
+        public ListsClient Lists => new ListsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -57,7 +58,7 @@ namespace G
         /// Create personalized avatar videos with ease using the **HeyGen API**. By selecting an avatar and a voice, you can create engaging videos for various purposes. 🌟<br/>
         /// **Guide**: [https://docs.heygen.com/docs/create-video](https://docs.heygen.com/docs/create-video)**Reference**: [https://docs.heygen.com/reference/create-an-avatar-video-v2](https://docs.heygen.com/reference/create-an-avatar-video-v2)
         /// </summary>
-        public CreateVideoAPIClient CreateVideoAPI => new CreateVideoAPIClient(_httpClient)
+        public CreateVideoAPIClient CreateVideoAPI => new CreateVideoAPIClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -72,7 +73,7 @@ namespace G
         /// **Guide**: [https://docs.heygen.com/docs/generate-video-from-template-v2](https://docs.heygen.com/docs/generate-video-from-template-v2)  <br/>
         /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2)
         /// </summary>
-        public TemplateAPIClient TemplateAPI => new TemplateAPIClient(_httpClient)
+        public TemplateAPIClient TemplateAPI => new TemplateAPIClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -81,7 +82,7 @@ namespace G
         /// The [Video Translate](https://labs.heygen.com/video-translate) by HeyGen provides a powerful solution for effortlessly translating videos, integrating natural voice cloning and authentic speaking styles seamlessly. Now, you can harness its capabilities programmatically through the **Video Translate API**!<br/>
         /// **Guide**: [https://docs.heygen.com/docs/video-translate-api](https://docs.heygen.com/docs/video-translate-api)**Reference**: [https://docs.heygen.com/reference/video-translate](https://docs.heygen.com/reference/video-translate)
         /// </summary>
-        public VideoTranslateAPIClient VideoTranslateAPI => new VideoTranslateAPIClient(_httpClient)
+        public VideoTranslateAPIClient VideoTranslateAPI => new VideoTranslateAPIClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -90,7 +91,7 @@ namespace G
         /// HeyGen's **Streaming API** allows developers to seamlessly integrate dynamic digital avatars into their applications for immersive and interactive user experiences. With this API, you can create _virtual assistants, real-time training simulations,_ and more, with a focus on real-time, low-latency communication between _users_ and _avatars_ with power of WebRTC.<br/>
         /// **Guide**: [https://docs.heygen.com/docs/streaming-api](https://docs.heygen.com/docs/streaming-api)**Reference**: [https://docs.heygen.com/reference/new-session](https://docs.heygen.com/reference/new-session)
         /// </summary>
-        public StreamingAPIClient StreamingAPI => new StreamingAPIClient(_httpClient)
+        public StreamingAPIClient StreamingAPI => new StreamingAPIClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -99,7 +100,7 @@ namespace G
         /// Webhook events are how the **HeyGen** notifies your _endpoints_ when a variety of interactions or events happen, including when avatar video processing _succeeds_ or _fails_. Webhook events are sent by HeyGen as POST requests to your webhook endpoint.<br/>
         /// **Guide**: [https://docs.heygen.com/docs/using-heygens-webhook-events](https://docs.heygen.com/docs/using-heygens-webhook-events)**Reference**: [https://docs.heygen.com/reference/add-a-webhook-endpoint](https://docs.heygen.com/reference/add-a-webhook-endpoint)
         /// </summary>
-        public WebhooksClient Webhooks => new WebhooksClient(_httpClient)
+        public WebhooksClient Webhooks => new WebhooksClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -108,7 +109,7 @@ namespace G
         /// These API endpoints allow you to manage photo avatars in your account.<br/>
         /// **Reference**: [https://docs.heygen.com/reference/upload-talking-photo](https://docs.heygen.com/reference/upload-talking-photo)
         /// </summary>
-        public TalkingPhotoClient TalkingPhoto => new TalkingPhotoClient(_httpClient)
+        public TalkingPhotoClient TalkingPhoto => new TalkingPhotoClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -118,7 +119,7 @@ namespace G
         /// **Guide**: [https://docs.heygen.com/docs/import-contacts-via-api](https://docs.heygen.com/docs/import-contacts-via-api)  <br/>
         /// Reference: [https://docs.heygen.com/reference/add-contact](https://docs.heygen.com/reference/add-contact)
         /// </summary>
-        public PersonalizedVideoClient PersonalizedVideo => new PersonalizedVideoClient(_httpClient)
+        public PersonalizedVideoClient PersonalizedVideo => new PersonalizedVideoClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -127,7 +128,7 @@ namespace G
         /// Obtain information about your account.<br/>
         /// **Reference**: [https://docs.heygen.com/reference/get-remaining-quota-v2](https://docs.heygen.com/reference/get-remaining-quota-v2)
         /// </summary>
-        public UserClient User => new UserClient(_httpClient)
+        public UserClient User => new UserClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -136,7 +137,7 @@ namespace G
         /// Upload an image or video asset to your account.<br/>
         /// **Reference**: [https://docs.heygen.com/reference/upload-asset-1](https://docs.heygen.com/reference/upload-asset-1)
         /// </summary>
-        public AssetsClient Assets => new AssetsClient(_httpClient)
+        public AssetsClient Assets => new AssetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -151,10 +152,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

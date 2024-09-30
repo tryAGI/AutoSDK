@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.github.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -27,7 +28,7 @@ namespace G
         /// <summary>
         /// Move projects to or from GitHub.
         /// </summary>
-        public MigrationsClient Migrations => new MigrationsClient(_httpClient)
+        public MigrationsClient Migrations => new MigrationsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -42,10 +43,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.instill.tech";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -76,7 +77,7 @@ namespace G
         /// <summary>
         /// User endpoints
         /// </summary>
-        public UserClient User => new UserClient(_httpClient)
+        public UserClient User => new UserClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -84,7 +85,7 @@ namespace G
         /// <summary>
         /// Organization endpoints
         /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(_httpClient)
+        public OrganizationClient Organization => new OrganizationClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -92,7 +93,7 @@ namespace G
         /// <summary>
         /// Membership endpoints
         /// </summary>
-        public MembershipClient Membership => new MembershipClient(_httpClient)
+        public MembershipClient Membership => new MembershipClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -100,7 +101,7 @@ namespace G
         /// <summary>
         /// Token endpoints
         /// </summary>
-        public TokenClient Token => new TokenClient(_httpClient)
+        public TokenClient Token => new TokenClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -108,7 +109,7 @@ namespace G
         /// <summary>
         /// Subscription endpoints
         /// </summary>
-        public SubscriptionClient Subscription => new SubscriptionClient(_httpClient)
+        public SubscriptionClient Subscription => new SubscriptionClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -116,7 +117,7 @@ namespace G
         /// <summary>
         /// Credit endpoints
         /// </summary>
-        public CreditClient Credit => new CreditClient(_httpClient)
+        public CreditClient Credit => new CreditClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -124,7 +125,7 @@ namespace G
         /// <summary>
         /// Metric endpoints
         /// </summary>
-        public MetricClient Metric => new MetricClient(_httpClient)
+        public MetricClient Metric => new MetricClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -132,7 +133,7 @@ namespace G
         /// <summary>
         /// Util endpoints
         /// </summary>
-        public UtilsClient Utils => new UtilsClient(_httpClient)
+        public UtilsClient Utils => new UtilsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -140,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CatalogClient Catalog => new CatalogClient(_httpClient)
+        public CatalogClient Catalog => new CatalogClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -155,10 +156,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

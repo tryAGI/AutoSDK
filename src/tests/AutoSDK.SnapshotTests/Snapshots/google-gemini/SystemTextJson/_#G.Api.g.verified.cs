@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "https://generativelanguage.googleapis.com/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -55,10 +56,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

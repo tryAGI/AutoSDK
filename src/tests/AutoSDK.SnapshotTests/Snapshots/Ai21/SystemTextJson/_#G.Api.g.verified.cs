@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.ai21.com/";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -82,7 +83,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public JambaCompleteClient JambaComplete => new JambaCompleteClient(_httpClient)
+        public JambaCompleteClient JambaComplete => new JambaCompleteClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -90,7 +91,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CompletionClient Completion => new CompletionClient(_httpClient)
+        public CompletionClient Completion => new CompletionClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -98,7 +99,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CustomModelsClient CustomModels => new CustomModelsClient(_httpClient)
+        public CustomModelsClient CustomModels => new CustomModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -106,7 +107,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -114,7 +115,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ParaphraseClient Paraphrase => new ParaphraseClient(_httpClient)
+        public ParaphraseClient Paraphrase => new ParaphraseClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -122,7 +123,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SummarizeClient Summarize => new SummarizeClient(_httpClient)
+        public SummarizeClient Summarize => new SummarizeClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -130,7 +131,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SegmentationClient Segmentation => new SegmentationClient(_httpClient)
+        public SegmentationClient Segmentation => new SegmentationClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -138,7 +139,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GrammaticalErrorCorrectionsClient GrammaticalErrorCorrections => new GrammaticalErrorCorrectionsClient(_httpClient)
+        public GrammaticalErrorCorrectionsClient GrammaticalErrorCorrections => new GrammaticalErrorCorrectionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -146,7 +147,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LibraryManagementClient LibraryManagement => new LibraryManagementClient(_httpClient)
+        public LibraryManagementClient LibraryManagement => new LibraryManagementClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -154,7 +155,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RAGEngineClient RAGEngine => new RAGEngineClient(_httpClient)
+        public RAGEngineClient RAGEngine => new RAGEngineClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -162,7 +163,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient)
+        public ChatClient Chat => new ChatClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -170,7 +171,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TokenizeClient Tokenize => new TokenizeClient(_httpClient)
+        public TokenizeClient Tokenize => new TokenizeClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -185,10 +186,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

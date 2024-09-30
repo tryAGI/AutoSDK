@@ -55,6 +55,23 @@ public static partial class Sources
 
             _httpClient.DefaultRequestHeaders.Add(""{authorization.Name}"", apiKey);
         }}",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) or
+                (SecuritySchemeType.ApiKey, _, ParameterLocation.Path) => $@" 
+        /// <summary>
+        /// Authorize using ApiKey authentication.
+        /// </summary>
+        /// <param name=""apiKey""></param>
+        public void AuthorizeUsingApiKey(
+            string apiKey)
+        {{
+            apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+
+            _authorization = new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            {{
+                Name = ""{authorization.Name}"",
+                Value = apiKey,
+            }};
+        }}",
             _ => " ",
         };
         
@@ -78,6 +95,7 @@ namespace {authorization.Settings.Namespace}
             (SecuritySchemeType.Http, "bearer", _) => "AuthorizeUsingBearer",
             (SecuritySchemeType.Http, "basic", _) => "AuthorizeUsingBasic",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "AuthorizeUsingApiKey",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => "AuthorizeUsingApiKey",
             _ => string.Empty,
         };
         string[] parameters = (authorization.Type, authorization.Scheme, authorization.In) switch
@@ -85,6 +103,7 @@ namespace {authorization.Settings.Namespace}
             (SecuritySchemeType.Http, "bearer", _) => ["apiKey"],
             (SecuritySchemeType.Http, "basic", _) => ["username", "password"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => ["apiKey"],
             _ => [],
         };
         if (parameters.Length == 0)

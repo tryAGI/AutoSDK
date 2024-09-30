@@ -133,7 +133,8 @@ public static class TraversalTreeHelper
                     operation: y.Value,
                     operationPath: x.Key,
                     operationType: y.Key,
-                    filteredSchemas: filteredSchemas)))
+                    filteredSchemas: filteredSchemas,
+                    globalSecurityRequirements: openApiDocument.SecurityRequirements ?? [])))
             .ToArray() ?? [];
     }
 }

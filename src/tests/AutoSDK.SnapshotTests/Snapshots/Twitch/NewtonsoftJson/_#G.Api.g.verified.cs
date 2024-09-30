@@ -25,6 +25,7 @@ namespace G
         public const string BaseUrl = "https://api.twitch.tv/helix";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -35,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AdsClient Ads => new AdsClient(_httpClient)
+        public AdsClient Ads => new AdsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -43,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AnalyticsClient Analytics => new AnalyticsClient(_httpClient)
+        public AnalyticsClient Analytics => new AnalyticsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -51,7 +52,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BitsClient Bits => new BitsClient(_httpClient)
+        public BitsClient Bits => new BitsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -59,7 +60,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChannelsClient Channels => new ChannelsClient(_httpClient)
+        public ChannelsClient Channels => new ChannelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -67,7 +68,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChannelPointsClient ChannelPoints => new ChannelPointsClient(_httpClient)
+        public ChannelPointsClient ChannelPoints => new ChannelPointsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -75,7 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CharityClient Charity => new CharityClient(_httpClient)
+        public CharityClient Charity => new CharityClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -83,7 +84,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient)
+        public ChatClient Chat => new ChatClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -91,7 +92,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ClipsClient Clips => new ClipsClient(_httpClient)
+        public ClipsClient Clips => new ClipsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -99,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ConduitsClient Conduits => new ConduitsClient(_httpClient)
+        public ConduitsClient Conduits => new ConduitsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -107,7 +108,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CCLsClient CCLs => new CCLsClient(_httpClient)
+        public CCLsClient CCLs => new CCLsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -115,7 +116,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EntitlementsClient Entitlements => new EntitlementsClient(_httpClient)
+        public EntitlementsClient Entitlements => new EntitlementsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -123,7 +124,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExtensionsClient Extensions => new ExtensionsClient(_httpClient)
+        public ExtensionsClient Extensions => new ExtensionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -131,7 +132,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EventSubClient EventSub => new EventSubClient(_httpClient)
+        public EventSubClient EventSub => new EventSubClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -139,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GamesClient Games => new GamesClient(_httpClient)
+        public GamesClient Games => new GamesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -147,7 +148,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GoalsClient Goals => new GoalsClient(_httpClient)
+        public GoalsClient Goals => new GoalsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -155,7 +156,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GuestStarClient GuestStar => new GuestStarClient(_httpClient)
+        public GuestStarClient GuestStar => new GuestStarClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -163,7 +164,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public HypeTrainClient HypeTrain => new HypeTrainClient(_httpClient)
+        public HypeTrainClient HypeTrain => new HypeTrainClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -171,7 +172,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModerationClient Moderation => new ModerationClient(_httpClient)
+        public ModerationClient Moderation => new ModerationClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -179,7 +180,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PollsClient Polls => new PollsClient(_httpClient)
+        public PollsClient Polls => new PollsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -187,7 +188,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PredictionsClient Predictions => new PredictionsClient(_httpClient)
+        public PredictionsClient Predictions => new PredictionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -195,7 +196,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RaidsClient Raids => new RaidsClient(_httpClient)
+        public RaidsClient Raids => new RaidsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -203,7 +204,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ScheduleClient Schedule => new ScheduleClient(_httpClient)
+        public ScheduleClient Schedule => new ScheduleClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -211,7 +212,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SearchClient Search => new SearchClient(_httpClient)
+        public SearchClient Search => new SearchClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -219,7 +220,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public StreamsClient Streams => new StreamsClient(_httpClient)
+        public StreamsClient Streams => new StreamsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -227,7 +228,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubscriptionsClient Subscriptions => new SubscriptionsClient(_httpClient)
+        public SubscriptionsClient Subscriptions => new SubscriptionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -235,7 +236,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TagsClient Tags => new TagsClient(_httpClient)
+        public TagsClient Tags => new TagsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -243,7 +244,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TeamsClient Teams => new TeamsClient(_httpClient)
+        public TeamsClient Teams => new TeamsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -251,7 +252,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient)
+        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -259,7 +260,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VideosClient Videos => new VideosClient(_httpClient)
+        public VideosClient Videos => new VideosClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -267,7 +268,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WhispersClient Whispers => new WhispersClient(_httpClient)
+        public WhispersClient Whispers => new WhispersClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -282,10 +283,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

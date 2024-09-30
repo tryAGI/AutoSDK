@@ -225,4 +225,13 @@ namespace G
         /// <returns>The constructed URL.</returns>
         public override string ToString() => _stringBuilder.ToString();
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class EndPointAuthorization
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
+    }
 }

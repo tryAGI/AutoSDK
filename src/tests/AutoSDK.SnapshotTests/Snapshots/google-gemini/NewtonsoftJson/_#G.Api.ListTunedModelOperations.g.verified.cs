@@ -57,6 +57,7 @@ namespace G
                 path: $"/tunedModels/{tunedModelId}/operations",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
                 .AddOptionalParameter("filter", filter) 
                 .AddOptionalParameter("pageToken", pageToken) 

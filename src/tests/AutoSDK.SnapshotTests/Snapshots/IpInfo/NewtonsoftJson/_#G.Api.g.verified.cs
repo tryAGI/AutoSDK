@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "https://ipinfo.io/";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -27,7 +28,7 @@ namespace G
         /// <summary>
         /// General API.
         /// </summary>
-        public GeneralClient General => new GeneralClient(_httpClient)
+        public GeneralClient General => new GeneralClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -35,7 +36,7 @@ namespace G
         /// <summary>
         /// Single info API.
         /// </summary>
-        public SingleClient Single => new SingleClient(_httpClient)
+        public SingleClient Single => new SingleClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -43,7 +44,7 @@ namespace G
         /// <summary>
         /// Privacy Detection API.
         /// </summary>
-        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient)
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -51,7 +52,7 @@ namespace G
         /// <summary>
         /// ASN API.
         /// </summary>
-        public AsnClient Asn => new AsnClient(_httpClient)
+        public AsnClient Asn => new AsnClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -59,7 +60,7 @@ namespace G
         /// <summary>
         /// IP Ranges API.
         /// </summary>
-        public RangesClient Ranges => new RangesClient(_httpClient)
+        public RangesClient Ranges => new RangesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -67,7 +68,7 @@ namespace G
         /// <summary>
         /// Hosted Domains API.
         /// </summary>
-        public DomainsClient Domains => new DomainsClient(_httpClient)
+        public DomainsClient Domains => new DomainsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -75,7 +76,7 @@ namespace G
         /// <summary>
         /// Abuse Contact API.
         /// </summary>
-        public AbuseClient Abuse => new AbuseClient(_httpClient)
+        public AbuseClient Abuse => new AbuseClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -90,10 +91,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

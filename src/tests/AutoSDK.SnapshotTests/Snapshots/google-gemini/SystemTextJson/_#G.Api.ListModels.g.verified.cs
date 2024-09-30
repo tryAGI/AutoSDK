@@ -47,6 +47,7 @@ namespace G
                 path: "/models",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
                 .AddOptionalParameter("pageToken", pageToken) 
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
                 ; 

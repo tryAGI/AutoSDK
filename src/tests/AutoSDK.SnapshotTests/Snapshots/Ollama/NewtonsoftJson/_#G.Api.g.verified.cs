@@ -17,6 +17,7 @@ namespace G
         public const string BaseUrl = "http://localhost:11434/api";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -27,7 +28,7 @@ namespace G
         /// <summary>
         /// Given a prompt, the model will generate a completion.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(_httpClient)
+        public CompletionsClient Completions => new CompletionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -35,7 +36,7 @@ namespace G
         /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient)
+        public ChatClient Chat => new ChatClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -43,7 +44,7 @@ namespace G
         /// <summary>
         /// Get a vector representation of a given input.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -51,7 +52,7 @@ namespace G
         /// <summary>
         /// List and describe the various models available.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -66,10 +67,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

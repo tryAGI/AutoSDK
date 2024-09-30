@@ -19,6 +19,7 @@ namespace G
         public const string BaseUrl = "https://api.cohere.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::G.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -178,7 +179,7 @@ namespace G
         /// <summary>
         /// Datasets API
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient)
+        public DatasetsClient Datasets => new DatasetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -186,7 +187,7 @@ namespace G
         /// <summary>
         /// Connectors API
         /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient)
+        public ConnectorsClient Connectors => new ConnectorsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -194,7 +195,7 @@ namespace G
         /// <summary>
         /// Embed Jobs API
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -202,7 +203,7 @@ namespace G
         /// <summary>
         /// Finetuning API (Beta)
         /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(_httpClient)
+        public FinetuningClient Finetuning => new FinetuningClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -210,7 +211,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -225,10 +226,12 @@ namespace G
         /// <param name="jsonSerializerOptions"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::G.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }

@@ -55,6 +55,7 @@ namespace G
                 path: $"/domains/{ip}",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 

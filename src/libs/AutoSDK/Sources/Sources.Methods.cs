@@ -295,12 +295,18 @@ namespace {endPoint.Namespace}
                 (!x.Type.IsArray || (x.Type.SubTypes[0].Properties.Length == 0 && !x.Type.SubTypes[0].IsArray)))
             .ToArray();
 
-        if (queryParameters.Length > 0)
+        if (queryParameters.Length > 0 ||
+            endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
-            code += $@" 
+            code += @" 
             __pathBuilder";
         }
 
+        if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
+        {
+            code += @" 
+                .AddRequiredParameter(_authorization!.Name, _authorization!.Value)";
+        }
         foreach (var parameter in queryParameters)
         {
             var additionalArguments = parameter.Type.IsArray
@@ -322,7 +328,8 @@ namespace {endPoint.Namespace}
             }
         }
         
-        if (queryParameters.Length > 0)
+        if (queryParameters.Length > 0 ||
+            endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
             code += @" 
                 ;";

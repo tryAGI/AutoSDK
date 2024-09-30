@@ -11,6 +11,7 @@ public class OperationContext
     public required OperationType OperationType { get; init; }
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
+    public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
     
     public HashSet<string> Tags { get; set; } = [];
 
@@ -21,7 +22,8 @@ public class OperationContext
         OpenApiOperation operation,
         string operationPath,
         OperationType operationType,
-        IReadOnlyCollection<SchemaContext> filteredSchemas)
+        IReadOnlyCollection<SchemaContext> filteredSchemas,
+        IList<OpenApiSecurityRequirement> globalSecurityRequirements)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -34,7 +36,8 @@ public class OperationContext
             Schemas = filteredSchemas
                 .Where(schema => schema.Operation == operation)
                 .ToArray(),
-            Tags = [..operation.Tags.Select(tag => tag.Name)]
+            Tags = [..operation.Tags.Select(tag => tag.Name)],
+            GlobalSecurityRequirements = globalSecurityRequirements,
         };
         context.MethodName = context.GetMethodName();
         

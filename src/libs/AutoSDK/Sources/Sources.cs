@@ -198,7 +198,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: $"{authorization.Settings.Namespace}.{authorization.Settings.ClassName}.Authorizations.{authorization.Scheme.ToPropertyName()}.g.cs",
+            Name: $"{authorization.Settings.Namespace}.{authorization.Settings.ClassName}.Authorizations.{authorization.FriendlyName}.g.cs",
             Text: GenerateAuthorization(authorization));
     }
     

@@ -15,6 +15,7 @@ public readonly record struct EndPoint(
     string Path,
     string RequestMediaType,
     ImmutableArray<MethodParameter> Parameters,
+    ImmutableArray<Authorization> Authorizations,
     ImmutableArray<MethodParameter> QueryParameters,
     OperationType HttpMethod,
     ContentType ContentType,
@@ -37,6 +38,18 @@ public readonly record struct EndPoint(
     public static EndPoint FromSchema(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
+        
+        var authorizations = operation.Operation.Security
+            .SelectMany(x => x)
+            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings))
+            .ToImmutableArray();
+        if (authorizations.Length == 0)
+        {
+            authorizations = operation.GlobalSecurityRequirements
+                .SelectMany(x => x)
+                .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, operation.Settings))
+                .ToImmutableArray();
+        }
         
         var parameters = operation.Schemas
             .Where(x => x is { Hint: Hint.Parameter, ParameterData: not null })
@@ -132,6 +145,7 @@ public readonly record struct EndPoint(
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
             QueryParameters: queryParameters.ToImmutableArray(),
+            Authorizations: authorizations,
             HttpMethod: operation.OperationType,
             ContentType: responses
                 .Any(x => x.MediaType.Key.Contains("application/octet-stream"))

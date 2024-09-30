@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.Authorizations..g.cs
+﻿//HintName: G.Api.Authorizations.ApiKeyInQuery.g.cs
 
 #nullable enable
 
@@ -15,7 +15,11 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _httpClient.DefaultRequestHeaders.Add("X-API-Key", apiKey);
+            _authorization = new global::G.EndPointAuthorization
+            {
+                Name = "key",
+                Value = apiKey,
+            };
         }
     }
 }
