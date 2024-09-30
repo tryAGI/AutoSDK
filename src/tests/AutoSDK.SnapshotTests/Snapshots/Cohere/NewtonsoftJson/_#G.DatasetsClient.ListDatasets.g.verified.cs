@@ -71,11 +71,6 @@ namespace G
                 validationStatus: ref validationStatus,
                 xClientName: ref xClientName);
 
-            if (xClientName != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-            }
-
             var validationStatusValue = validationStatus switch
             {
                 global::G.DatasetValidationStatus.Unknown => "unknown",
@@ -101,6 +96,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (xClientName != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+
 
             PrepareRequest(
                 client: _httpClient,

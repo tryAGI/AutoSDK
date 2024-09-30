@@ -54,15 +54,6 @@ namespace G
                 chatId: ref chatId,
                 turnId: ref turnId);
 
-            if (requestTimeout != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
-            }
-            if (requestTimeoutMillis != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: $"/v2/chats/{chatId}/turns/{turnId}",
                 baseUri: _httpClient.BaseAddress); 
@@ -70,6 +61,16 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (requestTimeout != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
+            }
+            if (requestTimeoutMillis != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
+            }
+
 
             PrepareRequest(
                 client: _httpClient,

@@ -46,11 +46,6 @@ namespace G
                 accept: ref accept,
                 request: request);
 
-            if (accept != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/runs/group",
                 baseUri: _httpClient.BaseAddress); 
@@ -58,6 +53,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (accept != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
+
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

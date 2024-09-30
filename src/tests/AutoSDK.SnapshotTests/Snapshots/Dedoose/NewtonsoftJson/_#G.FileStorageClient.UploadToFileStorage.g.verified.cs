@@ -60,11 +60,6 @@ namespace G
                 uploadType: ref uploadType,
                 request: request);
 
-            if (token != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/uploadtofilestorage",
                 baseUri: _httpClient.BaseAddress); 
@@ -77,6 +72,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (token != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
+            }
+
             var __httpRequestContentBody = global::System.Convert.ToBase64String(request);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

@@ -50,11 +50,6 @@ namespace G
                 xClientName: ref xClientName,
                 request: request);
 
-            if (xClientName != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: $"/v1/finetuning/finetuned-models/{id}",
                 baseUri: _httpClient.BaseAddress); 
@@ -62,6 +57,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (xClientName != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

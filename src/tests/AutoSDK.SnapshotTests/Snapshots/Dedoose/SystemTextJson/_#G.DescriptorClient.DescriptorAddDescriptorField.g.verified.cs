@@ -75,11 +75,6 @@ namespace G
                 setId: ref setId,
                 request: request);
 
-            if (token != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("token", token.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/descriptor/adddescriptorfield",
                 baseUri: _httpClient.BaseAddress); 
@@ -95,6 +90,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (token != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
+            }
+
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

@@ -52,15 +52,6 @@ namespace G
                 accepts: ref accepts,
                 request: request);
 
-            if (xClientName != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-            }
-            if (accepts != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
-            }
-
             var acceptsValue = accepts switch
             {
                 global::G.ChatAccepts.TextEventStream => "text/event-stream",
@@ -73,6 +64,16 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (xClientName != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+            if (accepts != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
+            }
+
             var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,

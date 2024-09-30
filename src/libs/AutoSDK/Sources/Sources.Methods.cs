@@ -138,18 +138,6 @@ namespace {endPoint.Namespace}
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
-{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
-{endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
-    .Select(x => $@"
-            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
-{endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
-    .Select(x => $@"
-            if ({x.ParameterName} != default)
-            {{
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
-            }}").Inject()}
 
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
     .Where(x => x is { Location: not null, Type.EnumValues.Length: > 0 })
@@ -165,6 +153,20 @@ namespace {endPoint.Namespace}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
+{endPoint.Parameters
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
+    .Select(x => $@"
+            httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
+{endPoint.Parameters
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
+    .Select(x => $@"
+            if ({x.ParameterName} != default)
+            {{
+                httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+            }}").Inject()}
+{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
+ 
 {GenerateRequestData(endPoint)}
 
             PrepareRequest(

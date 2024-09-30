@@ -119,11 +119,6 @@ namespace G
                 facets: ref facets,
                 accept: ref accept);
 
-            if (accept != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", accept.ToString());
-            }
-
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: _httpClient.BaseAddress); 
@@ -147,6 +142,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (accept != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("accept", accept.ToString());
+            }
+
 
             PrepareRequest(
                 client: _httpClient,

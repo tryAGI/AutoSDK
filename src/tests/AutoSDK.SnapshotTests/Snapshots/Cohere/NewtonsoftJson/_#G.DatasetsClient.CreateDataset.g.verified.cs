@@ -88,11 +88,6 @@ namespace G
                 xClientName: ref xClientName,
                 request: request);
 
-            if (xClientName != default)
-            {
-                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
-            }
-
             var typeValue = type switch
             {
                 global::G.DatasetType.EmbedInput => "embed-input",
@@ -122,6 +117,12 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (xClientName != default)
+            {
+                httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{name}"),

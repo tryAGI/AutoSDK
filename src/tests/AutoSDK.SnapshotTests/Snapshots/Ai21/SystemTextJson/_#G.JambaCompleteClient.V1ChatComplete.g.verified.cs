@@ -50,8 +50,6 @@ namespace G
                 authorization: ref authorization,
                 request: request);
 
-            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", authorization.ToString());
-
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/chat/completions",
                 baseUri: _httpClient.BaseAddress); 
@@ -59,6 +57,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            httpRequest.Headers.TryAddWithoutValidation("Authorization", authorization.ToString());
+
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
