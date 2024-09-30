@@ -22,8 +22,8 @@
     </PackageReference>
     <Compile Remove="Resources\*.cs" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
-    <PackageReference Include="Firecrawl" Version="1.0.2-dev.2" />
-    <PackageReference Include="tryAGI.OpenAI" Version="3.7.1-dev.5" />
+    <PackageReference Include="Firecrawl" Version="1.0.2-dev.4" />
+    <PackageReference Include="tryAGI.OpenAI" Version="3.8.0" />
   </ItemGroup>
 
   <ItemGroup>
