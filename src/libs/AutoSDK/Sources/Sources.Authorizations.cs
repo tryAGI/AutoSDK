@@ -16,7 +16,7 @@ public static partial class Sources
         if (authorization.Type is SecuritySchemeType.OAuth2)
         {
             var jsonSerializerContext = !string.IsNullOrWhiteSpace(authorization.Settings.JsonSerializerContext)
-                ? $", global::{authorization.Settings.JsonSerializerContext}.Default"
+                ? $", global::{authorization.Settings.JsonSerializerContext}.Default.DictionaryStringString"
                 : string.Empty;
 
             return $@"
