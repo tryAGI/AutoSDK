@@ -50,9 +50,12 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: "/operations",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: _httpClient.BaseAddress);
+            if (_authorization != null)
+            {
+                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+            } 
             __pathBuilder 
-                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
                 .AddOptionalParameter("pageToken", pageToken) 
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
                 .AddOptionalParameter("filter", filter) 

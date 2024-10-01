@@ -49,10 +49,11 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: $"/models/{modelId}:generateContent",
-                baseUri: _httpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
-                ; 
+                baseUri: _httpClient.BaseAddress);
+            if (_authorization != null)
+            {
+                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+            } 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

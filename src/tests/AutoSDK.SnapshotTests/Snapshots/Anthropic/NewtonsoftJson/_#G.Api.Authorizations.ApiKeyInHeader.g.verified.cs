@@ -10,12 +10,16 @@ namespace G
         /// Authorize using ApiKey authentication.
         /// </summary>
         /// <param name="apiKey"></param>
-        public void AuthorizeUsingApiKey(
+        public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+            _authorization = new global::G.EndPointAuthorization
+            {
+                Name = "x-api-key",
+                Value = apiKey,
+            };
         }
     }
 }

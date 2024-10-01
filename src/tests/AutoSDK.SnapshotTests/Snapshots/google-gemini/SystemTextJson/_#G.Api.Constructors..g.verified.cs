@@ -14,7 +14,7 @@ namespace G
         {
             Authorizing(_httpClient, ref apiKey);
 
-            AuthorizeUsingApiKey(apiKey);
+            AuthorizeUsingApiKeyInQuery(apiKey);
 
             Authorized(_httpClient);
         }

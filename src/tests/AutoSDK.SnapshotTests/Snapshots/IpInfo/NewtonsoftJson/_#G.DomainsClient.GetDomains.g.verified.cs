@@ -53,9 +53,12 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: $"/domains/{ip}",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: _httpClient.BaseAddress);
+            if (_authorization != null)
+            {
+                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+            } 
             __pathBuilder 
-                .AddRequiredParameter(_authorization!.Name, _authorization!.Value) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
@@ -63,6 +66,13 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            if (_authorization != null)
+            {{
+                httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                    scheme: _authorization.Name,
+                    parameter: _authorization.Value);
+            }}
 
             PrepareRequest(
                 client: _httpClient,
