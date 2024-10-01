@@ -11,6 +11,9 @@ namespace G
     /// </summary>
     public sealed partial class JsonSerializerContextTypes
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
 
         /// <summary>
