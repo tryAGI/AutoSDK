@@ -27,6 +27,8 @@ namespace {types[0].Namespace}
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class JsonSerializerContextTypes
     {{
+        public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary {{ get; set; }}
+
 {types.Select(x => x.CSharpTypeWithNullability).Distinct().Select((type, i) => @$"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {type} Type{i} {{ get; set; }}").Inject()}

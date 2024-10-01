@@ -11,7 +11,9 @@ public readonly record struct Authorization(
     EquatableArray<string> Parameters,
     string Name,
     string Scheme,
-    Settings Settings
+    Settings Settings,
+    EquatableArray<OAuthFlow> Flows,
+    string OpenIdConnectUrl
 )
 {
     public string MethodName => $"AuthorizeUsing{FriendlyName}";
@@ -52,6 +54,26 @@ public readonly record struct Authorization(
             Parameters: parameters.ToImmutableArray().AsEquatableArray(),
             Name: scheme.Name ?? string.Empty,
             Scheme: scheme.Scheme ?? string.Empty,
-            Settings: settings);
+            Settings: settings,
+            Flows: new []
+                {
+                    scheme.Flows?.Implicit != null
+                        ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.Implicit), scheme.Flows.Implicit!, settings)
+                        : (OAuthFlow?)null,
+                    scheme.Flows?.Password != null
+                        ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.Password), scheme.Flows.Password!, settings)
+                        : null,
+                    scheme.Flows?.ClientCredentials != null
+                        ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.ClientCredentials), scheme.Flows.ClientCredentials!, settings)
+                        : null,
+                    scheme.Flows?.AuthorizationCode != null
+                        ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.AuthorizationCode), scheme.Flows.AuthorizationCode!, settings)
+                        : null,
+                }
+                .Where(x => x != null)
+                .Select(x => x!.Value)
+                .ToImmutableArray()
+                .AsEquatableArray(),
+            OpenIdConnectUrl: scheme.OpenIdConnectUrl?.ToString() ?? string.Empty);
     }
 }

@@ -6,7 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
-        /// <inheritdoc cref="Api(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List<global::G.EndPointAuthorization>?)"/>
+        /// <inheritdoc cref="Api(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::G.EndPointAuthorization}?)"/>
         public Api(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
