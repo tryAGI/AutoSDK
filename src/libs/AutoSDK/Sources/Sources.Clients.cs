@@ -24,7 +24,7 @@ namespace {client.Namespace}
         public const string BaseUrl = ""{client.BaseUrl}"";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::{client.Namespace}.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization> _authorizations;
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
@@ -36,7 +36,7 @@ namespace {client.Namespace}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient, authorization: _authorization)
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient, authorizations: _authorizations)
         {{
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
@@ -51,15 +51,15 @@ namespace {client.Namespace}
         /// </summary>
         /// <param name=""httpClient""></param>
         /// <param name=""baseUri""></param>
-        /// <param name=""authorization""></param>
+        /// <param name=""authorizations""></param>
         public {client.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::{client.Namespace}.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization>? authorizations = null)
         {{
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }}

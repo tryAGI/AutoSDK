@@ -17,7 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.github.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::G.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub Actions using the REST API.
         /// </summary>
-        public ActionsClient Actions => new ActionsClient(_httpClient, authorization: _authorization)
+        public ActionsClient Actions => new ActionsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// Activity APIs provide access to notifications, subscriptions, and timelines.
         /// </summary>
-        public ActivityClient Activity => new ActivityClient(_httpClient, authorization: _authorization)
+        public ActivityClient Activity => new ActivityClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// Information for integrations and installations.
         /// </summary>
-        public AppsClient Apps => new AppsClient(_httpClient, authorization: _authorization)
+        public AppsClient Apps => new AppsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -52,7 +52,7 @@ namespace G
         /// <summary>
         /// Monitor charges and usage from Actions and Packages.
         /// </summary>
-        public BillingClient Billing => new BillingClient(_httpClient, authorization: _authorization)
+        public BillingClient Billing => new BillingClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Rich interactions with checks run by your integrations.
         /// </summary>
-        public ChecksClient Checks => new ChecksClient(_httpClient, authorization: _authorization)
+        public ChecksClient Checks => new ChecksClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -68,7 +68,7 @@ namespace G
         /// <summary>
         /// Retrieve code scanning alerts from a repository.
         /// </summary>
-        public CodeScanningClient CodeScanning => new CodeScanningClient(_httpClient, authorization: _authorization)
+        public CodeScanningClient CodeScanning => new CodeScanningClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// Insight into codes of conduct for your communities.
         /// </summary>
-        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(_httpClient, authorization: _authorization)
+        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// List emojis available to use on GitHub.
         /// </summary>
-        public EmojisClient Emojis => new EmojisClient(_httpClient, authorization: _authorization)
+        public EmojisClient Emojis => new EmojisClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -92,7 +92,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Dependabot.
         /// </summary>
-        public DependabotClient Dependabot => new DependabotClient(_httpClient, authorization: _authorization)
+        public DependabotClient Dependabot => new DependabotClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// Endpoints to access Dependency Graph features.
         /// </summary>
-        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(_httpClient, authorization: _authorization)
+        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -108,7 +108,7 @@ namespace G
         /// <summary>
         /// View, modify your gists.
         /// </summary>
-        public GistsClient Gists => new GistsClient(_httpClient, authorization: _authorization)
+        public GistsClient Gists => new GistsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -116,7 +116,7 @@ namespace G
         /// <summary>
         /// Raw Git functionality.
         /// </summary>
-        public GitClient Git => new GitClient(_httpClient, authorization: _authorization)
+        public GitClient Git => new GitClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -124,7 +124,7 @@ namespace G
         /// <summary>
         /// View gitignore templates
         /// </summary>
-        public GitignoreClient Gitignore => new GitignoreClient(_httpClient, authorization: _authorization)
+        public GitignoreClient Gitignore => new GitignoreClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -132,7 +132,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Issues.
         /// </summary>
-        public IssuesClient Issues => new IssuesClient(_httpClient, authorization: _authorization)
+        public IssuesClient Issues => new IssuesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -140,7 +140,7 @@ namespace G
         /// <summary>
         /// View various OSS licenses.
         /// </summary>
-        public LicensesClient Licenses => new LicensesClient(_httpClient, authorization: _authorization)
+        public LicensesClient Licenses => new LicensesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -148,7 +148,7 @@ namespace G
         /// <summary>
         /// Render GitHub flavored markdown
         /// </summary>
-        public MarkdownClient Markdown => new MarkdownClient(_httpClient, authorization: _authorization)
+        public MarkdownClient Markdown => new MarkdownClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -156,7 +156,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Merge Queues.
         /// </summary>
-        public MergeQueueClient MergeQueue => new MergeQueueClient(_httpClient, authorization: _authorization)
+        public MergeQueueClient MergeQueue => new MergeQueueClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -164,7 +164,7 @@ namespace G
         /// <summary>
         /// Endpoints that give information about the API.
         /// </summary>
-        public MetaClient Meta => new MetaClient(_httpClient, authorization: _authorization)
+        public MetaClient Meta => new MetaClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -172,7 +172,7 @@ namespace G
         /// <summary>
         /// Move projects to or from GitHub.
         /// </summary>
-        public MigrationsClient Migrations => new MigrationsClient(_httpClient, authorization: _authorization)
+        public MigrationsClient Migrations => new MigrationsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -180,7 +180,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub OIDC configuration using the REST API.
         /// </summary>
-        public OidcClient Oidc => new OidcClient(_httpClient, authorization: _authorization)
+        public OidcClient Oidc => new OidcClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -188,7 +188,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Orgs.
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(_httpClient, authorization: _authorization)
+        public OrgsClient Orgs => new OrgsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -196,7 +196,7 @@ namespace G
         /// <summary>
         /// Manage packages for authenticated users and organizations.
         /// </summary>
-        public PackagesClient Packages => new PackagesClient(_httpClient, authorization: _authorization)
+        public PackagesClient Packages => new PackagesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -204,7 +204,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Projects.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorization: _authorization)
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -212,7 +212,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Pull Requests.
         /// </summary>
-        public PullsClient Pulls => new PullsClient(_httpClient, authorization: _authorization)
+        public PullsClient Pulls => new PullsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -220,7 +220,7 @@ namespace G
         /// <summary>
         /// Check your current rate limit status
         /// </summary>
-        public RateLimitClient RateLimit => new RateLimitClient(_httpClient, authorization: _authorization)
+        public RateLimitClient RateLimit => new RateLimitClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -228,7 +228,7 @@ namespace G
         /// <summary>
         /// Interact with reactions to various GitHub entities.
         /// </summary>
-        public ReactionsClient Reactions => new ReactionsClient(_httpClient, authorization: _authorization)
+        public ReactionsClient Reactions => new ReactionsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -236,7 +236,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Repos.
         /// </summary>
-        public ReposClient Repos => new ReposClient(_httpClient, authorization: _authorization)
+        public ReposClient Repos => new ReposClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -244,7 +244,7 @@ namespace G
         /// <summary>
         /// Look for stuff on GitHub.
         /// </summary>
-        public SearchClient Search => new SearchClient(_httpClient, authorization: _authorization)
+        public SearchClient Search => new SearchClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -252,7 +252,7 @@ namespace G
         /// <summary>
         /// Retrieve secret scanning alerts from a repository.
         /// </summary>
-        public SecretScanningClient SecretScanning => new SecretScanningClient(_httpClient, authorization: _authorization)
+        public SecretScanningClient SecretScanning => new SecretScanningClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -260,7 +260,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Teams.
         /// </summary>
-        public TeamsClient Teams => new TeamsClient(_httpClient, authorization: _authorization)
+        public TeamsClient Teams => new TeamsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -268,7 +268,7 @@ namespace G
         /// <summary>
         /// Interact with and view information about users and also current user.
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
+        public UsersClient Users => new UsersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -276,7 +276,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Codespaces using the REST API.
         /// </summary>
-        public CodespacesClient Codespaces => new CodespacesClient(_httpClient, authorization: _authorization)
+        public CodespacesClient Codespaces => new CodespacesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -284,7 +284,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Copilot using the REST API.
         /// </summary>
-        public CopilotClient Copilot => new CopilotClient(_httpClient, authorization: _authorization)
+        public CopilotClient Copilot => new CopilotClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -292,7 +292,7 @@ namespace G
         /// <summary>
         /// Manage security advisories.
         /// </summary>
-        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(_httpClient, authorization: _authorization)
+        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -300,7 +300,7 @@ namespace G
         /// <summary>
         /// Owner or admin management of users interactions.
         /// </summary>
-        public InteractionsClient Interactions => new InteractionsClient(_httpClient, authorization: _authorization)
+        public InteractionsClient Interactions => new InteractionsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -308,7 +308,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Classroom.
         /// </summary>
-        public ClassroomClient Classroom => new ClassroomClient(_httpClient, authorization: _authorization)
+        public ClassroomClient Classroom => new ClassroomClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -316,7 +316,7 @@ namespace G
         /// <summary>
         /// Desktop specific endpoints.
         /// </summary>
-        public DesktopClient Desktop => new DesktopClient(_httpClient, authorization: _authorization)
+        public DesktopClient Desktop => new DesktopClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -324,7 +324,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub Enterprise Teams.
         /// </summary>
-        public EnterpriseTeamsClient EnterpriseTeams => new EnterpriseTeamsClient(_httpClient, authorization: _authorization)
+        public EnterpriseTeamsClient EnterpriseTeams => new EnterpriseTeamsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -336,15 +336,15 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::G.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }

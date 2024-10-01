@@ -17,7 +17,7 @@ namespace G
         public const string BaseUrl = "https://cloud.leonardo.ai/api/rest/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::G.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetClient Dataset => new DatasetClient(_httpClient, authorization: _authorization)
+        public DatasetClient Dataset => new DatasetClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ElementsClient Elements => new ElementsClient(_httpClient, authorization: _authorization)
+        public ElementsClient Elements => new ElementsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(_httpClient, authorization: _authorization)
+        public ImageClient Image => new ImageClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -52,7 +52,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InitImagesClient InitImages => new InitImagesClient(_httpClient, authorization: _authorization)
+        public InitImagesClient InitImages => new InitImagesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MotionClient Motion => new MotionClient(_httpClient, authorization: _authorization)
+        public MotionClient Motion => new MotionClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -68,7 +68,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient, authorization: _authorization)
+        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PromptClient Prompt => new PromptClient(_httpClient, authorization: _authorization)
+        public PromptClient Prompt => new PromptClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -92,7 +92,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient, authorization: _authorization)
+        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextureClient Texture => new TextureClient(_httpClient, authorization: _authorization)
+        public TextureClient Texture => new TextureClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -108,7 +108,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(_httpClient, authorization: _authorization)
+        public UserClient User => new UserClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -116,7 +116,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VariationClient Variation => new VariationClient(_httpClient, authorization: _authorization)
+        public VariationClient Variation => new VariationClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -124,7 +124,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient, authorization: _authorization)
+        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -136,15 +136,15 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::G.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }

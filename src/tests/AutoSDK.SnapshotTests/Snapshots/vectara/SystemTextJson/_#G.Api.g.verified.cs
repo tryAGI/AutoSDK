@@ -35,7 +35,7 @@ namespace G
         public const string BaseUrl = "https://api.vectara.io";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::G.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// <summary>
         /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
         /// </summary>
-        public QueriesClient Queries => new QueriesClient(_httpClient, authorization: _authorization)
+        public QueriesClient Queries => new QueriesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -87,7 +87,7 @@ namespace G
         /// <summary>
         /// Upload files to a corpus for automatic parsing and document extraction
         /// </summary>
-        public UploadClient Upload => new UploadClient(_httpClient, authorization: _authorization)
+        public UploadClient Upload => new UploadClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -95,7 +95,7 @@ namespace G
         /// <summary>
         /// Index and manage core and structured documents for efficient search and retrieval
         /// </summary>
-        public IndexClient Index => new IndexClient(_httpClient, authorization: _authorization)
+        public IndexClient Index => new IndexClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -103,7 +103,7 @@ namespace G
         /// <summary>
         /// Create, manage, and update corpora and their associated settings for administration purposes
         /// </summary>
-        public CorporaClient Corpora => new CorporaClient(_httpClient, authorization: _authorization)
+        public CorporaClient Corpora => new CorporaClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -111,7 +111,7 @@ namespace G
         /// <summary>
         /// Retrieve and manage documents stored in a corpus for administrative tasks
         /// </summary>
-        public DocumentsClient Documents => new DocumentsClient(_httpClient, authorization: _authorization)
+        public DocumentsClient Documents => new DocumentsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -119,7 +119,7 @@ namespace G
         /// <summary>
         /// Create, manage, and interact with chat sessions for conversational AI and administrative monitoring
         /// </summary>
-        public ChatsClient Chats => new ChatsClient(_httpClient, authorization: _authorization)
+        public ChatsClient Chats => new ChatsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -127,7 +127,7 @@ namespace G
         /// <summary>
         /// List LLMs for text summarization, chat, and other generation tasks
         /// </summary>
-        public LargeLanguageModelsClient LargeLanguageModels => new LargeLanguageModelsClient(_httpClient, authorization: _authorization)
+        public LargeLanguageModelsClient LargeLanguageModels => new LargeLanguageModelsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// List encoders that turn text into vectors such as Boomerang
         /// </summary>
-        public EncodersClient Encoders => new EncodersClient(_httpClient, authorization: _authorization)
+        public EncodersClient Encoders => new EncodersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -143,7 +143,7 @@ namespace G
         /// <summary>
         /// List rerankers for reranking search results
         /// </summary>
-        public RerankersClient Rerankers => new RerankersClient(_httpClient, authorization: _authorization)
+        public RerankersClient Rerankers => new RerankersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -151,7 +151,7 @@ namespace G
         /// <summary>
         /// Monitor background jobs such as rebuilding indexes or updating corpus settings
         /// </summary>
-        public JobsClient Jobs => new JobsClient(_httpClient, authorization: _authorization)
+        public JobsClient Jobs => new JobsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -159,7 +159,7 @@ namespace G
         /// <summary>
         /// Create, manage, and authenticate users within the platform for user administration
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
+        public UsersClient Users => new UsersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -167,7 +167,7 @@ namespace G
         /// <summary>
         /// Manage app clients, and perform authentication operations for admin-level access control
         /// </summary>
-        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(_httpClient, authorization: _authorization)
+        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// Manage API keys for the account
         /// </summary>
-        public APIKeysClient APIKeys => new APIKeysClient(_httpClient, authorization: _authorization)
+        public APIKeysClient APIKeys => new APIKeysClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -183,7 +183,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(_httpClient, authorization: _authorization)
+        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -195,15 +195,15 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::G.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }

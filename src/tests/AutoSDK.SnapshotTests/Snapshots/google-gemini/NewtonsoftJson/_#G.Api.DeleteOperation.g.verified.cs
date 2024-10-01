@@ -41,9 +41,13 @@ namespace G
             var __pathBuilder = new PathBuilder(
                 path: $"/operations/{operationId}",
                 baseUri: _httpClient.BaseAddress);
-            if (_authorization != null)
+            foreach (var _authorization in _authorizations)
             {
-                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                if (_authorization.Type == "ApiKey" &&
+                    _authorization.Location == "Query")
+                {
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                }
             } 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

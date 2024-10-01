@@ -56,11 +56,14 @@ namespace {authorization.Settings.Namespace}
 {authorization.Parameters.Select(x => $@"
             {x} = {x} ?? throw new global::System.ArgumentNullException(nameof({x}));").Inject()}
 
-            _authorization = new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            _authorizations.Clear();
+            _authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
             {{
+                Type = ""{authorization.Type:G}"",
+                Location = ""{authorization.In:G}"",
                 Name = ""{name}"",
                 Value = {value},
-            }};
+            }});
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -81,13 +84,13 @@ namespace {authorization.Settings.Namespace}
 {{
     public sealed partial class {authorization.Settings.ClassName}
     {{
-        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::{authorization.Settings.Namespace}.EndPointAuthorization?)""/>
+        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List<global::{authorization.Settings.Namespace}.EndPointAuthorization>?)""/>
         public {authorization.Settings.ClassName}(
 {string.Join("\n", authorization.Parameters.Select(x => $@" 
             string {x},"))}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::{authorization.Settings.Namespace}.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
+            global::System.Collections.Generic.List<global::{authorization.Settings.Namespace}.EndPointAuthorization>? authorizations = null) : this(httpClient, baseUri, authorizations)
         {{
             Authorizing(_httpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});
 

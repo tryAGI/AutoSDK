@@ -42,21 +42,34 @@ namespace G
             var __pathBuilder = new PathBuilder(
                 path: $"/AS{asn}/json",
                 baseUri: _httpClient.BaseAddress);
-            if (_authorization != null)
+            foreach (var _authorization in _authorizations)
             {
-                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                if (_authorization.Type == "ApiKey" &&
+                    _authorization.Location == "Query")
+                {
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                }
             } 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
-            if (_authorization != null)
-            {{
-                httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                    scheme: _authorization.Name,
-                    parameter: _authorization.Value);
-            }}
+            foreach (var _authorization in _authorizations)
+            {
+                if (_authorization.Type == "Http" ||
+                    _authorization.Type == "OAuth2")
+                {
+                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: _authorization.Name,
+                        parameter: _authorization.Value);
+                }
+                else if (_authorization.Type == "ApiKey" &&
+                         _authorization.Location == "Header")
+                {
+                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                }
+            }
 
             PrepareRequest(
                 client: _httpClient,

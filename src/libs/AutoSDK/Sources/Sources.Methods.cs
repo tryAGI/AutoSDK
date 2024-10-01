@@ -156,12 +156,21 @@ namespace {endPoint.Namespace}
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.Http } or
-    { Type: SecuritySchemeType.OAuth2 }) ? @"
-            if (_authorization != null)
+    { Type: SecuritySchemeType.OAuth2 }) ? @$"
+            foreach (var _authorization in _authorizations)
             {{
-                httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                    scheme: _authorization.Name,
-                    parameter: _authorization.Value);
+                if (_authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
+                    _authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
+                {{
+                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: _authorization.Name,
+                        parameter: _authorization.Value);
+                }}
+                else if (_authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                         _authorization.Location == ""{ParameterLocation.Header:G}"")
+                {{
+                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                }}
             }}" : " ")}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
 {endPoint.Parameters
@@ -302,11 +311,15 @@ namespace {endPoint.Namespace}
                 baseUri: _httpClient.BaseAddress);";
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
-            code += @"
-            if (_authorization != null)
-            {
-                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
-            }";
+            code += $@"
+            foreach (var _authorization in _authorizations)
+            {{
+                if (_authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                    _authorization.Location == ""{ParameterLocation.Query:G}"")
+                {{
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                }}
+            }}";
         }
 
         var queryParameters = endPoint.QueryParameters

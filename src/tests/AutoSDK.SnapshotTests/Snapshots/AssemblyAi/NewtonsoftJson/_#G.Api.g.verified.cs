@@ -17,7 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.assemblyai.com";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::G.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// Transcript related operations
         /// </summary>
-        public TranscriptClient Transcript => new TranscriptClient(_httpClient, authorization: _authorization)
+        public TranscriptClient Transcript => new TranscriptClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// LeMUR related operations
         /// </summary>
-        public LeMURClient LeMUR => new LeMURClient(_httpClient, authorization: _authorization)
+        public LeMURClient LeMUR => new LeMURClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// Streaming Speech-to-Text
         /// </summary>
-        public StreamingClient Streaming => new StreamingClient(_httpClient, authorization: _authorization)
+        public StreamingClient Streaming => new StreamingClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -56,15 +56,15 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::G.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }

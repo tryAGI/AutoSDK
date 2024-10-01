@@ -51,9 +51,13 @@ namespace G
             var __pathBuilder = new PathBuilder(
                 path: "/operations",
                 baseUri: _httpClient.BaseAddress);
-            if (_authorization != null)
+            foreach (var _authorization in _authorizations)
             {
-                __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                if (_authorization.Type == "ApiKey" &&
+                    _authorization.Location == "Query")
+                {
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                }
             } 
             __pathBuilder 
                 .AddOptionalParameter("pageToken", pageToken) 

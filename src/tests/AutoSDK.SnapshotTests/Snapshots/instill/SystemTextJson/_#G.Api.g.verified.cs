@@ -17,7 +17,7 @@ namespace G
         public const string BaseUrl = "https://api.instill.tech";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::G.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         /// <summary>
         /// User endpoints
         /// </summary>
-        public UserClient User => new UserClient(_httpClient, authorization: _authorization)
+        public UserClient User => new UserClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// Organization endpoints
         /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(_httpClient, authorization: _authorization)
+        public OrganizationClient Organization => new OrganizationClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -93,7 +93,7 @@ namespace G
         /// <summary>
         /// Membership endpoints
         /// </summary>
-        public MembershipClient Membership => new MembershipClient(_httpClient, authorization: _authorization)
+        public MembershipClient Membership => new MembershipClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// Token endpoints
         /// </summary>
-        public TokenClient Token => new TokenClient(_httpClient, authorization: _authorization)
+        public TokenClient Token => new TokenClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -109,7 +109,7 @@ namespace G
         /// <summary>
         /// Subscription endpoints
         /// </summary>
-        public SubscriptionClient Subscription => new SubscriptionClient(_httpClient, authorization: _authorization)
+        public SubscriptionClient Subscription => new SubscriptionClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -117,7 +117,7 @@ namespace G
         /// <summary>
         /// Credit endpoints
         /// </summary>
-        public CreditClient Credit => new CreditClient(_httpClient, authorization: _authorization)
+        public CreditClient Credit => new CreditClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -125,7 +125,7 @@ namespace G
         /// <summary>
         /// Metric endpoints
         /// </summary>
-        public MetricClient Metric => new MetricClient(_httpClient, authorization: _authorization)
+        public MetricClient Metric => new MetricClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -133,7 +133,7 @@ namespace G
         /// <summary>
         /// Util endpoints
         /// </summary>
-        public UtilsClient Utils => new UtilsClient(_httpClient, authorization: _authorization)
+        public UtilsClient Utils => new UtilsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CatalogClient Catalog => new CatalogClient(_httpClient, authorization: _authorization)
+        public CatalogClient Catalog => new CatalogClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -153,15 +153,15 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::G.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }

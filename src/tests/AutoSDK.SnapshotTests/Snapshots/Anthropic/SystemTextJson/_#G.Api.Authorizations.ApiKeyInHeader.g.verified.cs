@@ -15,11 +15,14 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _authorization = new global::G.EndPointAuthorization
+            _authorizations.Clear();
+            _authorizations.Add(new global::G.EndPointAuthorization
             {
+                Type = "ApiKey",
+                Location = "Header",
                 Name = "x-api-key",
                 Value = apiKey,
-            };
+            });
         }
     }
 }
