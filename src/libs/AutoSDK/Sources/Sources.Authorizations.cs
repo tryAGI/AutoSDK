@@ -81,12 +81,13 @@ namespace {authorization.Settings.Namespace}
 {{
     public sealed partial class {authorization.Settings.ClassName}
     {{
-        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?)""/>
+        /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::{authorization.Settings.Namespace}.EndPointAuthorization?)""/>
         public {authorization.Settings.ClassName}(
 {string.Join("\n", authorization.Parameters.Select(x => $@" 
             string {x},"))}
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null) : this(httpClient, baseUri)
+            global::System.Uri? baseUri = null,
+            global::{authorization.Settings.Namespace}.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
         {{
             Authorizing(_httpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});
 
