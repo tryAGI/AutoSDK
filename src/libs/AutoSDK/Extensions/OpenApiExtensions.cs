@@ -536,7 +536,7 @@ public static class OpenApiExtensions
         {
             Id = id,
             Name = PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix),
-            Summary = ExtractEnumSummaryFromDescription(id, description),
+            Summary = ClearForXml(ExtractEnumSummaryFromDescription(id, description)),
         };
     }
 

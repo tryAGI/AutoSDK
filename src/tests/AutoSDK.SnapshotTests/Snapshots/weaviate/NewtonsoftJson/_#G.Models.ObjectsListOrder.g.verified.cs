@@ -11,12 +11,12 @@ namespace G
     public enum ObjectsListOrder
     {
         /// <summary>
-        /// `sort=author_name,title&order=desc,asc`.
+        /// `sort=author_name,title&amp;order=desc,asc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="asc")]
         Asc,
         /// <summary>
-        /// `sort=author_name,title&order=desc,asc`.
+        /// `sort=author_name,title&amp;order=desc,asc`.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="desc")]
         Desc,
