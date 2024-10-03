@@ -243,370 +243,398 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>? Type56 { get; set; }
+        public global::G.ChatCompletionResponseBase? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageInfo? Type57 { get; set; }
+        public global::G.ResponseBase? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckpointOut? Type58 { get; set; }
+        public global::G.UsageInfo? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTimeOffset? Type59 { get; set; }
+        public global::G.ChatCompletionResponseBaseVariant2? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetricOut? Type60 { get; set; }
+        public global::G.ChatCompletionResponseVariant2? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionChunk? Type61 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CompletionResponseStreamChoice>? Type62 { get; set; }
+        public global::G.CheckpointOut? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionResponseStreamChoice? Type63 { get; set; }
+        public global::System.DateTimeOffset? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeltaMessage? Type64 { get; set; }
+        public global::G.MetricOut? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionResponseStreamChoiceFinishReason? Type65 { get; set; }
+        public global::G.CompletionChunk? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionEvent? Type66 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CompletionResponseStreamChoice>? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteFileOut? Type67 { get; set; }
+        public global::G.CompletionResponseStreamChoice? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type68 { get; set; }
+        public global::G.DeltaMessage? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelOut? Type69 { get; set; }
+        public global::G.CompletionResponseStreamChoiceFinishReason? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOut? Type70 { get; set; }
+        public global::G.CompletionEvent? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CheckpointOut>? Type71 { get; set; }
+        public global::G.DeleteFileOut? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EventOut>? Type72 { get; set; }
+        public global::System.Guid? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EventOut? Type73 { get; set; }
+        public global::G.DeleteModelOut? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EventOutData? Type74 { get; set; }
+        public global::G.DetailedJobOut? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrainingParameters? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CheckpointOut>? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegrationOut>>? Type76 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EventOut>? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WandbIntegrationOut>? Type77 { get; set; }
+        public global::G.EventOut? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOut? Type78 { get; set; }
+        public global::G.EventOutData? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOutType? Type79 { get; set; }
+        public global::G.TrainingParameters? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type80 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegrationOut>>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneableModel? Type81 { get; set; }
+        public global::G.OneOf<global::G.WandbIntegrationOut>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutObject? Type82 { get; set; }
+        public global::G.WandbIntegrationOut? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryOut>>? Type83 { get; set; }
+        public global::G.WandbIntegrationOutType? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.GithubRepositoryOut>? Type84 { get; set; }
+        public object? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOut? Type85 { get; set; }
+        public global::G.FineTuneableModel? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOutType? Type86 { get; set; }
+        public global::G.DetailedJobOutObject? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutStatus? Type87 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryOut>>? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type88 { get; set; }
+        public global::G.OneOf<global::G.GithubRepositoryOut>? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingRequest? Type89 { get; set; }
+        public global::G.GithubRepositoryOut? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingResponse? Type90 { get; set; }
+        public global::G.GithubRepositoryOutType? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingResponseData? Type91 { get; set; }
+        public global::G.DetailedJobOutStatus? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type92 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FIMCompletionRequest? Type93 { get; set; }
+        public global::G.EmbeddingRequest? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FIMCompletionResponse? Type94 { get; set; }
+        public global::G.EmbeddingResponse? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FIMCompletionResponseVariant2? Type95 { get; set; }
+        public global::G.EmbeddingResponseVariant2? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FTModelCapabilitiesOut? Type96 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbeddingResponseData>? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FTModelCard? Type97 { get; set; }
+        public global::G.EmbeddingResponseData? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FTModelCardType? Type98 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FTModelOut? Type99 { get; set; }
+        public global::G.EmbeddingResponseVariant3? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FTModelOutObject? Type100 { get; set; }
+        public global::G.FIMCompletionRequest? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSchema? Type101 { get; set; }
+        public global::G.FIMCompletionResponse? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSchemaPurpose? Type102 { get; set; }
+        public global::G.FIMCompletionResponseVariant2? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SampleType? Type103 { get; set; }
+        public global::G.FTModelCapabilitiesOut? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source? Type104 { get; set; }
+        public global::G.FTModelCard? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryIn? Type105 { get; set; }
+        public global::G.FTModelCardType? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryInType? Type106 { get; set; }
+        public global::G.FTModelOut? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HTTPValidationError? Type107 { get; set; }
+        public global::G.FTModelOutObject? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ValidationError>? Type108 { get; set; }
+        public global::G.FileSchema? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ValidationError? Type109 { get; set; }
+        public global::G.FileSchemaPurpose? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type110 { get; set; }
+        public global::G.SampleType? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?>? Type111 { get; set; }
+        public global::G.Source? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobIn? Type112 { get; set; }
+        public global::G.GithubRepositoryIn? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrainingParametersIn? Type113 { get; set; }
+        public global::G.GithubRepositoryInType? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegration>>? Type114 { get; set; }
+        public global::G.HTTPValidationError? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.WandbIntegration>? Type115 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ValidationError>? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegration? Type116 { get; set; }
+        public global::G.ValidationError? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationType? Type117 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryIn>>? Type118 { get; set; }
+        public global::G.AnyOf<string, int?>? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.GithubRepositoryIn>? Type119 { get; set; }
+        public global::G.JobIn? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TrainingFile>? Type120 { get; set; }
+        public global::G.TrainingParametersIn? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrainingFile? Type121 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegration>>? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobMetadataOut? Type122 { get; set; }
+        public global::G.OneOf<global::G.WandbIntegration>? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobOut? Type123 { get; set; }
+        public global::G.WandbIntegration? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobOutObject? Type124 { get; set; }
+        public global::G.WandbIntegrationType? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobOutStatus? Type125 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryIn>>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOut? Type126 { get; set; }
+        public global::G.OneOf<global::G.GithubRepositoryIn>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.JobOut>? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TrainingFile>? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOutObject? Type128 { get; set; }
+        public global::G.TrainingFile? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LegacyJobMetadataOut? Type129 { get; set; }
+        public global::G.JobMetadataOut? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LegacyJobMetadataOutObject? Type130 { get; set; }
+        public global::G.JobOut? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListFilesOut? Type131 { get; set; }
+        public global::G.JobOutObject? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FileSchema>? Type132 { get; set; }
+        public global::G.JobOutStatus? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelList? Type133 { get; set; }
+        public global::G.JobsOut? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>>? Type134 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.JobOut>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>? Type135 { get; set; }
+        public global::G.JobsOutObject? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RetrieveFileOut? Type136 { get; set; }
+        public global::G.LegacyJobMetadataOut? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RetrieveFileOutPurpose? Type137 { get; set; }
+        public global::G.LegacyJobMetadataOutObject? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnarchiveFTModelOut? Type138 { get; set; }
+        public global::G.ListFilesOut? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnarchiveFTModelOutObject? Type139 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FileSchema>? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateFTModelIn? Type140 { get; set; }
+        public global::G.ModelList? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadFileOut? Type141 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>>? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadFileOutPurpose? Type142 { get; set; }
+        public global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilesApiRoutesUploadFileRequest? Type143 { get; set; }
+        public global::G.RetrieveFileOut? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type144 { get; set; }
+        public global::G.RetrieveFileOutPurpose? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilesApiRoutesUploadFileRequestPurpose? Type145 { get; set; }
+        public global::G.UnarchiveFTModelOut? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? Type146 { get; set; }
+        public global::G.UnarchiveFTModelOutObject? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>? Type147 { get; set; }
+        public global::G.UpdateFTModelIn? Type147 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UploadFileOut? Type148 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UploadFileOutPurpose? Type149 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilesApiRoutesUploadFileRequest? Type150 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type151 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilesApiRoutesUploadFileRequestPurpose? Type152 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? Type153 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<global::G.JobOut, global::G.LegacyJobMetadataOut>? Type154 { get; set; }
     }
 }

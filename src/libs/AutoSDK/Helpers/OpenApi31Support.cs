@@ -191,6 +191,15 @@ public static class OpenApi31Support
                 }
                 node.Remove(keyString);
             }
+            
+            // Fix "items" node when "$ref" is present and "items" is a list
+            if (keyString == "items" &&
+                entry.Value is List<object?> itemsNode &&
+                itemsNode.ElementAtOrDefault(0) is Dictionary<object, object?> itemsValue &&
+                itemsValue.ElementAtOrDefault(0).Key is "$ref")
+            {
+                node[new string("items".ToCharArray())] = itemsValue;
+            }
         }
     }
 }

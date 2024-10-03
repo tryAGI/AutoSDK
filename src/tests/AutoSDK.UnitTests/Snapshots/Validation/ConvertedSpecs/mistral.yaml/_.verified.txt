@@ -290,33 +290,30 @@
       title: ChatCompletionRequest
       type: object
     ChatCompletionResponse:
-      properties:
-        choices:
-          items:
-            $ref: '#/components/schemas/ChatCompletionChoice'
-          type: array
-        created:
-          example: 1702256327
-          type: integer
-        id:
-          example: cmpl-e5cc70bb28c444948073e77776eb30ef
-          type: string
-        model:
-          example: mistral-small-latest
-          type: string
-        object:
-          example: chat.completion
-          type: string
-        usage:
-          $ref: '#/components/schemas/UsageInfo'
-      required:
-        - id
-        - object
-        - data
-        - model
-        - usage
-      title: ChatCompletionResponse
-      type: object
+      allOf:
+        - $ref: '#/components/schemas/ChatCompletionResponseBase'
+        - properties:
+            choices:
+              items:
+                $ref: '#/components/schemas/ChatCompletionChoice'
+              type: array
+          required:
+            - id
+            - object
+            - data
+            - model
+            - usage
+          title: ChatCompletionResponse
+          type: object
+    ChatCompletionResponseBase:
+      allOf:
+        - $ref: '#/components/schemas/ResponseBase'
+        - properties:
+            created:
+              example: 1702256327
+              type: integer
+          title: ChatCompletionResponseBase
+          type: object
     CheckpointOut:
       properties:
         created_at:
@@ -598,25 +595,26 @@
       title: EmbeddingRequest
       type: object
     EmbeddingResponse:
-      properties:
-        id:
-          example: cmpl-e5cc70bb28c444948073e77776eb30ef
-          type: string
-        model:
-          example: mistral-small-latest
-          type: string
-        object:
-          example: chat.completion
-          type: string
-        usage:
-          $ref: '#/components/schemas/UsageInfo'
-      required:
-        - id
-        - object
-        - data
-        - model
-        - usage
-      type: object
+      allOf:
+        - $ref: '#/components/schemas/ResponseBase'
+        - properties:
+            data:
+              items:
+                $ref: '#/components/schemas/EmbeddingResponseData'
+              type: array
+          type: object
+        - properties:
+            choices:
+              items:
+                $ref: '#/components/schemas/ChatCompletionChoice'
+              type: array
+          required:
+            - id
+            - object
+            - data
+            - model
+            - usage
+          type: object
     EmbeddingResponseData:
       example:
         embedding:
@@ -709,7 +707,7 @@
           title: Stream
           type: boolean
         suffix:
-          default: &o1300 
+          default: &o1303 
           description: Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
           example: return a+b
           nullable: true
@@ -951,7 +949,7 @@
       additionalProperties: false
       properties:
         description:
-          default: *o1300
+          default: *o1303
           title: Description
           type: string
         name:
@@ -1479,6 +1477,21 @@
           title: Object
           type: string
       title: ModelList
+      type: object
+    ResponseBase:
+      properties:
+        id:
+          example: cmpl-e5cc70bb28c444948073e77776eb30ef
+          type: string
+        model:
+          example: mistral-small-latest
+          type: string
+        object:
+          example: chat.completion
+          type: string
+        usage:
+          $ref: '#/components/schemas/UsageInfo'
+      title: ResponseBase
       type: object
     ResponseFormat:
       additionalProperties: false

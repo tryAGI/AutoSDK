@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingResponse.g.cs
+﻿//HintName: G.Models.ChatCompletionResponseBase.g.cs
 using System.Linq;
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -9,7 +9,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct EmbeddingResponse : global::System.IEquatable<EmbeddingResponse>
+    public readonly partial struct ChatCompletionResponseBase : global::System.IEquatable<ChatCompletionResponseBase>
     {
         /// <summary>
         /// 
@@ -31,17 +31,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.ResponseBase value) => new EmbeddingResponse(value);
+        public static implicit operator ChatCompletionResponseBase(global::G.ResponseBase value) => new ChatCompletionResponseBase(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseBase?(EmbeddingResponse @this) => @this.Value1;
+        public static implicit operator global::G.ResponseBase?(ChatCompletionResponseBase @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingResponse(global::G.ResponseBase? value)
+        public ChatCompletionResponseBase(global::G.ResponseBase? value)
         {
             Value1 = value;
         }
@@ -50,9 +50,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EmbeddingResponseVariant2? Value2 { get; init; }
+        public global::G.ChatCompletionResponseBaseVariant2? Value2 { get; init; }
 #else
-        public global::G.EmbeddingResponseVariant2? Value2 { get; }
+        public global::G.ChatCompletionResponseBaseVariant2? Value2 { get; }
 #endif
 
         /// <summary>
@@ -66,17 +66,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant2 value) => new EmbeddingResponse(value);
+        public static implicit operator ChatCompletionResponseBase(global::G.ChatCompletionResponseBaseVariant2 value) => new ChatCompletionResponseBase(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.Value2;
+        public static implicit operator global::G.ChatCompletionResponseBaseVariant2?(ChatCompletionResponseBase @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingResponse(global::G.EmbeddingResponseVariant2? value)
+        public ChatCompletionResponseBase(global::G.ChatCompletionResponseBaseVariant2? value)
         {
             Value2 = value;
         }
@@ -84,57 +84,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.EmbeddingResponseVariant3? Value3 { get; init; }
-#else
-        public global::G.EmbeddingResponseVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant3 value) => new EmbeddingResponse(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.EmbeddingResponseVariant3?(EmbeddingResponse @this) => @this.Value3;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbeddingResponse(global::G.EmbeddingResponseVariant3? value)
-        {
-            Value3 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbeddingResponse(
+        public ChatCompletionResponseBase(
             global::G.ResponseBase? value1,
-            global::G.EmbeddingResponseVariant2? value2,
-            global::G.EmbeddingResponseVariant3? value3
+            global::G.ChatCompletionResponseBaseVariant2? value2
             )
         {
             Value1 = value1;
             Value2 = value2;
-            Value3 = value3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
             Value2 as object ??
             Value1 as object 
             ;
@@ -144,7 +106,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsValue1 && IsValue2;
         }
 
         /// <summary>
@@ -152,8 +114,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ResponseBase?, TResult>? value1 = null,
-            global::System.Func<global::G.EmbeddingResponseVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.EmbeddingResponseVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.ChatCompletionResponseBaseVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -169,10 +130,6 @@ namespace G
             {
                 return value2(Value2!);
             }
-            else if (IsValue3 && value3 != null)
-            {
-                return value3(Value3!);
-            }
 
             return default(TResult);
         }
@@ -182,8 +139,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ResponseBase?>? value1 = null,
-            global::System.Action<global::G.EmbeddingResponseVariant2?>? value2 = null,
-            global::System.Action<global::G.EmbeddingResponseVariant3?>? value3 = null,
+            global::System.Action<global::G.ChatCompletionResponseBaseVariant2?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -199,10 +155,6 @@ namespace G
             {
                 value2?.Invoke(Value2!);
             }
-            else if (IsValue3)
-            {
-                value3?.Invoke(Value3!);
-            }
         }
 
         /// <summary>
@@ -215,9 +167,7 @@ namespace G
                 Value1,
                 typeof(global::G.ResponseBase),
                 Value2,
-                typeof(global::G.EmbeddingResponseVariant2),
-                Value3,
-                typeof(global::G.EmbeddingResponseVariant3),
+                typeof(global::G.ChatCompletionResponseBaseVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -230,27 +180,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(EmbeddingResponse other)
+        public bool Equals(ChatCompletionResponseBase other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponseBaseVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(EmbeddingResponse obj1, EmbeddingResponse obj2)
+        public static bool operator ==(ChatCompletionResponseBase obj1, ChatCompletionResponseBase obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<EmbeddingResponse>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ChatCompletionResponseBase>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(EmbeddingResponse obj1, EmbeddingResponse obj2)
+        public static bool operator !=(ChatCompletionResponseBase obj1, ChatCompletionResponseBase obj2)
         {
             return !(obj1 == obj2);
         }
@@ -260,7 +209,7 @@ namespace G
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is EmbeddingResponse o && Equals(o);
+            return obj is ChatCompletionResponseBase o && Equals(o);
         }
     }
 }

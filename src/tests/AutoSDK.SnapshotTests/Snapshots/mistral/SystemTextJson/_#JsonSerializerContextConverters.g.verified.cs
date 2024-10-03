@@ -83,7 +83,10 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.ContentChunkJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory4),
+            typeof(global::G.JsonConverters.ChatCompletionResponseJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionResponseBaseJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory1),
+            typeof(global::G.JsonConverters.EmbeddingResponseJsonConverter),
             typeof(global::G.JsonConverters.FIMCompletionResponseJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
         };

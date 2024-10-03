@@ -100,7 +100,10 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.ContentChunkJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory4(),
+                    new global::G.JsonConverters.ChatCompletionResponseJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionResponseBaseJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory1(),
+                    new global::G.JsonConverters.EmbeddingResponseJsonConverter(),
                     new global::G.JsonConverters.FIMCompletionResponseJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                 }

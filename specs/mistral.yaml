@@ -2690,6 +2690,21 @@ components:
         - prompt_tokens
         - completion_tokens
         - total_tokens
+    ResponseBase:
+      type: object
+      title: ResponseBase
+      properties:
+        id:
+          type: string
+          example: cmpl-e5cc70bb28c444948073e77776eb30ef
+        object:
+          type: string
+          example: chat.completion
+        model:
+          type: string
+          example: mistral-small-latest
+        usage:
+          $ref: '#/components/schemas/UsageInfo'
     ChatCompletionChoice:
       title: ChatCompletionChoice
       type: object
@@ -2712,34 +2727,31 @@ components:
             - error
             - tool_calls
           example: stop
+    ChatCompletionResponseBase:
+      allOf:
+        - $ref: '#/components/schemas/ResponseBase'
+        - type: object
+          title: ChatCompletionResponseBase
+          properties:
+            created:
+              type: integer
+              example: 1702256327
     ChatCompletionResponse:
-      type: object
-      title: ChatCompletionResponse
-      properties:
-        id:
-          type: string
-          example: cmpl-e5cc70bb28c444948073e77776eb30ef
-        object:
-          type: string
-          example: chat.completion
-        model:
-          type: string
-          example: mistral-small-latest
-        usage:
-          $ref: '#/components/schemas/UsageInfo'
-        created:
-          type: integer
-          example: 1702256327
-        choices:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChatCompletionChoice'
-      required:
-        - id
-        - object
-        - data
-        - model
-        - usage
+      allOf:
+        - $ref: '#/components/schemas/ChatCompletionResponseBase'
+        - type: object
+          title: ChatCompletionResponse
+          properties:
+            choices:
+              type: array
+              items:
+                $ref: '#/components/schemas/ChatCompletionChoice'
+          required:
+            - id
+            - object
+            - data
+            - model
+            - usage
     FIMCompletionResponse:
       allOf:
         - $ref: '#/components/schemas/ChatCompletionResponse'
@@ -2780,29 +2792,26 @@ components:
             - 0.6
           index: 1
     EmbeddingResponse:
-      type: object
-      properties:
-        id:
-          type: string
-          example: cmpl-e5cc70bb28c444948073e77776eb30ef
-        object:
-          type: string
-          example: chat.completion
-        model:
-          type: string
-          example: mistral-small-latest
-        usage:
-          $ref: '#/components/schemas/UsageInfo'
-#        data:
-#          type: array
-#          items:
-#            - $ref: '#/components/schemas/EmbeddingResponseData'
-      required:
-        - id
-        - object
-        - data
-        - model
-        - usage
+      allOf:
+        - $ref: '#/components/schemas/ResponseBase'
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                - $ref: '#/components/schemas/EmbeddingResponseData'
+        - type: object
+          properties:
+            choices:
+              type: array
+              items:
+                $ref: '#/components/schemas/ChatCompletionChoice'
+          required:
+            - id
+            - object
+            - data
+            - model
+            - usage
     CompletionEvent:
       type: object
       required:
