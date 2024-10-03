@@ -76,6 +76,9 @@ public sealed partial class {modelData.Parents[level].ClassName}
         var requiredKeyword = isRequiredKeywordSupported
             ? " required"
             : string.Empty;
+        var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties"
+            ? "2"
+            : string.Empty;
         
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
@@ -93,7 +96,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
 
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 }

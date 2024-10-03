@@ -519,6 +519,7 @@ public static class OpenApiExtensions
             .UseWordSeparator('_', '-', ' ', '.')
             .Replace("+", "Plus")
             .Replace("*", "Any")
+            .Replace("[]", "Array")
             .Replace("'", string.Empty)
             .Replace(".", string.Empty)
             .Replace("[", string.Empty)

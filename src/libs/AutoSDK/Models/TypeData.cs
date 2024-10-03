@@ -231,7 +231,7 @@ public readonly record struct TypeData(
             //      !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
             //     $"global::{context.Settings.Namespace}.{context.Id}",
             
-            ("object", _) when context.Schema.Reference == null =>
+            ("object", _) or (null, "object") when context.Schema.Reference == null =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
             
             // ("object", _) when
@@ -249,6 +249,7 @@ public readonly record struct TypeData(
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
             ("boolean", _) => "bool",
+            (null, "boolean") => "bool",
             ("integer", "int32") => "int",
             ("integer", "int64") => "long",
             ("number", "float") => "float",
@@ -274,6 +275,7 @@ public readonly record struct TypeData(
             ("integer", _) => "int",
             ("number", _) => "double",
             ("string", _) => "string",
+            (null, "string") => "string",
             ("object", _) => "object",
             ("array", _) =>
                 $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(),
