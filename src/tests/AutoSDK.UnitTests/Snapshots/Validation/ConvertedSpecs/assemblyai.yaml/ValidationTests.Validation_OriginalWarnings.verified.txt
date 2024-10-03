@@ -1,0 +1,142 @@
+﻿[
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptUtterance/example/words/9/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/ContentSafetyLabelsResult/example/severity_score_summary/disasters/high
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/0/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/1/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/2/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/3/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/4/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/5/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/6/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/7/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/8/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/9/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/10/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/11/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/12/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/13/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/AutoHighlightsResult/example/results/14/rank
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptSentence/example/words/3/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/SentencesResponse/example/sentences/0/words/3/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/SentencesResponse/example/sentences/1/words/3/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/SentencesResponse/example/sentences/1/words/5/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptParagraph/example/words/1/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptParagraph/example/words/3/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/ParagraphsResponse/example/paragraphs/0/words/1/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/ParagraphsResponse/example/paragraphs/0/words/3/confidence
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptList/example/transcripts/0/created
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptList/example/transcripts/1/created
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/TranscriptList/example/transcripts/2/created
+  }
+]
