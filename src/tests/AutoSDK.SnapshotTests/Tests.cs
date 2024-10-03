@@ -57,6 +57,8 @@ public partial class Tests
     [DataRow("", "google-gemini.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("", "vectara.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "vectara.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "mistral.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "mistral.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")

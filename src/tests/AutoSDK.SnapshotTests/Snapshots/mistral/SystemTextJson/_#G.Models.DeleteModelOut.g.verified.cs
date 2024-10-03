@@ -1,0 +1,39 @@
+﻿//HintName: G.Models.DeleteModelOut.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class DeleteModelOut
+    {
+        /// <summary>
+        /// The deletion status<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        public bool? Deleted { get; set; } = true;
+
+        /// <summary>
+        /// The ID of the deleted model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The object type that was deleted<br/>
+        /// Default Value: model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; } = "model";
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

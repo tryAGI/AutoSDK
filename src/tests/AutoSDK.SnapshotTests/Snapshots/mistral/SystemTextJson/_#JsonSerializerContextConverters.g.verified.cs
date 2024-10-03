@@ -1,0 +1,87 @@
+﻿//HintName: JsonSerializerContextConverters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    internal sealed partial class JsonSerializerContextConverters
+    {
+        private readonly global::System.Type[] _types = new global::System.Type[]
+        {
+            typeof(global::G.JsonConverters.TextChunkTypeJsonConverter),
+            typeof(global::G.JsonConverters.TextChunkTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ImageURLChunkTypeJsonConverter),
+            typeof(global::G.JsonConverters.ImageURLChunkTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.UserMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.UserMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.AssistantMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.AssistantMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolTypesJsonConverter),
+            typeof(global::G.JsonConverters.ToolTypesNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.ToolMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ResponseFormatsJsonConverter),
+            typeof(global::G.JsonConverters.ResponseFormatsNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolChoiceEnumJsonConverter),
+            typeof(global::G.JsonConverters.ToolChoiceEnumNullableJsonConverter),
+            typeof(global::G.JsonConverters.ArchiveFTModelOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.ArchiveFTModelOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter),
+            typeof(global::G.JsonConverters.SystemMessageRoleJsonConverter),
+            typeof(global::G.JsonConverters.SystemMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonJsonConverter),
+            typeof(global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonNullableJsonConverter),
+            typeof(global::G.JsonConverters.WandbIntegrationOutTypeJsonConverter),
+            typeof(global::G.JsonConverters.WandbIntegrationOutTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneableModelJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneableModelNullableJsonConverter),
+            typeof(global::G.JsonConverters.DetailedJobOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.DetailedJobOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.GithubRepositoryOutTypeJsonConverter),
+            typeof(global::G.JsonConverters.GithubRepositoryOutTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.DetailedJobOutStatusJsonConverter),
+            typeof(global::G.JsonConverters.DetailedJobOutStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.FTModelOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.FTModelOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.FileSchemaPurposeJsonConverter),
+            typeof(global::G.JsonConverters.FileSchemaPurposeNullableJsonConverter),
+            typeof(global::G.JsonConverters.SampleTypeJsonConverter),
+            typeof(global::G.JsonConverters.SampleTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.SourceJsonConverter),
+            typeof(global::G.JsonConverters.SourceNullableJsonConverter),
+            typeof(global::G.JsonConverters.GithubRepositoryInTypeJsonConverter),
+            typeof(global::G.JsonConverters.GithubRepositoryInTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.WandbIntegrationTypeJsonConverter),
+            typeof(global::G.JsonConverters.WandbIntegrationTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.JobOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.JobOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.JobOutStatusJsonConverter),
+            typeof(global::G.JsonConverters.JobOutStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.JobsOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.JobsOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.LegacyJobMetadataOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.LegacyJobMetadataOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.RetrieveFileOutPurposeJsonConverter),
+            typeof(global::G.JsonConverters.RetrieveFileOutPurposeNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnarchiveFTModelOutObjectJsonConverter),
+            typeof(global::G.JsonConverters.UnarchiveFTModelOutObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.UploadFileOutPurposeJsonConverter),
+            typeof(global::G.JsonConverters.UploadFileOutPurposeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FilesApiRoutesUploadFileRequestPurposeJsonConverter),
+            typeof(global::G.JsonConverters.FilesApiRoutesUploadFileRequestPurposeNullableJsonConverter),
+            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusJsonConverter),
+            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverterFactory3),
+            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.ContentChunkJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverterFactory4),
+            typeof(global::G.JsonConverters.OneOfJsonConverterFactory1),
+            typeof(global::G.JsonConverters.FIMCompletionResponseJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
+        };
+    }
+}
